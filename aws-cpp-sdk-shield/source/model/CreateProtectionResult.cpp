@@ -30,12 +30,12 @@ CreateProtectionResult::CreateProtectionResult()
 {
 }
 
-CreateProtectionResult::CreateProtectionResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateProtectionResult::CreateProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateProtectionResult& CreateProtectionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateProtectionResult& CreateProtectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ProtectionId"))

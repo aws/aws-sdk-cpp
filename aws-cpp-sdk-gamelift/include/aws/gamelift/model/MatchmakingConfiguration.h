@@ -50,6 +50,7 @@ namespace Model
     MatchmakingConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a matchmaking configuration. This name is used to
      * identify the configuration associated with a matchmaking request or ticket.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline MatchmakingConfiguration& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Descriptive label that is associated with matchmaking configuration.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      * <p>Descriptive label that is associated with matchmaking configuration.</p>
      */
     inline MatchmakingConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Amazon Resource Name (<a
@@ -207,6 +210,7 @@ namespace Model
      */
     inline MatchmakingConfiguration& AddGameSessionQueueArns(const char* value) { m_gameSessionQueueArnsHasBeenSet = true; m_gameSessionQueueArns.push_back(value); return *this; }
 
+
     /**
      * <p>Maximum duration, in seconds, that a matchmaking ticket can remain in process
      * before timing out. Requests that time out can be resubmitted as needed.</p>
@@ -224,6 +228,7 @@ namespace Model
      * before timing out. Requests that time out can be resubmitted as needed.</p>
      */
     inline MatchmakingConfiguration& WithRequestTimeoutSeconds(int value) { SetRequestTimeoutSeconds(value); return *this;}
+
 
     /**
      * <p>Length of time (in seconds) to wait for players to accept a proposed match.
@@ -246,6 +251,7 @@ namespace Model
      */
     inline MatchmakingConfiguration& WithAcceptanceTimeoutSeconds(int value) { SetAcceptanceTimeoutSeconds(value); return *this;}
 
+
     /**
      * <p>Flag that determines whether or not a match that was created with this
      * configuration must be accepted by the matched players. To require acceptance,
@@ -266,6 +272,7 @@ namespace Model
      * set to TRUE.</p>
      */
     inline MatchmakingConfiguration& WithAcceptanceRequired(bool value) { SetAcceptanceRequired(value); return *this;}
+
 
     /**
      * <p>Unique identifier for a matchmaking rule set to use with this configuration.
@@ -316,6 +323,7 @@ namespace Model
      */
     inline MatchmakingConfiguration& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
+
     /**
      * <p>SNS topic ARN that is set up to receive matchmaking notifications.</p>
      */
@@ -351,6 +359,7 @@ namespace Model
      */
     inline MatchmakingConfiguration& WithNotificationTarget(const char* value) { SetNotificationTarget(value); return *this;}
 
+
     /**
      * <p>Number of player slots in a match to keep open for future players. For
      * example, if the configuration's rule set specifies a match for a single
@@ -374,6 +383,7 @@ namespace Model
      * selected for the match.</p>
      */
     inline MatchmakingConfiguration& WithAdditionalPlayerCount(int value) { SetAdditionalPlayerCount(value); return *this;}
+
 
     /**
      * <p>Information to attached to all events related to the matchmaking
@@ -417,6 +427,7 @@ namespace Model
      */
     inline MatchmakingConfiguration& WithCustomEventData(const char* value) { SetCustomEventData(value); return *this;}
 
+
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
@@ -446,6 +457,7 @@ namespace Model
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline MatchmakingConfiguration& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Set of developer-defined properties for a game session, formatted as a set of
@@ -524,6 +536,7 @@ namespace Model
      */
     inline MatchmakingConfiguration& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Set of developer-defined game session properties, formatted as a single
      * string value. This data is included in the <a>GameSession</a> object, which is
@@ -595,30 +608,43 @@ namespace Model
     inline MatchmakingConfiguration& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_gameSessionQueueArns;
     bool m_gameSessionQueueArnsHasBeenSet;
+
     int m_requestTimeoutSeconds;
     bool m_requestTimeoutSecondsHasBeenSet;
+
     int m_acceptanceTimeoutSeconds;
     bool m_acceptanceTimeoutSecondsHasBeenSet;
+
     bool m_acceptanceRequired;
     bool m_acceptanceRequiredHasBeenSet;
+
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet;
+
     Aws::String m_notificationTarget;
     bool m_notificationTargetHasBeenSet;
+
     int m_additionalPlayerCount;
     bool m_additionalPlayerCountHasBeenSet;
+
     Aws::String m_customEventData;
     bool m_customEventDataHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::Vector<GameProperty> m_gameProperties;
     bool m_gamePropertiesHasBeenSet;
+
     Aws::String m_gameSessionData;
     bool m_gameSessionDataHasBeenSet;
   };

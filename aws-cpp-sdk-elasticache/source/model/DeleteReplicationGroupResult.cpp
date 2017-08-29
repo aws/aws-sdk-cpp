@@ -31,12 +31,12 @@ DeleteReplicationGroupResult::DeleteReplicationGroupResult()
 {
 }
 
-DeleteReplicationGroupResult::DeleteReplicationGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteReplicationGroupResult::DeleteReplicationGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteReplicationGroupResult& DeleteReplicationGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteReplicationGroupResult& DeleteReplicationGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

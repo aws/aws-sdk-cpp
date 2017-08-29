@@ -32,13 +32,13 @@ ModifyInstancePlacementResponse::ModifyInstancePlacementResponse() :
 {
 }
 
-ModifyInstancePlacementResponse::ModifyInstancePlacementResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+ModifyInstancePlacementResponse::ModifyInstancePlacementResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_return(false)
 {
   *this = result;
 }
 
-ModifyInstancePlacementResponse& ModifyInstancePlacementResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyInstancePlacementResponse& ModifyInstancePlacementResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

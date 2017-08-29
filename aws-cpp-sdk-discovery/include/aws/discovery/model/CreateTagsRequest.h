@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of configuration items that you want to tag.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of configuration items that you want to tag.</p>
      */
     inline CreateTagsRequest& AddConfigurationIds(const char* value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
+
 
     /**
      * <p>Tags that you want to associate with one or more configuration items. Specify
@@ -128,8 +130,10 @@ namespace Model
     inline CreateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_configurationIds;
     bool m_configurationIdsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

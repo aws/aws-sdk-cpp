@@ -48,6 +48,7 @@ namespace Model
     ContainerOverride& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the container that receives the override. This parameter is
      * required if any override is specified.</p>
@@ -89,6 +90,7 @@ namespace Model
      * required if any override is specified.</p>
      */
     inline ContainerOverride& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The command to send to the container that overrides the default command from
@@ -146,6 +148,7 @@ namespace Model
      */
     inline ContainerOverride& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
+
     /**
      * <p>The environment variables to send to the container. You can add new
      * environment variables, which are added to the container at launch, or you can
@@ -202,6 +205,7 @@ namespace Model
      */
     inline ContainerOverride& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The number of <code>cpu</code> units reserved for the container, instead of
      * the default value from the task definition. You must also specify a container
@@ -222,6 +226,7 @@ namespace Model
      * name.</p>
      */
     inline ContainerOverride& WithCpu(int value) { SetCpu(value); return *this;}
+
 
     /**
      * <p>The hard limit (in MiB) of memory to present to the container, instead of the
@@ -247,6 +252,7 @@ namespace Model
      */
     inline ContainerOverride& WithMemory(int value) { SetMemory(value); return *this;}
 
+
     /**
      * <p>The soft limit (in MiB) of memory to reserve for the container, instead of
      * the default value from the task definition. You must also specify a container
@@ -269,16 +275,22 @@ namespace Model
     inline ContainerOverride& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet;
+
     Aws::Vector<KeyValuePair> m_environment;
     bool m_environmentHasBeenSet;
+
     int m_cpu;
     bool m_cpuHasBeenSet;
+
     int m_memory;
     bool m_memoryHasBeenSet;
+
     int m_memoryReservation;
     bool m_memoryReservationHasBeenSet;
   };

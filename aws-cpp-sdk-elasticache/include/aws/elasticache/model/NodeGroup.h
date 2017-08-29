@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
      * replication group contains only 1 node group; therefore, the node group ID is
@@ -109,6 +110,7 @@ namespace Model
      */
     inline NodeGroup& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
 
+
     /**
      * <p>The current state of this replication group - <code>creating</code>,
      * <code>available</code>, etc.</p>
@@ -151,6 +153,7 @@ namespace Model
      */
     inline NodeGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The endpoint of the primary node in this node group (shard).</p>
      */
@@ -175,6 +178,7 @@ namespace Model
      * <p>The endpoint of the primary node in this node group (shard).</p>
      */
     inline NodeGroup& WithPrimaryEndpoint(Endpoint&& value) { SetPrimaryEndpoint(std::move(value)); return *this;}
+
 
     /**
      * <p>The keyspace for this node group (shard).</p>
@@ -210,6 +214,7 @@ namespace Model
      * <p>The keyspace for this node group (shard).</p>
      */
     inline NodeGroup& WithSlots(const char* value) { SetSlots(value); return *this;}
+
 
     /**
      * <p>A list containing information about individual nodes within the node group
@@ -254,14 +259,19 @@ namespace Model
     inline NodeGroup& AddNodeGroupMembers(NodeGroupMember&& value) { m_nodeGroupMembersHasBeenSet = true; m_nodeGroupMembers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nodeGroupId;
     bool m_nodeGroupIdHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Endpoint m_primaryEndpoint;
     bool m_primaryEndpointHasBeenSet;
+
     Aws::String m_slots;
     bool m_slotsHasBeenSet;
+
     Aws::Vector<NodeGroupMember> m_nodeGroupMembers;
     bool m_nodeGroupMembersHasBeenSet;
   };

@@ -30,12 +30,12 @@ DisassociateNodeResult::DisassociateNodeResult()
 {
 }
 
-DisassociateNodeResult::DisassociateNodeResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateNodeResult::DisassociateNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateNodeResult& DisassociateNodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateNodeResult& DisassociateNodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NodeAssociationStatusToken"))

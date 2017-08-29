@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     RegisterInstancesWithLoadBalancerResult();
-    RegisterInstancesWithLoadBalancerResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RegisterInstancesWithLoadBalancerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RegisterInstancesWithLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RegisterInstancesWithLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The updated list of instances for the load balancer.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline RegisterInstancesWithLoadBalancerResult& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline RegisterInstancesWithLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Instance> m_instances;
+
     ResponseMetadata m_responseMetadata;
   };
 

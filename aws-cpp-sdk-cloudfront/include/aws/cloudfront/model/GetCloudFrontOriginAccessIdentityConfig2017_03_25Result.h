@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetCloudFrontOriginAccessIdentityConfig2017_03_25Result();
-    GetCloudFrontOriginAccessIdentityConfig2017_03_25Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetCloudFrontOriginAccessIdentityConfig2017_03_25Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetCloudFrontOriginAccessIdentityConfig2017_03_25Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetCloudFrontOriginAccessIdentityConfig2017_03_25Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The origin access identity's configuration information. </p>
@@ -72,6 +73,7 @@ namespace Model
      * <p>The origin access identity's configuration information. </p>
      */
     inline GetCloudFrontOriginAccessIdentityConfig2017_03_25Result& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The current version of the configuration. For example:
@@ -116,7 +118,9 @@ namespace Model
     inline GetCloudFrontOriginAccessIdentityConfig2017_03_25Result& WithETag(const char* value) { SetETag(value); return *this;}
 
   private:
+
     CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;
+
     Aws::String m_eTag;
   };
 

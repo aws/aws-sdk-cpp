@@ -30,12 +30,12 @@ AdminLinkProviderForUserResult::AdminLinkProviderForUserResult()
 {
 }
 
-AdminLinkProviderForUserResult::AdminLinkProviderForUserResult(const AmazonWebServiceResult<JsonValue>& result)
+AdminLinkProviderForUserResult::AdminLinkProviderForUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AdminLinkProviderForUserResult& AdminLinkProviderForUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AdminLinkProviderForUserResult& AdminLinkProviderForUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

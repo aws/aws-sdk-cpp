@@ -46,6 +46,7 @@ namespace Model
     LoggingOptionsPayload& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline LoggingOptionsPayload& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>The logging level.</p>
      */
@@ -107,8 +109,10 @@ namespace Model
     inline LoggingOptionsPayload& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     LogLevel m_logLevel;
     bool m_logLevelHasBeenSet;
   };

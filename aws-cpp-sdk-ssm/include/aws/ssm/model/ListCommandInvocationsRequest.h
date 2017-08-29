@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>(Optional) The invocations for a specific command ID.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>(Optional) The invocations for a specific command ID.</p>
      */
     inline ListCommandInvocationsRequest& WithCommandId(const char* value) { SetCommandId(value); return *this;}
+
 
     /**
      * <p>(Optional) The command execution details for a specific instance ID.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline ListCommandInvocationsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>(Optional) The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the next set of
@@ -128,6 +131,7 @@ namespace Model
      * results.</p>
      */
     inline ListCommandInvocationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>(Optional) The token for the next set of items to return. (You received this
@@ -171,6 +175,7 @@ namespace Model
      */
     inline ListCommandInvocationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
      * of results.</p>
@@ -213,6 +218,7 @@ namespace Model
      */
     inline ListCommandInvocationsRequest& AddFilters(CommandFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>(Optional) If set this returns the response of the command executions and any
      * command output. By default this is set to False. </p>
@@ -232,16 +238,22 @@ namespace Model
     inline ListCommandInvocationsRequest& WithDetails(bool value) { SetDetails(value); return *this;}
 
   private:
+
     Aws::String m_commandId;
     bool m_commandIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::Vector<CommandFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     bool m_details;
     bool m_detailsHasBeenSet;
   };

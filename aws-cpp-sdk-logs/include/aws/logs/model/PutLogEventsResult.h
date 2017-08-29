@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     PutLogEventsResult();
-    PutLogEventsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutLogEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutLogEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutLogEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The next sequence token.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline PutLogEventsResult& WithNextSequenceToken(const char* value) { SetNextSequenceToken(value); return *this;}
 
+
     /**
      * <p>The rejected events.</p>
      */
@@ -103,7 +105,9 @@ namespace Model
     inline PutLogEventsResult& WithRejectedLogEventsInfo(RejectedLogEventsInfo&& value) { SetRejectedLogEventsInfo(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextSequenceToken;
+
     RejectedLogEventsInfo m_rejectedLogEventsInfo;
   };
 

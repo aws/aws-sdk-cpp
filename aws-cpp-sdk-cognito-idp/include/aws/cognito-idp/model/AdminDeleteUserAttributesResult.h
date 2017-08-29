@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     AdminDeleteUserAttributesResult();
-    AdminDeleteUserAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminDeleteUserAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminDeleteUserAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminDeleteUserAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

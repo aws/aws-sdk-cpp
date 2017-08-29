@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateEventSubscriptionResult();
-    CreateEventSubscriptionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateEventSubscriptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateEventSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateEventSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const EventSubscription& GetEventSubscription() const{ return m_eventSubscription; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline CreateEventSubscriptionResult& WithEventSubscription(EventSubscription&& value) { SetEventSubscription(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline CreateEventSubscriptionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     EventSubscription m_eventSubscription;
+
     ResponseMetadata m_responseMetadata;
   };
 

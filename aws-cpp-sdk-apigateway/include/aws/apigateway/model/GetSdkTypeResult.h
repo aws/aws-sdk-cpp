@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetSdkTypeResult();
-    GetSdkTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSdkTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSdkTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSdkTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of an <a>SdkType</a> instance.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline GetSdkTypeResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The user-friendly name of an <a>SdkType</a> instance.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline GetSdkTypeResult& WithFriendlyName(const char* value) { SetFriendlyName(value); return *this;}
 
+
     /**
      * <p>The description of an <a>SdkType</a>.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The description of an <a>SdkType</a>.</p>
      */
     inline GetSdkTypeResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of configuration properties of an <a>SdkType</a>.</p>
@@ -189,9 +193,13 @@ namespace Model
     inline GetSdkTypeResult& AddConfigurationProperties(SdkConfigurationProperty&& value) { m_configurationProperties.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_id;
+
     Aws::String m_friendlyName;
+
     Aws::String m_description;
+
     Aws::Vector<SdkConfigurationProperty> m_configurationProperties;
   };
 

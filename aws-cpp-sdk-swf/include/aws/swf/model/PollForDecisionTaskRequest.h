@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain containing the task lists to poll.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the domain containing the task lists to poll.</p>
      */
     inline PollForDecisionTaskRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>Specifies the task list to poll for decision tasks.</p> <p>The specified
@@ -122,6 +124,7 @@ namespace Model
      */
     inline PollForDecisionTaskRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 
+
     /**
      * <p>Identity of the decider making the request, which is recorded in the
      * DecisionTaskStarted event in the workflow history. This enables diagnostic
@@ -170,6 +173,7 @@ namespace Model
      * tracing when problems arise. The form of this identity is user defined.</p>
      */
     inline PollForDecisionTaskRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -276,6 +280,7 @@ namespace Model
      */
     inline PollForDecisionTaskRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results that are returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of results. The
@@ -306,6 +311,7 @@ namespace Model
      */
     inline PollForDecisionTaskRequest& WithMaximumPageSize(int value) { SetMaximumPageSize(value); return *this;}
 
+
     /**
      * <p>When set to <code>true</code>, returns the events in reverse order. By
      * default the results are returned in ascending order of the
@@ -328,16 +334,22 @@ namespace Model
     inline PollForDecisionTaskRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     TaskList m_taskList;
     bool m_taskListHasBeenSet;
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet;
+
     int m_maximumPageSize;
     bool m_maximumPageSizeHasBeenSet;
+
     bool m_reverseOrder;
     bool m_reverseOrderHasBeenSet;
   };

@@ -34,7 +34,7 @@ DeleteLagResult::DeleteLagResult() :
 {
 }
 
-DeleteLagResult::DeleteLagResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DeleteLagResult::DeleteLagResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_numberOfConnections(0),
     m_lagState(LagState::NOT_SET),
     m_minimumLinks(0),
@@ -43,7 +43,7 @@ DeleteLagResult::DeleteLagResult(const AmazonWebServiceResult<JsonValue>& result
   *this = result;
 }
 
-DeleteLagResult& DeleteLagResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteLagResult& DeleteLagResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("connectionsBandwidth"))

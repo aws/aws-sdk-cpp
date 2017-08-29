@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetRateBasedRuleResult();
-    GetRateBasedRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRateBasedRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRateBasedRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRateBasedRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the <a>RateBasedRule</a> that you specified in the
@@ -72,6 +73,7 @@ namespace Model
     inline GetRateBasedRuleResult& WithRule(RateBasedRule&& value) { SetRule(std::move(value)); return *this;}
 
   private:
+
     RateBasedRule m_rule;
   };
 

@@ -45,6 +45,7 @@ namespace Model
     GroupInformation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Arn of a group.
      */
@@ -79,6 +80,7 @@ namespace Model
      * Arn of a group.
      */
     inline GroupInformation& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * Timestamp of when the group was created.
@@ -115,6 +117,7 @@ namespace Model
      */
     inline GroupInformation& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
+
     /**
      * Id of a group.
      */
@@ -149,6 +152,7 @@ namespace Model
      * Id of a group.
      */
     inline GroupInformation& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Last updated timestamp of the group.
@@ -185,6 +189,7 @@ namespace Model
      */
     inline GroupInformation& WithLastUpdatedTimestamp(const char* value) { SetLastUpdatedTimestamp(value); return *this;}
 
+
     /**
      * Last version of the group.
      */
@@ -220,6 +225,7 @@ namespace Model
      */
     inline GroupInformation& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
 
+
     /**
      * Latest version arn of the group.
      */
@@ -254,6 +260,7 @@ namespace Model
      * Latest version arn of the group.
      */
     inline GroupInformation& WithLatestVersionArn(const char* value) { SetLatestVersionArn(value); return *this;}
+
 
     /**
      * Name of a group.
@@ -291,18 +298,25 @@ namespace Model
     inline GroupInformation& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_creationTimestamp;
     bool m_creationTimestampHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_lastUpdatedTimestamp;
     bool m_lastUpdatedTimestampHasBeenSet;
+
     Aws::String m_latestVersion;
     bool m_latestVersionHasBeenSet;
+
     Aws::String m_latestVersionArn;
     bool m_latestVersionArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

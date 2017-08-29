@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for the game session to add a player to.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline CreatePlayerSessionRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
+
     /**
      * <p>Unique identifier for a player. Player IDs are developer-defined.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      * <p>Unique identifier for a player. Player IDs are developer-defined.</p>
      */
     inline CreatePlayerSessionRequest& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
+
 
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not
@@ -152,10 +155,13 @@ namespace Model
     inline CreatePlayerSessionRequest& WithPlayerData(const char* value) { SetPlayerData(value); return *this;}
 
   private:
+
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet;
+
     Aws::String m_playerId;
     bool m_playerIdHasBeenSet;
+
     Aws::String m_playerData;
     bool m_playerDataHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ListInvalidations2017_03_25Result();
-    ListInvalidations2017_03_25Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListInvalidations2017_03_25Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListInvalidations2017_03_25Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListInvalidations2017_03_25Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about invalidation batches. </p>
@@ -73,6 +74,7 @@ namespace Model
     inline ListInvalidations2017_03_25Result& WithInvalidationList(InvalidationList&& value) { SetInvalidationList(std::move(value)); return *this;}
 
   private:
+
     InvalidationList m_invalidationList;
   };
 

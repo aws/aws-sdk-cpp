@@ -133,6 +133,7 @@ namespace Model
     Method& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The method's HTTP verb.</p>
      */
@@ -167,6 +168,7 @@ namespace Model
      * <p>The method's HTTP verb.</p>
      */
     inline Method& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
+
 
     /**
      * <p>The method's authorization type. Valid values are <code>NONE</code> for open
@@ -224,6 +226,7 @@ namespace Model
      */
     inline Method& WithAuthorizationType(const char* value) { SetAuthorizationType(value); return *this;}
 
+
     /**
      * <p>The identifier of an <a>Authorizer</a> to use on this method. The
      * <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
@@ -266,6 +269,7 @@ namespace Model
      */
     inline Method& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
 
+
     /**
      * <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke
      * this method.</p>
@@ -283,6 +287,7 @@ namespace Model
      * this method.</p>
      */
     inline Method& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
+
 
     /**
      * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
@@ -318,6 +323,7 @@ namespace Model
      * <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
      */
     inline Method& WithRequestValidatorId(const char* value) { SetRequestValidatorId(value); return *this;}
+
 
     /**
      * <p>A human-friendly operation identifier for the method. For example, you can
@@ -381,6 +387,7 @@ namespace Model
      * example.</p>
      */
     inline Method& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+
 
     /**
      * <p>A key-value map defining required or optional method request parameters that
@@ -486,6 +493,7 @@ namespace Model
      */
     inline Method& AddRequestParameters(const char* key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>A key-value map specifying data schemas, represented by <a>Model</a>
      * resources, (as the mapped value) of the request payloads of given content types
@@ -569,6 +577,7 @@ namespace Model
      * (as the mapping key).</p>
      */
     inline Method& AddRequestModels(const char* key, const char* value) { m_requestModelsHasBeenSet = true; m_requestModels.emplace(key, value); return *this; }
+
 
     /**
      * <p>Gets a method response associated with a given HTTP status code. </p> <div
@@ -911,6 +920,7 @@ namespace Model
      */
     inline Method& AddMethodResponses(const char* key, const MethodResponse& value) { m_methodResponsesHasBeenSet = true; m_methodResponses.emplace(key, value); return *this; }
 
+
     /**
      * <p>Gets the method's integration responsible for passing the client-submitted
      * request to the back end and performing necessary transformations to make the
@@ -1172,24 +1182,34 @@ namespace Model
     inline Method& WithMethodIntegration(Integration&& value) { SetMethodIntegration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
+
     Aws::String m_authorizationType;
     bool m_authorizationTypeHasBeenSet;
+
     Aws::String m_authorizerId;
     bool m_authorizerIdHasBeenSet;
+
     bool m_apiKeyRequired;
     bool m_apiKeyRequiredHasBeenSet;
+
     Aws::String m_requestValidatorId;
     bool m_requestValidatorIdHasBeenSet;
+
     Aws::String m_operationName;
     bool m_operationNameHasBeenSet;
+
     Aws::Map<Aws::String, bool> m_requestParameters;
     bool m_requestParametersHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_requestModels;
     bool m_requestModelsHasBeenSet;
+
     Aws::Map<Aws::String, MethodResponse> m_methodResponses;
     bool m_methodResponsesHasBeenSet;
+
     Integration m_methodIntegration;
     bool m_methodIntegrationHasBeenSet;
   };

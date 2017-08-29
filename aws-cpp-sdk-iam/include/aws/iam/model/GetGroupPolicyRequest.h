@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the group the policy is associated with.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -93,6 +94,7 @@ namespace Model
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline GetGroupPolicyRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
@@ -151,8 +153,10 @@ namespace Model
     inline GetGroupPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
   };

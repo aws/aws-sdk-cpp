@@ -39,6 +39,7 @@ namespace Model
     UploadMultipartPartRequest();
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -102,6 +103,7 @@ namespace Model
      */
     inline UploadMultipartPartRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -136,6 +138,7 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline UploadMultipartPartRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
 
     /**
      * <p>The upload ID of the multipart upload.</p>
@@ -172,6 +175,7 @@ namespace Model
      */
     inline UploadMultipartPartRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
+
     /**
      * <p>The SHA256 tree hash of the data being uploaded.</p>
      */
@@ -206,6 +210,7 @@ namespace Model
      * <p>The SHA256 tree hash of the data being uploaded.</p>
      */
     inline UploadMultipartPartRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+
 
     /**
      * <p>Identifies the range of bytes in the assembled archive that will be uploaded
@@ -264,16 +269,22 @@ namespace Model
     inline UploadMultipartPartRequest& WithRange(const char* value) { SetRange(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
+
     Aws::String m_range;
     bool m_rangeHasBeenSet;
+
   };
 
 } // namespace Model

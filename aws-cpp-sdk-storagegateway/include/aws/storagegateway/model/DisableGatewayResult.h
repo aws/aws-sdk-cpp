@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DisableGatewayResult();
-    DisableGatewayResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisableGatewayResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisableGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisableGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique Amazon Resource Name of the disabled gateway.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline DisableGatewayResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
   };
 

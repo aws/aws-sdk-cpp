@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The unique ID for an invalidation request.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline InvalidationSummary& WithId(const char* value) { SetId(value); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
@@ -96,6 +98,7 @@ namespace Model
 
     
     inline InvalidationSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of an invalidation request.</p>
@@ -133,10 +136,13 @@ namespace Model
     inline InvalidationSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

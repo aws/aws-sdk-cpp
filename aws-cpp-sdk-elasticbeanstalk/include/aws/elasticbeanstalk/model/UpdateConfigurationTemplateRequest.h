@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application associated with the configuration template to
      * update.</p> <p> If no application is found with this name,
@@ -101,6 +102,7 @@ namespace Model
      */
     inline UpdateConfigurationTemplateRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The name of the configuration template to update.</p> <p> If no configuration
      * template is found with this name, <code>UpdateConfigurationTemplate</code>
@@ -150,6 +152,7 @@ namespace Model
      */
     inline UpdateConfigurationTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
+
     /**
      * <p>A new description for the configuration.</p>
      */
@@ -184,6 +187,7 @@ namespace Model
      * <p>A new description for the configuration.</p>
      */
     inline UpdateConfigurationTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of configuration option settings to update with the new specified
@@ -226,6 +230,7 @@ namespace Model
      * option value.</p>
      */
     inline UpdateConfigurationTemplateRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of configuration options to remove from the configuration set.</p> <p>
@@ -277,14 +282,19 @@ namespace Model
     inline UpdateConfigurationTemplateRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
+
     Aws::Vector<OptionSpecification> m_optionsToRemove;
     bool m_optionsToRemoveHasBeenSet;
   };

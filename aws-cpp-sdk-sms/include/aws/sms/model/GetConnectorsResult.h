@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetConnectorsResult();
-    GetConnectorsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConnectorsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetConnectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetConnectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::Vector<Connector>& GetConnectorList() const{ return m_connectorList; }
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline GetConnectorsResult& AddConnectorList(Connector&& value) { m_connectorList.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -86,7 +88,9 @@ namespace Model
     inline GetConnectorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Connector> m_connectorList;
+
     Aws::String m_nextToken;
   };
 

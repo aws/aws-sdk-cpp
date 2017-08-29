@@ -50,6 +50,7 @@ namespace Model
     SourceAuth& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The authorization type to use. The only valid value is <code>OAUTH</code>,
      * which represents the OAuth authorization type.</p>
@@ -79,6 +80,7 @@ namespace Model
      * which represents the OAuth authorization type.</p>
      */
     inline SourceAuth& WithType(SourceAuthType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The resource value that applies to the specified authorization type.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline SourceAuth& WithResource(const char* value) { SetResource(value); return *this;}
 
   private:
+
     SourceAuthType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
   };

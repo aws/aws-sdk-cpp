@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the option.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The name of the option.</p>
      */
     inline Option& WithOptionName(const char* value) { SetOptionName(value); return *this;}
+
 
     /**
      * <p>The description of the option.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline Option& WithOptionDescription(const char* value) { SetOptionDescription(value); return *this;}
 
+
     /**
      * <p>Indicate if this option is persistent.</p>
      */
@@ -136,6 +139,7 @@ namespace Model
      * <p>Indicate if this option is persistent.</p>
      */
     inline Option& WithPersistent(bool value) { SetPersistent(value); return *this;}
+
 
     /**
      * <p>Indicate if this option is permanent.</p>
@@ -152,6 +156,7 @@ namespace Model
      */
     inline Option& WithPermanent(bool value) { SetPermanent(value); return *this;}
 
+
     /**
      * <p>If required, the port configured for this option to use.</p>
      */
@@ -166,6 +171,7 @@ namespace Model
      * <p>If required, the port configured for this option to use.</p>
      */
     inline Option& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The version of the option.</p>
@@ -202,6 +208,7 @@ namespace Model
      */
     inline Option& WithOptionVersion(const char* value) { SetOptionVersion(value); return *this;}
 
+
     /**
      * <p>The option settings for this option.</p>
      */
@@ -236,6 +243,7 @@ namespace Model
      * <p>The option settings for this option.</p>
      */
     inline Option& AddOptionSettings(OptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the option requires access to a port, then this DB security group allows
@@ -278,6 +286,7 @@ namespace Model
      * access to the port.</p>
      */
     inline Option& AddDBSecurityGroupMemberships(DBSecurityGroupMembership&& value) { m_dBSecurityGroupMembershipsHasBeenSet = true; m_dBSecurityGroupMemberships.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the option requires access to a port, then this VPC security group allows
@@ -322,22 +331,31 @@ namespace Model
     inline Option& AddVpcSecurityGroupMemberships(VpcSecurityGroupMembership&& value) { m_vpcSecurityGroupMembershipsHasBeenSet = true; m_vpcSecurityGroupMemberships.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_optionName;
     bool m_optionNameHasBeenSet;
+
     Aws::String m_optionDescription;
     bool m_optionDescriptionHasBeenSet;
+
     bool m_persistent;
     bool m_persistentHasBeenSet;
+
     bool m_permanent;
     bool m_permanentHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_optionVersion;
     bool m_optionVersionHasBeenSet;
+
     Aws::Vector<OptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
+
     Aws::Vector<DBSecurityGroupMembership> m_dBSecurityGroupMemberships;
     bool m_dBSecurityGroupMembershipsHasBeenSet;
+
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroupMemberships;
     bool m_vpcSecurityGroupMembershipsHasBeenSet;
   };

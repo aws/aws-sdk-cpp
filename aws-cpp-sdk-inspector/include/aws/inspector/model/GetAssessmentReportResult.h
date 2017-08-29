@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetAssessmentReportResult();
-    GetAssessmentReportResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAssessmentReportResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAssessmentReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAssessmentReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Specifies the status of the request to generate an assessment report. </p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>Specifies the status of the request to generate an assessment report. </p>
      */
     inline GetAssessmentReportResult& WithStatus(ReportStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the URL where you can find the generated assessment report. This
@@ -110,7 +112,9 @@ namespace Model
     inline GetAssessmentReportResult& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
     ReportStatus m_status;
+
     Aws::String m_url;
   };
 

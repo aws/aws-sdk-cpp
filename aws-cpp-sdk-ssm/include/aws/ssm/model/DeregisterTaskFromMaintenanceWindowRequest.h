@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Maintenance Window the task should be removed from.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the Maintenance Window the task should be removed from.</p>
      */
     inline DeregisterTaskFromMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>The ID of the task to remove from the Maintenance Window.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline DeregisterTaskFromMaintenanceWindowRequest& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::String m_windowTaskId;
     bool m_windowTaskIdHasBeenSet;
   };

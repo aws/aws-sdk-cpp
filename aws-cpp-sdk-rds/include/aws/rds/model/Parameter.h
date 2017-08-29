@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies the name of the parameter.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>Specifies the name of the parameter.</p>
      */
     inline Parameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+
 
     /**
      * <p>Specifies the value of the parameter.</p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline Parameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
 
+
     /**
      * <p>Provides a description of the parameter.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>Provides a description of the parameter.</p>
      */
     inline Parameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Indicates the source of the parameter value.</p>
@@ -193,6 +197,7 @@ namespace Model
      */
     inline Parameter& WithSource(const char* value) { SetSource(value); return *this;}
 
+
     /**
      * <p>Specifies the engine specific parameters type.</p>
      */
@@ -227,6 +232,7 @@ namespace Model
      * <p>Specifies the engine specific parameters type.</p>
      */
     inline Parameter& WithApplyType(const char* value) { SetApplyType(value); return *this;}
+
 
     /**
      * <p>Specifies the valid data type for the parameter.</p>
@@ -263,6 +269,7 @@ namespace Model
      */
     inline Parameter& WithDataType(const char* value) { SetDataType(value); return *this;}
 
+
     /**
      * <p>Specifies the valid range of values for the parameter.</p>
      */
@@ -298,6 +305,7 @@ namespace Model
      */
     inline Parameter& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
 
+
     /**
      * <p> Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or operational
@@ -318,6 +326,7 @@ namespace Model
      * implications that prevent them from being changed. </p>
      */
     inline Parameter& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
+
 
     /**
      * <p>The earliest engine version to which the parameter can apply.</p>
@@ -354,6 +363,7 @@ namespace Model
      */
     inline Parameter& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
 
+
     /**
      * <p>Indicates when to apply parameter updates.</p>
      */
@@ -380,24 +390,34 @@ namespace Model
     inline Parameter& WithApplyMethod(ApplyMethod&& value) { SetApplyMethod(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_parameterName;
     bool m_parameterNameHasBeenSet;
+
     Aws::String m_parameterValue;
     bool m_parameterValueHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     Aws::String m_applyType;
     bool m_applyTypeHasBeenSet;
+
     Aws::String m_dataType;
     bool m_dataTypeHasBeenSet;
+
     Aws::String m_allowedValues;
     bool m_allowedValuesHasBeenSet;
+
     bool m_isModifiable;
     bool m_isModifiableHasBeenSet;
+
     Aws::String m_minimumEngineVersion;
     bool m_minimumEngineVersionHasBeenSet;
+
     ApplyMethod m_applyMethod;
     bool m_applyMethodHasBeenSet;
   };

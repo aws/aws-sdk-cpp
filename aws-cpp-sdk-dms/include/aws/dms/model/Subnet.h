@@ -46,6 +46,7 @@ namespace Model
     Subnet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The subnet identifier.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline Subnet& WithSubnetIdentifier(const char* value) { SetSubnetIdentifier(value); return *this;}
 
+
     /**
      * <p>The Availability Zone of the subnet.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The Availability Zone of the subnet.</p>
      */
     inline Subnet& WithSubnetAvailabilityZone(AvailabilityZone&& value) { SetSubnetAvailabilityZone(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the subnet.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline Subnet& WithSubnetStatus(const char* value) { SetSubnetStatus(value); return *this;}
 
   private:
+
     Aws::String m_subnetIdentifier;
     bool m_subnetIdentifierHasBeenSet;
+
     AvailabilityZone m_subnetAvailabilityZone;
     bool m_subnetAvailabilityZoneHasBeenSet;
+
     Aws::String m_subnetStatus;
     bool m_subnetStatusHasBeenSet;
   };

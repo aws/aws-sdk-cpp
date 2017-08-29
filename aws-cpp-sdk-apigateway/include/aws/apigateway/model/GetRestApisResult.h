@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     GetRestApisResult();
-    GetRestApisResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRestApisResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRestApisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRestApisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetPosition() const{ return m_position; }
@@ -72,6 +73,7 @@ namespace Model
 
     
     inline GetRestApisResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+
 
     /**
      * <p>The current page of elements from this collection.</p>
@@ -109,7 +111,9 @@ namespace Model
     inline GetRestApisResult& AddItems(RestApi&& value) { m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_position;
+
     Aws::Vector<RestApi> m_items;
   };
 

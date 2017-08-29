@@ -50,6 +50,7 @@ namespace Model
     Entitlement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The product code for which the given entitlement applies. Product codes are
      * provided by AWS Marketplace when the product listing is created.</p>
@@ -91,6 +92,7 @@ namespace Model
      * provided by AWS Marketplace when the product listing is created.</p>
      */
     inline Entitlement& WithProductCode(const char* value) { SetProductCode(value); return *this;}
+
 
     /**
      * <p>The dimension for which the given entitlement applies. Dimensions represent
@@ -141,6 +143,7 @@ namespace Model
      */
     inline Entitlement& WithDimension(const char* value) { SetDimension(value); return *this;}
 
+
     /**
      * <p>The customer identifier is a handle to each unique customer in an
      * application. Customer identifiers are obtained through the ResolveCustomer
@@ -190,6 +193,7 @@ namespace Model
      */
     inline Entitlement& WithCustomerIdentifier(const char* value) { SetCustomerIdentifier(value); return *this;}
 
+
     /**
      * <p>The EntitlementValue represents the amount of capacity that the customer is
      * entitled to for the product.</p>
@@ -219,6 +223,7 @@ namespace Model
      * entitled to for the product.</p>
      */
     inline Entitlement& WithValue(EntitlementValue&& value) { SetValue(std::move(value)); return *this;}
+
 
     /**
      * <p>The expiration date represents the minimum date through which this
@@ -266,14 +271,19 @@ namespace Model
     inline Entitlement& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_productCode;
     bool m_productCodeHasBeenSet;
+
     Aws::String m_dimension;
     bool m_dimensionHasBeenSet;
+
     Aws::String m_customerIdentifier;
     bool m_customerIdentifierHasBeenSet;
+
     EntitlementValue m_value;
     bool m_valueHasBeenSet;
+
     Aws::Utils::DateTime m_expirationDate;
     bool m_expirationDateHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
      * can be created in.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
+
     /**
      * <p>The number of days for which automated backups of the restored DB cluster are
      * retained. You must specify a minimum value of 1.</p> <p>Default: 1</p>
@@ -108,6 +110,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 1 to 35</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
+
 
     /**
      * <p>A value that indicates that the restored DB cluster should be associated with
@@ -151,6 +154,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
 
+
     /**
      * <p>The database name for the restored DB cluster.</p>
      */
@@ -185,6 +189,7 @@ namespace Model
      * <p>The database name for the restored DB cluster.</p>
      */
     inline RestoreDBClusterFromS3Request& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+
 
     /**
      * <p>The name of the DB cluster to create from the source data in the S3 bucket.
@@ -256,6 +261,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
@@ -319,6 +325,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
+
     /**
      * <p>A list of EC2 VPC security groups to associate with the restored DB
      * cluster.</p>
@@ -366,6 +373,7 @@ namespace Model
      * cluster.</p>
      */
     inline RestoreDBClusterFromS3Request& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p>A DB subnet group to associate with the restored DB cluster.</p>
@@ -423,6 +431,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>The name of the database engine to be used for the restored DB cluster.</p>
      * <p>Valid Values: <code>aurora</code> </p>
@@ -464,6 +473,7 @@ namespace Model
      * <p>Valid Values: <code>aurora</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>The version number of the database engine to use.</p> <p> <b>Aurora</b> </p>
@@ -507,6 +517,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>The port number on which the instances in the restored DB cluster accept
      * connections.</p> <p> Default: <code>3306</code> </p>
@@ -524,6 +535,7 @@ namespace Model
      * connections.</p> <p> Default: <code>3306</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
@@ -581,6 +593,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
+
     /**
      * <p>The password for the master database user. This password can contain any
      * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
@@ -629,6 +642,7 @@ namespace Model
      * contain from 8 to 41 characters.</p>
      */
     inline RestoreDBClusterFromS3Request& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
+
 
     /**
      * <p>A value that indicates that the restored DB cluster should be associated with
@@ -685,6 +699,7 @@ namespace Model
      * associated with a DB cluster.</p>
      */
     inline RestoreDBClusterFromS3Request& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+
 
     /**
      * <p>The daily time range during which automated backups are created if automated
@@ -791,6 +806,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
+
     /**
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
@@ -882,6 +898,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -903,6 +920,7 @@ namespace Model
     
     inline RestoreDBClusterFromS3Request& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies whether the restored DB cluster is encrypted.</p>
      */
@@ -917,6 +935,7 @@ namespace Model
      * <p>Specifies whether the restored DB cluster is encrypted.</p>
      */
     inline RestoreDBClusterFromS3Request& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
+
 
     /**
      * <p>The KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
@@ -1009,6 +1028,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts, and otherwise false.</p>
@@ -1029,6 +1049,7 @@ namespace Model
      * <p>Default: <code>false</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
+
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
@@ -1071,6 +1092,7 @@ namespace Model
      * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngine(const char* value) { SetSourceEngine(value); return *this;}
+
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
@@ -1121,6 +1143,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const char* value) { SetSourceEngineVersion(value); return *this;}
 
+
     /**
      * <p>The name of the Amazon S3 bucket that contains the data used to create the
      * Amazon Aurora DB cluster.</p>
@@ -1162,6 +1185,7 @@ namespace Model
      * Amazon Aurora DB cluster.</p>
      */
     inline RestoreDBClusterFromS3Request& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+
 
     /**
      * <p>The prefix for all of the file names that contain the data used to create the
@@ -1219,6 +1243,7 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithS3Prefix(const char* value) { SetS3Prefix(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
      * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
@@ -1269,54 +1294,79 @@ namespace Model
     inline RestoreDBClusterFromS3Request& WithS3IngestionRoleArn(const char* value) { SetS3IngestionRoleArn(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
+
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;
+
     Aws::String m_masterUserPassword;
     bool m_masterUserPasswordHasBeenSet;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     bool m_storageEncrypted;
     bool m_storageEncryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+
     Aws::String m_sourceEngine;
     bool m_sourceEngineHasBeenSet;
+
     Aws::String m_sourceEngineVersion;
     bool m_sourceEngineVersionHasBeenSet;
+
     Aws::String m_s3BucketName;
     bool m_s3BucketNameHasBeenSet;
+
     Aws::String m_s3Prefix;
     bool m_s3PrefixHasBeenSet;
+
     Aws::String m_s3IngestionRoleArn;
     bool m_s3IngestionRoleArnHasBeenSet;
   };

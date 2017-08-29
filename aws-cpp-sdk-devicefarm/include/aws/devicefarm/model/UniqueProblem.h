@@ -48,6 +48,7 @@ namespace Model
     UniqueProblem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A message about the unique problems' result.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>A message about the unique problems' result.</p>
      */
     inline UniqueProblem& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>Information about the problems.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline UniqueProblem& AddProblems(Problem&& value) { m_problemsHasBeenSet = true; m_problems.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::Vector<Problem> m_problems;
     bool m_problemsHasBeenSet;
   };

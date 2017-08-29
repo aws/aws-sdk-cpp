@@ -30,12 +30,12 @@ DisassociateTagOptionFromResourceResult::DisassociateTagOptionFromResourceResult
 {
 }
 
-DisassociateTagOptionFromResourceResult::DisassociateTagOptionFromResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateTagOptionFromResourceResult::DisassociateTagOptionFromResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateTagOptionFromResourceResult& DisassociateTagOptionFromResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateTagOptionFromResourceResult& DisassociateTagOptionFromResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

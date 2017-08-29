@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The namespace of the metric.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline Metric& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
+
     /**
      * <p>The name of the metric.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The name of the metric.</p>
      */
     inline Metric& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+
 
     /**
      * <p>The dimensions for the metric.</p>
@@ -156,10 +159,13 @@ namespace Model
     inline Metric& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
   };

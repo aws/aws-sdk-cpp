@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeSnapshotScheduleResult();
-    DescribeSnapshotScheduleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSnapshotScheduleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSnapshotScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSnapshotScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
@@ -62,6 +63,7 @@ namespace Model
     
     inline DescribeSnapshotScheduleResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
+
     
     inline int GetStartAt() const{ return m_startAt; }
 
@@ -71,6 +73,7 @@ namespace Model
     
     inline DescribeSnapshotScheduleResult& WithStartAt(int value) { SetStartAt(value); return *this;}
 
+
     
     inline int GetRecurrenceInHours() const{ return m_recurrenceInHours; }
 
@@ -79,6 +82,7 @@ namespace Model
 
     
     inline DescribeSnapshotScheduleResult& WithRecurrenceInHours(int value) { SetRecurrenceInHours(value); return *this;}
+
 
     
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -100,6 +104,7 @@ namespace Model
 
     
     inline DescribeSnapshotScheduleResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
@@ -123,10 +128,15 @@ namespace Model
     inline DescribeSnapshotScheduleResult& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
+
     int m_startAt;
+
     int m_recurrenceInHours;
+
     Aws::String m_description;
+
     Aws::String m_timezone;
   };
 

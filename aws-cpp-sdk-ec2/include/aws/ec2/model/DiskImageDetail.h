@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The size of the disk image, in GiB.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>The size of the disk image, in GiB.</p>
      */
     inline DiskImageDetail& WithBytes(long long value) { SetBytes(value); return *this;}
+
 
     /**
      * <p>The disk image format.</p>
@@ -88,6 +90,7 @@ namespace Model
      * <p>The disk image format.</p>
      */
     inline DiskImageDetail& WithFormat(DiskImageFormat&& value) { SetFormat(std::move(value)); return *this;}
+
 
     /**
      * <p>A presigned URL for the import manifest stored in Amazon S3 and presented
@@ -188,10 +191,13 @@ namespace Model
     inline DiskImageDetail& WithImportManifestUrl(const char* value) { SetImportManifestUrl(value); return *this;}
 
   private:
+
     long long m_bytes;
     bool m_bytesHasBeenSet;
+
     DiskImageFormat m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_importManifestUrl;
     bool m_importManifestUrlHasBeenSet;
   };

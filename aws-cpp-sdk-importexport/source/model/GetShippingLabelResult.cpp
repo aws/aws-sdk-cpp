@@ -31,12 +31,12 @@ GetShippingLabelResult::GetShippingLabelResult()
 {
 }
 
-GetShippingLabelResult::GetShippingLabelResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetShippingLabelResult::GetShippingLabelResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetShippingLabelResult& GetShippingLabelResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetShippingLabelResult& GetShippingLabelResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

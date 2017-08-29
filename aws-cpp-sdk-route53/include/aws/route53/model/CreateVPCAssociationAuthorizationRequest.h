@@ -41,6 +41,7 @@ namespace Model
     CreateVPCAssociationAuthorizationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the private hosted zone that you want to authorize associating a
      * VPC with.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CreateVPCAssociationAuthorizationRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
+
     /**
      * <p>A complex type that contains the VPC ID and region for the VPC that you want
      * to authorize associating with your hosted zone.</p>
@@ -114,8 +116,10 @@ namespace Model
     inline CreateVPCAssociationAuthorizationRequest& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     VPC m_vPC;
     bool m_vPCHasBeenSet;
   };

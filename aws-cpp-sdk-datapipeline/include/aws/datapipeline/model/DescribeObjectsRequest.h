@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the pipeline that contains the object definitions.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ID of the pipeline that contains the object definitions.</p>
      */
     inline DescribeObjectsRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+
 
     /**
      * <p>The IDs of the pipeline objects that contain the definitions to be described.
@@ -131,6 +133,7 @@ namespace Model
      */
     inline DescribeObjectsRequest& AddObjectIds(const char* value) { m_objectIdsHasBeenSet = true; m_objectIds.push_back(value); return *this; }
 
+
     /**
      * <p>Indicates whether any expressions in the object should be evaluated when the
      * object descriptions are returned.</p>
@@ -148,6 +151,7 @@ namespace Model
      * object descriptions are returned.</p>
      */
     inline DescribeObjectsRequest& WithEvaluateExpressions(bool value) { SetEvaluateExpressions(value); return *this;}
+
 
     /**
      * <p>The starting point for the results to be returned. For the first call, this
@@ -206,12 +210,16 @@ namespace Model
     inline DescribeObjectsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_objectIds;
     bool m_objectIdsHasBeenSet;
+
     bool m_evaluateExpressions;
     bool m_evaluateExpressionsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

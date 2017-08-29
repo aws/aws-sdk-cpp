@@ -31,12 +31,12 @@ StartDBInstanceResult::StartDBInstanceResult()
 {
 }
 
-StartDBInstanceResult::StartDBInstanceResult(const AmazonWebServiceResult<XmlDocument>& result)
+StartDBInstanceResult::StartDBInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-StartDBInstanceResult& StartDBInstanceResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+StartDBInstanceResult& StartDBInstanceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

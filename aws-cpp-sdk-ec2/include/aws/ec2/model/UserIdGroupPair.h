@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the security group.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of the security group.</p>
      */
     inline UserIdGroupPair& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+
 
     /**
      * <p>The name of the security group. In a request, use this parameter for a
@@ -133,6 +135,7 @@ namespace Model
      */
     inline UserIdGroupPair& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>The status of a VPC peering connection, if applicable.</p>
      */
@@ -167,6 +170,7 @@ namespace Model
      * <p>The status of a VPC peering connection, if applicable.</p>
      */
     inline UserIdGroupPair& WithPeeringStatus(const char* value) { SetPeeringStatus(value); return *this;}
+
 
     /**
      * <p>The ID of an AWS account. For a referenced security group in another VPC, the
@@ -224,6 +228,7 @@ namespace Model
      */
     inline UserIdGroupPair& WithUserId(const char* value) { SetUserId(value); return *this;}
 
+
     /**
      * <p>The ID of the VPC for the referenced security group, if applicable.</p>
      */
@@ -258,6 +263,7 @@ namespace Model
      * <p>The ID of the VPC for the referenced security group, if applicable.</p>
      */
     inline UserIdGroupPair& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC peering connection, if applicable.</p>
@@ -295,16 +301,22 @@ namespace Model
     inline UserIdGroupPair& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
   private:
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_peeringStatus;
     bool m_peeringStatusHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
   };

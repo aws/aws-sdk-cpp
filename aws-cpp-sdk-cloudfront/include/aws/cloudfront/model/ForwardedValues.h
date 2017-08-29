@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>Indicates whether you want CloudFront to forward query strings to the origin
      * that is associated with this cache behavior and cache based on the query string
@@ -118,6 +119,7 @@ namespace Model
      */
     inline ForwardedValues& WithQueryString(bool value) { SetQueryString(value); return *this;}
 
+
     /**
      * <p>A complex type that specifies whether you want CloudFront to forward cookies
      * to the origin and, if so, which ones. For more information about forwarding
@@ -168,6 +170,7 @@ namespace Model
      */
     inline ForwardedValues& WithCookies(CookiePreference&& value) { SetCookies(std::move(value)); return *this;}
 
+
     /**
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
      * CloudFront to vary upon for this cache behavior. </p>
@@ -197,6 +200,7 @@ namespace Model
      * CloudFront to vary upon for this cache behavior. </p>
      */
     inline ForwardedValues& WithHeaders(Headers&& value) { SetHeaders(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that contains information about the query string parameters
@@ -229,12 +233,16 @@ namespace Model
     inline ForwardedValues& WithQueryStringCacheKeys(QueryStringCacheKeys&& value) { SetQueryStringCacheKeys(std::move(value)); return *this;}
 
   private:
+
     bool m_queryString;
     bool m_queryStringHasBeenSet;
+
     CookiePreference m_cookies;
     bool m_cookiesHasBeenSet;
+
     Headers m_headers;
     bool m_headersHasBeenSet;
+
     QueryStringCacheKeys m_queryStringCacheKeys;
     bool m_queryStringCacheKeysHasBeenSet;
   };

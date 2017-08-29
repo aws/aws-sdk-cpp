@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeCacheSecurityGroupsResult();
-    DescribeCacheSecurityGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCacheSecurityGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeCacheSecurityGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeCacheSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline DescribeCacheSecurityGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>A list of cache security groups. Each element in the list contains detailed
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeCacheSecurityGroupsResult& AddCacheSecurityGroups(CacheSecurityGroup&& value) { m_cacheSecurityGroups.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeCacheSecurityGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<CacheSecurityGroup> m_cacheSecurityGroups;
+
     ResponseMetadata m_responseMetadata;
   };
 

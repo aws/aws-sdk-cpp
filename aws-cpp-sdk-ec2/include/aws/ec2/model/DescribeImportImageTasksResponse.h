@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeImportImageTasksResponse();
-    DescribeImportImageTasksResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeImportImageTasksResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeImportImageTasksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeImportImageTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of zero or more import image tasks that are currently active or were
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeImportImageTasksResponse& AddImportImageTasks(ImportImageTask&& value) { m_importImageTasks.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token to use to get the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeImportImageTasksResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline DescribeImportImageTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ImportImageTask> m_importImageTasks;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

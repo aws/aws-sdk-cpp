@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetSuiteResult();
-    GetSuiteResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSuiteResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSuiteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSuiteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A collection of one or more tests.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline GetSuiteResult& WithSuite(Suite&& value) { SetSuite(std::move(value)); return *this;}
 
   private:
+
     Suite m_suite;
   };
 

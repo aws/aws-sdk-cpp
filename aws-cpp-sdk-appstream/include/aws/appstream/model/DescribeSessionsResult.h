@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeSessionsResult();
-    DescribeSessionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSessionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of streaming sessions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of streaming sessions.</p>
      */
     inline DescribeSessionsResult& AddSessions(Session&& value) { m_sessions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Session> m_sessions;
+
     Aws::String m_nextToken;
   };
 

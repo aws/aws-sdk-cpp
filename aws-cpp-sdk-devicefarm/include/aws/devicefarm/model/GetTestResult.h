@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetTestResult();
-    GetTestResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTestResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A test condition that is evaluated.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline GetTestResult& WithTest(Test&& value) { SetTest(std::move(value)); return *this;}
 
   private:
+
     Test m_test;
   };
 

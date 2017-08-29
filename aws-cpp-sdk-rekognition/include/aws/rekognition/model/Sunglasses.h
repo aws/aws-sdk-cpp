@@ -44,6 +44,7 @@ namespace Model
     Sunglasses& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Boolean value that indicates whether the face is wearing sunglasses or
      * not.</p>
@@ -62,6 +63,7 @@ namespace Model
      */
     inline Sunglasses& WithValue(bool value) { SetValue(value); return *this;}
 
+
     /**
      * <p>Level of confidence in the determination.</p>
      */
@@ -78,8 +80,10 @@ namespace Model
     inline Sunglasses& WithConfidence(double value) { SetConfidence(value); return *this;}
 
   private:
+
     bool m_value;
     bool m_valueHasBeenSet;
+
     double m_confidence;
     bool m_confidenceHasBeenSet;
   };

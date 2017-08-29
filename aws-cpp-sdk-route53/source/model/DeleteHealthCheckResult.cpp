@@ -29,12 +29,12 @@ DeleteHealthCheckResult::DeleteHealthCheckResult()
 {
 }
 
-DeleteHealthCheckResult::DeleteHealthCheckResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteHealthCheckResult::DeleteHealthCheckResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteHealthCheckResult& DeleteHealthCheckResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteHealthCheckResult& DeleteHealthCheckResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

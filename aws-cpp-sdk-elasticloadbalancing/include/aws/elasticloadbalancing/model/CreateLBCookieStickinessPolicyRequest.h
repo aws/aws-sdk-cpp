@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name of the load balancer.</p>
      */
     inline CreateLBCookieStickinessPolicyRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+
 
     /**
      * <p>The name of the policy being created. Policy names must consist of
@@ -126,6 +128,7 @@ namespace Model
      */
     inline CreateLBCookieStickinessPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
+
     /**
      * <p>The time period, in seconds, after which the cookie should be considered
      * stale. If you do not specify this parameter, the default value is 0, which
@@ -151,10 +154,13 @@ namespace Model
     inline CreateLBCookieStickinessPolicyRequest& WithCookieExpirationPeriod(long long value) { SetCookieExpirationPeriod(value); return *this;}
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     long long m_cookieExpirationPeriod;
     bool m_cookieExpirationPeriodHasBeenSet;
   };

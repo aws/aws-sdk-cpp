@@ -31,12 +31,12 @@ GetIdentityPoliciesResult::GetIdentityPoliciesResult()
 {
 }
 
-GetIdentityPoliciesResult::GetIdentityPoliciesResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetIdentityPoliciesResult::GetIdentityPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetIdentityPoliciesResult& GetIdentityPoliciesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetIdentityPoliciesResult& GetIdentityPoliciesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

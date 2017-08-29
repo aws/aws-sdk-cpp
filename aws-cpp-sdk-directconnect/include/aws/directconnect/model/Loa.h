@@ -47,6 +47,7 @@ namespace Model
     Loa& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::Utils::ByteBuffer& GetLoaContent() const{ return m_loaContent; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline Loa& WithLoaContent(Aws::Utils::ByteBuffer&& value) { SetLoaContent(std::move(value)); return *this;}
+
 
     
     inline const LoaContentType& GetLoaContentType() const{ return m_loaContentType; }
@@ -78,8 +80,10 @@ namespace Model
     inline Loa& WithLoaContentType(LoaContentType&& value) { SetLoaContentType(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_loaContent;
     bool m_loaContentHasBeenSet;
+
     LoaContentType m_loaContentType;
     bool m_loaContentTypeHasBeenSet;
   };

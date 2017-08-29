@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates which resource attribute is triggering this update, such as a
      * change in the resource attribute's <code>Metadata</code>,
@@ -86,6 +87,7 @@ namespace Model
      * <code>Properties</code>, or <code>Tags</code>.</p>
      */
     inline ResourceTargetDefinition& WithAttribute(ResourceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+
 
     /**
      * <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of
@@ -128,6 +130,7 @@ namespace Model
      * the property. For all other attributes, the value is null.</p>
      */
     inline ResourceTargetDefinition& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates
@@ -185,10 +188,13 @@ namespace Model
     inline ResourceTargetDefinition& WithRequiresRecreation(RequiresRecreation&& value) { SetRequiresRecreation(std::move(value)); return *this;}
 
   private:
+
     ResourceAttribute m_attribute;
     bool m_attributeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     RequiresRecreation m_requiresRecreation;
     bool m_requiresRecreationHasBeenSet;
   };

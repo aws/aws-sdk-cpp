@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_DAX_API DAXErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_DAX_API DAXErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace DAX
+} // namespace Client
 } // namespace Aws

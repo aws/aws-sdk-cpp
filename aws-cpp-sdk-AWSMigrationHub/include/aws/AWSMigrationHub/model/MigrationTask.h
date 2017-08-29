@@ -50,6 +50,7 @@ namespace Model
     MigrationTask& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A name that identifies the vendor of the migration tool being used.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>A name that identifies the vendor of the migration tool being used.</p>
      */
     inline MigrationTask& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
+
 
     /**
      * <p>Unique identifier that references the migration task.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline MigrationTask& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 
+
     /**
      * <p>Task object encapsulating task information.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      */
     inline MigrationTask& WithTask(Task&& value) { SetTask(std::move(value)); return *this;}
 
+
     /**
      * <p>The timestamp when the task was gathered.</p>
      */
@@ -169,6 +173,7 @@ namespace Model
      * <p>The timestamp when the task was gathered.</p>
      */
     inline MigrationTask& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p/>
@@ -206,14 +211,19 @@ namespace Model
     inline MigrationTask& AddResourceAttributeList(ResourceAttribute&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_progressUpdateStream;
     bool m_progressUpdateStreamHasBeenSet;
+
     Aws::String m_migrationTaskName;
     bool m_migrationTaskNameHasBeenSet;
+
     Task m_task;
     bool m_taskHasBeenSet;
+
     Aws::Utils::DateTime m_updateDateTime;
     bool m_updateDateTimeHasBeenSet;
+
     Aws::Vector<ResourceAttribute> m_resourceAttributeList;
     bool m_resourceAttributeListHasBeenSet;
   };

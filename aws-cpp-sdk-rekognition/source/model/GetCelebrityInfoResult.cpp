@@ -30,12 +30,12 @@ GetCelebrityInfoResult::GetCelebrityInfoResult()
 {
 }
 
-GetCelebrityInfoResult::GetCelebrityInfoResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCelebrityInfoResult::GetCelebrityInfoResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCelebrityInfoResult& GetCelebrityInfoResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCelebrityInfoResult& GetCelebrityInfoResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Urls"))

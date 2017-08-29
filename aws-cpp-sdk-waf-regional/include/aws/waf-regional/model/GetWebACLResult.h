@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetWebACLResult();
-    GetWebACLResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetWebACLResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the <a>WebACL</a> that you specified in the
@@ -112,6 +113,7 @@ namespace Model
     inline GetWebACLResult& WithWebACL(WebACL&& value) { SetWebACL(std::move(value)); return *this;}
 
   private:
+
     WebACL m_webACL;
   };
 

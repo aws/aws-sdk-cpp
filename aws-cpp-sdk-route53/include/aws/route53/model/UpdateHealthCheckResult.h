@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateHealthCheckResult();
-    UpdateHealthCheckResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateHealthCheckResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateHealthCheckResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateHealthCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
@@ -57,6 +58,7 @@ namespace Model
     inline UpdateHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
 
   private:
+
     HealthCheck m_healthCheck;
   };
 

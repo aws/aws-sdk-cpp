@@ -194,6 +194,7 @@ namespace Model
     HistoryEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The date and time when the event occurred.</p>
      */
@@ -218,6 +219,7 @@ namespace Model
      * <p>The date and time when the event occurred.</p>
      */
     inline HistoryEvent& WithEventTimestamp(Aws::Utils::DateTime&& value) { SetEventTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of the history event.</p>
@@ -244,6 +246,7 @@ namespace Model
      */
     inline HistoryEvent& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
 
+
     /**
      * <p>The system generated ID of the event. This ID uniquely identifies the event
      * with in the workflow execution history.</p>
@@ -261,6 +264,7 @@ namespace Model
      * with in the workflow execution history.</p>
      */
     inline HistoryEvent& WithEventId(long long value) { SetEventId(value); return *this;}
+
 
     /**
      * <p>If the event is of type <code>WorkflowExecutionStarted</code> then this
@@ -297,6 +301,7 @@ namespace Model
      */
     inline HistoryEvent& WithWorkflowExecutionStartedEventAttributes(WorkflowExecutionStartedEventAttributes&& value) { SetWorkflowExecutionStartedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>WorkflowExecutionCompleted</code> then this
      * member is set and provides detailed information about the event. It isn't set
@@ -331,6 +336,7 @@ namespace Model
      * for other event types.</p>
      */
     inline HistoryEvent& WithWorkflowExecutionCompletedEventAttributes(WorkflowExecutionCompletedEventAttributes&& value) { SetWorkflowExecutionCompletedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>CompleteWorkflowExecutionFailed</code> then
@@ -367,6 +373,7 @@ namespace Model
      */
     inline HistoryEvent& WithCompleteWorkflowExecutionFailedEventAttributes(CompleteWorkflowExecutionFailedEventAttributes&& value) { SetCompleteWorkflowExecutionFailedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>WorkflowExecutionFailed</code> then this member
      * is set and provides detailed information about the event. It isn't set for other
@@ -401,6 +408,7 @@ namespace Model
      * event types.</p>
      */
     inline HistoryEvent& WithWorkflowExecutionFailedEventAttributes(WorkflowExecutionFailedEventAttributes&& value) { SetWorkflowExecutionFailedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>FailWorkflowExecutionFailed</code> then this
@@ -437,6 +445,7 @@ namespace Model
      */
     inline HistoryEvent& WithFailWorkflowExecutionFailedEventAttributes(FailWorkflowExecutionFailedEventAttributes&& value) { SetFailWorkflowExecutionFailedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>WorkflowExecutionTimedOut</code> then this
      * member is set and provides detailed information about the event. It isn't set
@@ -471,6 +480,7 @@ namespace Model
      * for other event types.</p>
      */
     inline HistoryEvent& WithWorkflowExecutionTimedOutEventAttributes(WorkflowExecutionTimedOutEventAttributes&& value) { SetWorkflowExecutionTimedOutEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>WorkflowExecutionCanceled</code> then this
@@ -507,6 +517,7 @@ namespace Model
      */
     inline HistoryEvent& WithWorkflowExecutionCanceledEventAttributes(WorkflowExecutionCanceledEventAttributes&& value) { SetWorkflowExecutionCanceledEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>CancelWorkflowExecutionFailed</code> then this
      * member is set and provides detailed information about the event. It isn't set
@@ -541,6 +552,7 @@ namespace Model
      * for other event types.</p>
      */
     inline HistoryEvent& WithCancelWorkflowExecutionFailedEventAttributes(CancelWorkflowExecutionFailedEventAttributes&& value) { SetCancelWorkflowExecutionFailedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then
@@ -577,6 +589,7 @@ namespace Model
      */
     inline HistoryEvent& WithWorkflowExecutionContinuedAsNewEventAttributes(WorkflowExecutionContinuedAsNewEventAttributes&& value) { SetWorkflowExecutionContinuedAsNewEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code>
      * then this member is set and provides detailed information about the event. It
@@ -611,6 +624,7 @@ namespace Model
      * isn't set for other event types.</p>
      */
     inline HistoryEvent& WithContinueAsNewWorkflowExecutionFailedEventAttributes(ContinueAsNewWorkflowExecutionFailedEventAttributes&& value) { SetContinueAsNewWorkflowExecutionFailedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>WorkflowExecutionTerminated</code> then this
@@ -647,6 +661,7 @@ namespace Model
      */
     inline HistoryEvent& WithWorkflowExecutionTerminatedEventAttributes(WorkflowExecutionTerminatedEventAttributes&& value) { SetWorkflowExecutionTerminatedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>WorkflowExecutionCancelRequested</code> then
      * this member is set and provides detailed information about the event. It isn't
@@ -681,6 +696,7 @@ namespace Model
      * set for other event types.</p>
      */
     inline HistoryEvent& WithWorkflowExecutionCancelRequestedEventAttributes(WorkflowExecutionCancelRequestedEventAttributes&& value) { SetWorkflowExecutionCancelRequestedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>DecisionTaskScheduled</code> then this member
@@ -717,6 +733,7 @@ namespace Model
      */
     inline HistoryEvent& WithDecisionTaskScheduledEventAttributes(DecisionTaskScheduledEventAttributes&& value) { SetDecisionTaskScheduledEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>DecisionTaskStarted</code> then this member is
      * set and provides detailed information about the event. It isn't set for other
@@ -751,6 +768,7 @@ namespace Model
      * event types.</p>
      */
     inline HistoryEvent& WithDecisionTaskStartedEventAttributes(DecisionTaskStartedEventAttributes&& value) { SetDecisionTaskStartedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>DecisionTaskCompleted</code> then this member
@@ -787,6 +805,7 @@ namespace Model
      */
     inline HistoryEvent& WithDecisionTaskCompletedEventAttributes(DecisionTaskCompletedEventAttributes&& value) { SetDecisionTaskCompletedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>DecisionTaskTimedOut</code> then this member is
      * set and provides detailed information about the event. It isn't set for other
@@ -821,6 +840,7 @@ namespace Model
      * event types.</p>
      */
     inline HistoryEvent& WithDecisionTaskTimedOutEventAttributes(DecisionTaskTimedOutEventAttributes&& value) { SetDecisionTaskTimedOutEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>ActivityTaskScheduled</code> then this member
@@ -857,6 +877,7 @@ namespace Model
      */
     inline HistoryEvent& WithActivityTaskScheduledEventAttributes(ActivityTaskScheduledEventAttributes&& value) { SetActivityTaskScheduledEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>ActivityTaskStarted</code> then this member is
      * set and provides detailed information about the event. It isn't set for other
@@ -891,6 +912,7 @@ namespace Model
      * event types.</p>
      */
     inline HistoryEvent& WithActivityTaskStartedEventAttributes(ActivityTaskStartedEventAttributes&& value) { SetActivityTaskStartedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>ActivityTaskCompleted</code> then this member
@@ -927,6 +949,7 @@ namespace Model
      */
     inline HistoryEvent& WithActivityTaskCompletedEventAttributes(ActivityTaskCompletedEventAttributes&& value) { SetActivityTaskCompletedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>ActivityTaskFailed</code> then this member is
      * set and provides detailed information about the event. It isn't set for other
@@ -961,6 +984,7 @@ namespace Model
      * event types.</p>
      */
     inline HistoryEvent& WithActivityTaskFailedEventAttributes(ActivityTaskFailedEventAttributes&& value) { SetActivityTaskFailedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>ActivityTaskTimedOut</code> then this member is
@@ -997,6 +1021,7 @@ namespace Model
      */
     inline HistoryEvent& WithActivityTaskTimedOutEventAttributes(ActivityTaskTimedOutEventAttributes&& value) { SetActivityTaskTimedOutEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>ActivityTaskCanceled</code> then this member is
      * set and provides detailed information about the event. It isn't set for other
@@ -1031,6 +1056,7 @@ namespace Model
      * event types.</p>
      */
     inline HistoryEvent& WithActivityTaskCanceledEventAttributes(ActivityTaskCanceledEventAttributes&& value) { SetActivityTaskCanceledEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>ActivityTaskcancelRequested</code> then this
@@ -1067,6 +1093,7 @@ namespace Model
      */
     inline HistoryEvent& WithActivityTaskCancelRequestedEventAttributes(ActivityTaskCancelRequestedEventAttributes&& value) { SetActivityTaskCancelRequestedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>WorkflowExecutionSignaled</code> then this
      * member is set and provides detailed information about the event. It isn't set
@@ -1101,6 +1128,7 @@ namespace Model
      * for other event types.</p>
      */
     inline HistoryEvent& WithWorkflowExecutionSignaledEventAttributes(WorkflowExecutionSignaledEventAttributes&& value) { SetWorkflowExecutionSignaledEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>MarkerRecorded</code> then this member is set
@@ -1137,6 +1165,7 @@ namespace Model
      */
     inline HistoryEvent& WithMarkerRecordedEventAttributes(MarkerRecordedEventAttributes&& value) { SetMarkerRecordedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>DecisionTaskFailed</code> then this member is
      * set and provides detailed information about the event. It isn't set for other
@@ -1171,6 +1200,7 @@ namespace Model
      * event types.</p>
      */
     inline HistoryEvent& WithRecordMarkerFailedEventAttributes(RecordMarkerFailedEventAttributes&& value) { SetRecordMarkerFailedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>TimerStarted</code> then this member is set and
@@ -1207,6 +1237,7 @@ namespace Model
      */
     inline HistoryEvent& WithTimerStartedEventAttributes(TimerStartedEventAttributes&& value) { SetTimerStartedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>TimerFired</code> then this member is set and
      * provides detailed information about the event. It isn't set for other event
@@ -1241,6 +1272,7 @@ namespace Model
      * types.</p>
      */
     inline HistoryEvent& WithTimerFiredEventAttributes(TimerFiredEventAttributes&& value) { SetTimerFiredEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>TimerCanceled</code> then this member is set
@@ -1277,6 +1309,7 @@ namespace Model
      */
     inline HistoryEvent& WithTimerCanceledEventAttributes(TimerCanceledEventAttributes&& value) { SetTimerCanceledEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>StartChildWorkflowExecutionInitiated</code>
      * then this member is set and provides detailed information about the event. It
@@ -1311,6 +1344,7 @@ namespace Model
      * isn't set for other event types.</p>
      */
     inline HistoryEvent& WithStartChildWorkflowExecutionInitiatedEventAttributes(StartChildWorkflowExecutionInitiatedEventAttributes&& value) { SetStartChildWorkflowExecutionInitiatedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>ChildWorkflowExecutionStarted</code> then this
@@ -1347,6 +1381,7 @@ namespace Model
      */
     inline HistoryEvent& WithChildWorkflowExecutionStartedEventAttributes(ChildWorkflowExecutionStartedEventAttributes&& value) { SetChildWorkflowExecutionStartedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>ChildWorkflowExecutionCompleted</code> then
      * this member is set and provides detailed information about the event. It isn't
@@ -1381,6 +1416,7 @@ namespace Model
      * set for other event types.</p>
      */
     inline HistoryEvent& WithChildWorkflowExecutionCompletedEventAttributes(ChildWorkflowExecutionCompletedEventAttributes&& value) { SetChildWorkflowExecutionCompletedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>ChildWorkflowExecutionFailed</code> then this
@@ -1417,6 +1453,7 @@ namespace Model
      */
     inline HistoryEvent& WithChildWorkflowExecutionFailedEventAttributes(ChildWorkflowExecutionFailedEventAttributes&& value) { SetChildWorkflowExecutionFailedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this
      * member is set and provides detailed information about the event. It isn't set
@@ -1451,6 +1488,7 @@ namespace Model
      * for other event types.</p>
      */
     inline HistoryEvent& WithChildWorkflowExecutionTimedOutEventAttributes(ChildWorkflowExecutionTimedOutEventAttributes&& value) { SetChildWorkflowExecutionTimedOutEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this
@@ -1487,6 +1525,7 @@ namespace Model
      */
     inline HistoryEvent& WithChildWorkflowExecutionCanceledEventAttributes(ChildWorkflowExecutionCanceledEventAttributes&& value) { SetChildWorkflowExecutionCanceledEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>ChildWorkflowExecutionTerminated</code> then
      * this member is set and provides detailed information about the event. It isn't
@@ -1521,6 +1560,7 @@ namespace Model
      * set for other event types.</p>
      */
     inline HistoryEvent& WithChildWorkflowExecutionTerminatedEventAttributes(ChildWorkflowExecutionTerminatedEventAttributes&& value) { SetChildWorkflowExecutionTerminatedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code>
@@ -1557,6 +1597,7 @@ namespace Model
      */
     inline HistoryEvent& WithSignalExternalWorkflowExecutionInitiatedEventAttributes(SignalExternalWorkflowExecutionInitiatedEventAttributes&& value) { SetSignalExternalWorkflowExecutionInitiatedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then
      * this member is set and provides detailed information about the event. It isn't
@@ -1591,6 +1632,7 @@ namespace Model
      * set for other event types.</p>
      */
     inline HistoryEvent& WithExternalWorkflowExecutionSignaledEventAttributes(ExternalWorkflowExecutionSignaledEventAttributes&& value) { SetExternalWorkflowExecutionSignaledEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>SignalExternalWorkflowExecutionFailed</code>
@@ -1627,6 +1669,7 @@ namespace Model
      */
     inline HistoryEvent& WithSignalExternalWorkflowExecutionFailedEventAttributes(SignalExternalWorkflowExecutionFailedEventAttributes&& value) { SetSignalExternalWorkflowExecutionFailedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code>
      * then this member is set and provides detailed information about the event. It
@@ -1661,6 +1704,7 @@ namespace Model
      * isn't set for other event types. </p>
      */
     inline HistoryEvent& WithExternalWorkflowExecutionCancelRequestedEventAttributes(ExternalWorkflowExecutionCancelRequestedEventAttributes&& value) { SetExternalWorkflowExecutionCancelRequestedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type
@@ -1702,6 +1746,7 @@ namespace Model
      */
     inline HistoryEvent& WithRequestCancelExternalWorkflowExecutionInitiatedEventAttributes(RequestCancelExternalWorkflowExecutionInitiatedEventAttributes&& value) { SetRequestCancelExternalWorkflowExecutionInitiatedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type
      * <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is
@@ -1742,6 +1787,7 @@ namespace Model
      */
     inline HistoryEvent& WithRequestCancelExternalWorkflowExecutionFailedEventAttributes(RequestCancelExternalWorkflowExecutionFailedEventAttributes&& value) { SetRequestCancelExternalWorkflowExecutionFailedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>ScheduleActivityTaskFailed</code> then this
      * member is set and provides detailed information about the event. It isn't set
@@ -1776,6 +1822,7 @@ namespace Model
      * for other event types.</p>
      */
     inline HistoryEvent& WithScheduleActivityTaskFailedEventAttributes(ScheduleActivityTaskFailedEventAttributes&& value) { SetScheduleActivityTaskFailedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>RequestCancelActivityTaskFailed</code> then
@@ -1812,6 +1859,7 @@ namespace Model
      */
     inline HistoryEvent& WithRequestCancelActivityTaskFailedEventAttributes(RequestCancelActivityTaskFailedEventAttributes&& value) { SetRequestCancelActivityTaskFailedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>StartTimerFailed</code> then this member is set
      * and provides detailed information about the event. It isn't set for other event
@@ -1846,6 +1894,7 @@ namespace Model
      * types.</p>
      */
     inline HistoryEvent& WithStartTimerFailedEventAttributes(StartTimerFailedEventAttributes&& value) { SetStartTimerFailedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>If the event is of type <code>CancelTimerFailed</code> then this member is
@@ -1882,6 +1931,7 @@ namespace Model
      */
     inline HistoryEvent& WithCancelTimerFailedEventAttributes(CancelTimerFailedEventAttributes&& value) { SetCancelTimerFailedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>If the event is of type <code>StartChildWorkflowExecutionFailed</code> then
      * this member is set and provides detailed information about the event. It isn't
@@ -1917,6 +1967,7 @@ namespace Model
      */
     inline HistoryEvent& WithStartChildWorkflowExecutionFailedEventAttributes(StartChildWorkflowExecutionFailedEventAttributes&& value) { SetStartChildWorkflowExecutionFailedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It
      * isn't set for other event types.</p>
@@ -1946,6 +1997,7 @@ namespace Model
      * isn't set for other event types.</p>
      */
     inline HistoryEvent& WithLambdaFunctionScheduledEventAttributes(LambdaFunctionScheduledEventAttributes&& value) { SetLambdaFunctionScheduledEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It
@@ -1977,6 +2029,7 @@ namespace Model
      */
     inline HistoryEvent& WithLambdaFunctionStartedEventAttributes(LambdaFunctionStartedEventAttributes&& value) { SetLambdaFunctionStartedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It
      * isn't set for other event types.</p>
@@ -2006,6 +2059,7 @@ namespace Model
      * isn't set for other event types.</p>
      */
     inline HistoryEvent& WithLambdaFunctionCompletedEventAttributes(LambdaFunctionCompletedEventAttributes&& value) { SetLambdaFunctionCompletedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't
@@ -2037,6 +2091,7 @@ namespace Model
      */
     inline HistoryEvent& WithLambdaFunctionFailedEventAttributes(LambdaFunctionFailedEventAttributes&& value) { SetLambdaFunctionFailedEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides the details of the <code>LambdaFunctionTimedOut</code> event. It
      * isn't set for other event types.</p>
@@ -2067,6 +2122,7 @@ namespace Model
      */
     inline HistoryEvent& WithLambdaFunctionTimedOutEventAttributes(LambdaFunctionTimedOutEventAttributes&& value) { SetLambdaFunctionTimedOutEventAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event.
      * It isn't set for other event types.</p>
@@ -2096,6 +2152,7 @@ namespace Model
      * It isn't set for other event types.</p>
      */
     inline HistoryEvent& WithScheduleLambdaFunctionFailedEventAttributes(ScheduleLambdaFunctionFailedEventAttributes&& value) { SetScheduleLambdaFunctionFailedEventAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It
@@ -2128,118 +2185,175 @@ namespace Model
     inline HistoryEvent& WithStartLambdaFunctionFailedEventAttributes(StartLambdaFunctionFailedEventAttributes&& value) { SetStartLambdaFunctionFailedEventAttributes(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_eventTimestamp;
     bool m_eventTimestampHasBeenSet;
+
     EventType m_eventType;
     bool m_eventTypeHasBeenSet;
+
     long long m_eventId;
     bool m_eventIdHasBeenSet;
+
     WorkflowExecutionStartedEventAttributes m_workflowExecutionStartedEventAttributes;
     bool m_workflowExecutionStartedEventAttributesHasBeenSet;
+
     WorkflowExecutionCompletedEventAttributes m_workflowExecutionCompletedEventAttributes;
     bool m_workflowExecutionCompletedEventAttributesHasBeenSet;
+
     CompleteWorkflowExecutionFailedEventAttributes m_completeWorkflowExecutionFailedEventAttributes;
     bool m_completeWorkflowExecutionFailedEventAttributesHasBeenSet;
+
     WorkflowExecutionFailedEventAttributes m_workflowExecutionFailedEventAttributes;
     bool m_workflowExecutionFailedEventAttributesHasBeenSet;
+
     FailWorkflowExecutionFailedEventAttributes m_failWorkflowExecutionFailedEventAttributes;
     bool m_failWorkflowExecutionFailedEventAttributesHasBeenSet;
+
     WorkflowExecutionTimedOutEventAttributes m_workflowExecutionTimedOutEventAttributes;
     bool m_workflowExecutionTimedOutEventAttributesHasBeenSet;
+
     WorkflowExecutionCanceledEventAttributes m_workflowExecutionCanceledEventAttributes;
     bool m_workflowExecutionCanceledEventAttributesHasBeenSet;
+
     CancelWorkflowExecutionFailedEventAttributes m_cancelWorkflowExecutionFailedEventAttributes;
     bool m_cancelWorkflowExecutionFailedEventAttributesHasBeenSet;
+
     WorkflowExecutionContinuedAsNewEventAttributes m_workflowExecutionContinuedAsNewEventAttributes;
     bool m_workflowExecutionContinuedAsNewEventAttributesHasBeenSet;
+
     ContinueAsNewWorkflowExecutionFailedEventAttributes m_continueAsNewWorkflowExecutionFailedEventAttributes;
     bool m_continueAsNewWorkflowExecutionFailedEventAttributesHasBeenSet;
+
     WorkflowExecutionTerminatedEventAttributes m_workflowExecutionTerminatedEventAttributes;
     bool m_workflowExecutionTerminatedEventAttributesHasBeenSet;
+
     WorkflowExecutionCancelRequestedEventAttributes m_workflowExecutionCancelRequestedEventAttributes;
     bool m_workflowExecutionCancelRequestedEventAttributesHasBeenSet;
+
     DecisionTaskScheduledEventAttributes m_decisionTaskScheduledEventAttributes;
     bool m_decisionTaskScheduledEventAttributesHasBeenSet;
+
     DecisionTaskStartedEventAttributes m_decisionTaskStartedEventAttributes;
     bool m_decisionTaskStartedEventAttributesHasBeenSet;
+
     DecisionTaskCompletedEventAttributes m_decisionTaskCompletedEventAttributes;
     bool m_decisionTaskCompletedEventAttributesHasBeenSet;
+
     DecisionTaskTimedOutEventAttributes m_decisionTaskTimedOutEventAttributes;
     bool m_decisionTaskTimedOutEventAttributesHasBeenSet;
+
     ActivityTaskScheduledEventAttributes m_activityTaskScheduledEventAttributes;
     bool m_activityTaskScheduledEventAttributesHasBeenSet;
+
     ActivityTaskStartedEventAttributes m_activityTaskStartedEventAttributes;
     bool m_activityTaskStartedEventAttributesHasBeenSet;
+
     ActivityTaskCompletedEventAttributes m_activityTaskCompletedEventAttributes;
     bool m_activityTaskCompletedEventAttributesHasBeenSet;
+
     ActivityTaskFailedEventAttributes m_activityTaskFailedEventAttributes;
     bool m_activityTaskFailedEventAttributesHasBeenSet;
+
     ActivityTaskTimedOutEventAttributes m_activityTaskTimedOutEventAttributes;
     bool m_activityTaskTimedOutEventAttributesHasBeenSet;
+
     ActivityTaskCanceledEventAttributes m_activityTaskCanceledEventAttributes;
     bool m_activityTaskCanceledEventAttributesHasBeenSet;
+
     ActivityTaskCancelRequestedEventAttributes m_activityTaskCancelRequestedEventAttributes;
     bool m_activityTaskCancelRequestedEventAttributesHasBeenSet;
+
     WorkflowExecutionSignaledEventAttributes m_workflowExecutionSignaledEventAttributes;
     bool m_workflowExecutionSignaledEventAttributesHasBeenSet;
+
     MarkerRecordedEventAttributes m_markerRecordedEventAttributes;
     bool m_markerRecordedEventAttributesHasBeenSet;
+
     RecordMarkerFailedEventAttributes m_recordMarkerFailedEventAttributes;
     bool m_recordMarkerFailedEventAttributesHasBeenSet;
+
     TimerStartedEventAttributes m_timerStartedEventAttributes;
     bool m_timerStartedEventAttributesHasBeenSet;
+
     TimerFiredEventAttributes m_timerFiredEventAttributes;
     bool m_timerFiredEventAttributesHasBeenSet;
+
     TimerCanceledEventAttributes m_timerCanceledEventAttributes;
     bool m_timerCanceledEventAttributesHasBeenSet;
+
     StartChildWorkflowExecutionInitiatedEventAttributes m_startChildWorkflowExecutionInitiatedEventAttributes;
     bool m_startChildWorkflowExecutionInitiatedEventAttributesHasBeenSet;
+
     ChildWorkflowExecutionStartedEventAttributes m_childWorkflowExecutionStartedEventAttributes;
     bool m_childWorkflowExecutionStartedEventAttributesHasBeenSet;
+
     ChildWorkflowExecutionCompletedEventAttributes m_childWorkflowExecutionCompletedEventAttributes;
     bool m_childWorkflowExecutionCompletedEventAttributesHasBeenSet;
+
     ChildWorkflowExecutionFailedEventAttributes m_childWorkflowExecutionFailedEventAttributes;
     bool m_childWorkflowExecutionFailedEventAttributesHasBeenSet;
+
     ChildWorkflowExecutionTimedOutEventAttributes m_childWorkflowExecutionTimedOutEventAttributes;
     bool m_childWorkflowExecutionTimedOutEventAttributesHasBeenSet;
+
     ChildWorkflowExecutionCanceledEventAttributes m_childWorkflowExecutionCanceledEventAttributes;
     bool m_childWorkflowExecutionCanceledEventAttributesHasBeenSet;
+
     ChildWorkflowExecutionTerminatedEventAttributes m_childWorkflowExecutionTerminatedEventAttributes;
     bool m_childWorkflowExecutionTerminatedEventAttributesHasBeenSet;
+
     SignalExternalWorkflowExecutionInitiatedEventAttributes m_signalExternalWorkflowExecutionInitiatedEventAttributes;
     bool m_signalExternalWorkflowExecutionInitiatedEventAttributesHasBeenSet;
+
     ExternalWorkflowExecutionSignaledEventAttributes m_externalWorkflowExecutionSignaledEventAttributes;
     bool m_externalWorkflowExecutionSignaledEventAttributesHasBeenSet;
+
     SignalExternalWorkflowExecutionFailedEventAttributes m_signalExternalWorkflowExecutionFailedEventAttributes;
     bool m_signalExternalWorkflowExecutionFailedEventAttributesHasBeenSet;
+
     ExternalWorkflowExecutionCancelRequestedEventAttributes m_externalWorkflowExecutionCancelRequestedEventAttributes;
     bool m_externalWorkflowExecutionCancelRequestedEventAttributesHasBeenSet;
+
     RequestCancelExternalWorkflowExecutionInitiatedEventAttributes m_requestCancelExternalWorkflowExecutionInitiatedEventAttributes;
     bool m_requestCancelExternalWorkflowExecutionInitiatedEventAttributesHasBeenSet;
+
     RequestCancelExternalWorkflowExecutionFailedEventAttributes m_requestCancelExternalWorkflowExecutionFailedEventAttributes;
     bool m_requestCancelExternalWorkflowExecutionFailedEventAttributesHasBeenSet;
+
     ScheduleActivityTaskFailedEventAttributes m_scheduleActivityTaskFailedEventAttributes;
     bool m_scheduleActivityTaskFailedEventAttributesHasBeenSet;
+
     RequestCancelActivityTaskFailedEventAttributes m_requestCancelActivityTaskFailedEventAttributes;
     bool m_requestCancelActivityTaskFailedEventAttributesHasBeenSet;
+
     StartTimerFailedEventAttributes m_startTimerFailedEventAttributes;
     bool m_startTimerFailedEventAttributesHasBeenSet;
+
     CancelTimerFailedEventAttributes m_cancelTimerFailedEventAttributes;
     bool m_cancelTimerFailedEventAttributesHasBeenSet;
+
     StartChildWorkflowExecutionFailedEventAttributes m_startChildWorkflowExecutionFailedEventAttributes;
     bool m_startChildWorkflowExecutionFailedEventAttributesHasBeenSet;
+
     LambdaFunctionScheduledEventAttributes m_lambdaFunctionScheduledEventAttributes;
     bool m_lambdaFunctionScheduledEventAttributesHasBeenSet;
+
     LambdaFunctionStartedEventAttributes m_lambdaFunctionStartedEventAttributes;
     bool m_lambdaFunctionStartedEventAttributesHasBeenSet;
+
     LambdaFunctionCompletedEventAttributes m_lambdaFunctionCompletedEventAttributes;
     bool m_lambdaFunctionCompletedEventAttributesHasBeenSet;
+
     LambdaFunctionFailedEventAttributes m_lambdaFunctionFailedEventAttributes;
     bool m_lambdaFunctionFailedEventAttributesHasBeenSet;
+
     LambdaFunctionTimedOutEventAttributes m_lambdaFunctionTimedOutEventAttributes;
     bool m_lambdaFunctionTimedOutEventAttributesHasBeenSet;
+
     ScheduleLambdaFunctionFailedEventAttributes m_scheduleLambdaFunctionFailedEventAttributes;
     bool m_scheduleLambdaFunctionFailedEventAttributesHasBeenSet;
+
     StartLambdaFunctionFailedEventAttributes m_startLambdaFunctionFailedEventAttributes;
     bool m_startLambdaFunctionFailedEventAttributesHasBeenSet;
   };

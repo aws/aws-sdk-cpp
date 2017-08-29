@@ -46,6 +46,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether the VPN connection uses static routes only. Static routes
      * must be used for devices that don't support BGP.</p>
@@ -65,6 +66,7 @@ namespace Model
     inline VpnConnectionOptions& WithStaticRoutesOnly(bool value) { SetStaticRoutesOnly(value); return *this;}
 
   private:
+
     bool m_staticRoutesOnly;
     bool m_staticRoutesOnlyHasBeenSet;
   };

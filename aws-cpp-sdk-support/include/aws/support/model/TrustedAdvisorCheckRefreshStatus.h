@@ -45,6 +45,7 @@ namespace Model
     TrustedAdvisorCheckRefreshStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
     inline TrustedAdvisorCheckRefreshStatus& WithCheckId(const char* value) { SetCheckId(value); return *this;}
+
 
     /**
      * <p>The status of the Trusted Advisor check for which a refresh has been
@@ -122,6 +124,7 @@ namespace Model
      */
     inline TrustedAdvisorCheckRefreshStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The amount of time, in milliseconds, until the Trusted Advisor check is
      * eligible for refresh.</p>
@@ -141,10 +144,13 @@ namespace Model
     inline TrustedAdvisorCheckRefreshStatus& WithMillisUntilNextRefreshable(long long value) { SetMillisUntilNextRefreshable(value); return *this;}
 
   private:
+
     Aws::String m_checkId;
     bool m_checkIdHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     long long m_millisUntilNextRefreshable;
     bool m_millisUntilNextRefreshableHasBeenSet;
   };

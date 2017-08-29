@@ -30,12 +30,12 @@ CreateGroupCertificateAuthorityResult::CreateGroupCertificateAuthorityResult()
 {
 }
 
-CreateGroupCertificateAuthorityResult::CreateGroupCertificateAuthorityResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateGroupCertificateAuthorityResult::CreateGroupCertificateAuthorityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateGroupCertificateAuthorityResult& CreateGroupCertificateAuthorityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateGroupCertificateAuthorityResult& CreateGroupCertificateAuthorityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GroupCertificateAuthorityArn"))

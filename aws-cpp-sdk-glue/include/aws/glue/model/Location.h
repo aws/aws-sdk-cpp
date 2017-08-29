@@ -46,6 +46,7 @@ namespace Model
     Location& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A JDBC location.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>A JDBC location.</p>
      */
     inline Location& AddJdbc(CodeGenNodeArg&& value) { m_jdbcHasBeenSet = true; m_jdbc.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An AWS S3 location.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline Location& AddS3(CodeGenNodeArg&& value) { m_s3HasBeenSet = true; m_s3.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CodeGenNodeArg> m_jdbc;
     bool m_jdbcHasBeenSet;
+
     Aws::Vector<CodeGenNodeArg> m_s3;
     bool m_s3HasBeenSet;
   };

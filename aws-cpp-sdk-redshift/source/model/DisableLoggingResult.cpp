@@ -32,13 +32,13 @@ DisableLoggingResult::DisableLoggingResult() :
 {
 }
 
-DisableLoggingResult::DisableLoggingResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+DisableLoggingResult::DisableLoggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_loggingEnabled(false)
 {
   *this = result;
 }
 
-DisableLoggingResult& DisableLoggingResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DisableLoggingResult& DisableLoggingResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

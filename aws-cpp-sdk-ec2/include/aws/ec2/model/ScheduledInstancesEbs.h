@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      */
     inline ScheduledInstancesEbs& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+
 
     /**
      * <p>Indicates whether the volume is encrypted. You can attached encrypted volumes
@@ -81,6 +83,7 @@ namespace Model
      * only to instances that support them.</p>
      */
     inline ScheduledInstancesEbs& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
@@ -133,6 +136,7 @@ namespace Model
      */
     inline ScheduledInstancesEbs& WithIops(int value) { SetIops(value); return *this;}
 
+
     /**
      * <p>The ID of the snapshot.</p>
      */
@@ -168,6 +172,7 @@ namespace Model
      */
     inline ScheduledInstancesEbs& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>The size of the volume, in GiB.</p> <p>Default: If you're creating the volume
      * from a snapshot and don't specify a volume size, the default is the snapshot
@@ -188,6 +193,7 @@ namespace Model
      * size.</p>
      */
     inline ScheduledInstancesEbs& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
+
 
     /**
      * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>
@@ -246,16 +252,22 @@ namespace Model
     inline ScheduledInstancesEbs& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
   private:
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     int m_volumeSize;
     bool m_volumeSizeHasBeenSet;
+
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
   };

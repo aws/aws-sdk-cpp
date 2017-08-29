@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     SendTestEventNotificationResult();
-    SendTestEventNotificationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendTestEventNotificationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendTestEventNotificationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendTestEventNotificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

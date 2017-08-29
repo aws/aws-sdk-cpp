@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     AssumeRoleWithWebIdentityResult();
-    AssumeRoleWithWebIdentityResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssumeRoleWithWebIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssumeRoleWithWebIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssumeRoleWithWebIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
@@ -100,6 +101,7 @@ namespace Model
      * larger sizes.</p>
      */
     inline AssumeRoleWithWebIdentityResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
+
 
     /**
      * <p>The unique user identifier that is returned by the identity provider. This
@@ -178,6 +180,7 @@ namespace Model
      */
     inline AssumeRoleWithWebIdentityResult& WithSubjectFromWebIdentityToken(const char* value) { SetSubjectFromWebIdentityToken(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers
      * that you can use to refer to the resulting temporary security credentials. For
@@ -228,6 +231,7 @@ namespace Model
      */
     inline AssumeRoleWithWebIdentityResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(std::move(value)); return *this;}
 
+
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
@@ -248,6 +252,7 @@ namespace Model
      * means the policy exceeded the allowed space.</p>
      */
     inline AssumeRoleWithWebIdentityResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
+
 
     /**
      * <p> The issuing authority of the web identity token presented. For OpenID
@@ -312,6 +317,7 @@ namespace Model
      */
     inline AssumeRoleWithWebIdentityResult& WithProvider(const char* value) { SetProvider(value); return *this;}
 
+
     /**
      * <p>The intended audience (also known as client ID) of the web identity token.
      * This is traditionally the client identifier issued to the application that
@@ -361,6 +367,7 @@ namespace Model
      */
     inline AssumeRoleWithWebIdentityResult& WithAudience(const char* value) { SetAudience(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -377,12 +384,19 @@ namespace Model
     inline AssumeRoleWithWebIdentityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Credentials m_credentials;
+
     Aws::String m_subjectFromWebIdentityToken;
+
     AssumedRoleUser m_assumedRoleUser;
+
     int m_packedPolicySize;
+
     Aws::String m_provider;
+
     Aws::String m_audience;
+
     ResponseMetadata m_responseMetadata;
   };
 

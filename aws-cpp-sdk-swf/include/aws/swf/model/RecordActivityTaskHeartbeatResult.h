@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     RecordActivityTaskHeartbeatResult();
-    RecordActivityTaskHeartbeatResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RecordActivityTaskHeartbeatResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RecordActivityTaskHeartbeatResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RecordActivityTaskHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Set to <code>true</code> if cancellation of the task is requested.</p>
@@ -60,6 +61,7 @@ namespace Model
     inline RecordActivityTaskHeartbeatResult& WithCancelRequested(bool value) { SetCancelRequested(value); return *this;}
 
   private:
+
     bool m_cancelRequested;
   };
 

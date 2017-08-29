@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the lifecycle hook.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the lifecycle hook.</p>
      */
     inline PutLifecycleHookRequest& WithLifecycleHookName(const char* value) { SetLifecycleHookName(value); return *this;}
+
 
     /**
      * <p>The name of the Auto Scaling group to which you want to assign the lifecycle
@@ -117,6 +119,7 @@ namespace Model
      * hook.</p>
      */
     inline PutLifecycleHookRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>The instance state to which you want to attach the lifecycle hook. For a list
@@ -174,6 +177,7 @@ namespace Model
      */
     inline PutLifecycleHookRequest& WithLifecycleTransition(const char* value) { SetLifecycleTransition(value); return *this;}
 
+
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
      * specified notification target.</p> <p>This parameter is required for new
@@ -222,6 +226,7 @@ namespace Model
      * lifecycle hooks, but optional when updating existing hooks.</p>
      */
     inline PutLifecycleHookRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
 
     /**
      * <p>The ARN of the notification target that Auto Scaling will use to notify you
@@ -314,6 +319,7 @@ namespace Model
      */
     inline PutLifecycleHookRequest& WithNotificationTargetARN(const char* value) { SetNotificationTargetARN(value); return *this;}
 
+
     /**
      * <p>Contains additional information that you want to include any time Auto
      * Scaling sends a message to the notification target.</p>
@@ -356,6 +362,7 @@ namespace Model
      */
     inline PutLifecycleHookRequest& WithNotificationMetadata(const char* value) { SetNotificationMetadata(value); return *this;}
 
+
     /**
      * <p>The amount of time, in seconds, that can elapse before the lifecycle hook
      * times out. When the lifecycle hook times out, Auto Scaling performs the default
@@ -379,6 +386,7 @@ namespace Model
      * <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).</p>
      */
     inline PutLifecycleHookRequest& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}
+
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
@@ -437,20 +445,28 @@ namespace Model
     inline PutLifecycleHookRequest& WithDefaultResult(const char* value) { SetDefaultResult(value); return *this;}
 
   private:
+
     Aws::String m_lifecycleHookName;
     bool m_lifecycleHookNameHasBeenSet;
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_lifecycleTransition;
     bool m_lifecycleTransitionHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::String m_notificationTargetARN;
     bool m_notificationTargetARNHasBeenSet;
+
     Aws::String m_notificationMetadata;
     bool m_notificationMetadataHasBeenSet;
+
     int m_heartbeatTimeout;
     bool m_heartbeatTimeoutHasBeenSet;
+
     Aws::String m_defaultResult;
     bool m_defaultResultHasBeenSet;
   };

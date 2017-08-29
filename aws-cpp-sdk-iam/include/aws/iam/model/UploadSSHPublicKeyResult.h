@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     UploadSSHPublicKeyResult();
-    UploadSSHPublicKeyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UploadSSHPublicKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UploadSSHPublicKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UploadSSHPublicKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Contains information about the SSH public key.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline UploadSSHPublicKeyResult& WithSSHPublicKey(SSHPublicKey&& value) { SetSSHPublicKey(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline UploadSSHPublicKeyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     SSHPublicKey m_sSHPublicKey;
+
     ResponseMetadata m_responseMetadata;
   };
 

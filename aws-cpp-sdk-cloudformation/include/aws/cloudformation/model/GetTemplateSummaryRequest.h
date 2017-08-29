@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information about templates, see <a
@@ -118,6 +119,7 @@ namespace Model
      * <code>TemplateURL</code>.</p>
      */
     inline GetTemplateSummaryRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
@@ -203,6 +205,7 @@ namespace Model
      */
     inline GetTemplateSummaryRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
+
     /**
      * <p>The name or the stack ID that is associated with the stack, which are not
      * always interchangeable. For running stacks, you can specify either the stack's
@@ -273,6 +276,7 @@ namespace Model
      */
     inline GetTemplateSummaryRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+
     /**
      * <p>The name or unique ID of the stack set from which the stack was created.</p>
      * <p>Conditional: You must specify only one of the following parameters:
@@ -330,12 +334,16 @@ namespace Model
     inline GetTemplateSummaryRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
   private:
+
     Aws::String m_templateBody;
     bool m_templateBodyHasBeenSet;
+
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet;
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
   };

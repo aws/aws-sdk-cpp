@@ -30,12 +30,12 @@ DescribeEndpointTypesResult::DescribeEndpointTypesResult()
 {
 }
 
-DescribeEndpointTypesResult::DescribeEndpointTypesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEndpointTypesResult::DescribeEndpointTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeEndpointTypesResult& DescribeEndpointTypesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEndpointTypesResult& DescribeEndpointTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Marker"))

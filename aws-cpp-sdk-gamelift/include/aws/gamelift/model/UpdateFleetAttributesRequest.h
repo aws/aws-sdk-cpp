@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
     inline UpdateFleetAttributesRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
@@ -119,6 +121,7 @@ namespace Model
      */
     inline UpdateFleetAttributesRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Human-readable description of a fleet.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>Human-readable description of a fleet.</p>
      */
     inline UpdateFleetAttributesRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Game session protection policy to apply to all new instances created in this
@@ -209,6 +213,7 @@ namespace Model
      */
     inline UpdateFleetAttributesRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>Policy that limits the number of game sessions an individual player can
      * create over a span of time. </p>
@@ -238,6 +243,7 @@ namespace Model
      * create over a span of time. </p>
      */
     inline UpdateFleetAttributesRequest& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>Names of metric groups to include this fleet in. Amazon CloudWatch uses a
@@ -312,16 +318,22 @@ namespace Model
     inline UpdateFleetAttributesRequest& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ProtectionPolicy m_newGameSessionProtectionPolicy;
     bool m_newGameSessionProtectionPolicyHasBeenSet;
+
     ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
     bool m_resourceCreationLimitPolicyHasBeenSet;
+
     Aws::Vector<Aws::String> m_metricGroups;
     bool m_metricGroupsHasBeenSet;
   };

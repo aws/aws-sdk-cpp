@@ -46,6 +46,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The number of reservations available for the price.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The number of reservations available for the price.</p>
      */
     inline PricingDetail& WithCount(int value) { SetCount(value); return *this;}
+
 
     /**
      * <p>The price per instance.</p>
@@ -77,8 +79,10 @@ namespace Model
     inline PricingDetail& WithPrice(double value) { SetPrice(value); return *this;}
 
   private:
+
     int m_count;
     bool m_countHasBeenSet;
+
     double m_price;
     bool m_priceHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name for your new snapshot.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name for your new snapshot.</p>
      */
     inline CreateInstanceSnapshotRequest& WithInstanceSnapshotName(const char* value) { SetInstanceSnapshotName(value); return *this;}
+
 
     /**
      * <p>The Lightsail instance on which to base your snapshot.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline CreateInstanceSnapshotRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
   private:
+
     Aws::String m_instanceSnapshotName;
     bool m_instanceSnapshotNameHasBeenSet;
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
   };

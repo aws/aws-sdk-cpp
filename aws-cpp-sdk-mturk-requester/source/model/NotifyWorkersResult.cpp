@@ -30,12 +30,12 @@ NotifyWorkersResult::NotifyWorkersResult()
 {
 }
 
-NotifyWorkersResult::NotifyWorkersResult(const AmazonWebServiceResult<JsonValue>& result)
+NotifyWorkersResult::NotifyWorkersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-NotifyWorkersResult& NotifyWorkersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+NotifyWorkersResult& NotifyWorkersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NotifyWorkersFailureStatuses"))

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListTagsOfResourceResult();
-    ListTagsOfResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsOfResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsOfResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsOfResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The tags currently associated with the Amazon DynamoDB resource.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The tags currently associated with the Amazon DynamoDB resource.</p>
      */
     inline ListTagsOfResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If this value is returned, there are additional results to be displayed. To
@@ -128,7 +130,9 @@ namespace Model
     inline ListTagsOfResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Tag> m_tags;
+
     Aws::String m_nextToken;
   };
 

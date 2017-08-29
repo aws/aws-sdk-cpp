@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the identity provider. The URL must begin with "https://" and
      * should correspond to the <code>iss</code> claim in the provider's OpenID Connect
@@ -122,6 +123,7 @@ namespace Model
      * AWS account, you will get an error.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithUrl(const char* value) { SetUrl(value); return *this;}
+
 
     /**
      * <p>A list of client IDs (also known as audiences). When a mobile or web app
@@ -226,6 +228,7 @@ namespace Model
      * accepts client IDs up to 255 characters long.</p>
      */
     inline CreateOpenIDConnectProviderRequest& AddClientIDList(const char* value) { m_clientIDListHasBeenSet = true; m_clientIDList.push_back(value); return *this; }
+
 
     /**
      * <p>A list of server certificate thumbprints for the OpenID Connect (OIDC)
@@ -388,10 +391,13 @@ namespace Model
     inline CreateOpenIDConnectProviderRequest& AddThumbprintList(const char* value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
 
   private:
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
+
     Aws::Vector<Aws::String> m_clientIDList;
     bool m_clientIDListHasBeenSet;
+
     Aws::Vector<Aws::String> m_thumbprintList;
     bool m_thumbprintListHasBeenSet;
   };

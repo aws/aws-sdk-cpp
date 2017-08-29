@@ -45,6 +45,7 @@ namespace Model
     TapeInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
      */
     inline TapeInfo& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
+
 
     /**
      * <p>The barcode that identifies a specific virtual tape.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline TapeInfo& WithTapeBarcode(const char* value) { SetTapeBarcode(value); return *this;}
 
+
     /**
      * <p>The size, in bytes, of a virtual tape.</p>
      */
@@ -129,6 +132,7 @@ namespace Model
      * <p>The size, in bytes, of a virtual tape.</p>
      */
     inline TapeInfo& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
+
 
     /**
      * <p>The status of the tape.</p>
@@ -164,6 +168,7 @@ namespace Model
      * <p>The status of the tape.</p>
      */
     inline TapeInfo& WithTapeStatus(const char* value) { SetTapeStatus(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
@@ -208,14 +213,19 @@ namespace Model
     inline TapeInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
+
     Aws::String m_tapeBarcode;
     bool m_tapeBarcodeHasBeenSet;
+
     long long m_tapeSizeInBytes;
     bool m_tapeSizeInBytesHasBeenSet;
+
     Aws::String m_tapeStatus;
     bool m_tapeStatusHasBeenSet;
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
   };

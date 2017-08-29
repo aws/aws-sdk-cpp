@@ -45,6 +45,7 @@ namespace Model
     QuotaSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The maximum number of requests that can be made in a given time period.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
      * <p>The maximum number of requests that can be made in a given time period.</p>
      */
     inline QuotaSettings& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The number of requests subtracted from the given limit in the initial time
@@ -77,6 +79,7 @@ namespace Model
      * period.</p>
      */
     inline QuotaSettings& WithOffset(int value) { SetOffset(value); return *this;}
+
 
     /**
      * <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or
@@ -109,10 +112,13 @@ namespace Model
     inline QuotaSettings& WithPeriod(QuotaPeriodType&& value) { SetPeriod(std::move(value)); return *this;}
 
   private:
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     int m_offset;
     bool m_offsetHasBeenSet;
+
     QuotaPeriodType m_period;
     bool m_periodHasBeenSet;
   };

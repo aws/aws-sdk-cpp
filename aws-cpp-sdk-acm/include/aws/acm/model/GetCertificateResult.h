@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetCertificateResult();
-    GetCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>String that contains the ACM Certificate represented by the ARN specified at
@@ -82,6 +83,7 @@ namespace Model
      * input.</p>
      */
     inline GetCertificateResult& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+
 
     /**
      * <p>The certificate chain that contains the root certificate issued by the
@@ -126,7 +128,9 @@ namespace Model
     inline GetCertificateResult& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 
   private:
+
     Aws::String m_certificate;
+
     Aws::String m_certificateChain;
   };
 

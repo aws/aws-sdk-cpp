@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DownloadDBLogFilePortionResult();
-    DownloadDBLogFilePortionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DownloadDBLogFilePortionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DownloadDBLogFilePortionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DownloadDBLogFilePortionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Entries from the specified log file.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>Entries from the specified log file.</p>
      */
     inline DownloadDBLogFilePortionResult& WithLogFileData(const char* value) { SetLogFileData(value); return *this;}
+
 
     /**
      * <p>A pagination token that can be used in a subsequent DownloadDBLogFilePortion
@@ -125,6 +127,7 @@ namespace Model
      */
     inline DownloadDBLogFilePortionResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Boolean value that if true, indicates there is more data to be
      * downloaded.</p>
@@ -143,6 +146,7 @@ namespace Model
      */
     inline DownloadDBLogFilePortionResult& WithAdditionalDataPending(bool value) { SetAdditionalDataPending(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -159,9 +163,13 @@ namespace Model
     inline DownloadDBLogFilePortionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_logFileData;
+
     Aws::String m_marker;
+
     bool m_additionalDataPending;
+
     ResponseMetadata m_responseMetadata;
   };
 

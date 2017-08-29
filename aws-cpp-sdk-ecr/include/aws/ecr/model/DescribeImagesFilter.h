@@ -46,6 +46,7 @@ namespace Model
     DescribeImagesFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The tag status with which to filter your <a>DescribeImages</a> results. You
      * can filter results based on whether they are <code>TAGGED</code> or
@@ -82,6 +83,7 @@ namespace Model
     inline DescribeImagesFilter& WithTagStatus(TagStatus&& value) { SetTagStatus(std::move(value)); return *this;}
 
   private:
+
     TagStatus m_tagStatus;
     bool m_tagStatusHasBeenSet;
   };

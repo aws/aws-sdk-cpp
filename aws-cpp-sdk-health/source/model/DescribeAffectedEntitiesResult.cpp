@@ -30,12 +30,12 @@ DescribeAffectedEntitiesResult::DescribeAffectedEntitiesResult()
 {
 }
 
-DescribeAffectedEntitiesResult::DescribeAffectedEntitiesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAffectedEntitiesResult::DescribeAffectedEntitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeAffectedEntitiesResult& DescribeAffectedEntitiesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAffectedEntitiesResult& DescribeAffectedEntitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("entities"))

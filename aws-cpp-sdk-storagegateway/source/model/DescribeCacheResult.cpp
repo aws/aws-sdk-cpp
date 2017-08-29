@@ -35,7 +35,7 @@ DescribeCacheResult::DescribeCacheResult() :
 {
 }
 
-DescribeCacheResult::DescribeCacheResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeCacheResult::DescribeCacheResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_cacheAllocatedInBytes(0),
     m_cacheUsedPercentage(0.0),
     m_cacheDirtyPercentage(0.0),
@@ -45,7 +45,7 @@ DescribeCacheResult::DescribeCacheResult(const AmazonWebServiceResult<JsonValue>
   *this = result;
 }
 
-DescribeCacheResult& DescribeCacheResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCacheResult& DescribeCacheResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

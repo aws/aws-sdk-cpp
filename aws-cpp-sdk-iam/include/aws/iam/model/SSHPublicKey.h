@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The name of the IAM user associated with the SSH public key.</p>
      */
     inline SSHPublicKey& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The unique identifier for the SSH public key.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline SSHPublicKey& WithSSHPublicKeyId(const char* value) { SetSSHPublicKeyId(value); return *this;}
 
+
     /**
      * <p>The MD5 message digest of the SSH public key.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The MD5 message digest of the SSH public key.</p>
      */
     inline SSHPublicKey& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
+
 
     /**
      * <p>The SSH public key.</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline SSHPublicKey& WithSSHPublicKeyBody(const char* value) { SetSSHPublicKeyBody(value); return *this;}
 
+
     /**
      * <p>The status of the SSH public key. <code>Active</code> means the key can be
      * used for authentication with an AWS CodeCommit repository. <code>Inactive</code>
@@ -227,6 +232,7 @@ namespace Model
      */
     inline SSHPublicKey& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the SSH public key was uploaded.</p>
@@ -258,16 +264,22 @@ namespace Model
     inline SSHPublicKey& WithUploadDate(Aws::Utils::DateTime&& value) { SetUploadDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_sSHPublicKeyId;
     bool m_sSHPublicKeyIdHasBeenSet;
+
     Aws::String m_fingerprint;
     bool m_fingerprintHasBeenSet;
+
     Aws::String m_sSHPublicKeyBody;
     bool m_sSHPublicKeyBodyHasBeenSet;
+
     StatusType m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_uploadDate;
     bool m_uploadDateHasBeenSet;
   };

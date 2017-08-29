@@ -30,12 +30,12 @@ GetKeyPairResult::GetKeyPairResult()
 {
 }
 
-GetKeyPairResult::GetKeyPairResult(const AmazonWebServiceResult<JsonValue>& result)
+GetKeyPairResult::GetKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetKeyPairResult& GetKeyPairResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetKeyPairResult& GetKeyPairResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("keyPair"))

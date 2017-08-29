@@ -58,6 +58,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The friendly name (not ARN) identifying the policy.</p>
      */
@@ -92,6 +93,7 @@ namespace Model
      * <p>The friendly name (not ARN) identifying the policy.</p>
      */
     inline ManagedPolicyDetail& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
@@ -149,6 +151,7 @@ namespace Model
      */
     inline ManagedPolicyDetail& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 
+
     
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -169,6 +172,7 @@ namespace Model
 
     
     inline ManagedPolicyDetail& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
@@ -218,6 +222,7 @@ namespace Model
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline ManagedPolicyDetail& WithPath(const char* value) { SetPath(value); return *this;}
+
 
     /**
      * <p>The identifier for the version of the policy that is set as the default
@@ -275,6 +280,7 @@ namespace Model
      */
     inline ManagedPolicyDetail& WithDefaultVersionId(const char* value) { SetDefaultVersionId(value); return *this;}
 
+
     /**
      * <p>The number of principal entities (users, groups, and roles) that the policy
      * is attached to.</p>
@@ -293,6 +299,7 @@ namespace Model
      */
     inline ManagedPolicyDetail& WithAttachmentCount(int value) { SetAttachmentCount(value); return *this;}
 
+
     /**
      * <p>Specifies whether the policy can be attached to an IAM user, group, or
      * role.</p>
@@ -310,6 +317,7 @@ namespace Model
      * role.</p>
      */
     inline ManagedPolicyDetail& WithIsAttachable(bool value) { SetIsAttachable(value); return *this;}
+
 
     /**
      * <p>A friendly description of the policy.</p>
@@ -346,6 +354,7 @@ namespace Model
      */
     inline ManagedPolicyDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the policy was created.</p>
@@ -375,6 +384,7 @@ namespace Model
      * date-time format</a>, when the policy was created.</p>
      */
     inline ManagedPolicyDetail& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -421,6 +431,7 @@ namespace Model
      */
     inline ManagedPolicyDetail& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 
+
     /**
      * <p>A list containing information about the versions of the policy.</p>
      */
@@ -457,26 +468,37 @@ namespace Model
     inline ManagedPolicyDetail& AddPolicyVersionList(PolicyVersion&& value) { m_policyVersionListHasBeenSet = true; m_policyVersionList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyId;
     bool m_policyIdHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_defaultVersionId;
     bool m_defaultVersionIdHasBeenSet;
+
     int m_attachmentCount;
     bool m_attachmentCountHasBeenSet;
+
     bool m_isAttachable;
     bool m_isAttachableHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
+
     Aws::Vector<PolicyVersion> m_policyVersionList;
     bool m_policyVersionListHasBeenSet;
   };

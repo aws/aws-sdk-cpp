@@ -31,12 +31,12 @@ DescribeAutoScalingInstancesResult::DescribeAutoScalingInstancesResult()
 {
 }
 
-DescribeAutoScalingInstancesResult::DescribeAutoScalingInstancesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAutoScalingInstancesResult::DescribeAutoScalingInstancesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeAutoScalingInstancesResult& DescribeAutoScalingInstancesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAutoScalingInstancesResult& DescribeAutoScalingInstancesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

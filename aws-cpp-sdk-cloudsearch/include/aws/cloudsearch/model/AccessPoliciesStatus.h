@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::String& GetOptions() const{ return m_options; }
 
@@ -71,6 +72,7 @@ namespace Model
     
     inline AccessPoliciesStatus& WithOptions(const char* value) { SetOptions(value); return *this;}
 
+
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
 
@@ -87,8 +89,10 @@ namespace Model
     inline AccessPoliciesStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_options;
     bool m_optionsHasBeenSet;
+
     OptionStatus m_status;
     bool m_statusHasBeenSet;
   };

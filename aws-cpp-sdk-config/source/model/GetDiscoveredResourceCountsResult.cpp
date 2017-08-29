@@ -31,13 +31,13 @@ GetDiscoveredResourceCountsResult::GetDiscoveredResourceCountsResult() :
 {
 }
 
-GetDiscoveredResourceCountsResult::GetDiscoveredResourceCountsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetDiscoveredResourceCountsResult::GetDiscoveredResourceCountsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_totalDiscoveredResources(0)
 {
   *this = result;
 }
 
-GetDiscoveredResourceCountsResult& GetDiscoveredResourceCountsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDiscoveredResourceCountsResult& GetDiscoveredResourceCountsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("totalDiscoveredResources"))

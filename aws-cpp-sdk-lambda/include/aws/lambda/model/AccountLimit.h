@@ -44,6 +44,7 @@ namespace Model
     AccountLimit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Maximum size, in bytes, of a code package you can upload per region. The
      * default size is 75 GB. </p>
@@ -61,6 +62,7 @@ namespace Model
      * default size is 75 GB. </p>
      */
     inline AccountLimit& WithTotalCodeSize(long long value) { SetTotalCodeSize(value); return *this;}
+
 
     /**
      * <p>Size, in bytes, of code/dependencies that you can zip into a deployment
@@ -83,6 +85,7 @@ namespace Model
      */
     inline AccountLimit& WithCodeSizeUnzipped(long long value) { SetCodeSizeUnzipped(value); return *this;}
 
+
     /**
      * <p>Size, in bytes, of a single zipped code/dependencies package you can upload
      * for your Lambda function(.zip/.jar file). Try using Amazon S3 for uploading
@@ -103,6 +106,7 @@ namespace Model
      * larger files. Default limit is 50 MB.</p>
      */
     inline AccountLimit& WithCodeSizeZipped(long long value) { SetCodeSizeZipped(value); return *this;}
+
 
     /**
      * <p>Number of simultaneous executions of your function per region. For more
@@ -129,12 +133,16 @@ namespace Model
     inline AccountLimit& WithConcurrentExecutions(int value) { SetConcurrentExecutions(value); return *this;}
 
   private:
+
     long long m_totalCodeSize;
     bool m_totalCodeSizeHasBeenSet;
+
     long long m_codeSizeUnzipped;
     bool m_codeSizeUnzippedHasBeenSet;
+
     long long m_codeSizeZipped;
     bool m_codeSizeZippedHasBeenSet;
+
     int m_concurrentExecutions;
     bool m_concurrentExecutionsHasBeenSet;
   };

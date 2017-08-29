@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListAliasesResult();
-    ListAliasesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAliasesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of key aliases in the user's account.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of key aliases in the user's account.</p>
      */
     inline ListAliasesResult& AddAliases(AliasListEntry&& value) { m_aliases.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ListAliasesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To retrieve more items,
@@ -145,8 +148,11 @@ namespace Model
     inline ListAliasesResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
 
   private:
+
     Aws::Vector<AliasListEntry> m_aliases;
+
     Aws::String m_nextMarker;
+
     bool m_truncated;
   };
 

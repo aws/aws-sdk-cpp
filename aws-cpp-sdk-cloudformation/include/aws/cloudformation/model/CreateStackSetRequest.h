@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
      * region where you create your stack set.</p> <note> <p>A stack name can contain
@@ -99,6 +100,7 @@ namespace Model
      */
     inline CreateStackSetRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
+
     /**
      * <p>A description of the stack set. You can use the description to identify the
      * stack set's purpose or other important information.</p>
@@ -140,6 +142,7 @@ namespace Model
      * stack set's purpose or other important information.</p>
      */
     inline CreateStackSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The structure that contains the template body, with a minimum length of 1
@@ -203,6 +206,7 @@ namespace Model
      * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
      */
     inline CreateStackSetRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+
 
     /**
      * <p>The location of the file that contains the template body. The URL must point
@@ -274,6 +278,7 @@ namespace Model
      */
     inline CreateStackSetRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
+
     /**
      * <p>The input parameters for the stack set template. </p>
      */
@@ -308,6 +313,7 @@ namespace Model
      * <p>The input parameters for the stack set template. </p>
      */
     inline CreateStackSetRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of values that you must specify before AWS CloudFormation can create
@@ -470,6 +476,7 @@ namespace Model
      */
     inline CreateStackSetRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The key-value pairs to associate with this stack set and the stacks created
      * from it. AWS CloudFormation also propagates these tags to supported resources
@@ -554,6 +561,7 @@ namespace Model
      */
     inline CreateStackSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A unique identifier for this <code>CreateStackSet</code> request. Specify
      * this token if you plan to retry requests so that AWS CloudFormation knows that
@@ -625,20 +633,28 @@ namespace Model
     inline CreateStackSetRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_templateBody;
     bool m_templateBodyHasBeenSet;
+
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Vector<Capability> m_capabilities;
     bool m_capabilitiesHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
   };

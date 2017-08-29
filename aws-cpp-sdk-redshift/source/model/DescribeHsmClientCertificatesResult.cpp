@@ -31,12 +31,12 @@ DescribeHsmClientCertificatesResult::DescribeHsmClientCertificatesResult()
 {
 }
 
-DescribeHsmClientCertificatesResult::DescribeHsmClientCertificatesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeHsmClientCertificatesResult::DescribeHsmClientCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeHsmClientCertificatesResult& DescribeHsmClientCertificatesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeHsmClientCertificatesResult& DescribeHsmClientCertificatesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of an existing application.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline AddApplicationReferenceDataSourceRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>Version of the application for which you are adding the reference data
      * source. You can use the <a>DescribeApplication</a> operation to get the current
@@ -98,6 +100,7 @@ namespace Model
      * <code>ConcurrentModificationException</code> is returned.</p>
      */
     inline AddApplicationReferenceDataSourceRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+
 
     /**
      * <p>The reference data source can be an object in your Amazon S3 bucket. Amazon
@@ -150,10 +153,13 @@ namespace Model
     inline AddApplicationReferenceDataSourceRequest& WithReferenceDataSource(ReferenceDataSource&& value) { SetReferenceDataSource(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     long long m_currentApplicationVersionId;
     bool m_currentApplicationVersionIdHasBeenSet;
+
     ReferenceDataSource m_referenceDataSource;
     bool m_referenceDataSourceHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
     CreateDistribution2017_03_25Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The distribution's configuration information.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
     inline CreateDistribution2017_03_25Request& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
 
   private:
+
     DistributionConfig m_distributionConfig;
     bool m_distributionConfigHasBeenSet;
   };

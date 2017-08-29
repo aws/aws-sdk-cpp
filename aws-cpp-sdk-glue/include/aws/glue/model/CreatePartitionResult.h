@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreatePartitionResult();
-    CreatePartitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePartitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePartitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePartitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

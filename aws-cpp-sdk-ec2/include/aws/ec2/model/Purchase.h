@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The currency in which the <code>UpfrontPrice</code> and
      * <code>HourlyPrice</code> amounts are specified. At this time, the only supported
@@ -86,6 +87,7 @@ namespace Model
      */
     inline Purchase& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
+
     /**
      * <p>The duration of the reservation's term in seconds.</p>
      */
@@ -100,6 +102,7 @@ namespace Model
      * <p>The duration of the reservation's term in seconds.</p>
      */
     inline Purchase& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
@@ -141,6 +144,7 @@ namespace Model
      */
     inline Purchase& AddHostIdSet(const char* value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of the reservation.</p>
      */
@@ -176,6 +180,7 @@ namespace Model
      */
     inline Purchase& WithHostReservationId(const char* value) { SetHostReservationId(value); return *this;}
 
+
     /**
      * <p>The hourly price of the reservation per hour.</p>
      */
@@ -210,6 +215,7 @@ namespace Model
      * <p>The hourly price of the reservation per hour.</p>
      */
     inline Purchase& WithHourlyPrice(const char* value) { SetHourlyPrice(value); return *this;}
+
 
     /**
      * <p>The instance family on the Dedicated Host that the reservation can be
@@ -253,6 +259,7 @@ namespace Model
      */
     inline Purchase& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
 
+
     /**
      * <p>The payment option for the reservation.</p>
      */
@@ -277,6 +284,7 @@ namespace Model
      * <p>The payment option for the reservation.</p>
      */
     inline Purchase& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
+
 
     /**
      * <p>The upfront price of the reservation.</p>
@@ -314,20 +322,28 @@ namespace Model
     inline Purchase& WithUpfrontPrice(const char* value) { SetUpfrontPrice(value); return *this;}
 
   private:
+
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     Aws::Vector<Aws::String> m_hostIdSet;
     bool m_hostIdSetHasBeenSet;
+
     Aws::String m_hostReservationId;
     bool m_hostReservationIdHasBeenSet;
+
     Aws::String m_hourlyPrice;
     bool m_hourlyPriceHasBeenSet;
+
     Aws::String m_instanceFamily;
     bool m_instanceFamilyHasBeenSet;
+
     PaymentOption m_paymentOption;
     bool m_paymentOptionHasBeenSet;
+
     Aws::String m_upfrontPrice;
     bool m_upfrontPriceHasBeenSet;
   };

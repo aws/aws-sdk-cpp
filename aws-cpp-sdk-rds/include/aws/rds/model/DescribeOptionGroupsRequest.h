@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the option group to describe. Cannot be supplied together with
      * EngineName or MajorEngineVersion.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeOptionGroupsRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
+
     /**
      * <p>This parameter is not currently supported.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>This parameter is not currently supported.</p>
      */
     inline DescribeOptionGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> An optional pagination token provided by a previous DescribeOptionGroups
@@ -169,6 +172,7 @@ namespace Model
      */
     inline DescribeOptionGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -192,6 +196,7 @@ namespace Model
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeOptionGroupsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>Filters the list of option groups to only include groups associated with a
@@ -234,6 +239,7 @@ namespace Model
      * specific database engine.</p>
      */
     inline DescribeOptionGroupsRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
+
 
     /**
      * <p>Filters the list of option groups to only include groups associated with a
@@ -285,16 +291,22 @@ namespace Model
     inline DescribeOptionGroupsRequest& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
 
   private:
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_engineName;
     bool m_engineNameHasBeenSet;
+
     Aws::String m_majorEngineVersion;
     bool m_majorEngineVersionHasBeenSet;
   };

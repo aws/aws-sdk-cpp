@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetGroupPolicyResult();
-    GetGroupPolicyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetGroupPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetGroupPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetGroupPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The group the policy is associated with.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline GetGroupPolicyResult& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>The name of the policy.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The name of the policy.</p>
      */
     inline GetGroupPolicyResult& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The policy document.</p>
@@ -153,6 +156,7 @@ namespace Model
      */
     inline GetGroupPolicyResult& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -169,9 +173,13 @@ namespace Model
     inline GetGroupPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_groupName;
+
     Aws::String m_policyName;
+
     Aws::String m_policyDocument;
+
     ResponseMetadata m_responseMetadata;
   };
 

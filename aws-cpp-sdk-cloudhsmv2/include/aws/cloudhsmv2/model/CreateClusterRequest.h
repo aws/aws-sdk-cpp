@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
      * must specify at least one subnet. If you specify multiple subnets, they must
@@ -109,6 +110,7 @@ namespace Model
      */
     inline CreateClusterRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
     /**
      * <p>The type of HSM to use in the cluster. Currently the only allowed value is
      * <code>hsm1.medium</code>.</p>
@@ -150,6 +152,7 @@ namespace Model
      * <code>hsm1.medium</code>.</p>
      */
     inline CreateClusterRequest& WithHsmType(const char* value) { SetHsmType(value); return *this;}
+
 
     /**
      * <p>The identifier (ID) of the cluster backup to restore. Use this value to
@@ -201,10 +204,13 @@ namespace Model
     inline CreateClusterRequest& WithSourceBackupId(const char* value) { SetSourceBackupId(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::String m_hsmType;
     bool m_hsmTypeHasBeenSet;
+
     Aws::String m_sourceBackupId;
     bool m_sourceBackupIdHasBeenSet;
   };

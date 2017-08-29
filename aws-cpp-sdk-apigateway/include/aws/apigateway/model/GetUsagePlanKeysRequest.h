@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
      * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
@@ -93,6 +94,7 @@ namespace Model
      */
     inline GetUsagePlanKeysRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
+
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
@@ -128,6 +130,7 @@ namespace Model
      */
     inline GetUsagePlanKeysRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
+
     /**
      * <p>The maximum number of returned results per page.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The maximum number of returned results per page.</p>
      */
     inline GetUsagePlanKeysRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>A query parameter specifying the name of the to-be-returned usage plan
@@ -186,12 +190,16 @@ namespace Model
     inline GetUsagePlanKeysRequest& WithNameQuery(const char* value) { SetNameQuery(value); return *this;}
 
   private:
+
     Aws::String m_usagePlanId;
     bool m_usagePlanIdHasBeenSet;
+
     Aws::String m_position;
     bool m_positionHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nameQuery;
     bool m_nameQueryHasBeenSet;
   };

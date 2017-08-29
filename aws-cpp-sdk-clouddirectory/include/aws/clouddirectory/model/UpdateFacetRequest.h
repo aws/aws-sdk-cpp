@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For
      * more information, see <a>arns</a>.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline UpdateFacetRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
+
     /**
      * <p>The name of the facet.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The name of the facet.</p>
      */
     inline UpdateFacetRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
@@ -165,6 +168,7 @@ namespace Model
      */
     inline UpdateFacetRequest& AddAttributeUpdates(FacetAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The object type that is associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
@@ -196,12 +200,16 @@ namespace Model
     inline UpdateFacetRequest& WithObjectType(ObjectType&& value) { SetObjectType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<FacetAttributeUpdate> m_attributeUpdates;
     bool m_attributeUpdatesHasBeenSet;
+
     ObjectType m_objectType;
     bool m_objectTypeHasBeenSet;
   };

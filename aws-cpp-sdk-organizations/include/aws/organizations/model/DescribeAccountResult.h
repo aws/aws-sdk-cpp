@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeAccountResult();
-    DescribeAccountResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAccountResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains information about the requested account.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeAccountResult& WithAccount(Account&& value) { SetAccount(std::move(value)); return *this;}
 
   private:
+
     Account m_account;
   };
 

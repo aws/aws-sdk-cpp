@@ -30,12 +30,12 @@ DescribeCachediSCSIVolumesResult::DescribeCachediSCSIVolumesResult()
 {
 }
 
-DescribeCachediSCSIVolumesResult::DescribeCachediSCSIVolumesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCachediSCSIVolumesResult::DescribeCachediSCSIVolumesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeCachediSCSIVolumesResult& DescribeCachediSCSIVolumesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCachediSCSIVolumesResult& DescribeCachediSCSIVolumesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CachediSCSIVolumes"))

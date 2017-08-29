@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetStreamingDistribution2017_03_25Result();
-    GetStreamingDistribution2017_03_25Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetStreamingDistribution2017_03_25Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetStreamingDistribution2017_03_25Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetStreamingDistribution2017_03_25Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The streaming distribution's information.</p>
@@ -72,6 +73,7 @@ namespace Model
      * <p>The streaming distribution's information.</p>
      */
     inline GetStreamingDistribution2017_03_25Result& WithStreamingDistribution(StreamingDistribution&& value) { SetStreamingDistribution(std::move(value)); return *this;}
+
 
     /**
      * <p>The current version of the streaming distribution's information. For example:
@@ -116,7 +118,9 @@ namespace Model
     inline GetStreamingDistribution2017_03_25Result& WithETag(const char* value) { SetETag(value); return *this;}
 
   private:
+
     StreamingDistribution m_streamingDistribution;
+
     Aws::String m_eTag;
   };
 

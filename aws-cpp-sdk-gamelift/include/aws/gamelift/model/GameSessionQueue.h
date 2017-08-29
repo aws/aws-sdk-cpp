@@ -63,6 +63,7 @@ namespace Model
     GameSessionQueue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Descriptive label that is associated with game session queue. Queue names
      * must be unique within each region.</p>
@@ -104,6 +105,7 @@ namespace Model
      * must be unique within each region.</p>
      */
     inline GameSessionQueue& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Amazon Resource Name (<a
@@ -161,6 +163,7 @@ namespace Model
      */
     inline GameSessionQueue& WithGameSessionQueueArn(const char* value) { SetGameSessionQueueArn(value); return *this;}
 
+
     /**
      * <p>Maximum time, in seconds, that a new game session placement request remains
      * in the queue. When a request exceeds this time, the game session placement
@@ -181,6 +184,7 @@ namespace Model
      * changes to a <code>TIMED_OUT</code> status.</p>
      */
     inline GameSessionQueue& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
+
 
     /**
      * <p>Collection of latency policies to apply when processing game sessions
@@ -266,6 +270,7 @@ namespace Model
      */
     inline GameSessionQueue& AddPlayerLatencyPolicies(PlayerLatencyPolicy&& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>List of fleets that can be used to fulfill game session placement requests in
      * the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
@@ -316,14 +321,19 @@ namespace Model
     inline GameSessionQueue& AddDestinations(GameSessionQueueDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_gameSessionQueueArn;
     bool m_gameSessionQueueArnHasBeenSet;
+
     int m_timeoutInSeconds;
     bool m_timeoutInSecondsHasBeenSet;
+
     Aws::Vector<PlayerLatencyPolicy> m_playerLatencyPolicies;
     bool m_playerLatencyPoliciesHasBeenSet;
+
     Aws::Vector<GameSessionQueueDestination> m_destinations;
     bool m_destinationsHasBeenSet;
   };

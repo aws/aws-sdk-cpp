@@ -124,9 +124,9 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateInvalidation2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> CreateInvalidation2017_03_25Outcome;
         typedef Aws::Utils::Outcome<CreateStreamingDistribution2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> CreateStreamingDistribution2017_03_25Outcome;
         typedef Aws::Utils::Outcome<CreateStreamingDistributionWithTags2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> CreateStreamingDistributionWithTags2017_03_25Outcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFrontErrors>> DeleteCloudFrontOriginAccessIdentity2017_03_25Outcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFrontErrors>> DeleteDistribution2017_03_25Outcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFrontErrors>> DeleteStreamingDistribution2017_03_25Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFrontErrors>> DeleteCloudFrontOriginAccessIdentity2017_03_25Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFrontErrors>> DeleteDistribution2017_03_25Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFrontErrors>> DeleteStreamingDistribution2017_03_25Outcome;
         typedef Aws::Utils::Outcome<GetCloudFrontOriginAccessIdentity2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> GetCloudFrontOriginAccessIdentity2017_03_25Outcome;
         typedef Aws::Utils::Outcome<GetCloudFrontOriginAccessIdentityConfig2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> GetCloudFrontOriginAccessIdentityConfig2017_03_25Outcome;
         typedef Aws::Utils::Outcome<GetDistribution2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> GetDistribution2017_03_25Outcome;
@@ -140,8 +140,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListInvalidations2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> ListInvalidations2017_03_25Outcome;
         typedef Aws::Utils::Outcome<ListStreamingDistributions2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> ListStreamingDistributions2017_03_25Outcome;
         typedef Aws::Utils::Outcome<ListTagsForResource2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> ListTagsForResource2017_03_25Outcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFrontErrors>> TagResource2017_03_25Outcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFrontErrors>> UntagResource2017_03_25Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFrontErrors>> TagResource2017_03_25Outcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFrontErrors>> UntagResource2017_03_25Outcome;
         typedef Aws::Utils::Outcome<UpdateCloudFrontOriginAccessIdentity2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> UpdateCloudFrontOriginAccessIdentity2017_03_25Outcome;
         typedef Aws::Utils::Outcome<UpdateDistribution2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> UpdateDistribution2017_03_25Outcome;
         typedef Aws::Utils::Outcome<UpdateStreamingDistribution2017_03_25Result, Aws::Client::AWSError<CloudFrontErrors>> UpdateStreamingDistribution2017_03_25Outcome;
@@ -221,22 +221,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudFrontClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudFrontClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudFrontClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudFrontClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        CloudFrontClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudFrontClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CloudFrontClient();
+
 
         /**
          * <p>Creates a new origin access identity. If you're using Amazon S3 for your
@@ -1236,7 +1237,7 @@ namespace Model
 
 
   private:
-    void init(const Client::ClientConfiguration& clientConfiguration);
+    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void CreateCloudFrontOriginAccessIdentity2017_03_25AsyncHelper(const Model::CreateCloudFrontOriginAccessIdentity2017_03_25Request& request, const CreateCloudFrontOriginAccessIdentity2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1268,7 +1269,7 @@ namespace Model
         void UpdateStreamingDistribution2017_03_25AsyncHelper(const Model::UpdateStreamingDistribution2017_03_25Request& request, const UpdateStreamingDistribution2017_03_25ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
-    std::shared_ptr<Utils::Threading::Executor> m_executor;
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace CloudFront

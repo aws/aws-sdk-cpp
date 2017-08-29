@@ -30,12 +30,12 @@ UpdateObjectAttributesResult::UpdateObjectAttributesResult()
 {
 }
 
-UpdateObjectAttributesResult::UpdateObjectAttributesResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateObjectAttributesResult::UpdateObjectAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateObjectAttributesResult& UpdateObjectAttributesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateObjectAttributesResult& UpdateObjectAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ObjectIdentifier"))

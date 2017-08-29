@@ -49,6 +49,7 @@ namespace Model
     UserDefinedFunctionInput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the function.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the function.</p>
      */
     inline UserDefinedFunctionInput& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+
 
     /**
      * <p>The Java class that contains the function code.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline UserDefinedFunctionInput& WithClassName(const char* value) { SetClassName(value); return *this;}
 
+
     /**
      * <p>The owner of the function.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline UserDefinedFunctionInput& WithOwnerName(const char* value) { SetOwnerName(value); return *this;}
 
+
     /**
      * <p>The owner type.</p>
      */
@@ -178,6 +182,7 @@ namespace Model
      * <p>The owner type.</p>
      */
     inline UserDefinedFunctionInput& WithOwnerType(PrincipalType&& value) { SetOwnerType(std::move(value)); return *this;}
+
 
     /**
      * <p>The resource URIs for the function.</p>
@@ -215,14 +220,19 @@ namespace Model
     inline UserDefinedFunctionInput& AddResourceUris(ResourceUri&& value) { m_resourceUrisHasBeenSet = true; m_resourceUris.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_className;
     bool m_classNameHasBeenSet;
+
     Aws::String m_ownerName;
     bool m_ownerNameHasBeenSet;
+
     PrincipalType m_ownerType;
     bool m_ownerTypeHasBeenSet;
+
     Aws::Vector<ResourceUri> m_resourceUris;
     bool m_resourceUrisHasBeenSet;
   };

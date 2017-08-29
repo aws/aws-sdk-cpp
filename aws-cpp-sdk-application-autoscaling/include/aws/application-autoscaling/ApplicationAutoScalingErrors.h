@@ -55,7 +55,7 @@ enum class ApplicationAutoScalingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_UPDATE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_UPDATE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   FAILED_RESOURCE_ACCESS,
   INTERNAL_SERVICE,
   INVALID_NEXT_TOKEN,
@@ -64,7 +64,7 @@ enum class ApplicationAutoScalingErrors
 };
 namespace ApplicationAutoScalingErrorMapper
 {
-  AWS_APPLICATIONAUTOSCALING_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_APPLICATIONAUTOSCALING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ApplicationAutoScaling

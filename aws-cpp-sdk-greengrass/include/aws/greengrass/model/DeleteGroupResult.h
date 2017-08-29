@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteGroupResult();
-    DeleteGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

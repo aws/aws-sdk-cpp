@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetTableVersionsResult();
-    GetTableVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTableVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTableVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTableVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of strings identifying available versions of the specified table.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of strings identifying available versions of the specified table.</p>
      */
     inline GetTableVersionsResult& AddTableVersions(TableVersion&& value) { m_tableVersions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token, if the list of available versions does not include the
@@ -121,7 +123,9 @@ namespace Model
     inline GetTableVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<TableVersion> m_tableVersions;
+
     Aws::String m_nextToken;
   };
 

@@ -30,12 +30,12 @@ TransferCertificateResult::TransferCertificateResult()
 {
 }
 
-TransferCertificateResult::TransferCertificateResult(const AmazonWebServiceResult<JsonValue>& result)
+TransferCertificateResult::TransferCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-TransferCertificateResult& TransferCertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TransferCertificateResult& TransferCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("transferredCertificateArn"))

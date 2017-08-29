@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of structures that specify the WorkSpaces to terminate.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline TerminateWorkspacesRequest& AddTerminateWorkspaceRequests(TerminateRequest&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<TerminateRequest> m_terminateWorkspaceRequests;
     bool m_terminateWorkspaceRequestsHasBeenSet;
   };

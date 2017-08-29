@@ -53,6 +53,7 @@ namespace Model
     Build& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique ID for the build.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The unique ID for the build.</p>
      */
     inline Build& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the build.</p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline Build& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>When the build process started, expressed in Unix time format.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      */
     inline Build& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>When the build process ended, expressed in Unix time format.</p>
      */
@@ -172,6 +176,7 @@ namespace Model
      * <p>When the build process ended, expressed in Unix time format.</p>
      */
     inline Build& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The current build phase.</p>
@@ -207,6 +212,7 @@ namespace Model
      * <p>The current build phase.</p>
      */
     inline Build& WithCurrentPhase(const char* value) { SetCurrentPhase(value); return *this;}
+
 
     /**
      * <p>The current status of the build. Valid values include:</p> <ul> <li> <p>
@@ -258,6 +264,7 @@ namespace Model
      */
     inline Build& WithBuildStatus(StatusType&& value) { SetBuildStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Any version identifier for the version of the source code to be built.</p>
      */
@@ -293,6 +300,7 @@ namespace Model
      */
     inline Build& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 
+
     /**
      * <p>The name of the build project.</p>
      */
@@ -327,6 +335,7 @@ namespace Model
      * <p>The name of the build project.</p>
      */
     inline Build& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+
 
     /**
      * <p>Information about all previous build phases that are completed and
@@ -370,6 +379,7 @@ namespace Model
      */
     inline Build& AddPhases(BuildPhase&& value) { m_phasesHasBeenSet = true; m_phases.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Information about the source code to be built.</p>
      */
@@ -394,6 +404,7 @@ namespace Model
      * <p>Information about the source code to be built.</p>
      */
     inline Build& WithSource(ProjectSource&& value) { SetSource(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the output artifacts for the build.</p>
@@ -420,6 +431,7 @@ namespace Model
      */
     inline Build& WithArtifacts(BuildArtifacts&& value) { SetArtifacts(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the build environment for this build.</p>
      */
@@ -444,6 +456,7 @@ namespace Model
      * <p>Information about the build environment for this build.</p>
      */
     inline Build& WithEnvironment(ProjectEnvironment&& value) { SetEnvironment(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the build's logs in Amazon CloudWatch Logs.</p>
@@ -470,6 +483,7 @@ namespace Model
      */
     inline Build& WithLogs(LogsLocation&& value) { SetLogs(std::move(value)); return *this;}
 
+
     /**
      * <p>How long, in minutes, for AWS CodeBuild to wait before timing out this build
      * if it does not get marked as completed.</p>
@@ -488,6 +502,7 @@ namespace Model
      */
     inline Build& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
 
+
     /**
      * <p>Whether the build has finished. True if completed; otherwise, false.</p>
      */
@@ -502,6 +517,7 @@ namespace Model
      * <p>Whether the build has finished. True if completed; otherwise, false.</p>
      */
     inline Build& WithBuildComplete(bool value) { SetBuildComplete(value); return *this;}
+
 
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
@@ -581,36 +597,52 @@ namespace Model
     inline Build& WithInitiator(const char* value) { SetInitiator(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::String m_currentPhase;
     bool m_currentPhaseHasBeenSet;
+
     StatusType m_buildStatus;
     bool m_buildStatusHasBeenSet;
+
     Aws::String m_sourceVersion;
     bool m_sourceVersionHasBeenSet;
+
     Aws::String m_projectName;
     bool m_projectNameHasBeenSet;
+
     Aws::Vector<BuildPhase> m_phases;
     bool m_phasesHasBeenSet;
+
     ProjectSource m_source;
     bool m_sourceHasBeenSet;
+
     BuildArtifacts m_artifacts;
     bool m_artifactsHasBeenSet;
+
     ProjectEnvironment m_environment;
     bool m_environmentHasBeenSet;
+
     LogsLocation m_logs;
     bool m_logsHasBeenSet;
+
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
+
     bool m_buildComplete;
     bool m_buildCompleteHasBeenSet;
+
     Aws::String m_initiator;
     bool m_initiatorHasBeenSet;
   };

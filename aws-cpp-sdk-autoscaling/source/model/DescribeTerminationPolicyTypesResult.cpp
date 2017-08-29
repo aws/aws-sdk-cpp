@@ -31,12 +31,12 @@ DescribeTerminationPolicyTypesResult::DescribeTerminationPolicyTypesResult()
 {
 }
 
-DescribeTerminationPolicyTypesResult::DescribeTerminationPolicyTypesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeTerminationPolicyTypesResult::DescribeTerminationPolicyTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeTerminationPolicyTypesResult& DescribeTerminationPolicyTypesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeTerminationPolicyTypesResult& DescribeTerminationPolicyTypesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -51,6 +51,7 @@ namespace Model
     PlayerLatencyPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The maximum latency value that is allowed for any player, in milliseconds.
      * All policies must have a value set for this property.</p>
@@ -68,6 +69,7 @@ namespace Model
      * All policies must have a value set for this property.</p>
      */
     inline PlayerLatencyPolicy& WithMaximumIndividualPlayerLatencyMilliseconds(int value) { SetMaximumIndividualPlayerLatencyMilliseconds(value); return *this;}
+
 
     /**
      * <p>The length of time, in seconds, that the policy is enforced while placing a
@@ -91,8 +93,10 @@ namespace Model
     inline PlayerLatencyPolicy& WithPolicyDurationSeconds(int value) { SetPolicyDurationSeconds(value); return *this;}
 
   private:
+
     int m_maximumIndividualPlayerLatencyMilliseconds;
     bool m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet;
+
     int m_policyDurationSeconds;
     bool m_policyDurationSecondsHasBeenSet;
   };

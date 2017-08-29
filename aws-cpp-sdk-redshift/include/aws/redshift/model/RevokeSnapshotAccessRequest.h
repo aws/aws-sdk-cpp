@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
     inline RevokeSnapshotAccessRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
@@ -125,6 +127,7 @@ namespace Model
      */
     inline RevokeSnapshotAccessRequest& WithSnapshotClusterIdentifier(const char* value) { SetSnapshotClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The identifier of the AWS customer account that can no longer restore the
      * specified snapshot.</p>
@@ -168,10 +171,13 @@ namespace Model
     inline RevokeSnapshotAccessRequest& WithAccountWithRestoreAccess(const char* value) { SetAccountWithRestoreAccess(value); return *this;}
 
   private:
+
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
     Aws::String m_snapshotClusterIdentifier;
     bool m_snapshotClusterIdentifierHasBeenSet;
+
     Aws::String m_accountWithRestoreAccess;
     bool m_accountWithRestoreAccessHasBeenSet;
   };

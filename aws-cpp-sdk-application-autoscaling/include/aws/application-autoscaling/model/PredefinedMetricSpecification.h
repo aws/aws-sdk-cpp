@@ -47,6 +47,7 @@ namespace Model
     PredefinedMetricSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The metric type.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The metric type.</p>
      */
     inline PredefinedMetricSpecification& WithPredefinedMetricType(MetricType&& value) { SetPredefinedMetricType(std::move(value)); return *this;}
+
 
     /**
      * <p>Reserved for future use.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline PredefinedMetricSpecification& WithResourceLabel(const char* value) { SetResourceLabel(value); return *this;}
 
   private:
+
     MetricType m_predefinedMetricType;
     bool m_predefinedMetricTypeHasBeenSet;
+
     Aws::String m_resourceLabel;
     bool m_resourceLabelHasBeenSet;
   };

@@ -30,12 +30,12 @@ ListSqlInjectionMatchSetsResult::ListSqlInjectionMatchSetsResult()
 {
 }
 
-ListSqlInjectionMatchSetsResult::ListSqlInjectionMatchSetsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListSqlInjectionMatchSetsResult::ListSqlInjectionMatchSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListSqlInjectionMatchSetsResult& ListSqlInjectionMatchSetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListSqlInjectionMatchSetsResult& ListSqlInjectionMatchSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextMarker"))

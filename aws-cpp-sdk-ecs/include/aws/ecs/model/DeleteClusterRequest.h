@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to
      * delete.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline DeleteClusterRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
   };

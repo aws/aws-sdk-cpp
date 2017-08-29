@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The directory ID for which you are deleting the conditional forwarder.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The directory ID for which you are deleting the conditional forwarder.</p>
      */
     inline DeleteConditionalForwarderRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you
@@ -117,8 +119,10 @@ namespace Model
     inline DeleteConditionalForwarderRequest& WithRemoteDomainName(const char* value) { SetRemoteDomainName(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_remoteDomainName;
     bool m_remoteDomainNameHasBeenSet;
   };

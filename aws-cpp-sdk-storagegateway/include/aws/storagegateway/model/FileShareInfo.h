@@ -45,6 +45,7 @@ namespace Model
     FileShareInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
 
@@ -65,6 +66,7 @@ namespace Model
 
     
     inline FileShareInfo& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
+
 
     
     inline const Aws::String& GetFileShareId() const{ return m_fileShareId; }
@@ -87,6 +89,7 @@ namespace Model
     
     inline FileShareInfo& WithFileShareId(const char* value) { SetFileShareId(value); return *this;}
 
+
     
     inline const Aws::String& GetFileShareStatus() const{ return m_fileShareStatus; }
 
@@ -107,6 +110,7 @@ namespace Model
 
     
     inline FileShareInfo& WithFileShareStatus(const char* value) { SetFileShareStatus(value); return *this;}
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -130,12 +134,16 @@ namespace Model
     inline FileShareInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
     Aws::String m_fileShareARN;
     bool m_fileShareARNHasBeenSet;
+
     Aws::String m_fileShareId;
     bool m_fileShareIdHasBeenSet;
+
     Aws::String m_fileShareStatus;
     bool m_fileShareStatusHasBeenSet;
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
   };

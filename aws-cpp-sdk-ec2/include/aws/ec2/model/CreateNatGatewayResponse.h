@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateNatGatewayResponse();
-    CreateNatGatewayResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateNatGatewayResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateNatGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateNatGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Unique, case-sensitive identifier to ensure the idempotency of the request.
@@ -90,6 +91,7 @@ namespace Model
      */
     inline CreateNatGatewayResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>Information about the NAT gateway.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      */
     inline CreateNatGatewayResponse& WithNatGateway(NatGateway&& value) { SetNatGateway(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -131,8 +134,11 @@ namespace Model
     inline CreateNatGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clientToken;
+
     NatGateway m_natGateway;
+
     ResponseMetadata m_responseMetadata;
   };
 

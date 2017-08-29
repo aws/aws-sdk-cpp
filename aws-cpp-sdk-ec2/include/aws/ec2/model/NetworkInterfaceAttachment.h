@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The timestamp indicating when the attachment initiated.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The timestamp indicating when the attachment initiated.</p>
      */
     inline NetworkInterfaceAttachment& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the network interface attachment.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline NetworkInterfaceAttachment& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
 
+
     /**
      * <p>Indicates whether the network interface is deleted when the instance is
      * terminated.</p>
@@ -128,6 +131,7 @@ namespace Model
      */
     inline NetworkInterfaceAttachment& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
+
     /**
      * <p>The device index of the network interface attachment on the instance.</p>
      */
@@ -142,6 +146,7 @@ namespace Model
      * <p>The device index of the network interface attachment on the instance.</p>
      */
     inline NetworkInterfaceAttachment& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -178,6 +183,7 @@ namespace Model
      */
     inline NetworkInterfaceAttachment& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The AWS account ID of the owner of the instance.</p>
      */
@@ -213,6 +219,7 @@ namespace Model
      */
     inline NetworkInterfaceAttachment& WithInstanceOwnerId(const char* value) { SetInstanceOwnerId(value); return *this;}
 
+
     /**
      * <p>The attachment state.</p>
      */
@@ -239,18 +246,25 @@ namespace Model
     inline NetworkInterfaceAttachment& WithStatus(AttachmentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_attachTime;
     bool m_attachTimeHasBeenSet;
+
     Aws::String m_attachmentId;
     bool m_attachmentIdHasBeenSet;
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+
     int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_instanceOwnerId;
     bool m_instanceOwnerIdHasBeenSet;
+
     AttachmentStatus m_status;
     bool m_statusHasBeenSet;
   };

@@ -30,12 +30,12 @@ PeerVpcResult::PeerVpcResult()
 {
 }
 
-PeerVpcResult::PeerVpcResult(const AmazonWebServiceResult<JsonValue>& result)
+PeerVpcResult::PeerVpcResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PeerVpcResult& PeerVpcResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PeerVpcResult& PeerVpcResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operation"))

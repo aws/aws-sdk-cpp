@@ -46,6 +46,7 @@ namespace Model
     TreatmentResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The unique treatment ID.
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline TreatmentResource& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * The message configuration settings.
      */
@@ -105,6 +107,7 @@ namespace Model
      * The message configuration settings.
      */
     inline TreatmentResource& WithMessageConfiguration(MessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
+
 
     /**
      * The campaign schedule.
@@ -131,6 +134,7 @@ namespace Model
      */
     inline TreatmentResource& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
 
+
     /**
      * The allocated percentage of users for this treatment.
      */
@@ -145,6 +149,7 @@ namespace Model
      * The allocated percentage of users for this treatment.
      */
     inline TreatmentResource& WithSizePercent(int value) { SetSizePercent(value); return *this;}
+
 
     /**
      * The treatment status.
@@ -170,6 +175,7 @@ namespace Model
      * The treatment status.
      */
     inline TreatmentResource& WithState(CampaignState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * A custom description for the treatment.
@@ -205,6 +211,7 @@ namespace Model
      * A custom description for the treatment.
      */
     inline TreatmentResource& WithTreatmentDescription(const char* value) { SetTreatmentDescription(value); return *this;}
+
 
     /**
      * The custom name of a variation of the campaign used for A/B testing.
@@ -242,18 +249,25 @@ namespace Model
     inline TreatmentResource& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     MessageConfiguration m_messageConfiguration;
     bool m_messageConfigurationHasBeenSet;
+
     Schedule m_schedule;
     bool m_scheduleHasBeenSet;
+
     int m_sizePercent;
     bool m_sizePercentHasBeenSet;
+
     CampaignState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_treatmentDescription;
     bool m_treatmentDescriptionHasBeenSet;
+
     Aws::String m_treatmentName;
     bool m_treatmentNameHasBeenSet;
   };

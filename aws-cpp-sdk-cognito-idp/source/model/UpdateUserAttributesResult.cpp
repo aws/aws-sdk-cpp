@@ -30,12 +30,12 @@ UpdateUserAttributesResult::UpdateUserAttributesResult()
 {
 }
 
-UpdateUserAttributesResult::UpdateUserAttributesResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateUserAttributesResult::UpdateUserAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateUserAttributesResult& UpdateUserAttributesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateUserAttributesResult& UpdateUserAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CodeDeliveryDetailsList"))

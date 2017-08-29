@@ -31,12 +31,12 @@ PublishResult::PublishResult()
 {
 }
 
-PublishResult::PublishResult(const AmazonWebServiceResult<XmlDocument>& result)
+PublishResult::PublishResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-PublishResult& PublishResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+PublishResult& PublishResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

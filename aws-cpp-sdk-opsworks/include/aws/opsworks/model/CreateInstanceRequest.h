@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline CreateInstanceRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>An array that contains the instance's layer IDs.</p>
@@ -115,6 +117,7 @@ namespace Model
      * <p>An array that contains the instance's layer IDs.</p>
      */
     inline CreateInstanceRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+
 
     /**
      * <p>The instance type, such as <code>t2.micro</code>. For a list of supported
@@ -200,6 +203,7 @@ namespace Model
      */
     inline CreateInstanceRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>For load-based or time-based instances, the type. Windows stacks can use only
      * time-based instances.</p>
@@ -229,6 +233,7 @@ namespace Model
      * time-based instances.</p>
      */
     inline CreateInstanceRequest& WithAutoScalingType(AutoScalingType&& value) { SetAutoScalingType(std::move(value)); return *this;}
+
 
     /**
      * <p>The instance host name.</p>
@@ -264,6 +269,7 @@ namespace Model
      * <p>The instance host name.</p>
      */
     inline CreateInstanceRequest& WithHostname(const char* value) { SetHostname(value); return *this;}
+
 
     /**
      * <p>The instance's operating system, which must be set to one of the
@@ -482,6 +488,7 @@ namespace Model
      */
     inline CreateInstanceRequest& WithOs(const char* value) { SetOs(value); return *this;}
 
+
     /**
      * <p>A custom AMI ID to be used to create the instance. The AMI should be based on
      * one of the supported operating systems. For more information, see <a
@@ -545,6 +552,7 @@ namespace Model
      */
     inline CreateInstanceRequest& WithAmiId(const char* value) { SetAmiId(value); return *this;}
 
+
     /**
      * <p>The instance's Amazon EC2 key-pair name.</p>
      */
@@ -579,6 +587,7 @@ namespace Model
      * <p>The instance's Amazon EC2 key-pair name.</p>
      */
     inline CreateInstanceRequest& WithSshKeyName(const char* value) { SetSshKeyName(value); return *this;}
+
 
     /**
      * <p>The instance Availability Zone. For more information, see <a
@@ -629,6 +638,7 @@ namespace Model
      */
     inline CreateInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The instance's virtualization type, <code>paravirtual</code> or
      * <code>hvm</code>.</p>
@@ -670,6 +680,7 @@ namespace Model
      * <code>hvm</code>.</p>
      */
     inline CreateInstanceRequest& WithVirtualizationType(const char* value) { SetVirtualizationType(value); return *this;}
+
 
     /**
      * <p>The ID of the instance's subnet. If the stack is running in a VPC, you can
@@ -720,6 +731,7 @@ namespace Model
      */
     inline CreateInstanceRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
     /**
      * <p>The instance architecture. The default option is <code>x86_64</code>.
      * Instance types do not necessarily support both architectures. For a list of the
@@ -765,6 +777,7 @@ namespace Model
      */
     inline CreateInstanceRequest& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
 
+
     /**
      * <p>The instance root device type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
@@ -799,6 +812,7 @@ namespace Model
      * for the Root Device</a>.</p>
      */
     inline CreateInstanceRequest& WithRootDeviceType(RootDeviceType&& value) { SetRootDeviceType(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of <code>BlockDeviceMapping</code> objects that specify the
@@ -863,6 +877,7 @@ namespace Model
      */
     inline CreateInstanceRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Whether to install operating system and package updates when the instance
      * boots. The default value is <code>true</code>. To control when updates are
@@ -902,6 +917,7 @@ namespace Model
      */
     inline CreateInstanceRequest& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 
+
     /**
      * <p>Whether to create an Amazon EBS-optimized instance.</p>
      */
@@ -916,6 +932,7 @@ namespace Model
      * <p>Whether to create an Amazon EBS-optimized instance.</p>
      */
     inline CreateInstanceRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
+
 
     /**
      * <p>The default AWS OpsWorks Stacks agent version. You have the following
@@ -1014,6 +1031,7 @@ namespace Model
      * <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
      */
     inline CreateInstanceRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
 
     /**
      * <p>The instance's tenancy option. The default option is no tenancy, or if the
@@ -1135,40 +1153,58 @@ namespace Model
     inline CreateInstanceRequest& WithTenancy(const char* value) { SetTenancy(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_layerIds;
     bool m_layerIdsHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     AutoScalingType m_autoScalingType;
     bool m_autoScalingTypeHasBeenSet;
+
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
     Aws::String m_os;
     bool m_osHasBeenSet;
+
     Aws::String m_amiId;
     bool m_amiIdHasBeenSet;
+
     Aws::String m_sshKeyName;
     bool m_sshKeyNameHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Architecture m_architecture;
     bool m_architectureHasBeenSet;
+
     RootDeviceType m_rootDeviceType;
     bool m_rootDeviceTypeHasBeenSet;
+
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     bool m_installUpdatesOnBoot;
     bool m_installUpdatesOnBootHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet;
+
     Aws::String m_tenancy;
     bool m_tenancyHasBeenSet;
   };

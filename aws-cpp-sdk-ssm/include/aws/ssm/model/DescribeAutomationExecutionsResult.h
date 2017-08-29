@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeAutomationExecutionsResult();
-    DescribeAutomationExecutionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAutomationExecutionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAutomationExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAutomationExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of details about each automation execution which has occurred which
@@ -84,6 +85,7 @@ namespace Model
      * matches the filter specification, if any.</p>
      */
     inline DescribeAutomationExecutionsResult& AddAutomationExecutionMetadataList(AutomationExecutionMetadata&& value) { m_automationExecutionMetadataList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -128,7 +130,9 @@ namespace Model
     inline DescribeAutomationExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<AutomationExecutionMetadata> m_automationExecutionMetadataList;
+
     Aws::String m_nextToken;
   };
 

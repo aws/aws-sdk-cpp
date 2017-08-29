@@ -45,6 +45,7 @@ namespace Model
     MaintenanceWindowStepFunctionsParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The inputs for the STEP_FUNCTION task.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The inputs for the STEP_FUNCTION task.</p>
      */
     inline MaintenanceWindowStepFunctionsParameters& WithInput(const char* value) { SetInput(value); return *this;}
+
 
     /**
      * <p>The name of the STEP_FUNCTION task.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline MaintenanceWindowStepFunctionsParameters& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

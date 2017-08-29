@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeOptionGroupOptionsResult();
-    DescribeOptionGroupOptionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeOptionGroupOptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeOptionGroupOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeOptionGroupOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::Vector<OptionGroupOption>& GetOptionGroupOptions() const{ return m_optionGroupOptions; }
@@ -69,6 +70,7 @@ namespace Model
 
     
     inline DescribeOptionGroupOptionsResult& AddOptionGroupOptions(OptionGroupOption&& value) { m_optionGroupOptions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
@@ -119,6 +121,7 @@ namespace Model
      */
     inline DescribeOptionGroupOptionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -135,8 +138,11 @@ namespace Model
     inline DescribeOptionGroupOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<OptionGroupOption> m_optionGroupOptions;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

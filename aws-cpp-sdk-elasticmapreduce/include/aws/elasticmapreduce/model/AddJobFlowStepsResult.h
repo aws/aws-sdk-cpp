@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     AddJobFlowStepsResult();
-    AddJobFlowStepsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddJobFlowStepsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddJobFlowStepsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddJobFlowStepsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifiers of the list of steps added to the job flow.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline AddJobFlowStepsResult& AddStepIds(const char* value) { m_stepIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_stepIds;
   };
 

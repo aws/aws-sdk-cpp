@@ -45,6 +45,7 @@ namespace Model
     LambdaAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the Lambda function.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline LambdaAction& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
   private:
+
     Aws::String m_functionArn;
     bool m_functionArnHasBeenSet;
   };

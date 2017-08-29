@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>fingerprint</code> - The
      * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeKeyPairsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>One or more key pair names.</p> <p>Default: Describes all your key pairs.</p>
      */
@@ -132,6 +134,7 @@ namespace Model
      */
     inline DescribeKeyPairsRequest& AddKeyNames(const char* value) { m_keyNamesHasBeenSet = true; m_keyNames.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -157,10 +160,13 @@ namespace Model
     inline DescribeKeyPairsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_keyNames;
     bool m_keyNamesHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

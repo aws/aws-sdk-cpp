@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cluster parameter group.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The name of the cluster parameter group.</p>
      */
     inline ClusterParameterGroup& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the cluster parameter group family that this cluster parameter
@@ -127,6 +129,7 @@ namespace Model
      */
     inline ClusterParameterGroup& WithParameterGroupFamily(const char* value) { SetParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>The description of the parameter group.</p>
      */
@@ -161,6 +164,7 @@ namespace Model
      * <p>The description of the parameter group.</p>
      */
     inline ClusterParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The list of tags for the cluster parameter group.</p>
@@ -198,12 +202,16 @@ namespace Model
     inline ClusterParameterGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     Aws::String m_parameterGroupFamily;
     bool m_parameterGroupFamilyHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

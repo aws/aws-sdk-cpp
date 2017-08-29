@@ -63,6 +63,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>Specifies whether you want to require viewers to use signed URLs to access
      * the files specified by <code>PathPattern</code> and
@@ -84,6 +85,7 @@ namespace Model
      */
     inline TrustedSigners& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
     /**
      * <p>The number of trusted signers for this cache behavior.</p>
      */
@@ -98,6 +100,7 @@ namespace Model
      * <p>The number of trusted signers for this cache behavior.</p>
      */
     inline TrustedSigners& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p> <b>Optional</b>: A complex type that contains trusted signers for this cache
@@ -156,10 +159,13 @@ namespace Model
     inline TrustedSigners& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<Aws::String> m_items;
     bool m_itemsHasBeenSet;
   };

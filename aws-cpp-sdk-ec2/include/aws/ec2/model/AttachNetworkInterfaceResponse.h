@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     AttachNetworkInterfaceResponse();
-    AttachNetworkInterfaceResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AttachNetworkInterfaceResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AttachNetworkInterfaceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AttachNetworkInterfaceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the network interface attachment.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline AttachNetworkInterfaceResponse& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline AttachNetworkInterfaceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_attachmentId;
+
     ResponseMetadata m_responseMetadata;
   };
 

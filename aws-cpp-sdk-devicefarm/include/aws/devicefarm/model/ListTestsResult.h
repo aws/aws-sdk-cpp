@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListTestsResult();
-    ListTestsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTestsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTestsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTestsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the tests.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>Information about the tests.</p>
      */
     inline ListTestsResult& AddTests(Test&& value) { m_tests.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -133,7 +135,9 @@ namespace Model
     inline ListTestsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Test> m_tests;
+
     Aws::String m_nextToken;
   };
 

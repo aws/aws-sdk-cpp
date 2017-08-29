@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CopyObjectResult();
-    CopyObjectResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CopyObjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CopyObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CopyObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::String& GetETag() const{ return m_eTag; }
@@ -63,6 +64,7 @@ namespace Model
     
     inline CopyObjectResult& WithETag(const char* value) { SetETag(value); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
@@ -79,7 +81,9 @@ namespace Model
     inline CopyObjectResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_eTag;
+
     Aws::Utils::DateTime m_lastModified;
   };
 

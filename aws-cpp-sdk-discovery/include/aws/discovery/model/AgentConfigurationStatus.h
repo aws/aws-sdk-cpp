@@ -48,6 +48,7 @@ namespace Model
     AgentConfigurationStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The agent/connector ID.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline AgentConfigurationStatus& WithAgentId(const char* value) { SetAgentId(value); return *this;}
 
+
     /**
      * <p>Information about the status of the <code>StartDataCollection</code> and
      * <code>StopDataCollection</code> operations. The system has recorded the data
@@ -106,6 +108,7 @@ namespace Model
      * polls for a new command. </p>
      */
     inline AgentConfigurationStatus& WithOperationSucceeded(bool value) { SetOperationSucceeded(value); return *this;}
+
 
     /**
      * <p>A description of the operation performed.</p>
@@ -143,10 +146,13 @@ namespace Model
     inline AgentConfigurationStatus& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet;
+
     bool m_operationSucceeded;
     bool m_operationSucceededHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

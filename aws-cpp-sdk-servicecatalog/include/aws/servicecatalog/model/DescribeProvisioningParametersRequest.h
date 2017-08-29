@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeProvisioningParametersRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The product identifier.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The product identifier.</p>
      */
     inline DescribeProvisioningParametersRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
+
 
     /**
      * <p>The provisioning artifact identifier for this product. This is sometimes
@@ -161,6 +164,7 @@ namespace Model
      * referred to as the product version.</p>
      */
     inline DescribeProvisioningParametersRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
+
 
     /**
      * <p>The identifier of the path for this product's provisioning. This value is
@@ -212,12 +216,16 @@ namespace Model
     inline DescribeProvisioningParametersRequest& WithPathId(const char* value) { SetPathId(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
     Aws::String m_provisioningArtifactId;
     bool m_provisioningArtifactIdHasBeenSet;
+
     Aws::String m_pathId;
     bool m_pathIdHasBeenSet;
   };

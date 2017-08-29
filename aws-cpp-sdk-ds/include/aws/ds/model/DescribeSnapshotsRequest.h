@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the directory for which to retrieve snapshot
      * information.</p>
@@ -82,6 +83,7 @@ namespace Model
      * information.</p>
      */
     inline DescribeSnapshotsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>A list of identifiers of the snapshots to obtain the information for. If this
@@ -139,6 +141,7 @@ namespace Model
      */
     inline DescribeSnapshotsRequest& AddSnapshotIds(const char* value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
 
+
     /**
      * <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to
      * <a>DescribeSnapshots</a>. Pass null if this is the first call.</p>
@@ -181,6 +184,7 @@ namespace Model
      */
     inline DescribeSnapshotsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of objects to return.</p>
      */
@@ -197,12 +201,16 @@ namespace Model
     inline DescribeSnapshotsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_snapshotIds;
     bool m_snapshotIdsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

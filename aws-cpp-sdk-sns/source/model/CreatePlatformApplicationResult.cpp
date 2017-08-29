@@ -31,12 +31,12 @@ CreatePlatformApplicationResult::CreatePlatformApplicationResult()
 {
 }
 
-CreatePlatformApplicationResult::CreatePlatformApplicationResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreatePlatformApplicationResult::CreatePlatformApplicationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreatePlatformApplicationResult& CreatePlatformApplicationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreatePlatformApplicationResult& CreatePlatformApplicationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

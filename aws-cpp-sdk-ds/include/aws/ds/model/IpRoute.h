@@ -46,6 +46,7 @@ namespace Model
     IpRoute& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>IP address block using CIDR format, for example 10.0.0.0/24. This is often
      * the address block of the DNS server used for your on-premises domain. For a
@@ -102,6 +103,7 @@ namespace Model
      */
     inline IpRoute& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
 
+
     /**
      * <p>Description of the address block.</p>
      */
@@ -138,8 +140,10 @@ namespace Model
     inline IpRoute& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_cidrIp;
     bool m_cidrIpHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

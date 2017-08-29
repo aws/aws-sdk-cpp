@@ -37,6 +37,7 @@ namespace Model
     DeleteDatasetRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DeleteDatasetRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
@@ -120,6 +122,7 @@ namespace Model
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
     inline DeleteDatasetRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_'
@@ -164,10 +167,13 @@ namespace Model
     inline DeleteDatasetRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::String m_datasetName;
     bool m_datasetNameHasBeenSet;
   };

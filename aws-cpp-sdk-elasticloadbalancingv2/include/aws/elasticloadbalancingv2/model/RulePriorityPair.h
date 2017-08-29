@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline RulePriorityPair& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
 
+
     /**
      * <p>The rule priority.</p>
      */
@@ -100,8 +102,10 @@ namespace Model
     inline RulePriorityPair& WithPriority(int value) { SetPriority(value); return *this;}
 
   private:
+
     Aws::String m_ruleArn;
     bool m_ruleArnHasBeenSet;
+
     int m_priority;
     bool m_priorityHasBeenSet;
   };

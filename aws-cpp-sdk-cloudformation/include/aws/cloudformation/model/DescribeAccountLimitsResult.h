@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeAccountLimitsResult();
-    DescribeAccountLimitsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAccountLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAccountLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAccountLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>An account limit structure that contain a list of AWS CloudFormation account
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeAccountLimitsResult& AddAccountLimits(AccountLimit&& value) { m_accountLimits.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
      * limits. If no additional page exists, this value is null.</p>
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeAccountLimitsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline DescribeAccountLimitsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<AccountLimit> m_accountLimits;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

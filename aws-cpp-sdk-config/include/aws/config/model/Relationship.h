@@ -47,6 +47,7 @@ namespace Model
     Relationship& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The resource type of the related resource.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The resource type of the related resource.</p>
      */
     inline Relationship& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the related resource (for example, <code>sg-xxxxxx</code>).</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline Relationship& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The custom name of the related resource, if available.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      * <p>The custom name of the related resource, if available.</p>
      */
     inline Relationship& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
 
     /**
      * <p>The type of relationship with the related resource.</p>
@@ -178,12 +182,16 @@ namespace Model
     inline Relationship& WithRelationshipName(const char* value) { SetRelationshipName(value); return *this;}
 
   private:
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::String m_relationshipName;
     bool m_relationshipNameHasBeenSet;
   };

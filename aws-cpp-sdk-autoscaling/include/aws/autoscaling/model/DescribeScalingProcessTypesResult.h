@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeScalingProcessTypesResult();
-    DescribeScalingProcessTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeScalingProcessTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeScalingProcessTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeScalingProcessTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The names of the process types.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeScalingProcessTypesResult& AddProcesses(ProcessType&& value) { m_processes.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeScalingProcessTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ProcessType> m_processes;
+
     ResponseMetadata m_responseMetadata;
   };
 

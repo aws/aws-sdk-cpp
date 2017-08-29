@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateTableResult();
-    UpdateTableResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTableResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Represents the properties of the table.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline UpdateTableResult& WithTableDescription(TableDescription&& value) { SetTableDescription(std::move(value)); return *this;}
 
   private:
+
     TableDescription m_tableDescription;
   };
 

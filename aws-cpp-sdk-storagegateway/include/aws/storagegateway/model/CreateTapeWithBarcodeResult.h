@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateTapeWithBarcodeResult();
-    CreateTapeWithBarcodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTapeWithBarcodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTapeWithBarcodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTapeWithBarcodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was
@@ -89,6 +90,7 @@ namespace Model
     inline CreateTapeWithBarcodeResult& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
   };
 

@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>If you specify this parameter, only the dashboards with names starting with
      * the specified string are listed. The maximum length is 255, and valid characters
@@ -87,6 +88,7 @@ namespace Model
      */
     inline ListDashboardsRequest& WithDashboardNamePrefix(const char* value) { SetDashboardNamePrefix(value); return *this;}
 
+
     /**
      * <p>The token returned by a previous call to indicate that there is more data
      * available.</p>
@@ -130,8 +132,10 @@ namespace Model
     inline ListDashboardsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_dashboardNamePrefix;
     bool m_dashboardNamePrefixHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

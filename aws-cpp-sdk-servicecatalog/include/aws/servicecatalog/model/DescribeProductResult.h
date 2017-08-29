@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeProductResult();
-    DescribeProductResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeProductResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The summary metadata about the specified product.</p>
@@ -67,6 +68,7 @@ namespace Model
      * <p>The summary metadata about the specified product.</p>
      */
     inline DescribeProductResult& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of provisioning artifact objects for the specified product. The
@@ -118,7 +120,9 @@ namespace Model
     inline DescribeProductResult& AddProvisioningArtifacts(ProvisioningArtifact&& value) { m_provisioningArtifacts.push_back(std::move(value)); return *this; }
 
   private:
+
     ProductViewSummary m_productViewSummary;
+
     Aws::Vector<ProvisioningArtifact> m_provisioningArtifacts;
   };
 

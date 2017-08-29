@@ -30,12 +30,12 @@ DeleteRepositoryResult::DeleteRepositoryResult()
 {
 }
 
-DeleteRepositoryResult::DeleteRepositoryResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRepositoryResult::DeleteRepositoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteRepositoryResult& DeleteRepositoryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRepositoryResult& DeleteRepositoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("repositoryId"))

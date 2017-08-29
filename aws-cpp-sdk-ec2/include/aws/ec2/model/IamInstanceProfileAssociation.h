@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the association.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The ID of the association.</p>
      */
     inline IamInstanceProfileAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline IamInstanceProfileAssociation& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The IAM instance profile.</p>
      */
@@ -147,6 +150,7 @@ namespace Model
      */
     inline IamInstanceProfileAssociation& WithIamInstanceProfile(IamInstanceProfile&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
+
     /**
      * <p>The state of the association.</p>
      */
@@ -171,6 +175,7 @@ namespace Model
      * <p>The state of the association.</p>
      */
     inline IamInstanceProfileAssociation& WithState(IamInstanceProfileAssociationState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The time the IAM instance profile was associated with the instance.</p>
@@ -198,14 +203,19 @@ namespace Model
     inline IamInstanceProfileAssociation& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     IamInstanceProfile m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
+
     IamInstanceProfileAssociationState m_state;
     bool m_stateHasBeenSet;
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
   };

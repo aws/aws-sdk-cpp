@@ -48,6 +48,7 @@ namespace Model
     LoadBalancerInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An array containing information about the load balancer to use for load
      * balancing in a deployment. In Elastic Load Balancing, load balancers are used
@@ -96,6 +97,7 @@ namespace Model
      * with Classic Load Balancers.</p>
      */
     inline LoadBalancerInfo& AddElbInfoList(ELBInfo&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An array containing information about the target group to use for load
@@ -147,8 +149,10 @@ namespace Model
     inline LoadBalancerInfo& AddTargetGroupInfoList(TargetGroupInfo&& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ELBInfo> m_elbInfoList;
     bool m_elbInfoListHasBeenSet;
+
     Aws::Vector<TargetGroupInfo> m_targetGroupInfoList;
     bool m_targetGroupInfoListHasBeenSet;
   };

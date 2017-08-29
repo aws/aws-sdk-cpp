@@ -51,6 +51,7 @@ namespace Model
     IntegrationResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the status code that is used to map the integration response to an
      * existing <a>MethodResponse</a>.</p>
@@ -92,6 +93,7 @@ namespace Model
      * existing <a>MethodResponse</a>.</p>
      */
     inline IntegrationResponse& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p>Specifies the regular expression (regex) pattern used to choose an
@@ -176,6 +178,7 @@ namespace Model
      * the HTTP status code is matched.</p>
      */
     inline IntegrationResponse& WithSelectionPattern(const char* value) { SetSelectionPattern(value); return *this;}
+
 
     /**
      * <p>A key-value map specifying response parameters that are passed to the method
@@ -369,6 +372,7 @@ namespace Model
      */
     inline IntegrationResponse& AddResponseParameters(const char* key, const char* value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Specifies the templates used to transform the integration response body.
      * Response templates are represented as a key/value map, with a content-type as
@@ -453,6 +457,7 @@ namespace Model
      */
     inline IntegrationResponse& AddResponseTemplates(const char* key, const char* value) { m_responseTemplatesHasBeenSet = true; m_responseTemplates.emplace(key, value); return *this; }
 
+
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
      * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
@@ -514,14 +519,19 @@ namespace Model
     inline IntegrationResponse& WithContentHandling(ContentHandlingStrategy&& value) { SetContentHandling(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::String m_selectionPattern;
     bool m_selectionPatternHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
     bool m_responseParametersHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
     bool m_responseTemplatesHasBeenSet;
+
     ContentHandlingStrategy m_contentHandling;
     bool m_contentHandlingHasBeenSet;
   };

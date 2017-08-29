@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cache parameter group to reset.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline ResetCacheParameterGroupRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, all parameters in the cache parameter group are reset
      * to their default values. If <code>false</code>, only the parameters listed by
@@ -102,6 +104,7 @@ namespace Model
      * values: <code>true</code> | <code>false</code> </p>
      */
     inline ResetCacheParameterGroupRequest& WithResetAllParameters(bool value) { SetResetAllParameters(value); return *this;}
+
 
     /**
      * <p>An array of parameter names to reset to their default values. If
@@ -167,10 +170,13 @@ namespace Model
     inline ResetCacheParameterGroupRequest& AddParameterNameValues(ParameterNameValue&& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_cacheParameterGroupName;
     bool m_cacheParameterGroupNameHasBeenSet;
+
     bool m_resetAllParameters;
     bool m_resetAllParametersHasBeenSet;
+
     Aws::Vector<ParameterNameValue> m_parameterNameValues;
     bool m_parameterNameValuesHasBeenSet;
   };

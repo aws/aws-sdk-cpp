@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The position in the shard from which you want to start sequentially reading
      * data records. A shard iterator specifies this position using the sequence number
@@ -88,6 +89,7 @@ namespace Model
      */
     inline GetRecordsRequest& WithShardIterator(const char* value) { SetShardIterator(value); return *this;}
 
+
     /**
      * <p>The maximum number of records to return. Specify a value of up to 10,000. If
      * you specify a value that is greater than 10,000, <a>GetRecords</a> throws
@@ -110,8 +112,10 @@ namespace Model
     inline GetRecordsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_shardIterator;
     bool m_shardIteratorHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

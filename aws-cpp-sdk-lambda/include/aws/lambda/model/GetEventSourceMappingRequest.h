@@ -37,6 +37,7 @@ namespace Model
     GetEventSourceMappingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The AWS Lambda assigned ID of the event source mapping.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline GetEventSourceMappingRequest& WithUUID(const char* value) { SetUUID(value); return *this;}
 
   private:
+
     Aws::String m_uUID;
     bool m_uUIDHasBeenSet;
   };

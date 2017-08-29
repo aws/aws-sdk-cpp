@@ -30,12 +30,12 @@ ListPrincipalsForPortfolioResult::ListPrincipalsForPortfolioResult()
 {
 }
 
-ListPrincipalsForPortfolioResult::ListPrincipalsForPortfolioResult(const AmazonWebServiceResult<JsonValue>& result)
+ListPrincipalsForPortfolioResult::ListPrincipalsForPortfolioResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListPrincipalsForPortfolioResult& ListPrincipalsForPortfolioResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListPrincipalsForPortfolioResult& ListPrincipalsForPortfolioResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Principals"))

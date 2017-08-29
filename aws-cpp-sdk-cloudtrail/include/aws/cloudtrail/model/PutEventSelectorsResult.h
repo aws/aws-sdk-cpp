@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     PutEventSelectorsResult();
-    PutEventSelectorsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutEventSelectorsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutEventSelectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutEventSelectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Specifies the ARN of the trail that was updated with event selectors. The
@@ -92,6 +93,7 @@ namespace Model
      */
     inline PutEventSelectorsResult& WithTrailARN(const char* value) { SetTrailARN(value); return *this;}
 
+
     /**
      * <p>Specifies the event selectors configured for your trail.</p>
      */
@@ -128,7 +130,9 @@ namespace Model
     inline PutEventSelectorsResult& AddEventSelectors(EventSelector&& value) { m_eventSelectors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_trailARN;
+
     Aws::Vector<EventSelector> m_eventSelectors;
   };
 

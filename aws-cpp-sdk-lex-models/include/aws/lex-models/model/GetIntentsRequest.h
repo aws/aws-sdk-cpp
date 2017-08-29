@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>A pagination token that fetches the next page of intents. If the response to
      * this API call is truncated, Amazon Lex returns a pagination token in the
@@ -96,6 +97,7 @@ namespace Model
      */
     inline GetIntentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of intents to return in the response. The default is
      * 10.</p>
@@ -113,6 +115,7 @@ namespace Model
      * 10.</p>
      */
     inline GetIntentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Substring to match in intent names. An intent will be returned if any part of
@@ -164,10 +167,13 @@ namespace Model
     inline GetIntentsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet;
   };

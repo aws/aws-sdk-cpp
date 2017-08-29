@@ -30,12 +30,12 @@ DescribeDomainResult::DescribeDomainResult()
 {
 }
 
-DescribeDomainResult::DescribeDomainResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDomainResult::DescribeDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeDomainResult& DescribeDomainResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("domainInfo"))

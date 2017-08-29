@@ -30,12 +30,12 @@ DisablePolicyTypeResult::DisablePolicyTypeResult()
 {
 }
 
-DisablePolicyTypeResult::DisablePolicyTypeResult(const AmazonWebServiceResult<JsonValue>& result)
+DisablePolicyTypeResult::DisablePolicyTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisablePolicyTypeResult& DisablePolicyTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisablePolicyTypeResult& DisablePolicyTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Root"))

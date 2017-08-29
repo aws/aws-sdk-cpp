@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     RegisterVolumeResult();
-    RegisterVolumeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterVolumeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The volume ID.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline RegisterVolumeResult& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
   private:
+
     Aws::String m_volumeId;
   };
 

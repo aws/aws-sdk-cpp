@@ -30,12 +30,12 @@ CreateCustomActionTypeResult::CreateCustomActionTypeResult()
 {
 }
 
-CreateCustomActionTypeResult::CreateCustomActionTypeResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateCustomActionTypeResult::CreateCustomActionTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateCustomActionTypeResult& CreateCustomActionTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateCustomActionTypeResult& CreateCustomActionTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("actionType"))

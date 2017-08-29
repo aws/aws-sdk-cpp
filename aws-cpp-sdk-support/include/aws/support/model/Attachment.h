@@ -47,6 +47,7 @@ namespace Model
     Attachment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the attachment file.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline Attachment& WithFileName(const char* value) { SetFileName(value); return *this;}
 
+
     /**
      * <p>The content of the attachment file.</p>
      */
@@ -108,8 +110,10 @@ namespace Model
     inline Attachment& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet;
+
     Aws::Utils::ByteBuffer m_data;
     bool m_dataHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A string that you provide.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CreateIdentityPoolRequest& WithIdentityPoolName(const char* value) { SetIdentityPoolName(value); return *this;}
 
+
     /**
      * <p>TRUE if the identity pool supports unauthenticated logins.</p>
      */
@@ -91,6 +93,7 @@ namespace Model
      * <p>TRUE if the identity pool supports unauthenticated logins.</p>
      */
     inline CreateIdentityPoolRequest& WithAllowUnauthenticatedIdentities(bool value) { SetAllowUnauthenticatedIdentities(value); return *this;}
+
 
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -151,6 +154,7 @@ namespace Model
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
     inline CreateIdentityPoolRequest& AddSupportedLoginProviders(const char* key, const char* value) { m_supportedLoginProvidersHasBeenSet = true; m_supportedLoginProviders.emplace(key, value); return *this; }
+
 
     /**
      * <p>The "domain" by which Cognito will refer to your users. This name acts as a
@@ -222,6 +226,7 @@ namespace Model
      */
     inline CreateIdentityPoolRequest& WithDeveloperProviderName(const char* value) { SetDeveloperProviderName(value); return *this;}
 
+
     /**
      * <p>A list of OpendID Connect provider ARNs.</p>
      */
@@ -262,6 +267,7 @@ namespace Model
      */
     inline CreateIdentityPoolRequest& AddOpenIdConnectProviderARNs(const char* value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs.push_back(value); return *this; }
 
+
     /**
      * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
      */
@@ -296,6 +302,7 @@ namespace Model
      * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
      */
     inline CreateIdentityPoolRequest& AddCognitoIdentityProviders(CognitoIdentityProvider&& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
@@ -346,18 +353,25 @@ namespace Model
     inline CreateIdentityPoolRequest& AddSamlProviderARNs(const char* value) { m_samlProviderARNsHasBeenSet = true; m_samlProviderARNs.push_back(value); return *this; }
 
   private:
+
     Aws::String m_identityPoolName;
     bool m_identityPoolNameHasBeenSet;
+
     bool m_allowUnauthenticatedIdentities;
     bool m_allowUnauthenticatedIdentitiesHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_supportedLoginProviders;
     bool m_supportedLoginProvidersHasBeenSet;
+
     Aws::String m_developerProviderName;
     bool m_developerProviderNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_openIdConnectProviderARNs;
     bool m_openIdConnectProviderARNsHasBeenSet;
+
     Aws::Vector<CognitoIdentityProvider> m_cognitoIdentityProviders;
     bool m_cognitoIdentityProvidersHasBeenSet;
+
     Aws::Vector<Aws::String> m_samlProviderARNs;
     bool m_samlProviderARNsHasBeenSet;
   };

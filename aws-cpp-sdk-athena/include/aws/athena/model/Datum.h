@@ -45,6 +45,7 @@ namespace Model
     Datum& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The value of the datum.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline Datum& WithVarCharValue(const char* value) { SetVarCharValue(value); return *this;}
 
   private:
+
     Aws::String m_varCharValue;
     bool m_varCharValueHasBeenSet;
   };

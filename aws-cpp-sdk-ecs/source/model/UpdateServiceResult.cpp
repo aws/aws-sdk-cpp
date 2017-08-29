@@ -30,12 +30,12 @@ UpdateServiceResult::UpdateServiceResult()
 {
 }
 
-UpdateServiceResult::UpdateServiceResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateServiceResult::UpdateServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateServiceResult& UpdateServiceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateServiceResult& UpdateServiceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("service"))

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
      * platform, or restored to the EC2-Classic platform.</p>
@@ -79,6 +80,7 @@ namespace Model
      * platform, or restored to the EC2-Classic platform.</p>
      */
     inline MovingAddressStatus& WithMoveStatus(MoveStatus&& value) { SetMoveStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The Elastic IP address.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline MovingAddressStatus& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
   private:
+
     MoveStatus m_moveStatus;
     bool m_moveStatusHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
   };

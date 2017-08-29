@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>String that contains the ARN of the ACM Certificate to which the tag is to be
      * applied. This must be of the form:</p> <p>
@@ -108,6 +109,7 @@ namespace Model
      */
     inline AddTagsToCertificateRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
     /**
      * <p>The key-value pair that defines the tag. The tag value is optional.</p>
      */
@@ -144,8 +146,10 @@ namespace Model
     inline AddTagsToCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

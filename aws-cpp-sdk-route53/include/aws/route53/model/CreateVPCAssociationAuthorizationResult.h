@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     CreateVPCAssociationAuthorizationResult();
-    CreateVPCAssociationAuthorizationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateVPCAssociationAuthorizationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateVPCAssociationAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateVPCAssociationAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline CreateVPCAssociationAuthorizationResult& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
+
     /**
      * <p>The VPC that you authorized associating with a hosted zone.</p>
      */
@@ -110,7 +112,9 @@ namespace Model
     inline CreateVPCAssociationAuthorizationResult& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_hostedZoneId;
+
     VPC m_vPC;
   };
 

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeStacksResult();
-    DescribeStacksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStacksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>Stack</code> objects that describe the stacks.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeStacksResult& AddStacks(Stack&& value) { m_stacks.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Stack> m_stacks;
   };
 

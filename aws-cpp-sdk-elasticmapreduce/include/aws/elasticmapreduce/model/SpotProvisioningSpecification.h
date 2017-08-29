@@ -48,6 +48,7 @@ namespace Model
     SpotProvisioningSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The spot provisioning timeout period in minutes. If Spot instances are not
      * provisioned within this time period, the <code>TimeOutAction</code> is taken.
@@ -71,6 +72,7 @@ namespace Model
      * initial provisioning, when the cluster is first created.</p>
      */
     inline SpotProvisioningSpecification& WithTimeoutDurationMinutes(int value) { SetTimeoutDurationMinutes(value); return *this;}
+
 
     /**
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
@@ -122,6 +124,7 @@ namespace Model
      */
     inline SpotProvisioningSpecification& WithTimeoutAction(SpotProvisioningTimeoutAction&& value) { SetTimeoutAction(std::move(value)); return *this;}
 
+
     /**
      * <p>The defined duration for Spot instances (also known as Spot blocks) in
      * minutes. When specified, the Spot instance does not terminate before the defined
@@ -156,10 +159,13 @@ namespace Model
     inline SpotProvisioningSpecification& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
 
   private:
+
     int m_timeoutDurationMinutes;
     bool m_timeoutDurationMinutesHasBeenSet;
+
     SpotProvisioningTimeoutAction m_timeoutAction;
     bool m_timeoutActionHasBeenSet;
+
     int m_blockDurationMinutes;
     bool m_blockDurationMinutesHasBeenSet;
   };

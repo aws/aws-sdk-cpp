@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     AssumeRoleResult();
-    AssumeRoleResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssumeRoleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssumeRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssumeRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
@@ -100,6 +101,7 @@ namespace Model
      */
     inline AssumeRoleResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers
      * that you can use to refer to the resulting temporary security credentials. For
@@ -150,6 +152,7 @@ namespace Model
      */
     inline AssumeRoleResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(std::move(value)); return *this;}
 
+
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
@@ -171,6 +174,7 @@ namespace Model
      */
     inline AssumeRoleResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -187,9 +191,13 @@ namespace Model
     inline AssumeRoleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Credentials m_credentials;
+
     AssumedRoleUser m_assumedRoleUser;
+
     int m_packedPolicySize;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -32,14 +32,14 @@ DescribeSnapshotScheduleResult::DescribeSnapshotScheduleResult() :
 {
 }
 
-DescribeSnapshotScheduleResult::DescribeSnapshotScheduleResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeSnapshotScheduleResult::DescribeSnapshotScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_startAt(0),
     m_recurrenceInHours(0)
 {
   *this = result;
 }
 
-DescribeSnapshotScheduleResult& DescribeSnapshotScheduleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeSnapshotScheduleResult& DescribeSnapshotScheduleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("VolumeARN"))

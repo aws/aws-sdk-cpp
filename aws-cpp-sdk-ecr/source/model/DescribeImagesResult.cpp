@@ -30,12 +30,12 @@ DescribeImagesResult::DescribeImagesResult()
 {
 }
 
-DescribeImagesResult::DescribeImagesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeImagesResult::DescribeImagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeImagesResult& DescribeImagesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeImagesResult& DescribeImagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("imageDetails"))

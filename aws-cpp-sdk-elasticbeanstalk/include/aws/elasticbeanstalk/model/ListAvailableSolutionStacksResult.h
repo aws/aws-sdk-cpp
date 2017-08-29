@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     ListAvailableSolutionStacksResult();
-    ListAvailableSolutionStacksResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListAvailableSolutionStacksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListAvailableSolutionStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListAvailableSolutionStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of available solution stacks.</p>
@@ -89,6 +90,7 @@ namespace Model
      * <p>A list of available solution stacks.</p>
      */
     inline ListAvailableSolutionStacksResult& AddSolutionStacks(const char* value) { m_solutionStacks.push_back(value); return *this; }
+
 
     /**
      * <p> A list of available solution stacks and their
@@ -132,6 +134,7 @@ namespace Model
      */
     inline ListAvailableSolutionStacksResult& AddSolutionStackDetails(SolutionStackDescription&& value) { m_solutionStackDetails.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -148,8 +151,11 @@ namespace Model
     inline ListAvailableSolutionStacksResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_solutionStacks;
+
     Aws::Vector<SolutionStackDescription> m_solutionStackDetails;
+
     ResponseMetadata m_responseMetadata;
   };
 

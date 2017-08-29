@@ -30,12 +30,12 @@ DisableRadiusResult::DisableRadiusResult()
 {
 }
 
-DisableRadiusResult::DisableRadiusResult(const AmazonWebServiceResult<JsonValue>& result)
+DisableRadiusResult::DisableRadiusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisableRadiusResult& DisableRadiusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisableRadiusResult& DisableRadiusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetImportJobResult();
-    GetImportJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetImportJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const ImportJobResponse& GetImportJobResponse() const{ return m_importJobResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline GetImportJobResult& WithImportJobResponse(ImportJobResponse&& value) { SetImportJobResponse(std::move(value)); return *this;}
 
   private:
+
     ImportJobResponse m_importJobResponse;
   };
 

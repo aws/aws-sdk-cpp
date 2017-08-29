@@ -51,6 +51,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Specifies the number of days an object is noncurrent before Amazon S3 can
      * perform the associated action. For information about the noncurrent days
@@ -81,6 +82,7 @@ namespace Model
      */
     inline NoncurrentVersionTransition& WithNoncurrentDays(int value) { SetNoncurrentDays(value); return *this;}
 
+
     /**
      * The class of storage used to store the object.
      */
@@ -107,8 +109,10 @@ namespace Model
     inline NoncurrentVersionTransition& WithStorageClass(TransitionStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
   private:
+
     int m_noncurrentDays;
     bool m_noncurrentDaysHasBeenSet;
+
     TransitionStorageClass m_storageClass;
     bool m_storageClassHasBeenSet;
   };

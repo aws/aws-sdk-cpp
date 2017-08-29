@@ -30,12 +30,12 @@ UpdateRestApiResult::UpdateRestApiResult()
 {
 }
 
-UpdateRestApiResult::UpdateRestApiResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateRestApiResult::UpdateRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateRestApiResult& UpdateRestApiResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateRestApiResult& UpdateRestApiResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("id"))

@@ -30,12 +30,12 @@ DisableDomainAutoRenewResult::DisableDomainAutoRenewResult()
 {
 }
 
-DisableDomainAutoRenewResult::DisableDomainAutoRenewResult(const AmazonWebServiceResult<JsonValue>& result)
+DisableDomainAutoRenewResult::DisableDomainAutoRenewResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisableDomainAutoRenewResult& DisableDomainAutoRenewResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisableDomainAutoRenewResult& DisableDomainAutoRenewResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

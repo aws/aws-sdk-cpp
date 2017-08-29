@@ -30,12 +30,12 @@ BatchDeleteConnectionResult::BatchDeleteConnectionResult()
 {
 }
 
-BatchDeleteConnectionResult::BatchDeleteConnectionResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchDeleteConnectionResult::BatchDeleteConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchDeleteConnectionResult& BatchDeleteConnectionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchDeleteConnectionResult& BatchDeleteConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Succeeded"))

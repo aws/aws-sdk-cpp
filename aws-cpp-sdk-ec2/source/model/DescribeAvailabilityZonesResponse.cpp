@@ -31,12 +31,12 @@ DescribeAvailabilityZonesResponse::DescribeAvailabilityZonesResponse()
 {
 }
 
-DescribeAvailabilityZonesResponse::DescribeAvailabilityZonesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAvailabilityZonesResponse::DescribeAvailabilityZonesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeAvailabilityZonesResponse& DescribeAvailabilityZonesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAvailabilityZonesResponse& DescribeAvailabilityZonesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

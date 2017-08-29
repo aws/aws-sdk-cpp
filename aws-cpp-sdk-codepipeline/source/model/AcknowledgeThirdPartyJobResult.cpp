@@ -31,13 +31,13 @@ AcknowledgeThirdPartyJobResult::AcknowledgeThirdPartyJobResult() :
 {
 }
 
-AcknowledgeThirdPartyJobResult::AcknowledgeThirdPartyJobResult(const AmazonWebServiceResult<JsonValue>& result) : 
+AcknowledgeThirdPartyJobResult::AcknowledgeThirdPartyJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(JobStatus::NOT_SET)
 {
   *this = result;
 }
 
-AcknowledgeThirdPartyJobResult& AcknowledgeThirdPartyJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AcknowledgeThirdPartyJobResult& AcknowledgeThirdPartyJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("status"))

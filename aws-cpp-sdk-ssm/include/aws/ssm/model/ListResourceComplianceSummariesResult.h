@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListResourceComplianceSummariesResult();
-    ListResourceComplianceSummariesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourceComplianceSummariesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourceComplianceSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourceComplianceSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A summary count for specified or targeted managed instances. Summary count
@@ -99,6 +100,7 @@ namespace Model
      */
     inline ListResourceComplianceSummariesResult& AddResourceComplianceSummaryItems(ResourceComplianceSummaryItem&& value) { m_resourceComplianceSummaryItems.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token for the next set of items to return. Use this token to get the next
      * set of results.</p>
@@ -142,7 +144,9 @@ namespace Model
     inline ListResourceComplianceSummariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ResourceComplianceSummaryItem> m_resourceComplianceSummaryItems;
+
     Aws::String m_nextToken;
   };
 

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ShutdownGatewayResult();
-    ShutdownGatewayResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ShutdownGatewayResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ShutdownGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ShutdownGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -69,6 +70,7 @@ namespace Model
     inline ShutdownGatewayResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
   };
 

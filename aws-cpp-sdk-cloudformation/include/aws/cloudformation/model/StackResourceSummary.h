@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The logical name of the resource specified in the template.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The logical name of the resource specified in the template.</p>
      */
     inline StackResourceSummary& WithLogicalResourceId(const char* value) { SetLogicalResourceId(value); return *this;}
+
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of
@@ -127,6 +129,7 @@ namespace Model
      * the resource.</p>
      */
     inline StackResourceSummary& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
+
 
     /**
      * <p>Type of resource. (For more information, go to <a
@@ -177,6 +180,7 @@ namespace Model
      */
     inline StackResourceSummary& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>Time the status was updated.</p>
      */
@@ -202,6 +206,7 @@ namespace Model
      */
     inline StackResourceSummary& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>Current status of the resource.</p>
      */
@@ -226,6 +231,7 @@ namespace Model
      * <p>Current status of the resource.</p>
      */
     inline StackResourceSummary& WithResourceStatus(ResourceStatus&& value) { SetResourceStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Success/failure message associated with the resource.</p>
@@ -263,16 +269,22 @@ namespace Model
     inline StackResourceSummary& WithResourceStatusReason(const char* value) { SetResourceStatusReason(value); return *this;}
 
   private:
+
     Aws::String m_logicalResourceId;
     bool m_logicalResourceIdHasBeenSet;
+
     Aws::String m_physicalResourceId;
     bool m_physicalResourceIdHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
     bool m_lastUpdatedTimestampHasBeenSet;
+
     ResourceStatus m_resourceStatus;
     bool m_resourceStatusHasBeenSet;
+
     Aws::String m_resourceStatusReason;
     bool m_resourceStatusReasonHasBeenSet;
   };

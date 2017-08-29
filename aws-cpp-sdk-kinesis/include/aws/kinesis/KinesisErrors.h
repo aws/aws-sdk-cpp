@@ -55,7 +55,7 @@ enum class KinesisErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  EXPIRED_ITERATOR= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXPIRED_ITERATOR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_ARGUMENT,
   K_M_S_ACCESS_DENIED,
   K_M_S_DISABLED,
@@ -69,7 +69,7 @@ enum class KinesisErrors
 };
 namespace KinesisErrorMapper
 {
-  AWS_KINESIS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_KINESIS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Kinesis

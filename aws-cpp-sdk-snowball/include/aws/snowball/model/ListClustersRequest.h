@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The number of <code>ClusterListEntry</code> objects to return.</p>
      */
@@ -50,6 +51,7 @@ namespace Model
      * <p>The number of <code>ClusterListEntry</code> objects to return.</p>
      */
     inline ListClustersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>HTTP requests are stateless. To identify what object comes "next" in the list
@@ -101,8 +103,10 @@ namespace Model
     inline ListClustersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

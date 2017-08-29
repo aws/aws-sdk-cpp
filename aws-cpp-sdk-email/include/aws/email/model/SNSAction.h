@@ -65,6 +65,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example
      * of an Amazon SNS topic ARN is
@@ -135,6 +136,7 @@ namespace Model
      */
     inline SNSAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
+
     /**
      * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
      * is easier to use, but may not preserve all special characters when a message was
@@ -176,8 +178,10 @@ namespace Model
     inline SNSAction& WithEncoding(SNSActionEncoding&& value) { SetEncoding(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     SNSActionEncoding m_encoding;
     bool m_encodingHasBeenSet;
   };

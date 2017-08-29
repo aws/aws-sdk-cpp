@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateFolderResult();
-    CreateFolderResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateFolderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateFolderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The metadata of the folder.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateFolderResult& WithMetadata(FolderMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 
   private:
+
     FolderMetadata m_metadata;
   };
 

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ValidateConfigurationSettingsResult();
-    ValidateConfigurationSettingsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ValidateConfigurationSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ValidateConfigurationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ValidateConfigurationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> A list of <a>ValidationMessage</a>. </p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ValidateConfigurationSettingsResult& AddMessages(ValidationMessage&& value) { m_messages.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline ValidateConfigurationSettingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ValidationMessage> m_messages;
+
     ResponseMetadata m_responseMetadata;
   };
 

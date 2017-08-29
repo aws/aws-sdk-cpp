@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
      * results.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline DescribeParametersRequest& AddFilters(ParametersFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Filters to limit the request results.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      */
     inline DescribeParametersRequest& AddParameterFilters(ParameterStringFilter&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -136,6 +139,7 @@ namespace Model
      * results.</p>
      */
     inline DescribeParametersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -180,12 +184,16 @@ namespace Model
     inline DescribeParametersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ParametersFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<ParameterStringFilter> m_parameterFilters;
     bool m_parameterFiltersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

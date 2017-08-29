@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter
@@ -100,6 +101,7 @@ namespace Model
      */
     inline ListAliasesRequest& WithRoutingStrategyType(RoutingStrategyType&& value) { SetRoutingStrategyType(std::move(value)); return *this;}
 
+
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
@@ -142,6 +144,7 @@ namespace Model
      */
     inline ListAliasesRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -159,6 +162,7 @@ namespace Model
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline ListAliasesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -210,12 +214,16 @@ namespace Model
     inline ListAliasesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     RoutingStrategyType m_routingStrategyType;
     bool m_routingStrategyTypeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     StartDataCollectionByAgentIdsResult();
-    StartDataCollectionByAgentIdsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartDataCollectionByAgentIdsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartDataCollectionByAgentIdsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartDataCollectionByAgentIdsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about agents or the connector that were instructed to start
@@ -99,6 +100,7 @@ namespace Model
     inline StartDataCollectionByAgentIdsResult& AddAgentsConfigurationStatus(AgentConfigurationStatus&& value) { m_agentsConfigurationStatus.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<AgentConfigurationStatus> m_agentsConfigurationStatus;
   };
 

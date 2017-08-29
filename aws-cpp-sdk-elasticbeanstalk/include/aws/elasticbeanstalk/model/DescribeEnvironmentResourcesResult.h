@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeEnvironmentResourcesResult();
-    DescribeEnvironmentResourcesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEnvironmentResourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEnvironmentResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEnvironmentResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> A list of <a>EnvironmentResourceDescription</a>. </p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline DescribeEnvironmentResourcesResult& WithEnvironmentResources(EnvironmentResourceDescription&& value) { SetEnvironmentResources(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline DescribeEnvironmentResourcesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     EnvironmentResourceDescription m_environmentResources;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The cache cluster identifier. This parameter is stored as a lowercase
      * string.</p>
@@ -84,6 +85,7 @@ namespace Model
      * string.</p>
      */
     inline RebootCacheClusterRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+
 
     /**
      * <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001,
@@ -142,8 +144,10 @@ namespace Model
     inline RebootCacheClusterRequest& AddCacheNodeIdsToReboot(const char* value) { m_cacheNodeIdsToRebootHasBeenSet = true; m_cacheNodeIdsToReboot.push_back(value); return *this; }
 
   private:
+
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_cacheNodeIdsToReboot;
     bool m_cacheNodeIdsToRebootHasBeenSet;
   };

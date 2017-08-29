@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Whether auto-placement is on or off.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>Whether auto-placement is on or off.</p>
      */
     inline Host& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
+
 
     /**
      * <p>The Availability Zone of the Dedicated Host.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline Host& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The number of new instances that can be launched onto the Dedicated Host.</p>
      */
@@ -138,6 +141,7 @@ namespace Model
      * <p>The number of new instances that can be launched onto the Dedicated Host.</p>
      */
     inline Host& WithAvailableCapacity(AvailableCapacity&& value) { SetAvailableCapacity(std::move(value)); return *this;}
+
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -202,6 +206,7 @@ namespace Model
      */
     inline Host& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The ID of the Dedicated Host.</p>
      */
@@ -237,6 +242,7 @@ namespace Model
      */
     inline Host& WithHostId(const char* value) { SetHostId(value); return *this;}
 
+
     /**
      * <p>The hardware specifications of the Dedicated Host.</p>
      */
@@ -261,6 +267,7 @@ namespace Model
      * <p>The hardware specifications of the Dedicated Host.</p>
      */
     inline Host& WithHostProperties(HostProperties&& value) { SetHostProperties(std::move(value)); return *this;}
+
 
     /**
      * <p>The reservation ID of the Dedicated Host. This returns a <code>null</code>
@@ -304,6 +311,7 @@ namespace Model
      */
     inline Host& WithHostReservationId(const char* value) { SetHostReservationId(value); return *this;}
 
+
     /**
      * <p>The IDs and instance type that are currently running on the Dedicated
      * Host.</p>
@@ -346,6 +354,7 @@ namespace Model
      */
     inline Host& AddInstances(HostInstance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The Dedicated Host's state.</p>
      */
@@ -372,22 +381,31 @@ namespace Model
     inline Host& WithState(AllocationState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     AutoPlacement m_autoPlacement;
     bool m_autoPlacementHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     AvailableCapacity m_availableCapacity;
     bool m_availableCapacityHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::String m_hostId;
     bool m_hostIdHasBeenSet;
+
     HostProperties m_hostProperties;
     bool m_hostPropertiesHasBeenSet;
+
     Aws::String m_hostReservationId;
     bool m_hostReservationIdHasBeenSet;
+
     Aws::Vector<HostInstance> m_instances;
     bool m_instancesHasBeenSet;
+
     AllocationState m_state;
     bool m_stateHasBeenSet;
   };

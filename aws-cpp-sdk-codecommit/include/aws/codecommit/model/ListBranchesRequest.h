@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the repository that contains the branches.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the repository that contains the branches.</p>
      */
     inline ListBranchesRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>An enumeration token that allows the operation to batch the results.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline ListBranchesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

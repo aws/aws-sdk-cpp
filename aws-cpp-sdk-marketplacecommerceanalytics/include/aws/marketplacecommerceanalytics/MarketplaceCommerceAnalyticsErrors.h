@@ -55,11 +55,11 @@ enum class MarketplaceCommerceAnalyticsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  MARKETPLACE_COMMERCE_ANALYTICS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  MARKETPLACE_COMMERCE_ANALYTICS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
 namespace MarketplaceCommerceAnalyticsErrorMapper
 {
-  AWS_MARKETPLACECOMMERCEANALYTICS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_MARKETPLACECOMMERCEANALYTICS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace MarketplaceCommerceAnalytics

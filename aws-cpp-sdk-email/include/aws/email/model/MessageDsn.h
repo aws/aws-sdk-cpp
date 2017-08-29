@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The reporting MTA that attempted to deliver the message, formatted as
      * specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
@@ -111,6 +112,7 @@ namespace Model
      */
     inline MessageDsn& WithReportingMta(const char* value) { SetReportingMta(value); return *this;}
 
+
     /**
      * <p>When the message was received by the reporting mail transfer agent (MTA), in
      * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
@@ -140,6 +142,7 @@ namespace Model
      * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
     inline MessageDsn& WithArrivalDate(Aws::Utils::DateTime&& value) { SetArrivalDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Additional X-headers to include in the DSN.</p>
@@ -177,10 +180,13 @@ namespace Model
     inline MessageDsn& AddExtensionFields(ExtensionField&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_reportingMta;
     bool m_reportingMtaHasBeenSet;
+
     Aws::Utils::DateTime m_arrivalDate;
     bool m_arrivalDateHasBeenSet;
+
     Aws::Vector<ExtensionField> m_extensionFields;
     bool m_extensionFieldsHasBeenSet;
   };

@@ -30,12 +30,12 @@ GetIntentsResult::GetIntentsResult()
 {
 }
 
-GetIntentsResult::GetIntentsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetIntentsResult::GetIntentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetIntentsResult& GetIntentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetIntentsResult& GetIntentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("intents"))

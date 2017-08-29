@@ -47,6 +47,7 @@ namespace Model
     ActionTypeId& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ActionTypeId& WithCategory(ActionCategory&& value) { SetCategory(std::move(value)); return *this;}
 
+
     /**
      * <p>The creator of the action being called.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The creator of the action being called.</p>
      */
     inline ActionTypeId& WithOwner(ActionOwner&& value) { SetOwner(std::move(value)); return *this;}
+
 
     /**
      * <p>The provider of the service being called by the action. Valid providers are
@@ -163,6 +166,7 @@ namespace Model
      */
     inline ActionTypeId& WithProvider(const char* value) { SetProvider(value); return *this;}
 
+
     /**
      * <p>A string that identifies the action type.</p>
      */
@@ -199,12 +203,16 @@ namespace Model
     inline ActionTypeId& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     ActionCategory m_category;
     bool m_categoryHasBeenSet;
+
     ActionOwner m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::String m_provider;
     bool m_providerHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

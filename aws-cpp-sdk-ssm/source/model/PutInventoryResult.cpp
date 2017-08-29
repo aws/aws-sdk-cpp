@@ -30,12 +30,12 @@ PutInventoryResult::PutInventoryResult()
 {
 }
 
-PutInventoryResult::PutInventoryResult(const AmazonWebServiceResult<JsonValue>& result)
+PutInventoryResult::PutInventoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutInventoryResult& PutInventoryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutInventoryResult& PutInventoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

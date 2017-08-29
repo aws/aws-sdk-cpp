@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A value to use for the field if the field isn't specified for a document.
      * This can be important if you are using the field in an expression and that field
@@ -70,6 +71,7 @@ namespace Model
      * is not present in every document.</p>
      */
     inline DoubleOptions& WithDefaultValue(double value) { SetDefaultValue(value); return *this;}
+
 
     /**
      * <p>The name of the source field to map to the field. </p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline DoubleOptions& WithSourceField(const char* value) { SetSourceField(value); return *this;}
 
+
     /**
      * <p>Whether facet information can be returned for the field.</p>
      */
@@ -120,6 +123,7 @@ namespace Model
      * <p>Whether facet information can be returned for the field.</p>
      */
     inline DoubleOptions& WithFacetEnabled(bool value) { SetFacetEnabled(value); return *this;}
+
 
     /**
      * <p>Whether the contents of the field are searchable.</p>
@@ -136,6 +140,7 @@ namespace Model
      */
     inline DoubleOptions& WithSearchEnabled(bool value) { SetSearchEnabled(value); return *this;}
 
+
     /**
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
@@ -150,6 +155,7 @@ namespace Model
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
     inline DoubleOptions& WithReturnEnabled(bool value) { SetReturnEnabled(value); return *this;}
+
 
     /**
      * <p>Whether the field can be used to sort the search results.</p>
@@ -167,16 +173,22 @@ namespace Model
     inline DoubleOptions& WithSortEnabled(bool value) { SetSortEnabled(value); return *this;}
 
   private:
+
     double m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     Aws::String m_sourceField;
     bool m_sourceFieldHasBeenSet;
+
     bool m_facetEnabled;
     bool m_facetEnabledHasBeenSet;
+
     bool m_searchEnabled;
     bool m_searchEnabledHasBeenSet;
+
     bool m_returnEnabled;
     bool m_returnEnabledHasBeenSet;
+
     bool m_sortEnabled;
     bool m_sortEnabledHasBeenSet;
   };

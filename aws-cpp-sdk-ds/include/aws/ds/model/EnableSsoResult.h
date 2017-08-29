@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     EnableSsoResult();
-    EnableSsoResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableSsoResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableSsoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableSsoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

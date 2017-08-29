@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>A description of the status of the health check endpoint as reported by one
      * of the Amazon Route 53 health checkers.</p>
@@ -89,6 +90,7 @@ namespace Model
      * of the Amazon Route 53 health checkers.</p>
      */
     inline StatusReport& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The date and time that the health checker performed the health check in <a
@@ -136,8 +138,10 @@ namespace Model
     inline StatusReport& WithCheckedTime(Aws::Utils::DateTime&& value) { SetCheckedTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_checkedTime;
     bool m_checkedTimeHasBeenSet;
   };

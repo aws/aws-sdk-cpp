@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ResetServiceSpecificCredentialResult();
-    ResetServiceSpecificCredentialResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ResetServiceSpecificCredentialResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ResetServiceSpecificCredentialResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ResetServiceSpecificCredentialResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure with details about the updated service-specific credential,
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ResetServiceSpecificCredentialResult& WithServiceSpecificCredential(ServiceSpecificCredential&& value) { SetServiceSpecificCredential(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline ResetServiceSpecificCredentialResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ServiceSpecificCredential m_serviceSpecificCredential;
+
     ResponseMetadata m_responseMetadata;
   };
 

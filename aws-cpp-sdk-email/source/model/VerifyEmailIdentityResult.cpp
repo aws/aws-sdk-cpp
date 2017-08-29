@@ -31,12 +31,12 @@ VerifyEmailIdentityResult::VerifyEmailIdentityResult()
 {
 }
 
-VerifyEmailIdentityResult::VerifyEmailIdentityResult(const AmazonWebServiceResult<XmlDocument>& result)
+VerifyEmailIdentityResult::VerifyEmailIdentityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-VerifyEmailIdentityResult& VerifyEmailIdentityResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+VerifyEmailIdentityResult& VerifyEmailIdentityResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

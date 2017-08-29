@@ -31,12 +31,12 @@ VerifyDomainIdentityResult::VerifyDomainIdentityResult()
 {
 }
 
-VerifyDomainIdentityResult::VerifyDomainIdentityResult(const AmazonWebServiceResult<XmlDocument>& result)
+VerifyDomainIdentityResult::VerifyDomainIdentityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-VerifyDomainIdentityResult& VerifyDomainIdentityResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+VerifyDomainIdentityResult& VerifyDomainIdentityResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

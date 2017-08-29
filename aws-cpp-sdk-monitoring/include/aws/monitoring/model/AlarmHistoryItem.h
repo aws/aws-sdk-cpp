@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The descriptive name for the alarm.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline AlarmHistoryItem& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
 
+
     /**
      * <p>The time stamp for the alarm history item.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      */
     inline AlarmHistoryItem& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of alarm history item.</p>
      */
@@ -134,6 +137,7 @@ namespace Model
      * <p>The type of alarm history item.</p>
      */
     inline AlarmHistoryItem& WithHistoryItemType(HistoryItemType&& value) { SetHistoryItemType(std::move(value)); return *this;}
+
 
     /**
      * <p>A summary of the alarm history, in text format.</p>
@@ -169,6 +173,7 @@ namespace Model
      * <p>A summary of the alarm history, in text format.</p>
      */
     inline AlarmHistoryItem& WithHistorySummary(const char* value) { SetHistorySummary(value); return *this;}
+
 
     /**
      * <p>Data about the alarm, in JSON format.</p>
@@ -206,14 +211,19 @@ namespace Model
     inline AlarmHistoryItem& WithHistoryData(const char* value) { SetHistoryData(value); return *this;}
 
   private:
+
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
     HistoryItemType m_historyItemType;
     bool m_historyItemTypeHasBeenSet;
+
     Aws::String m_historySummary;
     bool m_historySummaryHasBeenSet;
+
     Aws::String m_historyData;
     bool m_historyDataHasBeenSet;
   };

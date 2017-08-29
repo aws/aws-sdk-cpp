@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListImportsResult();
-    ListImportsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListImportsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListImportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListImportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of stack names that are importing the specified exported output value.
@@ -91,6 +92,7 @@ namespace Model
      */
     inline ListImportsResult& AddImports(const char* value) { m_imports.push_back(value); return *this; }
 
+
     /**
      * <p>A string that identifies the next page of exports. If there is no additional
      * page, this value is null.</p>
@@ -133,6 +135,7 @@ namespace Model
      */
     inline ListImportsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -149,8 +152,11 @@ namespace Model
     inline ListImportsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_imports;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

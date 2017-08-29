@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListUserPoliciesResult();
-    ListUserPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListUserPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListUserPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListUserPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of policy names.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ListUserPoliciesResult& AddPolicyNames(const char* value) { m_policyNames.push_back(value); return *this; }
 
+
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
@@ -121,6 +123,7 @@ namespace Model
      * results.</p>
      */
     inline ListUserPoliciesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -171,6 +174,7 @@ namespace Model
      */
     inline ListUserPoliciesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -187,9 +191,13 @@ namespace Model
     inline ListUserPoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_policyNames;
+
     bool m_isTruncated;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

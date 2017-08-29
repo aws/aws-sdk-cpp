@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Information about the interface attachment. If modifying the 'delete on
      * termination' attribute, you must specify the ID of the interface attachment.</p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithAttachment(NetworkInterfaceAttachmentChanges&& value) { SetAttachment(std::move(value)); return *this;}
 
+
     /**
      * <p>A description for the network interface.</p>
      */
@@ -101,6 +103,7 @@ namespace Model
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -124,6 +127,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>Changes the security groups for the network interface. The new set of groups
@@ -189,6 +193,7 @@ namespace Model
      */
     inline ModifyNetworkInterfaceAttributeRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of the network interface.</p>
      */
@@ -223,6 +228,7 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of
@@ -275,16 +281,22 @@ namespace Model
     inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
 
   private:
+
     NetworkInterfaceAttachmentChanges m_attachment;
     bool m_attachmentHasBeenSet;
+
     AttributeValue m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Aws::String> m_groups;
     bool m_groupsHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     AttributeBooleanValue m_sourceDestCheck;
     bool m_sourceDestCheckHasBeenSet;
   };

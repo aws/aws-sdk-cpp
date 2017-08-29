@@ -53,6 +53,7 @@ namespace Model
     Stage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      */
     inline Stage& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
+
     /**
      * <p>The identifier of a client certificate for an API stage.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>The identifier of a client certificate for an API stage.</p>
      */
     inline Stage& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
+
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
@@ -165,6 +168,7 @@ namespace Model
      */
     inline Stage& WithStageName(const char* value) { SetStageName(value); return *this;}
 
+
     /**
      * <p>The stage's description.</p>
      */
@@ -200,6 +204,7 @@ namespace Model
      */
     inline Stage& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Specifies whether a cache cluster is enabled for the stage.</p>
      */
@@ -214,6 +219,7 @@ namespace Model
      * <p>Specifies whether a cache cluster is enabled for the stage.</p>
      */
     inline Stage& WithCacheClusterEnabled(bool value) { SetCacheClusterEnabled(value); return *this;}
+
 
     /**
      * <p>The size of the cache cluster for the stage, if enabled.</p>
@@ -240,6 +246,7 @@ namespace Model
      */
     inline Stage& WithCacheClusterSize(CacheClusterSize&& value) { SetCacheClusterSize(std::move(value)); return *this;}
 
+
     /**
      * <p>The status of the cache cluster for the stage, if enabled.</p>
      */
@@ -264,6 +271,7 @@ namespace Model
      * <p>The status of the cache cluster for the stage, if enabled.</p>
      */
     inline Stage& WithCacheClusterStatus(CacheClusterStatus&& value) { SetCacheClusterStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
@@ -353,6 +361,7 @@ namespace Model
      */
     inline Stage& AddMethodSettings(const char* key, const MethodSetting& value) { m_methodSettingsHasBeenSet = true; m_methodSettings.emplace(key, value); return *this; }
 
+
     /**
      * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
      * names can have alphanumeric and underscore characters, and the values must match
@@ -437,6 +446,7 @@ namespace Model
      */
     inline Stage& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 
+
     /**
      * <p>The version of the associated API documentation.</p>
      */
@@ -472,6 +482,7 @@ namespace Model
      */
     inline Stage& WithDocumentationVersion(const char* value) { SetDocumentationVersion(value); return *this;}
 
+
     /**
      * <p>The timestamp when the stage was created.</p>
      */
@@ -496,6 +507,7 @@ namespace Model
      * <p>The timestamp when the stage was created.</p>
      */
     inline Stage& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The timestamp when the stage last updated.</p>
@@ -523,28 +535,40 @@ namespace Model
     inline Stage& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::String m_clientCertificateId;
     bool m_clientCertificateIdHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_cacheClusterEnabled;
     bool m_cacheClusterEnabledHasBeenSet;
+
     CacheClusterSize m_cacheClusterSize;
     bool m_cacheClusterSizeHasBeenSet;
+
     CacheClusterStatus m_cacheClusterStatus;
     bool m_cacheClusterStatusHasBeenSet;
+
     Aws::Map<Aws::String, MethodSetting> m_methodSettings;
     bool m_methodSettingsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_variables;
     bool m_variablesHasBeenSet;
+
     Aws::String m_documentationVersion;
     bool m_documentationVersionHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
     bool m_lastUpdatedDateHasBeenSet;
   };

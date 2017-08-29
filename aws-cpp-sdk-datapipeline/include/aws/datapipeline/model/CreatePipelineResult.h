@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreatePipelineResult();
-    CreatePipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For
@@ -89,6 +90,7 @@ namespace Model
     inline CreatePipelineResult& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
 
   private:
+
     Aws::String m_pipelineId;
   };
 

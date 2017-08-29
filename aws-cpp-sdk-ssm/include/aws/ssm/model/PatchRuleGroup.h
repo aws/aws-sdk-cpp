@@ -47,6 +47,7 @@ namespace Model
     PatchRuleGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The rules that make up the rule group.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
     inline PatchRuleGroup& AddPatchRules(PatchRule&& value) { m_patchRulesHasBeenSet = true; m_patchRules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<PatchRule> m_patchRules;
     bool m_patchRulesHasBeenSet;
   };

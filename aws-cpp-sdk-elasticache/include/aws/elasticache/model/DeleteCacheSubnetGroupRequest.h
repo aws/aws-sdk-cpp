@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cache subnet group to delete.</p> <p>Constraints: Must
      * contain no more than 255 alphanumeric characters or hyphens.</p>
@@ -85,6 +86,7 @@ namespace Model
     inline DeleteCacheSubnetGroupRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 
   private:
+
     Aws::String m_cacheSubnetGroupName;
     bool m_cacheSubnetGroupNameHasBeenSet;
   };

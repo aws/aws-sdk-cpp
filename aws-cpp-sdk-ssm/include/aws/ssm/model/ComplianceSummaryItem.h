@@ -48,6 +48,7 @@ namespace Model
     ComplianceSummaryItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of compliance item. For example, the compliance type can be
      * Association, Patch, or Custom:string.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ComplianceSummaryItem& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
 
+
     /**
      * <p>A list of COMPLIANT items for the specified compliance type.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>A list of COMPLIANT items for the specified compliance type.</p>
      */
     inline ComplianceSummaryItem& WithCompliantSummary(CompliantSummary&& value) { SetCompliantSummary(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of NON_COMPLIANT items for the specified compliance type.</p>
@@ -141,10 +144,13 @@ namespace Model
     inline ComplianceSummaryItem& WithNonCompliantSummary(NonCompliantSummary&& value) { SetNonCompliantSummary(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_complianceType;
     bool m_complianceTypeHasBeenSet;
+
     CompliantSummary m_compliantSummary;
     bool m_compliantSummaryHasBeenSet;
+
     NonCompliantSummary m_nonCompliantSummary;
     bool m_nonCompliantSummaryHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier of the subnet.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline Subnet& WithSubnetIdentifier(const char* value) { SetSubnetIdentifier(value); return *this;}
 
+
     
     inline const AvailabilityZone& GetSubnetAvailabilityZone() const{ return m_subnetAvailabilityZone; }
 
@@ -98,6 +100,7 @@ namespace Model
 
     
     inline Subnet& WithSubnetAvailabilityZone(AvailabilityZone&& value) { SetSubnetAvailabilityZone(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the subnet.</p>
@@ -135,10 +138,13 @@ namespace Model
     inline Subnet& WithSubnetStatus(const char* value) { SetSubnetStatus(value); return *this;}
 
   private:
+
     Aws::String m_subnetIdentifier;
     bool m_subnetIdentifierHasBeenSet;
+
     AvailabilityZone m_subnetAvailabilityZone;
     bool m_subnetAvailabilityZoneHasBeenSet;
+
     Aws::String m_subnetStatus;
     bool m_subnetStatusHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
      */
     inline AssumeRoleWithSAMLRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider in IAM that describes the
@@ -114,6 +116,7 @@ namespace Model
      * IdP.</p>
      */
     inline AssumeRoleWithSAMLRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+
 
     /**
      * <p>The base-64 encoded SAML authentication response provided by the IdP.</p>
@@ -170,6 +173,7 @@ namespace Model
      * a Relying Party and Adding Claims</a> in the <i>Using IAM</i> guide. </p>
      */
     inline AssumeRoleWithSAMLRequest& WithSAMLAssertion(const char* value) { SetSAMLAssertion(value); return *this;}
+
 
     /**
      * <p>An IAM policy in JSON format.</p> <p>The policy parameter is optional. If you
@@ -339,6 +343,7 @@ namespace Model
      */
     inline AssumeRoleWithSAMLRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
+
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
@@ -391,14 +396,19 @@ namespace Model
     inline AssumeRoleWithSAMLRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_principalArn;
     bool m_principalArnHasBeenSet;
+
     Aws::String m_sAMLAssertion;
     bool m_sAMLAssertionHasBeenSet;
+
     Aws::String m_policy;
     bool m_policyHasBeenSet;
+
     int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
   };

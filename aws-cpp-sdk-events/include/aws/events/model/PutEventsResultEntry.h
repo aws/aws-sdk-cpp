@@ -46,6 +46,7 @@ namespace Model
     PutEventsResultEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the event.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline PutEventsResultEntry& WithEventId(const char* value) { SetEventId(value); return *this;}
 
+
     /**
      * <p>The error code that indicates why the event submission failed.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The error code that indicates why the event submission failed.</p>
      */
     inline PutEventsResultEntry& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The error message that explains why the event submission failed.</p>
@@ -152,10 +155,13 @@ namespace Model
     inline PutEventsResultEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

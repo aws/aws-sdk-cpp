@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeVolumesResult();
-    DescribeVolumesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeVolumesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeVolumesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of volume IDs.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeVolumesResult& AddVolumes(Volume&& value) { m_volumes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Volume> m_volumes;
   };
 

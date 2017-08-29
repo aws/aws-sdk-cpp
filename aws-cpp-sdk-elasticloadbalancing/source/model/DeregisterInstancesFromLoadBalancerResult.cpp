@@ -31,12 +31,12 @@ DeregisterInstancesFromLoadBalancerResult::DeregisterInstancesFromLoadBalancerRe
 {
 }
 
-DeregisterInstancesFromLoadBalancerResult::DeregisterInstancesFromLoadBalancerResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeregisterInstancesFromLoadBalancerResult::DeregisterInstancesFromLoadBalancerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeregisterInstancesFromLoadBalancerResult& DeregisterInstancesFromLoadBalancerResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeregisterInstancesFromLoadBalancerResult& DeregisterInstancesFromLoadBalancerResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

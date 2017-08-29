@@ -49,6 +49,7 @@ namespace Model
     ComparedSourceImageFace& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Bounding box of the face.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline ComparedSourceImageFace& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
 
+
     /**
      * <p>Confidence level that the selected bounding box contains a face.</p>
      */
@@ -90,8 +92,10 @@ namespace Model
     inline ComparedSourceImageFace& WithConfidence(double value) { SetConfidence(value); return *this;}
 
   private:
+
     BoundingBox m_boundingBox;
     bool m_boundingBoxHasBeenSet;
+
     double m_confidence;
     bool m_confidenceHasBeenSet;
   };

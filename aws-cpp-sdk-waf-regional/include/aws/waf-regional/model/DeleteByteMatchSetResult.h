@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteByteMatchSetResult();
-    DeleteByteMatchSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteByteMatchSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteByteMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteByteMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -98,6 +99,7 @@ namespace Model
     inline DeleteByteMatchSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_changeToken;
   };
 

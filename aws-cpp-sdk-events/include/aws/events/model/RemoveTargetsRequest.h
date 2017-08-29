@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the rule.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the rule.</p>
      */
     inline RemoveTargetsRequest& WithRule(const char* value) { SetRule(value); return *this;}
+
 
     /**
      * <p>The IDs of the targets to remove from the rule.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline RemoveTargetsRequest& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
 
   private:
+
     Aws::String m_rule;
     bool m_ruleHasBeenSet;
+
     Aws::Vector<Aws::String> m_ids;
     bool m_idsHasBeenSet;
   };

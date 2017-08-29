@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListBuildsForProjectResult();
-    ListBuildsForProjectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBuildsForProjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListBuildsForProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListBuildsForProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of build IDs for the specified build project, with each build ID
@@ -89,6 +90,7 @@ namespace Model
      * representing a single build.</p>
      */
     inline ListBuildsForProjectResult& AddIds(const char* value) { m_ids.push_back(value); return *this; }
+
 
     /**
      * <p>If there are more than 100 items in the list, only the first 100 items are
@@ -147,7 +149,9 @@ namespace Model
     inline ListBuildsForProjectResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_ids;
+
     Aws::String m_nextToken;
   };
 

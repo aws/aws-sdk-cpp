@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon Kinesis Analytics application name.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline DeleteApplicationOutputRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>Amazon Kinesis Analytics application version. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If
@@ -97,6 +99,7 @@ namespace Model
      * <code>ConcurrentModificationException</code> is returned. </p>
      */
     inline DeleteApplicationOutputRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+
 
     /**
      * <p>The ID of the configuration to delete. Each output configuration that is
@@ -169,10 +172,13 @@ namespace Model
     inline DeleteApplicationOutputRequest& WithOutputId(const char* value) { SetOutputId(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     long long m_currentApplicationVersionId;
     bool m_currentApplicationVersionIdHasBeenSet;
+
     Aws::String m_outputId;
     bool m_outputIdHasBeenSet;
   };

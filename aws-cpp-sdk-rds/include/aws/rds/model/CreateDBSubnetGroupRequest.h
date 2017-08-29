@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
@@ -99,6 +100,7 @@ namespace Model
      */
     inline CreateDBSubnetGroupRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>The description for the DB subnet group.</p>
      */
@@ -133,6 +135,7 @@ namespace Model
      * <p>The description for the DB subnet group.</p>
      */
     inline CreateDBSubnetGroupRequest& WithDBSubnetGroupDescription(const char* value) { SetDBSubnetGroupDescription(value); return *this;}
+
 
     /**
      * <p>The EC2 Subnet IDs for the DB subnet group.</p>
@@ -174,6 +177,7 @@ namespace Model
      */
     inline CreateDBSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -196,12 +200,16 @@ namespace Model
     inline CreateDBSubnetGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
+
     Aws::String m_dBSubnetGroupDescription;
     bool m_dBSubnetGroupDescriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

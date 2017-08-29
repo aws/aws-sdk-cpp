@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListPrincipalsForPortfolioResult();
-    ListPrincipalsForPortfolioResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPrincipalsForPortfolioResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPrincipalsForPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPrincipalsForPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The IAM principals (users or roles) associated with the portfolio.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The IAM principals (users or roles) associated with the portfolio.</p>
      */
     inline ListPrincipalsForPortfolioResult& AddPrincipals(Principal&& value) { m_principals.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -121,7 +123,9 @@ namespace Model
     inline ListPrincipalsForPortfolioResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<Principal> m_principals;
+
     Aws::String m_nextPageToken;
   };
 

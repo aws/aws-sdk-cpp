@@ -30,13 +30,13 @@ ListReusableDelegationSetsResult::ListReusableDelegationSetsResult() :
 {
 }
 
-ListReusableDelegationSetsResult::ListReusableDelegationSetsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListReusableDelegationSetsResult::ListReusableDelegationSetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListReusableDelegationSetsResult& ListReusableDelegationSetsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListReusableDelegationSetsResult& ListReusableDelegationSetsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

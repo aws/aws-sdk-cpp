@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
      * <code>redis</code> </p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeCacheEngineVersionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
+
     /**
      * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
     inline DescribeCacheEngineVersionsRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
 
     /**
      * <p>The name of a specific cache parameter group family to return details
@@ -189,6 +192,7 @@ namespace Model
      */
     inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a marker is included in
@@ -212,6 +216,7 @@ namespace Model
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
      */
     inline DescribeCacheEngineVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
@@ -269,6 +274,7 @@ namespace Model
      */
     inline DescribeCacheEngineVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, specifies that only the default version of the
      * specified engine or engine and major version combination is to be returned.</p>
@@ -288,16 +294,22 @@ namespace Model
     inline DescribeCacheEngineVersionsRequest& WithDefaultOnly(bool value) { SetDefaultOnly(value); return *this;}
 
   private:
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_cacheParameterGroupFamily;
     bool m_cacheParameterGroupFamilyHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     bool m_defaultOnly;
     bool m_defaultOnlyHasBeenSet;
   };

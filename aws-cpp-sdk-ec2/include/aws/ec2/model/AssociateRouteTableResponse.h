@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     AssociateRouteTableResponse();
-    AssociateRouteTableResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssociateRouteTableResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssociateRouteTableResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssociateRouteTableResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The route table association ID (needed to disassociate the route table).</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline AssociateRouteTableResponse& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline AssociateRouteTableResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_associationId;
+
     ResponseMetadata m_responseMetadata;
   };
 

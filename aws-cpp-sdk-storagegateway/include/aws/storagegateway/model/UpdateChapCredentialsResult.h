@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     UpdateChapCredentialsResult();
-    UpdateChapCredentialsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateChapCredentialsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateChapCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateChapCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target. This is the same target
@@ -87,6 +88,7 @@ namespace Model
      * specified in the request.</p>
      */
     inline UpdateChapCredentialsResult& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}
+
 
     /**
      * <p>The iSCSI initiator that connects to the target. This is the same initiator
@@ -131,7 +133,9 @@ namespace Model
     inline UpdateChapCredentialsResult& WithInitiatorName(const char* value) { SetInitiatorName(value); return *this;}
 
   private:
+
     Aws::String m_targetARN;
+
     Aws::String m_initiatorName;
   };
 

@@ -31,12 +31,12 @@ ModifyReservedInstancesResponse::ModifyReservedInstancesResponse()
 {
 }
 
-ModifyReservedInstancesResponse::ModifyReservedInstancesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyReservedInstancesResponse::ModifyReservedInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifyReservedInstancesResponse& ModifyReservedInstancesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyReservedInstancesResponse& ModifyReservedInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

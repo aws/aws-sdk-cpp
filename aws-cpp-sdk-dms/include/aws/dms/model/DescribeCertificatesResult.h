@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeCertificatesResult();
-    DescribeCertificatesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCertificatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The pagination token.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline DescribeCertificatesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>The Secure Sockets Layer (SSL) certificates associated with the replication
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<Certificate> m_certificates;
   };
 

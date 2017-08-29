@@ -30,12 +30,12 @@ GetObjectInformationResult::GetObjectInformationResult()
 {
 }
 
-GetObjectInformationResult::GetObjectInformationResult(const AmazonWebServiceResult<JsonValue>& result)
+GetObjectInformationResult::GetObjectInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetObjectInformationResult& GetObjectInformationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetObjectInformationResult& GetObjectInformationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SchemaFacets"))

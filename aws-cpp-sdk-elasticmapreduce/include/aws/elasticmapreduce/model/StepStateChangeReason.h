@@ -46,6 +46,7 @@ namespace Model
     StepStateChangeReason& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The programmable code for the state change reason. Note: Currently, the
      * service provides no code for the state change.</p>
@@ -75,6 +76,7 @@ namespace Model
      * service provides no code for the state change.</p>
      */
     inline StepStateChangeReason& WithCode(StepStateChangeReasonCode&& value) { SetCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The descriptive message for the state change reason.</p>
@@ -112,8 +114,10 @@ namespace Model
     inline StepStateChangeReason& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     StepStateChangeReasonCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

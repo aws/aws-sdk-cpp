@@ -39,6 +39,7 @@ namespace Model
     UpdateConnectivityInfoRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * Connectivity info array
      */
@@ -73,6 +74,7 @@ namespace Model
      * Connectivity info array
      */
     inline UpdateConnectivityInfoRequest& AddConnectivityInfo(ConnectivityInfo&& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo.push_back(std::move(value)); return *this; }
+
 
     /**
      * Thing Name
@@ -110,8 +112,10 @@ namespace Model
     inline UpdateConnectivityInfoRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
   private:
+
     Aws::Vector<ConnectivityInfo> m_connectivityInfo;
     bool m_connectivityInfoHasBeenSet;
+
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
   };

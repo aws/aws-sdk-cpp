@@ -48,6 +48,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the configuration set to which to apply the event
      * destination.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline CreateConfigurationSetEventDestinationRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 
+
     /**
      * <p>An object that describes the AWS service to which Amazon SES will publish the
      * email sending events associated with the specified configuration set.</p>
@@ -121,8 +123,10 @@ namespace Model
     inline CreateConfigurationSetEventDestinationRequest& WithEventDestination(EventDestination&& value) { SetEventDestination(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet;
+
     EventDestination m_eventDestination;
     bool m_eventDestinationHasBeenSet;
   };

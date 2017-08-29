@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The key of the tag.</p> <p>Constraints: Tag keys are case-sensitive and
      * accept a maximum of 127 Unicode characters. May not begin with <code>aws:</code>
@@ -97,6 +98,7 @@ namespace Model
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The value of the tag.</p> <p>Constraints: Tag values are case-sensitive and
      * accept a maximum of 255 Unicode characters.</p>
@@ -140,8 +142,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

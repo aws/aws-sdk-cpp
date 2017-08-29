@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The name of the thing to delete.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DeleteThingRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
+
     /**
      * <p>The expected version of the thing record in the registry. If the version of
      * the record in the registry does not match the expected version specified in the
@@ -103,8 +105,10 @@ namespace Model
     inline DeleteThingRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
 
   private:
+
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
+
     long long m_expectedVersion;
     bool m_expectedVersionHasBeenSet;
   };

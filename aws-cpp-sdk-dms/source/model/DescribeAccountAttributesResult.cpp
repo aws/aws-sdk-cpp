@@ -30,12 +30,12 @@ DescribeAccountAttributesResult::DescribeAccountAttributesResult()
 {
 }
 
-DescribeAccountAttributesResult::DescribeAccountAttributesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAccountAttributesResult::DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAccountAttributesResult& DescribeAccountAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AccountQuotas"))

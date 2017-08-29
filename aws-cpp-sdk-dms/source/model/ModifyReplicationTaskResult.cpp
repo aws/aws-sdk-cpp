@@ -30,12 +30,12 @@ ModifyReplicationTaskResult::ModifyReplicationTaskResult()
 {
 }
 
-ModifyReplicationTaskResult::ModifyReplicationTaskResult(const AmazonWebServiceResult<JsonValue>& result)
+ModifyReplicationTaskResult::ModifyReplicationTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ModifyReplicationTaskResult& ModifyReplicationTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ModifyReplicationTaskResult& ModifyReplicationTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ReplicationTask"))

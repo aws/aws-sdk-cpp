@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The namespace to filter against.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The namespace to filter against.</p>
      */
     inline ListMetricsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+
 
     /**
      * <p>The name of the metric to filter against.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline ListMetricsRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
+
     /**
      * <p>The dimensions to filter against.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>The dimensions to filter against.</p>
      */
     inline ListMetricsRequest& AddDimensions(DimensionFilter&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data
@@ -188,12 +192,16 @@ namespace Model
     inline ListMetricsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::Vector<DimensionFilter> m_dimensions;
     bool m_dimensionsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

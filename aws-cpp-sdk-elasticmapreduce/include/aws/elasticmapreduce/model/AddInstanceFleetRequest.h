@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier of the cluster.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline AddInstanceFleetRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>Specifies the configuration of the instance fleet.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline AddInstanceFleetRequest& WithInstanceFleet(InstanceFleetConfig&& value) { SetInstanceFleet(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     InstanceFleetConfig m_instanceFleet;
     bool m_instanceFleetHasBeenSet;
   };

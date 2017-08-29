@@ -30,12 +30,12 @@ ResetJobBookmarkResult::ResetJobBookmarkResult()
 {
 }
 
-ResetJobBookmarkResult::ResetJobBookmarkResult(const AmazonWebServiceResult<JsonValue>& result)
+ResetJobBookmarkResult::ResetJobBookmarkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ResetJobBookmarkResult& ResetJobBookmarkResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ResetJobBookmarkResult& ResetJobBookmarkResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("JobBookmarkEntry"))

@@ -30,12 +30,12 @@ DeleteObjectTaggingResult::DeleteObjectTaggingResult()
 {
 }
 
-DeleteObjectTaggingResult::DeleteObjectTaggingResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteObjectTaggingResult::DeleteObjectTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteObjectTaggingResult& DeleteObjectTaggingResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteObjectTaggingResult& DeleteObjectTaggingResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

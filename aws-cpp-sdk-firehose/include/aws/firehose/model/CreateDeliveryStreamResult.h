@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateDeliveryStreamResult();
-    CreateDeliveryStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDeliveryStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDeliveryStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDeliveryStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the delivery stream.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateDeliveryStreamResult& WithDeliveryStreamARN(const char* value) { SetDeliveryStreamARN(value); return *this;}
 
   private:
+
     Aws::String m_deliveryStreamARN;
   };
 

@@ -31,13 +31,13 @@ GetMaintenanceWindowExecutionResult::GetMaintenanceWindowExecutionResult() :
 {
 }
 
-GetMaintenanceWindowExecutionResult::GetMaintenanceWindowExecutionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetMaintenanceWindowExecutionResult::GetMaintenanceWindowExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(MaintenanceWindowExecutionStatus::NOT_SET)
 {
   *this = result;
 }
 
-GetMaintenanceWindowExecutionResult& GetMaintenanceWindowExecutionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetMaintenanceWindowExecutionResult& GetMaintenanceWindowExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WindowExecutionId"))

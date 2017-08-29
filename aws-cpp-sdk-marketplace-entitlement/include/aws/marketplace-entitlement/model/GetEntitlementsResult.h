@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetEntitlementsResult();
-    GetEntitlementsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEntitlementsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetEntitlementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetEntitlementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The set of entitlements found through the GetEntitlements operation. If the
@@ -97,6 +98,7 @@ namespace Model
      * and should be used.</p>
      */
     inline GetEntitlementsResult& AddEntitlements(Entitlement&& value) { m_entitlements.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>For paginated results, use NextToken in subsequent calls to GetEntitlements.
@@ -148,7 +150,9 @@ namespace Model
     inline GetEntitlementsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Entitlement> m_entitlements;
+
     Aws::String m_nextToken;
   };
 

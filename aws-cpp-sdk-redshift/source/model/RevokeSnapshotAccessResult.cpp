@@ -31,12 +31,12 @@ RevokeSnapshotAccessResult::RevokeSnapshotAccessResult()
 {
 }
 
-RevokeSnapshotAccessResult::RevokeSnapshotAccessResult(const AmazonWebServiceResult<XmlDocument>& result)
+RevokeSnapshotAccessResult::RevokeSnapshotAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RevokeSnapshotAccessResult& RevokeSnapshotAccessResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RevokeSnapshotAccessResult& RevokeSnapshotAccessResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

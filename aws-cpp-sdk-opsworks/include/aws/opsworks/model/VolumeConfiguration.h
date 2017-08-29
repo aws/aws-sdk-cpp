@@ -45,6 +45,7 @@ namespace Model
     VolumeConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The volume mount point. For example "/dev/sdh".</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline VolumeConfiguration& WithMountPoint(const char* value) { SetMountPoint(value); return *this;}
 
+
     /**
      * <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      * level</a>.</p>
@@ -98,6 +100,7 @@ namespace Model
      */
     inline VolumeConfiguration& WithRaidLevel(int value) { SetRaidLevel(value); return *this;}
 
+
     /**
      * <p>The number of disks in the volume.</p>
      */
@@ -113,6 +116,7 @@ namespace Model
      */
     inline VolumeConfiguration& WithNumberOfDisks(int value) { SetNumberOfDisks(value); return *this;}
 
+
     /**
      * <p>The volume size.</p>
      */
@@ -127,6 +131,7 @@ namespace Model
      * <p>The volume size.</p>
      */
     inline VolumeConfiguration& WithSize(int value) { SetSize(value); return *this;}
+
 
     /**
      * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
@@ -177,6 +182,7 @@ namespace Model
      */
     inline VolumeConfiguration& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
+
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
@@ -193,16 +199,22 @@ namespace Model
     inline VolumeConfiguration& WithIops(int value) { SetIops(value); return *this;}
 
   private:
+
     Aws::String m_mountPoint;
     bool m_mountPointHasBeenSet;
+
     int m_raidLevel;
     bool m_raidLevelHasBeenSet;
+
     int m_numberOfDisks;
     bool m_numberOfDisksHasBeenSet;
+
     int m_size;
     bool m_sizeHasBeenSet;
+
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
   };

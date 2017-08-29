@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     EnableDomainAutoRenewResult();
-    EnableDomainAutoRenewResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableDomainAutoRenewResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableDomainAutoRenewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableDomainAutoRenewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

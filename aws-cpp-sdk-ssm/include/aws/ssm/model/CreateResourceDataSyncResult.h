@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateResourceDataSyncResult();
-    CreateResourceDataSyncResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateResourceDataSyncResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateResourceDataSyncResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateResourceDataSyncResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

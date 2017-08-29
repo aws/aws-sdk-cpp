@@ -30,12 +30,12 @@ EnableAllFeaturesResult::EnableAllFeaturesResult()
 {
 }
 
-EnableAllFeaturesResult::EnableAllFeaturesResult(const AmazonWebServiceResult<JsonValue>& result)
+EnableAllFeaturesResult::EnableAllFeaturesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-EnableAllFeaturesResult& EnableAllFeaturesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+EnableAllFeaturesResult& EnableAllFeaturesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Handshake"))

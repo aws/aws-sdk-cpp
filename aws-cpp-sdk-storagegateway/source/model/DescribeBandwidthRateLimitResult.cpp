@@ -32,14 +32,14 @@ DescribeBandwidthRateLimitResult::DescribeBandwidthRateLimitResult() :
 {
 }
 
-DescribeBandwidthRateLimitResult::DescribeBandwidthRateLimitResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeBandwidthRateLimitResult::DescribeBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_averageUploadRateLimitInBitsPerSec(0),
     m_averageDownloadRateLimitInBitsPerSec(0)
 {
   *this = result;
 }
 
-DescribeBandwidthRateLimitResult& DescribeBandwidthRateLimitResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeBandwidthRateLimitResult& DescribeBandwidthRateLimitResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

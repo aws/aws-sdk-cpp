@@ -38,7 +38,7 @@ HeadObjectResult::HeadObjectResult() :
 {
 }
 
-HeadObjectResult::HeadObjectResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+HeadObjectResult::HeadObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_deleteMarker(false),
     m_contentLength(0),
     m_missingMeta(0),
@@ -51,7 +51,7 @@ HeadObjectResult::HeadObjectResult(const AmazonWebServiceResult<XmlDocument>& re
   *this = result;
 }
 
-HeadObjectResult& HeadObjectResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+HeadObjectResult& HeadObjectResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ID of the client associated with the user pool.</p>
      */
     inline ResendConfirmationCodeRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ResendConfirmationCodeRequest& WithSecretHash(const char* value) { SetSecretHash(value); return *this;}
 
+
     /**
      * <p>The user name of the user to whom you wish to resend a confirmation code.</p>
      */
@@ -153,10 +156,13 @@ namespace Model
     inline ResendConfirmationCodeRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
   private:
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
     Aws::String m_secretHash;
     bool m_secretHashHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
   };

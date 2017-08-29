@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateScriptResult();
-    CreateScriptResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateScriptResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateScriptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateScriptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Python script generated from the DAG.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateScriptResult& WithPythonScript(const char* value) { SetPythonScript(value); return *this;}
 
   private:
+
     Aws::String m_pythonScript;
   };
 

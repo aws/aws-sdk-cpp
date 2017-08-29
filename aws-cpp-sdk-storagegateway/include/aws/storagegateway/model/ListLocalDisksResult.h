@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListLocalDisksResult();
-    ListLocalDisksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLocalDisksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListLocalDisksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListLocalDisksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline ListLocalDisksResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     
     inline const Aws::Vector<Disk>& GetDisks() const{ return m_disks; }
@@ -86,7 +88,9 @@ namespace Model
     inline ListLocalDisksResult& AddDisks(Disk&& value) { m_disks.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_gatewayARN;
+
     Aws::Vector<Disk> m_disks;
   };
 

@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     FilterLogEventsResult();
-    FilterLogEventsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    FilterLogEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    FilterLogEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    FilterLogEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The matched events.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <p>The matched events.</p>
      */
     inline FilterLogEventsResult& AddEvents(FilteredLogEvent&& value) { m_events.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Indicates which log streams have been searched and whether each has been
@@ -120,6 +122,7 @@ namespace Model
      * searched completely.</p>
      */
     inline FilterLogEventsResult& AddSearchedLogStreams(SearchedLogStream&& value) { m_searchedLogStreams.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. The token expires
@@ -164,8 +167,11 @@ namespace Model
     inline FilterLogEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<FilteredLogEvent> m_events;
+
     Aws::Vector<SearchedLogStream> m_searchedLogStreams;
+
     Aws::String m_nextToken;
   };
 

@@ -31,13 +31,13 @@ RestoreObjectResult::RestoreObjectResult() :
 {
 }
 
-RestoreObjectResult::RestoreObjectResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+RestoreObjectResult::RestoreObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }
 
-RestoreObjectResult& RestoreObjectResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreObjectResult& RestoreObjectResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

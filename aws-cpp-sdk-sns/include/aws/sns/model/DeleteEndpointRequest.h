@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>EndpointArn of endpoint to delete.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteEndpointRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
   private:
+
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet;
   };

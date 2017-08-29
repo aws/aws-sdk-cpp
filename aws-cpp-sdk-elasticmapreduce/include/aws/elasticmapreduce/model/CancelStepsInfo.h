@@ -48,6 +48,7 @@ namespace Model
     CancelStepsInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The encrypted StepId of a step.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CancelStepsInfo& WithStepId(const char* value) { SetStepId(value); return *this;}
 
+
     /**
      * <p>The status of a CancelSteps Request. The value may be SUBMITTED or
      * FAILED.</p>
@@ -112,6 +114,7 @@ namespace Model
      * FAILED.</p>
      */
     inline CancelStepsInfo& WithStatus(CancelStepsRequestStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason for the failure if the CancelSteps request fails.</p>
@@ -149,10 +152,13 @@ namespace Model
     inline CancelStepsInfo& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     Aws::String m_stepId;
     bool m_stepIdHasBeenSet;
+
     CancelStepsRequestStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

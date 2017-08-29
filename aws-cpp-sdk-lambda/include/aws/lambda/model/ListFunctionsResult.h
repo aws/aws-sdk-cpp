@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListFunctionsResult();
-    ListFunctionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFunctionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFunctionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFunctionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A string, present if there are more functions.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A string, present if there are more functions.</p>
      */
     inline ListFunctionsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+
 
     /**
      * <p>A list of Lambda functions.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline ListFunctionsResult& AddFunctions(FunctionConfiguration&& value) { m_functions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextMarker;
+
     Aws::Vector<FunctionConfiguration> m_functions;
   };
 

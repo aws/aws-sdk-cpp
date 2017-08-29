@@ -30,12 +30,12 @@ DescribeOrderableReplicationInstancesResult::DescribeOrderableReplicationInstanc
 {
 }
 
-DescribeOrderableReplicationInstancesResult::DescribeOrderableReplicationInstancesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeOrderableReplicationInstancesResult::DescribeOrderableReplicationInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeOrderableReplicationInstancesResult& DescribeOrderableReplicationInstancesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeOrderableReplicationInstancesResult& DescribeOrderableReplicationInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OrderableReplicationInstances"))

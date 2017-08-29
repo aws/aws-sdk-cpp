@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the subscription whose properties you want to get.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline GetSubscriptionAttributesRequest& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionArn;
     bool m_subscriptionArnHasBeenSet;
   };

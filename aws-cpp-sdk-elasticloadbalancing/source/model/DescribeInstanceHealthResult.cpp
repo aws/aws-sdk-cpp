@@ -31,12 +31,12 @@ DescribeInstanceHealthResult::DescribeInstanceHealthResult()
 {
 }
 
-DescribeInstanceHealthResult::DescribeInstanceHealthResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeInstanceHealthResult::DescribeInstanceHealthResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeInstanceHealthResult& DescribeInstanceHealthResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeInstanceHealthResult& DescribeInstanceHealthResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

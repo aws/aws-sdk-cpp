@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetChangeTokenResult();
-    GetChangeTokenResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetChangeTokenResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetChangeTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetChangeTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used in the request. Use this value in
@@ -91,6 +92,7 @@ namespace Model
     inline GetChangeTokenResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_changeToken;
   };
 

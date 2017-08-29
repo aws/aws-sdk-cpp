@@ -46,6 +46,7 @@ namespace Model
     FieldStats& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The minimum value found in the specified field in the result set.</p> <p>If
      * the field is numeric (<code>int</code>, <code>int-array</code>,
@@ -129,6 +130,7 @@ namespace Model
      * yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
      */
     inline FieldStats& WithMin(const char* value) { SetMin(value); return *this;}
+
 
     /**
      * <p>The maximum value found in the specified field in the result set.</p> <p>If
@@ -214,6 +216,7 @@ namespace Model
      */
     inline FieldStats& WithMax(const char* value) { SetMax(value); return *this;}
 
+
     /**
      * <p>The number of documents that contain a value in the specified field in the
      * result set.</p>
@@ -231,6 +234,7 @@ namespace Model
      * result set.</p>
      */
     inline FieldStats& WithCount(long long value) { SetCount(value); return *this;}
+
 
     /**
      * <p>The number of documents that do not contain a value in the specified field in
@@ -250,6 +254,7 @@ namespace Model
      */
     inline FieldStats& WithMissing(long long value) { SetMissing(value); return *this;}
 
+
     /**
      * <p>The sum of the field values across the documents in the result set.
      * <code>null</code> for date fields.</p>
@@ -268,6 +273,7 @@ namespace Model
      */
     inline FieldStats& WithSum(double value) { SetSum(value); return *this;}
 
+
     /**
      * <p>The sum of all field values in the result set squared.</p>
      */
@@ -282,6 +288,7 @@ namespace Model
      * <p>The sum of all field values in the result set squared.</p>
      */
     inline FieldStats& WithSumOfSquares(double value) { SetSumOfSquares(value); return *this;}
+
 
     /**
      * <p>The average of the values found in the specified field in the result set.</p>
@@ -367,6 +374,7 @@ namespace Model
      */
     inline FieldStats& WithMean(const char* value) { SetMean(value); return *this;}
 
+
     /**
      * <p>The standard deviation of the values in the specified field in the result
      * set.</p>
@@ -386,20 +394,28 @@ namespace Model
     inline FieldStats& WithStddev(double value) { SetStddev(value); return *this;}
 
   private:
+
     Aws::String m_min;
     bool m_minHasBeenSet;
+
     Aws::String m_max;
     bool m_maxHasBeenSet;
+
     long long m_count;
     bool m_countHasBeenSet;
+
     long long m_missing;
     bool m_missingHasBeenSet;
+
     double m_sum;
     bool m_sumHasBeenSet;
+
     double m_sumOfSquares;
     bool m_sumOfSquaresHasBeenSet;
+
     Aws::String m_mean;
     bool m_meanHasBeenSet;
+
     double m_stddev;
     bool m_stddevHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeregisterScalableTargetResult();
-    DeregisterScalableTargetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterScalableTargetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterScalableTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterScalableTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DeleteMLModelResult();
-    DeleteMLModelResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteMLModelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteMLModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteMLModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
@@ -99,6 +100,7 @@ namespace Model
     inline DeleteMLModelResult& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
   };
 

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
      * virtual tapes you want to describe.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DescribeTapeArchivesRequest& AddTapeARNs(const char* value) { m_tapeARNsHasBeenSet = true; m_tapeARNs.push_back(value); return *this; }
 
+
     /**
      * <p>An opaque string that indicates the position at which to begin describing
      * virtual tapes.</p>
@@ -130,6 +132,7 @@ namespace Model
      */
     inline DescribeTapeArchivesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Specifies that the number of virtual tapes descried be limited to the
      * specified number.</p>
@@ -149,10 +152,13 @@ namespace Model
     inline DescribeTapeArchivesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_tapeARNs;
     bool m_tapeARNsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

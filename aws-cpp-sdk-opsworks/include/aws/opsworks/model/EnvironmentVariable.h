@@ -45,6 +45,7 @@ namespace Model
     EnvironmentVariable& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>(Required) The environment variable's name, which can consist of up to 64
      * characters and must be specified. The name can contain upper- and lowercase
@@ -101,6 +102,7 @@ namespace Model
      */
     inline EnvironmentVariable& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>(Optional) The environment variable's value, which can be left empty. If you
      * specify a value, it can contain up to 256 characters, which must all be
@@ -150,6 +152,7 @@ namespace Model
      */
     inline EnvironmentVariable& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>(Optional) Whether the variable's value will be returned by the
      * <a>DescribeApps</a> action. To conceal an environment variable's value, set
@@ -178,10 +181,13 @@ namespace Model
     inline EnvironmentVariable& WithSecure(bool value) { SetSecure(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     bool m_secure;
     bool m_secureHasBeenSet;
   };

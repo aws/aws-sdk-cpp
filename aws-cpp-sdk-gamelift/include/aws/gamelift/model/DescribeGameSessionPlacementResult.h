@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeGameSessionPlacementResult();
-    DescribeGameSessionPlacementResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeGameSessionPlacementResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeGameSessionPlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeGameSessionPlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that describes the requested game session placement.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacement&& value) { SetGameSessionPlacement(std::move(value)); return *this;}
 
   private:
+
     GameSessionPlacement m_gameSessionPlacement;
   };
 

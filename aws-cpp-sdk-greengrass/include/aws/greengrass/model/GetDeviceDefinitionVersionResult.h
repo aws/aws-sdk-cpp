@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetDeviceDefinitionVersionResult();
-    GetDeviceDefinitionVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeviceDefinitionVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeviceDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeviceDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the device definition version.
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetDeviceDefinitionVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * Timestamp of when the device definition version was created.
      */
@@ -112,6 +114,7 @@ namespace Model
      */
     inline GetDeviceDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
+
     /**
      * Device definition version
      */
@@ -136,6 +139,7 @@ namespace Model
      * Device definition version
      */
     inline GetDeviceDefinitionVersionResult& WithDefinition(DeviceDefinitionVersion&& value) { SetDefinition(std::move(value)); return *this;}
+
 
     /**
      * Id of the device definition the version belongs to.
@@ -171,6 +175,7 @@ namespace Model
      * Id of the device definition the version belongs to.
      */
     inline GetDeviceDefinitionVersionResult& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Version of the device definition version.
@@ -208,10 +213,15 @@ namespace Model
     inline GetDeviceDefinitionVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_arn;
+
     Aws::String m_creationTimestamp;
+
     DeviceDefinitionVersion m_definition;
+
     Aws::String m_id;
+
     Aws::String m_version;
   };
 

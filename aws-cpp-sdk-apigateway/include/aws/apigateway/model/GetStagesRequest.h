@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetStagesRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The stages' deployment identifiers.</p>
@@ -115,8 +117,10 @@ namespace Model
     inline GetStagesRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
   };

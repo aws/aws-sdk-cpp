@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the upgrade target database engine.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the upgrade target database engine.</p>
      */
     inline UpgradeTarget& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>The version number of the upgrade target database engine.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline UpgradeTarget& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>The version of the database engine that a DB instance can be upgraded to.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline UpgradeTarget& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A value that indicates whether the target version will be applied to any
      * source DB instances that have AutoMinorVersionUpgrade set to true.</p>
@@ -171,6 +175,7 @@ namespace Model
      * source DB instances that have AutoMinorVersionUpgrade set to true.</p>
      */
     inline UpgradeTarget& WithAutoUpgrade(bool value) { SetAutoUpgrade(value); return *this;}
+
 
     /**
      * <p>A value that indicates whether a database engine will be upgraded to a major
@@ -191,14 +196,19 @@ namespace Model
     inline UpgradeTarget& WithIsMajorVersionUpgrade(bool value) { SetIsMajorVersionUpgrade(value); return *this;}
 
   private:
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_autoUpgrade;
     bool m_autoUpgradeHasBeenSet;
+
     bool m_isMajorVersionUpgrade;
     bool m_isMajorVersionUpgradeHasBeenSet;
   };

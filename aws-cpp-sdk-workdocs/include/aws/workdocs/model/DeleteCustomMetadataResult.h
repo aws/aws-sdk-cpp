@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteCustomMetadataResult();
-    DeleteCustomMetadataResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteCustomMetadataResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteCustomMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteCustomMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

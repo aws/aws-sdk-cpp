@@ -47,6 +47,7 @@ namespace Model
     FacetAttributeUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The attribute to update.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The attribute to update.</p>
      */
     inline FacetAttributeUpdate& WithAttribute(FacetAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+
 
     /**
      * <p>The action to perform when updating the attribute.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline FacetAttributeUpdate& WithAction(UpdateActionType&& value) { SetAction(std::move(value)); return *this;}
 
   private:
+
     FacetAttribute m_attribute;
     bool m_attributeHasBeenSet;
+
     UpdateActionType m_action;
     bool m_actionHasBeenSet;
   };

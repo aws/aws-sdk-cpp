@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     AcceptHandshakeResult();
-    AcceptHandshakeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcceptHandshakeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AcceptHandshakeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AcceptHandshakeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains details about the accepted handshake.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline AcceptHandshakeResult& WithHandshake(Handshake&& value) { SetHandshake(std::move(value)); return *this;}
 
   private:
+
     Handshake m_handshake;
   };
 

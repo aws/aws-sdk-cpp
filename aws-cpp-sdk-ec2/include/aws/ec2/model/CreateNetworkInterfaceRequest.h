@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A description for the network interface.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline CreateNetworkInterfaceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -103,6 +105,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CreateNetworkInterfaceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The IDs of one or more security groups.</p>
@@ -144,6 +147,7 @@ namespace Model
      */
     inline CreateNetworkInterfaceRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
+
     /**
      * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
      * automatically selects the IPv6 addresses from the subnet range. You can't use
@@ -170,6 +174,7 @@ namespace Model
      * can specify <code>0</code> to override this setting.</p>
      */
     inline CreateNetworkInterfaceRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+
 
     /**
      * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
@@ -219,6 +224,7 @@ namespace Model
      * addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The primary private IPv4 address of the network interface. If you don't
@@ -283,6 +289,7 @@ namespace Model
      */
     inline CreateNetworkInterfaceRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
+
     /**
      * <p>One or more private IPv4 addresses.</p>
      */
@@ -317,6 +324,7 @@ namespace Model
      * <p>One or more private IPv4 addresses.</p>
      */
     inline CreateNetworkInterfaceRequest& AddPrivateIpAddresses(PrivateIpAddressSpecification&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The number of secondary private IPv4 addresses to assign to a network
@@ -360,6 +368,7 @@ namespace Model
      */
     inline CreateNetworkInterfaceRequest& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 
+
     /**
      * <p>The ID of the subnet to associate with the network interface.</p>
      */
@@ -396,22 +405,31 @@ namespace Model
     inline CreateNetworkInterfaceRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Aws::String> m_groups;
     bool m_groupsHasBeenSet;
+
     int m_ipv6AddressCount;
     bool m_ipv6AddressCountHasBeenSet;
+
     Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
     bool m_ipv6AddressesHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+
     Aws::Vector<PrivateIpAddressSpecification> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
+
     int m_secondaryPrivateIpAddressCount;
     bool m_secondaryPrivateIpAddressCountHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     PatchComplianceData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The title of the patch.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline PatchComplianceData& WithTitle(const char* value) { SetTitle(value); return *this;}
 
+
     /**
      * <p>The operating system-specific ID of the patch.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The operating system-specific ID of the patch.</p>
      */
     inline PatchComplianceData& WithKBId(const char* value) { SetKBId(value); return *this;}
+
 
     /**
      * <p>The classification of the patch (for example, SecurityUpdates, Updates,
@@ -160,6 +163,7 @@ namespace Model
      */
     inline PatchComplianceData& WithClassification(const char* value) { SetClassification(value); return *this;}
 
+
     /**
      * <p>The severity of the patch (for example, Critical, Important, Moderate).</p>
      */
@@ -195,6 +199,7 @@ namespace Model
      */
     inline PatchComplianceData& WithSeverity(const char* value) { SetSeverity(value); return *this;}
 
+
     /**
      * <p>The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING,
      * NOT_APPLICABLE or FAILED).</p>
@@ -224,6 +229,7 @@ namespace Model
      * NOT_APPLICABLE or FAILED).</p>
      */
     inline PatchComplianceData& WithState(PatchComplianceDataState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The date/time the patch was installed on the instance. Note that not all
@@ -256,16 +262,22 @@ namespace Model
     inline PatchComplianceData& WithInstalledTime(Aws::Utils::DateTime&& value) { SetInstalledTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     Aws::String m_kBId;
     bool m_kBIdHasBeenSet;
+
     Aws::String m_classification;
     bool m_classificationHasBeenSet;
+
     Aws::String m_severity;
     bool m_severityHasBeenSet;
+
     PatchComplianceDataState m_state;
     bool m_stateHasBeenSet;
+
     Aws::Utils::DateTime m_installedTime;
     bool m_installedTimeHasBeenSet;
   };

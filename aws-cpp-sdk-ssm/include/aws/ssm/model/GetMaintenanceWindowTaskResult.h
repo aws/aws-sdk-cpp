@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetMaintenanceWindowTaskResult();
-    GetMaintenanceWindowTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMaintenanceWindowTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetMaintenanceWindowTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The retrieved Maintenance Window ID.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline GetMaintenanceWindowTaskResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
+
     /**
      * <p>The retrieved Maintenance Window task ID.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline GetMaintenanceWindowTaskResult& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
 
+
     /**
      * <p>The targets where the task should execute.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The targets where the task should execute.</p>
      */
     inline GetMaintenanceWindowTaskResult& AddTargets(Target&& value) { m_targets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The resource that the task used during execution. For RUN_COMMAND and
@@ -209,6 +213,7 @@ namespace Model
      */
     inline GetMaintenanceWindowTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
+
     /**
      * <p>The IAM service role to assume during task execution.</p>
      */
@@ -244,6 +249,7 @@ namespace Model
      */
     inline GetMaintenanceWindowTaskResult& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
+
     /**
      * <p>The type of task to execute.</p>
      */
@@ -268,6 +274,7 @@ namespace Model
      * <p>The type of task to execute.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
+
 
     /**
      * <p>The parameters to pass to the task when it executes.</p>
@@ -324,6 +331,7 @@ namespace Model
      */
     inline GetMaintenanceWindowTaskResult& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The parameters to pass to the task when it executes.</p>
      */
@@ -349,6 +357,7 @@ namespace Model
      */
     inline GetMaintenanceWindowTaskResult& WithTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { SetTaskInvocationParameters(std::move(value)); return *this;}
 
+
     /**
      * <p>The priority of the task when it executes. The lower the number, the higher
      * the priority. Tasks that have the same priority are scheduled in parallel.</p>
@@ -366,6 +375,7 @@ namespace Model
      * the priority. Tasks that have the same priority are scheduled in parallel.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
@@ -401,6 +411,7 @@ namespace Model
      * <p>The maximum number of targets allowed to run this task in parallel.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
+
 
     /**
      * <p>The maximum number of errors allowed before the task stops being
@@ -444,6 +455,7 @@ namespace Model
      */
     inline GetMaintenanceWindowTaskResult& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
+
     /**
      * <p>The location in Amazon S3 where the task results are logged.</p>
      */
@@ -468,6 +480,7 @@ namespace Model
      * <p>The location in Amazon S3 where the task results are logged.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>The retrieved task name.</p>
@@ -503,6 +516,7 @@ namespace Model
      * <p>The retrieved task name.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The retrieved task description.</p>
@@ -540,19 +554,33 @@ namespace Model
     inline GetMaintenanceWindowTaskResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
+
     Aws::String m_windowTaskId;
+
     Aws::Vector<Target> m_targets;
+
     Aws::String m_taskArn;
+
     Aws::String m_serviceRoleArn;
+
     MaintenanceWindowTaskType m_taskType;
+
     Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> m_taskParameters;
+
     MaintenanceWindowTaskInvocationParameters m_taskInvocationParameters;
+
     int m_priority;
+
     Aws::String m_maxConcurrency;
+
     Aws::String m_maxErrors;
+
     LoggingInfo m_loggingInfo;
+
     Aws::String m_name;
+
     Aws::String m_description;
   };
 

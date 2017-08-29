@@ -30,12 +30,12 @@ GetUserDefinedFunctionsResult::GetUserDefinedFunctionsResult()
 {
 }
 
-GetUserDefinedFunctionsResult::GetUserDefinedFunctionsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetUserDefinedFunctionsResult::GetUserDefinedFunctionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetUserDefinedFunctionsResult& GetUserDefinedFunctionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetUserDefinedFunctionsResult& GetUserDefinedFunctionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UserDefinedFunctions"))

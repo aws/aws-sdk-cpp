@@ -47,6 +47,7 @@ namespace Model
     Application& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the application.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The unique identifier for the application.</p>
      */
     inline Application& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The name of the application shown to the end users.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline Application& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
     /**
      * <p>The URL for the application icon. This URL may be time-limited.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The URL for the application icon. This URL may be time-limited.</p>
      */
     inline Application& WithIconURL(const char* value) { SetIconURL(value); return *this;}
+
 
     /**
      * <p>The path to the application executable in the instance.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline Application& WithLaunchPath(const char* value) { SetLaunchPath(value); return *this;}
 
+
     /**
      * <p>A list of arguments that are passed to the application at launch.</p>
      */
@@ -222,6 +227,7 @@ namespace Model
      */
     inline Application& WithLaunchParameters(const char* value) { SetLaunchParameters(value); return *this;}
 
+
     /**
      * <p>If there is a problem, an application can be disabled after image
      * creation.</p>
@@ -239,6 +245,7 @@ namespace Model
      * creation.</p>
      */
     inline Application& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>Additional attributes that describe the application.</p>
@@ -301,18 +308,25 @@ namespace Model
     inline Application& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     Aws::String m_iconURL;
     bool m_iconURLHasBeenSet;
+
     Aws::String m_launchPath;
     bool m_launchPathHasBeenSet;
+
     Aws::String m_launchParameters;
     bool m_launchParametersHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_metadata;
     bool m_metadataHasBeenSet;
   };

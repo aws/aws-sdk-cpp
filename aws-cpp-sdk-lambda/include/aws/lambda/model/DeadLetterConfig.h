@@ -46,6 +46,7 @@ namespace Model
     DeadLetterConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
      * specify as your Dead Letter Queue (DLQ).</p>
@@ -89,6 +90,7 @@ namespace Model
     inline DeadLetterConfig& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
   private:
+
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet;
   };

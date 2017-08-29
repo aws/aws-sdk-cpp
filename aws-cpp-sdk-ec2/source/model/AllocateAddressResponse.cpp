@@ -32,13 +32,13 @@ AllocateAddressResponse::AllocateAddressResponse() :
 {
 }
 
-AllocateAddressResponse::AllocateAddressResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+AllocateAddressResponse::AllocateAddressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_domain(DomainType::NOT_SET)
 {
   *this = result;
 }
 
-AllocateAddressResponse& AllocateAddressResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AllocateAddressResponse& AllocateAddressResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

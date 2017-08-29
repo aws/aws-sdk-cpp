@@ -58,6 +58,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The number of HTTP methods that you want CloudFront to forward to your
      * origin. Valid values are 2 (for <code>GET</code> and <code>HEAD</code>
@@ -84,6 +85,7 @@ namespace Model
      * <code>DELETE</code> requests).</p>
      */
     inline AllowedMethods& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>A complex type that contains the HTTP methods that you want CloudFront to
@@ -127,6 +129,7 @@ namespace Model
      */
     inline AllowedMethods& AddItems(Method&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
+
     
     inline const CachedMethods& GetCachedMethods() const{ return m_cachedMethods; }
 
@@ -143,10 +146,13 @@ namespace Model
     inline AllowedMethods& WithCachedMethods(CachedMethods&& value) { SetCachedMethods(std::move(value)); return *this;}
 
   private:
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<Method> m_items;
     bool m_itemsHasBeenSet;
+
     CachedMethods m_cachedMethods;
     bool m_cachedMethodsHasBeenSet;
   };

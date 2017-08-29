@@ -31,12 +31,12 @@ ModifyDBClusterResult::ModifyDBClusterResult()
 {
 }
 
-ModifyDBClusterResult::ModifyDBClusterResult(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyDBClusterResult::ModifyDBClusterResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifyDBClusterResult& ModifyDBClusterResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyDBClusterResult& ModifyDBClusterResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

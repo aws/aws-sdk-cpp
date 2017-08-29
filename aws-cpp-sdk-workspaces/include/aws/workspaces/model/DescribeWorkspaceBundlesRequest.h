@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of strings that contains the identifiers of the bundles to retrieve.
      * This parameter cannot be combined with any other filter parameter.</p>
@@ -88,6 +89,7 @@ namespace Model
      * This parameter cannot be combined with any other filter parameter.</p>
      */
     inline DescribeWorkspaceBundlesRequest& AddBundleIds(const char* value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
+
 
     /**
      * <p>The owner of the bundles to retrieve. This parameter cannot be combined with
@@ -152,6 +154,7 @@ namespace Model
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(const char* value) { SetOwner(value); return *this;}
 
+
     /**
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
      * null if this is the first call.</p>
@@ -195,10 +198,13 @@ namespace Model
     inline DescribeWorkspaceBundlesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_bundleIds;
     bool m_bundleIdsHasBeenSet;
+
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

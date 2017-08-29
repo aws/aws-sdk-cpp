@@ -30,12 +30,12 @@ StartExecutionResult::StartExecutionResult()
 {
 }
 
-StartExecutionResult::StartExecutionResult(const AmazonWebServiceResult<JsonValue>& result)
+StartExecutionResult::StartExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartExecutionResult& StartExecutionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartExecutionResult& StartExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("executionArn"))

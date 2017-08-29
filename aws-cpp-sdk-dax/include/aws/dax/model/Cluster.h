@@ -52,6 +52,7 @@ namespace Model
     Cluster& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the DAX cluster.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The name of the DAX cluster.</p>
      */
     inline Cluster& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+
 
     /**
      * <p>The description of the cluster.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline Cluster& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster. </p>
      */
@@ -157,6 +160,7 @@ namespace Model
      */
     inline Cluster& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
 
+
     /**
      * <p>The total number of nodes in the cluster.</p>
      */
@@ -171,6 +175,7 @@ namespace Model
      * <p>The total number of nodes in the cluster.</p>
      */
     inline Cluster& WithTotalNodes(int value) { SetTotalNodes(value); return *this;}
+
 
     /**
      * <p>The number of nodes in the cluster that are active (i.e., capable of serving
@@ -189,6 +194,7 @@ namespace Model
      * requests).</p>
      */
     inline Cluster& WithActiveNodes(int value) { SetActiveNodes(value); return *this;}
+
 
     /**
      * <p>The node type for the nodes in the cluster. (All nodes in a DAX cluster are
@@ -232,6 +238,7 @@ namespace Model
      */
     inline Cluster& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
+
     /**
      * <p>The current status of the cluster.</p>
      */
@@ -266,6 +273,7 @@ namespace Model
      * <p>The current status of the cluster.</p>
      */
     inline Cluster& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The configuration endpoint for this DAX cluster, consisting of a DNS name and
@@ -307,6 +315,7 @@ namespace Model
      */
     inline Cluster& WithClusterDiscoveryEndpoint(Endpoint&& value) { SetClusterDiscoveryEndpoint(std::move(value)); return *this;}
 
+
     /**
      * <p>A list of nodes to be removed from the cluster.</p>
      */
@@ -347,6 +356,7 @@ namespace Model
      */
     inline Cluster& AddNodeIdsToRemove(const char* value) { m_nodeIdsToRemoveHasBeenSet = true; m_nodeIdsToRemove.push_back(value); return *this; }
 
+
     /**
      * <p>A list of nodes that are currently in the cluster.</p>
      */
@@ -381,6 +391,7 @@ namespace Model
      * <p>A list of nodes that are currently in the cluster.</p>
      */
     inline Cluster& AddNodes(Node&& value) { m_nodesHasBeenSet = true; m_nodes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A range of time when maintenance of DAX cluster software will be performed.
@@ -438,6 +449,7 @@ namespace Model
      */
     inline Cluster& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>Describes a notification topic and its status. Notification topics are used
      * for publishing DAX events to subscribers using Amazon Simple Notification
@@ -473,6 +485,7 @@ namespace Model
      */
     inline Cluster& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The subnet group where the DAX cluster is running.</p>
      */
@@ -507,6 +520,7 @@ namespace Model
      * <p>The subnet group where the DAX cluster is running.</p>
      */
     inline Cluster& WithSubnetGroup(const char* value) { SetSubnetGroup(value); return *this;}
+
 
     /**
      * <p>A list of security groups, and the status of each, for the nodes in the
@@ -549,6 +563,7 @@ namespace Model
      * cluster.</p>
      */
     inline Cluster& AddSecurityGroups(SecurityGroupMembership&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime,
@@ -599,6 +614,7 @@ namespace Model
      */
     inline Cluster& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 
+
     /**
      * <p>The parameter group being used by nodes in the cluster.</p>
      */
@@ -625,36 +641,52 @@ namespace Model
     inline Cluster& WithParameterGroup(ParameterGroupStatus&& value) { SetParameterGroup(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_clusterArn;
     bool m_clusterArnHasBeenSet;
+
     int m_totalNodes;
     bool m_totalNodesHasBeenSet;
+
     int m_activeNodes;
     bool m_activeNodesHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Endpoint m_clusterDiscoveryEndpoint;
     bool m_clusterDiscoveryEndpointHasBeenSet;
+
     Aws::Vector<Aws::String> m_nodeIdsToRemove;
     bool m_nodeIdsToRemoveHasBeenSet;
+
     Aws::Vector<Node> m_nodes;
     bool m_nodesHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     NotificationConfiguration m_notificationConfiguration;
     bool m_notificationConfigurationHasBeenSet;
+
     Aws::String m_subnetGroup;
     bool m_subnetGroupHasBeenSet;
+
     Aws::Vector<SecurityGroupMembership> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
     Aws::String m_iamRoleArn;
     bool m_iamRoleArnHasBeenSet;
+
     ParameterGroupStatus m_parameterGroup;
     bool m_parameterGroupHasBeenSet;
   };

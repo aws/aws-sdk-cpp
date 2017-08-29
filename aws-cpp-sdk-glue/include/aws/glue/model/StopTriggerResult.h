@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StopTriggerResult();
-    StopTriggerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopTriggerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopTriggerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopTriggerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the trigger that was stopped.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline StopTriggerResult& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
   };
 

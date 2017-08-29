@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetRegionsResult();
-    GetRegionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRegionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about your get regions
@@ -85,6 +86,7 @@ namespace Model
     inline GetRegionsResult& AddRegions(Region&& value) { m_regions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Region> m_regions;
   };
 

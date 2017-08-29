@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The path to the group. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -103,6 +104,7 @@ namespace Model
      */
     inline GroupDetail& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The friendly name that identifies the group.</p>
      */
@@ -137,6 +139,7 @@ namespace Model
      * <p>The friendly name that identifies the group.</p>
      */
     inline GroupDetail& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>The stable and unique string identifying the group. For more information
@@ -194,6 +197,7 @@ namespace Model
      */
     inline GroupDetail& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
+
     
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -214,6 +218,7 @@ namespace Model
 
     
     inline GroupDetail& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -244,6 +249,7 @@ namespace Model
      * date-time format</a>, when the group was created.</p>
      */
     inline GroupDetail& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the inline policies embedded in the group.</p>
@@ -279,6 +285,7 @@ namespace Model
      * <p>A list of the inline policies embedded in the group.</p>
      */
     inline GroupDetail& AddGroupPolicyList(PolicyDetail&& value) { m_groupPolicyListHasBeenSet = true; m_groupPolicyList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of the managed policies attached to the group.</p>
@@ -316,18 +323,25 @@ namespace Model
     inline GroupDetail& AddAttachedManagedPolicies(AttachedPolicy&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     Aws::Vector<PolicyDetail> m_groupPolicyList;
     bool m_groupPolicyListHasBeenSet;
+
     Aws::Vector<AttachedPolicy> m_attachedManagedPolicies;
     bool m_attachedManagedPoliciesHasBeenSet;
   };

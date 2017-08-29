@@ -224,22 +224,22 @@ namespace Model
         class VerifyUserAttributeRequest;
 
         typedef Aws::Utils::Outcome<AddCustomAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AddCustomAttributesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminAddUserToGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminAddUserToGroupOutcome;
         typedef Aws::Utils::Outcome<AdminConfirmSignUpResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminConfirmSignUpOutcome;
         typedef Aws::Utils::Outcome<AdminCreateUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminCreateUserOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDeleteUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDeleteUserOutcome;
         typedef Aws::Utils::Outcome<AdminDeleteUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDeleteUserAttributesOutcome;
         typedef Aws::Utils::Outcome<AdminDisableProviderForUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDisableProviderForUserOutcome;
         typedef Aws::Utils::Outcome<AdminDisableUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDisableUserOutcome;
         typedef Aws::Utils::Outcome<AdminEnableUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminEnableUserOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminForgetDeviceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminForgetDeviceOutcome;
         typedef Aws::Utils::Outcome<AdminGetDeviceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminGetDeviceOutcome;
         typedef Aws::Utils::Outcome<AdminGetUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminGetUserOutcome;
         typedef Aws::Utils::Outcome<AdminInitiateAuthResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminInitiateAuthOutcome;
         typedef Aws::Utils::Outcome<AdminLinkProviderForUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminLinkProviderForUserOutcome;
         typedef Aws::Utils::Outcome<AdminListDevicesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminListDevicesOutcome;
         typedef Aws::Utils::Outcome<AdminListGroupsForUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminListGroupsForUserOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminRemoveUserFromGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminRemoveUserFromGroupOutcome;
         typedef Aws::Utils::Outcome<AdminResetUserPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminResetUserPasswordOutcome;
         typedef Aws::Utils::Outcome<AdminRespondToAuthChallengeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminRespondToAuthChallengeOutcome;
         typedef Aws::Utils::Outcome<AdminSetUserSettingsResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminSetUserSettingsOutcome;
@@ -257,13 +257,13 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateUserPoolResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateUserPoolOutcome;
         typedef Aws::Utils::Outcome<CreateUserPoolClientResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateUserPoolClientOutcome;
         typedef Aws::Utils::Outcome<CreateUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> CreateUserPoolDomainOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteGroupOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteIdentityProviderOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteResourceServerOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteIdentityProviderOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteResourceServerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<DeleteUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserAttributesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolClientOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolClientOutcome;
         typedef Aws::Utils::Outcome<DeleteUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DeleteUserPoolDomainOutcome;
         typedef Aws::Utils::Outcome<DescribeIdentityProviderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeIdentityProviderOutcome;
         typedef Aws::Utils::Outcome<DescribeResourceServerResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeResourceServerOutcome;
@@ -271,7 +271,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeUserPoolResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserPoolOutcome;
         typedef Aws::Utils::Outcome<DescribeUserPoolClientResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserPoolClientOutcome;
         typedef Aws::Utils::Outcome<DescribeUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> DescribeUserPoolDomainOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ForgetDeviceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ForgetDeviceOutcome;
         typedef Aws::Utils::Outcome<ForgotPasswordResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> ForgotPasswordOutcome;
         typedef Aws::Utils::Outcome<GetCSVHeaderResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetCSVHeaderOutcome;
         typedef Aws::Utils::Outcome<GetDeviceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetDeviceOutcome;
@@ -494,22 +494,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CognitoIdentityProviderClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CognitoIdentityProviderClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CognitoIdentityProviderClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CognitoIdentityProviderClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        CognitoIdentityProviderClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CognitoIdentityProviderClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CognitoIdentityProviderClient();
+
 
         /**
          * <p>Adds additional user attributes to the user pool schema.</p><p><h3>See
@@ -3002,7 +3003,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AddCustomAttributesAsyncHelper(const Model::AddCustomAttributesRequest& request, const AddCustomAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

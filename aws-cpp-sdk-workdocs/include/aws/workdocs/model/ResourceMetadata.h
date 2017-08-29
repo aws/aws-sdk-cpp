@@ -47,6 +47,7 @@ namespace Model
     ResourceMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of resource.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The type of resource.</p>
      */
     inline ResourceMetadata& WithType(ResourceType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the resource.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline ResourceMetadata& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The original name of the resource prior to a rename operation.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      */
     inline ResourceMetadata& WithOriginalName(const char* value) { SetOriginalName(value); return *this;}
 
+
     /**
      * <p>The ID of the resource.</p>
      */
@@ -176,6 +180,7 @@ namespace Model
      * <p>The ID of the resource.</p>
      */
     inline ResourceMetadata& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The version ID of the resource. This is an optional field and is filled for
@@ -219,6 +224,7 @@ namespace Model
      */
     inline ResourceMetadata& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     /**
      * <p>The owner of the resource.</p>
      */
@@ -243,6 +249,7 @@ namespace Model
      * <p>The owner of the resource.</p>
      */
     inline ResourceMetadata& WithOwner(UserMetadata&& value) { SetOwner(std::move(value)); return *this;}
+
 
     /**
      * <p>The parent ID of the resource before a rename operation.</p>
@@ -280,18 +287,25 @@ namespace Model
     inline ResourceMetadata& WithParentId(const char* value) { SetParentId(value); return *this;}
 
   private:
+
     ResourceType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_originalName;
     bool m_originalNameHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     UserMetadata m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::String m_parentId;
     bool m_parentIdHasBeenSet;
   };

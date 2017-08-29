@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeAlarmHistoryResult();
-    DescribeAlarmHistoryResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAlarmHistoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAlarmHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAlarmHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The alarm histories, in JSON format.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeAlarmHistoryResult& AddAlarmHistoryItems(AlarmHistoryItem&& value) { m_alarmHistoryItems.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token that marks the start of the next batch of returned results.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      */
     inline DescribeAlarmHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -130,8 +133,11 @@ namespace Model
     inline DescribeAlarmHistoryResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<AlarmHistoryItem> m_alarmHistoryItems;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

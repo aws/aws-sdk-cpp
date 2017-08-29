@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no
      * data on an instance.</p>
@@ -66,6 +67,7 @@ namespace Model
      * data on an instance.</p>
      */
     inline InstanceHealthSummary& WithNoData(int value) { SetNoData(value); return *this;}
+
 
     /**
      * <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an
@@ -85,6 +87,7 @@ namespace Model
      */
     inline InstanceHealthSummary& WithUnknown(int value) { SetUnknown(value); return *this;}
 
+
     /**
      * <p> <b>Grey.</b> An operation is in progress on an instance within the command
      * timeout.</p>
@@ -102,6 +105,7 @@ namespace Model
      * timeout.</p>
      */
     inline InstanceHealthSummary& WithPending(int value) { SetPending(value); return *this;}
+
 
     /**
      * <p> <b>Green.</b> An instance is passing health checks and the health agent is
@@ -121,6 +125,7 @@ namespace Model
      */
     inline InstanceHealthSummary& WithOk(int value) { SetOk(value); return *this;}
 
+
     /**
      * <p> <b>Green.</b> An operation is in progress on an instance.</p>
      */
@@ -135,6 +140,7 @@ namespace Model
      * <p> <b>Green.</b> An operation is in progress on an instance.</p>
      */
     inline InstanceHealthSummary& WithInfo(int value) { SetInfo(value); return *this;}
+
 
     /**
      * <p> <b>Yellow.</b> The health agent is reporting a moderate number of request
@@ -154,6 +160,7 @@ namespace Model
      */
     inline InstanceHealthSummary& WithWarning(int value) { SetWarning(value); return *this;}
 
+
     /**
      * <p> <b>Red.</b> The health agent is reporting a high number of request failures
      * or other issues for an instance or environment.</p>
@@ -171,6 +178,7 @@ namespace Model
      * or other issues for an instance or environment.</p>
      */
     inline InstanceHealthSummary& WithDegraded(int value) { SetDegraded(value); return *this;}
+
 
     /**
      * <p> <b>Red.</b> The health agent is reporting a very high number of request
@@ -191,20 +199,28 @@ namespace Model
     inline InstanceHealthSummary& WithSevere(int value) { SetSevere(value); return *this;}
 
   private:
+
     int m_noData;
     bool m_noDataHasBeenSet;
+
     int m_unknown;
     bool m_unknownHasBeenSet;
+
     int m_pending;
     bool m_pendingHasBeenSet;
+
     int m_ok;
     bool m_okHasBeenSet;
+
     int m_info;
     bool m_infoHasBeenSet;
+
     int m_warning;
     bool m_warningHasBeenSet;
+
     int m_degraded;
     bool m_degradedHasBeenSet;
+
     int m_severe;
     bool m_severeHasBeenSet;
   };

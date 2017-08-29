@@ -44,6 +44,7 @@ namespace Model
     ErrorStatistics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of requests that failed with a 419 throttling status code.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>The number of requests that failed with a 419 throttling status code.</p>
      */
     inline ErrorStatistics& WithThrottleCount(long long value) { SetThrottleCount(value); return *this;}
+
 
     /**
      * <p>The number of requests that failed with untracked 4xx Client Error status
@@ -76,6 +78,7 @@ namespace Model
      * codes.</p>
      */
     inline ErrorStatistics& WithOtherCount(long long value) { SetOtherCount(value); return *this;}
+
 
     /**
      * <p>The total number of requests that failed with a 4xx Client Error status
@@ -96,10 +99,13 @@ namespace Model
     inline ErrorStatistics& WithTotalCount(long long value) { SetTotalCount(value); return *this;}
 
   private:
+
     long long m_throttleCount;
     bool m_throttleCountHasBeenSet;
+
     long long m_otherCount;
     bool m_otherCountHasBeenSet;
+
     long long m_totalCount;
     bool m_totalCountHasBeenSet;
   };

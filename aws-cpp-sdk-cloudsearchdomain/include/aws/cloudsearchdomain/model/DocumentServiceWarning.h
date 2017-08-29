@@ -46,6 +46,7 @@ namespace Model
     DocumentServiceWarning& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The description for a warning returned by the document service.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline DocumentServiceWarning& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

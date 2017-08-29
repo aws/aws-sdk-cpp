@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
@@ -93,6 +94,7 @@ namespace Model
      * can also include any of the following characters: =,.@-</p>
      */
     inline CreatePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
@@ -185,6 +187,7 @@ namespace Model
      */
     inline CreatePolicyRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The JSON policy document that you want to use as the content for the new
      * policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
@@ -269,6 +272,7 @@ namespace Model
      */
     inline CreatePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
+
     /**
      * <p>A friendly description of the policy.</p> <p>Typically used to store
      * information about the permissions defined in the policy. For example, "Grants
@@ -326,12 +330,16 @@ namespace Model
     inline CreatePolicyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListAssociationVersionsResult();
-    ListAssociationVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssociationVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssociationVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssociationVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about all versions of the association for the specified
@@ -84,6 +85,7 @@ namespace Model
      * association ID.</p>
      */
     inline ListAssociationVersionsResult& AddAssociationVersions(AssociationVersionInfo&& value) { m_associationVersions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token for the next set of items to return. Use this token to get the next
@@ -128,7 +130,9 @@ namespace Model
     inline ListAssociationVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<AssociationVersionInfo> m_associationVersions;
+
     Aws::String m_nextToken;
   };
 

@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The number of IPv6 addresses to assign to the network interface. Amazon EC2
      * automatically selects the IPv6 addresses from the subnet range. You can't use
@@ -59,6 +60,7 @@ namespace Model
      * this option if specifying specific IPv6 addresses.</p>
      */
     inline AssignIpv6AddressesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+
 
     /**
      * <p>One or more specific IPv6 addresses to be assigned to the network interface.
@@ -108,6 +110,7 @@ namespace Model
      */
     inline AssignIpv6AddressesRequest& AddIpv6Addresses(const char* value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of the network interface.</p>
      */
@@ -144,10 +147,13 @@ namespace Model
     inline AssignIpv6AddressesRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
   private:
+
     int m_ipv6AddressCount;
     bool m_ipv6AddressCountHasBeenSet;
+
     Aws::Vector<Aws::String> m_ipv6Addresses;
     bool m_ipv6AddressesHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
   };

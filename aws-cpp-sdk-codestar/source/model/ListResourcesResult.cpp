@@ -30,12 +30,12 @@ ListResourcesResult::ListResourcesResult()
 {
 }
 
-ListResourcesResult::ListResourcesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListResourcesResult::ListResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListResourcesResult& ListResourcesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListResourcesResult& ListResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("resources"))

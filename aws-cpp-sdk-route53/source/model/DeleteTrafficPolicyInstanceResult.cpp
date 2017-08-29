@@ -29,12 +29,12 @@ DeleteTrafficPolicyInstanceResult::DeleteTrafficPolicyInstanceResult()
 {
 }
 
-DeleteTrafficPolicyInstanceResult::DeleteTrafficPolicyInstanceResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteTrafficPolicyInstanceResult::DeleteTrafficPolicyInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteTrafficPolicyInstanceResult& DeleteTrafficPolicyInstanceResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteTrafficPolicyInstanceResult& DeleteTrafficPolicyInstanceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

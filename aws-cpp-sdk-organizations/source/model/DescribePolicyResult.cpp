@@ -30,12 +30,12 @@ DescribePolicyResult::DescribePolicyResult()
 {
 }
 
-DescribePolicyResult::DescribePolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribePolicyResult::DescribePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribePolicyResult& DescribePolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribePolicyResult& DescribePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Policy"))

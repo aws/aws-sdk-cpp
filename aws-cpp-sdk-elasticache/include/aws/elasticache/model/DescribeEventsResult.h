@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeEventsResult();
-    DescribeEventsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline DescribeEventsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>A list of events. Each element in the list contains detailed information
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeEventsResult& AddEvents(Event&& value) { m_events.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeEventsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<Event> m_events;
+
     ResponseMetadata m_responseMetadata;
   };
 

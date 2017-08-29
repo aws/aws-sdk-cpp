@@ -46,6 +46,7 @@ namespace Model
     EventCategoryGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | replication-server | security-group | migration-task</p>
@@ -87,6 +88,7 @@ namespace Model
      * replication-instance | replication-server | security-group | migration-task</p>
      */
     inline EventCategoryGroup& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+
 
     /**
      * <p> A list of event categories for a <code>SourceType</code> that you want to
@@ -137,8 +139,10 @@ namespace Model
     inline EventCategoryGroup& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
   private:
+
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventCategories;
     bool m_eventCategoriesHasBeenSet;
   };

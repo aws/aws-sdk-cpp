@@ -31,12 +31,12 @@ DescribeConversionTasksResponse::DescribeConversionTasksResponse()
 {
 }
 
-DescribeConversionTasksResponse::DescribeConversionTasksResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeConversionTasksResponse::DescribeConversionTasksResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeConversionTasksResponse& DescribeConversionTasksResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeConversionTasksResponse& DescribeConversionTasksResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

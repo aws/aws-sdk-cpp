@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A name for the cache security group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
@@ -98,6 +99,7 @@ namespace Model
      */
     inline CreateCacheSecurityGroupRequest& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
 
+
     /**
      * <p>A description for the cache security group.</p>
      */
@@ -134,8 +136,10 @@ namespace Model
     inline CreateCacheSecurityGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_cacheSecurityGroupName;
     bool m_cacheSecurityGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

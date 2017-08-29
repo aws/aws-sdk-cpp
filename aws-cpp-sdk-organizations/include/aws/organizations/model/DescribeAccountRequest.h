@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the AWS account that you want information
      * about. You can get the ID from the <a>ListAccounts</a> or
@@ -100,6 +101,7 @@ namespace Model
     inline DescribeAccountRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
   };

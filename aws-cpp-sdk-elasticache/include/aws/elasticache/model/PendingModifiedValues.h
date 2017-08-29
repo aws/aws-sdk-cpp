@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The new number of cache nodes for the cache cluster.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
@@ -70,6 +71,7 @@ namespace Model
      * must be between 1 and 20.</p>
      */
     inline PendingModifiedValues& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
+
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
@@ -119,6 +121,7 @@ namespace Model
      */
     inline PendingModifiedValues& AddCacheNodeIdsToRemove(const char* value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }
 
+
     /**
      * <p>The new cache engine version that the cache cluster runs.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>The new cache engine version that the cache cluster runs.</p>
      */
     inline PendingModifiedValues& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
 
     /**
      * <p>The cache node type that this cache cluster or replication group is scaled
@@ -197,12 +201,16 @@ namespace Model
     inline PendingModifiedValues& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
   private:
+
     int m_numCacheNodes;
     bool m_numCacheNodesHasBeenSet;
+
     Aws::Vector<Aws::String> m_cacheNodeIdsToRemove;
     bool m_cacheNodeIdsToRemoveHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
   };

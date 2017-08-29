@@ -37,6 +37,7 @@ namespace Model
     ListPolicyVersionsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The policy name.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline ListPolicyVersionsRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
   };

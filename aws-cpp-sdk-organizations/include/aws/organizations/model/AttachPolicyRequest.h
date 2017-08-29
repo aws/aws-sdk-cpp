@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the policy that you want to attach to the
      * target. You can get the ID for the policy by calling the <a>ListPolicies</a>
@@ -98,6 +99,7 @@ namespace Model
      * lower-case letters or digits.</p>
      */
     inline AttachPolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+
 
     /**
      * <p>The unique identifier (ID) of the root, OU, or account that you want to
@@ -205,8 +207,10 @@ namespace Model
     inline AttachPolicyRequest& WithTargetId(const char* value) { SetTargetId(value); return *this;}
 
   private:
+
     Aws::String m_policyId;
     bool m_policyIdHasBeenSet;
+
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet;
   };

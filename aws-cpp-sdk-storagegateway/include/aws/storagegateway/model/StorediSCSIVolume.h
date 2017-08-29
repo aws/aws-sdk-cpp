@@ -47,6 +47,7 @@ namespace Model
     StorediSCSIVolume& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the storage volume.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline StorediSCSIVolume& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
+
     /**
      * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
      */
     inline StorediSCSIVolume& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
 
     /**
      * <p>One of the VolumeType enumeration values describing the type of the
@@ -159,6 +162,7 @@ namespace Model
      */
     inline StorediSCSIVolume& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
+
     /**
      * <p>One of the VolumeStatus values that indicates the state of the storage
      * volume.</p>
@@ -201,6 +205,7 @@ namespace Model
      */
     inline StorediSCSIVolume& WithVolumeStatus(const char* value) { SetVolumeStatus(value); return *this;}
 
+
     /**
      * <p>The size of the volume in bytes.</p>
      */
@@ -215,6 +220,7 @@ namespace Model
      * <p>The size of the volume in bytes.</p>
      */
     inline StorediSCSIVolume& WithVolumeSizeInBytes(long long value) { SetVolumeSizeInBytes(value); return *this;}
+
 
     /**
      * <p>Represents the percentage complete if the volume is restoring or
@@ -239,6 +245,7 @@ namespace Model
      * bootstrapping.</p>
      */
     inline StorediSCSIVolume& WithVolumeProgress(double value) { SetVolumeProgress(value); return *this;}
+
 
     /**
      * <p>The ID of the local disk that was specified in the
@@ -282,6 +289,7 @@ namespace Model
      */
     inline StorediSCSIVolume& WithVolumeDiskId(const char* value) { SetVolumeDiskId(value); return *this;}
 
+
     /**
      * <p>If the stored volume was created from a snapshot, this field contains the
      * snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>
@@ -324,6 +332,7 @@ namespace Model
      */
     inline StorediSCSIVolume& WithSourceSnapshotId(const char* value) { SetSourceSnapshotId(value); return *this;}
 
+
     /**
      * <p>Indicates if when the stored volume was created, existing data on the
      * underlying local disk was preserved.</p> <p> Valid Values: true, false</p>
@@ -341,6 +350,7 @@ namespace Model
      * underlying local disk was preserved.</p> <p> Valid Values: true, false</p>
      */
     inline StorediSCSIVolume& WithPreservedExistingData(bool value) { SetPreservedExistingData(value); return *this;}
+
 
     /**
      * <p>An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI
@@ -371,6 +381,7 @@ namespace Model
      * attributes for one stored volume.</p>
      */
     inline StorediSCSIVolume& WithVolumeiSCSIAttributes(VolumeiSCSIAttributes&& value) { SetVolumeiSCSIAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
@@ -403,26 +414,37 @@ namespace Model
     inline StorediSCSIVolume& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
     bool m_volumeARNHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     Aws::String m_volumeStatus;
     bool m_volumeStatusHasBeenSet;
+
     long long m_volumeSizeInBytes;
     bool m_volumeSizeInBytesHasBeenSet;
+
     double m_volumeProgress;
     bool m_volumeProgressHasBeenSet;
+
     Aws::String m_volumeDiskId;
     bool m_volumeDiskIdHasBeenSet;
+
     Aws::String m_sourceSnapshotId;
     bool m_sourceSnapshotIdHasBeenSet;
+
     bool m_preservedExistingData;
     bool m_preservedExistingDataHasBeenSet;
+
     VolumeiSCSIAttributes m_volumeiSCSIAttributes;
     bool m_volumeiSCSIAttributesHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
   };

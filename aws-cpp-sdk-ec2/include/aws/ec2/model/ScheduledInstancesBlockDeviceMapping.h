@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The device name exposed to the instance (for example, <code>/dev/sdh</code>
      * or <code>xvdh</code>).</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline ScheduledInstancesBlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
+
     /**
      * <p>Parameters used to set up EBS volumes automatically when the instance is
      * launched.</p>
@@ -121,6 +123,7 @@ namespace Model
      * launched.</p>
      */
     inline ScheduledInstancesBlockDeviceMapping& WithEbs(ScheduledInstancesEbs&& value) { SetEbs(std::move(value)); return *this;}
+
 
     /**
      * <p>Suppresses the specified device included in the block device mapping of the
@@ -163,6 +166,7 @@ namespace Model
      * AMI.</p>
      */
     inline ScheduledInstancesBlockDeviceMapping& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
+
 
     /**
      * <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are
@@ -256,12 +260,16 @@ namespace Model
     inline ScheduledInstancesBlockDeviceMapping& WithVirtualName(const char* value) { SetVirtualName(value); return *this;}
 
   private:
+
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet;
+
     ScheduledInstancesEbs m_ebs;
     bool m_ebsHasBeenSet;
+
     Aws::String m_noDevice;
     bool m_noDeviceHasBeenSet;
+
     Aws::String m_virtualName;
     bool m_virtualNameHasBeenSet;
   };

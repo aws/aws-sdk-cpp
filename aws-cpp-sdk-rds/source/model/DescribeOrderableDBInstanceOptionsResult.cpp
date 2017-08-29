@@ -31,12 +31,12 @@ DescribeOrderableDBInstanceOptionsResult::DescribeOrderableDBInstanceOptionsResu
 {
 }
 
-DescribeOrderableDBInstanceOptionsResult::DescribeOrderableDBInstanceOptionsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeOrderableDBInstanceOptionsResult::DescribeOrderableDBInstanceOptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeOrderableDBInstanceOptionsResult& DescribeOrderableDBInstanceOptionsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeOrderableDBInstanceOptionsResult& DescribeOrderableDBInstanceOptionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

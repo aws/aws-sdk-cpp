@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ImportImageResponse();
-    ImportImageResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ImportImageResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ImportImageResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ImportImageResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The architecture of the virtual machine.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ImportImageResponse& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
 
+
     /**
      * <p>A description of the import task.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>A description of the import task.</p>
      */
     inline ImportImageResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The target hypervisor of the import task.</p>
@@ -154,6 +157,7 @@ namespace Model
      */
     inline ImportImageResponse& WithHypervisor(const char* value) { SetHypervisor(value); return *this;}
 
+
     /**
      * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
      */
@@ -188,6 +192,7 @@ namespace Model
      * <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
      */
     inline ImportImageResponse& WithImageId(const char* value) { SetImageId(value); return *this;}
+
 
     /**
      * <p>The task ID of the import image task.</p>
@@ -224,6 +229,7 @@ namespace Model
      */
     inline ImportImageResponse& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
 
+
     /**
      * <p>The license type of the virtual machine.</p>
      */
@@ -258,6 +264,7 @@ namespace Model
      * <p>The license type of the virtual machine.</p>
      */
     inline ImportImageResponse& WithLicenseType(const char* value) { SetLicenseType(value); return *this;}
+
 
     /**
      * <p>The operating system of the virtual machine.</p>
@@ -294,6 +301,7 @@ namespace Model
      */
     inline ImportImageResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
+
     /**
      * <p>The progress of the task.</p>
      */
@@ -328,6 +336,7 @@ namespace Model
      * <p>The progress of the task.</p>
      */
     inline ImportImageResponse& WithProgress(const char* value) { SetProgress(value); return *this;}
+
 
     /**
      * <p>Information about the snapshots.</p>
@@ -364,6 +373,7 @@ namespace Model
      */
     inline ImportImageResponse& AddSnapshotDetails(SnapshotDetail&& value) { m_snapshotDetails.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A brief status of the task.</p>
      */
@@ -398,6 +408,7 @@ namespace Model
      * <p>A brief status of the task.</p>
      */
     inline ImportImageResponse& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>A detailed status message of the import task.</p>
@@ -434,6 +445,7 @@ namespace Model
      */
     inline ImportImageResponse& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -450,17 +462,29 @@ namespace Model
     inline ImportImageResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_architecture;
+
     Aws::String m_description;
+
     Aws::String m_hypervisor;
+
     Aws::String m_imageId;
+
     Aws::String m_importTaskId;
+
     Aws::String m_licenseType;
+
     Aws::String m_platform;
+
     Aws::String m_progress;
+
     Aws::Vector<SnapshotDetail> m_snapshotDetails;
+
     Aws::String m_status;
+
     Aws::String m_statusMessage;
+
     ResponseMetadata m_responseMetadata;
   };
 

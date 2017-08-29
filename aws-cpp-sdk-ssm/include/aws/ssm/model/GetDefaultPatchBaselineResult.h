@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetDefaultPatchBaselineResult();
-    GetDefaultPatchBaselineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDefaultPatchBaselineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDefaultPatchBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDefaultPatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the default patch baseline.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetDefaultPatchBaselineResult& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
 
+
     /**
      * <p>The operating system for the returned patch baseline. </p>
      */
@@ -103,7 +105,9 @@ namespace Model
     inline GetDefaultPatchBaselineResult& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_baselineId;
+
     OperatingSystem m_operatingSystem;
   };
 

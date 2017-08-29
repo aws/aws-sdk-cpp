@@ -51,6 +51,7 @@ namespace Model
     Root& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) for the root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
@@ -99,6 +100,7 @@ namespace Model
      * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
      */
     inline Root& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the root.</p> <p>For more information about
@@ -163,6 +165,7 @@ namespace Model
      */
     inline Root& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The friendly name of the root.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
@@ -219,6 +222,7 @@ namespace Model
      */
     inline Root& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The types of policies that are currently enabled for the root and therefore
      * can be attached to the root or to its OUs or accounts.</p>
@@ -262,12 +266,16 @@ namespace Model
     inline Root& AddPolicyTypes(PolicyTypeSummary&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<PolicyTypeSummary> m_policyTypes;
     bool m_policyTypesHasBeenSet;
   };

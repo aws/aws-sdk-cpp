@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The accelerate configuration of the bucket.
      */
@@ -67,6 +68,7 @@ namespace Model
     inline AccelerateConfiguration& WithStatus(BucketAccelerateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     BucketAccelerateStatus m_status;
     bool m_statusHasBeenSet;
   };

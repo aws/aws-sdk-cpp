@@ -70,6 +70,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The triggers to monitor during stack creation or update actions. </p> <p>By
      * default, AWS CloudFormation saves the rollback triggers specified for a stack
@@ -203,6 +204,7 @@ namespace Model
      */
     inline RollbackConfiguration& AddRollbackTriggers(RollbackTrigger&& value) { m_rollbackTriggersHasBeenSet = true; m_rollbackTriggers.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The amount of time, in minutes, during which CloudFormation should monitor
      * all the rollback triggers after the stack creation or update operation deploys
@@ -264,8 +266,10 @@ namespace Model
     inline RollbackConfiguration& WithMonitoringTimeInMinutes(int value) { SetMonitoringTimeInMinutes(value); return *this;}
 
   private:
+
     Aws::Vector<RollbackTrigger> m_rollbackTriggers;
     bool m_rollbackTriggersHasBeenSet;
+
     int m_monitoringTimeInMinutes;
     bool m_monitoringTimeInMinutesHasBeenSet;
   };

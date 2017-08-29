@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the CMK under which to generate and encrypt the data
      * encryption key.</p> <p>A valid identifier is the unique key ID or the Amazon
@@ -129,6 +130,7 @@ namespace Model
      * </p> </li> </ul>
      */
     inline GenerateDataKeyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+
 
     /**
      * <p>A set of key-value pairs that represents additional authenticated data.</p>
@@ -226,6 +228,7 @@ namespace Model
      */
     inline GenerateDataKeyRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
+
     /**
      * <p>The length of the data encryption key in bytes. For example, use the value 64
      * to generate a 512-bit data key (64 bytes is 512 bits). For common key lengths
@@ -249,6 +252,7 @@ namespace Model
      * <code>KeySpec</code> field instead of this one.</p>
      */
     inline GenerateDataKeyRequest& WithNumberOfBytes(int value) { SetNumberOfBytes(value); return *this;}
+
 
     /**
      * <p>The length of the data encryption key. Use <code>AES_128</code> to generate a
@@ -284,6 +288,7 @@ namespace Model
      * key.</p>
      */
     inline GenerateDataKeyRequest& WithKeySpec(DataKeySpec&& value) { SetKeySpec(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
@@ -342,14 +347,19 @@ namespace Model
     inline GenerateDataKeyRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;
     bool m_encryptionContextHasBeenSet;
+
     int m_numberOfBytes;
     bool m_numberOfBytesHasBeenSet;
+
     DataKeySpec m_keySpec;
     bool m_keySpecHasBeenSet;
+
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet;
   };

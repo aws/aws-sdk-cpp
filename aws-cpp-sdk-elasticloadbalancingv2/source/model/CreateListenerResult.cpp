@@ -31,12 +31,12 @@ CreateListenerResult::CreateListenerResult()
 {
 }
 
-CreateListenerResult::CreateListenerResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateListenerResult::CreateListenerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateListenerResult& CreateListenerResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateListenerResult& CreateListenerResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

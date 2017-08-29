@@ -47,6 +47,7 @@ namespace Model
     TrustedAdvisorCheckDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline TrustedAdvisorCheckDescription& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The display name for the Trusted Advisor check.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The display name for the Trusted Advisor check.</p>
      */
     inline TrustedAdvisorCheckDescription& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The description of the Trusted Advisor check, which includes the alert
@@ -159,6 +162,7 @@ namespace Model
      */
     inline TrustedAdvisorCheckDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The category of the Trusted Advisor check.</p>
      */
@@ -193,6 +197,7 @@ namespace Model
      * <p>The category of the Trusted Advisor check.</p>
      */
     inline TrustedAdvisorCheckDescription& WithCategory(const char* value) { SetCategory(value); return *this;}
+
 
     /**
      * <p>The column headings for the data returned by the Trusted Advisor check. The
@@ -267,14 +272,19 @@ namespace Model
     inline TrustedAdvisorCheckDescription& AddMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.push_back(value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_category;
     bool m_categoryHasBeenSet;
+
     Aws::Vector<Aws::String> m_metadata;
     bool m_metadataHasBeenSet;
   };

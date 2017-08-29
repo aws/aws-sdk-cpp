@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 2xx
      * (200, 201, etc.) status code.</p>
@@ -66,6 +67,7 @@ namespace Model
      * (200, 201, etc.) status code.</p>
      */
     inline StatusCodes& WithStatus2xx(int value) { SetStatus2xx(value); return *this;}
+
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 3xx
@@ -85,6 +87,7 @@ namespace Model
      */
     inline StatusCodes& WithStatus3xx(int value) { SetStatus3xx(value); return *this;}
 
+
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 4xx
      * (400, 401, etc.) status code.</p>
@@ -102,6 +105,7 @@ namespace Model
      * (400, 401, etc.) status code.</p>
      */
     inline StatusCodes& WithStatus4xx(int value) { SetStatus4xx(value); return *this;}
+
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 5xx
@@ -122,12 +126,16 @@ namespace Model
     inline StatusCodes& WithStatus5xx(int value) { SetStatus5xx(value); return *this;}
 
   private:
+
     int m_status2xx;
     bool m_status2xxHasBeenSet;
+
     int m_status3xx;
     bool m_status3xxHasBeenSet;
+
     int m_status4xx;
     bool m_status4xxHasBeenSet;
+
     int m_status5xx;
     bool m_status5xxHasBeenSet;
   };

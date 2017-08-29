@@ -38,6 +38,7 @@ namespace Model
     CreateResourceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateResourceRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>The parent resource's identifier.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The parent resource's identifier.</p>
      */
     inline CreateResourceRequest& WithParentId(const char* value) { SetParentId(value); return *this;}
+
 
     /**
      * <p>The last path segment for this resource.</p>
@@ -144,10 +147,13 @@ namespace Model
     inline CreateResourceRequest& WithPathPart(const char* value) { SetPathPart(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_parentId;
     bool m_parentIdHasBeenSet;
+
     Aws::String m_pathPart;
     bool m_pathPartHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -66,6 +67,7 @@ namespace Model
     
     inline UpdateScalingParametersRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     
     inline const ScalingParameters& GetScalingParameters() const{ return m_scalingParameters; }
 
@@ -82,8 +84,10 @@ namespace Model
     inline UpdateScalingParametersRequest& WithScalingParameters(ScalingParameters&& value) { SetScalingParameters(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     ScalingParameters m_scalingParameters;
     bool m_scalingParametersHasBeenSet;
   };

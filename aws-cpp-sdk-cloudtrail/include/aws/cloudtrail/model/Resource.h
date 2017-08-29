@@ -46,6 +46,7 @@ namespace Model
     Resource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of a resource referenced by the event returned. When the resource
      * type cannot be determined, null is returned. Some examples of resource types
@@ -123,6 +124,7 @@ namespace Model
      */
     inline Resource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>The name of the resource referenced by the event returned. These are
      * user-created names whose values will depend on the environment. For example, the
@@ -180,8 +182,10 @@ namespace Model
     inline Resource& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
   private:
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
   };

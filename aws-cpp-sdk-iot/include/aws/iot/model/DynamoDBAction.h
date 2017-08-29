@@ -56,6 +56,7 @@ namespace Model
     DynamoDBAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the DynamoDB table.</p>
      */
@@ -91,6 +92,7 @@ namespace Model
      */
     inline DynamoDBAction& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
      */
     inline DynamoDBAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>The type of operation to be performed. This follows the substitution
@@ -182,6 +185,7 @@ namespace Model
      */
     inline DynamoDBAction& WithOperation(const char* value) { SetOperation(value); return *this;}
 
+
     /**
      * <p>The hash key name.</p>
      */
@@ -216,6 +220,7 @@ namespace Model
      * <p>The hash key name.</p>
      */
     inline DynamoDBAction& WithHashKeyField(const char* value) { SetHashKeyField(value); return *this;}
+
 
     /**
      * <p>The hash key value.</p>
@@ -252,6 +257,7 @@ namespace Model
      */
     inline DynamoDBAction& WithHashKeyValue(const char* value) { SetHashKeyValue(value); return *this;}
 
+
     /**
      * <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
      */
@@ -276,6 +282,7 @@ namespace Model
      * <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
      */
     inline DynamoDBAction& WithHashKeyType(DynamoKeyType&& value) { SetHashKeyType(std::move(value)); return *this;}
+
 
     /**
      * <p>The range key name.</p>
@@ -312,6 +319,7 @@ namespace Model
      */
     inline DynamoDBAction& WithRangeKeyField(const char* value) { SetRangeKeyField(value); return *this;}
 
+
     /**
      * <p>The range key value.</p>
      */
@@ -347,6 +355,7 @@ namespace Model
      */
     inline DynamoDBAction& WithRangeKeyValue(const char* value) { SetRangeKeyValue(value); return *this;}
 
+
     /**
      * <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
      */
@@ -371,6 +380,7 @@ namespace Model
      * <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
      */
     inline DynamoDBAction& WithRangeKeyType(DynamoKeyType&& value) { SetRangeKeyType(std::move(value)); return *this;}
+
 
     /**
      * <p>The action payload. This name can be customized.</p>
@@ -408,24 +418,34 @@ namespace Model
     inline DynamoDBAction& WithPayloadField(const char* value) { SetPayloadField(value); return *this;}
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_operation;
     bool m_operationHasBeenSet;
+
     Aws::String m_hashKeyField;
     bool m_hashKeyFieldHasBeenSet;
+
     Aws::String m_hashKeyValue;
     bool m_hashKeyValueHasBeenSet;
+
     DynamoKeyType m_hashKeyType;
     bool m_hashKeyTypeHasBeenSet;
+
     Aws::String m_rangeKeyField;
     bool m_rangeKeyFieldHasBeenSet;
+
     Aws::String m_rangeKeyValue;
     bool m_rangeKeyValueHasBeenSet;
+
     DynamoKeyType m_rangeKeyType;
     bool m_rangeKeyTypeHasBeenSet;
+
     Aws::String m_payloadField;
     bool m_payloadFieldHasBeenSet;
   };

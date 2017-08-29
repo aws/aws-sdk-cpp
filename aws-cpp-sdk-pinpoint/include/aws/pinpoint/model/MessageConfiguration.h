@@ -45,6 +45,7 @@ namespace Model
     MessageConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The message that the campaign delivers to APNS channels. Overrides the default
      * message.
@@ -75,6 +76,7 @@ namespace Model
      */
     inline MessageConfiguration& WithAPNSMessage(Message&& value) { SetAPNSMessage(std::move(value)); return *this;}
 
+
     /**
      * The default message for all channels.
      */
@@ -100,6 +102,7 @@ namespace Model
      */
     inline MessageConfiguration& WithDefaultMessage(Message&& value) { SetDefaultMessage(std::move(value)); return *this;}
 
+
     /**
      * The email message configuration.
      */
@@ -124,6 +127,7 @@ namespace Model
      * The email message configuration.
      */
     inline MessageConfiguration& WithEmailMessage(CampaignEmailMessage&& value) { SetEmailMessage(std::move(value)); return *this;}
+
 
     /**
      * The message that the campaign delivers to GCM channels. Overrides the default
@@ -155,6 +159,7 @@ namespace Model
      */
     inline MessageConfiguration& WithGCMMessage(Message&& value) { SetGCMMessage(std::move(value)); return *this;}
 
+
     /**
      * The SMS message configuration.
      */
@@ -181,14 +186,19 @@ namespace Model
     inline MessageConfiguration& WithSMSMessage(CampaignSmsMessage&& value) { SetSMSMessage(std::move(value)); return *this;}
 
   private:
+
     Message m_aPNSMessage;
     bool m_aPNSMessageHasBeenSet;
+
     Message m_defaultMessage;
     bool m_defaultMessageHasBeenSet;
+
     CampaignEmailMessage m_emailMessage;
     bool m_emailMessageHasBeenSet;
+
     Message m_gCMMessage;
     bool m_gCMMessageHasBeenSet;
+
     CampaignSmsMessage m_sMSMessage;
     bool m_sMSMessageHasBeenSet;
   };

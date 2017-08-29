@@ -30,12 +30,12 @@ ListLunaClientsResult::ListLunaClientsResult()
 {
 }
 
-ListLunaClientsResult::ListLunaClientsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListLunaClientsResult::ListLunaClientsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListLunaClientsResult& ListLunaClientsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListLunaClientsResult& ListLunaClientsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ClientList"))

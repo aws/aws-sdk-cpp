@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeTableStatisticsResult();
-    DescribeTableStatisticsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTableStatisticsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTableStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTableStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeTableStatisticsResult& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
 
+
     /**
      * <p>The table statistics.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The table statistics.</p>
      */
     inline DescribeTableStatisticsResult& AddTableStatistics(TableStatistics&& value) { m_tableStatistics.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -168,8 +171,11 @@ namespace Model
     inline DescribeTableStatisticsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_replicationTaskArn;
+
     Aws::Vector<TableStatistics> m_tableStatistics;
+
     Aws::String m_marker;
   };
 

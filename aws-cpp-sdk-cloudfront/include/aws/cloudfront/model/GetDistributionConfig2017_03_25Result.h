@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetDistributionConfig2017_03_25Result();
-    GetDistributionConfig2017_03_25Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetDistributionConfig2017_03_25Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetDistributionConfig2017_03_25Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetDistributionConfig2017_03_25Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The distribution's configuration information.</p>
@@ -72,6 +73,7 @@ namespace Model
      * <p>The distribution's configuration information.</p>
      */
     inline GetDistributionConfig2017_03_25Result& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The current version of the configuration. For example:
@@ -116,7 +118,9 @@ namespace Model
     inline GetDistributionConfig2017_03_25Result& WithETag(const char* value) { SetETag(value); return *this;}
 
   private:
+
     DistributionConfig m_distributionConfig;
+
     Aws::String m_eTag;
   };
 

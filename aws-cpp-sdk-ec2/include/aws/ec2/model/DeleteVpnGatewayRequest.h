@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline DeleteVpnGatewayRequest& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -101,8 +103,10 @@ namespace Model
     inline DeleteVpnGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_vpnGatewayId;
     bool m_vpnGatewayIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

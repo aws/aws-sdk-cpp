@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>An email address to be removed from the list of verified addresses.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
     inline DeleteVerifiedEmailAddressRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 
   private:
+
     Aws::String m_emailAddress;
     bool m_emailAddressHasBeenSet;
   };

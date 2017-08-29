@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL.
      * The range of valid ports is one (1) through 65535.</p> <p>TCP is the default,
@@ -160,6 +161,7 @@ namespace Model
      */
     inline HealthCheck& WithTarget(const char* value) { SetTarget(value); return *this;}
 
+
     /**
      * <p>The approximate interval, in seconds, between health checks of an individual
      * instance.</p>
@@ -177,6 +179,7 @@ namespace Model
      * instance.</p>
      */
     inline HealthCheck& WithInterval(int value) { SetInterval(value); return *this;}
+
 
     /**
      * <p>The amount of time, in seconds, during which no response means a failed
@@ -199,6 +202,7 @@ namespace Model
      */
     inline HealthCheck& WithTimeout(int value) { SetTimeout(value); return *this;}
 
+
     /**
      * <p>The number of consecutive health check failures required before moving the
      * instance to the <code>Unhealthy</code> state.</p>
@@ -216,6 +220,7 @@ namespace Model
      * instance to the <code>Unhealthy</code> state.</p>
      */
     inline HealthCheck& WithUnhealthyThreshold(int value) { SetUnhealthyThreshold(value); return *this;}
+
 
     /**
      * <p>The number of consecutive health checks successes required before moving the
@@ -236,14 +241,19 @@ namespace Model
     inline HealthCheck& WithHealthyThreshold(int value) { SetHealthyThreshold(value); return *this;}
 
   private:
+
     Aws::String m_target;
     bool m_targetHasBeenSet;
+
     int m_interval;
     bool m_intervalHasBeenSet;
+
     int m_timeout;
     bool m_timeoutHasBeenSet;
+
     int m_unhealthyThreshold;
     bool m_unhealthyThresholdHasBeenSet;
+
     int m_healthyThreshold;
     bool m_healthyThresholdHasBeenSet;
   };

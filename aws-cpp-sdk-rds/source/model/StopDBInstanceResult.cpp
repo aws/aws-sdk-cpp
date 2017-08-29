@@ -31,12 +31,12 @@ StopDBInstanceResult::StopDBInstanceResult()
 {
 }
 
-StopDBInstanceResult::StopDBInstanceResult(const AmazonWebServiceResult<XmlDocument>& result)
+StopDBInstanceResult::StopDBInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-StopDBInstanceResult& StopDBInstanceResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+StopDBInstanceResult& StopDBInstanceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

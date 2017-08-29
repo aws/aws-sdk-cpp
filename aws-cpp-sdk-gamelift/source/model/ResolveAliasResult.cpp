@@ -30,12 +30,12 @@ ResolveAliasResult::ResolveAliasResult()
 {
 }
 
-ResolveAliasResult::ResolveAliasResult(const AmazonWebServiceResult<JsonValue>& result)
+ResolveAliasResult::ResolveAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ResolveAliasResult& ResolveAliasResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ResolveAliasResult& ResolveAliasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FleetId"))

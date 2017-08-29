@@ -31,12 +31,12 @@ CreateAccessKeyResult::CreateAccessKeyResult()
 {
 }
 
-CreateAccessKeyResult::CreateAccessKeyResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateAccessKeyResult::CreateAccessKeyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateAccessKeyResult& CreateAccessKeyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateAccessKeyResult& CreateAccessKeyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

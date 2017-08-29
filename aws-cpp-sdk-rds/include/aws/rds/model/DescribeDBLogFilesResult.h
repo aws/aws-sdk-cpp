@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeDBLogFilesResult();
-    DescribeDBLogFilesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBLogFilesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBLogFilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBLogFilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The DB log files returned.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>The DB log files returned.</p>
      */
     inline DescribeDBLogFilesResult& AddDescribeDBLogFiles(DescribeDBLogFilesDetails&& value) { m_describeDBLogFiles.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token that can be used in a subsequent DescribeDBLogFiles
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeDBLogFilesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeDBLogFilesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<DescribeDBLogFilesDetails> m_describeDBLogFiles;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

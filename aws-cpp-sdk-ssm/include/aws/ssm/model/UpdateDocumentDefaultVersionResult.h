@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateDocumentDefaultVersionResult();
-    UpdateDocumentDefaultVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDocumentDefaultVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDocumentDefaultVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDocumentDefaultVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The description of a custom document that you want to set as the default
@@ -72,6 +73,7 @@ namespace Model
     inline UpdateDocumentDefaultVersionResult& WithDescription(DocumentDefaultVersionDescription&& value) { SetDescription(std::move(value)); return *this;}
 
   private:
+
     DocumentDefaultVersionDescription m_description;
   };
 

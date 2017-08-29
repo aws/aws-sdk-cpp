@@ -46,6 +46,7 @@ namespace Model
     HashKeyRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The starting hash key of the hash key range.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The starting hash key of the hash key range.</p>
      */
     inline HashKeyRange& WithStartingHashKey(const char* value) { SetStartingHashKey(value); return *this;}
+
 
     /**
      * <p>The ending hash key of the hash key range.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline HashKeyRange& WithEndingHashKey(const char* value) { SetEndingHashKey(value); return *this;}
 
   private:
+
     Aws::String m_startingHashKey;
     bool m_startingHashKeyHasBeenSet;
+
     Aws::String m_endingHashKey;
     bool m_endingHashKeyHasBeenSet;
   };

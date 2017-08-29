@@ -30,12 +30,12 @@ UpdateTimeToLiveResult::UpdateTimeToLiveResult()
 {
 }
 
-UpdateTimeToLiveResult::UpdateTimeToLiveResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateTimeToLiveResult::UpdateTimeToLiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateTimeToLiveResult& UpdateTimeToLiveResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateTimeToLiveResult& UpdateTimeToLiveResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TimeToLiveSpecification"))

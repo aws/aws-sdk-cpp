@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
      * product code will be provided by AWS Marketplace when the product listing is
@@ -91,6 +92,7 @@ namespace Model
      * created.</p>
      */
     inline GetEntitlementsRequest& WithProductCode(const char* value) { SetProductCode(value); return *this;}
+
 
     /**
      * <p>Filter is used to return entitlements for a specific customer or for a
@@ -164,6 +166,7 @@ namespace Model
      */
     inline GetEntitlementsRequest& AddFilter(GetEntitlementFilterName&& key, Aws::Vector<Aws::String>&& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), std::move(value)); return *this; }
 
+
     /**
      * <p>For paginated calls to GetEntitlements, pass the NextToken from the previous
      * GetEntitlementsResult.</p>
@@ -206,6 +209,7 @@ namespace Model
      */
     inline GetEntitlementsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to retrieve from the GetEntitlements operation.
      * For pagination, use the NextToken field in subsequent calls to
@@ -228,12 +232,16 @@ namespace Model
     inline GetEntitlementsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_productCode;
     bool m_productCodeHasBeenSet;
+
     Aws::Map<GetEntitlementFilterName, Aws::Vector<Aws::String>> m_filter;
     bool m_filterHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

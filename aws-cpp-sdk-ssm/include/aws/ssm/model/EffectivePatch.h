@@ -50,6 +50,7 @@ namespace Model
     EffectivePatch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Provides metadata for a patch, including information such as the KB ID,
      * severity, classification and a URL for where more information can be obtained
@@ -84,6 +85,7 @@ namespace Model
      * about the patch.</p>
      */
     inline EffectivePatch& WithPatch(Patch&& value) { SetPatch(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the patch in a patch baseline. This includes information about
@@ -126,8 +128,10 @@ namespace Model
     inline EffectivePatch& WithPatchStatus(PatchStatus&& value) { SetPatchStatus(std::move(value)); return *this;}
 
   private:
+
     Patch m_patch;
     bool m_patchHasBeenSet;
+
     PatchStatus m_patchStatus;
     bool m_patchStatusHasBeenSet;
   };

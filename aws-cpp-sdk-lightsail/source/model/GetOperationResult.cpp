@@ -30,12 +30,12 @@ GetOperationResult::GetOperationResult()
 {
 }
 
-GetOperationResult::GetOperationResult(const AmazonWebServiceResult<JsonValue>& result)
+GetOperationResult::GetOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetOperationResult& GetOperationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetOperationResult& GetOperationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operation"))

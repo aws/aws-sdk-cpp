@@ -30,12 +30,12 @@ GetJobManifestResult::GetJobManifestResult()
 {
 }
 
-GetJobManifestResult::GetJobManifestResult(const AmazonWebServiceResult<JsonValue>& result)
+GetJobManifestResult::GetJobManifestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetJobManifestResult& GetJobManifestResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetJobManifestResult& GetJobManifestResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ManifestURI"))

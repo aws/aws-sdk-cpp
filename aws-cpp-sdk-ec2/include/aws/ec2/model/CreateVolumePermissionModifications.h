@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Adds a specific AWS account ID or group to a volume's list of create volume
      * permissions.</p>
@@ -91,6 +92,7 @@ namespace Model
      * permissions.</p>
      */
     inline CreateVolumePermissionModifications& AddAdd(CreateVolumePermission&& value) { m_addHasBeenSet = true; m_add.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Removes a specific AWS account ID or group from a volume's list of create
@@ -135,8 +137,10 @@ namespace Model
     inline CreateVolumePermissionModifications& AddRemove(CreateVolumePermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CreateVolumePermission> m_add;
     bool m_addHasBeenSet;
+
     Aws::Vector<CreateVolumePermission> m_remove;
     bool m_removeHasBeenSet;
   };

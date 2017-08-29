@@ -47,6 +47,7 @@ namespace Model
     EventSourceMappingConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The AWS Lambda assigned opaque identifier for the mapping.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline EventSourceMappingConfiguration& WithUUID(const char* value) { SetUUID(value); return *this;}
 
+
     /**
      * <p>The largest number of records that AWS Lambda will retrieve from your event
      * source at the time of invoking your function. Your function receives an event
@@ -102,6 +104,7 @@ namespace Model
      * with all the retrieved records.</p>
      */
     inline EventSourceMappingConfiguration& WithBatchSize(int value) { SetBatchSize(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the
@@ -145,6 +148,7 @@ namespace Model
      */
     inline EventSourceMappingConfiguration& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 
+
     /**
      * <p>The Lambda function to invoke when AWS Lambda detects an event on the
      * stream.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline EventSourceMappingConfiguration& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
+
     /**
      * <p>The UTC time string indicating the last time the event mapping was
      * updated.</p>
@@ -216,6 +221,7 @@ namespace Model
      * updated.</p>
      */
     inline EventSourceMappingConfiguration& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+
 
     /**
      * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
@@ -251,6 +257,7 @@ namespace Model
      * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
      */
     inline EventSourceMappingConfiguration& WithLastProcessingResult(const char* value) { SetLastProcessingResult(value); return *this;}
+
 
     /**
      * <p>The state of the event source mapping. It can be <code>Creating</code>,
@@ -301,6 +308,7 @@ namespace Model
      */
     inline EventSourceMappingConfiguration& WithState(const char* value) { SetState(value); return *this;}
 
+
     /**
      * <p>The reason the event source mapping is in its current state. It is either
      * user-requested or an AWS Lambda-initiated state transition.</p>
@@ -344,20 +352,28 @@ namespace Model
     inline EventSourceMappingConfiguration& WithStateTransitionReason(const char* value) { SetStateTransitionReason(value); return *this;}
 
   private:
+
     Aws::String m_uUID;
     bool m_uUIDHasBeenSet;
+
     int m_batchSize;
     bool m_batchSizeHasBeenSet;
+
     Aws::String m_eventSourceArn;
     bool m_eventSourceArnHasBeenSet;
+
     Aws::String m_functionArn;
     bool m_functionArnHasBeenSet;
+
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
+
     Aws::String m_lastProcessingResult;
     bool m_lastProcessingResultHasBeenSet;
+
     Aws::String m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_stateTransitionReason;
     bool m_stateTransitionReasonHasBeenSet;
   };

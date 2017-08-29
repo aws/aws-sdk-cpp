@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The client token used to request idempotent operations.
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateCoreDefinitionVersionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
+
     /**
      * core definition Id
      */
@@ -107,6 +109,7 @@ namespace Model
      * core definition Id
      */
     inline CreateCoreDefinitionVersionRequest& WithCoreDefinitionId(const char* value) { SetCoreDefinitionId(value); return *this;}
+
 
     /**
      * Cores in the definition version.
@@ -144,10 +147,13 @@ namespace Model
     inline CreateCoreDefinitionVersionRequest& AddCores(Core&& value) { m_coresHasBeenSet = true; m_cores.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_amznClientToken;
     bool m_amznClientTokenHasBeenSet;
+
     Aws::String m_coreDefinitionId;
     bool m_coreDefinitionIdHasBeenSet;
+
     Aws::Vector<Core> m_cores;
     bool m_coresHasBeenSet;
   };

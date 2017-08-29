@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A unique namespace identifying the option's associated AWS resource.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>A unique namespace identifying the option's associated AWS resource.</p>
      */
     inline ConfigurationOptionDescription& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+
 
     /**
      * <p>The name of the configuration option.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline ConfigurationOptionDescription& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The default value for this configuration option.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The default value for this configuration option.</p>
      */
     inline ConfigurationOptionDescription& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+
 
     /**
      * <p>An indication of which action is required if the value for this configuration
@@ -248,6 +252,7 @@ namespace Model
      */
     inline ConfigurationOptionDescription& WithChangeSeverity(const char* value) { SetChangeSeverity(value); return *this;}
 
+
     /**
      * <p>An indication of whether the user defined this configuration option:</p> <ul>
      * <li> <p> <code>true</code> : This configuration option was defined by the user.
@@ -280,6 +285,7 @@ namespace Model
      * <p> Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline ConfigurationOptionDescription& WithUserDefined(bool value) { SetUserDefined(value); return *this;}
+
 
     /**
      * <p>An indication of which type of values this option has and whether it is
@@ -351,6 +357,7 @@ namespace Model
      */
     inline ConfigurationOptionDescription& WithValueType(ConfigurationOptionValueType&& value) { SetValueType(std::move(value)); return *this;}
 
+
     /**
      * <p>If specified, values for the configuration option are selected from this
      * list.</p>
@@ -399,6 +406,7 @@ namespace Model
      */
     inline ConfigurationOptionDescription& AddValueOptions(const char* value) { m_valueOptionsHasBeenSet = true; m_valueOptions.push_back(value); return *this; }
 
+
     /**
      * <p>If specified, the configuration option must be a numeric value greater than
      * this value.</p>
@@ -416,6 +424,7 @@ namespace Model
      * this value.</p>
      */
     inline ConfigurationOptionDescription& WithMinValue(int value) { SetMinValue(value); return *this;}
+
 
     /**
      * <p>If specified, the configuration option must be a numeric value less than this
@@ -435,6 +444,7 @@ namespace Model
      */
     inline ConfigurationOptionDescription& WithMaxValue(int value) { SetMaxValue(value); return *this;}
 
+
     /**
      * <p>If specified, the configuration option must be a string value no longer than
      * this value.</p>
@@ -452,6 +462,7 @@ namespace Model
      * this value.</p>
      */
     inline ConfigurationOptionDescription& WithMaxLength(int value) { SetMaxLength(value); return *this;}
+
 
     /**
      * <p>If specified, the configuration option must be a string value that satisfies
@@ -484,26 +495,37 @@ namespace Model
     inline ConfigurationOptionDescription& WithRegex(OptionRestrictionRegex&& value) { SetRegex(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     Aws::String m_changeSeverity;
     bool m_changeSeverityHasBeenSet;
+
     bool m_userDefined;
     bool m_userDefinedHasBeenSet;
+
     ConfigurationOptionValueType m_valueType;
     bool m_valueTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_valueOptions;
     bool m_valueOptionsHasBeenSet;
+
     int m_minValue;
     bool m_minValueHasBeenSet;
+
     int m_maxValue;
     bool m_maxValueHasBeenSet;
+
     int m_maxLength;
     bool m_maxLengthHasBeenSet;
+
     OptionRestrictionRegex m_regex;
     bool m_regexHasBeenSet;
   };

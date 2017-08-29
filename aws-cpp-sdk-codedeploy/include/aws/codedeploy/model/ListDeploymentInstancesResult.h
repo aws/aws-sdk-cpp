@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListDeploymentInstancesResult();
-    ListDeploymentInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDeploymentInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeploymentInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeploymentInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of instance IDs.</p>
@@ -87,6 +88,7 @@ namespace Model
      * <p>A list of instance IDs.</p>
      */
     inline ListDeploymentInstancesResult& AddInstancesList(const char* value) { m_instancesList.push_back(value); return *this; }
+
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
@@ -138,7 +140,9 @@ namespace Model
     inline ListDeploymentInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instancesList;
+
     Aws::String m_nextToken;
   };
 

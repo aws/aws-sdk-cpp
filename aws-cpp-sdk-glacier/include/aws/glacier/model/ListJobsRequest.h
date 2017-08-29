@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -107,6 +108,7 @@ namespace Model
      */
     inline ListJobsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -141,6 +143,7 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline ListJobsRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
 
     /**
      * <p>The maximum number of jobs to be returned. The default limit is 1000. The
@@ -190,6 +193,7 @@ namespace Model
      * of returned jobs never exceeds the limit.</p>
      */
     inline ListJobsRequest& WithLimit(const char* value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>An opaque string used for pagination. This value specifies the job at which
@@ -247,6 +251,7 @@ namespace Model
      */
     inline ListJobsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The type of job status to return. You can specify the following values:
      * <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
@@ -288,6 +293,7 @@ namespace Model
      * <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
      */
     inline ListJobsRequest& WithStatuscode(const char* value) { SetStatuscode(value); return *this;}
+
 
     /**
      * <p>The state of the jobs to return. You can specify <code>true</code> or
@@ -332,16 +338,22 @@ namespace Model
     inline ListJobsRequest& WithCompleted(const char* value) { SetCompleted(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_statuscode;
     bool m_statuscodeHasBeenSet;
+
     Aws::String m_completed;
     bool m_completedHasBeenSet;
   };

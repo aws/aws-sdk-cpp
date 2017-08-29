@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetLoginProfileResult();
-    GetLoginProfileResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetLoginProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetLoginProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetLoginProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure containing the user name and password create date for the
@@ -78,6 +79,7 @@ namespace Model
      */
     inline GetLoginProfileResult& WithLoginProfile(LoginProfile&& value) { SetLoginProfile(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline GetLoginProfileResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     LoginProfile m_loginProfile;
+
     ResponseMetadata m_responseMetadata;
   };
 

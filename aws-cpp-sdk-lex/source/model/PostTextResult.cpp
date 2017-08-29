@@ -31,13 +31,13 @@ PostTextResult::PostTextResult() :
 {
 }
 
-PostTextResult::PostTextResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PostTextResult::PostTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_dialogState(DialogState::NOT_SET)
 {
   *this = result;
 }
 
-PostTextResult& PostTextResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("intentName"))

@@ -55,7 +55,7 @@ enum class WAFErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  W_A_F_DISALLOWED_NAME= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  W_A_F_DISALLOWED_NAME= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   W_A_F_INTERNAL_ERROR,
   W_A_F_INVALID_ACCOUNT,
   W_A_F_INVALID_OPERATION,
@@ -69,7 +69,7 @@ enum class WAFErrors
 };
 namespace WAFErrorMapper
 {
-  AWS_WAF_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_WAF_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace WAF

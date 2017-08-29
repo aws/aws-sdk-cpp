@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetTemplateResult();
-    GetTemplateResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetTemplateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Structure containing the template body. (For more information, go to <a
@@ -104,6 +105,7 @@ namespace Model
      * returns the same template that was used when the stack was created.</p>
      */
     inline GetTemplateResult& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+
 
     /**
      * <p>The stage of the template that you can retrieve. For stacks, the
@@ -168,6 +170,7 @@ namespace Model
      */
     inline GetTemplateResult& AddStagesAvailable(TemplateStage&& value) { m_stagesAvailable.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -184,8 +187,11 @@ namespace Model
     inline GetTemplateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_templateBody;
+
     Aws::Vector<TemplateStage> m_stagesAvailable;
+
     ResponseMetadata m_responseMetadata;
   };
 

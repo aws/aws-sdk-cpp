@@ -34,6 +34,7 @@ namespace Model
     GetCoreDefinitionVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * core definition Id
      */
@@ -68,6 +69,7 @@ namespace Model
      * core definition Id
      */
     inline GetCoreDefinitionVersionRequest& WithCoreDefinitionId(const char* value) { SetCoreDefinitionId(value); return *this;}
+
 
     /**
      * core definition version Id
@@ -105,8 +107,10 @@ namespace Model
     inline GetCoreDefinitionVersionRequest& WithCoreDefinitionVersionId(const char* value) { SetCoreDefinitionVersionId(value); return *this;}
 
   private:
+
     Aws::String m_coreDefinitionId;
     bool m_coreDefinitionIdHasBeenSet;
+
     Aws::String m_coreDefinitionVersionId;
     bool m_coreDefinitionVersionIdHasBeenSet;
   };

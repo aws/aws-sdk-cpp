@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     AdminUpdateUserAttributesResult();
-    AdminUpdateUserAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminUpdateUserAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminUpdateUserAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminUpdateUserAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

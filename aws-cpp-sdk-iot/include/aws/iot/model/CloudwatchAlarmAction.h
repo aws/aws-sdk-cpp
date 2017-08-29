@@ -46,6 +46,7 @@ namespace Model
     CloudwatchAlarmAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The IAM role that allows access to the CloudWatch alarm.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The IAM role that allows access to the CloudWatch alarm.</p>
      */
     inline CloudwatchAlarmAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>The CloudWatch alarm name.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline CloudwatchAlarmAction& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
 
+
     /**
      * <p>The reason for the alarm change.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>The reason for the alarm change.</p>
      */
     inline CloudwatchAlarmAction& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+
 
     /**
      * <p>The value of the alarm state. Acceptable values are: OK, ALARM,
@@ -194,12 +198,16 @@ namespace Model
     inline CloudwatchAlarmAction& WithStateValue(const char* value) { SetStateValue(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
+
     Aws::String m_stateReason;
     bool m_stateReasonHasBeenSet;
+
     Aws::String m_stateValue;
     bool m_stateValueHasBeenSet;
   };

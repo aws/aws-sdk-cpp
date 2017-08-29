@@ -30,12 +30,12 @@ DeletePortfolioResult::DeletePortfolioResult()
 {
 }
 
-DeletePortfolioResult::DeletePortfolioResult(const AmazonWebServiceResult<JsonValue>& result)
+DeletePortfolioResult::DeletePortfolioResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeletePortfolioResult& DeletePortfolioResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeletePortfolioResult& DeletePortfolioResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

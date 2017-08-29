@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN).</p>
@@ -77,6 +78,7 @@ namespace Model
      * Resource Name (ARN).</p>
      */
     inline ListTagsOfResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
 
     /**
      * <p>An optional string that, if supplied, must be copied from the output of a
@@ -128,8 +130,10 @@ namespace Model
     inline ListTagsOfResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

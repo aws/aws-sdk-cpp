@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListKeyPoliciesResult();
-    ListKeyPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListKeyPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListKeyPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListKeyPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of policy names. Currently, there is only one policy and it is named
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ListKeyPoliciesResult& AddPolicyNames(const char* value) { m_policyNames.push_back(value); return *this; }
 
+
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
@@ -132,6 +134,7 @@ namespace Model
      */
     inline ListKeyPoliciesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To retrieve more items,
@@ -157,8 +160,11 @@ namespace Model
     inline ListKeyPoliciesResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_policyNames;
+
     Aws::String m_nextMarker;
+
     bool m_truncated;
   };
 

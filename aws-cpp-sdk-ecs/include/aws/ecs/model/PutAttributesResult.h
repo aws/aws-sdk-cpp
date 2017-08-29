@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     PutAttributesResult();
-    PutAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The attributes applied to your resource.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline PutAttributesResult& AddAttributes(Attribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Attribute> m_attributes;
   };
 

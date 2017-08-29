@@ -30,12 +30,12 @@ ListUserProfilesResult::ListUserProfilesResult()
 {
 }
 
-ListUserProfilesResult::ListUserProfilesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListUserProfilesResult::ListUserProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListUserProfilesResult& ListUserProfilesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListUserProfilesResult& ListUserProfilesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("userProfiles"))

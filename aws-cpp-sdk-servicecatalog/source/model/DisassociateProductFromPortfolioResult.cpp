@@ -30,12 +30,12 @@ DisassociateProductFromPortfolioResult::DisassociateProductFromPortfolioResult()
 {
 }
 
-DisassociateProductFromPortfolioResult::DisassociateProductFromPortfolioResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateProductFromPortfolioResult::DisassociateProductFromPortfolioResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateProductFromPortfolioResult& DisassociateProductFromPortfolioResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateProductFromPortfolioResult& DisassociateProductFromPortfolioResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

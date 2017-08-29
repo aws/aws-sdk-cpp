@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The type of task the task runner is configured to accept and process. The
      * worker group is set as a field on objects in the pipeline when they are created.
@@ -110,6 +111,7 @@ namespace Model
      */
     inline PollForTaskRequest& WithWorkerGroup(const char* value) { SetWorkerGroup(value); return *this;}
 
+
     /**
      * <p>The public DNS name of the calling task runner.</p>
      */
@@ -144,6 +146,7 @@ namespace Model
      * <p>The public DNS name of the calling task runner.</p>
      */
     inline PollForTaskRequest& WithHostname(const char* value) { SetHostname(value); return *this;}
+
 
     /**
      * <p>Identity information for the EC2 instance that is hosting the task runner.
@@ -211,10 +214,13 @@ namespace Model
     inline PollForTaskRequest& WithInstanceIdentity(InstanceIdentity&& value) { SetInstanceIdentity(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_workerGroup;
     bool m_workerGroupHasBeenSet;
+
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
     InstanceIdentity m_instanceIdentity;
     bool m_instanceIdentityHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where the object resides. For more information, see <a>arns</a>.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline ListObjectAttributesRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
     inline ListObjectAttributesRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -141,6 +144,7 @@ namespace Model
      */
     inline ListObjectAttributesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
@@ -158,6 +162,7 @@ namespace Model
      * approximate number.</p>
      */
     inline ListObjectAttributesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Represents the manner and timing in which the successful write or update of
@@ -188,6 +193,7 @@ namespace Model
      * an object is reflected in a subsequent read operation of that same object.</p>
      */
     inline ListObjectAttributesRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
+
 
     /**
      * <p>Used to filter the list of object attributes that are associated with a
@@ -220,16 +226,22 @@ namespace Model
     inline ListObjectAttributesRequest& WithFacetFilter(SchemaFacet&& value) { SetFacetFilter(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     ConsistencyLevel m_consistencyLevel;
     bool m_consistencyLevelHasBeenSet;
+
     SchemaFacet m_facetFilter;
     bool m_facetFilterHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StopStackSetOperationResult();
-    StopStackSetOperationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    StopStackSetOperationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    StopStackSetOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    StopStackSetOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -57,6 +58,7 @@ namespace Model
     inline StopStackSetOperationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ResponseMetadata m_responseMetadata;
   };
 

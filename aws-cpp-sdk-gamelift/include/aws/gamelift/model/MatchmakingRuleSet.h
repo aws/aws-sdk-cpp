@@ -71,6 +71,7 @@ namespace Model
     MatchmakingRuleSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a matchmaking rule set</p>
      */
@@ -105,6 +106,7 @@ namespace Model
      * <p>Unique identifier for a matchmaking rule set</p>
      */
     inline MatchmakingRuleSet& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
+
 
     /**
      * <p>Collection of matchmaking rules, formatted as a JSON string. (Note that
@@ -155,6 +157,7 @@ namespace Model
      */
     inline MatchmakingRuleSet& WithRuleSetBody(const char* value) { SetRuleSetBody(value); return *this;}
 
+
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
@@ -186,10 +189,13 @@ namespace Model
     inline MatchmakingRuleSet& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet;
+
     Aws::String m_ruleSetBody;
     bool m_ruleSetBodyHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
   };

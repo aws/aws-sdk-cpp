@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateCacheSubnetGroupResult();
-    CreateCacheSubnetGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateCacheSubnetGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateCacheSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateCacheSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const CacheSubnetGroup& GetCacheSubnetGroup() const{ return m_cacheSubnetGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline CreateCacheSubnetGroupResult& WithCacheSubnetGroup(CacheSubnetGroup&& value) { SetCacheSubnetGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline CreateCacheSubnetGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     CacheSubnetGroup m_cacheSubnetGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -30,12 +30,12 @@ ListJobsByStatusResult::ListJobsByStatusResult()
 {
 }
 
-ListJobsByStatusResult::ListJobsByStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+ListJobsByStatusResult::ListJobsByStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListJobsByStatusResult& ListJobsByStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListJobsByStatusResult& ListJobsByStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Jobs"))

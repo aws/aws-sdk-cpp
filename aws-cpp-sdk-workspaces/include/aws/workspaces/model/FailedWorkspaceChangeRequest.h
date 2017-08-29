@@ -48,6 +48,7 @@ namespace Model
     FailedWorkspaceChangeRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline FailedWorkspaceChangeRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
+
     /**
      * <p>The error code.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The error code.</p>
      */
     inline FailedWorkspaceChangeRequest& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The textual error message.</p>
@@ -154,10 +157,13 @@ namespace Model
     inline FailedWorkspaceChangeRequest& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

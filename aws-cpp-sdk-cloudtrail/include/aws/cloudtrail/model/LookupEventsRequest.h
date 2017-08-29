@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Contains a list of lookup attributes. Currently the list can contain only one
      * item.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline LookupEventsRequest& AddLookupAttributes(LookupAttribute&& value) { m_lookupAttributesHasBeenSet = true; m_lookupAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies that only events that occur after or at the specified time are
      * returned. If the specified start time is after the specified end time, an error
@@ -118,6 +120,7 @@ namespace Model
      * is returned.</p>
      */
     inline LookupEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies that only events that occur before or at the specified time are
@@ -154,6 +157,7 @@ namespace Model
      */
     inline LookupEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of events to return. Possible values are 1 through 50. The default
      * is 10.</p>
@@ -171,6 +175,7 @@ namespace Model
      * is 10.</p>
      */
     inline LookupEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token to use to get the next page of results after a previous API call.
@@ -236,14 +241,19 @@ namespace Model
     inline LookupEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<LookupAttribute> m_lookupAttributes;
     bool m_lookupAttributesHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

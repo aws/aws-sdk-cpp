@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline DescribeMetricFiltersRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
+
     /**
      * <p>The prefix to match.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The prefix to match.</p>
      */
     inline DescribeMetricFiltersRequest& WithFilterNamePrefix(const char* value) { SetFilterNamePrefix(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -148,6 +151,7 @@ namespace Model
      */
     inline DescribeMetricFiltersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the
      * default is up to 50 items.</p>
@@ -165,6 +169,7 @@ namespace Model
      * default is up to 50 items.</p>
      */
     inline DescribeMetricFiltersRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The name of the CloudWatch metric.</p>
@@ -200,6 +205,7 @@ namespace Model
      * <p>The name of the CloudWatch metric.</p>
      */
     inline DescribeMetricFiltersRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+
 
     /**
      * <p>The namespace of the CloudWatch metric.</p>
@@ -237,16 +243,22 @@ namespace Model
     inline DescribeMetricFiltersRequest& WithMetricNamespace(const char* value) { SetMetricNamespace(value); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_filterNamePrefix;
     bool m_filterNamePrefixHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::String m_metricNamespace;
     bool m_metricNamespaceHasBeenSet;
   };

@@ -31,12 +31,12 @@ ListVerifiedEmailAddressesResult::ListVerifiedEmailAddressesResult()
 {
 }
 
-ListVerifiedEmailAddressesResult::ListVerifiedEmailAddressesResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListVerifiedEmailAddressesResult::ListVerifiedEmailAddressesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListVerifiedEmailAddressesResult& ListVerifiedEmailAddressesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListVerifiedEmailAddressesResult& ListVerifiedEmailAddressesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -60,6 +61,7 @@ namespace Model
 
     
     inline CreateConnectionRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
+
 
     
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
@@ -82,6 +84,7 @@ namespace Model
     
     inline CreateConnectionRequest& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
 
+
     
     inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
 
@@ -102,6 +105,7 @@ namespace Model
 
     
     inline CreateConnectionRequest& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
+
 
     
     inline const Aws::String& GetLagId() const{ return m_lagId; }
@@ -125,12 +129,16 @@ namespace Model
     inline CreateConnectionRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
 
   private:
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
     Aws::String m_bandwidth;
     bool m_bandwidthHasBeenSet;
+
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet;
+
     Aws::String m_lagId;
     bool m_lagIdHasBeenSet;
   };

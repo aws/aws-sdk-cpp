@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetSampledRequestsResult();
-    GetSampledRequestsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSampledRequestsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSampledRequestsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSampledRequestsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A complex type that contains detailed information about each of the requests
@@ -85,6 +86,7 @@ namespace Model
      */
     inline GetSampledRequestsResult& AddSampledRequests(SampledHTTPRequest&& value) { m_sampledRequests.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The total number of requests from which <code>GetSampledRequests</code> got a
      * sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less
@@ -108,6 +110,7 @@ namespace Model
      * resource received during the specified time range.</p>
      */
     inline GetSampledRequestsResult& WithPopulationSize(long long value) { SetPopulationSize(value); return *this;}
+
 
     /**
      * <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
@@ -155,8 +158,11 @@ namespace Model
     inline GetSampledRequestsResult& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<SampledHTTPRequest> m_sampledRequests;
+
     long long m_populationSize;
+
     TimeWindow m_timeWindow;
   };
 

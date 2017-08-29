@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     RetrieveDomainAuthCodeResult();
-    RetrieveDomainAuthCodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RetrieveDomainAuthCodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RetrieveDomainAuthCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RetrieveDomainAuthCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The authorization code for the domain.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline RetrieveDomainAuthCodeResult& WithAuthCode(const char* value) { SetAuthCode(value); return *this;}
 
   private:
+
     Aws::String m_authCode;
   };
 

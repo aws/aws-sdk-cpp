@@ -50,6 +50,7 @@ namespace Model
     Instance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the instance in Amazon EMR.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The unique identifier for the instance in Amazon EMR.</p>
      */
     inline Instance& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The unique identifier of the instance in Amazon EC2.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline Instance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
 
+
     /**
      * <p>The public DNS name of the instance.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The public DNS name of the instance.</p>
      */
     inline Instance& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
+
 
     /**
      * <p>The public IP address of the instance.</p>
@@ -190,6 +194,7 @@ namespace Model
      */
     inline Instance& WithPublicIpAddress(const char* value) { SetPublicIpAddress(value); return *this;}
 
+
     /**
      * <p>The private DNS name of the instance.</p>
      */
@@ -224,6 +229,7 @@ namespace Model
      * <p>The private DNS name of the instance.</p>
      */
     inline Instance& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
+
 
     /**
      * <p>The private IP address of the instance.</p>
@@ -260,6 +266,7 @@ namespace Model
      */
     inline Instance& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
+
     /**
      * <p>The current status of the instance.</p>
      */
@@ -284,6 +291,7 @@ namespace Model
      * <p>The current status of the instance.</p>
      */
     inline Instance& WithStatus(InstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier of the instance group to which this instance belongs.</p>
@@ -319,6 +327,7 @@ namespace Model
      * <p>The identifier of the instance group to which this instance belongs.</p>
      */
     inline Instance& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
+
 
     /**
      * <p>The unique identifier of the instance fleet to which an EC2 instance
@@ -362,6 +371,7 @@ namespace Model
      */
     inline Instance& WithInstanceFleetId(const char* value) { SetInstanceFleetId(value); return *this;}
 
+
     /**
      * <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or
      * <code>SPOT</code>. </p>
@@ -391,6 +401,7 @@ namespace Model
      * <code>SPOT</code>. </p>
      */
     inline Instance& WithMarket(MarketType&& value) { SetMarket(std::move(value)); return *this;}
+
 
     /**
      * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
@@ -426,6 +437,7 @@ namespace Model
      * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline Instance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
 
     /**
      * <p>The list of EBS volumes that are attached to this instance.</p>
@@ -463,28 +475,40 @@ namespace Model
     inline Instance& AddEbsVolumes(EbsVolume&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_ec2InstanceId;
     bool m_ec2InstanceIdHasBeenSet;
+
     Aws::String m_publicDnsName;
     bool m_publicDnsNameHasBeenSet;
+
     Aws::String m_publicIpAddress;
     bool m_publicIpAddressHasBeenSet;
+
     Aws::String m_privateDnsName;
     bool m_privateDnsNameHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+
     InstanceStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_instanceGroupId;
     bool m_instanceGroupIdHasBeenSet;
+
     Aws::String m_instanceFleetId;
     bool m_instanceFleetIdHasBeenSet;
+
     MarketType m_market;
     bool m_marketHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::Vector<EbsVolume> m_ebsVolumes;
     bool m_ebsVolumesHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The alarms to be deleted.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
     inline DeleteAlarmsRequest& AddAlarmNames(const char* value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_alarmNames;
     bool m_alarmNamesHasBeenSet;
   };

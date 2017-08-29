@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A data structure that contains the name of the configuration set.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
     inline CreateConfigurationSetRequest& WithConfigurationSet(ConfigurationSet&& value) { SetConfigurationSet(std::move(value)); return *this;}
 
   private:
+
     ConfigurationSet m_configurationSet;
     bool m_configurationSetHasBeenSet;
   };

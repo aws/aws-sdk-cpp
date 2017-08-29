@@ -48,6 +48,7 @@ namespace Model
     PipelineContext& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the pipeline. This is a user-specified value. Pipeline names must
      * be unique across all pipeline names under an Amazon Web Services account.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline PipelineContext& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
 
+
     /**
      * <p>The stage of the pipeline.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>The stage of the pipeline.</p>
      */
     inline PipelineContext& WithStage(StageContext&& value) { SetStage(std::move(value)); return *this;}
+
 
     /**
      * <p/>
@@ -141,10 +144,13 @@ namespace Model
     inline PipelineContext& WithAction(ActionContext&& value) { SetAction(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet;
+
     StageContext m_stage;
     bool m_stageHasBeenSet;
+
     ActionContext m_action;
     bool m_actionHasBeenSet;
   };

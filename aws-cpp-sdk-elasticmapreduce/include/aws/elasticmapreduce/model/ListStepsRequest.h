@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the cluster for which to list the steps.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline ListStepsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>The filter to limit the step list based on certain states.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The filter to limit the step list based on certain states.</p>
      */
     inline ListStepsRequest& AddStepStates(StepState&& value) { m_stepStatesHasBeenSet = true; m_stepStates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The filter to limit the step list based on the identifier of the steps.</p>
@@ -151,6 +154,7 @@ namespace Model
      */
     inline ListStepsRequest& AddStepIds(const char* value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
 
+
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
@@ -187,12 +191,16 @@ namespace Model
     inline ListStepsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::Vector<StepState> m_stepStates;
     bool m_stepStatesHasBeenSet;
+
     Aws::Vector<Aws::String> m_stepIds;
     bool m_stepIdsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

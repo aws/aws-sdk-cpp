@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateCollectionResult();
-    CreateCollectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCollectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>HTTP status code indicating the result of the operation.</p>
@@ -55,6 +56,7 @@ namespace Model
      * <p>HTTP status code indicating the result of the operation.</p>
      */
     inline CreateCollectionResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p>Amazon Resource Name (ARN) of the collection. You can use this to manage
@@ -99,7 +101,9 @@ namespace Model
     inline CreateCollectionResult& WithCollectionArn(const char* value) { SetCollectionArn(value); return *this;}
 
   private:
+
     int m_statusCode;
+
     Aws::String m_collectionArn;
   };
 

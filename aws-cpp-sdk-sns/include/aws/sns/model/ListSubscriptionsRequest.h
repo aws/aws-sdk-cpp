@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline ListSubscriptionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -68,6 +68,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The AMI launch index, which can be used to find this instance in the launch
      * group.</p>
@@ -85,6 +86,7 @@ namespace Model
      * group.</p>
      */
     inline Instance& WithAmiLaunchIndex(int value) { SetAmiLaunchIndex(value); return *this;}
+
 
     /**
      * <p>The ID of the AMI used to launch the instance.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline Instance& WithImageId(const char* value) { SetImageId(value); return *this;}
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      */
     inline Instance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The instance type.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      * <p>The instance type.</p>
      */
     inline Instance& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The kernel associated with this instance, if applicable.</p>
@@ -215,6 +220,7 @@ namespace Model
      * <p>The kernel associated with this instance, if applicable.</p>
      */
     inline Instance& WithKernelId(const char* value) { SetKernelId(value); return *this;}
+
 
     /**
      * <p>The name of the key pair, if this instance was launched with an associated
@@ -258,6 +264,7 @@ namespace Model
      */
     inline Instance& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
+
     /**
      * <p>The time the instance was launched.</p>
      */
@@ -282,6 +289,7 @@ namespace Model
      * <p>The time the instance was launched.</p>
      */
     inline Instance& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The monitoring for the instance.</p>
@@ -308,6 +316,7 @@ namespace Model
      */
     inline Instance& WithMonitoring(Monitoring&& value) { SetMonitoring(std::move(value)); return *this;}
 
+
     /**
      * <p>The location where the instance launched, if applicable.</p>
      */
@@ -333,6 +342,7 @@ namespace Model
      */
     inline Instance& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
 
+
     /**
      * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
      */
@@ -357,6 +367,7 @@ namespace Model
      * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
      */
     inline Instance& WithPlatform(PlatformValues&& value) { SetPlatform(std::move(value)); return *this;}
+
 
     /**
      * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
@@ -435,6 +446,7 @@ namespace Model
      */
     inline Instance& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
 
+
     /**
      * <p>The private IPv4 address assigned to the instance.</p>
      */
@@ -470,6 +482,7 @@ namespace Model
      */
     inline Instance& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
+
     /**
      * <p>The product codes attached to this instance, if applicable.</p>
      */
@@ -504,6 +517,7 @@ namespace Model
      * <p>The product codes attached to this instance, if applicable.</p>
      */
     inline Instance& AddProductCodes(ProductCode&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
@@ -554,6 +568,7 @@ namespace Model
      */
     inline Instance& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
 
+
     /**
      * <p>The public IPv4 address assigned to the instance, if applicable.</p>
      */
@@ -588,6 +603,7 @@ namespace Model
      * <p>The public IPv4 address assigned to the instance, if applicable.</p>
      */
     inline Instance& WithPublicIpAddress(const char* value) { SetPublicIpAddress(value); return *this;}
+
 
     /**
      * <p>The RAM disk associated with this instance, if applicable.</p>
@@ -624,6 +640,7 @@ namespace Model
      */
     inline Instance& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
+
     /**
      * <p>The current state of the instance.</p>
      */
@@ -648,6 +665,7 @@ namespace Model
      * <p>The current state of the instance.</p>
      */
     inline Instance& WithState(InstanceState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason for the most recent state transition. This might be an empty
@@ -691,6 +709,7 @@ namespace Model
      */
     inline Instance& WithStateTransitionReason(const char* value) { SetStateTransitionReason(value); return *this;}
 
+
     /**
      * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
      */
@@ -725,6 +744,7 @@ namespace Model
      * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
      */
     inline Instance& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
@@ -761,6 +781,7 @@ namespace Model
      */
     inline Instance& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>The architecture of the image.</p>
      */
@@ -785,6 +806,7 @@ namespace Model
      * <p>The architecture of the image.</p>
      */
     inline Instance& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(std::move(value)); return *this;}
+
 
     /**
      * <p>Any block device mapping entries for the instance.</p>
@@ -820,6 +842,7 @@ namespace Model
      * <p>Any block device mapping entries for the instance.</p>
      */
     inline Instance& AddBlockDeviceMappings(InstanceBlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The idempotency token you provided when you launched the instance, if
@@ -863,6 +886,7 @@ namespace Model
      */
     inline Instance& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
@@ -890,6 +914,7 @@ namespace Model
      */
     inline Instance& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
+
     /**
      * <p>Specifies whether enhanced networking with ENA is enabled.</p>
      */
@@ -904,6 +929,7 @@ namespace Model
      * <p>Specifies whether enhanced networking with ENA is enabled.</p>
      */
     inline Instance& WithEnaSupport(bool value) { SetEnaSupport(value); return *this;}
+
 
     /**
      * <p>The hypervisor type of the instance.</p>
@@ -930,6 +956,7 @@ namespace Model
      */
     inline Instance& WithHypervisor(HypervisorType&& value) { SetHypervisor(std::move(value)); return *this;}
 
+
     /**
      * <p>The IAM instance profile associated with the instance, if applicable.</p>
      */
@@ -955,6 +982,7 @@ namespace Model
      */
     inline Instance& WithIamInstanceProfile(IamInstanceProfile&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
      */
@@ -979,6 +1007,7 @@ namespace Model
      * <p>Indicates whether this is a Spot instance or a Scheduled Instance.</p>
      */
     inline Instance& WithInstanceLifecycle(InstanceLifecycleType&& value) { SetInstanceLifecycle(std::move(value)); return *this;}
+
 
     /**
      * <p>The Elastic GPU associated with the instance.</p>
@@ -1015,6 +1044,7 @@ namespace Model
      */
     inline Instance& AddElasticGpuAssociations(ElasticGpuAssociation&& value) { m_elasticGpuAssociationsHasBeenSet = true; m_elasticGpuAssociations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
      */
@@ -1049,6 +1079,7 @@ namespace Model
      * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
      */
     inline Instance& AddNetworkInterfaces(InstanceNetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The root device name (for example, <code>/dev/sda1</code> or
@@ -1092,6 +1123,7 @@ namespace Model
      */
     inline Instance& WithRootDeviceName(const char* value) { SetRootDeviceName(value); return *this;}
 
+
     /**
      * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
      * instance store volume.</p>
@@ -1121,6 +1153,7 @@ namespace Model
      * instance store volume.</p>
      */
     inline Instance& WithRootDeviceType(DeviceType&& value) { SetRootDeviceType(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more security groups for the instance.</p>
@@ -1157,6 +1190,7 @@ namespace Model
      */
     inline Instance& AddSecurityGroups(GroupIdentifier&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies whether to enable an instance launched in a VPC to perform NAT.
      * This controls whether source/destination checking is enabled on the instance. A
@@ -1189,6 +1223,7 @@ namespace Model
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline Instance& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}
+
 
     /**
      * <p>If the request is a Spot instance request, the ID of the request.</p>
@@ -1224,6 +1259,7 @@ namespace Model
      * <p>If the request is a Spot instance request, the ID of the request.</p>
      */
     inline Instance& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
+
 
     /**
      * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
@@ -1267,6 +1303,7 @@ namespace Model
      */
     inline Instance& WithSriovNetSupport(const char* value) { SetSriovNetSupport(value); return *this;}
 
+
     /**
      * <p>The reason for the most recent state transition.</p>
      */
@@ -1291,6 +1328,7 @@ namespace Model
      * <p>The reason for the most recent state transition.</p>
      */
     inline Instance& WithStateReason(StateReason&& value) { SetStateReason(std::move(value)); return *this;}
+
 
     /**
      * <p>Any tags assigned to the instance.</p>
@@ -1327,6 +1365,7 @@ namespace Model
      */
     inline Instance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The virtualization type of the instance.</p>
      */
@@ -1353,82 +1392,121 @@ namespace Model
     inline Instance& WithVirtualizationType(VirtualizationType&& value) { SetVirtualizationType(std::move(value)); return *this;}
 
   private:
+
     int m_amiLaunchIndex;
     bool m_amiLaunchIndexHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_kernelId;
     bool m_kernelIdHasBeenSet;
+
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
+
     Aws::Utils::DateTime m_launchTime;
     bool m_launchTimeHasBeenSet;
+
     Monitoring m_monitoring;
     bool m_monitoringHasBeenSet;
+
     Placement m_placement;
     bool m_placementHasBeenSet;
+
     PlatformValues m_platform;
     bool m_platformHasBeenSet;
+
     Aws::String m_privateDnsName;
     bool m_privateDnsNameHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+
     Aws::Vector<ProductCode> m_productCodes;
     bool m_productCodesHasBeenSet;
+
     Aws::String m_publicDnsName;
     bool m_publicDnsNameHasBeenSet;
+
     Aws::String m_publicIpAddress;
     bool m_publicIpAddressHasBeenSet;
+
     Aws::String m_ramdiskId;
     bool m_ramdiskIdHasBeenSet;
+
     InstanceState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_stateTransitionReason;
     bool m_stateTransitionReasonHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     ArchitectureValues m_architecture;
     bool m_architectureHasBeenSet;
+
     Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
     bool m_enaSupport;
     bool m_enaSupportHasBeenSet;
+
     HypervisorType m_hypervisor;
     bool m_hypervisorHasBeenSet;
+
     IamInstanceProfile m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
+
     InstanceLifecycleType m_instanceLifecycle;
     bool m_instanceLifecycleHasBeenSet;
+
     Aws::Vector<ElasticGpuAssociation> m_elasticGpuAssociations;
     bool m_elasticGpuAssociationsHasBeenSet;
+
     Aws::Vector<InstanceNetworkInterface> m_networkInterfaces;
     bool m_networkInterfacesHasBeenSet;
+
     Aws::String m_rootDeviceName;
     bool m_rootDeviceNameHasBeenSet;
+
     DeviceType m_rootDeviceType;
     bool m_rootDeviceTypeHasBeenSet;
+
     Aws::Vector<GroupIdentifier> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
     bool m_sourceDestCheck;
     bool m_sourceDestCheckHasBeenSet;
+
     Aws::String m_spotInstanceRequestId;
     bool m_spotInstanceRequestIdHasBeenSet;
+
     Aws::String m_sriovNetSupport;
     bool m_sriovNetSupportHasBeenSet;
+
     StateReason m_stateReason;
     bool m_stateReasonHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     VirtualizationType m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
   };

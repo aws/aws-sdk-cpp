@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the event source for which events will be returned. If this
      * parameter is not specified, then all sources are included in the response.</p>
@@ -148,6 +149,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
+
     /**
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p> <p>Constraints:</p> <p>If <i>SourceType</i> is supplied,
@@ -218,6 +220,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
@@ -257,6 +260,7 @@ namespace Model
      * <p>Example: <code>2009-07-08T18:00Z</code> </p>
      */
     inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The end of the time interval for which to retrieve events, specified in ISO
@@ -298,6 +302,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of minutes prior to the time of the request for which to retrieve
      * events. For example, if the request is sent at 18:00 and you specify a duration
@@ -321,6 +326,7 @@ namespace Model
      * <p>Default: <code>60</code> </p>
      */
     inline DescribeEventsRequest& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The maximum number of response records to return in each call. If the number
@@ -351,6 +357,7 @@ namespace Model
      * maximum 100.</p>
      */
     inline DescribeEventsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -423,18 +430,25 @@ namespace Model
     inline DescribeEventsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet;
+
     SourceType m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

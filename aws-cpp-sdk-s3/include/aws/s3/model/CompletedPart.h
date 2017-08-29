@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Entity tag returned when the part was uploaded.
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline CompletedPart& WithETag(const char* value) { SetETag(value); return *this;}
 
+
     /**
      * Part number that identifies the part. This is a positive integer between 1 and
      * 10,000.
@@ -95,8 +97,10 @@ namespace Model
     inline CompletedPart& WithPartNumber(int value) { SetPartNumber(value); return *this;}
 
   private:
+
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
+
     int m_partNumber;
     bool m_partNumberHasBeenSet;
   };

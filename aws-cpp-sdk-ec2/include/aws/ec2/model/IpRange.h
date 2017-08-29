@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The IPv4 CIDR range. You can either specify a CIDR range or a source security
      * group, not both. To specify a single IPv4 address, use the /32 prefix.</p>
@@ -91,6 +92,7 @@ namespace Model
     inline IpRange& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
 
   private:
+
     Aws::String m_cidrIp;
     bool m_cidrIpHasBeenSet;
   };

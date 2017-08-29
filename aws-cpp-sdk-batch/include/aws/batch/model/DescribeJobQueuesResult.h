@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeJobQueuesResult();
-    DescribeJobQueuesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeJobQueuesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeJobQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeJobQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of job queues. </p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of job queues. </p>
      */
     inline DescribeJobQueuesResult& AddJobQueues(JobQueueDetail&& value) { m_jobQueues.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -142,7 +144,9 @@ namespace Model
     inline DescribeJobQueuesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<JobQueueDetail> m_jobQueues;
+
     Aws::String m_nextToken;
   };
 

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
      * removed from.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline RemoveTagsFromResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
+
     /**
      * <p>The tag key (name) of the tag to be removed.</p>
      */
@@ -123,8 +125,10 @@ namespace Model
     inline RemoveTagsFromResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

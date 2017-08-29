@@ -31,13 +31,13 @@ GetAssessmentReportResult::GetAssessmentReportResult() :
 {
 }
 
-GetAssessmentReportResult::GetAssessmentReportResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetAssessmentReportResult::GetAssessmentReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(ReportStatus::NOT_SET)
 {
   *this = result;
 }
 
-GetAssessmentReportResult& GetAssessmentReportResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetAssessmentReportResult& GetAssessmentReportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("status"))

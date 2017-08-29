@@ -30,12 +30,12 @@ PollForThirdPartyJobsResult::PollForThirdPartyJobsResult()
 {
 }
 
-PollForThirdPartyJobsResult::PollForThirdPartyJobsResult(const AmazonWebServiceResult<JsonValue>& result)
+PollForThirdPartyJobsResult::PollForThirdPartyJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PollForThirdPartyJobsResult& PollForThirdPartyJobsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PollForThirdPartyJobsResult& PollForThirdPartyJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("jobs"))

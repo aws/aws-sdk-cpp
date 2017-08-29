@@ -48,6 +48,7 @@ namespace Model
     NotificationWithSubscribers& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Notification& GetNotification() const{ return m_notification; }
 
@@ -62,6 +63,7 @@ namespace Model
 
     
     inline NotificationWithSubscribers& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
+
 
     
     inline const Aws::Vector<Subscriber>& GetSubscribers() const{ return m_subscribers; }
@@ -85,8 +87,10 @@ namespace Model
     inline NotificationWithSubscribers& AddSubscribers(Subscriber&& value) { m_subscribersHasBeenSet = true; m_subscribers.push_back(std::move(value)); return *this; }
 
   private:
+
     Notification m_notification;
     bool m_notificationHasBeenSet;
+
     Aws::Vector<Subscriber> m_subscribers;
     bool m_subscribersHasBeenSet;
   };

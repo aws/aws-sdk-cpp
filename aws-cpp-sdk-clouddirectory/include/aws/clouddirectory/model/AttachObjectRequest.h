@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
      * both objects reside. For more information, see <a>arns</a>.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline AttachObjectRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>The parent object reference.</p>
      */
@@ -104,6 +106,7 @@ namespace Model
      */
     inline AttachObjectRequest& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
 
+
     /**
      * <p>The child object reference to be attached to the object.</p>
      */
@@ -128,6 +131,7 @@ namespace Model
      * <p>The child object reference to be attached to the object.</p>
      */
     inline AttachObjectRequest& WithChildReference(ObjectReference&& value) { SetChildReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The link name with which the child object is attached to the parent.</p>
@@ -165,12 +169,16 @@ namespace Model
     inline AttachObjectRequest& WithLinkName(const char* value) { SetLinkName(value); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_parentReference;
     bool m_parentReferenceHasBeenSet;
+
     ObjectReference m_childReference;
     bool m_childReferenceHasBeenSet;
+
     Aws::String m_linkName;
     bool m_linkNameHasBeenSet;
   };

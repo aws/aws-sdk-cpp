@@ -31,12 +31,12 @@ DescribeSuggestersResult::DescribeSuggestersResult()
 {
 }
 
-DescribeSuggestersResult::DescribeSuggestersResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSuggestersResult::DescribeSuggestersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeSuggestersResult& DescribeSuggestersResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSuggestersResult& DescribeSuggestersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

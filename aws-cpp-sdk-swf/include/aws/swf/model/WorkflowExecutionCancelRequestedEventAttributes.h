@@ -47,6 +47,7 @@ namespace Model
     WorkflowExecutionCancelRequestedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The external workflow execution for which the cancellation was requested.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The external workflow execution for which the cancellation was requested.</p>
      */
     inline WorkflowExecutionCancelRequestedEventAttributes& WithExternalWorkflowExecution(WorkflowExecution&& value) { SetExternalWorkflowExecution(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code>
@@ -101,6 +103,7 @@ namespace Model
      * this event.</p>
      */
     inline WorkflowExecutionCancelRequestedEventAttributes& WithExternalInitiatedEventId(long long value) { SetExternalInitiatedEventId(value); return *this;}
+
 
     /**
      * <p>If set, indicates that the request to cancel the workflow execution was
@@ -143,10 +146,13 @@ namespace Model
     inline WorkflowExecutionCancelRequestedEventAttributes& WithCause(WorkflowExecutionCancelRequestedCause&& value) { SetCause(std::move(value)); return *this;}
 
   private:
+
     WorkflowExecution m_externalWorkflowExecution;
     bool m_externalWorkflowExecutionHasBeenSet;
+
     long long m_externalInitiatedEventId;
     bool m_externalInitiatedEventIdHasBeenSet;
+
     WorkflowExecutionCancelRequestedCause m_cause;
     bool m_causeHasBeenSet;
   };

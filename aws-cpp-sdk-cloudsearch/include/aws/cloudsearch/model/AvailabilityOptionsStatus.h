@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The availability options configured for the domain.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>The availability options configured for the domain.</p>
      */
     inline AvailabilityOptionsStatus& WithOptions(bool value) { SetOptions(value); return *this;}
+
 
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
@@ -80,8 +82,10 @@ namespace Model
     inline AvailabilityOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     bool m_options;
     bool m_optionsHasBeenSet;
+
     OptionStatus m_status;
     bool m_statusHasBeenSet;
   };

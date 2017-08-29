@@ -46,6 +46,7 @@ namespace Model
     WorkflowExecutionFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The workflowId to pass of match the criteria of this filter.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline WorkflowExecutionFilter& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
   private:
+
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet;
   };

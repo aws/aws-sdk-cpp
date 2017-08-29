@@ -30,12 +30,12 @@ PredictResult::PredictResult()
 {
 }
 
-PredictResult::PredictResult(const AmazonWebServiceResult<JsonValue>& result)
+PredictResult::PredictResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PredictResult& PredictResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PredictResult& PredictResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Prediction"))

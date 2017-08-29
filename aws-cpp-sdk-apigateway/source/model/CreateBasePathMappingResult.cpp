@@ -30,12 +30,12 @@ CreateBasePathMappingResult::CreateBasePathMappingResult()
 {
 }
 
-CreateBasePathMappingResult::CreateBasePathMappingResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateBasePathMappingResult::CreateBasePathMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateBasePathMappingResult& CreateBasePathMappingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateBasePathMappingResult& CreateBasePathMappingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("basePath"))

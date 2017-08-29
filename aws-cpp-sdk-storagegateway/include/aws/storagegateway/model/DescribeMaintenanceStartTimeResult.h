@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     DescribeMaintenanceStartTimeResult();
-    DescribeMaintenanceStartTimeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMaintenanceStartTimeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMaintenanceStartTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -72,6 +73,7 @@ namespace Model
     
     inline DescribeMaintenanceStartTimeResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     /**
      * <p>The hour component of the maintenance start time represented as <i>hh</i>,
      * where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone
@@ -92,6 +94,7 @@ namespace Model
      * of the gateway.</p>
      */
     inline DescribeMaintenanceStartTimeResult& WithHourOfDay(int value) { SetHourOfDay(value); return *this;}
+
 
     /**
      * <p>The minute component of the maintenance start time represented as <i>mm</i>,
@@ -114,6 +117,7 @@ namespace Model
      */
     inline DescribeMaintenanceStartTimeResult& WithMinuteOfHour(int value) { SetMinuteOfHour(value); return *this;}
 
+
     /**
      * <p>An ordinal number between 0 and 6 that represents the day of the week, where
      * 0 represents Sunday and 6 represents Saturday. The day of week is in the time
@@ -134,6 +138,7 @@ namespace Model
      * zone of the gateway.</p>
      */
     inline DescribeMaintenanceStartTimeResult& WithDayOfWeek(int value) { SetDayOfWeek(value); return *this;}
+
 
     
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
@@ -157,10 +162,15 @@ namespace Model
     inline DescribeMaintenanceStartTimeResult& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
+
     int m_hourOfDay;
+
     int m_minuteOfHour;
+
     int m_dayOfWeek;
+
     Aws::String m_timezone;
   };
 

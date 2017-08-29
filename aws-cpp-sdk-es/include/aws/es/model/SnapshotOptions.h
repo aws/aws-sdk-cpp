@@ -45,6 +45,7 @@ namespace Model
     SnapshotOptions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the time, in UTC format, when the service takes a daily automated
      * snapshot of the specified Elasticsearch domain. Default value is <code>0</code>
@@ -67,6 +68,7 @@ namespace Model
     inline SnapshotOptions& WithAutomatedSnapshotStartHour(int value) { SetAutomatedSnapshotStartHour(value); return *this;}
 
   private:
+
     int m_automatedSnapshotStartHour;
     bool m_automatedSnapshotStartHourHasBeenSet;
   };

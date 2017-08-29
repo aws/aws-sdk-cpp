@@ -48,6 +48,7 @@ namespace Model
     BatchListObjectParentPathsResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
      * with the directory.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline BatchListObjectParentPathsResponse& AddPathToObjectIdentifiersList(PathToObjectIdentifiers&& value) { m_pathToObjectIdentifiersListHasBeenSet = true; m_pathToObjectIdentifiersList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -126,8 +128,10 @@ namespace Model
     inline BatchListObjectParentPathsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PathToObjectIdentifiers> m_pathToObjectIdentifiersList;
     bool m_pathToObjectIdentifiersListHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

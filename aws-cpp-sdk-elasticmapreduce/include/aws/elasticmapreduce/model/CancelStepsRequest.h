@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>ClusterID</code> for which specified steps will be canceled. Use
      * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
@@ -82,6 +83,7 @@ namespace Model
      * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
      */
     inline CancelStepsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
 
     /**
      * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
@@ -132,8 +134,10 @@ namespace Model
     inline CancelStepsRequest& AddStepIds(const char* value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_stepIds;
     bool m_stepIdsHasBeenSet;
   };

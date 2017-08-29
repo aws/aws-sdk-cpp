@@ -46,6 +46,7 @@ namespace Model
     LogStream& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the log stream.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline LogStream& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
+
     /**
      * <p>The creation time of the stream, expressed as the number of milliseconds
      * since Jan 1, 1970 00:00:00 UTC.</p>
@@ -99,6 +101,7 @@ namespace Model
      */
     inline LogStream& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
+
     /**
      * <p>The time of the first event, expressed as the number of milliseconds since
      * Jan 1, 1970 00:00:00 UTC.</p>
@@ -116,6 +119,7 @@ namespace Model
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline LogStream& WithFirstEventTimestamp(long long value) { SetFirstEventTimestamp(value); return *this;}
+
 
     /**
      * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
@@ -144,6 +148,7 @@ namespace Model
      */
     inline LogStream& WithLastEventTimestamp(long long value) { SetLastEventTimestamp(value); return *this;}
 
+
     /**
      * <p>The ingestion time, expressed as the number of milliseconds since Jan 1, 1970
      * 00:00:00 UTC.</p>
@@ -161,6 +166,7 @@ namespace Model
      * 00:00:00 UTC.</p>
      */
     inline LogStream& WithLastIngestionTime(long long value) { SetLastIngestionTime(value); return *this;}
+
 
     /**
      * <p>The sequence token.</p>
@@ -197,6 +203,7 @@ namespace Model
      */
     inline LogStream& WithUploadSequenceToken(const char* value) { SetUploadSequenceToken(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the log stream.</p>
      */
@@ -232,6 +239,7 @@ namespace Model
      */
     inline LogStream& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The number of bytes stored.</p>
      */
@@ -248,20 +256,28 @@ namespace Model
     inline LogStream& WithStoredBytes(long long value) { SetStoredBytes(value); return *this;}
 
   private:
+
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
+
     long long m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     long long m_firstEventTimestamp;
     bool m_firstEventTimestampHasBeenSet;
+
     long long m_lastEventTimestamp;
     bool m_lastEventTimestampHasBeenSet;
+
     long long m_lastIngestionTime;
     bool m_lastIngestionTimeHasBeenSet;
+
     Aws::String m_uploadSequenceToken;
     bool m_uploadSequenceTokenHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     long long m_storedBytes;
     bool m_storedBytesHasBeenSet;
   };

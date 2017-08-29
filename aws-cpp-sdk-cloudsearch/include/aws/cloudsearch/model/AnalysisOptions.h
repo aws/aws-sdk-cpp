@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A JSON object that defines synonym groups and aliases. A synonym group is an
      * array of arrays, where each sub-array is a group of terms where each term in the
@@ -148,6 +149,7 @@ namespace Model
      */
     inline AnalysisOptions& WithSynonyms(const char* value) { SetSynonyms(value); return *this;}
 
+
     /**
      * <p>A JSON array of terms to ignore during indexing and searching. For example,
      * <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly
@@ -203,6 +205,7 @@ namespace Model
      * supported. </p>
      */
     inline AnalysisOptions& WithStopwords(const char* value) { SetStopwords(value); return *this;}
+
 
     /**
      * <p>A JSON object that contains a collection of string:value pairs that each map
@@ -274,6 +277,7 @@ namespace Model
      */
     inline AnalysisOptions& WithStemmingDictionary(const char* value) { SetStemmingDictionary(value); return *this;}
 
+
     /**
      * <p>A JSON array that contains a collection of terms, tokens, readings and part
      * of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary
@@ -330,6 +334,7 @@ namespace Model
      */
     inline AnalysisOptions& WithJapaneseTokenizationDictionary(const char* value) { SetJapaneseTokenizationDictionary(value); return *this;}
 
+
     /**
      * <p>The level of algorithmic stemming to perform: <code>none</code>,
      * <code>minimal</code>, <code>light</code>, or <code>full</code>. The available
@@ -381,14 +386,19 @@ namespace Model
     inline AnalysisOptions& WithAlgorithmicStemming(AlgorithmicStemming&& value) { SetAlgorithmicStemming(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_synonyms;
     bool m_synonymsHasBeenSet;
+
     Aws::String m_stopwords;
     bool m_stopwordsHasBeenSet;
+
     Aws::String m_stemmingDictionary;
     bool m_stemmingDictionaryHasBeenSet;
+
     Aws::String m_japaneseTokenizationDictionary;
     bool m_japaneseTokenizationDictionaryHasBeenSet;
+
     AlgorithmicStemming m_algorithmicStemming;
     bool m_algorithmicStemmingHasBeenSet;
   };

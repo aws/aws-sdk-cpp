@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     RebootNodeResult();
-    RebootNodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RebootNodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RebootNodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RebootNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A description of the DAX cluster after a node has been rebooted.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline RebootNodeResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
 
   private:
+
     Cluster m_cluster;
   };
 

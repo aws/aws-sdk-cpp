@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     ActivateGatewayResult();
-    ActivateGatewayResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ActivateGatewayResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ActivateGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ActivateGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -74,6 +75,7 @@ namespace Model
     inline ActivateGatewayResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
   };
 

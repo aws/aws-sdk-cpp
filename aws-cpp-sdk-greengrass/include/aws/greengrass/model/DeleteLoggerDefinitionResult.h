@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteLoggerDefinitionResult();
-    DeleteLoggerDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteLoggerDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteLoggerDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteLoggerDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

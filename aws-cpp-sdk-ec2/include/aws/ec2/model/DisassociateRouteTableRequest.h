@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The association ID representing the current association between the route
      * table and subnet.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DisassociateRouteTableRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -109,8 +111,10 @@ namespace Model
     inline DisassociateRouteTableRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

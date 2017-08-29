@@ -47,6 +47,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identity's email address. If you do not provide a value for this
      * parameter, you must specify a "From" address in the raw text of the message.
@@ -152,6 +153,7 @@ namespace Model
      */
     inline SendRawEmailRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
+
     /**
      * <p>A list of destinations for the message, consisting of To:, CC:, and BCC:
      * addresses.</p>
@@ -199,6 +201,7 @@ namespace Model
      * addresses.</p>
      */
     inline SendRawEmailRequest& AddDestinations(const char* value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
+
 
     /**
      * <p>The raw text of the message. The client is responsible for ensuring the
@@ -274,6 +277,7 @@ namespace Model
      * must not exceed 1,000 characters.</p> </li> </ul>
      */
     inline SendRawEmailRequest& WithRawMessage(RawMessage&& value) { SetRawMessage(std::move(value)); return *this;}
+
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -379,6 +383,7 @@ namespace Model
      * SES Developer Guide</a>.</p> </note>
      */
     inline SendRawEmailRequest& WithFromArn(const char* value) { SetFromArn(value); return *this;}
+
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -526,6 +531,7 @@ namespace Model
      * SES Developer Guide</a>.</p> </note>
      */
     inline SendRawEmailRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -681,6 +687,7 @@ namespace Model
      */
     inline SendRawEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}
 
+
     /**
      * <p>A list of tags, in the form of name/value pairs, to apply to an email that
      * you send using <code>SendRawEmail</code>. Tags correspond to characteristics of
@@ -730,6 +737,7 @@ namespace Model
      */
     inline SendRawEmailRequest& AddTags(MessageTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name of the configuration set to use when you send an email using
      * <code>SendRawEmail</code>.</p>
@@ -773,20 +781,28 @@ namespace Model
     inline SendRawEmailRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 
   private:
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     Aws::Vector<Aws::String> m_destinations;
     bool m_destinationsHasBeenSet;
+
     RawMessage m_rawMessage;
     bool m_rawMessageHasBeenSet;
+
     Aws::String m_fromArn;
     bool m_fromArnHasBeenSet;
+
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet;
+
     Aws::String m_returnPathArn;
     bool m_returnPathArnHasBeenSet;
+
     Aws::Vector<MessageTag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet;
   };

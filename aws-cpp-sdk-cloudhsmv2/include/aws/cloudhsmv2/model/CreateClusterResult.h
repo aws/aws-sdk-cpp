@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateClusterResult();
-    CreateClusterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the cluster that was created.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateClusterResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
 
   private:
+
     Cluster m_cluster;
   };
 

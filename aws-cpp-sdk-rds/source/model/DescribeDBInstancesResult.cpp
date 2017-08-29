@@ -31,12 +31,12 @@ DescribeDBInstancesResult::DescribeDBInstancesResult()
 {
 }
 
-DescribeDBInstancesResult::DescribeDBInstancesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBInstancesResult::DescribeDBInstancesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeDBInstancesResult& DescribeDBInstancesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBInstancesResult& DescribeDBInstancesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

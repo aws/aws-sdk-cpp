@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The unique identifier of the source cluster to copy snapshots from.</p>
      * <p>Constraints: Must be the valid name of an existing cluster that does not
@@ -89,6 +90,7 @@ namespace Model
      * already have cross-region snapshot copy enabled.</p>
      */
     inline EnableSnapshotCopyRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>The destination region that you want to copy snapshots to.</p>
@@ -146,6 +148,7 @@ namespace Model
      */
     inline EnableSnapshotCopyRequest& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}
 
+
     /**
      * <p>The number of days to retain automated snapshots in the destination region
      * after they are copied from the source region.</p> <p>Default: 7.</p>
@@ -166,6 +169,7 @@ namespace Model
      * <p>Constraints: Must be at least 1 and no more than 35.</p>
      */
     inline EnableSnapshotCopyRequest& WithRetentionPeriod(int value) { SetRetentionPeriod(value); return *this;}
+
 
     /**
      * <p>The name of the snapshot copy grant to use when snapshots of an AWS
@@ -210,12 +214,16 @@ namespace Model
     inline EnableSnapshotCopyRequest& WithSnapshotCopyGrantName(const char* value) { SetSnapshotCopyGrantName(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::String m_destinationRegion;
     bool m_destinationRegionHasBeenSet;
+
     int m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet;
+
     Aws::String m_snapshotCopyGrantName;
     bool m_snapshotCopyGrantNameHasBeenSet;
   };

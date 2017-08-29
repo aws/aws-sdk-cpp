@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetAssignmentResult();
-    GetAssignmentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAssignmentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAssignmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAssignmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> The assignment. The response includes one Assignment element. </p>
@@ -66,6 +67,7 @@ namespace Model
      * <p> The assignment. The response includes one Assignment element. </p>
      */
     inline GetAssignmentResult& WithAssignment(Assignment&& value) { SetAssignment(std::move(value)); return *this;}
+
 
     /**
      * <p> The HIT associated with this assignment. The response includes one HIT
@@ -98,7 +100,9 @@ namespace Model
     inline GetAssignmentResult& WithHIT(HIT&& value) { SetHIT(std::move(value)); return *this;}
 
   private:
+
     Assignment m_assignment;
+
     HIT m_hIT;
   };
 

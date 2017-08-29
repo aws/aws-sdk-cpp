@@ -30,12 +30,12 @@ DescribeHostedConnectionsResult::DescribeHostedConnectionsResult()
 {
 }
 
-DescribeHostedConnectionsResult::DescribeHostedConnectionsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeHostedConnectionsResult::DescribeHostedConnectionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeHostedConnectionsResult& DescribeHostedConnectionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeHostedConnectionsResult& DescribeHostedConnectionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("connections"))

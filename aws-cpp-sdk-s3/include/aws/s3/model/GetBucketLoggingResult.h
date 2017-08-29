@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetBucketLoggingResult();
-    GetBucketLoggingResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketLoggingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketLoggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketLoggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const LoggingEnabled& GetLoggingEnabled() const{ return m_loggingEnabled; }
@@ -57,6 +58,7 @@ namespace Model
     inline GetBucketLoggingResult& WithLoggingEnabled(LoggingEnabled&& value) { SetLoggingEnabled(std::move(value)); return *this;}
 
   private:
+
     LoggingEnabled m_loggingEnabled;
   };
 

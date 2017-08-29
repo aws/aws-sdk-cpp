@@ -30,12 +30,12 @@ GetTraceGraphResult::GetTraceGraphResult()
 {
 }
 
-GetTraceGraphResult::GetTraceGraphResult(const AmazonWebServiceResult<JsonValue>& result)
+GetTraceGraphResult::GetTraceGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetTraceGraphResult& GetTraceGraphResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetTraceGraphResult& GetTraceGraphResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Services"))

@@ -55,7 +55,7 @@ enum class CloudWatchErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DASHBOARD_INVALID_INPUT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DASHBOARD_INVALID_INPUT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DASHBOARD_NOT_FOUND,
   INTERNAL_SERVICE_FAULT,
   INVALID_FORMAT_FAULT,
@@ -65,7 +65,7 @@ enum class CloudWatchErrors
 };
 namespace CloudWatchErrorMapper
 {
-  AWS_CLOUDWATCH_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CLOUDWATCH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CloudWatch

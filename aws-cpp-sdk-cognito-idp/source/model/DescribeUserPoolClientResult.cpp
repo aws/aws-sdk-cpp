@@ -30,12 +30,12 @@ DescribeUserPoolClientResult::DescribeUserPoolClientResult()
 {
 }
 
-DescribeUserPoolClientResult::DescribeUserPoolClientResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeUserPoolClientResult::DescribeUserPoolClientResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeUserPoolClientResult& DescribeUserPoolClientResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeUserPoolClientResult& DescribeUserPoolClientResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UserPoolClient"))

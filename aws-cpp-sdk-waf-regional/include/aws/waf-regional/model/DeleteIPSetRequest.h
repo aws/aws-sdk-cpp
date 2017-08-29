@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete.
      * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DeleteIPSetRequest& WithIPSetId(const char* value) { SetIPSetId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline DeleteIPSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_iPSetId;
     bool m_iPSetIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
   };

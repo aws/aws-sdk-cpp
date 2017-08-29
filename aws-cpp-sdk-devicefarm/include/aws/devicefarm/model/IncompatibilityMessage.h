@@ -46,6 +46,7 @@ namespace Model
     IncompatibilityMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A message about the incompatibility.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>A message about the incompatibility.</p>
      */
     inline IncompatibilityMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
@@ -132,8 +134,10 @@ namespace Model
     inline IncompatibilityMessage& WithType(DeviceAttribute&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     DeviceAttribute m_type;
     bool m_typeHasBeenSet;
   };

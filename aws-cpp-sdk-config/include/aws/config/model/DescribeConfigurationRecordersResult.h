@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeConfigurationRecordersResult();
-    DescribeConfigurationRecordersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConfigurationRecordersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConfigurationRecordersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConfigurationRecordersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list that contains the descriptions of the specified configuration
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeConfigurationRecordersResult& AddConfigurationRecorders(ConfigurationRecorder&& value) { m_configurationRecorders.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ConfigurationRecorder> m_configurationRecorders;
   };
 

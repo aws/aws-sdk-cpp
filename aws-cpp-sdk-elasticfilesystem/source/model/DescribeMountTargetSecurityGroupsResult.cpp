@@ -30,12 +30,12 @@ DescribeMountTargetSecurityGroupsResult::DescribeMountTargetSecurityGroupsResult
 {
 }
 
-DescribeMountTargetSecurityGroupsResult::DescribeMountTargetSecurityGroupsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMountTargetSecurityGroupsResult::DescribeMountTargetSecurityGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeMountTargetSecurityGroupsResult& DescribeMountTargetSecurityGroupsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMountTargetSecurityGroupsResult& DescribeMountTargetSecurityGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SecurityGroups"))

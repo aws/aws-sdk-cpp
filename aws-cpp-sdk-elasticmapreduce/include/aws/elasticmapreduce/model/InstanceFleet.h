@@ -55,6 +55,7 @@ namespace Model
     InstanceFleet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier of the instance fleet.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      * <p>The unique identifier of the instance fleet.</p>
      */
     inline InstanceFleet& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>A friendly name for the instance fleet.</p>
@@ -125,6 +127,7 @@ namespace Model
      */
     inline InstanceFleet& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The current status of the instance fleet. </p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The current status of the instance fleet. </p>
      */
     inline InstanceFleet& WithStatus(InstanceFleetStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The node type that the instance fleet hosts. Valid values are MASTER, CORE,
@@ -179,6 +183,7 @@ namespace Model
      * or TASK. </p>
      */
     inline InstanceFleet& WithInstanceFleetType(InstanceFleetType&& value) { SetInstanceFleetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The target capacity of On-Demand units for the instance fleet, which
@@ -249,6 +254,7 @@ namespace Model
      */
     inline InstanceFleet& WithTargetOnDemandCapacity(int value) { SetTargetOnDemandCapacity(value); return *this;}
 
+
     /**
      * <p>The target capacity of Spot units for the instance fleet, which determines
      * how many Spot instances to provision. When the instance fleet launches, Amazon
@@ -315,6 +321,7 @@ namespace Model
      */
     inline InstanceFleet& WithTargetSpotCapacity(int value) { SetTargetSpotCapacity(value); return *this;}
 
+
     /**
      * <p>The number of On-Demand units that have been provisioned for the instance
      * fleet to fulfill <code>TargetOnDemandCapacity</code>. This provisioned capacity
@@ -336,6 +343,7 @@ namespace Model
      */
     inline InstanceFleet& WithProvisionedOnDemandCapacity(int value) { SetProvisionedOnDemandCapacity(value); return *this;}
 
+
     /**
      * <p>The number of Spot units that have been provisioned for this instance fleet
      * to fulfill <code>TargetSpotCapacity</code>. This provisioned capacity might be
@@ -356,6 +364,7 @@ namespace Model
      * less than or greater than <code>TargetSpotCapacity</code>.</p>
      */
     inline InstanceFleet& WithProvisionedSpotCapacity(int value) { SetProvisionedSpotCapacity(value); return *this;}
+
 
     /**
      * <p>The specification for the instance types that comprise an instance fleet. Up
@@ -406,6 +415,7 @@ namespace Model
      */
     inline InstanceFleet& AddInstanceTypeSpecifications(InstanceTypeSpecification&& value) { m_instanceTypeSpecificationsHasBeenSet = true; m_instanceTypeSpecifications.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Describes the launch specification for an instance fleet. </p>
      */
@@ -432,24 +442,34 @@ namespace Model
     inline InstanceFleet& WithLaunchSpecifications(InstanceFleetProvisioningSpecifications&& value) { SetLaunchSpecifications(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     InstanceFleetStatus m_status;
     bool m_statusHasBeenSet;
+
     InstanceFleetType m_instanceFleetType;
     bool m_instanceFleetTypeHasBeenSet;
+
     int m_targetOnDemandCapacity;
     bool m_targetOnDemandCapacityHasBeenSet;
+
     int m_targetSpotCapacity;
     bool m_targetSpotCapacityHasBeenSet;
+
     int m_provisionedOnDemandCapacity;
     bool m_provisionedOnDemandCapacityHasBeenSet;
+
     int m_provisionedSpotCapacity;
     bool m_provisionedSpotCapacityHasBeenSet;
+
     Aws::Vector<InstanceTypeSpecification> m_instanceTypeSpecifications;
     bool m_instanceTypeSpecificationsHasBeenSet;
+
     InstanceFleetProvisioningSpecifications m_launchSpecifications;
     bool m_launchSpecificationsHasBeenSet;
   };

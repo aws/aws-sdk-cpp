@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     PutTargetsResult();
-    PutTargetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutTargetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of failed entries.</p>
@@ -56,6 +57,7 @@ namespace Model
      * <p>The number of failed entries.</p>
      */
     inline PutTargetsResult& WithFailedEntryCount(int value) { SetFailedEntryCount(value); return *this;}
+
 
     /**
      * <p>The failed target entries.</p>
@@ -93,7 +95,9 @@ namespace Model
     inline PutTargetsResult& AddFailedEntries(PutTargetsResultEntry&& value) { m_failedEntries.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_failedEntryCount;
+
     Aws::Vector<PutTargetsResultEntry> m_failedEntries;
   };
 

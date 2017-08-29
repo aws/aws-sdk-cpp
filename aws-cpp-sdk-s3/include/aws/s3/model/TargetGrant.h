@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Grantee& GetGrantee() const{ return m_grantee; }
 
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline TargetGrant& WithGrantee(Grantee&& value) { SetGrantee(std::move(value)); return *this;}
+
 
     /**
      * Logging permissions assigned to the Grantee for the bucket.
@@ -83,8 +85,10 @@ namespace Model
     inline TargetGrant& WithPermission(BucketLogsPermission&& value) { SetPermission(std::move(value)); return *this;}
 
   private:
+
     Grantee m_grantee;
     bool m_granteeHasBeenSet;
+
     BucketLogsPermission m_permission;
     bool m_permissionHasBeenSet;
   };

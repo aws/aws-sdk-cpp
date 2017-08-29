@@ -31,12 +31,12 @@ InitiateJobResult::InitiateJobResult()
 {
 }
 
-InitiateJobResult::InitiateJobResult(const AmazonWebServiceResult<JsonValue>& result)
+InitiateJobResult::InitiateJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-InitiateJobResult& InitiateJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+InitiateJobResult& InitiateJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

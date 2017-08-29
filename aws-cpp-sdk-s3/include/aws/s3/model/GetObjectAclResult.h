@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     GetObjectAclResult();
-    GetObjectAclResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetObjectAclResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetObjectAclResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetObjectAclResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Owner& GetOwner() const{ return m_owner; }
@@ -58,6 +59,7 @@ namespace Model
 
     
     inline GetObjectAclResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+
 
     /**
      * A list of grants.
@@ -94,6 +96,7 @@ namespace Model
      */
     inline GetObjectAclResult& AddGrants(Grant&& value) { m_grants.push_back(std::move(value)); return *this; }
 
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -110,8 +113,11 @@ namespace Model
     inline GetObjectAclResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
+
     Owner m_owner;
+
     Aws::Vector<Grant> m_grants;
+
     RequestCharged m_requestCharged;
   };
 

@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the alarm.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline DescribeAlarmHistoryRequest& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
 
+
     /**
      * <p>The type of alarm histories to retrieve.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The type of alarm histories to retrieve.</p>
      */
     inline DescribeAlarmHistoryRequest& WithHistoryItemType(HistoryItemType&& value) { SetHistoryItemType(std::move(value)); return *this;}
+
 
     /**
      * <p>The starting date to retrieve alarm history.</p>
@@ -125,6 +128,7 @@ namespace Model
      */
     inline DescribeAlarmHistoryRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The ending date to retrieve alarm history.</p>
      */
@@ -150,6 +154,7 @@ namespace Model
      */
     inline DescribeAlarmHistoryRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of alarm history records to retrieve.</p>
      */
@@ -164,6 +169,7 @@ namespace Model
      * <p>The maximum number of alarm history records to retrieve.</p>
      */
     inline DescribeAlarmHistoryRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data
@@ -208,16 +214,22 @@ namespace Model
     inline DescribeAlarmHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
+
     HistoryItemType m_historyItemType;
     bool m_historyItemTypeHasBeenSet;
+
     Aws::Utils::DateTime m_startDate;
     bool m_startDateHasBeenSet;
+
     Aws::Utils::DateTime m_endDate;
     bool m_endDateHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

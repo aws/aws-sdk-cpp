@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     ModifyLunaClientResult();
-    ModifyLunaClientResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyLunaClientResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyLunaClientResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyLunaClientResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the client.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline ModifyLunaClientResult& WithClientArn(const char* value) { SetClientArn(value); return *this;}
 
   private:
+
     Aws::String m_clientArn;
   };
 

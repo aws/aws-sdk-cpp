@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetOpenIDConnectProviderResult();
-    GetOpenIDConnectProviderResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetOpenIDConnectProviderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetOpenIDConnectProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetOpenIDConnectProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The URL that the IAM OIDC provider resource object is associated with. For
@@ -91,6 +92,7 @@ namespace Model
      * more information, see <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline GetOpenIDConnectProviderResult& WithUrl(const char* value) { SetUrl(value); return *this;}
+
 
     /**
      * <p>A list of client IDs (also known as audiences) that are associated with the
@@ -148,6 +150,7 @@ namespace Model
      */
     inline GetOpenIDConnectProviderResult& AddClientIDList(const char* value) { m_clientIDList.push_back(value); return *this; }
 
+
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
      * OIDC provider resource object. For more information, see
@@ -204,6 +207,7 @@ namespace Model
      */
     inline GetOpenIDConnectProviderResult& AddThumbprintList(const char* value) { m_thumbprintList.push_back(value); return *this; }
 
+
     /**
      * <p>The date and time when the IAM OIDC provider resource object was created in
      * the AWS account.</p>
@@ -234,6 +238,7 @@ namespace Model
      */
     inline GetOpenIDConnectProviderResult& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -250,10 +255,15 @@ namespace Model
     inline GetOpenIDConnectProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_url;
+
     Aws::Vector<Aws::String> m_clientIDList;
+
     Aws::Vector<Aws::String> m_thumbprintList;
+
     Aws::Utils::DateTime m_createDate;
+
     ResponseMetadata m_responseMetadata;
   };
 

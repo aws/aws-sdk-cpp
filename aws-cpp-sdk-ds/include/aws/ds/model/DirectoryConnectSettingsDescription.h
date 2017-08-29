@@ -47,6 +47,7 @@ namespace Model
     DirectoryConnectSettingsDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the VPC that the AD Connector is in.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The identifier of the VPC that the AD Connector is in.</p>
      */
     inline DirectoryConnectSettingsDescription& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline DirectoryConnectSettingsDescription& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
     /**
      * <p>The username of the service account in the on-premises directory.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      */
     inline DirectoryConnectSettingsDescription& WithCustomerUserName(const char* value) { SetCustomerUserName(value); return *this;}
 
+
     /**
      * <p>The security group identifier for the AD Connector directory.</p>
      */
@@ -191,6 +195,7 @@ namespace Model
      * <p>The security group identifier for the AD Connector directory.</p>
      */
     inline DirectoryConnectSettingsDescription& WithSecurityGroupId(const char* value) { SetSecurityGroupId(value); return *this;}
+
 
     /**
      * <p>A list of the Availability Zones that the directory is in.</p>
@@ -231,6 +236,7 @@ namespace Model
      * <p>A list of the Availability Zones that the directory is in.</p>
      */
     inline DirectoryConnectSettingsDescription& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
 
     /**
      * <p>The IP addresses of the AD Connector servers.</p>
@@ -273,16 +279,22 @@ namespace Model
     inline DirectoryConnectSettingsDescription& AddConnectIps(const char* value) { m_connectIpsHasBeenSet = true; m_connectIps.push_back(value); return *this; }
 
   private:
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::String m_customerUserName;
     bool m_customerUserNameHasBeenSet;
+
     Aws::String m_securityGroupId;
     bool m_securityGroupIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     Aws::Vector<Aws::String> m_connectIps;
     bool m_connectIpsHasBeenSet;
   };

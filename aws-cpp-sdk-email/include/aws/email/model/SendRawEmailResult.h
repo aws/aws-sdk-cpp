@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     SendRawEmailResult();
-    SendRawEmailResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SendRawEmailResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SendRawEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SendRawEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The unique message identifier returned from the <code>SendRawEmail</code>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline SendRawEmailResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,7 +107,9 @@ namespace Model
     inline SendRawEmailResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_messageId;
+
     ResponseMetadata m_responseMetadata;
   };
 

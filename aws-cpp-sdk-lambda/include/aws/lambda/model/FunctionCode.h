@@ -46,6 +46,7 @@ namespace Model
     FunctionCode& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The contents of your zip file containing your deployment package. If you are
      * using the web API directly, the contents of the zip file must be base64-encoded.
@@ -96,6 +97,7 @@ namespace Model
      */
     inline FunctionCode& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 
+
     /**
      * <p>Amazon S3 bucket name where the .zip file containing your deployment package
      * is stored. This bucket must reside in the same AWS region where you are creating
@@ -145,6 +147,7 @@ namespace Model
      */
     inline FunctionCode& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
+
     /**
      * <p>The Amazon S3 object (the deployment package) key name you want to
      * upload.</p>
@@ -187,6 +190,7 @@ namespace Model
      */
     inline FunctionCode& WithS3Key(const char* value) { SetS3Key(value); return *this;}
 
+
     /**
      * <p>The Amazon S3 object (the deployment package) version you want to upload.</p>
      */
@@ -223,12 +227,16 @@ namespace Model
     inline FunctionCode& WithS3ObjectVersion(const char* value) { SetS3ObjectVersion(value); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_zipFile;
     bool m_zipFileHasBeenSet;
+
     Aws::String m_s3Bucket;
     bool m_s3BucketHasBeenSet;
+
     Aws::String m_s3Key;
     bool m_s3KeyHasBeenSet;
+
     Aws::String m_s3ObjectVersion;
     bool m_s3ObjectVersionHasBeenSet;
   };

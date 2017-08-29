@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     DescribeLimitsResult();
-    DescribeLimitsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The maximum total read capacity units that your account allows you to
@@ -63,6 +64,7 @@ namespace Model
      */
     inline DescribeLimitsResult& WithAccountMaxReadCapacityUnits(long long value) { SetAccountMaxReadCapacityUnits(value); return *this;}
 
+
     /**
      * <p>The maximum total write capacity units that your account allows you to
      * provision across all of your tables in this region.</p>
@@ -80,6 +82,7 @@ namespace Model
      * provision across all of your tables in this region.</p>
      */
     inline DescribeLimitsResult& WithAccountMaxWriteCapacityUnits(long long value) { SetAccountMaxWriteCapacityUnits(value); return *this;}
+
 
     /**
      * <p>The maximum read capacity units that your account allows you to provision for
@@ -101,6 +104,7 @@ namespace Model
      * units provisioned for its global secondary indexes (GSIs).</p>
      */
     inline DescribeLimitsResult& WithTableMaxReadCapacityUnits(long long value) { SetTableMaxReadCapacityUnits(value); return *this;}
+
 
     /**
      * <p>The maximum write capacity units that your account allows you to provision
@@ -124,9 +128,13 @@ namespace Model
     inline DescribeLimitsResult& WithTableMaxWriteCapacityUnits(long long value) { SetTableMaxWriteCapacityUnits(value); return *this;}
 
   private:
+
     long long m_accountMaxReadCapacityUnits;
+
     long long m_accountMaxWriteCapacityUnits;
+
     long long m_tableMaxReadCapacityUnits;
+
     long long m_tableMaxWriteCapacityUnits;
   };
 

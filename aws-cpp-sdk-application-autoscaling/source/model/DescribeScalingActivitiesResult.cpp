@@ -30,12 +30,12 @@ DescribeScalingActivitiesResult::DescribeScalingActivitiesResult()
 {
 }
 
-DescribeScalingActivitiesResult::DescribeScalingActivitiesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeScalingActivitiesResult::DescribeScalingActivitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeScalingActivitiesResult& DescribeScalingActivitiesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeScalingActivitiesResult& DescribeScalingActivitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ScalingActivities"))

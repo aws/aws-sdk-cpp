@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the policy.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The name of the policy.</p>
      */
     inline PolicyDetail& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The policy document.</p>
@@ -121,8 +123,10 @@ namespace Model
     inline PolicyDetail& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * The name of the item.
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline Item& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p></p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p></p>
      */
     inline Item& WithAlternateNameEncoding(const char* value) { SetAlternateNameEncoding(value); return *this;}
+
 
     /**
      * A list of attributes.
@@ -156,10 +159,13 @@ namespace Model
     inline Item& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_alternateNameEncoding;
     bool m_alternateNameEncodingHasBeenSet;
+
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
   };

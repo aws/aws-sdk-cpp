@@ -30,12 +30,12 @@ TestConnectionResult::TestConnectionResult()
 {
 }
 
-TestConnectionResult::TestConnectionResult(const AmazonWebServiceResult<JsonValue>& result)
+TestConnectionResult::TestConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-TestConnectionResult& TestConnectionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TestConnectionResult& TestConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Connection"))

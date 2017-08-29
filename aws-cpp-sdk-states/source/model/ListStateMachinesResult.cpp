@@ -30,12 +30,12 @@ ListStateMachinesResult::ListStateMachinesResult()
 {
 }
 
-ListStateMachinesResult::ListStateMachinesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListStateMachinesResult::ListStateMachinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListStateMachinesResult& ListStateMachinesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListStateMachinesResult& ListStateMachinesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("stateMachines"))

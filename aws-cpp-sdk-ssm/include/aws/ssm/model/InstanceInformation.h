@@ -51,6 +51,7 @@ namespace Model
     InstanceInformation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The instance ID. </p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline InstanceInformation& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>Connection status of the SSM Agent. </p>
      */
@@ -111,6 +113,7 @@ namespace Model
      */
     inline InstanceInformation& WithPingStatus(PingStatus&& value) { SetPingStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time when agent last pinged Systems Manager service. </p>
      */
@@ -135,6 +138,7 @@ namespace Model
      * <p>The date and time when agent last pinged Systems Manager service. </p>
      */
     inline InstanceInformation& WithLastPingDateTime(Aws::Utils::DateTime&& value) { SetLastPingDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The version of the SSM Agent running on your Linux instance. </p>
@@ -171,6 +175,7 @@ namespace Model
      */
     inline InstanceInformation& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
+
     /**
      * <p>Indicates whether latest version of the SSM Agent is running on your
      * instance. </p>
@@ -188,6 +193,7 @@ namespace Model
      * instance. </p>
      */
     inline InstanceInformation& WithIsLatestVersion(bool value) { SetIsLatestVersion(value); return *this;}
+
 
     /**
      * <p>The operating system platform type. </p>
@@ -213,6 +219,7 @@ namespace Model
      * <p>The operating system platform type. </p>
      */
     inline InstanceInformation& WithPlatformType(PlatformType&& value) { SetPlatformType(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the operating system platform running on your instance. </p>
@@ -249,6 +256,7 @@ namespace Model
      */
     inline InstanceInformation& WithPlatformName(const char* value) { SetPlatformName(value); return *this;}
 
+
     /**
      * <p>The version of the OS platform running on your instance. </p>
      */
@@ -283,6 +291,7 @@ namespace Model
      * <p>The version of the OS platform running on your instance. </p>
      */
     inline InstanceInformation& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+
 
     /**
      * <p>The activation ID created by Systems Manager when the server or VM was
@@ -326,6 +335,7 @@ namespace Model
      */
     inline InstanceInformation& WithActivationId(const char* value) { SetActivationId(value); return *this;}
 
+
     /**
      * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
      * instances or managed instances. </p>
@@ -368,6 +378,7 @@ namespace Model
      */
     inline InstanceInformation& WithIamRole(const char* value) { SetIamRole(value); return *this;}
 
+
     /**
      * <p>The date the server or VM was registered with AWS as a managed instance.</p>
      */
@@ -392,6 +403,7 @@ namespace Model
      * <p>The date the server or VM was registered with AWS as a managed instance.</p>
      */
     inline InstanceInformation& WithRegistrationDate(Aws::Utils::DateTime&& value) { SetRegistrationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of instance. Instances are either EC2 instances or managed
@@ -422,6 +434,7 @@ namespace Model
      * instances. </p>
      */
     inline InstanceInformation& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the managed instance.</p>
@@ -458,6 +471,7 @@ namespace Model
      */
     inline InstanceInformation& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The IP address of the managed instance.</p>
      */
@@ -492,6 +506,7 @@ namespace Model
      * <p>The IP address of the managed instance.</p>
      */
     inline InstanceInformation& WithIPAddress(const char* value) { SetIPAddress(value); return *this;}
+
 
     /**
      * <p>The fully qualified host name of the managed instance.</p>
@@ -528,6 +543,7 @@ namespace Model
      */
     inline InstanceInformation& WithComputerName(const char* value) { SetComputerName(value); return *this;}
 
+
     /**
      * <p>The status of the association.</p>
      */
@@ -563,6 +579,7 @@ namespace Model
      */
     inline InstanceInformation& WithAssociationStatus(const char* value) { SetAssociationStatus(value); return *this;}
 
+
     /**
      * <p>The date the association was last executed.</p>
      */
@@ -588,6 +605,7 @@ namespace Model
      */
     inline InstanceInformation& WithLastAssociationExecutionDate(Aws::Utils::DateTime&& value) { SetLastAssociationExecutionDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The last date the association was successfully run.</p>
      */
@@ -612,6 +630,7 @@ namespace Model
      * <p>The last date the association was successfully run.</p>
      */
     inline InstanceInformation& WithLastSuccessfulAssociationExecutionDate(Aws::Utils::DateTime&& value) { SetLastSuccessfulAssociationExecutionDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the association.</p>
@@ -639,42 +658,61 @@ namespace Model
     inline InstanceInformation& WithAssociationOverview(InstanceAggregatedAssociationOverview&& value) { SetAssociationOverview(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     PingStatus m_pingStatus;
     bool m_pingStatusHasBeenSet;
+
     Aws::Utils::DateTime m_lastPingDateTime;
     bool m_lastPingDateTimeHasBeenSet;
+
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet;
+
     bool m_isLatestVersion;
     bool m_isLatestVersionHasBeenSet;
+
     PlatformType m_platformType;
     bool m_platformTypeHasBeenSet;
+
     Aws::String m_platformName;
     bool m_platformNameHasBeenSet;
+
     Aws::String m_platformVersion;
     bool m_platformVersionHasBeenSet;
+
     Aws::String m_activationId;
     bool m_activationIdHasBeenSet;
+
     Aws::String m_iamRole;
     bool m_iamRoleHasBeenSet;
+
     Aws::Utils::DateTime m_registrationDate;
     bool m_registrationDateHasBeenSet;
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_iPAddress;
     bool m_iPAddressHasBeenSet;
+
     Aws::String m_computerName;
     bool m_computerNameHasBeenSet;
+
     Aws::String m_associationStatus;
     bool m_associationStatusHasBeenSet;
+
     Aws::Utils::DateTime m_lastAssociationExecutionDate;
     bool m_lastAssociationExecutionDateHasBeenSet;
+
     Aws::Utils::DateTime m_lastSuccessfulAssociationExecutionDate;
     bool m_lastSuccessfulAssociationExecutionDateHasBeenSet;
+
     InstanceAggregatedAssociationOverview m_associationOverview;
     bool m_associationOverviewHasBeenSet;
   };

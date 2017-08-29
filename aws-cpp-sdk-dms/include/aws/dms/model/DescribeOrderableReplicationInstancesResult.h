@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeOrderableReplicationInstancesResult();
-    DescribeOrderableReplicationInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOrderableReplicationInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeOrderableReplicationInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeOrderableReplicationInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The order-able replication instances available.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The order-able replication instances available.</p>
      */
     inline DescribeOrderableReplicationInstancesResult& AddOrderableReplicationInstances(OrderableReplicationInstance&& value) { m_orderableReplicationInstances.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -133,7 +135,9 @@ namespace Model
     inline DescribeOrderableReplicationInstancesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<OrderableReplicationInstance> m_orderableReplicationInstances;
+
     Aws::String m_marker;
   };
 

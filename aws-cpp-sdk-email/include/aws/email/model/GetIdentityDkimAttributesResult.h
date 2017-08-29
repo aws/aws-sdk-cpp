@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     GetIdentityDkimAttributesResult();
-    GetIdentityDkimAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetIdentityDkimAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetIdentityDkimAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetIdentityDkimAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The DKIM attributes for an email address or a domain.</p>
@@ -107,6 +108,7 @@ namespace Model
      */
     inline GetIdentityDkimAttributesResult& AddDkimAttributes(const char* key, const IdentityDkimAttributes& value) { m_dkimAttributes.emplace(key, value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -123,7 +125,9 @@ namespace Model
     inline GetIdentityDkimAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, IdentityDkimAttributes> m_dkimAttributes;
+
     ResponseMetadata m_responseMetadata;
   };
 

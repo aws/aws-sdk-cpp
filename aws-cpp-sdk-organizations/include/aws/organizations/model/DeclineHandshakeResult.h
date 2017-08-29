@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeclineHandshakeResult();
-    DeclineHandshakeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeclineHandshakeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeclineHandshakeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeclineHandshakeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains details about the declined handshake. The state is
@@ -72,6 +73,7 @@ namespace Model
     inline DeclineHandshakeResult& WithHandshake(Handshake&& value) { SetHandshake(std::move(value)); return *this;}
 
   private:
+
     Handshake m_handshake;
   };
 

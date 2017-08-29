@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeEffectiveInstanceAssociationsResult();
-    DescribeEffectiveInstanceAssociationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEffectiveInstanceAssociationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEffectiveInstanceAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEffectiveInstanceAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The associations for the requested instance.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The associations for the requested instance.</p>
      */
     inline DescribeEffectiveInstanceAssociationsResult& AddAssociations(InstanceAssociation&& value) { m_associations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeEffectiveInstanceAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<InstanceAssociation> m_associations;
+
     Aws::String m_nextToken;
   };
 

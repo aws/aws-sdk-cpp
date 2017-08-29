@@ -30,12 +30,12 @@ UpdateSnapshotScheduleResult::UpdateSnapshotScheduleResult()
 {
 }
 
-UpdateSnapshotScheduleResult::UpdateSnapshotScheduleResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateSnapshotScheduleResult::UpdateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateSnapshotScheduleResult& UpdateSnapshotScheduleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateSnapshotScheduleResult& UpdateSnapshotScheduleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("VolumeARN"))

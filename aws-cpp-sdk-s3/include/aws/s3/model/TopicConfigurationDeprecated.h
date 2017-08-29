@@ -43,6 +43,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetId() const{ return m_id; }
 
@@ -64,6 +65,7 @@ namespace Model
     
     inline TopicConfigurationDeprecated& WithId(const char* value) { SetId(value); return *this;}
 
+
     
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
@@ -84,6 +86,7 @@ namespace Model
 
     
     inline TopicConfigurationDeprecated& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+
 
     /**
      * Amazon SNS topic to which Amazon S3 will publish a message to report the
@@ -128,10 +131,13 @@ namespace Model
     inline TopicConfigurationDeprecated& WithTopic(const char* value) { SetTopic(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Vector<Event> m_events;
     bool m_eventsHasBeenSet;
+
     Aws::String m_topic;
     bool m_topicHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     Comment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the comment.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of the comment.</p>
      */
     inline Comment& WithCommentId(const char* value) { SetCommentId(value); return *this;}
+
 
     /**
      * <p>The ID of the parent comment.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Comment& WithParentId(const char* value) { SetParentId(value); return *this;}
 
+
     /**
      * <p>The ID of the root comment in the thread.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>The ID of the root comment in the thread.</p>
      */
     inline Comment& WithThreadId(const char* value) { SetThreadId(value); return *this;}
+
 
     /**
      * <p>The text of the comment.</p>
@@ -189,6 +193,7 @@ namespace Model
      */
     inline Comment& WithText(const char* value) { SetText(value); return *this;}
 
+
     /**
      * <p>The details of the user who made the comment.</p>
      */
@@ -213,6 +218,7 @@ namespace Model
      * <p>The details of the user who made the comment.</p>
      */
     inline Comment& WithContributor(User&& value) { SetContributor(std::move(value)); return *this;}
+
 
     /**
      * <p>The time that the comment was created.</p>
@@ -239,6 +245,7 @@ namespace Model
      */
     inline Comment& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The status of the comment.</p>
      */
@@ -263,6 +270,7 @@ namespace Model
      * <p>The status of the comment.</p>
      */
     inline Comment& WithStatus(CommentStatusType&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The visibility of the comment. Options are either PRIVATE, where the comment
@@ -303,6 +311,7 @@ namespace Model
      * contributors.</p>
      */
     inline Comment& WithVisibility(CommentVisibilityType&& value) { SetVisibility(std::move(value)); return *this;}
+
 
     /**
      * <p>If the comment is a reply to another user's comment, this field contains the
@@ -347,22 +356,31 @@ namespace Model
     inline Comment& WithRecipientId(const char* value) { SetRecipientId(value); return *this;}
 
   private:
+
     Aws::String m_commentId;
     bool m_commentIdHasBeenSet;
+
     Aws::String m_parentId;
     bool m_parentIdHasBeenSet;
+
     Aws::String m_threadId;
     bool m_threadIdHasBeenSet;
+
     Aws::String m_text;
     bool m_textHasBeenSet;
+
     User m_contributor;
     bool m_contributorHasBeenSet;
+
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet;
+
     CommentStatusType m_status;
     bool m_statusHasBeenSet;
+
     CommentVisibilityType m_visibility;
     bool m_visibilityHasBeenSet;
+
     Aws::String m_recipientId;
     bool m_recipientIdHasBeenSet;
   };

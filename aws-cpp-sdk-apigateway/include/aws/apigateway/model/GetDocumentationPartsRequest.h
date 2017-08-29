@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline GetDocumentationPartsRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>The type of API entities of the to-be-retrieved documentation parts. </p>
      */
@@ -104,6 +106,7 @@ namespace Model
      * <p>The type of API entities of the to-be-retrieved documentation parts. </p>
      */
     inline GetDocumentationPartsRequest& WithType(DocumentationPartType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of API entities of the to-be-retrieved documentation parts.</p>
@@ -140,6 +143,7 @@ namespace Model
      */
     inline GetDocumentationPartsRequest& WithNameQuery(const char* value) { SetNameQuery(value); return *this;}
 
+
     /**
      * <p>The path of API entities of the to-be-retrieved documentation parts.</p>
      */
@@ -174,6 +178,7 @@ namespace Model
      * <p>The path of API entities of the to-be-retrieved documentation parts.</p>
      */
     inline GetDocumentationPartsRequest& WithPath(const char* value) { SetPath(value); return *this;}
+
 
     /**
      * <p>The current pagination position in the paged result set.</p>
@@ -210,6 +215,7 @@ namespace Model
      */
     inline GetDocumentationPartsRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
+
     /**
      * <p>The maximum number of returned results per page.</p>
      */
@@ -226,16 +232,22 @@ namespace Model
     inline GetDocumentationPartsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     DocumentationPartType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_nameQuery;
     bool m_nameQueryHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_position;
     bool m_positionHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

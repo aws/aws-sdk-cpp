@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The rule priorities.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline SetRulePrioritiesRequest& AddRulePriorities(RulePriorityPair&& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<RulePriorityPair> m_rulePriorities;
     bool m_rulePrioritiesHasBeenSet;
   };

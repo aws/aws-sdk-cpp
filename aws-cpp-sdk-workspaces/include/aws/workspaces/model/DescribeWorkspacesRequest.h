@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
      * to retrieve information. This parameter cannot be combined with any other filter
@@ -113,6 +114,7 @@ namespace Model
      */
     inline DescribeWorkspacesRequest& AddWorkspaceIds(const char* value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies the directory identifier to which to limit the WorkSpaces.
      * Optionally, you can specify a specific directory user with the
@@ -169,6 +171,7 @@ namespace Model
      */
     inline DescribeWorkspacesRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
+
     /**
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
      * user for whom to obtain the WorkSpace.</p>
@@ -210,6 +213,7 @@ namespace Model
      * user for whom to obtain the WorkSpace.</p>
      */
     inline DescribeWorkspacesRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that
@@ -260,6 +264,7 @@ namespace Model
      */
     inline DescribeWorkspacesRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return.</p>
      */
@@ -274,6 +279,7 @@ namespace Model
      * <p>The maximum number of items to return.</p>
      */
     inline DescribeWorkspacesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
@@ -318,16 +324,22 @@ namespace Model
     inline DescribeWorkspacesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_workspaceIds;
     bool m_workspaceIdsHasBeenSet;
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

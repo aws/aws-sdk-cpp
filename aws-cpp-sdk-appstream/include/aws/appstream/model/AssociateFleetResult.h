@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AssociateFleetResult();
-    AssociateFleetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateFleetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

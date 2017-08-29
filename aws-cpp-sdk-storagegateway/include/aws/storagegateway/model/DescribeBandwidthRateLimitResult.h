@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DescribeBandwidthRateLimitResult();
-    DescribeBandwidthRateLimitResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBandwidthRateLimitResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBandwidthRateLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -67,6 +68,7 @@ namespace Model
     
     inline DescribeBandwidthRateLimitResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     /**
      * <p>The average upload bandwidth rate limit in bits per second. This field does
      * not appear in the response if the upload rate limit is not set.</p>
@@ -84,6 +86,7 @@ namespace Model
      * not appear in the response if the upload rate limit is not set.</p>
      */
     inline DescribeBandwidthRateLimitResult& WithAverageUploadRateLimitInBitsPerSec(long long value) { SetAverageUploadRateLimitInBitsPerSec(value); return *this;}
+
 
     /**
      * <p>The average download bandwidth rate limit in bits per second. This field does
@@ -104,8 +107,11 @@ namespace Model
     inline DescribeBandwidthRateLimitResult& WithAverageDownloadRateLimitInBitsPerSec(long long value) { SetAverageDownloadRateLimitInBitsPerSec(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
+
     long long m_averageUploadRateLimitInBitsPerSec;
+
     long long m_averageDownloadRateLimitInBitsPerSec;
   };
 

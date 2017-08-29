@@ -30,12 +30,12 @@ CreateReplicationSubnetGroupResult::CreateReplicationSubnetGroupResult()
 {
 }
 
-CreateReplicationSubnetGroupResult::CreateReplicationSubnetGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateReplicationSubnetGroupResult::CreateReplicationSubnetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateReplicationSubnetGroupResult& CreateReplicationSubnetGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateReplicationSubnetGroupResult& CreateReplicationSubnetGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ReplicationSubnetGroup"))

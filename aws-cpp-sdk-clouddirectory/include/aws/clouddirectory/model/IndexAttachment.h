@@ -47,6 +47,7 @@ namespace Model
     IndexAttachment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The indexed attribute values.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The indexed attribute values.</p>
      */
     inline IndexAttachment& AddIndexedAttributes(AttributeKeyAndValue&& value) { m_indexedAttributesHasBeenSet = true; m_indexedAttributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the object attached to the index.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline IndexAttachment& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::Vector<AttributeKeyAndValue> m_indexedAttributes;
     bool m_indexedAttributesHasBeenSet;
+
     Aws::String m_objectIdentifier;
     bool m_objectIdentifierHasBeenSet;
   };

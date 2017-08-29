@@ -32,13 +32,13 @@ ApplyEnvironmentManagedActionResult::ApplyEnvironmentManagedActionResult() :
 {
 }
 
-ApplyEnvironmentManagedActionResult::ApplyEnvironmentManagedActionResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ApplyEnvironmentManagedActionResult::ApplyEnvironmentManagedActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_actionType(ActionType::NOT_SET)
 {
   *this = result;
 }
 
-ApplyEnvironmentManagedActionResult& ApplyEnvironmentManagedActionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ApplyEnvironmentManagedActionResult& ApplyEnvironmentManagedActionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

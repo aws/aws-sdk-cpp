@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A user-defined comment about the disk upload.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ClientData& WithComment(const char* value) { SetComment(value); return *this;}
 
+
     /**
      * <p>The time that the disk upload ends.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      */
     inline ClientData& WithUploadEnd(Aws::Utils::DateTime&& value) { SetUploadEnd(std::move(value)); return *this;}
 
+
     /**
      * <p>The size of the uploaded disk image, in GiB.</p>
      */
@@ -123,6 +126,7 @@ namespace Model
      * <p>The size of the uploaded disk image, in GiB.</p>
      */
     inline ClientData& WithUploadSize(double value) { SetUploadSize(value); return *this;}
+
 
     /**
      * <p>The time that the disk upload starts.</p>
@@ -150,12 +154,16 @@ namespace Model
     inline ClientData& WithUploadStart(Aws::Utils::DateTime&& value) { SetUploadStart(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     Aws::Utils::DateTime m_uploadEnd;
     bool m_uploadEndHasBeenSet;
+
     double m_uploadSize;
     bool m_uploadSizeHasBeenSet;
+
     Aws::Utils::DateTime m_uploadStart;
     bool m_uploadStartHasBeenSet;
   };

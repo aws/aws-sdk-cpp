@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies the name of the option group.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline OptionGroup& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
+
     /**
      * <p>Provides a description of the option group.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>Provides a description of the option group.</p>
      */
     inline OptionGroup& WithOptionGroupDescription(const char* value) { SetOptionGroupDescription(value); return *this;}
+
 
     /**
      * <p>Indicates the name of the engine that this option group can be applied
@@ -162,6 +165,7 @@ namespace Model
      */
     inline OptionGroup& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
+
     /**
      * <p>Indicates the major engine version associated with this option group.</p>
      */
@@ -196,6 +200,7 @@ namespace Model
      * <p>Indicates the major engine version associated with this option group.</p>
      */
     inline OptionGroup& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
+
 
     /**
      * <p>Indicates what options are available in the option group.</p>
@@ -232,6 +237,7 @@ namespace Model
      */
     inline OptionGroup& AddOptions(Option&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether this option group can be applied to both VPC and non-VPC
      * instances. The value <code>true</code> indicates the option group can be applied
@@ -252,6 +258,7 @@ namespace Model
      * to both VPC and non-VPC instances. </p>
      */
     inline OptionGroup& WithAllowsVpcAndNonVpcInstanceMemberships(bool value) { SetAllowsVpcAndNonVpcInstanceMemberships(value); return *this;}
+
 
     /**
      * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
@@ -323,6 +330,7 @@ namespace Model
      */
     inline OptionGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the option group.</p>
      */
@@ -359,20 +367,28 @@ namespace Model
     inline OptionGroup& WithOptionGroupArn(const char* value) { SetOptionGroupArn(value); return *this;}
 
   private:
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::String m_optionGroupDescription;
     bool m_optionGroupDescriptionHasBeenSet;
+
     Aws::String m_engineName;
     bool m_engineNameHasBeenSet;
+
     Aws::String m_majorEngineVersion;
     bool m_majorEngineVersionHasBeenSet;
+
     Aws::Vector<Option> m_options;
     bool m_optionsHasBeenSet;
+
     bool m_allowsVpcAndNonVpcInstanceMemberships;
     bool m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::String m_optionGroupArn;
     bool m_optionGroupArnHasBeenSet;
   };

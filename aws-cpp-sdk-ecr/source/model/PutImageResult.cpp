@@ -30,12 +30,12 @@ PutImageResult::PutImageResult()
 {
 }
 
-PutImageResult::PutImageResult(const AmazonWebServiceResult<JsonValue>& result)
+PutImageResult::PutImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutImageResult& PutImageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutImageResult& PutImageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("image"))

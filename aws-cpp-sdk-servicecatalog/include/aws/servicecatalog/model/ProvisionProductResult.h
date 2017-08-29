@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     ProvisionProductResult();
-    ProvisionProductResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ProvisionProductResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ProvisionProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ProvisionProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The detailed result of the <a>ProvisionProduct</a> request, containing the
@@ -82,6 +83,7 @@ namespace Model
     inline ProvisionProductResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(std::move(value)); return *this;}
 
   private:
+
     RecordDetail m_recordDetail;
   };
 

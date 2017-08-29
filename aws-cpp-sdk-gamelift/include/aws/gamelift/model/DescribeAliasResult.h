@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeAliasResult();
-    DescribeAliasResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAliasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that contains the requested alias.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeAliasResult& WithAlias(Alias&& value) { SetAlias(std::move(value)); return *this;}
 
   private:
+
     Alias m_alias;
   };
 

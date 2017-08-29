@@ -32,13 +32,13 @@ ListSSHPublicKeysResult::ListSSHPublicKeysResult() :
 {
 }
 
-ListSSHPublicKeysResult::ListSSHPublicKeysResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListSSHPublicKeysResult::ListSSHPublicKeysResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListSSHPublicKeysResult& ListSSHPublicKeysResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListSSHPublicKeysResult& ListSSHPublicKeysResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

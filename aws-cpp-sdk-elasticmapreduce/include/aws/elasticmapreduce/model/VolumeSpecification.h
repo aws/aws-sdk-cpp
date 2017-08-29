@@ -47,6 +47,7 @@ namespace Model
     VolumeSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The volume type. Volume types supported are gp2, io1, standard.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline VolumeSpecification& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
+
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
      */
     inline VolumeSpecification& WithIops(int value) { SetIops(value); return *this;}
+
 
     /**
      * <p>The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If
@@ -116,10 +119,13 @@ namespace Model
     inline VolumeSpecification& WithSizeInGB(int value) { SetSizeInGB(value); return *this;}
 
   private:
+
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     int m_sizeInGB;
     bool m_sizeInGBHasBeenSet;
   };

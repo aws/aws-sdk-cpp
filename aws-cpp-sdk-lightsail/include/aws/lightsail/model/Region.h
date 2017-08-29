@@ -48,6 +48,7 @@ namespace Model
     Region& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
      */
     inline Region& WithContinentCode(const char* value) { SetContinentCode(value); return *this;}
+
 
     /**
      * <p>The description of the AWS Region (e.g., <code>This region is recommended to
@@ -125,6 +127,7 @@ namespace Model
      */
     inline Region& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The display name (e.g., <code>Virginia</code>).</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      */
     inline Region& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
     /**
      * <p>The region name (e.g., <code>us-east-1</code>).</p>
      */
@@ -184,6 +188,7 @@ namespace Model
      * <p>The region name (e.g., <code>us-east-1</code>).</p>
      */
     inline Region& WithName(RegionName&& value) { SetName(std::move(value)); return *this;}
+
 
     /**
      * <p>The Availability Zones. Follows the format <code>us-east-1a</code>
@@ -228,14 +233,19 @@ namespace Model
     inline Region& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_continentCode;
     bool m_continentCodeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     RegionName m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<AvailabilityZone> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
   };

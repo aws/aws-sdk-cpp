@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the project for the device pool.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The ARN of the project for the device pool.</p>
      */
     inline CreateDevicePoolRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+
 
     /**
      * <p>The device pool's name.</p>
@@ -112,6 +114,7 @@ namespace Model
      */
     inline CreateDevicePoolRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The device pool's description.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      * <p>The device pool's description.</p>
      */
     inline CreateDevicePoolRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The device pool's rules.</p>
@@ -183,12 +187,16 @@ namespace Model
     inline CreateDevicePoolRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_projectArn;
     bool m_projectArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet;
   };

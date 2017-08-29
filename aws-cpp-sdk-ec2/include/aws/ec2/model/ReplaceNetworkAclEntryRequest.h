@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
      * <code>172.16.0.0/24</code>).</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline ReplaceNetworkAclEntryRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -111,6 +113,7 @@ namespace Model
      */
     inline ReplaceNetworkAclEntryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
     /**
      * <p>Indicates whether to replace the egress rule.</p> <p>Default: If no value is
      * specified, we replace the ingress rule.</p>
@@ -128,6 +131,7 @@ namespace Model
      * specified, we replace the ingress rule.</p>
      */
     inline ReplaceNetworkAclEntryRequest& WithEgress(bool value) { SetEgress(value); return *this;}
+
 
     /**
      * <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying the
@@ -158,6 +162,7 @@ namespace Model
      * ICMP (1) protocol, or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
      */
     inline ReplaceNetworkAclEntryRequest& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The IPv6 network range to allow or deny, in CIDR notation (for example
@@ -201,6 +206,7 @@ namespace Model
      */
     inline ReplaceNetworkAclEntryRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
 
+
     /**
      * <p>The ID of the ACL.</p>
      */
@@ -236,6 +242,7 @@ namespace Model
      */
     inline ReplaceNetworkAclEntryRequest& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
 
+
     /**
      * <p>TCP or UDP protocols: The range of ports the rule applies to. Required if
      * specifying TCP (6) or UDP (17) for the protocol.</p>
@@ -265,6 +272,7 @@ namespace Model
      * specifying TCP (6) or UDP (17) for the protocol.</p>
      */
     inline ReplaceNetworkAclEntryRequest& WithPortRange(PortRange&& value) { SetPortRange(std::move(value)); return *this;}
+
 
     /**
      * <p>The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean
@@ -350,6 +358,7 @@ namespace Model
      */
     inline ReplaceNetworkAclEntryRequest& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
+
     /**
      * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
      */
@@ -375,6 +384,7 @@ namespace Model
      */
     inline ReplaceNetworkAclEntryRequest& WithRuleAction(RuleAction&& value) { SetRuleAction(std::move(value)); return *this;}
 
+
     /**
      * <p>The rule number of the entry to replace.</p>
      */
@@ -391,24 +401,34 @@ namespace Model
     inline ReplaceNetworkAclEntryRequest& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
 
   private:
+
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     bool m_egress;
     bool m_egressHasBeenSet;
+
     IcmpTypeCode m_icmpTypeCode;
     bool m_icmpTypeCodeHasBeenSet;
+
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
+
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet;
+
     PortRange m_portRange;
     bool m_portRangeHasBeenSet;
+
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
+
     RuleAction m_ruleAction;
     bool m_ruleActionHasBeenSet;
+
     int m_ruleNumber;
     bool m_ruleNumberHasBeenSet;
   };

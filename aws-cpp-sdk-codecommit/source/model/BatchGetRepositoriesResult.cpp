@@ -30,12 +30,12 @@ BatchGetRepositoriesResult::BatchGetRepositoriesResult()
 {
 }
 
-BatchGetRepositoriesResult::BatchGetRepositoriesResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetRepositoriesResult::BatchGetRepositoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchGetRepositoriesResult& BatchGetRepositoriesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetRepositoriesResult& BatchGetRepositoriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("repositories"))

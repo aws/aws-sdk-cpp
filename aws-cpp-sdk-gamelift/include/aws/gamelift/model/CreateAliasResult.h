@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateAliasResult();
-    CreateAliasResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAliasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that describes the newly created alias record.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline CreateAliasResult& WithAlias(Alias&& value) { SetAlias(std::move(value)); return *this;}
 
   private:
+
     Alias m_alias;
   };
 

@@ -46,6 +46,7 @@ namespace Model
     CloudwatchMetricAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The IAM role that allows access to the CloudWatch metric.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The IAM role that allows access to the CloudWatch metric.</p>
      */
     inline CloudwatchMetricAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>The CloudWatch metric namespace name.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline CloudwatchMetricAction& WithMetricNamespace(const char* value) { SetMetricNamespace(value); return *this;}
 
+
     /**
      * <p>The CloudWatch metric name.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      */
     inline CloudwatchMetricAction& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
+
     /**
      * <p>The CloudWatch metric value.</p>
      */
@@ -185,6 +189,7 @@ namespace Model
      * <p>The CloudWatch metric value.</p>
      */
     inline CloudwatchMetricAction& WithMetricValue(const char* value) { SetMetricValue(value); return *this;}
+
 
     /**
      * <p>The <a
@@ -234,6 +239,7 @@ namespace Model
      * unit</a> supported by CloudWatch.</p>
      */
     inline CloudwatchMetricAction& WithMetricUnit(const char* value) { SetMetricUnit(value); return *this;}
+
 
     /**
      * <p>An optional <a
@@ -285,16 +291,22 @@ namespace Model
     inline CloudwatchMetricAction& WithMetricTimestamp(const char* value) { SetMetricTimestamp(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_metricNamespace;
     bool m_metricNamespaceHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::String m_metricValue;
     bool m_metricValueHasBeenSet;
+
     Aws::String m_metricUnit;
     bool m_metricUnitHasBeenSet;
+
     Aws::String m_metricTimestamp;
     bool m_metricTimestampHasBeenSet;
   };

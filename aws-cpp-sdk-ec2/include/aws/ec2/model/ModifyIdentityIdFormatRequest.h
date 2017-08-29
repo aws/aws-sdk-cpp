@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
      * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
@@ -91,6 +92,7 @@ namespace Model
      */
     inline ModifyIdentityIdFormatRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
 
+
     /**
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
      * <code>snapshot</code> | <code>volume</code> </p>
@@ -133,6 +135,7 @@ namespace Model
      */
     inline ModifyIdentityIdFormatRequest& WithResource(const char* value) { SetResource(value); return *this;}
 
+
     /**
      * <p>Indicates whether the resource should use longer IDs (17-character IDs)</p>
      */
@@ -149,10 +152,13 @@ namespace Model
     inline ModifyIdentityIdFormatRequest& WithUseLongIds(bool value) { SetUseLongIds(value); return *this;}
 
   private:
+
     Aws::String m_principalArn;
     bool m_principalArnHasBeenSet;
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
+
     bool m_useLongIds;
     bool m_useLongIdsHasBeenSet;
   };

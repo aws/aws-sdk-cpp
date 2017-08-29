@@ -30,12 +30,12 @@ DeleteStateMachineResult::DeleteStateMachineResult()
 {
 }
 
-DeleteStateMachineResult::DeleteStateMachineResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteStateMachineResult::DeleteStateMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteStateMachineResult& DeleteStateMachineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteStateMachineResult& DeleteStateMachineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

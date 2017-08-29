@@ -46,6 +46,7 @@ namespace Model
     UserProfileSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
      */
     inline UserProfileSummary& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+
 
     /**
      * <p>The display name of a user in AWS CodeStar. For example, this could be set to
@@ -172,6 +174,7 @@ namespace Model
      */
     inline UserProfileSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
     /**
      * <p>The email address associated with the user.</p>
      */
@@ -206,6 +209,7 @@ namespace Model
      * <p>The email address associated with the user.</p>
      */
     inline UserProfileSummary& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+
 
     /**
      * <p>The SSH public key associated with the user in AWS CodeStar. If a project
@@ -257,12 +261,16 @@ namespace Model
     inline UserProfileSummary& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
 
   private:
+
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     Aws::String m_emailAddress;
     bool m_emailAddressHasBeenSet;
+
     Aws::String m_sshPublicKey;
     bool m_sshPublicKeyHasBeenSet;
   };

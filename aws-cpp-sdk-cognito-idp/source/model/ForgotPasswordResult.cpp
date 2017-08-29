@@ -30,12 +30,12 @@ ForgotPasswordResult::ForgotPasswordResult()
 {
 }
 
-ForgotPasswordResult::ForgotPasswordResult(const AmazonWebServiceResult<JsonValue>& result)
+ForgotPasswordResult::ForgotPasswordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ForgotPasswordResult& ForgotPasswordResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ForgotPasswordResult& ForgotPasswordResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CodeDeliveryDetails"))

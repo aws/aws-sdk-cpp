@@ -46,6 +46,7 @@ namespace Model
     WorkflowExecutionCompletedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The result produced by the workflow execution upon successful completion.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline WorkflowExecutionCompletedEventAttributes& WithResult(const char* value) { SetResult(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
      * decision task that resulted in the <code>CompleteWorkflowExecution</code>
@@ -109,8 +111,10 @@ namespace Model
     inline WorkflowExecutionCompletedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
   private:
+
     Aws::String m_result;
     bool m_resultHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
   };

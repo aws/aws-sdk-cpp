@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeVoicesResult();
-    DescribeVoicesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeVoicesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeVoicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeVoicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of voices with their properties.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of voices with their properties.</p>
      */
     inline DescribeVoicesResult& AddVoices(Voice&& value) { m_voices.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token to use in the next request to continue the listing of
@@ -128,7 +130,9 @@ namespace Model
     inline DescribeVoicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Voice> m_voices;
+
     Aws::String m_nextToken;
   };
 

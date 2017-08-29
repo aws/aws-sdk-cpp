@@ -47,6 +47,7 @@ namespace Model
     Certificate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the certificate.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The ARN of the certificate.</p>
      */
     inline Certificate& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
 
     /**
      * <p>The ID of the certificate.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline Certificate& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
     /**
      * <p>The status of the certificate.</p> <p>The status value REGISTER_INACTIVE is
      * deprecated and should not be used.</p>
@@ -147,6 +150,7 @@ namespace Model
      */
     inline Certificate& WithStatus(CertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time the certificate was created.</p>
      */
@@ -173,12 +177,16 @@ namespace Model
     inline Certificate& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
     CertificateStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };

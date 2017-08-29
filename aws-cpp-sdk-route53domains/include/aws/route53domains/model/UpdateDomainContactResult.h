@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateDomainContactResult();
-    UpdateDomainContactResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDomainContactResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDomainContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDomainContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Identifier for tracking the progress of the request. To use this ID to query
@@ -90,6 +91,7 @@ namespace Model
     inline UpdateDomainContactResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
   private:
+
     Aws::String m_operationId;
   };
 

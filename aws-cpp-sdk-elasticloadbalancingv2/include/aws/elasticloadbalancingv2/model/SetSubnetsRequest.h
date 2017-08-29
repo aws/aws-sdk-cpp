@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
     inline SetSubnetsRequest& WithLoadBalancerArn(const char* value) { SetLoadBalancerArn(value); return *this;}
+
 
     /**
      * <p>The IDs of the subnets. You must specify at least two subnets. You can add
@@ -123,8 +125,10 @@ namespace Model
     inline SetSubnetsRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
   private:
+
     Aws::String m_loadBalancerArn;
     bool m_loadBalancerArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet;
   };

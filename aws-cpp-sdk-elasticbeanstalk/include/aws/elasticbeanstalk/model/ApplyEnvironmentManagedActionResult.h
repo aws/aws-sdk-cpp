@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ApplyEnvironmentManagedActionResult();
-    ApplyEnvironmentManagedActionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ApplyEnvironmentManagedActionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ApplyEnvironmentManagedActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ApplyEnvironmentManagedActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The action ID of the managed action.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ApplyEnvironmentManagedActionResult& WithActionId(const char* value) { SetActionId(value); return *this;}
 
+
     /**
      * <p>A description of the managed action.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      */
     inline ApplyEnvironmentManagedActionResult& WithActionDescription(const char* value) { SetActionDescription(value); return *this;}
 
+
     /**
      * <p>The type of managed action.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      * <p>The type of managed action.</p>
      */
     inline ApplyEnvironmentManagedActionResult& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the managed action.</p>
@@ -179,6 +183,7 @@ namespace Model
      */
     inline ApplyEnvironmentManagedActionResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -195,10 +200,15 @@ namespace Model
     inline ApplyEnvironmentManagedActionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_actionId;
+
     Aws::String m_actionDescription;
+
     ActionType m_actionType;
+
     Aws::String m_status;
+
     ResponseMetadata m_responseMetadata;
   };
 

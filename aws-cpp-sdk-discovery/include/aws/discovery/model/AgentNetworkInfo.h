@@ -46,6 +46,7 @@ namespace Model
     AgentNetworkInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The IP address for the host where the agent/connector resides.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The IP address for the host where the agent/connector resides.</p>
      */
     inline AgentNetworkInfo& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
 
     /**
      * <p>The MAC address for the host where the agent/connector resides.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline AgentNetworkInfo& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
 
   private:
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     Aws::String m_macAddress;
     bool m_macAddressHasBeenSet;
   };

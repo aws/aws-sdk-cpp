@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p> The language identification tag (ISO 639 code for the language name-ISO 3166
      * country code) for filtering the list of voices returned. If you don't specify
@@ -75,6 +76,7 @@ namespace Model
      * this optional parameter, all available voices are returned. </p>
      */
     inline DescribeVoicesRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+
 
     /**
      * <p>An opaque pagination token returned from the previous
@@ -126,8 +128,10 @@ namespace Model
     inline DescribeVoicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

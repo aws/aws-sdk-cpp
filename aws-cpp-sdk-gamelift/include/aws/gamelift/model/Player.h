@@ -49,6 +49,7 @@ namespace Model
     Player& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a player</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>Unique identifier for a player</p>
      */
     inline Player& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
+
 
     /**
      * <p>Collection of name:value pairs containing player information for use in
@@ -172,6 +174,7 @@ namespace Model
      */
     inline Player& AddPlayerAttributes(const char* key, const AttributeValue& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>Name of the team that the player is assigned to in a match. Team names are
      * defined in a matchmaking rule set.</p>
@@ -213,6 +216,7 @@ namespace Model
      * defined in a matchmaking rule set.</p>
      */
     inline Player& WithTeam(const char* value) { SetTeam(value); return *this;}
+
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
@@ -311,12 +315,16 @@ namespace Model
     inline Player& AddLatencyInMs(const char* key, int value) { m_latencyInMsHasBeenSet = true; m_latencyInMs.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_playerId;
     bool m_playerIdHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_playerAttributes;
     bool m_playerAttributesHasBeenSet;
+
     Aws::String m_team;
     bool m_teamHasBeenSet;
+
     Aws::Map<Aws::String, int> m_latencyInMs;
     bool m_latencyInMsHasBeenSet;
   };

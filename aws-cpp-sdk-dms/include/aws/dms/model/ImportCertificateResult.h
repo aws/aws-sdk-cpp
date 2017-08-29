@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     ImportCertificateResult();
-    ImportCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The certificate to be uploaded.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline ImportCertificateResult& WithCertificate(Certificate&& value) { SetCertificate(std::move(value)); return *this;}
 
   private:
+
     Certificate m_certificate;
   };
 

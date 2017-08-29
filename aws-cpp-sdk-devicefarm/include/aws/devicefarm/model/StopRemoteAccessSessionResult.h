@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     StopRemoteAccessSessionResult();
-    StopRemoteAccessSessionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopRemoteAccessSessionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopRemoteAccessSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopRemoteAccessSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A container representing the metadata from the service about the remote
@@ -78,6 +79,7 @@ namespace Model
     inline StopRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSession&& value) { SetRemoteAccessSession(std::move(value)); return *this;}
 
   private:
+
     RemoteAccessSession m_remoteAccessSession;
   };
 

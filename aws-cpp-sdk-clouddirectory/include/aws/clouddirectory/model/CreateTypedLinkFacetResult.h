@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateTypedLinkFacetResult();
-    CreateTypedLinkFacetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTypedLinkFacetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTypedLinkFacetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTypedLinkFacetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

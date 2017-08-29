@@ -47,6 +47,7 @@ namespace Model
     VpcConfigResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of subnet IDs associated with the Lambda function.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>A list of subnet IDs associated with the Lambda function.</p>
      */
     inline VpcConfigResponse& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+
 
     /**
      * <p>A list of security group IDs associated with the Lambda function.</p>
@@ -127,6 +129,7 @@ namespace Model
      */
     inline VpcConfigResponse& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The VPC ID associated with you Lambda function.</p>
      */
@@ -163,10 +166,13 @@ namespace Model
     inline VpcConfigResponse& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

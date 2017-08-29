@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the topic for which you wish to find subscriptions.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ARN of the topic for which you wish to find subscriptions.</p>
      */
     inline ListSubscriptionsByTopicRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+
 
     /**
      * <p>Token returned by the previous <code>ListSubscriptionsByTopic</code>
@@ -119,8 +121,10 @@ namespace Model
     inline ListSubscriptionsByTopicRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

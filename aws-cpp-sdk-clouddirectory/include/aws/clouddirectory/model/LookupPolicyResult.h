@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     LookupPolicyResult();
-    LookupPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    LookupPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    LookupPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    LookupPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
@@ -99,6 +100,7 @@ namespace Model
      */
     inline LookupPolicyResult& AddPolicyToPathList(PolicyToPath&& value) { m_policyToPathList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -135,7 +137,9 @@ namespace Model
     inline LookupPolicyResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PolicyToPath> m_policyToPathList;
+
     Aws::String m_nextToken;
   };
 

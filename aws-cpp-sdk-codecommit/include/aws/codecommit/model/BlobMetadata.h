@@ -46,6 +46,7 @@ namespace Model
     BlobMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The full ID of the blob.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline BlobMetadata& WithBlobId(const char* value) { SetBlobId(value); return *this;}
 
+
     /**
      * <p>The path to the blob and any associated file name, if any.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The path to the blob and any associated file name, if any.</p>
      */
     inline BlobMetadata& WithPath(const char* value) { SetPath(value); return *this;}
+
 
     /**
      * <p>The file mode permissions of the blob. File mode permission codes
@@ -180,10 +183,13 @@ namespace Model
     inline BlobMetadata& WithMode(const char* value) { SetMode(value); return *this;}
 
   private:
+
     Aws::String m_blobId;
     bool m_blobIdHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_mode;
     bool m_modeHasBeenSet;
   };

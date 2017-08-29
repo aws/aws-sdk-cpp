@@ -31,13 +31,13 @@ GetPatchBaselineForPatchGroupResult::GetPatchBaselineForPatchGroupResult() :
 {
 }
 
-GetPatchBaselineForPatchGroupResult::GetPatchBaselineForPatchGroupResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetPatchBaselineForPatchGroupResult::GetPatchBaselineForPatchGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_operatingSystem(OperatingSystem::NOT_SET)
 {
   *this = result;
 }
 
-GetPatchBaselineForPatchGroupResult& GetPatchBaselineForPatchGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetPatchBaselineForPatchGroupResult& GetPatchBaselineForPatchGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("BaselineId"))

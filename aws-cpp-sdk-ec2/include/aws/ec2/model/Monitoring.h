@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
      * is enabled.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline Monitoring& WithState(MonitoringState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     MonitoringState m_state;
     bool m_stateHasBeenSet;
   };

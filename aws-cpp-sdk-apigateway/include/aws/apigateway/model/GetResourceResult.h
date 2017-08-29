@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetResourceResult();
-    GetResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resource's identifier.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline GetResourceResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The parent resource's identifier.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The parent resource's identifier.</p>
      */
     inline GetResourceResult& WithParentId(const char* value) { SetParentId(value); return *this;}
+
 
     /**
      * <p>The last path segment for this resource.</p>
@@ -155,6 +158,7 @@ namespace Model
      */
     inline GetResourceResult& WithPathPart(const char* value) { SetPathPart(value); return *this;}
 
+
     /**
      * <p>The full path for this resource.</p>
      */
@@ -189,6 +193,7 @@ namespace Model
      * <p>The full path for this resource.</p>
      */
     inline GetResourceResult& WithPath(const char* value) { SetPath(value); return *this;}
+
 
     /**
      * <p>Gets an API resource's method of a given HTTP verb.</p> <div class="remarks">
@@ -1027,10 +1032,15 @@ namespace Model
     inline GetResourceResult& AddResourceMethods(const char* key, const Method& value) { m_resourceMethods.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_id;
+
     Aws::String m_parentId;
+
     Aws::String m_pathPart;
+
     Aws::String m_path;
+
     Aws::Map<Aws::String, Method> m_resourceMethods;
   };
 

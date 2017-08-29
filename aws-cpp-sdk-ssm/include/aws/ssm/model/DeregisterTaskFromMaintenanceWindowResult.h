@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeregisterTaskFromMaintenanceWindowResult();
-    DeregisterTaskFromMaintenanceWindowResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterTaskFromMaintenanceWindowResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterTaskFromMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterTaskFromMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the Maintenance Window the task was removed from.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ID of the Maintenance Window the task was removed from.</p>
      */
     inline DeregisterTaskFromMaintenanceWindowResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>The ID of the task removed from the Maintenance Window.</p>
@@ -112,7 +114,9 @@ namespace Model
     inline DeregisterTaskFromMaintenanceWindowResult& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
+
     Aws::String m_windowTaskId;
   };
 

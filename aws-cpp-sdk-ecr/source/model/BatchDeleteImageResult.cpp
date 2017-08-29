@@ -30,12 +30,12 @@ BatchDeleteImageResult::BatchDeleteImageResult()
 {
 }
 
-BatchDeleteImageResult::BatchDeleteImageResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchDeleteImageResult::BatchDeleteImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchDeleteImageResult& BatchDeleteImageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchDeleteImageResult& BatchDeleteImageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("imageIds"))

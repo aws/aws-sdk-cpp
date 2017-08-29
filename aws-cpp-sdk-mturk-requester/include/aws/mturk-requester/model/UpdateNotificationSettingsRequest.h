@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The ID of the HIT type whose notification specification is being updated.
      * </p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline UpdateNotificationSettingsRequest& WithHITTypeId(const char* value) { SetHITTypeId(value); return *this;}
 
+
     /**
      * <p> The notification specification for the HIT type. </p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p> The notification specification for the HIT type. </p>
      */
     inline UpdateNotificationSettingsRequest& WithNotification(NotificationSpecification&& value) { SetNotification(std::move(value)); return *this;}
+
 
     /**
      * <p> Specifies whether notifications are sent for HITs of this HIT type,
@@ -129,10 +132,13 @@ namespace Model
     inline UpdateNotificationSettingsRequest& WithActive(bool value) { SetActive(value); return *this;}
 
   private:
+
     Aws::String m_hITTypeId;
     bool m_hITTypeIdHasBeenSet;
+
     NotificationSpecification m_notification;
     bool m_notificationHasBeenSet;
+
     bool m_active;
     bool m_activeHasBeenSet;
   };

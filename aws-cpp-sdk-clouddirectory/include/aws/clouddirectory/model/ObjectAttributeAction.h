@@ -46,6 +46,7 @@ namespace Model
     ObjectAttributeAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
      */
     inline ObjectAttributeAction& WithObjectAttributeActionType(UpdateActionType&& value) { SetObjectAttributeActionType(std::move(value)); return *this;}
+
 
     /**
      * <p>The value that you want to update to.</p>
@@ -97,8 +99,10 @@ namespace Model
     inline ObjectAttributeAction& WithObjectAttributeUpdateValue(TypedAttributeValue&& value) { SetObjectAttributeUpdateValue(std::move(value)); return *this;}
 
   private:
+
     UpdateActionType m_objectAttributeActionType;
     bool m_objectAttributeActionTypeHasBeenSet;
+
     TypedAttributeValue m_objectAttributeUpdateValue;
     bool m_objectAttributeUpdateValueHasBeenSet;
   };

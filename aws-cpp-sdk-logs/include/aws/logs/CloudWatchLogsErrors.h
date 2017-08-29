@@ -55,7 +55,7 @@ enum class CloudWatchLogsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DATA_ALREADY_ACCEPTED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DATA_ALREADY_ACCEPTED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_OPERATION,
   INVALID_PARAMETER,
   INVALID_SEQUENCE_TOKEN,
@@ -65,7 +65,7 @@ enum class CloudWatchLogsErrors
 };
 namespace CloudWatchLogsErrorMapper
 {
-  AWS_CLOUDWATCHLOGS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CLOUDWATCHLOGS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CloudWatchLogs

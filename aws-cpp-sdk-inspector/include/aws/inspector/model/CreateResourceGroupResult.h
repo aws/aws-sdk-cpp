@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateResourceGroupResult();
-    CreateResourceGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateResourceGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateResourceGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateResourceGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN that specifies the resource group that is created.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateResourceGroupResult& WithResourceGroupArn(const char* value) { SetResourceGroupArn(value); return *this;}
 
   private:
+
     Aws::String m_resourceGroupArn;
   };
 

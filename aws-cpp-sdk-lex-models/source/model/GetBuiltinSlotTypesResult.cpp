@@ -30,12 +30,12 @@ GetBuiltinSlotTypesResult::GetBuiltinSlotTypesResult()
 {
 }
 
-GetBuiltinSlotTypesResult::GetBuiltinSlotTypesResult(const AmazonWebServiceResult<JsonValue>& result)
+GetBuiltinSlotTypesResult::GetBuiltinSlotTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetBuiltinSlotTypesResult& GetBuiltinSlotTypesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetBuiltinSlotTypesResult& GetBuiltinSlotTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("slotTypes"))

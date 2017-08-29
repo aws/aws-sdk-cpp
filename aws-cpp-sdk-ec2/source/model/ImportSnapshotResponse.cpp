@@ -31,12 +31,12 @@ ImportSnapshotResponse::ImportSnapshotResponse()
 {
 }
 
-ImportSnapshotResponse::ImportSnapshotResponse(const AmazonWebServiceResult<XmlDocument>& result)
+ImportSnapshotResponse::ImportSnapshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ImportSnapshotResponse& ImportSnapshotResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ImportSnapshotResponse& ImportSnapshotResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

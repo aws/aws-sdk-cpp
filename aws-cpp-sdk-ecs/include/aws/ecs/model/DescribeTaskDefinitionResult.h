@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeTaskDefinitionResult();
-    DescribeTaskDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTaskDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTaskDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTaskDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The full task definition description.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
   private:
+
     TaskDefinition m_taskDefinition;
   };
 

@@ -54,6 +54,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The number of HTTP status codes for which you want to specify a custom error
      * page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you
@@ -74,6 +75,7 @@ namespace Model
      * can omit <code>Items</code>.</p>
      */
     inline CustomErrorResponses& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>A complex type that contains a <code>CustomErrorResponse</code> element for
@@ -125,8 +127,10 @@ namespace Model
     inline CustomErrorResponses& AddItems(CustomErrorResponse&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<CustomErrorResponse> m_items;
     bool m_itemsHasBeenSet;
   };

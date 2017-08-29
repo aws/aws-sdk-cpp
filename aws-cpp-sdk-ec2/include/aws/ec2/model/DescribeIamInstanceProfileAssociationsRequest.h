@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more IAM instance profile associations.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>One or more IAM instance profile associations.</p>
      */
     inline DescribeIamInstanceProfileAssociationsRequest& AddAssociationIds(const char* value) { m_associationIdsHasBeenSet = true; m_associationIds.push_back(value); return *this; }
+
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-id</code> - The ID of
@@ -136,6 +138,7 @@ namespace Model
      */
     inline DescribeIamInstanceProfileAssociationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned <code>NextToken</code>
@@ -156,6 +159,7 @@ namespace Model
      * value.</p>
      */
     inline DescribeIamInstanceProfileAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token to request the next page of results.</p>
@@ -193,12 +197,16 @@ namespace Model
     inline DescribeIamInstanceProfileAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_associationIds;
     bool m_associationIdsHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

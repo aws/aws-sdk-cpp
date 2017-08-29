@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to
      * delete.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline DeleteEvaluationRequest& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
 
   private:
+
     Aws::String m_evaluationId;
     bool m_evaluationIdHasBeenSet;
   };

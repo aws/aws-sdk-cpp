@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListOfferingPromotionsResult();
-    ListOfferingPromotionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOfferingPromotionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOfferingPromotionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOfferingPromotionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the offering promotions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Information about the offering promotions.</p>
      */
     inline ListOfferingPromotionsResult& AddOfferingPromotions(OfferingPromotion&& value) { m_offeringPromotions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier to be used in the next call to this operation, to return the
@@ -121,7 +123,9 @@ namespace Model
     inline ListOfferingPromotionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<OfferingPromotion> m_offeringPromotions;
+
     Aws::String m_nextToken;
   };
 

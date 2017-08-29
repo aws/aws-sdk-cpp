@@ -31,13 +31,13 @@ ListKeysResult::ListKeysResult() :
 {
 }
 
-ListKeysResult::ListKeysResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListKeysResult::ListKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_truncated(false)
 {
   *this = result;
 }
 
-ListKeysResult& ListKeysResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListKeysResult& ListKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Keys"))

@@ -48,6 +48,7 @@ namespace Model
     InstanceResizePolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specific list of instances to be terminated when shrinking an instance
      * group.</p>
@@ -95,6 +96,7 @@ namespace Model
      * group.</p>
      */
     inline InstanceResizePolicy& AddInstancesToTerminate(const char* value) { m_instancesToTerminateHasBeenSet = true; m_instancesToTerminate.push_back(value); return *this; }
+
 
     /**
      * <p>Specific list of instances to be protected when shrinking an instance
@@ -144,6 +146,7 @@ namespace Model
      */
     inline InstanceResizePolicy& AddInstancesToProtect(const char* value) { m_instancesToProtectHasBeenSet = true; m_instancesToProtect.push_back(value); return *this; }
 
+
     /**
      * <p>Decommissioning timeout override for the specific list of instances to be
      * terminated.</p>
@@ -163,10 +166,13 @@ namespace Model
     inline InstanceResizePolicy& WithInstanceTerminationTimeout(int value) { SetInstanceTerminationTimeout(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instancesToTerminate;
     bool m_instancesToTerminateHasBeenSet;
+
     Aws::Vector<Aws::String> m_instancesToProtect;
     bool m_instancesToProtectHasBeenSet;
+
     int m_instanceTerminationTimeout;
     bool m_instanceTerminationTimeoutHasBeenSet;
   };

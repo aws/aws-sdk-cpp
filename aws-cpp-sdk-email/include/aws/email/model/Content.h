@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The textual data of the content.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The textual data of the content.</p>
      */
     inline Content& WithData(const char* value) { SetData(value); return *this;}
+
 
     /**
      * <p>The character set of the content.</p>
@@ -123,8 +125,10 @@ namespace Model
     inline Content& WithCharset(const char* value) { SetCharset(value); return *this;}
 
   private:
+
     Aws::String m_data;
     bool m_dataHasBeenSet;
+
     Aws::String m_charset;
     bool m_charsetHasBeenSet;
   };

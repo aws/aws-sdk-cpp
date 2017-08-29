@@ -96,23 +96,23 @@ namespace Model
         class SendMessageBatchRequest;
         class SetQueueAttributesRequest;
 
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SQSErrors>> AddPermissionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SQSErrors>> ChangeMessageVisibilityOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> AddPermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> ChangeMessageVisibilityOutcome;
         typedef Aws::Utils::Outcome<ChangeMessageVisibilityBatchResult, Aws::Client::AWSError<SQSErrors>> ChangeMessageVisibilityBatchOutcome;
         typedef Aws::Utils::Outcome<CreateQueueResult, Aws::Client::AWSError<SQSErrors>> CreateQueueOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SQSErrors>> DeleteMessageOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> DeleteMessageOutcome;
         typedef Aws::Utils::Outcome<DeleteMessageBatchResult, Aws::Client::AWSError<SQSErrors>> DeleteMessageBatchOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SQSErrors>> DeleteQueueOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> DeleteQueueOutcome;
         typedef Aws::Utils::Outcome<GetQueueAttributesResult, Aws::Client::AWSError<SQSErrors>> GetQueueAttributesOutcome;
         typedef Aws::Utils::Outcome<GetQueueUrlResult, Aws::Client::AWSError<SQSErrors>> GetQueueUrlOutcome;
         typedef Aws::Utils::Outcome<ListDeadLetterSourceQueuesResult, Aws::Client::AWSError<SQSErrors>> ListDeadLetterSourceQueuesOutcome;
         typedef Aws::Utils::Outcome<ListQueuesResult, Aws::Client::AWSError<SQSErrors>> ListQueuesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SQSErrors>> PurgeQueueOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> PurgeQueueOutcome;
         typedef Aws::Utils::Outcome<ReceiveMessageResult, Aws::Client::AWSError<SQSErrors>> ReceiveMessageOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SQSErrors>> RemovePermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> RemovePermissionOutcome;
         typedef Aws::Utils::Outcome<SendMessageResult, Aws::Client::AWSError<SQSErrors>> SendMessageOutcome;
         typedef Aws::Utils::Outcome<SendMessageBatchResult, Aws::Client::AWSError<SQSErrors>> SendMessageBatchOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SQSErrors>> SetQueueAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> SetQueueAttributesOutcome;
 
         typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
         typedef std::future<ChangeMessageVisibilityOutcome> ChangeMessageVisibilityOutcomeCallable;
@@ -189,27 +189,28 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SQSClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SQSClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SQSClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SQSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        SQSClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SQSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~SQSClient();
+
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
-        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
 
         /**
@@ -1311,7 +1312,7 @@ namespace Model
 
 
   private:
-    void init(const Client::ClientConfiguration& clientConfiguration);
+    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AddPermissionAsyncHelper(const Model::AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1333,7 +1334,7 @@ namespace Model
         void SetQueueAttributesAsyncHelper(const Model::SetQueueAttributesRequest& request, const SetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
-    std::shared_ptr<Utils::Threading::Executor> m_executor;
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace SQS

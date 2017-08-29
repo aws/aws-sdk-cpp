@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Ciphertext of the data to reencrypt.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>Ciphertext of the data to reencrypt.</p>
      */
     inline ReEncryptRequest& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
+
 
     /**
      * <p>Encryption context used to encrypt and decrypt the data specified in the
@@ -135,6 +137,7 @@ namespace Model
      * <code>CiphertextBlob</code> parameter.</p>
      */
     inline ReEncryptRequest& AddSourceEncryptionContext(const char* key, const char* value) { m_sourceEncryptionContextHasBeenSet = true; m_sourceEncryptionContext.emplace(key, value); return *this; }
+
 
     /**
      * <p>A unique identifier for the CMK to use to reencrypt the data. This value can
@@ -220,6 +223,7 @@ namespace Model
      */
     inline ReEncryptRequest& WithDestinationKeyId(const char* value) { SetDestinationKeyId(value); return *this;}
 
+
     /**
      * <p>Encryption context to use when the data is reencrypted.</p>
      */
@@ -280,6 +284,7 @@ namespace Model
      */
     inline ReEncryptRequest& AddDestinationEncryptionContext(const char* key, const char* value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext.emplace(key, value); return *this; }
 
+
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
@@ -337,14 +342,19 @@ namespace Model
     inline ReEncryptRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
   private:
+
     Aws::Utils::ByteBuffer m_ciphertextBlob;
     bool m_ciphertextBlobHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_sourceEncryptionContext;
     bool m_sourceEncryptionContextHasBeenSet;
+
     Aws::String m_destinationKeyId;
     bool m_destinationKeyIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_destinationEncryptionContext;
     bool m_destinationEncryptionContextHasBeenSet;
+
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet;
   };

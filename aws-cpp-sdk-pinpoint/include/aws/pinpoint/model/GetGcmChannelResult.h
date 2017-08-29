@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetGcmChannelResult();
-    GetGcmChannelResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGcmChannelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGcmChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGcmChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const GCMChannelResponse& GetGCMChannelResponse() const{ return m_gCMChannelResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline GetGcmChannelResult& WithGCMChannelResponse(GCMChannelResponse&& value) { SetGCMChannelResponse(std::move(value)); return *this;}
 
   private:
+
     GCMChannelResponse m_gCMChannelResponse;
   };
 

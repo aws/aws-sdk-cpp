@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetInstanceMetricDataResult();
-    GetInstanceMetricDataResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstanceMetricDataResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceMetricDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceMetricDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The metric name to return data for. </p>
@@ -67,6 +68,7 @@ namespace Model
      * <p>The metric name to return data for. </p>
      */
     inline GetInstanceMetricDataResult& WithMetricName(InstanceMetricName&& value) { SetMetricName(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -111,7 +113,9 @@ namespace Model
     inline GetInstanceMetricDataResult& AddMetricData(MetricDatapoint&& value) { m_metricData.push_back(std::move(value)); return *this; }
 
   private:
+
     InstanceMetricName m_metricName;
+
     Aws::Vector<MetricDatapoint> m_metricData;
   };
 

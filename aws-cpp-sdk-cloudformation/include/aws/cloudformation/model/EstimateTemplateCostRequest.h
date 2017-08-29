@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. (For more information, go to <a
@@ -113,6 +114,7 @@ namespace Model
      * only <code>TemplateBody</code> is used.</p>
      */
     inline EstimateTemplateCostRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
@@ -184,6 +186,7 @@ namespace Model
      */
     inline EstimateTemplateCostRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
+
     /**
      * <p>A list of <code>Parameter</code> structures that specify input
      * parameters.</p>
@@ -227,10 +230,13 @@ namespace Model
     inline EstimateTemplateCostRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_templateBody;
     bool m_templateBodyHasBeenSet;
+
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
   };

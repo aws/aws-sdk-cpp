@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the ProvisionedProduct object to terminate. Specify either
      * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
@@ -86,6 +87,7 @@ namespace Model
      */
     inline TerminateProvisionedProductRequest& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}
 
+
     /**
      * <p>The identifier of the ProvisionedProduct object to terminate. Specify either
      * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
@@ -134,6 +136,7 @@ namespace Model
      * not both.</p>
      */
     inline TerminateProvisionedProductRequest& WithProvisionedProductId(const char* value) { SetProvisionedProductId(value); return *this;}
+
 
     /**
      * <p>An idempotency token that uniquely identifies the termination request. This
@@ -198,6 +201,7 @@ namespace Model
      */
     inline TerminateProvisionedProductRequest& WithTerminateToken(const char* value) { SetTerminateToken(value); return *this;}
 
+
     /**
      * <p>If set to true, AWS Service Catalog stops managing the specified
      * ProvisionedProduct object even if it cannot delete the underlying resources.</p>
@@ -215,6 +219,7 @@ namespace Model
      * ProvisionedProduct object even if it cannot delete the underlying resources.</p>
      */
     inline TerminateProvisionedProductRequest& WithIgnoreErrors(bool value) { SetIgnoreErrors(value); return *this;}
+
 
     /**
      * <p>The language code to use for this operation. Supported language codes are as
@@ -266,14 +271,19 @@ namespace Model
     inline TerminateProvisionedProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
   private:
+
     Aws::String m_provisionedProductName;
     bool m_provisionedProductNameHasBeenSet;
+
     Aws::String m_provisionedProductId;
     bool m_provisionedProductIdHasBeenSet;
+
     Aws::String m_terminateToken;
     bool m_terminateTokenHasBeenSet;
+
     bool m_ignoreErrors;
     bool m_ignoreErrorsHasBeenSet;
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
   };

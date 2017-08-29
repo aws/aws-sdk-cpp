@@ -30,12 +30,12 @@ AssociateTeamMemberResult::AssociateTeamMemberResult()
 {
 }
 
-AssociateTeamMemberResult::AssociateTeamMemberResult(const AmazonWebServiceResult<JsonValue>& result)
+AssociateTeamMemberResult::AssociateTeamMemberResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AssociateTeamMemberResult& AssociateTeamMemberResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AssociateTeamMemberResult& AssociateTeamMemberResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("clientRequestToken"))

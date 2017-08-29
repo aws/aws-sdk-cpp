@@ -49,6 +49,7 @@ namespace Model
     ConditionalForwarder& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The fully qualified domain name (FQDN) of the remote domains pointed to by
      * the conditional forwarder.</p>
@@ -90,6 +91,7 @@ namespace Model
      * the conditional forwarder.</p>
      */
     inline ConditionalForwarder& WithRemoteDomainName(const char* value) { SetRemoteDomainName(value); return *this;}
+
 
     /**
      * <p>The IP addresses of the remote DNS server associated with RemoteDomainName.
@@ -147,6 +149,7 @@ namespace Model
      */
     inline ConditionalForwarder& AddDnsIpAddrs(const char* value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(value); return *this; }
 
+
     /**
      * <p>The replication scope of the conditional forwarder. The only allowed value is
      * <code>Domain</code>, which will replicate the conditional forwarder to all of
@@ -183,10 +186,13 @@ namespace Model
     inline ConditionalForwarder& WithReplicationScope(ReplicationScope&& value) { SetReplicationScope(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_remoteDomainName;
     bool m_remoteDomainNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_dnsIpAddrs;
     bool m_dnsIpAddrsHasBeenSet;
+
     ReplicationScope m_replicationScope;
     bool m_replicationScopeHasBeenSet;
   };

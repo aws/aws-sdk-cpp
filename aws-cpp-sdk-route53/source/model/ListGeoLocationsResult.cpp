@@ -30,13 +30,13 @@ ListGeoLocationsResult::ListGeoLocationsResult() :
 {
 }
 
-ListGeoLocationsResult::ListGeoLocationsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListGeoLocationsResult::ListGeoLocationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListGeoLocationsResult& ListGeoLocationsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListGeoLocationsResult& ListGeoLocationsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

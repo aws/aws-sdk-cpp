@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetJobsResult();
-    GetJobsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of jobs.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of jobs.</p>
      */
     inline GetJobsResult& AddJobs(Job&& value) { m_jobs.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token, if not all jobs have yet been returned.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline GetJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Job> m_jobs;
+
     Aws::String m_nextToken;
   };
 

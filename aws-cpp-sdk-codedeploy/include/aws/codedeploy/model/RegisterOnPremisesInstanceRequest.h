@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the on-premises instance to register.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline RegisterOnPremisesInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
+
     /**
      * <p>The ARN of the IAM session to associate with the on-premises instance.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The ARN of the IAM session to associate with the on-premises instance.</p>
      */
     inline RegisterOnPremisesInstanceRequest& WithIamSessionArn(const char* value) { SetIamSessionArn(value); return *this;}
+
 
     /**
      * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
@@ -146,10 +149,13 @@ namespace Model
     inline RegisterOnPremisesInstanceRequest& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
 
   private:
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
+
     Aws::String m_iamSessionArn;
     bool m_iamSessionArnHasBeenSet;
+
     Aws::String m_iamUserArn;
     bool m_iamUserArnHasBeenSet;
   };

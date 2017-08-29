@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetJobRunResult();
-    GetJobRunResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobRunResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The requested job-run metadata.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetJobRunResult& WithJobRun(JobRun&& value) { SetJobRun(std::move(value)); return *this;}
 
   private:
+
     JobRun m_jobRun;
   };
 

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListGatewaysResult();
-    ListGatewaysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListGatewaysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListGatewaysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListGatewaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::Vector<GatewayInfo>& GetGateways() const{ return m_gateways; }
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline ListGatewaysResult& AddGateways(GatewayInfo&& value) { m_gateways.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::String& GetMarker() const{ return m_marker; }
@@ -86,7 +88,9 @@ namespace Model
     inline ListGatewaysResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<GatewayInfo> m_gateways;
+
     Aws::String m_marker;
   };
 

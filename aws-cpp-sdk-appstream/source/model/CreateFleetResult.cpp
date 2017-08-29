@@ -30,12 +30,12 @@ CreateFleetResult::CreateFleetResult()
 {
 }
 
-CreateFleetResult::CreateFleetResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateFleetResult::CreateFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateFleetResult& CreateFleetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateFleetResult& CreateFleetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Fleet"))

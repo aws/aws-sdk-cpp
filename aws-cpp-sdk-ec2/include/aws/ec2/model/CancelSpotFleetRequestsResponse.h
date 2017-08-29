@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     CancelSpotFleetRequestsResponse();
-    CancelSpotFleetRequestsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CancelSpotFleetRequestsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CancelSpotFleetRequestsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CancelSpotFleetRequestsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the Spot fleet requests that are successfully canceled.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the Spot fleet requests that are successfully canceled.</p>
      */
     inline CancelSpotFleetRequestsResponse& AddSuccessfulFleetRequests(CancelSpotFleetRequestsSuccessItem&& value) { m_successfulFleetRequests.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Information about the Spot fleet requests that are not successfully
@@ -126,6 +128,7 @@ namespace Model
      */
     inline CancelSpotFleetRequestsResponse& AddUnsuccessfulFleetRequests(CancelSpotFleetRequestsErrorItem&& value) { m_unsuccessfulFleetRequests.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline CancelSpotFleetRequestsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<CancelSpotFleetRequestsSuccessItem> m_successfulFleetRequests;
+
     Aws::Vector<CancelSpotFleetRequestsErrorItem> m_unsuccessfulFleetRequests;
+
     ResponseMetadata m_responseMetadata;
   };
 

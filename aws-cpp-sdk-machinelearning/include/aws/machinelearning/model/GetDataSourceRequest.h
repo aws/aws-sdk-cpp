@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID assigned to the <code>DataSource</code> at creation.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline GetDataSourceRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
+
     /**
      * <p>Specifies whether the <code>GetDataSource</code> operation should return
      * <code>DataSourceSchema</code>.</p> <p>If true, <code>DataSourceSchema</code> is
@@ -93,8 +95,10 @@ namespace Model
     inline GetDataSourceRequest& WithVerbose(bool value) { SetVerbose(value); return *this;}
 
   private:
+
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet;
+
     bool m_verbose;
     bool m_verboseHasBeenSet;
   };

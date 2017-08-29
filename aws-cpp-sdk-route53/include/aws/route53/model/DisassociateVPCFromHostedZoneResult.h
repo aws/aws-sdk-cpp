@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DisassociateVPCFromHostedZoneResult();
-    DisassociateVPCFromHostedZoneResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisassociateVPCFromHostedZoneResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DisassociateVPCFromHostedZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DisassociateVPCFromHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that describes the changes made to the specified private
@@ -78,6 +79,7 @@ namespace Model
     inline DisassociateVPCFromHostedZoneResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
 
   private:
+
     ChangeInfo m_changeInfo;
   };
 

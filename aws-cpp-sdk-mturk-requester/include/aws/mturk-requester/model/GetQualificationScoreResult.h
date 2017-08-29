@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetQualificationScoreResult();
-    GetQualificationScoreResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetQualificationScoreResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetQualificationScoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetQualificationScoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> The Qualification data structure of the Qualification assigned to a user,
@@ -72,6 +73,7 @@ namespace Model
     inline GetQualificationScoreResult& WithQualification(Qualification&& value) { SetQualification(std::move(value)); return *this;}
 
   private:
+
     Qualification m_qualification;
   };
 

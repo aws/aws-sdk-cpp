@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application to which the specified source bundles belong.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name of the application to which the specified source bundles belong.</p>
      */
     inline ComposeEnvironmentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The name of the group to which the target environments belong. Specify a
@@ -140,6 +142,7 @@ namespace Model
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline ComposeEnvironmentsRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>A list of version labels, specifying one or more application source bundles
@@ -214,10 +217,13 @@ namespace Model
     inline ComposeEnvironmentsRequest& AddVersionLabels(const char* value) { m_versionLabelsHasBeenSet = true; m_versionLabels.push_back(value); return *this; }
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_versionLabels;
     bool m_versionLabelsHasBeenSet;
   };

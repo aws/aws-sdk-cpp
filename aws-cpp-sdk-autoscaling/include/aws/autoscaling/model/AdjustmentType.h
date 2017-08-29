@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The policy adjustment type. The valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
@@ -100,6 +101,7 @@ namespace Model
     inline AdjustmentType& WithAdjustmentType(const char* value) { SetAdjustmentType(value); return *this;}
 
   private:
+
     Aws::String m_adjustmentType;
     bool m_adjustmentTypeHasBeenSet;
   };

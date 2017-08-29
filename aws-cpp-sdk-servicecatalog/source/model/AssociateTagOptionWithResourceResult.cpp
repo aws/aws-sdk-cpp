@@ -30,12 +30,12 @@ AssociateTagOptionWithResourceResult::AssociateTagOptionWithResourceResult()
 {
 }
 
-AssociateTagOptionWithResourceResult::AssociateTagOptionWithResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+AssociateTagOptionWithResourceResult::AssociateTagOptionWithResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AssociateTagOptionWithResourceResult& AssociateTagOptionWithResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AssociateTagOptionWithResourceResult& AssociateTagOptionWithResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetPatchBaselineForPatchGroupResult();
-    GetPatchBaselineForPatchGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPatchBaselineForPatchGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPatchBaselineForPatchGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPatchBaselineForPatchGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the patch baseline that should be used for the patch group.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetPatchBaselineForPatchGroupResult& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
 
+
     /**
      * <p>The name of the patch group.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      */
     inline GetPatchBaselineForPatchGroupResult& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
 
+
     /**
      * <p>The operating system rule specified for patch groups using the patch
      * baseline.</p>
@@ -143,8 +146,11 @@ namespace Model
     inline GetPatchBaselineForPatchGroupResult& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_baselineId;
+
     Aws::String m_patchGroup;
+
     OperatingSystem m_operatingSystem;
   };
 

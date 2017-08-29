@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListDevelopmentSchemaArnsResult();
-    ListDevelopmentSchemaArnsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDevelopmentSchemaArnsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDevelopmentSchemaArnsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDevelopmentSchemaArnsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARNs of retrieved development schemas.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ListDevelopmentSchemaArnsResult& AddSchemaArns(const char* value) { m_schemaArns.push_back(value); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -118,7 +120,9 @@ namespace Model
     inline ListDevelopmentSchemaArnsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_schemaArns;
+
     Aws::String m_nextToken;
   };
 

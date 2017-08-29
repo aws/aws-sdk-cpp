@@ -48,6 +48,7 @@ namespace Model
     CommentMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the comment.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CommentMetadata& WithCommentId(const char* value) { SetCommentId(value); return *this;}
 
+
     /**
      * <p>The user who made the comment.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      */
     inline CommentMetadata& WithContributor(User&& value) { SetContributor(std::move(value)); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
 
@@ -123,6 +126,7 @@ namespace Model
     
     inline CommentMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
+
     
     inline const CommentStatusType& GetCommentStatus() const{ return m_commentStatus; }
 
@@ -137,6 +141,7 @@ namespace Model
 
     
     inline CommentMetadata& WithCommentStatus(CommentStatusType&& value) { SetCommentStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the user being replied to.</p>
@@ -174,14 +179,19 @@ namespace Model
     inline CommentMetadata& WithRecipientId(const char* value) { SetRecipientId(value); return *this;}
 
   private:
+
     Aws::String m_commentId;
     bool m_commentIdHasBeenSet;
+
     User m_contributor;
     bool m_contributorHasBeenSet;
+
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet;
+
     CommentStatusType m_commentStatus;
     bool m_commentStatusHasBeenSet;
+
     Aws::String m_recipientId;
     bool m_recipientIdHasBeenSet;
   };

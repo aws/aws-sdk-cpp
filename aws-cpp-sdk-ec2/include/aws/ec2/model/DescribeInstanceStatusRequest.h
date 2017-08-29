@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone of the instance.</p> </li> <li> <p> <code>event.code</code> -
@@ -289,6 +290,7 @@ namespace Model
      */
     inline DescribeInstanceStatusRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>One or more instance IDs.</p> <p>Default: Describes all your instances.</p>
      * <p>Constraints: Maximum 100 explicitly specified instance IDs.</p>
@@ -337,6 +339,7 @@ namespace Model
      */
     inline DescribeInstanceStatusRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned <code>NextToken</code>
@@ -360,6 +363,7 @@ namespace Model
      * and the instance IDs parameter in the same call.</p>
      */
     inline DescribeInstanceStatusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -396,6 +400,7 @@ namespace Model
      */
     inline DescribeInstanceStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -420,6 +425,7 @@ namespace Model
      */
     inline DescribeInstanceStatusRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
     /**
      * <p>When <code>true</code>, includes the health status for all instances. When
      * <code>false</code>, includes the health status for running instances only.</p>
@@ -442,16 +448,22 @@ namespace Model
     inline DescribeInstanceStatusRequest& WithIncludeAllInstances(bool value) { SetIncludeAllInstances(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     bool m_includeAllInstances;
     bool m_includeAllInstancesHasBeenSet;
   };

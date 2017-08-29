@@ -30,12 +30,12 @@ CreateHapgResult::CreateHapgResult()
 {
 }
 
-CreateHapgResult::CreateHapgResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateHapgResult::CreateHapgResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateHapgResult& CreateHapgResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateHapgResult& CreateHapgResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("HapgArn"))

@@ -30,12 +30,12 @@ DescribeApplicationResult::DescribeApplicationResult()
 {
 }
 
-DescribeApplicationResult::DescribeApplicationResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeApplicationResult::DescribeApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeApplicationResult& DescribeApplicationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeApplicationResult& DescribeApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ApplicationDetail"))

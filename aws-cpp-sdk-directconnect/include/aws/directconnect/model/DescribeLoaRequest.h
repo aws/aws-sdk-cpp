@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of a connection, LAG, or interconnect for which to get the LOA-CFA
      * information.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
@@ -89,6 +90,7 @@ namespace Model
      * None</p>
      */
     inline DescribeLoaRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+
 
     /**
      * <p>The name of the service provider who establishes connectivity on your behalf.
@@ -139,6 +141,7 @@ namespace Model
      */
     inline DescribeLoaRequest& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
     /**
      * <p>A standard media type indicating the content type of the LOA-CFA document.
      * Currently, the only supported value is "application/pdf".</p> <p>Default:
@@ -175,10 +178,13 @@ namespace Model
     inline DescribeLoaRequest& WithLoaContentType(LoaContentType&& value) { SetLoaContentType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
+
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
     LoaContentType m_loaContentType;
     bool m_loaContentTypeHasBeenSet;
   };

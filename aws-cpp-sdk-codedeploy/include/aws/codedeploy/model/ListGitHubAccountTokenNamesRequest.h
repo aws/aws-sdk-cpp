@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An identifier returned from the previous ListGitHubAccountTokenNames call. It
      * can be used to return the next set of names in the list. </p>
@@ -83,6 +84,7 @@ namespace Model
     inline ListGitHubAccountTokenNamesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

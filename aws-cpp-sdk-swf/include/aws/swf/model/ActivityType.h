@@ -45,6 +45,7 @@ namespace Model
     ActivityType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of this activity.</p> <note> <p>The combination of activity type
      * name and version must be unique within a domain.</p> </note>
@@ -86,6 +87,7 @@ namespace Model
      * name and version must be unique within a domain.</p> </note>
      */
     inline ActivityType& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The version of this activity.</p> <note> <p>The combination of activity type
@@ -130,8 +132,10 @@ namespace Model
     inline ActivityType& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

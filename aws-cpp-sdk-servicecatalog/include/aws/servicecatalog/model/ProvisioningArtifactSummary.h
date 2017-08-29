@@ -48,6 +48,7 @@ namespace Model
     ProvisioningArtifactSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the provisioning artifact.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The identifier of the provisioning artifact.</p>
      */
     inline ProvisioningArtifactSummary& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the provisioning artifact.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline ProvisioningArtifactSummary& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The description of the provisioning artifact.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      */
     inline ProvisioningArtifactSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
@@ -177,6 +181,7 @@ namespace Model
      * <p>The UTC timestamp of the creation time.</p>
      */
     inline ProvisioningArtifactSummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The provisioning artifact metadata. This data is used with products created
@@ -251,14 +256,19 @@ namespace Model
     inline ProvisioningArtifactSummary& AddProvisioningArtifactMetadata(const char* key, const char* value) { m_provisioningArtifactMetadataHasBeenSet = true; m_provisioningArtifactMetadata.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_provisioningArtifactMetadata;
     bool m_provisioningArtifactMetadataHasBeenSet;
   };

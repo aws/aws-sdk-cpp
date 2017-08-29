@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A name for the cache subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
@@ -92,6 +93,7 @@ namespace Model
      */
     inline CreateCacheSubnetGroupRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>A description for the cache subnet group.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      * <p>A description for the cache subnet group.</p>
      */
     inline CreateCacheSubnetGroupRequest& WithCacheSubnetGroupDescription(const char* value) { SetCacheSubnetGroupDescription(value); return *this;}
+
 
     /**
      * <p>A list of VPC subnet IDs for the cache subnet group.</p>
@@ -168,10 +171,13 @@ namespace Model
     inline CreateCacheSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_cacheSubnetGroupName;
     bool m_cacheSubnetGroupNameHasBeenSet;
+
     Aws::String m_cacheSubnetGroupDescription;
     bool m_cacheSubnetGroupDescriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A timestamp for when this option was created.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>A timestamp for when this option was created.</p>
      */
     inline OptionStatus& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>A timestamp for when this option was last updated.</p>
@@ -99,6 +101,7 @@ namespace Model
      */
     inline OptionStatus& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 
+
     /**
      * <p>A unique integer that indicates when this option was last updated.</p>
      */
@@ -113,6 +116,7 @@ namespace Model
      * <p>A unique integer that indicates when this option was last updated.</p>
      */
     inline OptionStatus& WithUpdateVersion(int value) { SetUpdateVersion(value); return *this;}
+
 
     /**
      * <p>The state of processing a change to an option. Possible values:</p> <ul> <li>
@@ -179,6 +183,7 @@ namespace Model
      */
     inline OptionStatus& WithState(OptionState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates that the option will be deleted once processing is complete.</p>
      */
@@ -195,14 +200,19 @@ namespace Model
     inline OptionStatus& WithPendingDeletion(bool value) { SetPendingDeletion(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
+
     int m_updateVersion;
     bool m_updateVersionHasBeenSet;
+
     OptionState m_state;
     bool m_stateHasBeenSet;
+
     bool m_pendingDeletion;
     bool m_pendingDeletionHasBeenSet;
   };

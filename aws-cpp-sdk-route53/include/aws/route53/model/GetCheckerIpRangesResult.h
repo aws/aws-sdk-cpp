@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetCheckerIpRangesResult();
-    GetCheckerIpRangesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetCheckerIpRangesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetCheckerIpRangesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetCheckerIpRangesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::Vector<Aws::String>& GetCheckerIpRanges() const{ return m_checkerIpRanges; }
@@ -67,6 +68,7 @@ namespace Model
     inline GetCheckerIpRangesResult& AddCheckerIpRanges(const char* value) { m_checkerIpRanges.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_checkerIpRanges;
   };
 

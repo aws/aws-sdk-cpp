@@ -29,12 +29,12 @@ GetBucketNotificationConfigurationResult::GetBucketNotificationConfigurationResu
 {
 }
 
-GetBucketNotificationConfigurationResult::GetBucketNotificationConfigurationResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketNotificationConfigurationResult::GetBucketNotificationConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetBucketNotificationConfigurationResult& GetBucketNotificationConfigurationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketNotificationConfigurationResult& GetBucketNotificationConfigurationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

@@ -50,6 +50,7 @@ namespace Model
     InstancePatchState& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the managed instance the high-level patch compliance information
      * was collected for.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline InstancePatchState& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The name of the patch group the managed instance belongs to.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      */
     inline InstancePatchState& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
 
+
     /**
      * <p>The ID of the patch baseline used to patch the instance.</p>
      */
@@ -161,6 +164,7 @@ namespace Model
      * <p>The ID of the patch baseline used to patch the instance.</p>
      */
     inline InstancePatchState& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
+
 
     /**
      * <p>The ID of the patch baseline snapshot used during the patching operation when
@@ -204,6 +208,7 @@ namespace Model
      */
     inline InstancePatchState& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>Placeholder information, this field will always be empty in the current
      * release of the service.</p>
@@ -246,6 +251,7 @@ namespace Model
      */
     inline InstancePatchState& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
+
     /**
      * <p>The number of patches from the patch baseline that are installed on the
      * instance.</p>
@@ -263,6 +269,7 @@ namespace Model
      * instance.</p>
      */
     inline InstancePatchState& WithInstalledCount(int value) { SetInstalledCount(value); return *this;}
+
 
     /**
      * <p>The number of patches not specified in the patch baseline that are installed
@@ -282,6 +289,7 @@ namespace Model
      */
     inline InstancePatchState& WithInstalledOtherCount(int value) { SetInstalledOtherCount(value); return *this;}
 
+
     /**
      * <p>The number of patches from the patch baseline that are applicable for the
      * instance but aren't currently installed.</p>
@@ -299,6 +307,7 @@ namespace Model
      * instance but aren't currently installed.</p>
      */
     inline InstancePatchState& WithMissingCount(int value) { SetMissingCount(value); return *this;}
+
 
     /**
      * <p>The number of patches from the patch baseline that were attempted to be
@@ -318,6 +327,7 @@ namespace Model
      */
     inline InstancePatchState& WithFailedCount(int value) { SetFailedCount(value); return *this;}
 
+
     /**
      * <p>The number of patches from the patch baseline that aren't applicable for the
      * instance and hence aren't installed on the instance.</p>
@@ -335,6 +345,7 @@ namespace Model
      * instance and hence aren't installed on the instance.</p>
      */
     inline InstancePatchState& WithNotApplicableCount(int value) { SetNotApplicableCount(value); return *this;}
+
 
     /**
      * <p>The time the most recent patching operation was started on the instance.</p>
@@ -361,6 +372,7 @@ namespace Model
      */
     inline InstancePatchState& WithOperationStartTime(Aws::Utils::DateTime&& value) { SetOperationStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time the most recent patching operation completed on the instance.</p>
      */
@@ -385,6 +397,7 @@ namespace Model
      * <p>The time the most recent patching operation completed on the instance.</p>
      */
     inline InstancePatchState& WithOperationEndTime(Aws::Utils::DateTime&& value) { SetOperationEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of patching operation that was performed: SCAN (assess patch
@@ -417,30 +430,43 @@ namespace Model
     inline InstancePatchState& WithOperation(PatchOperationType&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_patchGroup;
     bool m_patchGroupHasBeenSet;
+
     Aws::String m_baselineId;
     bool m_baselineIdHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     Aws::String m_ownerInformation;
     bool m_ownerInformationHasBeenSet;
+
     int m_installedCount;
     bool m_installedCountHasBeenSet;
+
     int m_installedOtherCount;
     bool m_installedOtherCountHasBeenSet;
+
     int m_missingCount;
     bool m_missingCountHasBeenSet;
+
     int m_failedCount;
     bool m_failedCountHasBeenSet;
+
     int m_notApplicableCount;
     bool m_notApplicableCountHasBeenSet;
+
     Aws::Utils::DateTime m_operationStartTime;
     bool m_operationStartTimeHasBeenSet;
+
     Aws::Utils::DateTime m_operationEndTime;
     bool m_operationEndTimeHasBeenSet;
+
     PatchOperationType m_operation;
     bool m_operationHasBeenSet;
   };

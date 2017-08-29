@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The event code.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The event code.</p>
      */
     inline InstanceStatusEvent& WithCode(EventCode&& value) { SetCode(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the event.</p> <p>After a scheduled event is completed, it
@@ -124,6 +126,7 @@ namespace Model
      */
     inline InstanceStatusEvent& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The latest scheduled end time for the event.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      * <p>The latest scheduled end time for the event.</p>
      */
     inline InstanceStatusEvent& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(std::move(value)); return *this;}
+
 
     /**
      * <p>The earliest scheduled start time for the event.</p>
@@ -175,12 +179,16 @@ namespace Model
     inline InstanceStatusEvent& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
 
   private:
+
     EventCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_notAfter;
     bool m_notAfterHasBeenSet;
+
     Aws::Utils::DateTime m_notBefore;
     bool m_notBeforeHasBeenSet;
   };

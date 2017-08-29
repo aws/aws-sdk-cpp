@@ -50,6 +50,7 @@ namespace Model
     IpPermission& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Starting value for a range of allowed port numbers.</p>
      */
@@ -64,6 +65,7 @@ namespace Model
      * <p>Starting value for a range of allowed port numbers.</p>
      */
     inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
+
 
     /**
      * <p>Ending value for a range of allowed port numbers. Port numbers are
@@ -82,6 +84,7 @@ namespace Model
      * end-inclusive. This value must be higher than <code>FromPort</code>.</p>
      */
     inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
+
 
     /**
      * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
@@ -132,6 +135,7 @@ namespace Model
      */
     inline IpPermission& WithIpRange(const char* value) { SetIpRange(value); return *this;}
 
+
     /**
      * <p>Network communication protocol used by the fleet.</p>
      */
@@ -158,12 +162,16 @@ namespace Model
     inline IpPermission& WithProtocol(IpProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
+
     int m_fromPort;
     bool m_fromPortHasBeenSet;
+
     int m_toPort;
     bool m_toPortHasBeenSet;
+
     Aws::String m_ipRange;
     bool m_ipRangeHasBeenSet;
+
     IpProtocol m_protocol;
     bool m_protocolHasBeenSet;
   };

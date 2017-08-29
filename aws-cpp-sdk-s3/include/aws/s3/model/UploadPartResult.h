@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     UploadPartResult();
-    UploadPartResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UploadPartResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UploadPartResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UploadPartResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
@@ -72,6 +73,7 @@ namespace Model
      * AES256, aws:kms).
      */
     inline UploadPartResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
+
 
     /**
      * Entity tag for the uploaded object.
@@ -107,6 +109,7 @@ namespace Model
      * Entity tag for the uploaded object.
      */
     inline UploadPartResult& WithETag(const char* value) { SetETag(value); return *this;}
+
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -149,6 +152,7 @@ namespace Model
      * the response will include this header confirming the encryption algorithm used.
      */
     inline UploadPartResult& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -199,6 +203,7 @@ namespace Model
      */
     inline UploadPartResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
+
     /**
      * If present, specifies the ID of the AWS Key Management Service (KMS) master
      * encryption key that was used for the object.
@@ -241,6 +246,7 @@ namespace Model
      */
     inline UploadPartResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -257,11 +263,17 @@ namespace Model
     inline UploadPartResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
+
     ServerSideEncryption m_serverSideEncryption;
+
     Aws::String m_eTag;
+
     Aws::String m_sSECustomerAlgorithm;
+
     Aws::String m_sSECustomerKeyMD5;
+
     Aws::String m_sSEKMSKeyId;
+
     RequestCharged m_requestCharged;
   };
 

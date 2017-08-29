@@ -51,6 +51,7 @@ namespace Model
     GameSessionQueueDestination& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which
      * include a fleet ID or alias ID and a region name, provide a unique identifier
@@ -101,6 +102,7 @@ namespace Model
     inline GameSessionQueueDestination& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 
   private:
+
     Aws::String m_destinationArn;
     bool m_destinationArnHasBeenSet;
   };

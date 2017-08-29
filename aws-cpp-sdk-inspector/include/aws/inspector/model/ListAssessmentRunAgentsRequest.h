@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN that specifies the assessment run whose agents you want to list.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The ARN that specifies the assessment run whose agents you want to list.</p>
      */
     inline ListAssessmentRunAgentsRequest& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
+
 
     /**
      * <p>You can use this parameter to specify a subset of data to be included in the
@@ -111,6 +113,7 @@ namespace Model
      * attribute, any of the values can match.</p>
      */
     inline ListAssessmentRunAgentsRequest& WithFilter(AgentFilter&& value) { SetFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -175,6 +178,7 @@ namespace Model
      */
     inline ListAssessmentRunAgentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>You can use this parameter to indicate the maximum number of items that you
      * want in the response. The default value is 10. The maximum value is 500.</p>
@@ -194,12 +198,16 @@ namespace Model
     inline ListAssessmentRunAgentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_assessmentRunArn;
     bool m_assessmentRunArnHasBeenSet;
+
     AgentFilter m_filter;
     bool m_filterHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

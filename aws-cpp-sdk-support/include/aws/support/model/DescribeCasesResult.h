@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeCasesResult();
-    DescribeCasesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCasesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The details for the cases that match the request.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>The details for the cases that match the request.</p>
      */
     inline DescribeCasesResult& AddCases(CaseDetails&& value) { m_cases.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A resumption point for pagination.</p>
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeCasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<CaseDetails> m_cases;
+
     Aws::String m_nextToken;
   };
 

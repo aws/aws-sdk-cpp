@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetDocumentResult();
-    GetDocumentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDocumentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The metadata details of the document.</p>
@@ -67,6 +68,7 @@ namespace Model
      * <p>The metadata details of the document.</p>
      */
     inline GetDocumentResult& WithMetadata(DocumentMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+
 
     /**
      * <p>The custom metadata on the document.</p>
@@ -129,7 +131,9 @@ namespace Model
     inline GetDocumentResult& AddCustomMetadata(const char* key, const char* value) { m_customMetadata.emplace(key, value); return *this; }
 
   private:
+
     DocumentMetadata m_metadata;
+
     Aws::Map<Aws::String, Aws::String> m_customMetadata;
   };
 

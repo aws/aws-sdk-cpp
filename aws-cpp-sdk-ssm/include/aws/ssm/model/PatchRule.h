@@ -46,6 +46,7 @@ namespace Model
     PatchRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The patch filter group that defines the criteria for the rule.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The patch filter group that defines the criteria for the rule.</p>
      */
     inline PatchRule& WithPatchFilterGroup(PatchFilterGroup&& value) { SetPatchFilterGroup(std::move(value)); return *this;}
+
 
     /**
      * <p>A compliance severity level for all approved patches in a patch baseline.
@@ -106,6 +108,7 @@ namespace Model
      */
     inline PatchRule& WithComplianceLevel(PatchComplianceLevel&& value) { SetComplianceLevel(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of days after the release date of each patch matched by the rule
      * the patch is marked as approved in the patch baseline.</p>
@@ -125,10 +128,13 @@ namespace Model
     inline PatchRule& WithApproveAfterDays(int value) { SetApproveAfterDays(value); return *this;}
 
   private:
+
     PatchFilterGroup m_patchFilterGroup;
     bool m_patchFilterGroupHasBeenSet;
+
     PatchComplianceLevel m_complianceLevel;
     bool m_complianceLevelHasBeenSet;
+
     int m_approveAfterDays;
     bool m_approveAfterDaysHasBeenSet;
   };

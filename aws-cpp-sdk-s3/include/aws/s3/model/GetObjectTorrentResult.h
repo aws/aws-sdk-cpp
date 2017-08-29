@@ -42,8 +42,9 @@ namespace Model
     GetObjectTorrentResult& operator=(const GetObjectTorrentResult&) = delete;
 
 
-    GetObjectTorrentResult(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
-    GetObjectTorrentResult& operator=(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
+    GetObjectTorrentResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    GetObjectTorrentResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+
 
 
     
@@ -52,6 +53,7 @@ namespace Model
     
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
     
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -68,7 +70,9 @@ namespace Model
     inline GetObjectTorrentResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
-    Utils::Stream::ResponseStream m_body;
+
+  Aws::Utils::Stream::ResponseStream m_body;
+
     RequestCharged m_requestCharged;
   };
 

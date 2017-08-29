@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Minimum length to require for IAM user passwords.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
      * <p>Minimum length to require for IAM user passwords.</p>
      */
     inline PasswordPolicy& WithMinimumPasswordLength(int value) { SetMinimumPasswordLength(value); return *this;}
+
 
     /**
      * <p>Specifies whether to require symbols for IAM user passwords.</p>
@@ -78,6 +80,7 @@ namespace Model
      */
     inline PasswordPolicy& WithRequireSymbols(bool value) { SetRequireSymbols(value); return *this;}
 
+
     /**
      * <p>Specifies whether to require numbers for IAM user passwords.</p>
      */
@@ -92,6 +95,7 @@ namespace Model
      * <p>Specifies whether to require numbers for IAM user passwords.</p>
      */
     inline PasswordPolicy& WithRequireNumbers(bool value) { SetRequireNumbers(value); return *this;}
+
 
     /**
      * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
@@ -108,6 +112,7 @@ namespace Model
      */
     inline PasswordPolicy& WithRequireUppercaseCharacters(bool value) { SetRequireUppercaseCharacters(value); return *this;}
 
+
     /**
      * <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
      */
@@ -123,6 +128,7 @@ namespace Model
      */
     inline PasswordPolicy& WithRequireLowercaseCharacters(bool value) { SetRequireLowercaseCharacters(value); return *this;}
 
+
     /**
      * <p>Specifies whether IAM users are allowed to change their own password.</p>
      */
@@ -137,6 +143,7 @@ namespace Model
      * <p>Specifies whether IAM users are allowed to change their own password.</p>
      */
     inline PasswordPolicy& WithAllowUsersToChangePassword(bool value) { SetAllowUsersToChangePassword(value); return *this;}
+
 
     /**
      * <p>Indicates whether passwords in the account expire. Returns true if
@@ -159,6 +166,7 @@ namespace Model
      */
     inline PasswordPolicy& WithExpirePasswords(bool value) { SetExpirePasswords(value); return *this;}
 
+
     /**
      * <p>The number of days that an IAM user password is valid.</p>
      */
@@ -173,6 +181,7 @@ namespace Model
      * <p>The number of days that an IAM user password is valid.</p>
      */
     inline PasswordPolicy& WithMaxPasswordAge(int value) { SetMaxPasswordAge(value); return *this;}
+
 
     /**
      * <p>Specifies the number of previous passwords that IAM users are prevented from
@@ -191,6 +200,7 @@ namespace Model
      * reusing.</p>
      */
     inline PasswordPolicy& WithPasswordReusePrevention(int value) { SetPasswordReusePrevention(value); return *this;}
+
 
     /**
      * <p>Specifies whether IAM users are prevented from setting a new password after
@@ -211,24 +221,34 @@ namespace Model
     inline PasswordPolicy& WithHardExpiry(bool value) { SetHardExpiry(value); return *this;}
 
   private:
+
     int m_minimumPasswordLength;
     bool m_minimumPasswordLengthHasBeenSet;
+
     bool m_requireSymbols;
     bool m_requireSymbolsHasBeenSet;
+
     bool m_requireNumbers;
     bool m_requireNumbersHasBeenSet;
+
     bool m_requireUppercaseCharacters;
     bool m_requireUppercaseCharactersHasBeenSet;
+
     bool m_requireLowercaseCharacters;
     bool m_requireLowercaseCharactersHasBeenSet;
+
     bool m_allowUsersToChangePassword;
     bool m_allowUsersToChangePasswordHasBeenSet;
+
     bool m_expirePasswords;
     bool m_expirePasswordsHasBeenSet;
+
     int m_maxPasswordAge;
     bool m_maxPasswordAgeHasBeenSet;
+
     int m_passwordReusePrevention;
     bool m_passwordReusePreventionHasBeenSet;
+
     bool m_hardExpiry;
     bool m_hardExpiryHasBeenSet;
   };

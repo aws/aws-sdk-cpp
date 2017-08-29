@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The subnet group name of the replication instance.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline DeleteReplicationSubnetGroupRequest& WithReplicationSubnetGroupIdentifier(const char* value) { SetReplicationSubnetGroupIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_replicationSubnetGroupIdentifier;
     bool m_replicationSubnetGroupIdentifierHasBeenSet;
   };

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     AddTagsToResourceResult();
-    AddTagsToResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddTagsToResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddTagsToResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddTagsToResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline AddTagsToResourceResult& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 
   private:
+
     Aws::String m_resourceARN;
   };
 

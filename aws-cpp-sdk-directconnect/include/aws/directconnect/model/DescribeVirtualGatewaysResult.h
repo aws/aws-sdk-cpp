@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeVirtualGatewaysResult();
-    DescribeVirtualGatewaysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeVirtualGatewaysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeVirtualGatewaysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeVirtualGatewaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of virtual private gateways.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeVirtualGatewaysResult& AddVirtualGateways(VirtualGateway&& value) { m_virtualGateways.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<VirtualGateway> m_virtualGateways;
   };
 

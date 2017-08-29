@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListCuratedEnvironmentImagesResult();
-    ListCuratedEnvironmentImagesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCuratedEnvironmentImagesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCuratedEnvironmentImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCuratedEnvironmentImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about supported platforms for Docker images that are managed by
@@ -85,6 +86,7 @@ namespace Model
     inline ListCuratedEnvironmentImagesResult& AddPlatforms(EnvironmentPlatform&& value) { m_platforms.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<EnvironmentPlatform> m_platforms;
   };
 

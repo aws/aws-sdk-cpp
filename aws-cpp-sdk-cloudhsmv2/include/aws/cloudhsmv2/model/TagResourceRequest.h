@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The cluster identifier (ID) for the cluster that you are tagging. To find the
      * cluster ID, use <a>DescribeClusters</a>.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline TagResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>A list of one or more tags.</p>
      */
@@ -116,8 +118,10 @@ namespace Model
     inline TagResourceRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet;
   };

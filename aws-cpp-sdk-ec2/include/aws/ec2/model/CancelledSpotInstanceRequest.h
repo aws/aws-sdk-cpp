@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the Spot instance request.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline CancelledSpotInstanceRequest& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
 
+
     /**
      * <p>The state of the Spot instance request.</p>
      */
@@ -110,8 +112,10 @@ namespace Model
     inline CancelledSpotInstanceRequest& WithState(CancelSpotInstanceRequestState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_spotInstanceRequestId;
     bool m_spotInstanceRequestIdHasBeenSet;
+
     CancelSpotInstanceRequestState m_state;
     bool m_stateHasBeenSet;
   };

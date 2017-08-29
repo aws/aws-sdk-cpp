@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the data's environment.</p> <p>If no such environment is found,
      * returns an <code>InvalidParameterValue</code> error.</p> <p>Condition: You must
@@ -105,6 +106,7 @@ namespace Model
      * error.</p>
      */
     inline RetrieveEnvironmentInfoRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>The name of the data's environment.</p> <p> If no such environment is found,
@@ -169,6 +171,7 @@ namespace Model
      */
     inline RetrieveEnvironmentInfoRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The type of information to retrieve.</p>
      */
@@ -195,10 +198,13 @@ namespace Model
     inline RetrieveEnvironmentInfoRequest& WithInfoType(EnvironmentInfoType&& value) { SetInfoType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     EnvironmentInfoType m_infoType;
     bool m_infoTypeHasBeenSet;
   };

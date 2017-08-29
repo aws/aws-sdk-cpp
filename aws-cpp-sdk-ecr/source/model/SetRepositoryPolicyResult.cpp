@@ -30,12 +30,12 @@ SetRepositoryPolicyResult::SetRepositoryPolicyResult()
 {
 }
 
-SetRepositoryPolicyResult::SetRepositoryPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+SetRepositoryPolicyResult::SetRepositoryPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SetRepositoryPolicyResult& SetRepositoryPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SetRepositoryPolicyResult& SetRepositoryPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("registryId"))

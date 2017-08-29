@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListWebACLsResult();
-    ListWebACLsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWebACLsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListWebACLsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListWebACLsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If you have more <code>WebACL</code> objects than the number that you
@@ -113,6 +114,7 @@ namespace Model
      */
     inline ListWebACLsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>An array of <a>WebACLSummary</a> objects.</p>
      */
@@ -149,7 +151,9 @@ namespace Model
     inline ListWebACLsResult& AddWebACLs(WebACLSummary&& value) { m_webACLs.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextMarker;
+
     Aws::Vector<WebACLSummary> m_webACLs;
   };
 

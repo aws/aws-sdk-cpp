@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListClusters</code> request where <code>maxResults</code> was used and the
@@ -120,6 +121,7 @@ namespace Model
      */
     inline ListClustersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of cluster results returned by <code>ListClusters</code>
      * in paginated output. When this parameter is used, <code>ListClusters</code> only
@@ -157,8 +159,10 @@ namespace Model
     inline ListClustersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

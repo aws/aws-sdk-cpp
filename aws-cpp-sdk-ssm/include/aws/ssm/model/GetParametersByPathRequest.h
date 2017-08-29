@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
      * and end with the parameter name. A hierarchy can have a maximum of five levels.
@@ -94,6 +95,7 @@ namespace Model
      */
     inline GetParametersByPathRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>Retrieve all parameters within a hierarchy.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      * <p>Retrieve all parameters within a hierarchy.</p>
      */
     inline GetParametersByPathRequest& WithRecursive(bool value) { SetRecursive(value); return *this;}
+
 
     /**
      * <p>Filters to limit the request results.</p>
@@ -144,6 +147,7 @@ namespace Model
      */
     inline GetParametersByPathRequest& AddParameterFilters(ParameterStringFilter&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
      */
@@ -158,6 +162,7 @@ namespace Model
      * <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
      */
     inline GetParametersByPathRequest& WithWithDecryption(bool value) { SetWithDecryption(value); return *this;}
+
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
@@ -179,6 +184,7 @@ namespace Model
      * results.</p>
      */
     inline GetParametersByPathRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A token to start the list. Use this token to get the next set of results.
@@ -223,16 +229,22 @@ namespace Model
     inline GetParametersByPathRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     bool m_recursive;
     bool m_recursiveHasBeenSet;
+
     Aws::Vector<ParameterStringFilter> m_parameterFilters;
     bool m_parameterFiltersHasBeenSet;
+
     bool m_withDecryption;
     bool m_withDecryptionHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

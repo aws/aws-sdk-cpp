@@ -43,6 +43,7 @@ namespace Model
     QuietTime& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The default end time for quiet time in ISO 8601 format.
      */
@@ -77,6 +78,7 @@ namespace Model
      * The default end time for quiet time in ISO 8601 format.
      */
     inline QuietTime& WithEnd(const char* value) { SetEnd(value); return *this;}
+
 
     /**
      * The default start time for quiet time in ISO 8601 format.
@@ -114,8 +116,10 @@ namespace Model
     inline QuietTime& WithStart(const char* value) { SetStart(value); return *this;}
 
   private:
+
     Aws::String m_end;
     bool m_endHasBeenSet;
+
     Aws::String m_start;
     bool m_startHasBeenSet;
   };

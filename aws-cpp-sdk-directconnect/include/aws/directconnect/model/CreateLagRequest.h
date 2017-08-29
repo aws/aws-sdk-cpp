@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The number of physical connections initially provisioned and bundled by the
      * LAG.</p> <p>Default: None</p>
@@ -57,6 +58,7 @@ namespace Model
      * LAG.</p> <p>Default: None</p>
      */
     inline CreateLagRequest& WithNumberOfConnections(int value) { SetNumberOfConnections(value); return *this;}
+
 
     /**
      * <p>The AWS Direct Connect location in which the LAG should be allocated.</p>
@@ -100,6 +102,7 @@ namespace Model
      */
     inline CreateLagRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG.</p>
      * <p>Default: None</p> <p>Available values: 1Gbps, 10Gbps</p>
@@ -142,6 +145,7 @@ namespace Model
      */
     inline CreateLagRequest& WithConnectionsBandwidth(const char* value) { SetConnectionsBandwidth(value); return *this;}
 
+
     /**
      * <p>The name of the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
      * <p>Default: None</p>
@@ -183,6 +187,7 @@ namespace Model
      * <p>Default: None</p>
      */
     inline CreateLagRequest& WithLagName(const char* value) { SetLagName(value); return *this;}
+
 
     /**
      * <p>The ID of an existing connection to migrate to the LAG.</p> <p>Default:
@@ -227,14 +232,19 @@ namespace Model
     inline CreateLagRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
   private:
+
     int m_numberOfConnections;
     bool m_numberOfConnectionsHasBeenSet;
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
     Aws::String m_connectionsBandwidth;
     bool m_connectionsBandwidthHasBeenSet;
+
     Aws::String m_lagName;
     bool m_lagNameHasBeenSet;
+
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
   };

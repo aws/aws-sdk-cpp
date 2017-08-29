@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     SetLoadBalancerPoliciesForBackendServerResult();
-    SetLoadBalancerPoliciesForBackendServerResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetLoadBalancerPoliciesForBackendServerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetLoadBalancerPoliciesForBackendServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetLoadBalancerPoliciesForBackendServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -63,6 +64,7 @@ namespace Model
     inline SetLoadBalancerPoliciesForBackendServerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ResponseMetadata m_responseMetadata;
   };
 

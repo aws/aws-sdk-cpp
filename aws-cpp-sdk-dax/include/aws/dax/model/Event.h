@@ -49,6 +49,7 @@ namespace Model
     Event& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The source of the event. For example, if the event occurred at the node
      * level, the source would be the node ID.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline Event& WithSourceName(const char* value) { SetSourceName(value); return *this;}
 
+
     /**
      * <p>Specifies the origin of this event - a cluster, a parameter group, a node ID,
      * etc.</p>
@@ -120,6 +122,7 @@ namespace Model
      * etc.</p>
      */
     inline Event& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>A user-defined message associated with the event.</p>
@@ -156,6 +159,7 @@ namespace Model
      */
     inline Event& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The date and time when the event occurred.</p>
      */
@@ -182,12 +186,16 @@ namespace Model
     inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_sourceName;
     bool m_sourceNameHasBeenSet;
+
     SourceType m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
   };

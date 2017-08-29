@@ -52,6 +52,7 @@ namespace Model
     Instance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The agent version. This parameter is set to <code>INHERIT</code> if the
      * instance inherits the default stack setting or to a a version number for a fixed
@@ -100,6 +101,7 @@ namespace Model
      * agent version.</p>
      */
     inline Instance& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
 
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
@@ -157,6 +159,7 @@ namespace Model
      */
     inline Instance& WithAmiId(const char* value) { SetAmiId(value); return *this;}
 
+
     /**
      * <p>The instance architecture: "i386" or "x86_64".</p>
      */
@@ -182,6 +185,7 @@ namespace Model
      */
     inline Instance& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -202,6 +206,7 @@ namespace Model
 
     
     inline Instance& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>For load-based or time-based instances, the type.</p>
@@ -227,6 +232,7 @@ namespace Model
      * <p>For load-based or time-based instances, the type.</p>
      */
     inline Instance& WithAutoScalingType(AutoScalingType&& value) { SetAutoScalingType(std::move(value)); return *this;}
+
 
     /**
      * <p>The instance Availability Zone. For more information, see <a
@@ -277,6 +283,7 @@ namespace Model
      */
     inline Instance& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block device mappings.</p>
@@ -319,6 +326,7 @@ namespace Model
      */
     inline Instance& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time that the instance was created.</p>
      */
@@ -354,6 +362,7 @@ namespace Model
      */
     inline Instance& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
+
     /**
      * <p>Whether this is an Amazon EBS-optimized instance.</p>
      */
@@ -368,6 +377,7 @@ namespace Model
      * <p>Whether this is an Amazon EBS-optimized instance.</p>
      */
     inline Instance& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
+
 
     /**
      * <p>The ID of the associated Amazon EC2 instance.</p>
@@ -404,6 +414,7 @@ namespace Model
      */
     inline Instance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
 
+
     /**
      * <p>For container instances, the Amazon ECS cluster's ARN.</p>
      */
@@ -439,6 +450,7 @@ namespace Model
      */
     inline Instance& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
 
+
     /**
      * <p>For container instances, the instance's ARN.</p>
      */
@@ -473,6 +485,7 @@ namespace Model
      * <p>For container instances, the instance's ARN.</p>
      */
     inline Instance& WithEcsContainerInstanceArn(const char* value) { SetEcsContainerInstanceArn(value); return *this;}
+
 
     /**
      * <p>The instance <a
@@ -523,6 +536,7 @@ namespace Model
      */
     inline Instance& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
 
+
     /**
      * <p>The instance host name.</p>
      */
@@ -557,6 +571,7 @@ namespace Model
      * <p>The instance host name.</p>
      */
     inline Instance& WithHostname(const char* value) { SetHostname(value); return *this;}
+
 
     /**
      * <p>For registered instances, the infrastructure class: <code>ec2</code> or
@@ -600,6 +615,7 @@ namespace Model
      */
     inline Instance& WithInfrastructureClass(const char* value) { SetInfrastructureClass(value); return *this;}
 
+
     /**
      * <p>Whether to install operating system and package updates when the instance
      * boots. The default value is <code>true</code>. If this value is set to
@@ -636,6 +652,7 @@ namespace Model
      */
     inline Instance& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 
+
     /**
      * <p>The instance ID.</p>
      */
@@ -670,6 +687,7 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline Instance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The ARN of the instance's IAM profile. For more information about IAM ARNs,
@@ -727,6 +745,7 @@ namespace Model
      */
     inline Instance& WithInstanceProfileArn(const char* value) { SetInstanceProfileArn(value); return *this;}
 
+
     /**
      * <p>The instance type, such as <code>t2.micro</code>.</p>
      */
@@ -761,6 +780,7 @@ namespace Model
      * <p>The instance type, such as <code>t2.micro</code>.</p>
      */
     inline Instance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
 
     /**
      * <p>The ID of the last service error. For more information, call
@@ -804,6 +824,7 @@ namespace Model
      */
     inline Instance& WithLastServiceErrorId(const char* value) { SetLastServiceErrorId(value); return *this;}
 
+
     /**
      * <p>An array containing the instance layer IDs.</p>
      */
@@ -844,6 +865,7 @@ namespace Model
      */
     inline Instance& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
+
     /**
      * <p>The instance's operating system.</p>
      */
@@ -878,6 +900,7 @@ namespace Model
      * <p>The instance's operating system.</p>
      */
     inline Instance& WithOs(const char* value) { SetOs(value); return *this;}
+
 
     /**
      * <p>The instance's platform.</p>
@@ -914,6 +937,7 @@ namespace Model
      */
     inline Instance& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
+
     /**
      * <p>The instance's private DNS name.</p>
      */
@@ -948,6 +972,7 @@ namespace Model
      * <p>The instance's private DNS name.</p>
      */
     inline Instance& WithPrivateDns(const char* value) { SetPrivateDns(value); return *this;}
+
 
     /**
      * <p>The instance's private IP address.</p>
@@ -984,6 +1009,7 @@ namespace Model
      */
     inline Instance& WithPrivateIp(const char* value) { SetPrivateIp(value); return *this;}
 
+
     /**
      * <p>The instance public DNS name.</p>
      */
@@ -1018,6 +1044,7 @@ namespace Model
      * <p>The instance public DNS name.</p>
      */
     inline Instance& WithPublicDns(const char* value) { SetPublicDns(value); return *this;}
+
 
     /**
      * <p>The instance public IP address.</p>
@@ -1054,6 +1081,7 @@ namespace Model
      */
     inline Instance& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
+
     /**
      * <p>For registered instances, who performed the registration.</p>
      */
@@ -1088,6 +1116,7 @@ namespace Model
      * <p>For registered instances, who performed the registration.</p>
      */
     inline Instance& WithRegisteredBy(const char* value) { SetRegisteredBy(value); return *this;}
+
 
     /**
      * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
@@ -1124,6 +1153,7 @@ namespace Model
      */
     inline Instance& WithReportedAgentVersion(const char* value) { SetReportedAgentVersion(value); return *this;}
 
+
     /**
      * <p>For registered instances, the reported operating system.</p>
      */
@@ -1148,6 +1178,7 @@ namespace Model
      * <p>For registered instances, the reported operating system.</p>
      */
     inline Instance& WithReportedOs(ReportedOs&& value) { SetReportedOs(std::move(value)); return *this;}
+
 
     /**
      * <p>The instance's root device type. For more information, see <a
@@ -1184,6 +1215,7 @@ namespace Model
      */
     inline Instance& WithRootDeviceType(RootDeviceType&& value) { SetRootDeviceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The root device volume ID.</p>
      */
@@ -1218,6 +1250,7 @@ namespace Model
      * <p>The root device volume ID.</p>
      */
     inline Instance& WithRootDeviceVolumeId(const char* value) { SetRootDeviceVolumeId(value); return *this;}
+
 
     /**
      * <p>An array containing the instance security group IDs.</p>
@@ -1259,6 +1292,7 @@ namespace Model
      */
     inline Instance& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
      */
@@ -1293,6 +1327,7 @@ namespace Model
      * <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
      */
     inline Instance& WithSshHostDsaKeyFingerprint(const char* value) { SetSshHostDsaKeyFingerprint(value); return *this;}
+
 
     /**
      * <p>The SSH key's RSA fingerprint.</p>
@@ -1329,6 +1364,7 @@ namespace Model
      */
     inline Instance& WithSshHostRsaKeyFingerprint(const char* value) { SetSshHostRsaKeyFingerprint(value); return *this;}
 
+
     /**
      * <p>The instance's Amazon EC2 key-pair name.</p>
      */
@@ -1364,6 +1400,7 @@ namespace Model
      */
     inline Instance& WithSshKeyName(const char* value) { SetSshKeyName(value); return *this;}
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -1398,6 +1435,7 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline Instance& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The instance status:</p> <ul> <li> <p> <code>booting</code> </p> </li> <li>
@@ -1497,6 +1535,7 @@ namespace Model
      */
     inline Instance& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The instance's subnet ID; applicable only if the stack is running in a
      * VPC.</p>
@@ -1538,6 +1577,7 @@ namespace Model
      * VPC.</p>
      */
     inline Instance& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The instance's tenancy option, such as <code>dedicated</code> or
@@ -1581,6 +1621,7 @@ namespace Model
      */
     inline Instance& WithTenancy(const char* value) { SetTenancy(value); return *this;}
 
+
     /**
      * <p>The instance's virtualization type: <code>paravirtual</code> or
      * <code>hvm</code>.</p>
@@ -1612,86 +1653,127 @@ namespace Model
     inline Instance& WithVirtualizationType(VirtualizationType&& value) { SetVirtualizationType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet;
+
     Aws::String m_amiId;
     bool m_amiIdHasBeenSet;
+
     Architecture m_architecture;
     bool m_architectureHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     AutoScalingType m_autoScalingType;
     bool m_autoScalingTypeHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     Aws::String m_createdAt;
     bool m_createdAtHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
     Aws::String m_ec2InstanceId;
     bool m_ec2InstanceIdHasBeenSet;
+
     Aws::String m_ecsClusterArn;
     bool m_ecsClusterArnHasBeenSet;
+
     Aws::String m_ecsContainerInstanceArn;
     bool m_ecsContainerInstanceArnHasBeenSet;
+
     Aws::String m_elasticIp;
     bool m_elasticIpHasBeenSet;
+
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
     Aws::String m_infrastructureClass;
     bool m_infrastructureClassHasBeenSet;
+
     bool m_installUpdatesOnBoot;
     bool m_installUpdatesOnBootHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_instanceProfileArn;
     bool m_instanceProfileArnHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_lastServiceErrorId;
     bool m_lastServiceErrorIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_layerIds;
     bool m_layerIdsHasBeenSet;
+
     Aws::String m_os;
     bool m_osHasBeenSet;
+
     Aws::String m_platform;
     bool m_platformHasBeenSet;
+
     Aws::String m_privateDns;
     bool m_privateDnsHasBeenSet;
+
     Aws::String m_privateIp;
     bool m_privateIpHasBeenSet;
+
     Aws::String m_publicDns;
     bool m_publicDnsHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
+
     Aws::String m_registeredBy;
     bool m_registeredByHasBeenSet;
+
     Aws::String m_reportedAgentVersion;
     bool m_reportedAgentVersionHasBeenSet;
+
     ReportedOs m_reportedOs;
     bool m_reportedOsHasBeenSet;
+
     RootDeviceType m_rootDeviceType;
     bool m_rootDeviceTypeHasBeenSet;
+
     Aws::String m_rootDeviceVolumeId;
     bool m_rootDeviceVolumeIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::String m_sshHostDsaKeyFingerprint;
     bool m_sshHostDsaKeyFingerprintHasBeenSet;
+
     Aws::String m_sshHostRsaKeyFingerprint;
     bool m_sshHostRsaKeyFingerprintHasBeenSet;
+
     Aws::String m_sshKeyName;
     bool m_sshKeyNameHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_tenancy;
     bool m_tenancyHasBeenSet;
+
     VirtualizationType m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
   };

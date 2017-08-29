@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ScanProvisionedProductsResult();
-    ScanProvisionedProductsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ScanProvisionedProductsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ScanProvisionedProductsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ScanProvisionedProductsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of ProvisionedProduct detail objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of ProvisionedProduct detail objects.</p>
      */
     inline ScanProvisionedProductsResult& AddProvisionedProducts(ProvisionedProductDetail&& value) { m_provisionedProducts.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -121,7 +123,9 @@ namespace Model
     inline ScanProvisionedProductsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<ProvisionedProductDetail> m_provisionedProducts;
+
     Aws::String m_nextPageToken;
   };
 

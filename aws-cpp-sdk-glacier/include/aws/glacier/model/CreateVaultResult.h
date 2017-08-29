@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateVaultResult();
-    CreateVaultResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateVaultResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateVaultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateVaultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The URI of the vault that was created.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateVaultResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:
+
     Aws::String m_location;
   };
 

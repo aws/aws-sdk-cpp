@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * Name of the bucket to which the multipart upload was initiated.
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline UploadPartRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     /**
      * Size of the body in bytes. This parameter is useful when the size of the body
      * cannot be determined automatically.
@@ -94,6 +96,7 @@ namespace Model
      * cannot be determined automatically.
      */
     inline UploadPartRequest& WithContentLength(long long value) { SetContentLength(value); return *this;}
+
 
     /**
      * The base64-encoded 128-bit MD5 digest of the part data.
@@ -130,6 +133,7 @@ namespace Model
      */
     inline UploadPartRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
+
     /**
      * Object key for which the multipart upload was initiated.
      */
@@ -165,6 +169,7 @@ namespace Model
      */
     inline UploadPartRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * Part number of part being uploaded. This is a positive integer between 1 and
      * 10,000.
@@ -182,6 +187,7 @@ namespace Model
      * 10,000.
      */
     inline UploadPartRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
+
 
     /**
      * Upload ID identifying the multipart upload whose part is being uploaded.
@@ -218,6 +224,7 @@ namespace Model
      */
     inline UploadPartRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
+
     /**
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
@@ -252,6 +259,7 @@ namespace Model
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
     inline UploadPartRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -323,6 +331,7 @@ namespace Model
      */
     inline UploadPartRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
+
     /**
      * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
@@ -372,6 +381,7 @@ namespace Model
      */
     inline UploadPartRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
+
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
@@ -388,24 +398,35 @@ namespace Model
     inline UploadPartRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
   private:
+
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     long long m_contentLength;
     bool m_contentLengthHasBeenSet;
+
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     int m_partNumber;
     bool m_partNumberHasBeenSet;
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;
+
     Aws::String m_sSECustomerAlgorithm;
     bool m_sSECustomerAlgorithmHasBeenSet;
+
     Aws::String m_sSECustomerKey;
     bool m_sSECustomerKeyHasBeenSet;
+
     Aws::String m_sSECustomerKeyMD5;
     bool m_sSECustomerKeyMD5HasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
   };

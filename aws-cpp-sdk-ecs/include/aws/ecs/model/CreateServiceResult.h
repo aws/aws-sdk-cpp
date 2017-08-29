@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateServiceResult();
-    CreateServiceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateServiceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The full description of your service following the create call.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateServiceResult& WithService(Service&& value) { SetService(std::move(value)); return *this;}
 
   private:
+
     Service m_service;
   };
 

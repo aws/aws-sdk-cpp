@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The ID of the HIT type of the HITs to consider for the query. If not
      * specified, all HITs for the Reviewer are considered </p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline ListReviewableHITsRequest& WithHITTypeId(const char* value) { SetHITTypeId(value); return *this;}
 
+
     /**
      * <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable
      * is the default value. </p>
@@ -108,6 +110,7 @@ namespace Model
      * is the default value. </p>
      */
     inline ListReviewableHITsRequest& WithStatus(ReviewableHITStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Pagination Token</p>
@@ -144,6 +147,7 @@ namespace Model
      */
     inline ListReviewableHITsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p> Limit the number of results returned. </p>
      */
@@ -160,12 +164,16 @@ namespace Model
     inline ListReviewableHITsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_hITTypeId;
     bool m_hITTypeIdHasBeenSet;
+
     ReviewableHITStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

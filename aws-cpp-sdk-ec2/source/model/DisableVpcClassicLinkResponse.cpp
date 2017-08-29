@@ -32,13 +32,13 @@ DisableVpcClassicLinkResponse::DisableVpcClassicLinkResponse() :
 {
 }
 
-DisableVpcClassicLinkResponse::DisableVpcClassicLinkResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+DisableVpcClassicLinkResponse::DisableVpcClassicLinkResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_return(false)
 {
   *this = result;
 }
 
-DisableVpcClassicLinkResponse& DisableVpcClassicLinkResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DisableVpcClassicLinkResponse& DisableVpcClassicLinkResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

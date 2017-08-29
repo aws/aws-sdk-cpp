@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the dashboard.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the dashboard.</p>
      */
     inline DashboardEntry& WithDashboardName(const char* value) { SetDashboardName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline DashboardEntry& WithDashboardArn(const char* value) { SetDashboardArn(value); return *this;}
 
+
     /**
      * <p>The time stamp of when the dashboard was last modified, either by an API call
      * or through the console. This number is expressed as the number of milliseconds
@@ -154,6 +157,7 @@ namespace Model
      */
     inline DashboardEntry& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
+
     /**
      * <p>The size of the dashboard, in bytes.</p>
      */
@@ -170,12 +174,16 @@ namespace Model
     inline DashboardEntry& WithSize(long long value) { SetSize(value); return *this;}
 
   private:
+
     Aws::String m_dashboardName;
     bool m_dashboardNameHasBeenSet;
+
     Aws::String m_dashboardArn;
     bool m_dashboardArnHasBeenSet;
+
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
+
     long long m_size;
     bool m_sizeHasBeenSet;
   };

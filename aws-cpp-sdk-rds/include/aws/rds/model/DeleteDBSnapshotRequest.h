@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The DBSnapshot identifier.</p> <p>Constraints: Must be the name of an
      * existing DB snapshot in the <code>available</code> state.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DeleteDBSnapshotRequest& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_dBSnapshotIdentifier;
     bool m_dBSnapshotIdentifierHasBeenSet;
   };

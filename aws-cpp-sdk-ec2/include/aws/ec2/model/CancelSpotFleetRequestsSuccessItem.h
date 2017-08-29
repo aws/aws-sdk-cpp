@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The current state of the Spot fleet request.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline CancelSpotFleetRequestsSuccessItem& WithCurrentSpotFleetRequestState(BatchState&& value) { SetCurrentSpotFleetRequestState(std::move(value)); return *this;}
 
+
     /**
      * <p>The previous state of the Spot fleet request.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The previous state of the Spot fleet request.</p>
      */
     inline CancelSpotFleetRequestsSuccessItem& WithPreviousSpotFleetRequestState(BatchState&& value) { SetPreviousSpotFleetRequestState(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Spot fleet request.</p>
@@ -136,10 +139,13 @@ namespace Model
     inline CancelSpotFleetRequestsSuccessItem& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
   private:
+
     BatchState m_currentSpotFleetRequestState;
     bool m_currentSpotFleetRequestStateHasBeenSet;
+
     BatchState m_previousSpotFleetRequestState;
     bool m_previousSpotFleetRequestStateHasBeenSet;
+
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet;
   };

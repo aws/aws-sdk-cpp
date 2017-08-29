@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ConfigureHealthCheckRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
+
     /**
      * <p>The configuration information.</p>
      */
@@ -104,8 +106,10 @@ namespace Model
     inline ConfigureHealthCheckRequest& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     HealthCheck m_healthCheck;
     bool m_healthCheckHasBeenSet;
   };

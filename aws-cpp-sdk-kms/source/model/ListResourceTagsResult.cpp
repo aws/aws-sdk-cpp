@@ -31,13 +31,13 @@ ListResourceTagsResult::ListResourceTagsResult() :
 {
 }
 
-ListResourceTagsResult::ListResourceTagsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListResourceTagsResult::ListResourceTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_truncated(false)
 {
   *this = result;
 }
 
-ListResourceTagsResult& ListResourceTagsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListResourceTagsResult& ListResourceTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Tags"))

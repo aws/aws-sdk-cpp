@@ -44,6 +44,7 @@ namespace Model
     ActivitiesResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * List of campaign activities
      */
@@ -80,6 +81,7 @@ namespace Model
     inline ActivitiesResponse& AddItem(ActivityResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ActivityResponse> m_item;
     bool m_itemHasBeenSet;
   };

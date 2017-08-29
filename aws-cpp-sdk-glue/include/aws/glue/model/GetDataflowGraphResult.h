@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetDataflowGraphResult();
-    GetDataflowGraphResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDataflowGraphResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDataflowGraphResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDataflowGraphResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of the nodes in the resulting DAG.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of the nodes in the resulting DAG.</p>
      */
     inline GetDataflowGraphResult& AddDagNodes(CodeGenNode&& value) { m_dagNodes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of the edges in the resulting DAG.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline GetDataflowGraphResult& AddDagEdges(CodeGenEdge&& value) { m_dagEdges.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CodeGenNode> m_dagNodes;
+
     Aws::Vector<CodeGenEdge> m_dagEdges;
   };
 

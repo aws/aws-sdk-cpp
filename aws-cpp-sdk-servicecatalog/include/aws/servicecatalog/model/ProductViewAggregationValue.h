@@ -46,6 +46,7 @@ namespace Model
     ProductViewAggregationValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The value of the product view aggregation.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline ProductViewAggregationValue& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>An approximate count of the products that match the value.</p>
      */
@@ -97,8 +99,10 @@ namespace Model
     inline ProductViewAggregationValue& WithApproximateCount(int value) { SetApproximateCount(value); return *this;}
 
   private:
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     int m_approximateCount;
     bool m_approximateCountHasBeenSet;
   };

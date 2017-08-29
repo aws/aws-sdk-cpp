@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -57,6 +58,7 @@ namespace Model
 
     
     inline PutBucketReplicationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
@@ -79,6 +81,7 @@ namespace Model
     
     inline PutBucketReplicationRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
+
     
     inline const ReplicationConfiguration& GetReplicationConfiguration() const{ return m_replicationConfiguration; }
 
@@ -95,10 +98,13 @@ namespace Model
     inline PutBucketReplicationRequest& WithReplicationConfiguration(ReplicationConfiguration&& value) { SetReplicationConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
+
     ReplicationConfiguration m_replicationConfiguration;
     bool m_replicationConfigurationHasBeenSet;
   };

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetCallerIdentityResult();
-    GetCallerIdentityResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetCallerIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetCallerIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetCallerIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The unique identifier of the calling entity. The exact value depends on the
@@ -119,6 +120,7 @@ namespace Model
      */
     inline GetCallerIdentityResult& WithUserId(const char* value) { SetUserId(value); return *this;}
 
+
     /**
      * <p>The AWS account ID number of the account that owns or contains the calling
      * entity.</p>
@@ -161,6 +163,7 @@ namespace Model
      */
     inline GetCallerIdentityResult& WithAccount(const char* value) { SetAccount(value); return *this;}
 
+
     /**
      * <p>The AWS ARN associated with the calling entity.</p>
      */
@@ -196,6 +199,7 @@ namespace Model
      */
     inline GetCallerIdentityResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -212,9 +216,13 @@ namespace Model
     inline GetCallerIdentityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userId;
+
     Aws::String m_account;
+
     Aws::String m_arn;
+
     ResponseMetadata m_responseMetadata;
   };
 

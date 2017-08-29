@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the patch baseline to retrieve.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetPatchBaselineRequest& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
 
   private:
+
     Aws::String m_baselineId;
     bool m_baselineIdHasBeenSet;
   };

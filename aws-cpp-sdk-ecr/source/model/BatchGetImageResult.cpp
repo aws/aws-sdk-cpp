@@ -30,12 +30,12 @@ BatchGetImageResult::BatchGetImageResult()
 {
 }
 
-BatchGetImageResult::BatchGetImageResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetImageResult::BatchGetImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchGetImageResult& BatchGetImageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetImageResult& BatchGetImageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("images"))

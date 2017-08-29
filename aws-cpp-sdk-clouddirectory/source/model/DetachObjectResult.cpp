@@ -30,12 +30,12 @@ DetachObjectResult::DetachObjectResult()
 {
 }
 
-DetachObjectResult::DetachObjectResult(const AmazonWebServiceResult<JsonValue>& result)
+DetachObjectResult::DetachObjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DetachObjectResult& DetachObjectResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DetachObjectResult& DetachObjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DetachedObjectIdentifier"))

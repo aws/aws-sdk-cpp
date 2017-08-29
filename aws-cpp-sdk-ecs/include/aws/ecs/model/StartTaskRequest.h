@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
      * start your task. If you do not specify a cluster, the default cluster is
@@ -86,6 +87,7 @@ namespace Model
      * assumed.</p>
      */
     inline StartTaskRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
@@ -142,6 +144,7 @@ namespace Model
      * <code>ACTIVE</code> revision is used.</p>
      */
     inline StartTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
+
 
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
@@ -208,6 +211,7 @@ namespace Model
      */
     inline StartTaskRequest& WithOverrides(TaskOverride&& value) { SetOverrides(std::move(value)); return *this;}
 
+
     /**
      * <p>The container instance IDs or full Amazon Resource Name (ARN) entries for the
      * container instances on which you would like to place your task. You can specify
@@ -263,6 +267,7 @@ namespace Model
      * up to 10 container instances.</p>
      */
     inline StartTaskRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
+
 
     /**
      * <p>An optional tag specified when a task is started. For example if you
@@ -355,6 +360,7 @@ namespace Model
      */
     inline StartTaskRequest& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
+
     /**
      * <p>The name of the task group to associate with the task. The default value is
      * the family name of the task definition (for example, family:my-family-name).</p>
@@ -398,16 +404,22 @@ namespace Model
     inline StartTaskRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;
+
     TaskOverride m_overrides;
     bool m_overridesHasBeenSet;
+
     Aws::Vector<Aws::String> m_containerInstances;
     bool m_containerInstancesHasBeenSet;
+
     Aws::String m_startedBy;
     bool m_startedByHasBeenSet;
+
     Aws::String m_group;
     bool m_groupHasBeenSet;
   };

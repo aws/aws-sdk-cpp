@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the <b>ListRulesPackages</b> action.
@@ -99,6 +100,7 @@ namespace Model
      */
     inline ListRulesPackagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 10. The maximum value is 500.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline ListRulesPackagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

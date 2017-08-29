@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     RevokeSnapshotAccessResult();
-    RevokeSnapshotAccessResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RevokeSnapshotAccessResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RevokeSnapshotAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RevokeSnapshotAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Snapshot& GetSnapshot() const{ return m_snapshot; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline RevokeSnapshotAccessResult& WithSnapshot(Snapshot&& value) { SetSnapshot(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline RevokeSnapshotAccessResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Snapshot m_snapshot;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     SubmitTaskStateChangeResult();
-    SubmitTaskStateChangeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SubmitTaskStateChangeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SubmitTaskStateChangeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SubmitTaskStateChangeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Acknowledgement of the state change.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline SubmitTaskStateChangeResult& WithAcknowledgment(const char* value) { SetAcknowledgment(value); return *this;}
 
   private:
+
     Aws::String m_acknowledgment;
   };
 

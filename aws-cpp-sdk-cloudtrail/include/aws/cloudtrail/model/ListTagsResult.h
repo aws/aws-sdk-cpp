@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListTagsResult();
-    ListTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of resource tags.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list of resource tags.</p>
      */
     inline ListTagsResult& AddResourceTagList(ResourceTag&& value) { m_resourceTagList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Reserved for future use.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline ListTagsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ResourceTag> m_resourceTagList;
+
     Aws::String m_nextToken;
   };
 

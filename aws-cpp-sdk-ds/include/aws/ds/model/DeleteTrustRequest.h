@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Trust ID of the trust relationship to be deleted.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline DeleteTrustRequest& WithTrustId(const char* value) { SetTrustId(value); return *this;}
 
+
     /**
      * <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
      */
@@ -92,8 +94,10 @@ namespace Model
     inline DeleteTrustRequest& WithDeleteAssociatedConditionalForwarder(bool value) { SetDeleteAssociatedConditionalForwarder(value); return *this;}
 
   private:
+
     Aws::String m_trustId;
     bool m_trustIdHasBeenSet;
+
     bool m_deleteAssociatedConditionalForwarder;
     bool m_deleteAssociatedConditionalForwarderHasBeenSet;
   };

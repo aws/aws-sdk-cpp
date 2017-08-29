@@ -45,6 +45,7 @@ namespace Model
     UserPoolPolicyType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A container for information about the user pool password policy.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
     inline UserPoolPolicyType& WithPasswordPolicy(PasswordPolicyType&& value) { SetPasswordPolicy(std::move(value)); return *this;}
 
   private:
+
     PasswordPolicyType m_passwordPolicy;
     bool m_passwordPolicyHasBeenSet;
   };

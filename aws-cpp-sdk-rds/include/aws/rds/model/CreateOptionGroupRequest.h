@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Specifies the name of the option group to be created.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li>
@@ -106,6 +107,7 @@ namespace Model
      */
     inline CreateOptionGroupRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
+
     /**
      * <p>Specifies the name of the engine that this option group should be associated
      * with.</p>
@@ -147,6 +149,7 @@ namespace Model
      * with.</p>
      */
     inline CreateOptionGroupRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
+
 
     /**
      * <p>Specifies the major version of the engine that this option group should be
@@ -190,6 +193,7 @@ namespace Model
      */
     inline CreateOptionGroupRequest& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
 
+
     /**
      * <p>The description of the option group.</p>
      */
@@ -225,6 +229,7 @@ namespace Model
      */
     inline CreateOptionGroupRequest& WithOptionGroupDescription(const char* value) { SetOptionGroupDescription(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -247,14 +252,19 @@ namespace Model
     inline CreateOptionGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::String m_engineName;
     bool m_engineNameHasBeenSet;
+
     Aws::String m_majorEngineVersion;
     bool m_majorEngineVersionHasBeenSet;
+
     Aws::String m_optionGroupDescription;
     bool m_optionGroupDescriptionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

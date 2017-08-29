@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeAddressesResult();
-    DescribeAddressesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAddressesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAddressesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAddressesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Snowball shipping addresses that were created for this account.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The Snowball shipping addresses that were created for this account.</p>
      */
     inline DescribeAddressesResult& AddAddresses(Address&& value) { m_addresses.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>HTTP requests are stateless. If you use the automatically generated
@@ -128,7 +130,9 @@ namespace Model
     inline DescribeAddressesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Address> m_addresses;
+
     Aws::String m_nextToken;
   };
 

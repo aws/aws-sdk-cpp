@@ -46,6 +46,7 @@ namespace Model
     OutputArtifact& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the output of an artifact, such as "My App".</p> <p>The input
      * artifact of an action must exactly match the output artifact declared in a
@@ -124,6 +125,7 @@ namespace Model
     inline OutputArtifact& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

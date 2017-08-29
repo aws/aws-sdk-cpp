@@ -53,6 +53,7 @@ namespace Model
     Input& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name prefix to use when creating in-application stream. Suppose you specify a
      * prefix "MyInApplicationStream". Amazon Kinesis Analytics will then create one or
@@ -116,6 +117,7 @@ namespace Model
      */
     inline Input& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
 
+
     /**
      * <p>If the streaming source is an Amazon Kinesis stream, identifies the stream's
      * Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics
@@ -160,6 +162,7 @@ namespace Model
      * required.</p>
      */
     inline Input& WithKinesisStreamsInput(KinesisStreamsInput&& value) { SetKinesisStreamsInput(std::move(value)); return *this;}
+
 
     /**
      * <p>If the streaming source is an Amazon Kinesis Firehose delivery stream,
@@ -206,6 +209,7 @@ namespace Model
      */
     inline Input& WithKinesisFirehoseInput(KinesisFirehoseInput&& value) { SetKinesisFirehoseInput(std::move(value)); return *this;}
 
+
     /**
      * <p>Describes the number of in-application streams to create. </p> <p>Data from
      * your source will be routed to these in-application input streams.</p> <p> (see
@@ -251,6 +255,7 @@ namespace Model
      */
     inline Input& WithInputParallelism(InputParallelism&& value) { SetInputParallelism(std::move(value)); return *this;}
 
+
     /**
      * <p>Describes the format of the data in the streaming source, and how each data
      * element maps to corresponding columns in the in-application stream that is being
@@ -292,14 +297,19 @@ namespace Model
     inline Input& WithInputSchema(SourceSchema&& value) { SetInputSchema(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_namePrefix;
     bool m_namePrefixHasBeenSet;
+
     KinesisStreamsInput m_kinesisStreamsInput;
     bool m_kinesisStreamsInputHasBeenSet;
+
     KinesisFirehoseInput m_kinesisFirehoseInput;
     bool m_kinesisFirehoseInputHasBeenSet;
+
     InputParallelism m_inputParallelism;
     bool m_inputParallelismHasBeenSet;
+
     SourceSchema m_inputSchema;
     bool m_inputSchemaHasBeenSet;
   };

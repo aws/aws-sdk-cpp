@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the parameter group.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the parameter group.</p>
      */
     inline UpdateParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+
 
     /**
      * <p>An array of name-value pairs for the parameters in the group. Each element in
@@ -116,8 +118,10 @@ namespace Model
     inline UpdateParameterGroupRequest& AddParameterNameValues(ParameterNameValue&& value) { m_parameterNameValuesHasBeenSet = true; m_parameterNameValues.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     Aws::Vector<ParameterNameValue> m_parameterNameValues;
     bool m_parameterNameValuesHasBeenSet;
   };

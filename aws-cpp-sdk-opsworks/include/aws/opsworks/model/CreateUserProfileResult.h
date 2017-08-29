@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateUserProfileResult();
-    CreateUserProfileResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateUserProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUserProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The user's IAM ARN.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateUserProfileResult& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
 
   private:
+
     Aws::String m_iamUserArn;
   };
 

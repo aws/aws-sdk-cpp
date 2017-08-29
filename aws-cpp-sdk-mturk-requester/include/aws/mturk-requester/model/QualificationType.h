@@ -51,6 +51,7 @@ namespace Model
     QualificationType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> A unique identifier for the Qualification type. A Qualification type is
      * given a Qualification type ID when you call the CreateQualificationType
@@ -100,6 +101,7 @@ namespace Model
      */
     inline QualificationType& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
 
+
     /**
      * <p> The date and time the Qualification type was created. </p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p> The date and time the Qualification type was created. </p>
      */
     inline QualificationType& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p> The name of the Qualification type. The type name is used to identify the
@@ -167,6 +170,7 @@ namespace Model
      */
     inline QualificationType& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p> A long description for the Qualification type. </p>
      */
@@ -201,6 +205,7 @@ namespace Model
      * <p> A long description for the Qualification type. </p>
      */
     inline QualificationType& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p> One or more words or phrases that describe theQualification type, separated
@@ -244,6 +249,7 @@ namespace Model
      */
     inline QualificationType& WithKeywords(const char* value) { SetKeywords(value); return *this;}
 
+
     /**
      * <p> The status of the Qualification type. A Qualification type's status
      * determines if users can apply to receive a Qualification of this type, and if
@@ -283,6 +289,7 @@ namespace Model
      * Active | Inactive. </p>
      */
     inline QualificationType& WithQualificationTypeStatus(QualificationTypeStatus&& value) { SetQualificationTypeStatus(std::move(value)); return *this;}
+
 
     /**
      * <p> The questions for a Qualification test associated with this Qualification
@@ -340,6 +347,7 @@ namespace Model
      */
     inline QualificationType& WithTest(const char* value) { SetTest(value); return *this;}
 
+
     /**
      * <p> The amount of time, in seconds, given to a Worker to complete the
      * Qualification test, beginning from the time the Worker requests the
@@ -360,6 +368,7 @@ namespace Model
      * Qualification. </p>
      */
     inline QualificationType& WithTestDurationInSeconds(long long value) { SetTestDurationInSeconds(value); return *this;}
+
 
     /**
      * <p>The answers to the Qualification test specified in the Test parameter.</p>
@@ -396,6 +405,7 @@ namespace Model
      */
     inline QualificationType& WithAnswerKey(const char* value) { SetAnswerKey(value); return *this;}
 
+
     /**
      * <p> The amount of time, in seconds, Workers must wait after taking the
      * Qualification test before they can take it again. Workers can take a
@@ -426,6 +436,7 @@ namespace Model
      */
     inline QualificationType& WithRetryDelayInSeconds(long long value) { SetRetryDelayInSeconds(value); return *this;}
 
+
     /**
      * <p> Specifies whether the Qualification type is one that a user can request
      * through the Amazon Mechanical Turk web site, such as by taking a Qualification
@@ -450,6 +461,7 @@ namespace Model
      */
     inline QualificationType& WithIsRequestable(bool value) { SetIsRequestable(value); return *this;}
 
+
     /**
      * <p>Specifies that requests for the Qualification type are granted immediately,
      * without prompting the Worker with a Qualification test. Valid values are True |
@@ -471,6 +483,7 @@ namespace Model
      */
     inline QualificationType& WithAutoGranted(bool value) { SetAutoGranted(value); return *this;}
 
+
     /**
      * <p> The Qualification integer value to use for automatically granted
      * Qualifications, if AutoGranted is true. This is 1 by default. </p>
@@ -490,30 +503,43 @@ namespace Model
     inline QualificationType& WithAutoGrantedValue(int value) { SetAutoGrantedValue(value); return *this;}
 
   private:
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_keywords;
     bool m_keywordsHasBeenSet;
+
     QualificationTypeStatus m_qualificationTypeStatus;
     bool m_qualificationTypeStatusHasBeenSet;
+
     Aws::String m_test;
     bool m_testHasBeenSet;
+
     long long m_testDurationInSeconds;
     bool m_testDurationInSecondsHasBeenSet;
+
     Aws::String m_answerKey;
     bool m_answerKeyHasBeenSet;
+
     long long m_retryDelayInSeconds;
     bool m_retryDelayInSecondsHasBeenSet;
+
     bool m_isRequestable;
     bool m_isRequestableHasBeenSet;
+
     bool m_autoGranted;
     bool m_autoGrantedHasBeenSet;
+
     int m_autoGrantedValue;
     bool m_autoGrantedValueHasBeenSet;
   };

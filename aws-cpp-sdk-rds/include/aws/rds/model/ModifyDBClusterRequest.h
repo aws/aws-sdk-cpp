@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The DB cluster identifier for the cluster being modified. This parameter is
      * not case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier
@@ -111,6 +112,7 @@ namespace Model
      * hyphens.</p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster.
@@ -182,6 +184,7 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithNewDBClusterIdentifier(const char* value) { SetNewDBClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>A value that specifies whether the modifications in this request and any
      * pending modifications are asynchronously applied as soon as possible, regardless
@@ -233,6 +236,7 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
+
     /**
      * <p>The number of days for which automated backups are retained. You must specify
      * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
@@ -253,6 +257,7 @@ namespace Model
      * <p>Must be a value from 1 to 35</p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
+
 
     /**
      * <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
@@ -288,6 +293,7 @@ namespace Model
      * <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
      */
     inline ModifyDBClusterRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
+
 
     /**
      * <p>A list of VPC security groups that the DB cluster will belong to.</p>
@@ -329,6 +335,7 @@ namespace Model
      */
     inline ModifyDBClusterRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The port number on which the DB cluster accepts connections.</p>
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
@@ -349,6 +356,7 @@ namespace Model
      * port as the original DB cluster.</p>
      */
     inline ModifyDBClusterRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The new password for the master database user. This password can contain any
@@ -398,6 +406,7 @@ namespace Model
      * contain from 8 to 41 characters.</p>
      */
     inline ModifyDBClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
+
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
@@ -496,6 +505,7 @@ namespace Model
      * cluster.</p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+
 
     /**
      * <p>The daily time range during which automated backups are created if automated
@@ -602,6 +612,7 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
+
     /**
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
@@ -693,6 +704,7 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts, and otherwise false.</p>
@@ -715,28 +727,40 @@ namespace Model
     inline ModifyDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
   private:
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     Aws::String m_newDBClusterIdentifier;
     bool m_newDBClusterIdentifierHasBeenSet;
+
     bool m_applyImmediately;
     bool m_applyImmediatelyHasBeenSet;
+
     int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
+
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_masterUserPassword;
     bool m_masterUserPasswordHasBeenSet;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };

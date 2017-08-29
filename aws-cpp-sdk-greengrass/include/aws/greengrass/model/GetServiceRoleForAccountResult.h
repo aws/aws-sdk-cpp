@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetServiceRoleForAccountResult();
-    GetServiceRoleForAccountResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetServiceRoleForAccountResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetServiceRoleForAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetServiceRoleForAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Time when the service role was associated to the account.
@@ -75,6 +76,7 @@ namespace Model
      * Time when the service role was associated to the account.
      */
     inline GetServiceRoleForAccountResult& WithAssociatedAt(const char* value) { SetAssociatedAt(value); return *this;}
+
 
     /**
      * Role arn which is associated to the account.
@@ -112,7 +114,9 @@ namespace Model
     inline GetServiceRoleForAccountResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_associatedAt;
+
     Aws::String m_roleArn;
   };
 

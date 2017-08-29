@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DisassociateProductFromPortfolioRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The product identifier.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The product identifier.</p>
      */
     inline DisassociateProductFromPortfolioRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
+
 
     /**
      * <p>The portfolio identifier.</p>
@@ -156,10 +159,13 @@ namespace Model
     inline DisassociateProductFromPortfolioRequest& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
     Aws::String m_portfolioId;
     bool m_portfolioIdHasBeenSet;
   };

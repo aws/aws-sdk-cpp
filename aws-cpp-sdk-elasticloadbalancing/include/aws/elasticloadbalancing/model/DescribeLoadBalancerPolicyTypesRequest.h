@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The names of the policy types. If no names are specified, describes all
      * policy types defined by Elastic Load Balancing.</p>
@@ -92,6 +93,7 @@ namespace Model
     inline DescribeLoadBalancerPolicyTypesRequest& AddPolicyTypeNames(const char* value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_policyTypeNames;
     bool m_policyTypeNamesHasBeenSet;
   };

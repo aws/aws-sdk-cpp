@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline GetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
 
   private:
+
     Aws::String m_platformApplicationArn;
     bool m_platformApplicationArnHasBeenSet;
   };

@@ -30,12 +30,12 @@ DescribeEventSubscriptionsResult::DescribeEventSubscriptionsResult()
 {
 }
 
-DescribeEventSubscriptionsResult::DescribeEventSubscriptionsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEventSubscriptionsResult::DescribeEventSubscriptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Marker"))

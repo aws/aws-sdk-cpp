@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet to get event logs for.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>Unique identifier for a fleet to get event logs for.</p>
      */
     inline DescribeFleetEventsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Earliest date to retrieve event logs for. If no start time is specified, this
@@ -115,6 +117,7 @@ namespace Model
      */
     inline DescribeFleetEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
@@ -155,6 +158,7 @@ namespace Model
      */
     inline DescribeFleetEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -172,6 +176,7 @@ namespace Model
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline DescribeFleetEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -223,14 +228,19 @@ namespace Model
     inline DescribeFleetEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

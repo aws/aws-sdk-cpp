@@ -30,12 +30,12 @@ GetWebACLForResourceResult::GetWebACLForResourceResult()
 {
 }
 
-GetWebACLForResourceResult::GetWebACLForResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+GetWebACLForResourceResult::GetWebACLForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetWebACLForResourceResult& GetWebACLForResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetWebACLForResourceResult& GetWebACLForResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WebACLSummary"))

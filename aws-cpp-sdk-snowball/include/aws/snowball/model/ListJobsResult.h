@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListJobsResult();
-    ListJobsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListJobsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and
@@ -91,6 +92,7 @@ namespace Model
      * jobs. </p>
      */
     inline ListJobsResult& AddJobListEntries(JobListEntry&& value) { m_jobListEntries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>HTTP requests are stateless. If you use this automatically generated
@@ -149,7 +151,9 @@ namespace Model
     inline ListJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<JobListEntry> m_jobListEntries;
+
     Aws::String m_nextToken;
   };
 

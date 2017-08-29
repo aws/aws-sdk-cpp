@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool where you want to add custom
      * attributes.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline AddCustomAttributesRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>An array of custom attributes, such as Mutable and Name.</p>
      */
@@ -120,8 +122,10 @@ namespace Model
     inline AddCustomAttributesRequest& AddCustomAttributes(SchemaAttributeType&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::Vector<SchemaAttributeType> m_customAttributes;
     bool m_customAttributesHasBeenSet;
   };

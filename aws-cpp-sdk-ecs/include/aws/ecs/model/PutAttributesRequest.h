@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that
      * contains the resource to apply attributes. If you do not specify a cluster, the
@@ -86,6 +87,7 @@ namespace Model
      * default cluster is assumed.</p>
      */
     inline PutAttributesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>The attributes to apply to your resource. You can specify up to 10 custom
@@ -137,8 +139,10 @@ namespace Model
     inline PutAttributesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
   };

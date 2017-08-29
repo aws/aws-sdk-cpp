@@ -49,6 +49,7 @@ namespace Model
     MappingParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Provides additional mapping information when JSON is the record format on the
      * streaming source.</p>
@@ -78,6 +79,7 @@ namespace Model
      * streaming source.</p>
      */
     inline MappingParameters& WithJSONMappingParameters(JSONMappingParameters&& value) { SetJSONMappingParameters(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides additional mapping information when the record format uses
@@ -110,8 +112,10 @@ namespace Model
     inline MappingParameters& WithCSVMappingParameters(CSVMappingParameters&& value) { SetCSVMappingParameters(std::move(value)); return *this;}
 
   private:
+
     JSONMappingParameters m_jSONMappingParameters;
     bool m_jSONMappingParametersHasBeenSet;
+
     CSVMappingParameters m_cSVMappingParameters;
     bool m_cSVMappingParametersHasBeenSet;
   };

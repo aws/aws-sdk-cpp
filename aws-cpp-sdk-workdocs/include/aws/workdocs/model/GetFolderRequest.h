@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline GetFolderRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the folder.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      */
     inline GetFolderRequest& WithFolderId(const char* value) { SetFolderId(value); return *this;}
 
+
     /**
      * <p>Set to TRUE to include custom metadata in the response.</p>
      */
@@ -135,10 +138,13 @@ namespace Model
     inline GetFolderRequest& WithIncludeCustomMetadata(bool value) { SetIncludeCustomMetadata(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_folderId;
     bool m_folderIdHasBeenSet;
+
     bool m_includeCustomMetadata;
     bool m_includeCustomMetadataHasBeenSet;
   };

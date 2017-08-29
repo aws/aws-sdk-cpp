@@ -46,6 +46,7 @@ namespace Model
     UpdateGrokClassifierRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the <code>GrokClassifier</code>.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the <code>GrokClassifier</code>.</p>
      */
     inline UpdateGrokClassifierRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The type of result that the classifier matches, such as Twitter Json,
@@ -123,6 +125,7 @@ namespace Model
      */
     inline UpdateGrokClassifierRequest& WithClassification(const char* value) { SetClassification(value); return *this;}
 
+
     /**
      * <p>The grok pattern used by this classifier.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>The grok pattern used by this classifier.</p>
      */
     inline UpdateGrokClassifierRequest& WithGrokPattern(const char* value) { SetGrokPattern(value); return *this;}
+
 
     /**
      * <p>Custom grok patterns used by this classifier.</p>
@@ -194,12 +198,16 @@ namespace Model
     inline UpdateGrokClassifierRequest& WithCustomPatterns(const char* value) { SetCustomPatterns(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_classification;
     bool m_classificationHasBeenSet;
+
     Aws::String m_grokPattern;
     bool m_grokPatternHasBeenSet;
+
     Aws::String m_customPatterns;
     bool m_customPatternsHasBeenSet;
   };

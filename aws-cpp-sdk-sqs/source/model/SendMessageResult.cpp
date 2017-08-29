@@ -31,12 +31,12 @@ SendMessageResult::SendMessageResult()
 {
 }
 
-SendMessageResult::SendMessageResult(const AmazonWebServiceResult<XmlDocument>& result)
+SendMessageResult::SendMessageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SendMessageResult& SendMessageResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SendMessageResult& SendMessageResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

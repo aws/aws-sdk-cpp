@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of key-value pairs containing information about the port
      * mappings.</p>
@@ -66,6 +67,7 @@ namespace Model
      * mappings.</p>
      */
     inline OpenInstancePublicPortsRequest& WithPortInfo(PortInfo&& value) { SetPortInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the instance for which you want to open the public ports.</p>
@@ -103,8 +105,10 @@ namespace Model
     inline OpenInstancePublicPortsRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
   private:
+
     PortInfo m_portInfo;
     bool m_portInfoHasBeenSet;
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
   };

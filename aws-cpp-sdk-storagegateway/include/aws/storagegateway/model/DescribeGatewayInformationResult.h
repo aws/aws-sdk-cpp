@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeGatewayInformationResult();
-    DescribeGatewayInformationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeGatewayInformationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeGatewayInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeGatewayInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -68,6 +69,7 @@ namespace Model
 
     
     inline DescribeGatewayInformationResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     /**
      * <p>The unique identifier assigned to your gateway during activation. This ID
@@ -118,6 +120,7 @@ namespace Model
      */
     inline DescribeGatewayInformationResult& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
 
+
     /**
      * <p>The name you configured for your gateway.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The name you configured for your gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
+
 
     /**
      * <p>A value that indicates the time zone configured for the gateway.</p>
@@ -188,6 +192,7 @@ namespace Model
      */
     inline DescribeGatewayInformationResult& WithGatewayTimezone(const char* value) { SetGatewayTimezone(value); return *this;}
 
+
     /**
      * <p>A value that indicates the operating state of the gateway.</p>
      */
@@ -222,6 +227,7 @@ namespace Model
      * <p>A value that indicates the operating state of the gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithGatewayState(const char* value) { SetGatewayState(value); return *this;}
+
 
     /**
      * <p>A <a>NetworkInterface</a> array that contains descriptions of the gateway
@@ -265,6 +271,7 @@ namespace Model
      */
     inline DescribeGatewayInformationResult& AddGatewayNetworkInterfaces(NetworkInterface&& value) { m_gatewayNetworkInterfaces.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The type of the gateway.</p>
      */
@@ -299,6 +306,7 @@ namespace Model
      * <p>The type of the gateway.</p>
      */
     inline DescribeGatewayInformationResult& WithGatewayType(const char* value) { SetGatewayType(value); return *this;}
+
 
     /**
      * <p>The date on which an update to the gateway is available. This date is in the
@@ -348,6 +356,7 @@ namespace Model
      * field is not returned in the response.</p>
      */
     inline DescribeGatewayInformationResult& WithNextUpdateAvailabilityDate(const char* value) { SetNextUpdateAvailabilityDate(value); return *this;}
+
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
@@ -399,14 +408,23 @@ namespace Model
     inline DescribeGatewayInformationResult& WithLastSoftwareUpdate(const char* value) { SetLastSoftwareUpdate(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
+
     Aws::String m_gatewayId;
+
     Aws::String m_gatewayName;
+
     Aws::String m_gatewayTimezone;
+
     Aws::String m_gatewayState;
+
     Aws::Vector<NetworkInterface> m_gatewayNetworkInterfaces;
+
     Aws::String m_gatewayType;
+
     Aws::String m_nextUpdateAvailabilityDate;
+
     Aws::String m_lastSoftwareUpdate;
   };
 

@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
     inline CreateRuleRequest& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
+
 
     /**
      * <p>A condition. Each condition specifies a field name and a single value.</p>
@@ -202,6 +204,7 @@ namespace Model
      */
     inline CreateRuleRequest& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The priority for the rule. A listener can't have multiple rules with the same
      * priority.</p>
@@ -219,6 +222,7 @@ namespace Model
      * priority.</p>
      */
     inline CreateRuleRequest& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
      * <p>An action. Each action has the type <code>forward</code> and specifies a
@@ -263,12 +267,16 @@ namespace Model
     inline CreateRuleRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_listenerArn;
     bool m_listenerArnHasBeenSet;
+
     Aws::Vector<RuleCondition> m_conditions;
     bool m_conditionsHasBeenSet;
+
     int m_priority;
     bool m_priorityHasBeenSet;
+
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet;
   };

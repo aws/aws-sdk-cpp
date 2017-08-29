@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeApplicationVersionsResult();
-    DescribeApplicationVersionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeApplicationVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeApplicationVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeApplicationVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeApplicationVersionsResult& AddApplicationVersions(ApplicationVersionDescription&& value) { m_applicationVersions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>In a paginated request, the token that you can pass in a subsequent request
      * to get the next response page.</p>
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeApplicationVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline DescribeApplicationVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ApplicationVersionDescription> m_applicationVersions;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

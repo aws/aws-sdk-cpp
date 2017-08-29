@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeClusterResult();
-    DescribeClusterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about a specific cluster, including shipping information, cluster
@@ -72,6 +73,7 @@ namespace Model
     inline DescribeClusterResult& WithClusterMetadata(ClusterMetadata&& value) { SetClusterMetadata(std::move(value)); return *this;}
 
   private:
+
     ClusterMetadata m_clusterMetadata;
   };
 

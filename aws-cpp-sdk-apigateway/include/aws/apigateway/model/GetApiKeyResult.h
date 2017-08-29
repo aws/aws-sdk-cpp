@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     GetApiKeyResult();
-    GetApiKeyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApiKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetApiKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetApiKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of the API Key.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline GetApiKeyResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The value of the API Key.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      */
     inline GetApiKeyResult& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>The name of the API Key.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>The name of the API Key.</p>
      */
     inline GetApiKeyResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
@@ -200,6 +204,7 @@ namespace Model
      */
     inline GetApiKeyResult& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
 
+
     /**
      * <p>The description of the API Key.</p>
      */
@@ -235,6 +240,7 @@ namespace Model
      */
     inline GetApiKeyResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Specifies whether the API Key can be used by callers.</p>
      */
@@ -249,6 +255,7 @@ namespace Model
      * <p>Specifies whether the API Key can be used by callers.</p>
      */
     inline GetApiKeyResult& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The timestamp when the API Key was created.</p>
@@ -275,6 +282,7 @@ namespace Model
      */
     inline GetApiKeyResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The timestamp when the API Key was last updated.</p>
      */
@@ -299,6 +307,7 @@ namespace Model
      * <p>The timestamp when the API Key was last updated.</p>
      */
     inline GetApiKeyResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
@@ -349,14 +358,23 @@ namespace Model
     inline GetApiKeyResult& AddStageKeys(const char* value) { m_stageKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_id;
+
     Aws::String m_value;
+
     Aws::String m_name;
+
     Aws::String m_customerId;
+
     Aws::String m_description;
+
     bool m_enabled;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
+
     Aws::Vector<Aws::String> m_stageKeys;
   };
 

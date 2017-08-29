@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the patch group for which the patch state information should be
      * retrieved.</p>
@@ -79,6 +80,7 @@ namespace Model
      * retrieved.</p>
      */
     inline DescribeInstancePatchStatesForPatchGroupRequest& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
+
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string between
@@ -129,6 +131,7 @@ namespace Model
      */
     inline DescribeInstancePatchStatesForPatchGroupRequest& AddFilters(InstancePatchStateFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
@@ -171,6 +174,7 @@ namespace Model
      */
     inline DescribeInstancePatchStatesForPatchGroupRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of patches to return (per page).</p>
      */
@@ -187,12 +191,16 @@ namespace Model
     inline DescribeInstancePatchStatesForPatchGroupRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_patchGroup;
     bool m_patchGroupHasBeenSet;
+
     Aws::Vector<InstancePatchStateFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

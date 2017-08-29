@@ -31,12 +31,12 @@ DeleteIdentityPolicyResult::DeleteIdentityPolicyResult()
 {
 }
 
-DeleteIdentityPolicyResult::DeleteIdentityPolicyResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteIdentityPolicyResult::DeleteIdentityPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteIdentityPolicyResult& DeleteIdentityPolicyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteIdentityPolicyResult& DeleteIdentityPolicyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

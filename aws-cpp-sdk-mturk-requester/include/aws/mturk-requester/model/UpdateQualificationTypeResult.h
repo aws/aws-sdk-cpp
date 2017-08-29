@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateQualificationTypeResult();
-    UpdateQualificationTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateQualificationTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateQualificationTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateQualificationTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> Contains a QualificationType data structure.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateQualificationTypeResult& WithQualificationType(QualificationType&& value) { SetQualificationType(std::move(value)); return *this;}
 
   private:
+
     QualificationType m_qualificationType;
   };
 

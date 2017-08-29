@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the instance.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
   private:
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
   };

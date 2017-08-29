@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the Amazon Redshift HSM configuration.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      */
     inline HsmConfiguration& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
 
+
     /**
      * <p>A text description of the HSM configuration.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>A text description of the HSM configuration.</p>
      */
     inline HsmConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The IP address that the Amazon Redshift cluster must use to access the
@@ -165,6 +168,7 @@ namespace Model
      */
     inline HsmConfiguration& WithHsmIpAddress(const char* value) { SetHsmIpAddress(value); return *this;}
 
+
     /**
      * <p>The name of the partition in the HSM where the Amazon Redshift clusters will
      * store their database encryption keys.</p>
@@ -207,6 +211,7 @@ namespace Model
      */
     inline HsmConfiguration& WithHsmPartitionName(const char* value) { SetHsmPartitionName(value); return *this;}
 
+
     /**
      * <p>The list of tags for the HSM configuration.</p>
      */
@@ -243,14 +248,19 @@ namespace Model
     inline HsmConfiguration& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_hsmConfigurationIdentifier;
     bool m_hsmConfigurationIdentifierHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_hsmIpAddress;
     bool m_hsmIpAddressHasBeenSet;
+
     Aws::String m_hsmPartitionName;
     bool m_hsmPartitionNameHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

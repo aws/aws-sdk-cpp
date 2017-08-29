@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
      * the same region. If the delivery streams are in different accounts or different
@@ -90,6 +91,7 @@ namespace Model
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
 
+
     /**
      * <p>The delivery stream type. This parameter can be one of the following
      * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
@@ -135,6 +137,7 @@ namespace Model
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamType(DeliveryStreamType&& value) { SetDeliveryStreamType(std::move(value)); return *this;}
 
+
     /**
      * <p>When a Kinesis stream is used as the source for the delivery stream, a
      * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and
@@ -170,6 +173,7 @@ namespace Model
      */
     inline CreateDeliveryStreamRequest& WithKinesisStreamSourceConfiguration(KinesisStreamSourceConfiguration&& value) { SetKinesisStreamSourceConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The destination in Amazon S3. You can specify only one destination.</p>
      */
@@ -195,6 +199,7 @@ namespace Model
      */
     inline CreateDeliveryStreamRequest& WithExtendedS3DestinationConfiguration(ExtendedS3DestinationConfiguration&& value) { SetExtendedS3DestinationConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
      */
@@ -219,6 +224,7 @@ namespace Model
      * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
      */
     inline CreateDeliveryStreamRequest& WithRedshiftDestinationConfiguration(RedshiftDestinationConfiguration&& value) { SetRedshiftDestinationConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The destination in Amazon ES. You can specify only one destination.</p>
@@ -246,16 +252,22 @@ namespace Model
     inline CreateDeliveryStreamRequest& WithElasticsearchDestinationConfiguration(ElasticsearchDestinationConfiguration&& value) { SetElasticsearchDestinationConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet;
+
     DeliveryStreamType m_deliveryStreamType;
     bool m_deliveryStreamTypeHasBeenSet;
+
     KinesisStreamSourceConfiguration m_kinesisStreamSourceConfiguration;
     bool m_kinesisStreamSourceConfigurationHasBeenSet;
+
     ExtendedS3DestinationConfiguration m_extendedS3DestinationConfiguration;
     bool m_extendedS3DestinationConfigurationHasBeenSet;
+
     RedshiftDestinationConfiguration m_redshiftDestinationConfiguration;
     bool m_redshiftDestinationConfigurationHasBeenSet;
+
     ElasticsearchDestinationConfiguration m_elasticsearchDestinationConfiguration;
     bool m_elasticsearchDestinationConfigurationHasBeenSet;
   };

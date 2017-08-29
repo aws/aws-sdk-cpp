@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListObjectParentPathsResult();
-    ListObjectParentPathsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListObjectParentPathsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListObjectParentPathsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListObjectParentPathsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListObjectParentPathsResult& AddPathToObjectIdentifiersList(PathToObjectIdentifiers&& value) { m_pathToObjectIdentifiersList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -121,7 +123,9 @@ namespace Model
     inline ListObjectParentPathsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PathToObjectIdentifiers> m_pathToObjectIdentifiersList;
+
     Aws::String m_nextToken;
   };
 

@@ -30,12 +30,12 @@ ImportKeyMaterialResult::ImportKeyMaterialResult()
 {
 }
 
-ImportKeyMaterialResult::ImportKeyMaterialResult(const AmazonWebServiceResult<JsonValue>& result)
+ImportKeyMaterialResult::ImportKeyMaterialResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ImportKeyMaterialResult& ImportKeyMaterialResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ImportKeyMaterialResult& ImportKeyMaterialResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

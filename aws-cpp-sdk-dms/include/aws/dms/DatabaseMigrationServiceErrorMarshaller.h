@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace DatabaseMigrationService
+} // namespace Client
 } // namespace Aws

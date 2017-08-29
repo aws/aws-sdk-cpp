@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The custom platform attribute to which the filter values are applied.</p>
      * <p>Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> |
@@ -99,6 +100,7 @@ namespace Model
      * <code>PlatformStatus</code> | <code>PlatformOwner</code> </p>
      */
     inline PlatformFilter& WithType(const char* value) { SetType(value); return *this;}
+
 
     /**
      * <p>The operator to apply to the <code>Type</code> with each of the
@@ -170,6 +172,7 @@ namespace Model
      */
     inline PlatformFilter& WithOperator(const char* value) { SetOperator(value); return *this;}
 
+
     /**
      * <p>The list of values applied to the custom platform attribute.</p>
      */
@@ -211,10 +214,13 @@ namespace Model
     inline PlatformFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_operator;
     bool m_operatorHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

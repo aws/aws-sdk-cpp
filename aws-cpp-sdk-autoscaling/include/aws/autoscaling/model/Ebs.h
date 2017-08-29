@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the snapshot.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Ebs& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>The volume size, in GiB. For <code>standard</code> volumes, specify a value
      * from 1 to 1,024. For <code>io1</code> volumes, specify a value from 4 to 16,384.
@@ -112,6 +114,7 @@ namespace Model
      * volume size, the default is the snapshot size.</p>
      */
     inline Ebs& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
+
 
     /**
      * <p>The volume type. For more information, see <a
@@ -176,6 +179,7 @@ namespace Model
      */
     inline Ebs& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
+
     /**
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      * <p>Default: <code>true</code> </p>
@@ -193,6 +197,7 @@ namespace Model
      * <p>Default: <code>true</code> </p>
      */
     inline Ebs& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the
@@ -214,6 +219,7 @@ namespace Model
      * <code>io1</code>.</p>
      */
     inline Ebs& WithIops(int value) { SetIops(value); return *this;}
+
 
     /**
      * <p>Indicates whether the volume should be encrypted. Encrypted EBS volumes must
@@ -249,16 +255,22 @@ namespace Model
     inline Ebs& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
   private:
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     int m_volumeSize;
     bool m_volumeSizeHasBeenSet;
+
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
   };

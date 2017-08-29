@@ -48,6 +48,7 @@ namespace Model
     Evaluation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of AWS resource that was evaluated.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Evaluation& WithComplianceResourceType(const char* value) { SetComplianceResourceType(value); return *this;}
 
+
     /**
      * <p>The ID of the AWS resource that was evaluated.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The ID of the AWS resource that was evaluated.</p>
      */
     inline Evaluation& WithComplianceResourceId(const char* value) { SetComplianceResourceId(value); return *this;}
+
 
     /**
      * <p>Indicates whether the AWS resource complies with the AWS Config rule that it
@@ -183,6 +186,7 @@ namespace Model
      */
     inline Evaluation& WithComplianceType(ComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
 
+
     /**
      * <p>Supplementary information about how the evaluation determined the
      * compliance.</p>
@@ -224,6 +228,7 @@ namespace Model
      * compliance.</p>
      */
     inline Evaluation& WithAnnotation(const char* value) { SetAnnotation(value); return *this;}
+
 
     /**
      * <p>The time of the event in AWS Config that triggered the evaluation. For
@@ -271,14 +276,19 @@ namespace Model
     inline Evaluation& WithOrderingTimestamp(Aws::Utils::DateTime&& value) { SetOrderingTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_complianceResourceType;
     bool m_complianceResourceTypeHasBeenSet;
+
     Aws::String m_complianceResourceId;
     bool m_complianceResourceIdHasBeenSet;
+
     ComplianceType m_complianceType;
     bool m_complianceTypeHasBeenSet;
+
     Aws::String m_annotation;
     bool m_annotationHasBeenSet;
+
     Aws::Utils::DateTime m_orderingTimestamp;
     bool m_orderingTimestampHasBeenSet;
   };

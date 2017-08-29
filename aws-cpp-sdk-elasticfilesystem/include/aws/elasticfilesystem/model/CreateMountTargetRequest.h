@@ -38,6 +38,7 @@ namespace Model
     CreateMountTargetRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>ID of the file system for which to create the mount target.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>ID of the file system for which to create the mount target.</p>
      */
     inline CreateMountTargetRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+
 
     /**
      * <p>ID of the subnet to add the mount target in.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline CreateMountTargetRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
     /**
      * <p>Valid IPv4 address within the address range of the specified subnet.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>Valid IPv4 address within the address range of the specified subnet.</p>
      */
     inline CreateMountTargetRequest& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
 
     /**
      * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
@@ -192,12 +196,16 @@ namespace Model
     inline CreateMountTargetRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
   private:
+
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
   };

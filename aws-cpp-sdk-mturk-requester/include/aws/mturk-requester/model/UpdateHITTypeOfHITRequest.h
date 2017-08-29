@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The HIT to update.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The HIT to update.</p>
      */
     inline UpdateHITTypeOfHITRequest& WithHITId(const char* value) { SetHITId(value); return *this;}
+
 
     /**
      * <p>The ID of the new HIT type.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline UpdateHITTypeOfHITRequest& WithHITTypeId(const char* value) { SetHITTypeId(value); return *this;}
 
   private:
+
     Aws::String m_hITId;
     bool m_hITIdHasBeenSet;
+
     Aws::String m_hITTypeId;
     bool m_hITTypeIdHasBeenSet;
   };

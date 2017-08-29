@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the directory where you want to detach the
      * typed link.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DetachTypedLinkRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>Used to accept a typed link specifier as input.</p>
      */
@@ -105,8 +107,10 @@ namespace Model
     inline DetachTypedLinkRequest& WithTypedLinkSpecifier(TypedLinkSpecifier&& value) { SetTypedLinkSpecifier(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     TypedLinkSpecifier m_typedLinkSpecifier;
     bool m_typedLinkSpecifierHasBeenSet;
   };

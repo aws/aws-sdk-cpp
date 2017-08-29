@@ -30,12 +30,12 @@ ListGitHubAccountTokenNamesResult::ListGitHubAccountTokenNamesResult()
 {
 }
 
-ListGitHubAccountTokenNamesResult::ListGitHubAccountTokenNamesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListGitHubAccountTokenNamesResult::ListGitHubAccountTokenNamesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListGitHubAccountTokenNamesResult& ListGitHubAccountTokenNamesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListGitHubAccountTokenNamesResult& ListGitHubAccountTokenNamesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("tokenNameList"))

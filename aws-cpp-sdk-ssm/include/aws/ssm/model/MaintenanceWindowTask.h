@@ -52,6 +52,7 @@ namespace Model
     MaintenanceWindowTask& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Maintenance Window ID where the task is registered.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline MaintenanceWindowTask& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
+
     /**
      * <p>The task ID.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The task ID.</p>
      */
     inline MaintenanceWindowTask& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
+
 
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
@@ -178,6 +181,7 @@ namespace Model
      */
     inline MaintenanceWindowTask& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
+
     /**
      * <p>The type of task. The type can be one of the following: RUN_COMMAND,
      * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
@@ -207,6 +211,7 @@ namespace Model
      * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
      */
     inline MaintenanceWindowTask& WithType(MaintenanceWindowTaskType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
@@ -256,6 +261,7 @@ namespace Model
      * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
     inline MaintenanceWindowTask& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
@@ -312,6 +318,7 @@ namespace Model
      */
     inline MaintenanceWindowTask& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The priority of the task in the Maintenance Window. The lower the number, the
      * higher the priority. Tasks that have the same priority are scheduled in
@@ -332,6 +339,7 @@ namespace Model
      * parallel.</p>
      */
     inline MaintenanceWindowTask& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
      * <p>Information about an Amazon S3 bucket to write task-level logs to.</p>
@@ -357,6 +365,7 @@ namespace Model
      * <p>Information about an Amazon S3 bucket to write task-level logs to.</p>
      */
     inline MaintenanceWindowTask& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>The role that should be assumed when executing the task</p>
@@ -393,6 +402,7 @@ namespace Model
      */
     inline MaintenanceWindowTask& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
+
     /**
      * <p>The maximum number of targets this task can be run for in parallel.</p>
      */
@@ -427,6 +437,7 @@ namespace Model
      * <p>The maximum number of targets this task can be run for in parallel.</p>
      */
     inline MaintenanceWindowTask& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
+
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
@@ -470,6 +481,7 @@ namespace Model
      */
     inline MaintenanceWindowTask& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
+
     /**
      * <p>The task name.</p>
      */
@@ -504,6 +516,7 @@ namespace Model
      * <p>The task name.</p>
      */
     inline MaintenanceWindowTask& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A description of the task.</p>
@@ -541,30 +554,43 @@ namespace Model
     inline MaintenanceWindowTask& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::String m_windowTaskId;
     bool m_windowTaskIdHasBeenSet;
+
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet;
+
     MaintenanceWindowTaskType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> m_taskParameters;
     bool m_taskParametersHasBeenSet;
+
     int m_priority;
     bool m_priorityHasBeenSet;
+
     LoggingInfo m_loggingInfo;
     bool m_loggingInfoHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     Aws::String m_maxConcurrency;
     bool m_maxConcurrencyHasBeenSet;
+
     Aws::String m_maxErrors;
     bool m_maxErrorsHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

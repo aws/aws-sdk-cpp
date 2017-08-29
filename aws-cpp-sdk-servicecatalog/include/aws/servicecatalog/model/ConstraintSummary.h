@@ -46,6 +46,7 @@ namespace Model
     ConstraintSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of the constraint. </p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The type of the constraint. </p>
      */
     inline ConstraintSummary& WithType(const char* value) { SetType(value); return *this;}
+
 
     /**
      * <p>The text description of the constraint.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline ConstraintSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

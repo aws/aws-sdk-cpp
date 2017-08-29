@@ -49,6 +49,7 @@ namespace Model
     EndpointBatchItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The address or token of the endpoint as provided by your push provider (e.g.
      * DeviceToken or RegistrationId).
@@ -90,6 +91,7 @@ namespace Model
      * DeviceToken or RegistrationId).
      */
     inline EndpointBatchItem& WithAddress(const char* value) { SetAddress(value); return *this;}
+
 
     /**
      * Custom attributes that your app reports to Amazon Pinpoint. You can use these
@@ -157,6 +159,7 @@ namespace Model
      */
     inline EndpointBatchItem& AddAttributes(const char* key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * The channel type.
 
@@ -192,6 +195,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      */
     inline EndpointBatchItem& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
 
+
     /**
      * The endpoint demographic attributes.
      */
@@ -216,6 +220,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      * The endpoint demographic attributes.
      */
     inline EndpointBatchItem& WithDemographic(EndpointDemographic&& value) { SetDemographic(std::move(value)); return *this;}
+
 
     /**
      * The last time the endpoint was updated. Provided in ISO 8601 format.
@@ -251,6 +256,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      * The last time the endpoint was updated. Provided in ISO 8601 format.
      */
     inline EndpointBatchItem& WithEffectiveDate(const char* value) { SetEffectiveDate(value); return *this;}
+
 
     /**
      * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
@@ -294,6 +300,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      */
     inline EndpointBatchItem& WithEndpointStatus(const char* value) { SetEndpointStatus(value); return *this;}
 
+
     /**
      * The unique Id for the Endpoint in the batch.
      */
@@ -329,6 +336,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      */
     inline EndpointBatchItem& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * The endpoint location attributes.
      */
@@ -353,6 +361,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      * The endpoint location attributes.
      */
     inline EndpointBatchItem& WithLocation(EndpointLocation&& value) { SetLocation(std::move(value)); return *this;}
+
 
     /**
      * Custom metrics that your app reports to Amazon Pinpoint.
@@ -393,6 +402,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      * Custom metrics that your app reports to Amazon Pinpoint.
      */
     inline EndpointBatchItem& AddMetrics(const char* key, double value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
+
 
     /**
      * Indicates whether a user has opted out of receiving messages with one of the
@@ -471,6 +481,7 @@ NONE - Users has
      */
     inline EndpointBatchItem& WithOptOut(const char* value) { SetOptOut(value); return *this;}
 
+
     /**
      * The unique ID for the most recent request to update the endpoint.
      */
@@ -506,6 +517,7 @@ NONE - Users has
      */
     inline EndpointBatchItem& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
+
     /**
      * Custom user-specific attributes that your app reports to Amazon Pinpoint.
      */
@@ -532,28 +544,40 @@ NONE - Users has
     inline EndpointBatchItem& WithUser(EndpointUser&& value) { SetUser(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_address;
     bool m_addressHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_attributes;
     bool m_attributesHasBeenSet;
+
     ChannelType m_channelType;
     bool m_channelTypeHasBeenSet;
+
     EndpointDemographic m_demographic;
     bool m_demographicHasBeenSet;
+
     Aws::String m_effectiveDate;
     bool m_effectiveDateHasBeenSet;
+
     Aws::String m_endpointStatus;
     bool m_endpointStatusHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     EndpointLocation m_location;
     bool m_locationHasBeenSet;
+
     Aws::Map<Aws::String, double> m_metrics;
     bool m_metricsHasBeenSet;
+
     Aws::String m_optOut;
     bool m_optOutHasBeenSet;
+
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
+
     EndpointUser m_user;
     bool m_userHasBeenSet;
   };

@@ -29,12 +29,12 @@ DeleteReusableDelegationSetResult::DeleteReusableDelegationSetResult()
 {
 }
 
-DeleteReusableDelegationSetResult::DeleteReusableDelegationSetResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteReusableDelegationSetResult::DeleteReusableDelegationSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteReusableDelegationSetResult& DeleteReusableDelegationSetResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteReusableDelegationSetResult& DeleteReusableDelegationSetResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

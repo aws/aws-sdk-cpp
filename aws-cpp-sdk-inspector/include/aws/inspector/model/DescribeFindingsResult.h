@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     DescribeFindingsResult();
-    DescribeFindingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFindingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the finding.</p>
@@ -79,6 +80,7 @@ namespace Model
      * <p>Information about the finding.</p>
      */
     inline DescribeFindingsResult& AddFindings(Finding&& value) { m_findings.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Finding details that cannot be described. An error code is provided for each
@@ -147,7 +149,9 @@ namespace Model
     inline DescribeFindingsResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
 
   private:
+
     Aws::Vector<Finding> m_findings;
+
     Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
   };
 

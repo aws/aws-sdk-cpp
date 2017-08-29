@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DescribeUserProfileRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 
   private:
+
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;
   };

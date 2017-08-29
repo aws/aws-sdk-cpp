@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListObjectPoliciesResult();
-    ListObjectPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListObjectPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListObjectPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListObjectPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ListObjectPoliciesResult& AddAttachedPolicyIds(const char* value) { m_attachedPolicyIds.push_back(value); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -126,7 +128,9 @@ namespace Model
     inline ListObjectPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_attachedPolicyIds;
+
     Aws::String m_nextToken;
   };
 

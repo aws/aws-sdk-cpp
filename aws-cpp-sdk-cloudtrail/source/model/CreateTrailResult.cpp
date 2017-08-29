@@ -33,7 +33,7 @@ CreateTrailResult::CreateTrailResult() :
 {
 }
 
-CreateTrailResult::CreateTrailResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateTrailResult::CreateTrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_includeGlobalServiceEvents(false),
     m_isMultiRegionTrail(false),
     m_logFileValidationEnabled(false)
@@ -41,7 +41,7 @@ CreateTrailResult::CreateTrailResult(const AmazonWebServiceResult<JsonValue>& re
   *this = result;
 }
 
-CreateTrailResult& CreateTrailResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateTrailResult& CreateTrailResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Name"))

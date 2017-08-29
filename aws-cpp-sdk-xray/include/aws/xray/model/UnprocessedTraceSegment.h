@@ -46,6 +46,7 @@ namespace Model
     UnprocessedTraceSegment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The segment's ID.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline UnprocessedTraceSegment& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The error that caused processing to fail.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The error that caused processing to fail.</p>
      */
     inline UnprocessedTraceSegment& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The error message.</p>
@@ -152,10 +155,13 @@ namespace Model
     inline UnprocessedTraceSegment& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

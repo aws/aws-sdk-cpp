@@ -41,6 +41,7 @@ namespace Model
     ImportJobResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Sets whether the endpoints create a segment when they are imported.
      */
@@ -55,6 +56,7 @@ namespace Model
      * Sets whether the endpoints create a segment when they are imported.
      */
     inline ImportJobResource& WithDefineSegment(bool value) { SetDefineSegment(value); return *this;}
+
 
     /**
      * A unique, custom ID assigned to the IAM role that restricts who can assume the
@@ -98,6 +100,7 @@ namespace Model
      */
     inline ImportJobResource& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
+
     /**
      * The format of the files that contain the endpoint definitions.
 Valid values:
@@ -133,6 +136,7 @@ Valid values:
      */
     inline ImportJobResource& WithFormat(Format&& value) { SetFormat(std::move(value)); return *this;}
 
+
     /**
      * Sets whether the endpoints are registered with Amazon Pinpoint when they are
      * imported.
@@ -150,6 +154,7 @@ Valid values:
      * imported.
      */
     inline ImportJobResource& WithRegisterEndpoints(bool value) { SetRegisterEndpoints(value); return *this;}
+
 
     /**
      * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
@@ -192,6 +197,7 @@ Valid values:
      * to the Amazon S3 location that contains the endpoints to import.
      */
     inline ImportJobResource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * A URL that points to the location within an Amazon S3 bucket that contains the
@@ -277,6 +283,7 @@ Amazon
      */
     inline ImportJobResource& WithS3Url(const char* value) { SetS3Url(value); return *this;}
 
+
     /**
      * The ID of the segment to update if the import job is meant to update an existing
      * segment.
@@ -318,6 +325,7 @@ Amazon
      * segment.
      */
     inline ImportJobResource& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+
 
     /**
      * A custom name for the segment created by the import job. Use if DefineSegment is
@@ -362,20 +370,28 @@ Amazon
     inline ImportJobResource& WithSegmentName(const char* value) { SetSegmentName(value); return *this;}
 
   private:
+
     bool m_defineSegment;
     bool m_defineSegmentHasBeenSet;
+
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
+
     Format m_format;
     bool m_formatHasBeenSet;
+
     bool m_registerEndpoints;
     bool m_registerEndpointsHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_s3Url;
     bool m_s3UrlHasBeenSet;
+
     Aws::String m_segmentId;
     bool m_segmentIdHasBeenSet;
+
     Aws::String m_segmentName;
     bool m_segmentNameHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the job for which to retrieve all job runs.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the job for which to retrieve all job runs.</p>
      */
     inline GetJobRunsRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
+
 
     /**
      * <p>A continuation token, if this is a continuation call.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline GetJobRunsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum size of the response.</p>
      */
@@ -122,10 +125,13 @@ namespace Model
     inline GetJobRunsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

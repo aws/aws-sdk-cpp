@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeSpotFleetRequestsResponse();
-    DescribeSpotFleetRequestsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSpotFleetRequestsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotFleetRequestsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotFleetRequestsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The token required to retrieve the next set of results. This value is
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeSpotFleetRequestsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Information about the configuration of your Spot fleet.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeSpotFleetRequestsResponse& AddSpotFleetRequestConfigs(SpotFleetRequestConfig&& value) { m_spotFleetRequestConfigs.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeSpotFleetRequestsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<SpotFleetRequestConfig> m_spotFleetRequestConfigs;
+
     ResponseMetadata m_responseMetadata;
   };
 

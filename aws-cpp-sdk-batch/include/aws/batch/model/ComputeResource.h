@@ -49,6 +49,7 @@ namespace Model
     ComputeResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of compute environment.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline ComputeResource& WithType(CRType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The minimum number of EC2 vCPUs that an environment should maintain. </p>
      */
@@ -88,6 +90,7 @@ namespace Model
      * <p>The minimum number of EC2 vCPUs that an environment should maintain. </p>
      */
     inline ComputeResource& WithMinvCpus(int value) { SetMinvCpus(value); return *this;}
+
 
     /**
      * <p>The maximum number of EC2 vCPUs that an environment can reach. </p>
@@ -104,6 +107,7 @@ namespace Model
      */
     inline ComputeResource& WithMaxvCpus(int value) { SetMaxvCpus(value); return *this;}
 
+
     /**
      * <p>The desired number of EC2 vCPUS in the compute environment. </p>
      */
@@ -118,6 +122,7 @@ namespace Model
      * <p>The desired number of EC2 vCPUS in the compute environment. </p>
      */
     inline ComputeResource& WithDesiredvCpus(int value) { SetDesiredvCpus(value); return *this;}
+
 
     /**
      * <p>The instances types that may launched.</p>
@@ -158,6 +163,7 @@ namespace Model
      * <p>The instances types that may launched.</p>
      */
     inline ComputeResource& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
 
     /**
      * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
@@ -201,6 +207,7 @@ namespace Model
      */
     inline ComputeResource& WithImageId(const char* value) { SetImageId(value); return *this;}
 
+
     /**
      * <p>The VPC subnets into which the compute resources are launched. </p>
      */
@@ -240,6 +247,7 @@ namespace Model
      * <p>The VPC subnets into which the compute resources are launched. </p>
      */
     inline ComputeResource& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+
 
     /**
      * <p>The EC2 security group that is associated with instances launched in the
@@ -289,6 +297,7 @@ namespace Model
      */
     inline ComputeResource& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The EC2 key pair that is used for instances launched in the compute
      * environment.</p>
@@ -331,6 +340,7 @@ namespace Model
      */
     inline ComputeResource& WithEc2KeyPair(const char* value) { SetEc2KeyPair(value); return *this;}
 
+
     /**
      * <p>The Amazon ECS instance role applied to Amazon EC2 instances in a compute
      * environment.</p>
@@ -372,6 +382,7 @@ namespace Model
      * environment.</p>
      */
     inline ComputeResource& WithInstanceRole(const char* value) { SetInstanceRole(value); return *this;}
+
 
     /**
      * <p>Key-value pair tags to be applied to resources that are launched in the
@@ -445,6 +456,7 @@ namespace Model
      */
     inline ComputeResource& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
     /**
      * <p>The minimum percentage that a Spot Instance price must be when compared with
      * the On-Demand price for that instance type before instances are launched. For
@@ -468,6 +480,7 @@ namespace Model
      * the current On-Demand price for that EC2 instance.</p>
      */
     inline ComputeResource& WithBidPercentage(int value) { SetBidPercentage(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
@@ -512,30 +525,43 @@ namespace Model
     inline ComputeResource& WithSpotIamFleetRole(const char* value) { SetSpotIamFleetRole(value); return *this;}
 
   private:
+
     CRType m_type;
     bool m_typeHasBeenSet;
+
     int m_minvCpus;
     bool m_minvCpusHasBeenSet;
+
     int m_maxvCpus;
     bool m_maxvCpusHasBeenSet;
+
     int m_desiredvCpus;
     bool m_desiredvCpusHasBeenSet;
+
     Aws::Vector<Aws::String> m_instanceTypes;
     bool m_instanceTypesHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::String m_ec2KeyPair;
     bool m_ec2KeyPairHasBeenSet;
+
     Aws::String m_instanceRole;
     bool m_instanceRoleHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
     int m_bidPercentage;
     bool m_bidPercentageHasBeenSet;
+
     Aws::String m_spotIamFleetRole;
     bool m_spotIamFleetRoleHasBeenSet;
   };

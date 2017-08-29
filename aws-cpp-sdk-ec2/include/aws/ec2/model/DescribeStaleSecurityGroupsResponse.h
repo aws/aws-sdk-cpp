@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeStaleSecurityGroupsResponse();
-    DescribeStaleSecurityGroupsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeStaleSecurityGroupsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStaleSecurityGroupsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStaleSecurityGroupsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeStaleSecurityGroupsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Information about the stale security groups.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      */
     inline DescribeStaleSecurityGroupsResponse& AddStaleSecurityGroupSet(StaleSecurityGroup&& value) { m_staleSecurityGroupSet.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -137,8 +140,11 @@ namespace Model
     inline DescribeStaleSecurityGroupsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<StaleSecurityGroup> m_staleSecurityGroupSet;
+
     ResponseMetadata m_responseMetadata;
   };
 

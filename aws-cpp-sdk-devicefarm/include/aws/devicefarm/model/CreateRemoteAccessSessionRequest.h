@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the project for which you want to create a
      * remote access session.</p>
@@ -82,6 +83,7 @@ namespace Model
      * remote access session.</p>
      */
     inline CreateRemoteAccessSessionRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the device for which you want to create a
@@ -125,6 +127,7 @@ namespace Model
      */
     inline CreateRemoteAccessSessionRequest& WithDeviceArn(const char* value) { SetDeviceArn(value); return *this;}
 
+
     /**
      * <p>The name of the remote access session that you wish to create.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      */
     inline CreateRemoteAccessSessionRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The configuration information for the remote access session request.</p>
      */
@@ -186,12 +190,16 @@ namespace Model
     inline CreateRemoteAccessSessionRequest& WithConfiguration(CreateRemoteAccessSessionConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_projectArn;
     bool m_projectArnHasBeenSet;
+
     Aws::String m_deviceArn;
     bool m_deviceArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     CreateRemoteAccessSessionConfiguration m_configuration;
     bool m_configurationHasBeenSet;
   };

@@ -57,6 +57,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>If you specified a duration and your Spot instance request was fulfilled,
      * this is the fixed hourly price in effect for the Spot instance while it
@@ -105,6 +106,7 @@ namespace Model
      * runs.</p>
      */
     inline SpotInstanceRequest& WithActualBlockHourlyPrice(const char* value) { SetActualBlockHourlyPrice(value); return *this;}
+
 
     /**
      * <p>The Availability Zone group. If you specify the same Availability Zone group
@@ -155,6 +157,7 @@ namespace Model
      */
     inline SpotInstanceRequest& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
 
+
     /**
      * <p>The duration for the Spot instance, in minutes.</p>
      */
@@ -169,6 +172,7 @@ namespace Model
      * <p>The duration for the Spot instance, in minutes.</p>
      */
     inline SpotInstanceRequest& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
+
 
     /**
      * <p>The date and time when the Spot instance request was created, in UTC format
@@ -205,6 +209,7 @@ namespace Model
      */
     inline SpotInstanceRequest& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The fault codes for the Spot instance request, if any.</p>
      */
@@ -229,6 +234,7 @@ namespace Model
      * <p>The fault codes for the Spot instance request, if any.</p>
      */
     inline SpotInstanceRequest& WithFault(SpotInstanceStateFault&& value) { SetFault(std::move(value)); return *this;}
+
 
     /**
      * <p>The instance ID, if an instance has been launched to fulfill the Spot
@@ -272,6 +278,7 @@ namespace Model
      */
     inline SpotInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The instance launch group. Launch groups are Spot instances that launch
      * together and terminate together.</p>
@@ -314,6 +321,7 @@ namespace Model
      */
     inline SpotInstanceRequest& WithLaunchGroup(const char* value) { SetLaunchGroup(value); return *this;}
 
+
     /**
      * <p>Additional information for launching instances.</p>
      */
@@ -338,6 +346,7 @@ namespace Model
      * <p>Additional information for launching instances.</p>
      */
     inline SpotInstanceRequest& WithLaunchSpecification(LaunchSpecification&& value) { SetLaunchSpecification(std::move(value)); return *this;}
+
 
     /**
      * <p>The Availability Zone in which the bid is launched.</p>
@@ -374,6 +383,7 @@ namespace Model
      */
     inline SpotInstanceRequest& WithLaunchedAvailabilityZone(const char* value) { SetLaunchedAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The product description associated with the Spot instance.</p>
      */
@@ -398,6 +408,7 @@ namespace Model
      * <p>The product description associated with the Spot instance.</p>
      */
     inline SpotInstanceRequest& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Spot instance request.</p>
@@ -433,6 +444,7 @@ namespace Model
      * <p>The ID of the Spot instance request.</p>
      */
     inline SpotInstanceRequest& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
+
 
     /**
      * <p>The maximum hourly price (bid) for the Spot instance launched to fulfill the
@@ -476,6 +488,7 @@ namespace Model
      */
     inline SpotInstanceRequest& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
+
     /**
      * <p>The state of the Spot instance request. Spot bid status information can help
      * you track your Spot instance requests. For more information, see <a
@@ -516,6 +529,7 @@ namespace Model
      */
     inline SpotInstanceRequest& WithState(SpotInstanceState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The status code and status message describing the Spot instance request.</p>
      */
@@ -540,6 +554,7 @@ namespace Model
      * <p>The status code and status message describing the Spot instance request.</p>
      */
     inline SpotInstanceRequest& WithStatus(SpotInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Any tags assigned to the resource.</p>
@@ -576,6 +591,7 @@ namespace Model
      */
     inline SpotInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The Spot instance request type.</p>
      */
@@ -600,6 +616,7 @@ namespace Model
      * <p>The Spot instance request type.</p>
      */
     inline SpotInstanceRequest& WithType(SpotInstanceType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The start date of the request, in UTC format (for example,
@@ -635,6 +652,7 @@ namespace Model
      * becomes active at this date and time.</p>
      */
     inline SpotInstanceRequest& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(std::move(value)); return *this;}
+
 
     /**
      * <p>The end date of the request, in UTC format (for example,
@@ -682,40 +700,58 @@ namespace Model
     inline SpotInstanceRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_actualBlockHourlyPrice;
     bool m_actualBlockHourlyPriceHasBeenSet;
+
     Aws::String m_availabilityZoneGroup;
     bool m_availabilityZoneGroupHasBeenSet;
+
     int m_blockDurationMinutes;
     bool m_blockDurationMinutesHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
     SpotInstanceStateFault m_fault;
     bool m_faultHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_launchGroup;
     bool m_launchGroupHasBeenSet;
+
     LaunchSpecification m_launchSpecification;
     bool m_launchSpecificationHasBeenSet;
+
     Aws::String m_launchedAvailabilityZone;
     bool m_launchedAvailabilityZoneHasBeenSet;
+
     RIProductDescription m_productDescription;
     bool m_productDescriptionHasBeenSet;
+
     Aws::String m_spotInstanceRequestId;
     bool m_spotInstanceRequestIdHasBeenSet;
+
     Aws::String m_spotPrice;
     bool m_spotPriceHasBeenSet;
+
     SpotInstanceState m_state;
     bool m_stateHasBeenSet;
+
     SpotInstanceStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     SpotInstanceType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Utils::DateTime m_validFrom;
     bool m_validFromHasBeenSet;
+
     Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
   };

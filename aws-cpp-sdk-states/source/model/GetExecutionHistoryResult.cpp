@@ -30,12 +30,12 @@ GetExecutionHistoryResult::GetExecutionHistoryResult()
 {
 }
 
-GetExecutionHistoryResult::GetExecutionHistoryResult(const AmazonWebServiceResult<JsonValue>& result)
+GetExecutionHistoryResult::GetExecutionHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetExecutionHistoryResult& GetExecutionHistoryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetExecutionHistoryResult& GetExecutionHistoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("events"))

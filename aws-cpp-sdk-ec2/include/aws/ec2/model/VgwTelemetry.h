@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The number of accepted routes.</p>
      */
@@ -64,6 +65,7 @@ namespace Model
      * <p>The number of accepted routes.</p>
      */
     inline VgwTelemetry& WithAcceptedRouteCount(int value) { SetAcceptedRouteCount(value); return *this;}
+
 
     /**
      * <p>The date and time of the last change in status.</p>
@@ -89,6 +91,7 @@ namespace Model
      * <p>The date and time of the last change in status.</p>
      */
     inline VgwTelemetry& WithLastStatusChange(Aws::Utils::DateTime&& value) { SetLastStatusChange(std::move(value)); return *this;}
+
 
     /**
      * <p>The Internet-routable IP address of the virtual private gateway's outside
@@ -132,6 +135,7 @@ namespace Model
      */
     inline VgwTelemetry& WithOutsideIpAddress(const char* value) { SetOutsideIpAddress(value); return *this;}
 
+
     /**
      * <p>The status of the VPN tunnel.</p>
      */
@@ -156,6 +160,7 @@ namespace Model
      * <p>The status of the VPN tunnel.</p>
      */
     inline VgwTelemetry& WithStatus(TelemetryStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>If an error occurs, a description of the error.</p>
@@ -193,14 +198,19 @@ namespace Model
     inline VgwTelemetry& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
   private:
+
     int m_acceptedRouteCount;
     bool m_acceptedRouteCountHasBeenSet;
+
     Aws::Utils::DateTime m_lastStatusChange;
     bool m_lastStatusChangeHasBeenSet;
+
     Aws::String m_outsideIpAddress;
     bool m_outsideIpAddressHasBeenSet;
+
     TelemetryStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
   };

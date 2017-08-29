@@ -30,12 +30,12 @@ RegisterElasticIpResult::RegisterElasticIpResult()
 {
 }
 
-RegisterElasticIpResult::RegisterElasticIpResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterElasticIpResult::RegisterElasticIpResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterElasticIpResult& RegisterElasticIpResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterElasticIpResult& RegisterElasticIpResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ElasticIp"))

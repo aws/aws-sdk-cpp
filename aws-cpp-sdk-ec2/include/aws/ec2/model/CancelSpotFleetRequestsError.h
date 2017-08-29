@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The error code.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The error code.</p>
      */
     inline CancelSpotFleetRequestsError& WithCode(CancelBatchErrorCode&& value) { SetCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The description for the error code.</p>
@@ -110,8 +112,10 @@ namespace Model
     inline CancelSpotFleetRequestsError& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     CancelBatchErrorCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

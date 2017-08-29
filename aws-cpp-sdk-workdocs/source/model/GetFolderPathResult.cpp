@@ -30,12 +30,12 @@ GetFolderPathResult::GetFolderPathResult()
 {
 }
 
-GetFolderPathResult::GetFolderPathResult(const AmazonWebServiceResult<JsonValue>& result)
+GetFolderPathResult::GetFolderPathResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetFolderPathResult& GetFolderPathResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetFolderPathResult& GetFolderPathResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Path"))

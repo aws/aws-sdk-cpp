@@ -47,6 +47,7 @@ namespace Model
     RefreshSchemasStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline RefreshSchemasStatus& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      */
     inline RefreshSchemasStatus& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 
+
     /**
      * <p>The status of the schema.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      */
     inline RefreshSchemasStatus& WithStatus(RefreshSchemasStatusTypeValue&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The date the schema was last refreshed.</p>
      */
@@ -173,6 +177,7 @@ namespace Model
      * <p>The date the schema was last refreshed.</p>
      */
     inline RefreshSchemasStatus& WithLastRefreshDate(Aws::Utils::DateTime&& value) { SetLastRefreshDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The last failure message for the schema.</p>
@@ -210,14 +215,19 @@ namespace Model
     inline RefreshSchemasStatus& WithLastFailureMessage(const char* value) { SetLastFailureMessage(value); return *this;}
 
   private:
+
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet;
+
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet;
+
     RefreshSchemasStatusTypeValue m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_lastRefreshDate;
     bool m_lastRefreshDateHasBeenSet;
+
     Aws::String m_lastFailureMessage;
     bool m_lastFailureMessageHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     ElasticsearchClusterConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The instance type for an Elasticsearch cluster.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline ElasticsearchClusterConfig& WithInstanceType(ESPartitionInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of instances in the specified domain cluster.</p>
      */
@@ -85,6 +87,7 @@ namespace Model
      * <p>The number of instances in the specified domain cluster.</p>
      */
     inline ElasticsearchClusterConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>A boolean value to indicate whether a dedicated master node is enabled. See
@@ -110,6 +113,7 @@ namespace Model
      */
     inline ElasticsearchClusterConfig& WithDedicatedMasterEnabled(bool value) { SetDedicatedMasterEnabled(value); return *this;}
 
+
     /**
      * <p>A boolean value to indicate whether zone awareness is enabled. See <a
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
@@ -130,6 +134,7 @@ namespace Model
      * target="_blank">About Zone Awareness</a> for more information.</p>
      */
     inline ElasticsearchClusterConfig& WithZoneAwarenessEnabled(bool value) { SetZoneAwarenessEnabled(value); return *this;}
+
 
     /**
      * <p>The instance type for a dedicated master node.</p>
@@ -156,6 +161,7 @@ namespace Model
      */
     inline ElasticsearchClusterConfig& WithDedicatedMasterType(ESPartitionInstanceType&& value) { SetDedicatedMasterType(std::move(value)); return *this;}
 
+
     /**
      * <p>Total number of dedicated master nodes, active and on standby, for the
      * cluster.</p>
@@ -175,16 +181,22 @@ namespace Model
     inline ElasticsearchClusterConfig& WithDedicatedMasterCount(int value) { SetDedicatedMasterCount(value); return *this;}
 
   private:
+
     ESPartitionInstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     bool m_dedicatedMasterEnabled;
     bool m_dedicatedMasterEnabledHasBeenSet;
+
     bool m_zoneAwarenessEnabled;
     bool m_zoneAwarenessEnabledHasBeenSet;
+
     ESPartitionInstanceType m_dedicatedMasterType;
     bool m_dedicatedMasterTypeHasBeenSet;
+
     int m_dedicatedMasterCount;
     bool m_dedicatedMasterCountHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetDeploymentConfigResult();
-    GetDeploymentConfigResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeploymentConfigResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeploymentConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeploymentConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the deployment configuration.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline GetDeploymentConfigResult& WithDeploymentConfigInfo(DeploymentConfigInfo&& value) { SetDeploymentConfigInfo(std::move(value)); return *this;}
 
   private:
+
     DeploymentConfigInfo m_deploymentConfigInfo;
   };
 

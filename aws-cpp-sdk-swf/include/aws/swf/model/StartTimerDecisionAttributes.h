@@ -59,6 +59,7 @@ namespace Model
     StartTimerDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The unique ID of the timer.</p> <p>The specified string must not start or
      * end with whitespace. It must not contain a <code>:</code> (colon),
@@ -122,6 +123,7 @@ namespace Model
      */
     inline StartTimerDecisionAttributes& WithTimerId(const char* value) { SetTimerId(value); return *this;}
 
+
     /**
      * <p>The data attached to the event that can be used by the decider in subsequent
      * workflow tasks.</p>
@@ -163,6 +165,7 @@ namespace Model
      * workflow tasks.</p>
      */
     inline StartTimerDecisionAttributes& WithControl(const char* value) { SetControl(value); return *this;}
+
 
     /**
      * <p> The duration to wait before firing the timer.</p> <p>The duration is
@@ -207,10 +210,13 @@ namespace Model
     inline StartTimerDecisionAttributes& WithStartToFireTimeout(const char* value) { SetStartToFireTimeout(value); return *this;}
 
   private:
+
     Aws::String m_timerId;
     bool m_timerIdHasBeenSet;
+
     Aws::String m_control;
     bool m_controlHasBeenSet;
+
     Aws::String m_startToFireTimeout;
     bool m_startToFireTimeoutHasBeenSet;
   };

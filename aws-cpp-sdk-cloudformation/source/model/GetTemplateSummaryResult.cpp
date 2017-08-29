@@ -31,12 +31,12 @@ GetTemplateSummaryResult::GetTemplateSummaryResult()
 {
 }
 
-GetTemplateSummaryResult::GetTemplateSummaryResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetTemplateSummaryResult::GetTemplateSummaryResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetTemplateSummaryResult& GetTemplateSummaryResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

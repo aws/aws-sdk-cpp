@@ -47,6 +47,7 @@ namespace Model
     StartLambdaFunctionFailedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when
      * this activity task was scheduled. To help diagnose issues, use this information
@@ -67,6 +68,7 @@ namespace Model
      * to trace back the chain of events leading up to this event.</p>
      */
     inline StartLambdaFunctionFailedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
+
 
     /**
      * <p>The cause of the failure. To help diagnose issues, use this information to
@@ -123,6 +125,7 @@ namespace Model
      */
     inline StartLambdaFunctionFailedEventAttributes& WithCause(StartLambdaFunctionFailedCause&& value) { SetCause(std::move(value)); return *this;}
 
+
     /**
      * <p>A description that can help diagnose the cause of the fault.</p>
      */
@@ -159,10 +162,13 @@ namespace Model
     inline StartLambdaFunctionFailedEventAttributes& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     long long m_scheduledEventId;
     bool m_scheduledEventIdHasBeenSet;
+
     StartLambdaFunctionFailedCause m_cause;
     bool m_causeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

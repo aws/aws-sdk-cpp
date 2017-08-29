@@ -34,6 +34,7 @@ namespace Model
     GetApnsSandboxChannelRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -56,6 +57,7 @@ namespace Model
     inline GetApnsSandboxChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
   };

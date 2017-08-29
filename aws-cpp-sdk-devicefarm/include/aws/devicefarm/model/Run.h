@@ -55,6 +55,7 @@ namespace Model
     Run& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The run's ARN.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      */
     inline Run& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The run's name.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The run's name.</p>
      */
     inline Run& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The run's type.</p> <p>Must be one of the following values:</p> <ul> <li>
@@ -215,6 +218,7 @@ namespace Model
      */
     inline Run& WithType(TestType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The run's platform.</p> <p>Allowed values include:</p> <ul> <li> <p>ANDROID:
      * The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p> </li> </ul>
@@ -245,6 +249,7 @@ namespace Model
      */
     inline Run& WithPlatform(DevicePlatform&& value) { SetPlatform(std::move(value)); return *this;}
 
+
     /**
      * <p>When the run was created.</p>
      */
@@ -269,6 +274,7 @@ namespace Model
      * <p>When the run was created.</p>
      */
     inline Run& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+
 
     /**
      * <p>The run's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
@@ -325,6 +331,7 @@ namespace Model
      */
     inline Run& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The run's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
      * pending condition.</p> </li> <li> <p>PASSED: A passing condition.</p> </li> <li>
@@ -375,6 +382,7 @@ namespace Model
      */
     inline Run& WithResult(ExecutionResult&& value) { SetResult(std::move(value)); return *this;}
 
+
     /**
      * <p>The run's start time.</p>
      */
@@ -399,6 +407,7 @@ namespace Model
      * <p>The run's start time.</p>
      */
     inline Run& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(std::move(value)); return *this;}
+
 
     /**
      * <p>The run's stop time.</p>
@@ -425,6 +434,7 @@ namespace Model
      */
     inline Run& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(std::move(value)); return *this;}
 
+
     /**
      * <p>The run's result counters.</p>
      */
@@ -449,6 +459,7 @@ namespace Model
      * <p>The run's result counters.</p>
      */
     inline Run& WithCounters(Counters&& value) { SetCounters(std::move(value)); return *this;}
+
 
     /**
      * <p>A message about the run's result.</p>
@@ -485,6 +496,7 @@ namespace Model
      */
     inline Run& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The total number of jobs for the run.</p>
      */
@@ -500,6 +512,7 @@ namespace Model
      */
     inline Run& WithTotalJobs(int value) { SetTotalJobs(value); return *this;}
 
+
     /**
      * <p>The total number of completed jobs.</p>
      */
@@ -514,6 +527,7 @@ namespace Model
      * <p>The total number of completed jobs.</p>
      */
     inline Run& WithCompletedJobs(int value) { SetCompletedJobs(value); return *this;}
+
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
@@ -550,6 +564,7 @@ namespace Model
      */
     inline Run& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
 
+
     /**
      * <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
      */
@@ -574,6 +589,7 @@ namespace Model
      * <p>Represents the total (metered or unmetered) minutes used by the test run.</p>
      */
     inline Run& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(std::move(value)); return *this;}
+
 
     /**
      * <p>The network profile being used for a test run.</p>
@@ -601,36 +617,52 @@ namespace Model
     inline Run& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     TestType m_type;
     bool m_typeHasBeenSet;
+
     DevicePlatform m_platform;
     bool m_platformHasBeenSet;
+
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
+
     ExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     ExecutionResult m_result;
     bool m_resultHasBeenSet;
+
     Aws::Utils::DateTime m_started;
     bool m_startedHasBeenSet;
+
     Aws::Utils::DateTime m_stopped;
     bool m_stoppedHasBeenSet;
+
     Counters m_counters;
     bool m_countersHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     int m_totalJobs;
     bool m_totalJobsHasBeenSet;
+
     int m_completedJobs;
     bool m_completedJobsHasBeenSet;
+
     BillingMethod m_billingMethod;
     bool m_billingMethodHasBeenSet;
+
     DeviceMinutes m_deviceMinutes;
     bool m_deviceMinutesHasBeenSet;
+
     NetworkProfile m_networkProfile;
     bool m_networkProfileHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The change token for which you want to get the status. This change token was
      * previously returned in the <code>GetChangeToken</code> response.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline GetChangeTokenStatusRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
   };

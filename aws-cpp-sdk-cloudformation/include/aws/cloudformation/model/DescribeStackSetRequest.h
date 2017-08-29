@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or unique ID of the stack set whose description you want.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DescribeStackSetRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
   };

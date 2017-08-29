@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The verification status of the identity: "Pending", "Success", "Failed", or
      * "TemporaryFailure".</p>
@@ -79,6 +80,7 @@ namespace Model
      * "TemporaryFailure".</p>
      */
     inline IdentityVerificationAttributes& WithVerificationStatus(VerificationStatus&& value) { SetVerificationStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The verification token for a domain identity. Null for email address
@@ -123,8 +125,10 @@ namespace Model
     inline IdentityVerificationAttributes& WithVerificationToken(const char* value) { SetVerificationToken(value); return *this;}
 
   private:
+
     VerificationStatus m_verificationStatus;
     bool m_verificationStatusHasBeenSet;
+
     Aws::String m_verificationToken;
     bool m_verificationTokenHasBeenSet;
   };

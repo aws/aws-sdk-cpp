@@ -49,6 +49,7 @@ namespace Model
     PlayReadyDrm& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of DRM, if any, that you want Elastic Transcoder to apply to the
      * output files associated with this playlist.</p>
@@ -90,6 +91,7 @@ namespace Model
      * output files associated with this playlist.</p>
      */
     inline PlayReadyDrm& WithFormat(const char* value) { SetFormat(value); return *this;}
+
 
     /**
      * <p>The DRM key for your file, provided by your DRM license provider. The key
@@ -147,6 +149,7 @@ namespace Model
      */
     inline PlayReadyDrm& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The MD5 digest of the key used for DRM on your file, and that you want
      * Elastic Transcoder to use as a checksum to make sure your key was not corrupted
@@ -202,6 +205,7 @@ namespace Model
      * before being base64-encoded.</p>
      */
     inline PlayReadyDrm& WithKeyMd5(const char* value) { SetKeyMd5(value); return *this;}
+
 
     /**
      * <p>The ID for your DRM key, so that your DRM license provider knows which key to
@@ -266,6 +270,7 @@ namespace Model
      */
     inline PlayReadyDrm& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>The series of random bits created by a random bit generator, unique for every
      * encryption operation, that you want Elastic Transcoder to use to encrypt your
@@ -328,6 +333,7 @@ namespace Model
      * provided, Elastic Transcoder generates one for you.</p>
      */
     inline PlayReadyDrm& WithInitializationVector(const char* value) { SetInitializationVector(value); return *this;}
+
 
     /**
      * <p>The location of the license key required to play DRM content. The URL must be
@@ -400,16 +406,22 @@ namespace Model
     inline PlayReadyDrm& WithLicenseAcquisitionUrl(const char* value) { SetLicenseAcquisitionUrl(value); return *this;}
 
   private:
+
     Aws::String m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_keyMd5;
     bool m_keyMd5HasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::String m_initializationVector;
     bool m_initializationVectorHasBeenSet;
+
     Aws::String m_licenseAcquisitionUrl;
     bool m_licenseAcquisitionUrlHasBeenSet;
   };

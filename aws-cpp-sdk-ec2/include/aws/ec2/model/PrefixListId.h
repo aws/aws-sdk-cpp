@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the prefix.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
     inline PrefixListId& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
 
   private:
+
     Aws::String m_prefixListId;
     bool m_prefixListIdHasBeenSet;
   };

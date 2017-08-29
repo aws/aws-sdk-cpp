@@ -38,6 +38,7 @@ namespace Model
     DeleteDomainNameRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DeleteDomainNameRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

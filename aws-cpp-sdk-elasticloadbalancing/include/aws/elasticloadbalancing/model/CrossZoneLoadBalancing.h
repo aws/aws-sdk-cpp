@@ -47,6 +47,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies whether cross-zone load balancing is enabled for the load
      * balancer.</p>
@@ -66,6 +67,7 @@ namespace Model
     inline CrossZoneLoadBalancing& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
   };

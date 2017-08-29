@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies the name of the cache parameter group family to which the engine
      * default parameters apply.</p> <p>Valid values are: <code>memcached1.4</code> |
@@ -101,6 +102,7 @@ namespace Model
      */
     inline EngineDefaults& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
@@ -136,6 +138,7 @@ namespace Model
      */
     inline EngineDefaults& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Contains a list of engine default parameters.</p>
      */
@@ -170,6 +173,7 @@ namespace Model
      * <p>Contains a list of engine default parameters.</p>
      */
     inline EngineDefaults& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of parameters specific to a particular cache node type. Each element
@@ -214,12 +218,16 @@ namespace Model
     inline EngineDefaults& AddCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParameter&& value) { m_cacheNodeTypeSpecificParametersHasBeenSet = true; m_cacheNodeTypeSpecificParameters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_cacheParameterGroupFamily;
     bool m_cacheParameterGroupFamilyHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Vector<CacheNodeTypeSpecificParameter> m_cacheNodeTypeSpecificParameters;
     bool m_cacheNodeTypeSpecificParametersHasBeenSet;
   };

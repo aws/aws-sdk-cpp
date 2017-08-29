@@ -49,6 +49,7 @@ namespace Model
     VpcConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of one or more subnet IDs in your VPC.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>A list of one or more subnet IDs in your VPC.</p>
      */
     inline VpcConfig& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+
 
     /**
      * <p>A list of one or more security groups IDs in your VPC.</p>
@@ -130,8 +132,10 @@ namespace Model
     inline VpcConfig& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
   };

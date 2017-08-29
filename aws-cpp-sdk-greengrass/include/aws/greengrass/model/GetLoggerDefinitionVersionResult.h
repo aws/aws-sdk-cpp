@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetLoggerDefinitionVersionResult();
-    GetLoggerDefinitionVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLoggerDefinitionVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetLoggerDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetLoggerDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the logger definition version.
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetLoggerDefinitionVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * Timestamp of when the logger definition version was created.
      */
@@ -112,6 +114,7 @@ namespace Model
      */
     inline GetLoggerDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
+
     /**
      * Information on definition
      */
@@ -136,6 +139,7 @@ namespace Model
      * Information on definition
      */
     inline GetLoggerDefinitionVersionResult& WithDefinition(LoggerDefinitionVersion&& value) { SetDefinition(std::move(value)); return *this;}
+
 
     /**
      * Id of the logger definition the version belongs to.
@@ -171,6 +175,7 @@ namespace Model
      * Id of the logger definition the version belongs to.
      */
     inline GetLoggerDefinitionVersionResult& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Version of the logger definition version.
@@ -208,10 +213,15 @@ namespace Model
     inline GetLoggerDefinitionVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_arn;
+
     Aws::String m_creationTimestamp;
+
     LoggerDefinitionVersion m_definition;
+
     Aws::String m_id;
+
     Aws::String m_version;
   };
 

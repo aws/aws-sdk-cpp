@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeElasticsearchDomainsResult();
-    DescribeElasticsearchDomainsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeElasticsearchDomainsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticsearchDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticsearchDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the domains requested in the
@@ -92,6 +93,7 @@ namespace Model
     inline DescribeElasticsearchDomainsResult& AddDomainStatusList(ElasticsearchDomainStatus&& value) { m_domainStatusList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ElasticsearchDomainStatus> m_domainStatusList;
   };
 

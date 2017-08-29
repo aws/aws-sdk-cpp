@@ -48,6 +48,7 @@ namespace Model
     ThingTypeProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The description of the thing type.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The description of the thing type.</p>
      */
     inline ThingTypeProperties& WithThingTypeDescription(const char* value) { SetThingTypeDescription(value); return *this;}
+
 
     /**
      * <p>A list of searchable thing attribute names.</p>
@@ -124,8 +126,10 @@ namespace Model
     inline ThingTypeProperties& AddSearchableAttributes(const char* value) { m_searchableAttributesHasBeenSet = true; m_searchableAttributes.push_back(value); return *this; }
 
   private:
+
     Aws::String m_thingTypeDescription;
     bool m_thingTypeDescriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_searchableAttributes;
     bool m_searchableAttributesHasBeenSet;
   };

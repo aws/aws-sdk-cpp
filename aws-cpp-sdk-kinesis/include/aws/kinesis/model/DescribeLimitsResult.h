@@ -36,8 +36,9 @@ namespace Model
   {
   public:
     DescribeLimitsResult();
-    DescribeLimitsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The maximum number of shards.</p>
@@ -53,6 +54,7 @@ namespace Model
      * <p>The maximum number of shards.</p>
      */
     inline DescribeLimitsResult& WithShardLimit(int value) { SetShardLimit(value); return *this;}
+
 
     /**
      * <p>The number of open shards.</p>
@@ -70,7 +72,9 @@ namespace Model
     inline DescribeLimitsResult& WithOpenShardCount(int value) { SetOpenShardCount(value); return *this;}
 
   private:
+
     int m_shardLimit;
+
     int m_openShardCount;
   };
 

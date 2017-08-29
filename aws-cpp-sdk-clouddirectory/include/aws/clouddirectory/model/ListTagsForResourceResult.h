@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListTagsForResourceResult();
-    ListTagsForResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of tag key value pairs that are associated with the response.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of tag key value pairs that are associated with the response.</p>
      */
     inline ListTagsForResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is null
@@ -121,7 +123,9 @@ namespace Model
     inline ListTagsForResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Tag> m_tags;
+
     Aws::String m_nextToken;
   };
 

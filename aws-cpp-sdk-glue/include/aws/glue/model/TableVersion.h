@@ -41,6 +41,7 @@ namespace Model
     TableVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Table& GetTable() const{ return m_table; }
 
@@ -55,6 +56,7 @@ namespace Model
 
     
     inline TableVersion& WithTable(Table&& value) { SetTable(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
@@ -78,8 +80,10 @@ namespace Model
     inline TableVersion& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
+
     Table m_table;
     bool m_tableHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
   };

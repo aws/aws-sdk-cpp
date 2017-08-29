@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetTableResult();
-    GetTableResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTableResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>Table</code> object that defines the specified table.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetTableResult& WithTable(Table&& value) { SetTable(std::move(value)); return *this;}
 
   private:
+
     Table m_table;
   };
 

@@ -49,6 +49,7 @@ namespace Model
     EnvironmentResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The key-value pairs returned that represent your environment's configuration
      * settings or error information.</p>
@@ -121,6 +122,7 @@ namespace Model
      */
     inline EnvironmentResponse& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 
+
     
     inline const EnvironmentError& GetError() const{ return m_error; }
 
@@ -137,8 +139,10 @@ namespace Model
     inline EnvironmentResponse& WithError(EnvironmentError&& value) { SetError(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_variables;
     bool m_variablesHasBeenSet;
+
     EnvironmentError m_error;
     bool m_errorHasBeenSet;
   };

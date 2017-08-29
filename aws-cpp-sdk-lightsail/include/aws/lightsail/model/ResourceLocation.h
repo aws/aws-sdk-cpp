@@ -46,6 +46,7 @@ namespace Model
     ResourceLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Availability Zone. Follows the format <code>us-east-1a</code>
      * (case-sensitive).</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ResourceLocation& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The AWS Region name.</p>
      */
@@ -114,8 +116,10 @@ namespace Model
     inline ResourceLocation& WithRegionName(RegionName&& value) { SetRegionName(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     RegionName m_regionName;
     bool m_regionNameHasBeenSet;
   };

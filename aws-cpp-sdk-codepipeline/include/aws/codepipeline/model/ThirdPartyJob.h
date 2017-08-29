@@ -47,6 +47,7 @@ namespace Model
     ThirdPartyJob& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The clientToken portion of the clientId and clientToken pair used to verify
      * that the calling entity is allowed access to the job and its details.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ThirdPartyJob& WithClientId(const char* value) { SetClientId(value); return *this;}
 
+
     /**
      * <p>The identifier used to identify the job in AWS CodePipeline.</p>
      */
@@ -125,8 +127,10 @@ namespace Model
     inline ThirdPartyJob& WithJobId(const char* value) { SetJobId(value); return *this;}
 
   private:
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
   };

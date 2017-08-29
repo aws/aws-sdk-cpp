@@ -31,12 +31,12 @@ DescribeCacheEngineVersionsResult::DescribeCacheEngineVersionsResult()
 {
 }
 
-DescribeCacheEngineVersionsResult::DescribeCacheEngineVersionsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeCacheEngineVersionsResult::DescribeCacheEngineVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeCacheEngineVersionsResult& DescribeCacheEngineVersionsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeCacheEngineVersionsResult& DescribeCacheEngineVersionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

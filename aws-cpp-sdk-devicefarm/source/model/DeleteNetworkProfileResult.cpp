@@ -30,12 +30,12 @@ DeleteNetworkProfileResult::DeleteNetworkProfileResult()
 {
 }
 
-DeleteNetworkProfileResult::DeleteNetworkProfileResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteNetworkProfileResult::DeleteNetworkProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteNetworkProfileResult& DeleteNetworkProfileResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteNetworkProfileResult& DeleteNetworkProfileResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -45,6 +45,7 @@ namespace Model
     KeyPair& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The public key.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The public key.</p>
      */
     inline KeyPair& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
+
 
     /**
      * <p>The private key.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline KeyPair& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
 
   private:
+
     Aws::String m_publicKey;
     bool m_publicKeyHasBeenSet;
+
     Aws::String m_privateKey;
     bool m_privateKeyHasBeenSet;
   };

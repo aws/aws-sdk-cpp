@@ -31,12 +31,12 @@ DescribeTableRestoreStatusResult::DescribeTableRestoreStatusResult()
 {
 }
 
-DescribeTableRestoreStatusResult::DescribeTableRestoreStatusResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeTableRestoreStatusResult::DescribeTableRestoreStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeTableRestoreStatusResult& DescribeTableRestoreStatusResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeTableRestoreStatusResult& DescribeTableRestoreStatusResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

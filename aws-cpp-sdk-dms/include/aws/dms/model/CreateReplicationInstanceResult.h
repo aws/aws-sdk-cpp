@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateReplicationInstanceResult();
-    CreateReplicationInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateReplicationInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateReplicationInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateReplicationInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The replication instance that was created.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline CreateReplicationInstanceResult& WithReplicationInstance(ReplicationInstance&& value) { SetReplicationInstance(std::move(value)); return *this;}
 
   private:
+
     ReplicationInstance m_replicationInstance;
   };
 

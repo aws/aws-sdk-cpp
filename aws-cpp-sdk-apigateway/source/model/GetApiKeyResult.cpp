@@ -31,13 +31,13 @@ GetApiKeyResult::GetApiKeyResult() :
 {
 }
 
-GetApiKeyResult::GetApiKeyResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetApiKeyResult::GetApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_enabled(false)
 {
   *this = result;
 }
 
-GetApiKeyResult& GetApiKeyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetApiKeyResult& GetApiKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("id"))

@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     GetHostReservationPurchasePreviewResponse();
-    GetHostReservationPurchasePreviewResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetHostReservationPurchasePreviewResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHostReservationPurchasePreviewResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHostReservationPurchasePreviewResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The currency in which the <code>totalUpfrontPrice</code> and
@@ -79,6 +80,7 @@ namespace Model
      * supported currency is <code>USD</code>.</p>
      */
     inline GetHostReservationPurchasePreviewResponse& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The purchase information of the Dedicated Host Reservation and the Dedicated
@@ -122,6 +124,7 @@ namespace Model
      */
     inline GetHostReservationPurchasePreviewResponse& AddPurchase(Purchase&& value) { m_purchase.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The potential total hourly price of the reservation per hour.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The potential total hourly price of the reservation per hour.</p>
      */
     inline GetHostReservationPurchasePreviewResponse& WithTotalHourlyPrice(const char* value) { SetTotalHourlyPrice(value); return *this;}
+
 
     /**
      * <p>The potential total upfront price. This is billed immediately.</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline GetHostReservationPurchasePreviewResponse& WithTotalUpfrontPrice(const char* value) { SetTotalUpfrontPrice(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -208,10 +213,15 @@ namespace Model
     inline GetHostReservationPurchasePreviewResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     CurrencyCodeValues m_currencyCode;
+
     Aws::Vector<Purchase> m_purchase;
+
     Aws::String m_totalHourlyPrice;
+
     Aws::String m_totalUpfrontPrice;
+
     ResponseMetadata m_responseMetadata;
   };
 

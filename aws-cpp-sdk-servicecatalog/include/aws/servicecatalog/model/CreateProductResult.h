@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     CreateProductResult();
-    CreateProductResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateProductResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resulting detailed product view information.</p>
@@ -69,6 +70,7 @@ namespace Model
      */
     inline CreateProductResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(std::move(value)); return *this;}
 
+
     /**
      * <p>The resulting detailed provisioning artifact information.</p>
      */
@@ -93,6 +95,7 @@ namespace Model
      * <p>The resulting detailed provisioning artifact information.</p>
      */
     inline CreateProductResult& WithProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { SetProvisioningArtifactDetail(std::move(value)); return *this;}
+
 
     /**
      * <p>Tags successfully associated with the new product.</p>
@@ -130,8 +133,11 @@ namespace Model
     inline CreateProductResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     ProductViewDetail m_productViewDetail;
+
     ProvisioningArtifactDetail m_provisioningArtifactDetail;
+
     Aws::Vector<Tag> m_tags;
   };
 

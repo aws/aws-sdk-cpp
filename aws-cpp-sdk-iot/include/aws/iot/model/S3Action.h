@@ -47,6 +47,7 @@ namespace Model
     S3Action& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The ARN of the IAM role that grants access.</p>
      */
     inline S3Action& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>The Amazon S3 bucket.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline S3Action& WithBucketName(const char* value) { SetBucketName(value); return *this;}
 
+
     /**
      * <p>The object key.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The object key.</p>
      */
     inline S3Action& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The Amazon S3 canned ACL that controls access to the object identified by the
@@ -193,12 +197,16 @@ namespace Model
     inline S3Action& WithCannedAcl(CannedAccessControlList&& value) { SetCannedAcl(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     CannedAccessControlList m_cannedAcl;
     bool m_cannedAclHasBeenSet;
   };

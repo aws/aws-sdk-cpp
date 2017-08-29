@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the replication instance. </p>
      */
     inline ReloadTablesRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
+
 
     /**
      * <p>The name and schema of the table to be reloaded. </p>
@@ -109,8 +111,10 @@ namespace Model
     inline ReloadTablesRequest& AddTablesToReload(TableToReload&& value) { m_tablesToReloadHasBeenSet = true; m_tablesToReload.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_replicationTaskArn;
     bool m_replicationTaskArnHasBeenSet;
+
     Aws::Vector<TableToReload> m_tablesToReload;
     bool m_tablesToReloadHasBeenSet;
   };

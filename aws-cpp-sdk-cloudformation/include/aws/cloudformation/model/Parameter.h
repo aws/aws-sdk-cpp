@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The key associated with the parameter. If you don't specify a key and value
      * for a particular parameter, AWS CloudFormation uses the default value that is
@@ -97,6 +98,7 @@ namespace Model
      */
     inline Parameter& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}
 
+
     /**
      * <p>The value associated with the parameter.</p>
      */
@@ -132,6 +134,7 @@ namespace Model
      */
     inline Parameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
 
+
     /**
      * <p>During a stack update, use the existing parameter value that the stack is
      * using for a given parameter key. If you specify <code>true</code>, do not
@@ -154,10 +157,13 @@ namespace Model
     inline Parameter& WithUsePreviousValue(bool value) { SetUsePreviousValue(value); return *this;}
 
   private:
+
     Aws::String m_parameterKey;
     bool m_parameterKeyHasBeenSet;
+
     Aws::String m_parameterValue;
     bool m_parameterValueHasBeenSet;
+
     bool m_usePreviousValue;
     bool m_usePreviousValueHasBeenSet;
   };

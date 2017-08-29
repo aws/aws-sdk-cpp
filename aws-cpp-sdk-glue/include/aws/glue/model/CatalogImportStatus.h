@@ -47,6 +47,7 @@ namespace Model
     CatalogImportStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>True if the migration has completed, or False otherwise.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>True if the migration has completed, or False otherwise.</p>
      */
     inline CatalogImportStatus& WithImportCompleted(bool value) { SetImportCompleted(value); return *this;}
+
 
     /**
      * <p>The time that the migration was started.</p>
@@ -86,6 +88,7 @@ namespace Model
      * <p>The time that the migration was started.</p>
      */
     inline CatalogImportStatus& WithImportTime(Aws::Utils::DateTime&& value) { SetImportTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the person who initiated the migration.</p>
@@ -123,10 +126,13 @@ namespace Model
     inline CatalogImportStatus& WithImportedBy(const char* value) { SetImportedBy(value); return *this;}
 
   private:
+
     bool m_importCompleted;
     bool m_importCompletedHasBeenSet;
+
     Aws::Utils::DateTime m_importTime;
     bool m_importTimeHasBeenSet;
+
     Aws::String m_importedBy;
     bool m_importedByHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetDevEndpointsResult();
-    GetDevEndpointsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDevEndpointsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDevEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDevEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of DevEndpoint definitions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of DevEndpoint definitions.</p>
      */
     inline GetDevEndpointsResult& AddDevEndpoints(DevEndpoint&& value) { m_devEndpoints.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token, if not all DevEndpoint definitions have yet been
@@ -121,7 +123,9 @@ namespace Model
     inline GetDevEndpointsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<DevEndpoint> m_devEndpoints;
+
     Aws::String m_nextToken;
   };
 

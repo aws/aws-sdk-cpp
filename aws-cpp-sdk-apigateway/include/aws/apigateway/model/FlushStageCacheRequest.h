@@ -38,6 +38,7 @@ namespace Model
     FlushStageCacheRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline FlushStageCacheRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The name of the stage to flush its cache.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline FlushStageCacheRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
   };

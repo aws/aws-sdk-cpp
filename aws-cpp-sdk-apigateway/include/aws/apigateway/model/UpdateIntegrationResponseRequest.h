@@ -40,6 +40,7 @@ namespace Model
     UpdateIntegrationResponseRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline UpdateIntegrationResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>Specifies an update integration response request's resource identifier.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline UpdateIntegrationResponseRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>Specifies an update integration response request's HTTP method.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      */
     inline UpdateIntegrationResponseRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
+
     /**
      * <p>Specifies an update integration response request's status code.</p>
      */
@@ -179,6 +183,7 @@ namespace Model
      * <p>Specifies an update integration response request's status code.</p>
      */
     inline UpdateIntegrationResponseRequest& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -223,14 +228,19 @@ namespace Model
     inline UpdateIntegrationResponseRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
+
     Aws::String m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::Vector<PatchOperation> m_patchOperations;
     bool m_patchOperationsHasBeenSet;
   };

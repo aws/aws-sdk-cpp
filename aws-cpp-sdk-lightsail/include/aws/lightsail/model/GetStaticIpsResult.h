@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetStaticIpsResult();
-    GetStaticIpsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetStaticIpsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetStaticIpsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetStaticIpsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about your get static IPs
@@ -84,6 +85,7 @@ namespace Model
      * request.</p>
      */
     inline GetStaticIpsResult& AddStaticIps(StaticIp&& value) { m_staticIps.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token used for advancing to the next page of results from your get static
@@ -128,7 +130,9 @@ namespace Model
     inline GetStaticIpsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<StaticIp> m_staticIps;
+
     Aws::String m_nextPageToken;
   };
 

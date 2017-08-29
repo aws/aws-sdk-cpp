@@ -48,6 +48,7 @@ namespace Model
     WorkflowExecutionTerminatedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The reason provided for the termination.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline WorkflowExecutionTerminatedEventAttributes& WithReason(const char* value) { SetReason(value); return *this;}
 
+
     /**
      * <p>The details provided for the termination.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The details provided for the termination.</p>
      */
     inline WorkflowExecutionTerminatedEventAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
+
 
     /**
      * <p>The policy used for the child workflow executions of this workflow
@@ -183,6 +186,7 @@ namespace Model
      */
     inline WorkflowExecutionTerminatedEventAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>If set, indicates that the workflow execution was automatically terminated,
      * and specifies the cause. This happens if the parent workflow execution times out
@@ -219,12 +223,16 @@ namespace Model
     inline WorkflowExecutionTerminatedEventAttributes& WithCause(WorkflowExecutionTerminatedCause&& value) { SetCause(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
+
     ChildPolicy m_childPolicy;
     bool m_childPolicyHasBeenSet;
+
     WorkflowExecutionTerminatedCause m_cause;
     bool m_causeHasBeenSet;
   };

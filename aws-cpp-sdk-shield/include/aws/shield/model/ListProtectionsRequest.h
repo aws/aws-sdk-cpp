@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
      * to <code>ListProtections</code>. Pass null if this is the first call.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ListProtectionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of <a>Protection</a> objects to be returned. If this is
      * left blank the first 20 results will be returned.</p>
@@ -97,8 +99,10 @@ namespace Model
     inline ListProtectionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

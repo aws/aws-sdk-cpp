@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
      * for the route exactly.</p>
@@ -82,6 +83,7 @@ namespace Model
      * for the route exactly.</p>
      */
     inline DeleteRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+
 
     /**
      * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
@@ -125,6 +127,7 @@ namespace Model
      */
     inline DeleteRouteRequest& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -148,6 +151,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DeleteRouteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The ID of the route table.</p>
@@ -185,12 +189,16 @@ namespace Model
     inline DeleteRouteRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
 
   private:
+
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet;
+
     Aws::String m_destinationIpv6CidrBlock;
     bool m_destinationIpv6CidrBlockHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_routeTableId;
     bool m_routeTableIdHasBeenSet;
   };

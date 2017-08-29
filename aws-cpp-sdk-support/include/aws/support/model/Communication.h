@@ -50,6 +50,7 @@ namespace Model
     Communication& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
@@ -99,6 +100,7 @@ namespace Model
      */
     inline Communication& WithCaseId(const char* value) { SetCaseId(value); return *this;}
 
+
     /**
      * <p>The text of the communication between the customer and AWS Support.</p>
      */
@@ -133,6 +135,7 @@ namespace Model
      * <p>The text of the communication between the customer and AWS Support.</p>
      */
     inline Communication& WithBody(const char* value) { SetBody(value); return *this;}
+
 
     /**
      * <p>The email address of the account that submitted the AWS Support case.</p>
@@ -169,6 +172,7 @@ namespace Model
      */
     inline Communication& WithSubmittedBy(const char* value) { SetSubmittedBy(value); return *this;}
 
+
     /**
      * <p>The time the communication was created.</p>
      */
@@ -203,6 +207,7 @@ namespace Model
      * <p>The time the communication was created.</p>
      */
     inline Communication& WithTimeCreated(const char* value) { SetTimeCreated(value); return *this;}
+
 
     /**
      * <p>Information about the attachments to the case communication.</p>
@@ -240,14 +245,19 @@ namespace Model
     inline Communication& AddAttachmentSet(AttachmentDetails&& value) { m_attachmentSetHasBeenSet = true; m_attachmentSet.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_caseId;
     bool m_caseIdHasBeenSet;
+
     Aws::String m_body;
     bool m_bodyHasBeenSet;
+
     Aws::String m_submittedBy;
     bool m_submittedByHasBeenSet;
+
     Aws::String m_timeCreated;
     bool m_timeCreatedHasBeenSet;
+
     Aws::Vector<AttachmentDetails> m_attachmentSet;
     bool m_attachmentSetHasBeenSet;
   };

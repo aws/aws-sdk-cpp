@@ -45,6 +45,7 @@ namespace Model
     VersionInformation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Arn of the version.
      */
@@ -79,6 +80,7 @@ namespace Model
      * Arn of the version.
      */
     inline VersionInformation& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * Timestamp of when the version was created.
@@ -115,6 +117,7 @@ namespace Model
      */
     inline VersionInformation& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
+
     /**
      * Id of the resource container.
      */
@@ -149,6 +152,7 @@ namespace Model
      * Id of the resource container.
      */
     inline VersionInformation& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Unique Id of a version.
@@ -186,12 +190,16 @@ namespace Model
     inline VersionInformation& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_creationTimestamp;
     bool m_creationTimestampHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

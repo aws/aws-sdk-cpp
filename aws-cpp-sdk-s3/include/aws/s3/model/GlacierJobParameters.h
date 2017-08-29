@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Glacier retrieval tier at which the restore will be processed.
      */
@@ -67,6 +68,7 @@ namespace Model
     inline GlacierJobParameters& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 
   private:
+
     Tier m_tier;
     bool m_tierHasBeenSet;
   };

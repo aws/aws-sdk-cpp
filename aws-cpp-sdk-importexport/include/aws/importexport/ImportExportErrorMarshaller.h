@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_IMPORTEXPORT_API ImportExportErrorMarshaller : public Client::XmlErrorMarshaller
+class AWS_IMPORTEXPORT_API ImportExportErrorMarshaller : public Aws::Client::XmlErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace ImportExport
+} // namespace Client
 } // namespace Aws

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListXssMatchSetsResult();
-    ListXssMatchSetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListXssMatchSetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListXssMatchSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListXssMatchSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If you have more <a>XssMatchSet</a> objects than the number that you
@@ -119,6 +120,7 @@ namespace Model
      */
     inline ListXssMatchSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>An array of <a>XssMatchSetSummary</a> objects.</p>
      */
@@ -155,7 +157,9 @@ namespace Model
     inline ListXssMatchSetsResult& AddXssMatchSets(XssMatchSetSummary&& value) { m_xssMatchSets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextMarker;
+
     Aws::Vector<XssMatchSetSummary> m_xssMatchSets;
   };
 

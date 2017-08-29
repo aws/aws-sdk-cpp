@@ -46,6 +46,7 @@ namespace Model
     BufferingHints& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Buffer incoming data to the specified size, in MBs, before delivering it to
      * the destination. The default value is 5.</p> <p>We recommend setting this
@@ -73,6 +74,7 @@ namespace Model
      */
     inline BufferingHints& WithSizeInMBs(int value) { SetSizeInMBs(value); return *this;}
 
+
     /**
      * <p>Buffer incoming data for the specified period of time, in seconds, before
      * delivering it to the destination. The default value is 300.</p>
@@ -92,8 +94,10 @@ namespace Model
     inline BufferingHints& WithIntervalInSeconds(int value) { SetIntervalInSeconds(value); return *this;}
 
   private:
+
     int m_sizeInMBs;
     bool m_sizeInMBsHasBeenSet;
+
     int m_intervalInSeconds;
     bool m_intervalInSecondsHasBeenSet;
   };

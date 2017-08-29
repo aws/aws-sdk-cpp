@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The user pool ID for the user pool.</p>
      */
     inline CreateResourceServerRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>A unique resource server identifier for the resource server. This could be an
@@ -122,6 +124,7 @@ namespace Model
      */
     inline CreateResourceServerRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
+
     /**
      * <p>A friendly name for the resource server.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>A friendly name for the resource server.</p>
      */
     inline CreateResourceServerRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A list of scopes. Each scope is map, where the keys are <code>name</code> and
@@ -200,12 +204,16 @@ namespace Model
     inline CreateResourceServerRequest& AddScopes(ResourceServerScopeType&& value) { m_scopesHasBeenSet = true; m_scopes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_identifier;
     bool m_identifierHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<ResourceServerScopeType> m_scopes;
     bool m_scopesHasBeenSet;
   };

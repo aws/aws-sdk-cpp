@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     AcceptVpcPeeringConnectionResponse();
-    AcceptVpcPeeringConnectionResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AcceptVpcPeeringConnectionResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AcceptVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AcceptVpcPeeringConnectionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the VPC peering connection.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline AcceptVpcPeeringConnectionResponse& WithVpcPeeringConnection(VpcPeeringConnection&& value) { SetVpcPeeringConnection(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline AcceptVpcPeeringConnectionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     VpcPeeringConnection m_vpcPeeringConnection;
+
     ResponseMetadata m_responseMetadata;
   };
 

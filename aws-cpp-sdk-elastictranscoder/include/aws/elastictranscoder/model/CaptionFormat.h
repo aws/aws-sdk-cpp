@@ -47,6 +47,7 @@ namespace Model
     CaptionFormat& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The format you specify determines whether Elastic Transcoder generates an
      * embedded or sidecar caption for this output.</p> <ul> <li> <p> <b>Valid Embedded
@@ -158,6 +159,7 @@ namespace Model
      * </ul>
      */
     inline CaptionFormat& WithFormat(const char* value) { SetFormat(value); return *this;}
+
 
     /**
      * <p>The prefix for caption filenames, in the form
@@ -278,6 +280,7 @@ namespace Model
      */
     inline CaptionFormat& WithPattern(const char* value) { SetPattern(value); return *this;}
 
+
     /**
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your caption formats.</p>
@@ -309,10 +312,13 @@ namespace Model
     inline CaptionFormat& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_pattern;
     bool m_patternHasBeenSet;
+
     Encryption m_encryption;
     bool m_encryptionHasBeenSet;
   };

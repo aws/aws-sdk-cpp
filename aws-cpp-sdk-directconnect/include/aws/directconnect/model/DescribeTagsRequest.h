@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline DescribeTagsRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_resourceArns;
     bool m_resourceArnsHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     LayerFailure& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The layer digest associated with the failure.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline LayerFailure& WithLayerDigest(const char* value) { SetLayerDigest(value); return *this;}
 
+
     /**
      * <p>The failure code associated with the failure.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The failure code associated with the failure.</p>
      */
     inline LayerFailure& WithFailureCode(LayerFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason for the failure.</p>
@@ -143,10 +146,13 @@ namespace Model
     inline LayerFailure& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
   private:
+
     Aws::String m_layerDigest;
     bool m_layerDigestHasBeenSet;
+
     LayerFailureCode m_failureCode;
     bool m_failureCodeHasBeenSet;
+
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;
   };

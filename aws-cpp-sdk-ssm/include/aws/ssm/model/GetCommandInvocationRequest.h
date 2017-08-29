@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>(Required) The parent command ID of the invocation plugin.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>(Required) The parent command ID of the invocation plugin.</p>
      */
     inline GetCommandInvocationRequest& WithCommandId(const char* value) { SetCommandId(value); return *this;}
+
 
     /**
      * <p>(Required) The ID of the managed instance targeted by the command. A managed
@@ -119,6 +121,7 @@ namespace Model
      * that is configured for Systems Manager.</p>
      */
     inline GetCommandInvocationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>(Optional) The name of the plugin for which you want detailed results. If the
@@ -170,10 +173,13 @@ namespace Model
     inline GetCommandInvocationRequest& WithPluginName(const char* value) { SetPluginName(value); return *this;}
 
   private:
+
     Aws::String m_commandId;
     bool m_commandIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_pluginName;
     bool m_pluginNameHasBeenSet;
   };

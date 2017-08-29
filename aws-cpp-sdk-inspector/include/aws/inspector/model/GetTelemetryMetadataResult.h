@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetTelemetryMetadataResult();
-    GetTelemetryMetadataResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTelemetryMetadataResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTelemetryMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTelemetryMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Telemetry details.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline GetTelemetryMetadataResult& AddTelemetryMetadata(TelemetryMetadata&& value) { m_telemetryMetadata.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<TelemetryMetadata> m_telemetryMetadata;
   };
 

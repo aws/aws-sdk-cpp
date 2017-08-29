@@ -37,6 +37,7 @@ namespace Model
     CreatePolicyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The policy name.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The policy name.</p>
      */
     inline CreatePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The JSON document that describes the policy. <b>policyDocument</b> must have
@@ -115,8 +117,10 @@ namespace Model
     inline CreatePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet;
   };

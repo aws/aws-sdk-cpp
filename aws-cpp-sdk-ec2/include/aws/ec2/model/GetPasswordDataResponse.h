@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetPasswordDataResponse();
-    GetPasswordDataResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetPasswordDataResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetPasswordDataResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetPasswordDataResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the Windows instance.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline GetPasswordDataResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The password of the instance.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline GetPasswordDataResponse& WithPasswordData(const char* value) { SetPasswordData(value); return *this;}
 
+
     /**
      * <p>The time the data was last updated.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      */
     inline GetPasswordDataResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -159,9 +163,13 @@ namespace Model
     inline GetPasswordDataResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceId;
+
     Aws::String m_passwordData;
+
     Aws::Utils::DateTime m_timestamp;
+
     ResponseMetadata m_responseMetadata;
   };
 

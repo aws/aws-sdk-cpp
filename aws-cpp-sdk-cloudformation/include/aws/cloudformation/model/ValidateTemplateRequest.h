@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
      * maximum length of 51,200 bytes. For more information, go to <a
@@ -110,6 +111,7 @@ namespace Model
      * only <code>TemplateBody</code> is used.</p>
      */
     inline ValidateTemplateRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
@@ -189,8 +191,10 @@ namespace Model
     inline ValidateTemplateRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
   private:
+
     Aws::String m_templateBody;
     bool m_templateBodyHasBeenSet;
+
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet;
   };

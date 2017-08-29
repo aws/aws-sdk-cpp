@@ -46,12 +46,12 @@ DeleteThingShadowResult& DeleteThingShadowResult::operator=(DeleteThingShadowRes
    return *this;
 }
 
-DeleteThingShadowResult::DeleteThingShadowResult(AmazonWebServiceResult<ResponseStream>&& result)
+DeleteThingShadowResult::DeleteThingShadowResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
 }
 
-DeleteThingShadowResult& DeleteThingShadowResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+DeleteThingShadowResult& DeleteThingShadowResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_payload = result.TakeOwnershipOfPayload();
 

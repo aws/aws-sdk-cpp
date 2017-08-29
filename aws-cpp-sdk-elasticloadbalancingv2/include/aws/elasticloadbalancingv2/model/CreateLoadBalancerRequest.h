@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p> <p>This name must be unique per region per
      * account, can have a maximum of 32 characters, must contain only alphanumeric
@@ -90,6 +91,7 @@ namespace Model
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
     inline CreateLoadBalancerRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
@@ -147,6 +149,7 @@ namespace Model
      */
     inline CreateLoadBalancerRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
+
     /**
      * <p>The IDs of the security groups to assign to the load balancer.</p>
      */
@@ -186,6 +189,7 @@ namespace Model
      * <p>The IDs of the security groups to assign to the load balancer.</p>
      */
     inline CreateLoadBalancerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
 
     /**
      * <p>The nodes of an Internet-facing load balancer have public IP addresses. The
@@ -252,6 +256,7 @@ namespace Model
      */
     inline CreateLoadBalancerRequest& WithScheme(LoadBalancerSchemeEnum&& value) { SetScheme(std::move(value)); return *this;}
 
+
     /**
      * <p>One or more tags to assign to the load balancer.</p>
      */
@@ -286,6 +291,7 @@ namespace Model
      * <p>One or more tags to assign to the load balancer.</p>
      */
     inline CreateLoadBalancerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The type of IP addresses used by the subnets for your load balancer. The
@@ -328,16 +334,22 @@ namespace Model
     inline CreateLoadBalancerRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
     LoadBalancerSchemeEnum m_scheme;
     bool m_schemeHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet;
   };

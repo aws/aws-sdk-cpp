@@ -46,6 +46,7 @@ namespace Model
     ParameterGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the parameter group.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the parameter group.</p>
      */
     inline ParameterGroup& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+
 
     /**
      * <p>A description of the parameter group.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline ParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

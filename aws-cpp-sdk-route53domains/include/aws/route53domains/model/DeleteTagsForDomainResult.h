@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteTagsForDomainResult();
-    DeleteTagsForDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTagsForDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTagsForDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTagsForDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

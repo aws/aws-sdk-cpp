@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetInstanceResult();
-    GetInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the specified
@@ -72,6 +73,7 @@ namespace Model
     inline GetInstanceResult& WithInstance(Instance&& value) { SetInstance(std::move(value)); return *this;}
 
   private:
+
     Instance m_instance;
   };
 

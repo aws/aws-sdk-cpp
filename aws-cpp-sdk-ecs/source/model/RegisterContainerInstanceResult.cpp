@@ -30,12 +30,12 @@ RegisterContainerInstanceResult::RegisterContainerInstanceResult()
 {
 }
 
-RegisterContainerInstanceResult::RegisterContainerInstanceResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterContainerInstanceResult::RegisterContainerInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterContainerInstanceResult& RegisterContainerInstanceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterContainerInstanceResult& RegisterContainerInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("containerInstance"))

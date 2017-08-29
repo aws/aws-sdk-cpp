@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identity that is associated with the policy that you want to delete. You
      * can specify the identity by using its name or by using its Amazon Resource Name
@@ -108,6 +109,7 @@ namespace Model
      */
     inline DeleteIdentityPolicyRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
+
     /**
      * <p>The name of the policy to be deleted.</p>
      */
@@ -144,8 +146,10 @@ namespace Model
     inline DeleteIdentityPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
   };

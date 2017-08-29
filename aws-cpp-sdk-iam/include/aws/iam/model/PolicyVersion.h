@@ -56,6 +56,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The policy document.</p> <p>The policy document is returned in the response
      * to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
@@ -112,6 +113,7 @@ namespace Model
      */
     inline PolicyVersion& WithDocument(const char* value) { SetDocument(value); return *this;}
 
+
     /**
      * <p>The identifier for the policy version.</p> <p>Policy version identifiers
      * always begin with <code>v</code> (always lowercase). When a policy is created,
@@ -161,6 +163,7 @@ namespace Model
      */
     inline PolicyVersion& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     /**
      * <p>Specifies whether the policy version is set as the policy's default
      * version.</p>
@@ -178,6 +181,7 @@ namespace Model
      * version.</p>
      */
     inline PolicyVersion& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
+
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -210,12 +214,16 @@ namespace Model
     inline PolicyVersion& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_document;
     bool m_documentHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     bool m_isDefaultVersion;
     bool m_isDefaultVersionHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry to which to upload layers. If
      * you do not specify a registry, the default registry is assumed.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline CompleteLayerUploadRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The name of the repository to associate with the image layer.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The name of the repository to associate with the image layer.</p>
      */
     inline CompleteLayerUploadRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
@@ -156,6 +159,7 @@ namespace Model
      */
     inline CompleteLayerUploadRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
+
     /**
      * <p>The <code>sha256</code> digest of the image layer.</p>
      */
@@ -197,12 +201,16 @@ namespace Model
     inline CompleteLayerUploadRequest& AddLayerDigests(const char* value) { m_layerDigestsHasBeenSet = true; m_layerDigests.push_back(value); return *this; }
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_layerDigests;
     bool m_layerDigestsHasBeenSet;
   };

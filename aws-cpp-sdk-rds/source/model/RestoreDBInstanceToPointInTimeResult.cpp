@@ -31,12 +31,12 @@ RestoreDBInstanceToPointInTimeResult::RestoreDBInstanceToPointInTimeResult()
 {
 }
 
-RestoreDBInstanceToPointInTimeResult::RestoreDBInstanceToPointInTimeResult(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreDBInstanceToPointInTimeResult::RestoreDBInstanceToPointInTimeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RestoreDBInstanceToPointInTimeResult& RestoreDBInstanceToPointInTimeResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreDBInstanceToPointInTimeResult& RestoreDBInstanceToPointInTimeResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

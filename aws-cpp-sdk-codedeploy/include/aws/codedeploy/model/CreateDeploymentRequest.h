@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The name of the deployment group.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 
+
     /**
      * <p>The type and location of the revision to deploy.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>The type and location of the revision to deploy.</p>
      */
     inline CreateDeploymentRequest& WithRevision(RevisionLocation&& value) { SetRevision(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of a deployment configuration associated with the applicable IAM
@@ -209,6 +213,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
+
     /**
      * <p>A comment about the deployment.</p>
      */
@@ -244,6 +249,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>If set to true, then if the deployment causes the ApplicationStop deployment
      * lifecycle event to an instance to fail, the deployment to that instance will not
@@ -277,6 +283,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithIgnoreApplicationStopFailures(bool value) { SetIgnoreApplicationStopFailures(value); return *this;}
 
+
     /**
      * <p>Information about the instances that will belong to the replacement
      * environment in a blue/green deployment.</p>
@@ -306,6 +313,7 @@ namespace Model
      * environment in a blue/green deployment.</p>
      */
     inline CreateDeploymentRequest& WithTargetInstances(TargetInstances&& value) { SetTargetInstances(std::move(value)); return *this;}
+
 
     /**
      * <p>Configuration information for an automatic rollback that is added when a
@@ -337,6 +345,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether to deploy to all instances or only to instances that are
      * not running the latest application revision.</p>
@@ -354,6 +363,7 @@ namespace Model
      * not running the latest application revision.</p>
      */
     inline CreateDeploymentRequest& WithUpdateOutdatedInstancesOnly(bool value) { SetUpdateOutdatedInstancesOnly(value); return *this;}
+
 
     /**
      * <p>Information about how AWS CodeDeploy handles files that already exist in a
@@ -421,24 +431,34 @@ namespace Model
     inline CreateDeploymentRequest& WithFileExistsBehavior(FileExistsBehavior&& value) { SetFileExistsBehavior(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_deploymentGroupName;
     bool m_deploymentGroupNameHasBeenSet;
+
     RevisionLocation m_revision;
     bool m_revisionHasBeenSet;
+
     Aws::String m_deploymentConfigName;
     bool m_deploymentConfigNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_ignoreApplicationStopFailures;
     bool m_ignoreApplicationStopFailuresHasBeenSet;
+
     TargetInstances m_targetInstances;
     bool m_targetInstancesHasBeenSet;
+
     AutoRollbackConfiguration m_autoRollbackConfiguration;
     bool m_autoRollbackConfigurationHasBeenSet;
+
     bool m_updateOutdatedInstancesOnly;
     bool m_updateOutdatedInstancesOnlyHasBeenSet;
+
     FileExistsBehavior m_fileExistsBehavior;
     bool m_fileExistsBehaviorHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
@@ -70,6 +71,7 @@ namespace Model
 
     
     inline LifecycleRuleAndOperator& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+
 
     /**
      * All of these tags must exist in the object's tag set in order for the rule to
@@ -114,8 +116,10 @@ namespace Model
     inline LifecycleRuleAndOperator& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

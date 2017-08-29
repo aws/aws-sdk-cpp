@@ -30,12 +30,12 @@ UpdateDeviceDefinitionResult::UpdateDeviceDefinitionResult()
 {
 }
 
-UpdateDeviceDefinitionResult::UpdateDeviceDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDeviceDefinitionResult::UpdateDeviceDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateDeviceDefinitionResult& UpdateDeviceDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDeviceDefinitionResult& UpdateDeviceDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

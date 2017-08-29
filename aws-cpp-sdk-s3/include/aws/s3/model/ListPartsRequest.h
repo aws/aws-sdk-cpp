@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline ListPartsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
@@ -85,6 +87,7 @@ namespace Model
     
     inline ListPartsRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * Sets the maximum number of parts to return.
      */
@@ -99,6 +102,7 @@ namespace Model
      * Sets the maximum number of parts to return.
      */
     inline ListPartsRequest& WithMaxParts(int value) { SetMaxParts(value); return *this;}
+
 
     /**
      * Specifies the part after which listing should begin. Only parts with higher part
@@ -117,6 +121,7 @@ namespace Model
      * numbers will be listed.
      */
     inline ListPartsRequest& WithPartNumberMarker(int value) { SetPartNumberMarker(value); return *this;}
+
 
     /**
      * Upload ID identifying the multipart upload whose parts are being listed.
@@ -153,6 +158,7 @@ namespace Model
      */
     inline ListPartsRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
+
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
@@ -169,16 +175,22 @@ namespace Model
     inline ListPartsRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     int m_maxParts;
     bool m_maxPartsHasBeenSet;
+
     int m_partNumberMarker;
     bool m_partNumberMarkerHasBeenSet;
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
   };

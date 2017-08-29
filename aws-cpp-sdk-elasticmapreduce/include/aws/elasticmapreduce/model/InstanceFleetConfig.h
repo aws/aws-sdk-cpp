@@ -51,6 +51,7 @@ namespace Model
     InstanceFleetConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The friendly name of the instance fleet.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline InstanceFleetConfig& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The node type that the instance fleet hosts. Valid values are MASTER,CORE,and
      * TASK.</p>
@@ -115,6 +117,7 @@ namespace Model
      * TASK.</p>
      */
     inline InstanceFleetConfig& WithInstanceFleetType(InstanceFleetType&& value) { SetInstanceFleetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The target capacity of On-Demand units for the instance fleet, which
@@ -179,6 +182,7 @@ namespace Model
      */
     inline InstanceFleetConfig& WithTargetOnDemandCapacity(int value) { SetTargetOnDemandCapacity(value); return *this;}
 
+
     /**
      * <p>The target capacity of Spot units for the instance fleet, which determines
      * how many Spot instances to provision. When the instance fleet launches, Amazon
@@ -239,6 +243,7 @@ namespace Model
      */
     inline InstanceFleetConfig& WithTargetSpotCapacity(int value) { SetTargetSpotCapacity(value); return *this;}
 
+
     /**
      * <p>The instance type configurations that define the EC2 instances in the
      * instance fleet.</p>
@@ -281,6 +286,7 @@ namespace Model
      */
     inline InstanceFleetConfig& AddInstanceTypeConfigs(InstanceTypeConfig&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The launch specification for the instance fleet.</p>
      */
@@ -307,16 +313,22 @@ namespace Model
     inline InstanceFleetConfig& WithLaunchSpecifications(InstanceFleetProvisioningSpecifications&& value) { SetLaunchSpecifications(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     InstanceFleetType m_instanceFleetType;
     bool m_instanceFleetTypeHasBeenSet;
+
     int m_targetOnDemandCapacity;
     bool m_targetOnDemandCapacityHasBeenSet;
+
     int m_targetSpotCapacity;
     bool m_targetSpotCapacityHasBeenSet;
+
     Aws::Vector<InstanceTypeConfig> m_instanceTypeConfigs;
     bool m_instanceTypeConfigsHasBeenSet;
+
     InstanceFleetProvisioningSpecifications m_launchSpecifications;
     bool m_launchSpecificationsHasBeenSet;
   };

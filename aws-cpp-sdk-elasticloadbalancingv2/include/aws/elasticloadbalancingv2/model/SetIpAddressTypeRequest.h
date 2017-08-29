@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
     inline SetIpAddressTypeRequest& WithLoadBalancerArn(const char* value) { SetLoadBalancerArn(value); return *this;}
+
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
@@ -110,8 +112,10 @@ namespace Model
     inline SetIpAddressTypeRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_loadBalancerArn;
     bool m_loadBalancerArnHasBeenSet;
+
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet;
   };

@@ -30,12 +30,12 @@ DescribeEffectivePatchesForPatchBaselineResult::DescribeEffectivePatchesForPatch
 {
 }
 
-DescribeEffectivePatchesForPatchBaselineResult::DescribeEffectivePatchesForPatchBaselineResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEffectivePatchesForPatchBaselineResult::DescribeEffectivePatchesForPatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeEffectivePatchesForPatchBaselineResult& DescribeEffectivePatchesForPatchBaselineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEffectivePatchesForPatchBaselineResult& DescribeEffectivePatchesForPatchBaselineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EffectivePatches"))

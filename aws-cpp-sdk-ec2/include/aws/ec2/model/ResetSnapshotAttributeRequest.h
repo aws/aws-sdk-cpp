@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The attribute to reset. Currently, only the attribute for permission to
      * create volumes can be reset.</p>
@@ -72,6 +73,7 @@ namespace Model
      * create volumes can be reset.</p>
      */
     inline ResetSnapshotAttributeRequest& WithAttribute(SnapshotAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the snapshot.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline ResetSnapshotAttributeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -133,10 +136,13 @@ namespace Model
     inline ResetSnapshotAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     SnapshotAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

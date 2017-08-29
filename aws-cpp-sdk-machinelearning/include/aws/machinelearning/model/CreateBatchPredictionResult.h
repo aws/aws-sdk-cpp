@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     CreateBatchPredictionResult();
-    CreateBatchPredictionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateBatchPredictionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateBatchPredictionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateBatchPredictionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.
@@ -101,6 +102,7 @@ namespace Model
     inline CreateBatchPredictionResult& WithBatchPredictionId(const char* value) { SetBatchPredictionId(value); return *this;}
 
   private:
+
     Aws::String m_batchPredictionId;
   };
 

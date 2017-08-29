@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the group.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the group.</p>
      */
     inline DescribeNotificationConfigurationsRequest& AddAutoScalingGroupNames(const char* value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -125,6 +127,7 @@ namespace Model
      */
     inline DescribeNotificationConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return with this call. The default value is 50
      * and the maximum value is 100.</p>
@@ -144,10 +147,13 @@ namespace Model
     inline DescribeNotificationConfigurationsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_autoScalingGroupNames;
     bool m_autoScalingGroupNamesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
   };

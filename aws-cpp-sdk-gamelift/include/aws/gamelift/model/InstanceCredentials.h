@@ -47,6 +47,7 @@ namespace Model
     InstanceCredentials& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>User login string.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>User login string.</p>
      */
     inline InstanceCredentials& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>Secret string. For Windows instances, the secret is a password for use with
@@ -132,8 +134,10 @@ namespace Model
     inline InstanceCredentials& WithSecret(const char* value) { SetSecret(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_secret;
     bool m_secretHasBeenSet;
   };

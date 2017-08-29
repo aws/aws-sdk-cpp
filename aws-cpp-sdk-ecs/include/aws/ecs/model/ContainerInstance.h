@@ -52,6 +52,7 @@ namespace Model
     ContainerInstance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
      * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
@@ -129,6 +130,7 @@ namespace Model
      */
     inline ContainerInstance& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
 
+
     /**
      * <p>The EC2 instance ID of the container instance.</p>
      */
@@ -164,6 +166,7 @@ namespace Model
      */
     inline ContainerInstance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
 
+
     /**
      * <p>The version counter for the container instance. Every time a container
      * instance experiences a change that triggers a CloudWatch event, the version
@@ -197,6 +200,7 @@ namespace Model
      */
     inline ContainerInstance& WithVersion(long long value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>The version information for the Amazon ECS container agent and Docker daemon
      * running on the container instance.</p>
@@ -226,6 +230,7 @@ namespace Model
      * running on the container instance.</p>
      */
     inline ContainerInstance& WithVersionInfo(VersionInfo&& value) { SetVersionInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>For most resource types, this parameter describes the remaining resources of
@@ -290,6 +295,7 @@ namespace Model
      */
     inline ContainerInstance& AddRemainingResources(Resource&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>For most resource types, this parameter describes the registered resources on
      * the container instance that are in use by current tasks. For port resource
@@ -345,6 +351,7 @@ namespace Model
      * container agent when it registered the container instance with Amazon ECS.</p>
      */
     inline ContainerInstance& AddRegisteredResources(Resource&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The status of the container instance. The valid values are
@@ -437,6 +444,7 @@ namespace Model
      */
     inline ContainerInstance& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>This parameter returns <code>true</code> if the agent is actually connected
      * to Amazon ECS. Registered instances with an agent that may be unhealthy or
@@ -461,6 +469,7 @@ namespace Model
      */
     inline ContainerInstance& WithAgentConnected(bool value) { SetAgentConnected(value); return *this;}
 
+
     /**
      * <p>The number of tasks on the container instance that are in the
      * <code>RUNNING</code> status.</p>
@@ -479,6 +488,7 @@ namespace Model
      */
     inline ContainerInstance& WithRunningTasksCount(int value) { SetRunningTasksCount(value); return *this;}
 
+
     /**
      * <p>The number of tasks on the container instance that are in the
      * <code>PENDING</code> status.</p>
@@ -496,6 +506,7 @@ namespace Model
      * <code>PENDING</code> status.</p>
      */
     inline ContainerInstance& WithPendingTasksCount(int value) { SetPendingTasksCount(value); return *this;}
+
 
     /**
      * <p>The status of the most recent agent update. If an update has never been
@@ -526,6 +537,7 @@ namespace Model
      * requested, this value is <code>NULL</code>.</p>
      */
     inline ContainerInstance& WithAgentUpdateStatus(AgentUpdateStatus&& value) { SetAgentUpdateStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The attributes set for the container instance, either by the Amazon ECS
@@ -576,6 +588,7 @@ namespace Model
      */
     inline ContainerInstance& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The Unix timestamp for when the container instance was registered.</p>
      */
@@ -602,30 +615,43 @@ namespace Model
     inline ContainerInstance& WithRegisteredAt(Aws::Utils::DateTime&& value) { SetRegisteredAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_containerInstanceArn;
     bool m_containerInstanceArnHasBeenSet;
+
     Aws::String m_ec2InstanceId;
     bool m_ec2InstanceIdHasBeenSet;
+
     long long m_version;
     bool m_versionHasBeenSet;
+
     VersionInfo m_versionInfo;
     bool m_versionInfoHasBeenSet;
+
     Aws::Vector<Resource> m_remainingResources;
     bool m_remainingResourcesHasBeenSet;
+
     Aws::Vector<Resource> m_registeredResources;
     bool m_registeredResourcesHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     bool m_agentConnected;
     bool m_agentConnectedHasBeenSet;
+
     int m_runningTasksCount;
     bool m_runningTasksCountHasBeenSet;
+
     int m_pendingTasksCount;
     bool m_pendingTasksCountHasBeenSet;
+
     AgentUpdateStatus m_agentUpdateStatus;
     bool m_agentUpdateStatusHasBeenSet;
+
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::Utils::DateTime m_registeredAt;
     bool m_registeredAtHasBeenSet;
   };

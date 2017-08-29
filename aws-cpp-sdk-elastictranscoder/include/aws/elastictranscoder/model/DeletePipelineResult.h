@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     DeletePipelineResult();
-    DeletePipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeletePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeletePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

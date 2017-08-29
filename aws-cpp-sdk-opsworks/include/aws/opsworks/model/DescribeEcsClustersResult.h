@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeEcsClustersResult();
-    DescribeEcsClustersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEcsClustersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEcsClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEcsClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <code>EcsCluster</code> objects containing the cluster
@@ -90,6 +91,7 @@ namespace Model
      * descriptions.</p>
      */
     inline DescribeEcsClustersResult& AddEcsClusters(EcsCluster&& value) { m_ecsClusters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a paginated request does not return all of the remaining results, this
@@ -155,7 +157,9 @@ namespace Model
     inline DescribeEcsClustersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<EcsCluster> m_ecsClusters;
+
     Aws::String m_nextToken;
   };
 

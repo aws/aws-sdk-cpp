@@ -46,6 +46,7 @@ namespace Model
     BuiltinIntentSlot& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of the slots defined for the intent.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline BuiltinIntentSlot& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

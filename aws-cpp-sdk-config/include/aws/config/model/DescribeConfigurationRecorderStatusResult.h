@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeConfigurationRecorderStatusResult();
-    DescribeConfigurationRecorderStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConfigurationRecorderStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConfigurationRecorderStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConfigurationRecorderStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list that contains status of the specified recorders.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeConfigurationRecorderStatusResult& AddConfigurationRecordersStatus(ConfigurationRecorderStatus&& value) { m_configurationRecordersStatus.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ConfigurationRecorderStatus> m_configurationRecordersStatus;
   };
 

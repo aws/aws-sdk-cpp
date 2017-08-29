@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The ARN of the Lambda function.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The ARN of the Lambda function.</p>
      */
     inline LambdaFunctionAssociation& WithLambdaFunctionARN(const char* value) { SetLambdaFunctionARN(value); return *this;}
+
 
     /**
      * <p>Specifies the event type that triggers a Lambda function invocation. Valid
@@ -124,8 +126,10 @@ namespace Model
     inline LambdaFunctionAssociation& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_lambdaFunctionARN;
     bool m_lambdaFunctionARNHasBeenSet;
+
     EventType m_eventType;
     bool m_eventTypeHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The description of the disk image.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ImageDiskContainer& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The block device mapping for the disk.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The block device mapping for the disk.</p>
      */
     inline ImageDiskContainer& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
@@ -162,6 +165,7 @@ namespace Model
      */
     inline ImageDiskContainer& WithFormat(const char* value) { SetFormat(value); return *this;}
 
+
     /**
      * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
      */
@@ -196,6 +200,7 @@ namespace Model
      * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
      */
     inline ImageDiskContainer& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+
 
     /**
      * <p>The URL to the Amazon S3-based disk image being imported. The URL can either
@@ -239,6 +244,7 @@ namespace Model
      */
     inline ImageDiskContainer& WithUrl(const char* value) { SetUrl(value); return *this;}
 
+
     /**
      * <p>The S3 bucket for the disk image.</p>
      */
@@ -265,16 +271,22 @@ namespace Model
     inline ImageDiskContainer& WithUserBucket(UserBucket&& value) { SetUserBucket(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet;
+
     Aws::String m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
+
     UserBucket m_userBucket;
     bool m_userBucketHasBeenSet;
   };

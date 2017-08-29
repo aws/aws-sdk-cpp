@@ -47,6 +47,7 @@ namespace Model
     PipelineExecutionSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the pipeline execution.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The ID of the pipeline execution.</p>
      */
     inline PipelineExecutionSummary& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
+
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
@@ -137,6 +139,7 @@ namespace Model
      */
     inline PipelineExecutionSummary& WithStatus(PipelineExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time when the pipeline execution began, in timestamp format.</p>
      */
@@ -161,6 +164,7 @@ namespace Model
      * <p>The date and time when the pipeline execution began, in timestamp format.</p>
      */
     inline PipelineExecutionSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time of the last change to the pipeline execution, in timestamp
@@ -193,12 +197,16 @@ namespace Model
     inline PipelineExecutionSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_pipelineExecutionId;
     bool m_pipelineExecutionIdHasBeenSet;
+
     PipelineExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet;
   };

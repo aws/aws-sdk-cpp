@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     BatchDeleteTableResult();
-    BatchDeleteTableResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteTableResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchDeleteTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchDeleteTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of errors encountered in attempting to delete the specified
@@ -85,6 +86,7 @@ namespace Model
     inline BatchDeleteTableResult& AddErrors(TableError&& value) { m_errors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<TableError> m_errors;
   };
 

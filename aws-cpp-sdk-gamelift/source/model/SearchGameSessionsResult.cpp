@@ -30,12 +30,12 @@ SearchGameSessionsResult::SearchGameSessionsResult()
 {
 }
 
-SearchGameSessionsResult::SearchGameSessionsResult(const AmazonWebServiceResult<JsonValue>& result)
+SearchGameSessionsResult::SearchGameSessionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SearchGameSessionsResult& SearchGameSessionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SearchGameSessionsResult& SearchGameSessionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GameSessions"))

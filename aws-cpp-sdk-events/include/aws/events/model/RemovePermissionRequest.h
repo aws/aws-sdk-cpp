@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The statement ID corresponding to the account that is no longer allowed to
      * put events to the default event bus.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline RemovePermissionRequest& WithStatementId(const char* value) { SetStatementId(value); return *this;}
 
   private:
+
     Aws::String m_statementId;
     bool m_statementIdHasBeenSet;
   };

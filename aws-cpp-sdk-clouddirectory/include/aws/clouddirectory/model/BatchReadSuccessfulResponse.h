@@ -56,6 +56,7 @@ namespace Model
     BatchReadSuccessfulResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Lists all attributes that are associated with an object.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>Lists all attributes that are associated with an object.</p>
      */
     inline BatchReadSuccessfulResponse& WithListObjectAttributes(BatchListObjectAttributesResponse&& value) { SetListObjectAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>Returns a paginated list of child objects that are associated with a given
@@ -111,6 +113,7 @@ namespace Model
      */
     inline BatchReadSuccessfulResponse& WithListObjectChildren(BatchListObjectChildrenResponse&& value) { SetListObjectChildren(std::move(value)); return *this;}
 
+
     /**
      * <p>Retrieves metadata about an object.</p>
      */
@@ -136,6 +139,7 @@ namespace Model
      */
     inline BatchReadSuccessfulResponse& WithGetObjectInformation(BatchGetObjectInformationResponse&& value) { SetGetObjectInformation(std::move(value)); return *this;}
 
+
     /**
      * <p>Lists indices attached to an object.</p>
      */
@@ -160,6 +164,7 @@ namespace Model
      * <p>Lists indices attached to an object.</p>
      */
     inline BatchReadSuccessfulResponse& WithListAttachedIndices(BatchListAttachedIndicesResponse&& value) { SetListAttachedIndices(std::move(value)); return *this;}
+
 
     /**
      * <p>Retrieves all available parent paths for any object type such as node, leaf
@@ -206,6 +211,7 @@ namespace Model
      */
     inline BatchReadSuccessfulResponse& WithListObjectParentPaths(BatchListObjectParentPathsResponse&& value) { SetListObjectParentPaths(std::move(value)); return *this;}
 
+
     /**
      * <p>Returns policies attached to an object in pagination fashion.</p>
      */
@@ -230,6 +236,7 @@ namespace Model
      * <p>Returns policies attached to an object in pagination fashion.</p>
      */
     inline BatchReadSuccessfulResponse& WithListObjectPolicies(BatchListObjectPoliciesResponse&& value) { SetListObjectPolicies(std::move(value)); return *this;}
+
 
     /**
      * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
@@ -260,6 +267,7 @@ namespace Model
      * attached.</p>
      */
     inline BatchReadSuccessfulResponse& WithListPolicyAttachments(BatchListPolicyAttachmentsResponse&& value) { SetListPolicyAttachments(std::move(value)); return *this;}
+
 
     /**
      * <p>Lists all policies from the root of the <a>Directory</a> to the object
@@ -321,6 +329,7 @@ namespace Model
      */
     inline BatchReadSuccessfulResponse& WithLookupPolicy(BatchLookupPolicyResponse&& value) { SetLookupPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>Lists objects attached to the specified index.</p>
      */
@@ -345,6 +354,7 @@ namespace Model
      * <p>Lists objects attached to the specified index.</p>
      */
     inline BatchReadSuccessfulResponse& WithListIndex(BatchListIndexResponse&& value) { SetListIndex(std::move(value)); return *this;}
+
 
     /**
      * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
@@ -390,6 +400,7 @@ namespace Model
      * link</a>.</p>
      */
     inline BatchReadSuccessfulResponse& WithListOutgoingTypedLinks(BatchListOutgoingTypedLinksResponse&& value) { SetListOutgoingTypedLinks(std::move(value)); return *this;}
+
 
     /**
      * <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
@@ -437,26 +448,37 @@ namespace Model
     inline BatchReadSuccessfulResponse& WithListIncomingTypedLinks(BatchListIncomingTypedLinksResponse&& value) { SetListIncomingTypedLinks(std::move(value)); return *this;}
 
   private:
+
     BatchListObjectAttributesResponse m_listObjectAttributes;
     bool m_listObjectAttributesHasBeenSet;
+
     BatchListObjectChildrenResponse m_listObjectChildren;
     bool m_listObjectChildrenHasBeenSet;
+
     BatchGetObjectInformationResponse m_getObjectInformation;
     bool m_getObjectInformationHasBeenSet;
+
     BatchListAttachedIndicesResponse m_listAttachedIndices;
     bool m_listAttachedIndicesHasBeenSet;
+
     BatchListObjectParentPathsResponse m_listObjectParentPaths;
     bool m_listObjectParentPathsHasBeenSet;
+
     BatchListObjectPoliciesResponse m_listObjectPolicies;
     bool m_listObjectPoliciesHasBeenSet;
+
     BatchListPolicyAttachmentsResponse m_listPolicyAttachments;
     bool m_listPolicyAttachmentsHasBeenSet;
+
     BatchLookupPolicyResponse m_lookupPolicy;
     bool m_lookupPolicyHasBeenSet;
+
     BatchListIndexResponse m_listIndex;
     bool m_listIndexHasBeenSet;
+
     BatchListOutgoingTypedLinksResponse m_listOutgoingTypedLinks;
     bool m_listOutgoingTypedLinksHasBeenSet;
+
     BatchListIncomingTypedLinksResponse m_listIncomingTypedLinks;
     bool m_listIncomingTypedLinksHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     VmServer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const VmServerAddress& GetVmServerAddress() const{ return m_vmServerAddress; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline VmServer& WithVmServerAddress(VmServerAddress&& value) { SetVmServerAddress(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetVmName() const{ return m_vmName; }
@@ -83,6 +85,7 @@ namespace Model
     
     inline VmServer& WithVmName(const char* value) { SetVmName(value); return *this;}
 
+
     
     inline const Aws::String& GetVmManagerName() const{ return m_vmManagerName; }
 
@@ -104,6 +107,7 @@ namespace Model
     
     inline VmServer& WithVmManagerName(const char* value) { SetVmManagerName(value); return *this;}
 
+
     
     inline const VmManagerType& GetVmManagerType() const{ return m_vmManagerType; }
 
@@ -118,6 +122,7 @@ namespace Model
 
     
     inline VmServer& WithVmManagerType(VmManagerType&& value) { SetVmManagerType(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetVmPath() const{ return m_vmPath; }
@@ -141,14 +146,19 @@ namespace Model
     inline VmServer& WithVmPath(const char* value) { SetVmPath(value); return *this;}
 
   private:
+
     VmServerAddress m_vmServerAddress;
     bool m_vmServerAddressHasBeenSet;
+
     Aws::String m_vmName;
     bool m_vmNameHasBeenSet;
+
     Aws::String m_vmManagerName;
     bool m_vmManagerNameHasBeenSet;
+
     VmManagerType m_vmManagerType;
     bool m_vmManagerTypeHasBeenSet;
+
     Aws::String m_vmPath;
     bool m_vmPathHasBeenSet;
   };

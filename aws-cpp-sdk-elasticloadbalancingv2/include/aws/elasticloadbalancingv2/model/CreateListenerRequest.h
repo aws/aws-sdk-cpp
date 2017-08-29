@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CreateListenerRequest& WithLoadBalancerArn(const char* value) { SetLoadBalancerArn(value); return *this;}
 
+
     /**
      * <p>The protocol for connections from clients to the load balancer.</p>
      */
@@ -102,6 +104,7 @@ namespace Model
      */
     inline CreateListenerRequest& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}
 
+
     /**
      * <p>The port on which the load balancer is listening.</p>
      */
@@ -116,6 +119,7 @@ namespace Model
      * <p>The port on which the load balancer is listening.</p>
      */
     inline CreateListenerRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The security policy that defines which ciphers and protocols are supported.
@@ -159,6 +163,7 @@ namespace Model
      */
     inline CreateListenerRequest& WithSslPolicy(const char* value) { SetSslPolicy(value); return *this;}
 
+
     /**
      * <p>The SSL server certificate. You must provide exactly one certificate if the
      * protocol is HTTPS.</p>
@@ -201,6 +206,7 @@ namespace Model
      */
     inline CreateListenerRequest& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The default action for the listener.</p>
      */
@@ -237,16 +243,22 @@ namespace Model
     inline CreateListenerRequest& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_loadBalancerArn;
     bool m_loadBalancerArnHasBeenSet;
+
     ProtocolEnum m_protocol;
     bool m_protocolHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_sslPolicy;
     bool m_sslPolicyHasBeenSet;
+
     Aws::Vector<Certificate> m_certificates;
     bool m_certificatesHasBeenSet;
+
     Aws::Vector<Action> m_defaultActions;
     bool m_defaultActionsHasBeenSet;
   };

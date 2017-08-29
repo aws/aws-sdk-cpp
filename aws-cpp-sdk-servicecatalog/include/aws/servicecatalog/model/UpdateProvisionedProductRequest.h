@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -87,6 +88,7 @@ namespace Model
      * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline UpdateProvisionedProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+
 
     /**
      * <p>The updated name of the ProvisionedProduct object. Specify either
@@ -137,6 +139,7 @@ namespace Model
      */
     inline UpdateProvisionedProductRequest& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}
 
+
     /**
      * <p>The identifier of the ProvisionedProduct object to update. Specify either
      * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but
@@ -186,6 +189,7 @@ namespace Model
      */
     inline UpdateProvisionedProductRequest& WithProvisionedProductId(const char* value) { SetProvisionedProductId(value); return *this;}
 
+
     /**
      * <p>The identifier of the ProvisionedProduct object.</p>
      */
@@ -220,6 +224,7 @@ namespace Model
      * <p>The identifier of the ProvisionedProduct object.</p>
      */
     inline UpdateProvisionedProductRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
+
 
     /**
      * <p>The provisioning artifact identifier for this product. This is sometimes
@@ -262,6 +267,7 @@ namespace Model
      * referred to as the product version.</p>
      */
     inline UpdateProvisionedProductRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
+
 
     /**
      * <p>The identifier of the path to use in the updated ProvisionedProduct object.
@@ -312,6 +318,7 @@ namespace Model
      */
     inline UpdateProvisionedProductRequest& WithPathId(const char* value) { SetPathId(value); return *this;}
 
+
     /**
      * <p>A list of <code>ProvisioningParameter</code> objects used to update the
      * ProvisionedProduct object.</p>
@@ -353,6 +360,7 @@ namespace Model
      * ProvisionedProduct object.</p>
      */
     inline UpdateProvisionedProductRequest& AddProvisioningParameters(UpdateProvisioningParameter&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update
@@ -397,20 +405,28 @@ namespace Model
     inline UpdateProvisionedProductRequest& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_provisionedProductName;
     bool m_provisionedProductNameHasBeenSet;
+
     Aws::String m_provisionedProductId;
     bool m_provisionedProductIdHasBeenSet;
+
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
     Aws::String m_provisioningArtifactId;
     bool m_provisioningArtifactIdHasBeenSet;
+
     Aws::String m_pathId;
     bool m_pathIdHasBeenSet;
+
     Aws::Vector<UpdateProvisioningParameter> m_provisioningParameters;
     bool m_provisioningParametersHasBeenSet;
+
     Aws::String m_updateToken;
     bool m_updateTokenHasBeenSet;
   };

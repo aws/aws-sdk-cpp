@@ -55,6 +55,7 @@ namespace Model
     CommandInvocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The command against which this invocation was requested.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      */
     inline CommandInvocation& WithCommandId(const char* value) { SetCommandId(value); return *this;}
 
+
     /**
      * <p>The instance ID in which this invocation was requested.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The instance ID in which this invocation was requested.</p>
      */
     inline CommandInvocation& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The name of the invocation target. For Amazon EC2 instances this is the value
@@ -174,6 +177,7 @@ namespace Model
      */
     inline CommandInvocation& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
+
     /**
      * <p>User-specified information about the command, such as a brief description of
      * what the command should do.</p>
@@ -216,6 +220,7 @@ namespace Model
      */
     inline CommandInvocation& WithComment(const char* value) { SetComment(value); return *this;}
 
+
     /**
      * <p>The document name that was requested for execution.</p>
      */
@@ -251,6 +256,7 @@ namespace Model
      */
     inline CommandInvocation& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
+
     /**
      * <p>The time and date the request was sent to this instance.</p>
      */
@@ -276,6 +282,7 @@ namespace Model
      */
     inline CommandInvocation& WithRequestedDateTime(Aws::Utils::DateTime&& value) { SetRequestedDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether or not the invocation succeeded, failed, or is pending.</p>
      */
@@ -300,6 +307,7 @@ namespace Model
      * <p>Whether or not the invocation succeeded, failed, or is pending.</p>
      */
     inline CommandInvocation& WithStatus(CommandInvocationStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A detailed status of the command execution for each invocation (each instance
@@ -546,6 +554,7 @@ namespace Model
      */
     inline CommandInvocation& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
+
     /**
      * <p> Gets the trace output sent by the agent. </p>
      */
@@ -580,6 +589,7 @@ namespace Model
      * <p> Gets the trace output sent by the agent. </p>
      */
     inline CommandInvocation& WithTraceOutput(const char* value) { SetTraceOutput(value); return *this;}
+
 
     /**
      * <p>The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was
@@ -637,6 +647,7 @@ namespace Model
      */
     inline CommandInvocation& WithStandardOutputUrl(const char* value) { SetStandardOutputUrl(value); return *this;}
 
+
     /**
      * <p>The URL to the plugin's StdErr file in Amazon S3, if the Amazon S3 bucket was
      * defined for the parent command. For an invocation, StandardErrorUrl is populated
@@ -693,6 +704,7 @@ namespace Model
      */
     inline CommandInvocation& WithStandardErrorUrl(const char* value) { SetStandardErrorUrl(value); return *this;}
 
+
     
     inline const Aws::Vector<CommandPlugin>& GetCommandPlugins() const{ return m_commandPlugins; }
 
@@ -713,6 +725,7 @@ namespace Model
 
     
     inline CommandInvocation& AddCommandPlugins(CommandPlugin&& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The IAM service role that Run Command uses to act on your behalf when sending
@@ -756,6 +769,7 @@ namespace Model
      */
     inline CommandInvocation& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
+
     /**
      * <p>Configurations for sending notifications about command status changes on a
      * per instance basis.</p>
@@ -787,32 +801,46 @@ namespace Model
     inline CommandInvocation& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_commandId;
     bool m_commandIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
+
     Aws::Utils::DateTime m_requestedDateTime;
     bool m_requestedDateTimeHasBeenSet;
+
     CommandInvocationStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusDetails;
     bool m_statusDetailsHasBeenSet;
+
     Aws::String m_traceOutput;
     bool m_traceOutputHasBeenSet;
+
     Aws::String m_standardOutputUrl;
     bool m_standardOutputUrlHasBeenSet;
+
     Aws::String m_standardErrorUrl;
     bool m_standardErrorUrlHasBeenSet;
+
     Aws::Vector<CommandPlugin> m_commandPlugins;
     bool m_commandPluginsHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
     NotificationConfig m_notificationConfig;
     bool m_notificationConfigHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     Child& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) of this child entity.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
@@ -124,6 +125,7 @@ namespace Model
      */
     inline Child& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The type of this child entity.</p>
      */
@@ -150,8 +152,10 @@ namespace Model
     inline Child& WithType(ChildType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     ChildType m_type;
     bool m_typeHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     AutoRollbackConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Indicates whether a defined automatic rollback configuration is currently
      * enabled.</p>
@@ -65,6 +66,7 @@ namespace Model
      * enabled.</p>
      */
     inline AutoRollbackConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The event type or types that trigger a rollback.</p>
@@ -102,8 +104,10 @@ namespace Model
     inline AutoRollbackConfiguration& AddEvents(AutoRollbackEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::Vector<AutoRollbackEvent> m_events;
     bool m_eventsHasBeenSet;
   };

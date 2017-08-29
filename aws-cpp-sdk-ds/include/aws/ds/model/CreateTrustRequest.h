@@ -48,6 +48,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
      * the trust relationship.</p>
@@ -89,6 +90,7 @@ namespace Model
      * the trust relationship.</p>
      */
     inline CreateTrustRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to
@@ -132,6 +134,7 @@ namespace Model
      */
     inline CreateTrustRequest& WithRemoteDomainName(const char* value) { SetRemoteDomainName(value); return *this;}
 
+
     /**
      * <p>The trust password. The must be the same password that was used when creating
      * the trust relationship on the external domain.</p>
@@ -174,6 +177,7 @@ namespace Model
      */
     inline CreateTrustRequest& WithTrustPassword(const char* value) { SetTrustPassword(value); return *this;}
 
+
     /**
      * <p>The direction of the trust relationship.</p>
      */
@@ -199,6 +203,7 @@ namespace Model
      */
     inline CreateTrustRequest& WithTrustDirection(TrustDirection&& value) { SetTrustDirection(std::move(value)); return *this;}
 
+
     /**
      * <p>The trust relationship type.</p>
      */
@@ -223,6 +228,7 @@ namespace Model
      * <p>The trust relationship type.</p>
      */
     inline CreateTrustRequest& WithTrustType(TrustType&& value) { SetTrustType(std::move(value)); return *this;}
+
 
     /**
      * <p>The IP addresses of the remote DNS server associated with
@@ -273,16 +279,22 @@ namespace Model
     inline CreateTrustRequest& AddConditionalForwarderIpAddrs(const char* value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs.push_back(value); return *this; }
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_remoteDomainName;
     bool m_remoteDomainNameHasBeenSet;
+
     Aws::String m_trustPassword;
     bool m_trustPasswordHasBeenSet;
+
     TrustDirection m_trustDirection;
     bool m_trustDirectionHasBeenSet;
+
     TrustType m_trustType;
     bool m_trustTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_conditionalForwarderIpAddrs;
     bool m_conditionalForwarderIpAddrsHasBeenSet;
   };

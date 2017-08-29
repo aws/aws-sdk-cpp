@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     BuildSuggestersResult();
-    BuildSuggestersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    BuildSuggestersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    BuildSuggestersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    BuildSuggestersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::Vector<Aws::String>& GetFieldNames() const{ return m_fieldNames; }
@@ -73,6 +74,7 @@ namespace Model
     
     inline BuildSuggestersResult& AddFieldNames(const char* value) { m_fieldNames.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline BuildSuggestersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_fieldNames;
+
     ResponseMetadata m_responseMetadata;
   };
 

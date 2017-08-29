@@ -34,6 +34,7 @@ namespace Model
     AssociateRoleToGroupRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * The unique Id of the AWS Greengrass Group
      */
@@ -68,6 +69,7 @@ namespace Model
      * The unique Id of the AWS Greengrass Group
      */
     inline AssociateRoleToGroupRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+
 
     /**
      * Role arn you wish to associate with this group.
@@ -105,8 +107,10 @@ namespace Model
     inline AssociateRoleToGroupRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

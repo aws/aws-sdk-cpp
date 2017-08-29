@@ -55,14 +55,14 @@ enum class OpsWorksCMErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_NEXT_TOKEN= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_NEXT_TOKEN= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_STATE,
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS
 };
 namespace OpsWorksCMErrorMapper
 {
-  AWS_OPSWORKSCM_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_OPSWORKSCM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace OpsWorksCM

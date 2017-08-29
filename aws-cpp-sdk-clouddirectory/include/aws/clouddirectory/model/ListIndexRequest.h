@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the directory that the index exists in.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ARN of the directory that the index exists in.</p>
      */
     inline ListIndexRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+
 
     /**
      * <p>Specifies the ranges of indexed values that you want to query.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline ListIndexRequest& AddRangesOnIndexedValues(ObjectAttributeRange&& value) { m_rangesOnIndexedValuesHasBeenSet = true; m_rangesOnIndexedValues.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The reference to the index to list.</p>
      */
@@ -135,6 +138,7 @@ namespace Model
      */
     inline ListIndexRequest& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve from the index.</p>
      */
@@ -149,6 +153,7 @@ namespace Model
      * <p>The maximum number of results to retrieve from the index.</p>
      */
     inline ListIndexRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -185,6 +190,7 @@ namespace Model
      */
     inline ListIndexRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The consistency level to execute the request at.</p>
      */
@@ -211,16 +217,22 @@ namespace Model
     inline ListIndexRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     Aws::Vector<ObjectAttributeRange> m_rangesOnIndexedValues;
     bool m_rangesOnIndexedValuesHasBeenSet;
+
     ObjectReference m_indexReference;
     bool m_indexReferenceHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     ConsistencyLevel m_consistencyLevel;
     bool m_consistencyLevelHasBeenSet;
   };

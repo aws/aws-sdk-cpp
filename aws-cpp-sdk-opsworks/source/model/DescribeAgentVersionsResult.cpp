@@ -30,12 +30,12 @@ DescribeAgentVersionsResult::DescribeAgentVersionsResult()
 {
 }
 
-DescribeAgentVersionsResult::DescribeAgentVersionsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAgentVersionsResult::DescribeAgentVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeAgentVersionsResult& DescribeAgentVersionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAgentVersionsResult& DescribeAgentVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AgentVersions"))

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier of the HIT to retrieve review results for.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The unique identifier of the HIT to retrieve review results for.</p>
      */
     inline ListReviewPolicyResultsForHITRequest& WithHITId(const char* value) { SetHITId(value); return *this;}
+
 
     /**
      * <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If
@@ -122,6 +124,7 @@ namespace Model
      */
     inline ListReviewPolicyResultsForHITRequest& AddPolicyLevels(ReviewPolicyLevel&& value) { m_policyLevelsHasBeenSet = true; m_policyLevels.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> Specify if the operation should retrieve a list of the actions taken
      * executing the Review Policies and their outcomes. </p>
@@ -140,6 +143,7 @@ namespace Model
      */
     inline ListReviewPolicyResultsForHITRequest& WithRetrieveActions(bool value) { SetRetrieveActions(value); return *this;}
 
+
     /**
      * <p> Specify if the operation should retrieve a list of the results computed by
      * the Review Policies. </p>
@@ -157,6 +161,7 @@ namespace Model
      * the Review Policies. </p>
      */
     inline ListReviewPolicyResultsForHITRequest& WithRetrieveResults(bool value) { SetRetrieveResults(value); return *this;}
+
 
     /**
      * <p>Pagination token</p>
@@ -193,6 +198,7 @@ namespace Model
      */
     inline ListReviewPolicyResultsForHITRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Limit the number of results returned.</p>
      */
@@ -209,16 +215,22 @@ namespace Model
     inline ListReviewPolicyResultsForHITRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_hITId;
     bool m_hITIdHasBeenSet;
+
     Aws::Vector<ReviewPolicyLevel> m_policyLevels;
     bool m_policyLevelsHasBeenSet;
+
     bool m_retrieveActions;
     bool m_retrieveActionsHasBeenSet;
+
     bool m_retrieveResults;
     bool m_retrieveResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

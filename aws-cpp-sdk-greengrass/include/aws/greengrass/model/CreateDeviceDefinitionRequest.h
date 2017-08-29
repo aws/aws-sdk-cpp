@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The client token used to request idempotent operations.
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateDeviceDefinitionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
+
     /**
      * Information on the initial version
      */
@@ -96,6 +98,7 @@ namespace Model
      * Information on the initial version
      */
     inline CreateDeviceDefinitionRequest& WithInitialVersion(DeviceDefinitionVersion&& value) { SetInitialVersion(std::move(value)); return *this;}
+
 
     /**
      * name of the device definition
@@ -133,10 +136,13 @@ namespace Model
     inline CreateDeviceDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_amznClientToken;
     bool m_amznClientTokenHasBeenSet;
+
     DeviceDefinitionVersion m_initialVersion;
     bool m_initialVersionHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

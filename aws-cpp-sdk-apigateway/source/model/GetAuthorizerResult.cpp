@@ -32,14 +32,14 @@ GetAuthorizerResult::GetAuthorizerResult() :
 {
 }
 
-GetAuthorizerResult::GetAuthorizerResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetAuthorizerResult::GetAuthorizerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_type(AuthorizerType::NOT_SET),
     m_authorizerResultTtlInSeconds(0)
 {
   *this = result;
 }
 
-GetAuthorizerResult& GetAuthorizerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetAuthorizerResult& GetAuthorizerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("id"))

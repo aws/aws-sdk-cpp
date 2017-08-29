@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline CreateConstraintRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The portfolio identifier.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      */
     inline CreateConstraintRequest& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
 
+
     /**
      * <p>The product identifier.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The product identifier.</p>
      */
     inline CreateConstraintRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
+
 
     /**
      * <p>The constraint parameters. Expected values vary depending on which
@@ -226,6 +230,7 @@ namespace Model
      */
     inline CreateConstraintRequest& WithParameters(const char* value) { SetParameters(value); return *this;}
 
+
     /**
      * <p>The type of the constraint. Case-sensitive valid values are:
      * <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>
@@ -268,6 +273,7 @@ namespace Model
      */
     inline CreateConstraintRequest& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>The text description of the constraint.</p>
      */
@@ -302,6 +308,7 @@ namespace Model
      * <p>The text description of the constraint.</p>
      */
     inline CreateConstraintRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A token to disambiguate duplicate requests. You can create multiple resources
@@ -353,18 +360,25 @@ namespace Model
     inline CreateConstraintRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_portfolioId;
     bool m_portfolioIdHasBeenSet;
+
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
     Aws::String m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
   };

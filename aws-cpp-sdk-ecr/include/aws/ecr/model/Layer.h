@@ -46,6 +46,7 @@ namespace Model
     Layer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>sha256</code> digest of the image layer.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline Layer& WithLayerDigest(const char* value) { SetLayerDigest(value); return *this;}
 
+
     /**
      * <p>The availability status of the image layer.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      */
     inline Layer& WithLayerAvailability(LayerAvailability&& value) { SetLayerAvailability(std::move(value)); return *this;}
 
+
     /**
      * <p>The size, in bytes, of the image layer.</p>
      */
@@ -120,6 +123,7 @@ namespace Model
      * <p>The size, in bytes, of the image layer.</p>
      */
     inline Layer& WithLayerSize(long long value) { SetLayerSize(value); return *this;}
+
 
     /**
      * <p>The media type of the layer, such as
@@ -171,12 +175,16 @@ namespace Model
     inline Layer& WithMediaType(const char* value) { SetMediaType(value); return *this;}
 
   private:
+
     Aws::String m_layerDigest;
     bool m_layerDigestHasBeenSet;
+
     LayerAvailability m_layerAvailability;
     bool m_layerAvailabilityHasBeenSet;
+
     long long m_layerSize;
     bool m_layerSizeHasBeenSet;
+
     Aws::String m_mediaType;
     bool m_mediaTypeHasBeenSet;
   };

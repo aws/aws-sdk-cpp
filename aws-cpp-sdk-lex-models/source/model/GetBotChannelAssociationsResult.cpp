@@ -30,12 +30,12 @@ GetBotChannelAssociationsResult::GetBotChannelAssociationsResult()
 {
 }
 
-GetBotChannelAssociationsResult::GetBotChannelAssociationsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetBotChannelAssociationsResult::GetBotChannelAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetBotChannelAssociationsResult& GetBotChannelAssociationsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetBotChannelAssociationsResult& GetBotChannelAssociationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("botChannelAssociations"))

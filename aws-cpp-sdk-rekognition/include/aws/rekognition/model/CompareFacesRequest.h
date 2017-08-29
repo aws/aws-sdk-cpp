@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The source image, either as bytes or as an S3 object.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The source image, either as bytes or as an S3 object.</p>
      */
     inline CompareFacesRequest& WithSourceImage(Image&& value) { SetSourceImage(std::move(value)); return *this;}
+
 
     /**
      * <p>The target image, either as bytes or as an S3 object.</p>
@@ -86,6 +88,7 @@ namespace Model
      */
     inline CompareFacesRequest& WithTargetImage(Image&& value) { SetTargetImage(std::move(value)); return *this;}
 
+
     /**
      * <p>The minimum level of confidence in the face matches that a match must meet to
      * be included in the <code>FaceMatches</code> array.</p>
@@ -105,10 +108,13 @@ namespace Model
     inline CompareFacesRequest& WithSimilarityThreshold(double value) { SetSimilarityThreshold(value); return *this;}
 
   private:
+
     Image m_sourceImage;
     bool m_sourceImageHasBeenSet;
+
     Image m_targetImage;
     bool m_targetImageHasBeenSet;
+
     double m_similarityThreshold;
     bool m_similarityThresholdHasBeenSet;
   };

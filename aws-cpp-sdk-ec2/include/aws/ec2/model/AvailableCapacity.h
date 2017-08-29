@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The total number of instances that the Dedicated Host supports.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline AvailableCapacity& AddAvailableInstanceCapacity(InstanceCapacity&& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The number of vCPUs available on the Dedicated Host.</p>
      */
@@ -101,8 +103,10 @@ namespace Model
     inline AvailableCapacity& WithAvailableVCpus(int value) { SetAvailableVCpus(value); return *this;}
 
   private:
+
     Aws::Vector<InstanceCapacity> m_availableInstanceCapacity;
     bool m_availableInstanceCapacityHasBeenSet;
+
     int m_availableVCpus;
     bool m_availableVCpusHasBeenSet;
   };

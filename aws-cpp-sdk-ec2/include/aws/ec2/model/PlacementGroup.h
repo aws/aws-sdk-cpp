@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the placement group.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline PlacementGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>The state of the placement group.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The state of the placement group.</p>
      */
     inline PlacementGroup& WithState(PlacementGroupState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The placement strategy.</p>
@@ -136,10 +139,13 @@ namespace Model
     inline PlacementGroup& WithStrategy(PlacementStrategy&& value) { SetStrategy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     PlacementGroupState m_state;
     bool m_stateHasBeenSet;
+
     PlacementStrategy m_strategy;
     bool m_strategyHasBeenSet;
   };

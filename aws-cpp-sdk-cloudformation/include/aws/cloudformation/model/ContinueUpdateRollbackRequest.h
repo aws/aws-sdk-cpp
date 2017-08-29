@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or the unique ID of the stack that you want to continue rolling
      * back.</p> <note> <p>Don't specify the name of a nested stack (a stack that was
@@ -105,6 +106,7 @@ namespace Model
      * <code>AWS::CloudFormation::Stack</code> resource).</p> </note>
      */
     inline ContinueUpdateRollbackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
@@ -203,6 +205,7 @@ namespace Model
      * credentials.</p>
      */
     inline ContinueUpdateRollbackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
 
     /**
      * <p>A list of the logical IDs of the resources that AWS CloudFormation skips
@@ -484,6 +487,7 @@ namespace Model
      */
     inline ContinueUpdateRollbackRequest& AddResourcesToSkip(const char* value) { m_resourcesToSkipHasBeenSet = true; m_resourcesToSkip.push_back(value); return *this; }
 
+
     /**
      * <p>A unique identifier for this <code>ContinueUpdateRollback</code> request.
      * Specify this token if you plan to retry requests so that AWS CloudFormation
@@ -548,12 +552,16 @@ namespace Model
     inline ContinueUpdateRollbackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourcesToSkip;
     bool m_resourcesToSkipHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
   };

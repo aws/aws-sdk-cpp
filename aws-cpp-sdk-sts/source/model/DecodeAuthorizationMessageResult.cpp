@@ -31,12 +31,12 @@ DecodeAuthorizationMessageResult::DecodeAuthorizationMessageResult()
 {
 }
 
-DecodeAuthorizationMessageResult::DecodeAuthorizationMessageResult(const AmazonWebServiceResult<XmlDocument>& result)
+DecodeAuthorizationMessageResult::DecodeAuthorizationMessageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DecodeAuthorizationMessageResult& DecodeAuthorizationMessageResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DecodeAuthorizationMessageResult& DecodeAuthorizationMessageResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

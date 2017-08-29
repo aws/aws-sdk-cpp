@@ -30,12 +30,12 @@ ScheduleRunResult::ScheduleRunResult()
 {
 }
 
-ScheduleRunResult::ScheduleRunResult(const AmazonWebServiceResult<JsonValue>& result)
+ScheduleRunResult::ScheduleRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ScheduleRunResult& ScheduleRunResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ScheduleRunResult& ScheduleRunResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("run"))

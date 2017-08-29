@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetCommandInvocationResult();
-    GetCommandInvocationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCommandInvocationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCommandInvocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCommandInvocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The parent command ID of the invocation plugin.</p>
@@ -76,6 +77,7 @@ namespace Model
      * <p>The parent command ID of the invocation plugin.</p>
      */
     inline GetCommandInvocationResult& WithCommandId(const char* value) { SetCommandId(value); return *this;}
+
 
     /**
      * <p>The ID of the managed instance targeted by the command. A managed instance
@@ -126,6 +128,7 @@ namespace Model
      */
     inline GetCommandInvocationResult& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The comment text for the command.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      * <p>The comment text for the command.</p>
      */
     inline GetCommandInvocationResult& WithComment(const char* value) { SetComment(value); return *this;}
+
 
     /**
      * <p>The name of the document that was executed. For example,
@@ -203,6 +207,7 @@ namespace Model
      */
     inline GetCommandInvocationResult& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
+
     /**
      * <p>The name of the plugin for which you want detailed results. For example,
      * aws:RunShellScript is a plugin.</p>
@@ -245,6 +250,7 @@ namespace Model
      */
     inline GetCommandInvocationResult& WithPluginName(const char* value) { SetPluginName(value); return *this;}
 
+
     /**
      * <p>The error level response code for the plugin script. If the response code is
      * -1, then the command has not started executing on the instance, or it was not
@@ -265,6 +271,7 @@ namespace Model
      * received by the instance.</p>
      */
     inline GetCommandInvocationResult& WithResponseCode(int value) { SetResponseCode(value); return *this;}
+
 
     /**
      * <p>The date and time the plugin started executing. Date and time are written in
@@ -336,6 +343,7 @@ namespace Model
      */
     inline GetCommandInvocationResult& WithExecutionStartDateTime(const char* value) { SetExecutionStartDateTime(value); return *this;}
 
+
     /**
      * <p>Duration since ExecutionStartDateTime.</p>
      */
@@ -370,6 +378,7 @@ namespace Model
      * <p>Duration since ExecutionStartDateTime.</p>
      */
     inline GetCommandInvocationResult& WithExecutionElapsedTime(const char* value) { SetExecutionElapsedTime(value); return *this;}
+
 
     /**
      * <p>The date and time the plugin was finished executing. Date and time are
@@ -441,6 +450,7 @@ namespace Model
      */
     inline GetCommandInvocationResult& WithExecutionEndDateTime(const char* value) { SetExecutionEndDateTime(value); return *this;}
 
+
     /**
      * <p>The status of the parent command for this invocation. This status can be
      * different than StatusDetails.</p>
@@ -470,6 +480,7 @@ namespace Model
      * different than StatusDetails.</p>
      */
     inline GetCommandInvocationResult& WithStatus(CommandInvocationStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A detailed status of the command execution for an invocation. StatusDetails
@@ -730,6 +741,7 @@ namespace Model
      */
     inline GetCommandInvocationResult& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
+
     /**
      * <p>The first 24,000 characters written by the plugin to stdout. If the command
      * has not finished executing, if ExecutionStatus is neither Succeeded nor Failed,
@@ -779,6 +791,7 @@ namespace Model
      */
     inline GetCommandInvocationResult& WithStandardOutputContent(const char* value) { SetStandardOutputContent(value); return *this;}
 
+
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
      * If an Amazon S3 bucket was not specified, then this string is empty.</p>
@@ -821,6 +834,7 @@ namespace Model
      */
     inline GetCommandInvocationResult& WithStandardOutputUrl(const char* value) { SetStandardOutputUrl(value); return *this;}
 
+
     /**
      * <p>The first 8,000 characters written by the plugin to stderr. If the command
      * has not finished executing, then this string is empty.</p>
@@ -862,6 +876,7 @@ namespace Model
      * has not finished executing, then this string is empty.</p>
      */
     inline GetCommandInvocationResult& WithStandardErrorContent(const char* value) { SetStandardErrorContent(value); return *this;}
+
 
     /**
      * <p>The URL for the complete text written by the plugin to stderr. If the command
@@ -906,20 +921,35 @@ namespace Model
     inline GetCommandInvocationResult& WithStandardErrorUrl(const char* value) { SetStandardErrorUrl(value); return *this;}
 
   private:
+
     Aws::String m_commandId;
+
     Aws::String m_instanceId;
+
     Aws::String m_comment;
+
     Aws::String m_documentName;
+
     Aws::String m_pluginName;
+
     int m_responseCode;
+
     Aws::String m_executionStartDateTime;
+
     Aws::String m_executionElapsedTime;
+
     Aws::String m_executionEndDateTime;
+
     CommandInvocationStatus m_status;
+
     Aws::String m_statusDetails;
+
     Aws::String m_standardOutputContent;
+
     Aws::String m_standardOutputUrl;
+
     Aws::String m_standardErrorContent;
+
     Aws::String m_standardErrorUrl;
   };
 

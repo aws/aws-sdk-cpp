@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListBucketsResult();
-    ListBucketsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListBucketsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListBucketsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::Vector<Bucket>& GetBuckets() const{ return m_buckets; }
@@ -64,6 +65,7 @@ namespace Model
     
     inline ListBucketsResult& AddBuckets(Bucket&& value) { m_buckets.push_back(std::move(value)); return *this; }
 
+
     
     inline const Owner& GetOwner() const{ return m_owner; }
 
@@ -80,7 +82,9 @@ namespace Model
     inline ListBucketsResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Bucket> m_buckets;
+
     Owner m_owner;
   };
 

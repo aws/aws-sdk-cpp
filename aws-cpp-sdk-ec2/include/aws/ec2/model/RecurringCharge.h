@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The amount of the recurring charge.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
      * <p>The amount of the recurring charge.</p>
      */
     inline RecurringCharge& WithAmount(double value) { SetAmount(value); return *this;}
+
 
     /**
      * <p>The frequency of the recurring charge.</p>
@@ -89,8 +91,10 @@ namespace Model
     inline RecurringCharge& WithFrequency(RecurringChargeFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 
   private:
+
     double m_amount;
     bool m_amountHasBeenSet;
+
     RecurringChargeFrequency m_frequency;
     bool m_frequencyHasBeenSet;
   };

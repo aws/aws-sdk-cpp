@@ -50,6 +50,7 @@ namespace Model
     Address& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique ID for an address.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The unique ID for an address.</p>
      */
     inline Address& WithAddressId(const char* value) { SetAddressId(value); return *this;}
+
 
     /**
      * <p>The name of a person to receive a Snowball at an address.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline Address& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The name of the company to receive a Snowball at an address.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      */
     inline Address& WithCompany(const char* value) { SetCompany(value); return *this;}
 
+
     /**
      * <p>The first line in a street address that a Snowball is to be delivered to.</p>
      */
@@ -189,6 +193,7 @@ namespace Model
      * <p>The first line in a street address that a Snowball is to be delivered to.</p>
      */
     inline Address& WithStreet1(const char* value) { SetStreet1(value); return *this;}
+
 
     /**
      * <p>The second line in a street address that a Snowball is to be delivered
@@ -232,6 +237,7 @@ namespace Model
      */
     inline Address& WithStreet2(const char* value) { SetStreet2(value); return *this;}
 
+
     /**
      * <p>The third line in a street address that a Snowball is to be delivered to.</p>
      */
@@ -267,6 +273,7 @@ namespace Model
      */
     inline Address& WithStreet3(const char* value) { SetStreet3(value); return *this;}
 
+
     /**
      * <p>The city in an address that a Snowball is to be delivered to.</p>
      */
@@ -301,6 +308,7 @@ namespace Model
      * <p>The city in an address that a Snowball is to be delivered to.</p>
      */
     inline Address& WithCity(const char* value) { SetCity(value); return *this;}
+
 
     /**
      * <p>The state or province in an address that a Snowball is to be delivered
@@ -344,6 +352,7 @@ namespace Model
      */
     inline Address& WithStateOrProvince(const char* value) { SetStateOrProvince(value); return *this;}
 
+
     /**
      * <p>This field is no longer used and the value is ignored.</p>
      */
@@ -378,6 +387,7 @@ namespace Model
      * <p>This field is no longer used and the value is ignored.</p>
      */
     inline Address& WithPrefectureOrDistrict(const char* value) { SetPrefectureOrDistrict(value); return *this;}
+
 
     /**
      * <p>This field is no longer used and the value is ignored.</p>
@@ -414,6 +424,7 @@ namespace Model
      */
     inline Address& WithLandmark(const char* value) { SetLandmark(value); return *this;}
 
+
     /**
      * <p>The country in an address that a Snowball is to be delivered to.</p>
      */
@@ -449,6 +460,7 @@ namespace Model
      */
     inline Address& WithCountry(const char* value) { SetCountry(value); return *this;}
 
+
     /**
      * <p>The postal code in an address that a Snowball is to be delivered to.</p>
      */
@@ -483,6 +495,7 @@ namespace Model
      * <p>The postal code in an address that a Snowball is to be delivered to.</p>
      */
     inline Address& WithPostalCode(const char* value) { SetPostalCode(value); return *this;}
+
 
     /**
      * <p>The phone number associated with an address that a Snowball is to be
@@ -526,6 +539,7 @@ namespace Model
      */
     inline Address& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
 
+
     /**
      * <p>If the address you are creating is a primary address, then set this option to
      * true. This field is not supported in most regions.</p>
@@ -545,32 +559,46 @@ namespace Model
     inline Address& WithIsRestricted(bool value) { SetIsRestricted(value); return *this;}
 
   private:
+
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_company;
     bool m_companyHasBeenSet;
+
     Aws::String m_street1;
     bool m_street1HasBeenSet;
+
     Aws::String m_street2;
     bool m_street2HasBeenSet;
+
     Aws::String m_street3;
     bool m_street3HasBeenSet;
+
     Aws::String m_city;
     bool m_cityHasBeenSet;
+
     Aws::String m_stateOrProvince;
     bool m_stateOrProvinceHasBeenSet;
+
     Aws::String m_prefectureOrDistrict;
     bool m_prefectureOrDistrictHasBeenSet;
+
     Aws::String m_landmark;
     bool m_landmarkHasBeenSet;
+
     Aws::String m_country;
     bool m_countryHasBeenSet;
+
     Aws::String m_postalCode;
     bool m_postalCodeHasBeenSet;
+
     Aws::String m_phoneNumber;
     bool m_phoneNumberHasBeenSet;
+
     bool m_isRestricted;
     bool m_isRestrictedHasBeenSet;
   };

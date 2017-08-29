@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The assessments that the AWS Lambda function performs. Each evaluation
      * identifies an AWS resource and indicates whether it complies with the AWS Config
@@ -90,6 +91,7 @@ namespace Model
      */
     inline PutEvaluationsRequest& AddEvaluations(Evaluation&& value) { m_evaluationsHasBeenSet = true; m_evaluations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
      * Identifies the rule and the event that triggered the evaluation</p>
@@ -132,6 +134,7 @@ namespace Model
      */
     inline PutEvaluationsRequest& WithResultToken(const char* value) { SetResultToken(value); return *this;}
 
+
     /**
      * <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You
      * can verify whether your AWS Lambda function will deliver evaluation results to
@@ -166,10 +169,13 @@ namespace Model
     inline PutEvaluationsRequest& WithTestMode(bool value) { SetTestMode(value); return *this;}
 
   private:
+
     Aws::Vector<Evaluation> m_evaluations;
     bool m_evaluationsHasBeenSet;
+
     Aws::String m_resultToken;
     bool m_resultTokenHasBeenSet;
+
     bool m_testMode;
     bool m_testModeHasBeenSet;
   };

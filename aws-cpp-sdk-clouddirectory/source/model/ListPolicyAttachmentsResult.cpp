@@ -30,12 +30,12 @@ ListPolicyAttachmentsResult::ListPolicyAttachmentsResult()
 {
 }
 
-ListPolicyAttachmentsResult::ListPolicyAttachmentsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListPolicyAttachmentsResult::ListPolicyAttachmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListPolicyAttachmentsResult& ListPolicyAttachmentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListPolicyAttachmentsResult& ListPolicyAttachmentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ObjectIdentifiers"))

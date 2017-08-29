@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>the IDs of instances that are running on the Dedicated Host.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>the IDs of instances that are running on the Dedicated Host.</p>
      */
     inline HostInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The instance type size (for example, <code>m3.medium</code>) of the running
@@ -126,8 +128,10 @@ namespace Model
     inline HostInstance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
   };

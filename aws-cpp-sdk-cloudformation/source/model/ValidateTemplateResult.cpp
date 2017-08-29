@@ -31,12 +31,12 @@ ValidateTemplateResult::ValidateTemplateResult()
 {
 }
 
-ValidateTemplateResult::ValidateTemplateResult(const AmazonWebServiceResult<XmlDocument>& result)
+ValidateTemplateResult::ValidateTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ValidateTemplateResult& ValidateTemplateResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ValidateTemplateResult& ValidateTemplateResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

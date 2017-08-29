@@ -31,13 +31,13 @@ DetectFacesResult::DetectFacesResult() :
 {
 }
 
-DetectFacesResult::DetectFacesResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DetectFacesResult::DetectFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_orientationCorrection(OrientationCorrection::NOT_SET)
 {
   *this = result;
 }
 
-DetectFacesResult& DetectFacesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DetectFacesResult& DetectFacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FaceDetails"))

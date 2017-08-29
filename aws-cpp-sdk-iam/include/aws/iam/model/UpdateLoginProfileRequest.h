@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the user whose password you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -93,6 +94,7 @@ namespace Model
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline UpdateLoginProfileRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a
@@ -192,6 +194,7 @@ namespace Model
      */
     inline UpdateLoginProfileRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
     /**
      * <p>Allows this new password to be used only once by requiring the specified IAM
      * user to set a new password on next sign-in.</p>
@@ -211,10 +214,13 @@ namespace Model
     inline UpdateLoginProfileRequest& WithPasswordResetRequired(bool value) { SetPasswordResetRequired(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     bool m_passwordResetRequired;
     bool m_passwordResetRequiredHasBeenSet;
   };

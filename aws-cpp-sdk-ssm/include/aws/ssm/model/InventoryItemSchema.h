@@ -48,6 +48,7 @@ namespace Model
     InventoryItemSchema& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
      * AWS. Custom inventory type names will start with Custom. Default inventory item
@@ -104,6 +105,7 @@ namespace Model
      */
     inline InventoryItemSchema& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
+
     /**
      * <p>The schema version for the inventory item.</p>
      */
@@ -138,6 +140,7 @@ namespace Model
      * <p>The schema version for the inventory item.</p>
      */
     inline InventoryItemSchema& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The schema attributes for inventory. This contains data type and attribute
@@ -182,10 +185,13 @@ namespace Model
     inline InventoryItemSchema& AddAttributes(InventoryItemAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::Vector<InventoryItemAttribute> m_attributes;
     bool m_attributesHasBeenSet;
   };

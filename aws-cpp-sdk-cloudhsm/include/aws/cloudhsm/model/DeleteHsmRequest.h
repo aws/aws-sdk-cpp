@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the HSM to delete.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DeleteHsmRequest& WithHsmArn(const char* value) { SetHsmArn(value); return *this;}
 
   private:
+
     Aws::String m_hsmArn;
     bool m_hsmArnHasBeenSet;
   };

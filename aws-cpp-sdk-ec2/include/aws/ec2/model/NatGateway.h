@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The date and time the NAT gateway was created.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline NatGateway& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
      */
@@ -102,6 +104,7 @@ namespace Model
      * <p>The date and time the NAT gateway was deleted, if applicable.</p>
      */
     inline NatGateway& WithDeleteTime(Aws::Utils::DateTime&& value) { SetDeleteTime(std::move(value)); return *this;}
+
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error code for the
@@ -165,6 +168,7 @@ namespace Model
      * <code>InvalidSubnetID.NotFound</code>)</p>
      */
     inline NatGateway& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
+
 
     /**
      * <p>If the NAT gateway could not be created, specifies the error message for the
@@ -285,6 +289,7 @@ namespace Model
      */
     inline NatGateway& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 
+
     /**
      * <p>Information about the IP addresses and network interface associated with the
      * NAT gateway.</p>
@@ -327,6 +332,7 @@ namespace Model
      */
     inline NatGateway& AddNatGatewayAddresses(NatGatewayAddress&& value) { m_natGatewayAddressesHasBeenSet = true; m_natGatewayAddresses.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the NAT gateway.</p>
      */
@@ -361,6 +367,7 @@ namespace Model
      * <p>The ID of the NAT gateway.</p>
      */
     inline NatGateway& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
+
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -401,6 +408,7 @@ namespace Model
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
     inline NatGateway& WithProvisionedBandwidth(ProvisionedBandwidth&& value) { SetProvisionedBandwidth(std::move(value)); return *this;}
+
 
     /**
      * <p>The state of the NAT gateway.</p> <ul> <li> <p> <code>pending</code>: The NAT
@@ -477,6 +485,7 @@ namespace Model
      */
     inline NatGateway& WithState(NatGatewayState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID of the subnet in which the NAT gateway is located.</p>
      */
@@ -511,6 +520,7 @@ namespace Model
      * <p>The ID of the subnet in which the NAT gateway is located.</p>
      */
     inline NatGateway& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC in which the NAT gateway is located.</p>
@@ -548,24 +558,34 @@ namespace Model
     inline NatGateway& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
     Aws::Utils::DateTime m_deleteTime;
     bool m_deleteTimeHasBeenSet;
+
     Aws::String m_failureCode;
     bool m_failureCodeHasBeenSet;
+
     Aws::String m_failureMessage;
     bool m_failureMessageHasBeenSet;
+
     Aws::Vector<NatGatewayAddress> m_natGatewayAddresses;
     bool m_natGatewayAddressesHasBeenSet;
+
     Aws::String m_natGatewayId;
     bool m_natGatewayIdHasBeenSet;
+
     ProvisionedBandwidth m_provisionedBandwidth;
     bool m_provisionedBandwidthHasBeenSet;
+
     NatGatewayState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>The name of this scaling action.</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline PutScheduledUpdateGroupActionRequest& WithScheduledActionName(const char* value) { SetScheduledActionName(value); return *this;}
 
+
     /**
      * <p>This parameter is deprecated.</p>
      */
@@ -137,6 +140,7 @@ namespace Model
      * <p>This parameter is deprecated.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
@@ -188,6 +192,7 @@ namespace Model
      */
     inline PutScheduledUpdateGroupActionRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time for the recurring schedule to end. Auto Scaling does not perform the
      * action after this time.</p>
@@ -217,6 +222,7 @@ namespace Model
      * action after this time.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The recurring schedule for this action, in Unix cron syntax format. For more
@@ -267,6 +273,7 @@ namespace Model
      */
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(const char* value) { SetRecurrence(value); return *this;}
 
+
     /**
      * <p>The minimum size for the Auto Scaling group.</p>
      */
@@ -282,6 +289,7 @@ namespace Model
      */
     inline PutScheduledUpdateGroupActionRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
 
+
     /**
      * <p>The maximum size for the Auto Scaling group.</p>
      */
@@ -296,6 +304,7 @@ namespace Model
      * <p>The maximum size for the Auto Scaling group.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
+
 
     /**
      * <p>The number of EC2 instances that should be running in the group.</p>
@@ -313,22 +322,31 @@ namespace Model
     inline PutScheduledUpdateGroupActionRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_scheduledActionName;
     bool m_scheduledActionNameHasBeenSet;
+
     Aws::Utils::DateTime m_time;
     bool m_timeHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::String m_recurrence;
     bool m_recurrenceHasBeenSet;
+
     int m_minSize;
     bool m_minSizeHasBeenSet;
+
     int m_maxSize;
     bool m_maxSizeHasBeenSet;
+
     int m_desiredCapacity;
     bool m_desiredCapacityHasBeenSet;
   };

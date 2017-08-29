@@ -50,6 +50,7 @@ namespace Model
     BatchCreateObject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of <code>FacetArns</code> that will be associated with the object. For
      * more information, see <a>arns</a>.</p>
@@ -91,6 +92,7 @@ namespace Model
      * more information, see <a>arns</a>.</p>
      */
     inline BatchCreateObject& AddSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An attribute map, which contains an attribute ARN as the key and attribute
@@ -134,6 +136,7 @@ namespace Model
      */
     inline BatchCreateObject& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
      */
@@ -158,6 +161,7 @@ namespace Model
      * <p>If specified, the parent reference to which this object will be attached.</p>
      */
     inline BatchCreateObject& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the link.</p>
@@ -193,6 +197,7 @@ namespace Model
      * <p>The name of the link.</p>
      */
     inline BatchCreateObject& WithLinkName(const char* value) { SetLinkName(value); return *this;}
+
 
     /**
      * <p>The batch reference name. See <a
@@ -244,14 +249,19 @@ namespace Model
     inline BatchCreateObject& WithBatchReferenceName(const char* value) { SetBatchReferenceName(value); return *this;}
 
   private:
+
     Aws::Vector<SchemaFacet> m_schemaFacet;
     bool m_schemaFacetHasBeenSet;
+
     Aws::Vector<AttributeKeyAndValue> m_objectAttributeList;
     bool m_objectAttributeListHasBeenSet;
+
     ObjectReference m_parentReference;
     bool m_parentReferenceHasBeenSet;
+
     Aws::String m_linkName;
     bool m_linkNameHasBeenSet;
+
     Aws::String m_batchReferenceName;
     bool m_batchReferenceNameHasBeenSet;
   };

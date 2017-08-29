@@ -30,12 +30,12 @@ StartExportTaskResult::StartExportTaskResult()
 {
 }
 
-StartExportTaskResult::StartExportTaskResult(const AmazonWebServiceResult<JsonValue>& result)
+StartExportTaskResult::StartExportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartExportTaskResult& StartExportTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartExportTaskResult& StartExportTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("exportId"))

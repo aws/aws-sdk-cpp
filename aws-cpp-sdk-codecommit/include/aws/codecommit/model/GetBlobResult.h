@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetBlobResult();
-    GetBlobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBlobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBlobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBlobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The content of the blob, usually a file.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline GetBlobResult& WithContent(Aws::Utils::ByteBuffer&& value) { SetContent(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_content;
   };
 

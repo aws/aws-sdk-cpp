@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID that the instances are registered with. The operation returns
      * descriptions of all registered Amazon RDS instances.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeRdsDbInstancesRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>An array containing the ARNs of the instances to be described.</p>
      */
@@ -120,8 +122,10 @@ namespace Model
     inline DescribeRdsDbInstancesRequest& AddRdsDbInstanceArns(const char* value) { m_rdsDbInstanceArnsHasBeenSet = true; m_rdsDbInstanceArns.push_back(value); return *this; }
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_rdsDbInstanceArns;
     bool m_rdsDbInstanceArnsHasBeenSet;
   };

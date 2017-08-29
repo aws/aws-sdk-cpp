@@ -46,6 +46,7 @@ namespace Model
     NamedQuery& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The plain-language name of the query.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The plain-language name of the query.</p>
      */
     inline NamedQuery& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A brief description of the query.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline NamedQuery& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The database to which the query belongs.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      */
     inline NamedQuery& WithDatabase(const char* value) { SetDatabase(value); return *this;}
 
+
     /**
      * <p>The SQL query statements that comprise the query.</p>
      */
@@ -185,6 +189,7 @@ namespace Model
      * <p>The SQL query statements that comprise the query.</p>
      */
     inline NamedQuery& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+
 
     /**
      * <p>The unique identifier of the query.</p>
@@ -222,14 +227,19 @@ namespace Model
     inline NamedQuery& WithNamedQueryId(const char* value) { SetNamedQueryId(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_database;
     bool m_databaseHasBeenSet;
+
     Aws::String m_queryString;
     bool m_queryStringHasBeenSet;
+
     Aws::String m_namedQueryId;
     bool m_namedQueryIdHasBeenSet;
   };

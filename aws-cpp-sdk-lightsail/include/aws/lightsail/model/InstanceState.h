@@ -46,6 +46,7 @@ namespace Model
     InstanceState& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The status code for the instance.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The status code for the instance.</p>
      */
     inline InstanceState& WithCode(int value) { SetCode(value); return *this;}
+
 
     /**
      * <p>The state of the instance (e.g., <code>running</code> or
@@ -104,8 +106,10 @@ namespace Model
     inline InstanceState& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     int m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

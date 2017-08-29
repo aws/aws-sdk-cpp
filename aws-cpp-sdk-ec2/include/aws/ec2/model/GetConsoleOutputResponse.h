@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetConsoleOutputResponse();
-    GetConsoleOutputResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetConsoleOutputResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetConsoleOutputResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetConsoleOutputResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline GetConsoleOutputResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The console output, Base64-encoded. If using a command line tool, the tool
@@ -125,6 +127,7 @@ namespace Model
      */
     inline GetConsoleOutputResponse& WithOutput(const char* value) { SetOutput(value); return *this;}
 
+
     /**
      * <p>The time the output was last updated.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      */
     inline GetConsoleOutputResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -166,9 +170,13 @@ namespace Model
     inline GetConsoleOutputResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceId;
+
     Aws::String m_output;
+
     Aws::Utils::DateTime m_timestamp;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Identifier of the directory to which the domain controllers will be added or
      * removed.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline UpdateNumberOfDomainControllersRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
+
     /**
      * <p>The number of domain controllers desired in the directory.</p>
      */
@@ -94,8 +96,10 @@ namespace Model
     inline UpdateNumberOfDomainControllersRequest& WithDesiredNumber(int value) { SetDesiredNumber(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     int m_desiredNumber;
     bool m_desiredNumberHasBeenSet;
   };

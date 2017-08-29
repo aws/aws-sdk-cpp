@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     PostTextResult();
-    PostTextResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PostTextResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PostTextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PostTextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The current user intent that Amazon Lex is aware of.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <p>The current user intent that Amazon Lex is aware of.</p>
      */
     inline PostTextResult& WithIntentName(const char* value) { SetIntentName(value); return *this;}
+
 
     /**
      * <p> The intent slots (name/value pairs) that Amazon Lex detected so far from the
@@ -151,6 +153,7 @@ namespace Model
      */
     inline PostTextResult& AddSlots(const char* key, const char* value) { m_slots.emplace(key, value); return *this; }
 
+
     /**
      * <p>A map of key-value pairs representing the session-specific context
      * information.</p>
@@ -222,6 +225,7 @@ namespace Model
      * information.</p>
      */
     inline PostTextResult& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributes.emplace(key, value); return *this; }
+
 
     /**
      * <p> A message to convey to the user. It can come from the bot's configuration or
@@ -334,6 +338,7 @@ namespace Model
      * the client. </p>
      */
     inline PostTextResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p> Identifies the current state of the user interaction. Amazon Lex returns one
@@ -490,6 +495,7 @@ namespace Model
      */
     inline PostTextResult& WithDialogState(DialogState&& value) { SetDialogState(std::move(value)); return *this;}
 
+
     /**
      * <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the
      * name of the slot for which Amazon Lex is eliciting a value. </p>
@@ -532,6 +538,7 @@ namespace Model
      */
     inline PostTextResult& WithSlotToElicit(const char* value) { SetSlotToElicit(value); return *this;}
 
+
     /**
      * <p>Represents the options that the user has to respond to the current prompt.
      * Response Card can come from the bot configuration (in the Amazon Lex console,
@@ -573,12 +580,19 @@ namespace Model
     inline PostTextResult& WithResponseCard(ResponseCard&& value) { SetResponseCard(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_intentName;
+
     Aws::Map<Aws::String, Aws::String> m_slots;
+
     Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
+
     Aws::String m_message;
+
     DialogState m_dialogState;
+
     Aws::String m_slotToElicit;
+
     ResponseCard m_responseCard;
   };
 

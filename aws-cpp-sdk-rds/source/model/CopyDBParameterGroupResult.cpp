@@ -31,12 +31,12 @@ CopyDBParameterGroupResult::CopyDBParameterGroupResult()
 {
 }
 
-CopyDBParameterGroupResult::CopyDBParameterGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+CopyDBParameterGroupResult::CopyDBParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CopyDBParameterGroupResult& CopyDBParameterGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CopyDBParameterGroupResult& CopyDBParameterGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

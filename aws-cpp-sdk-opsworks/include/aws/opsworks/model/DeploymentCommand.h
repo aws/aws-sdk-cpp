@@ -48,6 +48,7 @@ namespace Model
     DeploymentCommand& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the operation. You can specify only one command.</p> <p>For stacks,
      * the following commands are available:</p> <ul> <li> <p>
@@ -192,6 +193,7 @@ namespace Model
      * <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li> </ul>
      */
     inline DeploymentCommand& WithName(DeploymentCommandName&& value) { SetName(std::move(value)); return *this;}
+
 
     /**
      * <p>The arguments of those commands that take arguments. It should be set to a
@@ -392,8 +394,10 @@ namespace Model
     inline DeploymentCommand& AddArgs(const char* key, const Aws::Vector<Aws::String>& value) { m_argsHasBeenSet = true; m_args.emplace(key, value); return *this; }
 
   private:
+
     DeploymentCommandName m_name;
     bool m_nameHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_args;
     bool m_argsHasBeenSet;
   };

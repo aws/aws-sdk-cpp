@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The criterion to be used to list build project names. Valid values
      * include:</p> <ul> <li> <p> <code>CREATED_TIME</code>: List the build project
@@ -98,6 +99,7 @@ namespace Model
      */
     inline ListProjectsRequest& WithSortBy(ProjectSortByType&& value) { SetSortBy(std::move(value)); return *this;}
 
+
     /**
      * <p>The order in which to list build projects. Valid values include:</p> <ul>
      * <li> <p> <code>ASCENDING</code>: List the build project names in ascending
@@ -142,6 +144,7 @@ namespace Model
      * criterion to be used to list build project names.</p>
      */
     inline ListProjectsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
+
 
     /**
      * <p>During a previous call, if there are more than 100 items in the list, only
@@ -214,10 +217,13 @@ namespace Model
     inline ListProjectsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     ProjectSortByType m_sortBy;
     bool m_sortByHasBeenSet;
+
     SortOrderType m_sortOrder;
     bool m_sortOrderHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

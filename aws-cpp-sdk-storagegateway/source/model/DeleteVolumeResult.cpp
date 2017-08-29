@@ -30,12 +30,12 @@ DeleteVolumeResult::DeleteVolumeResult()
 {
 }
 
-DeleteVolumeResult::DeleteVolumeResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteVolumeResult::DeleteVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteVolumeResult& DeleteVolumeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteVolumeResult& DeleteVolumeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("VolumeARN"))

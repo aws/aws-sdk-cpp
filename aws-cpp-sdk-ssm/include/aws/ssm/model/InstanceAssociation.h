@@ -46,6 +46,7 @@ namespace Model
     InstanceAssociation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The association ID.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The association ID.</p>
      */
     inline InstanceAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
 
     /**
      * <p>The instance ID.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline InstanceAssociation& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The content of the association document for the instance(s).</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>The content of the association document for the instance(s).</p>
      */
     inline InstanceAssociation& WithContent(const char* value) { SetContent(value); return *this;}
+
 
     /**
      * <p>Version information for the association on the instance.</p>
@@ -187,12 +191,16 @@ namespace Model
     inline InstanceAssociation& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
 
   private:
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_content;
     bool m_contentHasBeenSet;
+
     Aws::String m_associationVersion;
     bool m_associationVersionHasBeenSet;
   };

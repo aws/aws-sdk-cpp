@@ -30,12 +30,12 @@ GetCampaignVersionResult::GetCampaignVersionResult()
 {
 }
 
-GetCampaignVersionResult::GetCampaignVersionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCampaignVersionResult::GetCampaignVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCampaignVersionResult& GetCampaignVersionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCampaignVersionResult& GetCampaignVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CampaignResponse"))

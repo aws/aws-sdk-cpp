@@ -46,6 +46,7 @@ namespace Model
     SalesforceAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The token used to authenticate access to the Salesforce IoT Cloud Input
      * Stream. The token is available from the Salesforce IoT Cloud platform after
@@ -94,6 +95,7 @@ namespace Model
      * creation of the Input Stream.</p>
      */
     inline SalesforceAction& WithToken(const char* value) { SetToken(value); return *this;}
+
 
     /**
      * <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is
@@ -145,8 +147,10 @@ namespace Model
     inline SalesforceAction& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
     Aws::String m_token;
     bool m_tokenHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
   };

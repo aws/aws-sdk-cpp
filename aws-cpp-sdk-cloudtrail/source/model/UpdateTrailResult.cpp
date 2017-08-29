@@ -33,7 +33,7 @@ UpdateTrailResult::UpdateTrailResult() :
 {
 }
 
-UpdateTrailResult::UpdateTrailResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateTrailResult::UpdateTrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_includeGlobalServiceEvents(false),
     m_isMultiRegionTrail(false),
     m_logFileValidationEnabled(false)
@@ -41,7 +41,7 @@ UpdateTrailResult::UpdateTrailResult(const AmazonWebServiceResult<JsonValue>& re
   *this = result;
 }
 
-UpdateTrailResult& UpdateTrailResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateTrailResult& UpdateTrailResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Name"))

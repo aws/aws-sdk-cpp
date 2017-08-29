@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A map of one or more table names and, for each table, a map that describes
      * one or more items to retrieve from that table. Each table name can be used only
@@ -604,6 +605,7 @@ namespace Model
      */
     inline BatchGetItemRequest& AddRequestItems(const char* key, const KeysAndAttributes& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
 
+
     
     inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
 
@@ -620,8 +622,10 @@ namespace Model
     inline BatchGetItemRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, KeysAndAttributes> m_requestItems;
     bool m_requestItemsHasBeenSet;
+
     ReturnConsumedCapacity m_returnConsumedCapacity;
     bool m_returnConsumedCapacityHasBeenSet;
   };

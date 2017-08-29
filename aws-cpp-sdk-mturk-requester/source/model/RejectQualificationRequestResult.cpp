@@ -30,12 +30,12 @@ RejectQualificationRequestResult::RejectQualificationRequestResult()
 {
 }
 
-RejectQualificationRequestResult::RejectQualificationRequestResult(const AmazonWebServiceResult<JsonValue>& result)
+RejectQualificationRequestResult::RejectQualificationRequestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RejectQualificationRequestResult& RejectQualificationRequestResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RejectQualificationRequestResult& RejectQualificationRequestResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

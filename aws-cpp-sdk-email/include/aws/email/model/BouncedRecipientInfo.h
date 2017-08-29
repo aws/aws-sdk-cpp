@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The email address of the recipient of the bounced email.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The email address of the recipient of the bounced email.</p>
      */
     inline BouncedRecipientInfo& WithRecipient(const char* value) { SetRecipient(value); return *this;}
+
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -159,6 +161,7 @@ namespace Model
      */
     inline BouncedRecipientInfo& WithRecipientArn(const char* value) { SetRecipientArn(value); return *this;}
 
+
     /**
      * <p>The reason for the bounce. You must provide either this parameter or
      * <code>RecipientDsnFields</code>.</p>
@@ -188,6 +191,7 @@ namespace Model
      * <code>RecipientDsnFields</code>.</p>
      */
     inline BouncedRecipientInfo& WithBounceType(BounceType&& value) { SetBounceType(std::move(value)); return *this;}
+
 
     /**
      * <p>Recipient-related DSN fields, most of which would normally be filled in
@@ -225,12 +229,16 @@ namespace Model
     inline BouncedRecipientInfo& WithRecipientDsnFields(RecipientDsnFields&& value) { SetRecipientDsnFields(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_recipient;
     bool m_recipientHasBeenSet;
+
     Aws::String m_recipientArn;
     bool m_recipientArnHasBeenSet;
+
     BounceType m_bounceType;
     bool m_bounceTypeHasBeenSet;
+
     RecipientDsnFields m_recipientDsnFields;
     bool m_recipientDsnFieldsHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the job flow.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the job flow.</p>
      */
     inline RunJobFlowRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The location in Amazon S3 to write the log files of the job flow. If a value
@@ -126,6 +128,7 @@ namespace Model
      */
     inline RunJobFlowRequest& WithLogUri(const char* value) { SetLogUri(value); return *this;}
 
+
     /**
      * <p>A JSON string for selecting additional features.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      * <p>A JSON string for selecting additional features.</p>
      */
     inline RunJobFlowRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+
 
     /**
      * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
@@ -301,6 +305,7 @@ namespace Model
      */
     inline RunJobFlowRequest& WithAmiVersion(const char* value) { SetAmiVersion(value); return *this;}
 
+
     /**
      * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
      * AMIs, use <code>AmiVersion</code> instead.</p>
@@ -343,6 +348,7 @@ namespace Model
      */
     inline RunJobFlowRequest& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
 
+
     /**
      * <p>A specification of the number and type of Amazon EC2 instances.</p>
      */
@@ -367,6 +373,7 @@ namespace Model
      * <p>A specification of the number and type of Amazon EC2 instances.</p>
      */
     inline RunJobFlowRequest& WithInstances(JobFlowInstancesConfig&& value) { SetInstances(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of steps to run.</p>
@@ -402,6 +409,7 @@ namespace Model
      * <p>A list of steps to run.</p>
      */
     inline RunJobFlowRequest& AddSteps(StepConfig&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
@@ -444,6 +452,7 @@ namespace Model
      * nodes.</p>
      */
     inline RunJobFlowRequest& AddBootstrapActions(BootstrapActionConfig&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
@@ -540,6 +549,7 @@ namespace Model
      * </ul>
      */
     inline RunJobFlowRequest& AddSupportedProducts(const char* value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(value); return *this; }
+
 
     /**
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
@@ -688,6 +698,7 @@ namespace Model
      */
     inline RunJobFlowRequest& AddNewSupportedProducts(SupportedProductConfig&& value) { m_newSupportedProductsHasBeenSet = true; m_newSupportedProducts.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
      * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
@@ -737,6 +748,7 @@ namespace Model
      */
     inline RunJobFlowRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied
      * for the EMR cluster you are creating.</p>
@@ -779,6 +791,7 @@ namespace Model
      */
     inline RunJobFlowRequest& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Whether the cluster is visible to all IAM users of the AWS account associated
      * with the cluster. If this value is set to <code>true</code>, all IAM users of
@@ -805,6 +818,7 @@ namespace Model
      * created the cluster can view and manage it.</p>
      */
     inline RunJobFlowRequest& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
+
 
     /**
      * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
@@ -862,6 +876,7 @@ namespace Model
      */
     inline RunJobFlowRequest& WithJobFlowRole(const char* value) { SetJobFlowRole(value); return *this;}
 
+
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
@@ -903,6 +918,7 @@ namespace Model
      * resources on your behalf.</p>
      */
     inline RunJobFlowRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+
 
     /**
      * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
@@ -946,6 +962,7 @@ namespace Model
      */
     inline RunJobFlowRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name of a security configuration to apply to the cluster.</p>
      */
@@ -980,6 +997,7 @@ namespace Model
      * <p>The name of a security configuration to apply to the cluster.</p>
      */
     inline RunJobFlowRequest& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+
 
     /**
      * <p>An IAM role for automatic scaling policies. The default role is
@@ -1036,6 +1054,7 @@ namespace Model
      * an instance group.</p>
      */
     inline RunJobFlowRequest& WithAutoScalingRole(const char* value) { SetAutoScalingRole(value); return *this;}
+
 
     /**
      * <p>Specifies the way that individual Amazon EC2 instances terminate when an
@@ -1121,6 +1140,7 @@ namespace Model
      * Amazon EMR earlier than 5.1.0.</p>
      */
     inline RunJobFlowRequest& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
+
 
     /**
      * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
@@ -1248,6 +1268,7 @@ namespace Model
      */
     inline RunJobFlowRequest& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
 
+
     /**
      * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
      * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
@@ -1265,6 +1286,7 @@ namespace Model
      * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
      */
     inline RunJobFlowRequest& WithEbsRootVolumeSize(int value) { SetEbsRootVolumeSize(value); return *this;}
+
 
     /**
      * <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates
@@ -1312,48 +1334,70 @@ namespace Model
     inline RunJobFlowRequest& WithRepoUpgradeOnBoot(RepoUpgradeOnBoot&& value) { SetRepoUpgradeOnBoot(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_logUri;
     bool m_logUriHasBeenSet;
+
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet;
+
     Aws::String m_amiVersion;
     bool m_amiVersionHasBeenSet;
+
     Aws::String m_releaseLabel;
     bool m_releaseLabelHasBeenSet;
+
     JobFlowInstancesConfig m_instances;
     bool m_instancesHasBeenSet;
+
     Aws::Vector<StepConfig> m_steps;
     bool m_stepsHasBeenSet;
+
     Aws::Vector<BootstrapActionConfig> m_bootstrapActions;
     bool m_bootstrapActionsHasBeenSet;
+
     Aws::Vector<Aws::String> m_supportedProducts;
     bool m_supportedProductsHasBeenSet;
+
     Aws::Vector<SupportedProductConfig> m_newSupportedProducts;
     bool m_newSupportedProductsHasBeenSet;
+
     Aws::Vector<Application> m_applications;
     bool m_applicationsHasBeenSet;
+
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+
     bool m_visibleToAllUsers;
     bool m_visibleToAllUsersHasBeenSet;
+
     Aws::String m_jobFlowRole;
     bool m_jobFlowRoleHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet;
+
     Aws::String m_autoScalingRole;
     bool m_autoScalingRoleHasBeenSet;
+
     ScaleDownBehavior m_scaleDownBehavior;
     bool m_scaleDownBehaviorHasBeenSet;
+
     Aws::String m_customAmiId;
     bool m_customAmiIdHasBeenSet;
+
     int m_ebsRootVolumeSize;
     bool m_ebsRootVolumeSizeHasBeenSet;
+
     RepoUpgradeOnBoot m_repoUpgradeOnBoot;
     bool m_repoUpgradeOnBootHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the Amazon Kinesis stream for which to disable enhanced
      * monitoring.</p>
@@ -83,6 +84,7 @@ namespace Model
      * monitoring.</p>
      */
     inline DisableEnhancedMonitoringRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * <p>List of shard-level metrics to disable.</p> <p>The following are the valid
@@ -197,8 +199,10 @@ namespace Model
     inline DisableEnhancedMonitoringRequest& AddShardLevelMetrics(MetricsName&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::Vector<MetricsName> m_shardLevelMetrics;
     bool m_shardLevelMetricsHasBeenSet;
   };

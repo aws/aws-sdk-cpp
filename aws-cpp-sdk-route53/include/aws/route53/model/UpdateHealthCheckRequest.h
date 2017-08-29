@@ -42,6 +42,7 @@ namespace Model
     UpdateHealthCheckRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID for the health check for which you want detailed information. When you
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
@@ -90,6 +91,7 @@ namespace Model
      * response, in the <code>HealthCheckId</code> element.</p>
      */
     inline UpdateHealthCheckRequest& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
+
 
     /**
      * <p>A sequential counter that Amazon Route 53 sets to <code>1</code> when you
@@ -144,6 +146,7 @@ namespace Model
      * <code>HealthCheckVersionMismatch</code> error.</p> </li> </ul>
      */
     inline UpdateHealthCheckRequest& WithHealthCheckVersion(long long value) { SetHealthCheckVersion(value); return *this;}
+
 
     /**
      * <p>The IPv4 or IPv6 IP address for the endpoint that you want Amazon Route 53 to
@@ -439,6 +442,7 @@ namespace Model
      */
     inline UpdateHealthCheckRequest& WithIPAddress(const char* value) { SetIPAddress(value); return *this;}
 
+
     /**
      * <p>The port on the endpoint on which you want Amazon Route 53 to perform health
      * checks.</p>
@@ -456,6 +460,7 @@ namespace Model
      * checks.</p>
      */
     inline UpdateHealthCheckRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The path that you want Amazon Route 53 to request when performing health
@@ -519,6 +524,7 @@ namespace Model
      * change it.</p>
      */
     inline UpdateHealthCheckRequest& WithResourcePath(const char* value) { SetResourcePath(value); return *this;}
+
 
     /**
      * <p>Amazon Route 53 behavior depends on whether you specify a value for
@@ -919,6 +925,7 @@ namespace Model
      */
     inline UpdateHealthCheckRequest& WithFullyQualifiedDomainName(const char* value) { SetFullyQualifiedDomainName(value); return *this;}
 
+
     /**
      * <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or
      * <code>HTTP_STR_MATCH</code>, the string that you want Amazon Route 53 to search
@@ -982,6 +989,7 @@ namespace Model
      */
     inline UpdateHealthCheckRequest& WithSearchString(const char* value) { SetSearchString(value); return *this;}
 
+
     /**
      * <p>The number of consecutive health checks that an endpoint must pass or fail
      * for Amazon Route 53 to change the current status of the endpoint from unhealthy
@@ -1015,6 +1023,7 @@ namespace Model
      */
     inline UpdateHealthCheckRequest& WithFailureThreshold(int value) { SetFailureThreshold(value); return *this;}
 
+
     /**
      * <p>Specify whether you want Amazon Route 53 to invert the status of a health
      * check, for example, to consider a health check unhealthy when it otherwise would
@@ -1035,6 +1044,7 @@ namespace Model
      * be considered healthy.</p>
      */
     inline UpdateHealthCheckRequest& WithInverted(bool value) { SetInverted(value); return *this;}
+
 
     /**
      * <p>The number of child health checks that are associated with a
@@ -1077,6 +1087,7 @@ namespace Model
      * health check to be healthy.</p> </li> </ul>
      */
     inline UpdateHealthCheckRequest& WithHealthThreshold(int value) { SetHealthThreshold(value); return *this;}
+
 
     /**
      * <p>A complex type that contains one <code>ChildHealthCheck</code> element for
@@ -1133,6 +1144,7 @@ namespace Model
      * health check.</p>
      */
     inline UpdateHealthCheckRequest& AddChildHealthChecks(const char* value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks.push_back(value); return *this; }
+
 
     /**
      * <p>Specify whether you want Amazon Route 53 to send the value of
@@ -1206,6 +1218,7 @@ namespace Model
      */
     inline UpdateHealthCheckRequest& WithEnableSNI(bool value) { SetEnableSNI(value); return *this;}
 
+
     /**
      * <p>A complex type that contains one <code>Region</code> element for each region
      * that you want Amazon Route 53 health checkers to check the specified endpoint
@@ -1255,6 +1268,7 @@ namespace Model
      */
     inline UpdateHealthCheckRequest& AddRegions(HealthCheckRegion&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
+
     
     inline const AlarmIdentifier& GetAlarmIdentifier() const{ return m_alarmIdentifier; }
 
@@ -1269,6 +1283,7 @@ namespace Model
 
     
     inline UpdateHealthCheckRequest& WithAlarmIdentifier(AlarmIdentifier&& value) { SetAlarmIdentifier(std::move(value)); return *this;}
+
 
     /**
      * <p>When CloudWatch has insufficient data about the metric to determine the alarm
@@ -1336,34 +1351,49 @@ namespace Model
     inline UpdateHealthCheckRequest& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { SetInsufficientDataHealthStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_healthCheckId;
     bool m_healthCheckIdHasBeenSet;
+
     long long m_healthCheckVersion;
     bool m_healthCheckVersionHasBeenSet;
+
     Aws::String m_iPAddress;
     bool m_iPAddressHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_resourcePath;
     bool m_resourcePathHasBeenSet;
+
     Aws::String m_fullyQualifiedDomainName;
     bool m_fullyQualifiedDomainNameHasBeenSet;
+
     Aws::String m_searchString;
     bool m_searchStringHasBeenSet;
+
     int m_failureThreshold;
     bool m_failureThresholdHasBeenSet;
+
     bool m_inverted;
     bool m_invertedHasBeenSet;
+
     int m_healthThreshold;
     bool m_healthThresholdHasBeenSet;
+
     Aws::Vector<Aws::String> m_childHealthChecks;
     bool m_childHealthChecksHasBeenSet;
+
     bool m_enableSNI;
     bool m_enableSNIHasBeenSet;
+
     Aws::Vector<HealthCheckRegion> m_regions;
     bool m_regionsHasBeenSet;
+
     AlarmIdentifier m_alarmIdentifier;
     bool m_alarmIdentifierHasBeenSet;
+
     InsufficientDataHealthStatus m_insufficientDataHealthStatus;
     bool m_insufficientDataHealthStatusHasBeenSet;
   };

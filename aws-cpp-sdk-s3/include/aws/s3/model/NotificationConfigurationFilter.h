@@ -50,6 +50,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const S3KeyFilter& GetKey() const{ return m_key; }
 
@@ -66,6 +67,7 @@ namespace Model
     inline NotificationConfigurationFilter& WithKey(S3KeyFilter&& value) { SetKey(std::move(value)); return *this;}
 
   private:
+
     S3KeyFilter m_key;
     bool m_keyHasBeenSet;
   };

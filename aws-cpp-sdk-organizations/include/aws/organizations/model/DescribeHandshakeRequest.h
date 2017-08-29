@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the handshake that you want information about.
      * You can get the ID from the original call to <a>InviteAccountToOrganization</a>,
@@ -107,6 +108,7 @@ namespace Model
     inline DescribeHandshakeRequest& WithHandshakeId(const char* value) { SetHandshakeId(value); return *this;}
 
   private:
+
     Aws::String m_handshakeId;
     bool m_handshakeIdHasBeenSet;
   };

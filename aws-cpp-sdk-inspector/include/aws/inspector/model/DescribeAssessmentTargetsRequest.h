@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline DescribeAssessmentTargetsRequest& AddAssessmentTargetArns(const char* value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_assessmentTargetArns;
     bool m_assessmentTargetArnsHasBeenSet;
   };

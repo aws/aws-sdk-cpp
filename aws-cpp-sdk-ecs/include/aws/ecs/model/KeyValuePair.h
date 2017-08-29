@@ -45,6 +45,7 @@ namespace Model
     KeyValuePair& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the key value pair. For environment variables, this is the name
      * of the environment variable.</p>
@@ -86,6 +87,7 @@ namespace Model
      * of the environment variable.</p>
      */
     inline KeyValuePair& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The value of the key value pair. For environment variables, this is the value
@@ -130,8 +132,10 @@ namespace Model
     inline KeyValuePair& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

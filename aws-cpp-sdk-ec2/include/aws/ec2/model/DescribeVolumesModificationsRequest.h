@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -63,6 +64,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeVolumesModificationsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>One or more volume IDs for which in-progress modifications will be
@@ -111,6 +113,7 @@ namespace Model
      * described.</p>
      */
     inline DescribeVolumesModificationsRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
+
 
     /**
      * <p>One or more filters. Supported filters: <code>volume-id</code>,
@@ -175,6 +178,7 @@ namespace Model
      */
     inline DescribeVolumesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The <code>nextToken</code> value returned by a previous paginated
      * request.</p>
@@ -217,6 +221,7 @@ namespace Model
      */
     inline DescribeVolumesModificationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results (up to a limit of 500) to be returned in a
      * paginated request.</p>
@@ -236,14 +241,19 @@ namespace Model
     inline DescribeVolumesModificationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Aws::String> m_volumeIds;
     bool m_volumeIdsHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

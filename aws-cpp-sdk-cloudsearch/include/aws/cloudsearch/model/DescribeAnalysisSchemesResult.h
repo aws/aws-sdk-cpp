@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeAnalysisSchemesResult();
-    DescribeAnalysisSchemesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAnalysisSchemesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAnalysisSchemesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAnalysisSchemesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The analysis scheme descriptions.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeAnalysisSchemesResult& AddAnalysisSchemes(AnalysisSchemeStatus&& value) { m_analysisSchemes.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -101,7 +103,9 @@ namespace Model
     inline DescribeAnalysisSchemesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<AnalysisSchemeStatus> m_analysisSchemes;
+
     ResponseMetadata m_responseMetadata;
   };
 

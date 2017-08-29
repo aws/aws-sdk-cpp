@@ -45,6 +45,7 @@ namespace Model
     DeploymentConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The upper limit (as a percentage of the service's <code>desiredCount</code>)
      * of the number of tasks that are allowed in the <code>RUNNING</code> or
@@ -71,6 +72,7 @@ namespace Model
      * <code>maximumPercent</code>/100, rounded down to the nearest integer value.</p>
      */
     inline DeploymentConfiguration& WithMaximumPercent(int value) { SetMaximumPercent(value); return *this;}
+
 
     /**
      * <p>The lower limit (as a percentage of the service's <code>desiredCount</code>)
@@ -103,8 +105,10 @@ namespace Model
     inline DeploymentConfiguration& WithMinimumHealthyPercent(int value) { SetMinimumHealthyPercent(value); return *this;}
 
   private:
+
     int m_maximumPercent;
     bool m_maximumPercentHasBeenSet;
+
     int m_minimumHealthyPercent;
     bool m_minimumHealthyPercentHasBeenSet;
   };

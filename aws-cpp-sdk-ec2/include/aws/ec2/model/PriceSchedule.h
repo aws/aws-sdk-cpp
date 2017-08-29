@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The current price schedule, as determined by the term remaining for the
      * Reserved Instance in the listing.</p> <p>A specific price schedule is always in
@@ -84,6 +85,7 @@ namespace Model
      */
     inline PriceSchedule& WithActive(bool value) { SetActive(value); return *this;}
 
+
     /**
      * <p>The currency for transacting the Reserved Instance resale. At this time, the
      * only supported currency is <code>USD</code>.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline PriceSchedule& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
+
     /**
      * <p>The fixed price for the term.</p>
      */
@@ -128,6 +131,7 @@ namespace Model
      * <p>The fixed price for the term.</p>
      */
     inline PriceSchedule& WithPrice(double value) { SetPrice(value); return *this;}
+
 
     /**
      * <p>The number of months remaining in the reservation. For example, 2 is the
@@ -148,12 +152,16 @@ namespace Model
     inline PriceSchedule& WithTerm(long long value) { SetTerm(value); return *this;}
 
   private:
+
     bool m_active;
     bool m_activeHasBeenSet;
+
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet;
+
     double m_price;
     bool m_priceHasBeenSet;
+
     long long m_term;
     bool m_termHasBeenSet;
   };

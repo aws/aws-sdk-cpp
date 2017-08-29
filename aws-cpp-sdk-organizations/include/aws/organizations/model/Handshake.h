@@ -57,6 +57,7 @@ namespace Model
     Handshake& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) of a handshake. The originating account creates
      * the ID when it initiates the handshake.</p> <p>The <a
@@ -112,6 +113,7 @@ namespace Model
      * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
      */
     inline Handshake& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
@@ -176,6 +178,7 @@ namespace Model
      */
     inline Handshake& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>Information about the two accounts that are participating in the
      * handshake.</p>
@@ -217,6 +220,7 @@ namespace Model
      * handshake.</p>
      */
     inline Handshake& AddParties(HandshakeParty&& value) { m_partiesHasBeenSet = true; m_parties.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The current state of the handshake. Use the state to trace the flow of the
@@ -318,6 +322,7 @@ namespace Model
      */
     inline Handshake& WithState(HandshakeState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time that the handshake request was made.</p>
      */
@@ -342,6 +347,7 @@ namespace Model
      * <p>The date and time that the handshake request was made.</p>
      */
     inline Handshake& WithRequestedTimestamp(Aws::Utils::DateTime&& value) { SetRequestedTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time that the handshake expires. If the recipient of the
@@ -378,6 +384,7 @@ namespace Model
      */
     inline Handshake& WithExpirationTimestamp(Aws::Utils::DateTime&& value) { SetExpirationTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of handshake, indicating what action occurs when the recipient
      * accepts the handshake.</p>
@@ -407,6 +414,7 @@ namespace Model
      * accepts the handshake.</p>
      */
     inline Handshake& WithAction(ActionType&& value) { SetAction(std::move(value)); return *this;}
+
 
     /**
      * <p>Additional information that is needed to process the handshake.</p>
@@ -444,20 +452,28 @@ namespace Model
     inline Handshake& AddResources(HandshakeResource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::Vector<HandshakeParty> m_parties;
     bool m_partiesHasBeenSet;
+
     HandshakeState m_state;
     bool m_stateHasBeenSet;
+
     Aws::Utils::DateTime m_requestedTimestamp;
     bool m_requestedTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_expirationTimestamp;
     bool m_expirationTimestampHasBeenSet;
+
     ActionType m_action;
     bool m_actionHasBeenSet;
+
     Aws::Vector<HandshakeResource> m_resources;
     bool m_resourcesHasBeenSet;
   };

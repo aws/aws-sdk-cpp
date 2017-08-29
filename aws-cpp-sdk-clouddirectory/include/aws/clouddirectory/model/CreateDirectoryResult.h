@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateDirectoryResult();
-    CreateDirectoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDirectoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN that is associated with the <a>Directory</a>. For more information,
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CreateDirectoryResult& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>The name of the <a>Directory</a>.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline CreateDirectoryResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The root object node of the created directory.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The root object node of the created directory.</p>
      */
     inline CreateDirectoryResult& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
+
 
     /**
      * <p>The ARN of the published schema in the <a>Directory</a>. Once a published
@@ -203,9 +207,13 @@ namespace Model
     inline CreateDirectoryResult& WithAppliedSchemaArn(const char* value) { SetAppliedSchemaArn(value); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
+
     Aws::String m_name;
+
     Aws::String m_objectIdentifier;
+
     Aws::String m_appliedSchemaArn;
   };
 

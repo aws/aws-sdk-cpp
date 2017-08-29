@@ -44,6 +44,7 @@ namespace Model
     Beard& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Boolean value that indicates whether the face has beard or not.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>Boolean value that indicates whether the face has beard or not.</p>
      */
     inline Beard& WithValue(bool value) { SetValue(value); return *this;}
+
 
     /**
      * <p>Level of confidence in the determination.</p>
@@ -75,8 +77,10 @@ namespace Model
     inline Beard& WithConfidence(double value) { SetConfidence(value); return *this;}
 
   private:
+
     bool m_value;
     bool m_valueHasBeenSet;
+
     double m_confidence;
     bool m_confidenceHasBeenSet;
   };

@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The IPv4 CIDR address block used for the destination match. The value you
      * provide must match the CIDR of an existing route in the table.</p>
@@ -82,6 +83,7 @@ namespace Model
      * provide must match the CIDR of an existing route in the table.</p>
      */
     inline ReplaceRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+
 
     /**
      * <p>The IPv6 CIDR address block used for the destination match. The value you
@@ -125,6 +127,7 @@ namespace Model
      */
     inline ReplaceRouteRequest& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -148,6 +151,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ReplaceRouteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
@@ -184,6 +188,7 @@ namespace Model
      */
     inline ReplaceRouteRequest& WithEgressOnlyInternetGatewayId(const char* value) { SetEgressOnlyInternetGatewayId(value); return *this;}
 
+
     /**
      * <p>The ID of an Internet gateway or virtual private gateway.</p>
      */
@@ -218,6 +223,7 @@ namespace Model
      * <p>The ID of an Internet gateway or virtual private gateway.</p>
      */
     inline ReplaceRouteRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+
 
     /**
      * <p>The ID of a NAT instance in your VPC.</p>
@@ -254,6 +260,7 @@ namespace Model
      */
     inline ReplaceRouteRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
@@ -288,6 +295,7 @@ namespace Model
      * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
     inline ReplaceRouteRequest& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
+
 
     /**
      * <p>The ID of a network interface.</p>
@@ -324,6 +332,7 @@ namespace Model
      */
     inline ReplaceRouteRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
+
     /**
      * <p>The ID of the route table.</p>
      */
@@ -358,6 +367,7 @@ namespace Model
      * <p>The ID of the route table.</p>
      */
     inline ReplaceRouteRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
+
 
     /**
      * <p>The ID of a VPC peering connection.</p>
@@ -395,24 +405,34 @@ namespace Model
     inline ReplaceRouteRequest& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
   private:
+
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet;
+
     Aws::String m_destinationIpv6CidrBlock;
     bool m_destinationIpv6CidrBlockHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_egressOnlyInternetGatewayId;
     bool m_egressOnlyInternetGatewayIdHasBeenSet;
+
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_natGatewayId;
     bool m_natGatewayIdHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::String m_routeTableId;
     bool m_routeTableIdHasBeenSet;
+
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
   };

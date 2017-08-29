@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateStreamingURLResult();
-    CreateStreamingURLResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateStreamingURLResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateStreamingURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateStreamingURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The URL to start the AppStream 2.0 streaming session.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CreateStreamingURLResult& WithStreamingURL(const char* value) { SetStreamingURL(value); return *this;}
 
+
     /**
      * <p>Elapsed seconds after the Unix epoch, when this URL expires.</p>
      */
@@ -103,7 +105,9 @@ namespace Model
     inline CreateStreamingURLResult& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_streamingURL;
+
     Aws::Utils::DateTime m_expires;
   };
 

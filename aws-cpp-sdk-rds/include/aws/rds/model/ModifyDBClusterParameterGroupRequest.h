@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the DB cluster parameter group to modify.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name of the DB cluster parameter group to modify.</p>
      */
     inline ModifyDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
+
 
     /**
      * <p>A list of parameters in the DB cluster parameter group to modify.</p>
@@ -114,8 +116,10 @@ namespace Model
     inline ModifyDBClusterParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     NeighborConnectionDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the server that opened the network connection.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ID of the server that opened the network connection.</p>
      */
     inline NeighborConnectionDetail& WithSourceServerId(const char* value) { SetSourceServerId(value); return *this;}
+
 
     /**
      * <p>The ID of the server that accepted the network connection.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline NeighborConnectionDetail& WithDestinationServerId(const char* value) { SetDestinationServerId(value); return *this;}
 
+
     /**
      * <p>The destination network port for the connection.</p>
      */
@@ -129,6 +132,7 @@ namespace Model
      * <p>The destination network port for the connection.</p>
      */
     inline NeighborConnectionDetail& WithDestinationPort(int value) { SetDestinationPort(value); return *this;}
+
 
     /**
      * <p>The network protocol used for the connection.</p>
@@ -165,6 +169,7 @@ namespace Model
      */
     inline NeighborConnectionDetail& WithTransportProtocol(const char* value) { SetTransportProtocol(value); return *this;}
 
+
     /**
      * <p>The number of open network connections with the neighboring server.</p>
      */
@@ -181,14 +186,19 @@ namespace Model
     inline NeighborConnectionDetail& WithConnectionsCount(long long value) { SetConnectionsCount(value); return *this;}
 
   private:
+
     Aws::String m_sourceServerId;
     bool m_sourceServerIdHasBeenSet;
+
     Aws::String m_destinationServerId;
     bool m_destinationServerIdHasBeenSet;
+
     int m_destinationPort;
     bool m_destinationPortHasBeenSet;
+
     Aws::String m_transportProtocol;
     bool m_transportProtocolHasBeenSet;
+
     long long m_connectionsCount;
     bool m_connectionsCountHasBeenSet;
   };

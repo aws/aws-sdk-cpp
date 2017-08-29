@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     BatchGetDeploymentGroupsResult();
-    BatchGetDeploymentGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetDeploymentGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetDeploymentGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetDeploymentGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the deployment groups.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the deployment groups.</p>
      */
     inline BatchGetDeploymentGroupsResult& AddDeploymentGroupsInfo(DeploymentGroupInfo&& value) { m_deploymentGroupsInfo.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Information about errors that may have occurred during the API call.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline BatchGetDeploymentGroupsResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     Aws::Vector<DeploymentGroupInfo> m_deploymentGroupsInfo;
+
     Aws::String m_errorMessage;
   };
 

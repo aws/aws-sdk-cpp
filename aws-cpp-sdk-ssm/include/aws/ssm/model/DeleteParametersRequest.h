@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The names of the parameters to delete.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline DeleteParametersRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet;
   };

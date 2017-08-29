@@ -49,6 +49,7 @@ namespace Model
     ResourceDataSyncItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the Resource Data Sync.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ResourceDataSyncItem& WithSyncName(const char* value) { SetSyncName(value); return *this;}
 
+
     /**
      * <p>Configuration information for the target Amazon S3 bucket.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      */
     inline ResourceDataSyncItem& WithS3Destination(ResourceDataSyncS3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
 
+
     /**
      * <p>The last time the configuration attempted to sync (UTC).</p>
      */
@@ -133,6 +136,7 @@ namespace Model
      * <p>The last time the configuration attempted to sync (UTC).</p>
      */
     inline ResourceDataSyncItem& WithLastSyncTime(Aws::Utils::DateTime&& value) { SetLastSyncTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The last time the sync operations returned a status of
@@ -164,6 +168,7 @@ namespace Model
      */
     inline ResourceDataSyncItem& WithLastSuccessfulSyncTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulSyncTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The status reported by the last sync.</p>
      */
@@ -188,6 +193,7 @@ namespace Model
      * <p>The status reported by the last sync.</p>
      */
     inline ResourceDataSyncItem& WithLastStatus(LastResourceDataSyncStatus&& value) { SetLastStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time the configuration was created (UTC).</p>
@@ -215,16 +221,22 @@ namespace Model
     inline ResourceDataSyncItem& WithSyncCreatedTime(Aws::Utils::DateTime&& value) { SetSyncCreatedTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_syncName;
     bool m_syncNameHasBeenSet;
+
     ResourceDataSyncS3Destination m_s3Destination;
     bool m_s3DestinationHasBeenSet;
+
     Aws::Utils::DateTime m_lastSyncTime;
     bool m_lastSyncTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastSuccessfulSyncTime;
     bool m_lastSuccessfulSyncTimeHasBeenSet;
+
     LastResourceDataSyncStatus m_lastStatus;
     bool m_lastStatusHasBeenSet;
+
     Aws::Utils::DateTime m_syncCreatedTime;
     bool m_syncCreatedTimeHasBeenSet;
   };

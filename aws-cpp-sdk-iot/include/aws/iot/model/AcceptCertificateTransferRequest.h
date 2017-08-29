@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The ID of the certificate.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline AcceptCertificateTransferRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
     /**
      * <p>Specifies whether the certificate is active.</p>
      */
@@ -95,8 +97,10 @@ namespace Model
     inline AcceptCertificateTransferRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
 
   private:
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
     bool m_setAsActive;
     bool m_setAsActiveHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     AudioParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The audio codec for the output file. Valid values include <code>aac</code>,
      * <code>flac</code>, <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and
@@ -94,6 +95,7 @@ namespace Model
      * <code>vorbis</code>.</p>
      */
     inline AudioParameters& WithCodec(const char* value) { SetCodec(value); return *this;}
+
 
     /**
      * <p>The sample rate of the audio stream in the output file, in Hertz. Valid
@@ -158,6 +160,7 @@ namespace Model
      */
     inline AudioParameters& WithSampleRate(const char* value) { SetSampleRate(value); return *this;}
 
+
     /**
      * <p>The bit rate of the audio stream in the output file, in kilobits/second.
      * Enter an integer between 64 and 320, inclusive.</p>
@@ -199,6 +202,7 @@ namespace Model
      * Enter an integer between 64 and 320, inclusive.</p>
      */
     inline AudioParameters& WithBitRate(const char* value) { SetBitRate(value); return *this;}
+
 
     /**
      * <p>The number of audio channels in the output file. The following values are
@@ -353,6 +357,7 @@ namespace Model
      * <code>Audio:AudioPackingMode</code>.</p>
      */
     inline AudioParameters& WithChannels(const char* value) { SetChannels(value); return *this;}
+
 
     /**
      * <p>The method of organizing audio channels and tracks. Use
@@ -851,6 +856,7 @@ namespace Model
      */
     inline AudioParameters& WithAudioPackingMode(const char* value) { SetAudioPackingMode(value); return *this;}
 
+
     /**
      * <p>If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the
      * <code>AAC</code> compression profile to use. Valid values include:</p> <p>
@@ -897,16 +903,22 @@ namespace Model
     inline AudioParameters& WithCodecOptions(AudioCodecOptions&& value) { SetCodecOptions(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_codec;
     bool m_codecHasBeenSet;
+
     Aws::String m_sampleRate;
     bool m_sampleRateHasBeenSet;
+
     Aws::String m_bitRate;
     bool m_bitRateHasBeenSet;
+
     Aws::String m_channels;
     bool m_channelsHasBeenSet;
+
     Aws::String m_audioPackingMode;
     bool m_audioPackingModeHasBeenSet;
+
     AudioCodecOptions m_codecOptions;
     bool m_codecOptionsHasBeenSet;
   };

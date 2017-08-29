@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The device pool's ARN.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetDevicePoolCompatibilityRequest& WithDevicePoolArn(const char* value) { SetDevicePoolArn(value); return *this;}
 
+
     /**
      * <p>The ARN of the app that is associated with the specified device pool.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The ARN of the app that is associated with the specified device pool.</p>
      */
     inline GetDevicePoolCompatibilityRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+
 
     /**
      * <p>The test type for the specified device pool.</p> <p>Allowed values include
@@ -207,6 +210,7 @@ namespace Model
      */
     inline GetDevicePoolCompatibilityRequest& WithTestType(TestType&& value) { SetTestType(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the uploaded test to be run against the device pool.</p>
      */
@@ -233,12 +237,16 @@ namespace Model
     inline GetDevicePoolCompatibilityRequest& WithTest(ScheduleRunTest&& value) { SetTest(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_devicePoolArn;
     bool m_devicePoolArnHasBeenSet;
+
     Aws::String m_appArn;
     bool m_appArnHasBeenSet;
+
     TestType m_testType;
     bool m_testTypeHasBeenSet;
+
     ScheduleRunTest m_test;
     bool m_testHasBeenSet;
   };

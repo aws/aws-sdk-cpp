@@ -30,12 +30,12 @@ GetWebACLResult::GetWebACLResult()
 {
 }
 
-GetWebACLResult::GetWebACLResult(const AmazonWebServiceResult<JsonValue>& result)
+GetWebACLResult::GetWebACLResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetWebACLResult& GetWebACLResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetWebACLResult& GetWebACLResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WebACL"))

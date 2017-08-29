@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
 
@@ -59,6 +60,7 @@ namespace Model
     
     inline UpdateReplicationJobRequest& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
 
+
     
     inline int GetFrequency() const{ return m_frequency; }
 
@@ -67,6 +69,7 @@ namespace Model
 
     
     inline UpdateReplicationJobRequest& WithFrequency(int value) { SetFrequency(value); return *this;}
+
 
     
     inline const Aws::Utils::DateTime& GetNextReplicationRunStartTime() const{ return m_nextReplicationRunStartTime; }
@@ -83,6 +86,7 @@ namespace Model
     
     inline UpdateReplicationJobRequest& WithNextReplicationRunStartTime(Aws::Utils::DateTime&& value) { SetNextReplicationRunStartTime(std::move(value)); return *this;}
 
+
     
     inline const LicenseType& GetLicenseType() const{ return m_licenseType; }
 
@@ -97,6 +101,7 @@ namespace Model
 
     
     inline UpdateReplicationJobRequest& WithLicenseType(LicenseType&& value) { SetLicenseType(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
@@ -118,6 +123,7 @@ namespace Model
 
     
     inline UpdateReplicationJobRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
 
     
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -141,16 +147,22 @@ namespace Model
     inline UpdateReplicationJobRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_replicationJobId;
     bool m_replicationJobIdHasBeenSet;
+
     int m_frequency;
     bool m_frequencyHasBeenSet;
+
     Aws::Utils::DateTime m_nextReplicationRunStartTime;
     bool m_nextReplicationRunStartTimeHasBeenSet;
+
     LicenseType m_licenseType;
     bool m_licenseTypeHasBeenSet;
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

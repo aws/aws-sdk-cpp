@@ -29,12 +29,12 @@ UpdateTrafficPolicyCommentResult::UpdateTrafficPolicyCommentResult()
 {
 }
 
-UpdateTrafficPolicyCommentResult::UpdateTrafficPolicyCommentResult(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateTrafficPolicyCommentResult::UpdateTrafficPolicyCommentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UpdateTrafficPolicyCommentResult& UpdateTrafficPolicyCommentResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateTrafficPolicyCommentResult& UpdateTrafficPolicyCommentResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

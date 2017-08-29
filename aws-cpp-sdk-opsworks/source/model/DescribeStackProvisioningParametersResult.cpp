@@ -30,12 +30,12 @@ DescribeStackProvisioningParametersResult::DescribeStackProvisioningParametersRe
 {
 }
 
-DescribeStackProvisioningParametersResult::DescribeStackProvisioningParametersResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeStackProvisioningParametersResult::DescribeStackProvisioningParametersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeStackProvisioningParametersResult& DescribeStackProvisioningParametersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeStackProvisioningParametersResult& DescribeStackProvisioningParametersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AgentInstallerUrl"))

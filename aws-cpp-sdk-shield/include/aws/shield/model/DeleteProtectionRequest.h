@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) for the <a>Protection</a> object to be
      * deleted.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline DeleteProtectionRequest& WithProtectionId(const char* value) { SetProtectionId(value); return *this;}
 
   private:
+
     Aws::String m_protectionId;
     bool m_protectionIdHasBeenSet;
   };

@@ -29,12 +29,12 @@ AssociateVPCWithHostedZoneResult::AssociateVPCWithHostedZoneResult()
 {
 }
 
-AssociateVPCWithHostedZoneResult::AssociateVPCWithHostedZoneResult(const AmazonWebServiceResult<XmlDocument>& result)
+AssociateVPCWithHostedZoneResult::AssociateVPCWithHostedZoneResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-AssociateVPCWithHostedZoneResult& AssociateVPCWithHostedZoneResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AssociateVPCWithHostedZoneResult& AssociateVPCWithHostedZoneResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

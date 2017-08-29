@@ -45,6 +45,7 @@ namespace Model
     Connection& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline Connection& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
@@ -122,6 +124,7 @@ namespace Model
      */
     inline Connection& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
+
     /**
      * <p>The connection status.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      */
     inline Connection& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The error message when the connection last failed.</p>
      */
@@ -191,6 +195,7 @@ namespace Model
      * <p>The error message when the connection last failed.</p>
      */
     inline Connection& WithLastFailureMessage(const char* value) { SetLastFailureMessage(value); return *this;}
+
 
     /**
      * <p>The identifier of the endpoint. Identifiers must begin with a letter; must
@@ -241,6 +246,7 @@ namespace Model
      */
     inline Connection& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
 
+
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p>
@@ -284,16 +290,22 @@ namespace Model
     inline Connection& WithReplicationInstanceIdentifier(const char* value) { SetReplicationInstanceIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet;
+
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_lastFailureMessage;
     bool m_lastFailureMessageHasBeenSet;
+
     Aws::String m_endpointIdentifier;
     bool m_endpointIdentifierHasBeenSet;
+
     Aws::String m_replicationInstanceIdentifier;
     bool m_replicationInstanceIdentifierHasBeenSet;
   };

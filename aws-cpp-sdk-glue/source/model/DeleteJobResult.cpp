@@ -30,12 +30,12 @@ DeleteJobResult::DeleteJobResult()
 {
 }
 
-DeleteJobResult::DeleteJobResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteJobResult::DeleteJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteJobResult& DeleteJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteJobResult& DeleteJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("JobName"))

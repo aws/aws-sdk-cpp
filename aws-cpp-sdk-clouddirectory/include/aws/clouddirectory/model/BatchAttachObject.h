@@ -47,6 +47,7 @@ namespace Model
     BatchAttachObject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The parent object reference.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline BatchAttachObject& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
 
+
     /**
      * <p>The child object reference that is to be attached to the object.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>The child object reference that is to be attached to the object.</p>
      */
     inline BatchAttachObject& WithChildReference(ObjectReference&& value) { SetChildReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the link.</p>
@@ -133,10 +136,13 @@ namespace Model
     inline BatchAttachObject& WithLinkName(const char* value) { SetLinkName(value); return *this;}
 
   private:
+
     ObjectReference m_parentReference;
     bool m_parentReferenceHasBeenSet;
+
     ObjectReference m_childReference;
     bool m_childReferenceHasBeenSet;
+
     Aws::String m_linkName;
     bool m_linkNameHasBeenSet;
   };

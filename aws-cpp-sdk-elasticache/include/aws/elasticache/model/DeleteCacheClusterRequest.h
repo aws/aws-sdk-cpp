@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The cache cluster identifier for the cluster to be deleted. This parameter is
      * not case sensitive.</p>
@@ -83,6 +84,7 @@ namespace Model
      * not case sensitive.</p>
      */
     inline DeleteCacheClusterRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+
 
     /**
      * <p>The user-supplied name of a final cache cluster snapshot. This is the unique
@@ -134,8 +136,10 @@ namespace Model
     inline DeleteCacheClusterRequest& WithFinalSnapshotIdentifier(const char* value) { SetFinalSnapshotIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
+
     Aws::String m_finalSnapshotIdentifier;
     bool m_finalSnapshotIdentifierHasBeenSet;
   };

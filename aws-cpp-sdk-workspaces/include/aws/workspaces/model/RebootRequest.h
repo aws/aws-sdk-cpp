@@ -46,6 +46,7 @@ namespace Model
     RebootRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the WorkSpace to reboot.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline RebootRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
   private:
+
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet;
   };

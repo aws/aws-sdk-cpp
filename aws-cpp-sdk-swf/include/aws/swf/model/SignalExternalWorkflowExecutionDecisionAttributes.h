@@ -59,6 +59,7 @@ namespace Model
     SignalExternalWorkflowExecutionDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The <code>workflowId</code> of the workflow execution to be signaled.</p>
      */
@@ -94,6 +95,7 @@ namespace Model
      */
     inline SignalExternalWorkflowExecutionDecisionAttributes& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
+
     /**
      * <p>The <code>runId</code> of the workflow execution to be signaled.</p>
      */
@@ -128,6 +130,7 @@ namespace Model
      * <p>The <code>runId</code> of the workflow execution to be signaled.</p>
      */
     inline SignalExternalWorkflowExecutionDecisionAttributes& WithRunId(const char* value) { SetRunId(value); return *this;}
+
 
     /**
      * <p> The name of the signal.The target workflow execution uses the signal name
@@ -171,6 +174,7 @@ namespace Model
      */
     inline SignalExternalWorkflowExecutionDecisionAttributes& WithSignalName(const char* value) { SetSignalName(value); return *this;}
 
+
     /**
      * <p> The input data to be provided with the signal. The target workflow execution
      * uses the signal name and input data to process the signal.</p>
@@ -212,6 +216,7 @@ namespace Model
      * uses the signal name and input data to process the signal.</p>
      */
     inline SignalExternalWorkflowExecutionDecisionAttributes& WithInput(const char* value) { SetInput(value); return *this;}
+
 
     /**
      * <p>The data attached to the event that can be used by the decider in subsequent
@@ -256,14 +261,19 @@ namespace Model
     inline SignalExternalWorkflowExecutionDecisionAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 
   private:
+
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet;
+
     Aws::String m_runId;
     bool m_runIdHasBeenSet;
+
     Aws::String m_signalName;
     bool m_signalNameHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     Aws::String m_control;
     bool m_controlHasBeenSet;
   };

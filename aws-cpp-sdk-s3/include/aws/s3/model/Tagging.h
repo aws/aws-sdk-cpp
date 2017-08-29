@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::Vector<Tag>& GetTagSet() const{ return m_tagSet; }
 
@@ -64,6 +65,7 @@ namespace Model
     inline Tagging& AddTagSet(Tag&& value) { m_tagSetHasBeenSet = true; m_tagSet.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Tag> m_tagSet;
     bool m_tagSetHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
     GetRestApiRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the <a>RestApi</a> resource.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline GetRestApiRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
   };

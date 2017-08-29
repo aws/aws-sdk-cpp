@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateOpenIDConnectProviderResult();
-    CreateOpenIDConnectProviderResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateOpenIDConnectProviderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateOpenIDConnectProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateOpenIDConnectProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
@@ -90,6 +91,7 @@ namespace Model
      */
     inline CreateOpenIDConnectProviderResult& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -106,7 +108,9 @@ namespace Model
     inline CreateOpenIDConnectProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_openIDConnectProviderArn;
+
     ResponseMetadata m_responseMetadata;
   };
 

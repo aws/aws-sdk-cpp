@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateApplicationResult();
-    CreateApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique application ID.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateApplicationResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
   };
 

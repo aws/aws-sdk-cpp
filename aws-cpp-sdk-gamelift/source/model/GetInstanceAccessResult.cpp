@@ -30,12 +30,12 @@ GetInstanceAccessResult::GetInstanceAccessResult()
 {
 }
 
-GetInstanceAccessResult::GetInstanceAccessResult(const AmazonWebServiceResult<JsonValue>& result)
+GetInstanceAccessResult::GetInstanceAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetInstanceAccessResult& GetInstanceAccessResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetInstanceAccessResult& GetInstanceAccessResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("InstanceAccess"))

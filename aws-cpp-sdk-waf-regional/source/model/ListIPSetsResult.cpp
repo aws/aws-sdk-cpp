@@ -30,12 +30,12 @@ ListIPSetsResult::ListIPSetsResult()
 {
 }
 
-ListIPSetsResult::ListIPSetsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListIPSetsResult::ListIPSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListIPSetsResult& ListIPSetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListIPSetsResult& ListIPSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextMarker"))

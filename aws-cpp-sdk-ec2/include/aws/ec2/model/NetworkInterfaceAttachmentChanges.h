@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the network interface attachment.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline NetworkInterfaceAttachmentChanges& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
 
+
     /**
      * <p>Indicates whether the network interface is deleted when the instance is
      * terminated.</p>
@@ -102,8 +104,10 @@ namespace Model
     inline NetworkInterfaceAttachmentChanges& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
   private:
+
     Aws::String m_attachmentId;
     bool m_attachmentIdHasBeenSet;
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
   };

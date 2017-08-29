@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a build to return fleets for. Use this parameter to
      * return only fleets using the specified build. To retrieve all fleets, leave this
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ListFleetsRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
+
     /**
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -105,6 +107,7 @@ namespace Model
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline ListFleetsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -156,10 +159,13 @@ namespace Model
     inline ListFleetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_buildId;
     bool m_buildIdHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

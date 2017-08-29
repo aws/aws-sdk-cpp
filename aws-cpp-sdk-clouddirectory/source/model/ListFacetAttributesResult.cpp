@@ -30,12 +30,12 @@ ListFacetAttributesResult::ListFacetAttributesResult()
 {
 }
 
-ListFacetAttributesResult::ListFacetAttributesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListFacetAttributesResult::ListFacetAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListFacetAttributesResult& ListFacetAttributesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListFacetAttributesResult& ListFacetAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Attributes"))

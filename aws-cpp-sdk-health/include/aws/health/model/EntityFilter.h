@@ -50,6 +50,7 @@ namespace Model
     EntityFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of event ARNs (unique identifiers). For example:
      * <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
@@ -106,6 +107,7 @@ namespace Model
      */
     inline EntityFilter& AddEventArns(const char* value) { m_eventArnsHasBeenSet = true; m_eventArns.push_back(value); return *this; }
 
+
     /**
      * <p>A list of entity ARNs (unique identifiers).</p>
      */
@@ -145,6 +147,7 @@ namespace Model
      * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline EntityFilter& AddEntityArns(const char* value) { m_entityArnsHasBeenSet = true; m_entityArns.push_back(value); return *this; }
+
 
     /**
      * <p>A list of IDs for affected entities.</p>
@@ -186,6 +189,7 @@ namespace Model
      */
     inline EntityFilter& AddEntityValues(const char* value) { m_entityValuesHasBeenSet = true; m_entityValues.push_back(value); return *this; }
 
+
     /**
      * <p>A list of the most recent dates and times that the entity was updated.</p>
      */
@@ -221,6 +225,7 @@ namespace Model
      */
     inline EntityFilter& AddLastUpdatedTimes(DateTimeRange&& value) { m_lastUpdatedTimesHasBeenSet = true; m_lastUpdatedTimes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
@@ -255,6 +260,7 @@ namespace Model
      * <p>A map of entity tags attached to the affected entity.</p>
      */
     inline EntityFilter& AddTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of entity status codes (<code>IMPAIRED</code>,
@@ -299,16 +305,22 @@ namespace Model
     inline EntityFilter& AddStatusCodes(EntityStatusCode&& value) { m_statusCodesHasBeenSet = true; m_statusCodes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_eventArns;
     bool m_eventArnsHasBeenSet;
+
     Aws::Vector<Aws::String> m_entityArns;
     bool m_entityArnsHasBeenSet;
+
     Aws::Vector<Aws::String> m_entityValues;
     bool m_entityValuesHasBeenSet;
+
     Aws::Vector<DateTimeRange> m_lastUpdatedTimes;
     bool m_lastUpdatedTimesHasBeenSet;
+
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Vector<EntityStatusCode> m_statusCodes;
     bool m_statusCodesHasBeenSet;
   };

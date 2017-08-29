@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeClustersResult();
-    DescribeClustersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeClustersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of clusters.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of clusters.</p>
      */
     inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline DescribeClustersResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Cluster> m_clusters;
+
     Aws::Vector<Failure> m_failures;
   };
 

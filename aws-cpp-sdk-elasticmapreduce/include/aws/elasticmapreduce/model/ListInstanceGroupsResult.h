@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListInstanceGroupsResult();
-    ListInstanceGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListInstanceGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListInstanceGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListInstanceGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of instance groups for the cluster and given filters.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The list of instance groups for the cluster and given filters.</p>
      */
     inline ListInstanceGroupsResult& AddInstanceGroups(InstanceGroup&& value) { m_instanceGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline ListInstanceGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<InstanceGroup> m_instanceGroups;
+
     Aws::String m_marker;
   };
 

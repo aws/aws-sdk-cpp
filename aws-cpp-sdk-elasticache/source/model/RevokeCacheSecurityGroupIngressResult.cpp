@@ -31,12 +31,12 @@ RevokeCacheSecurityGroupIngressResult::RevokeCacheSecurityGroupIngressResult()
 {
 }
 
-RevokeCacheSecurityGroupIngressResult::RevokeCacheSecurityGroupIngressResult(const AmazonWebServiceResult<XmlDocument>& result)
+RevokeCacheSecurityGroupIngressResult::RevokeCacheSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RevokeCacheSecurityGroupIngressResult& RevokeCacheSecurityGroupIngressResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RevokeCacheSecurityGroupIngressResult& RevokeCacheSecurityGroupIngressResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

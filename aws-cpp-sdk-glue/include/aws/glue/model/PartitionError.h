@@ -47,6 +47,7 @@ namespace Model
     PartitionError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The values that define the partition.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline PartitionError& AddPartitionValues(const char* value) { m_partitionValuesHasBeenSet = true; m_partitionValues.push_back(value); return *this; }
 
+
     /**
      * <p>Details about the partition error.</p>
      */
@@ -113,8 +115,10 @@ namespace Model
     inline PartitionError& WithErrorDetail(ErrorDetail&& value) { SetErrorDetail(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_partitionValues;
     bool m_partitionValuesHasBeenSet;
+
     ErrorDetail m_errorDetail;
     bool m_errorDetailHasBeenSet;
   };

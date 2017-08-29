@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the high-availability partition group to describe.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DescribeHapgRequest& WithHapgArn(const char* value) { SetHapgArn(value); return *this;}
 
   private:
+
     Aws::String m_hapgArn;
     bool m_hapgArnHasBeenSet;
   };

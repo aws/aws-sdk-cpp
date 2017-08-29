@@ -30,12 +30,12 @@ ListCollectionsResult::ListCollectionsResult()
 {
 }
 
-ListCollectionsResult::ListCollectionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListCollectionsResult::ListCollectionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListCollectionsResult& ListCollectionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListCollectionsResult& ListCollectionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CollectionIds"))

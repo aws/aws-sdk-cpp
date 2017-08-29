@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     RunInstancesResponse();
-    RunInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RunInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RunInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RunInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>[EC2-Classic only] One or more security groups.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline RunInstancesResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>One or more instances.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline RunInstancesResponse& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the AWS account that owns the reservation.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The ID of the AWS account that owns the reservation.</p>
      */
     inline RunInstancesResponse& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
@@ -197,6 +201,7 @@ namespace Model
      */
     inline RunInstancesResponse& WithRequesterId(const char* value) { SetRequesterId(value); return *this;}
 
+
     /**
      * <p>The ID of the reservation.</p>
      */
@@ -232,6 +237,7 @@ namespace Model
      */
     inline RunInstancesResponse& WithReservationId(const char* value) { SetReservationId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -248,11 +254,17 @@ namespace Model
     inline RunInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<GroupIdentifier> m_groups;
+
     Aws::Vector<Instance> m_instances;
+
     Aws::String m_ownerId;
+
     Aws::String m_requesterId;
+
     Aws::String m_reservationId;
+
     ResponseMetadata m_responseMetadata;
   };
 

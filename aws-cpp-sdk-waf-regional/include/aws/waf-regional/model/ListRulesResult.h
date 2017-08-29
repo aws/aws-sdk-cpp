@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListRulesResult();
-    ListRulesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRulesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If you have more <code>Rules</code> than the number that you specified for
@@ -106,6 +107,7 @@ namespace Model
      */
     inline ListRulesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>An array of <a>RuleSummary</a> objects.</p>
      */
@@ -142,7 +144,9 @@ namespace Model
     inline ListRulesResult& AddRules(RuleSummary&& value) { m_rules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextMarker;
+
     Aws::Vector<RuleSummary> m_rules;
   };
 

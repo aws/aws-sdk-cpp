@@ -48,6 +48,7 @@ namespace Model
     TaskObject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An internal identifier for the task. This ID is passed to the
      * <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline TaskObject& WithTaskId(const char* value) { SetTaskId(value); return *this;}
 
+
     /**
      * <p>The ID of the pipeline that provided the task.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The ID of the pipeline that provided the task.</p>
      */
     inline TaskObject& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+
 
     /**
      * <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value
@@ -166,6 +169,7 @@ namespace Model
      * to track how many times a task is attempted.</p>
      */
     inline TaskObject& WithAttemptId(const char* value) { SetAttemptId(value); return *this;}
+
 
     /**
      * <p>Connection information for the location where the task runner will publish
@@ -234,12 +238,16 @@ namespace Model
     inline TaskObject& AddObjects(const char* key, const PipelineObject& value) { m_objectsHasBeenSet = true; m_objects.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet;
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     Aws::String m_attemptId;
     bool m_attemptIdHasBeenSet;
+
     Aws::Map<Aws::String, PipelineObject> m_objects;
     bool m_objectsHasBeenSet;
   };

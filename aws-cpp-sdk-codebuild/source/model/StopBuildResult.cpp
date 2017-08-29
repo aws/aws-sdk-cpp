@@ -30,12 +30,12 @@ StopBuildResult::StopBuildResult()
 {
 }
 
-StopBuildResult::StopBuildResult(const AmazonWebServiceResult<JsonValue>& result)
+StopBuildResult::StopBuildResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopBuildResult& StopBuildResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopBuildResult& StopBuildResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("build"))

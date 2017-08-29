@@ -57,6 +57,7 @@ namespace Model
     PerformanceMetrics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const{ return m_properties; }
 
@@ -94,6 +95,7 @@ namespace Model
     inline PerformanceMetrics& AddProperties(const char* key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_properties;
     bool m_propertiesHasBeenSet;
   };

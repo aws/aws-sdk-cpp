@@ -48,6 +48,7 @@ namespace Model
     InstanceFleetModifyConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for the instance fleet.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline InstanceFleetModifyConfig& WithInstanceFleetId(const char* value) { SetInstanceFleetId(value); return *this;}
 
+
     /**
      * <p>The target capacity of On-Demand units for the instance fleet. For more
      * information see <a>InstanceFleetConfig$TargetOnDemandCapacity</a>.</p>
@@ -100,6 +102,7 @@ namespace Model
      * information see <a>InstanceFleetConfig$TargetOnDemandCapacity</a>.</p>
      */
     inline InstanceFleetModifyConfig& WithTargetOnDemandCapacity(int value) { SetTargetOnDemandCapacity(value); return *this;}
+
 
     /**
      * <p>The target capacity of Spot units for the instance fleet. For more
@@ -120,10 +123,13 @@ namespace Model
     inline InstanceFleetModifyConfig& WithTargetSpotCapacity(int value) { SetTargetSpotCapacity(value); return *this;}
 
   private:
+
     Aws::String m_instanceFleetId;
     bool m_instanceFleetIdHasBeenSet;
+
     int m_targetOnDemandCapacity;
     bool m_targetOnDemandCapacityHasBeenSet;
+
     int m_targetSpotCapacity;
     bool m_targetSpotCapacityHasBeenSet;
   };

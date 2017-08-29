@@ -52,6 +52,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The identifier for the distribution. For example:
      * <code>EDFDVBD632BHDS5</code>.</p>
@@ -93,6 +94,7 @@ namespace Model
      * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline StreamingDistributionSummary& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
@@ -143,6 +145,7 @@ namespace Model
      */
     inline StreamingDistributionSummary& WithARN(const char* value) { SetARN(value); return *this;}
 
+
     /**
      * <p> Indicates the current status of the distribution. When the status is
      * <code>Deployed</code>, the distribution's information is fully propagated
@@ -192,6 +195,7 @@ namespace Model
      */
     inline StreamingDistributionSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The date and time the distribution was last modified.</p>
      */
@@ -216,6 +220,7 @@ namespace Model
      * <p>The date and time the distribution was last modified.</p>
      */
     inline StreamingDistributionSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The domain name corresponding to the distribution. For example:
@@ -259,6 +264,7 @@ namespace Model
      */
     inline StreamingDistributionSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>A complex type that contains information about the Amazon S3 bucket from
      * which you want CloudFront to get your media files for distribution.</p>
@@ -289,6 +295,7 @@ namespace Model
      */
     inline StreamingDistributionSummary& WithS3Origin(S3Origin&& value) { SetS3Origin(std::move(value)); return *this;}
 
+
     /**
      * <p>A complex type that contains information about CNAMEs (alternate domain
      * names), if any, for this streaming distribution.</p>
@@ -318,6 +325,7 @@ namespace Model
      * names), if any, for this streaming distribution.</p>
      */
     inline StreamingDistributionSummary& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that specifies the AWS accounts, if any, that you want to
@@ -404,6 +412,7 @@ namespace Model
      */
     inline StreamingDistributionSummary& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
 
+
     /**
      * <p>The comment originally specified when this distribution was created.</p>
      */
@@ -439,6 +448,7 @@ namespace Model
      */
     inline StreamingDistributionSummary& WithComment(const char* value) { SetComment(value); return *this;}
 
+
     
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
 
@@ -453,6 +463,7 @@ namespace Model
 
     
     inline StreamingDistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
+
 
     /**
      * <p>Whether the distribution is enabled to accept end user requests for
@@ -473,26 +484,37 @@ namespace Model
     inline StreamingDistributionSummary& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     S3Origin m_s3Origin;
     bool m_s3OriginHasBeenSet;
+
     Aliases m_aliases;
     bool m_aliasesHasBeenSet;
+
     TrustedSigners m_trustedSigners;
     bool m_trustedSignersHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     PriceClass m_priceClass;
     bool m_priceClassHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
   };

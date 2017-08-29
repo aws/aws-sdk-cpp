@@ -45,6 +45,7 @@ namespace Model
     JobSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the job.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ID of the job.</p>
      */
     inline JobSummary& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     /**
      * <p>The name of the job.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline JobSummary& WithJobName(const char* value) { SetJobName(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
   };

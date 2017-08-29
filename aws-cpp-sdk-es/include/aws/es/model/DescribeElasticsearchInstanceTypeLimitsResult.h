@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeElasticsearchInstanceTypeLimitsResult();
-    DescribeElasticsearchInstanceTypeLimitsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeElasticsearchInstanceTypeLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticsearchInstanceTypeLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticsearchInstanceTypeLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::Map<Aws::String, Limits>& GetLimitsByRole() const{ return m_limitsByRole; }
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeElasticsearchInstanceTypeLimitsResult& AddLimitsByRole(const char* key, const Limits& value) { m_limitsByRole.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Limits> m_limitsByRole;
   };
 

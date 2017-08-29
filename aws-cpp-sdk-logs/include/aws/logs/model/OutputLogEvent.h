@@ -45,6 +45,7 @@ namespace Model
     OutputLogEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The time the event occurred, expressed as the number of milliseconds since
      * Jan 1, 1970 00:00:00 UTC.</p>
@@ -62,6 +63,7 @@ namespace Model
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline OutputLogEvent& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
+
 
     /**
      * <p>The data contained in the log event.</p>
@@ -98,6 +100,7 @@ namespace Model
      */
     inline OutputLogEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The time the event was ingested, expressed as the number of milliseconds
      * since Jan 1, 1970 00:00:00 UTC.</p>
@@ -117,10 +120,13 @@ namespace Model
     inline OutputLogEvent& WithIngestionTime(long long value) { SetIngestionTime(value); return *this;}
 
   private:
+
     long long m_timestamp;
     bool m_timestampHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     long long m_ingestionTime;
     bool m_ingestionTimeHasBeenSet;
   };

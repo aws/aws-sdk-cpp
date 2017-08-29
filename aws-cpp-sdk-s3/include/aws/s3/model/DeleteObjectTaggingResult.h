@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteObjectTaggingResult();
-    DeleteObjectTaggingResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteObjectTaggingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteObjectTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteObjectTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * The versionId of the object the tag-set was removed from.
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteObjectTaggingResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
+
     Aws::String m_versionId;
   };
 

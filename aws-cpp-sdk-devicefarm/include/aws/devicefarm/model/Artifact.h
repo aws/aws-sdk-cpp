@@ -47,6 +47,7 @@ namespace Model
     Artifact& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The artifact's ARN.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline Artifact& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The artifact's name.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The artifact's name.</p>
      */
     inline Artifact& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The artifact's type.</p> <p>Allowed values include the following:</p> <ul>
@@ -247,6 +250,7 @@ namespace Model
      */
     inline Artifact& WithType(ArtifactType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The artifact's file extension.</p>
      */
@@ -281,6 +285,7 @@ namespace Model
      * <p>The artifact's file extension.</p>
      */
     inline Artifact& WithExtension(const char* value) { SetExtension(value); return *this;}
+
 
     /**
      * <p>The pre-signed Amazon S3 URL that can be used with a corresponding GET
@@ -325,14 +330,19 @@ namespace Model
     inline Artifact& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ArtifactType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_extension;
     bool m_extensionHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
   };

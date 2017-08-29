@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the group to update.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
@@ -93,6 +94,7 @@ namespace Model
      * can also include any of the following characters: =,.@-</p>
      */
     inline RemoveUserFromGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the user to remove.</p> <p>This parameter allows (per its <a
@@ -151,8 +153,10 @@ namespace Model
     inline RemoveUserFromGroupRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
   };

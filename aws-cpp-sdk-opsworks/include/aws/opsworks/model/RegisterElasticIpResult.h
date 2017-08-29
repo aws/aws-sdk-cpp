@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     RegisterElasticIpResult();
-    RegisterElasticIpResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterElasticIpResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterElasticIpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterElasticIpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Elastic IP address.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline RegisterElasticIpResult& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
 
   private:
+
     Aws::String m_elasticIp;
   };
 

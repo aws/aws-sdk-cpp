@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Maximum number of applications to list.</p>
      */
@@ -53,6 +54,7 @@ namespace Model
      * <p>Maximum number of applications to list.</p>
      */
     inline ListApplicationsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Name of the application to start the list with. When using pagination to
@@ -111,8 +113,10 @@ namespace Model
     inline ListApplicationsRequest& WithExclusiveStartApplicationName(const char* value) { SetExclusiveStartApplicationName(value); return *this;}
 
   private:
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_exclusiveStartApplicationName;
     bool m_exclusiveStartApplicationNameHasBeenSet;
   };

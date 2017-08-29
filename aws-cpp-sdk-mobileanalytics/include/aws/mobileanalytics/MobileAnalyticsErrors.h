@@ -55,11 +55,11 @@ enum class MobileAnalyticsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
 namespace MobileAnalyticsErrorMapper
 {
-  AWS_MOBILEANALYTICS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_MOBILEANALYTICS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace MobileAnalytics

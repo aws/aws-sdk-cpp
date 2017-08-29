@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A token used for paginating results from your get active names request.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetActiveNamesRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
   };

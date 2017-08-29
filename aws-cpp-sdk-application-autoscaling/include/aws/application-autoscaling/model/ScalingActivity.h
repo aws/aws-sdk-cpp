@@ -49,6 +49,7 @@ namespace Model
     ScalingActivity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier of the scaling activity.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ScalingActivity& WithActivityId(const char* value) { SetActivityId(value); return *this;}
 
+
     /**
      * <p>The namespace of the AWS service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
@@ -118,6 +120,7 @@ namespace Model
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline ScalingActivity& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier of the resource associated with the scaling activity. This
@@ -273,6 +276,7 @@ namespace Model
      */
     inline ScalingActivity& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The scalable dimension. This string consists of the service namespace,
      * resource type, and scaling property.</p> <ul> <li> <p>
@@ -378,6 +382,7 @@ namespace Model
      */
     inline ScalingActivity& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
+
     /**
      * <p>A simple description of what action the scaling activity intends to
      * accomplish.</p>
@@ -420,6 +425,7 @@ namespace Model
      */
     inline ScalingActivity& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A simple description of what caused the scaling activity to happen.</p>
      */
@@ -455,6 +461,7 @@ namespace Model
      */
     inline ScalingActivity& WithCause(const char* value) { SetCause(value); return *this;}
 
+
     /**
      * <p>The Unix timestamp for when the scaling activity began.</p>
      */
@@ -479,6 +486,7 @@ namespace Model
      * <p>The Unix timestamp for when the scaling activity began.</p>
      */
     inline ScalingActivity& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The Unix timestamp for when the scaling activity ended.</p>
@@ -505,6 +513,7 @@ namespace Model
      */
     inline ScalingActivity& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates the status of the scaling activity.</p>
      */
@@ -529,6 +538,7 @@ namespace Model
      * <p>Indicates the status of the scaling activity.</p>
      */
     inline ScalingActivity& WithStatusCode(ScalingActivityStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+
 
     /**
      * <p>A simple message about the current status of the scaling activity.</p>
@@ -564,6 +574,7 @@ namespace Model
      * <p>A simple message about the current status of the scaling activity.</p>
      */
     inline ScalingActivity& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
 
     /**
      * <p>The details about the scaling activity.</p>
@@ -601,26 +612,37 @@ namespace Model
     inline ScalingActivity& WithDetails(const char* value) { SetDetails(value); return *this;}
 
   private:
+
     Aws::String m_activityId;
     bool m_activityIdHasBeenSet;
+
     ServiceNamespace m_serviceNamespace;
     bool m_serviceNamespaceHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     ScalableDimension m_scalableDimension;
     bool m_scalableDimensionHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_cause;
     bool m_causeHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     ScalingActivityStatusCode m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
   };

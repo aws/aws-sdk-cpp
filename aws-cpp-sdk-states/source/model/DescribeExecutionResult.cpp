@@ -31,13 +31,13 @@ DescribeExecutionResult::DescribeExecutionResult() :
 {
 }
 
-DescribeExecutionResult::DescribeExecutionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeExecutionResult::DescribeExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(ExecutionStatus::NOT_SET)
 {
   *this = result;
 }
 
-DescribeExecutionResult& DescribeExecutionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeExecutionResult& DescribeExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("executionArn"))

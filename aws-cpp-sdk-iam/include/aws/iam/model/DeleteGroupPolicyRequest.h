@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name (friendly name, not ARN) identifying the group that the policy is
      * embedded in.</p> <p>This parameter allows (per its <a
@@ -101,6 +102,7 @@ namespace Model
      */
     inline DeleteGroupPolicyRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>The name identifying the policy document to delete.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -158,8 +160,10 @@ namespace Model
     inline DeleteGroupPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
   };

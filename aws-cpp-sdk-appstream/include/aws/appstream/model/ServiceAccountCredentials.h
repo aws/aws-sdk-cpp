@@ -47,6 +47,7 @@ namespace Model
     ServiceAccountCredentials& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user name of an account in the directory that is used by AppStream 2.0
      * streaming instances to connect to the directory. This account must have the
@@ -110,6 +111,7 @@ namespace Model
      */
     inline ServiceAccountCredentials& WithAccountName(const char* value) { SetAccountName(value); return *this;}
 
+
     /**
      * <p>The password for the user account for directory actions.</p>
      */
@@ -146,8 +148,10 @@ namespace Model
     inline ServiceAccountCredentials& WithAccountPassword(const char* value) { SetAccountPassword(value); return *this;}
 
   private:
+
     Aws::String m_accountName;
     bool m_accountNameHasBeenSet;
+
     Aws::String m_accountPassword;
     bool m_accountPasswordHasBeenSet;
   };

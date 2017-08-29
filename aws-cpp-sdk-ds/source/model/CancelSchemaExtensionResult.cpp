@@ -30,12 +30,12 @@ CancelSchemaExtensionResult::CancelSchemaExtensionResult()
 {
 }
 
-CancelSchemaExtensionResult::CancelSchemaExtensionResult(const AmazonWebServiceResult<JsonValue>& result)
+CancelSchemaExtensionResult::CancelSchemaExtensionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CancelSchemaExtensionResult& CancelSchemaExtensionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CancelSchemaExtensionResult& CancelSchemaExtensionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -48,6 +48,7 @@ namespace Model
     AWSSessionCredentials& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The access key for the session.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline AWSSessionCredentials& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
+
     /**
      * <p>The secret access key for the session.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The secret access key for the session.</p>
      */
     inline AWSSessionCredentials& WithSecretAccessKey(const char* value) { SetSecretAccessKey(value); return *this;}
+
 
     /**
      * <p>The token for the session.</p>
@@ -154,10 +157,13 @@ namespace Model
     inline AWSSessionCredentials& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
 
   private:
+
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet;
+
     Aws::String m_secretAccessKey;
     bool m_secretAccessKeyHasBeenSet;
+
     Aws::String m_sessionToken;
     bool m_sessionTokenHasBeenSet;
   };

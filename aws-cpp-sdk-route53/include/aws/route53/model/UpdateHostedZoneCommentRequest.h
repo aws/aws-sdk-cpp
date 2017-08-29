@@ -38,6 +38,7 @@ namespace Model
     UpdateHostedZoneCommentRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID for the hosted zone that you want to update the comment for.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The ID for the hosted zone that you want to update the comment for.</p>
      */
     inline UpdateHostedZoneCommentRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The new comment for the hosted zone. If you don't specify a value for
@@ -123,8 +125,10 @@ namespace Model
     inline UpdateHostedZoneCommentRequest& WithComment(const char* value) { SetComment(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
   };

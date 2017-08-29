@@ -30,12 +30,12 @@ GetSnapshotLimitsResult::GetSnapshotLimitsResult()
 {
 }
 
-GetSnapshotLimitsResult::GetSnapshotLimitsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetSnapshotLimitsResult::GetSnapshotLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetSnapshotLimitsResult& GetSnapshotLimitsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSnapshotLimitsResult& GetSnapshotLimitsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SnapshotLimits"))

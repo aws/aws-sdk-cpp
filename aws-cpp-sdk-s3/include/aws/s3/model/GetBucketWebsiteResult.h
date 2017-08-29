@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     GetBucketWebsiteResult();
-    GetBucketWebsiteResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketWebsiteResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketWebsiteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketWebsiteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const{ return m_redirectAllRequestsTo; }
@@ -60,6 +61,7 @@ namespace Model
     
     inline GetBucketWebsiteResult& WithRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { SetRedirectAllRequestsTo(std::move(value)); return *this;}
 
+
     
     inline const IndexDocument& GetIndexDocument() const{ return m_indexDocument; }
 
@@ -75,6 +77,7 @@ namespace Model
     
     inline GetBucketWebsiteResult& WithIndexDocument(IndexDocument&& value) { SetIndexDocument(std::move(value)); return *this;}
 
+
     
     inline const ErrorDocument& GetErrorDocument() const{ return m_errorDocument; }
 
@@ -89,6 +92,7 @@ namespace Model
 
     
     inline GetBucketWebsiteResult& WithErrorDocument(ErrorDocument&& value) { SetErrorDocument(std::move(value)); return *this;}
+
 
     
     inline const Aws::Vector<RoutingRule>& GetRoutingRules() const{ return m_routingRules; }
@@ -112,9 +116,13 @@ namespace Model
     inline GetBucketWebsiteResult& AddRoutingRules(RoutingRule&& value) { m_routingRules.push_back(std::move(value)); return *this; }
 
   private:
+
     RedirectAllRequestsTo m_redirectAllRequestsTo;
+
     IndexDocument m_indexDocument;
+
     ErrorDocument m_errorDocument;
+
     Aws::Vector<RoutingRule> m_routingRules;
   };
 

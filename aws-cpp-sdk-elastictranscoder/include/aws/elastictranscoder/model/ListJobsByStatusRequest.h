@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>To get information about all of the jobs associated with the current AWS
      * account that have a given status, specify the following status:
@@ -100,6 +101,7 @@ namespace Model
      */
     inline ListJobsByStatusRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p> To list jobs in chronological order by the date and time that they were
      * submitted, enter <code>true</code>. To list jobs in reverse chronological order,
@@ -148,6 +150,7 @@ namespace Model
      * enter <code>false</code>. </p>
      */
     inline ListJobsByStatusRequest& WithAscending(const char* value) { SetAscending(value); return *this;}
+
 
     /**
      * <p> When Elastic Transcoder returns more than one page of results, use
@@ -199,10 +202,13 @@ namespace Model
     inline ListJobsByStatusRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_ascending;
     bool m_ascendingHasBeenSet;
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
   };

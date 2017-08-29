@@ -42,6 +42,7 @@ namespace Model
     CreateJobRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use
      * for transcoding. The pipeline determines several settings, including the Amazon
@@ -98,6 +99,7 @@ namespace Model
      */
     inline CreateJobRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
 
+
     /**
      * <p>A section of the request body that provides information about the file that
      * is being transcoded.</p>
@@ -127,6 +129,7 @@ namespace Model
      * is being transcoded.</p>
      */
     inline CreateJobRequest& WithInput(JobInput&& value) { SetInput(std::move(value)); return *this;}
+
 
     /**
      * <p>A section of the request body that provides information about the files that
@@ -170,6 +173,7 @@ namespace Model
      */
     inline CreateJobRequest& AddInputs(JobInput&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> A section of the request body that provides information about the transcoded
      * (target) file. We strongly recommend that you use the <code>Outputs</code>
@@ -204,6 +208,7 @@ namespace Model
      * syntax instead of the <code>Output</code> syntax. </p>
      */
     inline CreateJobRequest& WithOutput(CreateJobOutput&& value) { SetOutput(std::move(value)); return *this;}
+
 
     /**
      * <p> A section of the request body that provides information about the transcoded
@@ -254,6 +259,7 @@ namespace Model
      */
     inline CreateJobRequest& AddOutputs(CreateJobOutput&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The value, if any, that you want Elastic Transcoder to prepend to the names
      * of all files that this job creates, including output files, thumbnails, and
@@ -302,6 +308,7 @@ namespace Model
      * playlists.</p>
      */
     inline CreateJobRequest& WithOutputKeyPrefix(const char* value) { SetOutputKeyPrefix(value); return *this;}
+
 
     /**
      * <p>If you specify a preset in <code>PresetId</code> for which the value of
@@ -358,6 +365,7 @@ namespace Model
      * to create.</p> <p>The maximum number of master playlists in a job is 30.</p>
      */
     inline CreateJobRequest& AddPlaylists(CreateJobPlaylist&& value) { m_playlistsHasBeenSet = true; m_playlists.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder
@@ -468,20 +476,28 @@ namespace Model
     inline CreateJobRequest& AddUserMetadata(const char* key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     JobInput m_input;
     bool m_inputHasBeenSet;
+
     Aws::Vector<JobInput> m_inputs;
     bool m_inputsHasBeenSet;
+
     CreateJobOutput m_output;
     bool m_outputHasBeenSet;
+
     Aws::Vector<CreateJobOutput> m_outputs;
     bool m_outputsHasBeenSet;
+
     Aws::String m_outputKeyPrefix;
     bool m_outputKeyPrefixHasBeenSet;
+
     Aws::Vector<CreateJobPlaylist> m_playlists;
     bool m_playlistsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_userMetadata;
     bool m_userMetadataHasBeenSet;
   };

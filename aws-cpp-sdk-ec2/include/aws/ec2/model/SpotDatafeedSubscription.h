@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon S3 bucket where the Spot instance data feed is located.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline SpotDatafeedSubscription& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     /**
      * <p>The fault codes for the Spot instance request, if any.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The fault codes for the Spot instance request, if any.</p>
      */
     inline SpotDatafeedSubscription& WithFault(SpotInstanceStateFault&& value) { SetFault(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS account ID of the account.</p>
@@ -145,6 +148,7 @@ namespace Model
      */
     inline SpotDatafeedSubscription& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
     /**
      * <p>The prefix that is prepended to data feed files.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      */
     inline SpotDatafeedSubscription& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     /**
      * <p>The state of the Spot instance data feed subscription.</p>
      */
@@ -206,14 +211,19 @@ namespace Model
     inline SpotDatafeedSubscription& WithState(DatafeedSubscriptionState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     SpotInstanceStateFault m_fault;
     bool m_faultHasBeenSet;
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     DatafeedSubscriptionState m_state;
     bool m_stateHasBeenSet;
   };

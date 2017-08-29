@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
      * VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR
@@ -58,6 +59,7 @@ namespace Model
      * block.</p>
      */
     inline AssociateVpcCidrBlockRequest& WithAmazonProvidedIpv6CidrBlock(bool value) { SetAmazonProvidedIpv6CidrBlock(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -95,8 +97,10 @@ namespace Model
     inline AssociateVpcCidrBlockRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     bool m_amazonProvidedIpv6CidrBlock;
     bool m_amazonProvidedIpv6CidrBlockHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

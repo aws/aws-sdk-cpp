@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
      * <p>Queue URLs are case-sensitive.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>Queue URLs are case-sensitive.</p>
      */
     inline RemovePermissionRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+
 
     /**
      * <p>The identification of the permission to remove. This is the label added using
@@ -126,8 +128,10 @@ namespace Model
     inline RemovePermissionRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     Aws::String m_label;
     bool m_labelHasBeenSet;
   };

@@ -30,12 +30,12 @@ GetDocumentationVersionResult::GetDocumentationVersionResult()
 {
 }
 
-GetDocumentationVersionResult::GetDocumentationVersionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDocumentationVersionResult::GetDocumentationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDocumentationVersionResult& GetDocumentationVersionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDocumentationVersionResult& GetDocumentationVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("version"))

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeMigrationTaskResult();
-    DescribeMigrationTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMigrationTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMigrationTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMigrationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object encapsulating information about the migration task.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeMigrationTaskResult& WithMigrationTask(MigrationTask&& value) { SetMigrationTask(std::move(value)); return *this;}
 
   private:
+
     MigrationTask m_migrationTask;
   };
 

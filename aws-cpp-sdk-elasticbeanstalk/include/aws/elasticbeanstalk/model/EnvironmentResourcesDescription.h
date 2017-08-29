@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Describes the LoadBalancer.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline EnvironmentResourcesDescription& WithLoadBalancer(LoadBalancerDescription&& value) { SetLoadBalancer(std::move(value)); return *this;}
 
   private:
+
     LoadBalancerDescription m_loadBalancer;
     bool m_loadBalancerHasBeenSet;
   };

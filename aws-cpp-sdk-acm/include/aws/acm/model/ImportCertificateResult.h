@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     ImportCertificateResult();
-    ImportCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <a
@@ -91,6 +92,7 @@ namespace Model
     inline ImportCertificateResult& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
   };
 

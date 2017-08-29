@@ -31,12 +31,12 @@ DeleteConfigurationSetResult::DeleteConfigurationSetResult()
 {
 }
 
-DeleteConfigurationSetResult::DeleteConfigurationSetResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteConfigurationSetResult::DeleteConfigurationSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteConfigurationSetResult& DeleteConfigurationSetResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteConfigurationSetResult& DeleteConfigurationSetResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

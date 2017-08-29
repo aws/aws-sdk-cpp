@@ -46,6 +46,7 @@ namespace Model
     FleetError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The error code for the fleet error.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The error code for the fleet error.</p>
      */
     inline FleetError& WithErrorCode(FleetErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The error message generated when the fleet has errors.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline FleetError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     FleetErrorCode m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

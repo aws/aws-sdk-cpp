@@ -30,12 +30,12 @@ CreateDataSourceFromRDSResult::CreateDataSourceFromRDSResult()
 {
 }
 
-CreateDataSourceFromRDSResult::CreateDataSourceFromRDSResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateDataSourceFromRDSResult::CreateDataSourceFromRDSResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateDataSourceFromRDSResult& CreateDataSourceFromRDSResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateDataSourceFromRDSResult& CreateDataSourceFromRDSResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DataSourceId"))

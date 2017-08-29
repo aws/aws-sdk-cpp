@@ -30,12 +30,12 @@ DescribeNFSFileSharesResult::DescribeNFSFileSharesResult()
 {
 }
 
-DescribeNFSFileSharesResult::DescribeNFSFileSharesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeNFSFileSharesResult::DescribeNFSFileSharesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeNFSFileSharesResult& DescribeNFSFileSharesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeNFSFileSharesResult& DescribeNFSFileSharesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NFSFileShareInfoList"))

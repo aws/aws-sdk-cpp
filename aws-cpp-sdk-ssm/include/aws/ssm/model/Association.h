@@ -50,6 +50,7 @@ namespace Model
     Association& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the SSM document.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline Association& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline Association& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The ID created by the system when you create an association. An association
@@ -162,6 +165,7 @@ namespace Model
      */
     inline Association& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
+
     /**
      * <p>The association version.</p>
      */
@@ -196,6 +200,7 @@ namespace Model
      * <p>The association version.</p>
      */
     inline Association& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
+
 
     /**
      * <p>The version of the document used in the association.</p>
@@ -232,6 +237,7 @@ namespace Model
      */
     inline Association& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
+
     /**
      * <p>The instances targeted by the request to create an association. </p>
      */
@@ -267,6 +273,7 @@ namespace Model
      */
     inline Association& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The date on which the association was last run.</p>
      */
@@ -292,6 +299,7 @@ namespace Model
      */
     inline Association& WithLastExecutionDate(Aws::Utils::DateTime&& value) { SetLastExecutionDate(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the association.</p>
      */
@@ -316,6 +324,7 @@ namespace Model
      * <p>Information about the association.</p>
      */
     inline Association& WithOverview(AssociationOverview&& value) { SetOverview(std::move(value)); return *this;}
+
 
     /**
      * <p>A cron expression that specifies a schedule when the association runs.</p>
@@ -351,6 +360,7 @@ namespace Model
      * <p>A cron expression that specifies a schedule when the association runs.</p>
      */
     inline Association& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+
 
     /**
      * <p>The association name.</p>
@@ -388,24 +398,34 @@ namespace Model
     inline Association& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     Aws::String m_associationVersion;
     bool m_associationVersionHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::Utils::DateTime m_lastExecutionDate;
     bool m_lastExecutionDateHasBeenSet;
+
     AssociationOverview m_overview;
     bool m_overviewHasBeenSet;
+
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet;
+
     Aws::String m_associationName;
     bool m_associationNameHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeWorkspacesConnectionStatusResult();
-    DescribeWorkspacesConnectionStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkspacesConnectionStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkspacesConnectionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkspacesConnectionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The connection status of the WorkSpace.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The connection status of the WorkSpace.</p>
      */
     inline DescribeWorkspacesConnectionStatusResult& AddWorkspacesConnectionStatus(WorkspaceConnectionStatus&& value) { m_workspacesConnectionStatus.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The next token of the result.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline DescribeWorkspacesConnectionStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<WorkspaceConnectionStatus> m_workspacesConnectionStatus;
+
     Aws::String m_nextToken;
   };
 

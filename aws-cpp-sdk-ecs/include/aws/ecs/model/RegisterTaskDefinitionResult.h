@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     RegisterTaskDefinitionResult();
-    RegisterTaskDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterTaskDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterTaskDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterTaskDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The full description of the registered task definition.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline RegisterTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
   private:
+
     TaskDefinition m_taskDefinition;
   };
 

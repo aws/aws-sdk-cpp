@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the instance that the address is associated with (if any).</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of the instance that the address is associated with (if any).</p>
      */
     inline Address& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The Elastic IP address.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Address& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
+
     /**
      * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
      */
     inline Address& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+
 
     /**
      * <p>The ID representing the association of the address with an instance in a
@@ -196,6 +200,7 @@ namespace Model
      */
     inline Address& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
+
     /**
      * <p>Indicates whether this Elastic IP address is for use with instances in
      * EC2-Classic (<code>standard</code>) or instances in a VPC
@@ -230,6 +235,7 @@ namespace Model
      * (<code>vpc</code>).</p>
      */
     inline Address& WithDomain(DomainType&& value) { SetDomain(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the network interface.</p>
@@ -266,6 +272,7 @@ namespace Model
      */
     inline Address& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
+
     /**
      * <p>The ID of the AWS account that owns the network interface.</p>
      */
@@ -300,6 +307,7 @@ namespace Model
      * <p>The ID of the AWS account that owns the network interface.</p>
      */
     inline Address& WithNetworkInterfaceOwnerId(const char* value) { SetNetworkInterfaceOwnerId(value); return *this;}
+
 
     /**
      * <p>The private IP address associated with the Elastic IP address.</p>
@@ -337,20 +345,28 @@ namespace Model
     inline Address& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
+
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet;
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     DomainType m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::String m_networkInterfaceOwnerId;
     bool m_networkInterfaceOwnerIdHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
   };

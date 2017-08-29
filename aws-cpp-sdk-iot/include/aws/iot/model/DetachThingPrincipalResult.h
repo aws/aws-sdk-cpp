@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     DetachThingPrincipalResult();
-    DetachThingPrincipalResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetachThingPrincipalResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetachThingPrincipalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetachThingPrincipalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

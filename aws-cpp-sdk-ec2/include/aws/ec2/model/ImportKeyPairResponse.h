@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ImportKeyPairResponse();
-    ImportKeyPairResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ImportKeyPairResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ImportKeyPairResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ImportKeyPairResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ImportKeyPairResponse& WithKeyFingerprint(const char* value) { SetKeyFingerprint(value); return *this;}
 
+
     /**
      * <p>The key pair name you provided.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ImportKeyPairResponse& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -133,8 +136,11 @@ namespace Model
     inline ImportKeyPairResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_keyFingerprint;
+
     Aws::String m_keyName;
+
     ResponseMetadata m_responseMetadata;
   };
 

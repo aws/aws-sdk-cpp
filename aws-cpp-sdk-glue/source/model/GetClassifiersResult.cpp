@@ -30,12 +30,12 @@ GetClassifiersResult::GetClassifiersResult()
 {
 }
 
-GetClassifiersResult::GetClassifiersResult(const AmazonWebServiceResult<JsonValue>& result)
+GetClassifiersResult::GetClassifiersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetClassifiersResult& GetClassifiersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetClassifiersResult& GetClassifiersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Classifiers"))

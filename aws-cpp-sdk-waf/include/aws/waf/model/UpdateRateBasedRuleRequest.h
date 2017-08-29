@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to
      * update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and
@@ -87,6 +88,7 @@ namespace Model
      */
     inline UpdateRateBasedRuleRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline UpdateRateBasedRuleRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+
 
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
@@ -164,6 +167,7 @@ namespace Model
      */
     inline UpdateRateBasedRuleRequest& AddUpdates(RuleUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of requests, which have an identical value in the field
      * specified by the <code>RateKey</code>, allowed in a five-minute period. If the
@@ -192,12 +196,16 @@ namespace Model
     inline UpdateRateBasedRuleRequest& WithRateLimit(long long value) { SetRateLimit(value); return *this;}
 
   private:
+
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
+
     Aws::Vector<RuleUpdate> m_updates;
     bool m_updatesHasBeenSet;
+
     long long m_rateLimit;
     bool m_rateLimitHasBeenSet;
   };

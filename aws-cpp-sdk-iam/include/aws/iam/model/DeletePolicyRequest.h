@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy you want to delete.</p>
      * <p>For more information about ARNs, see <a
@@ -102,6 +103,7 @@ namespace Model
     inline DeletePolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
   private:
+
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet;
   };

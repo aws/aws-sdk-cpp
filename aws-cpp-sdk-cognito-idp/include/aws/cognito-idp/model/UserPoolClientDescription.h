@@ -45,6 +45,7 @@ namespace Model
     UserPoolClientDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ID of the client associated with the user pool.</p>
      */
     inline UserPoolClientDescription& WithClientId(const char* value) { SetClientId(value); return *this;}
+
 
     /**
      * <p>The user pool ID for the user pool where you want to describe the user pool
@@ -122,6 +124,7 @@ namespace Model
      */
     inline UserPoolClientDescription& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The client name from the user pool client description.</p>
      */
@@ -158,10 +161,13 @@ namespace Model
     inline UserPoolClientDescription& WithClientName(const char* value) { SetClientName(value); return *this;}
 
   private:
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_clientName;
     bool m_clientNameHasBeenSet;
   };

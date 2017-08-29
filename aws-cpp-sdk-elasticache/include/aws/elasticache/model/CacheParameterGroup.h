@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cache parameter group.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the cache parameter group.</p>
      */
     inline CacheParameterGroup& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the cache parameter group family that this cache parameter group
@@ -133,6 +135,7 @@ namespace Model
      */
     inline CacheParameterGroup& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>The description for this cache parameter group.</p>
      */
@@ -169,10 +172,13 @@ namespace Model
     inline CacheParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_cacheParameterGroupName;
     bool m_cacheParameterGroupNameHasBeenSet;
+
     Aws::String m_cacheParameterGroupFamily;
     bool m_cacheParameterGroupFamilyHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

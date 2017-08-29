@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     SetTaskStatusResult();
-    SetTaskStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SetTaskStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SetTaskStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SetTaskStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Use this when paginating results to indicate where to begin in your list of
      * distributions. The results include distributions in the list that occur after
@@ -106,6 +107,7 @@ namespace Model
      */
     inline ListDistributions2017_03_25Request& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of distributions you want in the response body.</p>
      */
@@ -142,8 +144,10 @@ namespace Model
     inline ListDistributions2017_03_25Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

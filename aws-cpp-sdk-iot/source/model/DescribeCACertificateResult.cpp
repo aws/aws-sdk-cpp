@@ -30,12 +30,12 @@ DescribeCACertificateResult::DescribeCACertificateResult()
 {
 }
 
-DescribeCACertificateResult::DescribeCACertificateResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCACertificateResult::DescribeCACertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeCACertificateResult& DescribeCACertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCACertificateResult& DescribeCACertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("certificateDescription"))

@@ -30,12 +30,12 @@ DescribeExportTasksResult::DescribeExportTasksResult()
 {
 }
 
-DescribeExportTasksResult::DescribeExportTasksResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeExportTasksResult::DescribeExportTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeExportTasksResult& DescribeExportTasksResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeExportTasksResult& DescribeExportTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("exportsInfo"))

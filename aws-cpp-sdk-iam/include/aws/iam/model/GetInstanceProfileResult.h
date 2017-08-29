@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetInstanceProfileResult();
-    GetInstanceProfileResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetInstanceProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetInstanceProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetInstanceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure containing details about the instance profile.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline GetInstanceProfileResult& WithInstanceProfile(InstanceProfile&& value) { SetInstanceProfile(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline GetInstanceProfileResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     InstanceProfile m_instanceProfile;
+
     ResponseMetadata m_responseMetadata;
   };
 

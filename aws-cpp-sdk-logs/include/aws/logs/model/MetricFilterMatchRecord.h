@@ -46,6 +46,7 @@ namespace Model
     MetricFilterMatchRecord& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The event number.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The event number.</p>
      */
     inline MetricFilterMatchRecord& WithEventNumber(long long value) { SetEventNumber(value); return *this;}
+
 
     /**
      * <p>The raw event data.</p>
@@ -95,6 +97,7 @@ namespace Model
      * <p>The raw event data.</p>
      */
     inline MetricFilterMatchRecord& WithEventMessage(const char* value) { SetEventMessage(value); return *this;}
+
 
     /**
      * <p>The values extracted from the event data by the filter.</p>
@@ -157,10 +160,13 @@ namespace Model
     inline MetricFilterMatchRecord& AddExtractedValues(const char* key, const char* value) { m_extractedValuesHasBeenSet = true; m_extractedValues.emplace(key, value); return *this; }
 
   private:
+
     long long m_eventNumber;
     bool m_eventNumberHasBeenSet;
+
     Aws::String m_eventMessage;
     bool m_eventMessageHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_extractedValues;
     bool m_extractedValuesHasBeenSet;
   };

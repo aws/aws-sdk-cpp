@@ -45,6 +45,7 @@ namespace Model
     CampaignsResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * A list of campaigns.
      */
@@ -79,6 +80,7 @@ namespace Model
      * A list of campaigns.
      */
     inline CampaignsResponse& AddItem(CampaignResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
+
 
     /**
      * The string that you use in a subsequent request to get the next page of results
@@ -123,8 +125,10 @@ namespace Model
     inline CampaignsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<CampaignResponse> m_item;
     bool m_itemHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

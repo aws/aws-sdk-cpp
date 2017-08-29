@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>If a <code>NextToken</code> was returned by a previous call, there are more
      * results available. To retrieve the next page of results, make the call again
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListMigrationTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Value to specify how many results are returned per page.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>Value to specify how many results are returned per page.</p>
      */
     inline ListMigrationTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Filter migration tasks by discovered resource name.</p>
@@ -136,10 +139,13 @@ namespace Model
     inline ListMigrationTasksRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
   };

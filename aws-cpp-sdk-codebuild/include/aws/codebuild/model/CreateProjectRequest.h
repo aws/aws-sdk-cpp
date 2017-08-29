@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the build project.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the build project.</p>
      */
     inline CreateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A description that makes the build project easy to identify.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline CreateProjectRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Information about the build input source code for the build project.</p>
      */
@@ -135,6 +138,7 @@ namespace Model
      * <p>Information about the build input source code for the build project.</p>
      */
     inline CreateProjectRequest& WithSource(ProjectSource&& value) { SetSource(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the build output artifacts for the build project.</p>
@@ -161,6 +165,7 @@ namespace Model
      */
     inline CreateProjectRequest& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the build environment for the build project.</p>
      */
@@ -185,6 +190,7 @@ namespace Model
      * <p>Information about the build environment for the build project.</p>
      */
     inline CreateProjectRequest& WithEnvironment(ProjectEnvironment&& value) { SetEnvironment(std::move(value)); return *this;}
+
 
     /**
      * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
@@ -235,6 +241,7 @@ namespace Model
      */
     inline CreateProjectRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
+
     /**
      * <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait
      * until timing out any build that has not been marked as completed. The default is
@@ -255,6 +262,7 @@ namespace Model
      * 60 minutes.</p>
      */
     inline CreateProjectRequest& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
+
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
@@ -312,6 +320,7 @@ namespace Model
      */
     inline CreateProjectRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
+
     /**
      * <p>A set of tags for this build project.</p> <p>These tags are available for use
      * by AWS services that support AWS CodeBuild build project tags.</p>
@@ -355,22 +364,31 @@ namespace Model
     inline CreateProjectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ProjectSource m_source;
     bool m_sourceHasBeenSet;
+
     ProjectArtifacts m_artifacts;
     bool m_artifactsHasBeenSet;
+
     ProjectEnvironment m_environment;
     bool m_environmentHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
+
     Aws::String m_encryptionKey;
     bool m_encryptionKeyHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

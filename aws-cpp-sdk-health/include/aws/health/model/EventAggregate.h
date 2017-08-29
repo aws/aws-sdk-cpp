@@ -46,6 +46,7 @@ namespace Model
     EventAggregate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The issue type for the associated count.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline EventAggregate& WithAggregateValue(const char* value) { SetAggregateValue(value); return *this;}
 
+
     /**
      * <p>The number of events of the associated issue type.</p>
      */
@@ -97,8 +99,10 @@ namespace Model
     inline EventAggregate& WithCount(int value) { SetCount(value); return *this;}
 
   private:
+
     Aws::String m_aggregateValue;
     bool m_aggregateValueHasBeenSet;
+
     int m_count;
     bool m_countHasBeenSet;
   };

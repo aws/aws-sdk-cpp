@@ -31,12 +31,12 @@ CreateStorageLocationResult::CreateStorageLocationResult()
 {
 }
 
-CreateStorageLocationResult::CreateStorageLocationResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateStorageLocationResult::CreateStorageLocationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateStorageLocationResult& CreateStorageLocationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateStorageLocationResult& CreateStorageLocationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

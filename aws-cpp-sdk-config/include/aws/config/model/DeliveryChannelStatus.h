@@ -48,6 +48,7 @@ namespace Model
     DeliveryChannelStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the delivery channel.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DeliveryChannelStatus& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A list containing the status of the delivery of the snapshot to the specified
      * Amazon S3 bucket.</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline DeliveryChannelStatus& WithConfigSnapshotDeliveryInfo(ConfigExportDeliveryInfo&& value) { SetConfigSnapshotDeliveryInfo(std::move(value)); return *this;}
 
+
     /**
      * <p>A list that contains the status of the delivery of the configuration history
      * to the specified Amazon S3 bucket.</p>
@@ -142,6 +145,7 @@ namespace Model
      * to the specified Amazon S3 bucket.</p>
      */
     inline DeliveryChannelStatus& WithConfigHistoryDeliveryInfo(ConfigExportDeliveryInfo&& value) { SetConfigHistoryDeliveryInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>A list containing the status of the delivery of the configuration stream
@@ -174,12 +178,16 @@ namespace Model
     inline DeliveryChannelStatus& WithConfigStreamDeliveryInfo(ConfigStreamDeliveryInfo&& value) { SetConfigStreamDeliveryInfo(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ConfigExportDeliveryInfo m_configSnapshotDeliveryInfo;
     bool m_configSnapshotDeliveryInfoHasBeenSet;
+
     ConfigExportDeliveryInfo m_configHistoryDeliveryInfo;
     bool m_configHistoryDeliveryInfoHasBeenSet;
+
     ConfigStreamDeliveryInfo m_configStreamDeliveryInfo;
     bool m_configStreamDeliveryInfoHasBeenSet;
   };

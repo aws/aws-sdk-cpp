@@ -46,6 +46,7 @@ namespace Model
     TypedAttributeValueRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The inclusive or exclusive range start.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The inclusive or exclusive range start.</p>
      */
     inline TypedAttributeValueRange& WithStartMode(RangeMode&& value) { SetStartMode(std::move(value)); return *this;}
+
 
     /**
      * <p>The value to start the range at.</p>
@@ -96,6 +98,7 @@ namespace Model
      */
     inline TypedAttributeValueRange& WithStartValue(TypedAttributeValue&& value) { SetStartValue(std::move(value)); return *this;}
 
+
     /**
      * <p>The inclusive or exclusive range end.</p>
      */
@@ -120,6 +123,7 @@ namespace Model
      * <p>The inclusive or exclusive range end.</p>
      */
     inline TypedAttributeValueRange& WithEndMode(RangeMode&& value) { SetEndMode(std::move(value)); return *this;}
+
 
     /**
      * <p>The attribute value to terminate the range at.</p>
@@ -147,12 +151,16 @@ namespace Model
     inline TypedAttributeValueRange& WithEndValue(TypedAttributeValue&& value) { SetEndValue(std::move(value)); return *this;}
 
   private:
+
     RangeMode m_startMode;
     bool m_startModeHasBeenSet;
+
     TypedAttributeValue m_startValue;
     bool m_startValueHasBeenSet;
+
     RangeMode m_endMode;
     bool m_endModeHasBeenSet;
+
     TypedAttributeValue m_endValue;
     bool m_endValueHasBeenSet;
   };

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeClusterSecurityGroupsResult();
-    DescribeClusterSecurityGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeClusterSecurityGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClusterSecurityGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClusterSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -119,6 +120,7 @@ namespace Model
      */
     inline DescribeClusterSecurityGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
      */
@@ -154,6 +156,7 @@ namespace Model
      */
     inline DescribeClusterSecurityGroupsResult& AddClusterSecurityGroups(ClusterSecurityGroup&& value) { m_clusterSecurityGroups.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -170,8 +173,11 @@ namespace Model
     inline DescribeClusterSecurityGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<ClusterSecurityGroup> m_clusterSecurityGroups;
+
     ResponseMetadata m_responseMetadata;
   };
 

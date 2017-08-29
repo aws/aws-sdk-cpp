@@ -30,12 +30,12 @@ DeleteProtectionResult::DeleteProtectionResult()
 {
 }
 
-DeleteProtectionResult::DeleteProtectionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteProtectionResult::DeleteProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteProtectionResult& DeleteProtectionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteProtectionResult& DeleteProtectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -51,12 +51,12 @@ GetExportResult& GetExportResult::operator=(GetExportResult&& toMove)
    return *this;
 }
 
-GetExportResult::GetExportResult(AmazonWebServiceResult<ResponseStream>&& result)
+GetExportResult::GetExportResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
 }
 
-GetExportResult& GetExportResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+GetExportResult& GetExportResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_body = result.TakeOwnershipOfPayload();
 

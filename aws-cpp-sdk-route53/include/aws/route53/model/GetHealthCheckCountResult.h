@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     GetHealthCheckCountResult();
-    GetHealthCheckCountResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetHealthCheckCountResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHealthCheckCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHealthCheckCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The number of health checks associated with the current AWS account.</p>
@@ -61,6 +62,7 @@ namespace Model
     inline GetHealthCheckCountResult& WithHealthCheckCount(long long value) { SetHealthCheckCount(value); return *this;}
 
   private:
+
     long long m_healthCheckCount;
   };
 

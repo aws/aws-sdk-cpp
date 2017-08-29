@@ -52,6 +52,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
      * an encryption value as arguments for block-device mapping results in an error.
@@ -122,6 +123,7 @@ namespace Model
      */
     inline RunInstancesRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
      */
@@ -156,6 +158,7 @@ namespace Model
      * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>.</p>
      */
     inline RunInstancesRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+
 
     /**
      * <p>The instance type. For more information, see <a
@@ -197,6 +200,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
      * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
@@ -223,6 +227,7 @@ namespace Model
      * number of instances to launch.</p>
      */
     inline RunInstancesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+
 
     /**
      * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
@@ -287,6 +292,7 @@ namespace Model
      */
     inline RunInstancesRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
@@ -350,6 +356,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithKernelId(const char* value) { SetKernelId(value); return *this;}
 
+
     /**
      * <p>The name of the key pair. You can create a key pair using
      * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
@@ -406,6 +413,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
+
     /**
      * <p>The maximum number of instances to launch. If you specify more instances than
      * Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the
@@ -442,6 +450,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithMaxCount(int value) { SetMaxCount(value); return *this;}
 
+
     /**
      * <p>The minimum number of instances to launch. If you specify a minimum that is
      * more instances than Amazon EC2 can launch in the target Availability Zone,
@@ -475,6 +484,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithMinCount(int value) { SetMinCount(value); return *this;}
 
+
     /**
      * <p>The monitoring for the instance.</p>
      */
@@ -500,6 +510,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithMonitoring(RunInstancesMonitoringEnabled&& value) { SetMonitoring(std::move(value)); return *this;}
 
+
     /**
      * <p>The placement for the instance.</p>
      */
@@ -524,6 +535,7 @@ namespace Model
      * <p>The placement for the instance.</p>
      */
     inline RunInstancesRequest& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
@@ -588,6 +600,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
+
     /**
      * <p>One or more security group IDs. You can create a security group using
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
@@ -643,6 +656,7 @@ namespace Model
      * group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
@@ -700,6 +714,7 @@ namespace Model
      */
     inline RunInstancesRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
+
     /**
      * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
      */
@@ -734,6 +749,7 @@ namespace Model
      * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
      */
     inline RunInstancesRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
@@ -812,6 +828,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
+
     /**
      * <p>Reserved.</p>
      */
@@ -846,6 +863,7 @@ namespace Model
      * <p>Reserved.</p>
      */
     inline RunInstancesRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -903,6 +921,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>If you set this parameter to <code>true</code>, you can't terminate the
      * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
@@ -936,6 +955,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithDisableApiTermination(bool value) { SetDisableApiTermination(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -959,6 +979,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline RunInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
@@ -987,6 +1008,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
+
     /**
      * <p>The IAM instance profile.</p>
      */
@@ -1011,6 +1033,7 @@ namespace Model
      * <p>The IAM instance profile.</p>
      */
     inline RunInstancesRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
@@ -1047,6 +1070,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
 
+
     /**
      * <p>One or more network interfaces.</p>
      */
@@ -1081,6 +1105,7 @@ namespace Model
      * <p>One or more network interfaces.</p>
      */
     inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
@@ -1152,6 +1177,7 @@ namespace Model
      */
     inline RunInstancesRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
+
     /**
      * <p>An Elastic GPU to associate with the instance.</p>
      */
@@ -1186,6 +1212,7 @@ namespace Model
      * <p>An Elastic GPU to associate with the instance.</p>
      */
     inline RunInstancesRequest& AddElasticGpuSpecification(ElasticGpuSpecification&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The tags to apply to the resources during launch. You can tag instances and
@@ -1237,58 +1264,85 @@ namespace Model
     inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     int m_ipv6AddressCount;
     bool m_ipv6AddressCountHasBeenSet;
+
     Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
     bool m_ipv6AddressesHasBeenSet;
+
     Aws::String m_kernelId;
     bool m_kernelIdHasBeenSet;
+
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
+
     int m_maxCount;
     bool m_maxCountHasBeenSet;
+
     int m_minCount;
     bool m_minCountHasBeenSet;
+
     RunInstancesMonitoringEnabled m_monitoring;
     bool m_monitoringHasBeenSet;
+
     Placement m_placement;
     bool m_placementHasBeenSet;
+
     Aws::String m_ramdiskId;
     bool m_ramdiskIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_userData;
     bool m_userDataHasBeenSet;
+
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     bool m_disableApiTermination;
     bool m_disableApiTerminationHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
     IamInstanceProfileSpecification m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
+
     ShutdownBehavior m_instanceInitiatedShutdownBehavior;
     bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
+
     Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
     bool m_networkInterfacesHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+
     Aws::Vector<ElasticGpuSpecification> m_elasticGpuSpecification;
     bool m_elasticGpuSpecificationHasBeenSet;
+
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
   };

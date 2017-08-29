@@ -31,13 +31,13 @@ PutIntegrationResponseResult::PutIntegrationResponseResult() :
 {
 }
 
-PutIntegrationResponseResult::PutIntegrationResponseResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PutIntegrationResponseResult::PutIntegrationResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_contentHandling(ContentHandlingStrategy::NOT_SET)
 {
   *this = result;
 }
 
-PutIntegrationResponseResult& PutIntegrationResponseResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutIntegrationResponseResult& PutIntegrationResponseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("statusCode"))

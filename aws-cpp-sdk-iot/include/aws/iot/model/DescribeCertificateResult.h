@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeCertificateResult();
-    DescribeCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The description of the certificate.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeCertificateResult& WithCertificateDescription(CertificateDescription&& value) { SetCertificateDescription(std::move(value)); return *this;}
 
   private:
+
     CertificateDescription m_certificateDescription;
   };
 

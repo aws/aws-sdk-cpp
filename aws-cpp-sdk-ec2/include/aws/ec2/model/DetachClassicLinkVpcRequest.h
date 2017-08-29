@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -65,6 +66,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DetachClassicLinkVpcRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The ID of the instance to unlink from the VPC.</p>
@@ -100,6 +102,7 @@ namespace Model
      * <p>The ID of the instance to unlink from the VPC.</p>
      */
     inline DetachClassicLinkVpcRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC to which the instance is linked.</p>
@@ -137,10 +140,13 @@ namespace Model
     inline DetachClassicLinkVpcRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

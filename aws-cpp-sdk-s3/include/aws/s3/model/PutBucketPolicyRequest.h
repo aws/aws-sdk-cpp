@@ -36,6 +36,7 @@ namespace Model
 
     inline bool ShouldComputeContentMd5() const override { return true; }
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline PutBucketPolicyRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
@@ -79,10 +81,13 @@ namespace Model
     inline PutBucketPolicyRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
+
   };
 
 } // namespace Model

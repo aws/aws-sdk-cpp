@@ -34,6 +34,7 @@ namespace Model
     GetSegmentVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -55,6 +56,7 @@ namespace Model
     
     inline GetSegmentVersionRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     
     inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
 
@@ -75,6 +77,7 @@ namespace Model
 
     
     inline GetSegmentVersionRequest& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+
 
     
     inline const Aws::String& GetVersion() const{ return m_version; }
@@ -98,10 +101,13 @@ namespace Model
     inline GetSegmentVersionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_segmentId;
     bool m_segmentIdHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

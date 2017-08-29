@@ -35,6 +35,7 @@ namespace Model
     PutBucketAccelerateConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * Name of the bucket for which the accelerate configuration is set.
      */
@@ -70,6 +71,7 @@ namespace Model
      */
     inline PutBucketAccelerateConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     /**
      * Specifies the Accelerate Configuration you want to set for the bucket.
      */
@@ -96,8 +98,10 @@ namespace Model
     inline PutBucketAccelerateConfigurationRequest& WithAccelerateConfiguration(AccelerateConfiguration&& value) { SetAccelerateConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     AccelerateConfiguration m_accelerateConfiguration;
     bool m_accelerateConfigurationHasBeenSet;
   };

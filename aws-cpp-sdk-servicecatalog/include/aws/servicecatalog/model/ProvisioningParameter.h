@@ -46,6 +46,7 @@ namespace Model
     ProvisioningParameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
      * <a>DescribeProvisioningParameters</a>.</p>
@@ -87,6 +88,7 @@ namespace Model
      * <a>DescribeProvisioningParameters</a>.</p>
      */
     inline ProvisioningParameter& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The value to use for provisioning. Any constraints on this value can be found
@@ -131,8 +133,10 @@ namespace Model
     inline ProvisioningParameter& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

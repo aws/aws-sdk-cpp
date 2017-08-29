@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The number of listed Reserved Instances in the state specified by the
      * <code>state</code>.</p>
@@ -65,6 +66,7 @@ namespace Model
      * <code>state</code>.</p>
      */
     inline InstanceCount& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>The states of the listed Reserved Instances.</p>
@@ -92,8 +94,10 @@ namespace Model
     inline InstanceCount& WithState(ListingState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     ListingState m_state;
     bool m_stateHasBeenSet;
   };

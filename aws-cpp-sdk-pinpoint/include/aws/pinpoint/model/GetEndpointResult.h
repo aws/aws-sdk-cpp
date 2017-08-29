@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetEndpointResult();
-    GetEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const EndpointResponse& GetEndpointResponse() const{ return m_endpointResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline GetEndpointResult& WithEndpointResponse(EndpointResponse&& value) { SetEndpointResponse(std::move(value)); return *this;}
 
   private:
+
     EndpointResponse m_endpointResponse;
   };
 

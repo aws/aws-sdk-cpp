@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListQualificationRequestsResult();
-    ListQualificationRequestsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListQualificationRequestsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListQualificationRequestsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListQualificationRequestsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of Qualification requests on this page in the filtered results
@@ -64,6 +65,7 @@ namespace Model
      */
     inline ListQualificationRequestsResult& WithNumResults(int value) { SetNumResults(value); return *this;}
 
+
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -84,6 +86,7 @@ namespace Model
 
     
     inline ListQualificationRequestsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>The Qualification request. The response includes one QualificationRequest
@@ -128,8 +131,11 @@ namespace Model
     inline ListQualificationRequestsResult& AddQualificationRequests(QualificationRequest&& value) { m_qualificationRequests.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_numResults;
+
     Aws::String m_nextToken;
+
     Aws::Vector<QualificationRequest> m_qualificationRequests;
   };
 

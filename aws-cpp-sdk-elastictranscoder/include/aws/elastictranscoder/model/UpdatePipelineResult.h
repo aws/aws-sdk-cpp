@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     UpdatePipelineResult();
-    UpdatePipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
@@ -73,6 +74,7 @@ namespace Model
      * <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
      */
     inline UpdatePipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
+
 
     /**
      * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
@@ -131,7 +133,9 @@ namespace Model
     inline UpdatePipelineResult& AddWarnings(Warning&& value) { m_warnings.push_back(std::move(value)); return *this; }
 
   private:
+
     Pipeline m_pipeline;
+
     Aws::Vector<Warning> m_warnings;
   };
 

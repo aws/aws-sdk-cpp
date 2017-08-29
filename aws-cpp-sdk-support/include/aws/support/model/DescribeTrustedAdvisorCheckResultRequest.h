@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
     inline DescribeTrustedAdvisorCheckResultRequest& WithCheckId(const char* value) { SetCheckId(value); return *this;}
+
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -124,8 +126,10 @@ namespace Model
     inline DescribeTrustedAdvisorCheckResultRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
   private:
+
     Aws::String m_checkId;
     bool m_checkIdHasBeenSet;
+
     Aws::String m_language;
     bool m_languageHasBeenSet;
   };

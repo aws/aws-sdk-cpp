@@ -47,6 +47,7 @@ namespace Model
     TagFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A name of the tag filter.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>A name of the tag filter.</p>
      */
     inline TagFilter& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Values for the tag filter.</p>
@@ -123,8 +125,10 @@ namespace Model
     inline TagFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

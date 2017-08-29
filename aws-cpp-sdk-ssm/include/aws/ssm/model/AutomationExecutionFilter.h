@@ -49,6 +49,7 @@ namespace Model
     AutomationExecutionFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The aspect of the Automation execution information that should be
      * limited.</p>
@@ -78,6 +79,7 @@ namespace Model
      * limited.</p>
      */
     inline AutomationExecutionFilter& WithKey(AutomationExecutionFilterKey&& value) { SetKey(std::move(value)); return *this;}
+
 
     /**
      * <p>The values used to limit the execution information associated with the
@@ -128,8 +130,10 @@ namespace Model
     inline AutomationExecutionFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     AutomationExecutionFilterKey m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

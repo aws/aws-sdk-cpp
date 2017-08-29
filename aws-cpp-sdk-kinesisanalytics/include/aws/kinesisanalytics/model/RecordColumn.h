@@ -47,6 +47,7 @@ namespace Model
     RecordColumn& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the column created in the in-application input stream or reference
      * table.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline RecordColumn& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Reference to the data element in the streaming input of the reference data
      * source.</p>
@@ -130,6 +132,7 @@ namespace Model
      * source.</p>
      */
     inline RecordColumn& WithMapping(const char* value) { SetMapping(value); return *this;}
+
 
     /**
      * <p>Type of column created in the in-application input stream or reference
@@ -174,10 +177,13 @@ namespace Model
     inline RecordColumn& WithSqlType(const char* value) { SetSqlType(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_mapping;
     bool m_mappingHasBeenSet;
+
     Aws::String m_sqlType;
     bool m_sqlTypeHasBeenSet;
   };

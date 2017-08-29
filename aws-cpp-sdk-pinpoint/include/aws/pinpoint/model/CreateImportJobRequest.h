@@ -35,6 +35,7 @@ namespace Model
     CreateImportJobRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -56,6 +57,7 @@ namespace Model
     
     inline CreateImportJobRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     
     inline const ImportJobRequest& GetImportJobRequest() const{ return m_importJobRequest; }
 
@@ -72,8 +74,10 @@ namespace Model
     inline CreateImportJobRequest& WithImportJobRequest(ImportJobRequest&& value) { SetImportJobRequest(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     ImportJobRequest m_importJobRequest;
     bool m_importJobRequestHasBeenSet;
   };

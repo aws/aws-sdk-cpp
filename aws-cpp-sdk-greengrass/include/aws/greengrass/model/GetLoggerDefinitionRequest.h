@@ -34,6 +34,7 @@ namespace Model
     GetLoggerDefinitionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * logger definition Id
      */
@@ -70,6 +71,7 @@ namespace Model
     inline GetLoggerDefinitionRequest& WithLoggerDefinitionId(const char* value) { SetLoggerDefinitionId(value); return *this;}
 
   private:
+
     Aws::String m_loggerDefinitionId;
     bool m_loggerDefinitionIdHasBeenSet;
   };

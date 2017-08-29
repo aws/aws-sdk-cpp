@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeSnapshotsResult();
-    DescribeSnapshotsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSnapshotsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
@@ -106,6 +107,7 @@ namespace Model
      */
     inline DescribeSnapshotsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of snapshots. Each item in the list contains detailed information
      * about one snapshot.</p>
@@ -148,6 +150,7 @@ namespace Model
      */
     inline DescribeSnapshotsResult& AddSnapshots(Snapshot&& value) { m_snapshots.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -164,8 +167,11 @@ namespace Model
     inline DescribeSnapshotsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<Snapshot> m_snapshots;
+
     ResponseMetadata m_responseMetadata;
   };
 

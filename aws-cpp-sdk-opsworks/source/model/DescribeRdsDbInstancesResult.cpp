@@ -30,12 +30,12 @@ DescribeRdsDbInstancesResult::DescribeRdsDbInstancesResult()
 {
 }
 
-DescribeRdsDbInstancesResult::DescribeRdsDbInstancesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeRdsDbInstancesResult::DescribeRdsDbInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeRdsDbInstancesResult& DescribeRdsDbInstancesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeRdsDbInstancesResult& DescribeRdsDbInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("RdsDbInstances"))

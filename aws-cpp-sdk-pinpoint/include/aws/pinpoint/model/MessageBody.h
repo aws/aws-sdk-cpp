@@ -43,6 +43,7 @@ namespace Model
     MessageBody& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The error message returned from the API.
      */
@@ -77,6 +78,7 @@ namespace Model
      * The error message returned from the API.
      */
     inline MessageBody& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * The unique message body ID.
@@ -114,8 +116,10 @@ namespace Model
     inline MessageBody& WithRequestID(const char* value) { SetRequestID(value); return *this;}
 
   private:
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::String m_requestID;
     bool m_requestIDHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeComplianceByConfigRuleResult();
-    DescribeComplianceByConfigRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeComplianceByConfigRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeComplianceByConfigRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeComplianceByConfigRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Indicates whether each of the specified AWS Config rules is compliant.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>Indicates whether each of the specified AWS Config rules is compliant.</p>
      */
     inline DescribeComplianceByConfigRuleResult& AddComplianceByConfigRules(ComplianceByConfigRule&& value) { m_complianceByConfigRules.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of
@@ -126,7 +128,9 @@ namespace Model
     inline DescribeComplianceByConfigRuleResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ComplianceByConfigRule> m_complianceByConfigRules;
+
     Aws::String m_nextToken;
   };
 

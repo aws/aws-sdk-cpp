@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the project that you wish to update network
      * profile settings.</p>
@@ -78,6 +79,7 @@ namespace Model
      * profile settings.</p>
      */
     inline UpdateNetworkProfileRequest& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The name of the network profile about which you are returning
@@ -121,6 +123,7 @@ namespace Model
      */
     inline UpdateNetworkProfileRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The descriptoin of the network profile about which you are returning
      * information.</p>
@@ -163,6 +166,7 @@ namespace Model
      */
     inline UpdateNetworkProfileRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The type of network profile you wish to return information about. Valid
      * values are listed below.</p>
@@ -193,6 +197,7 @@ namespace Model
      */
     inline UpdateNetworkProfileRequest& WithType(NetworkProfileType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The data throughput rate in bits per second, as an integer from 0 to
      * 104857600.</p>
@@ -210,6 +215,7 @@ namespace Model
      * 104857600.</p>
      */
     inline UpdateNetworkProfileRequest& WithUplinkBandwidthBits(long long value) { SetUplinkBandwidthBits(value); return *this;}
+
 
     /**
      * <p>The data throughput rate in bits per second, as an integer from 0 to
@@ -229,6 +235,7 @@ namespace Model
      */
     inline UpdateNetworkProfileRequest& WithDownlinkBandwidthBits(long long value) { SetDownlinkBandwidthBits(value); return *this;}
 
+
     /**
      * <p>Delay time for all packets to destination in milliseconds as an integer from
      * 0 to 2000.</p>
@@ -246,6 +253,7 @@ namespace Model
      * 0 to 2000.</p>
      */
     inline UpdateNetworkProfileRequest& WithUplinkDelayMs(long long value) { SetUplinkDelayMs(value); return *this;}
+
 
     /**
      * <p>Delay time for all packets to destination in milliseconds as an integer from
@@ -265,6 +273,7 @@ namespace Model
      */
     inline UpdateNetworkProfileRequest& WithDownlinkDelayMs(long long value) { SetDownlinkDelayMs(value); return *this;}
 
+
     /**
      * <p>Time variation in the delay of received packets in milliseconds as an integer
      * from 0 to 2000.</p>
@@ -282,6 +291,7 @@ namespace Model
      * from 0 to 2000.</p>
      */
     inline UpdateNetworkProfileRequest& WithUplinkJitterMs(long long value) { SetUplinkJitterMs(value); return *this;}
+
 
     /**
      * <p>Time variation in the delay of received packets in milliseconds as an integer
@@ -301,6 +311,7 @@ namespace Model
      */
     inline UpdateNetworkProfileRequest& WithDownlinkJitterMs(long long value) { SetDownlinkJitterMs(value); return *this;}
 
+
     /**
      * <p>Proportion of transmitted packets that fail to arrive from 0 to 100
      * percent.</p>
@@ -319,6 +330,7 @@ namespace Model
      */
     inline UpdateNetworkProfileRequest& WithUplinkLossPercent(int value) { SetUplinkLossPercent(value); return *this;}
 
+
     /**
      * <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
      */
@@ -335,28 +347,40 @@ namespace Model
     inline UpdateNetworkProfileRequest& WithDownlinkLossPercent(int value) { SetDownlinkLossPercent(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     NetworkProfileType m_type;
     bool m_typeHasBeenSet;
+
     long long m_uplinkBandwidthBits;
     bool m_uplinkBandwidthBitsHasBeenSet;
+
     long long m_downlinkBandwidthBits;
     bool m_downlinkBandwidthBitsHasBeenSet;
+
     long long m_uplinkDelayMs;
     bool m_uplinkDelayMsHasBeenSet;
+
     long long m_downlinkDelayMs;
     bool m_downlinkDelayMsHasBeenSet;
+
     long long m_uplinkJitterMs;
     bool m_uplinkJitterMsHasBeenSet;
+
     long long m_downlinkJitterMs;
     bool m_downlinkJitterMsHasBeenSet;
+
     int m_uplinkLossPercent;
     bool m_uplinkLossPercentHasBeenSet;
+
     int m_downlinkLossPercent;
     bool m_downlinkLossPercentHasBeenSet;
   };

@@ -52,6 +52,7 @@ namespace Model
     ElasticsearchDestinationDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the AWS credentials.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The ARN of the AWS credentials.</p>
      */
     inline ElasticsearchDestinationDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
 
     /**
      * <p>The ARN of the Amazon ES domain.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline ElasticsearchDestinationDescription& WithDomainARN(const char* value) { SetDomainARN(value); return *this;}
 
+
     /**
      * <p>The Elasticsearch index name.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The Elasticsearch index name.</p>
      */
     inline ElasticsearchDestinationDescription& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
 
     /**
      * <p>The Elasticsearch type name.</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline ElasticsearchDestinationDescription& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
+
     /**
      * <p>The Elasticsearch index rotation period</p>
      */
@@ -216,6 +221,7 @@ namespace Model
      * <p>The Elasticsearch index rotation period</p>
      */
     inline ElasticsearchDestinationDescription& WithIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { SetIndexRotationPeriod(std::move(value)); return *this;}
+
 
     /**
      * <p>The buffering options.</p>
@@ -242,6 +248,7 @@ namespace Model
      */
     inline ElasticsearchDestinationDescription& WithBufferingHints(ElasticsearchBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
 
+
     /**
      * <p>The Amazon ES retry options.</p>
      */
@@ -266,6 +273,7 @@ namespace Model
      * <p>The Amazon ES retry options.</p>
      */
     inline ElasticsearchDestinationDescription& WithRetryOptions(ElasticsearchRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon S3 backup mode.</p>
@@ -292,6 +300,7 @@ namespace Model
      */
     inline ElasticsearchDestinationDescription& WithS3BackupMode(ElasticsearchS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
 
+
     /**
      * <p>The Amazon S3 destination.</p>
      */
@@ -317,6 +326,7 @@ namespace Model
      */
     inline ElasticsearchDestinationDescription& WithS3DestinationDescription(S3DestinationDescription&& value) { SetS3DestinationDescription(std::move(value)); return *this;}
 
+
     /**
      * <p>The data processing configuration.</p>
      */
@@ -341,6 +351,7 @@ namespace Model
      * <p>The data processing configuration.</p>
      */
     inline ElasticsearchDestinationDescription& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The CloudWatch logging options.</p>
@@ -368,26 +379,37 @@ namespace Model
     inline ElasticsearchDestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::String m_domainARN;
     bool m_domainARNHasBeenSet;
+
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet;
+
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet;
+
     ElasticsearchIndexRotationPeriod m_indexRotationPeriod;
     bool m_indexRotationPeriodHasBeenSet;
+
     ElasticsearchBufferingHints m_bufferingHints;
     bool m_bufferingHintsHasBeenSet;
+
     ElasticsearchRetryOptions m_retryOptions;
     bool m_retryOptionsHasBeenSet;
+
     ElasticsearchS3BackupMode m_s3BackupMode;
     bool m_s3BackupModeHasBeenSet;
+
     S3DestinationDescription m_s3DestinationDescription;
     bool m_s3DestinationDescriptionHasBeenSet;
+
     ProcessingConfiguration m_processingConfiguration;
     bool m_processingConfigurationHasBeenSet;
+
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
   };

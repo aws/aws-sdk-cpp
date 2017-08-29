@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The action that you are enabling the other account to perform. Currently,
      * this must be <code>events:PutEvents</code>.</p>
@@ -77,6 +78,7 @@ namespace Model
      * this must be <code>events:PutEvents</code>.</p>
      */
     inline PutPermissionRequest& WithAction(const char* value) { SetAction(value); return *this;}
+
 
     /**
      * <p>The 12-digit AWS account ID that you are permitting to put events to your
@@ -155,6 +157,7 @@ namespace Model
      */
     inline PutPermissionRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
+
     /**
      * <p>An identifier string for the external account that you are granting
      * permissions to. If you later want to revoke the permission for this external
@@ -212,10 +215,13 @@ namespace Model
     inline PutPermissionRequest& WithStatementId(const char* value) { SetStatementId(value); return *this;}
 
   private:
+
     Aws::String m_action;
     bool m_actionHasBeenSet;
+
     Aws::String m_principal;
     bool m_principalHasBeenSet;
+
     Aws::String m_statementId;
     bool m_statementIdHasBeenSet;
   };

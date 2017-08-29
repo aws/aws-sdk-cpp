@@ -49,6 +49,7 @@ namespace Model
     SizeConstraintSetUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specify <code>INSERT</code> to add a <a>SizeConstraintSetUpdate</a> to a
      * <a>SizeConstraintSet</a>. Use <code>DELETE</code> to remove a
@@ -83,6 +84,7 @@ namespace Model
      * <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
      */
     inline SizeConstraintSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses
@@ -135,8 +137,10 @@ namespace Model
     inline SizeConstraintSetUpdate& WithSizeConstraint(SizeConstraint&& value) { SetSizeConstraint(std::move(value)); return *this;}
 
   private:
+
     ChangeAction m_action;
     bool m_actionHasBeenSet;
+
     SizeConstraint m_sizeConstraint;
     bool m_sizeConstraintHasBeenSet;
   };

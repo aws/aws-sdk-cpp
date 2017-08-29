@@ -41,6 +41,7 @@ namespace Model
     Message& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The action that occurs if the user taps a push notification delivered by the
      * campaign:
@@ -116,6 +117,7 @@ URL - The default mobile browser on
      */
     inline Message& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
 
+
     /**
      * The message body. Can include up to 140 characters.
      */
@@ -150,6 +152,7 @@ URL - The default mobile browser on
      * The message body. Can include up to 140 characters.
      */
     inline Message& WithBody(const char* value) { SetBody(value); return *this;}
+
 
     /**
      * The URL that points to the icon image for the push notification icon, for
@@ -193,6 +196,7 @@ URL - The default mobile browser on
      */
     inline Message& WithImageIconUrl(const char* value) { SetImageIconUrl(value); return *this;}
 
+
     /**
      * The URL that points to the small icon image for the push notification icon, for
      * example, the app icon.
@@ -235,6 +239,7 @@ URL - The default mobile browser on
      */
     inline Message& WithImageSmallIconUrl(const char* value) { SetImageSmallIconUrl(value); return *this;}
 
+
     /**
      * The URL that points to an image used in the push notification.
      */
@@ -269,6 +274,7 @@ URL - The default mobile browser on
      * The URL that points to an image used in the push notification.
      */
     inline Message& WithImageUrl(const char* value) { SetImageUrl(value); return *this;}
+
 
     /**
      * The JSON payload used for a silent push.
@@ -305,6 +311,7 @@ URL - The default mobile browser on
      */
     inline Message& WithJsonBody(const char* value) { SetJsonBody(value); return *this;}
 
+
     /**
      * The URL that points to the media resource, for example a .mp4 or .gif file.
      */
@@ -339,6 +346,7 @@ URL - The default mobile browser on
      * The URL that points to the media resource, for example a .mp4 or .gif file.
      */
     inline Message& WithMediaUrl(const char* value) { SetMediaUrl(value); return *this;}
+
 
     /**
      * The Raw JSON formatted string to be used as the payload. This value overrides
@@ -382,6 +390,7 @@ URL - The default mobile browser on
      */
     inline Message& WithRawContent(const char* value) { SetRawContent(value); return *this;}
 
+
     /**
      * Indicates if the message should display on the users device.
 
@@ -405,6 +414,7 @@ Silent pushes can
      * be used for Remote Configuration and Phone Home use cases. 
      */
     inline Message& WithSilentPush(bool value) { SetSilentPush(value); return *this;}
+
 
     /**
      * The message title that displays above the message on the user's device.
@@ -440,6 +450,7 @@ Silent pushes can
      * The message title that displays above the message on the user's device.
      */
     inline Message& WithTitle(const char* value) { SetTitle(value); return *this;}
+
 
     /**
      * The URL to open in the user's mobile browser. Used if the value for Action is
@@ -484,26 +495,37 @@ Silent pushes can
     inline Message& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
     Action m_action;
     bool m_actionHasBeenSet;
+
     Aws::String m_body;
     bool m_bodyHasBeenSet;
+
     Aws::String m_imageIconUrl;
     bool m_imageIconUrlHasBeenSet;
+
     Aws::String m_imageSmallIconUrl;
     bool m_imageSmallIconUrlHasBeenSet;
+
     Aws::String m_imageUrl;
     bool m_imageUrlHasBeenSet;
+
     Aws::String m_jsonBody;
     bool m_jsonBodyHasBeenSet;
+
     Aws::String m_mediaUrl;
     bool m_mediaUrlHasBeenSet;
+
     Aws::String m_rawContent;
     bool m_rawContentHasBeenSet;
+
     bool m_silentPush;
     bool m_silentPushHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
   };

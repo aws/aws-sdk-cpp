@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Filters the handshakes that you want included in the response. The default is
      * all types. Use the <code>ActionType</code> element to limit the output to only a
@@ -97,6 +98,7 @@ namespace Model
      */
     inline ListHandshakesForAccountRequest& WithFilter(HandshakeFilter&& value) { SetFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
      * previous request that indicates that there is more output available. Set it to
@@ -153,6 +155,7 @@ namespace Model
      */
     inline ListHandshakesForAccountRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this to limit the number of results you want included in the
      * response. If you do not include this parameter, it defaults to a value that is
@@ -193,10 +196,13 @@ namespace Model
     inline ListHandshakesForAccountRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     HandshakeFilter m_filter;
     bool m_filterHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

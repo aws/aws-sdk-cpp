@@ -31,13 +31,13 @@ UpdateMaintenanceWindowTaskResult::UpdateMaintenanceWindowTaskResult() :
 {
 }
 
-UpdateMaintenanceWindowTaskResult::UpdateMaintenanceWindowTaskResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateMaintenanceWindowTaskResult::UpdateMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_priority(0)
 {
   *this = result;
 }
 
-UpdateMaintenanceWindowTaskResult& UpdateMaintenanceWindowTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateMaintenanceWindowTaskResult& UpdateMaintenanceWindowTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WindowId"))

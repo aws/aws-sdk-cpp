@@ -30,12 +30,12 @@ SetLocalConsolePasswordResult::SetLocalConsolePasswordResult()
 {
 }
 
-SetLocalConsolePasswordResult::SetLocalConsolePasswordResult(const AmazonWebServiceResult<JsonValue>& result)
+SetLocalConsolePasswordResult::SetLocalConsolePasswordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SetLocalConsolePasswordResult& SetLocalConsolePasswordResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SetLocalConsolePasswordResult& SetLocalConsolePasswordResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

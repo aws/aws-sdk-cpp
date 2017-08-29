@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the application to which the application version belongs.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The name of the application to which the application version belongs.</p>
      */
     inline ApplicationVersionDescription& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The description of the application version.</p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline ApplicationVersionDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A unique identifier for the application version.</p>
      */
@@ -158,6 +161,7 @@ namespace Model
      */
     inline ApplicationVersionDescription& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
+
     /**
      * <p>If the version's source code was retrieved from AWS CodeCommit, the location
      * of the source code for the application version.</p>
@@ -187,6 +191,7 @@ namespace Model
      * of the source code for the application version.</p>
      */
     inline ApplicationVersionDescription& WithSourceBuildInformation(SourceBuildInformation&& value) { SetSourceBuildInformation(std::move(value)); return *this;}
+
 
     /**
      * <p>Reference to the artifact from the AWS CodeBuild build.</p>
@@ -223,6 +228,7 @@ namespace Model
      */
     inline ApplicationVersionDescription& WithBuildArn(const char* value) { SetBuildArn(value); return *this;}
 
+
     /**
      * <p>The storage location of the application version's source bundle in Amazon
      * S3.</p>
@@ -253,6 +259,7 @@ namespace Model
      */
     inline ApplicationVersionDescription& WithSourceBundle(S3Location&& value) { SetSourceBundle(std::move(value)); return *this;}
 
+
     /**
      * <p>The creation date of the application version.</p>
      */
@@ -278,6 +285,7 @@ namespace Model
      */
     inline ApplicationVersionDescription& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
 
+
     /**
      * <p>The last modified date of the application version.</p>
      */
@@ -302,6 +310,7 @@ namespace Model
      * <p>The last modified date of the application version.</p>
      */
     inline ApplicationVersionDescription& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(std::move(value)); return *this;}
+
 
     /**
      * <p>The processing status of the application version.</p>
@@ -329,22 +338,31 @@ namespace Model
     inline ApplicationVersionDescription& WithStatus(ApplicationVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+
     SourceBuildInformation m_sourceBuildInformation;
     bool m_sourceBuildInformationHasBeenSet;
+
     Aws::String m_buildArn;
     bool m_buildArnHasBeenSet;
+
     S3Location m_sourceBundle;
     bool m_sourceBundleHasBeenSet;
+
     Aws::Utils::DateTime m_dateCreated;
     bool m_dateCreatedHasBeenSet;
+
     Aws::Utils::DateTime m_dateUpdated;
     bool m_dateUpdatedHasBeenSet;
+
     ApplicationVersionStatus m_status;
     bool m_statusHasBeenSet;
   };

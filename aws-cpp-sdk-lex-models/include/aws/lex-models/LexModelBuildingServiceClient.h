@@ -128,15 +128,15 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateBotVersionResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> CreateBotVersionOutcome;
         typedef Aws::Utils::Outcome<CreateIntentVersionResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> CreateIntentVersionOutcome;
         typedef Aws::Utils::Outcome<CreateSlotTypeVersionResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> CreateSlotTypeVersionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotAliasOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotChannelAssociationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotVersionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteIntentOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteIntentVersionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteSlotTypeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteSlotTypeVersionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteUtterancesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotAliasOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotChannelAssociationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteBotVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteIntentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteIntentVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteSlotTypeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteSlotTypeVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> DeleteUtterancesOutcome;
         typedef Aws::Utils::Outcome<GetBotResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotOutcome;
         typedef Aws::Utils::Outcome<GetBotAliasResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotAliasOutcome;
         typedef Aws::Utils::Outcome<GetBotAliasesResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBotAliasesOutcome;
@@ -245,22 +245,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LexModelBuildingServiceClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        LexModelBuildingServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LexModelBuildingServiceClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        LexModelBuildingServiceClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        LexModelBuildingServiceClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        LexModelBuildingServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~LexModelBuildingServiceClient();
+
 
         /**
          * <p>Creates a new version of the bot based on the <code>$LATEST</code> version.
@@ -1770,7 +1771,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void CreateBotVersionAsyncHelper(const Model::CreateBotVersionRequest& request, const CreateBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

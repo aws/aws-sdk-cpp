@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeDefaultParametersResult();
-    DescribeDefaultParametersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDefaultParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDefaultParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDefaultParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline DescribeDefaultParametersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>A list of parameters. Each element in the list represents one parameter.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline DescribeDefaultParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<Parameter> m_parameters;
   };
 

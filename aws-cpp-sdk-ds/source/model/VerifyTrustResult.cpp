@@ -30,12 +30,12 @@ VerifyTrustResult::VerifyTrustResult()
 {
 }
 
-VerifyTrustResult::VerifyTrustResult(const AmazonWebServiceResult<JsonValue>& result)
+VerifyTrustResult::VerifyTrustResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-VerifyTrustResult& VerifyTrustResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+VerifyTrustResult& VerifyTrustResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TrustId"))

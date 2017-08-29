@@ -53,6 +53,7 @@ namespace Model
     DateTimeRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The starting date and time of a time range.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The starting date and time of a time range.</p>
      */
     inline DateTimeRange& WithFrom(Aws::Utils::DateTime&& value) { SetFrom(std::move(value)); return *this;}
+
 
     /**
      * <p>The ending date and time of a time range.</p>
@@ -104,8 +106,10 @@ namespace Model
     inline DateTimeRange& WithTo(Aws::Utils::DateTime&& value) { SetTo(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_from;
     bool m_fromHasBeenSet;
+
     Aws::Utils::DateTime m_to;
     bool m_toHasBeenSet;
   };

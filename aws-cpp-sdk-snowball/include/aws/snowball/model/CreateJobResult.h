@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateJobResult();
-    CreateJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The automatically generated ID for a job, for example
@@ -84,6 +85,7 @@ namespace Model
     inline CreateJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
   };
 

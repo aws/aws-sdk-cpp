@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AcceptMatchResult();
-    AcceptMatchResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcceptMatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AcceptMatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AcceptMatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a build to retrieve properties for.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline DescribeBuildRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
   private:
+
     Aws::String m_buildId;
     bool m_buildIdHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
      * AWS account ID is used by default.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline BatchDeleteTableRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
+
     /**
      * <p>The name of the catalog database where the tables to delete reside.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The name of the catalog database where the tables to delete reside.</p>
      */
     inline BatchDeleteTableRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+
 
     /**
      * <p>A list of the table to delete.</p>
@@ -155,10 +158,13 @@ namespace Model
     inline BatchDeleteTableRequest& AddTablesToDelete(const char* value) { m_tablesToDeleteHasBeenSet = true; m_tablesToDelete.push_back(value); return *this; }
 
   private:
+
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_tablesToDelete;
     bool m_tablesToDeleteHasBeenSet;
   };

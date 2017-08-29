@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DescribeCommunicationsRequest& WithCaseId(const char* value) { SetCaseId(value); return *this;}
 
+
     /**
      * <p>The end date for a filtered date search on support case communications. Case
      * communications are available for 12 months after creation.</p>
@@ -129,6 +131,7 @@ namespace Model
      * communications are available for 12 months after creation.</p>
      */
     inline DescribeCommunicationsRequest& WithBeforeTime(const char* value) { SetBeforeTime(value); return *this;}
+
 
     /**
      * <p>The start date for a filtered date search on support case communications.
@@ -172,6 +175,7 @@ namespace Model
      */
     inline DescribeCommunicationsRequest& WithAfterTime(const char* value) { SetAfterTime(value); return *this;}
 
+
     /**
      * <p>A resumption point for pagination.</p>
      */
@@ -207,6 +211,7 @@ namespace Model
      */
     inline DescribeCommunicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return before paginating.</p>
      */
@@ -223,14 +228,19 @@ namespace Model
     inline DescribeCommunicationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_caseId;
     bool m_caseIdHasBeenSet;
+
     Aws::String m_beforeTime;
     bool m_beforeTimeHasBeenSet;
+
     Aws::String m_afterTime;
     bool m_afterTimeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

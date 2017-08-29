@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateDhcpOptionsResponse();
-    CreateDhcpOptionsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateDhcpOptionsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDhcpOptionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDhcpOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A set of DHCP options.</p>
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateDhcpOptionsResponse& WithDhcpOptions(DhcpOptions&& value) { SetDhcpOptions(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -88,7 +90,9 @@ namespace Model
     inline CreateDhcpOptionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DhcpOptions m_dhcpOptions;
+
     ResponseMetadata m_responseMetadata;
   };
 

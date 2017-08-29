@@ -30,12 +30,12 @@ ListRulesResult::ListRulesResult()
 {
 }
 
-ListRulesResult::ListRulesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListRulesResult::ListRulesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListRulesResult& ListRulesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListRulesResult& ListRulesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextMarker"))

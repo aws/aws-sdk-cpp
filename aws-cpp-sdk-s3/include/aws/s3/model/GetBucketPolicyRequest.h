@@ -34,6 +34,7 @@ namespace Model
     GetBucketPolicyRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -56,6 +57,7 @@ namespace Model
     inline GetBucketPolicyRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
   };

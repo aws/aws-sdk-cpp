@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or
      * SSL.</p>
@@ -94,6 +95,7 @@ namespace Model
      */
     inline Listener& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
+
     /**
      * <p>The port on which the load balancer is listening. On EC2-VPC, you can specify
      * any port from the range 1-65535. On EC2-Classic, you can specify any port from
@@ -114,6 +116,7 @@ namespace Model
      * the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
      */
     inline Listener& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
+
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
@@ -206,6 +209,7 @@ namespace Model
      */
     inline Listener& WithInstanceProtocol(const char* value) { SetInstanceProtocol(value); return *this;}
 
+
     /**
      * <p>The port on which the instance is listening.</p>
      */
@@ -220,6 +224,7 @@ namespace Model
      * <p>The port on which the instance is listening.</p>
      */
     inline Listener& WithInstancePort(int value) { SetInstancePort(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the server certificate.</p>
@@ -257,14 +262,19 @@ namespace Model
     inline Listener& WithSSLCertificateId(const char* value) { SetSSLCertificateId(value); return *this;}
 
   private:
+
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
+
     int m_loadBalancerPort;
     bool m_loadBalancerPortHasBeenSet;
+
     Aws::String m_instanceProtocol;
     bool m_instanceProtocolHasBeenSet;
+
     int m_instancePort;
     bool m_instancePortHasBeenSet;
+
     Aws::String m_sSLCertificateId;
     bool m_sSLCertificateIdHasBeenSet;
   };

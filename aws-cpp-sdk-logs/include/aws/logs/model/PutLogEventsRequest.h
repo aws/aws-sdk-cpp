@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline PutLogEventsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the log stream.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline PutLogEventsRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
+
     /**
      * <p>The log events.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The log events.</p>
      */
     inline PutLogEventsRequest& AddLogEvents(InputLogEvent&& value) { m_logEventsHasBeenSet = true; m_logEvents.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The sequence token.</p>
@@ -179,12 +183,16 @@ namespace Model
     inline PutLogEventsRequest& WithSequenceToken(const char* value) { SetSequenceToken(value); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
+
     Aws::Vector<InputLogEvent> m_logEvents;
     bool m_logEventsHasBeenSet;
+
     Aws::String m_sequenceToken;
     bool m_sequenceTokenHasBeenSet;
   };

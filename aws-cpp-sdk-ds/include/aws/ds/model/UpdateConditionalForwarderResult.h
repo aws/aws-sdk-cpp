@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     UpdateConditionalForwarderResult();
-    UpdateConditionalForwarderResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateConditionalForwarderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateConditionalForwarderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateConditionalForwarderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

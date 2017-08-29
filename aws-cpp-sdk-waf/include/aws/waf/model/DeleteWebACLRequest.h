@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete.
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DeleteWebACLRequest& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline DeleteWebACLRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
   };

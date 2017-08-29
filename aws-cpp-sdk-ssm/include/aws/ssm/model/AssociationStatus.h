@@ -47,6 +47,7 @@ namespace Model
     AssociationStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The date when the status changed.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline AssociationStatus& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The status.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>The status.</p>
      */
     inline AssociationStatus& WithName(AssociationStatusName&& value) { SetName(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason for the status.</p>
@@ -131,6 +134,7 @@ namespace Model
      * <p>The reason for the status.</p>
      */
     inline AssociationStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>A user-defined string.</p>
@@ -168,12 +172,16 @@ namespace Model
     inline AssociationStatus& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
+
     AssociationStatusName m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet;
   };

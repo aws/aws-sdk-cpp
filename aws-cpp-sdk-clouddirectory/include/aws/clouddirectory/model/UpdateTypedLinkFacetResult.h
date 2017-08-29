@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateTypedLinkFacetResult();
-    UpdateTypedLinkFacetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTypedLinkFacetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTypedLinkFacetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTypedLinkFacetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

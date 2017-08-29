@@ -50,6 +50,7 @@ namespace Model
     InstanceSnapshot& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the snapshot.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The name of the snapshot.</p>
      */
     inline InstanceSnapshot& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
@@ -126,6 +128,7 @@ namespace Model
      * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline InstanceSnapshot& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -176,6 +179,7 @@ namespace Model
      */
     inline InstanceSnapshot& WithSupportCode(const char* value) { SetSupportCode(value); return *this;}
 
+
     /**
      * <p>The timestamp when the snapshot was created (e.g.,
      * <code>1479907467.024</code>).</p>
@@ -206,6 +210,7 @@ namespace Model
      */
     inline InstanceSnapshot& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The region name and availability zone where you created the snapshot.</p>
      */
@@ -230,6 +235,7 @@ namespace Model
      * <p>The region name and availability zone where you created the snapshot.</p>
      */
     inline InstanceSnapshot& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of resource (usually <code>InstanceSnapshot</code>).</p>
@@ -256,6 +262,7 @@ namespace Model
      */
     inline InstanceSnapshot& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The state the snapshot is in.</p>
      */
@@ -280,6 +287,7 @@ namespace Model
      * <p>The state the snapshot is in.</p>
      */
     inline InstanceSnapshot& WithState(InstanceSnapshotState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The progress of the snapshot.</p>
@@ -316,6 +324,7 @@ namespace Model
      */
     inline InstanceSnapshot& WithProgress(const char* value) { SetProgress(value); return *this;}
 
+
     /**
      * <p>The instance from which the snapshot was created.</p>
      */
@@ -350,6 +359,7 @@ namespace Model
      * <p>The instance from which the snapshot was created.</p>
      */
     inline InstanceSnapshot& WithFromInstanceName(const char* value) { SetFromInstanceName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
@@ -400,6 +410,7 @@ namespace Model
      */
     inline InstanceSnapshot& WithFromInstanceArn(const char* value) { SetFromInstanceArn(value); return *this;}
 
+
     /**
      * <p>The blueprint ID from which you created the snapshot (e.g.,
      * <code>os_debian_8_3</code>). A blueprint is a virtual private server (or
@@ -449,6 +460,7 @@ namespace Model
      */
     inline InstanceSnapshot& WithFromBlueprintId(const char* value) { SetFromBlueprintId(value); return *this;}
 
+
     /**
      * <p>The bundle ID from which you created the snapshot (e.g.,
      * <code>micro_1_0</code>).</p>
@@ -491,6 +503,7 @@ namespace Model
      */
     inline InstanceSnapshot& WithFromBundleId(const char* value) { SetFromBundleId(value); return *this;}
 
+
     /**
      * <p>The size in GB of the SSD.</p>
      */
@@ -507,30 +520,43 @@ namespace Model
     inline InstanceSnapshot& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_supportCode;
     bool m_supportCodeHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     ResourceLocation m_location;
     bool m_locationHasBeenSet;
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     InstanceSnapshotState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_progress;
     bool m_progressHasBeenSet;
+
     Aws::String m_fromInstanceName;
     bool m_fromInstanceNameHasBeenSet;
+
     Aws::String m_fromInstanceArn;
     bool m_fromInstanceArnHasBeenSet;
+
     Aws::String m_fromBlueprintId;
     bool m_fromBlueprintIdHasBeenSet;
+
     Aws::String m_fromBundleId;
     bool m_fromBundleIdHasBeenSet;
+
     int m_sizeInGb;
     bool m_sizeInGbHasBeenSet;
   };

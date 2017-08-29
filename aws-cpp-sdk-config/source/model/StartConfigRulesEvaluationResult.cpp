@@ -30,12 +30,12 @@ StartConfigRulesEvaluationResult::StartConfigRulesEvaluationResult()
 {
 }
 
-StartConfigRulesEvaluationResult::StartConfigRulesEvaluationResult(const AmazonWebServiceResult<JsonValue>& result)
+StartConfigRulesEvaluationResult::StartConfigRulesEvaluationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartConfigRulesEvaluationResult& StartConfigRulesEvaluationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartConfigRulesEvaluationResult& StartConfigRulesEvaluationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

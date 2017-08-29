@@ -30,12 +30,12 @@ DescribeMigrationTaskResult::DescribeMigrationTaskResult()
 {
 }
 
-DescribeMigrationTaskResult::DescribeMigrationTaskResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMigrationTaskResult::DescribeMigrationTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeMigrationTaskResult& DescribeMigrationTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMigrationTaskResult& DescribeMigrationTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MigrationTask"))

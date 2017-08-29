@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateDocumentResult();
-    UpdateDocumentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDocumentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A description of the document that was updated.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateDocumentResult& WithDocumentDescription(DocumentDescription&& value) { SetDocumentDescription(std::move(value)); return *this;}
 
   private:
+
     DocumentDescription m_documentDescription;
   };
 

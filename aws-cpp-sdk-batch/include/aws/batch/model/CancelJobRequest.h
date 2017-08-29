@@ -34,6 +34,7 @@ namespace Model
     CancelJobRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A list of up to 100 job IDs to cancel.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>A list of up to 100 job IDs to cancel.</p>
      */
     inline CancelJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     /**
      * <p>A message to attach to the job that explains the reason for cancelling it.
@@ -119,8 +121,10 @@ namespace Model
     inline CancelJobRequest& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

@@ -30,12 +30,12 @@ BatchWriteItemResult::BatchWriteItemResult()
 {
 }
 
-BatchWriteItemResult::BatchWriteItemResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchWriteItemResult::BatchWriteItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchWriteItemResult& BatchWriteItemResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchWriteItemResult& BatchWriteItemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UnprocessedItems"))

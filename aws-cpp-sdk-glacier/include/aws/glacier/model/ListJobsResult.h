@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListJobsResult();
-    ListJobsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListJobsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of job objects. Each job object contains metadata describing the
@@ -90,6 +91,7 @@ namespace Model
      * job.</p>
      */
     inline ListJobsResult& AddJobList(GlacierJobDescription&& value) { m_jobList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> An opaque string used for pagination that specifies the job at which the
@@ -155,7 +157,9 @@ namespace Model
     inline ListJobsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<GlacierJobDescription> m_jobList;
+
     Aws::String m_marker;
   };
 

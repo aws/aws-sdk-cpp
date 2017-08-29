@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the resource for which you want the list of
      * tags, for example
@@ -120,6 +121,7 @@ namespace Model
     inline ListTagsForResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
   };

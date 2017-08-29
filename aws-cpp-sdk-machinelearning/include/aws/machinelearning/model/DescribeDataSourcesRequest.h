@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Use one of the following variables to filter a list of
      * <code>DataSource</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the search
@@ -113,6 +114,7 @@ namespace Model
      */
     inline DescribeDataSourcesRequest& WithFilterVariable(DataSourceFilterVariable&& value) { SetFilterVariable(std::move(value)); return *this;}
 
+
     /**
      * <p>The equal to operator. The <code>DataSource</code> results will have
      * <code>FilterVariable</code> values that exactly match the value specified with
@@ -161,6 +163,7 @@ namespace Model
      * <code>EQ</code>.</p>
      */
     inline DescribeDataSourcesRequest& WithEQ(const char* value) { SetEQ(value); return *this;}
+
 
     /**
      * <p>The greater than operator. The <code>DataSource</code> results will have
@@ -211,6 +214,7 @@ namespace Model
      */
     inline DescribeDataSourcesRequest& WithGT(const char* value) { SetGT(value); return *this;}
 
+
     /**
      * <p>The less than operator. The <code>DataSource</code> results will have
      * <code>FilterVariable</code> values that are less than the value specified with
@@ -259,6 +263,7 @@ namespace Model
      * <code>LT</code>.</p>
      */
     inline DescribeDataSourcesRequest& WithLT(const char* value) { SetLT(value); return *this;}
+
 
     /**
      * <p>The greater than or equal to operator. The <code>DataSource</code> results
@@ -309,6 +314,7 @@ namespace Model
      */
     inline DescribeDataSourcesRequest& WithGE(const char* value) { SetGE(value); return *this;}
 
+
     /**
      * <p>The less than or equal to operator. The <code>DataSource</code> results will
      * have <code>FilterVariable</code> values that are less than or equal to the value
@@ -358,6 +364,7 @@ namespace Model
      */
     inline DescribeDataSourcesRequest& WithLE(const char* value) { SetLE(value); return *this;}
 
+
     /**
      * <p>The not equal to operator. The <code>DataSource</code> results will have
      * <code>FilterVariable</code> values not equal to the value specified with
@@ -406,6 +413,7 @@ namespace Model
      * <code>NE</code>.</p>
      */
     inline DescribeDataSourcesRequest& WithNE(const char* value) { SetNE(value); return *this;}
+
 
     /**
      * <p>A string that is found at the beginning of a variable, such as
@@ -491,6 +499,7 @@ namespace Model
      */
     inline DescribeDataSourcesRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
      * <code>DataSource</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
@@ -536,6 +545,7 @@ namespace Model
      */
     inline DescribeDataSourcesRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID of the page in the paginated results.</p>
      */
@@ -571,6 +581,7 @@ namespace Model
      */
     inline DescribeDataSourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p> The maximum number of <code>DataSource</code> to include in the result.</p>
      */
@@ -587,26 +598,37 @@ namespace Model
     inline DescribeDataSourcesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     DataSourceFilterVariable m_filterVariable;
     bool m_filterVariableHasBeenSet;
+
     Aws::String m_eQ;
     bool m_eQHasBeenSet;
+
     Aws::String m_gT;
     bool m_gTHasBeenSet;
+
     Aws::String m_lT;
     bool m_lTHasBeenSet;
+
     Aws::String m_gE;
     bool m_gEHasBeenSet;
+
     Aws::String m_lE;
     bool m_lEHasBeenSet;
+
     Aws::String m_nE;
     bool m_nEHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

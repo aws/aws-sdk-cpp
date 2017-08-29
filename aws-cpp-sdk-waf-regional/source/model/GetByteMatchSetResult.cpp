@@ -30,12 +30,12 @@ GetByteMatchSetResult::GetByteMatchSetResult()
 {
 }
 
-GetByteMatchSetResult::GetByteMatchSetResult(const AmazonWebServiceResult<JsonValue>& result)
+GetByteMatchSetResult::GetByteMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetByteMatchSetResult& GetByteMatchSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetByteMatchSetResult& GetByteMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ByteMatchSet"))

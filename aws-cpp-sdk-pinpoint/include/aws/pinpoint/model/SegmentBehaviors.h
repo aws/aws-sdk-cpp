@@ -43,6 +43,7 @@ namespace Model
     SegmentBehaviors& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The recency of use.
      */
@@ -69,6 +70,7 @@ namespace Model
     inline SegmentBehaviors& WithRecency(RecencyDimension&& value) { SetRecency(std::move(value)); return *this;}
 
   private:
+
     RecencyDimension m_recency;
     bool m_recencyHasBeenSet;
   };

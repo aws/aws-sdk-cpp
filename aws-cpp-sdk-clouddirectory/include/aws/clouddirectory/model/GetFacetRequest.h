@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For
      * more information, see <a>arns</a>.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline GetFacetRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
+
     /**
      * <p>The name of the facet to retrieve.</p>
      */
@@ -114,8 +116,10 @@ namespace Model
     inline GetFacetRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

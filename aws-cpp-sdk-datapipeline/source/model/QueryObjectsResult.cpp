@@ -31,13 +31,13 @@ QueryObjectsResult::QueryObjectsResult() :
 {
 }
 
-QueryObjectsResult::QueryObjectsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+QueryObjectsResult::QueryObjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_hasMoreResults(false)
 {
   *this = result;
 }
 
-QueryObjectsResult& QueryObjectsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+QueryObjectsResult& QueryObjectsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ids"))

@@ -52,6 +52,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the number of
      * periods that the metric is compared to the threshold.</p>
@@ -70,6 +71,7 @@ namespace Model
      */
     inline CloudWatchAlarmConfiguration& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
 
+
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the value the
      * metric is compared with.</p>
@@ -87,6 +89,7 @@ namespace Model
      * metric is compared with.</p>
      */
     inline CloudWatchAlarmConfiguration& WithThreshold(double value) { SetThreshold(value); return *this;}
+
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the arithmetic
@@ -118,6 +121,7 @@ namespace Model
      */
     inline CloudWatchAlarmConfiguration& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
+
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the duration of
      * one evaluation period in seconds.</p>
@@ -135,6 +139,7 @@ namespace Model
      * one evaluation period in seconds.</p>
      */
     inline CloudWatchAlarmConfiguration& WithPeriod(int value) { SetPeriod(value); return *this;}
+
 
     /**
      * <p>The name of the CloudWatch metric that the alarm is associated with.</p>
@@ -170,6 +175,7 @@ namespace Model
      * <p>The name of the CloudWatch metric that the alarm is associated with.</p>
      */
     inline CloudWatchAlarmConfiguration& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+
 
     /**
      * <p>The namespace of the metric that the alarm is associated with. For more
@@ -234,6 +240,7 @@ namespace Model
      */
     inline CloudWatchAlarmConfiguration& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
+
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the statistic
      * that is applied to the metric.</p>
@@ -263,6 +270,7 @@ namespace Model
      * that is applied to the metric.</p>
      */
     inline CloudWatchAlarmConfiguration& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
+
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type
@@ -335,20 +343,28 @@ namespace Model
     inline CloudWatchAlarmConfiguration& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_evaluationPeriods;
     bool m_evaluationPeriodsHasBeenSet;
+
     double m_threshold;
     bool m_thresholdHasBeenSet;
+
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
+
     int m_period;
     bool m_periodHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Statistic m_statistic;
     bool m_statisticHasBeenSet;
+
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
   };

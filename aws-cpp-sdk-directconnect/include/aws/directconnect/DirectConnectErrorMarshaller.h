@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_DIRECTCONNECT_API DirectConnectErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_DIRECTCONNECT_API DirectConnectErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace DirectConnect
+} // namespace Client
 } // namespace Aws

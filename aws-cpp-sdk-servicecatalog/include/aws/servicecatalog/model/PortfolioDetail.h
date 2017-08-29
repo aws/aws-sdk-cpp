@@ -46,6 +46,7 @@ namespace Model
     PortfolioDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier for the portfolio.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The identifier for the portfolio.</p>
      */
     inline PortfolioDetail& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The ARN assigned to the portfolio.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline PortfolioDetail& WithARN(const char* value) { SetARN(value); return *this;}
 
+
     /**
      * <p>The name to use for display purposes.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>The name to use for display purposes.</p>
      */
     inline PortfolioDetail& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
 
     /**
      * <p>The text description of the portfolio.</p>
@@ -186,6 +190,7 @@ namespace Model
      */
     inline PortfolioDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
@@ -210,6 +215,7 @@ namespace Model
      * <p>The UTC timestamp of the creation time.</p>
      */
     inline PortfolioDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the portfolio provider.</p>
@@ -247,16 +253,22 @@ namespace Model
     inline PortfolioDetail& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
   };

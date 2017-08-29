@@ -32,14 +32,14 @@ GetIntegrationResult::GetIntegrationResult() :
 {
 }
 
-GetIntegrationResult::GetIntegrationResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetIntegrationResult::GetIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_type(IntegrationType::NOT_SET),
     m_contentHandling(ContentHandlingStrategy::NOT_SET)
 {
   *this = result;
 }
 
-GetIntegrationResult& GetIntegrationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetIntegrationResult& GetIntegrationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("type"))

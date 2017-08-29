@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     VerifyDomainIdentityResult();
-    VerifyDomainIdentityResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    VerifyDomainIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    VerifyDomainIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    VerifyDomainIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A TXT record that you must place in the DNS settings of the domain to
@@ -132,6 +133,7 @@ namespace Model
      */
     inline VerifyDomainIdentityResult& WithVerificationToken(const char* value) { SetVerificationToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -148,7 +150,9 @@ namespace Model
     inline VerifyDomainIdentityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_verificationToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

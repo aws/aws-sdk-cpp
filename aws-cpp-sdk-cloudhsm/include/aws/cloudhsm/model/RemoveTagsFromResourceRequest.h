@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
      */
     inline RemoveTagsFromResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
 
     /**
      * <p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not
@@ -129,8 +131,10 @@ namespace Model
     inline RemoveTagsFromResourceRequest& AddTagKeyList(const char* value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeyList;
     bool m_tagKeyListHasBeenSet;
   };

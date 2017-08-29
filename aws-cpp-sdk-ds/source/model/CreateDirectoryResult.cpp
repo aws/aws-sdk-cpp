@@ -30,12 +30,12 @@ CreateDirectoryResult::CreateDirectoryResult()
 {
 }
 
-CreateDirectoryResult::CreateDirectoryResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateDirectoryResult::CreateDirectoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateDirectoryResult& CreateDirectoryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateDirectoryResult& CreateDirectoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DirectoryId"))

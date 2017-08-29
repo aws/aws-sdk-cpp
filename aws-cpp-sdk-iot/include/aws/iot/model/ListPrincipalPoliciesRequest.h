@@ -46,6 +46,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The principal.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The principal.</p>
      */
     inline ListPrincipalPoliciesRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
+
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline ListPrincipalPoliciesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The result page size.</p>
      */
@@ -130,6 +133,7 @@ namespace Model
      * <p>The result page size.</p>
      */
     inline ListPrincipalPoliciesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+
 
     /**
      * <p>Specifies the order for results. If true, results are returned in ascending
@@ -150,12 +154,16 @@ namespace Model
     inline ListPrincipalPoliciesRequest& WithAscendingOrder(bool value) { SetAscendingOrder(value); return *this;}
 
   private:
+
     Aws::String m_principal;
     bool m_principalHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     bool m_ascendingOrder;
     bool m_ascendingOrderHasBeenSet;
   };

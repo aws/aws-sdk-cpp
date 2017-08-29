@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update.
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -88,6 +89,7 @@ namespace Model
      */
     inline UpdateWebACLRequest& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline UpdateWebACLRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+
 
     /**
      * <p>An array of updates to make to the <a>WebACL</a>.</p> <p>An array of
@@ -207,6 +210,7 @@ namespace Model
      */
     inline UpdateWebACLRequest& AddUpdates(WebACLUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the
      * default action if a request doesn't match the criteria in any of the rules in a
@@ -243,12 +247,16 @@ namespace Model
     inline UpdateWebACLRequest& WithDefaultAction(WafAction&& value) { SetDefaultAction(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
+
     Aws::Vector<WebACLUpdate> m_updates;
     bool m_updatesHasBeenSet;
+
     WafAction m_defaultAction;
     bool m_defaultActionHasBeenSet;
   };

@@ -31,12 +31,12 @@ CreateVaultResult::CreateVaultResult()
 {
 }
 
-CreateVaultResult::CreateVaultResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateVaultResult::CreateVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateVaultResult& CreateVaultResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateVaultResult& CreateVaultResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -50,6 +50,7 @@ namespace Model
     Event& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The CloudTrail ID of the event returned.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The CloudTrail ID of the event returned.</p>
      */
     inline Event& WithEventId(const char* value) { SetEventId(value); return *this;}
+
 
     /**
      * <p>The name of the event returned.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline Event& WithEventName(const char* value) { SetEventName(value); return *this;}
 
+
     /**
      * <p>The date and time of the event returned.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>The date and time of the event returned.</p>
      */
     inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS service that the request was made to.</p>
@@ -179,6 +183,7 @@ namespace Model
      * <p>The AWS service that the request was made to.</p>
      */
     inline Event& WithEventSource(const char* value) { SetEventSource(value); return *this;}
+
 
     /**
      * <p>A user name or role name of the requester that called the API in the event
@@ -222,6 +227,7 @@ namespace Model
      */
     inline Event& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
     /**
      * <p>A list of resources referenced by the event returned.</p>
      */
@@ -256,6 +262,7 @@ namespace Model
      * <p>A list of resources referenced by the event returned.</p>
      */
     inline Event& AddResources(Resource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A JSON string that contains a representation of the event returned.</p>
@@ -293,18 +300,25 @@ namespace Model
     inline Event& WithCloudTrailEvent(const char* value) { SetCloudTrailEvent(value); return *this;}
 
   private:
+
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet;
+
     Aws::String m_eventName;
     bool m_eventNameHasBeenSet;
+
     Aws::Utils::DateTime m_eventTime;
     bool m_eventTimeHasBeenSet;
+
     Aws::String m_eventSource;
     bool m_eventSourceHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::Vector<Resource> m_resources;
     bool m_resourcesHasBeenSet;
+
     Aws::String m_cloudTrailEvent;
     bool m_cloudTrailEventHasBeenSet;
   };

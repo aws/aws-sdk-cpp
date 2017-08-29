@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetInstanceAccessResult();
-    GetInstanceAccessResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstanceAccessResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that contains connection information for a fleet instance, including
@@ -78,6 +79,7 @@ namespace Model
     inline GetInstanceAccessResult& WithInstanceAccess(InstanceAccess&& value) { SetInstanceAccess(std::move(value)); return *this;}
 
   private:
+
     InstanceAccess m_instanceAccess;
   };
 

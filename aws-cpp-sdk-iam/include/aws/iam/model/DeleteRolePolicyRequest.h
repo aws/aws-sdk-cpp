@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name (friendly name, not ARN) identifying the role that the policy is
      * embedded in.</p> <p>This parameter allows (per its <a
@@ -100,6 +101,7 @@ namespace Model
      * can also include any of the following characters: _+=,.@-</p>
      */
     inline DeleteRolePolicyRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
 
     /**
      * <p>The name of the inline policy to delete from the specified IAM role.</p>
@@ -165,8 +167,10 @@ namespace Model
     inline DeleteRolePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
   private:
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
   };

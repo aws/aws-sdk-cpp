@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the access key was most recently used. This field is
@@ -100,6 +101,7 @@ namespace Model
      * sign-in data associated with the user</p> </li> </ul>
      */
     inline AccessKeyLastUsed& WithLastUsedDate(Aws::Utils::DateTime&& value) { SetLastUsedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the AWS service with which this access key was most recently
@@ -163,6 +165,7 @@ namespace Model
      * </li> <li> <p>There is no sign-in data associated with the user</p> </li> </ul>
      */
     inline AccessKeyLastUsed& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+
 
     /**
      * <p>The AWS region where this access key was most recently used. This field is
@@ -249,10 +252,13 @@ namespace Model
     inline AccessKeyLastUsed& WithRegion(const char* value) { SetRegion(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_lastUsedDate;
     bool m_lastUsedDateHasBeenSet;
+
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
   };

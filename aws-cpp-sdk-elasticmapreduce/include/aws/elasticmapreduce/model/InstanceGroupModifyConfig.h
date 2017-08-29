@@ -47,6 +47,7 @@ namespace Model
     InstanceGroupModifyConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique ID of the instance group to expand or shrink.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline InstanceGroupModifyConfig& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
 
+
     /**
      * <p>Target size for the instance group.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>Target size for the instance group.</p>
      */
     inline InstanceGroupModifyConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
@@ -145,6 +148,7 @@ namespace Model
      */
     inline InstanceGroupModifyConfig& AddEC2InstanceIdsToTerminate(const char* value) { m_eC2InstanceIdsToTerminateHasBeenSet = true; m_eC2InstanceIdsToTerminate.push_back(value); return *this; }
 
+
     /**
      * <p>Policy for customizing shrink operations.</p>
      */
@@ -171,12 +175,16 @@ namespace Model
     inline InstanceGroupModifyConfig& WithShrinkPolicy(ShrinkPolicy&& value) { SetShrinkPolicy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceGroupId;
     bool m_instanceGroupIdHasBeenSet;
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     Aws::Vector<Aws::String> m_eC2InstanceIdsToTerminate;
     bool m_eC2InstanceIdsToTerminateHasBeenSet;
+
     ShrinkPolicy m_shrinkPolicy;
     bool m_shrinkPolicyHasBeenSet;
   };

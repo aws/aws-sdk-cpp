@@ -30,12 +30,12 @@ CreateInstancesResult::CreateInstancesResult()
 {
 }
 
-CreateInstancesResult::CreateInstancesResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateInstancesResult::CreateInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateInstancesResult& CreateInstancesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateInstancesResult& CreateInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operations"))

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteComputeEnvironmentResult();
-    DeleteComputeEnvironmentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteComputeEnvironmentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteComputeEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteComputeEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -30,12 +30,12 @@ StartWorkflowExecutionResult::StartWorkflowExecutionResult()
 {
 }
 
-StartWorkflowExecutionResult::StartWorkflowExecutionResult(const AmazonWebServiceResult<JsonValue>& result)
+StartWorkflowExecutionResult::StartWorkflowExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartWorkflowExecutionResult& StartWorkflowExecutionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartWorkflowExecutionResult& StartWorkflowExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("runId"))

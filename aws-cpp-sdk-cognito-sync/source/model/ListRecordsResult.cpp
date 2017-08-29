@@ -34,7 +34,7 @@ ListRecordsResult::ListRecordsResult() :
 {
 }
 
-ListRecordsResult::ListRecordsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListRecordsResult::ListRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_count(0),
     m_datasetSyncCount(0),
     m_datasetExists(false),
@@ -43,7 +43,7 @@ ListRecordsResult::ListRecordsResult(const AmazonWebServiceResult<JsonValue>& re
   *this = result;
 }
 
-ListRecordsResult& ListRecordsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListRecordsResult& ListRecordsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Records"))

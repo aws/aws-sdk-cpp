@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the QualificationType.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the QualificationType.</p>
      */
     inline GetQualificationScoreRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
+
 
     /**
      * <p>The ID of the Worker whose Qualification is being updated.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline GetQualificationScoreRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
 
   private:
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
+
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet;
   };

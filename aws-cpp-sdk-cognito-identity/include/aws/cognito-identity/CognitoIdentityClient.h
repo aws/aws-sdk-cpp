@@ -102,7 +102,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<CreateIdentityPoolResult, Aws::Client::AWSError<CognitoIdentityErrors>> CreateIdentityPoolOutcome;
         typedef Aws::Utils::Outcome<DeleteIdentitiesResult, Aws::Client::AWSError<CognitoIdentityErrors>> DeleteIdentitiesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> DeleteIdentityPoolOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> DeleteIdentityPoolOutcome;
         typedef Aws::Utils::Outcome<DescribeIdentityResult, Aws::Client::AWSError<CognitoIdentityErrors>> DescribeIdentityOutcome;
         typedef Aws::Utils::Outcome<DescribeIdentityPoolResult, Aws::Client::AWSError<CognitoIdentityErrors>> DescribeIdentityPoolOutcome;
         typedef Aws::Utils::Outcome<GetCredentialsForIdentityResult, Aws::Client::AWSError<CognitoIdentityErrors>> GetCredentialsForIdentityOutcome;
@@ -114,9 +114,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ListIdentityPoolsResult, Aws::Client::AWSError<CognitoIdentityErrors>> ListIdentityPoolsOutcome;
         typedef Aws::Utils::Outcome<LookupDeveloperIdentityResult, Aws::Client::AWSError<CognitoIdentityErrors>> LookupDeveloperIdentityOutcome;
         typedef Aws::Utils::Outcome<MergeDeveloperIdentitiesResult, Aws::Client::AWSError<CognitoIdentityErrors>> MergeDeveloperIdentitiesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> SetIdentityPoolRolesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> UnlinkDeveloperIdentityOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> UnlinkIdentityOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> SetIdentityPoolRolesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> UnlinkDeveloperIdentityOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CognitoIdentityErrors>> UnlinkIdentityOutcome;
         typedef Aws::Utils::Outcome<UpdateIdentityPoolResult, Aws::Client::AWSError<CognitoIdentityErrors>> UpdateIdentityPoolOutcome;
 
         typedef std::future<CreateIdentityPoolOutcome> CreateIdentityPoolOutcomeCallable;
@@ -202,22 +202,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CognitoIdentityClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CognitoIdentityClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CognitoIdentityClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CognitoIdentityClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        CognitoIdentityClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CognitoIdentityClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CognitoIdentityClient();
+
 
         /**
          * <p>Creates a new identity pool. The identity pool is a store of user identity
@@ -893,7 +894,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void CreateIdentityPoolAsyncHelper(const Model::CreateIdentityPoolRequest& request, const CreateIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -30,12 +30,12 @@ SearchProductsAsAdminResult::SearchProductsAsAdminResult()
 {
 }
 
-SearchProductsAsAdminResult::SearchProductsAsAdminResult(const AmazonWebServiceResult<JsonValue>& result)
+SearchProductsAsAdminResult::SearchProductsAsAdminResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SearchProductsAsAdminResult& SearchProductsAsAdminResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SearchProductsAsAdminResult& SearchProductsAsAdminResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ProductViewDetails"))

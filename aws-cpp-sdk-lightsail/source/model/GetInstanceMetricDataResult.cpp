@@ -31,13 +31,13 @@ GetInstanceMetricDataResult::GetInstanceMetricDataResult() :
 {
 }
 
-GetInstanceMetricDataResult::GetInstanceMetricDataResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetInstanceMetricDataResult::GetInstanceMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_metricName(InstanceMetricName::NOT_SET)
 {
   *this = result;
 }
 
-GetInstanceMetricDataResult& GetInstanceMetricDataResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetInstanceMetricDataResult& GetInstanceMetricDataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("metricName"))

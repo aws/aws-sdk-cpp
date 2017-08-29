@@ -30,12 +30,12 @@ SendTaskSuccessResult::SendTaskSuccessResult()
 {
 }
 
-SendTaskSuccessResult::SendTaskSuccessResult(const AmazonWebServiceResult<JsonValue>& result)
+SendTaskSuccessResult::SendTaskSuccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SendTaskSuccessResult& SendTaskSuccessResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SendTaskSuccessResult& SendTaskSuccessResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

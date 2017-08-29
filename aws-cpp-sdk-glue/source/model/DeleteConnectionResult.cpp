@@ -30,12 +30,12 @@ DeleteConnectionResult::DeleteConnectionResult()
 {
 }
 
-DeleteConnectionResult::DeleteConnectionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteConnectionResult::DeleteConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteConnectionResult& DeleteConnectionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteConnectionResult& DeleteConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

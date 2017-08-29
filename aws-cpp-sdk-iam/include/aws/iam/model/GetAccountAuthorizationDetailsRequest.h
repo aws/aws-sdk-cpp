@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A list of entity types used to filter the results. Only the entities that
      * match the types you specify are included in the output. Use the value
@@ -110,6 +111,7 @@ namespace Model
      */
     inline GetAccountAuthorizationDetailsRequest& AddFilter(EntityType&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>(Optional) Use this only when paginating results to indicate the maximum
      * number of items you want in the response. If additional items exist beyond the
@@ -145,6 +147,7 @@ namespace Model
      * subsequent call that tells the service where to continue from.</p>
      */
     inline GetAccountAuthorizationDetailsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -203,10 +206,13 @@ namespace Model
     inline GetAccountAuthorizationDetailsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<EntityType> m_filter;
     bool m_filterHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

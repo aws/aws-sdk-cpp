@@ -31,13 +31,13 @@ StopDeploymentResult::StopDeploymentResult() :
 {
 }
 
-StopDeploymentResult::StopDeploymentResult(const AmazonWebServiceResult<JsonValue>& result) : 
+StopDeploymentResult::StopDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(StopStatus::NOT_SET)
 {
   *this = result;
 }
 
-StopDeploymentResult& StopDeploymentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopDeploymentResult& StopDeploymentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("status"))

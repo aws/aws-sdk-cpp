@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateSqlInjectionMatchSetResult();
-    CreateSqlInjectionMatchSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSqlInjectionMatchSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSqlInjectionMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A <a>SqlInjectionMatchSet</a>.</p>
@@ -72,6 +73,7 @@ namespace Model
      * <p>A <a>SqlInjectionMatchSet</a>.</p>
      */
     inline CreateSqlInjectionMatchSetResult& WithSqlInjectionMatchSet(SqlInjectionMatchSet&& value) { SetSqlInjectionMatchSet(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -130,7 +132,9 @@ namespace Model
     inline CreateSqlInjectionMatchSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     SqlInjectionMatchSet m_sqlInjectionMatchSet;
+
     Aws::String m_changeToken;
   };
 

@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Specifies the number of days an object is noncurrent before Amazon S3 can
      * perform the associated action. For information about the noncurrent days
@@ -79,6 +80,7 @@ namespace Model
     inline NoncurrentVersionExpiration& WithNoncurrentDays(int value) { SetNoncurrentDays(value); return *this;}
 
   private:
+
     int m_noncurrentDays;
     bool m_noncurrentDaysHasBeenSet;
   };

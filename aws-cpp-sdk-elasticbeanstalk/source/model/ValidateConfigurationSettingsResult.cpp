@@ -31,12 +31,12 @@ ValidateConfigurationSettingsResult::ValidateConfigurationSettingsResult()
 {
 }
 
-ValidateConfigurationSettingsResult::ValidateConfigurationSettingsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ValidateConfigurationSettingsResult::ValidateConfigurationSettingsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ValidateConfigurationSettingsResult& ValidateConfigurationSettingsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ValidateConfigurationSettingsResult& ValidateConfigurationSettingsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

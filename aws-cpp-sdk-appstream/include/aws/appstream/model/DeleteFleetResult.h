@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteFleetResult();
-    DeleteFleetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteFleetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -34,7 +34,7 @@ CreateSnapshotResponse::CreateSnapshotResponse() :
 {
 }
 
-CreateSnapshotResponse::CreateSnapshotResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+CreateSnapshotResponse::CreateSnapshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_encrypted(false),
     m_state(SnapshotState::NOT_SET),
     m_volumeSize(0)
@@ -42,7 +42,7 @@ CreateSnapshotResponse::CreateSnapshotResponse(const AmazonWebServiceResult<XmlD
   *this = result;
 }
 
-CreateSnapshotResponse& CreateSnapshotResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

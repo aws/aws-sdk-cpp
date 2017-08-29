@@ -46,6 +46,7 @@ namespace Model
     CertificateSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -109,6 +110,7 @@ namespace Model
      */
     inline CertificateSummary& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
     /**
      * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,
      * for the certificate.</p>
@@ -152,8 +154,10 @@ namespace Model
     inline CertificateSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

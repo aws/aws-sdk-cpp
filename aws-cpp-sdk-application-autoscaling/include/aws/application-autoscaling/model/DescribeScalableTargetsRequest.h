@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The namespace of the AWS service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
@@ -73,6 +74,7 @@ namespace Model
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline DescribeScalableTargetsRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
@@ -258,6 +260,7 @@ namespace Model
      */
     inline DescribeScalableTargetsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
+
     /**
      * <p>The scalable dimension associated with the scalable target. This string
      * consists of the service namespace, resource type, and scaling property. If you
@@ -368,6 +371,7 @@ namespace Model
      */
     inline DescribeScalableTargetsRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of scalable target results. This value can be between 1
      * and 50. The default value is 50.</p> <p>If this parameter is used, the operation
@@ -400,6 +404,7 @@ namespace Model
      * if applicable.</p>
      */
     inline DescribeScalableTargetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of results.</p>
@@ -437,14 +442,19 @@ namespace Model
     inline DescribeScalableTargetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     ServiceNamespace m_serviceNamespace;
     bool m_serviceNamespaceHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourceIds;
     bool m_resourceIdsHasBeenSet;
+
     ScalableDimension m_scalableDimension;
     bool m_scalableDimensionHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

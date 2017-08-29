@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     GetReplicationRunsResult();
-    GetReplicationRunsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetReplicationRunsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetReplicationRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetReplicationRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const ReplicationJob& GetReplicationJob() const{ return m_replicationJob; }
@@ -58,6 +59,7 @@ namespace Model
 
     
     inline GetReplicationRunsResult& WithReplicationJob(ReplicationJob&& value) { SetReplicationJob(std::move(value)); return *this;}
+
 
     
     inline const Aws::Vector<ReplicationRun>& GetReplicationRunList() const{ return m_replicationRunList; }
@@ -79,6 +81,7 @@ namespace Model
 
     
     inline GetReplicationRunsResult& AddReplicationRunList(ReplicationRun&& value) { m_replicationRunList.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -102,8 +105,11 @@ namespace Model
     inline GetReplicationRunsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     ReplicationJob m_replicationJob;
+
     Aws::Vector<ReplicationRun> m_replicationRunList;
+
     Aws::String m_nextToken;
   };
 

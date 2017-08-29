@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The instance ID for which you want inventory information.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline ListInventoryEntriesRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The type of inventory item for which you want information.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The type of inventory item for which you want information.</p>
      */
     inline ListInventoryEntriesRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -150,6 +153,7 @@ namespace Model
      */
     inline ListInventoryEntriesRequest& AddFilters(InventoryFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline ListInventoryEntriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -214,14 +219,19 @@ namespace Model
     inline ListInventoryEntriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet;
+
     Aws::Vector<InventoryFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

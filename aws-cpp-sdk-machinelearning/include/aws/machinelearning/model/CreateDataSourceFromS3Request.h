@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A user-supplied identifier that uniquely identifies the
      * <code>DataSource</code>. </p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline CreateDataSourceFromS3Request& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
+
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
      */
     inline CreateDataSourceFromS3Request& WithDataSourceName(const char* value) { SetDataSourceName(value); return *this;}
+
 
     /**
      * <p>The data specification of a <code>DataSource</code>:</p> <ul>
@@ -184,6 +187,7 @@ namespace Model
      */
     inline CreateDataSourceFromS3Request& WithDataSpec(S3DataSpec&& value) { SetDataSpec(std::move(value)); return *this;}
 
+
     /**
      * <p>The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a <code>DataSource</code>.
@@ -215,12 +219,16 @@ namespace Model
     inline CreateDataSourceFromS3Request& WithComputeStatistics(bool value) { SetComputeStatistics(value); return *this;}
 
   private:
+
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet;
+
     Aws::String m_dataSourceName;
     bool m_dataSourceNameHasBeenSet;
+
     S3DataSpec m_dataSpec;
     bool m_dataSpecHasBeenSet;
+
     bool m_computeStatistics;
     bool m_computeStatisticsHasBeenSet;
   };

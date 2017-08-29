@@ -51,6 +51,7 @@ namespace Model
     ComparedFace& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Bounding box of the face.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline ComparedFace& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
 
+
     /**
      * <p>Level of confidence that what the bounding box contains is a face.</p>
      */
@@ -90,6 +92,7 @@ namespace Model
      * <p>Level of confidence that what the bounding box contains is a face.</p>
      */
     inline ComparedFace& WithConfidence(double value) { SetConfidence(value); return *this;}
+
 
     /**
      * <p>An array of facial landmarks.</p>
@@ -126,6 +129,7 @@ namespace Model
      */
     inline ComparedFace& AddLandmarks(Landmark&& value) { m_landmarksHasBeenSet = true; m_landmarks.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
      */
@@ -150,6 +154,7 @@ namespace Model
      * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
      */
     inline ComparedFace& WithPose(Pose&& value) { SetPose(std::move(value)); return *this;}
+
 
     /**
      * <p>Identifies face image brightness and sharpness. </p>
@@ -177,14 +182,19 @@ namespace Model
     inline ComparedFace& WithQuality(ImageQuality&& value) { SetQuality(std::move(value)); return *this;}
 
   private:
+
     BoundingBox m_boundingBox;
     bool m_boundingBoxHasBeenSet;
+
     double m_confidence;
     bool m_confidenceHasBeenSet;
+
     Aws::Vector<Landmark> m_landmarks;
     bool m_landmarksHasBeenSet;
+
     Pose m_pose;
     bool m_poseHasBeenSet;
+
     ImageQuality m_quality;
     bool m_qualityHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateDocumentResult();
-    CreateDocumentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDocumentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the Systems Manager document.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateDocumentResult& WithDocumentDescription(DocumentDescription&& value) { SetDocumentDescription(std::move(value)); return *this;}
 
   private:
+
     DocumentDescription m_documentDescription;
   };
 

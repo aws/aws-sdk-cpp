@@ -51,6 +51,7 @@ namespace Model
     ConnectionInput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the connection.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name of the connection.</p>
      */
     inline ConnectionInput& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Description of the connection.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline ConnectionInput& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The type of the connection.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>The type of the connection.</p>
      */
     inline ConnectionInput& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of criteria that can be used in selecting this connection.</p>
@@ -185,6 +189,7 @@ namespace Model
      * <p>A list of criteria that can be used in selecting this connection.</p>
      */
     inline ConnectionInput& AddMatchCriteria(const char* value) { m_matchCriteriaHasBeenSet = true; m_matchCriteria.push_back(value); return *this; }
+
 
     /**
      * <p>A list of key-value pairs used as parameters for this connection.</p>
@@ -241,6 +246,7 @@ namespace Model
      */
     inline ConnectionInput& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
+
     /**
      * <p>A map of physical connection requirements, such as VPC and SecurityGroup,
      * needed for making this connection successfully.</p>
@@ -272,16 +278,22 @@ namespace Model
     inline ConnectionInput& WithPhysicalConnectionRequirements(PhysicalConnectionRequirements&& value) { SetPhysicalConnectionRequirements(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ConnectionType m_connectionType;
     bool m_connectionTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_matchCriteria;
     bool m_matchCriteriaHasBeenSet;
+
     Aws::Map<ConnectionPropertyKey, Aws::String> m_connectionProperties;
     bool m_connectionPropertiesHasBeenSet;
+
     PhysicalConnectionRequirements m_physicalConnectionRequirements;
     bool m_physicalConnectionRequirementsHasBeenSet;
   };

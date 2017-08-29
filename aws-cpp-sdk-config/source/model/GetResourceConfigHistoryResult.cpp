@@ -30,12 +30,12 @@ GetResourceConfigHistoryResult::GetResourceConfigHistoryResult()
 {
 }
 
-GetResourceConfigHistoryResult::GetResourceConfigHistoryResult(const AmazonWebServiceResult<JsonValue>& result)
+GetResourceConfigHistoryResult::GetResourceConfigHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetResourceConfigHistoryResult& GetResourceConfigHistoryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetResourceConfigHistoryResult& GetResourceConfigHistoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("configurationItems"))

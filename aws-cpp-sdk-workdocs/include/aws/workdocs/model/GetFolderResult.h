@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetFolderResult();
-    GetFolderResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFolderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetFolderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The metadata of the folder.</p>
@@ -67,6 +68,7 @@ namespace Model
      * <p>The metadata of the folder.</p>
      */
     inline GetFolderResult& WithMetadata(FolderMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+
 
     /**
      * <p>The custom metadata on the folder.</p>
@@ -129,7 +131,9 @@ namespace Model
     inline GetFolderResult& AddCustomMetadata(const char* key, const char* value) { m_customMetadata.emplace(key, value); return *this; }
 
   private:
+
     FolderMetadata m_metadata;
+
     Aws::Map<Aws::String, Aws::String> m_customMetadata;
   };
 

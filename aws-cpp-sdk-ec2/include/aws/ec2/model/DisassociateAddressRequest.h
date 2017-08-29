@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>[EC2-VPC] The association ID. Required for EC2-VPC.</p>
      */
     inline DisassociateAddressRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
 
     /**
      * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
@@ -112,6 +114,7 @@ namespace Model
      */
     inline DisassociateAddressRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -137,10 +140,13 @@ namespace Model
     inline DisassociateAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

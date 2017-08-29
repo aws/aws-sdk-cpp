@@ -51,6 +51,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The number of objects that you want to invalidate.</p>
      */
@@ -65,6 +66,7 @@ namespace Model
      * <p>The number of objects that you want to invalidate.</p>
      */
     inline Paths& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>A complex type that contains a list of the paths that you want to
@@ -115,8 +117,10 @@ namespace Model
     inline Paths& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<Aws::String> m_items;
     bool m_itemsHasBeenSet;
   };

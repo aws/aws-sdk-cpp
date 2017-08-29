@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The value of the attribute.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
     inline AccountAttributeValue& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
 
   private:
+
     Aws::String m_attributeValue;
     bool m_attributeValueHasBeenSet;
   };

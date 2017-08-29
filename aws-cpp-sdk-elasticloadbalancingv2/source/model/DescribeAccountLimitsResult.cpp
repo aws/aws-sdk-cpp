@@ -31,12 +31,12 @@ DescribeAccountLimitsResult::DescribeAccountLimitsResult()
 {
 }
 
-DescribeAccountLimitsResult::DescribeAccountLimitsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAccountLimitsResult::DescribeAccountLimitsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeAccountLimitsResult& DescribeAccountLimitsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAccountLimitsResult& DescribeAccountLimitsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

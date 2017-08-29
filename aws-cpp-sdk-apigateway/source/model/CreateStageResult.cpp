@@ -33,7 +33,7 @@ CreateStageResult::CreateStageResult() :
 {
 }
 
-CreateStageResult::CreateStageResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateStageResult::CreateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_cacheClusterEnabled(false),
     m_cacheClusterSize(CacheClusterSize::NOT_SET),
     m_cacheClusterStatus(CacheClusterStatus::NOT_SET)
@@ -41,7 +41,7 @@ CreateStageResult::CreateStageResult(const AmazonWebServiceResult<JsonValue>& re
   *this = result;
 }
 
-CreateStageResult& CreateStageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateStageResult& CreateStageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("deploymentId"))

@@ -30,12 +30,12 @@ DescribeStreamResult::DescribeStreamResult()
 {
 }
 
-DescribeStreamResult::DescribeStreamResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeStreamResult::DescribeStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeStreamResult& DescribeStreamResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeStreamResult& DescribeStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StreamDescription"))

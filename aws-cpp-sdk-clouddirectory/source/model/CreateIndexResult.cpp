@@ -30,12 +30,12 @@ CreateIndexResult::CreateIndexResult()
 {
 }
 
-CreateIndexResult::CreateIndexResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateIndexResult::CreateIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateIndexResult& CreateIndexResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateIndexResult& CreateIndexResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ObjectIdentifier"))

@@ -30,12 +30,12 @@ GlobalSignOutResult::GlobalSignOutResult()
 {
 }
 
-GlobalSignOutResult::GlobalSignOutResult(const AmazonWebServiceResult<JsonValue>& result)
+GlobalSignOutResult::GlobalSignOutResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GlobalSignOutResult& GlobalSignOutResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GlobalSignOutResult& GlobalSignOutResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

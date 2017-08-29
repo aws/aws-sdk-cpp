@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline GetDomainNamesRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
+
     /**
      * <p>The maximum number of returned results per page. The value is 25 by default
      * and could be between 1 - 500.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline GetDomainNamesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_position;
     bool m_positionHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

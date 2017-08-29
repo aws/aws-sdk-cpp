@@ -47,6 +47,7 @@ namespace Model
     InstanceGroupStateChangeReason& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The programmable code for the state change reason.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The programmable code for the state change reason.</p>
      */
     inline InstanceGroupStateChangeReason& WithCode(InstanceGroupStateChangeReasonCode&& value) { SetCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The status change reason description.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline InstanceGroupStateChangeReason& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     InstanceGroupStateChangeReasonCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

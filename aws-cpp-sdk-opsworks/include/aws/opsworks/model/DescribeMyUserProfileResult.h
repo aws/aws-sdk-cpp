@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeMyUserProfileResult();
-    DescribeMyUserProfileResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMyUserProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMyUserProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMyUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A <code>UserProfile</code> object that describes the user's SSH
@@ -78,6 +79,7 @@ namespace Model
     inline DescribeMyUserProfileResult& WithUserProfile(SelfUserProfile&& value) { SetUserProfile(std::move(value)); return *this;}
 
   private:
+
     SelfUserProfile m_userProfile;
   };
 

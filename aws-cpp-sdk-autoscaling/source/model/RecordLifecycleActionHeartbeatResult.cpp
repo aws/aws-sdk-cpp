@@ -31,12 +31,12 @@ RecordLifecycleActionHeartbeatResult::RecordLifecycleActionHeartbeatResult()
 {
 }
 
-RecordLifecycleActionHeartbeatResult::RecordLifecycleActionHeartbeatResult(const AmazonWebServiceResult<XmlDocument>& result)
+RecordLifecycleActionHeartbeatResult::RecordLifecycleActionHeartbeatResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RecordLifecycleActionHeartbeatResult& RecordLifecycleActionHeartbeatResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RecordLifecycleActionHeartbeatResult& RecordLifecycleActionHeartbeatResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

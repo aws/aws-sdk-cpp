@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response was
      * <code>true</code>, you have more traffic policy instances. To get more traffic
@@ -135,6 +136,7 @@ namespace Model
      * get.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithHostedZoneIdMarker(const char* value) { SetHostedZoneIdMarker(value); return *this;}
+
 
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response was
@@ -227,6 +229,7 @@ namespace Model
      */
     inline ListTrafficPolicyInstancesRequest& WithTrafficPolicyInstanceNameMarker(const char* value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
 
+
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response was
      * <code>true</code>, you have more traffic policy instances. To get more traffic
@@ -291,6 +294,7 @@ namespace Model
      * are no more traffic policy instances to get.</p>
      */
     inline ListTrafficPolicyInstancesRequest& WithTrafficPolicyInstanceTypeMarker(RRType&& value) { SetTrafficPolicyInstanceTypeMarker(std::move(value)); return *this;}
+
 
     /**
      * <p>The maximum number of traffic policy instances that you want Amazon Route 53
@@ -384,12 +388,16 @@ namespace Model
     inline ListTrafficPolicyInstancesRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_hostedZoneIdMarker;
     bool m_hostedZoneIdMarkerHasBeenSet;
+
     Aws::String m_trafficPolicyInstanceNameMarker;
     bool m_trafficPolicyInstanceNameMarkerHasBeenSet;
+
     RRType m_trafficPolicyInstanceTypeMarker;
     bool m_trafficPolicyInstanceTypeMarkerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

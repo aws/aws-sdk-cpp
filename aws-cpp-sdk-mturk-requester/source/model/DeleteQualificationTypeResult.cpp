@@ -30,12 +30,12 @@ DeleteQualificationTypeResult::DeleteQualificationTypeResult()
 {
 }
 
-DeleteQualificationTypeResult::DeleteQualificationTypeResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteQualificationTypeResult::DeleteQualificationTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteQualificationTypeResult& DeleteQualificationTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteQualificationTypeResult& DeleteQualificationTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

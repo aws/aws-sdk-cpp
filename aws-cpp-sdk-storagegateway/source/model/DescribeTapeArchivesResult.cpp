@@ -30,12 +30,12 @@ DescribeTapeArchivesResult::DescribeTapeArchivesResult()
 {
 }
 
-DescribeTapeArchivesResult::DescribeTapeArchivesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTapeArchivesResult::DescribeTapeArchivesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeTapeArchivesResult& DescribeTapeArchivesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTapeArchivesResult& DescribeTapeArchivesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TapeArchives"))

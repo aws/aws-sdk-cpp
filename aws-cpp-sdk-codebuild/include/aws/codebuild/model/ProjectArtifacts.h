@@ -49,6 +49,7 @@ namespace Model
     ProjectArtifacts& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
      * <code>CODEPIPELINE</code>: The build project will have build output generated
@@ -98,6 +99,7 @@ namespace Model
      * Storage Service (Amazon S3).</p> </li> </ul>
      */
     inline ProjectArtifacts& WithType(ArtifactsType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the build output artifact location, as follows:</p> <ul>
@@ -182,6 +184,7 @@ namespace Model
      * is the name of the output bucket.</p> </li> </ul>
      */
     inline ProjectArtifacts& WithLocation(const char* value) { SetLocation(value); return *this;}
+
 
     /**
      * <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that
@@ -309,6 +312,7 @@ namespace Model
      */
     inline ProjectArtifacts& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>Along with <code>path</code> and <code>name</code>, the pattern that AWS
      * CodeBuild will use to determine the name and location to store the output
@@ -413,6 +417,7 @@ namespace Model
      * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
      */
     inline ProjectArtifacts& WithNamespaceType(ArtifactNamespace&& value) { SetNamespaceType(std::move(value)); return *this;}
+
 
     /**
      * <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that
@@ -533,6 +538,7 @@ namespace Model
      */
     inline ProjectArtifacts& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The type of build output artifact to create, as follows:</p> <ul> <li> <p>If
      * <code>type</code> is set to <code>CODEPIPELINE</code>, then AWS CodePipeline
@@ -614,16 +620,22 @@ namespace Model
     inline ProjectArtifacts& WithPackaging(ArtifactPackaging&& value) { SetPackaging(std::move(value)); return *this;}
 
   private:
+
     ArtifactsType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     ArtifactNamespace m_namespaceType;
     bool m_namespaceTypeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ArtifactPackaging m_packaging;
     bool m_packagingHasBeenSet;
   };

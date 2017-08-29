@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM user to associate the SSH public key with.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -100,6 +101,7 @@ namespace Model
      * following characters: =,.@-</p>
      */
     inline UploadSSHPublicKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
@@ -186,8 +188,10 @@ namespace Model
     inline UploadSSHPublicKeyRequest& WithSSHPublicKeyBody(const char* value) { SetSSHPublicKeyBody(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_sSHPublicKeyBody;
     bool m_sSHPublicKeyBodyHasBeenSet;
   };

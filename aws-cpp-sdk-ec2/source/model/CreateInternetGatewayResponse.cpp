@@ -31,12 +31,12 @@ CreateInternetGatewayResponse::CreateInternetGatewayResponse()
 {
 }
 
-CreateInternetGatewayResponse::CreateInternetGatewayResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateInternetGatewayResponse::CreateInternetGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateInternetGatewayResponse& CreateInternetGatewayResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateInternetGatewayResponse& CreateInternetGatewayResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

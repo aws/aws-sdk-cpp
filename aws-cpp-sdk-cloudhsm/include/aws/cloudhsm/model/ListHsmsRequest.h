@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <i>NextToken</i> value from a previous call to <a>ListHsms</a>. Pass null
      * if this is the first call.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline ListHsmsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

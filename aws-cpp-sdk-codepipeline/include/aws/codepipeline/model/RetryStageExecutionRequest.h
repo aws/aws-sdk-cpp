@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the pipeline that contains the failed stage.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline RetryStageExecutionRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
 
+
     /**
      * <p>The name of the failed stage to be retried.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The name of the failed stage to be retried.</p>
      */
     inline RetryStageExecutionRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
+
 
     /**
      * <p>The ID of the pipeline execution in the failed stage to be retried. Use the
@@ -160,6 +163,7 @@ namespace Model
      */
     inline RetryStageExecutionRequest& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
 
+
     /**
      * <p>The scope of the retry attempt. Currently, the only supported value is
      * FAILED_ACTIONS.</p>
@@ -191,12 +195,16 @@ namespace Model
     inline RetryStageExecutionRequest& WithRetryMode(StageRetryMode&& value) { SetRetryMode(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     Aws::String m_pipelineExecutionId;
     bool m_pipelineExecutionIdHasBeenSet;
+
     StageRetryMode m_retryMode;
     bool m_retryModeHasBeenSet;
   };

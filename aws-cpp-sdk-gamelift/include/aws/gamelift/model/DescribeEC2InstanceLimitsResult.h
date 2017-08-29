@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeEC2InstanceLimitsResult();
-    DescribeEC2InstanceLimitsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEC2InstanceLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEC2InstanceLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEC2InstanceLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that contains the maximum number of instances for the specified
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeEC2InstanceLimitsResult& AddEC2InstanceLimits(EC2InstanceLimit&& value) { m_eC2InstanceLimits.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<EC2InstanceLimit> m_eC2InstanceLimits;
   };
 

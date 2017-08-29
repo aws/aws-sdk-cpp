@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies the name of the DB parameter group family that the engine default
      * parameters apply to.</p>
@@ -92,6 +93,7 @@ namespace Model
      * parameters apply to.</p>
      */
     inline EngineDefaults& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
+
 
     /**
      * <p> An optional pagination token provided by a previous EngineDefaults request.
@@ -142,6 +144,7 @@ namespace Model
      */
     inline EngineDefaults& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Contains a list of engine default parameters.</p>
      */
@@ -178,10 +181,13 @@ namespace Model
     inline EngineDefaults& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_dBParameterGroupFamily;
     bool m_dBParameterGroupFamilyHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
   };

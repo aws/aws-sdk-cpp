@@ -49,6 +49,7 @@ namespace Model
     ReviewActionDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the action.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The unique identifier for the action.</p>
      */
     inline ReviewActionDetail& WithActionId(const char* value) { SetActionId(value); return *this;}
+
 
     /**
      * <p> The nature of the action itself. The Review Policy is responsible for
@@ -133,6 +135,7 @@ namespace Model
      */
     inline ReviewActionDetail& WithActionName(const char* value) { SetActionName(value); return *this;}
 
+
     /**
      * <p> The specific HITId or AssignmentID targeted by the action.</p>
      */
@@ -167,6 +170,7 @@ namespace Model
      * <p> The specific HITId or AssignmentID targeted by the action.</p>
      */
     inline ReviewActionDetail& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+
 
     /**
      * <p> The type of object in TargetId.</p>
@@ -203,6 +207,7 @@ namespace Model
      */
     inline ReviewActionDetail& WithTargetType(const char* value) { SetTargetType(value); return *this;}
 
+
     /**
      * <p> The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or
      * CANCELLED. </p>
@@ -233,6 +238,7 @@ namespace Model
      */
     inline ReviewActionDetail& WithStatus(ReviewActionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p> The date when the action was completed.</p>
      */
@@ -257,6 +263,7 @@ namespace Model
      * <p> The date when the action was completed.</p>
      */
     inline ReviewActionDetail& WithCompleteTime(Aws::Utils::DateTime&& value) { SetCompleteTime(std::move(value)); return *this;}
+
 
     /**
      * <p> A description of the outcome of the review.</p>
@@ -292,6 +299,7 @@ namespace Model
      * <p> A description of the outcome of the review.</p>
      */
     inline ReviewActionDetail& WithResult(const char* value) { SetResult(value); return *this;}
+
 
     /**
      * <p> Present only when the Results have a FAILED Status.</p>
@@ -329,20 +337,28 @@ namespace Model
     inline ReviewActionDetail& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
   private:
+
     Aws::String m_actionId;
     bool m_actionIdHasBeenSet;
+
     Aws::String m_actionName;
     bool m_actionNameHasBeenSet;
+
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet;
+
     Aws::String m_targetType;
     bool m_targetTypeHasBeenSet;
+
     ReviewActionStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_completeTime;
     bool m_completeTimeHasBeenSet;
+
     Aws::String m_result;
     bool m_resultHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
   };

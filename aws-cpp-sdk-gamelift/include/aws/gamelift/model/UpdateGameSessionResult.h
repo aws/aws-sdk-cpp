@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateGameSessionResult();
-    UpdateGameSessionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateGameSessionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateGameSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateGameSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that contains the updated game session metadata.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline UpdateGameSessionResult& WithGameSession(GameSession&& value) { SetGameSession(std::move(value)); return *this;}
 
   private:
+
     GameSession m_gameSession;
   };
 

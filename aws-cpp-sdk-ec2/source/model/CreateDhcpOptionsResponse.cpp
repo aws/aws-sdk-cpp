@@ -31,12 +31,12 @@ CreateDhcpOptionsResponse::CreateDhcpOptionsResponse()
 {
 }
 
-CreateDhcpOptionsResponse::CreateDhcpOptionsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateDhcpOptionsResponse::CreateDhcpOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateDhcpOptionsResponse& CreateDhcpOptionsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateDhcpOptionsResponse& CreateDhcpOptionsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

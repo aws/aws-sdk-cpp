@@ -54,8 +54,9 @@ namespace Model
   {
   public:
     CreateInterconnectResult();
-    CreateInterconnectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateInterconnectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateInterconnectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateInterconnectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetInterconnectId() const{ return m_interconnectId; }
@@ -78,6 +79,7 @@ namespace Model
     
     inline CreateInterconnectResult& WithInterconnectId(const char* value) { SetInterconnectId(value); return *this;}
 
+
     
     inline const Aws::String& GetInterconnectName() const{ return m_interconnectName; }
 
@@ -99,6 +101,7 @@ namespace Model
     
     inline CreateInterconnectResult& WithInterconnectName(const char* value) { SetInterconnectName(value); return *this;}
 
+
     
     inline const InterconnectState& GetInterconnectState() const{ return m_interconnectState; }
 
@@ -113,6 +116,7 @@ namespace Model
 
     
     inline CreateInterconnectResult& WithInterconnectState(InterconnectState&& value) { SetInterconnectState(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetRegion() const{ return m_region; }
@@ -135,6 +139,7 @@ namespace Model
     
     inline CreateInterconnectResult& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
     
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -156,6 +161,7 @@ namespace Model
     
     inline CreateInterconnectResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
 
@@ -176,6 +182,7 @@ namespace Model
 
     
     inline CreateInterconnectResult& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
+
 
     /**
      * <p>The time of the most recent call to DescribeInterconnectLoa for this
@@ -207,6 +214,7 @@ namespace Model
      */
     inline CreateInterconnectResult& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetLagId() const{ return m_lagId; }
 
@@ -227,6 +235,7 @@ namespace Model
 
     
     inline CreateInterconnectResult& WithLagId(const char* value) { SetLagId(value); return *this;}
+
 
     /**
      * <p>The Direct Connection endpoint which the physical connection terminates
@@ -271,14 +280,23 @@ namespace Model
     inline CreateInterconnectResult& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
 
   private:
+
     Aws::String m_interconnectId;
+
     Aws::String m_interconnectName;
+
     InterconnectState m_interconnectState;
+
     Aws::String m_region;
+
     Aws::String m_location;
+
     Aws::String m_bandwidth;
+
     Aws::Utils::DateTime m_loaIssueTime;
+
     Aws::String m_lagId;
+
     Aws::String m_awsDevice;
   };
 

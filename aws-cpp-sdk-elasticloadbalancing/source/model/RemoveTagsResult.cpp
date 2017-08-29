@@ -31,12 +31,12 @@ RemoveTagsResult::RemoveTagsResult()
 {
 }
 
-RemoveTagsResult::RemoveTagsResult(const AmazonWebServiceResult<XmlDocument>& result)
+RemoveTagsResult::RemoveTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RemoveTagsResult& RemoveTagsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RemoveTagsResult& RemoveTagsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

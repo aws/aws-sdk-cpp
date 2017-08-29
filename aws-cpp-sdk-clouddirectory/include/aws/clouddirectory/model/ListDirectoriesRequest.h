@@ -35,6 +35,7 @@ namespace Model
     ListDirectoriesRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      */
     inline ListDirectoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -84,6 +86,7 @@ namespace Model
      * <p>The maximum number of results to retrieve.</p>
      */
     inline ListDirectoriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The state of the directories in the list. Can be either Enabled, Disabled, or
@@ -116,10 +119,13 @@ namespace Model
     inline ListDirectoriesRequest& WithState(DirectoryState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     DirectoryState m_state;
     bool m_stateHasBeenSet;
   };

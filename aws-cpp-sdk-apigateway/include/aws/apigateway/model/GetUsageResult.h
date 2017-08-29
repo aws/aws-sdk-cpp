@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     GetUsageResult();
-    GetUsageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUsageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The plan Id associated with this usage data.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline GetUsageResult& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
+
     /**
      * <p>The starting date of the usage data.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>The starting date of the usage data.</p>
      */
     inline GetUsageResult& WithStartDate(const char* value) { SetStartDate(value); return *this;}
+
 
     /**
      * <p>The ending date of the usage data.</p>
@@ -158,6 +161,7 @@ namespace Model
      */
     inline GetUsageResult& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 
+
     
     inline const Aws::String& GetPosition() const{ return m_position; }
 
@@ -178,6 +182,7 @@ namespace Model
 
     
     inline GetUsageResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+
 
     /**
      * <p>The usage data, as daily logs of used and remaining quotas, over the
@@ -279,10 +284,15 @@ namespace Model
     inline GetUsageResult& AddItems(const char* key, const Aws::Vector<Aws::Vector<long long>>& value) { m_items.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_usagePlanId;
+
     Aws::String m_startDate;
+
     Aws::String m_endDate;
+
     Aws::String m_position;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::Vector<long long>>> m_items;
   };
 

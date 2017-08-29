@@ -31,13 +31,13 @@ IsVpcPeeredResult::IsVpcPeeredResult() :
 {
 }
 
-IsVpcPeeredResult::IsVpcPeeredResult(const AmazonWebServiceResult<JsonValue>& result) : 
+IsVpcPeeredResult::IsVpcPeeredResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_isPeered(false)
 {
   *this = result;
 }
 
-IsVpcPeeredResult& IsVpcPeeredResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+IsVpcPeeredResult& IsVpcPeeredResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("isPeered"))

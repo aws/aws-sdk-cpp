@@ -30,12 +30,12 @@ GetDeviceResult::GetDeviceResult()
 {
 }
 
-GetDeviceResult::GetDeviceResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDeviceResult::GetDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDeviceResult& GetDeviceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDeviceResult& GetDeviceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Device"))

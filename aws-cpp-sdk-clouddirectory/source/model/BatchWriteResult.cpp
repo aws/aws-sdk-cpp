@@ -30,12 +30,12 @@ BatchWriteResult::BatchWriteResult()
 {
 }
 
-BatchWriteResult::BatchWriteResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchWriteResult::BatchWriteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchWriteResult& BatchWriteResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchWriteResult& BatchWriteResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Responses"))

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateHsmConfigurationResult();
-    CreateHsmConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateHsmConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateHsmConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateHsmConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const HsmConfiguration& GetHsmConfiguration() const{ return m_hsmConfiguration; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline CreateHsmConfigurationResult& WithHsmConfiguration(HsmConfiguration&& value) { SetHsmConfiguration(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline CreateHsmConfigurationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     HsmConfiguration m_hsmConfiguration;
+
     ResponseMetadata m_responseMetadata;
   };
 

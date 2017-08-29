@@ -41,6 +41,7 @@ namespace Model
     PutIntentRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the intent. The name is <i>not</i> case sensitive. </p> <p>The
      * name can't match a built-in intent name, or a built-in intent name with
@@ -118,6 +119,7 @@ namespace Model
      */
     inline PutIntentRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the intent.</p>
      */
@@ -152,6 +154,7 @@ namespace Model
      * <p>A description of the intent.</p>
      */
     inline PutIntentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values
@@ -201,6 +204,7 @@ namespace Model
      * &lt;xref linkend="how-it-works"/&gt;. </p>
      */
     inline PutIntentRequest& AddSlots(Slot&& value) { m_slotsHasBeenSet = true; m_slots.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An array of utterances (strings) that a user might say to signal the intent.
@@ -257,6 +261,7 @@ namespace Model
      * </p> <p>In each utterance, a slot name is enclosed in curly braces. </p>
      */
     inline PutIntentRequest& AddSampleUtterances(const char* value) { m_sampleUtterancesHasBeenSet = true; m_sampleUtterances.push_back(value); return *this; }
+
 
     /**
      * <p>Prompts the user to confirm the intent. This question should have a yes or no
@@ -323,6 +328,7 @@ namespace Model
      */
     inline PutIntentRequest& WithConfirmationPrompt(Prompt&& value) { SetConfirmationPrompt(std::move(value)); return *this;}
 
+
     /**
      * <p>When the user answers "no" to the question defined in
      * <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
@@ -367,6 +373,7 @@ namespace Model
      * neither.</p> </note>
      */
     inline PutIntentRequest& WithRejectionStatement(Statement&& value) { SetRejectionStatement(std::move(value)); return *this;}
+
 
     /**
      * <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling
@@ -448,6 +455,7 @@ namespace Model
      */
     inline PutIntentRequest& WithFollowUpPrompt(FollowUpPrompt&& value) { SetFollowUpPrompt(std::move(value)); return *this;}
 
+
     /**
      * <p> The statement that you want Amazon Lex to convey to the user after the
      * intent is successfully fulfilled by the Lambda function. </p> <p>This element is
@@ -502,6 +510,7 @@ namespace Model
      * exclusive. You can specify only one.</p> </note>
      */
     inline PutIntentRequest& WithConclusionStatement(Statement&& value) { SetConclusionStatement(std::move(value)); return *this;}
+
 
     /**
      * <p> Specifies a Lambda function to invoke for each user input. You can invoke
@@ -558,6 +567,7 @@ namespace Model
      */
     inline PutIntentRequest& WithDialogCodeHook(CodeHook&& value) { SetDialogCodeHook(std::move(value)); return *this;}
 
+
     /**
      * <p> Describes how the intent is fulfilled. For example, after a user provides
      * all of the information for a pizza order, <code>fulfillmentActivity</code>
@@ -607,6 +617,7 @@ namespace Model
      * intent (for example, place an order with a pizzeria). </p>
      */
     inline PutIntentRequest& WithFulfillmentActivity(FulfillmentActivity&& value) { SetFulfillmentActivity(std::move(value)); return *this;}
+
 
     /**
      * <p>A unique identifier for the built-in intent to base this intent on. To find
@@ -663,6 +674,7 @@ namespace Model
      * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
      */
     inline PutIntentRequest& WithParentIntentSignature(const char* value) { SetParentIntentSignature(value); return *this;}
+
 
     /**
      * <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
@@ -749,28 +761,40 @@ namespace Model
     inline PutIntentRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Slot> m_slots;
     bool m_slotsHasBeenSet;
+
     Aws::Vector<Aws::String> m_sampleUtterances;
     bool m_sampleUtterancesHasBeenSet;
+
     Prompt m_confirmationPrompt;
     bool m_confirmationPromptHasBeenSet;
+
     Statement m_rejectionStatement;
     bool m_rejectionStatementHasBeenSet;
+
     FollowUpPrompt m_followUpPrompt;
     bool m_followUpPromptHasBeenSet;
+
     Statement m_conclusionStatement;
     bool m_conclusionStatementHasBeenSet;
+
     CodeHook m_dialogCodeHook;
     bool m_dialogCodeHookHasBeenSet;
+
     FulfillmentActivity m_fulfillmentActivity;
     bool m_fulfillmentActivityHasBeenSet;
+
     Aws::String m_parentIntentSignature;
     bool m_parentIntentSignatureHasBeenSet;
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
   };

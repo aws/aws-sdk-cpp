@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The IPv6 CIDR block.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
     inline Ipv6CidrBlock& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
 
   private:
+
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
   };

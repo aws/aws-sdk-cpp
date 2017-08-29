@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListCACertificatesResult();
-    ListCACertificatesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCACertificatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCACertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCACertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The CA certificates registered in your AWS account.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The CA certificates registered in your AWS account.</p>
      */
     inline ListCACertificatesResult& AddCertificates(CACertificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The current position within the list of CA certificates.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline ListCACertificatesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
   private:
+
     Aws::Vector<CACertificate> m_certificates;
+
     Aws::String m_nextMarker;
   };
 

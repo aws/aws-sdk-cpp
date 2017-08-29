@@ -48,6 +48,7 @@ namespace Model
     InstanceAccessDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>For SSH access, the public key to use when accessing your instance For
      * OpenSSH clients (e.g., command line SSH), you should save this value to
@@ -97,6 +98,7 @@ namespace Model
      */
     inline InstanceAccessDetails& WithCertKey(const char* value) { SetCertKey(value); return *this;}
 
+
     /**
      * <p>For SSH access, the date on which the temporary keys expire.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>For SSH access, the date on which the temporary keys expire.</p>
      */
     inline InstanceAccessDetails& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The public IP address of the Amazon Lightsail instance.</p>
@@ -157,6 +160,7 @@ namespace Model
      */
     inline InstanceAccessDetails& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
+
     /**
      * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
      */
@@ -191,6 +195,7 @@ namespace Model
      * <p>For RDP access, the temporary password of the Amazon EC2 instance.</p>
      */
     inline InstanceAccessDetails& WithPassword(const char* value) { SetPassword(value); return *this;}
+
 
     /**
      * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
@@ -234,6 +239,7 @@ namespace Model
      */
     inline InstanceAccessDetails& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
 
+
     /**
      * <p>The protocol for these Amazon Lightsail instance access details.</p>
      */
@@ -258,6 +264,7 @@ namespace Model
      * <p>The protocol for these Amazon Lightsail instance access details.</p>
      */
     inline InstanceAccessDetails& WithProtocol(InstanceAccessProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of this Amazon Lightsail instance.</p>
@@ -293,6 +300,7 @@ namespace Model
      * <p>The name of this Amazon Lightsail instance.</p>
      */
     inline InstanceAccessDetails& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+
 
     /**
      * <p>The user name to use when logging in to the Amazon Lightsail instance.</p>
@@ -330,20 +338,28 @@ namespace Model
     inline InstanceAccessDetails& WithUsername(const char* value) { SetUsername(value); return *this;}
 
   private:
+
     Aws::String m_certKey;
     bool m_certKeyHasBeenSet;
+
     Aws::Utils::DateTime m_expiresAt;
     bool m_expiresAtHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     Aws::String m_privateKey;
     bool m_privateKeyHasBeenSet;
+
     InstanceAccessProtocol m_protocol;
     bool m_protocolHasBeenSet;
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
   };

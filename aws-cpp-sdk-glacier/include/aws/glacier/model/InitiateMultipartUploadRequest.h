@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -103,6 +104,7 @@ namespace Model
      */
     inline InitiateMultipartUploadRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -137,6 +139,7 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline InitiateMultipartUploadRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
 
     /**
      * <p>The archive description that you are uploading in parts.</p> <p>The part size
@@ -194,6 +197,7 @@ namespace Model
      */
     inline InitiateMultipartUploadRequest& WithArchiveDescription(const char* value) { SetArchiveDescription(value); return *this;}
 
+
     /**
      * <p>The size of each part except the last, in bytes. The last part can be smaller
      * than this part size.</p>
@@ -237,12 +241,16 @@ namespace Model
     inline InitiateMultipartUploadRequest& WithPartSize(const char* value) { SetPartSize(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_archiveDescription;
     bool m_archiveDescriptionHasBeenSet;
+
     Aws::String m_partSize;
     bool m_partSizeHasBeenSet;
   };

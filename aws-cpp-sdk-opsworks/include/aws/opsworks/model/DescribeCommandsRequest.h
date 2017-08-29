@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The deployment ID. If you include this parameter,
      * <code>DescribeCommands</code> returns a description of the commands associated
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeCommandsRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
+
     /**
      * <p>The instance ID. If you include this parameter, <code>DescribeCommands</code>
      * returns a description of the commands associated with the specified
@@ -134,6 +136,7 @@ namespace Model
      * instance.</p>
      */
     inline DescribeCommandsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>An array of command IDs. If you include this parameter,
@@ -192,10 +195,13 @@ namespace Model
     inline DescribeCommandsRequest& AddCommandIds(const char* value) { m_commandIdsHasBeenSet = true; m_commandIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_commandIds;
     bool m_commandIdsHasBeenSet;
   };

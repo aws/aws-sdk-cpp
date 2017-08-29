@@ -31,12 +31,12 @@ GenerateDataKeyWithoutPlaintextResult::GenerateDataKeyWithoutPlaintextResult()
 {
 }
 
-GenerateDataKeyWithoutPlaintextResult::GenerateDataKeyWithoutPlaintextResult(const AmazonWebServiceResult<JsonValue>& result)
+GenerateDataKeyWithoutPlaintextResult::GenerateDataKeyWithoutPlaintextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GenerateDataKeyWithoutPlaintextResult& GenerateDataKeyWithoutPlaintextResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GenerateDataKeyWithoutPlaintextResult& GenerateDataKeyWithoutPlaintextResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CiphertextBlob"))

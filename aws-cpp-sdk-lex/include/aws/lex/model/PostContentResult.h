@@ -43,8 +43,9 @@ namespace Model
     PostContentResult& operator=(const PostContentResult&) = delete;
 
 
-    PostContentResult(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
-    PostContentResult& operator=(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
+    PostContentResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    PostContentResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+
 
 
     /**
@@ -89,6 +90,7 @@ namespace Model
      */
     inline PostContentResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 
+
     /**
      * <p>Current user intent that Amazon Lex is aware of.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      * <p>Current user intent that Amazon Lex is aware of.</p>
      */
     inline PostContentResult& WithIntentName(const char* value) { SetIntentName(value); return *this;}
+
 
     /**
      * <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from
@@ -166,6 +169,7 @@ namespace Model
      */
     inline PostContentResult& WithSlots(const char* value) { SetSlots(value); return *this;}
 
+
     /**
      * <p> Map of key/value pairs representing the session-specific context
      * information. </p>
@@ -207,6 +211,7 @@ namespace Model
      * information. </p>
      */
     inline PostContentResult& WithSessionAttributes(const char* value) { SetSessionAttributes(value); return *this;}
+
 
     /**
      * <p> Message to convey to the user. It can come from the bot's configuration or a
@@ -319,6 +324,7 @@ namespace Model
      * the client. </p>
      */
     inline PostContentResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>Identifies the current state of the user interaction. Amazon Lex returns one
@@ -480,6 +486,7 @@ namespace Model
      */
     inline PostContentResult& WithDialogState(DialogState&& value) { SetDialogState(std::move(value)); return *this;}
 
+
     /**
      * <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns
      * the name of the slot for which Amazon Lex is eliciting a value. </p>
@@ -522,6 +529,7 @@ namespace Model
      */
     inline PostContentResult& WithSlotToElicit(const char* value) { SetSlotToElicit(value); return *this;}
 
+
     /**
      * <p>Transcript of the voice input to the operation.</p>
      */
@@ -557,6 +565,7 @@ namespace Model
      */
     inline PostContentResult& WithInputTranscript(const char* value) { SetInputTranscript(value); return *this;}
 
+
     /**
      * <p>The prompt (or statement) to convey to the user. This is based on the bot
      * configuration and context. For example, if Amazon Lex did not understand the
@@ -580,15 +589,24 @@ namespace Model
     inline void ReplaceBody(Aws::IOStream* body) { m_audioStream = Aws::Utils::Stream::ResponseStream(body); }
     
   private:
+
     Aws::String m_contentType;
+
     Aws::String m_intentName;
+
     Aws::String m_slots;
+
     Aws::String m_sessionAttributes;
+
     Aws::String m_message;
+
     DialogState m_dialogState;
+
     Aws::String m_slotToElicit;
+
     Aws::String m_inputTranscript;
-    Utils::Stream::ResponseStream m_audioStream;
+
+  Aws::Utils::Stream::ResponseStream m_audioStream;
   };
 
 } // namespace Model

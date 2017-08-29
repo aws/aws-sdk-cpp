@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateCommentResult();
-    CreateCommentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCommentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCommentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The comment that has been created.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateCommentResult& WithComment(Comment&& value) { SetComment(std::move(value)); return *this;}
 
   private:
+
     Comment m_comment;
   };
 

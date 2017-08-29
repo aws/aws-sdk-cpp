@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies the status of the IP range. Status can be "authorizing",
      * "authorized", "revoking", and "revoked".</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline IPRange& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>Specifies the IP range.</p>
      */
@@ -127,8 +129,10 @@ namespace Model
     inline IPRange& WithCIDRIP(const char* value) { SetCIDRIP(value); return *this;}
 
   private:
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_cIDRIP;
     bool m_cIDRIPHasBeenSet;
   };

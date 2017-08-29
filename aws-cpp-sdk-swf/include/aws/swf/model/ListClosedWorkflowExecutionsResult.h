@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListClosedWorkflowExecutionsResult();
-    ListClosedWorkflowExecutionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListClosedWorkflowExecutionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListClosedWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListClosedWorkflowExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of workflow information structures.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The list of workflow information structures.</p>
      */
     inline ListClosedWorkflowExecutionsResult& AddExecutionInfos(WorkflowExecutionInfo&& value) { m_executionInfos.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -148,7 +150,9 @@ namespace Model
     inline ListClosedWorkflowExecutionsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<WorkflowExecutionInfo> m_executionInfos;
+
     Aws::String m_nextPageToken;
   };
 

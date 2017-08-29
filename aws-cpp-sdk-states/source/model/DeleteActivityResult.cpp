@@ -30,12 +30,12 @@ DeleteActivityResult::DeleteActivityResult()
 {
 }
 
-DeleteActivityResult::DeleteActivityResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteActivityResult::DeleteActivityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteActivityResult& DeleteActivityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteActivityResult& DeleteActivityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

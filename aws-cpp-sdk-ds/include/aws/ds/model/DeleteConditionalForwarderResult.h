@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     DeleteConditionalForwarderResult();
-    DeleteConditionalForwarderResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConditionalForwarderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteConditionalForwarderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteConditionalForwarderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

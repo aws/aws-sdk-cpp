@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -57,6 +58,7 @@ namespace Model
 
     
     inline AddUploadBufferRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     
     inline const Aws::Vector<Aws::String>& GetDiskIds() const{ return m_diskIds; }
@@ -83,8 +85,10 @@ namespace Model
     inline AddUploadBufferRequest& AddDiskIds(const char* value) { m_diskIdsHasBeenSet = true; m_diskIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     Aws::Vector<Aws::String> m_diskIds;
     bool m_diskIdsHasBeenSet;
   };

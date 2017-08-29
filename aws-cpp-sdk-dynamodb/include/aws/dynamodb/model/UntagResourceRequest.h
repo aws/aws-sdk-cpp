@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon DyanamoDB resource the tags will be removed from. This value is an
      * Amazon Resource Name (ARN).</p>
@@ -78,6 +79,7 @@ namespace Model
      * Amazon Resource Name (ARN).</p>
      */
     inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
 
     /**
      * <p>A list of tag keys. Existing tags of the resource whose keys are members of
@@ -128,8 +130,10 @@ namespace Model
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

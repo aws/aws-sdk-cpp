@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of one or more states that you want included in the response. If this
      * parameter is not present, then all requests are included in the response.</p>
@@ -79,6 +80,7 @@ namespace Model
      * parameter is not present, then all requests are included in the response.</p>
      */
     inline ListCreateAccountStatusRequest& AddStates(CreateAccountState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -136,6 +138,7 @@ namespace Model
      */
     inline ListCreateAccountStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this to limit the number of results you want included in the
      * response. If you do not include this parameter, it defaults to a value that is
@@ -176,10 +179,13 @@ namespace Model
     inline ListCreateAccountStatusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::Vector<CreateAccountState> m_states;
     bool m_statesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

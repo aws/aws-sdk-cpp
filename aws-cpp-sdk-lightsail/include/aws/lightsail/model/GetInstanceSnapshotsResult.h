@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetInstanceSnapshotsResult();
-    GetInstanceSnapshotsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstanceSnapshotsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -84,6 +85,7 @@ namespace Model
      * get instance snapshots request.</p>
      */
     inline GetInstanceSnapshotsResult& AddInstanceSnapshots(InstanceSnapshot&& value) { m_instanceSnapshots.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token used for advancing to the next page of results from your get instance
@@ -128,7 +130,9 @@ namespace Model
     inline GetInstanceSnapshotsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<InstanceSnapshot> m_instanceSnapshots;
+
     Aws::String m_nextPageToken;
   };
 

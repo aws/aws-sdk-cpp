@@ -30,12 +30,12 @@ GetCrawlerMetricsResult::GetCrawlerMetricsResult()
 {
 }
 
-GetCrawlerMetricsResult::GetCrawlerMetricsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCrawlerMetricsResult::GetCrawlerMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCrawlerMetricsResult& GetCrawlerMetricsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCrawlerMetricsResult& GetCrawlerMetricsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CrawlerMetricsList"))

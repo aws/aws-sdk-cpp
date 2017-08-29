@@ -46,6 +46,7 @@ namespace Model
     FailureDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of the failure.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The type of the failure.</p>
      */
     inline FailureDetails& WithType(FailureType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The message about the failure.</p>
@@ -105,6 +107,7 @@ namespace Model
      * <p>The message about the failure.</p>
      */
     inline FailureDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>The external ID of the run of the action that failed.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline FailureDetails& WithExternalExecutionId(const char* value) { SetExternalExecutionId(value); return *this;}
 
   private:
+
     FailureType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::String m_externalExecutionId;
     bool m_externalExecutionIdHasBeenSet;
   };

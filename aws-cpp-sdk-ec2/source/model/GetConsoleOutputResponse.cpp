@@ -31,12 +31,12 @@ GetConsoleOutputResponse::GetConsoleOutputResponse()
 {
 }
 
-GetConsoleOutputResponse::GetConsoleOutputResponse(const AmazonWebServiceResult<XmlDocument>& result)
+GetConsoleOutputResponse::GetConsoleOutputResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetConsoleOutputResponse& GetConsoleOutputResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetConsoleOutputResponse& GetConsoleOutputResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

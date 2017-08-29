@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that you intend to upload
      * layers to. If you do not specify a registry, the default registry is
@@ -85,6 +86,7 @@ namespace Model
      */
     inline InitiateLayerUploadRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The name of the repository that you intend to upload layers to.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline InitiateLayerUploadRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
   };

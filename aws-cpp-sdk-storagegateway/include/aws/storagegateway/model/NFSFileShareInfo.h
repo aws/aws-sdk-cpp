@@ -49,6 +49,7 @@ namespace Model
     NFSFileShareInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const NFSFileShareDefaults& GetNFSFileShareDefaults() const{ return m_nFSFileShareDefaults; }
 
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline NFSFileShareInfo& WithNFSFileShareDefaults(NFSFileShareDefaults&& value) { SetNFSFileShareDefaults(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
@@ -85,6 +87,7 @@ namespace Model
     
     inline NFSFileShareInfo& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
 
+
     
     inline const Aws::String& GetFileShareId() const{ return m_fileShareId; }
 
@@ -105,6 +108,7 @@ namespace Model
 
     
     inline NFSFileShareInfo& WithFileShareId(const char* value) { SetFileShareId(value); return *this;}
+
 
     
     inline const Aws::String& GetFileShareStatus() const{ return m_fileShareStatus; }
@@ -127,6 +131,7 @@ namespace Model
     
     inline NFSFileShareInfo& WithFileShareStatus(const char* value) { SetFileShareStatus(value); return *this;}
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -148,6 +153,7 @@ namespace Model
     
     inline NFSFileShareInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     /**
      * <p>True to use Amazon S3 server side encryption with your own KMS key, or false
      * to use a key managed by Amazon S3. Optional. </p>
@@ -165,6 +171,7 @@ namespace Model
      * to use a key managed by Amazon S3. Optional. </p>
      */
     inline NFSFileShareInfo& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
+
 
     
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
@@ -187,6 +194,7 @@ namespace Model
     
     inline NFSFileShareInfo& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
 
+
     
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -207,6 +215,7 @@ namespace Model
 
     
     inline NFSFileShareInfo& WithPath(const char* value) { SetPath(value); return *this;}
+
 
     
     inline const Aws::String& GetRole() const{ return m_role; }
@@ -229,6 +238,7 @@ namespace Model
     
     inline NFSFileShareInfo& WithRole(const char* value) { SetRole(value); return *this;}
 
+
     
     inline const Aws::String& GetLocationARN() const{ return m_locationARN; }
 
@@ -249,6 +259,7 @@ namespace Model
 
     
     inline NFSFileShareInfo& WithLocationARN(const char* value) { SetLocationARN(value); return *this;}
+
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by file
@@ -299,6 +310,7 @@ namespace Model
      */
     inline NFSFileShareInfo& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 
+
     
     inline const Aws::Vector<Aws::String>& GetClientList() const{ return m_clientList; }
 
@@ -323,6 +335,7 @@ namespace Model
     
     inline NFSFileShareInfo& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
 
+
     
     inline const Aws::String& GetSquash() const{ return m_squash; }
 
@@ -344,6 +357,7 @@ namespace Model
     
     inline NFSFileShareInfo& WithSquash(const char* value) { SetSquash(value); return *this;}
 
+
     
     inline bool GetReadOnly() const{ return m_readOnly; }
 
@@ -354,32 +368,46 @@ namespace Model
     inline NFSFileShareInfo& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
   private:
+
     NFSFileShareDefaults m_nFSFileShareDefaults;
     bool m_nFSFileShareDefaultsHasBeenSet;
+
     Aws::String m_fileShareARN;
     bool m_fileShareARNHasBeenSet;
+
     Aws::String m_fileShareId;
     bool m_fileShareIdHasBeenSet;
+
     Aws::String m_fileShareStatus;
     bool m_fileShareStatusHasBeenSet;
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     bool m_kMSEncrypted;
     bool m_kMSEncryptedHasBeenSet;
+
     Aws::String m_kMSKey;
     bool m_kMSKeyHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     Aws::String m_locationARN;
     bool m_locationARNHasBeenSet;
+
     Aws::String m_defaultStorageClass;
     bool m_defaultStorageClassHasBeenSet;
+
     Aws::Vector<Aws::String> m_clientList;
     bool m_clientListHasBeenSet;
+
     Aws::String m_squash;
     bool m_squashHasBeenSet;
+
     bool m_readOnly;
     bool m_readOnlyHasBeenSet;
   };

@@ -30,12 +30,12 @@ ListLoggerDefinitionsResult::ListLoggerDefinitionsResult()
 {
 }
 
-ListLoggerDefinitionsResult::ListLoggerDefinitionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListLoggerDefinitionsResult::ListLoggerDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListLoggerDefinitionsResult& ListLoggerDefinitionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListLoggerDefinitionsResult& ListLoggerDefinitionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Definitions"))

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     TransferCertificateResult();
-    TransferCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TransferCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TransferCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TransferCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the certificate.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline TransferCertificateResult& WithTransferredCertificateArn(const char* value) { SetTransferredCertificateArn(value); return *this;}
 
   private:
+
     Aws::String m_transferredCertificateArn;
   };
 

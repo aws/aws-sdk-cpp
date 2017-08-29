@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     DescribeProvisioningParametersResult();
-    DescribeProvisioningParametersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeProvisioningParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProvisioningParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProvisioningParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of parameters used to successfully provision the product. Each
@@ -94,6 +95,7 @@ namespace Model
      */
     inline DescribeProvisioningParametersResult& AddProvisioningArtifactParameters(ProvisioningArtifactParameter&& value) { m_provisioningArtifactParameters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The list of constraint summaries that apply to provisioning this product.</p>
      */
@@ -128,6 +130,7 @@ namespace Model
      * <p>The list of constraint summaries that apply to provisioning this product.</p>
      */
     inline DescribeProvisioningParametersResult& AddConstraintSummaries(ConstraintSummary&& value) { m_constraintSummaries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Any additional metadata specifically related to the provisioning of the
@@ -178,6 +181,7 @@ namespace Model
      */
     inline DescribeProvisioningParametersResult& AddUsageInstructions(UsageInstruction&& value) { m_usageInstructions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>List of TagOptions associated with the provisioned provisioning
      * parameters.</p>
@@ -221,9 +225,13 @@ namespace Model
     inline DescribeProvisioningParametersResult& AddTagOptions(TagOptionSummary&& value) { m_tagOptions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;
+
     Aws::Vector<ConstraintSummary> m_constraintSummaries;
+
     Aws::Vector<UsageInstruction> m_usageInstructions;
+
     Aws::Vector<TagOptionSummary> m_tagOptions;
   };
 

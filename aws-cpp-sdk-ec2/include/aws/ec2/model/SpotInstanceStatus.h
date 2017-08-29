@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The status code. For a list of status codes, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
@@ -99,6 +100,7 @@ namespace Model
      */
     inline SpotInstanceStatus& WithCode(const char* value) { SetCode(value); return *this;}
 
+
     /**
      * <p>The description for the status code.</p>
      */
@@ -134,6 +136,7 @@ namespace Model
      */
     inline SpotInstanceStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The date and time of the most recent status update, in UTC format (for
      * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
@@ -165,10 +168,13 @@ namespace Model
     inline SpotInstanceStatus& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet;
   };

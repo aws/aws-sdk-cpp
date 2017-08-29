@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the patch group whose patch baseline should be retrieved.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline GetPatchBaselineForPatchGroupRequest& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
 
+
     /**
      * <p>Returns he operating system rule specified for patch groups using the patch
      * baseline.</p>
@@ -103,8 +105,10 @@ namespace Model
     inline GetPatchBaselineForPatchGroupRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_patchGroup;
     bool m_patchGroupHasBeenSet;
+
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet;
   };

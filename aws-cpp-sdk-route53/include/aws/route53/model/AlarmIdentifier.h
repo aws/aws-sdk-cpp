@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>A complex type that identifies the CloudWatch alarm that you want Amazon
      * Route 53 health checkers to use to determine whether this health check is
@@ -99,6 +100,7 @@ namespace Model
      */
     inline AlarmIdentifier& WithRegion(CloudWatchRegion&& value) { SetRegion(std::move(value)); return *this;}
 
+
     /**
      * <p>The name of the CloudWatch alarm that you want Amazon Route 53 health
      * checkers to use to determine whether this health check is healthy.</p>
@@ -142,8 +144,10 @@ namespace Model
     inline AlarmIdentifier& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     CloudWatchRegion m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

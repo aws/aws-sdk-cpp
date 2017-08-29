@@ -34,6 +34,7 @@ namespace Model
     GetGroupRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * The unique Id of the AWS Greengrass Group
      */
@@ -70,6 +71,7 @@ namespace Model
     inline GetGroupRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
   private:
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
   };

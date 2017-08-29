@@ -31,12 +31,12 @@ ReEncryptResult::ReEncryptResult()
 {
 }
 
-ReEncryptResult::ReEncryptResult(const AmazonWebServiceResult<JsonValue>& result)
+ReEncryptResult::ReEncryptResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ReEncryptResult& ReEncryptResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ReEncryptResult& ReEncryptResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CiphertextBlob"))

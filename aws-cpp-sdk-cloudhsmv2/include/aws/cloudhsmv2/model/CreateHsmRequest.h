@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use
      * <a>DescribeClusters</a>.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline CreateHsmRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>The Availability Zone where you are creating the HSM. To find the cluster's
      * Availability Zones, use <a>DescribeClusters</a>.</p>
@@ -119,6 +121,7 @@ namespace Model
      * Availability Zones, use <a>DescribeClusters</a>.</p>
      */
     inline CreateHsmRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>The HSM's IP address. If you specify an IP address, use an available address
@@ -177,10 +180,13 @@ namespace Model
     inline CreateHsmRequest& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A token returned from a previous call to <code>ListConfigurationSets</code>
      * to indicate the position of the configuration set in the configuration set
@@ -94,6 +95,7 @@ namespace Model
      */
     inline ListConfigurationSetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The number of configuration sets to return.</p>
      */
@@ -110,8 +112,10 @@ namespace Model
     inline ListConfigurationSetsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

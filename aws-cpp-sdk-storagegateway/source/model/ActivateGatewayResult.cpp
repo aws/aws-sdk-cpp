@@ -30,12 +30,12 @@ ActivateGatewayResult::ActivateGatewayResult()
 {
 }
 
-ActivateGatewayResult::ActivateGatewayResult(const AmazonWebServiceResult<JsonValue>& result)
+ActivateGatewayResult::ActivateGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ActivateGatewayResult& ActivateGatewayResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ActivateGatewayResult& ActivateGatewayResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

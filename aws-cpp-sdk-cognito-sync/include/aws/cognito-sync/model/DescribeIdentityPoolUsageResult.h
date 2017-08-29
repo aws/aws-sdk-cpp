@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeIdentityPoolUsageResult();
-    DescribeIdentityPoolUsageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeIdentityPoolUsageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeIdentityPoolUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeIdentityPoolUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Information about the usage of the identity pool.
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeIdentityPoolUsageResult& WithIdentityPoolUsage(IdentityPoolUsage&& value) { SetIdentityPoolUsage(std::move(value)); return *this;}
 
   private:
+
     IdentityPoolUsage m_identityPoolUsage;
   };
 

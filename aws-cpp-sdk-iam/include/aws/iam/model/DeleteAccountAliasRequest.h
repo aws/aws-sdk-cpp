@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the account alias to delete.</p> <p>This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
@@ -95,6 +96,7 @@ namespace Model
     inline DeleteAccountAliasRequest& WithAccountAlias(const char* value) { SetAccountAlias(value); return *this;}
 
   private:
+
     Aws::String m_accountAlias;
     bool m_accountAliasHasBeenSet;
   };

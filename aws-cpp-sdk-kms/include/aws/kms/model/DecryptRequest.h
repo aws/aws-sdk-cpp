@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Ciphertext to be decrypted. The blob includes metadata.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>Ciphertext to be decrypted. The blob includes metadata.</p>
      */
     inline DecryptRequest& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
+
 
     /**
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
@@ -172,6 +174,7 @@ namespace Model
      */
     inline DecryptRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
+
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
@@ -229,10 +232,13 @@ namespace Model
     inline DecryptRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
   private:
+
     Aws::Utils::ByteBuffer m_ciphertextBlob;
     bool m_ciphertextBlobHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;
     bool m_encryptionContextHasBeenSet;
+
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet;
   };

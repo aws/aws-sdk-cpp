@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the modified Amazon Redshift event notification subscription.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name of the modified Amazon Redshift event notification subscription.</p>
      */
     inline ModifyEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic to be used by the event
@@ -118,6 +120,7 @@ namespace Model
      * notification subscription.</p>
      */
     inline ModifyEventSubscriptionRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+
 
     /**
      * <p>The type of source that will be generating the events. For example, if you
@@ -188,6 +191,7 @@ namespace Model
      * cluster-parameter-group, cluster-security-group, and cluster-snapshot.</p>
      */
     inline ModifyEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+
 
     /**
      * <p>A list of one or more identifiers of Amazon Redshift source objects. All of
@@ -269,6 +273,7 @@ namespace Model
      */
     inline ModifyEventSubscriptionRequest& AddSourceIds(const char* value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies the Amazon Redshift event categories to be published by the event
      * notification subscription.</p> <p>Values: Configuration, Management, Monitoring,
@@ -325,6 +330,7 @@ namespace Model
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies the Amazon Redshift event severity to be published by the event
      * notification subscription.</p> <p>Values: ERROR, INFO</p>
@@ -367,6 +373,7 @@ namespace Model
      */
     inline ModifyEventSubscriptionRequest& WithSeverity(const char* value) { SetSeverity(value); return *this;}
 
+
     /**
      * <p>A Boolean value indicating if the subscription is enabled. <code>true</code>
      * indicates the subscription is enabled </p>
@@ -386,18 +393,25 @@ namespace Model
     inline ModifyEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionName;
     bool m_subscriptionNameHasBeenSet;
+
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet;
+
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_sourceIds;
     bool m_sourceIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventCategories;
     bool m_eventCategoriesHasBeenSet;
+
     Aws::String m_severity;
     bool m_severityHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
   };

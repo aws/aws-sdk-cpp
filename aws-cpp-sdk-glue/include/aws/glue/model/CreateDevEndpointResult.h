@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     CreateDevEndpointResult();
-    CreateDevEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDevEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDevEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDevEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name assigned to the new DevEndpoint.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline CreateDevEndpointResult& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
 
+
     /**
      * <p>The current status of the new DevEndpoint.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The current status of the new DevEndpoint.</p>
      */
     inline CreateDevEndpointResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The security groups assigned to the new DevEndpoint.</p>
@@ -153,6 +156,7 @@ namespace Model
      */
     inline CreateDevEndpointResult& AddSecurityGroupIds(const char* value) { m_securityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The subnet ID assigned to the new DevEndpoint.</p>
      */
@@ -187,6 +191,7 @@ namespace Model
      * <p>The subnet ID assigned to the new DevEndpoint.</p>
      */
     inline CreateDevEndpointResult& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The AWS ARN of the role assigned to the new DevEndpoint.</p>
@@ -223,6 +228,7 @@ namespace Model
      */
     inline CreateDevEndpointResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>The address of the YARN endpoint used by this DevEndpoint.</p>
      */
@@ -258,6 +264,7 @@ namespace Model
      */
     inline CreateDevEndpointResult& WithYarnEndpointAddress(const char* value) { SetYarnEndpointAddress(value); return *this;}
 
+
     /**
      * <p>The number of nodes in this DevEndpoint.</p>
      */
@@ -272,6 +279,7 @@ namespace Model
      * <p>The number of nodes in this DevEndpoint.</p>
      */
     inline CreateDevEndpointResult& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
+
 
     /**
      * <p>The AWS availability zone where this DevEndpoint is located.</p>
@@ -308,6 +316,7 @@ namespace Model
      */
     inline CreateDevEndpointResult& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The ID of the VPC used by this DevEndpoint.</p>
      */
@@ -342,6 +351,7 @@ namespace Model
      * <p>The ID of the VPC used by this DevEndpoint.</p>
      */
     inline CreateDevEndpointResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>Path to one or more Python libraries in an S3 bucket that will be loaded in
@@ -385,6 +395,7 @@ namespace Model
      */
     inline CreateDevEndpointResult& WithExtraPythonLibsS3Path(const char* value) { SetExtraPythonLibsS3Path(value); return *this;}
 
+
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that will be loaded in your
      * DevEndpoint.</p>
@@ -427,6 +438,7 @@ namespace Model
      */
     inline CreateDevEndpointResult& WithExtraJarsS3Path(const char* value) { SetExtraJarsS3Path(value); return *this;}
 
+
     /**
      * <p>The reason for a current failure in this DevEndpoint.</p>
      */
@@ -462,6 +474,7 @@ namespace Model
      */
     inline CreateDevEndpointResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
     /**
      * <p>The point in time at which this DevEndpoint was created.</p>
      */
@@ -488,18 +501,31 @@ namespace Model
     inline CreateDevEndpointResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_endpointName;
+
     Aws::String m_status;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
+
     Aws::String m_subnetId;
+
     Aws::String m_roleArn;
+
     Aws::String m_yarnEndpointAddress;
+
     int m_numberOfNodes;
+
     Aws::String m_availabilityZone;
+
     Aws::String m_vpcId;
+
     Aws::String m_extraPythonLibsS3Path;
+
     Aws::String m_extraJarsS3Path;
+
     Aws::String m_failureReason;
+
     Aws::Utils::DateTime m_createdTimestamp;
   };
 

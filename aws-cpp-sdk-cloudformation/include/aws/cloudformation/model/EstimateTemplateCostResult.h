@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     EstimateTemplateCostResult();
-    EstimateTemplateCostResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    EstimateTemplateCostResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    EstimateTemplateCostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    EstimateTemplateCostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>An AWS Simple Monthly Calculator URL with a query string that describes the
@@ -90,6 +91,7 @@ namespace Model
      */
     inline EstimateTemplateCostResult& WithUrl(const char* value) { SetUrl(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -106,7 +108,9 @@ namespace Model
     inline EstimateTemplateCostResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_url;
+
     ResponseMetadata m_responseMetadata;
   };
 

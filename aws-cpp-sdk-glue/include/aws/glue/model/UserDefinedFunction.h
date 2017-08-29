@@ -50,6 +50,7 @@ namespace Model
     UserDefinedFunction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the function.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The name of the function.</p>
      */
     inline UserDefinedFunction& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+
 
     /**
      * <p>The Java class that contains the function code.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline UserDefinedFunction& WithClassName(const char* value) { SetClassName(value); return *this;}
 
+
     /**
      * <p>The owner of the function.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      */
     inline UserDefinedFunction& WithOwnerName(const char* value) { SetOwnerName(value); return *this;}
 
+
     /**
      * <p>The owner type.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      */
     inline UserDefinedFunction& WithOwnerType(PrincipalType&& value) { SetOwnerType(std::move(value)); return *this;}
 
+
     /**
      * <p>The time at which the function was created.</p>
      */
@@ -204,6 +209,7 @@ namespace Model
      * <p>The time at which the function was created.</p>
      */
     inline UserDefinedFunction& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The resource URIs for the function.</p>
@@ -241,16 +247,22 @@ namespace Model
     inline UserDefinedFunction& AddResourceUris(ResourceUri&& value) { m_resourceUrisHasBeenSet = true; m_resourceUris.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_className;
     bool m_classNameHasBeenSet;
+
     Aws::String m_ownerName;
     bool m_ownerNameHasBeenSet;
+
     PrincipalType m_ownerType;
     bool m_ownerTypeHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
     Aws::Vector<ResourceUri> m_resourceUris;
     bool m_resourceUrisHasBeenSet;
   };

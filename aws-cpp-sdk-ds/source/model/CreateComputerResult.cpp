@@ -30,12 +30,12 @@ CreateComputerResult::CreateComputerResult()
 {
 }
 
-CreateComputerResult::CreateComputerResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateComputerResult::CreateComputerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateComputerResult& CreateComputerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateComputerResult& CreateComputerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Computer"))

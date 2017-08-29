@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     BatchCheckLayerAvailabilityResult();
-    BatchCheckLayerAvailabilityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchCheckLayerAvailabilityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchCheckLayerAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchCheckLayerAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of image layer objects corresponding to the image layer references in
@@ -85,6 +86,7 @@ namespace Model
      */
     inline BatchCheckLayerAvailabilityResult& AddLayers(Layer&& value) { m_layers.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Any failures associated with the call.</p>
      */
@@ -121,7 +123,9 @@ namespace Model
     inline BatchCheckLayerAvailabilityResult& AddFailures(LayerFailure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Layer> m_layers;
+
     Aws::Vector<LayerFailure> m_failures;
   };
 

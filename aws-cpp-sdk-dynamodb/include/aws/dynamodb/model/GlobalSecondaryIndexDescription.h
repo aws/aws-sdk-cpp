@@ -51,6 +51,7 @@ namespace Model
     GlobalSecondaryIndexDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the global secondary index.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name of the global secondary index.</p>
      */
     inline GlobalSecondaryIndexDescription& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
 
     /**
      * <p>The complete key schema for a global secondary index, which consists of one
@@ -184,6 +186,7 @@ namespace Model
      */
     inline GlobalSecondaryIndexDescription& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Represents attributes that are copied (projected) from the table into the
      * global secondary index. These are in addition to the primary key attributes and
@@ -218,6 +221,7 @@ namespace Model
      * index key attributes, which are automatically projected. </p>
      */
     inline GlobalSecondaryIndexDescription& WithProjection(Projection&& value) { SetProjection(std::move(value)); return *this;}
+
 
     /**
      * <p>The current state of the global secondary index:</p> <ul> <li> <p>
@@ -264,6 +268,7 @@ namespace Model
      */
     inline GlobalSecondaryIndexDescription& WithIndexStatus(IndexStatus&& value) { SetIndexStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether the index is currently backfilling. <i>Backfilling</i> is
      * the process of reading items from the table and determining whether they can be
@@ -302,6 +307,7 @@ namespace Model
      * <code>DescribeTable</code> output.</p> </note>
      */
     inline GlobalSecondaryIndexDescription& WithBackfilling(bool value) { SetBackfilling(value); return *this;}
+
 
     /**
      * <p>Represents the provisioned throughput settings for the specified global
@@ -348,6 +354,7 @@ namespace Model
      */
     inline GlobalSecondaryIndexDescription& WithProvisionedThroughput(ProvisionedThroughputDescription&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
 
+
     /**
      * <p>The total size of the specified index, in bytes. DynamoDB updates this value
      * approximately every six hours. Recent changes might not be reflected in this
@@ -369,6 +376,7 @@ namespace Model
      */
     inline GlobalSecondaryIndexDescription& WithIndexSizeBytes(long long value) { SetIndexSizeBytes(value); return *this;}
 
+
     /**
      * <p>The number of items in the specified index. DynamoDB updates this value
      * approximately every six hours. Recent changes might not be reflected in this
@@ -389,6 +397,7 @@ namespace Model
      * value.</p>
      */
     inline GlobalSecondaryIndexDescription& WithItemCount(long long value) { SetItemCount(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
@@ -426,22 +435,31 @@ namespace Model
     inline GlobalSecondaryIndexDescription& WithIndexArn(const char* value) { SetIndexArn(value); return *this;}
 
   private:
+
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet;
+
     Aws::Vector<KeySchemaElement> m_keySchema;
     bool m_keySchemaHasBeenSet;
+
     Projection m_projection;
     bool m_projectionHasBeenSet;
+
     IndexStatus m_indexStatus;
     bool m_indexStatusHasBeenSet;
+
     bool m_backfilling;
     bool m_backfillingHasBeenSet;
+
     ProvisionedThroughputDescription m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet;
+
     long long m_indexSizeBytes;
     bool m_indexSizeBytesHasBeenSet;
+
     long long m_itemCount;
     bool m_itemCountHasBeenSet;
+
     Aws::String m_indexArn;
     bool m_indexArnHasBeenSet;
   };

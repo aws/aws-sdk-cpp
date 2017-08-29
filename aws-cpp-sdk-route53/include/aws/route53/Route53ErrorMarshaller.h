@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_ROUTE53_API Route53ErrorMarshaller : public Client::XmlErrorMarshaller
+class AWS_ROUTE53_API Route53ErrorMarshaller : public Aws::Client::XmlErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Route53
+} // namespace Client
 } // namespace Aws

@@ -43,6 +43,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Owner& GetOwner() const{ return m_owner; }
 
@@ -57,6 +58,7 @@ namespace Model
 
     
     inline DeleteMarkerEntry& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+
 
     /**
      * The object key.
@@ -93,6 +95,7 @@ namespace Model
      */
     inline DeleteMarkerEntry& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * Version ID of an object.
      */
@@ -128,6 +131,7 @@ namespace Model
      */
     inline DeleteMarkerEntry& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     /**
      * Specifies whether the object is (true) or is not (false) the latest version of
      * an object.
@@ -145,6 +149,7 @@ namespace Model
      * an object.
      */
     inline DeleteMarkerEntry& WithIsLatest(bool value) { SetIsLatest(value); return *this;}
+
 
     /**
      * Date and time the object was last modified.
@@ -172,14 +177,19 @@ namespace Model
     inline DeleteMarkerEntry& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
   private:
+
     Owner m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     bool m_isLatest;
     bool m_isLatestHasBeenSet;
+
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
   };

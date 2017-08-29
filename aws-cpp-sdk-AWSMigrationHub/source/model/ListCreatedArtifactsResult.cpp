@@ -30,12 +30,12 @@ ListCreatedArtifactsResult::ListCreatedArtifactsResult()
 {
 }
 
-ListCreatedArtifactsResult::ListCreatedArtifactsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListCreatedArtifactsResult::ListCreatedArtifactsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListCreatedArtifactsResult& ListCreatedArtifactsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListCreatedArtifactsResult& ListCreatedArtifactsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

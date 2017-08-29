@@ -30,12 +30,12 @@ AcceptMatchResult::AcceptMatchResult()
 {
 }
 
-AcceptMatchResult::AcceptMatchResult(const AmazonWebServiceResult<JsonValue>& result)
+AcceptMatchResult::AcceptMatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AcceptMatchResult& AcceptMatchResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AcceptMatchResult& AcceptMatchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

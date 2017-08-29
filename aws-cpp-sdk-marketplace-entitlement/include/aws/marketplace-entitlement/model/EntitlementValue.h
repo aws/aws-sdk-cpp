@@ -46,6 +46,7 @@ namespace Model
     EntitlementValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The IntegerValue field will be populated with an integer value when the
      * entitlement is an integer type. Otherwise, the field will not be set.</p>
@@ -63,6 +64,7 @@ namespace Model
      * entitlement is an integer type. Otherwise, the field will not be set.</p>
      */
     inline EntitlementValue& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
+
 
     /**
      * <p>The DoubleValue field will be populated with a double value when the
@@ -82,6 +84,7 @@ namespace Model
      */
     inline EntitlementValue& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
 
+
     /**
      * <p>The BooleanValue field will be populated with a boolean value when the
      * entitlement is a boolean type. Otherwise, the field will not be set.</p>
@@ -99,6 +102,7 @@ namespace Model
      * entitlement is a boolean type. Otherwise, the field will not be set.</p>
      */
     inline EntitlementValue& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
+
 
     /**
      * <p>The StringValue field will be populated with a string value when the
@@ -143,12 +147,16 @@ namespace Model
     inline EntitlementValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
   private:
+
     int m_integerValue;
     bool m_integerValueHasBeenSet;
+
     double m_doubleValue;
     bool m_doubleValueHasBeenSet;
+
     bool m_booleanValue;
     bool m_booleanValueHasBeenSet;
+
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet;
   };

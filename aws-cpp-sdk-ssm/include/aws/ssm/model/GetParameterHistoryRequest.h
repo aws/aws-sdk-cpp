@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of a parameter you want to query.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline GetParameterHistoryRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Return decrypted values for secure string parameters. This flag is ignored
      * for String and StringList parameter types.</p>
@@ -88,6 +90,7 @@ namespace Model
      * for String and StringList parameter types.</p>
      */
     inline GetParameterHistoryRequest& WithWithDecryption(bool value) { SetWithDecryption(value); return *this;}
+
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
@@ -109,6 +112,7 @@ namespace Model
      * results.</p>
      */
     inline GetParameterHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -153,12 +157,16 @@ namespace Model
     inline GetParameterHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     bool m_withDecryption;
     bool m_withDecryptionHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

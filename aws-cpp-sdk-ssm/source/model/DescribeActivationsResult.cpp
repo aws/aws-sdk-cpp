@@ -30,12 +30,12 @@ DescribeActivationsResult::DescribeActivationsResult()
 {
 }
 
-DescribeActivationsResult::DescribeActivationsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeActivationsResult::DescribeActivationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeActivationsResult& DescribeActivationsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeActivationsResult& DescribeActivationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ActivationList"))

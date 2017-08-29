@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Screen name of the grantee.
      */
@@ -76,6 +77,7 @@ namespace Model
      * Screen name of the grantee.
      */
     inline Grantee& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
 
     /**
      * Email address of the grantee.
@@ -112,6 +114,7 @@ namespace Model
      */
     inline Grantee& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 
+
     /**
      * The canonical user ID of the grantee.
      */
@@ -147,6 +150,7 @@ namespace Model
      */
     inline Grantee& WithID(const char* value) { SetID(value); return *this;}
 
+
     /**
      * Type of grantee
      */
@@ -171,6 +175,7 @@ namespace Model
      * Type of grantee
      */
     inline Grantee& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * URI of the grantee group.
@@ -208,14 +213,19 @@ namespace Model
     inline Grantee& WithURI(const char* value) { SetURI(value); return *this;}
 
   private:
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     Aws::String m_emailAddress;
     bool m_emailAddressHasBeenSet;
+
     Aws::String m_iD;
     bool m_iDHasBeenSet;
+
     Type m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_uRI;
     bool m_uRIHasBeenSet;
   };

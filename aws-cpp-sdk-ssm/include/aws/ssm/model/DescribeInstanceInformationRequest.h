@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
      * instances.</p>
@@ -80,6 +81,7 @@ namespace Model
      * instances.</p>
      */
     inline DescribeInstanceInformationRequest& AddInstanceInformationFilterList(InstanceInformationFilter&& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -123,6 +125,7 @@ namespace Model
      */
     inline DescribeInstanceInformationRequest& AddFilters(InstanceInformationStringFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of results.
@@ -143,6 +146,7 @@ namespace Model
      * </p>
      */
     inline DescribeInstanceInformationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -187,12 +191,16 @@ namespace Model
     inline DescribeInstanceInformationRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<InstanceInformationFilter> m_instanceInformationFilterList;
     bool m_instanceInformationFilterListHasBeenSet;
+
     Aws::Vector<InstanceInformationStringFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

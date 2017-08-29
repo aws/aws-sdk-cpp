@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The cluster identifier.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline RebootClusterRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
   };

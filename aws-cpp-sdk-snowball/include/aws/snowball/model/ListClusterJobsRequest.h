@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The 39-character ID for the cluster that you want to list, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ListClusterJobsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>The number of <code>JobListEntry</code> objects to return.</p>
      */
@@ -92,6 +94,7 @@ namespace Model
      * <p>The number of <code>JobListEntry</code> objects to return.</p>
      */
     inline ListClusterJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>HTTP requests are stateless. To identify what object comes "next" in the list
@@ -143,10 +146,13 @@ namespace Model
     inline ListClusterJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

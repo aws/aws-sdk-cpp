@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * A destination signifying output to an S3 bucket.
      */
@@ -67,6 +68,7 @@ namespace Model
     inline AnalyticsExportDestination& WithS3BucketDestination(AnalyticsS3BucketDestination&& value) { SetS3BucketDestination(std::move(value)); return *this;}
 
   private:
+
     AnalyticsS3BucketDestination m_s3BucketDestination;
     bool m_s3BucketDestinationHasBeenSet;
   };

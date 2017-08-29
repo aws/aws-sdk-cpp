@@ -43,6 +43,7 @@ namespace Model
     ComputeCapacity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The desired number of streaming instances.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
     inline ComputeCapacity& WithDesiredInstances(int value) { SetDesiredInstances(value); return *this;}
 
   private:
+
     int m_desiredInstances;
     bool m_desiredInstancesHasBeenSet;
   };

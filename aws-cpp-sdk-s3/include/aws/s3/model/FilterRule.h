@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Object key name prefix or suffix identifying one or more objects to which the
      * filtering rule applies. Maximum prefix length can be up to 1,024 characters.
@@ -98,6 +99,7 @@ namespace Model
      */
     inline FilterRule& WithName(FilterRuleName&& value) { SetName(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -120,8 +122,10 @@ namespace Model
     inline FilterRule& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     FilterRuleName m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

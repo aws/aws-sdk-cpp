@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_DIRECTORYSERVICE_API DirectoryServiceErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_DIRECTORYSERVICE_API DirectoryServiceErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace DirectoryService
+} // namespace Client
 } // namespace Aws

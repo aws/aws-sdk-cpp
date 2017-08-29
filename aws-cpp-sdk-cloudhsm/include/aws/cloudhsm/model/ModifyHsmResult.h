@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ModifyHsmResult();
-    ModifyHsmResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyHsmResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyHsmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyHsmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the HSM.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline ModifyHsmResult& WithHsmArn(const char* value) { SetHsmArn(value); return *this;}
 
   private:
+
     Aws::String m_hsmArn;
   };
 

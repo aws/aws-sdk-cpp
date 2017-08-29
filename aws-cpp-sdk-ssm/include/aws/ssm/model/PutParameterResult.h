@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     PutParameterResult();
-    PutParameterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutParameterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutParameterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutParameterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

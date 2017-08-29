@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain containing the workflow executions to count.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the domain containing the workflow executions to count.</p>
      */
     inline CountClosedWorkflowExecutionsRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>If specified, only workflow executions that meet the start time criteria of
@@ -116,6 +118,7 @@ namespace Model
      */
     inline CountClosedWorkflowExecutionsRequest& WithStartTimeFilter(ExecutionTimeFilter&& value) { SetStartTimeFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>If specified, only workflow executions that meet the close time criteria of
      * the filter are counted.</p> <note> <p> <code>startTimeFilter</code> and
@@ -155,6 +158,7 @@ namespace Model
      * these in a request but not both.</p> </note>
      */
     inline CountClosedWorkflowExecutionsRequest& WithCloseTimeFilter(ExecutionTimeFilter&& value) { SetCloseTimeFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>If specified, only workflow executions matching the <code>WorkflowId</code>
@@ -201,6 +205,7 @@ namespace Model
      */
     inline CountClosedWorkflowExecutionsRequest& WithExecutionFilter(WorkflowExecutionFilter&& value) { SetExecutionFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>If specified, indicates the type of the workflow executions to be
      * counted.</p> <note> <p> <code>closeStatusFilter</code>,
@@ -246,6 +251,7 @@ namespace Model
      */
     inline CountClosedWorkflowExecutionsRequest& WithTypeFilter(WorkflowTypeFilter&& value) { SetTypeFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>If specified, only executions that have a tag that matches the filter are
      * counted.</p> <note> <p> <code>closeStatusFilter</code>,
@@ -290,6 +296,7 @@ namespace Model
      * </note>
      */
     inline CountClosedWorkflowExecutionsRequest& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>If specified, only workflow executions that match this close status are
@@ -342,18 +349,25 @@ namespace Model
     inline CountClosedWorkflowExecutionsRequest& WithCloseStatusFilter(CloseStatusFilter&& value) { SetCloseStatusFilter(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     ExecutionTimeFilter m_startTimeFilter;
     bool m_startTimeFilterHasBeenSet;
+
     ExecutionTimeFilter m_closeTimeFilter;
     bool m_closeTimeFilterHasBeenSet;
+
     WorkflowExecutionFilter m_executionFilter;
     bool m_executionFilterHasBeenSet;
+
     WorkflowTypeFilter m_typeFilter;
     bool m_typeFilterHasBeenSet;
+
     TagFilter m_tagFilter;
     bool m_tagFilterHasBeenSet;
+
     CloseStatusFilter m_closeStatusFilter;
     bool m_closeStatusFilterHasBeenSet;
   };

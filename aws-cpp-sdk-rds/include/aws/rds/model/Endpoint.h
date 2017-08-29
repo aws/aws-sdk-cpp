@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies the DNS address of the DB instance.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
 
+
     /**
      * <p>Specifies the port that the database engine is listening on.</p>
      */
@@ -100,6 +102,7 @@ namespace Model
      * <p>Specifies the port that the database engine is listening on.</p>
      */
     inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
@@ -144,10 +147,13 @@ namespace Model
     inline Endpoint& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
   private:
+
     Aws::String m_address;
     bool m_addressHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
   };

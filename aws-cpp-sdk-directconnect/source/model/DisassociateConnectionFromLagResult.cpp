@@ -32,14 +32,14 @@ DisassociateConnectionFromLagResult::DisassociateConnectionFromLagResult() :
 {
 }
 
-DisassociateConnectionFromLagResult::DisassociateConnectionFromLagResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DisassociateConnectionFromLagResult::DisassociateConnectionFromLagResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_connectionState(ConnectionState::NOT_SET),
     m_vlan(0)
 {
   *this = result;
 }
 
-DisassociateConnectionFromLagResult& DisassociateConnectionFromLagResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateConnectionFromLagResult& DisassociateConnectionFromLagResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ownerAccount"))

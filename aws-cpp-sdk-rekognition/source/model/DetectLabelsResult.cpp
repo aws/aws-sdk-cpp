@@ -31,13 +31,13 @@ DetectLabelsResult::DetectLabelsResult() :
 {
 }
 
-DetectLabelsResult::DetectLabelsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DetectLabelsResult::DetectLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_orientationCorrection(OrientationCorrection::NOT_SET)
 {
   *this = result;
 }
 
-DetectLabelsResult& DetectLabelsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DetectLabelsResult& DetectLabelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Labels"))

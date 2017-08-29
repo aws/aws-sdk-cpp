@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListVerifiedEmailAddressesResult();
-    ListVerifiedEmailAddressesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListVerifiedEmailAddressesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListVerifiedEmailAddressesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListVerifiedEmailAddressesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of email addresses that have been verified.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ListVerifiedEmailAddressesResult& AddVerifiedEmailAddresses(const char* value) { m_verifiedEmailAddresses.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,7 +107,9 @@ namespace Model
     inline ListVerifiedEmailAddressesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_verifiedEmailAddresses;
+
     ResponseMetadata m_responseMetadata;
   };
 

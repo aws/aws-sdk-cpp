@@ -30,12 +30,12 @@ UpdateManagedInstanceRoleResult::UpdateManagedInstanceRoleResult()
 {
 }
 
-UpdateManagedInstanceRoleResult::UpdateManagedInstanceRoleResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateManagedInstanceRoleResult::UpdateManagedInstanceRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateManagedInstanceRoleResult& UpdateManagedInstanceRoleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateManagedInstanceRoleResult& UpdateManagedInstanceRoleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

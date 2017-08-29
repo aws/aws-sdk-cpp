@@ -52,6 +52,7 @@ namespace Model
     RemoteAccessSession& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the remote access session.</p>
      */
     inline RemoteAccessSession& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The name of the remote access session.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline RemoteAccessSession& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The date and time the remote access session was created.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      * <p>The date and time the remote access session was created.</p>
      */
     inline RemoteAccessSession& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the remote access session. Can be any of the following:</p>
@@ -207,6 +211,7 @@ namespace Model
      */
     inline RemoteAccessSession& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The result of the remote access session. Can be any of the following:</p>
      * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
@@ -257,6 +262,7 @@ namespace Model
      */
     inline RemoteAccessSession& WithResult(ExecutionResult&& value) { SetResult(std::move(value)); return *this;}
 
+
     /**
      * <p>A message about the remote access session.</p>
      */
@@ -292,6 +298,7 @@ namespace Model
      */
     inline RemoteAccessSession& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The date and time the remote access session was started.</p>
      */
@@ -316,6 +323,7 @@ namespace Model
      * <p>The date and time the remote access session was started.</p>
      */
     inline RemoteAccessSession& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time the remote access session was stopped.</p>
@@ -342,6 +350,7 @@ namespace Model
      */
     inline RemoteAccessSession& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(std::move(value)); return *this;}
 
+
     /**
      * <p>The device (phone or tablet) used in the remote access session.</p>
      */
@@ -366,6 +375,7 @@ namespace Model
      * <p>The device (phone or tablet) used in the remote access session.</p>
      */
     inline RemoteAccessSession& WithDevice(Device&& value) { SetDevice(std::move(value)); return *this;}
+
 
     /**
      * <p>The billing method of the remote access session. Possible values include
@@ -412,6 +422,7 @@ namespace Model
      */
     inline RemoteAccessSession& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of minutes a device is used in a remote access sesssion (including
      * setup and teardown minutes).</p>
@@ -441,6 +452,7 @@ namespace Model
      * setup and teardown minutes).</p>
      */
     inline RemoteAccessSession& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(std::move(value)); return *this;}
+
 
     /**
      * <p>The endpoint for the remote access sesssion.</p>
@@ -478,28 +490,40 @@ namespace Model
     inline RemoteAccessSession& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
+
     ExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     ExecutionResult m_result;
     bool m_resultHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::Utils::DateTime m_started;
     bool m_startedHasBeenSet;
+
     Aws::Utils::DateTime m_stopped;
     bool m_stoppedHasBeenSet;
+
     Device m_device;
     bool m_deviceHasBeenSet;
+
     BillingMethod m_billingMethod;
     bool m_billingMethodHasBeenSet;
+
     DeviceMinutes m_deviceMinutes;
     bool m_deviceMinutesHasBeenSet;
+
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
   };

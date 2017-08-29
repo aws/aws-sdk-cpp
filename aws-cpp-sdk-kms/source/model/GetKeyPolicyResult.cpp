@@ -30,12 +30,12 @@ GetKeyPolicyResult::GetKeyPolicyResult()
 {
 }
 
-GetKeyPolicyResult::GetKeyPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+GetKeyPolicyResult::GetKeyPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetKeyPolicyResult& GetKeyPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetKeyPolicyResult& GetKeyPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Policy"))

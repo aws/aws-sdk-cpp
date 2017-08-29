@@ -45,6 +45,7 @@ namespace Model
     Alarm& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
      * be used only once in a list of alarms.</p>
@@ -88,6 +89,7 @@ namespace Model
     inline Alarm& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

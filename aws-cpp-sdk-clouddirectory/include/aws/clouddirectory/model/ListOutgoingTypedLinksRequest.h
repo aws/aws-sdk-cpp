@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the directory where you want to list the
      * typed links.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ListOutgoingTypedLinksRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>A reference that identifies the object whose attributes will be listed.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>A reference that identifies the object whose attributes will be listed.</p>
      */
     inline ListOutgoingTypedLinksRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides range filters for multiple attributes. When providing ranges to
@@ -164,6 +167,7 @@ namespace Model
      */
     inline ListOutgoingTypedLinksRequest& AddFilterAttributeRanges(TypedLinkAttributeRange&& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Filters are interpreted in the order of the attributes defined on the typed
      * link facet, not the order they are supplied to any API calls.</p>
@@ -193,6 +197,7 @@ namespace Model
      * link facet, not the order they are supplied to any API calls.</p>
      */
     inline ListOutgoingTypedLinksRequest& WithFilterTypedLink(TypedLinkSchemaAndFacetName&& value) { SetFilterTypedLink(std::move(value)); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -229,6 +234,7 @@ namespace Model
      */
     inline ListOutgoingTypedLinksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -243,6 +249,7 @@ namespace Model
      * <p>The maximum number of results to retrieve.</p>
      */
     inline ListOutgoingTypedLinksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The consistency level to execute the request at.</p>
@@ -270,18 +277,25 @@ namespace Model
     inline ListOutgoingTypedLinksRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
+
     Aws::Vector<TypedLinkAttributeRange> m_filterAttributeRanges;
     bool m_filterAttributeRangesHasBeenSet;
+
     TypedLinkSchemaAndFacetName m_filterTypedLink;
     bool m_filterTypedLinkHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     ConsistencyLevel m_consistencyLevel;
     bool m_consistencyLevelHasBeenSet;
   };

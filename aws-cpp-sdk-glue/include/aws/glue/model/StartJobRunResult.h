@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StartJobRunResult();
-    StartJobRunResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartJobRunResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartJobRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID assigned to this job run.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline StartJobRunResult& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
 
   private:
+
     Aws::String m_jobRunId;
   };
 

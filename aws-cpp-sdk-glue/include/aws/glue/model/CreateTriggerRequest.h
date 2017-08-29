@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name to assign to the new trigger.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline CreateTriggerRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The type of the new trigger.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The type of the new trigger.</p>
      */
     inline CreateTriggerRequest& WithType(TriggerType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>A cron schedule expression for the new trigger.</p>
@@ -135,6 +138,7 @@ namespace Model
      */
     inline CreateTriggerRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 
+
     /**
      * <p>A predicate to specify when the new trigger should fire.</p>
      */
@@ -159,6 +163,7 @@ namespace Model
      * <p>A predicate to specify when the new trigger should fire.</p>
      */
     inline CreateTriggerRequest& WithPredicate(Predicate&& value) { SetPredicate(std::move(value)); return *this;}
+
 
     /**
      * <p>The actions initiated by this trigger when it fires.</p>
@@ -194,6 +199,7 @@ namespace Model
      * <p>The actions initiated by this trigger when it fires.</p>
      */
     inline CreateTriggerRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A description of the new trigger.</p>
@@ -231,16 +237,22 @@ namespace Model
     inline CreateTriggerRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     TriggerType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_schedule;
     bool m_scheduleHasBeenSet;
+
     Predicate m_predicate;
     bool m_predicateHasBeenSet;
+
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

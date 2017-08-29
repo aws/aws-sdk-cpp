@@ -47,6 +47,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetExportRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The name of the <a>Stage</a> that will be exported.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline GetExportRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
+
     /**
      * <p>The type of export. Currently only 'swagger' is supported.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The type of export. Currently only 'swagger' is supported.</p>
      */
     inline GetExportRequest& WithExportType(const char* value) { SetExportType(value); return *this;}
+
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
@@ -296,6 +300,7 @@ namespace Model
      */
     inline GetExportRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The content-type of the export, for example <code>application/json</code>.
      * Currently <code>application/json</code> and <code>application/yaml</code> are
@@ -353,14 +358,19 @@ namespace Model
     inline GetExportRequest& WithAccepts(const char* value) { SetAccepts(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     Aws::String m_exportType;
     bool m_exportTypeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::String m_accepts;
     bool m_acceptsHasBeenSet;
   };

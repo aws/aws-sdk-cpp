@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     CreateDomainNameResult();
-    CreateDomainNameResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDomainNameResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDomainNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDomainNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline CreateDomainNameResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The name of the certificate.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The name of the certificate.</p>
      */
     inline CreateDomainNameResult& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
+
 
     /**
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
@@ -162,6 +165,7 @@ namespace Model
      */
     inline CreateDomainNameResult& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
     /**
      * <p>The timestamp when the certificate was uploaded.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      * <p>The timestamp when the certificate was uploaded.</p>
      */
     inline CreateDomainNameResult& WithCertificateUploadDate(Aws::Utils::DateTime&& value) { SetCertificateUploadDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The domain name of the Amazon CloudFront distribution. For more information,
@@ -237,10 +242,15 @@ namespace Model
     inline CreateDomainNameResult& WithDistributionDomainName(const char* value) { SetDistributionDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
+
     Aws::String m_certificateName;
+
     Aws::String m_certificateArn;
+
     Aws::Utils::DateTime m_certificateUploadDate;
+
     Aws::String m_distributionDomainName;
   };
 

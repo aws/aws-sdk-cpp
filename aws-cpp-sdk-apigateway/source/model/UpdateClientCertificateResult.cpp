@@ -30,12 +30,12 @@ UpdateClientCertificateResult::UpdateClientCertificateResult()
 {
 }
 
-UpdateClientCertificateResult::UpdateClientCertificateResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateClientCertificateResult::UpdateClientCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateClientCertificateResult& UpdateClientCertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateClientCertificateResult& UpdateClientCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("clientCertificateId"))

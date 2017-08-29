@@ -30,12 +30,12 @@ ListProvisionedCapacityResult::ListProvisionedCapacityResult()
 {
 }
 
-ListProvisionedCapacityResult::ListProvisionedCapacityResult(const AmazonWebServiceResult<JsonValue>& result)
+ListProvisionedCapacityResult::ListProvisionedCapacityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListProvisionedCapacityResult& ListProvisionedCapacityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListProvisionedCapacityResult& ListProvisionedCapacityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ProvisionedCapacityList"))

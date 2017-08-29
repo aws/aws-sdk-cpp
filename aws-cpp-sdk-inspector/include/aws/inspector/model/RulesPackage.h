@@ -47,6 +47,7 @@ namespace Model
     RulesPackage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the rules package.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The ARN of the rules package.</p>
      */
     inline RulesPackage& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The name of the rules package.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline RulesPackage& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The version ID of the rules package.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      */
     inline RulesPackage& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>The provider of the rules package.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      * <p>The provider of the rules package.</p>
      */
     inline RulesPackage& WithProvider(const char* value) { SetProvider(value); return *this;}
+
 
     /**
      * <p>The description of the rules package.</p>
@@ -223,14 +228,19 @@ namespace Model
     inline RulesPackage& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_provider;
     bool m_providerHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

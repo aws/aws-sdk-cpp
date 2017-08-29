@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeEventAggregatesResult();
-    DescribeEventAggregatesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEventAggregatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventAggregatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventAggregatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of events in each category that meet the optional filter
@@ -84,6 +85,7 @@ namespace Model
      * criteria.</p>
      */
     inline DescribeEventAggregatesResult& AddEventAggregates(EventAggregate&& value) { m_eventAggregates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -149,7 +151,9 @@ namespace Model
     inline DescribeEventAggregatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<EventAggregate> m_eventAggregates;
+
     Aws::String m_nextToken;
   };
 

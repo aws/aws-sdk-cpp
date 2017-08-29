@@ -31,12 +31,12 @@ DescribeMovingAddressesResponse::DescribeMovingAddressesResponse()
 {
 }
 
-DescribeMovingAddressesResponse::DescribeMovingAddressesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeMovingAddressesResponse::DescribeMovingAddressesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeMovingAddressesResponse& DescribeMovingAddressesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeMovingAddressesResponse& DescribeMovingAddressesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The user pool ID for the user pool.</p>
      */
     inline ListUsersInGroupRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The name of the group.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline ListUsersInGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>The limit of the request to list users.</p>
      */
@@ -120,6 +123,7 @@ namespace Model
      * <p>The limit of the request to list users.</p>
      */
     inline ListUsersInGroupRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -164,12 +168,16 @@ namespace Model
     inline ListUsersInGroupRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

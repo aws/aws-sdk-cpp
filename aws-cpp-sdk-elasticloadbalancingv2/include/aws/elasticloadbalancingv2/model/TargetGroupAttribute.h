@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic
@@ -167,6 +168,7 @@ namespace Model
      */
     inline TargetGroupAttribute& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The value of the attribute.</p>
      */
@@ -203,8 +205,10 @@ namespace Model
     inline TargetGroupAttribute& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

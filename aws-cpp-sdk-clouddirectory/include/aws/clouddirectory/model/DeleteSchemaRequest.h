@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the development schema. For more
      * information, see <a>arns</a>.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline DeleteSchemaRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
   };

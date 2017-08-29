@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The cluster identifier (ID) for the cluster whose tags you are getting. To
      * find the cluster ID, use <a>DescribeClusters</a>.</p>
@@ -77,6 +78,7 @@ namespace Model
      * find the cluster ID, use <a>DescribeClusters</a>.</p>
      */
     inline ListTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>The <code>NextToken</code> value that you received in the previous response.
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ListTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of tags to return in the response. When there are more
      * tags than the number you specify, the response contains a <code>NextToken</code>
@@ -142,10 +145,13 @@ namespace Model
     inline ListTagsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

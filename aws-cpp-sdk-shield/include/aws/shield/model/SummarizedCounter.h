@@ -45,6 +45,7 @@ namespace Model
     SummarizedCounter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The counter name.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline SummarizedCounter& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The maximum value of the counter for a specified time period.</p>
      */
@@ -94,6 +96,7 @@ namespace Model
      * <p>The maximum value of the counter for a specified time period.</p>
      */
     inline SummarizedCounter& WithMax(double value) { SetMax(value); return *this;}
+
 
     /**
      * <p>The average value of the counter for a specified time period.</p>
@@ -110,6 +113,7 @@ namespace Model
      */
     inline SummarizedCounter& WithAverage(double value) { SetAverage(value); return *this;}
 
+
     /**
      * <p>The total of counter values for a specified time period.</p>
      */
@@ -125,6 +129,7 @@ namespace Model
      */
     inline SummarizedCounter& WithSum(double value) { SetSum(value); return *this;}
 
+
     /**
      * <p>The number of counters for a specified time period.</p>
      */
@@ -139,6 +144,7 @@ namespace Model
      * <p>The number of counters for a specified time period.</p>
      */
     inline SummarizedCounter& WithN(int value) { SetN(value); return *this;}
+
 
     /**
      * <p>The unit of the counters.</p>
@@ -176,16 +182,22 @@ namespace Model
     inline SummarizedCounter& WithUnit(const char* value) { SetUnit(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     double m_max;
     bool m_maxHasBeenSet;
+
     double m_average;
     bool m_averageHasBeenSet;
+
     double m_sum;
     bool m_sumHasBeenSet;
+
     int m_n;
     bool m_nHasBeenSet;
+
     Aws::String m_unit;
     bool m_unitHasBeenSet;
   };

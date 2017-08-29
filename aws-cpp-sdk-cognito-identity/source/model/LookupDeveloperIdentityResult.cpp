@@ -30,12 +30,12 @@ LookupDeveloperIdentityResult::LookupDeveloperIdentityResult()
 {
 }
 
-LookupDeveloperIdentityResult::LookupDeveloperIdentityResult(const AmazonWebServiceResult<JsonValue>& result)
+LookupDeveloperIdentityResult::LookupDeveloperIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-LookupDeveloperIdentityResult& LookupDeveloperIdentityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+LookupDeveloperIdentityResult& LookupDeveloperIdentityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityId"))

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the instance to access.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline GetInstanceAccessDetailsRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
+
     /**
      * <p>The protocol to use to connect to your instance. Defaults to
      * <code>ssh</code>.</p>
@@ -103,8 +105,10 @@ namespace Model
     inline GetInstanceAccessDetailsRequest& WithProtocol(InstanceAccessProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
+
     InstanceAccessProtocol m_protocol;
     bool m_protocolHasBeenSet;
   };

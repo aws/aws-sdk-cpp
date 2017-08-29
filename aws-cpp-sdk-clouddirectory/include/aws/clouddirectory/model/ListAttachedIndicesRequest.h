@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the directory.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline ListAttachedIndicesRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>A reference to the object that has indices attached.</p>
      */
@@ -97,6 +99,7 @@ namespace Model
      * <p>A reference to the object that has indices attached.</p>
      */
     inline ListAttachedIndicesRequest& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -133,6 +136,7 @@ namespace Model
      */
     inline ListAttachedIndicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -147,6 +151,7 @@ namespace Model
      * <p>The maximum number of results to retrieve.</p>
      */
     inline ListAttachedIndicesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The consistency level to use for this operation.</p>
@@ -174,14 +179,19 @@ namespace Model
     inline ListAttachedIndicesRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_targetReference;
     bool m_targetReferenceHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     ConsistencyLevel m_consistencyLevel;
     bool m_consistencyLevelHasBeenSet;
   };

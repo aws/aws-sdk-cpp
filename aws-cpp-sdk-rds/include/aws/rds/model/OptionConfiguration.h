@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The configuration of options to include in a group.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline OptionConfiguration& WithOptionName(const char* value) { SetOptionName(value); return *this;}
 
+
     /**
      * <p>The optional port for the option.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The optional port for the option.</p>
      */
     inline OptionConfiguration& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The version for the option.</p>
@@ -134,6 +137,7 @@ namespace Model
      * <p>The version for the option.</p>
      */
     inline OptionConfiguration& WithOptionVersion(const char* value) { SetOptionVersion(value); return *this;}
+
 
     /**
      * <p>A list of DBSecurityGroupMemebrship name strings used for this option.</p>
@@ -175,6 +179,7 @@ namespace Model
      */
     inline OptionConfiguration& AddDBSecurityGroupMemberships(const char* value) { m_dBSecurityGroupMembershipsHasBeenSet = true; m_dBSecurityGroupMemberships.push_back(value); return *this; }
 
+
     /**
      * <p>A list of VpcSecurityGroupMemebrship name strings used for this option.</p>
      */
@@ -215,6 +220,7 @@ namespace Model
      */
     inline OptionConfiguration& AddVpcSecurityGroupMemberships(const char* value) { m_vpcSecurityGroupMembershipsHasBeenSet = true; m_vpcSecurityGroupMemberships.push_back(value); return *this; }
 
+
     /**
      * <p>The option settings to include in an option group.</p>
      */
@@ -251,16 +257,22 @@ namespace Model
     inline OptionConfiguration& AddOptionSettings(OptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_optionName;
     bool m_optionNameHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_optionVersion;
     bool m_optionVersionHasBeenSet;
+
     Aws::Vector<Aws::String> m_dBSecurityGroupMemberships;
     bool m_dBSecurityGroupMembershipsHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupMemberships;
     bool m_vpcSecurityGroupMembershipsHasBeenSet;
+
     Aws::Vector<OptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
   };

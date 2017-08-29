@@ -50,6 +50,7 @@ namespace Model
     KeySchemaElement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of a key attribute.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline KeySchemaElement& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
+
     /**
      * <p>The attribute data, consisting of the data type and the attribute value
      * itself.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline KeySchemaElement& WithKeyType(KeyType&& value) { SetKeyType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     KeyType m_keyType;
     bool m_keyTypeHasBeenSet;
   };

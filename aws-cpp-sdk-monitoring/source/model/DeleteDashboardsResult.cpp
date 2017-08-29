@@ -31,12 +31,12 @@ DeleteDashboardsResult::DeleteDashboardsResult()
 {
 }
 
-DeleteDashboardsResult::DeleteDashboardsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteDashboardsResult::DeleteDashboardsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteDashboardsResult& DeleteDashboardsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteDashboardsResult& DeleteDashboardsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

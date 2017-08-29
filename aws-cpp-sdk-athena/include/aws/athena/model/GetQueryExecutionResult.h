@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetQueryExecutionResult();
-    GetQueryExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetQueryExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetQueryExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetQueryExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the query execution.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetQueryExecutionResult& WithQueryExecution(QueryExecution&& value) { SetQueryExecution(std::move(value)); return *this;}
 
   private:
+
     QueryExecution m_queryExecution;
   };
 

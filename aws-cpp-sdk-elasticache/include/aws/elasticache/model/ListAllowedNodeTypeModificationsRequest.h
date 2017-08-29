@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cache cluster you want to scale up to a larger node instanced
      * type. ElastiCache uses the cluster id to identify the current node type of this
@@ -111,6 +112,7 @@ namespace Model
      * </important>
      */
     inline ListAllowedNodeTypeModificationsRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+
 
     /**
      * <p>The name of the replication group want to scale up to a larger node type.
@@ -183,8 +185,10 @@ namespace Model
     inline ListAllowedNodeTypeModificationsRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 
   private:
+
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
+
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
   };

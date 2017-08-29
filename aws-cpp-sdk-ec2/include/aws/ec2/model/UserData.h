@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The user data. If you are using an AWS SDK or command line tool,
      * Base64-encoding is performed for you, and you can load the text from a file.
@@ -98,6 +99,7 @@ namespace Model
     inline UserData& WithData(const char* value) { SetData(value); return *this;}
 
   private:
+
     Aws::String m_data;
     bool m_dataHasBeenSet;
   };

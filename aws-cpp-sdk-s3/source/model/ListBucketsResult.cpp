@@ -29,12 +29,12 @@ ListBucketsResult::ListBucketsResult()
 {
 }
 
-ListBucketsResult::ListBucketsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListBucketsResult::ListBucketsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListBucketsResult& ListBucketsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListBucketsResult& ListBucketsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

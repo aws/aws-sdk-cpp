@@ -47,6 +47,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the configuration set to describe.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the configuration set to describe.</p>
      */
     inline DescribeConfigurationSetRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+
 
     /**
      * <p>A list of configuration set attributes to return.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline DescribeConfigurationSetRequest& AddConfigurationSetAttributeNames(ConfigurationSetAttribute&& value) { m_configurationSetAttributeNamesHasBeenSet = true; m_configurationSetAttributeNames.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet;
+
     Aws::Vector<ConfigurationSetAttribute> m_configurationSetAttributeNames;
     bool m_configurationSetAttributeNamesHasBeenSet;
   };

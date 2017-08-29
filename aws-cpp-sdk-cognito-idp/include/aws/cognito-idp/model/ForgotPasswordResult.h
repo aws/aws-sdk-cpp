@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ForgotPasswordResult();
-    ForgotPasswordResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ForgotPasswordResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ForgotPasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ForgotPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The code delivery details returned by the server in response to the request
@@ -78,6 +79,7 @@ namespace Model
     inline ForgotPasswordResult& WithCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { SetCodeDeliveryDetails(std::move(value)); return *this;}
 
   private:
+
     CodeDeliveryDetailsType m_codeDeliveryDetails;
   };
 

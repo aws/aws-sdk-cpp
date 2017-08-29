@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListPipelinesResult();
-    ListPipelinesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPipelinesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPipelinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPipelinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The pipeline identifiers. If you require additional information about the
@@ -97,6 +98,7 @@ namespace Model
      */
     inline ListPipelinesResult& AddPipelineIdList(PipelineIdName&& value) { m_pipelineIdList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The starting point for the next page of results. To view the next page of
      * results, call <code>ListPipelinesOutput</code> again with this marker value. If
@@ -146,6 +148,7 @@ namespace Model
      */
     inline ListPipelinesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Indicates whether there are more results that can be obtained by a subsequent
      * call.</p>
@@ -165,8 +168,11 @@ namespace Model
     inline ListPipelinesResult& WithHasMoreResults(bool value) { SetHasMoreResults(value); return *this;}
 
   private:
+
     Aws::Vector<PipelineIdName> m_pipelineIdList;
+
     Aws::String m_marker;
+
     bool m_hasMoreResults;
   };
 

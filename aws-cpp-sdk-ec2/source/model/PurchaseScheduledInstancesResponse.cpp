@@ -31,12 +31,12 @@ PurchaseScheduledInstancesResponse::PurchaseScheduledInstancesResponse()
 {
 }
 
-PurchaseScheduledInstancesResponse::PurchaseScheduledInstancesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+PurchaseScheduledInstancesResponse::PurchaseScheduledInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-PurchaseScheduledInstancesResponse& PurchaseScheduledInstancesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+PurchaseScheduledInstancesResponse& PurchaseScheduledInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

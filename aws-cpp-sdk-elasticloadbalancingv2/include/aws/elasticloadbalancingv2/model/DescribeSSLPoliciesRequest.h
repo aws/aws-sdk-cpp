@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The names of the policies.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The names of the policies.</p>
      */
     inline DescribeSSLPoliciesRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -121,6 +123,7 @@ namespace Model
      */
     inline DescribeSSLPoliciesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return with this call.</p>
      */
@@ -137,10 +140,13 @@ namespace Model
     inline DescribeSSLPoliciesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
   };

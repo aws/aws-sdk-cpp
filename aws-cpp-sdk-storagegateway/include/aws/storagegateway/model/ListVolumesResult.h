@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListVolumesResult();
-    ListVolumesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVolumesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListVolumesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -64,6 +65,7 @@ namespace Model
     
     inline ListVolumesResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -84,6 +86,7 @@ namespace Model
 
     
     inline ListVolumesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     
     inline const Aws::Vector<VolumeInfo>& GetVolumeInfos() const{ return m_volumeInfos; }
@@ -107,8 +110,11 @@ namespace Model
     inline ListVolumesResult& AddVolumeInfos(VolumeInfo&& value) { m_volumeInfos.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_gatewayARN;
+
     Aws::String m_marker;
+
     Aws::Vector<VolumeInfo> m_volumeInfos;
   };
 

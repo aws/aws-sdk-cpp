@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the repository to set or change the comment or description
      * for.</p>
@@ -81,6 +82,7 @@ namespace Model
      * for.</p>
      */
     inline UpdateRepositoryDescriptionRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The new comment or description for the specified repository. Repository
@@ -125,8 +127,10 @@ namespace Model
     inline UpdateRepositoryDescriptionRequest& WithRepositoryDescription(const char* value) { SetRepositoryDescription(value); return *this;}
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_repositoryDescription;
     bool m_repositoryDescriptionHasBeenSet;
   };

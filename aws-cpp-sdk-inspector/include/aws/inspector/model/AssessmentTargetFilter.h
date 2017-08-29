@@ -46,6 +46,7 @@ namespace Model
     AssessmentTargetFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>For a record to match a filter, an explicit value or a string that contains a
      * wildcard that is specified for this data type property must match the value of
@@ -103,6 +104,7 @@ namespace Model
     inline AssessmentTargetFilter& WithAssessmentTargetNamePattern(const char* value) { SetAssessmentTargetNamePattern(value); return *this;}
 
   private:
+
     Aws::String m_assessmentTargetNamePattern;
     bool m_assessmentTargetNamePatternHasBeenSet;
   };

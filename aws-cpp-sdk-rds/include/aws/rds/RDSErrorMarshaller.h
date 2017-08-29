@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_RDS_API RDSErrorMarshaller : public Client::XmlErrorMarshaller
+class AWS_RDS_API RDSErrorMarshaller : public Aws::Client::XmlErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace RDS
+} // namespace Client
 } // namespace Aws

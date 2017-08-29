@@ -30,12 +30,12 @@ DisableSsoResult::DisableSsoResult()
 {
 }
 
-DisableSsoResult::DisableSsoResult(const AmazonWebServiceResult<JsonValue>& result)
+DisableSsoResult::DisableSsoResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisableSsoResult& DisableSsoResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisableSsoResult& DisableSsoResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

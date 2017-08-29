@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the receipt rule set to which the receipt rule belongs.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline UpdateReceiptRuleRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
+
     /**
      * <p>A data structure that contains the updated receipt rule information.</p>
      */
@@ -106,8 +108,10 @@ namespace Model
     inline UpdateReceiptRuleRequest& WithRule(ReceiptRule&& value) { SetRule(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet;
+
     ReceiptRule m_rule;
     bool m_ruleHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     Record& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The data blob, which is base64-encoded when the blob is serialized. The
      * maximum size of the data blob, before base64-encoding, is 1,000 KB.</p>
@@ -76,6 +77,7 @@ namespace Model
     inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_data;
     bool m_dataHasBeenSet;
   };

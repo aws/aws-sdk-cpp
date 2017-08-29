@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline DescribeRefreshSchemasStatusRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
   private:
+
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet;
   };

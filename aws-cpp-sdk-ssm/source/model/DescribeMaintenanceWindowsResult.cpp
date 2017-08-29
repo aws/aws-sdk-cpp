@@ -30,12 +30,12 @@ DescribeMaintenanceWindowsResult::DescribeMaintenanceWindowsResult()
 {
 }
 
-DescribeMaintenanceWindowsResult::DescribeMaintenanceWindowsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMaintenanceWindowsResult::DescribeMaintenanceWindowsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeMaintenanceWindowsResult& DescribeMaintenanceWindowsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMaintenanceWindowsResult& DescribeMaintenanceWindowsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WindowIdentities"))

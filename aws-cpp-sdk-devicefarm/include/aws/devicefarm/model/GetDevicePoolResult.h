@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetDevicePoolResult();
-    GetDevicePoolResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDevicePoolResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDevicePoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDevicePoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An object containing information about the requested device pool.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline GetDevicePoolResult& WithDevicePool(DevicePool&& value) { SetDevicePool(std::move(value)); return *this;}
 
   private:
+
     DevicePool m_devicePool;
   };
 

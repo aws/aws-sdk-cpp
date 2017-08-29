@@ -48,6 +48,7 @@ namespace Model
     ReviewReport& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> A list of ReviewResults objects for each action specified in the Review
      * Policy. </p>
@@ -89,6 +90,7 @@ namespace Model
      * Policy. </p>
      */
     inline ReviewReport& AddReviewResults(ReviewResultDetail&& value) { m_reviewResultsHasBeenSet = true; m_reviewResults.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> A list of ReviewAction objects for each action specified in the Review
@@ -133,8 +135,10 @@ namespace Model
     inline ReviewReport& AddReviewActions(ReviewActionDetail&& value) { m_reviewActionsHasBeenSet = true; m_reviewActions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ReviewResultDetail> m_reviewResults;
     bool m_reviewResultsHasBeenSet;
+
     Aws::Vector<ReviewActionDetail> m_reviewActions;
     bool m_reviewActionsHasBeenSet;
   };

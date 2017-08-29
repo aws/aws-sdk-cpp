@@ -45,6 +45,7 @@ namespace Model
     MessageResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Application id of the message.
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline MessageResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     /**
      * Original request Id for which this message was delivered.
      */
@@ -114,6 +116,7 @@ namespace Model
      * Original request Id for which this message was delivered.
      */
     inline MessageResponse& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
 
     /**
      * A map containing a multi part response for each address, with the address as the
@@ -182,10 +185,13 @@ namespace Model
     inline MessageResponse& AddResult(const char* key, const MessageResult& value) { m_resultHasBeenSet = true; m_result.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
+
     Aws::Map<Aws::String, MessageResult> m_result;
     bool m_resultHasBeenSet;
   };

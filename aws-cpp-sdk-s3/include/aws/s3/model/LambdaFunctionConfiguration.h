@@ -50,6 +50,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetId() const{ return m_id; }
 
@@ -70,6 +71,7 @@ namespace Model
 
     
     inline LambdaFunctionConfiguration& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Lambda cloud function ARN that Amazon S3 can invoke when it detects events of
@@ -113,6 +115,7 @@ namespace Model
      */
     inline LambdaFunctionConfiguration& WithLambdaFunctionArn(const char* value) { SetLambdaFunctionArn(value); return *this;}
 
+
     
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
@@ -134,6 +137,7 @@ namespace Model
     
     inline LambdaFunctionConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
+
     
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
 
@@ -150,12 +154,16 @@ namespace Model
     inline LambdaFunctionConfiguration& WithFilter(NotificationConfigurationFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_lambdaFunctionArn;
     bool m_lambdaFunctionArnHasBeenSet;
+
     Aws::Vector<Event> m_events;
     bool m_eventsHasBeenSet;
+
     NotificationConfigurationFilter m_filter;
     bool m_filterHasBeenSet;
   };

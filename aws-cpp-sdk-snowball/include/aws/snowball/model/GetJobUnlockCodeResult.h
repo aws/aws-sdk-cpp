@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetJobUnlockCodeResult();
-    GetJobUnlockCodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobUnlockCodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobUnlockCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobUnlockCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>UnlockCode</code> value for the specified job. The
@@ -91,6 +92,7 @@ namespace Model
     inline GetJobUnlockCodeResult& WithUnlockCode(const char* value) { SetUnlockCode(value); return *this;}
 
   private:
+
     Aws::String m_unlockCode;
   };
 

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier of the <code>MLModel</code>.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>A unique identifier of the <code>MLModel</code>.</p>
      */
     inline PredictRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetRecord() const{ return m_record; }
@@ -108,6 +110,7 @@ namespace Model
     
     inline PredictRequest& AddRecord(const char* key, const char* value) { m_recordHasBeenSet = true; m_record.emplace(key, value); return *this; }
 
+
     
     inline const Aws::String& GetPredictEndpoint() const{ return m_predictEndpoint; }
 
@@ -130,10 +133,13 @@ namespace Model
     inline PredictRequest& WithPredictEndpoint(const char* value) { SetPredictEndpoint(value); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
     bool m_mLModelIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_record;
     bool m_recordHasBeenSet;
+
     Aws::String m_predictEndpoint;
     bool m_predictEndpointHasBeenSet;
   };

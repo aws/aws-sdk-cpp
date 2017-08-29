@@ -45,6 +45,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -65,6 +66,7 @@ namespace Model
 
     
     inline DeletableItem& WithName(const char* value) { SetName(value); return *this;}
+
 
     
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
@@ -88,8 +90,10 @@ namespace Model
     inline DeletableItem& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
   };

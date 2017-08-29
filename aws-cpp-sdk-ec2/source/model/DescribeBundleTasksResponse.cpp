@@ -31,12 +31,12 @@ DescribeBundleTasksResponse::DescribeBundleTasksResponse()
 {
 }
 
-DescribeBundleTasksResponse::DescribeBundleTasksResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeBundleTasksResponse::DescribeBundleTasksResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeBundleTasksResponse& DescribeBundleTasksResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeBundleTasksResponse& DescribeBundleTasksResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

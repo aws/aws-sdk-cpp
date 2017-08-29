@@ -45,6 +45,7 @@ namespace Model
     StackConfigurationManager& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name. This parameter must be set to "Chef".</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name. This parameter must be set to "Chef".</p>
      */
     inline StackConfigurationManager& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux
@@ -130,8 +132,10 @@ namespace Model
     inline StackConfigurationManager& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

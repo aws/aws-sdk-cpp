@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteDirectoryConfigResult();
-    DeleteDirectoryConfigResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDirectoryConfigResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDirectoryConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDirectoryConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

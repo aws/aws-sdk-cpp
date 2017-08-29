@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UploadMultipartPartResult();
-    UploadMultipartPartResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UploadMultipartPartResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UploadMultipartPartResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UploadMultipartPartResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline UploadMultipartPartResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_checksum;
   };
 

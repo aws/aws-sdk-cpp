@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Maintenance Window execution that includes the task.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetMaintenanceWindowExecutionRequest& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
 
   private:
+
     Aws::String m_windowExecutionId;
     bool m_windowExecutionIdHasBeenSet;
   };

@@ -30,12 +30,12 @@ DeactivatePipelineResult::DeactivatePipelineResult()
 {
 }
 
-DeactivatePipelineResult::DeactivatePipelineResult(const AmazonWebServiceResult<JsonValue>& result)
+DeactivatePipelineResult::DeactivatePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeactivatePipelineResult& DeactivatePipelineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeactivatePipelineResult& DeactivatePipelineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

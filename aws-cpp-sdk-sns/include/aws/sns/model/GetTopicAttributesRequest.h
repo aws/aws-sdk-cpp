@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the topic whose properties you want to get.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline GetTopicAttributesRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
   };

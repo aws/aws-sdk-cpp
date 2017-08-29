@@ -30,12 +30,12 @@ SubscribeToDatasetResult::SubscribeToDatasetResult()
 {
 }
 
-SubscribeToDatasetResult::SubscribeToDatasetResult(const AmazonWebServiceResult<JsonValue>& result)
+SubscribeToDatasetResult::SubscribeToDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SubscribeToDatasetResult& SubscribeToDatasetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SubscribeToDatasetResult& SubscribeToDatasetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -51,6 +51,7 @@ namespace Model
     Project& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the build project.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name of the build project.</p>
      */
     inline Project& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the build project.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline Project& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>A description that makes the build project easy to identify.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      */
     inline Project& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Information about the build input source code for this build project.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      * <p>Information about the build input source code for this build project.</p>
      */
     inline Project& WithSource(ProjectSource&& value) { SetSource(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the build output artifacts for the build project.</p>
@@ -206,6 +211,7 @@ namespace Model
      */
     inline Project& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the build environment for this build project.</p>
      */
@@ -230,6 +236,7 @@ namespace Model
      * <p>Information about the build environment for this build project.</p>
      */
     inline Project& WithEnvironment(ProjectEnvironment&& value) { SetEnvironment(std::move(value)); return *this;}
+
 
     /**
      * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
@@ -280,6 +287,7 @@ namespace Model
      */
     inline Project& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
+
     /**
      * <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait
      * before timing out any related build that did not get marked as completed. The
@@ -300,6 +308,7 @@ namespace Model
      * default is 60 minutes.</p>
      */
     inline Project& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
+
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
@@ -357,6 +366,7 @@ namespace Model
      */
     inline Project& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
+
     /**
      * <p>The tags for this build project.</p> <p>These tags are available for use by
      * AWS services that support AWS CodeBuild build project tags.</p>
@@ -399,6 +409,7 @@ namespace Model
      */
     inline Project& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>When the build project was created, expressed in Unix time format.</p>
      */
@@ -423,6 +434,7 @@ namespace Model
      * <p>When the build project was created, expressed in Unix time format.</p>
      */
     inline Project& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+
 
     /**
      * <p>When the build project's settings were last modified, expressed in Unix time
@@ -455,28 +467,40 @@ namespace Model
     inline Project& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ProjectSource m_source;
     bool m_sourceHasBeenSet;
+
     ProjectArtifacts m_artifacts;
     bool m_artifactsHasBeenSet;
+
     ProjectEnvironment m_environment;
     bool m_environmentHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
+
     Aws::String m_encryptionKey;
     bool m_encryptionKeyHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
+
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the account that you want to move.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
@@ -84,6 +85,7 @@ namespace Model
      * string requires exactly 12 digits.</p>
      */
     inline MoveAccountRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
 
     /**
      * <p>The unique identifier (ID) of the root or organizational unit that you want
@@ -175,6 +177,7 @@ namespace Model
      * digits.</p> </li> </ul>
      */
     inline MoveAccountRequest& WithSourceParentId(const char* value) { SetSourceParentId(value); return *this;}
+
 
     /**
      * <p>The unique identifier (ID) of the root or organizational unit that you want
@@ -268,10 +271,13 @@ namespace Model
     inline MoveAccountRequest& WithDestinationParentId(const char* value) { SetDestinationParentId(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_sourceParentId;
     bool m_sourceParentIdHasBeenSet;
+
     Aws::String m_destinationParentId;
     bool m_destinationParentIdHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeStorediSCSIVolumesResult();
-    DescribeStorediSCSIVolumesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStorediSCSIVolumesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStorediSCSIVolumesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStorediSCSIVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::Vector<StorediSCSIVolume>& GetStorediSCSIVolumes() const{ return m_storediSCSIVolumes; }
@@ -64,6 +65,7 @@ namespace Model
     inline DescribeStorediSCSIVolumesResult& AddStorediSCSIVolumes(StorediSCSIVolume&& value) { m_storediSCSIVolumes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<StorediSCSIVolume> m_storediSCSIVolumes;
   };
 

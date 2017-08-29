@@ -30,12 +30,12 @@ SetUICustomizationResult::SetUICustomizationResult()
 {
 }
 
-SetUICustomizationResult::SetUICustomizationResult(const AmazonWebServiceResult<JsonValue>& result)
+SetUICustomizationResult::SetUICustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SetUICustomizationResult& SetUICustomizationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SetUICustomizationResult& SetUICustomizationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UICustomization"))

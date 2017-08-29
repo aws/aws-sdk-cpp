@@ -45,6 +45,7 @@ namespace Model
     ApplicationsResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * List of applications returned in this page.
      */
@@ -79,6 +80,7 @@ namespace Model
      * List of applications returned in this page.
      */
     inline ApplicationsResponse& AddItem(ApplicationResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
+
 
     /**
      * The string that you use in a subsequent request to get the next page of results
@@ -123,8 +125,10 @@ namespace Model
     inline ApplicationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ApplicationResponse> m_item;
     bool m_itemHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     Snapshot& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The directory identifier.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The directory identifier.</p>
      */
     inline Snapshot& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The snapshot identifier.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline Snapshot& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>The snapshot type.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The snapshot type.</p>
      */
     inline Snapshot& WithType(SnapshotType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The descriptive name of the snapshot.</p>
@@ -178,6 +182,7 @@ namespace Model
      */
     inline Snapshot& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The snapshot status.</p>
      */
@@ -202,6 +207,7 @@ namespace Model
      * <p>The snapshot status.</p>
      */
     inline Snapshot& WithStatus(SnapshotStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time that the snapshot was taken.</p>
@@ -229,16 +235,22 @@ namespace Model
     inline Snapshot& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     SnapshotType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     SnapshotStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
   };

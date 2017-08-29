@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateOrganizationalUnitResult();
-    CreateOrganizationalUnitResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateOrganizationalUnitResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateOrganizationalUnitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateOrganizationalUnitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains details about the newly created OU.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateOrganizationalUnitResult& WithOrganizationalUnit(OrganizationalUnit&& value) { SetOrganizationalUnit(std::move(value)); return *this;}
 
   private:
+
     OrganizationalUnit m_organizationalUnit;
   };
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetFileUploadURLResult();
-    GetFileUploadURLResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFileUploadURLResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetFileUploadURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetFileUploadURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
@@ -77,6 +78,7 @@ namespace Model
     inline GetFileUploadURLResult& WithFileUploadURL(const char* value) { SetFileUploadURL(value); return *this;}
 
   private:
+
     Aws::String m_fileUploadURL;
   };
 

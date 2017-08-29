@@ -31,12 +31,12 @@ GetAccountSummaryResult::GetAccountSummaryResult()
 {
 }
 
-GetAccountSummaryResult::GetAccountSummaryResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetAccountSummaryResult::GetAccountSummaryResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetAccountSummaryResult& GetAccountSummaryResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetAccountSummaryResult& GetAccountSummaryResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

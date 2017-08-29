@@ -34,6 +34,7 @@ namespace Model
     PutLexiconRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>Name of the lexicon. The name must follow the regular express format
      * [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up
@@ -83,6 +84,7 @@ namespace Model
      */
     inline PutLexiconRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Content of the PLS lexicon as string data.</p>
      */
@@ -119,8 +121,10 @@ namespace Model
     inline PutLexiconRequest& WithContent(const char* value) { SetContent(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_content;
     bool m_contentHasBeenSet;
   };

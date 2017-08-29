@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateProtectionResult();
-    CreateProtectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateProtectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique identifier (ID) for the <a>Protection</a> object that is
@@ -84,6 +85,7 @@ namespace Model
     inline CreateProtectionResult& WithProtectionId(const char* value) { SetProtectionId(value); return *this;}
 
   private:
+
     Aws::String m_protectionId;
   };
 

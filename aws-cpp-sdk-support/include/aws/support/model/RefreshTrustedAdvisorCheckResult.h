@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     RefreshTrustedAdvisorCheckResult();
-    RefreshTrustedAdvisorCheckResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RefreshTrustedAdvisorCheckResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RefreshTrustedAdvisorCheckResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RefreshTrustedAdvisorCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The current refresh status for a check, including the amount of time until
@@ -78,6 +79,7 @@ namespace Model
     inline RefreshTrustedAdvisorCheckResult& WithStatus(TrustedAdvisorCheckRefreshStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     TrustedAdvisorCheckRefreshStatus m_status;
   };
 

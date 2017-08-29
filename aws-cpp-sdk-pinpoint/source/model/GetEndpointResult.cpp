@@ -30,12 +30,12 @@ GetEndpointResult::GetEndpointResult()
 {
 }
 
-GetEndpointResult::GetEndpointResult(const AmazonWebServiceResult<JsonValue>& result)
+GetEndpointResult::GetEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetEndpointResult& GetEndpointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetEndpointResult& GetEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EndpointResponse"))

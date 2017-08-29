@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
      * <p>Queue URLs are case-sensitive.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>Queue URLs are case-sensitive.</p>
      */
     inline ChangeMessageVisibilityBatchRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+
 
     /**
      * <p>A list of receipt handles of the messages for which the visibility timeout
@@ -128,8 +130,10 @@ namespace Model
     inline ChangeMessageVisibilityBatchRequest& AddEntries(ChangeMessageVisibilityBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     Aws::Vector<ChangeMessageVisibilityBatchRequestEntry> m_entries;
     bool m_entriesHasBeenSet;
   };

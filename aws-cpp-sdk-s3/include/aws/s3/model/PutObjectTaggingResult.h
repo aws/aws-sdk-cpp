@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PutObjectTaggingResult();
-    PutObjectTaggingResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PutObjectTaggingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PutObjectTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PutObjectTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
@@ -63,6 +64,7 @@ namespace Model
     inline PutObjectTaggingResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
+
     Aws::String m_versionId;
   };
 

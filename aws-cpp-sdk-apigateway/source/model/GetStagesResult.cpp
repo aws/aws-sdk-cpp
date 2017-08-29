@@ -30,12 +30,12 @@ GetStagesResult::GetStagesResult()
 {
 }
 
-GetStagesResult::GetStagesResult(const AmazonWebServiceResult<JsonValue>& result)
+GetStagesResult::GetStagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetStagesResult& GetStagesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetStagesResult& GetStagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("item"))

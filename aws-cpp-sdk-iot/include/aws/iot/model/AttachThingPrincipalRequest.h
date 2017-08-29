@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the thing.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the thing.</p>
      */
     inline AttachThingPrincipalRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+
 
     /**
      * <p>The principal, such as a certificate or other credential.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline AttachThingPrincipalRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
   private:
+
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
+
     Aws::String m_principal;
     bool m_principalHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     RevokeCacheSecurityGroupIngressResult();
-    RevokeCacheSecurityGroupIngressResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RevokeCacheSecurityGroupIngressResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RevokeCacheSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RevokeCacheSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const CacheSecurityGroup& GetCacheSecurityGroup() const{ return m_cacheSecurityGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline RevokeCacheSecurityGroupIngressResult& WithCacheSecurityGroup(CacheSecurityGroup&& value) { SetCacheSecurityGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline RevokeCacheSecurityGroupIngressResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     CacheSecurityGroup m_cacheSecurityGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 

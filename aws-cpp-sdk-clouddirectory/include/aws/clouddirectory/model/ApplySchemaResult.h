@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     ApplySchemaResult();
-    ApplySchemaResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ApplySchemaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ApplySchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ApplySchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The applied schema ARN that is associated with the copied schema in the
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ApplySchemaResult& WithAppliedSchemaArn(const char* value) { SetAppliedSchemaArn(value); return *this;}
 
+
     /**
      * <p>The ARN that is associated with the <a>Directory</a>. For more information,
      * see <a>arns</a>.</p>
@@ -133,7 +135,9 @@ namespace Model
     inline ApplySchemaResult& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
   private:
+
     Aws::String m_appliedSchemaArn;
+
     Aws::String m_directoryArn;
   };
 

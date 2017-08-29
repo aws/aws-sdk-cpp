@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
      * be between 1 and 128 characters. Valid characters include <code>a-z</code>,
@@ -102,6 +103,7 @@ namespace Model
      * . : / = + @</code>.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string
@@ -160,8 +162,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

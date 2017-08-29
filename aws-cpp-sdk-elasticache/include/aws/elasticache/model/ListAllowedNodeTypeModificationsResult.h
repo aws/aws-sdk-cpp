@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListAllowedNodeTypeModificationsResult();
-    ListAllowedNodeTypeModificationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListAllowedNodeTypeModificationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListAllowedNodeTypeModificationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListAllowedNodeTypeModificationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A string list, each element of which specifies a cache node type which you
@@ -121,6 +122,7 @@ namespace Model
      */
     inline ListAllowedNodeTypeModificationsResult& AddScaleUpModifications(const char* value) { m_scaleUpModifications.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -137,7 +139,9 @@ namespace Model
     inline ListAllowedNodeTypeModificationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_scaleUpModifications;
+
     ResponseMetadata m_responseMetadata;
   };
 

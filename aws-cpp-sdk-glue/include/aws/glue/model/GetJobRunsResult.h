@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetJobRunsResult();
-    GetJobRunsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobRunsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of job-run metatdata objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of job-run metatdata objects.</p>
      */
     inline GetJobRunsResult& AddJobRuns(JobRun&& value) { m_jobRuns.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token, if not all reequested job runs have been returned.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline GetJobRunsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<JobRun> m_jobRuns;
+
     Aws::String m_nextToken;
   };
 

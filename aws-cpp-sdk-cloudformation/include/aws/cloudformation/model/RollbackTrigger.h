@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the rollback trigger.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the rollback trigger.</p>
      */
     inline RollbackTrigger& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The resource type of the rollback trigger. Currently, <a
@@ -136,8 +138,10 @@ namespace Model
     inline RollbackTrigger& WithType(const char* value) { SetType(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
   };

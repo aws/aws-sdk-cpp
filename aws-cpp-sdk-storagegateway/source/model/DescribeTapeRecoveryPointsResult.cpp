@@ -30,12 +30,12 @@ DescribeTapeRecoveryPointsResult::DescribeTapeRecoveryPointsResult()
 {
 }
 
-DescribeTapeRecoveryPointsResult::DescribeTapeRecoveryPointsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTapeRecoveryPointsResult::DescribeTapeRecoveryPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeTapeRecoveryPointsResult& DescribeTapeRecoveryPointsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTapeRecoveryPointsResult& DescribeTapeRecoveryPointsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

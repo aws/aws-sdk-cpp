@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateChangeSetResult();
-    CreateChangeSetResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateChangeSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the change set.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CreateChangeSetResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The unique ID of the stack.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline CreateChangeSetResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -134,8 +137,11 @@ namespace Model
     inline CreateChangeSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
+
     Aws::String m_stackId;
+
     ResponseMetadata m_responseMetadata;
   };
 

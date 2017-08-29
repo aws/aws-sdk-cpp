@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteDataSourceRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
   private:
+
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet;
   };

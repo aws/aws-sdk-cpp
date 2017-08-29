@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateManagedInstanceRoleResult();
-    UpdateManagedInstanceRoleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateManagedInstanceRoleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateManagedInstanceRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateManagedInstanceRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

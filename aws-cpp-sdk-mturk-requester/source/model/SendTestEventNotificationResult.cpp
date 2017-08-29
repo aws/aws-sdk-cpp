@@ -30,12 +30,12 @@ SendTestEventNotificationResult::SendTestEventNotificationResult()
 {
 }
 
-SendTestEventNotificationResult::SendTestEventNotificationResult(const AmazonWebServiceResult<JsonValue>& result)
+SendTestEventNotificationResult::SendTestEventNotificationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SendTestEventNotificationResult& SendTestEventNotificationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SendTestEventNotificationResult& SendTestEventNotificationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

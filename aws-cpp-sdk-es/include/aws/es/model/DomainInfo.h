@@ -40,6 +40,7 @@ namespace Model
     DomainInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Specifies the <code>DomainName</code>.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DomainInfo& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

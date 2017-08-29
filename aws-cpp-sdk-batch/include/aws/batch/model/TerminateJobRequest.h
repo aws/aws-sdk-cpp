@@ -34,6 +34,7 @@ namespace Model
     TerminateJobRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>Job IDs to be terminated. Up to 100 jobs can be specified.</p>
      */
     inline TerminateJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     /**
      * <p>A message to attach to the job that explains the reason for cancelling it.
@@ -119,8 +121,10 @@ namespace Model
     inline TerminateJobRequest& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

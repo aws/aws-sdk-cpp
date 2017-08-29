@@ -38,6 +38,7 @@ namespace Model
     SetDefaultPolicyVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The policy name.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The policy name.</p>
      */
     inline SetDefaultPolicyVersionRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The policy version ID.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline SetDefaultPolicyVersionRequest& WithPolicyVersionId(const char* value) { SetPolicyVersionId(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyVersionId;
     bool m_policyVersionIdHasBeenSet;
   };

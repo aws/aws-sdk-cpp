@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     StopLoggingResult();
-    StopLoggingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopLoggingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopLoggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopLoggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

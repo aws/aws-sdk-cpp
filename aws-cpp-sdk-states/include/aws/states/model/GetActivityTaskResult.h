@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetActivityTaskResult();
-    GetActivityTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetActivityTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetActivityTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetActivityTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A token that identifies the scheduled task. This token must be copied and
@@ -97,6 +98,7 @@ namespace Model
      */
     inline GetActivityTaskResult& WithTaskToken(const char* value) { SetTaskToken(value); return *this;}
 
+
     /**
      * <p>The JSON input data for the task.</p>
      */
@@ -133,7 +135,9 @@ namespace Model
     inline GetActivityTaskResult& WithInput(const char* value) { SetInput(value); return *this;}
 
   private:
+
     Aws::String m_taskToken;
+
     Aws::String m_input;
   };
 

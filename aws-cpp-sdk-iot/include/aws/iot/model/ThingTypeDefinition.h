@@ -48,6 +48,7 @@ namespace Model
     ThingTypeDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the thing type.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ThingTypeDefinition& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
 
+
     /**
      * <p>The ThingTypeProperties for the thing type.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The ThingTypeProperties for the thing type.</p>
      */
     inline ThingTypeDefinition& WithThingTypeProperties(ThingTypeProperties&& value) { SetThingTypeProperties(std::move(value)); return *this;}
+
 
     /**
      * <p>The ThingTypeMetadata contains additional information about the thing type
@@ -144,10 +147,13 @@ namespace Model
     inline ThingTypeDefinition& WithThingTypeMetadata(ThingTypeMetadata&& value) { SetThingTypeMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet;
+
     ThingTypeProperties m_thingTypeProperties;
     bool m_thingTypePropertiesHasBeenSet;
+
     ThingTypeMetadata m_thingTypeMetadata;
     bool m_thingTypeMetadataHasBeenSet;
   };

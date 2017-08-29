@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeStackInstanceResult();
-    DescribeStackInstanceResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeStackInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStackInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStackInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The stack instance that matches the specified request parameters.</p>
@@ -67,6 +68,7 @@ namespace Model
      */
     inline DescribeStackInstanceResult& WithStackInstance(StackInstance&& value) { SetStackInstance(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -83,7 +85,9 @@ namespace Model
     inline DescribeStackInstanceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     StackInstance m_stackInstance;
+
     ResponseMetadata m_responseMetadata;
   };
 

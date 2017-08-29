@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the customer gateway.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline DeleteCustomerGatewayRequest& WithCustomerGatewayId(const char* value) { SetCustomerGatewayId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -102,8 +104,10 @@ namespace Model
     inline DeleteCustomerGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_customerGatewayId;
     bool m_customerGatewayIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

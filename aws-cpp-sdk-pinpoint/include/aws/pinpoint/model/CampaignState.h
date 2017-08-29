@@ -43,6 +43,7 @@ namespace Model
     CampaignState& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The status of the campaign, or the status of a treatment that belongs to an A/B
      * test campaign.
@@ -89,6 +90,7 @@ Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED,
     inline CampaignState& WithCampaignStatus(CampaignStatus&& value) { SetCampaignStatus(std::move(value)); return *this;}
 
   private:
+
     CampaignStatus m_campaignStatus;
     bool m_campaignStatusHasBeenSet;
   };

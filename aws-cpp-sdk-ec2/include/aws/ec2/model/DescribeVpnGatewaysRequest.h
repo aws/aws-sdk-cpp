@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
      * current state of the attachment between the gateway and the VPC
@@ -254,6 +255,7 @@ namespace Model
      */
     inline DescribeVpnGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>One or more virtual private gateway IDs.</p> <p>Default: Describes all your
      * virtual private gateways.</p>
@@ -302,6 +304,7 @@ namespace Model
      */
     inline DescribeVpnGatewaysRequest& AddVpnGatewayIds(const char* value) { m_vpnGatewayIdsHasBeenSet = true; m_vpnGatewayIds.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -327,10 +330,13 @@ namespace Model
     inline DescribeVpnGatewaysRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpnGatewayIds;
     bool m_vpnGatewayIdsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     BatchGetQueryExecutionResult();
-    BatchGetQueryExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetQueryExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetQueryExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetQueryExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about a query execution.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Information about a query execution.</p>
      */
     inline BatchGetQueryExecutionResult& AddQueryExecutions(QueryExecution&& value) { m_queryExecutions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Information about the query executions that failed to run.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline BatchGetQueryExecutionResult& AddUnprocessedQueryExecutionIds(UnprocessedQueryExecutionId&& value) { m_unprocessedQueryExecutionIds.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<QueryExecution> m_queryExecutions;
+
     Aws::Vector<UnprocessedQueryExecutionId> m_unprocessedQueryExecutionIds;
   };
 

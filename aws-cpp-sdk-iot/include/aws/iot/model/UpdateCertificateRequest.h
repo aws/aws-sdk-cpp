@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The ID of the certificate.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The ID of the certificate.</p>
      */
     inline UpdateCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
+
 
     /**
      * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
@@ -125,8 +127,10 @@ namespace Model
     inline UpdateCertificateRequest& WithNewStatus(CertificateStatus&& value) { SetNewStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
     CertificateStatus m_newStatus;
     bool m_newStatusHasBeenSet;
   };

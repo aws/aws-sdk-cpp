@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The canned ACL to apply to the object.
      */
@@ -69,6 +70,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithACL(ObjectCannedACL&& value) { SetACL(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -89,6 +91,7 @@ namespace Model
 
     
     inline CopyObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * Specifies caching behavior along the request/reply chain.
@@ -125,6 +128,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
 
+
     /**
      * Specifies presentational information for the object.
      */
@@ -159,6 +163,7 @@ namespace Model
      * Specifies presentational information for the object.
      */
     inline CopyObjectRequest& WithContentDisposition(const char* value) { SetContentDisposition(value); return *this;}
+
 
     /**
      * Specifies what content encodings have been applied to the object and thus what
@@ -209,6 +214,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithContentEncoding(const char* value) { SetContentEncoding(value); return *this;}
 
+
     /**
      * The language the content is in.
      */
@@ -244,6 +250,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithContentLanguage(const char* value) { SetContentLanguage(value); return *this;}
 
+
     /**
      * A standard MIME type describing the format of the object data.
      */
@@ -278,6 +285,7 @@ namespace Model
      * A standard MIME type describing the format of the object data.
      */
     inline CopyObjectRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
+
 
     /**
      * The name of the source bucket and key name of the source object, separated by a
@@ -321,6 +329,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithCopySource(const char* value) { SetCopySource(value); return *this;}
 
+
     /**
      * Copies the object if its entity tag (ETag) matches the specified tag.
      */
@@ -356,6 +365,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithCopySourceIfMatch(const char* value) { SetCopySourceIfMatch(value); return *this;}
 
+
     /**
      * Copies the object if it has been modified since the specified time.
      */
@@ -380,6 +390,7 @@ namespace Model
      * Copies the object if it has been modified since the specified time.
      */
     inline CopyObjectRequest& WithCopySourceIfModifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfModifiedSince(std::move(value)); return *this;}
+
 
     /**
      * Copies the object if its entity tag (ETag) is different than the specified ETag.
@@ -416,6 +427,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithCopySourceIfNoneMatch(const char* value) { SetCopySourceIfNoneMatch(value); return *this;}
 
+
     /**
      * Copies the object if it hasn't been modified since the specified time.
      */
@@ -441,6 +453,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithCopySourceIfUnmodifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfUnmodifiedSince(std::move(value)); return *this;}
 
+
     /**
      * The date and time at which the object is no longer cacheable.
      */
@@ -465,6 +478,7 @@ namespace Model
      * The date and time at which the object is no longer cacheable.
      */
     inline CopyObjectRequest& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
+
 
     /**
      * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
@@ -501,6 +515,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithGrantFullControl(const char* value) { SetGrantFullControl(value); return *this;}
 
+
     /**
      * Allows grantee to read the object data and its metadata.
      */
@@ -535,6 +550,7 @@ namespace Model
      * Allows grantee to read the object data and its metadata.
      */
     inline CopyObjectRequest& WithGrantRead(const char* value) { SetGrantRead(value); return *this;}
+
 
     /**
      * Allows grantee to read the object ACL.
@@ -571,6 +587,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithGrantReadACP(const char* value) { SetGrantReadACP(value); return *this;}
 
+
     /**
      * Allows grantee to write the ACL for the applicable object.
      */
@@ -606,6 +623,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithGrantWriteACP(const char* value) { SetGrantWriteACP(value); return *this;}
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -626,6 +644,7 @@ namespace Model
 
     
     inline CopyObjectRequest& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * A map of metadata to store with the object in S3.
@@ -687,6 +706,7 @@ namespace Model
      */
     inline CopyObjectRequest& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
+
     /**
      * Specifies whether the metadata is copied from the source object or replaced with
      * metadata provided in the request.
@@ -716,6 +736,7 @@ namespace Model
      * metadata provided in the request.
      */
     inline CopyObjectRequest& WithMetadataDirective(MetadataDirective&& value) { SetMetadataDirective(std::move(value)); return *this;}
+
 
     /**
      * Specifies whether the object tag-set are copied from the source object or
@@ -747,6 +768,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithTaggingDirective(TaggingDirective&& value) { SetTaggingDirective(std::move(value)); return *this;}
 
+
     /**
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
      * AES256, aws:kms).
@@ -777,6 +799,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
+
     /**
      * The type of storage to use for the object. Defaults to 'STANDARD'.
      */
@@ -801,6 +824,7 @@ namespace Model
      * The type of storage to use for the object. Defaults to 'STANDARD'.
      */
     inline CopyObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+
 
     /**
      * If the bucket is configured as a website, redirects requests for this object to
@@ -851,6 +875,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithWebsiteRedirectLocation(const char* value) { SetWebsiteRedirectLocation(value); return *this;}
 
+
     /**
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
@@ -885,6 +910,7 @@ namespace Model
      * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
      */
     inline CopyObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -949,6 +975,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
+
     /**
      * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
@@ -997,6 +1024,7 @@ namespace Model
      * encryption key was transmitted without error.
      */
     inline CopyObjectRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
+
 
     /**
      * Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
@@ -1061,6 +1089,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
+
     /**
      * Specifies the algorithm to use when decrypting the source object (e.g., AES256).
      */
@@ -1095,6 +1124,7 @@ namespace Model
      * Specifies the algorithm to use when decrypting the source object (e.g., AES256).
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerAlgorithm(const char* value) { SetCopySourceSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * Specifies the customer-provided encryption key for Amazon S3 to use to decrypt
@@ -1145,6 +1175,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKey(const char* value) { SetCopySourceSSECustomerKey(value); return *this;}
 
+
     /**
      * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
@@ -1194,6 +1225,7 @@ namespace Model
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKeyMD5(const char* value) { SetCopySourceSSECustomerKeyMD5(value); return *this;}
 
+
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
@@ -1208,6 +1240,7 @@ namespace Model
 
     
     inline CopyObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
+
 
     /**
      * The tag-set for the object destination object this value must be used in
@@ -1259,70 +1292,103 @@ namespace Model
     inline CopyObjectRequest& WithTagging(const char* value) { SetTagging(value); return *this;}
 
   private:
+
     ObjectCannedACL m_aCL;
     bool m_aCLHasBeenSet;
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_cacheControl;
     bool m_cacheControlHasBeenSet;
+
     Aws::String m_contentDisposition;
     bool m_contentDispositionHasBeenSet;
+
     Aws::String m_contentEncoding;
     bool m_contentEncodingHasBeenSet;
+
     Aws::String m_contentLanguage;
     bool m_contentLanguageHasBeenSet;
+
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet;
+
     Aws::String m_copySource;
     bool m_copySourceHasBeenSet;
+
     Aws::String m_copySourceIfMatch;
     bool m_copySourceIfMatchHasBeenSet;
+
     Aws::Utils::DateTime m_copySourceIfModifiedSince;
     bool m_copySourceIfModifiedSinceHasBeenSet;
+
     Aws::String m_copySourceIfNoneMatch;
     bool m_copySourceIfNoneMatchHasBeenSet;
+
     Aws::Utils::DateTime m_copySourceIfUnmodifiedSince;
     bool m_copySourceIfUnmodifiedSinceHasBeenSet;
+
     Aws::Utils::DateTime m_expires;
     bool m_expiresHasBeenSet;
+
     Aws::String m_grantFullControl;
     bool m_grantFullControlHasBeenSet;
+
     Aws::String m_grantRead;
     bool m_grantReadHasBeenSet;
+
     Aws::String m_grantReadACP;
     bool m_grantReadACPHasBeenSet;
+
     Aws::String m_grantWriteACP;
     bool m_grantWriteACPHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_metadata;
     bool m_metadataHasBeenSet;
+
     MetadataDirective m_metadataDirective;
     bool m_metadataDirectiveHasBeenSet;
+
     TaggingDirective m_taggingDirective;
     bool m_taggingDirectiveHasBeenSet;
+
     ServerSideEncryption m_serverSideEncryption;
     bool m_serverSideEncryptionHasBeenSet;
+
     StorageClass m_storageClass;
     bool m_storageClassHasBeenSet;
+
     Aws::String m_websiteRedirectLocation;
     bool m_websiteRedirectLocationHasBeenSet;
+
     Aws::String m_sSECustomerAlgorithm;
     bool m_sSECustomerAlgorithmHasBeenSet;
+
     Aws::String m_sSECustomerKey;
     bool m_sSECustomerKeyHasBeenSet;
+
     Aws::String m_sSECustomerKeyMD5;
     bool m_sSECustomerKeyMD5HasBeenSet;
+
     Aws::String m_sSEKMSKeyId;
     bool m_sSEKMSKeyIdHasBeenSet;
+
     Aws::String m_copySourceSSECustomerAlgorithm;
     bool m_copySourceSSECustomerAlgorithmHasBeenSet;
+
     Aws::String m_copySourceSSECustomerKey;
     bool m_copySourceSSECustomerKeyHasBeenSet;
+
     Aws::String m_copySourceSSECustomerKeyMD5;
     bool m_copySourceSSECustomerKeyMD5HasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+
     Aws::String m_tagging;
     bool m_taggingHasBeenSet;
   };

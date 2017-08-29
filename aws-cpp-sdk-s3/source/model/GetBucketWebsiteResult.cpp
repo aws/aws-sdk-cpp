@@ -29,12 +29,12 @@ GetBucketWebsiteResult::GetBucketWebsiteResult()
 {
 }
 
-GetBucketWebsiteResult::GetBucketWebsiteResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketWebsiteResult::GetBucketWebsiteResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetBucketWebsiteResult& GetBucketWebsiteResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketWebsiteResult& GetBucketWebsiteResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

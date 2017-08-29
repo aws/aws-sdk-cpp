@@ -30,12 +30,12 @@ PutEvaluationsResult::PutEvaluationsResult()
 {
 }
 
-PutEvaluationsResult::PutEvaluationsResult(const AmazonWebServiceResult<JsonValue>& result)
+PutEvaluationsResult::PutEvaluationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutEvaluationsResult& PutEvaluationsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutEvaluationsResult& PutEvaluationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FailedEvaluations"))

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListOutgoingCertificatesResult();
-    ListOutgoingCertificatesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOutgoingCertificatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOutgoingCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOutgoingCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The certificates that are being transfered but not yet accepted.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The certificates that are being transfered but not yet accepted.</p>
      */
     inline ListOutgoingCertificatesResult& AddOutgoingCertificates(OutgoingCertificate&& value) { m_outgoingCertificates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline ListOutgoingCertificatesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
   private:
+
     Aws::Vector<OutgoingCertificate> m_outgoingCertificates;
+
     Aws::String m_nextMarker;
   };
 

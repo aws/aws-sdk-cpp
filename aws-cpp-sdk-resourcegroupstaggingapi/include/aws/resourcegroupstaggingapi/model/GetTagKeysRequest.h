@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A string that indicates that additional data is available. Leave this value
      * empty for your initial request. If the response includes a PaginationToken, use
@@ -86,6 +87,7 @@ namespace Model
     inline GetTagKeysRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
   private:
+
     Aws::String m_paginationToken;
     bool m_paginationTokenHasBeenSet;
   };

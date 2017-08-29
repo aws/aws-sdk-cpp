@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DomainMetadataResult();
-    DomainMetadataResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DomainMetadataResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DomainMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DomainMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * The number of all items in the domain.
@@ -56,6 +57,7 @@ namespace Model
      */
     inline DomainMetadataResult& WithItemCount(int value) { SetItemCount(value); return *this;}
 
+
     /**
      * The total size of all item names in the domain, in bytes.
      */
@@ -70,6 +72,7 @@ namespace Model
      * The total size of all item names in the domain, in bytes.
      */
     inline DomainMetadataResult& WithItemNamesSizeBytes(long long value) { SetItemNamesSizeBytes(value); return *this;}
+
 
     /**
      * The number of unique attribute names in the domain.
@@ -86,6 +89,7 @@ namespace Model
      */
     inline DomainMetadataResult& WithAttributeNameCount(int value) { SetAttributeNameCount(value); return *this;}
 
+
     /**
      * The total size of all unique attribute names in the domain, in bytes.
      */
@@ -100,6 +104,7 @@ namespace Model
      * The total size of all unique attribute names in the domain, in bytes.
      */
     inline DomainMetadataResult& WithAttributeNamesSizeBytes(long long value) { SetAttributeNamesSizeBytes(value); return *this;}
+
 
     /**
      * The number of all attribute name/value pairs in the domain.
@@ -116,6 +121,7 @@ namespace Model
      */
     inline DomainMetadataResult& WithAttributeValueCount(int value) { SetAttributeValueCount(value); return *this;}
 
+
     /**
      * The total size of all attribute values in the domain, in bytes.
      */
@@ -131,6 +137,7 @@ namespace Model
      */
     inline DomainMetadataResult& WithAttributeValuesSizeBytes(long long value) { SetAttributeValuesSizeBytes(value); return *this;}
 
+
     /**
      * The data and time when metadata was calculated, in Epoch (UNIX) seconds.
      */
@@ -145,6 +152,7 @@ namespace Model
      * The data and time when metadata was calculated, in Epoch (UNIX) seconds.
      */
     inline DomainMetadataResult& WithTimestamp(int value) { SetTimestamp(value); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -162,13 +170,21 @@ namespace Model
     inline DomainMetadataResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     int m_itemCount;
+
     long long m_itemNamesSizeBytes;
+
     int m_attributeNameCount;
+
     long long m_attributeNamesSizeBytes;
+
     int m_attributeValueCount;
+
     long long m_attributeValuesSizeBytes;
+
     int m_timestamp;
+
     ResponseMetadata m_responseMetadata;
   };
 

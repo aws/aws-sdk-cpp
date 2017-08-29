@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeServiceErrorsResult();
-    DescribeServiceErrorsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeServiceErrorsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeServiceErrorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeServiceErrorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>ServiceError</code> objects that describe the specified
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeServiceErrorsResult& AddServiceErrors(ServiceError&& value) { m_serviceErrors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ServiceError> m_serviceErrors;
   };
 

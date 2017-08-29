@@ -50,6 +50,7 @@ namespace Model
     Source& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Indicates whether AWS or the customer owns and manages the AWS Config
      * rule.</p>
@@ -79,6 +80,7 @@ namespace Model
      * rule.</p>
      */
     inline Source& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+
 
     /**
      * <p>For AWS Config managed rules, a predefined identifier from a list. For
@@ -157,6 +159,7 @@ namespace Model
      */
     inline Source& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
+
     /**
      * <p>Provides the source and type of the event that causes AWS Config to evaluate
      * your AWS resources.</p>
@@ -200,10 +203,13 @@ namespace Model
     inline Source& AddSourceDetails(SourceDetail&& value) { m_sourceDetailsHasBeenSet = true; m_sourceDetails.push_back(std::move(value)); return *this; }
 
   private:
+
     Owner m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet;
+
     Aws::Vector<SourceDetail> m_sourceDetails;
     bool m_sourceDetailsHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
     RejectCertificateTransferRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the certificate.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The ID of the certificate.</p>
      */
     inline RejectCertificateTransferRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
+
 
     /**
      * <p>The reason the certificate transfer was rejected.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline RejectCertificateTransferRequest& WithRejectReason(const char* value) { SetRejectReason(value); return *this;}
 
   private:
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
     Aws::String m_rejectReason;
     bool m_rejectReasonHasBeenSet;
   };

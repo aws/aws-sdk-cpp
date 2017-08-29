@@ -48,6 +48,7 @@ namespace Model
     Lexicon& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Lexicon content in string format. The content of a lexicon must be in PLS
      * format.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline Lexicon& WithContent(const char* value) { SetContent(value); return *this;}
 
+
     /**
      * <p>Name of the lexicon.</p>
      */
@@ -126,8 +128,10 @@ namespace Model
     inline Lexicon& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_content;
     bool m_contentHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

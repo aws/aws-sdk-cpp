@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the ProgressUpdateStream. </p>
      */
     inline ImportMigrationTaskRequest& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
+
 
     /**
      * <p>Unique identifier that references the migration task.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline ImportMigrationTaskRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 
+
     /**
      * <p>Optional boolean flag to indicate whether any effect should take place. Used
      * to test if the caller has permission to make the call.</p>
@@ -125,10 +128,13 @@ namespace Model
     inline ImportMigrationTaskRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_progressUpdateStream;
     bool m_progressUpdateStreamHasBeenSet;
+
     Aws::String m_migrationTaskName;
     bool m_migrationTaskNameHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

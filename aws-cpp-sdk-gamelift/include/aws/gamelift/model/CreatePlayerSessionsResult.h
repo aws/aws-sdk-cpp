@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreatePlayerSessionsResult();
-    CreatePlayerSessionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePlayerSessionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePlayerSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePlayerSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of player session objects created for the added players.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline CreatePlayerSessionsResult& AddPlayerSessions(PlayerSession&& value) { m_playerSessions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<PlayerSession> m_playerSessions;
   };
 

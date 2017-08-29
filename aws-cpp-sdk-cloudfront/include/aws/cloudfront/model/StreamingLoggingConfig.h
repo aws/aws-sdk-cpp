@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>Specifies whether you want CloudFront to save access logs to an Amazon S3
      * bucket. If you do not want to enable logging when you create a streaming
@@ -82,6 +83,7 @@ namespace Model
      * deleted. </p>
      */
     inline StreamingLoggingConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The Amazon S3 bucket to store the access logs in, for example,
@@ -124,6 +126,7 @@ namespace Model
      * <code>myawslogbucket.s3.amazonaws.com</code>.</p>
      */
     inline StreamingLoggingConfig& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * <p>An optional string that you want CloudFront to prefix to the access log
@@ -189,10 +192,13 @@ namespace Model
     inline StreamingLoggingConfig& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
   };

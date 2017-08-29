@@ -31,12 +31,12 @@ ChangeMessageVisibilityBatchResult::ChangeMessageVisibilityBatchResult()
 {
 }
 
-ChangeMessageVisibilityBatchResult::ChangeMessageVisibilityBatchResult(const AmazonWebServiceResult<XmlDocument>& result)
+ChangeMessageVisibilityBatchResult::ChangeMessageVisibilityBatchResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ChangeMessageVisibilityBatchResult& ChangeMessageVisibilityBatchResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ChangeMessageVisibilityBatchResult& ChangeMessageVisibilityBatchResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

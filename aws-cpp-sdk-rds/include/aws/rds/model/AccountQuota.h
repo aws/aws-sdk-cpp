@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the Amazon RDS quota for this AWS account.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline AccountQuota& WithAccountQuotaName(const char* value) { SetAccountQuotaName(value); return *this;}
 
+
     /**
      * <p>The amount currently used toward the quota maximum.</p>
      */
@@ -98,6 +100,7 @@ namespace Model
      * <p>The amount currently used toward the quota maximum.</p>
      */
     inline AccountQuota& WithUsed(long long value) { SetUsed(value); return *this;}
+
 
     /**
      * <p>The maximum allowed value for the quota.</p>
@@ -115,10 +118,13 @@ namespace Model
     inline AccountQuota& WithMax(long long value) { SetMax(value); return *this;}
 
   private:
+
     Aws::String m_accountQuotaName;
     bool m_accountQuotaNameHasBeenSet;
+
     long long m_used;
     bool m_usedHasBeenSet;
+
     long long m_max;
     bool m_maxHasBeenSet;
   };

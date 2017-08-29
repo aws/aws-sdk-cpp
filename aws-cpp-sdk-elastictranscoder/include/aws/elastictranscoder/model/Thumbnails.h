@@ -45,6 +45,7 @@ namespace Model
     Thumbnails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The format of thumbnails, if any. Valid values are <code>jpg</code> and
      * <code>png</code>. </p> <p>You specify whether you want Elastic Transcoder to
@@ -94,6 +95,7 @@ namespace Model
      */
     inline Thumbnails& WithFormat(const char* value) { SetFormat(value); return *this;}
 
+
     /**
      * <p>The approximate number of seconds between thumbnails. Specify an integer
      * value.</p>
@@ -135,6 +137,7 @@ namespace Model
      * value.</p>
      */
     inline Thumbnails& WithInterval(const char* value) { SetInterval(value); return *this;}
+
 
     /**
      * <important> <p>To better control resolution and aspect ratio of thumbnails, we
@@ -227,6 +230,7 @@ namespace Model
      */
     inline Thumbnails& WithResolution(const char* value) { SetResolution(value); return *this;}
 
+
     /**
      * <important> <p>To better control resolution and aspect ratio of thumbnails, we
      * recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>,
@@ -318,6 +322,7 @@ namespace Model
      */
     inline Thumbnails& WithAspectRatio(const char* value) { SetAspectRatio(value); return *this;}
 
+
     /**
      * <p>The maximum width of thumbnails in pixels. If you specify auto, Elastic
      * Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric
@@ -367,6 +372,7 @@ namespace Model
      */
     inline Thumbnails& WithMaxWidth(const char* value) { SetMaxWidth(value); return *this;}
 
+
     /**
      * <p>The maximum height of thumbnails in pixels. If you specify auto, Elastic
      * Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric
@@ -415,6 +421,7 @@ namespace Model
      * value, enter an even integer between 32 and 3072.</p>
      */
     inline Thumbnails& WithMaxHeight(const char* value) { SetMaxHeight(value); return *this;}
+
 
     /**
      * <p>Specify one of the following values to control scaling of thumbnails:</p>
@@ -619,6 +626,7 @@ namespace Model
      */
     inline Thumbnails& WithSizingPolicy(const char* value) { SetSizingPolicy(value); return *this;}
 
+
     /**
      * <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic
      * Transcoder may add black bars to the top and bottom and/or left and right sides
@@ -683,20 +691,28 @@ namespace Model
     inline Thumbnails& WithPaddingPolicy(const char* value) { SetPaddingPolicy(value); return *this;}
 
   private:
+
     Aws::String m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_interval;
     bool m_intervalHasBeenSet;
+
     Aws::String m_resolution;
     bool m_resolutionHasBeenSet;
+
     Aws::String m_aspectRatio;
     bool m_aspectRatioHasBeenSet;
+
     Aws::String m_maxWidth;
     bool m_maxWidthHasBeenSet;
+
     Aws::String m_maxHeight;
     bool m_maxHeightHasBeenSet;
+
     Aws::String m_sizingPolicy;
     bool m_sizingPolicyHasBeenSet;
+
     Aws::String m_paddingPolicy;
     bool m_paddingPolicyHasBeenSet;
   };

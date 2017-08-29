@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name you assign to this job.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name you assign to this job.</p>
      */
     inline CreateJobRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Description of the job.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline CreateJobRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Location of the logs for this job.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>Location of the logs for this job.</p>
      */
     inline CreateJobRequest& WithLogUri(const char* value) { SetLogUri(value); return *this;}
+
 
     /**
      * <p>The role associated with this job.</p>
@@ -180,6 +184,7 @@ namespace Model
      */
     inline CreateJobRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
+
     /**
      * <p>An ExecutionProperty specifying the maximum number of concurrent runs allowed
      * for this job.</p>
@@ -210,6 +215,7 @@ namespace Model
      */
     inline CreateJobRequest& WithExecutionProperty(ExecutionProperty&& value) { SetExecutionProperty(std::move(value)); return *this;}
 
+
     /**
      * <p>The JobCommand that executes this job.</p>
      */
@@ -234,6 +240,7 @@ namespace Model
      * <p>The JobCommand that executes this job.</p>
      */
     inline CreateJobRequest& WithCommand(JobCommand&& value) { SetCommand(std::move(value)); return *this;}
+
 
     /**
      * <p>The default parameters for this job.</p>
@@ -295,6 +302,7 @@ namespace Model
      */
     inline CreateJobRequest& AddDefaultArguments(const char* key, const char* value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(key, value); return *this; }
 
+
     /**
      * <p>The connections used for this job.</p>
      */
@@ -320,6 +328,7 @@ namespace Model
      */
     inline CreateJobRequest& WithConnections(ConnectionsList&& value) { SetConnections(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of times to retry this job if it fails.</p>
      */
@@ -334,6 +343,7 @@ namespace Model
      * <p>The maximum number of times to retry this job if it fails.</p>
      */
     inline CreateJobRequest& WithMaxRetries(int value) { SetMaxRetries(value); return *this;}
+
 
     /**
      * <p>The number of capacity units allocated to this job.</p>
@@ -351,24 +361,34 @@ namespace Model
     inline CreateJobRequest& WithAllocatedCapacity(int value) { SetAllocatedCapacity(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_logUri;
     bool m_logUriHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     ExecutionProperty m_executionProperty;
     bool m_executionPropertyHasBeenSet;
+
     JobCommand m_command;
     bool m_commandHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_defaultArguments;
     bool m_defaultArgumentsHasBeenSet;
+
     ConnectionsList m_connections;
     bool m_connectionsHasBeenSet;
+
     int m_maxRetries;
     bool m_maxRetriesHasBeenSet;
+
     int m_allocatedCapacity;
     bool m_allocatedCapacityHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The configuration recorder object that records each configuration change made
      * to the resources.</p>
@@ -71,6 +72,7 @@ namespace Model
     inline PutConfigurationRecorderRequest& WithConfigurationRecorder(ConfigurationRecorder&& value) { SetConfigurationRecorder(std::move(value)); return *this;}
 
   private:
+
     ConfigurationRecorder m_configurationRecorder;
     bool m_configurationRecorderHasBeenSet;
   };

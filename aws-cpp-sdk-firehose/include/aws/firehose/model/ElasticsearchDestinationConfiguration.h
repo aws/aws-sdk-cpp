@@ -53,6 +53,7 @@ namespace Model
     ElasticsearchDestinationConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the IAM role to be assumed by Kinesis Firehose for calling the
      * Amazon ES Configuration API and for indexing documents. For more information,
@@ -115,6 +116,7 @@ namespace Model
      * S3 Bucket Access</a>.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
 
     /**
      * <p>The ARN of the Amazon ES domain. The IAM role must have permissions
@@ -179,6 +181,7 @@ namespace Model
      */
     inline ElasticsearchDestinationConfiguration& WithDomainARN(const char* value) { SetDomainARN(value); return *this;}
 
+
     /**
      * <p>The Elasticsearch index name.</p>
      */
@@ -214,6 +217,7 @@ namespace Model
      */
     inline ElasticsearchDestinationConfiguration& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 
+
     /**
      * <p>The Elasticsearch type name.</p>
      */
@@ -248,6 +252,7 @@ namespace Model
      * <p>The Elasticsearch type name.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+
 
     /**
      * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
@@ -299,6 +304,7 @@ namespace Model
      */
     inline ElasticsearchDestinationConfiguration& WithIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { SetIndexRotationPeriod(std::move(value)); return *this;}
 
+
     /**
      * <p>The buffering options. If no value is specified, the default values for
      * <b>ElasticsearchBufferingHints</b> are used.</p>
@@ -329,6 +335,7 @@ namespace Model
      */
     inline ElasticsearchDestinationConfiguration& WithBufferingHints(ElasticsearchBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
 
+
     /**
      * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
      * Amazon ES. The default value is 300 (5 minutes).</p>
@@ -358,6 +365,7 @@ namespace Model
      * Amazon ES. The default value is 300 (5 minutes).</p>
      */
     inline ElasticsearchDestinationConfiguration& WithRetryOptions(ElasticsearchRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When set to
@@ -424,6 +432,7 @@ namespace Model
      */
     inline ElasticsearchDestinationConfiguration& WithS3BackupMode(ElasticsearchS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
 
+
     /**
      * <p>The configuration for the backup Amazon S3 location.</p>
      */
@@ -449,6 +458,7 @@ namespace Model
      */
     inline ElasticsearchDestinationConfiguration& WithS3Configuration(S3DestinationConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
 
+
     /**
      * <p>The data processing configuration.</p>
      */
@@ -473,6 +483,7 @@ namespace Model
      * <p>The data processing configuration.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
@@ -500,26 +511,37 @@ namespace Model
     inline ElasticsearchDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::String m_domainARN;
     bool m_domainARNHasBeenSet;
+
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet;
+
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet;
+
     ElasticsearchIndexRotationPeriod m_indexRotationPeriod;
     bool m_indexRotationPeriodHasBeenSet;
+
     ElasticsearchBufferingHints m_bufferingHints;
     bool m_bufferingHintsHasBeenSet;
+
     ElasticsearchRetryOptions m_retryOptions;
     bool m_retryOptionsHasBeenSet;
+
     ElasticsearchS3BackupMode m_s3BackupMode;
     bool m_s3BackupModeHasBeenSet;
+
     S3DestinationConfiguration m_s3Configuration;
     bool m_s3ConfigurationHasBeenSet;
+
     ProcessingConfiguration m_processingConfiguration;
     bool m_processingConfigurationHasBeenSet;
+
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
   };

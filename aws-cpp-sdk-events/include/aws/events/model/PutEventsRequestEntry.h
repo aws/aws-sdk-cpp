@@ -47,6 +47,7 @@ namespace Model
     PutEventsRequestEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The timestamp of the event, per <a
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
@@ -82,6 +83,7 @@ namespace Model
      */
     inline PutEventsRequestEntry& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The source of the event.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The source of the event.</p>
      */
     inline PutEventsRequestEntry& WithSource(const char* value) { SetSource(value); return *this;}
+
 
     /**
      * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
@@ -165,6 +168,7 @@ namespace Model
      */
     inline PutEventsRequestEntry& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
+
     /**
      * <p>Free-form string used to decide what fields to expect in the event
      * detail.</p>
@@ -206,6 +210,7 @@ namespace Model
      * detail.</p>
      */
     inline PutEventsRequestEntry& WithDetailType(const char* value) { SetDetailType(value); return *this;}
+
 
     /**
      * <p>In the JSON sense, an object containing fields, which may also contain nested
@@ -250,14 +255,19 @@ namespace Model
     inline PutEventsRequestEntry& WithDetail(const char* value) { SetDetail(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_time;
     bool m_timeHasBeenSet;
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     Aws::Vector<Aws::String> m_resources;
     bool m_resourcesHasBeenSet;
+
     Aws::String m_detailType;
     bool m_detailTypeHasBeenSet;
+
     Aws::String m_detail;
     bool m_detailHasBeenSet;
   };

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribePrefixListsResponse();
-    DescribePrefixListsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribePrefixListsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribePrefixListsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribePrefixListsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -91,6 +92,7 @@ namespace Model
      */
     inline DescribePrefixListsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>All available prefix lists.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      */
     inline DescribePrefixListsResponse& AddPrefixLists(PrefixList&& value) { m_prefixLists.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline DescribePrefixListsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<PrefixList> m_prefixLists;
+
     ResponseMetadata m_responseMetadata;
   };
 

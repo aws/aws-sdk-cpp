@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet to update port settings for.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline UpdateFleetPortSettingsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
+
     /**
      * <p>Collection of port settings to be added to the fleet record.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>Collection of port settings to be added to the fleet record.</p>
      */
     inline UpdateFleetPortSettingsRequest& AddInboundPermissionAuthorizations(IpPermission&& value) { m_inboundPermissionAuthorizationsHasBeenSet = true; m_inboundPermissionAuthorizations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Collection of port settings to be removed from the fleet record.</p>
@@ -147,10 +150,13 @@ namespace Model
     inline UpdateFleetPortSettingsRequest& AddInboundPermissionRevocations(IpPermission&& value) { m_inboundPermissionRevocationsHasBeenSet = true; m_inboundPermissionRevocations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::Vector<IpPermission> m_inboundPermissionAuthorizations;
     bool m_inboundPermissionAuthorizationsHasBeenSet;
+
     Aws::Vector<IpPermission> m_inboundPermissionRevocations;
     bool m_inboundPermissionRevocationsHasBeenSet;
   };

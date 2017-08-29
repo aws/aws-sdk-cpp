@@ -31,12 +31,12 @@ GetSubscriptionAttributesResult::GetSubscriptionAttributesResult()
 {
 }
 
-GetSubscriptionAttributesResult::GetSubscriptionAttributesResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetSubscriptionAttributesResult::GetSubscriptionAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetSubscriptionAttributesResult& GetSubscriptionAttributesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetSubscriptionAttributesResult& GetSubscriptionAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

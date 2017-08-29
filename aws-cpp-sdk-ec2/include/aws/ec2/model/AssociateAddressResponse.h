@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     AssociateAddressResponse();
-    AssociateAddressResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssociateAddressResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssociateAddressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssociateAddressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
@@ -89,6 +90,7 @@ namespace Model
      */
     inline AssociateAddressResponse& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,7 +107,9 @@ namespace Model
     inline AssociateAddressResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_associationId;
+
     ResponseMetadata m_responseMetadata;
   };
 

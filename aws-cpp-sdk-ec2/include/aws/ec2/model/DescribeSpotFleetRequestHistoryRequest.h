@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -67,6 +68,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeSpotFleetRequestHistoryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The type of events to describe. By default, all events are described.</p>
@@ -93,6 +95,7 @@ namespace Model
      */
     inline DescribeSpotFleetRequestHistoryRequest& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of results to return in a single call. Specify a value
      * between 1 and 1000. The default value is 1000. To retrieve the remaining
@@ -113,6 +116,7 @@ namespace Model
      * results, make another call with the returned <code>NextToken</code> value.</p>
      */
     inline DescribeSpotFleetRequestHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of results.</p>
@@ -149,6 +153,7 @@ namespace Model
      */
     inline DescribeSpotFleetRequestHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The ID of the Spot fleet request.</p>
      */
@@ -184,6 +189,7 @@ namespace Model
      */
     inline DescribeSpotFleetRequestHistoryRequest& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
+
     /**
      * <p>The starting date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
@@ -215,16 +221,22 @@ namespace Model
     inline DescribeSpotFleetRequestHistoryRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     EventType m_eventType;
     bool m_eventTypeHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
   };

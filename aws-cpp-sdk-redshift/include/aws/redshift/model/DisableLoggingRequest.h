@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the cluster on which logging is to be stopped.</p>
      * <p>Example: <code>examplecluster</code> </p>
@@ -84,6 +85,7 @@ namespace Model
     inline DisableLoggingRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
   };

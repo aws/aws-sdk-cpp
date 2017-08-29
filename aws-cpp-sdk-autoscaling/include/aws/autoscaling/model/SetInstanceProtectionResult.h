@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     SetInstanceProtectionResult();
-    SetInstanceProtectionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetInstanceProtectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetInstanceProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetInstanceProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -62,6 +63,7 @@ namespace Model
     inline SetInstanceProtectionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ResponseMetadata m_responseMetadata;
   };
 

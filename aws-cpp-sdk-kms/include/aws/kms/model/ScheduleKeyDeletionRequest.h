@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier for the customer master key (CMK) to delete.</p> <p>To
      * specify this value, use the unique key ID or the Amazon Resource Name (ARN) of
@@ -113,6 +114,7 @@ namespace Model
      */
     inline ScheduleKeyDeletionRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>The waiting period, specified in number of days. After the waiting period
      * ends, AWS KMS deletes the customer master key (CMK).</p> <p>This value is
@@ -138,8 +140,10 @@ namespace Model
     inline ScheduleKeyDeletionRequest& WithPendingWindowInDays(int value) { SetPendingWindowInDays(value); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     int m_pendingWindowInDays;
     bool m_pendingWindowInDaysHasBeenSet;
   };

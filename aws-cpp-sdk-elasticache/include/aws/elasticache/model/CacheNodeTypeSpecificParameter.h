@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the parameter.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The name of the parameter.</p>
      */
     inline CacheNodeTypeSpecificParameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+
 
     /**
      * <p>A description of the parameter.</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline CacheNodeTypeSpecificParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The source of the parameter value.</p>
      */
@@ -158,6 +161,7 @@ namespace Model
      * <p>The source of the parameter value.</p>
      */
     inline CacheNodeTypeSpecificParameter& WithSource(const char* value) { SetSource(value); return *this;}
+
 
     /**
      * <p>The valid data type for the parameter.</p>
@@ -194,6 +198,7 @@ namespace Model
      */
     inline CacheNodeTypeSpecificParameter& WithDataType(const char* value) { SetDataType(value); return *this;}
 
+
     /**
      * <p>The valid range of values for the parameter.</p>
      */
@@ -229,6 +234,7 @@ namespace Model
      */
     inline CacheNodeTypeSpecificParameter& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
 
+
     /**
      * <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the
      * parameter can be modified. Some parameters have security or operational
@@ -249,6 +255,7 @@ namespace Model
      * implications that prevent them from being changed.</p>
      */
     inline CacheNodeTypeSpecificParameter& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
+
 
     /**
      * <p>The earliest cache engine version to which the parameter can apply.</p>
@@ -284,6 +291,7 @@ namespace Model
      * <p>The earliest cache engine version to which the parameter can apply.</p>
      */
     inline CacheNodeTypeSpecificParameter& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
+
 
     /**
      * <p>A list of cache node types and their corresponding values for this
@@ -326,6 +334,7 @@ namespace Model
      * parameter.</p>
      */
     inline CacheNodeTypeSpecificParameter& AddCacheNodeTypeSpecificValues(CacheNodeTypeSpecificValue&& value) { m_cacheNodeTypeSpecificValuesHasBeenSet = true; m_cacheNodeTypeSpecificValues.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Indicates whether a change to the parameter is applied immediately or
@@ -373,22 +382,31 @@ namespace Model
     inline CacheNodeTypeSpecificParameter& WithChangeType(ChangeType&& value) { SetChangeType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_parameterName;
     bool m_parameterNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     Aws::String m_dataType;
     bool m_dataTypeHasBeenSet;
+
     Aws::String m_allowedValues;
     bool m_allowedValuesHasBeenSet;
+
     bool m_isModifiable;
     bool m_isModifiableHasBeenSet;
+
     Aws::String m_minimumEngineVersion;
     bool m_minimumEngineVersionHasBeenSet;
+
     Aws::Vector<CacheNodeTypeSpecificValue> m_cacheNodeTypeSpecificValues;
     bool m_cacheNodeTypeSpecificValuesHasBeenSet;
+
     ChangeType m_changeType;
     bool m_changeTypeHasBeenSet;
   };

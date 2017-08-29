@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListTopicRulesResult();
-    ListTopicRulesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTopicRulesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTopicRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTopicRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The rules.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The rules.</p>
      */
     inline ListTopicRulesResult& AddRules(TopicRuleListItem&& value) { m_rules.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token used to retrieve the next value.</p>
@@ -119,7 +121,9 @@ namespace Model
     inline ListTopicRulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<TopicRuleListItem> m_rules;
+
     Aws::String m_nextToken;
   };
 

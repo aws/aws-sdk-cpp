@@ -46,6 +46,7 @@ namespace Model
     EventTriggerDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an
      * AWS Lambda function's event trigger associated with this job.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline EventTriggerDefinition& WithEventResourceARN(const char* value) { SetEventResourceARN(value); return *this;}
 
   private:
+
     Aws::String m_eventResourceARN;
     bool m_eventResourceARNHasBeenSet;
   };

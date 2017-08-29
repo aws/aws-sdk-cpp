@@ -45,6 +45,7 @@ namespace Model
     ConstraintDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the constraint.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The identifier of the constraint.</p>
      */
     inline ConstraintDetail& WithConstraintId(const char* value) { SetConstraintId(value); return *this;}
+
 
     /**
      * <p>The type of the constraint.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline ConstraintDetail& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>The text description of the constraint.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The text description of the constraint.</p>
      */
     inline ConstraintDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The owner of the constraint.</p>
@@ -186,12 +190,16 @@ namespace Model
     inline ConstraintDetail& WithOwner(const char* value) { SetOwner(value); return *this;}
 
   private:
+
     Aws::String m_constraintId;
     bool m_constraintIdHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
   };

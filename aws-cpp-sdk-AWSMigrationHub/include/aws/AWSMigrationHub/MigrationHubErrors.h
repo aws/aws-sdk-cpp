@@ -55,14 +55,14 @@ enum class MigrationHubErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DRY_RUN_OPERATION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DRY_RUN_OPERATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_INPUT,
   POLICY_ERROR,
   UNAUTHORIZED_OPERATION
 };
 namespace MigrationHubErrorMapper
 {
-  AWS_MIGRATIONHUB_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_MIGRATIONHUB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace MigrationHub

@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
      * you. If you create more than one subnet in your VPC, we may not necessarily
@@ -90,6 +91,7 @@ namespace Model
      */
     inline CreateSubnetRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
@@ -131,6 +133,7 @@ namespace Model
      * <code>10.0.0.0/24</code>.</p>
      */
     inline CreateSubnetRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+
 
     /**
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
@@ -174,6 +177,7 @@ namespace Model
      */
     inline CreateSubnetRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
 
+
     /**
      * <p>The ID of the VPC.</p>
      */
@@ -209,6 +213,7 @@ namespace Model
      */
     inline CreateSubnetRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -234,14 +239,19 @@ namespace Model
     inline CreateSubnetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
+
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

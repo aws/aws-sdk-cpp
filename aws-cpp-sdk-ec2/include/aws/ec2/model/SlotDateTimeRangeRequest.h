@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
     inline SlotDateTimeRangeRequest& WithEarliestTime(Aws::Utils::DateTime&& value) { SetEarliestTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start. This
@@ -111,8 +113,10 @@ namespace Model
     inline SlotDateTimeRangeRequest& WithLatestTime(Aws::Utils::DateTime&& value) { SetLatestTime(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_earliestTime;
     bool m_earliestTimeHasBeenSet;
+
     Aws::Utils::DateTime m_latestTime;
     bool m_latestTimeHasBeenSet;
   };

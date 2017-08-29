@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeEgressOnlyInternetGatewaysResponse();
-    DescribeEgressOnlyInternetGatewaysResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEgressOnlyInternetGatewaysResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEgressOnlyInternetGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEgressOnlyInternetGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the egress-only Internet gateways.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeEgressOnlyInternetGatewaysResponse& AddEgressOnlyInternetGateways(EgressOnlyInternetGateway&& value) { m_egressOnlyInternetGateways.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      */
     inline DescribeEgressOnlyInternetGatewaysResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -130,8 +133,11 @@ namespace Model
     inline DescribeEgressOnlyInternetGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<EgressOnlyInternetGateway> m_egressOnlyInternetGateways;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

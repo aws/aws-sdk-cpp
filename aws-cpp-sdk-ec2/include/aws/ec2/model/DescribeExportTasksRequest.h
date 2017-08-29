@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more export task IDs.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeExportTasksRequest& AddExportTaskIds(const char* value) { m_exportTaskIdsHasBeenSet = true; m_exportTaskIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_exportTaskIds;
     bool m_exportTaskIdsHasBeenSet;
   };

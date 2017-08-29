@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetSendQuotaResult();
-    GetSendQuotaResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetSendQuotaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetSendQuotaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetSendQuotaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The maximum number of emails the user is allowed to send in a 24-hour
@@ -65,6 +66,7 @@ namespace Model
      * interval. A value of -1 signifies an unlimited quota.</p>
      */
     inline GetSendQuotaResult& WithMax24HourSend(double value) { SetMax24HourSend(value); return *this;}
+
 
     /**
      * <p>The maximum number of emails that Amazon SES can accept from the user's
@@ -87,6 +89,7 @@ namespace Model
      */
     inline GetSendQuotaResult& WithMaxSendRate(double value) { SetMaxSendRate(value); return *this;}
 
+
     /**
      * <p>The number of emails sent during the previous 24 hours.</p>
      */
@@ -101,6 +104,7 @@ namespace Model
      * <p>The number of emails sent during the previous 24 hours.</p>
      */
     inline GetSendQuotaResult& WithSentLast24Hours(double value) { SetSentLast24Hours(value); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -118,9 +122,13 @@ namespace Model
     inline GetSendQuotaResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     double m_max24HourSend;
+
     double m_maxSendRate;
+
     double m_sentLast24Hours;
+
     ResponseMetadata m_responseMetadata;
   };
 

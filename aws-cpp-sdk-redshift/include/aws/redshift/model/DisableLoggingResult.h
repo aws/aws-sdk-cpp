@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DisableLoggingResult();
-    DisableLoggingResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisableLoggingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DisableLoggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DisableLoggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> <code>true</code> if logging is on, <code>false</code> if logging is
@@ -65,6 +66,7 @@ namespace Model
      * off.</p>
      */
     inline DisableLoggingResult& WithLoggingEnabled(bool value) { SetLoggingEnabled(value); return *this;}
+
 
     /**
      * <p>The name of the S3 bucket where the log files are stored.</p>
@@ -101,6 +103,7 @@ namespace Model
      */
     inline DisableLoggingResult& WithBucketName(const char* value) { SetBucketName(value); return *this;}
 
+
     /**
      * <p>The prefix applied to the log file names.</p>
      */
@@ -136,6 +139,7 @@ namespace Model
      */
     inline DisableLoggingResult& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
 
+
     /**
      * <p>The last time that logs were delivered.</p>
      */
@@ -161,6 +165,7 @@ namespace Model
      */
     inline DisableLoggingResult& WithLastSuccessfulDeliveryTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulDeliveryTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The last time when logs failed to be delivered.</p>
      */
@@ -185,6 +190,7 @@ namespace Model
      * <p>The last time when logs failed to be delivered.</p>
      */
     inline DisableLoggingResult& WithLastFailureTime(Aws::Utils::DateTime&& value) { SetLastFailureTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The message indicating that logs failed to be delivered.</p>
@@ -221,6 +227,7 @@ namespace Model
      */
     inline DisableLoggingResult& WithLastFailureMessage(const char* value) { SetLastFailureMessage(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -237,12 +244,19 @@ namespace Model
     inline DisableLoggingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     bool m_loggingEnabled;
+
     Aws::String m_bucketName;
+
     Aws::String m_s3KeyPrefix;
+
     Aws::Utils::DateTime m_lastSuccessfulDeliveryTime;
+
     Aws::Utils::DateTime m_lastFailureTime;
+
     Aws::String m_lastFailureMessage;
+
     ResponseMetadata m_responseMetadata;
   };
 

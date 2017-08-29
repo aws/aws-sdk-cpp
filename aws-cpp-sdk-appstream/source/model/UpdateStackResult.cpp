@@ -30,12 +30,12 @@ UpdateStackResult::UpdateStackResult()
 {
 }
 
-UpdateStackResult::UpdateStackResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateStackResult::UpdateStackResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateStackResult& UpdateStackResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateStackResult& UpdateStackResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Stack"))

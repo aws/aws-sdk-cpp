@@ -51,6 +51,7 @@ namespace Model
     Event& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the event. Format:
      * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i>
@@ -107,6 +108,7 @@ namespace Model
      */
     inline Event& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The AWS service that is affected by the event. For example, <code>EC2</code>,
      * <code>RDS</code>.</p>
@@ -148,6 +150,7 @@ namespace Model
      * <code>RDS</code>.</p>
      */
     inline Event& WithService(const char* value) { SetService(value); return *this;}
+
 
     /**
      * <p>The unique identifier for the event type. The format is
@@ -198,6 +201,7 @@ namespace Model
      */
     inline Event& WithEventTypeCode(const char* value) { SetEventTypeCode(value); return *this;}
 
+
     /**
      * <p>The </p>
      */
@@ -222,6 +226,7 @@ namespace Model
      * <p>The </p>
      */
     inline Event& WithEventTypeCategory(EventTypeCategory&& value) { SetEventTypeCategory(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS region name of the event.</p>
@@ -258,6 +263,7 @@ namespace Model
      */
     inline Event& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
     /**
      * <p>The AWS Availability Zone of the event. For example, us-east-1a.</p>
      */
@@ -293,6 +299,7 @@ namespace Model
      */
     inline Event& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The date and time that the event began.</p>
      */
@@ -317,6 +324,7 @@ namespace Model
      * <p>The date and time that the event began.</p>
      */
     inline Event& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time that the event ended.</p>
@@ -343,6 +351,7 @@ namespace Model
      */
     inline Event& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The most recent date and time that the event was updated.</p>
      */
@@ -367,6 +376,7 @@ namespace Model
      * <p>The most recent date and time that the event was updated.</p>
      */
     inline Event& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The most recent status of the event. Possible values are <code>open</code>,
@@ -399,24 +409,34 @@ namespace Model
     inline Event& WithStatusCode(EventStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_service;
     bool m_serviceHasBeenSet;
+
     Aws::String m_eventTypeCode;
     bool m_eventTypeCodeHasBeenSet;
+
     EventTypeCategory m_eventTypeCategory;
     bool m_eventTypeCategoryHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
     EventStatusCode m_statusCode;
     bool m_statusCodeHasBeenSet;
   };

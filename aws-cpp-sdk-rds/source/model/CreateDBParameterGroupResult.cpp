@@ -31,12 +31,12 @@ CreateDBParameterGroupResult::CreateDBParameterGroupResult()
 {
 }
 
-CreateDBParameterGroupResult::CreateDBParameterGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateDBParameterGroupResult::CreateDBParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateDBParameterGroupResult& CreateDBParameterGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateDBParameterGroupResult& CreateDBParameterGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

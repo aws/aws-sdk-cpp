@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListOfferingsResult();
-    ListOfferingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOfferingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A value representing the list offering results.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A value representing the list offering results.</p>
      */
     inline ListOfferingsResult& AddOfferings(Offering&& value) { m_offerings.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -127,7 +129,9 @@ namespace Model
     inline ListOfferingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Offering> m_offerings;
+
     Aws::String m_nextToken;
   };
 

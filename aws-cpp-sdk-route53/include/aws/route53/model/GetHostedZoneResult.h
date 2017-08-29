@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetHostedZoneResult();
-    GetHostedZoneResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetHostedZoneResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHostedZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains general information about the specified hosted
@@ -80,6 +81,7 @@ namespace Model
      */
     inline GetHostedZoneResult& WithHostedZone(HostedZone&& value) { SetHostedZone(std::move(value)); return *this;}
 
+
     /**
      * <p>A complex type that lists the Amazon Route 53 name servers for the specified
      * hosted zone.</p>
@@ -109,6 +111,7 @@ namespace Model
      * hosted zone.</p>
      */
     inline GetHostedZoneResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that contains information about the VPCs that are associated
@@ -153,8 +156,11 @@ namespace Model
     inline GetHostedZoneResult& AddVPCs(VPC&& value) { m_vPCs.push_back(std::move(value)); return *this; }
 
   private:
+
     HostedZone m_hostedZone;
+
     DelegationSet m_delegationSet;
+
     Aws::Vector<VPC> m_vPCs;
   };
 

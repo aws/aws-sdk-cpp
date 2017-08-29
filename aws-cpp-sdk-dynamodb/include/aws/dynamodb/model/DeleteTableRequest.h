@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the table to delete.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DeleteTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
   };

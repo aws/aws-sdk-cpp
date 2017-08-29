@@ -31,12 +31,12 @@ GetIdentityDkimAttributesResult::GetIdentityDkimAttributesResult()
 {
 }
 
-GetIdentityDkimAttributesResult::GetIdentityDkimAttributesResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetIdentityDkimAttributesResult::GetIdentityDkimAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetIdentityDkimAttributesResult& GetIdentityDkimAttributesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetIdentityDkimAttributesResult& GetIdentityDkimAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

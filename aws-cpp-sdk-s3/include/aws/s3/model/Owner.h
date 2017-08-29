@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline Owner& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
 
     
     inline const Aws::String& GetID() const{ return m_iD; }
@@ -84,8 +86,10 @@ namespace Model
     inline Owner& WithID(const char* value) { SetID(value); return *this;}
 
   private:
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     Aws::String m_iD;
     bool m_iDHasBeenSet;
   };

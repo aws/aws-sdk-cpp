@@ -57,6 +57,7 @@ namespace Model
     IPSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use
      * <code>IPSetId</code> to get information about an <code>IPSet</code> (see
@@ -134,6 +135,7 @@ namespace Model
      */
     inline IPSet& WithIPSetId(const char* value) { SetIPSetId(value); return *this;}
 
+
     /**
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
      * of an <code>IPSet</code> after you create it.</p>
@@ -175,6 +177,7 @@ namespace Model
      * of an <code>IPSet</code> after you create it.</p>
      */
     inline IPSet& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
@@ -240,10 +243,13 @@ namespace Model
     inline IPSet& AddIPSetDescriptors(IPSetDescriptor&& value) { m_iPSetDescriptorsHasBeenSet = true; m_iPSetDescriptors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_iPSetId;
     bool m_iPSetIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<IPSetDescriptor> m_iPSetDescriptors;
     bool m_iPSetDescriptorsHasBeenSet;
   };

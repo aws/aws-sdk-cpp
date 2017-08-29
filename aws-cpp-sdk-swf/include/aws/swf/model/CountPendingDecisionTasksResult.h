@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     CountPendingDecisionTasksResult();
-    CountPendingDecisionTasksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CountPendingDecisionTasksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CountPendingDecisionTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CountPendingDecisionTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of tasks in the task list.</p>
@@ -58,6 +59,7 @@ namespace Model
      * <p>The number of tasks in the task list.</p>
      */
     inline CountPendingDecisionTasksResult& WithCount(int value) { SetCount(value); return *this;}
+
 
     /**
      * <p>If set to true, indicates that the actual count was more than the maximum
@@ -78,7 +80,9 @@ namespace Model
     inline CountPendingDecisionTasksResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
 
   private:
+
     int m_count;
+
     bool m_truncated;
   };
 

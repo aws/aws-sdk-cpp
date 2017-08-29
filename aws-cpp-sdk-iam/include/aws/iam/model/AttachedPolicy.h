@@ -56,6 +56,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The friendly name of the attached policy.</p>
      */
@@ -91,6 +92,7 @@ namespace Model
      */
     inline AttachedPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
+
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
@@ -113,8 +115,10 @@ namespace Model
     inline AttachedPolicy& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet;
   };

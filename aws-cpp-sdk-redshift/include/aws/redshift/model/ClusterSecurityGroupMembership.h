@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cluster security group.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the cluster security group.</p>
      */
     inline ClusterSecurityGroupMembership& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}
+
 
     /**
      * <p>The status of the cluster security group.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline ClusterSecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_clusterSecurityGroupName;
     bool m_clusterSecurityGroupNameHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

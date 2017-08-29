@@ -30,12 +30,12 @@ DeleteDeviceDefinitionResult::DeleteDeviceDefinitionResult()
 {
 }
 
-DeleteDeviceDefinitionResult::DeleteDeviceDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDeviceDefinitionResult::DeleteDeviceDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteDeviceDefinitionResult& DeleteDeviceDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDeviceDefinitionResult& DeleteDeviceDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

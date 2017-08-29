@@ -54,6 +54,7 @@ namespace Model
     Output& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the in-application stream.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      */
     inline Output& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Identifies an Amazon Kinesis stream as the destination.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>Identifies an Amazon Kinesis stream as the destination.</p>
      */
     inline Output& WithKinesisStreamsOutput(KinesisStreamsOutput&& value) { SetKinesisStreamsOutput(std::move(value)); return *this;}
+
 
     /**
      * <p>Identifies an Amazon Kinesis Firehose delivery stream as the destination.</p>
@@ -139,6 +142,7 @@ namespace Model
      */
     inline Output& WithKinesisFirehoseOutput(KinesisFirehoseOutput&& value) { SetKinesisFirehoseOutput(std::move(value)); return *this;}
 
+
     
     inline const DestinationSchema& GetDestinationSchema() const{ return m_destinationSchema; }
 
@@ -155,12 +159,16 @@ namespace Model
     inline Output& WithDestinationSchema(DestinationSchema&& value) { SetDestinationSchema(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     KinesisStreamsOutput m_kinesisStreamsOutput;
     bool m_kinesisStreamsOutputHasBeenSet;
+
     KinesisFirehoseOutput m_kinesisFirehoseOutput;
     bool m_kinesisFirehoseOutputHasBeenSet;
+
     DestinationSchema m_destinationSchema;
     bool m_destinationSchemaHasBeenSet;
   };

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     ListElasticsearchInstanceTypesResult();
-    ListElasticsearchInstanceTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListElasticsearchInstanceTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListElasticsearchInstanceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListElasticsearchInstanceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> List of instance types supported by Amazon Elasticsearch service for given
@@ -91,6 +92,7 @@ namespace Model
      * <code> <a>ElasticsearchVersion</a> </code> </p>
      */
     inline ListElasticsearchInstanceTypesResult& AddElasticsearchInstanceTypes(ESPartitionInstanceType&& value) { m_elasticsearchInstanceTypes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>In case if there are more results available NextToken would be present, make
@@ -142,7 +144,9 @@ namespace Model
     inline ListElasticsearchInstanceTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ESPartitionInstanceType> m_elasticsearchInstanceTypes;
+
     Aws::String m_nextToken;
   };
 

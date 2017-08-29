@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p> The path for the virtual MFA device. For more information about paths, see
      * <a
@@ -136,6 +137,7 @@ namespace Model
      */
     inline CreateVirtualMFADeviceRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The name of the virtual MFA device. Use with path to uniquely identify a
      * virtual MFA device.</p> <p>This parameter allows (per its <a
@@ -200,8 +202,10 @@ namespace Model
     inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(const char* value) { SetVirtualMFADeviceName(value); return *this;}
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_virtualMFADeviceName;
     bool m_virtualMFADeviceNameHasBeenSet;
   };

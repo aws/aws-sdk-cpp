@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Contains information about where to publish the inventory results.
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline InventoryConfiguration& WithDestination(InventoryDestination&& value) { SetDestination(std::move(value)); return *this;}
 
+
     /**
      * Specifies whether the inventory is enabled or disabled.
      */
@@ -86,6 +88,7 @@ namespace Model
      * Specifies whether the inventory is enabled or disabled.
      */
     inline InventoryConfiguration& WithIsEnabled(bool value) { SetIsEnabled(value); return *this;}
+
 
     /**
      * Specifies an inventory filter. The inventory only includes objects that meet the
@@ -116,6 +119,7 @@ namespace Model
      * filter's criteria.
      */
     inline InventoryConfiguration& WithFilter(InventoryFilter&& value) { SetFilter(std::move(value)); return *this;}
+
 
     /**
      * The ID used to identify the inventory configuration.
@@ -152,6 +156,7 @@ namespace Model
      */
     inline InventoryConfiguration& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * Specifies which object version(s) to included in the inventory results.
      */
@@ -176,6 +181,7 @@ namespace Model
      * Specifies which object version(s) to included in the inventory results.
      */
     inline InventoryConfiguration& WithIncludedObjectVersions(InventoryIncludedObjectVersions&& value) { SetIncludedObjectVersions(std::move(value)); return *this;}
+
 
     /**
      * Contains the optional fields that are included in the inventory results.
@@ -212,6 +218,7 @@ namespace Model
      */
     inline InventoryConfiguration& AddOptionalFields(InventoryOptionalField&& value) { m_optionalFieldsHasBeenSet = true; m_optionalFields.push_back(std::move(value)); return *this; }
 
+
     /**
      * Specifies the schedule for generating inventory results.
      */
@@ -238,18 +245,25 @@ namespace Model
     inline InventoryConfiguration& WithSchedule(InventorySchedule&& value) { SetSchedule(std::move(value)); return *this;}
 
   private:
+
     InventoryDestination m_destination;
     bool m_destinationHasBeenSet;
+
     bool m_isEnabled;
     bool m_isEnabledHasBeenSet;
+
     InventoryFilter m_filter;
     bool m_filterHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     InventoryIncludedObjectVersions m_includedObjectVersions;
     bool m_includedObjectVersionsHasBeenSet;
+
     Aws::Vector<InventoryOptionalField> m_optionalFields;
     bool m_optionalFieldsHasBeenSet;
+
     InventorySchedule m_schedule;
     bool m_scheduleHasBeenSet;
   };

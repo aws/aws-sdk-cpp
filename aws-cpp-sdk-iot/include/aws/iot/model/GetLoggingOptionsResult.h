@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetLoggingOptionsResult();
-    GetLoggingOptionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLoggingOptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetLoggingOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetLoggingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the IAM role that grants access.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline GetLoggingOptionsResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>The logging level.</p>
      */
@@ -109,7 +111,9 @@ namespace Model
     inline GetLoggingOptionsResult& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_roleArn;
+
     LogLevel m_logLevel;
   };
 

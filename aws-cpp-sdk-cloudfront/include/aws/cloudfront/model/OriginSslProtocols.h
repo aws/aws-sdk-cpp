@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
      * establishing an HTTPS connection with this origin. </p>
@@ -66,6 +67,7 @@ namespace Model
      * establishing an HTTPS connection with this origin. </p>
      */
     inline OriginSslProtocols& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
@@ -103,8 +105,10 @@ namespace Model
     inline OriginSslProtocols& AddItems(SslProtocol&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<SslProtocol> m_items;
     bool m_itemsHasBeenSet;
   };

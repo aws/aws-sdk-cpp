@@ -52,6 +52,7 @@ namespace Model
     StreamDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the stream being described.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline StreamDescription& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the stream being described.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the stream being described.</p>
      */
     inline StreamDescription& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+
 
     /**
      * <p>The current status of the stream being described. The stream status is one of
@@ -202,6 +205,7 @@ namespace Model
      */
     inline StreamDescription& WithStreamStatus(StreamStatus&& value) { SetStreamStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The shards that comprise the stream.</p>
      */
@@ -237,6 +241,7 @@ namespace Model
      */
     inline StreamDescription& AddShards(Shard&& value) { m_shardsHasBeenSet = true; m_shards.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If set to <code>true</code>, more shards in the stream are available to
      * describe.</p>
@@ -255,6 +260,7 @@ namespace Model
      */
     inline StreamDescription& WithHasMoreShards(bool value) { SetHasMoreShards(value); return *this;}
 
+
     /**
      * <p>The current retention period, in hours.</p>
      */
@@ -269,6 +275,7 @@ namespace Model
      * <p>The current retention period, in hours.</p>
      */
     inline StreamDescription& WithRetentionPeriodHours(int value) { SetRetentionPeriodHours(value); return *this;}
+
 
     /**
      * <p>The approximate time that the stream was created.</p>
@@ -294,6 +301,7 @@ namespace Model
      * <p>The approximate time that the stream was created.</p>
      */
     inline StreamDescription& WithStreamCreationTimestamp(Aws::Utils::DateTime&& value) { SetStreamCreationTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>Represents the current enhanced monitoring settings of the stream.</p>
@@ -329,6 +337,7 @@ namespace Model
      * <p>Represents the current enhanced monitoring settings of the stream.</p>
      */
     inline StreamDescription& AddEnhancedMonitoring(EnhancedMetrics&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The server-side encryption type used on the stream. This parameter can be one
@@ -375,6 +384,7 @@ namespace Model
      */
     inline StreamDescription& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 
+
     /**
      * <p>The GUID for the customer-managed KMS key used for encryption on the
      * stream.</p>
@@ -418,24 +428,34 @@ namespace Model
     inline StreamDescription& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::String m_streamARN;
     bool m_streamARNHasBeenSet;
+
     StreamStatus m_streamStatus;
     bool m_streamStatusHasBeenSet;
+
     Aws::Vector<Shard> m_shards;
     bool m_shardsHasBeenSet;
+
     bool m_hasMoreShards;
     bool m_hasMoreShardsHasBeenSet;
+
     int m_retentionPeriodHours;
     bool m_retentionPeriodHoursHasBeenSet;
+
     Aws::Utils::DateTime m_streamCreationTimestamp;
     bool m_streamCreationTimestampHasBeenSet;
+
     Aws::Vector<EnhancedMetrics> m_enhancedMonitoring;
     bool m_enhancedMonitoringHasBeenSet;
+
     EncryptionType m_encryptionType;
     bool m_encryptionTypeHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
   };

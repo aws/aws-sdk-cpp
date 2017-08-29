@@ -43,6 +43,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The prefix used when evaluating a metrics filter.
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline MetricsFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     /**
      * The tag used when evaluating a metrics filter.
      */
@@ -102,6 +104,7 @@ namespace Model
      * The tag used when evaluating a metrics filter.
      */
     inline MetricsFilter& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
+
 
     /**
      * A conjunction (logical AND) of predicates, which is used in evaluating a metrics
@@ -139,10 +142,13 @@ namespace Model
     inline MetricsFilter& WithAnd(MetricsAndOperator&& value) { SetAnd(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     Tag m_tag;
     bool m_tagHasBeenSet;
+
     MetricsAndOperator m_and;
     bool m_andHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The data path related to the message.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The data path related to the message.</p>
      */
     inline DashboardValidationMessage& WithDataPath(const char* value) { SetDataPath(value); return *this;}
+
 
     /**
      * <p>A message describing the error or warning.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline DashboardValidationMessage& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_dataPath;
     bool m_dataPathHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

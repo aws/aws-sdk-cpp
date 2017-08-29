@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the directory in which to create the computer account.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CreateComputerRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
+
     /**
      * <p>The name of the computer account.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The name of the computer account.</p>
      */
     inline CreateComputerRequest& WithComputerName(const char* value) { SetComputerName(value); return *this;}
+
 
     /**
      * <p>A one-time password that is used to join the computer to the directory. You
@@ -154,6 +157,7 @@ namespace Model
      */
     inline CreateComputerRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
     /**
      * <p>The fully-qualified distinguished name of the organizational unit to place
      * the computer account in.</p>
@@ -195,6 +199,7 @@ namespace Model
      * the computer account in.</p>
      */
     inline CreateComputerRequest& WithOrganizationalUnitDistinguishedName(const char* value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
+
 
     /**
      * <p>An array of <a>Attribute</a> objects that contain any LDAP attributes to
@@ -239,14 +244,19 @@ namespace Model
     inline CreateComputerRequest& AddComputerAttributes(Attribute&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_computerName;
     bool m_computerNameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     Aws::String m_organizationalUnitDistinguishedName;
     bool m_organizationalUnitDistinguishedNameHasBeenSet;
+
     Aws::Vector<Attribute> m_computerAttributes;
     bool m_computerAttributesHasBeenSet;
   };

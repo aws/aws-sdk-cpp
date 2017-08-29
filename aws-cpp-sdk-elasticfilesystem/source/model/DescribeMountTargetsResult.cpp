@@ -30,12 +30,12 @@ DescribeMountTargetsResult::DescribeMountTargetsResult()
 {
 }
 
-DescribeMountTargetsResult::DescribeMountTargetsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMountTargetsResult::DescribeMountTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeMountTargetsResult& DescribeMountTargetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMountTargetsResult& DescribeMountTargetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Marker"))

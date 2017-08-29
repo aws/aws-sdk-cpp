@@ -47,6 +47,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
      * it.</p>
@@ -65,6 +66,7 @@ namespace Model
      */
     inline MaxAgeRule& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
     /**
      * <p>Specify the number of days to retain an application versions.</p>
      */
@@ -79,6 +81,7 @@ namespace Model
      * <p>Specify the number of days to retain an application versions.</p>
      */
     inline MaxAgeRule& WithMaxAgeInDays(int value) { SetMaxAgeInDays(value); return *this;}
+
 
     /**
      * <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3
@@ -99,10 +102,13 @@ namespace Model
     inline MaxAgeRule& WithDeleteSourceFromS3(bool value) { SetDeleteSourceFromS3(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     int m_maxAgeInDays;
     bool m_maxAgeInDaysHasBeenSet;
+
     bool m_deleteSourceFromS3;
     bool m_deleteSourceFromS3HasBeenSet;
   };

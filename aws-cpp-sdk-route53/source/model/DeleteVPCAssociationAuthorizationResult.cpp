@@ -29,12 +29,12 @@ DeleteVPCAssociationAuthorizationResult::DeleteVPCAssociationAuthorizationResult
 {
 }
 
-DeleteVPCAssociationAuthorizationResult::DeleteVPCAssociationAuthorizationResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteVPCAssociationAuthorizationResult::DeleteVPCAssociationAuthorizationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteVPCAssociationAuthorizationResult& DeleteVPCAssociationAuthorizationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteVPCAssociationAuthorizationResult& DeleteVPCAssociationAuthorizationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

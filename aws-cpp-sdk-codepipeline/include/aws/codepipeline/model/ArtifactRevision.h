@@ -46,6 +46,7 @@ namespace Model
     ArtifactRevision& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of an artifact. This name might be system-generated, such as
      * "MyApp", or might be defined by the user when an action is created.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ArtifactRevision& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The revision ID of the artifact.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>The revision ID of the artifact.</p>
      */
     inline ArtifactRevision& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+
 
     /**
      * <p>An additional identifier for a revision, such as a commit date or, for
@@ -164,6 +167,7 @@ namespace Model
      * artifacts stored in Amazon S3 buckets, the ETag value.</p>
      */
     inline ArtifactRevision& WithRevisionChangeIdentifier(const char* value) { SetRevisionChangeIdentifier(value); return *this;}
+
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
@@ -228,6 +232,7 @@ namespace Model
      */
     inline ArtifactRevision& WithRevisionSummary(const char* value) { SetRevisionSummary(value); return *this;}
 
+
     /**
      * <p>The date and time when the most recent revision of the artifact was created,
      * in timestamp format.</p>
@@ -257,6 +262,7 @@ namespace Model
      * in timestamp format.</p>
      */
     inline ArtifactRevision& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
@@ -308,16 +314,22 @@ namespace Model
     inline ArtifactRevision& WithRevisionUrl(const char* value) { SetRevisionUrl(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet;
+
     Aws::String m_revisionChangeIdentifier;
     bool m_revisionChangeIdentifierHasBeenSet;
+
     Aws::String m_revisionSummary;
     bool m_revisionSummaryHasBeenSet;
+
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
+
     Aws::String m_revisionUrl;
     bool m_revisionUrlHasBeenSet;
   };

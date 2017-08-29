@@ -32,13 +32,13 @@ UpdateConfigurationTemplateResult::UpdateConfigurationTemplateResult() :
 {
 }
 
-UpdateConfigurationTemplateResult::UpdateConfigurationTemplateResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+UpdateConfigurationTemplateResult::UpdateConfigurationTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_deploymentStatus(ConfigurationDeploymentStatus::NOT_SET)
 {
   *this = result;
 }
 
-UpdateConfigurationTemplateResult& UpdateConfigurationTemplateResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateConfigurationTemplateResult& UpdateConfigurationTemplateResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

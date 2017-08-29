@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     RequestSpotFleetResponse();
-    RequestSpotFleetResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RequestSpotFleetResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RequestSpotFleetResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RequestSpotFleetResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the Spot fleet request.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline RequestSpotFleetResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline RequestSpotFleetResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_spotFleetRequestId;
+
     ResponseMetadata m_responseMetadata;
   };
 

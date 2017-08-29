@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteNetworkInterfacePermissionResponse();
-    DeleteNetworkInterfacePermissionResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteNetworkInterfacePermissionResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteNetworkInterfacePermissionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteNetworkInterfacePermissionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Returns <code>true</code> if the request succeeds, otherwise returns an
@@ -65,6 +66,7 @@ namespace Model
      */
     inline DeleteNetworkInterfacePermissionResponse& WithReturn(bool value) { SetReturn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -81,7 +83,9 @@ namespace Model
     inline DeleteNetworkInterfacePermissionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     bool m_return;
+
     ResponseMetadata m_responseMetadata;
   };
 

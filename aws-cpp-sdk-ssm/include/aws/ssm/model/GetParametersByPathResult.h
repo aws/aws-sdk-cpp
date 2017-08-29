@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetParametersByPathResult();
-    GetParametersByPathResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetParametersByPathResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetParametersByPathResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetParametersByPathResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of parameters found in the specified hierarchy.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of parameters found in the specified hierarchy.</p>
      */
     inline GetParametersByPathResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token for the next set of items to return. Use this token to get the next
@@ -121,7 +123,9 @@ namespace Model
     inline GetParametersByPathResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Parameter> m_parameters;
+
     Aws::String m_nextToken;
   };
 

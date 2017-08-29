@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name of the Auto Scaling group.</p>
      */
     inline DescribeLoadBalancerTargetGroupsRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -119,6 +121,7 @@ namespace Model
      */
     inline DescribeLoadBalancerTargetGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return with this call. The default value is 50
      * and the maximum value is 100.</p>
@@ -138,10 +141,13 @@ namespace Model
     inline DescribeLoadBalancerTargetGroupsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
   };

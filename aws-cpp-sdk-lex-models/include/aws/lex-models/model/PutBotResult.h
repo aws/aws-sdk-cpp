@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     PutBotResult();
-    PutBotResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutBotResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutBotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutBotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the bot.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline PutBotResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the bot.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>A description of the bot.</p>
      */
     inline PutBotResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>An array of <code>Intent</code> objects. For more information, see
@@ -160,6 +163,7 @@ namespace Model
      */
     inline PutBotResult& AddIntents(Intent&& value) { m_intents.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> The prompts that Amazon Lex uses when it doesn't understand the user's
      * intent. For more information, see <a>PutBot</a>. </p>
@@ -190,6 +194,7 @@ namespace Model
      */
     inline PutBotResult& WithClarificationPrompt(Prompt&& value) { SetClarificationPrompt(std::move(value)); return *this;}
 
+
     /**
      * <p>The message that Amazon Lex uses to abort a conversation. For more
      * information, see <a>PutBot</a>.</p>
@@ -219,6 +224,7 @@ namespace Model
      * information, see <a>PutBot</a>.</p>
      */
     inline PutBotResult& WithAbortStatement(Statement&& value) { SetAbortStatement(std::move(value)); return *this;}
+
 
     /**
      * <p> When you send a request to create a bot with <code>processBehavior</code>
@@ -280,6 +286,7 @@ namespace Model
      */
     inline PutBotResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
      * that it failed to build the bot.</p>
@@ -322,6 +329,7 @@ namespace Model
      */
     inline PutBotResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
     /**
      * <p>The date that the bot was updated. When you create a resource, the creation
      * date and last updated date are the same.</p>
@@ -352,6 +360,7 @@ namespace Model
      */
     inline PutBotResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date that the bot was created.</p>
      */
@@ -377,6 +386,7 @@ namespace Model
      */
     inline PutBotResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum length of time that Amazon Lex retains the data gathered in a
      * conversation. For more information, see <a>PutBot</a>.</p>
@@ -394,6 +404,7 @@ namespace Model
      * conversation. For more information, see <a>PutBot</a>.</p>
      */
     inline PutBotResult& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
+
 
     /**
      * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
@@ -437,6 +448,7 @@ namespace Model
      */
     inline PutBotResult& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
 
+
     /**
      * <p>Checksum of the bot that you created.</p>
      */
@@ -471,6 +483,7 @@ namespace Model
      * <p>Checksum of the bot that you created.</p>
      */
     inline PutBotResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+
 
     /**
      * <p>The version of the bot. For a new bot, the version is always
@@ -514,6 +527,7 @@ namespace Model
      */
     inline PutBotResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p> The target locale for the bot. </p>
      */
@@ -538,6 +552,7 @@ namespace Model
      * <p> The target locale for the bot. </p>
      */
     inline PutBotResult& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
+
 
     /**
      * <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service,
@@ -621,20 +636,35 @@ namespace Model
     inline PutBotResult& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_description;
+
     Aws::Vector<Intent> m_intents;
+
     Prompt m_clarificationPrompt;
+
     Statement m_abortStatement;
+
     Status m_status;
+
     Aws::String m_failureReason;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
+
     Aws::Utils::DateTime m_createdDate;
+
     int m_idleSessionTTLInSeconds;
+
     Aws::String m_voiceId;
+
     Aws::String m_checksum;
+
     Aws::String m_version;
+
     Locale m_locale;
+
     bool m_childDirected;
   };
 

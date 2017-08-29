@@ -30,12 +30,12 @@ CancelRetrievalResult::CancelRetrievalResult()
 {
 }
 
-CancelRetrievalResult::CancelRetrievalResult(const AmazonWebServiceResult<JsonValue>& result)
+CancelRetrievalResult::CancelRetrievalResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CancelRetrievalResult& CancelRetrievalResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CancelRetrievalResult& CancelRetrievalResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TapeARN"))

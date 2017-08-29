@@ -39,6 +39,7 @@ namespace Model
     CreateTrafficPolicyInstanceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the hosted zone in which you want Amazon Route 53 to create
      * resource record sets by using the configuration in a traffic policy.</p>
@@ -80,6 +81,7 @@ namespace Model
      * resource record sets by using the configuration in a traffic policy.</p>
      */
     inline CreateTrafficPolicyInstanceRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+
 
     /**
      * <p>The domain name (such as example.com) or subdomain name (such as
@@ -137,6 +139,7 @@ namespace Model
      */
     inline CreateTrafficPolicyInstanceRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the
      * resource record sets that it creates in the specified hosted zone.</p>
@@ -154,6 +157,7 @@ namespace Model
      * resource record sets that it creates in the specified hosted zone.</p>
      */
     inline CreateTrafficPolicyInstanceRequest& WithTTL(long long value) { SetTTL(value); return *this;}
+
 
     /**
      * <p>The ID of the traffic policy that you want to use to create resource record
@@ -197,6 +201,7 @@ namespace Model
      */
     inline CreateTrafficPolicyInstanceRequest& WithTrafficPolicyId(const char* value) { SetTrafficPolicyId(value); return *this;}
 
+
     /**
      * <p>The version of the traffic policy that you want to use to create resource
      * record sets in the specified hosted zone.</p>
@@ -216,14 +221,19 @@ namespace Model
     inline CreateTrafficPolicyInstanceRequest& WithTrafficPolicyVersion(int value) { SetTrafficPolicyVersion(value); return *this;}
 
   private:
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     long long m_tTL;
     bool m_tTLHasBeenSet;
+
     Aws::String m_trafficPolicyId;
     bool m_trafficPolicyIdHasBeenSet;
+
     int m_trafficPolicyVersion;
     bool m_trafficPolicyVersionHasBeenSet;
   };

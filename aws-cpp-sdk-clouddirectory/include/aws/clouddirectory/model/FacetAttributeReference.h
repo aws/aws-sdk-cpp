@@ -47,6 +47,7 @@ namespace Model
     FacetAttributeReference& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The target facet name that is associated with the facet reference. See <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
@@ -95,6 +96,7 @@ namespace Model
      * References</a> for more information.</p>
      */
     inline FacetAttributeReference& WithTargetFacetName(const char* value) { SetTargetFacetName(value); return *this;}
+
 
     /**
      * <p>The target attribute name that is associated with the facet reference. See <a
@@ -146,8 +148,10 @@ namespace Model
     inline FacetAttributeReference& WithTargetAttributeName(const char* value) { SetTargetAttributeName(value); return *this;}
 
   private:
+
     Aws::String m_targetFacetName;
     bool m_targetFacetNameHasBeenSet;
+
     Aws::String m_targetAttributeName;
     bool m_targetAttributeNameHasBeenSet;
   };

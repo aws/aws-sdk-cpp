@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeCertificateResult();
-    DescribeCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Metadata about an ACM certificate.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeCertificateResult& WithCertificate(CertificateDetail&& value) { SetCertificate(std::move(value)); return *this;}
 
   private:
+
     CertificateDetail m_certificate;
   };
 

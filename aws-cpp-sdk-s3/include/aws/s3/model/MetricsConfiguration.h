@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The ID used to identify the metrics configuration.
      */
@@ -76,6 +77,7 @@ namespace Model
      * The ID used to identify the metrics configuration.
      */
     inline MetricsConfiguration& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Specifies a metrics configuration filter. The metrics configuration will only
@@ -113,8 +115,10 @@ namespace Model
     inline MetricsConfiguration& WithFilter(MetricsFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     MetricsFilter m_filter;
     bool m_filterHasBeenSet;
   };

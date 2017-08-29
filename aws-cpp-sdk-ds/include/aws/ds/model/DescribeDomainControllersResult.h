@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeDomainControllersResult();
-    DescribeDomainControllersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDomainControllersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDomainControllersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDomainControllersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of the <a>DomainController</a> objects that were retrieved.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>List of the <a>DomainController</a> objects that were retrieved.</p>
      */
     inline DescribeDomainControllersResult& AddDomainControllers(DomainController&& value) { m_domainControllers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If not null, more results are available. Pass this value for the
@@ -128,7 +130,9 @@ namespace Model
     inline DescribeDomainControllersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<DomainController> m_domainControllers;
+
     Aws::String m_nextToken;
   };
 

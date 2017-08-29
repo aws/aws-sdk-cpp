@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the bundle task.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline CancelBundleTaskRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -101,8 +103,10 @@ namespace Model
     inline CancelBundleTaskRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetDeploymentResult();
-    GetDeploymentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeploymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the deployment.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline GetDeploymentResult& WithDeploymentInfo(DeploymentInfo&& value) { SetDeploymentInfo(std::move(value)); return *this;}
 
   private:
+
     DeploymentInfo m_deploymentInfo;
   };
 

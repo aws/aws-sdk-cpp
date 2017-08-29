@@ -55,6 +55,7 @@ namespace Model
     InstanceGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the instance group.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      * <p>The identifier of the instance group.</p>
      */
     inline InstanceGroup& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the instance group.</p>
@@ -125,6 +127,7 @@ namespace Model
      */
     inline InstanceGroup& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The marketplace to provision instances for this group. Valid values are
      * ON_DEMAND or SPOT.</p>
@@ -155,6 +158,7 @@ namespace Model
      */
     inline InstanceGroup& WithMarket(MarketType&& value) { SetMarket(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of the instance group. Valid values are MASTER, CORE or TASK.</p>
      */
@@ -179,6 +183,7 @@ namespace Model
      * <p>The type of the instance group. Valid values are MASTER, CORE or TASK.</p>
      */
     inline InstanceGroup& WithInstanceGroupType(InstanceGroupType&& value) { SetInstanceGroupType(std::move(value)); return *this;}
+
 
     /**
      * <p>The bid price for each EC2 instance in the instance group when launching
@@ -222,6 +227,7 @@ namespace Model
      */
     inline InstanceGroup& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 
+
     /**
      * <p>The EC2 instance type for all instances in the instance group.</p>
      */
@@ -257,6 +263,7 @@ namespace Model
      */
     inline InstanceGroup& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The target number of instances for the instance group.</p>
      */
@@ -272,6 +279,7 @@ namespace Model
      */
     inline InstanceGroup& WithRequestedInstanceCount(int value) { SetRequestedInstanceCount(value); return *this;}
 
+
     /**
      * <p>The number of instances currently running in this instance group.</p>
      */
@@ -286,6 +294,7 @@ namespace Model
      * <p>The number of instances currently running in this instance group.</p>
      */
     inline InstanceGroup& WithRunningInstanceCount(int value) { SetRunningInstanceCount(value); return *this;}
+
 
     /**
      * <p>The current status of the instance group.</p>
@@ -311,6 +320,7 @@ namespace Model
      * <p>The current status of the instance group.</p>
      */
     inline InstanceGroup& WithStatus(InstanceGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
@@ -361,6 +371,7 @@ namespace Model
      */
     inline InstanceGroup& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The EBS block devices that are mapped to this instance group.</p>
      */
@@ -396,6 +407,7 @@ namespace Model
      */
     inline InstanceGroup& AddEbsBlockDevices(EbsBlockDevice&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If the instance group is EBS-optimized. An Amazon EBS-optimized instance uses
      * an optimized configuration stack and provides additional, dedicated capacity for
@@ -416,6 +428,7 @@ namespace Model
      * Amazon EBS I/O.</p>
      */
     inline InstanceGroup& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
+
 
     /**
      * <p>Policy for customizing shrink operations.</p>
@@ -441,6 +454,7 @@ namespace Model
      * <p>Policy for customizing shrink operations.</p>
      */
     inline InstanceGroup& WithShrinkPolicy(ShrinkPolicy&& value) { SetShrinkPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>An automatic scaling policy for a core instance group or task instance group
@@ -483,32 +497,46 @@ namespace Model
     inline InstanceGroup& WithAutoScalingPolicy(AutoScalingPolicyDescription&& value) { SetAutoScalingPolicy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     MarketType m_market;
     bool m_marketHasBeenSet;
+
     InstanceGroupType m_instanceGroupType;
     bool m_instanceGroupTypeHasBeenSet;
+
     Aws::String m_bidPrice;
     bool m_bidPriceHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     int m_requestedInstanceCount;
     bool m_requestedInstanceCountHasBeenSet;
+
     int m_runningInstanceCount;
     bool m_runningInstanceCountHasBeenSet;
+
     InstanceGroupStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+
     Aws::Vector<EbsBlockDevice> m_ebsBlockDevices;
     bool m_ebsBlockDevicesHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
     ShrinkPolicy m_shrinkPolicy;
     bool m_shrinkPolicyHasBeenSet;
+
     AutoScalingPolicyDescription m_autoScalingPolicy;
     bool m_autoScalingPolicyHasBeenSet;
   };

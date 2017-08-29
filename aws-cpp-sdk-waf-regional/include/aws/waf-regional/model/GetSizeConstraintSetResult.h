@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetSizeConstraintSetResult();
-    GetSizeConstraintSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSizeConstraintSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSizeConstraintSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSizeConstraintSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the <a>SizeConstraintSet</a> that you specified in the
@@ -112,6 +113,7 @@ namespace Model
     inline GetSizeConstraintSetResult& WithSizeConstraintSet(SizeConstraintSet&& value) { SetSizeConstraintSet(std::move(value)); return *this;}
 
   private:
+
     SizeConstraintSet m_sizeConstraintSet;
   };
 

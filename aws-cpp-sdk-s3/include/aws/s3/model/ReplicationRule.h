@@ -43,6 +43,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Unique identifier for the rule. The value cannot be longer than 255 characters.
      */
@@ -77,6 +78,7 @@ namespace Model
      * Unique identifier for the rule. The value cannot be longer than 255 characters.
      */
     inline ReplicationRule& WithID(const char* value) { SetID(value); return *this;}
+
 
     /**
      * Object keyname prefix identifying one or more objects to which the rule applies.
@@ -127,6 +129,7 @@ namespace Model
      */
     inline ReplicationRule& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     /**
      * The rule is ignored if status is not Enabled.
      */
@@ -152,6 +155,7 @@ namespace Model
      */
     inline ReplicationRule& WithStatus(ReplicationRuleStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     
     inline const Destination& GetDestination() const{ return m_destination; }
 
@@ -168,12 +172,16 @@ namespace Model
     inline ReplicationRule& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_iD;
     bool m_iDHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     ReplicationRuleStatus m_status;
     bool m_statusHasBeenSet;
+
     Destination m_destination;
     bool m_destinationHasBeenSet;
   };

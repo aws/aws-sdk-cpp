@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListDeviceDefinitionVersionsResult();
-    ListDeviceDefinitionVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDeviceDefinitionVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeviceDefinitionVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeviceDefinitionVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * The token for the next set of results, or ''null'' if there are no additional
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListDeviceDefinitionVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * Versions
      */
@@ -121,7 +123,9 @@ namespace Model
     inline ListDeviceDefinitionVersionsResult& AddVersions(VersionInformation&& value) { m_versions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<VersionInformation> m_versions;
   };
 

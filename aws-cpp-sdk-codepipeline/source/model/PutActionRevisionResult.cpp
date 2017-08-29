@@ -31,13 +31,13 @@ PutActionRevisionResult::PutActionRevisionResult() :
 {
 }
 
-PutActionRevisionResult::PutActionRevisionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PutActionRevisionResult::PutActionRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_newRevision(false)
 {
   *this = result;
 }
 
-PutActionRevisionResult& PutActionRevisionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutActionRevisionResult& PutActionRevisionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("newRevision"))

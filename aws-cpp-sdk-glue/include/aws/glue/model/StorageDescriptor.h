@@ -51,6 +51,7 @@ namespace Model
     StorageDescriptor& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of the <code>Columns</code> in the table.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>A list of the <code>Columns</code> in the table.</p>
      */
     inline StorageDescriptor& AddColumns(Column&& value) { m_columnsHasBeenSet = true; m_columns.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The physical location of the table. By default this takes the form of the
@@ -135,6 +137,7 @@ namespace Model
      */
     inline StorageDescriptor& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     /**
      * <p>The input format: <code>SequenceFileInputFormat</code> (binary), or
      * <code>TextInputFormat</code>, or a custom format.</p>
@@ -176,6 +179,7 @@ namespace Model
      * <code>TextInputFormat</code>, or a custom format.</p>
      */
     inline StorageDescriptor& WithInputFormat(const char* value) { SetInputFormat(value); return *this;}
+
 
     /**
      * <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or
@@ -219,6 +223,7 @@ namespace Model
      */
     inline StorageDescriptor& WithOutputFormat(const char* value) { SetOutputFormat(value); return *this;}
 
+
     /**
      * <p>True if the data in the table is compressed, or False if not.</p>
      */
@@ -234,6 +239,7 @@ namespace Model
      */
     inline StorageDescriptor& WithCompressed(bool value) { SetCompressed(value); return *this;}
 
+
     /**
      * <p>Must be specified if the table contains any dimension columns.</p>
      */
@@ -248,6 +254,7 @@ namespace Model
      * <p>Must be specified if the table contains any dimension columns.</p>
      */
     inline StorageDescriptor& WithNumberOfBuckets(int value) { SetNumberOfBuckets(value); return *this;}
+
 
     /**
      * <p>Serialization/deserialization (SerDe) information.</p>
@@ -273,6 +280,7 @@ namespace Model
      * <p>Serialization/deserialization (SerDe) information.</p>
      */
     inline StorageDescriptor& WithSerdeInfo(SerDeInfo&& value) { SetSerdeInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of reducer grouping columns, clustering columns, and bucketing columns
@@ -322,6 +330,7 @@ namespace Model
      */
     inline StorageDescriptor& AddBucketColumns(const char* value) { m_bucketColumnsHasBeenSet = true; m_bucketColumns.push_back(value); return *this; }
 
+
     /**
      * <p>A list specifying the sort order of each bucket in the table.</p>
      */
@@ -356,6 +365,7 @@ namespace Model
      * <p>A list specifying the sort order of each bucket in the table.</p>
      */
     inline StorageDescriptor& AddSortColumns(Order&& value) { m_sortColumnsHasBeenSet = true; m_sortColumns.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>User-supplied properties in key-value form.</p>
@@ -417,6 +427,7 @@ namespace Model
      */
     inline StorageDescriptor& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Information about values that appear very frequently in a column (skewed
      * values).</p>
@@ -447,6 +458,7 @@ namespace Model
      */
     inline StorageDescriptor& WithSkewedInfo(SkewedInfo&& value) { SetSkewedInfo(std::move(value)); return *this;}
 
+
     /**
      * <p>True if the table data is stored in subdirectories, or False if not.</p>
      */
@@ -463,28 +475,40 @@ namespace Model
     inline StorageDescriptor& WithStoredAsSubDirectories(bool value) { SetStoredAsSubDirectories(value); return *this;}
 
   private:
+
     Aws::Vector<Column> m_columns;
     bool m_columnsHasBeenSet;
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
     Aws::String m_inputFormat;
     bool m_inputFormatHasBeenSet;
+
     Aws::String m_outputFormat;
     bool m_outputFormatHasBeenSet;
+
     bool m_compressed;
     bool m_compressedHasBeenSet;
+
     int m_numberOfBuckets;
     bool m_numberOfBucketsHasBeenSet;
+
     SerDeInfo m_serdeInfo;
     bool m_serdeInfoHasBeenSet;
+
     Aws::Vector<Aws::String> m_bucketColumns;
     bool m_bucketColumnsHasBeenSet;
+
     Aws::Vector<Order> m_sortColumns;
     bool m_sortColumnsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
     SkewedInfo m_skewedInfo;
     bool m_skewedInfoHasBeenSet;
+
     bool m_storedAsSubDirectories;
     bool m_storedAsSubDirectoriesHasBeenSet;
   };

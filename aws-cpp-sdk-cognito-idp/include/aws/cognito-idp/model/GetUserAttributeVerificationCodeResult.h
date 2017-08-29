@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetUserAttributeVerificationCodeResult();
-    GetUserAttributeVerificationCodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUserAttributeVerificationCodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUserAttributeVerificationCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUserAttributeVerificationCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The code delivery details returned by the server in response to the request
@@ -78,6 +79,7 @@ namespace Model
     inline GetUserAttributeVerificationCodeResult& WithCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { SetCodeDeliveryDetails(std::move(value)); return *this;}
 
   private:
+
     CodeDeliveryDetailsType m_codeDeliveryDetails;
   };
 

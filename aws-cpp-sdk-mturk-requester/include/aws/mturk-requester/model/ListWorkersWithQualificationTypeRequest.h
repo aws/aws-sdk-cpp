@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Qualification type of the Qualifications to return.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline ListWorkersWithQualificationTypeRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
 
+
     /**
      * <p> The status of the Qualifications to return. Can be <code>Granted |
      * Revoked</code>. </p>
@@ -101,6 +103,7 @@ namespace Model
      * Revoked</code>. </p>
      */
     inline ListWorkersWithQualificationTypeRequest& WithStatus(QualificationStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Pagination Token</p>
@@ -137,6 +140,7 @@ namespace Model
      */
     inline ListWorkersWithQualificationTypeRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p> Limit the number of results returned. </p>
      */
@@ -153,12 +157,16 @@ namespace Model
     inline ListWorkersWithQualificationTypeRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
+
     QualificationStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

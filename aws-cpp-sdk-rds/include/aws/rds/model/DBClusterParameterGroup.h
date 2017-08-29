@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Provides the name of the DB cluster parameter group.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>Provides the name of the DB cluster parameter group.</p>
      */
     inline DBClusterParameterGroup& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
+
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB cluster
@@ -129,6 +131,7 @@ namespace Model
      */
     inline DBClusterParameterGroup& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>Provides the customer-specified description for this DB cluster parameter
      * group.</p>
@@ -171,6 +174,7 @@ namespace Model
      */
     inline DBClusterParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
      */
@@ -207,12 +211,16 @@ namespace Model
     inline DBClusterParameterGroup& WithDBClusterParameterGroupArn(const char* value) { SetDBClusterParameterGroupArn(value); return *this;}
 
   private:
+
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet;
+
     Aws::String m_dBParameterGroupFamily;
     bool m_dBParameterGroupFamilyHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_dBClusterParameterGroupArn;
     bool m_dBClusterParameterGroupArnHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the cluster for which to list the instances.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The identifier of the cluster for which to list the instances.</p>
      */
     inline ListInstancesRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
 
     /**
      * <p>The identifier of the instance group for which to list the instances.</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline ListInstancesRequest& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
 
+
     /**
      * <p>The type of instance group for which to list the instances.</p>
      */
@@ -147,6 +150,7 @@ namespace Model
      * <p>The type of instance group for which to list the instances.</p>
      */
     inline ListInstancesRequest& AddInstanceGroupTypes(InstanceGroupType&& value) { m_instanceGroupTypesHasBeenSet = true; m_instanceGroupTypes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The unique identifier of the instance fleet.</p>
@@ -183,6 +187,7 @@ namespace Model
      */
     inline ListInstancesRequest& WithInstanceFleetId(const char* value) { SetInstanceFleetId(value); return *this;}
 
+
     /**
      * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
      */
@@ -207,6 +212,7 @@ namespace Model
      * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
      */
     inline ListInstancesRequest& WithInstanceFleetType(InstanceFleetType&& value) { SetInstanceFleetType(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of instance states that will filter the instances returned with this
@@ -250,6 +256,7 @@ namespace Model
      */
     inline ListInstancesRequest& AddInstanceStates(InstanceState&& value) { m_instanceStatesHasBeenSet = true; m_instanceStates.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
@@ -286,18 +293,25 @@ namespace Model
     inline ListInstancesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_instanceGroupId;
     bool m_instanceGroupIdHasBeenSet;
+
     Aws::Vector<InstanceGroupType> m_instanceGroupTypes;
     bool m_instanceGroupTypesHasBeenSet;
+
     Aws::String m_instanceFleetId;
     bool m_instanceFleetIdHasBeenSet;
+
     InstanceFleetType m_instanceFleetType;
     bool m_instanceFleetTypeHasBeenSet;
+
     Aws::Vector<InstanceState> m_instanceStates;
     bool m_instanceStatesHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

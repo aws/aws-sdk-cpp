@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     AllocateHostedConnectionResult();
-    AllocateHostedConnectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AllocateHostedConnectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AllocateHostedConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AllocateHostedConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The AWS account that will own the new connection.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline AllocateHostedConnectionResult& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
+
     
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
@@ -104,6 +106,7 @@ namespace Model
 
     
     inline AllocateHostedConnectionResult& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+
 
     
     inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
@@ -126,6 +129,7 @@ namespace Model
     
     inline AllocateHostedConnectionResult& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
+
     
     inline const ConnectionState& GetConnectionState() const{ return m_connectionState; }
 
@@ -140,6 +144,7 @@ namespace Model
 
     
     inline AllocateHostedConnectionResult& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetRegion() const{ return m_region; }
@@ -162,6 +167,7 @@ namespace Model
     
     inline AllocateHostedConnectionResult& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
     
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -182,6 +188,7 @@ namespace Model
 
     
     inline AllocateHostedConnectionResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections),
@@ -225,6 +232,7 @@ namespace Model
      */
     inline AllocateHostedConnectionResult& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
 
+
     
     inline int GetVlan() const{ return m_vlan; }
 
@@ -233,6 +241,7 @@ namespace Model
 
     
     inline AllocateHostedConnectionResult& WithVlan(int value) { SetVlan(value); return *this;}
+
 
     /**
      * <p>The name of the AWS Direct Connect service provider associated with the
@@ -276,6 +285,7 @@ namespace Model
      */
     inline AllocateHostedConnectionResult& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
 
+
     /**
      * <p>The time of the most recent call to <a>DescribeLoa</a> for this
      * connection.</p>
@@ -306,6 +316,7 @@ namespace Model
      */
     inline AllocateHostedConnectionResult& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetLagId() const{ return m_lagId; }
 
@@ -326,6 +337,7 @@ namespace Model
 
     
     inline AllocateHostedConnectionResult& WithLagId(const char* value) { SetLagId(value); return *this;}
+
 
     /**
      * <p>The Direct Connection endpoint which the physical connection terminates
@@ -370,17 +382,29 @@ namespace Model
     inline AllocateHostedConnectionResult& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
 
   private:
+
     Aws::String m_ownerAccount;
+
     Aws::String m_connectionId;
+
     Aws::String m_connectionName;
+
     ConnectionState m_connectionState;
+
     Aws::String m_region;
+
     Aws::String m_location;
+
     Aws::String m_bandwidth;
+
     int m_vlan;
+
     Aws::String m_partnerName;
+
     Aws::Utils::DateTime m_loaIssueTime;
+
     Aws::String m_lagId;
+
     Aws::String m_awsDevice;
   };
 

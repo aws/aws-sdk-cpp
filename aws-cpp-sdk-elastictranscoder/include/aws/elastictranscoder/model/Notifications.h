@@ -48,6 +48,7 @@ namespace Model
     Notifications& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process the job.</p>
@@ -89,6 +90,7 @@ namespace Model
      * notify when Elastic Transcoder has started to process the job.</p>
      */
     inline Notifications& WithProgressing(const char* value) { SetProgressing(value); return *this;}
+
 
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
@@ -132,6 +134,7 @@ namespace Model
      */
     inline Notifications& WithCompleted(const char* value) { SetCompleted(value); return *this;}
 
+
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters a warning condition.</p>
@@ -173,6 +176,7 @@ namespace Model
      * encounters a warning condition.</p>
      */
     inline Notifications& WithWarning(const char* value) { SetWarning(value); return *this;}
+
 
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
@@ -217,12 +221,16 @@ namespace Model
     inline Notifications& WithError(const char* value) { SetError(value); return *this;}
 
   private:
+
     Aws::String m_progressing;
     bool m_progressingHasBeenSet;
+
     Aws::String m_completed;
     bool m_completedHasBeenSet;
+
     Aws::String m_warning;
     bool m_warningHasBeenSet;
+
     Aws::String m_error;
     bool m_errorHasBeenSet;
   };

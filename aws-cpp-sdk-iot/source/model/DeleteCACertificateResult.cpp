@@ -30,12 +30,12 @@ DeleteCACertificateResult::DeleteCACertificateResult()
 {
 }
 
-DeleteCACertificateResult::DeleteCACertificateResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteCACertificateResult::DeleteCACertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteCACertificateResult& DeleteCACertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteCACertificateResult& DeleteCACertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

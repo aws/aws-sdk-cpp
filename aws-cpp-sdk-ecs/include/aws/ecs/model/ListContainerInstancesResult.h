@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListContainerInstancesResult();
-    ListContainerInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListContainerInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListContainerInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListContainerInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of container instances with full Amazon Resource Name (ARN) entries
@@ -89,6 +90,7 @@ namespace Model
      * for each container instance associated with the specified cluster.</p>
      */
     inline ListContainerInstancesResult& AddContainerInstanceArns(const char* value) { m_containerInstanceArns.push_back(value); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -154,7 +156,9 @@ namespace Model
     inline ListContainerInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_containerInstanceArns;
+
     Aws::String m_nextToken;
   };
 

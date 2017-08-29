@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetRuleResult();
-    GetRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the <a>Rule</a> that you specified in the
@@ -97,6 +98,7 @@ namespace Model
     inline GetRuleResult& WithRule(Rule&& value) { SetRule(std::move(value)); return *this;}
 
   private:
+
     Rule m_rule;
   };
 

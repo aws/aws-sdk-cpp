@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The access tokens for the request to list devices.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline ListDevicesRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
+
     /**
      * <p>The limit of the device request.</p>
      */
@@ -88,6 +90,7 @@ namespace Model
      * <p>The limit of the device request.</p>
      */
     inline ListDevicesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The pagination token for the list request.</p>
@@ -125,10 +128,13 @@ namespace Model
     inline ListDevicesRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
   private:
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_paginationToken;
     bool m_paginationTokenHasBeenSet;
   };

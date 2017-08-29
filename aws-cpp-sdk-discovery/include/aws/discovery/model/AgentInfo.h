@@ -52,6 +52,7 @@ namespace Model
     AgentInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The agent or connector ID.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The agent or connector ID.</p>
      */
     inline AgentInfo& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+
 
     /**
      * <p>The name of the host where the agent or connector resides. The host can be a
@@ -129,6 +131,7 @@ namespace Model
      */
     inline AgentInfo& WithHostName(const char* value) { SetHostName(value); return *this;}
 
+
     /**
      * <p>Network details about the host where the agent or connector resides.</p>
      */
@@ -163,6 +166,7 @@ namespace Model
      * <p>Network details about the host where the agent or connector resides.</p>
      */
     inline AgentInfo& AddAgentNetworkInfoList(AgentNetworkInfo&& value) { m_agentNetworkInfoListHasBeenSet = true; m_agentNetworkInfoList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the connector.</p>
@@ -199,6 +203,7 @@ namespace Model
      */
     inline AgentInfo& WithConnectorId(const char* value) { SetConnectorId(value); return *this;}
 
+
     /**
      * <p>The agent or connector version.</p>
      */
@@ -234,6 +239,7 @@ namespace Model
      */
     inline AgentInfo& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>The health of the agent or connector.</p>
      */
@@ -258,6 +264,7 @@ namespace Model
      * <p>The health of the agent or connector.</p>
      */
     inline AgentInfo& WithHealth(AgentStatus&& value) { SetHealth(std::move(value)); return *this;}
+
 
     /**
      * <p>Time since agent or connector health was reported.</p>
@@ -294,6 +301,7 @@ namespace Model
      */
     inline AgentInfo& WithLastHealthPingTime(const char* value) { SetLastHealthPingTime(value); return *this;}
 
+
     /**
      * <p>Status of the collection process for an agent or connector.</p>
      */
@@ -329,6 +337,7 @@ namespace Model
      */
     inline AgentInfo& WithCollectionStatus(const char* value) { SetCollectionStatus(value); return *this;}
 
+
     /**
      * <p>Type of agent.</p>
      */
@@ -363,6 +372,7 @@ namespace Model
      * <p>Type of agent.</p>
      */
     inline AgentInfo& WithAgentType(const char* value) { SetAgentType(value); return *this;}
+
 
     /**
      * <p>Agent's first registration timestamp in UTC.</p>
@@ -400,24 +410,34 @@ namespace Model
     inline AgentInfo& WithRegisteredTime(const char* value) { SetRegisteredTime(value); return *this;}
 
   private:
+
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet;
+
     Aws::String m_hostName;
     bool m_hostNameHasBeenSet;
+
     Aws::Vector<AgentNetworkInfo> m_agentNetworkInfoList;
     bool m_agentNetworkInfoListHasBeenSet;
+
     Aws::String m_connectorId;
     bool m_connectorIdHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     AgentStatus m_health;
     bool m_healthHasBeenSet;
+
     Aws::String m_lastHealthPingTime;
     bool m_lastHealthPingTimeHasBeenSet;
+
     Aws::String m_collectionStatus;
     bool m_collectionStatusHasBeenSet;
+
     Aws::String m_agentType;
     bool m_agentTypeHasBeenSet;
+
     Aws::String m_registeredTime;
     bool m_registeredTimeHasBeenSet;
   };

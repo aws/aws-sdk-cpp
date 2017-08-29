@@ -30,12 +30,12 @@ CreateBackupResult::CreateBackupResult()
 {
 }
 
-CreateBackupResult::CreateBackupResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateBackupResult::CreateBackupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateBackupResult& CreateBackupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateBackupResult& CreateBackupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Backup"))

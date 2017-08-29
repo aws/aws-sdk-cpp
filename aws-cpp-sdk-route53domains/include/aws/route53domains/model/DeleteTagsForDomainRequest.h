@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The domain for which you want to delete one or more tags.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The domain for which you want to delete one or more tags.</p>
      */
     inline DeleteTagsForDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>A list of tag keys to delete.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline DeleteTagsForDomainRequest& AddTagsToDelete(const char* value) { m_tagsToDeleteHasBeenSet = true; m_tagsToDelete.push_back(value); return *this; }
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagsToDelete;
     bool m_tagsToDeleteHasBeenSet;
   };

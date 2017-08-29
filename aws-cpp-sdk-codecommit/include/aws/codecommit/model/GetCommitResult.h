@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetCommitResult();
-    GetCommitResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCommitResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCommitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCommitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A commit data type object that contains information about the specified
@@ -78,6 +79,7 @@ namespace Model
     inline GetCommitResult& WithCommit(Commit&& value) { SetCommit(std::move(value)); return *this;}
 
   private:
+
     Commit m_commit;
   };
 

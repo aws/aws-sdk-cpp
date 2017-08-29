@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_SNOWBALL_API SnowballErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_SNOWBALL_API SnowballErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Snowball
+} // namespace Client
 } // namespace Aws

@@ -48,6 +48,7 @@ namespace Model
     Voice& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Gender of the voice.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>Gender of the voice.</p>
      */
     inline Voice& WithGender(Gender&& value) { SetGender(std::move(value)); return *this;}
+
 
     /**
      * <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling
@@ -103,6 +105,7 @@ namespace Model
      */
     inline Voice& WithId(VoiceId&& value) { SetId(std::move(value)); return *this;}
 
+
     /**
      * <p>Language code of the voice.</p>
      */
@@ -127,6 +130,7 @@ namespace Model
      * <p>Language code of the voice.</p>
      */
     inline Voice& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+
 
     /**
      * <p>Human readable name of the language in English.</p>
@@ -162,6 +166,7 @@ namespace Model
      * <p>Human readable name of the language in English.</p>
      */
     inline Voice& WithLanguageName(const char* value) { SetLanguageName(value); return *this;}
+
 
     /**
      * <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human
@@ -206,14 +211,19 @@ namespace Model
     inline Voice& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Gender m_gender;
     bool m_genderHasBeenSet;
+
     VoiceId m_id;
     bool m_idHasBeenSet;
+
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;
+
     Aws::String m_languageName;
     bool m_languageNameHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

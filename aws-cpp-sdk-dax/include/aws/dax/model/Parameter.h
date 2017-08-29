@@ -51,6 +51,7 @@ namespace Model
     Parameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the parameter.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline Parameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
 
+
     /**
      * <p>Determines whether the parameter can be applied to any nodes, or only nodes
      * of a particular type.</p>
@@ -115,6 +117,7 @@ namespace Model
      * of a particular type.</p>
      */
     inline Parameter& WithParameterType(ParameterType&& value) { SetParameterType(std::move(value)); return *this;}
+
 
     /**
      * <p>The value for the parameter.</p>
@@ -151,6 +154,7 @@ namespace Model
      */
     inline Parameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
 
+
     /**
      * <p>A list of node types, and specific parameter values for each node.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      */
     inline Parameter& AddNodeTypeSpecificValues(NodeTypeSpecificValue&& value) { m_nodeTypeSpecificValuesHasBeenSet = true; m_nodeTypeSpecificValues.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A description of the parameter</p>
      */
@@ -220,6 +225,7 @@ namespace Model
      * <p>A description of the parameter</p>
      */
     inline Parameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>How the parameter is defined. For example, <code>system</code> denotes a
@@ -263,6 +269,7 @@ namespace Model
      */
     inline Parameter& WithSource(const char* value) { SetSource(value); return *this;}
 
+
     /**
      * <p>The data type of the parameter. For example, <code>integer</code>:</p>
      */
@@ -297,6 +304,7 @@ namespace Model
      * <p>The data type of the parameter. For example, <code>integer</code>:</p>
      */
     inline Parameter& WithDataType(const char* value) { SetDataType(value); return *this;}
+
 
     /**
      * <p>A range of values within which the parameter can be set.</p>
@@ -333,6 +341,7 @@ namespace Model
      */
     inline Parameter& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
 
+
     /**
      * <p>Whether the customer is allowed to modify the parameter.</p>
      */
@@ -357,6 +366,7 @@ namespace Model
      * <p>Whether the customer is allowed to modify the parameter.</p>
      */
     inline Parameter& WithIsModifiable(IsModifiable&& value) { SetIsModifiable(std::move(value)); return *this;}
+
 
     /**
      * <p>The conditions under which changes to this parameter can be applied. For
@@ -394,24 +404,34 @@ namespace Model
     inline Parameter& WithChangeType(ChangeType&& value) { SetChangeType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_parameterName;
     bool m_parameterNameHasBeenSet;
+
     ParameterType m_parameterType;
     bool m_parameterTypeHasBeenSet;
+
     Aws::String m_parameterValue;
     bool m_parameterValueHasBeenSet;
+
     Aws::Vector<NodeTypeSpecificValue> m_nodeTypeSpecificValues;
     bool m_nodeTypeSpecificValuesHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     Aws::String m_dataType;
     bool m_dataTypeHasBeenSet;
+
     Aws::String m_allowedValues;
     bool m_allowedValuesHasBeenSet;
+
     IsModifiable m_isModifiable;
     bool m_isModifiableHasBeenSet;
+
     ChangeType m_changeType;
     bool m_changeTypeHasBeenSet;
   };

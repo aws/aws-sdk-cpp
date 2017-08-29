@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StartAssessmentRunResult();
-    StartAssessmentRunResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartAssessmentRunResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartAssessmentRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartAssessmentRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the assessment run that has been started.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline StartAssessmentRunResult& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
 
   private:
+
     Aws::String m_assessmentRunArn;
   };
 

@@ -49,6 +49,7 @@ namespace Model
     DomainName& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the <a>DomainName</a> resource.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DomainName& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The name of the certificate.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The name of the certificate.</p>
      */
     inline DomainName& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
+
 
     /**
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
@@ -161,6 +164,7 @@ namespace Model
      */
     inline DomainName& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
     /**
      * <p>The timestamp when the certificate was uploaded.</p>
      */
@@ -185,6 +189,7 @@ namespace Model
      * <p>The timestamp when the certificate was uploaded.</p>
      */
     inline DomainName& WithCertificateUploadDate(Aws::Utils::DateTime&& value) { SetCertificateUploadDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The domain name of the Amazon CloudFront distribution. For more information,
@@ -236,14 +241,19 @@ namespace Model
     inline DomainName& WithDistributionDomainName(const char* value) { SetDistributionDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_certificateName;
     bool m_certificateNameHasBeenSet;
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     Aws::Utils::DateTime m_certificateUploadDate;
     bool m_certificateUploadDateHasBeenSet;
+
     Aws::String m_distributionDomainName;
     bool m_distributionDomainNameHasBeenSet;
   };

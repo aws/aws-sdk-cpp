@@ -32,13 +32,13 @@ ListJobsResult::ListJobsResult() :
 {
 }
 
-ListJobsResult::ListJobsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListJobsResult::ListJobsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListJobsResult& ListJobsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListJobsResult& ListJobsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

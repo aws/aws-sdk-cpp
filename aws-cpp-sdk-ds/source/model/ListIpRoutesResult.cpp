@@ -30,12 +30,12 @@ ListIpRoutesResult::ListIpRoutesResult()
 {
 }
 
-ListIpRoutesResult::ListIpRoutesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListIpRoutesResult::ListIpRoutesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListIpRoutesResult& ListIpRoutesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListIpRoutesResult& ListIpRoutesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IpRoutesInfo"))

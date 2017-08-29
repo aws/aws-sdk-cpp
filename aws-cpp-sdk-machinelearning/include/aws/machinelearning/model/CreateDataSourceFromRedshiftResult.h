@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     CreateDataSourceFromRedshiftResult();
-    CreateDataSourceFromRedshiftResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDataSourceFromRedshiftResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDataSourceFromRedshiftResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDataSourceFromRedshiftResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A user-supplied ID that uniquely identifies the datasource. This value should
@@ -93,6 +94,7 @@ namespace Model
     inline CreateDataSourceFromRedshiftResult& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
   private:
+
     Aws::String m_dataSourceId;
   };
 

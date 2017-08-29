@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateEndpointResult();
-    CreateEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The endpoint that was created.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline CreateEndpointResult& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
 
   private:
+
     Endpoint m_endpoint;
   };
 

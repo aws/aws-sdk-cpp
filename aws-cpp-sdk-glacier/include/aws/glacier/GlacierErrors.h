@@ -55,7 +55,7 @@ enum class GlacierErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INSUFFICIENT_CAPACITY= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INSUFFICIENT_CAPACITY= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   LIMIT_EXCEEDED,
   MISSING_PARAMETER_VALUE,
   POLICY_ENFORCED,
@@ -63,7 +63,7 @@ enum class GlacierErrors
 };
 namespace GlacierErrorMapper
 {
-  AWS_GLACIER_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_GLACIER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Glacier

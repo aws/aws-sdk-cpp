@@ -30,12 +30,12 @@ CreateMatchmakingRuleSetResult::CreateMatchmakingRuleSetResult()
 {
 }
 
-CreateMatchmakingRuleSetResult::CreateMatchmakingRuleSetResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateMatchmakingRuleSetResult::CreateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateMatchmakingRuleSetResult& CreateMatchmakingRuleSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateMatchmakingRuleSetResult& CreateMatchmakingRuleSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("RuleSet"))

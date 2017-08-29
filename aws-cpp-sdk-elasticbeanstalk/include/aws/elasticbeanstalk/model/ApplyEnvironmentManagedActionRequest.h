@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the target environment.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline ApplyEnvironmentManagedActionRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The environment ID of the target environment.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The environment ID of the target environment.</p>
      */
     inline ApplyEnvironmentManagedActionRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>The action ID of the scheduled managed action to execute.</p>
@@ -148,10 +151,13 @@ namespace Model
     inline ApplyEnvironmentManagedActionRequest& WithActionId(const char* value) { SetActionId(value); return *this;}
 
   private:
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_actionId;
     bool m_actionIdHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     DevEndpoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the DevEndpoint.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DevEndpoint& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
 
+
     /**
      * <p>The AWS ARN of the IAM role used in this DevEndpoint.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The AWS ARN of the IAM role used in this DevEndpoint.</p>
      */
     inline DevEndpoint& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>A list of security group identifiers used in this DevEndpoint.</p>
@@ -158,6 +161,7 @@ namespace Model
      */
     inline DevEndpoint& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The subnet ID for this DevEndpoint.</p>
      */
@@ -192,6 +196,7 @@ namespace Model
      * <p>The subnet ID for this DevEndpoint.</p>
      */
     inline DevEndpoint& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The YARN endpoint address used by this DevEndpoint.</p>
@@ -228,6 +233,7 @@ namespace Model
      */
     inline DevEndpoint& WithYarnEndpointAddress(const char* value) { SetYarnEndpointAddress(value); return *this;}
 
+
     /**
      * <p>The public address used by this DevEndpoint.</p>
      */
@@ -262,6 +268,7 @@ namespace Model
      * <p>The public address used by this DevEndpoint.</p>
      */
     inline DevEndpoint& WithPublicAddress(const char* value) { SetPublicAddress(value); return *this;}
+
 
     /**
      * <p>The current status of this DevEndpoint.</p>
@@ -298,6 +305,7 @@ namespace Model
      */
     inline DevEndpoint& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The number of nodes used by this DevEndpoint.</p>
      */
@@ -312,6 +320,7 @@ namespace Model
      * <p>The number of nodes used by this DevEndpoint.</p>
      */
     inline DevEndpoint& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
+
 
     /**
      * <p>The AWS availability zone where this DevEndpoint is located.</p>
@@ -348,6 +357,7 @@ namespace Model
      */
     inline DevEndpoint& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The ID of the virtual private cloud (VPC) used by this DevEndpoint.</p>
      */
@@ -382,6 +392,7 @@ namespace Model
      * <p>The ID of the virtual private cloud (VPC) used by this DevEndpoint.</p>
      */
     inline DevEndpoint& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
@@ -425,6 +436,7 @@ namespace Model
      */
     inline DevEndpoint& WithExtraPythonLibsS3Path(const char* value) { SetExtraPythonLibsS3Path(value); return *this;}
 
+
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
      * DevEndpoint.</p>
@@ -467,6 +479,7 @@ namespace Model
      */
     inline DevEndpoint& WithExtraJarsS3Path(const char* value) { SetExtraJarsS3Path(value); return *this;}
 
+
     /**
      * <p>The reason for a current failure in this DevEndpoint.</p>
      */
@@ -501,6 +514,7 @@ namespace Model
      * <p>The reason for a current failure in this DevEndpoint.</p>
      */
     inline DevEndpoint& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+
 
     /**
      * <p>The status of the last update.</p>
@@ -537,6 +551,7 @@ namespace Model
      */
     inline DevEndpoint& WithLastUpdateStatus(const char* value) { SetLastUpdateStatus(value); return *this;}
 
+
     /**
      * <p>The point in time at which this DevEndpoint was created.</p>
      */
@@ -562,6 +577,7 @@ namespace Model
      */
     inline DevEndpoint& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The point in time at which this DevEndpoint was last modified.</p>
      */
@@ -586,6 +602,7 @@ namespace Model
      * <p>The point in time at which this DevEndpoint was last modified.</p>
      */
     inline DevEndpoint& WithLastModifiedTimestamp(Aws::Utils::DateTime&& value) { SetLastModifiedTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The public key to be used by this DevEndpoint for authentication.</p>
@@ -623,38 +640,55 @@ namespace Model
     inline DevEndpoint& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
 
   private:
+
     Aws::String m_endpointName;
     bool m_endpointNameHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_yarnEndpointAddress;
     bool m_yarnEndpointAddressHasBeenSet;
+
     Aws::String m_publicAddress;
     bool m_publicAddressHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::String m_extraPythonLibsS3Path;
     bool m_extraPythonLibsS3PathHasBeenSet;
+
     Aws::String m_extraJarsS3Path;
     bool m_extraJarsS3PathHasBeenSet;
+
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;
+
     Aws::String m_lastUpdateStatus;
     bool m_lastUpdateStatusHasBeenSet;
+
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedTimestamp;
     bool m_lastModifiedTimestampHasBeenSet;
+
     Aws::String m_publicKey;
     bool m_publicKeyHasBeenSet;
   };

@@ -30,12 +30,12 @@ DescribeDocumentPermissionResult::DescribeDocumentPermissionResult()
 {
 }
 
-DescribeDocumentPermissionResult::DescribeDocumentPermissionResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDocumentPermissionResult::DescribeDocumentPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeDocumentPermissionResult& DescribeDocumentPermissionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeDocumentPermissionResult& DescribeDocumentPermissionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AccountIds"))

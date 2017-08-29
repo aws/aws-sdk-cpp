@@ -34,6 +34,7 @@ namespace Model
     GetFunctionDefinitionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * the unique Id of the lambda definition
      */
@@ -70,6 +71,7 @@ namespace Model
     inline GetFunctionDefinitionRequest& WithFunctionDefinitionId(const char* value) { SetFunctionDefinitionId(value); return *this;}
 
   private:
+
     Aws::String m_functionDefinitionId;
     bool m_functionDefinitionIdHasBeenSet;
   };

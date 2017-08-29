@@ -46,6 +46,7 @@ namespace Model
     S3ArtifactLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the Amazon S3 bucket.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the Amazon S3 bucket.</p>
      */
     inline S3ArtifactLocation& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+
 
     /**
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the
@@ -124,8 +126,10 @@ namespace Model
     inline S3ArtifactLocation& WithObjectKey(const char* value) { SetObjectKey(value); return *this;}
 
   private:
+
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet;
+
     Aws::String m_objectKey;
     bool m_objectKeyHasBeenSet;
   };

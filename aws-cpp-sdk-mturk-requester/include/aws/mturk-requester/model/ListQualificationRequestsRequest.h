@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the QualificationType.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline ListQualificationRequestsRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
 
+
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -92,6 +94,7 @@ namespace Model
     
     inline ListQualificationRequestsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p> The maximum number of results to return in a single call. </p>
      */
@@ -108,10 +111,13 @@ namespace Model
     inline ListQualificationRequestsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

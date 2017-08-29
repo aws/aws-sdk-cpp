@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     RegisterScalableTargetResult();
-    RegisterScalableTargetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterScalableTargetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterScalableTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterScalableTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

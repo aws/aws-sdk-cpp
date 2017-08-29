@@ -30,12 +30,12 @@ PutLexiconResult::PutLexiconResult()
 {
 }
 
-PutLexiconResult::PutLexiconResult(const AmazonWebServiceResult<JsonValue>& result)
+PutLexiconResult::PutLexiconResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutLexiconResult& PutLexiconResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutLexiconResult& PutLexiconResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -45,6 +45,7 @@ namespace Model
     SetDimension& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The type of dimension:
 INCLUSIVE - Endpoints that match the criteria are
@@ -89,6 +90,7 @@ EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
     inline SetDimension& WithDimensionType(DimensionType&& value) { SetDimensionType(std::move(value)); return *this;}
+
 
     /**
      * The criteria values for the segment dimension. Endpoints with matching attribute
@@ -147,8 +149,10 @@ EXCLUSIVE - Endpoints that match the criteria are
     inline SetDimension& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     DimensionType m_dimensionType;
     bool m_dimensionTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

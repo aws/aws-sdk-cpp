@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeAccountAttributesResult();
-    DescribeAccountAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAccountAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAccountAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Account quota information.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DescribeAccountAttributesResult& AddAccountQuotas(AccountQuota&& value) { m_accountQuotas.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<AccountQuota> m_accountQuotas;
   };
 

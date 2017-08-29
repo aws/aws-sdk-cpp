@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     SendTaskSuccessResult();
-    SendTaskSuccessResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendTaskSuccessResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendTaskSuccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendTaskSuccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

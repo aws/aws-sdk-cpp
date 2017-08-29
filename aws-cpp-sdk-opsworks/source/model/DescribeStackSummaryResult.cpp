@@ -30,12 +30,12 @@ DescribeStackSummaryResult::DescribeStackSummaryResult()
 {
 }
 
-DescribeStackSummaryResult::DescribeStackSummaryResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeStackSummaryResult::DescribeStackSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeStackSummaryResult& DescribeStackSummaryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeStackSummaryResult& DescribeStackSummaryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StackSummary"))

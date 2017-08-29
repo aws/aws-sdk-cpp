@@ -30,12 +30,12 @@ CreateDocumentationPartResult::CreateDocumentationPartResult()
 {
 }
 
-CreateDocumentationPartResult::CreateDocumentationPartResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateDocumentationPartResult::CreateDocumentationPartResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateDocumentationPartResult& CreateDocumentationPartResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateDocumentationPartResult& CreateDocumentationPartResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("id"))

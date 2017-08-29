@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The device key.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The device key.</p>
      */
     inline GetDeviceRequest& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
+
 
     /**
      * <p>The access token.</p>
@@ -110,8 +112,10 @@ namespace Model
     inline GetDeviceRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
   private:
+
     Aws::String m_deviceKey;
     bool m_deviceKeyHasBeenSet;
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
   };

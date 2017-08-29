@@ -51,6 +51,7 @@ namespace Model
     S3Resource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
      */
     inline S3Resource& WithBucketArn(const char* value) { SetBucketArn(value); return *this;}
+
 
     /**
      * <p>For export jobs, you can provide an optional <code>KeyRange</code> within a
@@ -127,8 +129,10 @@ namespace Model
     inline S3Resource& WithKeyRange(KeyRange&& value) { SetKeyRange(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucketArn;
     bool m_bucketArnHasBeenSet;
+
     KeyRange m_keyRange;
     bool m_keyRangeHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>An identifier for this particular receipt handle. This is used to communicate
      * the result.</p> <note> <p>The <code>Id</code>s of a batch request need to be
@@ -98,6 +99,7 @@ namespace Model
      */
     inline DeleteMessageBatchRequestEntry& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>A receipt handle.</p>
      */
@@ -134,8 +136,10 @@ namespace Model
     inline DeleteMessageBatchRequestEntry& WithReceiptHandle(const char* value) { SetReceiptHandle(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_receiptHandle;
     bool m_receiptHandleHasBeenSet;
   };

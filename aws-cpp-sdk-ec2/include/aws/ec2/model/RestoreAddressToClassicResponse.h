@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     RestoreAddressToClassicResponse();
-    RestoreAddressToClassicResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreAddressToClassicResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RestoreAddressToClassicResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RestoreAddressToClassicResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The Elastic IP address.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline RestoreAddressToClassicResponse& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
+
     /**
      * <p>The move status for the IP address.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      */
     inline RestoreAddressToClassicResponse& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -124,8 +127,11 @@ namespace Model
     inline RestoreAddressToClassicResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_publicIp;
+
     Status m_status;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The ID of the traffic policy for which you want to list traffic policy
      * instances.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline ListTrafficPolicyInstancesByPolicyRequest& WithTrafficPolicyId(const char* value) { SetTrafficPolicyId(value); return *this;}
 
+
     /**
      * <p>The version of the traffic policy for which you want to list traffic policy
      * instances. The version must be associated with the traffic policy that is
@@ -107,6 +109,7 @@ namespace Model
      * specified by <code>TrafficPolicyId</code>.</p>
      */
     inline ListTrafficPolicyInstancesByPolicyRequest& WithTrafficPolicyVersion(int value) { SetTrafficPolicyVersion(value); return *this;}
+
 
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response was
@@ -199,6 +202,7 @@ namespace Model
      */
     inline ListTrafficPolicyInstancesByPolicyRequest& WithHostedZoneIdMarker(const char* value) { SetHostedZoneIdMarker(value); return *this;}
 
+
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response was
      * <code>true</code>, you have more traffic policy instances. To get more traffic
@@ -290,6 +294,7 @@ namespace Model
      */
     inline ListTrafficPolicyInstancesByPolicyRequest& WithTrafficPolicyInstanceNameMarker(const char* value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
 
+
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response was
      * <code>true</code>, you have more traffic policy instances. To get more traffic
@@ -354,6 +359,7 @@ namespace Model
      * are no more traffic policy instances to get.</p>
      */
     inline ListTrafficPolicyInstancesByPolicyRequest& WithTrafficPolicyInstanceTypeMarker(RRType&& value) { SetTrafficPolicyInstanceTypeMarker(std::move(value)); return *this;}
+
 
     /**
      * <p>The maximum number of traffic policy instances to be included in the response
@@ -440,16 +446,22 @@ namespace Model
     inline ListTrafficPolicyInstancesByPolicyRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_trafficPolicyId;
     bool m_trafficPolicyIdHasBeenSet;
+
     int m_trafficPolicyVersion;
     bool m_trafficPolicyVersionHasBeenSet;
+
     Aws::String m_hostedZoneIdMarker;
     bool m_hostedZoneIdMarkerHasBeenSet;
+
     Aws::String m_trafficPolicyInstanceNameMarker;
     bool m_trafficPolicyInstanceNameMarkerHasBeenSet;
+
     RRType m_trafficPolicyInstanceTypeMarker;
     bool m_trafficPolicyInstanceTypeMarkerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

@@ -55,12 +55,12 @@ enum class EMRErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_REQUEST
 };
 namespace EMRErrorMapper
 {
-  AWS_EMR_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_EMR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace EMR

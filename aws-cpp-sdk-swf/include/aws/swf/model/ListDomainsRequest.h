@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
      * more results available. To retrieve the next page of results, make the call
@@ -100,6 +101,7 @@ namespace Model
      */
     inline ListDomainsRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
+
     /**
      * <p>Specifies the registration status of the domains to list.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>Specifies the registration status of the domains to list.</p>
      */
     inline ListDomainsRequest& WithRegistrationStatus(RegistrationStatus&& value) { SetRegistrationStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The maximum number of results that are returned per call.
@@ -155,6 +158,7 @@ namespace Model
      */
     inline ListDomainsRequest& WithMaximumPageSize(int value) { SetMaximumPageSize(value); return *this;}
 
+
     /**
      * <p>When set to <code>true</code>, returns the results in reverse order. By
      * default, the results are returned in ascending alphabetical order by
@@ -177,12 +181,16 @@ namespace Model
     inline ListDomainsRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
 
   private:
+
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet;
+
     RegistrationStatus m_registrationStatus;
     bool m_registrationStatusHasBeenSet;
+
     int m_maximumPageSize;
     bool m_maximumPageSizeHasBeenSet;
+
     bool m_reverseOrder;
     bool m_reverseOrderHasBeenSet;
   };

@@ -30,12 +30,12 @@ ListPolicyVersionsResult::ListPolicyVersionsResult()
 {
 }
 
-ListPolicyVersionsResult::ListPolicyVersionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListPolicyVersionsResult::ListPolicyVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListPolicyVersionsResult& ListPolicyVersionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListPolicyVersionsResult& ListPolicyVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("policyVersions"))

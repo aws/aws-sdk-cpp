@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the assessment template that is used during the event for which
      * you want to receive SNS notifications.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline SubscribeToEventRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
+
     /**
      * <p>The event for which you want to receive SNS notifications.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p>The event for which you want to receive SNS notifications.</p>
      */
     inline SubscribeToEventRequest& WithEvent(InspectorEvent&& value) { SetEvent(std::move(value)); return *this;}
+
 
     /**
      * <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
@@ -140,10 +143,13 @@ namespace Model
     inline SubscribeToEventRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     InspectorEvent m_event;
     bool m_eventHasBeenSet;
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
   };

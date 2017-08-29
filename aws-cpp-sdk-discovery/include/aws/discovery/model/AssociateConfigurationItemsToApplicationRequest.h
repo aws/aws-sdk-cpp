@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The configuration ID of an application with which items are to be
      * associated.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline AssociateConfigurationItemsToApplicationRequest& WithApplicationConfigurationId(const char* value) { SetApplicationConfigurationId(value); return *this;}
 
+
     /**
      * <p>The ID of each configuration item to be associated with an application.</p>
      */
@@ -120,8 +122,10 @@ namespace Model
     inline AssociateConfigurationItemsToApplicationRequest& AddConfigurationIds(const char* value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_applicationConfigurationId;
     bool m_applicationConfigurationIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_configurationIds;
     bool m_configurationIdsHasBeenSet;
   };

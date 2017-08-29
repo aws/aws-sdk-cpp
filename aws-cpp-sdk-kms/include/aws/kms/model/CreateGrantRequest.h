@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier for the customer master key (CMK) that the grant
      * applies to.</p> <p>To specify this value, use the globally unique key ID or the
@@ -108,6 +109,7 @@ namespace Model
      * </li> </ul>
      */
     inline CreateGrantRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+
 
     /**
      * <p>The principal that is given permission to perform the operations that the
@@ -200,6 +202,7 @@ namespace Model
      */
     inline CreateGrantRequest& WithGranteePrincipal(const char* value) { SetGranteePrincipal(value); return *this;}
 
+
     /**
      * <p>The principal that is given permission to retire the grant by using
      * <a>RetireGrant</a> operation.</p> <p>To specify the principal, use the <a
@@ -291,6 +294,7 @@ namespace Model
      */
     inline CreateGrantRequest& WithRetiringPrincipal(const char* value) { SetRetiringPrincipal(value); return *this;}
 
+
     /**
      * <p>A list of operations that the grant permits.</p>
      */
@@ -325,6 +329,7 @@ namespace Model
      * <p>A list of operations that the grant permits.</p>
      */
     inline CreateGrantRequest& AddOperations(GrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A structure that you can use to allow certain operations in the grant only
@@ -370,6 +375,7 @@ namespace Model
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithConstraints(GrantConstraints&& value) { SetConstraints(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
@@ -426,6 +432,7 @@ namespace Model
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+
 
     /**
      * <p>A friendly name for identifying the grant. Use this value to prevent
@@ -533,18 +540,25 @@ namespace Model
     inline CreateGrantRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::String m_granteePrincipal;
     bool m_granteePrincipalHasBeenSet;
+
     Aws::String m_retiringPrincipal;
     bool m_retiringPrincipalHasBeenSet;
+
     Aws::Vector<GrantOperation> m_operations;
     bool m_operationsHasBeenSet;
+
     GrantConstraints m_constraints;
     bool m_constraintsHasBeenSet;
+
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

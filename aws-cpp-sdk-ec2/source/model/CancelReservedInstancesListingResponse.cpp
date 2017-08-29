@@ -31,12 +31,12 @@ CancelReservedInstancesListingResponse::CancelReservedInstancesListingResponse()
 {
 }
 
-CancelReservedInstancesListingResponse::CancelReservedInstancesListingResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CancelReservedInstancesListingResponse::CancelReservedInstancesListingResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CancelReservedInstancesListingResponse& CancelReservedInstancesListingResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CancelReservedInstancesListingResponse& CancelReservedInstancesListingResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

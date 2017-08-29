@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The subscription's ARN.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The subscription's ARN.</p>
      */
     inline Subscription& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
+
 
     /**
      * <p>The subscription's owner.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Subscription& WithOwner(const char* value) { SetOwner(value); return *this;}
 
+
     /**
      * <p>The subscription's protocol.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline Subscription& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
+
     /**
      * <p>The subscription's endpoint (format depends on the protocol).</p>
      */
@@ -188,6 +192,7 @@ namespace Model
      * <p>The subscription's endpoint (format depends on the protocol).</p>
      */
     inline Subscription& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+
 
     /**
      * <p>The ARN of the subscription's topic.</p>
@@ -225,14 +230,19 @@ namespace Model
     inline Subscription& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionArn;
     bool m_subscriptionArnHasBeenSet;
+
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
+
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
   };

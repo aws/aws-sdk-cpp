@@ -30,12 +30,12 @@ GetAssociatedRoleResult::GetAssociatedRoleResult()
 {
 }
 
-GetAssociatedRoleResult::GetAssociatedRoleResult(const AmazonWebServiceResult<JsonValue>& result)
+GetAssociatedRoleResult::GetAssociatedRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetAssociatedRoleResult& GetAssociatedRoleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetAssociatedRoleResult& GetAssociatedRoleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AssociatedAt"))

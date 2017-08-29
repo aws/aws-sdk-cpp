@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DescribeTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The type of the ML object.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline DescribeTagsRequest& WithResourceType(TaggableResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     TaggableResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
   };

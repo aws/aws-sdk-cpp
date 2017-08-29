@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The type of resources that you want AWS Config to list in the response.</p>
      */
@@ -65,6 +66,7 @@ namespace Model
      * <p>The type of resources that you want AWS Config to list in the response.</p>
      */
     inline ListDiscoveredResourcesRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The IDs of only those resources that you want AWS Config to list in the
@@ -122,6 +124,7 @@ namespace Model
      */
     inline ListDiscoveredResourcesRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
+
     /**
      * <p>The custom name of only those resources that you want AWS Config to list in
      * the response. If you do not specify this parameter, AWS Config lists all
@@ -171,6 +174,7 @@ namespace Model
      */
     inline ListDiscoveredResourcesRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
     /**
      * <p>The maximum number of resource identifiers returned on each page. The default
      * is 100. You cannot specify a limit greater than 100. If you specify 0, AWS
@@ -192,6 +196,7 @@ namespace Model
      */
     inline ListDiscoveredResourcesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
+
     /**
      * <p>Specifies whether AWS Config includes deleted resources in the results. By
      * default, deleted resources are not included.</p>
@@ -209,6 +214,7 @@ namespace Model
      * default, deleted resources are not included.</p>
      */
     inline ListDiscoveredResourcesRequest& WithIncludeDeletedResources(bool value) { SetIncludeDeletedResources(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
@@ -253,16 +259,22 @@ namespace Model
     inline ListDiscoveredResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourceIds;
     bool m_resourceIdsHasBeenSet;
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     bool m_includeDeletedResources;
     bool m_includeDeletedResourcesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

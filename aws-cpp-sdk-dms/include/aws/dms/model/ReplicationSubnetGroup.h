@@ -47,6 +47,7 @@ namespace Model
     ReplicationSubnetGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the replication instance subnet group.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The identifier of the replication instance subnet group.</p>
      */
     inline ReplicationSubnetGroup& WithReplicationSubnetGroupIdentifier(const char* value) { SetReplicationSubnetGroupIdentifier(value); return *this;}
+
 
     /**
      * <p>The description of the replication subnet group.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ReplicationSubnetGroup& WithReplicationSubnetGroupDescription(const char* value) { SetReplicationSubnetGroupDescription(value); return *this;}
 
+
     /**
      * <p>The ID of the VPC.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      */
     inline ReplicationSubnetGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>The status of the subnet group.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      * <p>The status of the subnet group.</p>
      */
     inline ReplicationSubnetGroup& WithSubnetGroupStatus(const char* value) { SetSubnetGroupStatus(value); return *this;}
+
 
     /**
      * <p>The subnets that are in the subnet group.</p>
@@ -223,14 +228,19 @@ namespace Model
     inline ReplicationSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_replicationSubnetGroupIdentifier;
     bool m_replicationSubnetGroupIdentifierHasBeenSet;
+
     Aws::String m_replicationSubnetGroupDescription;
     bool m_replicationSubnetGroupDescriptionHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::String m_subnetGroupStatus;
     bool m_subnetGroupStatusHasBeenSet;
+
     Aws::Vector<Subnet> m_subnets;
     bool m_subnetsHasBeenSet;
   };

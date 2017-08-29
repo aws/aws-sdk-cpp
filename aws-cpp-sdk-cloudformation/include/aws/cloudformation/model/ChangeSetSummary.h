@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the stack with which the change set is associated.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The ID of the stack with which the change set is associated.</p>
      */
     inline ChangeSetSummary& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The name of the stack with which the change set is associated.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline ChangeSetSummary& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+
     /**
      * <p>The ID of the change set.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      */
     inline ChangeSetSummary& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
 
+
     /**
      * <p>The name of the change set.</p>
      */
@@ -191,6 +195,7 @@ namespace Model
      * <p>The name of the change set.</p>
      */
     inline ChangeSetSummary& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
@@ -237,6 +242,7 @@ namespace Model
      */
     inline ChangeSetSummary& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>,
      * <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
@@ -266,6 +272,7 @@ namespace Model
      * <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
      */
     inline ChangeSetSummary& WithStatus(ChangeSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the change set's status. For example, if your change set is
@@ -316,6 +323,7 @@ namespace Model
      */
     inline ChangeSetSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
+
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
@@ -340,6 +348,7 @@ namespace Model
      * <p>The start time when the change set was created, in UTC.</p>
      */
     inline ChangeSetSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Descriptive information about the change set.</p>
@@ -377,22 +386,31 @@ namespace Model
     inline ChangeSetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_changeSetId;
     bool m_changeSetIdHasBeenSet;
+
     Aws::String m_changeSetName;
     bool m_changeSetNameHasBeenSet;
+
     ExecutionStatus m_executionStatus;
     bool m_executionStatusHasBeenSet;
+
     ChangeSetStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

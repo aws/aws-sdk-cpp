@@ -30,12 +30,12 @@ GetDifferencesResult::GetDifferencesResult()
 {
 }
 
-GetDifferencesResult::GetDifferencesResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDifferencesResult::GetDifferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDifferencesResult& GetDifferencesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDifferencesResult& GetDifferencesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("differences"))

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     StartReplicationTaskResult();
-    StartReplicationTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartReplicationTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartReplicationTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartReplicationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The replication task started.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline StartReplicationTaskResult& WithReplicationTask(ReplicationTask&& value) { SetReplicationTask(std::move(value)); return *this;}
 
   private:
+
     ReplicationTask m_replicationTask;
   };
 

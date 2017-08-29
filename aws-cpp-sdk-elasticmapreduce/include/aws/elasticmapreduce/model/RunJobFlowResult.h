@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     RunJobFlowResult();
-    RunJobFlowResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RunJobFlowResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RunJobFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RunJobFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An unique identifier for the job flow.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline RunJobFlowResult& WithJobFlowId(const char* value) { SetJobFlowId(value); return *this;}
 
   private:
+
     Aws::String m_jobFlowId;
   };
 

@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * The name of the domain in which to perform the operation.
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline GetAttributesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * The name of the item.
      */
@@ -108,6 +110,7 @@ namespace Model
      * The name of the item.
      */
     inline GetAttributesRequest& WithItemName(const char* value) { SetItemName(value); return *this;}
+
 
     /**
      * The names of the attributes.
@@ -149,6 +152,7 @@ namespace Model
      */
     inline GetAttributesRequest& AddAttributeNames(const char* value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
+
     /**
      * Determines whether or not strong consistency should be enforced when data is
      * read from SimpleDB. If <code>true</code>, any data previously written to
@@ -174,12 +178,16 @@ namespace Model
     inline GetAttributesRequest& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_itemName;
     bool m_itemNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_attributeNames;
     bool m_attributeNamesHasBeenSet;
+
     bool m_consistentRead;
     bool m_consistentReadHasBeenSet;
   };

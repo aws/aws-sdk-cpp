@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetCatalogImportStatusResult();
-    GetCatalogImportStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCatalogImportStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCatalogImportStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCatalogImportStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the specified catalog migration.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetCatalogImportStatusResult& WithImportStatus(CatalogImportStatus&& value) { SetImportStatus(std::move(value)); return *this;}
 
   private:
+
     CatalogImportStatus m_importStatus;
   };
 

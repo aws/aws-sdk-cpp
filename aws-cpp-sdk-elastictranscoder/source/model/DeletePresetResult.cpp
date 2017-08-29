@@ -30,12 +30,12 @@ DeletePresetResult::DeletePresetResult()
 {
 }
 
-DeletePresetResult::DeletePresetResult(const AmazonWebServiceResult<JsonValue>& result)
+DeletePresetResult::DeletePresetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeletePresetResult& DeletePresetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeletePresetResult& DeletePresetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

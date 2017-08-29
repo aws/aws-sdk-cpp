@@ -58,6 +58,7 @@ namespace Model
     DeploymentInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The application name.</p>
      */
@@ -92,6 +93,7 @@ namespace Model
      * <p>The application name.</p>
      */
     inline DeploymentInfo& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The deployment group name.</p>
@@ -128,6 +130,7 @@ namespace Model
      */
     inline DeploymentInfo& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 
+
     /**
      * <p>The deployment configuration name.</p>
      */
@@ -162,6 +165,7 @@ namespace Model
      * <p>The deployment configuration name.</p>
      */
     inline DeploymentInfo& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
+
 
     /**
      * <p>The deployment ID.</p>
@@ -198,6 +202,7 @@ namespace Model
      */
     inline DeploymentInfo& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
+
     /**
      * <p>Information about the application revision that was deployed to the
      * deployment group before the most recent successful deployment.</p>
@@ -227,6 +232,7 @@ namespace Model
      * deployment group before the most recent successful deployment.</p>
      */
     inline DeploymentInfo& WithPreviousRevision(RevisionLocation&& value) { SetPreviousRevision(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the location of stored application artifacts and the
@@ -258,6 +264,7 @@ namespace Model
      */
     inline DeploymentInfo& WithRevision(RevisionLocation&& value) { SetRevision(std::move(value)); return *this;}
 
+
     /**
      * <p>The current state of the deployment as a whole.</p>
      */
@@ -282,6 +289,7 @@ namespace Model
      * <p>The current state of the deployment as a whole.</p>
      */
     inline DeploymentInfo& WithStatus(DeploymentStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about any error associated with this deployment.</p>
@@ -308,6 +316,7 @@ namespace Model
      */
     inline DeploymentInfo& WithErrorInformation(ErrorInformation&& value) { SetErrorInformation(std::move(value)); return *this;}
 
+
     /**
      * <p>A timestamp indicating when the deployment was created.</p>
      */
@@ -332,6 +341,7 @@ namespace Model
      * <p>A timestamp indicating when the deployment was created.</p>
      */
     inline DeploymentInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>A timestamp indicating when the deployment was deployed to the deployment
@@ -373,6 +383,7 @@ namespace Model
      */
     inline DeploymentInfo& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>A timestamp indicating when the deployment was complete.</p>
      */
@@ -398,6 +409,7 @@ namespace Model
      */
     inline DeploymentInfo& WithCompleteTime(Aws::Utils::DateTime&& value) { SetCompleteTime(std::move(value)); return *this;}
 
+
     /**
      * <p>A summary of the deployment status of the instances in the deployment.</p>
      */
@@ -422,6 +434,7 @@ namespace Model
      * <p>A summary of the deployment status of the instances in the deployment.</p>
      */
     inline DeploymentInfo& WithDeploymentOverview(DeploymentOverview&& value) { SetDeploymentOverview(std::move(value)); return *this;}
+
 
     /**
      * <p>A comment about the deployment.</p>
@@ -457,6 +470,7 @@ namespace Model
      * <p>A comment about the deployment.</p>
      */
     inline DeploymentInfo& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
@@ -498,6 +512,7 @@ namespace Model
      */
     inline DeploymentInfo& WithCreator(DeploymentCreator&& value) { SetCreator(std::move(value)); return *this;}
 
+
     /**
      * <p>If true, then if the deployment causes the ApplicationStop deployment
      * lifecycle event to an instance to fail, the deployment to that instance will not
@@ -531,6 +546,7 @@ namespace Model
      */
     inline DeploymentInfo& WithIgnoreApplicationStopFailures(bool value) { SetIgnoreApplicationStopFailures(value); return *this;}
 
+
     /**
      * <p>Information about the automatic rollback configuration associated with the
      * deployment.</p>
@@ -561,6 +577,7 @@ namespace Model
      */
     inline DeploymentInfo& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether only instances that are not running the latest application
      * revision are to be deployed to.</p>
@@ -578,6 +595,7 @@ namespace Model
      * revision are to be deployed to.</p>
      */
     inline DeploymentInfo& WithUpdateOutdatedInstancesOnly(bool value) { SetUpdateOutdatedInstancesOnly(value); return *this;}
+
 
     /**
      * <p>Information about a deployment rollback.</p>
@@ -603,6 +621,7 @@ namespace Model
      * <p>Information about a deployment rollback.</p>
      */
     inline DeploymentInfo& WithRollbackInfo(RollbackInfo&& value) { SetRollbackInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the type of deployment, either in-place or blue/green, you
@@ -634,6 +653,7 @@ namespace Model
      */
     inline DeploymentInfo& WithDeploymentStyle(DeploymentStyle&& value) { SetDeploymentStyle(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the instances that belong to the replacement environment in
      * a blue/green deployment.</p>
@@ -664,6 +684,7 @@ namespace Model
      */
     inline DeploymentInfo& WithTargetInstances(TargetInstances&& value) { SetTargetInstances(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether the wait period set for the termination of instances in the
      * original environment has started. Status is 'false' if the KEEP_ALIVE option is
@@ -684,6 +705,7 @@ namespace Model
      * specified; otherwise, 'true' as soon as the termination wait period starts.</p>
      */
     inline DeploymentInfo& WithInstanceTerminationWaitTimeStarted(bool value) { SetInstanceTerminationWaitTimeStarted(value); return *this;}
+
 
     /**
      * <p>Information about blue/green deployment options for this deployment.</p>
@@ -710,6 +732,7 @@ namespace Model
      */
     inline DeploymentInfo& WithBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { SetBlueGreenDeploymentConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the load balancer used in the deployment.</p>
      */
@@ -734,6 +757,7 @@ namespace Model
      * <p>Information about the load balancer used in the deployment.</p>
      */
     inline DeploymentInfo& WithLoadBalancerInfo(LoadBalancerInfo&& value) { SetLoadBalancerInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides information about the results of a deployment, such as whether
@@ -783,6 +807,7 @@ namespace Model
      * terminated.</p>
      */
     inline DeploymentInfo& WithAdditionalDeploymentStatusInfo(const char* value) { SetAdditionalDeploymentStatusInfo(value); return *this;}
+
 
     /**
      * <p>Information about how AWS CodeDeploy handles files that already exist in a
@@ -845,54 +870,79 @@ namespace Model
     inline DeploymentInfo& WithFileExistsBehavior(FileExistsBehavior&& value) { SetFileExistsBehavior(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_deploymentGroupName;
     bool m_deploymentGroupNameHasBeenSet;
+
     Aws::String m_deploymentConfigName;
     bool m_deploymentConfigNameHasBeenSet;
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     RevisionLocation m_previousRevision;
     bool m_previousRevisionHasBeenSet;
+
     RevisionLocation m_revision;
     bool m_revisionHasBeenSet;
+
     DeploymentStatus m_status;
     bool m_statusHasBeenSet;
+
     ErrorInformation m_errorInformation;
     bool m_errorInformationHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_completeTime;
     bool m_completeTimeHasBeenSet;
+
     DeploymentOverview m_deploymentOverview;
     bool m_deploymentOverviewHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     DeploymentCreator m_creator;
     bool m_creatorHasBeenSet;
+
     bool m_ignoreApplicationStopFailures;
     bool m_ignoreApplicationStopFailuresHasBeenSet;
+
     AutoRollbackConfiguration m_autoRollbackConfiguration;
     bool m_autoRollbackConfigurationHasBeenSet;
+
     bool m_updateOutdatedInstancesOnly;
     bool m_updateOutdatedInstancesOnlyHasBeenSet;
+
     RollbackInfo m_rollbackInfo;
     bool m_rollbackInfoHasBeenSet;
+
     DeploymentStyle m_deploymentStyle;
     bool m_deploymentStyleHasBeenSet;
+
     TargetInstances m_targetInstances;
     bool m_targetInstancesHasBeenSet;
+
     bool m_instanceTerminationWaitTimeStarted;
     bool m_instanceTerminationWaitTimeStartedHasBeenSet;
+
     BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
     bool m_blueGreenDeploymentConfigurationHasBeenSet;
+
     LoadBalancerInfo m_loadBalancerInfo;
     bool m_loadBalancerInfoHasBeenSet;
+
     Aws::String m_additionalDeploymentStatusInfo;
     bool m_additionalDeploymentStatusInfoHasBeenSet;
+
     FileExistsBehavior m_fileExistsBehavior;
     bool m_fileExistsBehaviorHasBeenSet;
   };

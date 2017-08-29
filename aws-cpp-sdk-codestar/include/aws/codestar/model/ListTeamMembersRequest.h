@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the project for which you want to list team members.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the project for which you want to list team members.</p>
      */
     inline ListTeamMembersRequest& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+
 
     /**
      * <p>The continuation token for the next set of results, if the results cannot be
@@ -113,6 +115,7 @@ namespace Model
      */
     inline ListTeamMembersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of team members you want returned in a response.</p>
      */
@@ -129,10 +132,13 @@ namespace Model
     inline ListTeamMembersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_projectId;
     bool m_projectIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

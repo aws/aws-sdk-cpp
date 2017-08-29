@@ -43,6 +43,7 @@ namespace Model
     ImportApiKeysRequest();
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>A query parameter to specify the input format to imported API keys.
      * Currently, only the <code>csv</code> format is supported.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline ImportApiKeysRequest& WithFormat(ApiKeysFormat&& value) { SetFormat(std::move(value)); return *this;}
 
+
     /**
      * <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation
      * (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
@@ -92,8 +94,11 @@ namespace Model
     inline ImportApiKeysRequest& WithFailOnWarnings(bool value) { SetFailOnWarnings(value); return *this;}
 
   private:
+
+
     ApiKeysFormat m_format;
     bool m_formatHasBeenSet;
+
     bool m_failOnWarnings;
     bool m_failOnWarningsHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateEmailChannelResult();
-    UpdateEmailChannelResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEmailChannelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateEmailChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateEmailChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const EmailChannelResponse& GetEmailChannelResponse() const{ return m_emailChannelResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline UpdateEmailChannelResult& WithEmailChannelResponse(EmailChannelResponse&& value) { SetEmailChannelResponse(std::move(value)); return *this;}
 
   private:
+
     EmailChannelResponse m_emailChannelResponse;
   };
 

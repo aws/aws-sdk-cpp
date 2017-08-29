@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The path to the role. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -104,6 +105,7 @@ namespace Model
      */
     inline RoleDetail& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The friendly name that identifies the role.</p>
      */
@@ -138,6 +140,7 @@ namespace Model
      * <p>The friendly name that identifies the role.</p>
      */
     inline RoleDetail& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
 
     /**
      * <p>The stable and unique string identifying the role. For more information about
@@ -195,6 +198,7 @@ namespace Model
      */
     inline RoleDetail& WithRoleId(const char* value) { SetRoleId(value); return *this;}
 
+
     
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -215,6 +219,7 @@ namespace Model
 
     
     inline RoleDetail& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -245,6 +250,7 @@ namespace Model
      * date-time format</a>, when the role was created.</p>
      */
     inline RoleDetail& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The trust policy that grants permission to assume the role.</p>
@@ -281,6 +287,7 @@ namespace Model
      */
     inline RoleDetail& WithAssumeRolePolicyDocument(const char* value) { SetAssumeRolePolicyDocument(value); return *this;}
 
+
     /**
      * <p>A list of instance profiles that contain this role.</p>
      */
@@ -315,6 +322,7 @@ namespace Model
      * <p>A list of instance profiles that contain this role.</p>
      */
     inline RoleDetail& AddInstanceProfileList(InstanceProfile&& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of inline policies embedded in the role. These policies are the role's
@@ -357,6 +365,7 @@ namespace Model
      * access (permissions) policies.</p>
      */
     inline RoleDetail& AddRolePolicyList(PolicyDetail&& value) { m_rolePolicyListHasBeenSet = true; m_rolePolicyList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of managed policies attached to the role. These policies are the
@@ -401,22 +410,31 @@ namespace Model
     inline RoleDetail& AddAttachedManagedPolicies(AttachedPolicy&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_roleId;
     bool m_roleIdHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     Aws::String m_assumeRolePolicyDocument;
     bool m_assumeRolePolicyDocumentHasBeenSet;
+
     Aws::Vector<InstanceProfile> m_instanceProfileList;
     bool m_instanceProfileListHasBeenSet;
+
     Aws::Vector<PolicyDetail> m_rolePolicyList;
     bool m_rolePolicyListHasBeenSet;
+
     Aws::Vector<AttachedPolicy> m_attachedManagedPolicies;
     bool m_attachedManagedPoliciesHasBeenSet;
   };

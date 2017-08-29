@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name (friendly name, not ARN) identifying the user.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The name (friendly name, not ARN) identifying the user.</p>
      */
     inline PolicyUser& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The stable and unique string identifying the user. For more information about
@@ -146,8 +148,10 @@ namespace Model
     inline PolicyUser& WithUserId(const char* value) { SetUserId(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
   };

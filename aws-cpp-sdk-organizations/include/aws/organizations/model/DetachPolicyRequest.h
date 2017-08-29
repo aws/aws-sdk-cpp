@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the policy you want to detach. You can get the
      * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
@@ -98,6 +99,7 @@ namespace Model
      * digits.</p>
      */
     inline DetachPolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+
 
     /**
      * <p>The unique identifier (ID) of the root, OU, or account from which you want to
@@ -205,8 +207,10 @@ namespace Model
     inline DetachPolicyRequest& WithTargetId(const char* value) { SetTargetId(value); return *this;}
 
   private:
+
     Aws::String m_policyId;
     bool m_policyIdHasBeenSet;
+
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     MergeDeveloperIdentitiesResult();
-    MergeDeveloperIdentitiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    MergeDeveloperIdentitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    MergeDeveloperIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    MergeDeveloperIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline MergeDeveloperIdentitiesResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
   private:
+
     Aws::String m_identityId;
   };
 

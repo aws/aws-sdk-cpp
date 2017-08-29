@@ -30,12 +30,12 @@ GetDocumentationPartResult::GetDocumentationPartResult()
 {
 }
 
-GetDocumentationPartResult::GetDocumentationPartResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDocumentationPartResult::GetDocumentationPartResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDocumentationPartResult& GetDocumentationPartResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDocumentationPartResult& GetDocumentationPartResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("id"))

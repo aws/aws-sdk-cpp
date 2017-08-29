@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The unique ID of a stack set operation.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      */
     inline StackSetOperation& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
+
     /**
      * <p>The ID of the stack set.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>The ID of the stack set.</p>
      */
     inline StackSetOperation& WithStackSetId(const char* value) { SetStackSetId(value); return *this;}
+
 
     /**
      * <p>The type of stack set operation: <code>CREATE</code>, <code>UPDATE</code>, or
@@ -167,6 +170,7 @@ namespace Model
      * stack set instances.</p>
      */
     inline StackSetOperation& WithAction(StackSetOperationAction&& value) { SetAction(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the operation. </p> <ul> <li> <p> <code>FAILED</code>: The
@@ -258,6 +262,7 @@ namespace Model
      */
     inline StackSetOperation& WithStatus(StackSetOperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The preferences for how AWS CloudFormation performs this stack set
      * operation.</p>
@@ -288,6 +293,7 @@ namespace Model
      */
     inline StackSetOperation& WithOperationPreferences(StackSetOperationPreferences&& value) { SetOperationPreferences(std::move(value)); return *this;}
 
+
     /**
      * <p>For stack set operations of action type <code>DELETE</code>, specifies
      * whether to remove the stack instances from the specified stack set, but doesn't
@@ -311,6 +317,7 @@ namespace Model
      * saved stack to a new stack set.</p>
      */
     inline StackSetOperation& WithRetainStacks(bool value) { SetRetainStacks(value); return *this;}
+
 
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
@@ -357,6 +364,7 @@ namespace Model
      */
     inline StackSetOperation& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The time at which the stack set operation ended, across all accounts and
      * regions specified. Note that this doesn't necessarily mean that the stack set
@@ -393,20 +401,28 @@ namespace Model
     inline StackSetOperation& WithEndTimestamp(Aws::Utils::DateTime&& value) { SetEndTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet;
+
     Aws::String m_stackSetId;
     bool m_stackSetIdHasBeenSet;
+
     StackSetOperationAction m_action;
     bool m_actionHasBeenSet;
+
     StackSetOperationStatus m_status;
     bool m_statusHasBeenSet;
+
     StackSetOperationPreferences m_operationPreferences;
     bool m_operationPreferencesHasBeenSet;
+
     bool m_retainStacks;
     bool m_retainStacksHasBeenSet;
+
     Aws::Utils::DateTime m_creationTimestamp;
     bool m_creationTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_endTimestamp;
     bool m_endTimestampHasBeenSet;
   };

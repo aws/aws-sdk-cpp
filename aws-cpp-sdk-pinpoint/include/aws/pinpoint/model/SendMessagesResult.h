@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     SendMessagesResult();
-    SendMessagesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendMessagesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendMessagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendMessagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const MessageResponse& GetMessageResponse() const{ return m_messageResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline SendMessagesResult& WithMessageResponse(MessageResponse&& value) { SetMessageResponse(std::move(value)); return *this;}
 
   private:
+
     MessageResponse m_messageResponse;
   };
 

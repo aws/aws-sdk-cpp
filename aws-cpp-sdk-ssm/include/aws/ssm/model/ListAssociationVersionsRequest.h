@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The association ID for which you want to view all versions.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline ListAssociationVersionsRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -91,6 +93,7 @@ namespace Model
      * results.</p>
      */
     inline ListAssociationVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A token to start the list. Use this token to get the next set of results.
@@ -135,10 +138,13 @@ namespace Model
     inline ListAssociationVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

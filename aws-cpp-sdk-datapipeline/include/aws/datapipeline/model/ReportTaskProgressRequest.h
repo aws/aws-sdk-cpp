@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the task assigned to the task runner. This value is provided in the
      * response for <a>PollForTask</a>.</p>
@@ -82,6 +83,7 @@ namespace Model
      * response for <a>PollForTask</a>.</p>
      */
     inline ReportTaskProgressRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+
 
     /**
      * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
@@ -126,8 +128,10 @@ namespace Model
     inline ReportTaskProgressRequest& AddFields(Field&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet;
+
     Aws::Vector<Field> m_fields;
     bool m_fieldsHasBeenSet;
   };

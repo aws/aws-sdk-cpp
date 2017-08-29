@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the schema where the facet resides.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ARN of the schema where the facet resides.</p>
      */
     inline ListFacetAttributesRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+
 
     /**
      * <p>The name of the facet whose attributes will be retrieved.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline ListFacetAttributesRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      */
     inline ListFacetAttributesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -157,12 +161,16 @@ namespace Model
     inline ListFacetAttributesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

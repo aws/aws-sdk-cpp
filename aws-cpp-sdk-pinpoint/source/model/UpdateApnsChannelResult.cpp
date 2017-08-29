@@ -30,12 +30,12 @@ UpdateApnsChannelResult::UpdateApnsChannelResult()
 {
 }
 
-UpdateApnsChannelResult::UpdateApnsChannelResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateApnsChannelResult::UpdateApnsChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateApnsChannelResult& UpdateApnsChannelResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateApnsChannelResult& UpdateApnsChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("APNSChannelResponse"))

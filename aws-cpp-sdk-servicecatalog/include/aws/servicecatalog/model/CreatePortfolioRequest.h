@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline CreatePortfolioRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The name to use for display purposes.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>The name to use for display purposes.</p>
      */
     inline CreatePortfolioRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
 
     /**
      * <p>The text description of the portfolio.</p>
@@ -158,6 +161,7 @@ namespace Model
      */
     inline CreatePortfolioRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The name of the portfolio provider.</p>
      */
@@ -193,6 +197,7 @@ namespace Model
      */
     inline CreatePortfolioRequest& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
     /**
      * <p>Tags to associate with the new portfolio.</p>
      */
@@ -227,6 +232,7 @@ namespace Model
      * <p>Tags to associate with the new portfolio.</p>
      */
     inline CreatePortfolioRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token to disambiguate duplicate requests. You can create multiple resources
@@ -278,16 +284,22 @@ namespace Model
     inline CreatePortfolioRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
   };

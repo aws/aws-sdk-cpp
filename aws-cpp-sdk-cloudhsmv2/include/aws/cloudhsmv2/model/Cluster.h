@@ -53,6 +53,7 @@ namespace Model
     Cluster& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The cluster's backup policy.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The cluster's backup policy.</p>
      */
     inline Cluster& WithBackupPolicy(BackupPolicy&& value) { SetBackupPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>The cluster's identifier (ID).</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline Cluster& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>The date and time when the cluster was created.</p>
      */
@@ -137,6 +140,7 @@ namespace Model
      * <p>The date and time when the cluster was created.</p>
      */
     inline Cluster& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>Contains information about the HSMs in the cluster.</p>
@@ -173,6 +177,7 @@ namespace Model
      */
     inline Cluster& AddHsms(Hsm&& value) { m_hsmsHasBeenSet = true; m_hsms.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The type of HSM that the cluster contains.</p>
      */
@@ -207,6 +212,7 @@ namespace Model
      * <p>The type of HSM that the cluster contains.</p>
      */
     inline Cluster& WithHsmType(const char* value) { SetHsmType(value); return *this;}
+
 
     /**
      * <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
@@ -243,6 +249,7 @@ namespace Model
      */
     inline Cluster& WithPreCoPassword(const char* value) { SetPreCoPassword(value); return *this;}
 
+
     /**
      * <p>The identifier (ID) of the cluster's security group.</p>
      */
@@ -277,6 +284,7 @@ namespace Model
      * <p>The identifier (ID) of the cluster's security group.</p>
      */
     inline Cluster& WithSecurityGroup(const char* value) { SetSecurityGroup(value); return *this;}
+
 
     /**
      * <p>The identifier (ID) of the backup used to create the cluster. This value
@@ -320,6 +328,7 @@ namespace Model
      */
     inline Cluster& WithSourceBackupId(const char* value) { SetSourceBackupId(value); return *this;}
 
+
     /**
      * <p>The cluster's state.</p>
      */
@@ -344,6 +353,7 @@ namespace Model
      * <p>The cluster's state.</p>
      */
     inline Cluster& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the cluster's state.</p>
@@ -379,6 +389,7 @@ namespace Model
      * <p>A description of the cluster's state.</p>
      */
     inline Cluster& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
+
 
     /**
      * <p>A map of the cluster's subnets and their corresponding Availability
@@ -452,6 +463,7 @@ namespace Model
      */
     inline Cluster& AddSubnetMapping(const char* key, const char* value) { m_subnetMappingHasBeenSet = true; m_subnetMapping.emplace(key, value); return *this; }
 
+
     /**
      * <p>The identifier (ID) of the virtual private cloud (VPC) that contains the
      * cluster.</p>
@@ -494,6 +506,7 @@ namespace Model
      */
     inline Cluster& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>Contains one or more certificates or a certificate signing request (CSR).</p>
      */
@@ -520,30 +533,43 @@ namespace Model
     inline Cluster& WithCertificates(Certificates&& value) { SetCertificates(std::move(value)); return *this;}
 
   private:
+
     BackupPolicy m_backupPolicy;
     bool m_backupPolicyHasBeenSet;
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::Utils::DateTime m_createTimestamp;
     bool m_createTimestampHasBeenSet;
+
     Aws::Vector<Hsm> m_hsms;
     bool m_hsmsHasBeenSet;
+
     Aws::String m_hsmType;
     bool m_hsmTypeHasBeenSet;
+
     Aws::String m_preCoPassword;
     bool m_preCoPasswordHasBeenSet;
+
     Aws::String m_securityGroup;
     bool m_securityGroupHasBeenSet;
+
     Aws::String m_sourceBackupId;
     bool m_sourceBackupIdHasBeenSet;
+
     ClusterState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_stateMessage;
     bool m_stateMessageHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_subnetMapping;
     bool m_subnetMappingHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Certificates m_certificates;
     bool m_certificatesHasBeenSet;
   };

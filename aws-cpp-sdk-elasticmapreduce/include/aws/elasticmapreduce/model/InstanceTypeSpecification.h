@@ -51,6 +51,7 @@ namespace Model
     InstanceTypeSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline InstanceTypeSpecification& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The number of units that a provisioned instance of this type provides toward
      * fulfilling the target capacities defined in <a>InstanceFleetConfig</a>. Capacity
@@ -109,6 +111,7 @@ namespace Model
      * not specified, the default value is 1.</p>
      */
     inline InstanceTypeSpecification& WithWeightedCapacity(int value) { SetWeightedCapacity(value); return *this;}
+
 
     /**
      * <p>The bid price for each EC2 Spot instance type as defined by
@@ -152,6 +155,7 @@ namespace Model
      */
     inline InstanceTypeSpecification& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 
+
     /**
      * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
      * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
@@ -172,6 +176,7 @@ namespace Model
      * specifies 20%).</p>
      */
     inline InstanceTypeSpecification& WithBidPriceAsPercentageOfOnDemandPrice(double value) { SetBidPriceAsPercentageOfOnDemandPrice(value); return *this;}
+
 
     /**
      * <p>A configuration classification that applies when provisioning cluster
@@ -222,6 +227,7 @@ namespace Model
      */
     inline InstanceTypeSpecification& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
      * instance as defined by <code>InstanceType</code>.</p>
@@ -264,6 +270,7 @@ namespace Model
      */
     inline InstanceTypeSpecification& AddEbsBlockDevices(EbsBlockDevice&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code>
      * is EBS-optimized.</p>
@@ -283,18 +290,25 @@ namespace Model
     inline InstanceTypeSpecification& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
   private:
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     int m_weightedCapacity;
     bool m_weightedCapacityHasBeenSet;
+
     Aws::String m_bidPrice;
     bool m_bidPriceHasBeenSet;
+
     double m_bidPriceAsPercentageOfOnDemandPrice;
     bool m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet;
+
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+
     Aws::Vector<EbsBlockDevice> m_ebsBlockDevices;
     bool m_ebsBlockDevicesHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
   };

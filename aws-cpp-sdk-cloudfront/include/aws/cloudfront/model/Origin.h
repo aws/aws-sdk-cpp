@@ -55,6 +55,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>A unique identifier for the origin. The value of <code>Id</code> must be
      * unique within the distribution.</p> <p>When you specify the value of
@@ -145,6 +146,7 @@ namespace Model
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline Origin& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p> <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which
@@ -278,6 +280,7 @@ namespace Model
      * <p>The name cannot exceed 128 characters.</p> </li> </ul>
      */
     inline Origin& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>An optional element that causes CloudFront to request your content from a
@@ -419,6 +422,7 @@ namespace Model
      */
     inline Origin& WithOriginPath(const char* value) { SetOriginPath(value); return *this;}
 
+
     /**
      * <p>A complex type that contains names and values for the custom headers that you
      * want.</p>
@@ -448,6 +452,7 @@ namespace Model
      * want.</p>
      */
     inline Origin& WithCustomHeaders(CustomHeaders&& value) { SetCustomHeaders(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that contains information about the Amazon S3 origin. If the
@@ -484,6 +489,7 @@ namespace Model
      */
     inline Origin& WithS3OriginConfig(S3OriginConfig&& value) { SetS3OriginConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>A complex type that contains information about a custom origin. If the origin
      * is an Amazon S3 bucket, use the <code>S3OriginConfig</code> element instead.</p>
@@ -515,16 +521,22 @@ namespace Model
     inline Origin& WithCustomOriginConfig(CustomOriginConfig&& value) { SetCustomOriginConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_originPath;
     bool m_originPathHasBeenSet;
+
     CustomHeaders m_customHeaders;
     bool m_customHeadersHasBeenSet;
+
     S3OriginConfig m_s3OriginConfig;
     bool m_s3OriginConfigHasBeenSet;
+
     CustomOriginConfig m_customOriginConfig;
     bool m_customOriginConfigHasBeenSet;
   };

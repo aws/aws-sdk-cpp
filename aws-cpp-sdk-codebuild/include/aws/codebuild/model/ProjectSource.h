@@ -48,6 +48,7 @@ namespace Model
     ProjectSource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of repository that contains the source code to be built. Valid
      * values include:</p> <ul> <li> <p> <code>CODECOMMIT</code>: The source code is in
@@ -102,6 +103,7 @@ namespace Model
      * Amazon Simple Storage Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline ProjectSource& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the location of the source code to be built. Valid values
@@ -306,6 +308,7 @@ namespace Model
      */
     inline ProjectSource& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     /**
      * <p>The build spec declaration to use for the builds in this build project.</p>
      * <p>If this value is not specified, a build spec must be included along with the
@@ -355,6 +358,7 @@ namespace Model
      */
     inline ProjectSource& WithBuildspec(const char* value) { SetBuildspec(value); return *this;}
 
+
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
      * source code to be built.</p> <p>This information is for the AWS CodeBuild
@@ -401,12 +405,16 @@ namespace Model
     inline ProjectSource& WithAuth(SourceAuth&& value) { SetAuth(std::move(value)); return *this;}
 
   private:
+
     SourceType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
     Aws::String m_buildspec;
     bool m_buildspecHasBeenSet;
+
     SourceAuth m_auth;
     bool m_authHasBeenSet;
   };

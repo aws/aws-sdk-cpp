@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A list of one or more identities. You can specify an identity by using its
      * name or by using its Amazon Resource Name (ARN). Examples:
@@ -111,6 +112,7 @@ namespace Model
     inline GetIdentityNotificationAttributesRequest& AddIdentities(const char* value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_identities;
     bool m_identitiesHasBeenSet;
   };

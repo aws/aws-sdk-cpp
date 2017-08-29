@@ -53,6 +53,7 @@ namespace Model
     App& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The app ID.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The app ID.</p>
      */
     inline App& WithAppId(const char* value) { SetAppId(value); return *this;}
+
 
     /**
      * <p>The app stack ID.</p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline App& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The app's short name.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>The app's short name.</p>
      */
     inline App& WithShortname(const char* value) { SetShortname(value); return *this;}
+
 
     /**
      * <p>The app name.</p>
@@ -193,6 +197,7 @@ namespace Model
      */
     inline App& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the app.</p>
      */
@@ -227,6 +232,7 @@ namespace Model
      * <p>A description of the app.</p>
      */
     inline App& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The app's data sources.</p>
@@ -263,6 +269,7 @@ namespace Model
      */
     inline App& AddDataSources(DataSource&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The app type.</p>
      */
@@ -288,6 +295,7 @@ namespace Model
      */
     inline App& WithType(AppType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>A <code>Source</code> object that describes the app repository.</p>
      */
@@ -312,6 +320,7 @@ namespace Model
      * <p>A <code>Source</code> object that describes the app repository.</p>
      */
     inline App& WithAppSource(Source&& value) { SetAppSource(std::move(value)); return *this;}
+
 
     /**
      * <p>The app vhost settings with multiple domains separated by commas. For
@@ -361,6 +370,7 @@ namespace Model
      */
     inline App& AddDomains(const char* value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
 
+
     /**
      * <p>Whether to enable SSL for the app.</p>
      */
@@ -375,6 +385,7 @@ namespace Model
      * <p>Whether to enable SSL for the app.</p>
      */
     inline App& WithEnableSsl(bool value) { SetEnableSsl(value); return *this;}
+
 
     /**
      * <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
@@ -400,6 +411,7 @@ namespace Model
      * <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
      */
     inline App& WithSslConfiguration(SslConfiguration&& value) { SetSslConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The stack attributes.</p>
@@ -456,6 +468,7 @@ namespace Model
      */
     inline App& AddAttributes(const AppAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>When the app was created.</p>
      */
@@ -490,6 +503,7 @@ namespace Model
      * <p>When the app was created.</p>
      */
     inline App& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
 
     /**
      * <p>An array of <code>EnvironmentVariable</code> objects that specify environment
@@ -597,32 +611,46 @@ namespace Model
     inline App& AddEnvironment(EnvironmentVariable&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_appId;
     bool m_appIdHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_shortname;
     bool m_shortnameHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<DataSource> m_dataSources;
     bool m_dataSourcesHasBeenSet;
+
     AppType m_type;
     bool m_typeHasBeenSet;
+
     Source m_appSource;
     bool m_appSourceHasBeenSet;
+
     Aws::Vector<Aws::String> m_domains;
     bool m_domainsHasBeenSet;
+
     bool m_enableSsl;
     bool m_enableSslHasBeenSet;
+
     SslConfiguration m_sslConfiguration;
     bool m_sslConfigurationHasBeenSet;
+
     Aws::Map<AppAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::String m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Vector<EnvironmentVariable> m_environment;
     bool m_environmentHasBeenSet;
   };

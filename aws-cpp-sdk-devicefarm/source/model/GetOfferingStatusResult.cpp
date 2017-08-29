@@ -30,12 +30,12 @@ GetOfferingStatusResult::GetOfferingStatusResult()
 {
 }
 
-GetOfferingStatusResult::GetOfferingStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+GetOfferingStatusResult::GetOfferingStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetOfferingStatusResult& GetOfferingStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetOfferingStatusResult& GetOfferingStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("current"))

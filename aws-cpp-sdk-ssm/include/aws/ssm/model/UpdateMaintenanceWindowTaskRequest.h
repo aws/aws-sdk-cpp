@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Maintenance Window ID that contains the task to modify.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
+
     /**
      * <p>The task ID to modify.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The task ID to modify.</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
+
 
     /**
      * <p>The targets (either instances or tags) to modify. Instances are specified
@@ -161,6 +164,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The task ARN to modify.</p>
      */
@@ -195,6 +199,7 @@ namespace Model
      * <p>The task ARN to modify.</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
@@ -237,6 +242,7 @@ namespace Model
      * execution. </p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+
 
     /**
      * <p>The parameters to modify. The map has the following format:</p> <p>Key:
@@ -315,6 +321,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskRequest& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The parameters that the task should use during execution. Populate only the
      * fields that match the task type. All other fields should be empty.</p>
@@ -345,6 +352,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskRequest& WithTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { SetTaskInvocationParameters(std::move(value)); return *this;}
 
+
     /**
      * <p>The new task priority to specify. The lower the number, the higher the
      * priority. Tasks that have the same priority are scheduled in parallel.</p>
@@ -362,6 +370,7 @@ namespace Model
      * priority. Tasks that have the same priority are scheduled in parallel.</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
      * <p>The new <code>MaxConcurrency</code> value you want to specify.
@@ -412,6 +421,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
+
     /**
      * <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is
      * the maximum number of errors that are allowed before the task stops being
@@ -461,6 +471,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskRequest& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
+
     /**
      * <p>The new logging location in Amazon S3 to specify.</p>
      */
@@ -485,6 +496,7 @@ namespace Model
      * <p>The new logging location in Amazon S3 to specify.</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>The new task name to specify.</p>
@@ -521,6 +533,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The new task description to specify.</p>
      */
@@ -556,6 +569,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>If True, then all fields that are required by the
      * RegisterTaskWithMaintenanceWndow action are also required for this API request.
@@ -578,32 +592,46 @@ namespace Model
     inline UpdateMaintenanceWindowTaskRequest& WithReplace(bool value) { SetReplace(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::String m_windowTaskId;
     bool m_windowTaskIdHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> m_taskParameters;
     bool m_taskParametersHasBeenSet;
+
     MaintenanceWindowTaskInvocationParameters m_taskInvocationParameters;
     bool m_taskInvocationParametersHasBeenSet;
+
     int m_priority;
     bool m_priorityHasBeenSet;
+
     Aws::String m_maxConcurrency;
     bool m_maxConcurrencyHasBeenSet;
+
     Aws::String m_maxErrors;
     bool m_maxErrorsHasBeenSet;
+
     LoggingInfo m_loggingInfo;
     bool m_loggingInfoHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_replace;
     bool m_replaceHasBeenSet;
   };

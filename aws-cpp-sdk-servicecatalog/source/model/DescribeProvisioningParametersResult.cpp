@@ -30,12 +30,12 @@ DescribeProvisioningParametersResult::DescribeProvisioningParametersResult()
 {
 }
 
-DescribeProvisioningParametersResult::DescribeProvisioningParametersResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeProvisioningParametersResult::DescribeProvisioningParametersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ProvisioningArtifactParameters"))

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The attribute value. Note that the value is case-sensitive.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
     inline AttributeValue& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

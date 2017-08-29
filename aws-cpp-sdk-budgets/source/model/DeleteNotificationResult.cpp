@@ -30,12 +30,12 @@ DeleteNotificationResult::DeleteNotificationResult()
 {
 }
 
-DeleteNotificationResult::DeleteNotificationResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteNotificationResult::DeleteNotificationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteNotificationResult& DeleteNotificationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteNotificationResult& DeleteNotificationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

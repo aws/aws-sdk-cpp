@@ -30,12 +30,12 @@ DisassociateFleetResult::DisassociateFleetResult()
 {
 }
 
-DisassociateFleetResult::DisassociateFleetResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateFleetResult::DisassociateFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateFleetResult& DisassociateFleetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateFleetResult& DisassociateFleetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

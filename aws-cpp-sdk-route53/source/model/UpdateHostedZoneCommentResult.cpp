@@ -29,12 +29,12 @@ UpdateHostedZoneCommentResult::UpdateHostedZoneCommentResult()
 {
 }
 
-UpdateHostedZoneCommentResult::UpdateHostedZoneCommentResult(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateHostedZoneCommentResult::UpdateHostedZoneCommentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UpdateHostedZoneCommentResult& UpdateHostedZoneCommentResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateHostedZoneCommentResult& UpdateHostedZoneCommentResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     InitializeClusterResult();
-    InitializeClusterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InitializeClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitializeClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitializeClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The cluster's state.</p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>The cluster's state.</p>
      */
     inline InitializeClusterResult& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the cluster's state.</p>
@@ -103,7 +105,9 @@ namespace Model
     inline InitializeClusterResult& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
 
   private:
+
     ClusterState m_state;
+
     Aws::String m_stateMessage;
   };
 

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CheckDNSAvailabilityResult();
-    CheckDNSAvailabilityResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CheckDNSAvailabilityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CheckDNSAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CheckDNSAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Indicates if the specified CNAME is available:</p> <ul> <li> <p>
@@ -67,6 +68,7 @@ namespace Model
      * <code>false</code> : The CNAME is not available.</p> </li> </ul>
      */
     inline CheckDNSAvailabilityResult& WithAvailable(bool value) { SetAvailable(value); return *this;}
+
 
     /**
      * <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
@@ -110,6 +112,7 @@ namespace Model
      */
     inline CheckDNSAvailabilityResult& WithFullyQualifiedCNAME(const char* value) { SetFullyQualifiedCNAME(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -126,8 +129,11 @@ namespace Model
     inline CheckDNSAvailabilityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     bool m_available;
+
     Aws::String m_fullyQualifiedCNAME;
+
     ResponseMetadata m_responseMetadata;
   };
 

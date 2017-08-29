@@ -30,12 +30,12 @@ GetDataflowGraphResult::GetDataflowGraphResult()
 {
 }
 
-GetDataflowGraphResult::GetDataflowGraphResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDataflowGraphResult::GetDataflowGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDataflowGraphResult& GetDataflowGraphResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDataflowGraphResult& GetDataflowGraphResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DagNodes"))

@@ -118,10 +118,10 @@ namespace Model
         typedef Aws::Utils::Outcome<AcknowledgeThirdPartyJobResult, Aws::Client::AWSError<CodePipelineErrors>> AcknowledgeThirdPartyJobOutcome;
         typedef Aws::Utils::Outcome<CreateCustomActionTypeResult, Aws::Client::AWSError<CodePipelineErrors>> CreateCustomActionTypeOutcome;
         typedef Aws::Utils::Outcome<CreatePipelineResult, Aws::Client::AWSError<CodePipelineErrors>> CreatePipelineOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> DeleteCustomActionTypeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> DeletePipelineOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> DisableStageTransitionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> EnableStageTransitionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> DeleteCustomActionTypeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> DeletePipelineOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> DisableStageTransitionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> EnableStageTransitionOutcome;
         typedef Aws::Utils::Outcome<GetJobDetailsResult, Aws::Client::AWSError<CodePipelineErrors>> GetJobDetailsOutcome;
         typedef Aws::Utils::Outcome<GetPipelineResult, Aws::Client::AWSError<CodePipelineErrors>> GetPipelineOutcome;
         typedef Aws::Utils::Outcome<GetPipelineExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> GetPipelineExecutionOutcome;
@@ -134,10 +134,10 @@ namespace Model
         typedef Aws::Utils::Outcome<PollForThirdPartyJobsResult, Aws::Client::AWSError<CodePipelineErrors>> PollForThirdPartyJobsOutcome;
         typedef Aws::Utils::Outcome<PutActionRevisionResult, Aws::Client::AWSError<CodePipelineErrors>> PutActionRevisionOutcome;
         typedef Aws::Utils::Outcome<PutApprovalResultResult, Aws::Client::AWSError<CodePipelineErrors>> PutApprovalResultOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutJobFailureResultOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutJobSuccessResultOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutThirdPartyJobFailureResultOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutThirdPartyJobSuccessResultOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutJobFailureResultOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutJobSuccessResultOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutThirdPartyJobFailureResultOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutThirdPartyJobSuccessResultOutcome;
         typedef Aws::Utils::Outcome<RetryStageExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> RetryStageExecutionOutcome;
         typedef Aws::Utils::Outcome<StartPipelineExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> StartPipelineExecutionOutcome;
         typedef Aws::Utils::Outcome<UpdatePipelineResult, Aws::Client::AWSError<CodePipelineErrors>> UpdatePipelineOutcome;
@@ -282,22 +282,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodePipelineClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CodePipelineClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CodePipelineClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CodePipelineClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        CodePipelineClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CodePipelineClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CodePipelineClient();
+
 
         /**
          * <p>Returns information about a specified job and whether that job has been
@@ -1129,7 +1130,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AcknowledgeJobAsyncHelper(const Model::AcknowledgeJobRequest& request, const AcknowledgeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

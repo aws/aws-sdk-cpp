@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Version of Elasticsearch for which list of supported elasticsearch instance
      * types are needed. </p>
@@ -86,6 +87,7 @@ namespace Model
      * types are needed. </p>
      */
     inline ListElasticsearchInstanceTypesRequest& WithElasticsearchVersion(const char* value) { SetElasticsearchVersion(value); return *this;}
+
 
     /**
      * <p>DomainName represents the name of the Domain that we are trying to modify.
@@ -136,6 +138,7 @@ namespace Model
      */
     inline ListElasticsearchInstanceTypesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p> Set this value to limit the number of results returned. Value provided must
      * be greater than 30 else it wont be honored. </p>
@@ -153,6 +156,7 @@ namespace Model
      * be greater than 30 else it wont be honored. </p>
      */
     inline ListElasticsearchInstanceTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>NextToken should be sent in case if earlier API call produced result
@@ -197,12 +201,16 @@ namespace Model
     inline ListElasticsearchInstanceTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_elasticsearchVersion;
     bool m_elasticsearchVersionHasBeenSet;
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

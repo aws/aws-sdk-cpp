@@ -46,6 +46,7 @@ namespace Model
     RepositoryMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the AWS account associated with the repository.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The ID of the AWS account associated with the repository.</p>
      */
     inline RepositoryMetadata& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
 
     /**
      * <p>The ID of the repository.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline RepositoryMetadata& WithRepositoryId(const char* value) { SetRepositoryId(value); return *this;}
 
+
     /**
      * <p>The repository's name.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>The repository's name.</p>
      */
     inline RepositoryMetadata& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>A comment or description about the repository.</p>
@@ -186,6 +190,7 @@ namespace Model
      */
     inline RepositoryMetadata& WithRepositoryDescription(const char* value) { SetRepositoryDescription(value); return *this;}
 
+
     /**
      * <p>The repository's default branch name.</p>
      */
@@ -221,6 +226,7 @@ namespace Model
      */
     inline RepositoryMetadata& WithDefaultBranch(const char* value) { SetDefaultBranch(value); return *this;}
 
+
     /**
      * <p>The date and time the repository was last modified, in timestamp format.</p>
      */
@@ -246,6 +252,7 @@ namespace Model
      */
     inline RepositoryMetadata& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time the repository was created, in timestamp format.</p>
      */
@@ -270,6 +277,7 @@ namespace Model
      * <p>The date and time the repository was created, in timestamp format.</p>
      */
     inline RepositoryMetadata& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The URL to use for cloning the repository over HTTPS.</p>
@@ -306,6 +314,7 @@ namespace Model
      */
     inline RepositoryMetadata& WithCloneUrlHttp(const char* value) { SetCloneUrlHttp(value); return *this;}
 
+
     /**
      * <p>The URL to use for cloning the repository over SSH.</p>
      */
@@ -340,6 +349,7 @@ namespace Model
      * <p>The URL to use for cloning the repository over SSH.</p>
      */
     inline RepositoryMetadata& WithCloneUrlSsh(const char* value) { SetCloneUrlSsh(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the repository.</p>
@@ -377,24 +387,34 @@ namespace Model
     inline RepositoryMetadata& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_repositoryId;
     bool m_repositoryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_repositoryDescription;
     bool m_repositoryDescriptionHasBeenSet;
+
     Aws::String m_defaultBranch;
     bool m_defaultBranchHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::String m_cloneUrlHttp;
     bool m_cloneUrlHttpHasBeenSet;
+
     Aws::String m_cloneUrlSsh;
     bool m_cloneUrlSshHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
   };

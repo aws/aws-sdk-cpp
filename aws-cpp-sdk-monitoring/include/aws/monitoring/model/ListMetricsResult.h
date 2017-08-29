@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     ListMetricsResult();
-    ListMetricsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListMetricsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The metrics.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline ListMetricsResult& AddMetrics(Metric&& value) { m_metrics.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token that marks the start of the next batch of returned results.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      */
     inline ListMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -130,8 +133,11 @@ namespace Model
     inline ListMetricsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Metric> m_metrics;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

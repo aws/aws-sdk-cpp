@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the name of one
      * dimension.</p>
@@ -88,6 +89,7 @@ namespace Model
      * dimension.</p>
      */
     inline Dimension& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the value of one
@@ -132,8 +134,10 @@ namespace Model
     inline Dimension& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

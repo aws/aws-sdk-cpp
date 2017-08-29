@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     StopAutomationExecutionResult();
-    StopAutomationExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopAutomationExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopAutomationExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopAutomationExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

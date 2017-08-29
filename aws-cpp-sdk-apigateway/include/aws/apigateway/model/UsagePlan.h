@@ -55,6 +55,7 @@ namespace Model
     UsagePlan& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of a <a>UsagePlan</a> resource.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      * <p>The identifier of a <a>UsagePlan</a> resource.</p>
      */
     inline UsagePlan& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of a usage plan.</p>
@@ -125,6 +127,7 @@ namespace Model
      */
     inline UsagePlan& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The description of a usage plan.</p>
      */
@@ -159,6 +162,7 @@ namespace Model
      * <p>The description of a usage plan.</p>
      */
     inline UsagePlan& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The associated API stages of a usage plan.</p>
@@ -195,6 +199,7 @@ namespace Model
      */
     inline UsagePlan& AddApiStages(ApiStage&& value) { m_apiStagesHasBeenSet = true; m_apiStages.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The request throttle limits of a usage plan.</p>
      */
@@ -220,6 +225,7 @@ namespace Model
      */
     inline UsagePlan& WithThrottle(ThrottleSettings&& value) { SetThrottle(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of permitted requests per a given unit time interval.</p>
      */
@@ -244,6 +250,7 @@ namespace Model
      * <p>The maximum number of permitted requests per a given unit time interval.</p>
      */
     inline UsagePlan& WithQuota(QuotaSettings&& value) { SetQuota(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS Markeplace product identifier to associate with the usage plan as a
@@ -288,18 +295,25 @@ namespace Model
     inline UsagePlan& WithProductCode(const char* value) { SetProductCode(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<ApiStage> m_apiStages;
     bool m_apiStagesHasBeenSet;
+
     ThrottleSettings m_throttle;
     bool m_throttleHasBeenSet;
+
     QuotaSettings m_quota;
     bool m_quotaHasBeenSet;
+
     Aws::String m_productCode;
     bool m_productCodeHasBeenSet;
   };

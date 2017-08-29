@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DownloadDefaultKeyPairResult();
-    DownloadDefaultKeyPairResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DownloadDefaultKeyPairResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DownloadDefaultKeyPairResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DownloadDefaultKeyPairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
      */
     inline DownloadDefaultKeyPairResult& WithPublicKeyBase64(const char* value) { SetPublicKeyBase64(value); return *this;}
+
 
     /**
      * <p>A base64-encoded RSA private key.</p>
@@ -112,7 +114,9 @@ namespace Model
     inline DownloadDefaultKeyPairResult& WithPrivateKeyBase64(const char* value) { SetPrivateKeyBase64(value); return *this;}
 
   private:
+
     Aws::String m_publicKeyBase64;
+
     Aws::String m_privateKeyBase64;
   };
 

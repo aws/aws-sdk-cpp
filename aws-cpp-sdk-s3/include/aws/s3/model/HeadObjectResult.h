@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     HeadObjectResult();
-    HeadObjectResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    HeadObjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    HeadObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    HeadObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * Specifies whether the object retrieved was (true) or was not (false) a Delete
@@ -64,6 +65,7 @@ namespace Model
      * Marker. If false, this response header does not appear in the response.
      */
     inline HeadObjectResult& WithDeleteMarker(bool value) { SetDeleteMarker(value); return *this;}
+
 
     
     inline const Aws::String& GetAcceptRanges() const{ return m_acceptRanges; }
@@ -85,6 +87,7 @@ namespace Model
 
     
     inline HeadObjectResult& WithAcceptRanges(const char* value) { SetAcceptRanges(value); return *this;}
+
 
     /**
      * If the object expiration is configured (see PUT Bucket lifecycle), the response
@@ -142,6 +145,7 @@ namespace Model
      */
     inline HeadObjectResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
+
     /**
      * Provides information about object restoration operation and expiration time of
      * the restored object copy.
@@ -184,6 +188,7 @@ namespace Model
      */
     inline HeadObjectResult& WithRestore(const char* value) { SetRestore(value); return *this;}
 
+
     /**
      * Last modified date of the object
      */
@@ -209,6 +214,7 @@ namespace Model
      */
     inline HeadObjectResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
+
     /**
      * Size of the body in bytes.
      */
@@ -223,6 +229,7 @@ namespace Model
      * Size of the body in bytes.
      */
     inline HeadObjectResult& WithContentLength(long long value) { SetContentLength(value); return *this;}
+
 
     /**
      * An ETag is an opaque identifier assigned by a web server to a specific version
@@ -266,6 +273,7 @@ namespace Model
      */
     inline HeadObjectResult& WithETag(const char* value) { SetETag(value); return *this;}
 
+
     /**
      * This is set to the number of metadata entries not returned in x-amz-meta
      * headers. This can happen if you create metadata using an API like SOAP that
@@ -289,6 +297,7 @@ namespace Model
      * can create metadata whose values are not legal HTTP headers.
      */
     inline HeadObjectResult& WithMissingMeta(int value) { SetMissingMeta(value); return *this;}
+
 
     /**
      * Version of the object.
@@ -325,6 +334,7 @@ namespace Model
      */
     inline HeadObjectResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     /**
      * Specifies caching behavior along the request/reply chain.
      */
@@ -360,6 +370,7 @@ namespace Model
      */
     inline HeadObjectResult& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
 
+
     /**
      * Specifies presentational information for the object.
      */
@@ -394,6 +405,7 @@ namespace Model
      * Specifies presentational information for the object.
      */
     inline HeadObjectResult& WithContentDisposition(const char* value) { SetContentDisposition(value); return *this;}
+
 
     /**
      * Specifies what content encodings have been applied to the object and thus what
@@ -444,6 +456,7 @@ namespace Model
      */
     inline HeadObjectResult& WithContentEncoding(const char* value) { SetContentEncoding(value); return *this;}
 
+
     /**
      * The language the content is in.
      */
@@ -478,6 +491,7 @@ namespace Model
      * The language the content is in.
      */
     inline HeadObjectResult& WithContentLanguage(const char* value) { SetContentLanguage(value); return *this;}
+
 
     /**
      * A standard MIME type describing the format of the object data.
@@ -514,6 +528,7 @@ namespace Model
      */
     inline HeadObjectResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 
+
     /**
      * The date and time at which the object is no longer cacheable.
      */
@@ -538,6 +553,7 @@ namespace Model
      * The date and time at which the object is no longer cacheable.
      */
     inline HeadObjectResult& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
+
 
     /**
      * If the bucket is configured as a website, redirects requests for this object to
@@ -588,6 +604,7 @@ namespace Model
      */
     inline HeadObjectResult& WithWebsiteRedirectLocation(const char* value) { SetWebsiteRedirectLocation(value); return *this;}
 
+
     /**
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
      * AES256, aws:kms).
@@ -617,6 +634,7 @@ namespace Model
      * AES256, aws:kms).
      */
     inline HeadObjectResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
+
 
     /**
      * A map of metadata to store with the object in S3.
@@ -678,6 +696,7 @@ namespace Model
      */
     inline HeadObjectResult& AddMetadata(const char* key, const char* value) { m_metadata.emplace(key, value); return *this; }
 
+
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
      * the response will include this header confirming the encryption algorithm used.
@@ -719,6 +738,7 @@ namespace Model
      * the response will include this header confirming the encryption algorithm used.
      */
     inline HeadObjectResult& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -769,6 +789,7 @@ namespace Model
      */
     inline HeadObjectResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
+
     /**
      * If present, specifies the ID of the AWS Key Management Service (KMS) master
      * encryption key that was used for the object.
@@ -811,6 +832,7 @@ namespace Model
      */
     inline HeadObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
+
     
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
@@ -825,6 +847,7 @@ namespace Model
 
     
     inline HeadObjectResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+
 
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
@@ -841,6 +864,7 @@ namespace Model
     
     inline HeadObjectResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
+
     
     inline const ReplicationStatus& GetReplicationStatus() const{ return m_replicationStatus; }
 
@@ -855,6 +879,7 @@ namespace Model
 
     
     inline HeadObjectResult& WithReplicationStatus(ReplicationStatus&& value) { SetReplicationStatus(std::move(value)); return *this;}
+
 
     /**
      * The count of parts this object has.
@@ -872,30 +897,55 @@ namespace Model
     inline HeadObjectResult& WithPartsCount(int value) { SetPartsCount(value); return *this;}
 
   private:
+
     bool m_deleteMarker;
+
     Aws::String m_acceptRanges;
+
     Aws::String m_expiration;
+
     Aws::String m_restore;
+
     Aws::Utils::DateTime m_lastModified;
+
     long long m_contentLength;
+
     Aws::String m_eTag;
+
     int m_missingMeta;
+
     Aws::String m_versionId;
+
     Aws::String m_cacheControl;
+
     Aws::String m_contentDisposition;
+
     Aws::String m_contentEncoding;
+
     Aws::String m_contentLanguage;
+
     Aws::String m_contentType;
+
     Aws::Utils::DateTime m_expires;
+
     Aws::String m_websiteRedirectLocation;
+
     ServerSideEncryption m_serverSideEncryption;
+
     Aws::Map<Aws::String, Aws::String> m_metadata;
+
     Aws::String m_sSECustomerAlgorithm;
+
     Aws::String m_sSECustomerKeyMD5;
+
     Aws::String m_sSEKMSKeyId;
+
     StorageClass m_storageClass;
+
     RequestCharged m_requestCharged;
+
     ReplicationStatus m_replicationStatus;
+
     int m_partsCount;
   };
 

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape for which you want to
      * retrieve the recovery point.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline RetrieveTapeRecoveryPointRequest& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -103,8 +105,10 @@ namespace Model
     inline RetrieveTapeRecoveryPointRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListPresetsResult();
-    ListPresetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPresetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPresetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPresetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>Preset</code> objects.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>An array of <code>Preset</code> objects.</p>
      */
     inline ListPresetsResult& AddPresets(Preset&& value) { m_presets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A value that you use to access the second and subsequent pages of results, if
@@ -133,7 +135,9 @@ namespace Model
     inline ListPresetsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<Preset> m_presets;
+
     Aws::String m_nextPageToken;
   };
 

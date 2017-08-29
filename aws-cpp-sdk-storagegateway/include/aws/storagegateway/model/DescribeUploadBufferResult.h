@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeUploadBufferResult();
-    DescribeUploadBufferResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeUploadBufferResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUploadBufferResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeUploadBufferResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -62,6 +63,7 @@ namespace Model
 
     
     inline DescribeUploadBufferResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     
     inline const Aws::Vector<Aws::String>& GetDiskIds() const{ return m_diskIds; }
@@ -87,6 +89,7 @@ namespace Model
     
     inline DescribeUploadBufferResult& AddDiskIds(const char* value) { m_diskIds.push_back(value); return *this; }
 
+
     
     inline long long GetUploadBufferUsedInBytes() const{ return m_uploadBufferUsedInBytes; }
 
@@ -95,6 +98,7 @@ namespace Model
 
     
     inline DescribeUploadBufferResult& WithUploadBufferUsedInBytes(long long value) { SetUploadBufferUsedInBytes(value); return *this;}
+
 
     
     inline long long GetUploadBufferAllocatedInBytes() const{ return m_uploadBufferAllocatedInBytes; }
@@ -106,9 +110,13 @@ namespace Model
     inline DescribeUploadBufferResult& WithUploadBufferAllocatedInBytes(long long value) { SetUploadBufferAllocatedInBytes(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
+
     Aws::Vector<Aws::String> m_diskIds;
+
     long long m_uploadBufferUsedInBytes;
+
     long long m_uploadBufferAllocatedInBytes;
   };
 

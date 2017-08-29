@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone of the subnet.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline Subnet& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The number of unused private IPv4 addresses in the subnet. Note that the IPv4
      * addresses for any stopped instances are considered unavailable.</p>
@@ -104,6 +106,7 @@ namespace Model
      * addresses for any stopped instances are considered unavailable.</p>
      */
     inline Subnet& WithAvailableIpAddressCount(int value) { SetAvailableIpAddressCount(value); return *this;}
+
 
     /**
      * <p>The IPv4 CIDR block assigned to the subnet.</p>
@@ -140,6 +143,7 @@ namespace Model
      */
     inline Subnet& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
+
     /**
      * <p>Indicates whether this is the default subnet for the Availability Zone.</p>
      */
@@ -154,6 +158,7 @@ namespace Model
      * <p>Indicates whether this is the default subnet for the Availability Zone.</p>
      */
     inline Subnet& WithDefaultForAz(bool value) { SetDefaultForAz(value); return *this;}
+
 
     /**
      * <p>Indicates whether instances launched in this subnet receive a public IPv4
@@ -172,6 +177,7 @@ namespace Model
      * address.</p>
      */
     inline Subnet& WithMapPublicIpOnLaunch(bool value) { SetMapPublicIpOnLaunch(value); return *this;}
+
 
     /**
      * <p>The current state of the subnet.</p>
@@ -197,6 +203,7 @@ namespace Model
      * <p>The current state of the subnet.</p>
      */
     inline Subnet& WithState(SubnetState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the subnet.</p>
@@ -233,6 +240,7 @@ namespace Model
      */
     inline Subnet& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
     /**
      * <p>The ID of the VPC the subnet is in.</p>
      */
@@ -268,6 +276,7 @@ namespace Model
      */
     inline Subnet& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>Indicates whether a network interface created in this subnet (including a
      * network interface created by <a>RunInstances</a>) receives an IPv6 address.</p>
@@ -285,6 +294,7 @@ namespace Model
      * network interface created by <a>RunInstances</a>) receives an IPv6 address.</p>
      */
     inline Subnet& WithAssignIpv6AddressOnCreation(bool value) { SetAssignIpv6AddressOnCreation(value); return *this;}
+
 
     /**
      * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
@@ -320,6 +330,7 @@ namespace Model
      * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
      */
     inline Subnet& AddIpv6CidrBlockAssociationSet(SubnetIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociationSetHasBeenSet = true; m_ipv6CidrBlockAssociationSet.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Any tags assigned to the subnet.</p>
@@ -357,26 +368,37 @@ namespace Model
     inline Subnet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     int m_availableIpAddressCount;
     bool m_availableIpAddressCountHasBeenSet;
+
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
+
     bool m_defaultForAz;
     bool m_defaultForAzHasBeenSet;
+
     bool m_mapPublicIpOnLaunch;
     bool m_mapPublicIpOnLaunchHasBeenSet;
+
     SubnetState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     bool m_assignIpv6AddressOnCreation;
     bool m_assignIpv6AddressOnCreationHasBeenSet;
+
     Aws::Vector<SubnetIpv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
     bool m_ipv6CidrBlockAssociationSetHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

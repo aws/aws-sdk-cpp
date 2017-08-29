@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the SSM document.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the SSM document.</p>
      */
     inline UpdateAssociationStatusRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline UpdateAssociationStatusRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The association status.</p>
      */
@@ -133,10 +136,13 @@ namespace Model
     inline UpdateAssociationStatusRequest& WithAssociationStatus(AssociationStatus&& value) { SetAssociationStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     AssociationStatus m_associationStatus;
     bool m_associationStatusHasBeenSet;
   };

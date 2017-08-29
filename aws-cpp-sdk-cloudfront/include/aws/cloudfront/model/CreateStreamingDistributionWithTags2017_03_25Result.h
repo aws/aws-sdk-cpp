@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateStreamingDistributionWithTags2017_03_25Result();
-    CreateStreamingDistributionWithTags2017_03_25Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateStreamingDistributionWithTags2017_03_25Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateStreamingDistributionWithTags2017_03_25Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateStreamingDistributionWithTags2017_03_25Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The streaming distribution's information. </p>
@@ -72,6 +73,7 @@ namespace Model
      * <p>The streaming distribution's information. </p>
      */
     inline CreateStreamingDistributionWithTags2017_03_25Result& WithStreamingDistribution(StreamingDistribution&& value) { SetStreamingDistribution(std::move(value)); return *this;}
+
 
     /**
      * <p>The fully qualified URI of the new streaming distribution resource just
@@ -122,6 +124,7 @@ namespace Model
      */
     inline CreateStreamingDistributionWithTags2017_03_25Result& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
@@ -144,8 +147,11 @@ namespace Model
     inline CreateStreamingDistributionWithTags2017_03_25Result& WithETag(const char* value) { SetETag(value); return *this;}
 
   private:
+
     StreamingDistribution m_streamingDistribution;
+
     Aws::String m_location;
+
     Aws::String m_eTag;
   };
 

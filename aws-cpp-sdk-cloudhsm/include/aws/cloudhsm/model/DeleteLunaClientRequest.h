@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the client to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteLunaClientRequest& WithClientArn(const char* value) { SetClientArn(value); return *this;}
 
   private:
+
     Aws::String m_clientArn;
     bool m_clientArnHasBeenSet;
   };

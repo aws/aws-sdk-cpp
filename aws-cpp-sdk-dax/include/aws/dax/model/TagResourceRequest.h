@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the DAX resource to which tags should be added.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the DAX resource to which tags should be added.</p>
      */
     inline TagResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
 
     /**
      * <p>The tags to be assigned to the DAX resource. </p>
@@ -109,8 +111,10 @@ namespace Model
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

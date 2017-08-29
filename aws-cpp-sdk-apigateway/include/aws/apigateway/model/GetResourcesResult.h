@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetResourcesResult();
-    GetResourcesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetPosition() const{ return m_position; }
@@ -71,6 +72,7 @@ namespace Model
 
     
     inline GetResourcesResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+
 
     /**
      * <p>The current page of elements from this collection.</p>
@@ -108,7 +110,9 @@ namespace Model
     inline GetResourcesResult& AddItems(Resource&& value) { m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_position;
+
     Aws::Vector<Resource> m_items;
   };
 

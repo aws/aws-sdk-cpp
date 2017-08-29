@@ -30,12 +30,12 @@ DescribeTrailsResult::DescribeTrailsResult()
 {
 }
 
-DescribeTrailsResult::DescribeTrailsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTrailsResult::DescribeTrailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeTrailsResult& DescribeTrailsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTrailsResult& DescribeTrailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("trailList"))

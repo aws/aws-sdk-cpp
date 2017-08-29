@@ -47,6 +47,7 @@ namespace Model
     Server& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
@@ -68,6 +69,7 @@ namespace Model
     
     inline Server& WithServerId(const char* value) { SetServerId(value); return *this;}
 
+
     
     inline const ServerType& GetServerType() const{ return m_serverType; }
 
@@ -83,6 +85,7 @@ namespace Model
     
     inline Server& WithServerType(ServerType&& value) { SetServerType(std::move(value)); return *this;}
 
+
     
     inline const VmServer& GetVmServer() const{ return m_vmServer; }
 
@@ -97,6 +100,7 @@ namespace Model
 
     
     inline Server& WithVmServer(VmServer&& value) { SetVmServer(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
@@ -119,6 +123,7 @@ namespace Model
     
     inline Server& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
 
+
     
     inline bool GetReplicationJobTerminated() const{ return m_replicationJobTerminated; }
 
@@ -129,14 +134,19 @@ namespace Model
     inline Server& WithReplicationJobTerminated(bool value) { SetReplicationJobTerminated(value); return *this;}
 
   private:
+
     Aws::String m_serverId;
     bool m_serverIdHasBeenSet;
+
     ServerType m_serverType;
     bool m_serverTypeHasBeenSet;
+
     VmServer m_vmServer;
     bool m_vmServerHasBeenSet;
+
     Aws::String m_replicationJobId;
     bool m_replicationJobIdHasBeenSet;
+
     bool m_replicationJobTerminated;
     bool m_replicationJobTerminatedHasBeenSet;
   };

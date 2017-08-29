@@ -46,6 +46,7 @@ namespace Model
     CreateRemoteAccessSessionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Returns the billing method for purposes of configuring a remote access
      * session.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateRemoteAccessSessionConfiguration& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
 
   private:
+
     BillingMethod m_billingMethod;
     bool m_billingMethodHasBeenSet;
   };

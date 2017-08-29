@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateTrustResult();
-    CreateTrustResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTrustResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTrustResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTrustResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique identifier for the trust relationship that was created.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline CreateTrustResult& WithTrustId(const char* value) { SetTrustId(value); return *this;}
 
   private:
+
     Aws::String m_trustId;
   };
 

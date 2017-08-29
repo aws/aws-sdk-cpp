@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN (Amazon Resource Name) of the resource for which to get the web
      * ACL.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline GetWebACLForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
   };

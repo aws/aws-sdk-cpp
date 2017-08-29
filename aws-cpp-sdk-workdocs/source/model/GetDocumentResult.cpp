@@ -30,12 +30,12 @@ GetDocumentResult::GetDocumentResult()
 {
 }
 
-GetDocumentResult::GetDocumentResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDocumentResult::GetDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDocumentResult& GetDocumentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDocumentResult& GetDocumentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Metadata"))

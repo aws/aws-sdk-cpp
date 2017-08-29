@@ -46,6 +46,7 @@ namespace Model
     ReportedOs& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The operating system family.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline ReportedOs& WithFamily(const char* value) { SetFamily(value); return *this;}
 
+
     /**
      * <p>The operating system name.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The operating system name.</p>
      */
     inline ReportedOs& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The operating system version.</p>
@@ -152,10 +155,13 @@ namespace Model
     inline ReportedOs& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_family;
     bool m_familyHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

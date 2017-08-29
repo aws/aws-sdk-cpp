@@ -30,12 +30,12 @@ StopUserImportJobResult::StopUserImportJobResult()
 {
 }
 
-StopUserImportJobResult::StopUserImportJobResult(const AmazonWebServiceResult<JsonValue>& result)
+StopUserImportJobResult::StopUserImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopUserImportJobResult& StopUserImportJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopUserImportJobResult& StopUserImportJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UserImportJob"))

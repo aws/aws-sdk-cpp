@@ -47,6 +47,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies whether the simulated action is allowed by the AWS Organizations
      * service control policies that impact the simulated user's account.</p>
@@ -66,6 +67,7 @@ namespace Model
     inline OrganizationsDecisionDetail& WithAllowedByOrganizations(bool value) { SetAllowedByOrganizations(value); return *this;}
 
   private:
+
     bool m_allowedByOrganizations;
     bool m_allowedByOrganizationsHasBeenSet;
   };

@@ -30,12 +30,12 @@ CreateProgressUpdateStreamResult::CreateProgressUpdateStreamResult()
 {
 }
 
-CreateProgressUpdateStreamResult::CreateProgressUpdateStreamResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateProgressUpdateStreamResult::CreateProgressUpdateStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateProgressUpdateStreamResult& CreateProgressUpdateStreamResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateProgressUpdateStreamResult& CreateProgressUpdateStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

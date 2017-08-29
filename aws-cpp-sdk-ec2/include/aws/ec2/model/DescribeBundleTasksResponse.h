@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeBundleTasksResponse();
-    DescribeBundleTasksResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeBundleTasksResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeBundleTasksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeBundleTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more bundle tasks.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeBundleTasksResponse& AddBundleTasks(BundleTask&& value) { m_bundleTasks.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribeBundleTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<BundleTask> m_bundleTasks;
+
     ResponseMetadata m_responseMetadata;
   };
 

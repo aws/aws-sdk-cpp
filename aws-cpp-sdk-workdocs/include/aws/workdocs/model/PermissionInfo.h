@@ -46,6 +46,7 @@ namespace Model
     PermissionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The role of the user.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The role of the user.</p>
      */
     inline PermissionInfo& WithRole(RoleType&& value) { SetRole(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of permissions.</p>
@@ -97,8 +99,10 @@ namespace Model
     inline PermissionInfo& WithType(RolePermissionType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     RoleType m_role;
     bool m_roleHasBeenSet;
+
     RolePermissionType m_type;
     bool m_typeHasBeenSet;
   };

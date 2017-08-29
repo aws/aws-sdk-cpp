@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     PutRecordResult();
-    PutRecordResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRecordResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The shard ID of the shard where the data record was placed.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The shard ID of the shard where the data record was placed.</p>
      */
     inline PutRecordResult& WithShardId(const char* value) { SetShardId(value); return *this;}
+
 
     /**
      * <p>The sequence number identifier that was assigned to the put data record. The
@@ -139,6 +141,7 @@ namespace Model
      */
     inline PutRecordResult& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
 
+
     /**
      * <p>The encryption type to use on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
@@ -185,8 +188,11 @@ namespace Model
     inline PutRecordResult& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_shardId;
+
     Aws::String m_sequenceNumber;
+
     EncryptionType m_encryptionType;
   };
 

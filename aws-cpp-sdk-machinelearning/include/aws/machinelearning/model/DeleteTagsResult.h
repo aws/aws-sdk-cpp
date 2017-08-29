@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteTagsResult();
-    DeleteTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the ML object from which tags were deleted.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline DeleteTagsResult& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The type of the ML object from which tags were deleted.</p>
      */
@@ -108,7 +110,9 @@ namespace Model
     inline DeleteTagsResult& WithResourceType(TaggableResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_resourceId;
+
     TaggableResourceType m_resourceType;
   };
 

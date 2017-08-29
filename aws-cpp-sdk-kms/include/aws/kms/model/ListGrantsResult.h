@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListGrantsResult();
-    ListGrantsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListGrantsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListGrantsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListGrantsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of grants.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of grants.</p>
      */
     inline ListGrantsResult& AddGrants(GrantListEntry&& value) { m_grants.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ListGrantsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To retrieve more items,
@@ -145,8 +148,11 @@ namespace Model
     inline ListGrantsResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
 
   private:
+
     Aws::Vector<GrantListEntry> m_grants;
+
     Aws::String m_nextMarker;
+
     bool m_truncated;
   };
 

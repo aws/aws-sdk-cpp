@@ -40,6 +40,7 @@ namespace Model
     LambdaFunctionSucceededEventDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The JSON data output by the lambda function.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline LambdaFunctionSucceededEventDetails& WithOutput(const char* value) { SetOutput(value); return *this;}
 
   private:
+
     Aws::String m_output;
     bool m_outputHasBeenSet;
   };

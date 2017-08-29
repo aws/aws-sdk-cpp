@@ -30,12 +30,12 @@ DescribeWorkspaceDirectoriesResult::DescribeWorkspaceDirectoriesResult()
 {
 }
 
-DescribeWorkspaceDirectoriesResult::DescribeWorkspaceDirectoriesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeWorkspaceDirectoriesResult::DescribeWorkspaceDirectoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeWorkspaceDirectoriesResult& DescribeWorkspaceDirectoriesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeWorkspaceDirectoriesResult& DescribeWorkspaceDirectoriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Directories"))

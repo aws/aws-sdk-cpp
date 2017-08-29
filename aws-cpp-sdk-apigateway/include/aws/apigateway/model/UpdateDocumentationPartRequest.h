@@ -40,6 +40,7 @@ namespace Model
     UpdateDocumentationPartRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline UpdateDocumentationPartRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>[Required] The identifier of the to-be-updated documentation part.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>[Required] The identifier of the to-be-updated documentation part.</p>
      */
     inline UpdateDocumentationPartRequest& WithDocumentationPartId(const char* value) { SetDocumentationPartId(value); return *this;}
+
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -153,10 +156,13 @@ namespace Model
     inline UpdateDocumentationPartRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_documentationPartId;
     bool m_documentationPartIdHasBeenSet;
+
     Aws::Vector<PatchOperation> m_patchOperations;
     bool m_patchOperationsHasBeenSet;
   };

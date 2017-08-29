@@ -55,7 +55,7 @@ enum class Route53Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICTING_DOMAIN_EXISTS,
   CONFLICTING_TYPES,
   DELEGATION_SET_ALREADY_CREATED,
@@ -102,7 +102,7 @@ enum class Route53Errors
 };
 namespace Route53ErrorMapper
 {
-  AWS_ROUTE53_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ROUTE53_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Route53

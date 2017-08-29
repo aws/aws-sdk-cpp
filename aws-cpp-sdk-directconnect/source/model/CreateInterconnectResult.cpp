@@ -31,13 +31,13 @@ CreateInterconnectResult::CreateInterconnectResult() :
 {
 }
 
-CreateInterconnectResult::CreateInterconnectResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateInterconnectResult::CreateInterconnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_interconnectState(InterconnectState::NOT_SET)
 {
   *this = result;
 }
 
-CreateInterconnectResult& CreateInterconnectResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateInterconnectResult& CreateInterconnectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("interconnectId"))

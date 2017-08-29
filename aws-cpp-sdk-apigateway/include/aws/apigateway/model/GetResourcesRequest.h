@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetResourcesRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The current pagination position in the paged result set.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline GetResourcesRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
+
     /**
      * <p>The maximum number of returned results per page. The value is 25 by default
      * and could be between 1 - 500.</p>
@@ -132,6 +135,7 @@ namespace Model
      * and could be between 1 - 500.</p>
      */
     inline GetResourcesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>A query parameter used to retrieve the specified resources embedded in the
@@ -222,12 +226,16 @@ namespace Model
     inline GetResourcesRequest& AddEmbed(const char* value) { m_embedHasBeenSet = true; m_embed.push_back(value); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_position;
     bool m_positionHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::Vector<Aws::String> m_embed;
     bool m_embedHasBeenSet;
   };

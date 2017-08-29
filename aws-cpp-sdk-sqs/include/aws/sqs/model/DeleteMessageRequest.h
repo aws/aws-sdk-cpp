@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
      * URLs are case-sensitive.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DeleteMessageRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
+
     /**
      * <p>The receipt handle associated with the message to delete.</p>
      */
@@ -119,8 +121,10 @@ namespace Model
     inline DeleteMessageRequest& WithReceiptHandle(const char* value) { SetReceiptHandle(value); return *this;}
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     Aws::String m_receiptHandle;
     bool m_receiptHandleHasBeenSet;
   };

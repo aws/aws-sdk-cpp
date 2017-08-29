@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListUserProfilesResult();
-    ListUserProfilesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListUserProfilesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUserProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUserProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
      */
     inline ListUserProfilesResult& AddUserProfiles(UserProfileSummary&& value) { m_userProfiles.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The continuation token to use when requesting the next set of results, if
@@ -121,7 +123,9 @@ namespace Model
     inline ListUserProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<UserProfileSummary> m_userProfiles;
+
     Aws::String m_nextToken;
   };
 

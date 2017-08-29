@@ -53,6 +53,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The HTTP status code for which you want to specify a custom error page and/or
      * a caching duration.</p>
@@ -70,6 +71,7 @@ namespace Model
      * a caching duration.</p>
      */
     inline CustomErrorResponse& WithErrorCode(int value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The path to the custom error page that you want CloudFront to return to a
@@ -246,6 +248,7 @@ namespace Model
      */
     inline CustomErrorResponse& WithResponsePagePath(const char* value) { SetResponsePagePath(value); return *this;}
 
+
     /**
      * <p>The HTTP status code that you want CloudFront to return to the viewer along
      * with the custom error page. There are a variety of reasons that you might want
@@ -379,6 +382,7 @@ namespace Model
      */
     inline CustomErrorResponse& WithResponseCode(const char* value) { SetResponseCode(value); return *this;}
 
+
     /**
      * <p>The minimum amount of time, in seconds, that you want CloudFront to cache the
      * HTTP status code specified in <code>ErrorCode</code>. When this time period has
@@ -419,12 +423,16 @@ namespace Model
     inline CustomErrorResponse& WithErrorCachingMinTTL(long long value) { SetErrorCachingMinTTL(value); return *this;}
 
   private:
+
     int m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_responsePagePath;
     bool m_responsePagePathHasBeenSet;
+
     Aws::String m_responseCode;
     bool m_responseCodeHasBeenSet;
+
     long long m_errorCachingMinTTL;
     bool m_errorCachingMinTTLHasBeenSet;
   };

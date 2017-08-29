@@ -31,12 +31,12 @@ DescribeAutoScalingNotificationTypesResult::DescribeAutoScalingNotificationTypes
 {
 }
 
-DescribeAutoScalingNotificationTypesResult::DescribeAutoScalingNotificationTypesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAutoScalingNotificationTypesResult::DescribeAutoScalingNotificationTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeAutoScalingNotificationTypesResult& DescribeAutoScalingNotificationTypesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAutoScalingNotificationTypesResult& DescribeAutoScalingNotificationTypesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

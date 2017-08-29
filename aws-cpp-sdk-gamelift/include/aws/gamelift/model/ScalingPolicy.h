@@ -67,6 +67,7 @@ namespace Model
     ScalingPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a fleet that is associated with this scaling
      * policy.</p>
@@ -109,6 +110,7 @@ namespace Model
      */
     inline ScalingPolicy& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
+
     /**
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
@@ -150,6 +152,7 @@ namespace Model
      * not need to be unique.</p>
      */
     inline ScalingPolicy& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Current status of the scaling policy. The scaling policy is only in force
@@ -221,6 +224,7 @@ namespace Model
      */
     inline ScalingPolicy& WithStatus(ScalingStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
      */
@@ -235,6 +239,7 @@ namespace Model
      * <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
      */
     inline ScalingPolicy& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
+
 
     /**
      * <p>Type of adjustment to make to a fleet's instance count (see
@@ -296,6 +301,7 @@ namespace Model
      */
     inline ScalingPolicy& WithScalingAdjustmentType(ScalingAdjustmentType&& value) { SetScalingAdjustmentType(std::move(value)); return *this;}
 
+
     /**
      * <p>Comparison operator to use when measuring a metric against the threshold
      * value.</p>
@@ -326,6 +332,7 @@ namespace Model
      */
     inline ScalingPolicy& WithComparisonOperator(ComparisonOperatorType&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
+
     /**
      * <p>Metric value used to trigger a scaling event.</p>
      */
@@ -340,6 +347,7 @@ namespace Model
      * <p>Metric value used to trigger a scaling event.</p>
      */
     inline ScalingPolicy& WithThreshold(double value) { SetThreshold(value); return *this;}
+
 
     /**
      * <p>Length of time (in minutes) the metric must be at or beyond the threshold
@@ -358,6 +366,7 @@ namespace Model
      * before a scaling event is triggered.</p>
      */
     inline ScalingPolicy& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
+
 
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
@@ -465,22 +474,31 @@ namespace Model
     inline ScalingPolicy& WithMetricName(MetricName&& value) { SetMetricName(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ScalingStatusType m_status;
     bool m_statusHasBeenSet;
+
     int m_scalingAdjustment;
     bool m_scalingAdjustmentHasBeenSet;
+
     ScalingAdjustmentType m_scalingAdjustmentType;
     bool m_scalingAdjustmentTypeHasBeenSet;
+
     ComparisonOperatorType m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
+
     double m_threshold;
     bool m_thresholdHasBeenSet;
+
     int m_evaluationPeriods;
     bool m_evaluationPeriodsHasBeenSet;
+
     MetricName m_metricName;
     bool m_metricNameHasBeenSet;
   };

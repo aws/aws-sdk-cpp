@@ -49,6 +49,7 @@ namespace Model
     StageDeclaration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the stage.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline StageDeclaration& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline StageDeclaration& AddBlockers(BlockerDeclaration&& value) { m_blockersHasBeenSet = true; m_blockers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The actions included in a stage.</p>
@@ -155,10 +158,13 @@ namespace Model
     inline StageDeclaration& AddActions(ActionDeclaration&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<BlockerDeclaration> m_blockers;
     bool m_blockersHasBeenSet;
+
     Aws::Vector<ActionDeclaration> m_actions;
     bool m_actionsHasBeenSet;
   };

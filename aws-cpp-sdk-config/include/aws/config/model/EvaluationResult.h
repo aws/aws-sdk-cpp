@@ -50,6 +50,7 @@ namespace Model
     EvaluationResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Uniquely identifies the evaluation result.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>Uniquely identifies the evaluation result.</p>
      */
     inline EvaluationResult& WithEvaluationResultIdentifier(EvaluationResultIdentifier&& value) { SetEvaluationResultIdentifier(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates whether the AWS resource complies with the AWS Config rule that
@@ -125,6 +127,7 @@ namespace Model
      */
     inline EvaluationResult& WithComplianceType(ComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The time when AWS Config recorded the evaluation result.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      */
     inline EvaluationResult& WithResultRecordedTime(Aws::Utils::DateTime&& value) { SetResultRecordedTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
      */
@@ -174,6 +178,7 @@ namespace Model
      * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
      */
     inline EvaluationResult& WithConfigRuleInvokedTime(Aws::Utils::DateTime&& value) { SetConfigRuleInvokedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Supplementary information about how the evaluation determined the
@@ -216,6 +221,7 @@ namespace Model
      * compliance.</p>
      */
     inline EvaluationResult& WithAnnotation(const char* value) { SetAnnotation(value); return *this;}
+
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule. The
@@ -267,16 +273,22 @@ namespace Model
     inline EvaluationResult& WithResultToken(const char* value) { SetResultToken(value); return *this;}
 
   private:
+
     EvaluationResultIdentifier m_evaluationResultIdentifier;
     bool m_evaluationResultIdentifierHasBeenSet;
+
     ComplianceType m_complianceType;
     bool m_complianceTypeHasBeenSet;
+
     Aws::Utils::DateTime m_resultRecordedTime;
     bool m_resultRecordedTimeHasBeenSet;
+
     Aws::Utils::DateTime m_configRuleInvokedTime;
     bool m_configRuleInvokedTimeHasBeenSet;
+
     Aws::String m_annotation;
     bool m_annotationHasBeenSet;
+
     Aws::String m_resultToken;
     bool m_resultTokenHasBeenSet;
   };

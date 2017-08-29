@@ -46,6 +46,7 @@ namespace Model
     WorkflowExecutionFailedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The descriptive reason provided for the failure.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The descriptive reason provided for the failure.</p>
      */
     inline WorkflowExecutionFailedEventAttributes& WithReason(const char* value) { SetReason(value); return *this;}
+
 
     /**
      * <p>The details of the failure.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline WorkflowExecutionFailedEventAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
      * decision task that resulted in the <code>FailWorkflowExecution</code> decision
@@ -141,10 +144,13 @@ namespace Model
     inline WorkflowExecutionFailedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
   private:
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
   };

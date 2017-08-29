@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the repository where you want to get differences.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the repository where you want to get differences.</p>
      */
     inline GetDifferencesRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
@@ -134,6 +136,7 @@ namespace Model
      */
     inline GetDifferencesRequest& WithBeforeCommitSpecifier(const char* value) { SetBeforeCommitSpecifier(value); return *this;}
 
+
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
      * commit.</p>
@@ -175,6 +178,7 @@ namespace Model
      * commit.</p>
      */
     inline GetDifferencesRequest& WithAfterCommitSpecifier(const char* value) { SetAfterCommitSpecifier(value); return *this;}
+
 
     /**
      * <p>The file path in which to check for differences. Limits the results to this
@@ -232,6 +236,7 @@ namespace Model
      */
     inline GetDifferencesRequest& WithBeforePath(const char* value) { SetBeforePath(value); return *this;}
 
+
     /**
      * <p>The file path in which to check differences. Limits the results to this path.
      * Can also be used to specify the changed name of a directory or folder, if it has
@@ -281,6 +286,7 @@ namespace Model
      */
     inline GetDifferencesRequest& WithAfterPath(const char* value) { SetAfterPath(value); return *this;}
 
+
     /**
      * <p>A non-negative integer used to limit the number of returned results.</p>
      */
@@ -295,6 +301,7 @@ namespace Model
      * <p>A non-negative integer used to limit the number of returned results.</p>
      */
     inline GetDifferencesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>An enumeration token that when provided in a request, returns the next batch
@@ -339,18 +346,25 @@ namespace Model
     inline GetDifferencesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_beforeCommitSpecifier;
     bool m_beforeCommitSpecifierHasBeenSet;
+
     Aws::String m_afterCommitSpecifier;
     bool m_afterCommitSpecifierHasBeenSet;
+
     Aws::String m_beforePath;
     bool m_beforePathHasBeenSet;
+
     Aws::String m_afterPath;
     bool m_afterPathHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

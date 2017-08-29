@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListIncomingTypedLinksResult();
-    ListIncomingTypedLinksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListIncomingTypedLinksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIncomingTypedLinksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIncomingTypedLinksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Returns one or more typed link specifiers as output.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Returns one or more typed link specifiers as output.</p>
      */
     inline ListIncomingTypedLinksResult& AddLinkSpecifiers(TypedLinkSpecifier&& value) { m_linkSpecifiers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline ListIncomingTypedLinksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<TypedLinkSpecifier> m_linkSpecifiers;
+
     Aws::String m_nextToken;
   };
 

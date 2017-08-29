@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListPortfolioAccessResult();
-    ListPortfolioAccessResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPortfolioAccessResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPortfolioAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPortfolioAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of account IDs associated with access to the portfolio.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>List of account IDs associated with access to the portfolio.</p>
      */
     inline ListPortfolioAccessResult& AddAccountIds(const char* value) { m_accountIds.push_back(value); return *this; }
+
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -125,7 +127,9 @@ namespace Model
     inline ListPortfolioAccessResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_accountIds;
+
     Aws::String m_nextPageToken;
   };
 

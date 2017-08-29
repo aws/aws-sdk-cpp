@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListPartsResult();
-    ListPartsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListPartsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListPartsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListPartsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * Date when multipart upload will become eligible for abort operation by
@@ -77,6 +78,7 @@ namespace Model
      * lifecycle.
      */
     inline ListPartsResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(std::move(value)); return *this;}
+
 
     /**
      * Id of the lifecycle rule that makes a multipart upload eligible for abort
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ListPartsResult& WithAbortRuleId(const char* value) { SetAbortRuleId(value); return *this;}
 
+
     /**
      * Name of the bucket to which the multipart upload was initiated.
      */
@@ -154,6 +157,7 @@ namespace Model
      * Name of the bucket to which the multipart upload was initiated.
      */
     inline ListPartsResult& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * Object key for which the multipart upload was initiated.
@@ -190,6 +194,7 @@ namespace Model
      */
     inline ListPartsResult& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * Upload ID identifying the multipart upload whose parts are being listed.
      */
@@ -225,6 +230,7 @@ namespace Model
      */
     inline ListPartsResult& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
+
     /**
      * Part number after which listing begins.
      */
@@ -239,6 +245,7 @@ namespace Model
      * Part number after which listing begins.
      */
     inline ListPartsResult& WithPartNumberMarker(int value) { SetPartNumberMarker(value); return *this;}
+
 
     /**
      * When a list is truncated, this element specifies the last part in the list, as
@@ -261,6 +268,7 @@ namespace Model
      */
     inline ListPartsResult& WithNextPartNumberMarker(int value) { SetNextPartNumberMarker(value); return *this;}
 
+
     /**
      * Maximum number of parts that were allowed in the response.
      */
@@ -276,6 +284,7 @@ namespace Model
      */
     inline ListPartsResult& WithMaxParts(int value) { SetMaxParts(value); return *this;}
 
+
     /**
      * Indicates whether the returned list of parts is truncated.
      */
@@ -290,6 +299,7 @@ namespace Model
      * Indicates whether the returned list of parts is truncated.
      */
     inline ListPartsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     
     inline const Aws::Vector<Part>& GetParts() const{ return m_parts; }
@@ -311,6 +321,7 @@ namespace Model
 
     
     inline ListPartsResult& AddParts(Part&& value) { m_parts.push_back(std::move(value)); return *this; }
+
 
     /**
      * Identifies who initiated the multipart upload.
@@ -337,6 +348,7 @@ namespace Model
      */
     inline ListPartsResult& WithInitiator(Initiator&& value) { SetInitiator(std::move(value)); return *this;}
 
+
     
     inline const Owner& GetOwner() const{ return m_owner; }
 
@@ -351,6 +363,7 @@ namespace Model
 
     
     inline ListPartsResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+
 
     /**
      * The class of storage used to store the object.
@@ -377,6 +390,7 @@ namespace Model
      */
     inline ListPartsResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -393,19 +407,33 @@ namespace Model
     inline ListPartsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_abortDate;
+
     Aws::String m_abortRuleId;
+
     Aws::String m_bucket;
+
     Aws::String m_key;
+
     Aws::String m_uploadId;
+
     int m_partNumberMarker;
+
     int m_nextPartNumberMarker;
+
     int m_maxParts;
+
     bool m_isTruncated;
+
     Aws::Vector<Part> m_parts;
+
     Initiator m_initiator;
+
     Owner m_owner;
+
     StorageClass m_storageClass;
+
     RequestCharged m_requestCharged;
   };
 

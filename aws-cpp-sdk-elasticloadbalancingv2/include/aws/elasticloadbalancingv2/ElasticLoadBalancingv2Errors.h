@@ -55,7 +55,7 @@ enum class ElasticLoadBalancingv2Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CERTIFICATE_NOT_FOUND= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CERTIFICATE_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DUPLICATE_LISTENER,
   DUPLICATE_LOAD_BALANCER_NAME,
   DUPLICATE_TAG_KEYS,
@@ -89,7 +89,7 @@ enum class ElasticLoadBalancingv2Errors
 };
 namespace ElasticLoadBalancingv2ErrorMapper
 {
-  AWS_ELASTICLOADBALANCINGV2_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ELASTICLOADBALANCINGV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ElasticLoadBalancingv2

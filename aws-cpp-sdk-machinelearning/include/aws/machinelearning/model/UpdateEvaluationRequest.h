@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
      */
     inline UpdateEvaluationRequest& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
+
 
     /**
      * <p>A new user-supplied name or description of the <code>Evaluation</code> that
@@ -114,8 +116,10 @@ namespace Model
     inline UpdateEvaluationRequest& WithEvaluationName(const char* value) { SetEvaluationName(value); return *this;}
 
   private:
+
     Aws::String m_evaluationId;
     bool m_evaluationIdHasBeenSet;
+
     Aws::String m_evaluationName;
     bool m_evaluationNameHasBeenSet;
   };

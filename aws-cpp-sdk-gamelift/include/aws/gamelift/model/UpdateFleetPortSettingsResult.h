@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateFleetPortSettingsResult();
-    UpdateFleetPortSettingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFleetPortSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateFleetPortSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateFleetPortSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Unique identifier for a fleet that was updated.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline UpdateFleetPortSettingsResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
   };
 

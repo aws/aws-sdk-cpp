@@ -54,6 +54,7 @@ namespace Model
     JobOutput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A sequential counter, starting with 1, that identifies an output among the
      * outputs from the current job. In the Output syntax, this value is always 1.</p>
@@ -95,6 +96,7 @@ namespace Model
      * outputs from the current job. In the Output syntax, this value is always 1.</p>
      */
     inline JobOutput& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p> The name to assign to the transcoded file. Elastic Transcoder saves the file
@@ -144,6 +146,7 @@ namespace Model
      * pipeline that is specified by the pipeline ID.</p>
      */
     inline JobOutput& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>Whether you want Elastic Transcoder to create thumbnails for your videos and,
@@ -348,6 +351,7 @@ namespace Model
      */
     inline JobOutput& WithThumbnailPattern(const char* value) { SetThumbnailPattern(value); return *this;}
 
+
     /**
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your thumbnail.</p>
@@ -377,6 +381,7 @@ namespace Model
      * your thumbnail.</p>
      */
     inline JobOutput& WithThumbnailEncryption(Encryption&& value) { SetThumbnailEncryption(std::move(value)); return *this;}
+
 
     /**
      * <p>The number of degrees clockwise by which you want Elastic Transcoder to
@@ -440,6 +445,7 @@ namespace Model
      * the file that you're transcoding contains rotation metadata.</p>
      */
     inline JobOutput& WithRotate(const char* value) { SetRotate(value); return *this;}
+
 
     /**
      * <p>The value of the <code>Id</code> object for the preset that you want to use
@@ -510,6 +516,7 @@ namespace Model
      * which you can get with <code>ListPresets</code>.</p>
      */
     inline JobOutput& WithPresetId(const char* value) { SetPresetId(value); return *this;}
+
 
     /**
      * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
@@ -650,6 +657,7 @@ namespace Model
      * include it in the <code>OutputKeys</code> of the associated playlist.</p>
      */
     inline JobOutput& WithSegmentDuration(const char* value) { SetSegmentDuration(value); return *this;}
+
 
     /**
      * <p> The status of one output in a job. If you specified only one output for the
@@ -805,6 +813,7 @@ namespace Model
      */
     inline JobOutput& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>Information that further explains <code>Status</code>.</p>
      */
@@ -840,6 +849,7 @@ namespace Model
      */
     inline JobOutput& WithStatusDetail(const char* value) { SetStatusDetail(value); return *this;}
 
+
     /**
      * <p>Duration of the output file, in seconds.</p>
      */
@@ -854,6 +864,7 @@ namespace Model
      * <p>Duration of the output file, in seconds.</p>
      */
     inline JobOutput& WithDuration(long long value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>Specifies the width of the output file in pixels.</p>
@@ -870,6 +881,7 @@ namespace Model
      */
     inline JobOutput& WithWidth(int value) { SetWidth(value); return *this;}
 
+
     /**
      * <p>Height of the output file, in pixels.</p>
      */
@@ -884,6 +896,7 @@ namespace Model
      * <p>Height of the output file, in pixels.</p>
      */
     inline JobOutput& WithHeight(int value) { SetHeight(value); return *this;}
+
 
     /**
      * <p>Frame rate of the output file, in frames per second.</p>
@@ -920,6 +933,7 @@ namespace Model
      */
     inline JobOutput& WithFrameRate(const char* value) { SetFrameRate(value); return *this;}
 
+
     /**
      * <p>File size of the output file, in bytes.</p>
      */
@@ -935,6 +949,7 @@ namespace Model
      */
     inline JobOutput& WithFileSize(long long value) { SetFileSize(value); return *this;}
 
+
     /**
      * <p>Duration of the output file, in milliseconds.</p>
      */
@@ -949,6 +964,7 @@ namespace Model
      * <p>Duration of the output file, in milliseconds.</p>
      */
     inline JobOutput& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
+
 
     /**
      * <p>Information about the watermarks that you want Elastic Transcoder to add to
@@ -1048,6 +1064,7 @@ namespace Model
      */
     inline JobOutput& AddWatermarks(JobWatermark&& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The album art to be associated with the output file, if any.</p>
      */
@@ -1072,6 +1089,7 @@ namespace Model
      * <p>The album art to be associated with the output file, if any.</p>
      */
     inline JobOutput& WithAlbumArt(JobAlbumArt&& value) { SetAlbumArt(std::move(value)); return *this;}
+
 
     /**
      * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
@@ -1248,6 +1266,7 @@ namespace Model
      */
     inline JobOutput& WithCaptions(Captions&& value) { SetCaptions(std::move(value)); return *this;}
 
+
     /**
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your output files. If you choose to use encryption, you must specify a mode to
@@ -1287,6 +1306,7 @@ namespace Model
      * unencrypted file to your Amazon S3 bucket.</p>
      */
     inline JobOutput& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
+
 
     /**
      * <p>If Elastic Transcoder used a preset with a
@@ -1352,44 +1372,64 @@ namespace Model
     inline JobOutput& WithAppliedColorSpaceConversion(const char* value) { SetAppliedColorSpaceConversion(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_thumbnailPattern;
     bool m_thumbnailPatternHasBeenSet;
+
     Encryption m_thumbnailEncryption;
     bool m_thumbnailEncryptionHasBeenSet;
+
     Aws::String m_rotate;
     bool m_rotateHasBeenSet;
+
     Aws::String m_presetId;
     bool m_presetIdHasBeenSet;
+
     Aws::String m_segmentDuration;
     bool m_segmentDurationHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusDetail;
     bool m_statusDetailHasBeenSet;
+
     long long m_duration;
     bool m_durationHasBeenSet;
+
     int m_width;
     bool m_widthHasBeenSet;
+
     int m_height;
     bool m_heightHasBeenSet;
+
     Aws::String m_frameRate;
     bool m_frameRateHasBeenSet;
+
     long long m_fileSize;
     bool m_fileSizeHasBeenSet;
+
     long long m_durationMillis;
     bool m_durationMillisHasBeenSet;
+
     Aws::Vector<JobWatermark> m_watermarks;
     bool m_watermarksHasBeenSet;
+
     JobAlbumArt m_albumArt;
     bool m_albumArtHasBeenSet;
+
     Captions m_captions;
     bool m_captionsHasBeenSet;
+
     Encryption m_encryption;
     bool m_encryptionHasBeenSet;
+
     Aws::String m_appliedColorSpaceConversion;
     bool m_appliedColorSpaceConversionHasBeenSet;
   };

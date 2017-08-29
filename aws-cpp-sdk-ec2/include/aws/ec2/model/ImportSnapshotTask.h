@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A description of the import snapshot task.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>A description of the import snapshot task.</p>
      */
     inline ImportSnapshotTask& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The ID of the import snapshot task.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline ImportSnapshotTask& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
 
+
     /**
      * <p>Describes an import snapshot task.</p>
      */
@@ -145,10 +148,13 @@ namespace Model
     inline ImportSnapshotTask& WithSnapshotTaskDetail(SnapshotTaskDetail&& value) { SetSnapshotTaskDetail(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_importTaskId;
     bool m_importTaskIdHasBeenSet;
+
     SnapshotTaskDetail m_snapshotTaskDetail;
     bool m_snapshotTaskDetailHasBeenSet;
   };

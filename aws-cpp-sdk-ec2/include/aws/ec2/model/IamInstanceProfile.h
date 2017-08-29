@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
      */
     inline IamInstanceProfile& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The ID of the instance profile.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline IamInstanceProfile& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

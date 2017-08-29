@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ModifyClusterIamRolesResult();
-    ModifyClusterIamRolesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyClusterIamRolesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyClusterIamRolesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyClusterIamRolesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Cluster& GetCluster() const{ return m_cluster; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline ModifyClusterIamRolesResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline ModifyClusterIamRolesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Cluster m_cluster;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -46,6 +46,7 @@ namespace Model
     InputStartingPositionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The starting position on the stream.</p> <ul> <li> <p> <code>NOW</code> -
      * Start reading just after the most recent record in the stream, start at the
@@ -107,6 +108,7 @@ namespace Model
     inline InputStartingPositionConfiguration& WithInputStartingPosition(InputStartingPosition&& value) { SetInputStartingPosition(std::move(value)); return *this;}
 
   private:
+
     InputStartingPosition m_inputStartingPosition;
     bool m_inputStartingPositionHasBeenSet;
   };

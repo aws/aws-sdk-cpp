@@ -30,12 +30,12 @@ ListResourceComplianceSummariesResult::ListResourceComplianceSummariesResult()
 {
 }
 
-ListResourceComplianceSummariesResult::ListResourceComplianceSummariesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListResourceComplianceSummariesResult::ListResourceComplianceSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListResourceComplianceSummariesResult& ListResourceComplianceSummariesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListResourceComplianceSummariesResult& ListResourceComplianceSummariesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ResourceComplianceSummaryItems"))

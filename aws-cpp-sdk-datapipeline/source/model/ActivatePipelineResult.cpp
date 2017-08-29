@@ -30,12 +30,12 @@ ActivatePipelineResult::ActivatePipelineResult()
 {
 }
 
-ActivatePipelineResult::ActivatePipelineResult(const AmazonWebServiceResult<JsonValue>& result)
+ActivatePipelineResult::ActivatePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ActivatePipelineResult& ActivatePipelineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ActivatePipelineResult& ActivatePipelineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

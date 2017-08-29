@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
      * want to get. <code>SizeConstraintSetId</code> is returned by
@@ -86,6 +87,7 @@ namespace Model
     inline GetSizeConstraintSetRequest& WithSizeConstraintSetId(const char* value) { SetSizeConstraintSetId(value); return *this;}
 
   private:
+
     Aws::String m_sizeConstraintSetId;
     bool m_sizeConstraintSetIdHasBeenSet;
   };

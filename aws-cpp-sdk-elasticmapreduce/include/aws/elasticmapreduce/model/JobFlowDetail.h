@@ -51,6 +51,7 @@ namespace Model
     JobFlowDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The job flow identifier.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The job flow identifier.</p>
      */
     inline JobFlowDetail& WithJobFlowId(const char* value) { SetJobFlowId(value); return *this;}
+
 
     /**
      * <p>The name of the job flow.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline JobFlowDetail& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The location in Amazon S3 where log files for the job are stored.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The location in Amazon S3 where log files for the job are stored.</p>
      */
     inline JobFlowDetail& WithLogUri(const char* value) { SetLogUri(value); return *this;}
+
 
     /**
      * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
@@ -219,6 +223,7 @@ namespace Model
      */
     inline JobFlowDetail& WithAmiVersion(const char* value) { SetAmiVersion(value); return *this;}
 
+
     /**
      * <p>Describes the execution status of the job flow.</p>
      */
@@ -244,6 +249,7 @@ namespace Model
      */
     inline JobFlowDetail& WithExecutionStatusDetail(JobFlowExecutionStatusDetail&& value) { SetExecutionStatusDetail(std::move(value)); return *this;}
 
+
     /**
      * <p>Describes the Amazon EC2 instances of the job flow.</p>
      */
@@ -268,6 +274,7 @@ namespace Model
      * <p>Describes the Amazon EC2 instances of the job flow.</p>
      */
     inline JobFlowDetail& WithInstances(JobFlowInstancesDetail&& value) { SetInstances(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of steps run by the job flow.</p>
@@ -304,6 +311,7 @@ namespace Model
      */
     inline JobFlowDetail& AddSteps(StepDetail&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of the bootstrap actions run by the job flow.</p>
      */
@@ -338,6 +346,7 @@ namespace Model
      * <p>A list of the bootstrap actions run by the job flow.</p>
      */
     inline JobFlowDetail& AddBootstrapActions(BootstrapActionDetail&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of strings set by third party software when the job flow is launched.
@@ -395,6 +404,7 @@ namespace Model
      */
     inline JobFlowDetail& AddSupportedProducts(const char* value) { m_supportedProductsHasBeenSet = true; m_supportedProducts.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies whether the cluster is visible to all IAM users of the AWS account
      * associated with the cluster. If this value is set to <code>true</code>, all IAM
@@ -424,6 +434,7 @@ namespace Model
      * changed using the <a>SetVisibleToAllUsers</a> action.</p>
      */
     inline JobFlowDetail& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
+
 
     /**
      * <p>The IAM role that was specified when the job flow was launched. The EC2
@@ -467,6 +478,7 @@ namespace Model
      */
     inline JobFlowDetail& WithJobFlowRole(const char* value) { SetJobFlowRole(value); return *this;}
 
+
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
@@ -508,6 +520,7 @@ namespace Model
      * resources on your behalf.</p>
      */
     inline JobFlowDetail& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+
 
     /**
      * <p>An IAM role for automatic scaling policies. The default role is
@@ -564,6 +577,7 @@ namespace Model
      * terminate EC2 instances in an instance group.</p>
      */
     inline JobFlowDetail& WithAutoScalingRole(const char* value) { SetAutoScalingRole(value); return *this;}
+
 
     /**
      * <p>The way that individual Amazon EC2 instances terminate when an automatic
@@ -651,32 +665,46 @@ namespace Model
     inline JobFlowDetail& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobFlowId;
     bool m_jobFlowIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_logUri;
     bool m_logUriHasBeenSet;
+
     Aws::String m_amiVersion;
     bool m_amiVersionHasBeenSet;
+
     JobFlowExecutionStatusDetail m_executionStatusDetail;
     bool m_executionStatusDetailHasBeenSet;
+
     JobFlowInstancesDetail m_instances;
     bool m_instancesHasBeenSet;
+
     Aws::Vector<StepDetail> m_steps;
     bool m_stepsHasBeenSet;
+
     Aws::Vector<BootstrapActionDetail> m_bootstrapActions;
     bool m_bootstrapActionsHasBeenSet;
+
     Aws::Vector<Aws::String> m_supportedProducts;
     bool m_supportedProductsHasBeenSet;
+
     bool m_visibleToAllUsers;
     bool m_visibleToAllUsersHasBeenSet;
+
     Aws::String m_jobFlowRole;
     bool m_jobFlowRoleHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
     Aws::String m_autoScalingRole;
     bool m_autoScalingRoleHasBeenSet;
+
     ScaleDownBehavior m_scaleDownBehavior;
     bool m_scaleDownBehaviorHasBeenSet;
   };

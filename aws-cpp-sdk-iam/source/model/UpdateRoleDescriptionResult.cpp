@@ -31,12 +31,12 @@ UpdateRoleDescriptionResult::UpdateRoleDescriptionResult()
 {
 }
 
-UpdateRoleDescriptionResult::UpdateRoleDescriptionResult(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateRoleDescriptionResult::UpdateRoleDescriptionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UpdateRoleDescriptionResult& UpdateRoleDescriptionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateRoleDescriptionResult& UpdateRoleDescriptionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

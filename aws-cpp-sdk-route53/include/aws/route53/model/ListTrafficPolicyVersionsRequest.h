@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Specify the value of <code>Id</code> of the traffic policy for which you want
      * to list all versions.</p>
@@ -85,6 +86,7 @@ namespace Model
      * to list all versions.</p>
      */
     inline ListTrafficPolicyVersionsRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't
@@ -170,6 +172,7 @@ namespace Model
      */
     inline ListTrafficPolicyVersionsRequest& WithTrafficPolicyVersionMarker(const char* value) { SetTrafficPolicyVersionMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of traffic policy versions that you want Amazon Route 53
      * to include in the response body for this request. If the specified traffic
@@ -241,10 +244,13 @@ namespace Model
     inline ListTrafficPolicyVersionsRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_trafficPolicyVersionMarker;
     bool m_trafficPolicyVersionMarkerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

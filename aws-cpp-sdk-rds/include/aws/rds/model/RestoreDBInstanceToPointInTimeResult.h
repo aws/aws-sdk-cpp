@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     RestoreDBInstanceToPointInTimeResult();
-    RestoreDBInstanceToPointInTimeResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreDBInstanceToPointInTimeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RestoreDBInstanceToPointInTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RestoreDBInstanceToPointInTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DBInstance& GetDBInstance() const{ return m_dBInstance; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline RestoreDBInstanceToPointInTimeResult& WithDBInstance(DBInstance&& value) { SetDBInstance(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline RestoreDBInstanceToPointInTimeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DBInstance m_dBInstance;
+
     ResponseMetadata m_responseMetadata;
   };
 

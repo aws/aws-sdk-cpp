@@ -47,6 +47,7 @@ namespace Model
     ActionConfigurationProperty& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the action configuration property.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ActionConfigurationProperty& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Whether the configuration property is a required value.</p>
      */
@@ -97,6 +99,7 @@ namespace Model
      */
     inline ActionConfigurationProperty& WithRequired(bool value) { SetRequired(value); return *this;}
 
+
     /**
      * <p>Whether the configuration property is a key.</p>
      */
@@ -111,6 +114,7 @@ namespace Model
      * <p>Whether the configuration property is a key.</p>
      */
     inline ActionConfigurationProperty& WithKey(bool value) { SetKey(value); return *this;}
+
 
     /**
      * <p>Whether the configuration property is secret. Secrets are hidden from all
@@ -138,6 +142,7 @@ namespace Model
      * the secret.</p>
      */
     inline ActionConfigurationProperty& WithSecret(bool value) { SetSecret(value); return *this;}
+
 
     /**
      * <p>Indicates that the proprety will be used in conjunction with PollForJobs.
@@ -174,6 +179,7 @@ namespace Model
      * hyphens.</p>
      */
     inline ActionConfigurationProperty& WithQueryable(bool value) { SetQueryable(value); return *this;}
+
 
     /**
      * <p>The description of the action configuration property that will be displayed
@@ -217,6 +223,7 @@ namespace Model
      */
     inline ActionConfigurationProperty& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The type of the configuration property.</p>
      */
@@ -243,18 +250,25 @@ namespace Model
     inline ActionConfigurationProperty& WithType(ActionConfigurationPropertyType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     bool m_required;
     bool m_requiredHasBeenSet;
+
     bool m_key;
     bool m_keyHasBeenSet;
+
     bool m_secret;
     bool m_secretHasBeenSet;
+
     bool m_queryable;
     bool m_queryableHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ActionConfigurationPropertyType m_type;
     bool m_typeHasBeenSet;
   };

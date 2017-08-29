@@ -32,13 +32,13 @@ UpdateJobResult::UpdateJobResult() :
 {
 }
 
-UpdateJobResult::UpdateJobResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+UpdateJobResult::UpdateJobResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_success(false)
 {
   *this = result;
 }
 
-UpdateJobResult& UpdateJobResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateJobResult& UpdateJobResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

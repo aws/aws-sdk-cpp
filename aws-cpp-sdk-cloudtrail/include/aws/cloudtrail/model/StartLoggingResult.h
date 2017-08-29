@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     StartLoggingResult();
-    StartLoggingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartLoggingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartLoggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartLoggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

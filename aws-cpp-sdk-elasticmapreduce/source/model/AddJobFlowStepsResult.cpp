@@ -30,12 +30,12 @@ AddJobFlowStepsResult::AddJobFlowStepsResult()
 {
 }
 
-AddJobFlowStepsResult::AddJobFlowStepsResult(const AmazonWebServiceResult<JsonValue>& result)
+AddJobFlowStepsResult::AddJobFlowStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddJobFlowStepsResult& AddJobFlowStepsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddJobFlowStepsResult& AddJobFlowStepsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StepIds"))

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
 
@@ -58,6 +59,7 @@ namespace Model
     inline DeleteReplicationJobRequest& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
 
   private:
+
     Aws::String m_replicationJobId;
     bool m_replicationJobIdHasBeenSet;
   };

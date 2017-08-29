@@ -48,8 +48,9 @@ namespace Model
     GetJobOutputResult& operator=(const GetJobOutputResult&) = delete;
 
 
-    GetJobOutputResult(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
-    GetJobOutputResult& operator=(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
+    GetJobOutputResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    GetJobOutputResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+
 
 
     /**
@@ -62,6 +63,7 @@ namespace Model
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
     
+
     /**
      * <p>The checksum of the data in the response. This header is returned only when
      * retrieving the output for an archive retrieval job. Furthermore, this header
@@ -174,6 +176,7 @@ namespace Model
      */
     inline GetJobOutputResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
+
     /**
      * <p>The HTTP response code for a job output request. The value depends on whether
      * a range was specified in the request.</p>
@@ -191,6 +194,7 @@ namespace Model
      * a range was specified in the request.</p>
      */
     inline GetJobOutputResult& WithStatus(int value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The range of bytes returned by Amazon Glacier. If only partial output is
@@ -241,6 +245,7 @@ namespace Model
      */
     inline GetJobOutputResult& WithContentRange(const char* value) { SetContentRange(value); return *this;}
 
+
     /**
      * <p>Indicates the range units accepted. For more information, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
@@ -282,6 +287,7 @@ namespace Model
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
      */
     inline GetJobOutputResult& WithAcceptRanges(const char* value) { SetAcceptRanges(value); return *this;}
+
 
     /**
      * <p>The Content-Type depends on whether the job output is an archive or a vault
@@ -346,6 +352,7 @@ namespace Model
      */
     inline GetJobOutputResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 
+
     /**
      * <p>The description of an archive.</p>
      */
@@ -382,12 +389,19 @@ namespace Model
     inline GetJobOutputResult& WithArchiveDescription(const char* value) { SetArchiveDescription(value); return *this;}
 
   private:
-    Utils::Stream::ResponseStream m_body;
+
+  Aws::Utils::Stream::ResponseStream m_body;
+
     Aws::String m_checksum;
+
     int m_status;
+
     Aws::String m_contentRange;
+
     Aws::String m_acceptRanges;
+
     Aws::String m_contentType;
+
     Aws::String m_archiveDescription;
   };
 

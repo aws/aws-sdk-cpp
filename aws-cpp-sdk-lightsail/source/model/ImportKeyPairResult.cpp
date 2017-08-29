@@ -30,12 +30,12 @@ ImportKeyPairResult::ImportKeyPairResult()
 {
 }
 
-ImportKeyPairResult::ImportKeyPairResult(const AmazonWebServiceResult<JsonValue>& result)
+ImportKeyPairResult::ImportKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ImportKeyPairResult& ImportKeyPairResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ImportKeyPairResult& ImportKeyPairResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operation"))

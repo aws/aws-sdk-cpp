@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeReservedCacheNodesOfferingsResult();
-    DescribeReservedCacheNodesOfferingsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeReservedCacheNodesOfferingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeReservedCacheNodesOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeReservedCacheNodesOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline DescribeReservedCacheNodesOfferingsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>A list of reserved cache node offerings. Each element in the list contains
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeReservedCacheNodesOfferingsResult& AddReservedCacheNodesOfferings(ReservedCacheNodesOffering&& value) { m_reservedCacheNodesOfferings.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeReservedCacheNodesOfferingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<ReservedCacheNodesOffering> m_reservedCacheNodesOfferings;
+
     ResponseMetadata m_responseMetadata;
   };
 

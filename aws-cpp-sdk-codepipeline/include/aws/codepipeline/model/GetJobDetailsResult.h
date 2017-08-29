@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetJobDetailsResult();
-    GetJobDetailsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobDetailsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
@@ -83,6 +84,7 @@ namespace Model
     inline GetJobDetailsResult& WithJobDetails(JobDetails&& value) { SetJobDetails(std::move(value)); return *this;}
 
   private:
+
     JobDetails m_jobDetails;
   };
 

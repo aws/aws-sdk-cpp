@@ -47,6 +47,7 @@ namespace Model
     TrustedAdvisorResourceDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The status code for the resource identified in the Trusted Advisor check.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The status code for the resource identified in the Trusted Advisor check.</p>
      */
     inline TrustedAdvisorResourceDetail& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The AWS region in which the identified resource is located.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline TrustedAdvisorResourceDetail& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
     /**
      * <p>The unique identifier for the identified resource.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      */
     inline TrustedAdvisorResourceDetail& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it
      * was marked as suppressed by the user.</p>
@@ -169,6 +173,7 @@ namespace Model
      * was marked as suppressed by the user.</p>
      */
     inline TrustedAdvisorResourceDetail& WithIsSuppressed(bool value) { SetIsSuppressed(value); return *this;}
+
 
     /**
      * <p>Additional information about the identified resource. The exact metadata and
@@ -251,14 +256,19 @@ namespace Model
     inline TrustedAdvisorResourceDetail& AddMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.push_back(value); return *this; }
 
   private:
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     bool m_isSuppressed;
     bool m_isSuppressedHasBeenSet;
+
     Aws::Vector<Aws::String> m_metadata;
     bool m_metadataHasBeenSet;
   };

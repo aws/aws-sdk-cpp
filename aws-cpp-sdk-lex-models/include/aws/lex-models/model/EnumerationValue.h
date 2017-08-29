@@ -49,6 +49,7 @@ namespace Model
     EnumerationValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The value of the slot type.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
     inline EnumerationValue& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

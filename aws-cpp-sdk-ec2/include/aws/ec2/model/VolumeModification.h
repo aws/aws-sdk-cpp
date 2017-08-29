@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>ID of the volume being modified.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      */
     inline VolumeModification& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     /**
      * <p>Current state of modification. Modification state is null for unmodified
      * volumes. </p>
@@ -117,6 +119,7 @@ namespace Model
      * volumes. </p>
      */
     inline VolumeModification& WithModificationState(VolumeModificationState&& value) { SetModificationState(std::move(value)); return *this;}
+
 
     /**
      * <p>Generic status message on modification progress or failure.</p>
@@ -153,6 +156,7 @@ namespace Model
      */
     inline VolumeModification& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     /**
      * <p>Target size of the volume being modified.</p>
      */
@@ -168,6 +172,7 @@ namespace Model
      */
     inline VolumeModification& WithTargetSize(int value) { SetTargetSize(value); return *this;}
 
+
     /**
      * <p>Target IOPS rate of the volume being modified.</p>
      */
@@ -182,6 +187,7 @@ namespace Model
      * <p>Target IOPS rate of the volume being modified.</p>
      */
     inline VolumeModification& WithTargetIops(int value) { SetTargetIops(value); return *this;}
+
 
     /**
      * <p>Target EBS volume type of the volume being modified.</p>
@@ -208,6 +214,7 @@ namespace Model
      */
     inline VolumeModification& WithTargetVolumeType(VolumeType&& value) { SetTargetVolumeType(std::move(value)); return *this;}
 
+
     /**
      * <p>Original size of the volume being modified.</p>
      */
@@ -223,6 +230,7 @@ namespace Model
      */
     inline VolumeModification& WithOriginalSize(int value) { SetOriginalSize(value); return *this;}
 
+
     /**
      * <p>Original IOPS rate of the volume being modified.</p>
      */
@@ -237,6 +245,7 @@ namespace Model
      * <p>Original IOPS rate of the volume being modified.</p>
      */
     inline VolumeModification& WithOriginalIops(int value) { SetOriginalIops(value); return *this;}
+
 
     /**
      * <p>Original EBS volume type of the volume being modified.</p>
@@ -263,6 +272,7 @@ namespace Model
      */
     inline VolumeModification& WithOriginalVolumeType(VolumeType&& value) { SetOriginalVolumeType(std::move(value)); return *this;}
 
+
     /**
      * <p>Modification progress from 0 to 100%.</p>
      */
@@ -277,6 +287,7 @@ namespace Model
      * <p>Modification progress from 0 to 100%.</p>
      */
     inline VolumeModification& WithProgress(long long value) { SetProgress(value); return *this;}
+
 
     /**
      * <p>Modification start time </p>
@@ -302,6 +313,7 @@ namespace Model
      * <p>Modification start time </p>
      */
     inline VolumeModification& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Modification completion or failure time.</p>
@@ -329,28 +341,40 @@ namespace Model
     inline VolumeModification& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     VolumeModificationState m_modificationState;
     bool m_modificationStateHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     int m_targetSize;
     bool m_targetSizeHasBeenSet;
+
     int m_targetIops;
     bool m_targetIopsHasBeenSet;
+
     VolumeType m_targetVolumeType;
     bool m_targetVolumeTypeHasBeenSet;
+
     int m_originalSize;
     bool m_originalSizeHasBeenSet;
+
     int m_originalIops;
     bool m_originalIopsHasBeenSet;
+
     VolumeType m_originalVolumeType;
     bool m_originalVolumeTypeHasBeenSet;
+
     long long m_progress;
     bool m_progressHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     TemporaryCredential& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user name.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The user name.</p>
      */
     inline TemporaryCredential& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>The password.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline TemporaryCredential& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
     /**
      * <p>The length of time (in minutes) that the grant is valid. When the grant
      * expires, at the end of this period, the user will no longer be able to use the
@@ -139,6 +142,7 @@ namespace Model
      * automatically logged out.</p>
      */
     inline TemporaryCredential& WithValidForInMinutes(int value) { SetValidForInMinutes(value); return *this;}
+
 
     /**
      * <p>The instance's AWS OpsWorks Stacks ID.</p>
@@ -176,12 +180,16 @@ namespace Model
     inline TemporaryCredential& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     int m_validForInMinutes;
     bool m_validForInMinutesHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
   };

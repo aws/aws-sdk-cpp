@@ -46,6 +46,7 @@ namespace Model
     Deployment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the deployment.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The ID of the deployment.</p>
      */
     inline Deployment& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The status of the deployment. Valid values are <code>PRIMARY</code> (for the
@@ -144,6 +146,7 @@ namespace Model
      */
     inline Deployment& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The most recent task definition that was specified for the service to
      * use.</p>
@@ -186,6 +189,7 @@ namespace Model
      */
     inline Deployment& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
+
     /**
      * <p>The most recent desired count of tasks that was specified for the service to
      * deploy or maintain.</p>
@@ -203,6 +207,7 @@ namespace Model
      * deploy or maintain.</p>
      */
     inline Deployment& WithDesiredCount(int value) { SetDesiredCount(value); return *this;}
+
 
     /**
      * <p>The number of tasks in the deployment that are in the <code>PENDING</code>
@@ -222,6 +227,7 @@ namespace Model
      */
     inline Deployment& WithPendingCount(int value) { SetPendingCount(value); return *this;}
 
+
     /**
      * <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
      * status.</p>
@@ -239,6 +245,7 @@ namespace Model
      * status.</p>
      */
     inline Deployment& WithRunningCount(int value) { SetRunningCount(value); return *this;}
+
 
     /**
      * <p>The Unix timestamp for when the service was created.</p>
@@ -264,6 +271,7 @@ namespace Model
      * <p>The Unix timestamp for when the service was created.</p>
      */
     inline Deployment& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The Unix timestamp for when the service was last updated.</p>
@@ -291,20 +299,28 @@ namespace Model
     inline Deployment& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;
+
     int m_desiredCount;
     bool m_desiredCountHasBeenSet;
+
     int m_pendingCount;
     bool m_pendingCountHasBeenSet;
+
     int m_runningCount;
     bool m_runningCountHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet;
   };

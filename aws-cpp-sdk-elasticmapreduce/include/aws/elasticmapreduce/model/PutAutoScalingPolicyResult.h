@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     PutAutoScalingPolicyResult();
-    PutAutoScalingPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAutoScalingPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutAutoScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutAutoScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Specifies the ID of a cluster. The instance group to which the automatic
@@ -84,6 +85,7 @@ namespace Model
      */
     inline PutAutoScalingPolicyResult& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>Specifies the ID of the instance group to which the scaling policy is
      * applied.</p>
@@ -126,6 +128,7 @@ namespace Model
      */
     inline PutAutoScalingPolicyResult& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
 
+
     /**
      * <p>The automatic scaling policy definition.</p>
      */
@@ -152,8 +155,11 @@ namespace Model
     inline PutAutoScalingPolicyResult& WithAutoScalingPolicy(AutoScalingPolicyDescription&& value) { SetAutoScalingPolicy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clusterId;
+
     Aws::String m_instanceGroupId;
+
     AutoScalingPolicyDescription m_autoScalingPolicy;
   };
 

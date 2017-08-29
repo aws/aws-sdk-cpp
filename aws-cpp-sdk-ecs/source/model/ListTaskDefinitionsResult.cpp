@@ -30,12 +30,12 @@ ListTaskDefinitionsResult::ListTaskDefinitionsResult()
 {
 }
 
-ListTaskDefinitionsResult::ListTaskDefinitionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListTaskDefinitionsResult::ListTaskDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListTaskDefinitionsResult& ListTaskDefinitionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListTaskDefinitionsResult& ListTaskDefinitionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("taskDefinitionArns"))

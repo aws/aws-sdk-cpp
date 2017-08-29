@@ -45,6 +45,7 @@ namespace Model
     TableToReload& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The schema name of the table to be reloaded.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The schema name of the table to be reloaded.</p>
      */
     inline TableToReload& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+
 
     /**
      * <p>The table name of the table to be reloaded.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline TableToReload& WithTableName(const char* value) { SetTableName(value); return *this;}
 
   private:
+
     Aws::String m_schemaName;
     bool m_schemaNameHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
   };

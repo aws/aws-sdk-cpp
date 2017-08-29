@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be the identifier for a valid automated snapshot whose state is
@@ -89,6 +90,7 @@ namespace Model
      * <code>available</code>.</p> </li> </ul>
      */
     inline CopyClusterSnapshotRequest& WithSourceSnapshotIdentifier(const char* value) { SetSourceSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
@@ -152,6 +154,7 @@ namespace Model
      * </li> </ul>
      */
     inline CopyClusterSnapshotRequest& WithSourceSnapshotClusterIdentifier(const char* value) { SetSourceSnapshotClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul>
@@ -224,10 +227,13 @@ namespace Model
     inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(const char* value) { SetTargetSnapshotIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_sourceSnapshotIdentifier;
     bool m_sourceSnapshotIdentifierHasBeenSet;
+
     Aws::String m_sourceSnapshotClusterIdentifier;
     bool m_sourceSnapshotClusterIdentifierHasBeenSet;
+
     Aws::String m_targetSnapshotIdentifier;
     bool m_targetSnapshotIdentifierHasBeenSet;
   };

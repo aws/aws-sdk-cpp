@@ -46,6 +46,7 @@ namespace Model
     DeploymentReadyOption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Information about when to reroute traffic from an original environment to a
      * replacement environment in a blue/green deployment.</p> <ul> <li>
@@ -106,6 +107,7 @@ namespace Model
      */
     inline DeploymentReadyOption& WithActionOnTimeout(DeploymentReadyAction&& value) { SetActionOnTimeout(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of minutes to wait before the status of a blue/green deployment
      * changed to Stopped if rerouting is not started manually. Applies only to the
@@ -128,8 +130,10 @@ namespace Model
     inline DeploymentReadyOption& WithWaitTimeInMinutes(int value) { SetWaitTimeInMinutes(value); return *this;}
 
   private:
+
     DeploymentReadyAction m_actionOnTimeout;
     bool m_actionOnTimeoutHasBeenSet;
+
     int m_waitTimeInMinutes;
     bool m_waitTimeInMinutesHasBeenSet;
   };

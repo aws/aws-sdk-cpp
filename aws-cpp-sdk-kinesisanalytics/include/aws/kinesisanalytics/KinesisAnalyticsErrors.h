@@ -55,7 +55,7 @@ enum class KinesisAnalyticsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CODE_VALIDATION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CODE_VALIDATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONCURRENT_MODIFICATION,
   INVALID_APPLICATION_CONFIGURATION,
   INVALID_ARGUMENT,
@@ -66,7 +66,7 @@ enum class KinesisAnalyticsErrors
 };
 namespace KinesisAnalyticsErrorMapper
 {
-  AWS_KINESISANALYTICS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_KINESISANALYTICS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace KinesisAnalytics

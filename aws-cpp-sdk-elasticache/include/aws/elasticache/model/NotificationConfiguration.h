@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
      */
     inline NotificationConfiguration& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+
 
     /**
      * <p>The current state of the topic.</p>
@@ -121,8 +123,10 @@ namespace Model
     inline NotificationConfiguration& WithTopicStatus(const char* value) { SetTopicStatus(value); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_topicStatus;
     bool m_topicStatusHasBeenSet;
   };

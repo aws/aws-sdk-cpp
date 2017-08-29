@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     RequestUploadCredentialsResult();
-    RequestUploadCredentialsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RequestUploadCredentialsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RequestUploadCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RequestUploadCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>AWS credentials required when uploading a game build to the storage location.
@@ -83,6 +84,7 @@ namespace Model
      */
     inline RequestUploadCredentialsResult& WithUploadCredentials(AwsCredentials&& value) { SetUploadCredentials(std::move(value)); return *this;}
 
+
     /**
      * <p>Amazon S3 path and key, identifying where the game build files are
      * stored.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline RequestUploadCredentialsResult& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 
   private:
+
     AwsCredentials m_uploadCredentials;
+
     S3Location m_storageLocation;
   };
 

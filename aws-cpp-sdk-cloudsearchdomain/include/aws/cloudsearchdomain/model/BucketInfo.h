@@ -47,6 +47,7 @@ namespace Model
     BucketInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of the calculated facet values and counts.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
     inline BucketInfo& AddBuckets(Bucket&& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Bucket> m_buckets;
     bool m_bucketsHasBeenSet;
   };

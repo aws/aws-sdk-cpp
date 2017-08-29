@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The client token used to request idempotent operations.
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline CreateFunctionDefinitionVersionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
+
     /**
      * the unique Id of the lambda definition
      */
@@ -110,6 +112,7 @@ namespace Model
      * the unique Id of the lambda definition
      */
     inline CreateFunctionDefinitionVersionRequest& WithFunctionDefinitionId(const char* value) { SetFunctionDefinitionId(value); return *this;}
+
 
     /**
      * Lambda functions in this function definition version.
@@ -147,10 +150,13 @@ namespace Model
     inline CreateFunctionDefinitionVersionRequest& AddFunctions(Function&& value) { m_functionsHasBeenSet = true; m_functions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_amznClientToken;
     bool m_amznClientTokenHasBeenSet;
+
     Aws::String m_functionDefinitionId;
     bool m_functionDefinitionIdHasBeenSet;
+
     Aws::Vector<Function> m_functions;
     bool m_functionsHasBeenSet;
   };

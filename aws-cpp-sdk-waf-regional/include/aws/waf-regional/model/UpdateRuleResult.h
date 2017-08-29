@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateRuleResult();
-    UpdateRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -91,6 +92,7 @@ namespace Model
     inline UpdateRuleResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_changeToken;
   };
 

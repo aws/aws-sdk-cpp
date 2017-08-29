@@ -48,6 +48,7 @@ namespace Model
     ScheduleLambdaFunctionDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A string that identifies the Lambda function execution in the event
      * history.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ScheduleLambdaFunctionDecisionAttributes& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name, or ARN, of the Lambda function to schedule.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The name, or ARN, of the Lambda function to schedule.</p>
      */
     inline ScheduleLambdaFunctionDecisionAttributes& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The data attached to the event that the decider can use in subsequent
@@ -167,6 +170,7 @@ namespace Model
      */
     inline ScheduleLambdaFunctionDecisionAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 
+
     /**
      * <p>The optional input data to be supplied to the Lambda function.</p>
      */
@@ -201,6 +205,7 @@ namespace Model
      * <p>The optional input data to be supplied to the Lambda function.</p>
      */
     inline ScheduleLambdaFunctionDecisionAttributes& WithInput(const char* value) { SetInput(value); return *this;}
+
 
     /**
      * <p>The timeout value, in seconds, after which the Lambda function is considered
@@ -252,14 +257,19 @@ namespace Model
     inline ScheduleLambdaFunctionDecisionAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_control;
     bool m_controlHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     Aws::String m_startToCloseTimeout;
     bool m_startToCloseTimeoutHasBeenSet;
   };

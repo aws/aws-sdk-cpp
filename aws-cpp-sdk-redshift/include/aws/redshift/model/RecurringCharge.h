@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The amount charged per the period of time specified by the recurring charge
      * frequency.</p>
@@ -65,6 +66,7 @@ namespace Model
      * frequency.</p>
      */
     inline RecurringCharge& WithRecurringChargeAmount(double value) { SetRecurringChargeAmount(value); return *this;}
+
 
     /**
      * <p>The frequency at which the recurring charge amount is applied.</p>
@@ -102,8 +104,10 @@ namespace Model
     inline RecurringCharge& WithRecurringChargeFrequency(const char* value) { SetRecurringChargeFrequency(value); return *this;}
 
   private:
+
     double m_recurringChargeAmount;
     bool m_recurringChargeAmountHasBeenSet;
+
     Aws::String m_recurringChargeFrequency;
     bool m_recurringChargeFrequencyHasBeenSet;
   };

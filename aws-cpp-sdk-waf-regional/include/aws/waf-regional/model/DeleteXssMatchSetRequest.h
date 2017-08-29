@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to
      * delete. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and
@@ -89,6 +90,7 @@ namespace Model
      */
     inline DeleteXssMatchSetRequest& WithXssMatchSetId(const char* value) { SetXssMatchSetId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -125,8 +127,10 @@ namespace Model
     inline DeleteXssMatchSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_xssMatchSetId;
     bool m_xssMatchSetIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
   };

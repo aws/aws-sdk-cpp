@@ -50,6 +50,7 @@ namespace Model
     InstanceSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The deployment ID.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline InstanceSummary& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
+
     /**
      * <p>The instance ID.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline InstanceSummary& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
@@ -175,6 +178,7 @@ namespace Model
      */
     inline InstanceSummary& WithStatus(InstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>A timestamp indicating when the instance information was last updated.</p>
      */
@@ -199,6 +203,7 @@ namespace Model
      * <p>A timestamp indicating when the instance information was last updated.</p>
      */
     inline InstanceSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of lifecycle events for this instance.</p>
@@ -234,6 +239,7 @@ namespace Model
      * <p>A list of lifecycle events for this instance.</p>
      */
     inline InstanceSummary& AddLifecycleEvents(LifecycleEvent&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Information about which environment an instance belongs to in a blue/green
@@ -276,16 +282,22 @@ namespace Model
     inline InstanceSummary& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     InstanceStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
+
     Aws::Vector<LifecycleEvent> m_lifecycleEvents;
     bool m_lifecycleEventsHasBeenSet;
+
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
   };

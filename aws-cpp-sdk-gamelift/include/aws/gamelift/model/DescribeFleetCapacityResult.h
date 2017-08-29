@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeFleetCapacityResult();
-    DescribeFleetCapacityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFleetCapacityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFleetCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFleetCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of objects containing capacity information for each requested
@@ -97,6 +98,7 @@ namespace Model
      * fleets.</p>
      */
     inline DescribeFleetCapacityResult& AddFleetCapacity(FleetCapacity&& value) { m_fleetCapacity.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -148,7 +150,9 @@ namespace Model
     inline DescribeFleetCapacityResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<FleetCapacity> m_fleetCapacity;
+
     Aws::String m_nextToken;
   };
 

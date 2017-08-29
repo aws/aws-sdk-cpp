@@ -39,6 +39,7 @@ namespace Model
     TestInvokeMethodRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline TestInvokeMethodRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>Specifies a test invoke method request's resource ID.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline TestInvokeMethodRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>Specifies a test invoke method request's HTTP method.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      * <p>Specifies a test invoke method request's HTTP method.</p>
      */
     inline TestInvokeMethodRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
+
 
     /**
      * <p>The URI path, including query string, of the simulated invocation request.
@@ -185,6 +189,7 @@ namespace Model
      * Use this to specify path parameters and query string parameters.</p>
      */
     inline TestInvokeMethodRequest& WithPathWithQueryString(const char* value) { SetPathWithQueryString(value); return *this;}
+
 
     /**
      * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
@@ -234,6 +239,7 @@ namespace Model
      * back-end endpoint.</p>
      */
     inline TestInvokeMethodRequest& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
+
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
@@ -307,6 +313,7 @@ namespace Model
      */
     inline TestInvokeMethodRequest& AddStageVariables(const char* key, const char* value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, value); return *this; }
 
+
     /**
      * <p>The simulated request body of an incoming invocation request.</p>
      */
@@ -341,6 +348,7 @@ namespace Model
      * <p>The simulated request body of an incoming invocation request.</p>
      */
     inline TestInvokeMethodRequest& WithRequestBody(const char* value) { SetRequestBody(value); return *this;}
+
 
     /**
      * <p>A key-value map of headers to simulate an incoming invocation request.</p>
@@ -403,20 +411,28 @@ namespace Model
     inline TestInvokeMethodRequest& AddRequestHeaders(const char* key, const char* value) { m_requestHeadersHasBeenSet = true; m_requestHeaders.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
+
     Aws::String m_pathWithQueryString;
     bool m_pathWithQueryStringHasBeenSet;
+
     Aws::String m_clientCertificateId;
     bool m_clientCertificateIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_stageVariables;
     bool m_stageVariablesHasBeenSet;
+
     Aws::String m_requestBody;
     bool m_requestBodyHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_requestHeaders;
     bool m_requestHeadersHasBeenSet;
   };

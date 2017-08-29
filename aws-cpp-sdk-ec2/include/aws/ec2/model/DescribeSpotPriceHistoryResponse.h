@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeSpotPriceHistoryResponse();
-    DescribeSpotPriceHistoryResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSpotPriceHistoryResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotPriceHistoryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotPriceHistoryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The token required to retrieve the next set of results. This value is
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeSpotPriceHistoryResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The historical Spot prices.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeSpotPriceHistoryResponse& AddSpotPriceHistory(SpotPrice&& value) { m_spotPriceHistory.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeSpotPriceHistoryResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<SpotPrice> m_spotPriceHistory;
+
     ResponseMetadata m_responseMetadata;
   };
 

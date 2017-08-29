@@ -47,6 +47,7 @@ namespace Model
     AssetAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The schema version of this data type.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>The schema version of this data type.</p>
      */
     inline AssetAttributes& WithSchemaVersion(int value) { SetSchemaVersion(value); return *this;}
+
 
     /**
      * <p>The ID of the agent that is installed on the EC2 instance where the finding
@@ -104,6 +106,7 @@ namespace Model
      */
     inline AssetAttributes& WithAgentId(const char* value) { SetAgentId(value); return *this;}
 
+
     /**
      * <p>The Auto Scaling group of the EC2 instance where the finding is
      * generated.</p>
@@ -145,6 +148,7 @@ namespace Model
      * generated.</p>
      */
     inline AssetAttributes& WithAutoScalingGroup(const char* value) { SetAutoScalingGroup(value); return *this;}
+
 
     /**
      * <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2
@@ -188,6 +192,7 @@ namespace Model
      */
     inline AssetAttributes& WithAmiId(const char* value) { SetAmiId(value); return *this;}
 
+
     /**
      * <p>The hostname of the EC2 instance where the finding is generated.</p>
      */
@@ -222,6 +227,7 @@ namespace Model
      * <p>The hostname of the EC2 instance where the finding is generated.</p>
      */
     inline AssetAttributes& WithHostname(const char* value) { SetHostname(value); return *this;}
+
 
     /**
      * <p>The list of IP v4 addresses of the EC2 instance where the finding is
@@ -272,16 +278,22 @@ namespace Model
     inline AssetAttributes& AddIpv4Addresses(const char* value) { m_ipv4AddressesHasBeenSet = true; m_ipv4Addresses.push_back(value); return *this; }
 
   private:
+
     int m_schemaVersion;
     bool m_schemaVersionHasBeenSet;
+
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet;
+
     Aws::String m_autoScalingGroup;
     bool m_autoScalingGroupHasBeenSet;
+
     Aws::String m_amiId;
     bool m_amiIdHasBeenSet;
+
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
     Aws::Vector<Aws::String> m_ipv4Addresses;
     bool m_ipv4AddressesHasBeenSet;
   };

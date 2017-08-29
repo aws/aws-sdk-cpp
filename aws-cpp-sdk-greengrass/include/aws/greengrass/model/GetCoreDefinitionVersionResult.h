@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetCoreDefinitionVersionResult();
-    GetCoreDefinitionVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCoreDefinitionVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCoreDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCoreDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the core definition version.
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetCoreDefinitionVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * Timestamp of when the core definition version was created.
      */
@@ -112,6 +114,7 @@ namespace Model
      */
     inline GetCoreDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
+
     /**
      * Information on definition
      */
@@ -136,6 +139,7 @@ namespace Model
      * Information on definition
      */
     inline GetCoreDefinitionVersionResult& WithDefinition(CoreDefinitionVersion&& value) { SetDefinition(std::move(value)); return *this;}
+
 
     /**
      * Id of the core definition the version belongs to.
@@ -171,6 +175,7 @@ namespace Model
      * Id of the core definition the version belongs to.
      */
     inline GetCoreDefinitionVersionResult& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Version of the core definition version.
@@ -208,10 +213,15 @@ namespace Model
     inline GetCoreDefinitionVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_arn;
+
     Aws::String m_creationTimestamp;
+
     CoreDefinitionVersion m_definition;
+
     Aws::String m_id;
+
     Aws::String m_version;
   };
 

@@ -56,6 +56,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the snapshot copy grant.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      * <p>The name of the snapshot copy grant.</p>
      */
     inline SnapshotCopyGrant& WithSnapshotCopyGrantName(const char* value) { SetSnapshotCopyGrantName(value); return *this;}
+
 
     /**
      * <p>The unique identifier of the customer master key (CMK) in AWS KMS to which
@@ -133,6 +135,7 @@ namespace Model
      */
     inline SnapshotCopyGrant& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>A list of tag instances.</p>
      */
@@ -169,10 +172,13 @@ namespace Model
     inline SnapshotCopyGrant& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_snapshotCopyGrantName;
     bool m_snapshotCopyGrantNameHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

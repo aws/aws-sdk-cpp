@@ -30,12 +30,12 @@ ListAvailableZonesResult::ListAvailableZonesResult()
 {
 }
 
-ListAvailableZonesResult::ListAvailableZonesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListAvailableZonesResult::ListAvailableZonesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListAvailableZonesResult& ListAvailableZonesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListAvailableZonesResult& ListAvailableZonesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AZList"))

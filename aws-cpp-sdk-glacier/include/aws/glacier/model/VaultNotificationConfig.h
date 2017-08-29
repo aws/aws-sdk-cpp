@@ -47,6 +47,7 @@ namespace Model
     VaultNotificationConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
      * Name (ARN).</p>
@@ -88,6 +89,7 @@ namespace Model
      * Name (ARN).</p>
      */
     inline VaultNotificationConfig& WithSNSTopic(const char* value) { SetSNSTopic(value); return *this;}
+
 
     /**
      * <p>A list of one or more events for which Amazon Glacier will send a
@@ -138,8 +140,10 @@ namespace Model
     inline VaultNotificationConfig& AddEvents(const char* value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
   private:
+
     Aws::String m_sNSTopic;
     bool m_sNSTopicHasBeenSet;
+
     Aws::Vector<Aws::String> m_events;
     bool m_eventsHasBeenSet;
   };

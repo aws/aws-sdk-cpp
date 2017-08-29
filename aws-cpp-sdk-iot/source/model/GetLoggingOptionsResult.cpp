@@ -31,13 +31,13 @@ GetLoggingOptionsResult::GetLoggingOptionsResult() :
 {
 }
 
-GetLoggingOptionsResult::GetLoggingOptionsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetLoggingOptionsResult::GetLoggingOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_logLevel(LogLevel::NOT_SET)
 {
   *this = result;
 }
 
-GetLoggingOptionsResult& GetLoggingOptionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetLoggingOptionsResult& GetLoggingOptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("roleArn"))

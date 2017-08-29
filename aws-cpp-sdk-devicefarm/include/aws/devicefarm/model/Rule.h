@@ -47,6 +47,7 @@ namespace Model
     Rule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The rule's stringified attribute. For example, specify the value as
      * <code>"\"abc\""</code>.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The
@@ -102,6 +103,7 @@ namespace Model
      */
     inline Rule& WithAttribute(DeviceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
 
+
     /**
      * <p>The rule's operator.</p> <ul> <li> <p>EQUALS: The equals operator.</p> </li>
      * <li> <p>GREATER_THAN: The greater-than operator.</p> </li> <li> <p>IN: The in
@@ -147,6 +149,7 @@ namespace Model
      */
     inline Rule& WithOperator(RuleOperator&& value) { SetOperator(std::move(value)); return *this;}
 
+
     /**
      * <p>The rule's value.</p>
      */
@@ -183,10 +186,13 @@ namespace Model
     inline Rule& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     DeviceAttribute m_attribute;
     bool m_attributeHasBeenSet;
+
     RuleOperator m_operator;
     bool m_operatorHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

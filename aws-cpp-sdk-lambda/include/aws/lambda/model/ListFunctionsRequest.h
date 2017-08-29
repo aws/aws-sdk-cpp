@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Optional string. If not specified, will return only regular function versions
      * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
@@ -114,6 +115,7 @@ namespace Model
      */
     inline ListFunctionsRequest& WithMasterRegion(const char* value) { SetMasterRegion(value); return *this;}
 
+
     /**
      * <p>Optional string. If not specified, only the unqualified functions ARNs
      * (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p>
@@ -153,6 +155,7 @@ namespace Model
      * which will have fully qualified ARNs (Amazon Resource Names).</p>
      */
     inline ListFunctionsRequest& WithFunctionVersion(FunctionVersion&& value) { SetFunctionVersion(std::move(value)); return *this;}
+
 
     /**
      * <p>Optional string. An opaque pagination token returned from a previous
@@ -203,6 +206,7 @@ namespace Model
      */
     inline ListFunctionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Optional integer. Specifies the maximum number of AWS Lambda functions to
      * return in response. This parameter value must be greater than 0.</p>
@@ -222,12 +226,16 @@ namespace Model
     inline ListFunctionsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_masterRegion;
     bool m_masterRegionHasBeenSet;
+
     FunctionVersion m_functionVersion;
     bool m_functionVersionHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

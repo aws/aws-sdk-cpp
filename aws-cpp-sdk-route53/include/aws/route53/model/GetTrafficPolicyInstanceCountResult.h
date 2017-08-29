@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetTrafficPolicyInstanceCountResult();
-    GetTrafficPolicyInstanceCountResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetTrafficPolicyInstanceCountResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetTrafficPolicyInstanceCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetTrafficPolicyInstanceCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The number of traffic policy instances that are associated with the current
@@ -65,6 +66,7 @@ namespace Model
     inline GetTrafficPolicyInstanceCountResult& WithTrafficPolicyInstanceCount(int value) { SetTrafficPolicyInstanceCount(value); return *this;}
 
   private:
+
     int m_trafficPolicyInstanceCount;
   };
 

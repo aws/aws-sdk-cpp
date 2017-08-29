@@ -58,6 +58,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The user-supplied identifier of the cache cluster. This identifier is a
      * unique key that identifies a cache cluster.</p>
@@ -99,6 +100,7 @@ namespace Model
      * unique key that identifies a cache cluster.</p>
      */
     inline CacheCluster& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+
 
     /**
      * <p>Represents a Memcached cluster endpoint which, if Automatic Discovery is
@@ -145,6 +147,7 @@ namespace Model
      */
     inline CacheCluster& WithConfigurationEndpoint(Endpoint&& value) { SetConfigurationEndpoint(std::move(value)); return *this;}
 
+
     /**
      * <p>The URL of the web page where you can download the latest ElastiCache client
      * library.</p>
@@ -186,6 +189,7 @@ namespace Model
      * library.</p>
      */
     inline CacheCluster& WithClientDownloadLandingPage(const char* value) { SetClientDownloadLandingPage(value); return *this;}
+
 
     /**
      * <p>The name of the compute and memory capacity node type for the cache
@@ -432,6 +436,7 @@ namespace Model
      */
     inline CacheCluster& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
+
     /**
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
      * to be used for this cache cluster.</p>
@@ -474,6 +479,7 @@ namespace Model
      */
     inline CacheCluster& WithEngine(const char* value) { SetEngine(value); return *this;}
 
+
     /**
      * <p>The version of the cache engine that is used in this cache cluster.</p>
      */
@@ -508,6 +514,7 @@ namespace Model
      * <p>The version of the cache engine that is used in this cache cluster.</p>
      */
     inline CacheCluster& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
 
     /**
      * <p>The current state of this cache cluster, one of the following values:
@@ -572,6 +579,7 @@ namespace Model
      */
     inline CacheCluster& WithCacheClusterStatus(const char* value) { SetCacheClusterStatus(value); return *this;}
 
+
     /**
      * <p>The number of cache nodes in the cache cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
@@ -592,6 +600,7 @@ namespace Model
      * between 1 and 20.</p>
      */
     inline CacheCluster& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
+
 
     /**
      * <p>The name of the Availability Zone in which the cache cluster is located or
@@ -635,6 +644,7 @@ namespace Model
      */
     inline CacheCluster& WithPreferredAvailabilityZone(const char* value) { SetPreferredAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The date and time when the cache cluster was created.</p>
      */
@@ -659,6 +669,7 @@ namespace Model
      * <p>The date and time when the cache cluster was created.</p>
      */
     inline CacheCluster& WithCacheClusterCreateTime(Aws::Utils::DateTime&& value) { SetCacheClusterCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
@@ -744,6 +755,7 @@ namespace Model
      */
     inline CacheCluster& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     
     inline const PendingModifiedValues& GetPendingModifiedValues() const{ return m_pendingModifiedValues; }
 
@@ -759,6 +771,7 @@ namespace Model
     
     inline CacheCluster& WithPendingModifiedValues(PendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
 
+
     
     inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
 
@@ -773,6 +786,7 @@ namespace Model
 
     
     inline CacheCluster& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of cache security group elements, composed of name and status
@@ -816,6 +830,7 @@ namespace Model
      */
     inline CacheCluster& AddCacheSecurityGroups(CacheSecurityGroupMembership&& value) { m_cacheSecurityGroupsHasBeenSet = true; m_cacheSecurityGroups.push_back(std::move(value)); return *this; }
 
+
     
     inline const CacheParameterGroupStatus& GetCacheParameterGroup() const{ return m_cacheParameterGroup; }
 
@@ -830,6 +845,7 @@ namespace Model
 
     
     inline CacheCluster& WithCacheParameterGroup(CacheParameterGroupStatus&& value) { SetCacheParameterGroup(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the cache subnet group associated with the cache cluster.</p>
@@ -866,6 +882,7 @@ namespace Model
      */
     inline CacheCluster& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>A list of cache nodes that are members of the cache cluster.</p>
      */
@@ -901,6 +918,7 @@ namespace Model
      */
     inline CacheCluster& AddCacheNodes(CacheNode&& value) { m_cacheNodesHasBeenSet = true; m_cacheNodes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>This parameter is currently disabled.</p>
      */
@@ -915,6 +933,7 @@ namespace Model
      * <p>This parameter is currently disabled.</p>
      */
     inline CacheCluster& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>A list of VPC Security Groups associated with the cache cluster.</p>
@@ -950,6 +969,7 @@ namespace Model
      * <p>A list of VPC Security Groups associated with the cache cluster.</p>
      */
     inline CacheCluster& AddSecurityGroups(SecurityGroupMembership&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The replication group to which this cache cluster belongs. If this field is
@@ -993,6 +1013,7 @@ namespace Model
      */
     inline CacheCluster& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 
+
     /**
      * <p>The number of days for which ElastiCache retains automatic cache cluster
      * snapshots before deleting them. For example, if you set
@@ -1022,6 +1043,7 @@ namespace Model
      * </important>
      */
     inline CacheCluster& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
+
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -1066,48 +1088,70 @@ namespace Model
     inline CacheCluster& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
   private:
+
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
+
     Endpoint m_configurationEndpoint;
     bool m_configurationEndpointHasBeenSet;
+
     Aws::String m_clientDownloadLandingPage;
     bool m_clientDownloadLandingPageHasBeenSet;
+
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_cacheClusterStatus;
     bool m_cacheClusterStatusHasBeenSet;
+
     int m_numCacheNodes;
     bool m_numCacheNodesHasBeenSet;
+
     Aws::String m_preferredAvailabilityZone;
     bool m_preferredAvailabilityZoneHasBeenSet;
+
     Aws::Utils::DateTime m_cacheClusterCreateTime;
     bool m_cacheClusterCreateTimeHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     PendingModifiedValues m_pendingModifiedValues;
     bool m_pendingModifiedValuesHasBeenSet;
+
     NotificationConfiguration m_notificationConfiguration;
     bool m_notificationConfigurationHasBeenSet;
+
     Aws::Vector<CacheSecurityGroupMembership> m_cacheSecurityGroups;
     bool m_cacheSecurityGroupsHasBeenSet;
+
     CacheParameterGroupStatus m_cacheParameterGroup;
     bool m_cacheParameterGroupHasBeenSet;
+
     Aws::String m_cacheSubnetGroupName;
     bool m_cacheSubnetGroupNameHasBeenSet;
+
     Aws::Vector<CacheNode> m_cacheNodes;
     bool m_cacheNodesHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     Aws::Vector<SecurityGroupMembership> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
     int m_snapshotRetentionLimit;
     bool m_snapshotRetentionLimitHasBeenSet;
+
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;
   };

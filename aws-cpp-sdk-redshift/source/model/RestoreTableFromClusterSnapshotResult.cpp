@@ -31,12 +31,12 @@ RestoreTableFromClusterSnapshotResult::RestoreTableFromClusterSnapshotResult()
 {
 }
 
-RestoreTableFromClusterSnapshotResult::RestoreTableFromClusterSnapshotResult(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreTableFromClusterSnapshotResult::RestoreTableFromClusterSnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RestoreTableFromClusterSnapshotResult& RestoreTableFromClusterSnapshotResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreTableFromClusterSnapshotResult& RestoreTableFromClusterSnapshotResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

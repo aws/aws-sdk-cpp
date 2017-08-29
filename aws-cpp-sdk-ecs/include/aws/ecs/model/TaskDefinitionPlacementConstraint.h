@@ -50,6 +50,7 @@ namespace Model
     TaskDefinitionPlacementConstraint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of constraint. The <code>DistinctInstance</code> constraint ensures
      * that each task in a particular group is running on a different container
@@ -89,6 +90,7 @@ namespace Model
      * group of valid candidates.</p>
      */
     inline TaskDefinitionPlacementConstraint& WithType(TaskDefinitionPlacementConstraintType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>A cluster query language expression to apply to the constraint. For more
@@ -154,8 +156,10 @@ namespace Model
     inline TaskDefinitionPlacementConstraint& WithExpression(const char* value) { SetExpression(value); return *this;}
 
   private:
+
     TaskDefinitionPlacementConstraintType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_expression;
     bool m_expressionHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     TimeToLiveSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Indicates whether Time To Live is to be enabled (true) or disabled (false) on
      * the table.</p>
@@ -63,6 +64,7 @@ namespace Model
      * the table.</p>
      */
     inline TimeToLiveSpecification& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The name of the Time to Live attribute used to store the expiration time for
@@ -107,8 +109,10 @@ namespace Model
     inline TimeToLiveSpecification& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
   };

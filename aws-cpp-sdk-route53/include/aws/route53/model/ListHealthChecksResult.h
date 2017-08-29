@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListHealthChecksResult();
-    ListHealthChecksResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListHealthChecksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListHealthChecksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListHealthChecksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
@@ -90,6 +91,7 @@ namespace Model
      * health check that is associated with the current AWS account.</p>
      */
     inline ListHealthChecksResult& AddHealthChecks(HealthCheck&& value) { m_healthChecks.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>For the second and subsequent calls to <code>ListHealthChecks</code>,
@@ -140,6 +142,7 @@ namespace Model
      */
     inline ListHealthChecksResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A flag that indicates whether there are more health checks to be listed. If
      * the response was truncated, you can get the next group of health checks by
@@ -163,6 +166,7 @@ namespace Model
      * value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline ListHealthChecksResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
@@ -220,6 +224,7 @@ namespace Model
      */
     inline ListHealthChecksResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
      * call to <code>ListHealthChecks</code> that produced the current response.</p>
@@ -263,10 +268,15 @@ namespace Model
     inline ListHealthChecksResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::Vector<HealthCheck> m_healthChecks;
+
     Aws::String m_marker;
+
     bool m_isTruncated;
+
     Aws::String m_nextMarker;
+
     Aws::String m_maxItems;
   };
 

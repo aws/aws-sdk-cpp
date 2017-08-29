@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeEnvironmentManagedActionsResult();
-    DescribeEnvironmentManagedActionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEnvironmentManagedActionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEnvironmentManagedActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEnvironmentManagedActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of upcoming and in-progress managed actions.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeEnvironmentManagedActionsResult& AddManagedActions(ManagedAction&& value) { m_managedActions.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeEnvironmentManagedActionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ManagedAction> m_managedActions;
+
     ResponseMetadata m_responseMetadata;
   };
 

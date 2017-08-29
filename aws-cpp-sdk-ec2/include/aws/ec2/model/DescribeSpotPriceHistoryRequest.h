@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
@@ -172,6 +173,7 @@ namespace Model
      */
     inline DescribeSpotPriceHistoryRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Filters the results by the specified Availability Zone.</p>
      */
@@ -207,6 +209,7 @@ namespace Model
      */
     inline DescribeSpotPriceHistoryRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -230,6 +233,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeSpotPriceHistoryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The date and time, up to the current date, from which to stop retrieving the
@@ -265,6 +269,7 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline DescribeSpotPriceHistoryRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Filters the results by the specified instance types. Note that T2 and HS1
@@ -308,6 +313,7 @@ namespace Model
      */
     inline DescribeSpotPriceHistoryRequest& AddInstanceTypes(InstanceType&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of results to return in a single call. Specify a value
      * between 1 and 1000. The default value is 1000. To retrieve the remaining
@@ -328,6 +334,7 @@ namespace Model
      * results, make another call with the returned <code>NextToken</code> value.</p>
      */
     inline DescribeSpotPriceHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of results.</p>
@@ -363,6 +370,7 @@ namespace Model
      * <p>The token for the next set of results.</p>
      */
     inline DescribeSpotPriceHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>Filters the results by the specified basic product descriptions.</p>
@@ -404,6 +412,7 @@ namespace Model
      */
     inline DescribeSpotPriceHistoryRequest& AddProductDescriptions(const char* value) { m_productDescriptionsHasBeenSet = true; m_productDescriptions.push_back(value); return *this; }
 
+
     /**
      * <p>The date and time, up to the past 90 days, from which to start retrieving the
      * price history data, in UTC format (for example,
@@ -440,22 +449,31 @@ namespace Model
     inline DescribeSpotPriceHistoryRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::Vector<InstanceType> m_instanceTypes;
     bool m_instanceTypesHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::Vector<Aws::String> m_productDescriptions;
     bool m_productDescriptionsHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
   };

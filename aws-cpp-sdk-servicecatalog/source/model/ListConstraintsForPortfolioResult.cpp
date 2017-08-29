@@ -30,12 +30,12 @@ ListConstraintsForPortfolioResult::ListConstraintsForPortfolioResult()
 {
 }
 
-ListConstraintsForPortfolioResult::ListConstraintsForPortfolioResult(const AmazonWebServiceResult<JsonValue>& result)
+ListConstraintsForPortfolioResult::ListConstraintsForPortfolioResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListConstraintsForPortfolioResult& ListConstraintsForPortfolioResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListConstraintsForPortfolioResult& ListConstraintsForPortfolioResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ConstraintDetails"))

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     StartInstancesResponse();
-    StartInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    StartInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    StartInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    StartInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more started instances.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline StartInstancesResponse& AddStartingInstances(InstanceStateChange&& value) { m_startingInstances.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline StartInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<InstanceStateChange> m_startingInstances;
+
     ResponseMetadata m_responseMetadata;
   };
 

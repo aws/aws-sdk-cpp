@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the instance profile to update.</p> <p>This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
@@ -93,6 +94,7 @@ namespace Model
      * spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline AddRoleToInstanceProfileRequest& WithInstanceProfileName(const char* value) { SetInstanceProfileName(value); return *this;}
+
 
     /**
      * <p>The name of the role to add.</p> <p>This parameter allows (per its <a
@@ -151,8 +153,10 @@ namespace Model
     inline AddRoleToInstanceProfileRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
   private:
+
     Aws::String m_instanceProfileName;
     bool m_instanceProfileNameHasBeenSet;
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
   };

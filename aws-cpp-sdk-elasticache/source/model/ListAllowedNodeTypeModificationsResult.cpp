@@ -31,12 +31,12 @@ ListAllowedNodeTypeModificationsResult::ListAllowedNodeTypeModificationsResult()
 {
 }
 
-ListAllowedNodeTypeModificationsResult::ListAllowedNodeTypeModificationsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListAllowedNodeTypeModificationsResult::ListAllowedNodeTypeModificationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListAllowedNodeTypeModificationsResult& ListAllowedNodeTypeModificationsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListAllowedNodeTypeModificationsResult& ListAllowedNodeTypeModificationsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

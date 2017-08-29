@@ -55,7 +55,7 @@ enum class CodeDeployErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALARMS_LIMIT_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALARMS_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   APPLICATION_ALREADY_EXISTS,
   APPLICATION_DOES_NOT_EXIST,
   APPLICATION_LIMIT_EXCEEDED,
@@ -139,7 +139,7 @@ enum class CodeDeployErrors
 };
 namespace CodeDeployErrorMapper
 {
-  AWS_CODEDEPLOY_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CODEDEPLOY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CodeDeploy

@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The encoded message that was returned with the response.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DecodeAuthorizationMessageRequest& WithEncodedMessage(const char* value) { SetEncodedMessage(value); return *this;}
 
   private:
+
     Aws::String m_encodedMessage;
     bool m_encodedMessageHasBeenSet;
   };

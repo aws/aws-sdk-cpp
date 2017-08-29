@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     RegisterCACertificateResult();
-    RegisterCACertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterCACertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterCACertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterCACertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The CA certificate ARN.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The CA certificate ARN.</p>
      */
     inline RegisterCACertificateResult& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
 
     /**
      * <p>The CA certificate identifier.</p>
@@ -118,7 +120,9 @@ namespace Model
     inline RegisterCACertificateResult& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
+
     Aws::String m_certificateId;
   };
 

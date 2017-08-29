@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>customer-gateway-configuration</code> - The configuration information for
@@ -282,6 +283,7 @@ namespace Model
      */
     inline DescribeVpnConnectionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>One or more VPN connection IDs.</p> <p>Default: Describes your VPN
      * connections.</p>
@@ -330,6 +332,7 @@ namespace Model
      */
     inline DescribeVpnConnectionsRequest& AddVpnConnectionIds(const char* value) { m_vpnConnectionIdsHasBeenSet = true; m_vpnConnectionIds.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -355,10 +358,13 @@ namespace Model
     inline DescribeVpnConnectionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpnConnectionIds;
     bool m_vpnConnectionIdsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

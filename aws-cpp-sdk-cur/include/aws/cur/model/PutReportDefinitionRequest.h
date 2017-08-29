@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const ReportDefinition& GetReportDefinition() const{ return m_reportDefinition; }
 
@@ -55,6 +56,7 @@ namespace Model
     inline PutReportDefinitionRequest& WithReportDefinition(ReportDefinition&& value) { SetReportDefinition(std::move(value)); return *this;}
 
   private:
+
     ReportDefinition m_reportDefinition;
     bool m_reportDefinitionHasBeenSet;
   };

@@ -31,13 +31,13 @@ PollForActivityTaskResult::PollForActivityTaskResult() :
 {
 }
 
-PollForActivityTaskResult::PollForActivityTaskResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PollForActivityTaskResult::PollForActivityTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_startedEventId(0)
 {
   *this = result;
 }
 
-PollForActivityTaskResult& PollForActivityTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PollForActivityTaskResult& PollForActivityTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("taskToken"))

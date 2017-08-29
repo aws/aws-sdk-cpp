@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     BatchDeleteImageResult();
-    BatchDeleteImageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteImageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchDeleteImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchDeleteImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The image IDs of the deleted images.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The image IDs of the deleted images.</p>
      */
     inline BatchDeleteImageResult& AddImageIds(ImageIdentifier&& value) { m_imageIds.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline BatchDeleteImageResult& AddFailures(ImageFailure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ImageIdentifier> m_imageIds;
+
     Aws::Vector<ImageFailure> m_failures;
   };
 

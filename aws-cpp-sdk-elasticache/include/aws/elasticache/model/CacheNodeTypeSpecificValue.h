@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The cache node type for which this value applies.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The cache node type for which this value applies.</p>
      */
     inline CacheNodeTypeSpecificValue& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
+
 
     /**
      * <p>The value for the cache node type.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline CacheNodeTypeSpecificValue& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

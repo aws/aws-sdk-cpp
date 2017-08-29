@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the character set.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the character set.</p>
      */
     inline CharacterSet& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
+
 
     /**
      * <p>The description of the character set.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline CharacterSet& WithCharacterSetDescription(const char* value) { SetCharacterSetDescription(value); return *this;}
 
   private:
+
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
+
     Aws::String m_characterSetDescription;
     bool m_characterSetDescriptionHasBeenSet;
   };

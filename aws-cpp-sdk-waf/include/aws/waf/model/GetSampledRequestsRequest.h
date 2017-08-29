@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want
      * <code>GetSampledRequests</code> to return a sample of requests.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <code>GetSampledRequests</code> to return a sample of requests.</p>
      */
     inline GetSampledRequestsRequest& WithWebAclId(const char* value) { SetWebAclId(value); return *this;}
+
 
     /**
      * <p> <code>RuleId</code> is one of two values:</p> <ul> <li> <p>The
@@ -149,6 +151,7 @@ namespace Model
      */
     inline GetSampledRequestsRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 
+
     /**
      * <p>The start date and time and the end date and time of the range for which you
      * want <code>GetSampledRequests</code> to return a sample of requests. Specify the
@@ -189,6 +192,7 @@ namespace Model
      */
     inline GetSampledRequestsRequest& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of requests that you want AWS WAF to return from among the first
      * 5,000 requests that your AWS resource received during the time range. If your
@@ -214,12 +218,16 @@ namespace Model
     inline GetSampledRequestsRequest& WithMaxItems(long long value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_webAclId;
     bool m_webAclIdHasBeenSet;
+
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;
+
     TimeWindow m_timeWindow;
     bool m_timeWindowHasBeenSet;
+
     long long m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

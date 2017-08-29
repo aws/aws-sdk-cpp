@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetSlotTypesResult();
-    GetSlotTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSlotTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSlotTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSlotTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of objects, one for each slot type, that provides information such
@@ -84,6 +85,7 @@ namespace Model
      * as the name of the slot type, the version, and a description.</p>
      */
     inline GetSlotTypesResult& AddSlotTypes(SlotTypeMetadata&& value) { m_slotTypes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the response is truncated, it includes a pagination token that you can
@@ -128,7 +130,9 @@ namespace Model
     inline GetSlotTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<SlotTypeMetadata> m_slotTypes;
+
     Aws::String m_nextToken;
   };
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateParameterGroupResult();
-    UpdateParameterGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateParameterGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The parameter group that has been modified.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateParameterGroupResult& WithParameterGroup(ParameterGroup&& value) { SetParameterGroup(std::move(value)); return *this;}
 
   private:
+
     ParameterGroup m_parameterGroup;
   };
 

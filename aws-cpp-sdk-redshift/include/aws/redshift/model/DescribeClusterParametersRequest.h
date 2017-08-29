@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of a cluster parameter group for which to return details.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of a cluster parameter group for which to return details.</p>
      */
     inline DescribeClusterParametersRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+
 
     /**
      * <p>The parameter types to return. Specify <code>user</code> to show parameters
@@ -139,6 +141,7 @@ namespace Model
      */
     inline DescribeClusterParametersRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
+
     /**
      * <p>The maximum number of response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
@@ -168,6 +171,7 @@ namespace Model
      * maximum 100.</p>
      */
     inline DescribeClusterParametersRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -240,12 +244,16 @@ namespace Model
     inline DescribeClusterParametersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

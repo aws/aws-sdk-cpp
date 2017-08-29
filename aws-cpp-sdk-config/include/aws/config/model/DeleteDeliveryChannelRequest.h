@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the delivery channel to delete.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DeleteDeliveryChannelRequest& WithDeliveryChannelName(const char* value) { SetDeliveryChannelName(value); return *this;}
 
   private:
+
     Aws::String m_deliveryChannelName;
     bool m_deliveryChannelNameHasBeenSet;
   };

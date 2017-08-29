@@ -30,12 +30,12 @@ SetUserSettingsResult::SetUserSettingsResult()
 {
 }
 
-SetUserSettingsResult::SetUserSettingsResult(const AmazonWebServiceResult<JsonValue>& result)
+SetUserSettingsResult::SetUserSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SetUserSettingsResult& SetUserSettingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SetUserSettingsResult& SetUserSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

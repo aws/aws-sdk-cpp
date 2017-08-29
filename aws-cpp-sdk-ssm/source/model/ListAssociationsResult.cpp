@@ -30,12 +30,12 @@ ListAssociationsResult::ListAssociationsResult()
 {
 }
 
-ListAssociationsResult::ListAssociationsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListAssociationsResult::ListAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListAssociationsResult& ListAssociationsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListAssociationsResult& ListAssociationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Associations"))

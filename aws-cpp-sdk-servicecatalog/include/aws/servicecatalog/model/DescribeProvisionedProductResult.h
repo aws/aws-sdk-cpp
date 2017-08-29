@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeProvisionedProductResult();
-    DescribeProvisionedProductResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeProvisionedProductResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProvisionedProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProvisionedProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Detailed provisioned product information.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeProvisionedProductResult& WithProvisionedProductDetail(ProvisionedProductDetail&& value) { SetProvisionedProductDetail(std::move(value)); return *this;}
 
   private:
+
     ProvisionedProductDetail m_provisionedProductDetail;
   };
 

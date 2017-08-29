@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The 39-character ID for the cluster that you want to cancel, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline CancelClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
   };

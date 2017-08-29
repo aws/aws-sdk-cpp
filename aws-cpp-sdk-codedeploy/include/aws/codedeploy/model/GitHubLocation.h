@@ -46,6 +46,7 @@ namespace Model
     GitHubLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The GitHub account and repository pair that stores a reference to the commit
      * that represents the bundled artifacts for the application revision. </p>
@@ -95,6 +96,7 @@ namespace Model
      */
     inline GitHubLocation& WithRepository(const char* value) { SetRepository(value); return *this;}
 
+
     /**
      * <p>The SHA1 commit ID of the GitHub commit that represents the bundled artifacts
      * for the application revision.</p>
@@ -138,8 +140,10 @@ namespace Model
     inline GitHubLocation& WithCommitId(const char* value) { SetCommitId(value); return *this;}
 
   private:
+
     Aws::String m_repository;
     bool m_repositoryHasBeenSet;
+
     Aws::String m_commitId;
     bool m_commitIdHasBeenSet;
   };

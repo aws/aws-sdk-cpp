@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
      * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
@@ -104,6 +105,7 @@ namespace Model
      */
     inline DownloadDBLogFilePortionRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p>The name of the log file to be downloaded.</p>
      */
@@ -138,6 +140,7 @@ namespace Model
      * <p>The name of the log file to be downloaded.</p>
      */
     inline DownloadDBLogFilePortionRequest& WithLogFileName(const char* value) { SetLogFileName(value); return *this;}
+
 
     /**
      * <p>The pagination token provided in the previous request or "0". If the Marker
@@ -187,6 +190,7 @@ namespace Model
      * until the end of the file or up to NumberOfLines.</p>
      */
     inline DownloadDBLogFilePortionRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>The number of lines to download. If the number of lines specified results in
@@ -249,12 +253,16 @@ namespace Model
     inline DownloadDBLogFilePortionRequest& WithNumberOfLines(int value) { SetNumberOfLines(value); return *this;}
 
   private:
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     Aws::String m_logFileName;
     bool m_logFileNameHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_numberOfLines;
     bool m_numberOfLinesHasBeenSet;
   };

@@ -36,8 +36,9 @@ namespace Model
   {
   public:
     GetSnowballUsageResult();
-    GetSnowballUsageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSnowballUsageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSnowballUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSnowballUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The service limit for number of Snowballs this account can have at once. The
@@ -57,6 +58,7 @@ namespace Model
      */
     inline GetSnowballUsageResult& WithSnowballLimit(int value) { SetSnowballLimit(value); return *this;}
 
+
     /**
      * <p>The number of Snowballs that this account is currently using.</p>
      */
@@ -73,7 +75,9 @@ namespace Model
     inline GetSnowballUsageResult& WithSnowballsInUse(int value) { SetSnowballsInUse(value); return *this;}
 
   private:
+
     int m_snowballLimit;
+
     int m_snowballsInUse;
   };
 

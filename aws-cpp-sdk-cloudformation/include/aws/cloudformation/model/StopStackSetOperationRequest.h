@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or unique ID of the stack set that you want to stop the operation
      * for.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline StopStackSetOperationRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
+
     /**
      * <p>The ID of the stack operation. </p>
      */
@@ -116,8 +118,10 @@ namespace Model
     inline StopStackSetOperationRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet;
   };

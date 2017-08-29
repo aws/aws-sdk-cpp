@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Values to narrow the results returned. At least one event ARN is required.
      * </p>
@@ -66,6 +67,7 @@ namespace Model
      * </p>
      */
     inline DescribeAffectedEntitiesRequest& WithFilter(EntityFilter&& value) { SetFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>The locale (language) to return information in. English (en) is the default
@@ -108,6 +110,7 @@ namespace Model
      * and the only supported value at this time.</p>
      */
     inline DescribeAffectedEntitiesRequest& WithLocale(const char* value) { SetLocale(value); return *this;}
+
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -172,6 +175,7 @@ namespace Model
      */
     inline DescribeAffectedEntitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return in one batch, between 10 and 100,
      * inclusive.</p>
@@ -191,12 +195,16 @@ namespace Model
     inline DescribeAffectedEntitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     EntityFilter m_filter;
     bool m_filterHasBeenSet;
+
     Aws::String m_locale;
     bool m_localeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

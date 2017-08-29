@@ -35,6 +35,7 @@ namespace Model
     PostTextRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the Amazon Lex bot.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      */
     inline PostTextRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
 
+
     /**
      * <p>The alias of the Amazon Lex bot.</p>
      */
@@ -104,6 +106,7 @@ namespace Model
      * <p>The alias of the Amazon Lex bot.</p>
      */
     inline PostTextRequest& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
+
 
     /**
      * <p>The ID of the client application user. The application developer decides the
@@ -202,6 +205,7 @@ namespace Model
      * some globally unique identifier. </p> </li> </ul>
      */
     inline PostTextRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+
 
     /**
      * <p> By using session attributes, a client application can pass contextual
@@ -647,6 +651,7 @@ namespace Model
      */
     inline PostTextRequest& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>The text that the user entered (Amazon Lex interprets this text).</p>
      */
@@ -683,14 +688,19 @@ namespace Model
     inline PostTextRequest& WithInputText(const char* value) { SetInputText(value); return *this;}
 
   private:
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
+
     Aws::String m_botAlias;
     bool m_botAliasHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
     bool m_sessionAttributesHasBeenSet;
+
     Aws::String m_inputText;
     bool m_inputTextHasBeenSet;
   };

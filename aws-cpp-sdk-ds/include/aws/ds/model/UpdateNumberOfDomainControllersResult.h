@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateNumberOfDomainControllersResult();
-    UpdateNumberOfDomainControllersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateNumberOfDomainControllersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateNumberOfDomainControllersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateNumberOfDomainControllersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

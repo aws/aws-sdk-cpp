@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The pending or in-progress change of the master user password for the
      * cluster.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline PendingModifiedValues& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
+
     /**
      * <p>The pending or in-progress change of the cluster's node type.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      */
     inline PendingModifiedValues& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
+
     /**
      * <p>The pending or in-progress change of the number of nodes in the cluster.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      * <p>The pending or in-progress change of the number of nodes in the cluster.</p>
      */
     inline PendingModifiedValues& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
+
 
     /**
      * <p>The pending or in-progress change of the cluster type.</p>
@@ -177,6 +181,7 @@ namespace Model
      */
     inline PendingModifiedValues& WithClusterType(const char* value) { SetClusterType(value); return *this;}
 
+
     /**
      * <p>The pending or in-progress change of the service version.</p>
      */
@@ -212,6 +217,7 @@ namespace Model
      */
     inline PendingModifiedValues& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
 
+
     /**
      * <p>The pending or in-progress change of the automated snapshot retention
      * period.</p>
@@ -229,6 +235,7 @@ namespace Model
      * period.</p>
      */
     inline PendingModifiedValues& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+
 
     /**
      * <p>The pending or in-progress change of the new identifier for the cluster.</p>
@@ -265,6 +272,7 @@ namespace Model
      */
     inline PendingModifiedValues& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The pending or in-progress change of the ability to connect to the cluster
      * from the public network.</p>
@@ -282,6 +290,7 @@ namespace Model
      * from the public network.</p>
      */
     inline PendingModifiedValues& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+
 
     /**
      * <p>An option that specifies whether to create the cluster with enhanced VPC
@@ -317,22 +326,31 @@ namespace Model
     inline PendingModifiedValues& WithEnhancedVpcRouting(bool value) { SetEnhancedVpcRouting(value); return *this;}
 
   private:
+
     Aws::String m_masterUserPassword;
     bool m_masterUserPasswordHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
+
     Aws::String m_clusterType;
     bool m_clusterTypeHasBeenSet;
+
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
     int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     PortMapping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The port number on the container that is bound to the user-specified or
      * automatically assigned host port. If you specify a container port and not a host
@@ -79,6 +80,7 @@ namespace Model
      * limit of a container instance.</p>
      */
     inline PortMapping& WithContainerPort(int value) { SetContainerPort(value); return *this;}
+
 
     /**
      * <p>The port number on the container instance to reserve for your container. You
@@ -158,6 +160,7 @@ namespace Model
      */
     inline PortMapping& WithHostPort(int value) { SetHostPort(value); return *this;}
 
+
     /**
      * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
      * <code>udp</code>. The default is <code>tcp</code>.</p>
@@ -189,10 +192,13 @@ namespace Model
     inline PortMapping& WithProtocol(TransportProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
+
     int m_containerPort;
     bool m_containerPortHasBeenSet;
+
     int m_hostPort;
     bool m_hostPortHasBeenSet;
+
     TransportProtocol m_protocol;
     bool m_protocolHasBeenSet;
   };

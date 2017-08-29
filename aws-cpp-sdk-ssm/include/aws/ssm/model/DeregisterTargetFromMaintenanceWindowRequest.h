@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Maintenance Window the target should be removed from.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the Maintenance Window the target should be removed from.</p>
      */
     inline DeregisterTargetFromMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>The ID of the target definition to remove.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline DeregisterTargetFromMaintenanceWindowRequest& WithWindowTargetId(const char* value) { SetWindowTargetId(value); return *this;}
 
+
     /**
      * <p>The system checks if the target is being referenced by a task. If the target
      * is being referenced, the system returns an error and does not deregister the
@@ -128,10 +131,13 @@ namespace Model
     inline DeregisterTargetFromMaintenanceWindowRequest& WithSafe(bool value) { SetSafe(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::String m_windowTargetId;
     bool m_windowTargetIdHasBeenSet;
+
     bool m_safe;
     bool m_safeHasBeenSet;
   };

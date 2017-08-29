@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateBucketResult();
-    CreateBucketResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateBucketResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateBucketResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateBucketResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::String& GetLocation() const{ return m_location; }
@@ -63,6 +64,7 @@ namespace Model
     inline CreateBucketResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:
+
     Aws::String m_location;
   };
 

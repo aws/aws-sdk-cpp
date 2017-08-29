@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeliverConfigSnapshotResult();
-    DeliverConfigSnapshotResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeliverConfigSnapshotResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeliverConfigSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeliverConfigSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the snapshot that is being created.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DeliverConfigSnapshotResult& WithConfigSnapshotId(const char* value) { SetConfigSnapshotId(value); return *this;}
 
   private:
+
     Aws::String m_configSnapshotId;
   };
 

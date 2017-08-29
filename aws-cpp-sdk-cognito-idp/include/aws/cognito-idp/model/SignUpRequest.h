@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ID of the client associated with the user pool.</p>
      */
     inline SignUpRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -118,6 +120,7 @@ namespace Model
      */
     inline SignUpRequest& WithSecretHash(const char* value) { SetSecretHash(value); return *this;}
 
+
     /**
      * <p>The user name of the user you wish to register.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      */
     inline SignUpRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
     /**
      * <p>The password of the user you wish to register.</p>
      */
@@ -187,6 +191,7 @@ namespace Model
      * <p>The password of the user you wish to register.</p>
      */
     inline SignUpRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
+
 
     /**
      * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
@@ -237,6 +242,7 @@ namespace Model
      */
     inline SignUpRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The validation data in the request to register a user.</p>
      */
@@ -273,16 +279,22 @@ namespace Model
     inline SignUpRequest& AddValidationData(AttributeType&& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
     Aws::String m_secretHash;
     bool m_secretHashHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     Aws::Vector<AttributeType> m_userAttributes;
     bool m_userAttributesHasBeenSet;
+
     Aws::Vector<AttributeType> m_validationData;
     bool m_validationDataHasBeenSet;
   };

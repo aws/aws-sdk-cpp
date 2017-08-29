@@ -43,6 +43,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetId() const{ return m_id; }
 
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline CloudFunctionConfiguration& WithId(const char* value) { SetId(value); return *this;}
+
 
     
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
@@ -85,6 +87,7 @@ namespace Model
     
     inline CloudFunctionConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::String& GetCloudFunction() const{ return m_cloudFunction; }
 
@@ -105,6 +108,7 @@ namespace Model
 
     
     inline CloudFunctionConfiguration& WithCloudFunction(const char* value) { SetCloudFunction(value); return *this;}
+
 
     
     inline const Aws::String& GetInvocationRole() const{ return m_invocationRole; }
@@ -128,12 +132,16 @@ namespace Model
     inline CloudFunctionConfiguration& WithInvocationRole(const char* value) { SetInvocationRole(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Vector<Event> m_events;
     bool m_eventsHasBeenSet;
+
     Aws::String m_cloudFunction;
     bool m_cloudFunctionHasBeenSet;
+
     Aws::String m_invocationRole;
     bool m_invocationRoleHasBeenSet;
   };

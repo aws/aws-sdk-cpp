@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the container instances to list. If you do not specify a cluster, the default
@@ -85,6 +86,7 @@ namespace Model
      * cluster is assumed.</p>
      */
     inline ListContainerInstancesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
@@ -148,6 +150,7 @@ namespace Model
      * Guide</i>.</p>
      */
     inline ListContainerInstancesRequest& WithFilter(const char* value) { SetFilter(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -233,6 +236,7 @@ namespace Model
      */
     inline ListContainerInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of container instance results returned by
      * <code>ListContainerInstances</code> in paginated output. When this parameter is
@@ -271,6 +275,7 @@ namespace Model
      * 100 results and a <code>nextToken</code> value if applicable.</p>
      */
     inline ListContainerInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Filters the container instances by status. For example, if you specify the
@@ -323,14 +328,19 @@ namespace Model
     inline ListContainerInstancesRequest& WithStatus(ContainerInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_filter;
     bool m_filterHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     ContainerInstanceStatus m_status;
     bool m_statusHasBeenSet;
   };

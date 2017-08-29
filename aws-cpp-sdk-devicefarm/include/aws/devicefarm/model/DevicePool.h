@@ -48,6 +48,7 @@ namespace Model
     DevicePool& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The device pool's ARN.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The device pool's ARN.</p>
      */
     inline DevicePool& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The device pool's name.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline DevicePool& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The device pool's description.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The device pool's description.</p>
      */
     inline DevicePool& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The device pool's type.</p> <p>Allowed values include:</p> <ul> <li>
@@ -193,6 +197,7 @@ namespace Model
      */
     inline DevicePool& WithType(DevicePoolType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the device pool's rules.</p>
      */
@@ -229,14 +234,19 @@ namespace Model
     inline DevicePool& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     DevicePoolType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet;
   };

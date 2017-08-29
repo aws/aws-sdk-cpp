@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The notification specification to test. This value is identical to the value
      * you would provide to the UpdateNotificationSettings operation when you establish
@@ -71,6 +72,7 @@ namespace Model
      * the notification specification for a HIT type. </p>
      */
     inline SendTestEventNotificationRequest& WithNotification(NotificationSpecification&& value) { SetNotification(std::move(value)); return *this;}
+
 
     /**
      * <p> The event to simulate to test the notification specification. This event is
@@ -113,8 +115,10 @@ namespace Model
     inline SendTestEventNotificationRequest& WithTestEventType(EventType&& value) { SetTestEventType(std::move(value)); return *this;}
 
   private:
+
     NotificationSpecification m_notification;
     bool m_notificationHasBeenSet;
+
     EventType m_testEventType;
     bool m_testEventTypeHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the type of resource you are tagging.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>Specifies the type of resource you are tagging.</p>
      */
     inline AddTagsToResourceRequest& WithResourceType(ResourceTypeForTagging&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The resource ID you want to tag.</p>
@@ -98,6 +100,7 @@ namespace Model
      * <p>The resource ID you want to tag.</p>
      */
     inline AddTagsToResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p> One or more tags. The value parameter is required, but if you don't want the
@@ -149,10 +152,13 @@ namespace Model
     inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     ResourceTypeForTagging m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

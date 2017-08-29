@@ -47,6 +47,7 @@ namespace Model
     PatchGroupPatchBaselineMapping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the patch group registered with the patch baseline.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline PatchGroupPatchBaselineMapping& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
 
+
     /**
      * <p>The patch baseline the patch group is registered with.</p>
      */
@@ -108,8 +110,10 @@ namespace Model
     inline PatchGroupPatchBaselineMapping& WithBaselineIdentity(PatchBaselineIdentity&& value) { SetBaselineIdentity(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_patchGroup;
     bool m_patchGroupHasBeenSet;
+
     PatchBaselineIdentity m_baselineIdentity;
     bool m_baselineIdentityHasBeenSet;
   };

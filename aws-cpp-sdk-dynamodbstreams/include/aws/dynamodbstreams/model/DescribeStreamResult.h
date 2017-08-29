@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeStreamResult();
-    DescribeStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A complete description of the stream, including its creation date and time,
@@ -85,6 +86,7 @@ namespace Model
     inline DescribeStreamResult& WithStreamDescription(StreamDescription&& value) { SetStreamDescription(std::move(value)); return *this;}
 
   private:
+
     StreamDescription m_streamDescription;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the patch baseline to retrieve the effective patches for.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline DescribeEffectivePatchesForPatchBaselineRequest& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
 
+
     /**
      * <p>The maximum number of patches to return (per page).</p>
      */
@@ -85,6 +87,7 @@ namespace Model
      * <p>The maximum number of patches to return (per page).</p>
      */
     inline DescribeEffectivePatchesForPatchBaselineRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -129,10 +132,13 @@ namespace Model
     inline DescribeEffectivePatchesForPatchBaselineRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_baselineId;
     bool m_baselineIdHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

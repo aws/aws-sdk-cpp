@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the build project.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the build project.</p>
      */
     inline ListBuildsForProjectRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+
 
     /**
      * <p>The order to list build IDs. Valid values include:</p> <ul> <li> <p>
@@ -111,6 +113,7 @@ namespace Model
      * by build ID.</p> </li> </ul>
      */
     inline ListBuildsForProjectRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
+
 
     /**
      * <p>During a previous call, if there are more than 100 items in the list, only
@@ -183,10 +186,13 @@ namespace Model
     inline ListBuildsForProjectRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_projectName;
     bool m_projectNameHasBeenSet;
+
     SortOrderType m_sortOrder;
     bool m_sortOrderHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

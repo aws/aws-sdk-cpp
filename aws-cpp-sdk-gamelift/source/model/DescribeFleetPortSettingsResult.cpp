@@ -30,12 +30,12 @@ DescribeFleetPortSettingsResult::DescribeFleetPortSettingsResult()
 {
 }
 
-DescribeFleetPortSettingsResult::DescribeFleetPortSettingsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeFleetPortSettingsResult::DescribeFleetPortSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeFleetPortSettingsResult& DescribeFleetPortSettingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeFleetPortSettingsResult& DescribeFleetPortSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("InboundPermissions"))

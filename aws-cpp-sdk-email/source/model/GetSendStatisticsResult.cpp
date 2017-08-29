@@ -31,12 +31,12 @@ GetSendStatisticsResult::GetSendStatisticsResult()
 {
 }
 
-GetSendStatisticsResult::GetSendStatisticsResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetSendStatisticsResult::GetSendStatisticsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetSendStatisticsResult& GetSendStatisticsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetSendStatisticsResult& GetSendStatisticsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

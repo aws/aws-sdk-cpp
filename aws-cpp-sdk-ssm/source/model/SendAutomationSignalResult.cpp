@@ -30,12 +30,12 @@ SendAutomationSignalResult::SendAutomationSignalResult()
 {
 }
 
-SendAutomationSignalResult::SendAutomationSignalResult(const AmazonWebServiceResult<JsonValue>& result)
+SendAutomationSignalResult::SendAutomationSignalResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SendAutomationSignalResult& SendAutomationSignalResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SendAutomationSignalResult& SendAutomationSignalResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

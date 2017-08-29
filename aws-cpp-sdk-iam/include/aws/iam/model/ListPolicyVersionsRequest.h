@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
      * versions.</p> <p>For more information about ARNs, see <a
@@ -101,6 +102,7 @@ namespace Model
      */
     inline ListPolicyVersionsRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
+
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
      * response indicating that the results are truncated. Set it to the value of the
@@ -157,6 +159,7 @@ namespace Model
      */
     inline ListPolicyVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this only when paginating results to indicate the maximum
      * number of items you want in the response. If additional items exist beyond the
@@ -194,10 +197,13 @@ namespace Model
     inline ListPolicyVersionsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

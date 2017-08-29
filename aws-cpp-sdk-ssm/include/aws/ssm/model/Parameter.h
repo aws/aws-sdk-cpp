@@ -47,6 +47,7 @@ namespace Model
     Parameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the parameter.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline Parameter& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The type of parameter. Valid values include the following: String, String
      * list, Secure string.</p>
@@ -111,6 +113,7 @@ namespace Model
      * list, Secure string.</p>
      */
     inline Parameter& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The parameter value.</p>
@@ -148,10 +151,13 @@ namespace Model
     inline Parameter& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ParameterType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

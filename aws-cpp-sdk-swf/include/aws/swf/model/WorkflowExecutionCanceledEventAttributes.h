@@ -46,6 +46,7 @@ namespace Model
     WorkflowExecutionCanceledEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The details of the cancellation.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline WorkflowExecutionCanceledEventAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
      * decision task that resulted in the <code>CancelWorkflowExecution</code> decision
@@ -106,8 +108,10 @@ namespace Model
     inline WorkflowExecutionCanceledEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
   private:
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
   };

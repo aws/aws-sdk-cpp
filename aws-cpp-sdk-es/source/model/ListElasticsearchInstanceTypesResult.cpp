@@ -30,12 +30,12 @@ ListElasticsearchInstanceTypesResult::ListElasticsearchInstanceTypesResult()
 {
 }
 
-ListElasticsearchInstanceTypesResult::ListElasticsearchInstanceTypesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListElasticsearchInstanceTypesResult::ListElasticsearchInstanceTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListElasticsearchInstanceTypesResult& ListElasticsearchInstanceTypesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListElasticsearchInstanceTypesResult& ListElasticsearchInstanceTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ElasticsearchInstanceTypes"))

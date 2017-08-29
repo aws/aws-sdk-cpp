@@ -47,6 +47,7 @@ namespace Model
     PushSync& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>List of SNS platform application ARNs that could be used by clients.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>List of SNS platform application ARNs that could be used by clients.</p>
      */
     inline PushSync& AddApplicationArns(const char* value) { m_applicationArnsHasBeenSet = true; m_applicationArns.push_back(value); return *this; }
+
 
     /**
      * <p>A role configured to allow Cognito to call SNS on behalf of the
@@ -130,8 +132,10 @@ namespace Model
     inline PushSync& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_applicationArns;
     bool m_applicationArnsHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

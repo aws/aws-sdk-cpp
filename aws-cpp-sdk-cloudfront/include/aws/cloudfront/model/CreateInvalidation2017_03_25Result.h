@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateInvalidation2017_03_25Result();
-    CreateInvalidation2017_03_25Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateInvalidation2017_03_25Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateInvalidation2017_03_25Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateInvalidation2017_03_25Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The fully qualified URI of the distribution and invalidation batch request,
@@ -90,6 +91,7 @@ namespace Model
      */
     inline CreateInvalidation2017_03_25Result& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     /**
      * <p>The invalidation's information.</p>
      */
@@ -116,7 +118,9 @@ namespace Model
     inline CreateInvalidation2017_03_25Result& WithInvalidation(Invalidation&& value) { SetInvalidation(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_location;
+
     Invalidation m_invalidation;
   };
 

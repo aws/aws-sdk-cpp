@@ -32,14 +32,14 @@ PutGatewayResponseResult::PutGatewayResponseResult() :
 {
 }
 
-PutGatewayResponseResult::PutGatewayResponseResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PutGatewayResponseResult::PutGatewayResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_responseType(GatewayResponseType::NOT_SET),
     m_defaultResponse(false)
 {
   *this = result;
 }
 
-PutGatewayResponseResult& PutGatewayResponseResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutGatewayResponseResult& PutGatewayResponseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("responseType"))

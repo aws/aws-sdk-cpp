@@ -30,12 +30,12 @@ UpdateClassifierResult::UpdateClassifierResult()
 {
 }
 
-UpdateClassifierResult::UpdateClassifierResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateClassifierResult::UpdateClassifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateClassifierResult& UpdateClassifierResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateClassifierResult& UpdateClassifierResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

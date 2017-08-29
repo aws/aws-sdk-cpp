@@ -49,6 +49,7 @@ namespace Model
     EbsBlockDevice& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The snapshot ID.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline EbsBlockDevice& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
      * more information, see <a
@@ -105,6 +107,7 @@ namespace Model
      */
     inline EbsBlockDevice& WithIops(int value) { SetIops(value); return *this;}
 
+
     /**
      * <p>The volume size, in GiB. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
@@ -122,6 +125,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.</p>
      */
     inline EbsBlockDevice& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
+
 
     /**
      * <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
@@ -158,6 +162,7 @@ namespace Model
      */
     inline EbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether the volume is deleted on instance termination.</p>
      */
@@ -174,14 +179,19 @@ namespace Model
     inline EbsBlockDevice& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
   private:
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     int m_volumeSize;
     bool m_volumeSizeHasBeenSet;
+
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
   };

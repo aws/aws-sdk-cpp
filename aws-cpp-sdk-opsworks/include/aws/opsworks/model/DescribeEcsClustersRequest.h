@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of ARNs, one for each cluster to be described.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>A list of ARNs, one for each cluster to be described.</p>
      */
     inline DescribeEcsClustersRequest& AddEcsClusterArns(const char* value) { m_ecsClusterArnsHasBeenSet = true; m_ecsClusterArns.push_back(value); return *this; }
+
 
     /**
      * <p>A stack ID. <code>DescribeEcsClusters</code> returns a description of the
@@ -118,6 +120,7 @@ namespace Model
      * cluster that is registered with the stack.</p>
      */
     inline DescribeEcsClustersRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>If the previous paginated request did not return all of the remaining
@@ -196,6 +199,7 @@ namespace Model
      */
     inline DescribeEcsClustersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>To receive a paginated response, use this parameter to specify the maximum
      * number of results to be returned with a single call. If the number of available
@@ -224,12 +228,16 @@ namespace Model
     inline DescribeEcsClustersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_ecsClusterArns;
     bool m_ecsClusterArnsHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

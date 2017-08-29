@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListBootstrapActionsResult();
-    ListBootstrapActionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBootstrapActionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListBootstrapActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListBootstrapActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The bootstrap actions associated with the cluster.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The bootstrap actions associated with the cluster.</p>
      */
     inline ListBootstrapActionsResult& AddBootstrapActions(Command&& value) { m_bootstrapActions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline ListBootstrapActionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<Command> m_bootstrapActions;
+
     Aws::String m_marker;
   };
 

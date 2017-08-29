@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the server for which you want to view events.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the server for which you want to view events.</p>
      */
     inline DescribeEventsRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
+
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It
@@ -162,6 +164,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>To receive a paginated response, use this parameter to specify the maximum
      * number of results to be returned with a single call. If the number of available
@@ -190,10 +193,13 @@ namespace Model
     inline DescribeEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

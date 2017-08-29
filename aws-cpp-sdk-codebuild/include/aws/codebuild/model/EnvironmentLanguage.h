@@ -48,6 +48,7 @@ namespace Model
     EnvironmentLanguage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The programming language for the Docker images.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The programming language for the Docker images.</p>
      */
     inline EnvironmentLanguage& WithLanguage(LanguageType&& value) { SetLanguage(std::move(value)); return *this;}
+
 
     /**
      * <p>The list of Docker images that are related by the specified programming
@@ -116,8 +118,10 @@ namespace Model
     inline EnvironmentLanguage& AddImages(EnvironmentImage&& value) { m_imagesHasBeenSet = true; m_images.push_back(std::move(value)); return *this; }
 
   private:
+
     LanguageType m_language;
     bool m_languageHasBeenSet;
+
     Aws::Vector<EnvironmentImage> m_images;
     bool m_imagesHasBeenSet;
   };

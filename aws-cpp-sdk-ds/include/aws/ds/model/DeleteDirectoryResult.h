@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteDirectoryResult();
-    DeleteDirectoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDirectoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The directory identifier.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DeleteDirectoryResult& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
   };
 

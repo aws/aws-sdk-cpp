@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetResourcesResult();
-    GetResourcesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A string that indicates that the response contains more data than can be
@@ -92,6 +93,7 @@ namespace Model
      */
     inline GetResourcesResult& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
+
     /**
      * <p>A list of resource ARNs and the tags (keys and values) associated with
      * each.</p>
@@ -135,7 +137,9 @@ namespace Model
     inline GetResourcesResult& AddResourceTagMappingList(ResourceTagMapping&& value) { m_resourceTagMappingList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_paginationToken;
+
     Aws::Vector<ResourceTagMapping> m_resourceTagMappingList;
   };
 

@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetWorkflowExecutionHistoryResult();
-    GetWorkflowExecutionHistoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetWorkflowExecutionHistoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetWorkflowExecutionHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetWorkflowExecutionHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of history events.</p>
@@ -85,6 +86,7 @@ namespace Model
      * <p>The list of history events.</p>
      */
     inline GetWorkflowExecutionHistoryResult& AddEvents(HistoryEvent&& value) { m_events.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -150,7 +152,9 @@ namespace Model
     inline GetWorkflowExecutionHistoryResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<HistoryEvent> m_events;
+
     Aws::String m_nextPageToken;
   };
 

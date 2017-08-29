@@ -47,6 +47,7 @@ namespace Model
     EvaluationResultQualifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the AWS Config rule that was used in the evaluation.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline EvaluationResultQualifier& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
+
     /**
      * <p>The type of AWS resource that was evaluated.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The type of AWS resource that was evaluated.</p>
      */
     inline EvaluationResultQualifier& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
 
     /**
      * <p>The ID of the evaluated AWS resource.</p>
@@ -153,10 +156,13 @@ namespace Model
     inline EvaluationResultQualifier& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
   private:
+
     Aws::String m_configRuleName;
     bool m_configRuleNameHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
   };

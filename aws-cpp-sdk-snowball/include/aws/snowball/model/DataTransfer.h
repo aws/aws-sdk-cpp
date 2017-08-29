@@ -46,6 +46,7 @@ namespace Model
     DataTransfer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of bytes transferred between a Snowball and Amazon S3.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      */
     inline DataTransfer& WithBytesTransferred(long long value) { SetBytesTransferred(value); return *this;}
 
+
     /**
      * <p>The number of objects transferred between a Snowball and Amazon S3.</p>
      */
@@ -75,6 +77,7 @@ namespace Model
      * <p>The number of objects transferred between a Snowball and Amazon S3.</p>
      */
     inline DataTransfer& WithObjectsTransferred(long long value) { SetObjectsTransferred(value); return *this;}
+
 
     /**
      * <p>The total bytes of data for a transfer between a Snowball and Amazon S3. This
@@ -96,6 +99,7 @@ namespace Model
      * listed.</p>
      */
     inline DataTransfer& WithTotalBytes(long long value) { SetTotalBytes(value); return *this;}
+
 
     /**
      * <p>The total number of objects for a transfer between a Snowball and Amazon S3.
@@ -119,12 +123,16 @@ namespace Model
     inline DataTransfer& WithTotalObjects(long long value) { SetTotalObjects(value); return *this;}
 
   private:
+
     long long m_bytesTransferred;
     bool m_bytesTransferredHasBeenSet;
+
     long long m_objectsTransferred;
     bool m_objectsTransferredHasBeenSet;
+
     long long m_totalBytes;
     bool m_totalBytesHasBeenSet;
+
     long long m_totalObjects;
     bool m_totalObjectsHasBeenSet;
   };

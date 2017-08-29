@@ -47,6 +47,7 @@ namespace Model
     ProductViewSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The product view identifier.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The product view identifier.</p>
      */
     inline ProductViewSummary& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The product identifier.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ProductViewSummary& WithProductId(const char* value) { SetProductId(value); return *this;}
 
+
     /**
      * <p>The name of the product.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The name of the product.</p>
      */
     inline ProductViewSummary& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The owner of the product. Contact the product administrator for the
@@ -194,6 +198,7 @@ namespace Model
      */
     inline ProductViewSummary& WithOwner(const char* value) { SetOwner(value); return *this;}
 
+
     /**
      * <p>Short description of the product.</p>
      */
@@ -229,6 +234,7 @@ namespace Model
      */
     inline ProductViewSummary& WithShortDescription(const char* value) { SetShortDescription(value); return *this;}
 
+
     /**
      * <p>The product type. Contact the product administrator for the significance of
      * this value. If this value is <code>MARKETPLACE</code>, the product was created
@@ -263,6 +269,7 @@ namespace Model
      * by AWS Marketplace.</p>
      */
     inline ProductViewSummary& WithType(ProductType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The distributor of the product. Contact the product administrator for the
@@ -306,6 +313,7 @@ namespace Model
      */
     inline ProductViewSummary& WithDistributor(const char* value) { SetDistributor(value); return *this;}
 
+
     /**
      * <p>A value of <code>false</code> indicates that the product does not have a
      * default path, while a value of <code>true</code> indicates that it does. If it's
@@ -335,6 +343,7 @@ namespace Model
      * <a>DescribeProvisioningParameters</a>.</p>
      */
     inline ProductViewSummary& WithHasDefaultPath(bool value) { SetHasDefaultPath(value); return *this;}
+
 
     /**
      * <p>The email contact information to obtain support for this Product.</p>
@@ -371,6 +380,7 @@ namespace Model
      */
     inline ProductViewSummary& WithSupportEmail(const char* value) { SetSupportEmail(value); return *this;}
 
+
     /**
      * <p>The description of the support for this Product.</p>
      */
@@ -405,6 +415,7 @@ namespace Model
      * <p>The description of the support for this Product.</p>
      */
     inline ProductViewSummary& WithSupportDescription(const char* value) { SetSupportDescription(value); return *this;}
+
 
     /**
      * <p>The URL information to obtain support for this Product.</p>
@@ -442,26 +453,37 @@ namespace Model
     inline ProductViewSummary& WithSupportUrl(const char* value) { SetSupportUrl(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::String m_shortDescription;
     bool m_shortDescriptionHasBeenSet;
+
     ProductType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_distributor;
     bool m_distributorHasBeenSet;
+
     bool m_hasDefaultPath;
     bool m_hasDefaultPathHasBeenSet;
+
     Aws::String m_supportEmail;
     bool m_supportEmailHasBeenSet;
+
     Aws::String m_supportDescription;
     bool m_supportDescriptionHasBeenSet;
+
     Aws::String m_supportUrl;
     bool m_supportUrlHasBeenSet;
   };

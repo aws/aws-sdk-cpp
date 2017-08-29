@@ -46,6 +46,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code> </p>
      */
@@ -62,6 +63,7 @@ namespace Model
     inline SpotFleetMonitoring& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
   };

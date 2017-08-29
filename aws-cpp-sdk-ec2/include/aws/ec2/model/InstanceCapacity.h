@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The number of instances that can still be launched onto the Dedicated
      * Host.</p>
@@ -66,6 +67,7 @@ namespace Model
      * Host.</p>
      */
     inline InstanceCapacity& WithAvailableCapacity(int value) { SetAvailableCapacity(value); return *this;}
+
 
     /**
      * <p>The instance type size supported by the Dedicated Host.</p>
@@ -102,6 +104,7 @@ namespace Model
      */
     inline InstanceCapacity& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The total number of instances that can be launched onto the Dedicated
      * Host.</p>
@@ -121,10 +124,13 @@ namespace Model
     inline InstanceCapacity& WithTotalCapacity(int value) { SetTotalCapacity(value); return *this;}
 
   private:
+
     int m_availableCapacity;
     bool m_availableCapacityHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     int m_totalCapacity;
     bool m_totalCapacityHasBeenSet;
   };

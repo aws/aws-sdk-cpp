@@ -46,6 +46,7 @@ namespace Model
     Captions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The array of file formats for the output captions. If you leave this value
      * blank, Elastic Transcoder returns an error.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline Captions& AddCaptionFormats(CaptionFormat&& value) { m_captionFormatsHasBeenSet = true; m_captionFormats.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CaptionFormat> m_captionFormats;
     bool m_captionFormatsHasBeenSet;
   };

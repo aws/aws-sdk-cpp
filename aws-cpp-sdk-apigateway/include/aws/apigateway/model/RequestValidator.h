@@ -53,6 +53,7 @@ namespace Model
     RequestValidator& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of this <a>RequestValidator</a>.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The identifier of this <a>RequestValidator</a>.</p>
      */
     inline RequestValidator& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of this <a>RequestValidator</a></p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline RequestValidator& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A Boolean flag to indicate whether to validate a request body according to
      * the configured <a>Model</a> schema.</p>
@@ -140,6 +143,7 @@ namespace Model
      * the configured <a>Model</a> schema.</p>
      */
     inline RequestValidator& WithValidateRequestBody(bool value) { SetValidateRequestBody(value); return *this;}
+
 
     /**
      * <p>A Boolean flag to indicate whether to validate request parameters
@@ -160,12 +164,16 @@ namespace Model
     inline RequestValidator& WithValidateRequestParameters(bool value) { SetValidateRequestParameters(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     bool m_validateRequestBody;
     bool m_validateRequestBodyHasBeenSet;
+
     bool m_validateRequestParameters;
     bool m_validateRequestParametersHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteQualificationTypeResult();
-    DeleteQualificationTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteQualificationTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteQualificationTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteQualificationTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

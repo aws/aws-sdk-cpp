@@ -30,12 +30,12 @@ NotifyApplicationStateResult::NotifyApplicationStateResult()
 {
 }
 
-NotifyApplicationStateResult::NotifyApplicationStateResult(const AmazonWebServiceResult<JsonValue>& result)
+NotifyApplicationStateResult::NotifyApplicationStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-NotifyApplicationStateResult& NotifyApplicationStateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+NotifyApplicationStateResult& NotifyApplicationStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

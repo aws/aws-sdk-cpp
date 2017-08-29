@@ -46,6 +46,7 @@ namespace Model
     TimePeriod& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::Utils::DateTime& GetStart() const{ return m_start; }
 
@@ -60,6 +61,7 @@ namespace Model
 
     
     inline TimePeriod& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
+
 
     
     inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
@@ -77,8 +79,10 @@ namespace Model
     inline TimePeriod& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_start;
     bool m_startHasBeenSet;
+
     Aws::Utils::DateTime m_end;
     bool m_endHasBeenSet;
   };

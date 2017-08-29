@@ -30,12 +30,12 @@ PollForTaskResult::PollForTaskResult()
 {
 }
 
-PollForTaskResult::PollForTaskResult(const AmazonWebServiceResult<JsonValue>& result)
+PollForTaskResult::PollForTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PollForTaskResult& PollForTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PollForTaskResult& PollForTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("taskObject"))

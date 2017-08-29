@@ -30,12 +30,12 @@ CreateEndpointResult::CreateEndpointResult()
 {
 }
 
-CreateEndpointResult::CreateEndpointResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateEndpointResult::CreateEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateEndpointResult& CreateEndpointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateEndpointResult& CreateEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Endpoint"))

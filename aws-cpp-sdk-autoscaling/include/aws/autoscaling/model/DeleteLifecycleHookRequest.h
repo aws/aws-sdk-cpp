@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the lifecycle hook.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name of the lifecycle hook.</p>
      */
     inline DeleteLifecycleHookRequest& WithLifecycleHookName(const char* value) { SetLifecycleHookName(value); return *this;}
+
 
     /**
      * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline DeleteLifecycleHookRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
   private:
+
     Aws::String m_lifecycleHookName;
     bool m_lifecycleHookNameHasBeenSet;
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
   };

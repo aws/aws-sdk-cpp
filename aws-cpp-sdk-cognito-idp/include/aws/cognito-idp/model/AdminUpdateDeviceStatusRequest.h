@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The user pool ID.</p>
      */
     inline AdminUpdateDeviceStatusRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The user name.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline AdminUpdateDeviceStatusRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
     /**
      * <p>The device key.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      */
     inline AdminUpdateDeviceStatusRequest& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
 
+
     /**
      * <p>The status indicating whether a device has been remembered or not.</p>
      */
@@ -172,12 +176,16 @@ namespace Model
     inline AdminUpdateDeviceStatusRequest& WithDeviceRememberedStatus(DeviceRememberedStatusType&& value) { SetDeviceRememberedStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_deviceKey;
     bool m_deviceKeyHasBeenSet;
+
     DeviceRememberedStatusType m_deviceRememberedStatus;
     bool m_deviceRememberedStatusHasBeenSet;
   };

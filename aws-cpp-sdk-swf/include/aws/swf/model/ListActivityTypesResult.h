@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListActivityTypesResult();
-    ListActivityTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListActivityTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListActivityTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListActivityTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of activity type information.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>List of activity type information.</p>
      */
     inline ListActivityTypesResult& AddTypeInfos(ActivityTypeInfo&& value) { m_typeInfos.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -148,7 +150,9 @@ namespace Model
     inline ListActivityTypesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<ActivityTypeInfo> m_typeInfos;
+
     Aws::String m_nextPageToken;
   };
 

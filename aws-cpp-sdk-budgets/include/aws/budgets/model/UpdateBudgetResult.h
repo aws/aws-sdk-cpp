@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     UpdateBudgetResult();
-    UpdateBudgetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateBudgetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateBudgetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateBudgetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

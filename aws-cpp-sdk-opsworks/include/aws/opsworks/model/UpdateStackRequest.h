@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The stack's new name.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The stack's new name.</p>
      */
     inline UpdateStackRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
@@ -178,6 +181,7 @@ namespace Model
      */
     inline UpdateStackRequest& AddAttributes(const StackAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>Do not use this parameter. You cannot update a stack's service role.</p>
      */
@@ -212,6 +216,7 @@ namespace Model
      * <p>Do not use this parameter. You cannot update a stack's service role.</p>
      */
     inline UpdateStackRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+
 
     /**
      * <p>The ARN of an IAM profile that is the default profile for all of the stack's
@@ -268,6 +273,7 @@ namespace Model
      * Identifiers</a>.</p>
      */
     inline UpdateStackRequest& WithDefaultInstanceProfileArn(const char* value) { SetDefaultInstanceProfileArn(value); return *this;}
+
 
     /**
      * <p>The stack's operating system, which must be set to one of the following:</p>
@@ -444,6 +450,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithDefaultOs(const char* value) { SetDefaultOs(value); return *this;}
 
+
     /**
      * <p>The stack's new host name theme, with spaces replaced by underscores. The
      * theme is used to generate host names for the stack's instances. By default,
@@ -570,6 +577,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithHostnameTheme(const char* value) { SetHostnameTheme(value); return *this;}
 
+
     /**
      * <p>The stack's default Availability Zone, which must be in the stack's region.
      * For more information, see <a
@@ -640,6 +648,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithDefaultAvailabilityZone(const char* value) { SetDefaultAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The stack's default VPC subnet ID. This parameter is required if you specify
      * a value for the <code>VpcId</code> parameter. All instances are launched into
@@ -709,6 +718,7 @@ namespace Model
      * required, see the <code>VpcId</code> parameter description. </p>
      */
     inline UpdateStackRequest& WithDefaultSubnetId(const char* value) { SetDefaultSubnetId(value); return *this;}
+
 
     /**
      * <p>A string that contains user-defined, custom JSON. It can be used to override
@@ -787,6 +797,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
+
     /**
      * <p>The configuration manager. When you update a stack, we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
@@ -826,6 +837,7 @@ namespace Model
      * currently 11.4.</p>
      */
     inline UpdateStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
+
 
     /**
      * <p>A <code>ChefConfiguration</code> object that specifies whether to enable
@@ -872,6 +884,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithChefConfiguration(ChefConfiguration&& value) { SetChefConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether the stack uses custom cookbooks.</p>
      */
@@ -887,6 +900,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithUseCustomCookbooks(bool value) { SetUseCustomCookbooks(value); return *this;}
 
+
     
     inline const Source& GetCustomCookbooksSource() const{ return m_customCookbooksSource; }
 
@@ -901,6 +915,7 @@ namespace Model
 
     
     inline UpdateStackRequest& WithCustomCookbooksSource(Source&& value) { SetCustomCookbooksSource(std::move(value)); return *this;}
+
 
     /**
      * <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>.
@@ -1007,6 +1022,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithDefaultSshKeyName(const char* value) { SetDefaultSshKeyName(value); return *this;}
 
+
     /**
      * <p>The default root device type. This value is used by default for all instances
      * in the stack, but you can override it when you create an instance. For more
@@ -1051,6 +1067,7 @@ namespace Model
      * for the Root Device</a>.</p>
      */
     inline UpdateStackRequest& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(std::move(value)); return *this;}
+
 
     /**
      * <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with
@@ -1114,6 +1131,7 @@ namespace Model
      * a New Stack</a>.</p>
      */
     inline UpdateStackRequest& WithUseOpsworksSecurityGroups(bool value) { SetUseOpsworksSecurityGroups(value); return *this;}
+
 
     /**
      * <p>The default AWS OpsWorks Stacks agent version. You have the following
@@ -1242,40 +1260,58 @@ namespace Model
     inline UpdateStackRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Map<StackAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     Aws::String m_defaultInstanceProfileArn;
     bool m_defaultInstanceProfileArnHasBeenSet;
+
     Aws::String m_defaultOs;
     bool m_defaultOsHasBeenSet;
+
     Aws::String m_hostnameTheme;
     bool m_hostnameThemeHasBeenSet;
+
     Aws::String m_defaultAvailabilityZone;
     bool m_defaultAvailabilityZoneHasBeenSet;
+
     Aws::String m_defaultSubnetId;
     bool m_defaultSubnetIdHasBeenSet;
+
     Aws::String m_customJson;
     bool m_customJsonHasBeenSet;
+
     StackConfigurationManager m_configurationManager;
     bool m_configurationManagerHasBeenSet;
+
     ChefConfiguration m_chefConfiguration;
     bool m_chefConfigurationHasBeenSet;
+
     bool m_useCustomCookbooks;
     bool m_useCustomCookbooksHasBeenSet;
+
     Source m_customCookbooksSource;
     bool m_customCookbooksSourceHasBeenSet;
+
     Aws::String m_defaultSshKeyName;
     bool m_defaultSshKeyNameHasBeenSet;
+
     RootDeviceType m_defaultRootDeviceType;
     bool m_defaultRootDeviceTypeHasBeenSet;
+
     bool m_useOpsworksSecurityGroups;
     bool m_useOpsworksSecurityGroupsHasBeenSet;
+
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet;
   };

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     SimulatePrincipalPolicyResult();
-    SimulatePrincipalPolicyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SimulatePrincipalPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SimulatePrincipalPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SimulatePrincipalPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The results of the simulation.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline SimulatePrincipalPolicyResult& AddEvaluationResults(EvaluationResult&& value) { m_evaluationResults.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
@@ -117,6 +119,7 @@ namespace Model
      * results.</p>
      */
     inline SimulatePrincipalPolicyResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -167,6 +170,7 @@ namespace Model
      */
     inline SimulatePrincipalPolicyResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -183,9 +187,13 @@ namespace Model
     inline SimulatePrincipalPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<EvaluationResult> m_evaluationResults;
+
     bool m_isTruncated;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

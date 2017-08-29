@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteUserDefinedFunctionResult();
-    DeleteUserDefinedFunctionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteUserDefinedFunctionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteUserDefinedFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteUserDefinedFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

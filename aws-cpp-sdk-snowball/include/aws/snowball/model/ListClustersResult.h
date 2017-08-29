@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListClustersResult();
-    ListClustersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListClustersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a
@@ -84,6 +85,7 @@ namespace Model
      * cluster's ID, and other important status information.</p>
      */
     inline ListClustersResult& AddClusterListEntries(ClusterListEntry&& value) { m_clusterListEntries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>HTTP requests are stateless. If you use the automatically generated
@@ -135,7 +137,9 @@ namespace Model
     inline ListClustersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ClusterListEntry> m_clusterListEntries;
+
     Aws::String m_nextToken;
   };
 

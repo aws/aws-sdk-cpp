@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name of the Auto Scaling group.</p>
      */
     inline DeleteScheduledActionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the action to delete.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline DeleteScheduledActionRequest& WithScheduledActionName(const char* value) { SetScheduledActionName(value); return *this;}
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_scheduledActionName;
     bool m_scheduledActionNameHasBeenSet;
   };

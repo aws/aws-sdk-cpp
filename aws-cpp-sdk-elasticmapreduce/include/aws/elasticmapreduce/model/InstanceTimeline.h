@@ -45,6 +45,7 @@ namespace Model
     InstanceTimeline& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The creation date and time of the instance.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      */
     inline InstanceTimeline& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time when the instance was ready to perform tasks.</p>
      */
@@ -94,6 +96,7 @@ namespace Model
      * <p>The date and time when the instance was ready to perform tasks.</p>
      */
     inline InstanceTimeline& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time when the instance was terminated.</p>
@@ -121,10 +124,13 @@ namespace Model
     inline InstanceTimeline& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_readyDateTime;
     bool m_readyDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endDateTime;
     bool m_endDateTimeHasBeenSet;
   };

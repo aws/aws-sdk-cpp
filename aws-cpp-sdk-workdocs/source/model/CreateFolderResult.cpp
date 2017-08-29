@@ -30,12 +30,12 @@ CreateFolderResult::CreateFolderResult()
 {
 }
 
-CreateFolderResult::CreateFolderResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateFolderResult::CreateFolderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateFolderResult& CreateFolderResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateFolderResult& CreateFolderResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Metadata"))

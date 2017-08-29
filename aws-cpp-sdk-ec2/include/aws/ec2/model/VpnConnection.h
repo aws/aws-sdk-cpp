@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The configuration information for the VPN connection's customer gateway (in
      * the native XML format). This element is always present in the
@@ -118,6 +119,7 @@ namespace Model
      */
     inline VpnConnection& WithCustomerGatewayConfiguration(const char* value) { SetCustomerGatewayConfiguration(value); return *this;}
 
+
     /**
      * <p>The ID of the customer gateway at your end of the VPN connection.</p>
      */
@@ -153,6 +155,7 @@ namespace Model
      */
     inline VpnConnection& WithCustomerGatewayId(const char* value) { SetCustomerGatewayId(value); return *this;}
 
+
     /**
      * <p>The current state of the VPN connection.</p>
      */
@@ -178,6 +181,7 @@ namespace Model
      */
     inline VpnConnection& WithState(VpnState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of VPN connection.</p>
      */
@@ -202,6 +206,7 @@ namespace Model
      * <p>The type of VPN connection.</p>
      */
     inline VpnConnection& WithType(GatewayType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the VPN connection.</p>
@@ -237,6 +242,7 @@ namespace Model
      * <p>The ID of the VPN connection.</p>
      */
     inline VpnConnection& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
+
 
     /**
      * <p>The ID of the virtual private gateway at the AWS side of the VPN
@@ -280,6 +286,7 @@ namespace Model
      */
     inline VpnConnection& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
 
+
     /**
      * <p>The VPN connection options.</p>
      */
@@ -304,6 +311,7 @@ namespace Model
      * <p>The VPN connection options.</p>
      */
     inline VpnConnection& WithOptions(VpnConnectionOptions&& value) { SetOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>The static routes associated with the VPN connection.</p>
@@ -340,6 +348,7 @@ namespace Model
      */
     inline VpnConnection& AddRoutes(VpnStaticRoute&& value) { m_routesHasBeenSet = true; m_routes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Any tags assigned to the VPN connection.</p>
      */
@@ -374,6 +383,7 @@ namespace Model
      * <p>Any tags assigned to the VPN connection.</p>
      */
     inline VpnConnection& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Information about the VPN tunnel.</p>
@@ -411,24 +421,34 @@ namespace Model
     inline VpnConnection& AddVgwTelemetry(VgwTelemetry&& value) { m_vgwTelemetryHasBeenSet = true; m_vgwTelemetry.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_customerGatewayConfiguration;
     bool m_customerGatewayConfigurationHasBeenSet;
+
     Aws::String m_customerGatewayId;
     bool m_customerGatewayIdHasBeenSet;
+
     VpnState m_state;
     bool m_stateHasBeenSet;
+
     GatewayType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_vpnConnectionId;
     bool m_vpnConnectionIdHasBeenSet;
+
     Aws::String m_vpnGatewayId;
     bool m_vpnGatewayIdHasBeenSet;
+
     VpnConnectionOptions m_options;
     bool m_optionsHasBeenSet;
+
     Aws::Vector<VpnStaticRoute> m_routes;
     bool m_routesHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Vector<VgwTelemetry> m_vgwTelemetry;
     bool m_vgwTelemetryHasBeenSet;
   };

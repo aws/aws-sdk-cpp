@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListActionTypesResult();
-    ListActionTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListActionTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListActionTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListActionTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Provides details of the action types.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Provides details of the action types.</p>
      */
     inline ListActionTypesResult& AddActionTypes(ActionType&& value) { m_actionTypes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
@@ -134,7 +136,9 @@ namespace Model
     inline ListActionTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ActionType> m_actionTypes;
+
     Aws::String m_nextToken;
   };
 

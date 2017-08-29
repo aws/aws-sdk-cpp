@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
      * want to delete. <code>SizeConstraintSetId</code> is returned by
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DeleteSizeConstraintSetRequest& WithSizeConstraintSetId(const char* value) { SetSizeConstraintSetId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline DeleteSizeConstraintSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_sizeConstraintSetId;
     bool m_sizeConstraintSetIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
   };

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeVolumeAttributeResponse();
-    DescribeVolumeAttributeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVolumeAttributeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVolumeAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVolumeAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The state of <code>autoEnableIO</code> attribute.</p>
@@ -74,6 +75,7 @@ namespace Model
      * <p>The state of <code>autoEnableIO</code> attribute.</p>
      */
     inline DescribeVolumeAttributeResponse& WithAutoEnableIO(AttributeBooleanValue&& value) { SetAutoEnableIO(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of product codes.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline DescribeVolumeAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the volume.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      */
     inline DescribeVolumeAttributeResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -161,9 +165,13 @@ namespace Model
     inline DescribeVolumeAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     AttributeBooleanValue m_autoEnableIO;
+
     Aws::Vector<ProductCode> m_productCodes;
+
     Aws::String m_volumeId;
+
     ResponseMetadata m_responseMetadata;
   };
 

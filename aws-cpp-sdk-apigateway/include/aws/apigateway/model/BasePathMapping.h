@@ -50,6 +50,7 @@ namespace Model
     BasePathMapping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline BasePathMapping& WithBasePath(const char* value) { SetBasePath(value); return *this;}
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline BasePathMapping& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The name of the associated stage.</p>
@@ -163,10 +166,13 @@ namespace Model
     inline BasePathMapping& WithStage(const char* value) { SetStage(value); return *this;}
 
   private:
+
     Aws::String m_basePath;
     bool m_basePathHasBeenSet;
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_stage;
     bool m_stageHasBeenSet;
   };

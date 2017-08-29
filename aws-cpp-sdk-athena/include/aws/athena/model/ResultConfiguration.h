@@ -47,6 +47,7 @@ namespace Model
     ResultConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The location in S3 where query results are stored.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The location in S3 where query results are stored.</p>
      */
     inline ResultConfiguration& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
+
 
     /**
      * <p>If query results are encrypted in S3, indicates the S3 encryption option used
@@ -118,8 +120,10 @@ namespace Model
     inline ResultConfiguration& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_outputLocation;
     bool m_outputLocationHasBeenSet;
+
     EncryptionConfiguration m_encryptionConfiguration;
     bool m_encryptionConfigurationHasBeenSet;
   };

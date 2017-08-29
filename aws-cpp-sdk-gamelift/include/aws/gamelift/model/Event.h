@@ -50,6 +50,7 @@ namespace Model
     Event& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a fleet event.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline Event& WithEventId(const char* value) { SetEventId(value); return *this;}
 
+
     /**
      * <p>Unique identifier for an event resource, such as a fleet ID.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>Unique identifier for an event resource, such as a fleet ID.</p>
      */
     inline Event& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>Type of event being logged. The following events are currently in use:</p>
@@ -415,6 +418,7 @@ namespace Model
      */
     inline Event& WithEventCode(EventCode&& value) { SetEventCode(std::move(value)); return *this;}
 
+
     /**
      * <p>Additional information related to the event.</p>
      */
@@ -450,6 +454,7 @@ namespace Model
      */
     inline Event& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
      * in Unix time as milliseconds (for example "1469498468.057").</p>
@@ -479,6 +484,7 @@ namespace Model
      * in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Location of stored logs with additional detail that is related to the event.
@@ -530,16 +536,22 @@ namespace Model
     inline Event& WithPreSignedLogUrl(const char* value) { SetPreSignedLogUrl(value); return *this;}
 
   private:
+
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     EventCode m_eventCode;
     bool m_eventCodeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::Utils::DateTime m_eventTime;
     bool m_eventTimeHasBeenSet;
+
     Aws::String m_preSignedLogUrl;
     bool m_preSignedLogUrlHasBeenSet;
   };

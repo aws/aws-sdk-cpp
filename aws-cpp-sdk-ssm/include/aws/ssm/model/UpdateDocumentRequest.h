@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The content in a document that you want to update.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline UpdateDocumentRequest& WithContent(const char* value) { SetContent(value); return *this;}
 
+
     /**
      * <p>The name of the document that you want to update.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The name of the document that you want to update.</p>
      */
     inline UpdateDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The version of the document that you want to update.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline UpdateDocumentRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
   private:
+
     Aws::String m_content;
     bool m_contentHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
   };

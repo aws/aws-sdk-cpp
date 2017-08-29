@@ -34,6 +34,7 @@ namespace Model
     CreateReusableDelegationSetRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A unique string that identifies the request, and that allows you to retry
      * failed <code>CreateReusableDelegationSet</code> requests without the risk of
@@ -104,6 +105,7 @@ namespace Model
      */
     inline CreateReusableDelegationSetRequest& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
+
     /**
      * <p>If you want to mark the delegation set for an existing hosted zone as
      * reusable, the ID for that hosted zone.</p>
@@ -147,8 +149,10 @@ namespace Model
     inline CreateReusableDelegationSetRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
   private:
+
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
   };

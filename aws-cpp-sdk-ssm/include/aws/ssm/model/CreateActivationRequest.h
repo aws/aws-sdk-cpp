@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A userdefined description of the resource that you want to register with
      * Amazon EC2. </p>
@@ -78,6 +79,7 @@ namespace Model
      * Amazon EC2. </p>
      */
     inline CreateActivationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Amazon
@@ -128,6 +130,7 @@ namespace Model
      */
     inline CreateActivationRequest& WithDefaultInstanceName(const char* value) { SetDefaultInstanceName(value); return *this;}
 
+
     /**
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
      * to the managed instance. </p>
@@ -170,6 +173,7 @@ namespace Model
      */
     inline CreateActivationRequest& WithIamRole(const char* value) { SetIamRole(value); return *this;}
 
+
     /**
      * <p>Specify the maximum number of managed instances you want to register. The
      * default value is 1 instance.</p>
@@ -187,6 +191,7 @@ namespace Model
      * default value is 1 instance.</p>
      */
     inline CreateActivationRequest& WithRegistrationLimit(int value) { SetRegistrationLimit(value); return *this;}
+
 
     /**
      * <p>The date by which this activation request should expire. The default value is
@@ -219,14 +224,19 @@ namespace Model
     inline CreateActivationRequest& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_defaultInstanceName;
     bool m_defaultInstanceNameHasBeenSet;
+
     Aws::String m_iamRole;
     bool m_iamRoleHasBeenSet;
+
     int m_registrationLimit;
     bool m_registrationLimitHasBeenSet;
+
     Aws::Utils::DateTime m_expirationDate;
     bool m_expirationDateHasBeenSet;
   };

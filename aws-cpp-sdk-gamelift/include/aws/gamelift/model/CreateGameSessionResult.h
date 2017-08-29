@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateGameSessionResult();
-    CreateGameSessionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateGameSessionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateGameSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateGameSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that describes the newly created game session record.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline CreateGameSessionResult& WithGameSession(GameSession&& value) { SetGameSession(std::move(value)); return *this;}
 
   private:
+
     GameSession m_gameSession;
   };
 

@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -65,6 +66,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ImportKeyPairRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>A unique name for the key pair.</p>
@@ -101,6 +103,7 @@ namespace Model
      */
     inline ImportKeyPairRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
+
     /**
      * <p>The public key. For API calls, the text must be base64-encoded. For command
      * line tools, base64 encoding is performed for you.</p>
@@ -132,10 +135,13 @@ namespace Model
     inline ImportKeyPairRequest& WithPublicKeyMaterial(Aws::Utils::ByteBuffer&& value) { SetPublicKeyMaterial(std::move(value)); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
+
     Aws::Utils::ByteBuffer m_publicKeyMaterial;
     bool m_publicKeyMaterialHasBeenSet;
   };

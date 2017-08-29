@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeMountTargetsResult();
-    DescribeMountTargetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMountTargetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMountTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMountTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If the request included the <code>Marker</code>, the response returns that
@@ -90,6 +91,7 @@ namespace Model
      */
     inline DescribeMountTargetsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Returns the file system's mount targets as an array of
      * <code>MountTargetDescription</code> objects.</p>
@@ -131,6 +133,7 @@ namespace Model
      * <code>MountTargetDescription</code> objects.</p>
      */
     inline DescribeMountTargetsResult& AddMountTargets(MountTargetDescription&& value) { m_mountTargets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a value is present, there are more mount targets to return. In a
@@ -182,8 +185,11 @@ namespace Model
     inline DescribeMountTargetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<MountTargetDescription> m_mountTargets;
+
     Aws::String m_nextMarker;
   };
 

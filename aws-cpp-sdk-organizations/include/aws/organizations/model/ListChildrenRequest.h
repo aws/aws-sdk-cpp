@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) for the parent root or OU whose children you want
      * to list.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
@@ -121,6 +122,7 @@ namespace Model
      */
     inline ListChildrenRequest& WithParentId(const char* value) { SetParentId(value); return *this;}
 
+
     /**
      * <p>Filters the output to include only the specified child type.</p>
      */
@@ -145,6 +147,7 @@ namespace Model
      * <p>Filters the output to include only the specified child type.</p>
      */
     inline ListChildrenRequest& WithChildType(ChildType&& value) { SetChildType(std::move(value)); return *this;}
+
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -202,6 +205,7 @@ namespace Model
      */
     inline ListChildrenRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this to limit the number of results you want included in the
      * response. If you do not include this parameter, it defaults to a value that is
@@ -242,12 +246,16 @@ namespace Model
     inline ListChildrenRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_parentId;
     bool m_parentIdHasBeenSet;
+
     ChildType m_childType;
     bool m_childTypeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

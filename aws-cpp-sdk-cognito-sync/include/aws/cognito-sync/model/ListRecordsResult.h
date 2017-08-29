@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListRecordsResult();
-    ListRecordsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRecordsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * A list of all records.
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ListRecordsResult& AddRecords(Record&& value) { m_records.push_back(std::move(value)); return *this; }
 
+
     /**
      * A pagination token for obtaining the next page of results.
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline ListRecordsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * Total number of records.
      */
@@ -133,6 +136,7 @@ namespace Model
      */
     inline ListRecordsResult& WithCount(int value) { SetCount(value); return *this;}
 
+
     /**
      * Server sync count for this dataset.
      */
@@ -147,6 +151,7 @@ namespace Model
      * Server sync count for this dataset.
      */
     inline ListRecordsResult& WithDatasetSyncCount(long long value) { SetDatasetSyncCount(value); return *this;}
+
 
     /**
      * The user/device that made the last change to this record.
@@ -182,6 +187,7 @@ namespace Model
      * The user/device that made the last change to this record.
      */
     inline ListRecordsResult& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
+
 
     /**
      * Names of merged datasets.
@@ -223,6 +229,7 @@ namespace Model
      */
     inline ListRecordsResult& AddMergedDatasetNames(const char* value) { m_mergedDatasetNames.push_back(value); return *this; }
 
+
     /**
      * Indicates whether the dataset exists.
      */
@@ -238,6 +245,7 @@ namespace Model
      */
     inline ListRecordsResult& WithDatasetExists(bool value) { SetDatasetExists(value); return *this;}
 
+
     /**
      * A boolean value specifying whether to delete the dataset locally.
      */
@@ -252,6 +260,7 @@ namespace Model
      * A boolean value specifying whether to delete the dataset locally.
      */
     inline ListRecordsResult& WithDatasetDeletedAfterRequestedSyncCount(bool value) { SetDatasetDeletedAfterRequestedSyncCount(value); return *this;}
+
 
     /**
      * A token containing a session ID, identity ID, and expiration.
@@ -289,14 +298,23 @@ namespace Model
     inline ListRecordsResult& WithSyncSessionToken(const char* value) { SetSyncSessionToken(value); return *this;}
 
   private:
+
     Aws::Vector<Record> m_records;
+
     Aws::String m_nextToken;
+
     int m_count;
+
     long long m_datasetSyncCount;
+
     Aws::String m_lastModifiedBy;
+
     Aws::Vector<Aws::String> m_mergedDatasetNames;
+
     bool m_datasetExists;
+
     bool m_datasetDeletedAfterRequestedSyncCount;
+
     Aws::String m_syncSessionToken;
   };
 

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the trigger to update.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline UpdateTriggerRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The new values with which to update the trigger.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline UpdateTriggerRequest& WithTriggerUpdate(TriggerUpdate&& value) { SetTriggerUpdate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     TriggerUpdate m_triggerUpdate;
     bool m_triggerUpdateHasBeenSet;
   };

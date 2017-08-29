@@ -45,6 +45,7 @@ namespace Model
     Failure& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the failed resource.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the failed resource.</p>
      */
     inline Failure& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The reason for the failure.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline Failure& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     GetMetricStatisticsResult();
-    GetMetricStatisticsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetMetricStatisticsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetMetricStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetMetricStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A label for the specified metric.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline GetMetricStatisticsResult& WithLabel(const char* value) { SetLabel(value); return *this;}
 
+
     /**
      * <p>The data points for the specified metric.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      */
     inline GetMetricStatisticsResult& AddDatapoints(Datapoint&& value) { m_datapoints.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -130,8 +133,11 @@ namespace Model
     inline GetMetricStatisticsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_label;
+
     Aws::Vector<Datapoint> m_datapoints;
+
     ResponseMetadata m_responseMetadata;
   };
 

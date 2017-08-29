@@ -30,12 +30,12 @@ PurchaseOfferingResult::PurchaseOfferingResult()
 {
 }
 
-PurchaseOfferingResult::PurchaseOfferingResult(const AmazonWebServiceResult<JsonValue>& result)
+PurchaseOfferingResult::PurchaseOfferingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PurchaseOfferingResult& PurchaseOfferingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PurchaseOfferingResult& PurchaseOfferingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("offeringTransaction"))

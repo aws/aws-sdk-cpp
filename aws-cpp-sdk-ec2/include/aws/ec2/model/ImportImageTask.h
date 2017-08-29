@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
      * <code>i386</code> | <code>x86_64</code> </p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline ImportImageTask& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
 
+
     /**
      * <p>A description of the import task.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      * <p>A description of the import task.</p>
      */
     inline ImportImageTask& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The target hypervisor for the import task.</p> <p>Valid values:
@@ -169,6 +172,7 @@ namespace Model
      */
     inline ImportImageTask& WithHypervisor(const char* value) { SetHypervisor(value); return *this;}
 
+
     /**
      * <p>The ID of the Amazon Machine Image (AMI) of the imported virtual machine.</p>
      */
@@ -203,6 +207,7 @@ namespace Model
      * <p>The ID of the Amazon Machine Image (AMI) of the imported virtual machine.</p>
      */
     inline ImportImageTask& WithImageId(const char* value) { SetImageId(value); return *this;}
+
 
     /**
      * <p>The ID of the import image task.</p>
@@ -239,6 +244,7 @@ namespace Model
      */
     inline ImportImageTask& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
 
+
     /**
      * <p>The license type of the virtual machine.</p>
      */
@@ -273,6 +279,7 @@ namespace Model
      * <p>The license type of the virtual machine.</p>
      */
     inline ImportImageTask& WithLicenseType(const char* value) { SetLicenseType(value); return *this;}
+
 
     /**
      * <p>The description string for the import image task.</p>
@@ -309,6 +316,7 @@ namespace Model
      */
     inline ImportImageTask& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
+
     /**
      * <p>The percentage of progress of the import image task.</p>
      */
@@ -343,6 +351,7 @@ namespace Model
      * <p>The percentage of progress of the import image task.</p>
      */
     inline ImportImageTask& WithProgress(const char* value) { SetProgress(value); return *this;}
+
 
     /**
      * <p>Information about the snapshots.</p>
@@ -379,6 +388,7 @@ namespace Model
      */
     inline ImportImageTask& AddSnapshotDetails(SnapshotDetail&& value) { m_snapshotDetailsHasBeenSet = true; m_snapshotDetails.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A brief status for the import image task.</p>
      */
@@ -413,6 +423,7 @@ namespace Model
      * <p>A brief status for the import image task.</p>
      */
     inline ImportImageTask& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>A descriptive status message for the import image task.</p>
@@ -450,26 +461,37 @@ namespace Model
     inline ImportImageTask& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
   private:
+
     Aws::String m_architecture;
     bool m_architectureHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_hypervisor;
     bool m_hypervisorHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     Aws::String m_importTaskId;
     bool m_importTaskIdHasBeenSet;
+
     Aws::String m_licenseType;
     bool m_licenseTypeHasBeenSet;
+
     Aws::String m_platform;
     bool m_platformHasBeenSet;
+
     Aws::String m_progress;
     bool m_progressHasBeenSet;
+
     Aws::Vector<SnapshotDetail> m_snapshotDetails;
     bool m_snapshotDetailsHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
   };

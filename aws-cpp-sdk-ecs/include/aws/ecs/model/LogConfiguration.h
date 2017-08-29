@@ -48,6 +48,7 @@ namespace Model
     LogConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
@@ -137,6 +138,7 @@ namespace Model
      * </p>
      */
     inline LogConfiguration& WithLogDriver(LogDriver&& value) { SetLogDriver(std::move(value)); return *this;}
+
 
     /**
      * <p>The configuration options to send to the log driver. This parameter requires
@@ -247,8 +249,10 @@ namespace Model
     inline LogConfiguration& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
 
   private:
+
     LogDriver m_logDriver;
     bool m_logDriverHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_options;
     bool m_optionsHasBeenSet;
   };

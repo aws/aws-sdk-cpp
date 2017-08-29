@@ -30,12 +30,12 @@ AttachStaticIpResult::AttachStaticIpResult()
 {
 }
 
-AttachStaticIpResult::AttachStaticIpResult(const AmazonWebServiceResult<JsonValue>& result)
+AttachStaticIpResult::AttachStaticIpResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AttachStaticIpResult& AttachStaticIpResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AttachStaticIpResult& AttachStaticIpResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operations"))

@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::String& GetAnalysisSchemeName() const{ return m_analysisSchemeName; }
 
@@ -76,6 +77,7 @@ namespace Model
     
     inline AnalysisScheme& WithAnalysisSchemeName(const char* value) { SetAnalysisSchemeName(value); return *this;}
 
+
     
     inline const AnalysisSchemeLanguage& GetAnalysisSchemeLanguage() const{ return m_analysisSchemeLanguage; }
 
@@ -90,6 +92,7 @@ namespace Model
 
     
     inline AnalysisScheme& WithAnalysisSchemeLanguage(AnalysisSchemeLanguage&& value) { SetAnalysisSchemeLanguage(std::move(value)); return *this;}
+
 
     
     inline const AnalysisOptions& GetAnalysisOptions() const{ return m_analysisOptions; }
@@ -107,10 +110,13 @@ namespace Model
     inline AnalysisScheme& WithAnalysisOptions(AnalysisOptions&& value) { SetAnalysisOptions(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_analysisSchemeName;
     bool m_analysisSchemeNameHasBeenSet;
+
     AnalysisSchemeLanguage m_analysisSchemeLanguage;
     bool m_analysisSchemeLanguageHasBeenSet;
+
     AnalysisOptions m_analysisOptions;
     bool m_analysisOptionsHasBeenSet;
   };

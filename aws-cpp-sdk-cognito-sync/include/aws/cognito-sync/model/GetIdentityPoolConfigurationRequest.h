@@ -38,6 +38,7 @@ namespace Model
     GetIdentityPoolConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A name-spaced GUID (for example,
      * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This
@@ -88,6 +89,7 @@ namespace Model
     inline GetIdentityPoolConfigurationRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListImagesResult();
-    ListImagesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListImagesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of image IDs for the requested repository.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of image IDs for the requested repository.</p>
      */
     inline ListImagesResult& AddImageIds(ImageIdentifier&& value) { m_imageIds.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -142,7 +144,9 @@ namespace Model
     inline ListImagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ImageIdentifier> m_imageIds;
+
     Aws::String m_nextToken;
   };
 

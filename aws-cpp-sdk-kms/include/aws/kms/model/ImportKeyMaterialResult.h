@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     ImportKeyMaterialResult();
-    ImportKeyMaterialResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportKeyMaterialResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportKeyMaterialResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportKeyMaterialResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

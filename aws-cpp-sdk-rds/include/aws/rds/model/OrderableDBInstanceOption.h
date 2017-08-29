@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The engine type of the orderable DB instance.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The engine type of the orderable DB instance.</p>
      */
     inline OrderableDBInstanceOption& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>The engine version of the orderable DB instance.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>The DB instance class for the orderable DB instance.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The DB instance class for the orderable DB instance.</p>
      */
     inline OrderableDBInstanceOption& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
+
 
     /**
      * <p>The license model for the orderable DB instance.</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
+
     /**
      * <p>A list of Availability Zones for the orderable DB instance.</p>
      */
@@ -227,6 +232,7 @@ namespace Model
      */
     inline OrderableDBInstanceOption& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether this orderable DB instance is multi-AZ capable.</p>
      */
@@ -241,6 +247,7 @@ namespace Model
      * <p>Indicates whether this orderable DB instance is multi-AZ capable.</p>
      */
     inline OrderableDBInstanceOption& WithMultiAZCapable(bool value) { SetMultiAZCapable(value); return *this;}
+
 
     /**
      * <p>Indicates whether this orderable DB instance can have a Read Replica.</p>
@@ -257,6 +264,7 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithReadReplicaCapable(bool value) { SetReadReplicaCapable(value); return *this;}
 
+
     /**
      * <p>Indicates whether this is a VPC orderable DB instance.</p>
      */
@@ -272,6 +280,7 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithVpc(bool value) { SetVpc(value); return *this;}
 
+
     /**
      * <p>Indicates whether this orderable DB instance supports encrypted storage.</p>
      */
@@ -286,6 +295,7 @@ namespace Model
      * <p>Indicates whether this orderable DB instance supports encrypted storage.</p>
      */
     inline OrderableDBInstanceOption& WithSupportsStorageEncryption(bool value) { SetSupportsStorageEncryption(value); return *this;}
+
 
     /**
      * <p>Indicates the storage type for this orderable DB instance.</p>
@@ -322,6 +332,7 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
+
     /**
      * <p>Indicates whether this orderable DB instance supports provisioned IOPS.</p>
      */
@@ -336,6 +347,7 @@ namespace Model
      * <p>Indicates whether this orderable DB instance supports provisioned IOPS.</p>
      */
     inline OrderableDBInstanceOption& WithSupportsIops(bool value) { SetSupportsIops(value); return *this;}
+
 
     /**
      * <p>Indicates whether the DB instance supports enhanced monitoring at intervals
@@ -354,6 +366,7 @@ namespace Model
      * from 1 to 60 seconds.</p>
      */
     inline OrderableDBInstanceOption& WithSupportsEnhancedMonitoring(bool value) { SetSupportsEnhancedMonitoring(value); return *this;}
+
 
     /**
      * <p>Indicates whether this orderable DB instance supports IAM database
@@ -374,30 +387,43 @@ namespace Model
     inline OrderableDBInstanceOption& WithSupportsIAMDatabaseAuthentication(bool value) { SetSupportsIAMDatabaseAuthentication(value); return *this;}
 
   private:
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
     Aws::Vector<AvailabilityZone> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     bool m_multiAZCapable;
     bool m_multiAZCapableHasBeenSet;
+
     bool m_readReplicaCapable;
     bool m_readReplicaCapableHasBeenSet;
+
     bool m_vpc;
     bool m_vpcHasBeenSet;
+
     bool m_supportsStorageEncryption;
     bool m_supportsStorageEncryptionHasBeenSet;
+
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
+
     bool m_supportsIops;
     bool m_supportsIopsHasBeenSet;
+
     bool m_supportsEnhancedMonitoring;
     bool m_supportsEnhancedMonitoringHasBeenSet;
+
     bool m_supportsIAMDatabaseAuthentication;
     bool m_supportsIAMDatabaseAuthenticationHasBeenSet;
   };

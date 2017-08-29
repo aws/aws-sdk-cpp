@@ -55,7 +55,7 @@ enum class Route53DomainsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DOMAIN_LIMIT_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DOMAIN_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DUPLICATE_REQUEST,
   INVALID_INPUT,
   OPERATION_LIMIT_EXCEEDED,
@@ -64,7 +64,7 @@ enum class Route53DomainsErrors
 };
 namespace Route53DomainsErrorMapper
 {
-  AWS_ROUTE53DOMAINS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ROUTE53DOMAINS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Route53Domains

@@ -31,12 +31,12 @@ SetIdentityHeadersInNotificationsEnabledResult::SetIdentityHeadersInNotification
 {
 }
 
-SetIdentityHeadersInNotificationsEnabledResult::SetIdentityHeadersInNotificationsEnabledResult(const AmazonWebServiceResult<XmlDocument>& result)
+SetIdentityHeadersInNotificationsEnabledResult::SetIdentityHeadersInNotificationsEnabledResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SetIdentityHeadersInNotificationsEnabledResult& SetIdentityHeadersInNotificationsEnabledResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SetIdentityHeadersInNotificationsEnabledResult& SetIdentityHeadersInNotificationsEnabledResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

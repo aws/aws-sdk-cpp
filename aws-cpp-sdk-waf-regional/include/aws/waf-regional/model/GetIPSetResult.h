@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetIPSetResult();
-    GetIPSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetIPSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetIPSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetIPSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the <a>IPSet</a> that you specified in the
@@ -97,6 +98,7 @@ namespace Model
     inline GetIPSetResult& WithIPSet(IPSet&& value) { SetIPSet(std::move(value)); return *this;}
 
   private:
+
     IPSet m_iPSet;
   };
 

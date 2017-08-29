@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetApnsChannelResult();
-    GetApnsChannelResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApnsChannelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetApnsChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetApnsChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const APNSChannelResponse& GetAPNSChannelResponse() const{ return m_aPNSChannelResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline GetApnsChannelResult& WithAPNSChannelResponse(APNSChannelResponse&& value) { SetAPNSChannelResponse(std::move(value)); return *this;}
 
   private:
+
     APNSChannelResponse m_aPNSChannelResponse;
   };
 

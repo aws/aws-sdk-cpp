@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     StopDataCollectionByAgentIdsResult();
-    StopDataCollectionByAgentIdsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopDataCollectionByAgentIdsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopDataCollectionByAgentIdsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopDataCollectionByAgentIdsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the agents or connector that were instructed to stop
@@ -99,6 +100,7 @@ namespace Model
     inline StopDataCollectionByAgentIdsResult& AddAgentsConfigurationStatus(AgentConfigurationStatus&& value) { m_agentsConfigurationStatus.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<AgentConfigurationStatus> m_agentsConfigurationStatus;
   };
 

@@ -31,12 +31,12 @@ GetSAMLProviderResult::GetSAMLProviderResult()
 {
 }
 
-GetSAMLProviderResult::GetSAMLProviderResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetSAMLProviderResult::GetSAMLProviderResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetSAMLProviderResult& GetSAMLProviderResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetSAMLProviderResult& GetSAMLProviderResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

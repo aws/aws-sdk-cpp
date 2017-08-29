@@ -56,6 +56,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The email address to which the message was ultimately delivered. This
      * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
@@ -147,6 +148,7 @@ namespace Model
      */
     inline RecipientDsnFields& WithFinalRecipient(const char* value) { SetFinalRecipient(value); return *this;}
 
+
     /**
      * <p>The action performed by the reporting mail transfer agent (MTA) as a result
      * of its attempt to deliver the message to the recipient address. This is required
@@ -181,6 +183,7 @@ namespace Model
      * by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline RecipientDsnFields& WithAction(DsnAction&& value) { SetAction(std::move(value)); return *this;}
+
 
     /**
      * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
@@ -238,6 +241,7 @@ namespace Model
      */
     inline RecipientDsnFields& WithRemoteMta(const char* value) { SetRemoteMta(value); return *this;}
 
+
     /**
      * <p>The status code that indicates what went wrong. This is required by <a
      * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
@@ -279,6 +283,7 @@ namespace Model
      * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
     inline RecipientDsnFields& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>An extended explanation of what went wrong; this is usually an SMTP response.
@@ -329,6 +334,7 @@ namespace Model
      */
     inline RecipientDsnFields& WithDiagnosticCode(const char* value) { SetDiagnosticCode(value); return *this;}
 
+
     /**
      * <p>The time the final delivery attempt was made, in <a
      * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
@@ -358,6 +364,7 @@ namespace Model
      * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
     inline RecipientDsnFields& WithLastAttemptDate(Aws::Utils::DateTime&& value) { SetLastAttemptDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Additional X-headers to include in the DSN.</p>
@@ -395,18 +402,25 @@ namespace Model
     inline RecipientDsnFields& AddExtensionFields(ExtensionField&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_finalRecipient;
     bool m_finalRecipientHasBeenSet;
+
     DsnAction m_action;
     bool m_actionHasBeenSet;
+
     Aws::String m_remoteMta;
     bool m_remoteMtaHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_diagnosticCode;
     bool m_diagnosticCodeHasBeenSet;
+
     Aws::Utils::DateTime m_lastAttemptDate;
     bool m_lastAttemptDateHasBeenSet;
+
     Aws::Vector<ExtensionField> m_extensionFields;
     bool m_extensionFieldsHasBeenSet;
   };

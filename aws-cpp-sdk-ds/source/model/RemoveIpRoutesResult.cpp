@@ -30,12 +30,12 @@ RemoveIpRoutesResult::RemoveIpRoutesResult()
 {
 }
 
-RemoveIpRoutesResult::RemoveIpRoutesResult(const AmazonWebServiceResult<JsonValue>& result)
+RemoveIpRoutesResult::RemoveIpRoutesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RemoveIpRoutesResult& RemoveIpRoutesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RemoveIpRoutesResult& RemoveIpRoutesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

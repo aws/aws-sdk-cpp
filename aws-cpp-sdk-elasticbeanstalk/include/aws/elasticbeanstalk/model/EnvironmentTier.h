@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of this environment tier.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline EnvironmentTier& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The type of this environment tier.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The type of this environment tier.</p>
      */
     inline EnvironmentTier& WithType(const char* value) { SetType(value); return *this;}
+
 
     /**
      * <p>The version of this environment tier.</p>
@@ -154,10 +157,13 @@ namespace Model
     inline EnvironmentTier& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

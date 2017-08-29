@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListTagsLogGroupResult();
-    ListTagsLogGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsLogGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsLogGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsLogGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The tags.</p>
@@ -103,6 +104,7 @@ namespace Model
     inline ListTagsLogGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_tags;
   };
 

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     UpdateDeploymentGroupResult();
-    UpdateDeploymentGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDeploymentGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDeploymentGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDeploymentGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If the output contains no data, and the corresponding deployment group
@@ -112,6 +113,7 @@ namespace Model
     inline UpdateDeploymentGroupResult& AddHooksNotCleanedUp(AutoScalingGroup&& value) { m_hooksNotCleanedUp.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<AutoScalingGroup> m_hooksNotCleanedUp;
   };
 

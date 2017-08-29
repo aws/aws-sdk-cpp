@@ -30,12 +30,12 @@ DescribeAutomationExecutionsResult::DescribeAutomationExecutionsResult()
 {
 }
 
-DescribeAutomationExecutionsResult::DescribeAutomationExecutionsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAutomationExecutionsResult::DescribeAutomationExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeAutomationExecutionsResult& DescribeAutomationExecutionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAutomationExecutionsResult& DescribeAutomationExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AutomationExecutionMetadataList"))

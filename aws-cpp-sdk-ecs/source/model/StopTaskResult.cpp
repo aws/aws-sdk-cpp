@@ -30,12 +30,12 @@ StopTaskResult::StopTaskResult()
 {
 }
 
-StopTaskResult::StopTaskResult(const AmazonWebServiceResult<JsonValue>& result)
+StopTaskResult::StopTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopTaskResult& StopTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopTaskResult& StopTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("task"))

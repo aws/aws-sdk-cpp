@@ -48,6 +48,7 @@ namespace Model
     PolicySummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string
@@ -96,6 +97,7 @@ namespace Model
      * requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
      */
     inline PolicySummary& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p> <p>For more information
@@ -160,6 +162,7 @@ namespace Model
      */
     inline PolicySummary& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The friendly name of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
@@ -216,6 +219,7 @@ namespace Model
      */
     inline PolicySummary& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The description of the policy.</p>
      */
@@ -251,6 +255,7 @@ namespace Model
      */
     inline PolicySummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The type of policy.</p>
      */
@@ -276,6 +281,7 @@ namespace Model
      */
     inline PolicySummary& WithType(PolicyType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>A boolean value that indicates whether the specified policy is an AWS managed
      * policy. If true, then you can attach the policy to roots, OUs, or accounts, but
@@ -298,16 +304,22 @@ namespace Model
     inline PolicySummary& WithAwsManaged(bool value) { SetAwsManaged(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     PolicyType m_type;
     bool m_typeHasBeenSet;
+
     bool m_awsManaged;
     bool m_awsManagedHasBeenSet;
   };

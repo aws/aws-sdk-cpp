@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     RevokeClusterSecurityGroupIngressResult();
-    RevokeClusterSecurityGroupIngressResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RevokeClusterSecurityGroupIngressResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RevokeClusterSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RevokeClusterSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ClusterSecurityGroup& GetClusterSecurityGroup() const{ return m_clusterSecurityGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline RevokeClusterSecurityGroupIngressResult& WithClusterSecurityGroup(ClusterSecurityGroup&& value) { SetClusterSecurityGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline RevokeClusterSecurityGroupIngressResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ClusterSecurityGroup m_clusterSecurityGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 

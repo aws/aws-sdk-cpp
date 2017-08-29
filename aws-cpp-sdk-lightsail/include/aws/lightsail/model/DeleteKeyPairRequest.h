@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the key pair to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteKeyPairRequest& WithKeyPairName(const char* value) { SetKeyPairName(value); return *this;}
 
   private:
+
     Aws::String m_keyPairName;
     bool m_keyPairNameHasBeenSet;
   };

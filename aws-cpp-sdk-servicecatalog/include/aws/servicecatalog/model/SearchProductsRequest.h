@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -89,6 +90,7 @@ namespace Model
      * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline SearchProductsRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+
 
     /**
      * <p>The list of filters with which to limit search results. If no search filters
@@ -153,6 +155,7 @@ namespace Model
      */
     inline SearchProductsRequest& AddFilters(ProductViewFilterBy&& key, Aws::Vector<Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of items to return in the results. If more results exist
      * than fit in the specified <code>PageSize</code>, the value of
@@ -173,6 +176,7 @@ namespace Model
      * <code>NextPageToken</code> in the response is non-null.</p>
      */
     inline SearchProductsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+
 
     /**
      * <p>The sort field specifier. If no value is specified, results are not
@@ -204,6 +208,7 @@ namespace Model
      */
     inline SearchProductsRequest& WithSortBy(ProductViewSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
+
     /**
      * <p>The sort order specifier. If no value is specified, results are not
      * sorted.</p>
@@ -233,6 +238,7 @@ namespace Model
      * sorted.</p>
      */
     inline SearchProductsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+
 
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first
@@ -277,16 +283,22 @@ namespace Model
     inline SearchProductsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     ProductViewSortBy m_sortBy;
     bool m_sortByHasBeenSet;
+
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet;
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
   };

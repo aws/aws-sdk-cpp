@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The code for the continent with which you want to start listing locations
      * that Amazon Route 53 supports for geolocation. If Amazon Route 53 has already
@@ -127,6 +128,7 @@ namespace Model
      * countries or countries with their subdivisions.</p>
      */
     inline ListGeoLocationsRequest& WithStartContinentCode(const char* value) { SetStartContinentCode(value); return *this;}
+
 
     /**
      * <p>The code for the country with which you want to start listing locations that
@@ -219,6 +221,7 @@ namespace Model
      */
     inline ListGeoLocationsRequest& WithStartCountryCode(const char* value) { SetStartCountryCode(value); return *this;}
 
+
     /**
      * <p>The code for the subdivision (for example, state or province) with which you
      * want to start listing locations that Amazon Route 53 supports for geolocation.
@@ -303,6 +306,7 @@ namespace Model
      */
     inline ListGeoLocationsRequest& WithStartSubdivisionCode(const char* value) { SetStartSubdivisionCode(value); return *this;}
 
+
     /**
      * <p>(Optional) The maximum number of geolocations to be included in the response
      * body for this request. If more than <code>MaxItems</code> geolocations remain to
@@ -360,12 +364,16 @@ namespace Model
     inline ListGeoLocationsRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_startContinentCode;
     bool m_startContinentCodeHasBeenSet;
+
     Aws::String m_startCountryCode;
     bool m_startCountryCodeHasBeenSet;
+
     Aws::String m_startSubdivisionCode;
     bool m_startSubdivisionCodeHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

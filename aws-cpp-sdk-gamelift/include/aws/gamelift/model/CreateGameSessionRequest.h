@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet to create a game session in. Each request must
      * reference either a fleet ID or alias ID, but not both.</p>
@@ -82,6 +83,7 @@ namespace Model
      * reference either a fleet ID or alias ID, but not both.</p>
      */
     inline CreateGameSessionRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Unique identifier for an alias associated with the fleet to create a game
@@ -132,6 +134,7 @@ namespace Model
      */
     inline CreateGameSessionRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
 
+
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session.</p>
@@ -149,6 +152,7 @@ namespace Model
      * session.</p>
      */
     inline CreateGameSessionRequest& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -191,6 +195,7 @@ namespace Model
      * not need to be unique.</p>
      */
     inline CreateGameSessionRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Set of developer-defined properties for a game session, formatted as a set of
@@ -262,6 +267,7 @@ namespace Model
      */
     inline CreateGameSessionRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Unique identifier for a player or entity creating the game session. This ID
      * is used to enforce a resource protection policy (if one exists) that limits the
@@ -310,6 +316,7 @@ namespace Model
      * number of concurrent active game sessions one player can have.</p>
      */
     inline CreateGameSessionRequest& WithCreatorId(const char* value) { SetCreatorId(value); return *this;}
+
 
     /**
      * <p> <i>This parameter is no longer preferred. Please use
@@ -388,6 +395,7 @@ namespace Model
      */
     inline CreateGameSessionRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
+
     /**
      * <p>Custom string that uniquely identifies a request for a new game session.
      * Maximum token length is 48 characters. If provided, this string is included in
@@ -465,6 +473,7 @@ namespace Model
      */
     inline CreateGameSessionRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
+
     /**
      * <p>Set of developer-defined game session properties, formatted as a single
      * string value. This data is included in the <a>GameSession</a> object, which is
@@ -529,22 +538,31 @@ namespace Model
     inline CreateGameSessionRequest& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::String m_aliasId;
     bool m_aliasIdHasBeenSet;
+
     int m_maximumPlayerSessionCount;
     bool m_maximumPlayerSessionCountHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<GameProperty> m_gameProperties;
     bool m_gamePropertiesHasBeenSet;
+
     Aws::String m_creatorId;
     bool m_creatorIdHasBeenSet;
+
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet;
+
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
+
     Aws::String m_gameSessionData;
     bool m_gameSessionDataHasBeenSet;
   };

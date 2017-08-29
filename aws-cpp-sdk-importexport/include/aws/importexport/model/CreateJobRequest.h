@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline const JobType& GetJobType() const{ return m_jobType; }
 
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline CreateJobRequest& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetManifest() const{ return m_manifest; }
@@ -78,6 +80,7 @@ namespace Model
     
     inline CreateJobRequest& WithManifest(const char* value) { SetManifest(value); return *this;}
 
+
     
     inline const Aws::String& GetManifestAddendum() const{ return m_manifestAddendum; }
 
@@ -99,6 +102,7 @@ namespace Model
     
     inline CreateJobRequest& WithManifestAddendum(const char* value) { SetManifestAddendum(value); return *this;}
 
+
     
     inline bool GetValidateOnly() const{ return m_validateOnly; }
 
@@ -107,6 +111,7 @@ namespace Model
 
     
     inline CreateJobRequest& WithValidateOnly(bool value) { SetValidateOnly(value); return *this;}
+
 
     
     inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
@@ -130,14 +135,19 @@ namespace Model
     inline CreateJobRequest& WithAPIVersion(const char* value) { SetAPIVersion(value); return *this;}
 
   private:
+
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
+
     Aws::String m_manifest;
     bool m_manifestHasBeenSet;
+
     Aws::String m_manifestAddendum;
     bool m_manifestAddendumHasBeenSet;
+
     bool m_validateOnly;
     bool m_validateOnlyHasBeenSet;
+
     Aws::String m_aPIVersion;
     bool m_aPIVersionHasBeenSet;
   };

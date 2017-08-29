@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GenerateDataSetResult();
-    GenerateDataSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateDataSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GenerateDataSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GenerateDataSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * A unique identifier representing a specific request to the GenerateDataSet
@@ -97,6 +98,7 @@ namespace Model
     inline GenerateDataSetResult& WithDataSetRequestId(const char* value) { SetDataSetRequestId(value); return *this;}
 
   private:
+
     Aws::String m_dataSetRequestId;
   };
 

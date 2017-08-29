@@ -31,12 +31,12 @@ CopySnapshotResult::CopySnapshotResult()
 {
 }
 
-CopySnapshotResult::CopySnapshotResult(const AmazonWebServiceResult<XmlDocument>& result)
+CopySnapshotResult::CopySnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CopySnapshotResult& CopySnapshotResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CopySnapshotResult& CopySnapshotResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

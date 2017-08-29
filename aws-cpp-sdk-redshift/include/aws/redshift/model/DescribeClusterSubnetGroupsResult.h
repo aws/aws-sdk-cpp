@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeClusterSubnetGroupsResult();
-    DescribeClusterSubnetGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeClusterSubnetGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClusterSubnetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClusterSubnetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -120,6 +121,7 @@ namespace Model
      */
     inline DescribeClusterSubnetGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of <a>ClusterSubnetGroup</a> instances. </p>
      */
@@ -155,6 +157,7 @@ namespace Model
      */
     inline DescribeClusterSubnetGroupsResult& AddClusterSubnetGroups(ClusterSubnetGroup&& value) { m_clusterSubnetGroups.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -171,8 +174,11 @@ namespace Model
     inline DescribeClusterSubnetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<ClusterSubnetGroup> m_clusterSubnetGroups;
+
     ResponseMetadata m_responseMetadata;
   };
 

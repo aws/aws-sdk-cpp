@@ -30,12 +30,12 @@ EnableSsoResult::EnableSsoResult()
 {
 }
 
-EnableSsoResult::EnableSsoResult(const AmazonWebServiceResult<JsonValue>& result)
+EnableSsoResult::EnableSsoResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-EnableSsoResult& EnableSsoResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+EnableSsoResult& EnableSsoResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

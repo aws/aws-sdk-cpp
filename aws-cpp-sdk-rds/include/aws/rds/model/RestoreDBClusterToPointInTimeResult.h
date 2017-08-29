@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     RestoreDBClusterToPointInTimeResult();
-    RestoreDBClusterToPointInTimeResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreDBClusterToPointInTimeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RestoreDBClusterToPointInTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RestoreDBClusterToPointInTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DBCluster& GetDBCluster() const{ return m_dBCluster; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline RestoreDBClusterToPointInTimeResult& WithDBCluster(DBCluster&& value) { SetDBCluster(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline RestoreDBClusterToPointInTimeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DBCluster m_dBCluster;
+
     ResponseMetadata m_responseMetadata;
   };
 

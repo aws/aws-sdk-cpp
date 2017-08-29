@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     ModifyReplicationInstanceResult();
-    ModifyReplicationInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyReplicationInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyReplicationInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyReplicationInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The modified replication instance.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline ModifyReplicationInstanceResult& WithReplicationInstance(ReplicationInstance&& value) { SetReplicationInstance(std::move(value)); return *this;}
 
   private:
+
     ReplicationInstance m_replicationInstance;
   };
 

@@ -31,12 +31,12 @@ RunInstancesResponse::RunInstancesResponse()
 {
 }
 
-RunInstancesResponse::RunInstancesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+RunInstancesResponse::RunInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RunInstancesResponse& RunInstancesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RunInstancesResponse& RunInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -50,6 +50,7 @@ namespace Model
     StageState& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the stage.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline StageState& WithStageName(const char* value) { SetStageName(value); return *this;}
 
+
     /**
      * <p>The state of the inbound transition, which is either enabled or disabled.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The state of the inbound transition, which is either enabled or disabled.</p>
      */
     inline StageState& WithInboundTransitionState(TransitionState&& value) { SetInboundTransitionState(std::move(value)); return *this;}
+
 
     /**
      * <p>The state of the stage.</p>
@@ -145,6 +148,7 @@ namespace Model
      */
     inline StageState& AddActionStates(ActionState&& value) { m_actionStatesHasBeenSet = true; m_actionStates.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Information about the latest execution in the stage, including its ID and
      * status.</p>
@@ -176,12 +180,16 @@ namespace Model
     inline StageState& WithLatestExecution(StageExecution&& value) { SetLatestExecution(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     TransitionState m_inboundTransitionState;
     bool m_inboundTransitionStateHasBeenSet;
+
     Aws::Vector<ActionState> m_actionStates;
     bool m_actionStatesHasBeenSet;
+
     StageExecution m_latestExecution;
     bool m_latestExecutionHasBeenSet;
   };

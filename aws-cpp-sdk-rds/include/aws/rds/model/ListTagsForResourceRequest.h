@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon RDS resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN). For information about creating an ARN, see <a
@@ -99,6 +100,7 @@ namespace Model
      */
     inline ListTagsForResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
     /**
      * <p>This parameter is not currently supported.</p>
      */
@@ -135,8 +137,10 @@ namespace Model
     inline ListTagsForResourceRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
   };

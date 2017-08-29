@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateUploadResult();
-    CreateUploadResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The newly created upload.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline CreateUploadResult& WithUpload(Upload&& value) { SetUpload(std::move(value)); return *this;}
 
   private:
+
     Upload m_upload;
   };
 

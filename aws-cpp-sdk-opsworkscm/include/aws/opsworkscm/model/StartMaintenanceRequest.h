@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the server on which to run maintenance. </p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline StartMaintenanceRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 
   private:
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
   };

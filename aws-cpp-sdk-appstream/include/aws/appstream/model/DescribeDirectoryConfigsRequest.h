@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A specific list of directory names.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline DescribeDirectoryConfigsRequest& AddDirectoryNames(const char* value) { m_directoryNamesHasBeenSet = true; m_directoryNames.push_back(value); return *this; }
 
+
     /**
      * <p>The size of each page of results.</p>
      */
@@ -91,6 +93,7 @@ namespace Model
      * <p>The size of each page of results.</p>
      */
     inline DescribeDirectoryConfigsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The DescribeDirectoryConfigsResult.NextToken from a previous call to
@@ -135,10 +138,13 @@ namespace Model
     inline DescribeDirectoryConfigsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_directoryNames;
     bool m_directoryNamesHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

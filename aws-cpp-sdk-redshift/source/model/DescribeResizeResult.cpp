@@ -37,7 +37,7 @@ DescribeResizeResult::DescribeResizeResult() :
 {
 }
 
-DescribeResizeResult::DescribeResizeResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+DescribeResizeResult::DescribeResizeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_targetNumberOfNodes(0),
     m_avgResizeRateInMegaBytesPerSecond(0.0),
     m_totalResizeDataInMegaBytes(0),
@@ -48,7 +48,7 @@ DescribeResizeResult::DescribeResizeResult(const AmazonWebServiceResult<XmlDocum
   *this = result;
 }
 
-DescribeResizeResult& DescribeResizeResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeResizeResult& DescribeResizeResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

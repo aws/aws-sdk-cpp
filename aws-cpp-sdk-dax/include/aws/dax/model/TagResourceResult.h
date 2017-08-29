@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     TagResourceResult();
-    TagResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TagResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of tags that are associated with the DAX resource.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline TagResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Tag> m_tags;
   };
 

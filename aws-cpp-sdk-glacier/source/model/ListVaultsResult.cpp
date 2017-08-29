@@ -30,12 +30,12 @@ ListVaultsResult::ListVaultsResult()
 {
 }
 
-ListVaultsResult::ListVaultsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListVaultsResult::ListVaultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListVaultsResult& ListVaultsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListVaultsResult& ListVaultsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("VaultList"))

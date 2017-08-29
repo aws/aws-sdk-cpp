@@ -30,12 +30,12 @@ DescribeScalingPoliciesResult::DescribeScalingPoliciesResult()
 {
 }
 
-DescribeScalingPoliciesResult::DescribeScalingPoliciesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeScalingPoliciesResult::DescribeScalingPoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeScalingPoliciesResult& DescribeScalingPoliciesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeScalingPoliciesResult& DescribeScalingPoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ScalingPolicies"))

@@ -31,13 +31,13 @@ CreateConstraintResult::CreateConstraintResult() :
 {
 }
 
-CreateConstraintResult::CreateConstraintResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateConstraintResult::CreateConstraintResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(Status::NOT_SET)
 {
   *this = result;
 }
 
-CreateConstraintResult& CreateConstraintResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateConstraintResult& CreateConstraintResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ConstraintDetail"))

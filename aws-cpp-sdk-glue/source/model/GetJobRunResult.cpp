@@ -30,12 +30,12 @@ GetJobRunResult::GetJobRunResult()
 {
 }
 
-GetJobRunResult::GetJobRunResult(const AmazonWebServiceResult<JsonValue>& result)
+GetJobRunResult::GetJobRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetJobRunResult& GetJobRunResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetJobRunResult& GetJobRunResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("JobRun"))

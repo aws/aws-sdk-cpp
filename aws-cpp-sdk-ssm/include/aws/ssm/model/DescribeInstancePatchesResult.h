@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeInstancePatchesResult();
-    DescribeInstancePatchesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInstancePatchesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInstancePatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInstancePatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Title (string)</p>
@@ -99,6 +100,7 @@ namespace Model
      */
     inline DescribeInstancePatchesResult& AddPatches(PatchComplianceData&& value) { m_patches.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
@@ -142,7 +144,9 @@ namespace Model
     inline DescribeInstancePatchesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PatchComplianceData> m_patches;
+
     Aws::String m_nextToken;
   };
 

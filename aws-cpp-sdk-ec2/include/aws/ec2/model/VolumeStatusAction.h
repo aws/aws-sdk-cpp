@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The code identifying the operation, for example,
      * <code>enable-volume-io</code>.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline VolumeStatusAction& WithCode(const char* value) { SetCode(value); return *this;}
 
+
     /**
      * <p>A description of the operation.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      */
     inline VolumeStatusAction& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The ID of the event associated with this operation.</p>
      */
@@ -159,6 +162,7 @@ namespace Model
      * <p>The ID of the event associated with this operation.</p>
      */
     inline VolumeStatusAction& WithEventId(const char* value) { SetEventId(value); return *this;}
+
 
     /**
      * <p>The event type associated with this operation.</p>
@@ -196,12 +200,16 @@ namespace Model
     inline VolumeStatusAction& WithEventType(const char* value) { SetEventType(value); return *this;}
 
   private:
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet;
+
     Aws::String m_eventType;
     bool m_eventTypeHasBeenSet;
   };

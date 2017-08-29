@@ -46,6 +46,7 @@ namespace Model
     PutTargetsResultEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the target.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The ID of the target.</p>
      */
     inline PutTargetsResultEntry& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+
 
     /**
      * <p>The error code that indicates why the target addition failed. If the value is
@@ -130,6 +132,7 @@ namespace Model
      */
     inline PutTargetsResultEntry& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
+
     /**
      * <p>The error message that explains why the target addition failed.</p>
      */
@@ -166,10 +169,13 @@ namespace Model
     inline PutTargetsResultEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     Aws::String m_targetId;
     bool m_targetIdHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

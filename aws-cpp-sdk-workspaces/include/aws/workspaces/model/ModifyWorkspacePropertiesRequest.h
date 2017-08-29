@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the WorkSpace.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline ModifyWorkspacePropertiesRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
+
     /**
      * <p>The WorkSpace properties of the request.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline ModifyWorkspacePropertiesRequest& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet;
+
     WorkspaceProperties m_workspaceProperties;
     bool m_workspacePropertiesHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>If a <code>NextToken</code> was returned by a previous call, there are more
      * results available. To retrieve the next page of results, make the call again
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListProgressUpdateStreamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Filter to limit the maximum number of results to list per page.</p>
      */
@@ -101,8 +103,10 @@ namespace Model
     inline ListProgressUpdateStreamsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

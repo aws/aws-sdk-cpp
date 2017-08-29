@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ListCloudFrontOriginAccessIdentities2017_03_25Result();
-    ListCloudFrontOriginAccessIdentities2017_03_25Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListCloudFrontOriginAccessIdentities2017_03_25Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListCloudFrontOriginAccessIdentities2017_03_25Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListCloudFrontOriginAccessIdentities2017_03_25Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
@@ -73,6 +74,7 @@ namespace Model
     inline ListCloudFrontOriginAccessIdentities2017_03_25Result& WithCloudFrontOriginAccessIdentityList(CloudFrontOriginAccessIdentityList&& value) { SetCloudFrontOriginAccessIdentityList(std::move(value)); return *this;}
 
   private:
+
     CloudFrontOriginAccessIdentityList m_cloudFrontOriginAccessIdentityList;
   };
 

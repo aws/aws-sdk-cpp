@@ -30,12 +30,12 @@ DeleteMLModelResult::DeleteMLModelResult()
 {
 }
 
-DeleteMLModelResult::DeleteMLModelResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteMLModelResult::DeleteMLModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteMLModelResult& DeleteMLModelResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteMLModelResult& DeleteMLModelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MLModelId"))

@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     ScanResult();
-    ScanResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ScanResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ScanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ScanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of item attributes that match the scan criteria. Each element in
@@ -93,6 +94,7 @@ namespace Model
      */
     inline ScanResult& AddItems(Aws::Map<Aws::String, AttributeValue>&& value) { m_items.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The number of items in the response.</p> <p>If you set
      * <code>ScanFilter</code> in the request, then <code>Count</code> is the number of
@@ -122,6 +124,7 @@ namespace Model
      * <code>ScannedCount</code>.</p>
      */
     inline ScanResult& WithCount(int value) { SetCount(value); return *this;}
+
 
     /**
      * <p>The number of items evaluated, before any <code>ScanFilter</code> is applied.
@@ -158,6 +161,7 @@ namespace Model
      * same as <code>Count</code>.</p>
      */
     inline ScanResult& WithScannedCount(int value) { SetScannedCount(value); return *this;}
+
 
     /**
      * <p>The primary key of the item where the operation stopped, inclusive of the
@@ -291,6 +295,7 @@ namespace Model
      */
     inline ScanResult& AddLastEvaluatedKey(const char* key, const AttributeValue& value) { m_lastEvaluatedKey.emplace(key, value); return *this; }
 
+
     /**
      * <p>The capacity units consumed by the <code>Scan</code> operation. The data
      * returned includes the total provisioned throughput consumed, along with
@@ -352,10 +357,15 @@ namespace Model
     inline ScanResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_items;
+
     int m_count;
+
     int m_scannedCount;
+
     Aws::Map<Aws::String, AttributeValue> m_lastEvaluatedKey;
+
     ConsumedCapacity m_consumedCapacity;
   };
 

@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Optionally specifies, in UTC, the start of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is used,
@@ -76,6 +77,7 @@ namespace Model
      */
     inline ListPublicKeysRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Optionally specifies, in UTC, the end of the time range to look up public
      * keys for CloudTrail digest files. If not specified, the current time is
@@ -110,6 +112,7 @@ namespace Model
      * used.</p>
      */
     inline ListPublicKeysRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Reserved for future use.</p>
@@ -147,10 +150,13 @@ namespace Model
     inline ListPublicKeysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

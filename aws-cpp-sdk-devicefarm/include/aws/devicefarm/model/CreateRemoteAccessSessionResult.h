@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateRemoteAccessSessionResult();
-    CreateRemoteAccessSessionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRemoteAccessSessionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateRemoteAccessSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateRemoteAccessSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A container that describes the remote access session when the request to
@@ -78,6 +79,7 @@ namespace Model
     inline CreateRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSession&& value) { SetRemoteAccessSession(std::move(value)); return *this;}
 
   private:
+
     RemoteAccessSession m_remoteAccessSession;
   };
 

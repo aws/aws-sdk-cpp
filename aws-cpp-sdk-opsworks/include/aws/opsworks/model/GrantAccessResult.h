@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GrantAccessResult();
-    GrantAccessResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GrantAccessResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GrantAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GrantAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A <code>TemporaryCredential</code> object that contains the data needed to
@@ -83,6 +84,7 @@ namespace Model
     inline GrantAccessResult& WithTemporaryCredential(TemporaryCredential&& value) { SetTemporaryCredential(std::move(value)); return *this;}
 
   private:
+
     TemporaryCredential m_temporaryCredential;
   };
 

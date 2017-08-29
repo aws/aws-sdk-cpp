@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the activity.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The ID of the activity.</p>
      */
     inline Activity& WithActivityId(const char* value) { SetActivityId(value); return *this;}
+
 
     /**
      * <p>The name of the Auto Scaling group.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline Activity& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
+
     /**
      * <p>A friendly, more verbose description of the activity.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>A friendly, more verbose description of the activity.</p>
      */
     inline Activity& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The reason the activity began.</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline Activity& WithCause(const char* value) { SetCause(value); return *this;}
 
+
     /**
      * <p>The start time of the activity.</p>
      */
@@ -216,6 +221,7 @@ namespace Model
      * <p>The start time of the activity.</p>
      */
     inline Activity& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The end time of the activity.</p>
@@ -242,6 +248,7 @@ namespace Model
      */
     inline Activity& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The current status of the activity.</p>
      */
@@ -266,6 +273,7 @@ namespace Model
      * <p>The current status of the activity.</p>
      */
     inline Activity& WithStatusCode(ScalingActivityStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+
 
     /**
      * <p>A friendly, more verbose description of the activity status.</p>
@@ -302,6 +310,7 @@ namespace Model
      */
     inline Activity& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     /**
      * <p>A value between 0 and 100 that indicates the progress of the activity.</p>
      */
@@ -316,6 +325,7 @@ namespace Model
      * <p>A value between 0 and 100 that indicates the progress of the activity.</p>
      */
     inline Activity& WithProgress(int value) { SetProgress(value); return *this;}
+
 
     /**
      * <p>The details about the activity.</p>
@@ -353,24 +363,34 @@ namespace Model
     inline Activity& WithDetails(const char* value) { SetDetails(value); return *this;}
 
   private:
+
     Aws::String m_activityId;
     bool m_activityIdHasBeenSet;
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_cause;
     bool m_causeHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     ScalingActivityStatusCode m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     int m_progress;
     bool m_progressHasBeenSet;
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
   };

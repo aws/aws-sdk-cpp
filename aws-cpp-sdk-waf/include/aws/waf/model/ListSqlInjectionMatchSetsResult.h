@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListSqlInjectionMatchSetsResult();
-    ListSqlInjectionMatchSetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSqlInjectionMatchSetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSqlInjectionMatchSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSqlInjectionMatchSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If you have more <a>SqlInjectionMatchSet</a> objects than the number that you
@@ -119,6 +120,7 @@ namespace Model
      */
     inline ListSqlInjectionMatchSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>An array of <a>SqlInjectionMatchSetSummary</a> objects.</p>
      */
@@ -155,7 +157,9 @@ namespace Model
     inline ListSqlInjectionMatchSetsResult& AddSqlInjectionMatchSets(SqlInjectionMatchSetSummary&& value) { m_sqlInjectionMatchSets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextMarker;
+
     Aws::Vector<SqlInjectionMatchSetSummary> m_sqlInjectionMatchSets;
   };
 

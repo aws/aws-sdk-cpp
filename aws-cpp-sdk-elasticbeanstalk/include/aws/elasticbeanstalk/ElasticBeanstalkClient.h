@@ -142,7 +142,7 @@ namespace Model
         class UpdateEnvironmentRequest;
         class ValidateConfigurationSettingsRequest;
 
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> AbortEnvironmentUpdateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> AbortEnvironmentUpdateOutcome;
         typedef Aws::Utils::Outcome<ApplyEnvironmentManagedActionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ApplyEnvironmentManagedActionOutcome;
         typedef Aws::Utils::Outcome<CheckDNSAvailabilityResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CheckDNSAvailabilityOutcome;
         typedef Aws::Utils::Outcome<ComposeEnvironmentsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ComposeEnvironmentsOutcome;
@@ -152,10 +152,10 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateEnvironmentOutcome;
         typedef Aws::Utils::Outcome<CreatePlatformVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreatePlatformVersionOutcome;
         typedef Aws::Utils::Outcome<CreateStorageLocationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> CreateStorageLocationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteApplicationVersionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteConfigurationTemplateOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteEnvironmentConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteApplicationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteApplicationVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteConfigurationTemplateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeleteEnvironmentConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeletePlatformVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DeletePlatformVersionOutcome;
         typedef Aws::Utils::Outcome<DescribeApplicationVersionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeApplicationVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeApplicationsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeApplicationsOutcome;
@@ -171,11 +171,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribePlatformVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribePlatformVersionOutcome;
         typedef Aws::Utils::Outcome<ListAvailableSolutionStacksResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListAvailableSolutionStacksOutcome;
         typedef Aws::Utils::Outcome<ListPlatformVersionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListPlatformVersionsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RebuildEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RequestEnvironmentInfoOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RestartAppServerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RebuildEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RequestEnvironmentInfoOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RestartAppServerOutcome;
         typedef Aws::Utils::Outcome<RetrieveEnvironmentInfoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RetrieveEnvironmentInfoOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> SwapEnvironmentCNAMEsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> SwapEnvironmentCNAMEsOutcome;
         typedef Aws::Utils::Outcome<TerminateEnvironmentResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> TerminateEnvironmentOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResourceLifecycleResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> UpdateApplicationResourceLifecycleOutcome;
@@ -296,27 +296,28 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ElasticBeanstalkClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        ElasticBeanstalkClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ElasticBeanstalkClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        ElasticBeanstalkClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        ElasticBeanstalkClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        ElasticBeanstalkClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ElasticBeanstalkClient();
+
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
-        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
 
         /**
@@ -1664,7 +1665,7 @@ namespace Model
 
 
   private:
-    void init(const Client::ClientConfiguration& clientConfiguration);
+    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AbortEnvironmentUpdateAsyncHelper(const Model::AbortEnvironmentUpdateRequest& request, const AbortEnvironmentUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1710,7 +1711,7 @@ namespace Model
         void ValidateConfigurationSettingsAsyncHelper(const Model::ValidateConfigurationSettingsRequest& request, const ValidateConfigurationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
-    std::shared_ptr<Utils::Threading::Executor> m_executor;
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace ElasticBeanstalk

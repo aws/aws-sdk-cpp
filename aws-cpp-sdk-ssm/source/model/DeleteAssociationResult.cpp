@@ -30,12 +30,12 @@ DeleteAssociationResult::DeleteAssociationResult()
 {
 }
 
-DeleteAssociationResult::DeleteAssociationResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteAssociationResult::DeleteAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteAssociationResult& DeleteAssociationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteAssociationResult& DeleteAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -30,12 +30,12 @@ ListImagesResult::ListImagesResult()
 {
 }
 
-ListImagesResult::ListImagesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListImagesResult::ListImagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListImagesResult& ListImagesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListImagesResult& ListImagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("imageIds"))

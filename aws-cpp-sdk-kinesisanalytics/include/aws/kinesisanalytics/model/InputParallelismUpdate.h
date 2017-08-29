@@ -43,6 +43,7 @@ namespace Model
     InputParallelismUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Number of in-application streams to create for the specified streaming
      * source.</p>
@@ -62,6 +63,7 @@ namespace Model
     inline InputParallelismUpdate& WithCountUpdate(int value) { SetCountUpdate(value); return *this;}
 
   private:
+
     int m_countUpdate;
     bool m_countUpdateHasBeenSet;
   };

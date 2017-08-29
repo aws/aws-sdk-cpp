@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline Error& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
@@ -83,6 +85,7 @@ namespace Model
     
     inline Error& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     
     inline const Aws::String& GetCode() const{ return m_code; }
 
@@ -103,6 +106,7 @@ namespace Model
 
     
     inline Error& WithCode(const char* value) { SetCode(value); return *this;}
+
 
     
     inline const Aws::String& GetMessage() const{ return m_message; }
@@ -126,12 +130,16 @@ namespace Model
     inline Error& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

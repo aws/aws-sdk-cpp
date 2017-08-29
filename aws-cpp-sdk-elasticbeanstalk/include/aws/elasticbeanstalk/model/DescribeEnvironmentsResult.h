@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeEnvironmentsResult();
-    DescribeEnvironmentsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEnvironmentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> Returns an <a>EnvironmentDescription</a> list. </p>
@@ -84,6 +85,7 @@ namespace Model
      * <p> Returns an <a>EnvironmentDescription</a> list. </p>
      */
     inline DescribeEnvironmentsResult& AddEnvironments(EnvironmentDescription&& value) { m_environments.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>In a paginated request, the token that you can pass in a subsequent request
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeEnvironmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeEnvironmentsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<EnvironmentDescription> m_environments;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

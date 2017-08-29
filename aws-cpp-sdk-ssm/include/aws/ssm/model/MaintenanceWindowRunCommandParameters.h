@@ -49,6 +49,7 @@ namespace Model
     MaintenanceWindowRunCommandParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Information about the command(s) to execute.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the command(s) to execute.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithComment(const char* value) { SetComment(value); return *this;}
+
 
     /**
      * <p>The SHA-256 or SHA-1 hash created by the system when the document was
@@ -126,6 +128,7 @@ namespace Model
      */
     inline MaintenanceWindowRunCommandParameters& WithDocumentHash(const char* value) { SetDocumentHash(value); return *this;}
 
+
     /**
      * <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithDocumentHashType(DocumentHashType&& value) { SetDocumentHashType(std::move(value)); return *this;}
+
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
@@ -180,6 +184,7 @@ namespace Model
      * per-instance basis.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the Amazon S3 bucket.</p>
@@ -216,6 +221,7 @@ namespace Model
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
 
+
     /**
      * <p>The Amazon S3 bucket subfolder.</p>
      */
@@ -250,6 +256,7 @@ namespace Model
      * <p>The Amazon S3 bucket subfolder.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
+
 
     /**
      * <p>The parameters for the RUN_COMMAND task execution.</p>
@@ -306,6 +313,7 @@ namespace Model
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The IAM service role to assume during task execution.</p>
      */
@@ -341,6 +349,7 @@ namespace Model
      */
     inline MaintenanceWindowRunCommandParameters& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
+
     /**
      * <p>If this time is reached and the command has not already started executing, it
      * doesn not execute.</p>
@@ -360,22 +369,31 @@ namespace Model
     inline MaintenanceWindowRunCommandParameters& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
 
   private:
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     Aws::String m_documentHash;
     bool m_documentHashHasBeenSet;
+
     DocumentHashType m_documentHashType;
     bool m_documentHashTypeHasBeenSet;
+
     NotificationConfig m_notificationConfig;
     bool m_notificationConfigHasBeenSet;
+
     Aws::String m_outputS3BucketName;
     bool m_outputS3BucketNameHasBeenSet;
+
     Aws::String m_outputS3KeyPrefix;
     bool m_outputS3KeyPrefixHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     int m_timeoutSeconds;
     bool m_timeoutSecondsHasBeenSet;
   };

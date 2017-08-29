@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the DAX cluster that will receive additional nodes.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline IncreaseReplicationFactorRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
+
     /**
      * <p>The new number of nodes for the DAX cluster.</p>
      */
@@ -86,6 +88,7 @@ namespace Model
      * <p>The new number of nodes for the DAX cluster.</p>
      */
     inline IncreaseReplicationFactorRequest& WithNewReplicationFactor(int value) { SetNewReplicationFactor(value); return *this;}
+
 
     /**
      * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
@@ -144,10 +147,13 @@ namespace Model
     inline IncreaseReplicationFactorRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
   private:
+
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet;
+
     int m_newReplicationFactor;
     bool m_newReplicationFactorHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
   };

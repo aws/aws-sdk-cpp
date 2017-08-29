@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GenerateDataKeyResult();
-    GenerateDataKeyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateDataKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GenerateDataKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GenerateDataKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The encrypted data encryption key.</p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>The encrypted data encryption key.</p>
      */
     inline GenerateDataKeyResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
+
 
     /**
      * <p>The data encryption key. Use this data key for local encryption and
@@ -96,6 +98,7 @@ namespace Model
      * decryption, then remove it from memory as soon as possible.</p>
      */
     inline GenerateDataKeyResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier of the CMK under which the data encryption key was generated
@@ -140,8 +143,11 @@ namespace Model
     inline GenerateDataKeyResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_ciphertextBlob;
+
     Aws::Utils::ByteBuffer m_plaintext;
+
     Aws::String m_keyId;
   };
 

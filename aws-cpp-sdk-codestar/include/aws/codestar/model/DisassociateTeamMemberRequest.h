@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the AWS CodeStar project from which you want to remove a team
      * member.</p>
@@ -77,6 +78,7 @@ namespace Model
      * member.</p>
      */
     inline DisassociateTeamMemberRequest& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to
@@ -121,8 +123,10 @@ namespace Model
     inline DisassociateTeamMemberRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 
   private:
+
     Aws::String m_projectId;
     bool m_projectIdHasBeenSet;
+
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;
   };

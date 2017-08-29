@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     AddApplicationReferenceDataSourceResult();
-    AddApplicationReferenceDataSourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddApplicationReferenceDataSourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddApplicationReferenceDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddApplicationReferenceDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

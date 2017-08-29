@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteHsmConfigurationRequest& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_hsmConfigurationIdentifier;
     bool m_hsmConfigurationIdentifierHasBeenSet;
   };

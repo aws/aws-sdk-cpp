@@ -55,7 +55,7 @@ enum class ACMErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_ARN= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_ARN= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_DOMAIN_VALIDATION_OPTIONS,
   INVALID_STATE,
   INVALID_TAG,
@@ -66,7 +66,7 @@ enum class ACMErrors
 };
 namespace ACMErrorMapper
 {
-  AWS_ACM_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ACM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ACM

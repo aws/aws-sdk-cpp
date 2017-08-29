@@ -38,7 +38,7 @@ DomainMetadataResult::DomainMetadataResult() :
 {
 }
 
-DomainMetadataResult::DomainMetadataResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+DomainMetadataResult::DomainMetadataResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_itemCount(0),
     m_itemNamesSizeBytes(0),
     m_attributeNameCount(0),
@@ -50,7 +50,7 @@ DomainMetadataResult::DomainMetadataResult(const AmazonWebServiceResult<XmlDocum
   *this = result;
 }
 
-DomainMetadataResult& DomainMetadataResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DomainMetadataResult& DomainMetadataResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

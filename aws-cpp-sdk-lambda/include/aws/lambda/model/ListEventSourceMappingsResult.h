@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListEventSourceMappingsResult();
-    ListEventSourceMappingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEventSourceMappingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListEventSourceMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListEventSourceMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A string, present if there are more event source mappings.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A string, present if there are more event source mappings.</p>
      */
     inline ListEventSourceMappingsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+
 
     /**
      * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline ListEventSourceMappingsResult& AddEventSourceMappings(EventSourceMappingConfiguration&& value) { m_eventSourceMappings.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextMarker;
+
     Aws::Vector<EventSourceMappingConfiguration> m_eventSourceMappings;
   };
 

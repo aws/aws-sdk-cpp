@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeIndexFieldsResult();
-    DescribeIndexFieldsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeIndexFieldsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeIndexFieldsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeIndexFieldsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The index fields configured for the domain.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeIndexFieldsResult& AddIndexFields(IndexFieldStatus&& value) { m_indexFields.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -101,7 +103,9 @@ namespace Model
     inline DescribeIndexFieldsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<IndexFieldStatus> m_indexFields;
+
     ResponseMetadata m_responseMetadata;
   };
 

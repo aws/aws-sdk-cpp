@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     ListUniqueProblemsResult();
-    ListUniqueProblemsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListUniqueProblemsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUniqueProblemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUniqueProblemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
@@ -141,6 +142,7 @@ namespace Model
      */
     inline ListUniqueProblemsResult& AddUniqueProblems(ExecutionResult&& key, Aws::Vector<UniqueProblem>&& value) { m_uniqueProblems.emplace(std::move(key), std::move(value)); return *this; }
 
+
     /**
      * <p>If the number of items that are returned is significantly large, this is an
      * identifier that is also returned, which can be used in a subsequent call to this
@@ -191,7 +193,9 @@ namespace Model
     inline ListUniqueProblemsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Map<ExecutionResult, Aws::Vector<UniqueProblem>> m_uniqueProblems;
+
     Aws::String m_nextToken;
   };
 

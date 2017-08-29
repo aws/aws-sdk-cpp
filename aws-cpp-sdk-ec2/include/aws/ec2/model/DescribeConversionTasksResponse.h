@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeConversionTasksResponse();
-    DescribeConversionTasksResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeConversionTasksResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeConversionTasksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeConversionTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the conversion tasks.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeConversionTasksResponse& AddConversionTasks(ConversionTask&& value) { m_conversionTasks.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeConversionTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ConversionTask> m_conversionTasks;
+
     ResponseMetadata m_responseMetadata;
   };
 

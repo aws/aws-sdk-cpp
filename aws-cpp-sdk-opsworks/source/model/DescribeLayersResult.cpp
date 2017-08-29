@@ -30,12 +30,12 @@ DescribeLayersResult::DescribeLayersResult()
 {
 }
 
-DescribeLayersResult::DescribeLayersResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLayersResult::DescribeLayersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeLayersResult& DescribeLayersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLayersResult& DescribeLayersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Layers"))

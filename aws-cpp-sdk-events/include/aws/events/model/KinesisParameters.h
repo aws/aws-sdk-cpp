@@ -49,6 +49,7 @@ namespace Model
     KinesisParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The JSON path to be extracted from the event and used as the partition key.
      * For more information, see <a
@@ -113,6 +114,7 @@ namespace Model
     inline KinesisParameters& WithPartitionKeyPath(const char* value) { SetPartitionKeyPath(value); return *this;}
 
   private:
+
     Aws::String m_partitionKeyPath;
     bool m_partitionKeyPathHasBeenSet;
   };

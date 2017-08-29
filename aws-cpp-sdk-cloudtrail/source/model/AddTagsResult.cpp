@@ -30,12 +30,12 @@ AddTagsResult::AddTagsResult()
 {
 }
 
-AddTagsResult::AddTagsResult(const AmazonWebServiceResult<JsonValue>& result)
+AddTagsResult::AddTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddTagsResult& AddTagsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddTagsResult& AddTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

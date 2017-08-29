@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateFpgaImageResponse();
-    CreateFpgaImageResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateFpgaImageResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateFpgaImageResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateFpgaImageResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The FPGA image identifier (AFI ID).</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CreateFpgaImageResponse& WithFpgaImageId(const char* value) { SetFpgaImageId(value); return *this;}
 
+
     /**
      * <p>The global FPGA image identifier (AGFI ID).</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      */
     inline CreateFpgaImageResponse& WithFpgaImageGlobalId(const char* value) { SetFpgaImageGlobalId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -128,8 +131,11 @@ namespace Model
     inline CreateFpgaImageResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_fpgaImageId;
+
     Aws::String m_fpgaImageGlobalId;
+
     ResponseMetadata m_responseMetadata;
   };
 

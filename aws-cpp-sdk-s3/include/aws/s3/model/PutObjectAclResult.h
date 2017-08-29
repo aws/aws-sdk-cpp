@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PutObjectAclResult();
-    PutObjectAclResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PutObjectAclResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PutObjectAclResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PutObjectAclResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
@@ -57,6 +58,7 @@ namespace Model
     inline PutObjectAclResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
+
     RequestCharged m_requestCharged;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the repository.
      * If you do not specify a registry, the default registry is assumed.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline SetRepositoryPolicyRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The name of the repository to receive the policy.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The name of the repository to receive the policy.</p>
      */
     inline SetRepositoryPolicyRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The JSON repository policy text to apply to the repository.</p>
@@ -148,6 +151,7 @@ namespace Model
      */
     inline SetRepositoryPolicyRequest& WithPolicyText(const char* value) { SetPolicyText(value); return *this;}
 
+
     /**
      * <p>If the policy you are attempting to set on a repository policy would prevent
      * you from setting another policy in the future, you must force the
@@ -173,12 +177,16 @@ namespace Model
     inline SetRepositoryPolicyRequest& WithForce(bool value) { SetForce(value); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_policyText;
     bool m_policyTextHasBeenSet;
+
     bool m_force;
     bool m_forceHasBeenSet;
   };

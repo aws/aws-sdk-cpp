@@ -31,12 +31,12 @@ DescribeNetworkInterfacePermissionsResponse::DescribeNetworkInterfacePermissions
 {
 }
 
-DescribeNetworkInterfacePermissionsResponse::DescribeNetworkInterfacePermissionsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeNetworkInterfacePermissionsResponse::DescribeNetworkInterfacePermissionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeNetworkInterfacePermissionsResponse& DescribeNetworkInterfacePermissionsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeNetworkInterfacePermissionsResponse& DescribeNetworkInterfacePermissionsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

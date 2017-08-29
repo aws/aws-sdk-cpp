@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -59,6 +60,7 @@ namespace Model
 
     
     inline CancelArchivalRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel
@@ -103,8 +105,10 @@ namespace Model
     inline CancelArchivalRequest& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
   };

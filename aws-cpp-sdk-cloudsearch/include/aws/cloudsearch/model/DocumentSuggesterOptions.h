@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the index field you want to use for suggestions. </p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the index field you want to use for suggestions. </p>
      */
     inline DocumentSuggesterOptions& WithSourceField(const char* value) { SetSourceField(value); return *this;}
+
 
     /**
      * <p>The level of fuzziness allowed when suggesting matches for a string:
@@ -128,6 +130,7 @@ namespace Model
      * suggestions can differ by up to two characters. The default is none. </p>
      */
     inline DocumentSuggesterOptions& WithFuzzyMatching(SuggesterFuzzyMatching&& value) { SetFuzzyMatching(std::move(value)); return *this;}
+
 
     /**
      * <p>An expression that computes a score for each suggestion to control how they
@@ -207,10 +210,13 @@ namespace Model
     inline DocumentSuggesterOptions& WithSortExpression(const char* value) { SetSortExpression(value); return *this;}
 
   private:
+
     Aws::String m_sourceField;
     bool m_sourceFieldHasBeenSet;
+
     SuggesterFuzzyMatching m_fuzzyMatching;
     bool m_fuzzyMatchingHasBeenSet;
+
     Aws::String m_sortExpression;
     bool m_sortExpressionHasBeenSet;
   };

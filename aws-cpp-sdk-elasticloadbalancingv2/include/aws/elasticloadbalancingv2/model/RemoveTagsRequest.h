@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline RemoveTagsRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
+
 
     /**
      * <p>The tag keys for the tags to remove.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline RemoveTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_resourceArns;
     bool m_resourceArnsHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

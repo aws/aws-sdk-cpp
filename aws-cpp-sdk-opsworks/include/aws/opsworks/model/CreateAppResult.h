@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateAppResult();
-    CreateAppResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAppResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The app ID.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateAppResult& WithAppId(const char* value) { SetAppId(value); return *this;}
 
   private:
+
     Aws::String m_appId;
   };
 

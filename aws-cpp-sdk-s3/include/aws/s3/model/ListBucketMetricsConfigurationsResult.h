@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListBucketMetricsConfigurationsResult();
-    ListBucketMetricsConfigurationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListBucketMetricsConfigurationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListBucketMetricsConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListBucketMetricsConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * Indicates whether the returned list of metrics configurations is complete. A
@@ -63,6 +64,7 @@ namespace Model
      * NextContinuationToken will be provided for a subsequent request.
      */
     inline ListBucketMetricsConfigurationsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * The marker that is used as a starting point for this metrics configuration list
@@ -105,6 +107,7 @@ namespace Model
      * response. This value is present if it was sent in the request.
      */
     inline ListBucketMetricsConfigurationsResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+
 
     /**
      * The marker used to continue a metrics configuration listing that has been
@@ -162,6 +165,7 @@ namespace Model
      */
     inline ListBucketMetricsConfigurationsResult& WithNextContinuationToken(const char* value) { SetNextContinuationToken(value); return *this;}
 
+
     /**
      * The list of metrics configurations for a bucket.
      */
@@ -198,9 +202,13 @@ namespace Model
     inline ListBucketMetricsConfigurationsResult& AddMetricsConfigurationList(MetricsConfiguration&& value) { m_metricsConfigurationList.push_back(std::move(value)); return *this; }
 
   private:
+
     bool m_isTruncated;
+
     Aws::String m_continuationToken;
+
     Aws::String m_nextContinuationToken;
+
     Aws::Vector<MetricsConfiguration> m_metricsConfigurationList;
   };
 

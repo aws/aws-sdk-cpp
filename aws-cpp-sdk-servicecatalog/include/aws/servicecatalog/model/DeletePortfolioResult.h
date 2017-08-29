@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeletePortfolioResult();
-    DeletePortfolioResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePortfolioResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeletePortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeletePortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

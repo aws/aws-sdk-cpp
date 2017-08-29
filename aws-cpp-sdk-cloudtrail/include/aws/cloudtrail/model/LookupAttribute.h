@@ -47,6 +47,7 @@ namespace Model
     LookupAttribute& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies an attribute on which to filter the events returned.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>Specifies an attribute on which to filter the events returned.</p>
      */
     inline LookupAttribute& WithAttributeKey(LookupAttributeKey&& value) { SetAttributeKey(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies a value for the specified AttributeKey.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline LookupAttribute& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
 
   private:
+
     LookupAttributeKey m_attributeKey;
     bool m_attributeKeyHasBeenSet;
+
     Aws::String m_attributeValue;
     bool m_attributeValueHasBeenSet;
   };

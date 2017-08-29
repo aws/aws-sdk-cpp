@@ -30,12 +30,12 @@ ListPortfoliosResult::ListPortfoliosResult()
 {
 }
 
-ListPortfoliosResult::ListPortfoliosResult(const AmazonWebServiceResult<JsonValue>& result)
+ListPortfoliosResult::ListPortfoliosResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListPortfoliosResult& ListPortfoliosResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListPortfoliosResult& ListPortfoliosResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PortfolioDetails"))

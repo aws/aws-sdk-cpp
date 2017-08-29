@@ -48,6 +48,7 @@ namespace Model
     BuiltinSlotTypeMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for the built-in slot type. To find the signature for a
      * slot type, see <a
@@ -104,6 +105,7 @@ namespace Model
      */
     inline BuiltinSlotTypeMetadata& WithSignature(const char* value) { SetSignature(value); return *this;}
 
+
     /**
      * <p>A list of target locales for the slot. </p>
      */
@@ -140,8 +142,10 @@ namespace Model
     inline BuiltinSlotTypeMetadata& AddSupportedLocales(Locale&& value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_signature;
     bool m_signatureHasBeenSet;
+
     Aws::Vector<Locale> m_supportedLocales;
     bool m_supportedLocalesHasBeenSet;
   };

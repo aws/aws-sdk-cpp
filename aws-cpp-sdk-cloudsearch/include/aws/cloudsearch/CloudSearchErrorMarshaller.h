@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CLOUDSEARCH_API CloudSearchErrorMarshaller : public Client::XmlErrorMarshaller
+class AWS_CLOUDSEARCH_API CloudSearchErrorMarshaller : public Aws::Client::XmlErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace CloudSearch
+} // namespace Client
 } // namespace Aws

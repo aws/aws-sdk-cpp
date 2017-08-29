@@ -55,7 +55,7 @@ enum class CloudDirectoryErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BATCH_WRITE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BATCH_WRITE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CANNOT_LIST_PARENT_OF_ROOT,
   DIRECTORY_ALREADY_EXISTS,
   DIRECTORY_DELETED,
@@ -89,7 +89,7 @@ enum class CloudDirectoryErrors
 };
 namespace CloudDirectoryErrorMapper
 {
-  AWS_CLOUDDIRECTORY_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CLOUDDIRECTORY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CloudDirectory

@@ -31,13 +31,13 @@ DeleteTagsResult::DeleteTagsResult() :
 {
 }
 
-DeleteTagsResult::DeleteTagsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DeleteTagsResult::DeleteTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_resourceType(TaggableResourceType::NOT_SET)
 {
   *this = result;
 }
 
-DeleteTagsResult& DeleteTagsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTagsResult& DeleteTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ResourceId"))

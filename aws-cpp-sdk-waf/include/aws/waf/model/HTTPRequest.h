@@ -51,6 +51,7 @@ namespace Model
     HTTPRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The IP address that the request originated from. If the <code>WebACL</code>
      * is associated with a CloudFront distribution, this is the value of one of the
@@ -121,6 +122,7 @@ namespace Model
      */
     inline HTTPRequest& WithClientIP(const char* value) { SetClientIP(value); return *this;}
 
+
     /**
      * <p>The two-letter country code for the country that the request originated from.
      * For a current list of country codes, see the Wikipedia entry <a
@@ -177,6 +179,7 @@ namespace Model
      */
     inline HTTPRequest& WithCountry(const char* value) { SetCountry(value); return *this;}
 
+
     /**
      * <p>The part of a web request that identifies the resource, for example,
      * <code>/images/daily-ad.jpg</code>.</p>
@@ -218,6 +221,7 @@ namespace Model
      * <code>/images/daily-ad.jpg</code>.</p>
      */
     inline HTTPRequest& WithURI(const char* value) { SetURI(value); return *this;}
+
 
     /**
      * <p>The HTTP method specified in the sampled web request. CloudFront supports the
@@ -275,6 +279,7 @@ namespace Model
      */
     inline HTTPRequest& WithMethod(const char* value) { SetMethod(value); return *this;}
 
+
     /**
      * <p>The HTTP version specified in the sampled web request, for example,
      * <code>HTTP/1.1</code>.</p>
@@ -316,6 +321,7 @@ namespace Model
      * <code>HTTP/1.1</code>.</p>
      */
     inline HTTPRequest& WithHTTPVersion(const char* value) { SetHTTPVersion(value); return *this;}
+
 
     /**
      * <p>A complex type that contains two values for each header in the sampled web
@@ -360,16 +366,22 @@ namespace Model
     inline HTTPRequest& AddHeaders(HTTPHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_clientIP;
     bool m_clientIPHasBeenSet;
+
     Aws::String m_country;
     bool m_countryHasBeenSet;
+
     Aws::String m_uRI;
     bool m_uRIHasBeenSet;
+
     Aws::String m_method;
     bool m_methodHasBeenSet;
+
     Aws::String m_hTTPVersion;
     bool m_hTTPVersionHasBeenSet;
+
     Aws::Vector<HTTPHeader> m_headers;
     bool m_headersHasBeenSet;
   };

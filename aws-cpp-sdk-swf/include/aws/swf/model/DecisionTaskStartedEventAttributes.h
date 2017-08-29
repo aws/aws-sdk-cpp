@@ -46,6 +46,7 @@ namespace Model
     DecisionTaskStartedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identity of the decider making the request. This enables diagnostic tracing
      * when problems arise. The form of this identity is user defined.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DecisionTaskStartedEventAttributes& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
      * this decision task was scheduled. This information can be useful for diagnosing
@@ -110,8 +112,10 @@ namespace Model
     inline DecisionTaskStartedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     long long m_scheduledEventId;
     bool m_scheduledEventIdHasBeenSet;
   };

@@ -24,7 +24,7 @@ namespace Aws
 {
 namespace S3
 {
-  class AWS_S3_API S3Request : public AmazonSerializableWebServiceRequest
+  class AWS_S3_API S3Request : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
     virtual ~S3Request () {}
@@ -38,7 +38,7 @@ namespace S3
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, AMZN_XML_CONTENT_TYPE ));
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_XML_CONTENT_TYPE ));
       }
 
       return headers;
@@ -49,7 +49,7 @@ namespace S3
 
   };
 
-  typedef AmazonStreamingWebServiceRequest StreamingS3Request;
+  typedef Aws::AmazonStreamingWebServiceRequest StreamingS3Request;
 
 } // namespace S3
 } // namespace Aws

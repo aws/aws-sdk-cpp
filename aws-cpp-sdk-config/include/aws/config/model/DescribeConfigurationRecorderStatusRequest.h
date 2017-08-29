@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name(s) of the configuration recorder. If the name is not specified, the
      * action returns the current status of all the configuration recorders associated
@@ -98,6 +99,7 @@ namespace Model
     inline DescribeConfigurationRecorderStatusRequest& AddConfigurationRecorderNames(const char* value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_configurationRecorderNames;
     bool m_configurationRecorderNamesHasBeenSet;
   };

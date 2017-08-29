@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateXssMatchSetResult();
-    UpdateXssMatchSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateXssMatchSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateXssMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateXssMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -104,6 +105,7 @@ namespace Model
     inline UpdateXssMatchSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_changeToken;
   };
 

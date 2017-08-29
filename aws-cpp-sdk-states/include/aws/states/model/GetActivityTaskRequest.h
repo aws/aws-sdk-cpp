@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>
      */
     inline GetActivityTaskRequest& WithActivityArn(const char* value) { SetActivityArn(value); return *this;}
+
 
     /**
      * <p>An arbitrary name may be provided in order to identify the worker that the
@@ -121,8 +123,10 @@ namespace Model
     inline GetActivityTaskRequest& WithWorkerName(const char* value) { SetWorkerName(value); return *this;}
 
   private:
+
     Aws::String m_activityArn;
     bool m_activityArnHasBeenSet;
+
     Aws::String m_workerName;
     bool m_workerNameHasBeenSet;
   };

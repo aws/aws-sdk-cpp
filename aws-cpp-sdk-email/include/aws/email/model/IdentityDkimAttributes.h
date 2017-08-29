@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>True if DKIM signing is enabled for email sent from the identity; false
      * otherwise. The default value is true.</p>
@@ -68,6 +69,7 @@ namespace Model
      * otherwise. The default value is true.</p>
      */
     inline IdentityDkimAttributes& WithDkimEnabled(bool value) { SetDkimEnabled(value); return *this;}
+
 
     /**
      * <p>Describes whether Amazon SES has successfully verified the DKIM DNS records
@@ -103,6 +105,7 @@ namespace Model
      * identities, not email address identities.)</p>
      */
     inline IdentityDkimAttributes& WithDkimVerificationStatus(VerificationStatus&& value) { SetDkimVerificationStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A set of character strings that represent the domain's identity. Using these
@@ -217,10 +220,13 @@ namespace Model
     inline IdentityDkimAttributes& AddDkimTokens(const char* value) { m_dkimTokensHasBeenSet = true; m_dkimTokens.push_back(value); return *this; }
 
   private:
+
     bool m_dkimEnabled;
     bool m_dkimEnabledHasBeenSet;
+
     VerificationStatus m_dkimVerificationStatus;
     bool m_dkimVerificationStatusHasBeenSet;
+
     Aws::Vector<Aws::String> m_dkimTokens;
     bool m_dkimTokensHasBeenSet;
   };

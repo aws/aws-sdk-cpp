@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListRepositoriesResult();
-    ListRepositoriesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRepositoriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Lists the repositories called by the list repositories operation.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Lists the repositories called by the list repositories operation.</p>
      */
     inline ListRepositoriesResult& AddRepositories(RepositoryNameIdPair&& value) { m_repositories.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An enumeration token that allows the operation to batch the results of the
@@ -141,7 +143,9 @@ namespace Model
     inline ListRepositoriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<RepositoryNameIdPair> m_repositories;
+
     Aws::String m_nextToken;
   };
 

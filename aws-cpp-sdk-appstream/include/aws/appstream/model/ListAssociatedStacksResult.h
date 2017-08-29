@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ListAssociatedStacksResult();
-    ListAssociatedStacksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssociatedStacksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssociatedStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssociatedStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The names of associated stacks.</p>
@@ -86,6 +87,7 @@ namespace Model
      * <p>The names of associated stacks.</p>
      */
     inline ListAssociatedStacksResult& AddNames(const char* value) { m_names.push_back(value); return *this; }
+
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -130,7 +132,9 @@ namespace Model
     inline ListAssociatedStacksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_names;
+
     Aws::String m_nextToken;
   };
 

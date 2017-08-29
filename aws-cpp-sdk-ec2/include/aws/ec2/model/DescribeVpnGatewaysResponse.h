@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeVpnGatewaysResponse();
-    DescribeVpnGatewaysResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVpnGatewaysResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpnGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpnGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more virtual private gateways.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeVpnGatewaysResponse& AddVpnGateways(VpnGateway&& value) { m_vpnGateways.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribeVpnGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<VpnGateway> m_vpnGateways;
+
     ResponseMetadata m_responseMetadata;
   };
 

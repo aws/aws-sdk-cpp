@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListConstraintsForPortfolioResult();
-    ListConstraintsForPortfolioResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListConstraintsForPortfolioResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListConstraintsForPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListConstraintsForPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of detailed constraint information objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>List of detailed constraint information objects.</p>
      */
     inline ListConstraintsForPortfolioResult& AddConstraintDetails(ConstraintDetail&& value) { m_constraintDetails.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -121,7 +123,9 @@ namespace Model
     inline ListConstraintsForPortfolioResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<ConstraintDetail> m_constraintDetails;
+
     Aws::String m_nextPageToken;
   };
 

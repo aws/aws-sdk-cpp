@@ -47,6 +47,7 @@ namespace Model
     NewPrivateVirtualInterfaceAllocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetVirtualInterfaceName() const{ return m_virtualInterfaceName; }
 
@@ -68,6 +69,7 @@ namespace Model
     
     inline NewPrivateVirtualInterfaceAllocation& WithVirtualInterfaceName(const char* value) { SetVirtualInterfaceName(value); return *this;}
 
+
     
     inline int GetVlan() const{ return m_vlan; }
 
@@ -77,6 +79,7 @@ namespace Model
     
     inline NewPrivateVirtualInterfaceAllocation& WithVlan(int value) { SetVlan(value); return *this;}
 
+
     
     inline int GetAsn() const{ return m_asn; }
 
@@ -85,6 +88,7 @@ namespace Model
 
     
     inline NewPrivateVirtualInterfaceAllocation& WithAsn(int value) { SetAsn(value); return *this;}
+
 
     
     inline const Aws::String& GetAuthKey() const{ return m_authKey; }
@@ -107,6 +111,7 @@ namespace Model
     
     inline NewPrivateVirtualInterfaceAllocation& WithAuthKey(const char* value) { SetAuthKey(value); return *this;}
 
+
     
     inline const Aws::String& GetAmazonAddress() const{ return m_amazonAddress; }
 
@@ -128,6 +133,7 @@ namespace Model
     
     inline NewPrivateVirtualInterfaceAllocation& WithAmazonAddress(const char* value) { SetAmazonAddress(value); return *this;}
 
+
     
     inline const AddressFamily& GetAddressFamily() const{ return m_addressFamily; }
 
@@ -142,6 +148,7 @@ namespace Model
 
     
     inline NewPrivateVirtualInterfaceAllocation& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
@@ -165,18 +172,25 @@ namespace Model
     inline NewPrivateVirtualInterfaceAllocation& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
 
   private:
+
     Aws::String m_virtualInterfaceName;
     bool m_virtualInterfaceNameHasBeenSet;
+
     int m_vlan;
     bool m_vlanHasBeenSet;
+
     int m_asn;
     bool m_asnHasBeenSet;
+
     Aws::String m_authKey;
     bool m_authKeyHasBeenSet;
+
     Aws::String m_amazonAddress;
     bool m_amazonAddressHasBeenSet;
+
     AddressFamily m_addressFamily;
     bool m_addressFamilyHasBeenSet;
+
     Aws::String m_customerAddress;
     bool m_customerAddressHasBeenSet;
   };

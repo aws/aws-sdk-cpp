@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeElasticIpsResult();
-    DescribeElasticIpsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeElasticIpsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticIpsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticIpsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An <code>ElasticIps</code> object that describes the specified Elastic IP
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeElasticIpsResult& AddElasticIps(ElasticIp&& value) { m_elasticIps.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ElasticIp> m_elasticIps;
   };
 

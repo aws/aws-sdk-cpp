@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeSubscriptionFiltersResult();
-    DescribeSubscriptionFiltersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSubscriptionFiltersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSubscriptionFiltersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSubscriptionFiltersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The subscription filters.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeSubscriptionFiltersResult& AddSubscriptionFilters(SubscriptionFilter&& value) { m_subscriptionFilters.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeSubscriptionFiltersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<SubscriptionFilter> m_subscriptionFilters;
+
     Aws::String m_nextToken;
   };
 

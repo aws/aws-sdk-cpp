@@ -37,6 +37,7 @@ namespace Model
     GetChangeRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the change batch request. The value that you specify here is the
      * value that <code>ChangeResourceRecordSets</code> returned in the <code>Id</code>
@@ -87,6 +88,7 @@ namespace Model
     inline GetChangeRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

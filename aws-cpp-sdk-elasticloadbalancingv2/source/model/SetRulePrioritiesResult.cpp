@@ -31,12 +31,12 @@ SetRulePrioritiesResult::SetRulePrioritiesResult()
 {
 }
 
-SetRulePrioritiesResult::SetRulePrioritiesResult(const AmazonWebServiceResult<XmlDocument>& result)
+SetRulePrioritiesResult::SetRulePrioritiesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SetRulePrioritiesResult& SetRulePrioritiesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SetRulePrioritiesResult& SetRulePrioritiesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

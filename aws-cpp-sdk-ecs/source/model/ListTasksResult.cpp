@@ -30,12 +30,12 @@ ListTasksResult::ListTasksResult()
 {
 }
 
-ListTasksResult::ListTasksResult(const AmazonWebServiceResult<JsonValue>& result)
+ListTasksResult::ListTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListTasksResult& ListTasksResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListTasksResult& ListTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("taskArns"))

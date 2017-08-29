@@ -46,6 +46,7 @@ namespace Model
     Clip& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Settings that determine when a clip begins and how long it lasts.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline Clip& WithTimeSpan(TimeSpan&& value) { SetTimeSpan(std::move(value)); return *this;}
 
   private:
+
     TimeSpan m_timeSpan;
     bool m_timeSpanHasBeenSet;
   };

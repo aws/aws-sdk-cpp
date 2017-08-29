@@ -32,14 +32,14 @@ AssociateHostedConnectionResult::AssociateHostedConnectionResult() :
 {
 }
 
-AssociateHostedConnectionResult::AssociateHostedConnectionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+AssociateHostedConnectionResult::AssociateHostedConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_connectionState(ConnectionState::NOT_SET),
     m_vlan(0)
 {
   *this = result;
 }
 
-AssociateHostedConnectionResult& AssociateHostedConnectionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AssociateHostedConnectionResult& AssociateHostedConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ownerAccount"))

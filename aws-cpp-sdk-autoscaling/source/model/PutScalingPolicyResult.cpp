@@ -31,12 +31,12 @@ PutScalingPolicyResult::PutScalingPolicyResult()
 {
 }
 
-PutScalingPolicyResult::PutScalingPolicyResult(const AmazonWebServiceResult<XmlDocument>& result)
+PutScalingPolicyResult::PutScalingPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-PutScalingPolicyResult& PutScalingPolicyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+PutScalingPolicyResult& PutScalingPolicyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

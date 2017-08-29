@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListIdentityPoolsResult();
-    ListIdentityPoolsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListIdentityPoolsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIdentityPoolsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIdentityPoolsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identity pools returned by the ListIdentityPools action.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The identity pools returned by the ListIdentityPools action.</p>
      */
     inline ListIdentityPoolsResult& AddIdentityPools(IdentityPoolShortDescription&& value) { m_identityPools.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline ListIdentityPoolsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<IdentityPoolShortDescription> m_identityPools;
+
     Aws::String m_nextToken;
   };
 

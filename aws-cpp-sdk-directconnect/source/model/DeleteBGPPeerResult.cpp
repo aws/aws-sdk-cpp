@@ -30,12 +30,12 @@ DeleteBGPPeerResult::DeleteBGPPeerResult()
 {
 }
 
-DeleteBGPPeerResult::DeleteBGPPeerResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteBGPPeerResult::DeleteBGPPeerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteBGPPeerResult& DeleteBGPPeerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteBGPPeerResult& DeleteBGPPeerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("virtualInterface"))

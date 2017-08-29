@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeTapeRecoveryPointsResult();
-    DescribeTapeRecoveryPointsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTapeRecoveryPointsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTapeRecoveryPointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTapeRecoveryPointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -68,6 +69,7 @@ namespace Model
 
     
     inline DescribeTapeRecoveryPointsResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     /**
      * <p>An array of TapeRecoveryPointInfos that are available for the specified
@@ -110,6 +112,7 @@ namespace Model
      * gateway.</p>
      */
     inline DescribeTapeRecoveryPointsResult& AddTapeRecoveryPointInfos(TapeRecoveryPointInfo&& value) { m_tapeRecoveryPointInfos.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An opaque string that indicates the position at which the virtual tape
@@ -175,8 +178,11 @@ namespace Model
     inline DescribeTapeRecoveryPointsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
+
     Aws::Vector<TapeRecoveryPointInfo> m_tapeRecoveryPointInfos;
+
     Aws::String m_marker;
   };
 

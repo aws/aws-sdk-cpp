@@ -30,12 +30,12 @@ CreateTypedLinkFacetResult::CreateTypedLinkFacetResult()
 {
 }
 
-CreateTypedLinkFacetResult::CreateTypedLinkFacetResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateTypedLinkFacetResult::CreateTypedLinkFacetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateTypedLinkFacetResult& CreateTypedLinkFacetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateTypedLinkFacetResult& CreateTypedLinkFacetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

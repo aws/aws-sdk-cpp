@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     AdminListGroupsForUserResult();
-    AdminListGroupsForUserResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminListGroupsForUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminListGroupsForUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminListGroupsForUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The groups that the user belongs to.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The groups that the user belongs to.</p>
      */
     inline AdminListGroupsForUserResult& AddGroups(GroupType&& value) { m_groups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -121,7 +123,9 @@ namespace Model
     inline AdminListGroupsForUserResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<GroupType> m_groups;
+
     Aws::String m_nextToken;
   };
 

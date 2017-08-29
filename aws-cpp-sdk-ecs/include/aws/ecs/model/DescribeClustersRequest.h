@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
      * entries. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -86,6 +87,7 @@ namespace Model
     inline DescribeClustersRequest& AddClusters(const char* value) { m_clustersHasBeenSet = true; m_clusters.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_clusters;
     bool m_clustersHasBeenSet;
   };

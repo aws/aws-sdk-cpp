@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the web ACL for which to list the associated
      * resources.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline ListResourcesForWebACLRequest& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 
   private:
+
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
   };

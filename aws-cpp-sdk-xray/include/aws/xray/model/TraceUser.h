@@ -48,6 +48,7 @@ namespace Model
     TraceUser& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user's name.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The user's name.</p>
      */
     inline TraceUser& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>Services that the user's request hit.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline TraceUser& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::Vector<ServiceId> m_serviceIds;
     bool m_serviceIdsHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     ConfigurationTag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A type of IT asset to tag.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>A type of IT asset to tag.</p>
      */
     inline ConfigurationTag& WithConfigurationType(ConfigurationItemType&& value) { SetConfigurationType(std::move(value)); return *this;}
+
 
     /**
      * <p>The configuration ID for the item to tag. You can specify a list of keys and
@@ -115,6 +117,7 @@ namespace Model
      */
     inline ConfigurationTag& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
 
+
     /**
      * <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
      */
     inline ConfigurationTag& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>A value on which to filter. For example <i>key = serverType</i> and <i>value
@@ -192,6 +196,7 @@ namespace Model
      */
     inline ConfigurationTag& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>The time the configuration tag was created in Coordinated Universal Time
      * (UTC).</p>
@@ -223,14 +228,19 @@ namespace Model
     inline ConfigurationTag& WithTimeOfCreation(Aws::Utils::DateTime&& value) { SetTimeOfCreation(std::move(value)); return *this;}
 
   private:
+
     ConfigurationItemType m_configurationType;
     bool m_configurationTypeHasBeenSet;
+
     Aws::String m_configurationId;
     bool m_configurationIdHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     Aws::Utils::DateTime m_timeOfCreation;
     bool m_timeOfCreationHasBeenSet;
   };

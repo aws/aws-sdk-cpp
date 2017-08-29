@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>If enabled, the load balancer routes the request traffic evenly across all
      * instances regardless of the Availability Zones.</p> <p>For more information, see
@@ -97,6 +98,7 @@ namespace Model
      * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancer Guide</i>.</p>
      */
     inline LoadBalancerAttributes& WithCrossZoneLoadBalancing(CrossZoneLoadBalancing&& value) { SetCrossZoneLoadBalancing(std::move(value)); return *this;}
+
 
     /**
      * <p>If enabled, the load balancer captures detailed information of all requests
@@ -143,6 +145,7 @@ namespace Model
      */
     inline LoadBalancerAttributes& WithAccessLog(AccessLog&& value) { SetAccessLog(std::move(value)); return *this;}
 
+
     /**
      * <p>If enabled, the load balancer allows existing requests to complete before the
      * load balancer shifts traffic away from a deregistered or unhealthy instance.</p>
@@ -187,6 +190,7 @@ namespace Model
      * Connection Draining</a> in the <i>Classic Load Balancer Guide</i>.</p>
      */
     inline LoadBalancerAttributes& WithConnectionDraining(ConnectionDraining&& value) { SetConnectionDraining(std::move(value)); return *this;}
+
 
     /**
      * <p>If enabled, the load balancer allows the connections to remain idle (no data
@@ -243,6 +247,7 @@ namespace Model
      */
     inline LoadBalancerAttributes& WithConnectionSettings(ConnectionSettings&& value) { SetConnectionSettings(std::move(value)); return *this;}
 
+
     /**
      * <p>This parameter is reserved.</p>
      */
@@ -279,14 +284,19 @@ namespace Model
     inline LoadBalancerAttributes& AddAdditionalAttributes(AdditionalAttribute&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(std::move(value)); return *this; }
 
   private:
+
     CrossZoneLoadBalancing m_crossZoneLoadBalancing;
     bool m_crossZoneLoadBalancingHasBeenSet;
+
     AccessLog m_accessLog;
     bool m_accessLogHasBeenSet;
+
     ConnectionDraining m_connectionDraining;
     bool m_connectionDrainingHasBeenSet;
+
     ConnectionSettings m_connectionSettings;
     bool m_connectionSettingsHasBeenSet;
+
     Aws::Vector<AdditionalAttribute> m_additionalAttributes;
     bool m_additionalAttributesHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A string that indicates that additional data is available. Leave this value
      * empty for your initial request. If the response includes a
@@ -93,6 +94,7 @@ namespace Model
      * additional page of data.</p>
      */
     inline GetResourcesRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
+
 
     /**
      * <p>A list of tags (keys and values). A request can include up to 50 keys, and
@@ -171,6 +173,7 @@ namespace Model
      */
     inline GetResourcesRequest& AddTagFilters(TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A limit that restricts the number of resources returned by GetResources in
      * paginated output. You can set ResourcesPerPage to a minimum of 1 item and the
@@ -191,6 +194,7 @@ namespace Model
      * maximum of 50 items. </p>
      */
     inline GetResourcesRequest& WithResourcesPerPage(int value) { SetResourcesPerPage(value); return *this;}
+
 
     /**
      * <p>A limit that restricts the number of tags (key and value pairs) returned by
@@ -248,6 +252,7 @@ namespace Model
      * items.</p>
      */
     inline GetResourcesRequest& WithTagsPerPage(int value) { SetTagsPerPage(value); return *this;}
+
 
     /**
      * <p>The constraints on the resources that you want returned. The format of each
@@ -394,14 +399,19 @@ namespace Model
     inline GetResourcesRequest& AddResourceTypeFilters(const char* value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
 
   private:
+
     Aws::String m_paginationToken;
     bool m_paginationTokenHasBeenSet;
+
     Aws::Vector<TagFilter> m_tagFilters;
     bool m_tagFiltersHasBeenSet;
+
     int m_resourcesPerPage;
     bool m_resourcesPerPageHasBeenSet;
+
     int m_tagsPerPage;
     bool m_tagsPerPageHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourceTypeFilters;
     bool m_resourceTypeFiltersHasBeenSet;
   };

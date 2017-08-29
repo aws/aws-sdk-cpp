@@ -30,12 +30,12 @@ BatchCreatePartitionResult::BatchCreatePartitionResult()
 {
 }
 
-BatchCreatePartitionResult::BatchCreatePartitionResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchCreatePartitionResult::BatchCreatePartitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchCreatePartitionResult& BatchCreatePartitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchCreatePartitionResult& BatchCreatePartitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Errors"))

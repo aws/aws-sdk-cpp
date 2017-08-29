@@ -39,6 +39,7 @@ namespace Model
     AddTagsToVaultRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -102,6 +103,7 @@ namespace Model
      */
     inline AddTagsToVaultRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -136,6 +138,7 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline AddTagsToVaultRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
 
     /**
      * <p>The tags to add to the vault. Each tag is composed of a key and a value. The
@@ -210,10 +213,13 @@ namespace Model
     inline AddTagsToVaultRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -54,6 +54,7 @@ namespace Model
     JobFlowInstancesConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The EC2 instance type of the master node.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The EC2 instance type of the master node.</p>
      */
     inline JobFlowInstancesConfig& WithMasterInstanceType(const char* value) { SetMasterInstanceType(value); return *this;}
+
 
     /**
      * <p>The EC2 instance type of the slave nodes.</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline JobFlowInstancesConfig& WithSlaveInstanceType(const char* value) { SetSlaveInstanceType(value); return *this;}
 
+
     /**
      * <p>The number of EC2 instances in the cluster.</p>
      */
@@ -138,6 +141,7 @@ namespace Model
      * <p>The number of EC2 instances in the cluster.</p>
      */
     inline JobFlowInstancesConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>Configuration for the instance groups in a cluster.</p>
@@ -173,6 +177,7 @@ namespace Model
      * <p>Configuration for the instance groups in a cluster.</p>
      */
     inline JobFlowInstancesConfig& AddInstanceGroups(InstanceGroupConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <note> <p>The instance fleet configuration is available only in Amazon EMR
@@ -230,6 +235,7 @@ namespace Model
      */
     inline JobFlowInstancesConfig& AddInstanceFleets(InstanceFleetConfig&& value) { m_instanceFleetsHasBeenSet = true; m_instanceFleets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name of the EC2 key pair that can be used to ssh to the master node as
      * the user called "hadoop."</p>
@@ -272,6 +278,7 @@ namespace Model
      */
     inline JobFlowInstancesConfig& WithEc2KeyName(const char* value) { SetEc2KeyName(value); return *this;}
 
+
     /**
      * <p>The Availability Zone in which the cluster runs.</p>
      */
@@ -297,6 +304,7 @@ namespace Model
      */
     inline JobFlowInstancesConfig& WithPlacement(PlacementType&& value) { SetPlacement(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies whether the cluster should remain available after completing all
      * steps.</p>
@@ -314,6 +322,7 @@ namespace Model
      * steps.</p>
      */
     inline JobFlowInstancesConfig& WithKeepJobFlowAliveWhenNoSteps(bool value) { SetKeepJobFlowAliveWhenNoSteps(value); return *this;}
+
 
     /**
      * <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances
@@ -335,6 +344,7 @@ namespace Model
      * job-flow error.</p>
      */
     inline JobFlowInstancesConfig& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
+
 
     /**
      * <p>The Hadoop version for the cluster. Valid inputs are "0.18" (deprecated),
@@ -398,6 +408,7 @@ namespace Model
      * Hadoop for that AMI version is used.</p>
      */
     inline JobFlowInstancesConfig& WithHadoopVersion(const char* value) { SetHadoopVersion(value); return *this;}
+
 
     /**
      * <p>Applies to clusters that use the uniform instance group configuration. To
@@ -490,6 +501,7 @@ namespace Model
      */
     inline JobFlowInstancesConfig& WithEc2SubnetId(const char* value) { SetEc2SubnetId(value); return *this;}
 
+
     /**
      * <p>Applies to clusters that use the instance fleet configuration. When multiple
      * EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances
@@ -562,6 +574,7 @@ namespace Model
      */
     inline JobFlowInstancesConfig& AddEc2SubnetIds(const char* value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds.push_back(value); return *this; }
 
+
     /**
      * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
@@ -597,6 +610,7 @@ namespace Model
      */
     inline JobFlowInstancesConfig& WithEmrManagedMasterSecurityGroup(const char* value) { SetEmrManagedMasterSecurityGroup(value); return *this;}
 
+
     /**
      * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
@@ -631,6 +645,7 @@ namespace Model
      * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(const char* value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
+
 
     /**
      * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
@@ -674,6 +689,7 @@ namespace Model
      */
     inline JobFlowInstancesConfig& WithServiceAccessSecurityGroup(const char* value) { SetServiceAccessSecurityGroup(value); return *this;}
 
+
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
      */
@@ -713,6 +729,7 @@ namespace Model
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
      */
     inline JobFlowInstancesConfig& AddAdditionalMasterSecurityGroups(const char* value) { m_additionalMasterSecurityGroupsHasBeenSet = true; m_additionalMasterSecurityGroups.push_back(value); return *this; }
+
 
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
@@ -755,38 +772,55 @@ namespace Model
     inline JobFlowInstancesConfig& AddAdditionalSlaveSecurityGroups(const char* value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
 
   private:
+
     Aws::String m_masterInstanceType;
     bool m_masterInstanceTypeHasBeenSet;
+
     Aws::String m_slaveInstanceType;
     bool m_slaveInstanceTypeHasBeenSet;
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     Aws::Vector<InstanceGroupConfig> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet;
+
     Aws::Vector<InstanceFleetConfig> m_instanceFleets;
     bool m_instanceFleetsHasBeenSet;
+
     Aws::String m_ec2KeyName;
     bool m_ec2KeyNameHasBeenSet;
+
     PlacementType m_placement;
     bool m_placementHasBeenSet;
+
     bool m_keepJobFlowAliveWhenNoSteps;
     bool m_keepJobFlowAliveWhenNoStepsHasBeenSet;
+
     bool m_terminationProtected;
     bool m_terminationProtectedHasBeenSet;
+
     Aws::String m_hadoopVersion;
     bool m_hadoopVersionHasBeenSet;
+
     Aws::String m_ec2SubnetId;
     bool m_ec2SubnetIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_ec2SubnetIds;
     bool m_ec2SubnetIdsHasBeenSet;
+
     Aws::String m_emrManagedMasterSecurityGroup;
     bool m_emrManagedMasterSecurityGroupHasBeenSet;
+
     Aws::String m_emrManagedSlaveSecurityGroup;
     bool m_emrManagedSlaveSecurityGroupHasBeenSet;
+
     Aws::String m_serviceAccessSecurityGroup;
     bool m_serviceAccessSecurityGroupHasBeenSet;
+
     Aws::Vector<Aws::String> m_additionalMasterSecurityGroups;
     bool m_additionalMasterSecurityGroupsHasBeenSet;
+
     Aws::Vector<Aws::String> m_additionalSlaveSecurityGroups;
     bool m_additionalSlaveSecurityGroupsHasBeenSet;
   };

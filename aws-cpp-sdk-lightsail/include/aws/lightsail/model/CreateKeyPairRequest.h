@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name for your new key pair.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline CreateKeyPairRequest& WithKeyPairName(const char* value) { SetKeyPairName(value); return *this;}
 
   private:
+
     Aws::String m_keyPairName;
     bool m_keyPairNameHasBeenSet;
   };

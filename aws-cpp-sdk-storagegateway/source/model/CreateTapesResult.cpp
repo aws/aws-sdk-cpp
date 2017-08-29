@@ -30,12 +30,12 @@ CreateTapesResult::CreateTapesResult()
 {
 }
 
-CreateTapesResult::CreateTapesResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateTapesResult::CreateTapesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateTapesResult& CreateTapesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateTapesResult& CreateTapesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TapeARNs"))

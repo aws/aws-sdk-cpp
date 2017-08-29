@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the application to which you want to add the output
      * configuration.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline AddApplicationOutputRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>Version of the application to which you want add the output configuration.
      * You can use the <a>DescribeApplication</a> operation to get the current
@@ -105,6 +107,7 @@ namespace Model
      * <code>ConcurrentModificationException</code> is returned. </p>
      */
     inline AddApplicationOutputRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+
 
     /**
      * <p>An array of objects, each describing one output configuration. In the output
@@ -147,10 +150,13 @@ namespace Model
     inline AddApplicationOutputRequest& WithOutput(Output&& value) { SetOutput(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     long long m_currentApplicationVersionId;
     bool m_currentApplicationVersionIdHasBeenSet;
+
     Output m_output;
     bool m_outputHasBeenSet;
   };

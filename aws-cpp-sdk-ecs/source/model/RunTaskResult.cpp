@@ -30,12 +30,12 @@ RunTaskResult::RunTaskResult()
 {
 }
 
-RunTaskResult::RunTaskResult(const AmazonWebServiceResult<JsonValue>& result)
+RunTaskResult::RunTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RunTaskResult& RunTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RunTaskResult& RunTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("tasks"))

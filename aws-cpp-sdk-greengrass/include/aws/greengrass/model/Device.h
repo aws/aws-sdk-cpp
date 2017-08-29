@@ -45,6 +45,7 @@ namespace Model
     Device& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Certificate arn of the device.
      */
@@ -79,6 +80,7 @@ namespace Model
      * Certificate arn of the device.
      */
     inline Device& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
 
     /**
      * Element Id for this entry in the list.
@@ -115,6 +117,7 @@ namespace Model
      */
     inline Device& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * If true, the local shadow value automatically syncs with the cloud's shadow
      * state.
@@ -132,6 +135,7 @@ namespace Model
      * state.
      */
     inline Device& WithSyncShadow(bool value) { SetSyncShadow(value); return *this;}
+
 
     /**
      * Thing arn of the device.
@@ -169,12 +173,16 @@ namespace Model
     inline Device& WithThingArn(const char* value) { SetThingArn(value); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     bool m_syncShadow;
     bool m_syncShadowHasBeenSet;
+
     Aws::String m_thingArn;
     bool m_thingArnHasBeenSet;
   };

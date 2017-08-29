@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Qualification type to use for the assigned Qualification.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the Qualification type to use for the assigned Qualification.</p>
      */
     inline AssociateQualificationWithWorkerRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
+
 
     /**
      * <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs
@@ -113,6 +115,7 @@ namespace Model
      */
     inline AssociateQualificationWithWorkerRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
 
+
     /**
      * <p>The value of the Qualification to assign.</p>
      */
@@ -127,6 +130,7 @@ namespace Model
      * <p>The value of the Qualification to assign.</p>
      */
     inline AssociateQualificationWithWorkerRequest& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
+
 
     /**
      * <p> Specifies whether to send a notification email message to the Worker saying
@@ -150,12 +154,16 @@ namespace Model
     inline AssociateQualificationWithWorkerRequest& WithSendNotification(bool value) { SetSendNotification(value); return *this;}
 
   private:
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
+
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet;
+
     int m_integerValue;
     bool m_integerValueHasBeenSet;
+
     bool m_sendNotification;
     bool m_sendNotificationHasBeenSet;
   };

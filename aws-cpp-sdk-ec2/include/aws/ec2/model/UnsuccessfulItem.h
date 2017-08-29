@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Information about the error.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>Information about the error.</p>
      */
     inline UnsuccessfulItem& WithError(UnsuccessfulItemError&& value) { SetError(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the resource.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline UnsuccessfulItem& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
   private:
+
     UnsuccessfulItemError m_error;
     bool m_errorHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
   };

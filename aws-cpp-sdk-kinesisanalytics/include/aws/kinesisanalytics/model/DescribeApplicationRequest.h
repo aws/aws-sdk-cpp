@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the application.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline DescribeApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
   };

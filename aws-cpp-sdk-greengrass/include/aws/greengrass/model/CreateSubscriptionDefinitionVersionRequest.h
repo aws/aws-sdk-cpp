@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The client token used to request idempotent operations.
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateSubscriptionDefinitionVersionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
 
+
     /**
      * subscription definition Id
      */
@@ -107,6 +109,7 @@ namespace Model
      * subscription definition Id
      */
     inline CreateSubscriptionDefinitionVersionRequest& WithSubscriptionDefinitionId(const char* value) { SetSubscriptionDefinitionId(value); return *this;}
+
 
     /**
      * Subscriptions in the version.
@@ -144,10 +147,13 @@ namespace Model
     inline CreateSubscriptionDefinitionVersionRequest& AddSubscriptions(Subscription&& value) { m_subscriptionsHasBeenSet = true; m_subscriptions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_amznClientToken;
     bool m_amznClientTokenHasBeenSet;
+
     Aws::String m_subscriptionDefinitionId;
     bool m_subscriptionDefinitionIdHasBeenSet;
+
     Aws::Vector<Subscription> m_subscriptions;
     bool m_subscriptionsHasBeenSet;
   };

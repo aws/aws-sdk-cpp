@@ -30,12 +30,12 @@ GetGameSessionLogUrlResult::GetGameSessionLogUrlResult()
 {
 }
 
-GetGameSessionLogUrlResult::GetGameSessionLogUrlResult(const AmazonWebServiceResult<JsonValue>& result)
+GetGameSessionLogUrlResult::GetGameSessionLogUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetGameSessionLogUrlResult& GetGameSessionLogUrlResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetGameSessionLogUrlResult& GetGameSessionLogUrlResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PreSignedUrl"))

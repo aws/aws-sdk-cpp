@@ -23,7 +23,7 @@ namespace Aws
 {
 namespace CognitoSync
 {
-  class AWS_COGNITOSYNC_API CognitoSyncRequest : public AmazonSerializableWebServiceRequest
+  class AWS_COGNITOSYNC_API CognitoSyncRequest : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
     virtual ~CognitoSyncRequest () {}
@@ -37,7 +37,7 @@ namespace CognitoSync
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, AMZN_JSON_CONTENT_TYPE_1_1 ));
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_1 ));
       }
 
       return headers;

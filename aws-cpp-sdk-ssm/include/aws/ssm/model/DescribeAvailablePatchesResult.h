@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeAvailablePatchesResult();
-    DescribeAvailablePatchesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAvailablePatchesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAvailablePatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAvailablePatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of patches. Each entry in the array is a patch structure.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>An array of patches. Each entry in the array is a patch structure.</p>
      */
     inline DescribeAvailablePatchesResult& AddPatches(Patch&& value) { m_patches.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeAvailablePatchesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Patch> m_patches;
+
     Aws::String m_nextToken;
   };
 

@@ -30,12 +30,12 @@ ListRuleNamesByTargetResult::ListRuleNamesByTargetResult()
 {
 }
 
-ListRuleNamesByTargetResult::ListRuleNamesByTargetResult(const AmazonWebServiceResult<JsonValue>& result)
+ListRuleNamesByTargetResult::ListRuleNamesByTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListRuleNamesByTargetResult& ListRuleNamesByTargetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListRuleNamesByTargetResult& ListRuleNamesByTargetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("RuleNames"))

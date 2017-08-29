@@ -46,6 +46,7 @@ namespace Model
     ActivityTaskCompletedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The results of the activity task.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline ActivityTaskCompletedEventAttributes& WithResult(const char* value) { SetResult(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when
      * this activity task was scheduled. This information can be useful for diagnosing
@@ -101,6 +103,7 @@ namespace Model
      * problems by tracing back the chain of events leading up to this event.</p>
      */
     inline ActivityTaskCompletedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
+
 
     /**
      * <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this
@@ -124,10 +127,13 @@ namespace Model
     inline ActivityTaskCompletedEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 
   private:
+
     Aws::String m_result;
     bool m_resultHasBeenSet;
+
     long long m_scheduledEventId;
     bool m_scheduledEventIdHasBeenSet;
+
     long long m_startedEventId;
     bool m_startedEventIdHasBeenSet;
   };

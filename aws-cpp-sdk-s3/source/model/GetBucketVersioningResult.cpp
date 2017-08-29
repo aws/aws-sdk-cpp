@@ -31,14 +31,14 @@ GetBucketVersioningResult::GetBucketVersioningResult() :
 {
 }
 
-GetBucketVersioningResult::GetBucketVersioningResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetBucketVersioningResult::GetBucketVersioningResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_status(BucketVersioningStatus::NOT_SET),
     m_mFADelete(MFADeleteStatus::NOT_SET)
 {
   *this = result;
 }
 
-GetBucketVersioningResult& GetBucketVersioningResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketVersioningResult& GetBucketVersioningResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

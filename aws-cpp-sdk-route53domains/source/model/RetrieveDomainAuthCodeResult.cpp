@@ -30,12 +30,12 @@ RetrieveDomainAuthCodeResult::RetrieveDomainAuthCodeResult()
 {
 }
 
-RetrieveDomainAuthCodeResult::RetrieveDomainAuthCodeResult(const AmazonWebServiceResult<JsonValue>& result)
+RetrieveDomainAuthCodeResult::RetrieveDomainAuthCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RetrieveDomainAuthCodeResult& RetrieveDomainAuthCodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RetrieveDomainAuthCodeResult& RetrieveDomainAuthCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AuthCode"))

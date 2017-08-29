@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     CreateRuleResult();
-    CreateRuleResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the rule.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline CreateRuleResult& AddRules(Rule&& value) { m_rules.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline CreateRuleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Rule> m_rules;
+
     ResponseMetadata m_responseMetadata;
   };
 

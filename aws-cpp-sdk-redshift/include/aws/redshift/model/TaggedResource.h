@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The tag for the resource.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The tag for the resource.</p>
      */
     inline TaggedResource& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) with which the tag is associated. For example,
@@ -115,6 +117,7 @@ namespace Model
      * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
      */
     inline TaggedResource& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
 
     /**
      * <p>The type of resource with which the tag is associated. Valid resource types
@@ -215,10 +218,13 @@ namespace Model
     inline TaggedResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
   private:
+
     Tag m_tag;
     bool m_tagHasBeenSet;
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
   };

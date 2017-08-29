@@ -53,6 +53,7 @@ namespace Model
     SqlInjectionMatchSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
      * <code>SqlInjectionMatchSetId</code> to get information about a
@@ -151,6 +152,7 @@ namespace Model
      */
     inline SqlInjectionMatchSet& WithSqlInjectionMatchSetId(const char* value) { SetSqlInjectionMatchSetId(value); return *this;}
 
+
     /**
      * <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
      */
@@ -185,6 +187,7 @@ namespace Model
      * <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
      */
     inline SqlInjectionMatchSet& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Specifies the parts of web requests that you want to inspect for snippets of
@@ -229,10 +232,13 @@ namespace Model
     inline SqlInjectionMatchSet& AddSqlInjectionMatchTuples(SqlInjectionMatchTuple&& value) { m_sqlInjectionMatchTuplesHasBeenSet = true; m_sqlInjectionMatchTuples.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_sqlInjectionMatchSetId;
     bool m_sqlInjectionMatchSetIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<SqlInjectionMatchTuple> m_sqlInjectionMatchTuples;
     bool m_sqlInjectionMatchTuplesHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
     CreateElasticsearchDomainRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the Elasticsearch domain that you are creating. Domain names are
      * unique across the domains owned by an account within an AWS region. Domain names
@@ -93,6 +94,7 @@ namespace Model
      * (lowercase), 0-9, and - (hyphen).</p>
      */
     inline CreateElasticsearchDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
@@ -157,6 +159,7 @@ namespace Model
      */
     inline CreateElasticsearchDomainRequest& WithElasticsearchVersion(const char* value) { SetElasticsearchVersion(value); return *this;}
 
+
     /**
      * <p>Configuration options for an Elasticsearch domain. Specifies the instance
      * type and number of instances in the domain cluster. </p>
@@ -187,6 +190,7 @@ namespace Model
      */
     inline CreateElasticsearchDomainRequest& WithElasticsearchClusterConfig(ElasticsearchClusterConfig&& value) { SetElasticsearchClusterConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>Options to enable, disable and specify the type and size of EBS storage
      * volumes. </p>
@@ -216,6 +220,7 @@ namespace Model
      * volumes. </p>
      */
     inline CreateElasticsearchDomainRequest& WithEBSOptions(EBSOptions&& value) { SetEBSOptions(std::move(value)); return *this;}
+
 
     /**
      * <p> IAM access policy as a JSON-formatted string.</p>
@@ -252,6 +257,7 @@ namespace Model
      */
     inline CreateElasticsearchDomainRequest& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
 
+
     /**
      * <p>Option to set time, in UTC format, of the daily automated snapshot. Default
      * value is 0 hours. </p>
@@ -281,6 +287,7 @@ namespace Model
      * value is 0 hours. </p>
      */
     inline CreateElasticsearchDomainRequest& WithSnapshotOptions(SnapshotOptions&& value) { SetSnapshotOptions(std::move(value)); return *this;}
+
 
     /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
@@ -391,18 +398,25 @@ namespace Model
     inline CreateElasticsearchDomainRequest& AddAdvancedOptions(const char* key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_elasticsearchVersion;
     bool m_elasticsearchVersionHasBeenSet;
+
     ElasticsearchClusterConfig m_elasticsearchClusterConfig;
     bool m_elasticsearchClusterConfigHasBeenSet;
+
     EBSOptions m_eBSOptions;
     bool m_eBSOptionsHasBeenSet;
+
     Aws::String m_accessPolicies;
     bool m_accessPoliciesHasBeenSet;
+
     SnapshotOptions m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;
   };

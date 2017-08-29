@@ -55,14 +55,14 @@ enum class ApplicationDiscoveryServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  AUTHORIZATION_ERROR= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AUTHORIZATION_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_PARAMETER,
   OPERATION_NOT_PERMITTED,
   SERVER_INTERNAL_ERROR
 };
 namespace ApplicationDiscoveryServiceErrorMapper
 {
-  AWS_APPLICATIONDISCOVERYSERVICE_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ApplicationDiscoveryService

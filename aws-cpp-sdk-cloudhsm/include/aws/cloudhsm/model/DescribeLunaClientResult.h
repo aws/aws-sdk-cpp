@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeLunaClientResult();
-    DescribeLunaClientResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLunaClientResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLunaClientResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLunaClientResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the client.</p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline DescribeLunaClientResult& WithClientArn(const char* value) { SetClientArn(value); return *this;}
 
+
     /**
      * <p>The certificate installed on the HSMs used by this client.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The certificate installed on the HSMs used by this client.</p>
      */
     inline DescribeLunaClientResult& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+
 
     /**
      * <p>The certificate fingerprint.</p>
@@ -146,6 +149,7 @@ namespace Model
      */
     inline DescribeLunaClientResult& WithCertificateFingerprint(const char* value) { SetCertificateFingerprint(value); return *this;}
 
+
     /**
      * <p>The date and time the client was last modified.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      * <p>The date and time the client was last modified.</p>
      */
     inline DescribeLunaClientResult& WithLastModifiedTimestamp(const char* value) { SetLastModifiedTimestamp(value); return *this;}
+
 
     /**
      * <p>The label of the client.</p>
@@ -217,10 +222,15 @@ namespace Model
     inline DescribeLunaClientResult& WithLabel(const char* value) { SetLabel(value); return *this;}
 
   private:
+
     Aws::String m_clientArn;
+
     Aws::String m_certificate;
+
     Aws::String m_certificateFingerprint;
+
     Aws::String m_lastModifiedTimestamp;
+
     Aws::String m_label;
   };
 

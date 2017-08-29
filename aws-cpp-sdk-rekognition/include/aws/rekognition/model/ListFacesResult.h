@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListFacesResult();
-    ListFacesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>Face</code> objects. </p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>An array of <code>Face</code> objects. </p>
      */
     inline ListFacesResult& AddFaces(Face&& value) { m_faces.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the response is truncated, Amazon Rekognition returns this token that you
@@ -121,7 +123,9 @@ namespace Model
     inline ListFacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Face> m_faces;
+
     Aws::String m_nextToken;
   };
 

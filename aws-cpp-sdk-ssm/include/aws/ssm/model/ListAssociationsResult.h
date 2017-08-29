@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListAssociationsResult();
-    ListAssociationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssociationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The associations.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The associations.</p>
      */
     inline ListAssociationsResult& AddAssociations(Association&& value) { m_associations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline ListAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Association> m_associations;
+
     Aws::String m_nextToken;
   };
 

@@ -32,14 +32,14 @@ GetEvaluationResult::GetEvaluationResult() :
 {
 }
 
-GetEvaluationResult::GetEvaluationResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetEvaluationResult::GetEvaluationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(EntityStatus::NOT_SET),
     m_computeTime(0)
 {
   *this = result;
 }
 
-GetEvaluationResult& GetEvaluationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetEvaluationResult& GetEvaluationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EvaluationId"))

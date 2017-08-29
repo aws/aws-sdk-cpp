@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Specifies who pays for the download and request fees.
      */
@@ -67,6 +68,7 @@ namespace Model
     inline RequestPaymentConfiguration& WithPayer(Payer&& value) { SetPayer(std::move(value)); return *this;}
 
   private:
+
     Payer m_payer;
     bool m_payerHasBeenSet;
   };

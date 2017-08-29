@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetReusableDelegationSetResult();
-    GetReusableDelegationSetResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetReusableDelegationSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetReusableDelegationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetReusableDelegationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains information about the reusable delegation
@@ -78,6 +79,7 @@ namespace Model
     inline GetReusableDelegationSetResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(std::move(value)); return *this;}
 
   private:
+
     DelegationSet m_delegationSet;
   };
 

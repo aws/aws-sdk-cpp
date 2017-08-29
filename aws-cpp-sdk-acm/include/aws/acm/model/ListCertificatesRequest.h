@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
     inline ListCertificatesRequest& AddCertificateStatuses(CertificateStatus&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
@@ -122,6 +124,7 @@ namespace Model
      */
     inline ListCertificatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Use this parameter when paginating results to specify the maximum number of
      * items to return in the response. If additional items exist beyond the number you
@@ -150,10 +153,13 @@ namespace Model
     inline ListCertificatesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::Vector<CertificateStatus> m_certificateStatuses;
     bool m_certificateStatusesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

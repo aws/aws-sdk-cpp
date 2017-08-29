@@ -46,6 +46,7 @@ namespace Model
     EnhancedMetrics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>List of shard-level metrics.</p> <p>The following are the valid shard-level
      * metrics. The value "<code>ALL</code>" enhances every metric.</p> <ul> <li> <p>
@@ -159,6 +160,7 @@ namespace Model
     inline EnhancedMetrics& AddShardLevelMetrics(MetricsName&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<MetricsName> m_shardLevelMetrics;
     bool m_shardLevelMetricsHasBeenSet;
   };

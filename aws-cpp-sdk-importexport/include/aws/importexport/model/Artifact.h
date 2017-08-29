@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::String& GetDescription() const{ return m_description; }
 
@@ -69,6 +70,7 @@ namespace Model
 
     
     inline Artifact& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     
     inline const Aws::String& GetURL() const{ return m_uRL; }
@@ -92,8 +94,10 @@ namespace Model
     inline Artifact& WithURL(const char* value) { SetURL(value); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_uRL;
     bool m_uRLHasBeenSet;
   };

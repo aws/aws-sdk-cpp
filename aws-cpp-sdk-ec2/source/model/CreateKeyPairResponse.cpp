@@ -31,12 +31,12 @@ CreateKeyPairResponse::CreateKeyPairResponse()
 {
 }
 
-CreateKeyPairResponse::CreateKeyPairResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateKeyPairResponse::CreateKeyPairResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateKeyPairResponse& CreateKeyPairResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateKeyPairResponse& CreateKeyPairResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

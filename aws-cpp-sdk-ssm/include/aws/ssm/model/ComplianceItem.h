@@ -51,6 +51,7 @@ namespace Model
     ComplianceItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The compliance type. For example, Association (for a State Manager
      * association), Patch, or Custom:<code>string</code> are all valid compliance
@@ -100,6 +101,7 @@ namespace Model
      */
     inline ComplianceItem& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
 
+
     /**
      * <p>The type of resource. <code>ManagedInstance</code> is currently the only
      * supported resource type.</p>
@@ -142,6 +144,7 @@ namespace Model
      */
     inline ComplianceItem& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
      */
@@ -176,6 +179,7 @@ namespace Model
      * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
      */
     inline ComplianceItem& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>An ID for the compliance item. For example, if the compliance item is a
@@ -226,6 +230,7 @@ namespace Model
      */
     inline ComplianceItem& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>A title for the compliance item. For example, if the compliance item is a
      * Windows patch, the title could be the title of the KB article for the patch.
@@ -275,6 +280,7 @@ namespace Model
      */
     inline ComplianceItem& WithTitle(const char* value) { SetTitle(value); return *this;}
 
+
     /**
      * <p>The status of the compliance item. An item is either COMPLIANT or
      * NON_COMPLIANT.</p>
@@ -304,6 +310,7 @@ namespace Model
      * NON_COMPLIANT.</p>
      */
     inline ComplianceItem& WithStatus(ComplianceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The severity of the compliance status. Severity can be one of the following:
@@ -335,6 +342,7 @@ namespace Model
      */
     inline ComplianceItem& WithSeverity(ComplianceSeverity&& value) { SetSeverity(std::move(value)); return *this;}
 
+
     /**
      * <p>A summary for the compliance item. The summary includes an execution ID, the
      * execution type (for example, command), and the execution time.</p>
@@ -364,6 +372,7 @@ namespace Model
      * execution type (for example, command), and the execution time.</p>
      */
     inline ComplianceItem& WithExecutionSummary(ComplianceExecutionSummary&& value) { SetExecutionSummary(std::move(value)); return *this;}
+
 
     /**
      * <p>A "Key": "Value" tag combination for the compliance item.</p>
@@ -426,22 +435,31 @@ namespace Model
     inline ComplianceItem& AddDetails(const char* key, const char* value) { m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_complianceType;
     bool m_complianceTypeHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     ComplianceStatus m_status;
     bool m_statusHasBeenSet;
+
     ComplianceSeverity m_severity;
     bool m_severityHasBeenSet;
+
     ComplianceExecutionSummary m_executionSummary;
     bool m_executionSummaryHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_details;
     bool m_detailsHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     BatchGetNamedQueryResult();
-    BatchGetNamedQueryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetNamedQueryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetNamedQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetNamedQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the named query IDs submitted.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Information about the named query IDs submitted.</p>
      */
     inline BatchGetNamedQueryResult& AddNamedQueries(NamedQuery&& value) { m_namedQueries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Information about provided query IDs.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline BatchGetNamedQueryResult& AddUnprocessedNamedQueryIds(UnprocessedNamedQueryId&& value) { m_unprocessedNamedQueryIds.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<NamedQuery> m_namedQueries;
+
     Aws::Vector<UnprocessedNamedQueryId> m_unprocessedNamedQueryIds;
   };
 

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeJobResult();
-    DescribeJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An opaque string that identifies an Amazon Glacier job.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
     /**
      * <p>The job description you provided when you initiated the job.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      */
     inline DescribeJobResult& WithJobDescription(const char* value) { SetJobDescription(value); return *this;}
 
+
     /**
      * <p>The job type. It is either ArchiveRetrieval or InventoryRetrieval.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      * <p>The job type. It is either ArchiveRetrieval or InventoryRetrieval.</p>
      */
     inline DescribeJobResult& WithAction(ActionCode&& value) { SetAction(std::move(value)); return *this;}
+
 
     /**
      * <p>For an ArchiveRetrieval job, this is the archive ID requested for download.
@@ -186,6 +190,7 @@ namespace Model
      */
     inline DescribeJobResult& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the vault from which the archive retrieval
      * was requested.</p>
@@ -227,6 +232,7 @@ namespace Model
      * was requested.</p>
      */
     inline DescribeJobResult& WithVaultARN(const char* value) { SetVaultARN(value); return *this;}
+
 
     /**
      * <p>The UTC date when the job was created. A string representation of ISO 8601
@@ -270,6 +276,7 @@ namespace Model
      */
     inline DescribeJobResult& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
+
     /**
      * <p>The job status. When a job is completed, you get the job's output.</p>
      */
@@ -284,6 +291,7 @@ namespace Model
      * <p>The job status. When a job is completed, you get the job's output.</p>
      */
     inline DescribeJobResult& WithCompleted(bool value) { SetCompleted(value); return *this;}
+
 
     /**
      * <p>The status code can be InProgress, Succeeded, or Failed, and indicates the
@@ -314,6 +322,7 @@ namespace Model
      * status of the job.</p>
      */
     inline DescribeJobResult& WithStatusCode(StatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+
 
     /**
      * <p>A friendly message that describes the job status.</p>
@@ -350,6 +359,7 @@ namespace Model
      */
     inline DescribeJobResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     /**
      * <p>For an ArchiveRetrieval job, this is the size in bytes of the archive being
      * requested for download. For the InventoryRetrieval job, the value is null.</p>
@@ -368,6 +378,7 @@ namespace Model
      */
     inline DescribeJobResult& WithArchiveSizeInBytes(long long value) { SetArchiveSizeInBytes(value); return *this;}
 
+
     /**
      * <p>For an InventoryRetrieval job, this is the size in bytes of the inventory
      * requested for download. For the ArchiveRetrieval job, the value is null.</p>
@@ -385,6 +396,7 @@ namespace Model
      * requested for download. For the ArchiveRetrieval job, the value is null.</p>
      */
     inline DescribeJobResult& WithInventorySizeInBytes(long long value) { SetInventorySizeInBytes(value); return *this;}
+
 
     /**
      * <p>An Amazon Simple Notification Service (Amazon SNS) topic that receives
@@ -428,6 +440,7 @@ namespace Model
      */
     inline DescribeJobResult& WithSNSTopic(const char* value) { SetSNSTopic(value); return *this;}
 
+
     /**
      * <p>The UTC time that the archive retrieval request completed. While the job is
      * in progress, the value will be null.</p>
@@ -469,6 +482,7 @@ namespace Model
      * in progress, the value will be null.</p>
      */
     inline DescribeJobResult& WithCompletionDate(const char* value) { SetCompletionDate(value); return *this;}
+
 
     /**
      * <p>For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise,
@@ -568,6 +582,7 @@ namespace Model
      */
     inline DescribeJobResult& WithSHA256TreeHash(const char* value) { SetSHA256TreeHash(value); return *this;}
 
+
     /**
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
      * inventory retrieval jobs, this field is null.</p>
@@ -609,6 +624,7 @@ namespace Model
      * inventory retrieval jobs, this field is null.</p>
      */
     inline DescribeJobResult& WithArchiveSHA256TreeHash(const char* value) { SetArchiveSHA256TreeHash(value); return *this;}
+
 
     /**
      * <p>The retrieved byte range for archive retrieval jobs in the form
@@ -673,6 +689,7 @@ namespace Model
      */
     inline DescribeJobResult& WithRetrievalByteRange(const char* value) { SetRetrievalByteRange(value); return *this;}
 
+
     /**
      * <p>The retrieval option to use for the archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
@@ -722,6 +739,7 @@ namespace Model
      */
     inline DescribeJobResult& WithTier(const char* value) { SetTier(value); return *this;}
 
+
     /**
      * <p>Parameters used for range inventory retrieval.</p>
      */
@@ -748,23 +766,41 @@ namespace Model
     inline DescribeJobResult& WithInventoryRetrievalParameters(InventoryRetrievalJobDescription&& value) { SetInventoryRetrievalParameters(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobId;
+
     Aws::String m_jobDescription;
+
     ActionCode m_action;
+
     Aws::String m_archiveId;
+
     Aws::String m_vaultARN;
+
     Aws::String m_creationDate;
+
     bool m_completed;
+
     StatusCode m_statusCode;
+
     Aws::String m_statusMessage;
+
     long long m_archiveSizeInBytes;
+
     long long m_inventorySizeInBytes;
+
     Aws::String m_sNSTopic;
+
     Aws::String m_completionDate;
+
     Aws::String m_sHA256TreeHash;
+
     Aws::String m_archiveSHA256TreeHash;
+
     Aws::String m_retrievalByteRange;
+
     Aws::String m_tier;
+
     InventoryRetrievalJobDescription m_inventoryRetrievalParameters;
   };
 

@@ -48,6 +48,7 @@ namespace Model
     RecentCaseCommunications& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The five most recent communications associated with the case.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The five most recent communications associated with the case.</p>
      */
     inline RecentCaseCommunications& AddCommunications(Communication&& value) { m_communicationsHasBeenSet = true; m_communications.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A resumption point for pagination.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline RecentCaseCommunications& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Communication> m_communications;
     bool m_communicationsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

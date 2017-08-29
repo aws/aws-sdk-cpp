@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateGatewaySoftwareNowResult();
-    UpdateGatewaySoftwareNowResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateGatewaySoftwareNowResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateGatewaySoftwareNowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateGatewaySoftwareNowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -69,6 +70,7 @@ namespace Model
     inline UpdateGatewaySoftwareNowResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
   };
 

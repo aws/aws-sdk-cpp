@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The time stamp when the attachment initiated.</p>
      */
     inline VolumeAttachment& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The device name.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline VolumeAttachment& WithDevice(const char* value) { SetDevice(value); return *this;}
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      */
     inline VolumeAttachment& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The attachment state of the volume.</p>
      */
@@ -170,6 +174,7 @@ namespace Model
      * <p>The attachment state of the volume.</p>
      */
     inline VolumeAttachment& WithState(VolumeAttachmentState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the volume.</p>
@@ -206,6 +211,7 @@ namespace Model
      */
     inline VolumeAttachment& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     /**
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
      */
@@ -220,6 +226,7 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
      */
     inline VolumeAttachment& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -237,18 +244,25 @@ namespace Model
     inline VolumeAttachment& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_attachTime;
     bool m_attachTimeHasBeenSet;
+
     Aws::String m_device;
     bool m_deviceHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     VolumeAttachmentState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;
   };

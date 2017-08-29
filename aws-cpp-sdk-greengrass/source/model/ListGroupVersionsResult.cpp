@@ -30,12 +30,12 @@ ListGroupVersionsResult::ListGroupVersionsResult()
 {
 }
 
-ListGroupVersionsResult::ListGroupVersionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListGroupVersionsResult::ListGroupVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListGroupVersionsResult& ListGroupVersionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListGroupVersionsResult& ListGroupVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

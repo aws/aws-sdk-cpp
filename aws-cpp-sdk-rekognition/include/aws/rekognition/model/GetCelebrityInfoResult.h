@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetCelebrityInfoResult();
-    GetCelebrityInfoResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCelebrityInfoResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCelebrityInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCelebrityInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of URLs pointing to additional celebrity information. </p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline GetCelebrityInfoResult& AddUrls(const char* value) { m_urls.push_back(value); return *this; }
 
+
     /**
      * <p>The name of the celebrity.</p>
      */
@@ -118,7 +120,9 @@ namespace Model
     inline GetCelebrityInfoResult& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_urls;
+
     Aws::String m_name;
   };
 

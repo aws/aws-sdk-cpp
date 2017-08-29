@@ -38,6 +38,7 @@ namespace Model
     DeleteDocumentationPartRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline DeleteDocumentationPartRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>[Required] The identifier of the to-be-deleted documentation part.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline DeleteDocumentationPartRequest& WithDocumentationPartId(const char* value) { SetDocumentationPartId(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_documentationPartId;
     bool m_documentationPartIdHasBeenSet;
   };

@@ -30,12 +30,12 @@ GetUserAttributeVerificationCodeResult::GetUserAttributeVerificationCodeResult()
 {
 }
 
-GetUserAttributeVerificationCodeResult::GetUserAttributeVerificationCodeResult(const AmazonWebServiceResult<JsonValue>& result)
+GetUserAttributeVerificationCodeResult::GetUserAttributeVerificationCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetUserAttributeVerificationCodeResult& GetUserAttributeVerificationCodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetUserAttributeVerificationCodeResult& GetUserAttributeVerificationCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CodeDeliveryDetails"))

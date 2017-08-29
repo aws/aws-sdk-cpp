@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
      * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
@@ -104,6 +105,7 @@ namespace Model
      */
     inline KeyPairInfo& WithKeyFingerprint(const char* value) { SetKeyFingerprint(value); return *this;}
 
+
     /**
      * <p>The name of the key pair.</p>
      */
@@ -140,8 +142,10 @@ namespace Model
     inline KeyPairInfo& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
   private:
+
     Aws::String m_keyFingerprint;
     bool m_keyFingerprintHasBeenSet;
+
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
   };

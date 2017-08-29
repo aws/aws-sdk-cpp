@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     VerifyDomainDkimResult();
-    VerifyDomainDkimResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    VerifyDomainDkimResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    VerifyDomainDkimResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    VerifyDomainDkimResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A set of character strings that represent the domain's identity. If the
@@ -161,6 +162,7 @@ namespace Model
      */
     inline VerifyDomainDkimResult& AddDkimTokens(const char* value) { m_dkimTokens.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -177,7 +179,9 @@ namespace Model
     inline VerifyDomainDkimResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_dkimTokens;
+
     ResponseMetadata m_responseMetadata;
   };
 

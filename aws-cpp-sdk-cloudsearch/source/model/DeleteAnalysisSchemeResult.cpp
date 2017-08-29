@@ -31,12 +31,12 @@ DeleteAnalysisSchemeResult::DeleteAnalysisSchemeResult()
 {
 }
 
-DeleteAnalysisSchemeResult::DeleteAnalysisSchemeResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteAnalysisSchemeResult::DeleteAnalysisSchemeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteAnalysisSchemeResult& DeleteAnalysisSchemeResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteAnalysisSchemeResult& DeleteAnalysisSchemeResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

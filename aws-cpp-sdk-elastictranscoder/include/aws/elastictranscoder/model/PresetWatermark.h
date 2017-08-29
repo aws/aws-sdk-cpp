@@ -56,6 +56,7 @@ namespace Model
     PresetWatermark& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> A unique identifier for the settings for one watermark. The value of
      * <code>Id</code> can be up to 40 characters long. </p>
@@ -97,6 +98,7 @@ namespace Model
      * <code>Id</code> can be up to 40 characters long. </p>
      */
     inline PresetWatermark& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The maximum width of the watermark in one of the following formats: </p> <ul>
@@ -182,6 +184,7 @@ namespace Model
      */
     inline PresetWatermark& WithMaxWidth(const char* value) { SetMaxWidth(value); return *this;}
 
+
     /**
      * <p>The maximum height of the watermark in one of the following formats: </p>
      * <ul> <li> <p>number of pixels (px): The minimum value is 16 pixels, and the
@@ -265,6 +268,7 @@ namespace Model
      * less than or equal to the value of <code>MaxHeight</code>.</p>
      */
     inline PresetWatermark& WithMaxHeight(const char* value) { SetMaxHeight(value); return *this;}
+
 
     /**
      * <p>A value that controls scaling of the watermark: </p> <ul> <li> <p>
@@ -385,6 +389,7 @@ namespace Model
      */
     inline PresetWatermark& WithSizingPolicy(const char* value) { SetSizingPolicy(value); return *this;}
 
+
     /**
      * <p>The horizontal position of the watermark unless you specify a non-zero value
      * for <code>HorizontalOffset</code>: </p> <ul> <li> <p> <b>Left</b>: The left edge
@@ -454,6 +459,7 @@ namespace Model
      * between the left and right borders.</p> </li> </ul>
      */
     inline PresetWatermark& WithHorizontalAlign(const char* value) { SetHorizontalAlign(value); return *this;}
+
 
     /**
      * <p>The amount by which you want the horizontal position of the watermark to be
@@ -595,6 +601,7 @@ namespace Model
      */
     inline PresetWatermark& WithHorizontalOffset(const char* value) { SetHorizontalOffset(value); return *this;}
 
+
     /**
      * <p>The vertical position of the watermark unless you specify a non-zero value
      * for <code>VerticalOffset</code>: </p> <ul> <li> <p> <b>Top</b>: The top edge of
@@ -664,6 +671,7 @@ namespace Model
      * between the top and bottom borders.</p> </li> </ul>
      */
     inline PresetWatermark& WithVerticalAlign(const char* value) { SetVerticalAlign(value); return *this;}
+
 
     /**
      * <p> <code>VerticalOffset</code> </p> <p>The amount by which you want the
@@ -812,6 +820,7 @@ namespace Model
      */
     inline PresetWatermark& WithVerticalOffset(const char* value) { SetVerticalOffset(value); return *this;}
 
+
     /**
      * <p>A percentage that indicates how much you want a watermark to obscure the
      * video in the location where it appears. Valid values are 0 (the watermark is
@@ -895,6 +904,7 @@ namespace Model
      * transparency.</p>
      */
     inline PresetWatermark& WithOpacity(const char* value) { SetOpacity(value); return *this;}
+
 
     /**
      * <p>A value that determines how Elastic Transcoder interprets values that you
@@ -1023,24 +1033,34 @@ namespace Model
     inline PresetWatermark& WithTarget(const char* value) { SetTarget(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_maxWidth;
     bool m_maxWidthHasBeenSet;
+
     Aws::String m_maxHeight;
     bool m_maxHeightHasBeenSet;
+
     Aws::String m_sizingPolicy;
     bool m_sizingPolicyHasBeenSet;
+
     Aws::String m_horizontalAlign;
     bool m_horizontalAlignHasBeenSet;
+
     Aws::String m_horizontalOffset;
     bool m_horizontalOffsetHasBeenSet;
+
     Aws::String m_verticalAlign;
     bool m_verticalAlignHasBeenSet;
+
     Aws::String m_verticalOffset;
     bool m_verticalOffsetHasBeenSet;
+
     Aws::String m_opacity;
     bool m_opacityHasBeenSet;
+
     Aws::String m_target;
     bool m_targetHasBeenSet;
   };

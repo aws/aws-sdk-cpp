@@ -30,12 +30,12 @@ PreviewAgentsResult::PreviewAgentsResult()
 {
 }
 
-PreviewAgentsResult::PreviewAgentsResult(const AmazonWebServiceResult<JsonValue>& result)
+PreviewAgentsResult::PreviewAgentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PreviewAgentsResult& PreviewAgentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PreviewAgentsResult& PreviewAgentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("agentPreviews"))

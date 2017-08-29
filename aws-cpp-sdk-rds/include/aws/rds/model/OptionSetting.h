@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the option that has settings that you can set.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The name of the option that has settings that you can set.</p>
      */
     inline OptionSetting& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The current value of the option setting.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline OptionSetting& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>The default value of the option setting.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The default value of the option setting.</p>
      */
     inline OptionSetting& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+
 
     /**
      * <p>The description of the option setting.</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline OptionSetting& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The DB engine specific parameter type.</p>
      */
@@ -226,6 +231,7 @@ namespace Model
      * <p>The DB engine specific parameter type.</p>
      */
     inline OptionSetting& WithApplyType(const char* value) { SetApplyType(value); return *this;}
+
 
     /**
      * <p>The data type of the option setting.</p>
@@ -262,6 +268,7 @@ namespace Model
      */
     inline OptionSetting& WithDataType(const char* value) { SetDataType(value); return *this;}
 
+
     /**
      * <p>The allowed values of the option setting.</p>
      */
@@ -297,6 +304,7 @@ namespace Model
      */
     inline OptionSetting& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
 
+
     /**
      * <p>A Boolean value that, when true, indicates the option setting can be modified
      * from the default.</p>
@@ -315,6 +323,7 @@ namespace Model
      */
     inline OptionSetting& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
 
+
     /**
      * <p>Indicates if the option setting is part of a collection.</p>
      */
@@ -331,22 +340,31 @@ namespace Model
     inline OptionSetting& WithIsCollection(bool value) { SetIsCollection(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_applyType;
     bool m_applyTypeHasBeenSet;
+
     Aws::String m_dataType;
     bool m_dataTypeHasBeenSet;
+
     Aws::String m_allowedValues;
     bool m_allowedValuesHasBeenSet;
+
     bool m_isModifiable;
     bool m_isModifiableHasBeenSet;
+
     bool m_isCollection;
     bool m_isCollectionHasBeenSet;
   };

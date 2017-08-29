@@ -34,6 +34,7 @@ namespace Model
     DeleteAliasRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Lambda function name for which the alias is created. Deleting an alias
      * does not delete the function version to which it is pointing. Note that the
@@ -90,6 +91,7 @@ namespace Model
      */
     inline DeleteAliasRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>Name of the alias to delete.</p>
      */
@@ -126,8 +128,10 @@ namespace Model
     inline DeleteAliasRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

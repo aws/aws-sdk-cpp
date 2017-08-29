@@ -50,6 +50,7 @@ namespace Model
     AttackDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) of the attack.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline AttackDetail& WithAttackId(const char* value) { SetAttackId(value); return *this;}
 
+
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
      */
     inline AttackDetail& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
 
     /**
      * <p>If applicable, additional detail about the resource being attacked, for
@@ -162,6 +165,7 @@ namespace Model
      */
     inline AttackDetail& AddSubResources(SubResourceSummary&& value) { m_subResourcesHasBeenSet = true; m_subResources.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time the attack started, in the format 2016-12-16T13:50Z.</p>
      */
@@ -187,6 +191,7 @@ namespace Model
      */
     inline AttackDetail& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>
      */
@@ -211,6 +216,7 @@ namespace Model
      * <p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>
      */
     inline AttackDetail& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>List of counters that describe the attack for the specified time period.</p>
@@ -246,6 +252,7 @@ namespace Model
      * <p>List of counters that describe the attack for the specified time period.</p>
      */
     inline AttackDetail& AddAttackCounters(SummarizedCounter&& value) { m_attackCountersHasBeenSet = true; m_attackCounters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>List of mitigation actions taken for the attack.</p>
@@ -283,18 +290,25 @@ namespace Model
     inline AttackDetail& AddMitigations(Mitigation&& value) { m_mitigationsHasBeenSet = true; m_mitigations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_attackId;
     bool m_attackIdHasBeenSet;
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::Vector<SubResourceSummary> m_subResources;
     bool m_subResourcesHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::Vector<SummarizedCounter> m_attackCounters;
     bool m_attackCountersHasBeenSet;
+
     Aws::Vector<Mitigation> m_mitigations;
     bool m_mitigationsHasBeenSet;
   };

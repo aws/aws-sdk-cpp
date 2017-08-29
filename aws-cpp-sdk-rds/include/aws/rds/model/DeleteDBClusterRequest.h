@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The DB cluster identifier for the DB cluster to be deleted. This parameter
      * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
@@ -104,6 +105,7 @@ namespace Model
      */
     inline DeleteDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
+
     /**
      * <p> Determines whether a final DB cluster snapshot is created before the DB
      * cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is
@@ -136,6 +138,7 @@ namespace Model
      * <code>false</code> </p>
      */
     inline DeleteDBClusterRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
+
 
     /**
      * <p> The DB cluster snapshot identifier of the new DB cluster snapshot created
@@ -215,10 +218,13 @@ namespace Model
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(const char* value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     bool m_skipFinalSnapshot;
     bool m_skipFinalSnapshotHasBeenSet;
+
     Aws::String m_finalDBSnapshotIdentifier;
     bool m_finalDBSnapshotIdentifierHasBeenSet;
   };

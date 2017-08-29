@@ -31,12 +31,12 @@ GetOpenIDConnectProviderResult::GetOpenIDConnectProviderResult()
 {
 }
 
-GetOpenIDConnectProviderResult::GetOpenIDConnectProviderResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetOpenIDConnectProviderResult::GetOpenIDConnectProviderResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetOpenIDConnectProviderResult& GetOpenIDConnectProviderResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetOpenIDConnectProviderResult& GetOpenIDConnectProviderResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

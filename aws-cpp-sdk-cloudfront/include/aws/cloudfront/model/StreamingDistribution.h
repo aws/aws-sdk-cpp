@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The identifier for the RTMP distribution. For example:
      * <code>EGTXBD79EXAMPLE</code>.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline StreamingDistribution& WithId(const char* value) { SetId(value); return *this;}
 
+
     
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
@@ -111,6 +113,7 @@ namespace Model
 
     
     inline StreamingDistribution& WithARN(const char* value) { SetARN(value); return *this;}
+
 
     /**
      * <p>The current status of the RTMP distribution. When the status is
@@ -161,6 +164,7 @@ namespace Model
      */
     inline StreamingDistribution& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The date and time that the distribution was last modified. </p>
      */
@@ -185,6 +189,7 @@ namespace Model
      * <p>The date and time that the distribution was last modified. </p>
      */
     inline StreamingDistribution& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The domain name that corresponds to the streaming distribution. For example:
@@ -227,6 +232,7 @@ namespace Model
      * <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
      */
     inline StreamingDistribution& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>A complex type that lists the AWS accounts, if any, that you included in the
@@ -313,6 +319,7 @@ namespace Model
      */
     inline StreamingDistribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(std::move(value)); return *this;}
 
+
     /**
      * <p>The current configuration information for the RTMP distribution.</p>
      */
@@ -339,18 +346,25 @@ namespace Model
     inline StreamingDistribution& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     ActiveTrustedSigners m_activeTrustedSigners;
     bool m_activeTrustedSignersHasBeenSet;
+
     StreamingDistributionConfig m_streamingDistributionConfig;
     bool m_streamingDistributionConfigHasBeenSet;
   };

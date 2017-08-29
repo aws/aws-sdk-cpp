@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateProvisionedProductResult();
-    UpdateProvisionedProductResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateProvisionedProductResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateProvisionedProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateProvisionedProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The detailed result of the <a>UpdateProvisionedProduct</a> request,
@@ -82,6 +83,7 @@ namespace Model
     inline UpdateProvisionedProductResult& WithRecordDetail(RecordDetail&& value) { SetRecordDetail(std::move(value)); return *this;}
 
   private:
+
     RecordDetail m_recordDetail;
   };
 

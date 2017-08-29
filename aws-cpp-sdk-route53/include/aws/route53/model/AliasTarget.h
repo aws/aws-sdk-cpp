@@ -57,6 +57,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p> <i>Alias resource records sets only</i>: The value used depends on where you
      * want to route traffic:</p> <dl> <dt>CloudFront distribution</dt> <dd> <p>Specify
@@ -364,6 +365,7 @@ namespace Model
      * zone.)</p> </dd> </dl>
      */
     inline AliasTarget& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+
 
     /**
      * <p> <i>Alias resource record sets only:</i> The value that you specify depends
@@ -778,6 +780,7 @@ namespace Model
      */
     inline AliasTarget& WithDNSName(const char* value) { SetDNSName(value); return *this;}
 
+
     /**
      * <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias,
      * and weighted alias resource record sets:</i> When
@@ -917,10 +920,13 @@ namespace Model
     inline AliasTarget& WithEvaluateTargetHealth(bool value) { SetEvaluateTargetHealth(value); return *this;}
 
   private:
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     Aws::String m_dNSName;
     bool m_dNSNameHasBeenSet;
+
     bool m_evaluateTargetHealth;
     bool m_evaluateTargetHealthHasBeenSet;
   };

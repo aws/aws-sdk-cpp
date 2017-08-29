@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Specifies the string for which you want to get suggestions.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>Specifies the string for which you want to get suggestions.</p>
      */
     inline SuggestRequest& WithQuery(const char* value) { SetQuery(value); return *this;}
+
 
     /**
      * <p>Specifies the name of the suggester to use to find suggested matches.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline SuggestRequest& WithSuggester(const char* value) { SetSuggester(value); return *this;}
 
+
     /**
      * <p>Specifies the maximum number of suggestions to return. </p>
      */
@@ -130,10 +133,13 @@ namespace Model
     inline SuggestRequest& WithSize(long long value) { SetSize(value); return *this;}
 
   private:
+
     Aws::String m_query;
     bool m_queryHasBeenSet;
+
     Aws::String m_suggester;
     bool m_suggesterHasBeenSet;
+
     long long m_size;
     bool m_sizeHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DetachPolicyResult();
-    DetachPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetachPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetachPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetachPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

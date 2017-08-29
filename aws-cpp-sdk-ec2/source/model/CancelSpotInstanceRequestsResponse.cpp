@@ -31,12 +31,12 @@ CancelSpotInstanceRequestsResponse::CancelSpotInstanceRequestsResponse()
 {
 }
 
-CancelSpotInstanceRequestsResponse::CancelSpotInstanceRequestsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CancelSpotInstanceRequestsResponse::CancelSpotInstanceRequestsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CancelSpotInstanceRequestsResponse& CancelSpotInstanceRequestsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CancelSpotInstanceRequestsResponse& CancelSpotInstanceRequestsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

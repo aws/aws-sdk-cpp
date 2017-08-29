@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateTrailResult();
-    UpdateTrailResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTrailResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Specifies the name of the trail.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>Specifies the name of the trail.</p>
      */
     inline UpdateTrailResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Specifies the name of the Amazon S3 bucket designated for publishing log
@@ -123,6 +125,7 @@ namespace Model
      * files.</p>
      */
     inline UpdateTrailResult& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+
 
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
@@ -180,6 +183,7 @@ namespace Model
      */
     inline UpdateTrailResult& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
 
+
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
      * notifications when log files are delivered. The format of a topic ARN is:</p>
@@ -229,6 +233,7 @@ namespace Model
      */
     inline UpdateTrailResult& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
 
+
     /**
      * <p>Specifies whether the trail is publishing events from global services such as
      * IAM to the log files.</p>
@@ -247,6 +252,7 @@ namespace Model
      */
     inline UpdateTrailResult& WithIncludeGlobalServiceEvents(bool value) { SetIncludeGlobalServiceEvents(value); return *this;}
 
+
     /**
      * <p>Specifies whether the trail exists in one region or in all regions.</p>
      */
@@ -261,6 +267,7 @@ namespace Model
      * <p>Specifies whether the trail exists in one region or in all regions.</p>
      */
     inline UpdateTrailResult& WithIsMultiRegionTrail(bool value) { SetIsMultiRegionTrail(value); return *this;}
+
 
     /**
      * <p>Specifies the ARN of the trail that was updated. The format of a trail ARN
@@ -311,6 +318,7 @@ namespace Model
      */
     inline UpdateTrailResult& WithTrailARN(const char* value) { SetTrailARN(value); return *this;}
 
+
     /**
      * <p>Specifies whether log file integrity validation is enabled.</p>
      */
@@ -325,6 +333,7 @@ namespace Model
      * <p>Specifies whether log file integrity validation is enabled.</p>
      */
     inline UpdateTrailResult& WithLogFileValidationEnabled(bool value) { SetLogFileValidationEnabled(value); return *this;}
+
 
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail
@@ -368,6 +377,7 @@ namespace Model
      */
     inline UpdateTrailResult& WithCloudWatchLogsLogGroupArn(const char* value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
 
+
     /**
      * <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a
      * user's log group.</p>
@@ -409,6 +419,7 @@ namespace Model
      * user's log group.</p>
      */
     inline UpdateTrailResult& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}
+
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
@@ -467,16 +478,27 @@ namespace Model
     inline UpdateTrailResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_s3BucketName;
+
     Aws::String m_s3KeyPrefix;
+
     Aws::String m_snsTopicARN;
+
     bool m_includeGlobalServiceEvents;
+
     bool m_isMultiRegionTrail;
+
     Aws::String m_trailARN;
+
     bool m_logFileValidationEnabled;
+
     Aws::String m_cloudWatchLogsLogGroupArn;
+
     Aws::String m_cloudWatchLogsRoleArn;
+
     Aws::String m_kmsKeyId;
   };
 

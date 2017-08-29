@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the repository that contains the blob.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The name of the repository that contains the blob.</p>
      */
     inline GetBlobRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The ID of the blob, which is its SHA-1 pointer.</p>
@@ -110,8 +112,10 @@ namespace Model
     inline GetBlobRequest& WithBlobId(const char* value) { SetBlobId(value); return *this;}
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_blobId;
     bool m_blobIdHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack for which the URL is generated.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The stack for which the URL is generated.</p>
      */
     inline CreateStreamingURLRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>The fleet for which the URL is generated.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline CreateStreamingURLRequest& WithFleetName(const char* value) { SetFleetName(value); return *this;}
 
+
     /**
      * <p>A unique user ID for whom the URL is generated.</p>
      */
@@ -140,6 +143,7 @@ namespace Model
      * <p>A unique user ID for whom the URL is generated.</p>
      */
     inline CreateStreamingURLRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+
 
     /**
      * <p>The ID of the application that must be launched after the session starts.</p>
@@ -176,6 +180,7 @@ namespace Model
      */
     inline CreateStreamingURLRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     /**
      * <p>The duration up to which the URL returned by this action is valid. The input
      * can be any numeric value in seconds between 1 and 604800 seconds.</p>
@@ -193,6 +198,7 @@ namespace Model
      * can be any numeric value in seconds between 1 and 604800 seconds.</p>
      */
     inline CreateStreamingURLRequest& WithValidity(long long value) { SetValidity(value); return *this;}
+
 
     /**
      * <p>The sessionContext of the streaming URL.</p>
@@ -230,16 +236,22 @@ namespace Model
     inline CreateStreamingURLRequest& WithSessionContext(const char* value) { SetSessionContext(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_fleetName;
     bool m_fleetNameHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     long long m_validity;
     bool m_validityHasBeenSet;
+
     Aws::String m_sessionContext;
     bool m_sessionContextHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DisassociateQualificationFromWorkerResult();
-    DisassociateQualificationFromWorkerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateQualificationFromWorkerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateQualificationFromWorkerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateQualificationFromWorkerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

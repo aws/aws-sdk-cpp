@@ -47,6 +47,7 @@ namespace Model
     ProviderDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identity provider name.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ProviderDescription& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
     /**
      * <p>The identity provider type.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      */
     inline ProviderDescription& WithProviderType(IdentityProviderTypeType&& value) { SetProviderType(std::move(value)); return *this;}
 
+
     /**
      * <p>The date the provider was last modified.</p>
      */
@@ -131,6 +134,7 @@ namespace Model
      * <p>The date the provider was last modified.</p>
      */
     inline ProviderDescription& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the provider was added to the user pool.</p>
@@ -158,12 +162,16 @@ namespace Model
     inline ProviderDescription& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
     IdentityProviderTypeType m_providerType;
     bool m_providerTypeHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };

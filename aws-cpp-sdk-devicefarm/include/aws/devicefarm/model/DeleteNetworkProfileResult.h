@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteNetworkProfileResult();
-    DeleteNetworkProfileResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteNetworkProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteNetworkProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteNetworkProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

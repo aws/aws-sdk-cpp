@@ -30,12 +30,12 @@ GetThirdPartyJobDetailsResult::GetThirdPartyJobDetailsResult()
 {
 }
 
-GetThirdPartyJobDetailsResult::GetThirdPartyJobDetailsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetThirdPartyJobDetailsResult::GetThirdPartyJobDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetThirdPartyJobDetailsResult& GetThirdPartyJobDetailsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetThirdPartyJobDetailsResult& GetThirdPartyJobDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("jobDetails"))

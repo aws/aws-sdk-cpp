@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>One of the following processes:</p> <ul> <li> <p> <code>Launch</code> </p>
      * </li> <li> <p> <code>Terminate</code> </p> </li> <li> <p>
@@ -129,6 +130,7 @@ namespace Model
     inline ProcessType& WithProcessName(const char* value) { SetProcessName(value); return *this;}
 
   private:
+
     Aws::String m_processName;
     bool m_processNameHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     SendTaskFailureResult();
-    SendTaskFailureResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendTaskFailureResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendTaskFailureResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendTaskFailureResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

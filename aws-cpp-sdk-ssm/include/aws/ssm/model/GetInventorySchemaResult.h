@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetInventorySchemaResult();
-    GetInventorySchemaResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInventorySchemaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInventorySchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInventorySchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Inventory schemas returned by the request.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Inventory schemas returned by the request.</p>
      */
     inline GetInventorySchemaResult& AddSchemas(InventoryItemSchema&& value) { m_schemas.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline GetInventorySchemaResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<InventoryItemSchema> m_schemas;
+
     Aws::String m_nextToken;
   };
 

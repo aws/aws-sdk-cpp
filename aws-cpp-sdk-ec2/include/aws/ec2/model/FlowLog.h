@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The date and time the flow log was created.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The date and time the flow log was created.</p>
      */
     inline FlowLog& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
@@ -152,6 +154,7 @@ namespace Model
      */
     inline FlowLog& WithDeliverLogsErrorMessage(const char* value) { SetDeliverLogsErrorMessage(value); return *this;}
 
+
     /**
      * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
      */
@@ -186,6 +189,7 @@ namespace Model
      * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
      */
     inline FlowLog& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
+
 
     /**
      * <p>The status of the logs delivery (<code>SUCCESS</code> |
@@ -229,6 +233,7 @@ namespace Model
      */
     inline FlowLog& WithDeliverLogsStatus(const char* value) { SetDeliverLogsStatus(value); return *this;}
 
+
     /**
      * <p>The flow log ID.</p>
      */
@@ -263,6 +268,7 @@ namespace Model
      * <p>The flow log ID.</p>
      */
     inline FlowLog& WithFlowLogId(const char* value) { SetFlowLogId(value); return *this;}
+
 
     /**
      * <p>The status of the flow log (<code>ACTIVE</code>).</p>
@@ -299,6 +305,7 @@ namespace Model
      */
     inline FlowLog& WithFlowLogStatus(const char* value) { SetFlowLogStatus(value); return *this;}
 
+
     /**
      * <p>The name of the flow log group.</p>
      */
@@ -333,6 +340,7 @@ namespace Model
      * <p>The name of the flow log group.</p>
      */
     inline FlowLog& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>The ID of the resource on which the flow log was created.</p>
@@ -369,6 +377,7 @@ namespace Model
      */
     inline FlowLog& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The type of traffic captured for the flow log.</p>
      */
@@ -395,22 +404,31 @@ namespace Model
     inline FlowLog& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::String m_deliverLogsErrorMessage;
     bool m_deliverLogsErrorMessageHasBeenSet;
+
     Aws::String m_deliverLogsPermissionArn;
     bool m_deliverLogsPermissionArnHasBeenSet;
+
     Aws::String m_deliverLogsStatus;
     bool m_deliverLogsStatusHasBeenSet;
+
     Aws::String m_flowLogId;
     bool m_flowLogIdHasBeenSet;
+
     Aws::String m_flowLogStatus;
     bool m_flowLogStatusHasBeenSet;
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     TrafficType m_trafficType;
     bool m_trafficTypeHasBeenSet;
   };

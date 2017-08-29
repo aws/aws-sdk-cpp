@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
      * the AWS account ID associated with the credentials used to sign the request. You
@@ -115,6 +116,7 @@ namespace Model
      */
     inline ListVaultsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>A string used for pagination. The marker specifies the vault ARN after which
      * the listing of vaults should begin.</p>
@@ -156,6 +158,7 @@ namespace Model
      * the listing of vaults should begin.</p>
      */
     inline ListVaultsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>The maximum number of vaults to be returned. The default limit is 1000. The
@@ -207,10 +210,13 @@ namespace Model
     inline ListVaultsRequest& WithLimit(const char* value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_limit;
     bool m_limitHasBeenSet;
   };

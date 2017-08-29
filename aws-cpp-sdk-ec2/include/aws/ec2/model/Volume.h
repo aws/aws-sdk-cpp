@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Information about the volume attachments.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      * <p>Information about the volume attachments.</p>
      */
     inline Volume& AddAttachments(VolumeAttachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The Availability Zone for the volume.</p>
@@ -125,6 +127,7 @@ namespace Model
      */
     inline Volume& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The time stamp when volume creation was initiated.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      */
     inline Volume& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether the volume will be encrypted.</p>
      */
@@ -164,6 +168,7 @@ namespace Model
      * <p>Indicates whether the volume will be encrypted.</p>
      */
     inline Volume& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
@@ -207,6 +212,7 @@ namespace Model
      */
     inline Volume& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>The size of the volume, in GiBs.</p>
      */
@@ -221,6 +227,7 @@ namespace Model
      * <p>The size of the volume, in GiBs.</p>
      */
     inline Volume& WithSize(int value) { SetSize(value); return *this;}
+
 
     /**
      * <p>The snapshot from which the volume was created, if applicable.</p>
@@ -257,6 +264,7 @@ namespace Model
      */
     inline Volume& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>The volume state.</p>
      */
@@ -281,6 +289,7 @@ namespace Model
      * <p>The volume state.</p>
      */
     inline Volume& WithState(VolumeState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the volume.</p>
@@ -316,6 +325,7 @@ namespace Model
      * <p>The ID of the volume.</p>
      */
     inline Volume& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
@@ -368,6 +378,7 @@ namespace Model
      */
     inline Volume& WithIops(int value) { SetIops(value); return *this;}
 
+
     /**
      * <p>Any tags assigned to the volume.</p>
      */
@@ -402,6 +413,7 @@ namespace Model
      * <p>Any tags assigned to the volume.</p>
      */
     inline Volume& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
@@ -443,6 +455,7 @@ namespace Model
      */
     inline Volume& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -459,30 +472,43 @@ namespace Model
     inline Volume& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<VolumeAttachment> m_attachments;
     bool m_attachmentsHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     int m_size;
     bool m_sizeHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     VolumeState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;
   };

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetProjectResult();
-    GetProjectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetProjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The project you wish to get information about.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline GetProjectResult& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
 
   private:
+
     Project m_project;
   };
 

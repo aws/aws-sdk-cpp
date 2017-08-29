@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Specify the environment by name.</p> <p>You must specify either this or an
      * EnvironmentName, or both.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeEnvironmentHealthRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>Specify the environment by ID.</p> <p>You must specify either this or an
      * EnvironmentName, or both.</p>
@@ -127,6 +129,7 @@ namespace Model
      * EnvironmentName, or both.</p>
      */
     inline DescribeEnvironmentHealthRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>Specify the response elements to return. To retrieve all attributes, set to
@@ -178,10 +181,13 @@ namespace Model
     inline DescribeEnvironmentHealthRequest& AddAttributeNames(EnvironmentHealthAttribute&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::Vector<EnvironmentHealthAttribute> m_attributeNames;
     bool m_attributeNamesHasBeenSet;
   };

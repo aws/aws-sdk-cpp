@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>One or more compliance filters. Use a filter to return a more specific list
      * of results.</p>
@@ -79,6 +80,7 @@ namespace Model
      * of results.</p>
      */
     inline ListComplianceItemsRequest& AddFilters(ComplianceStringFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID for the resources from which to get compliance information. Currently,
@@ -128,6 +130,7 @@ namespace Model
      */
     inline ListComplianceItemsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
+
     /**
      * <p>The type of resource from which to get compliance information. Currently, the
      * only supported resource type is <code>ManagedInstance</code>.</p>
@@ -176,6 +179,7 @@ namespace Model
      */
     inline ListComplianceItemsRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
+
     /**
      * <p>A token to start the list. Use this token to get the next set of results.
      * </p>
@@ -218,6 +222,7 @@ namespace Model
      */
     inline ListComplianceItemsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -240,14 +245,19 @@ namespace Model
     inline ListComplianceItemsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::Vector<ComplianceStringFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourceIds;
     bool m_resourceIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourceTypes;
     bool m_resourceTypesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

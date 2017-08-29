@@ -30,12 +30,12 @@ ListAssessmentRunAgentsResult::ListAssessmentRunAgentsResult()
 {
 }
 
-ListAssessmentRunAgentsResult::ListAssessmentRunAgentsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListAssessmentRunAgentsResult::ListAssessmentRunAgentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListAssessmentRunAgentsResult& ListAssessmentRunAgentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListAssessmentRunAgentsResult& ListAssessmentRunAgentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("assessmentRunAgents"))

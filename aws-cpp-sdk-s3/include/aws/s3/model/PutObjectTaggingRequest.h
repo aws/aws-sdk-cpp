@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline PutObjectTaggingRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
@@ -85,6 +87,7 @@ namespace Model
     
     inline PutObjectTaggingRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
@@ -105,6 +108,7 @@ namespace Model
 
     
     inline PutObjectTaggingRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+
 
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
@@ -127,6 +131,7 @@ namespace Model
     
     inline PutObjectTaggingRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
+
     
     inline const Tagging& GetTagging() const{ return m_tagging; }
 
@@ -143,14 +148,19 @@ namespace Model
     inline PutObjectTaggingRequest& WithTagging(Tagging&& value) { SetTagging(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
+
     Tagging m_tagging;
     bool m_taggingHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListJobsResult();
-    ListJobsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListJobsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::Vector<Job>& GetJobs() const{ return m_jobs; }
@@ -69,6 +70,7 @@ namespace Model
     
     inline ListJobsResult& AddJobs(Job&& value) { m_jobs.push_back(std::move(value)); return *this; }
 
+
     
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
@@ -77,6 +79,7 @@ namespace Model
 
     
     inline ListJobsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -94,8 +97,11 @@ namespace Model
     inline ListJobsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Job> m_jobs;
+
     bool m_isTruncated;
+
     ResponseMetadata m_responseMetadata;
   };
 

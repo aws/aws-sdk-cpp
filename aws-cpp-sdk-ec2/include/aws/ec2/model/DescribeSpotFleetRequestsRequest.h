@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -67,6 +68,7 @@ namespace Model
      */
     inline DescribeSpotFleetRequestsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return in a single call. Specify a value
      * between 1 and 1000. The default value is 1000. To retrieve the remaining
@@ -87,6 +89,7 @@ namespace Model
      * results, make another call with the returned <code>NextToken</code> value.</p>
      */
     inline DescribeSpotFleetRequestsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of results.</p>
@@ -122,6 +125,7 @@ namespace Model
      * <p>The token for the next set of results.</p>
      */
     inline DescribeSpotFleetRequestsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>The IDs of the Spot fleet requests.</p>
@@ -164,12 +168,16 @@ namespace Model
     inline DescribeSpotFleetRequestsRequest& AddSpotFleetRequestIds(const char* value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.push_back(value); return *this; }
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::Vector<Aws::String> m_spotFleetRequestIds;
     bool m_spotFleetRequestIdsHasBeenSet;
   };

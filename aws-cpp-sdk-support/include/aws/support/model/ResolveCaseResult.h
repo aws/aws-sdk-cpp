@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ResolveCaseResult();
-    ResolveCaseResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResolveCaseResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResolveCaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResolveCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the case when the <a>ResolveCase</a> request was sent.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The status of the case when the <a>ResolveCase</a> request was sent.</p>
      */
     inline ResolveCaseResult& WithInitialCaseStatus(const char* value) { SetInitialCaseStatus(value); return *this;}
+
 
     /**
      * <p>The status of the case after the <a>ResolveCase</a> request was
@@ -125,7 +127,9 @@ namespace Model
     inline ResolveCaseResult& WithFinalCaseStatus(const char* value) { SetFinalCaseStatus(value); return *this;}
 
   private:
+
     Aws::String m_initialCaseStatus;
+
     Aws::String m_finalCaseStatus;
   };
 

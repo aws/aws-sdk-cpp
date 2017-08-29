@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeComplianceByResourceResult();
-    DescribeComplianceByResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeComplianceByResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeComplianceByResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeComplianceByResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Indicates whether the specified AWS resource complies with all of the AWS
@@ -89,6 +90,7 @@ namespace Model
      * Config rules that evaluate it.</p>
      */
     inline DescribeComplianceByResourceResult& AddComplianceByResources(ComplianceByResource&& value) { m_complianceByResources.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of
@@ -133,7 +135,9 @@ namespace Model
     inline DescribeComplianceByResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ComplianceByResource> m_complianceByResources;
+
     Aws::String m_nextToken;
   };
 

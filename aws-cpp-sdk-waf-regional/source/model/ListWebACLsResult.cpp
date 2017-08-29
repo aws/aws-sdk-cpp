@@ -30,12 +30,12 @@ ListWebACLsResult::ListWebACLsResult()
 {
 }
 
-ListWebACLsResult::ListWebACLsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListWebACLsResult::ListWebACLsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListWebACLsResult& ListWebACLsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListWebACLsResult& ListWebACLsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextMarker"))

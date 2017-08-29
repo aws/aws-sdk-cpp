@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
      */
     inline GetModelRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The name of the model as an identifier.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline GetModelRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
 
+
     /**
      * <p>A query parameter of a Boolean value to resolve (<code>true</code>) all
      * external model references and returns a flattened model schema or not
@@ -136,10 +139,13 @@ namespace Model
     inline GetModelRequest& WithFlatten(bool value) { SetFlatten(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_modelName;
     bool m_modelNameHasBeenSet;
+
     bool m_flatten;
     bool m_flattenHasBeenSet;
   };

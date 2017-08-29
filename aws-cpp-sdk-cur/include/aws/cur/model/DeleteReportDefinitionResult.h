@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DeleteReportDefinitionResult();
-    DeleteReportDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteReportDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetResponseMessage() const{ return m_responseMessage; }
@@ -68,6 +69,7 @@ namespace Model
     inline DeleteReportDefinitionResult& WithResponseMessage(const char* value) { SetResponseMessage(value); return *this;}
 
   private:
+
     Aws::String m_responseMessage;
   };
 

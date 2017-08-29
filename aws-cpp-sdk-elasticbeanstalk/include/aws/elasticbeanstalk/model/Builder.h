@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ARN of the builder.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
     inline Builder& WithARN(const char* value) { SetARN(value); return *this;}
 
   private:
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
   };

@@ -34,7 +34,7 @@ GetBatchPredictionResult::GetBatchPredictionResult() :
 {
 }
 
-GetBatchPredictionResult::GetBatchPredictionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetBatchPredictionResult::GetBatchPredictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(EntityStatus::NOT_SET),
     m_computeTime(0),
     m_totalRecordCount(0),
@@ -43,7 +43,7 @@ GetBatchPredictionResult::GetBatchPredictionResult(const AmazonWebServiceResult<
   *this = result;
 }
 
-GetBatchPredictionResult& GetBatchPredictionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetBatchPredictionResult& GetBatchPredictionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("BatchPredictionId"))

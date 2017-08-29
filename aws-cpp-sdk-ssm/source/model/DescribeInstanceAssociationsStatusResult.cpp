@@ -30,12 +30,12 @@ DescribeInstanceAssociationsStatusResult::DescribeInstanceAssociationsStatusResu
 {
 }
 
-DescribeInstanceAssociationsStatusResult::DescribeInstanceAssociationsStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeInstanceAssociationsStatusResult::DescribeInstanceAssociationsStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeInstanceAssociationsStatusResult& DescribeInstanceAssociationsStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeInstanceAssociationsStatusResult& DescribeInstanceAssociationsStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("InstanceAssociationStatusInfos"))

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetBucketAccelerateConfigurationResult();
-    GetBucketAccelerateConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketAccelerateConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketAccelerateConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketAccelerateConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * The accelerate configuration of the bucket.
@@ -67,6 +68,7 @@ namespace Model
     inline GetBucketAccelerateConfigurationResult& WithStatus(BucketAccelerateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     BucketAccelerateStatus m_status;
   };
 

@@ -30,12 +30,12 @@ DeleteJobQueueResult::DeleteJobQueueResult()
 {
 }
 
-DeleteJobQueueResult::DeleteJobQueueResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteJobQueueResult::DeleteJobQueueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteJobQueueResult& DeleteJobQueueResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteJobQueueResult& DeleteJobQueueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

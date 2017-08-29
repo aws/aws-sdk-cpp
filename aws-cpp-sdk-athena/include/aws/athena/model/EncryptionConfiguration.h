@@ -47,6 +47,7 @@ namespace Model
     EncryptionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed
      * keys (<code>SSE-S3</code>), server-side encryption with KMS-managed keys
@@ -86,6 +87,7 @@ namespace Model
      * (CSE-KMS) is used.</p>
      */
     inline EncryptionConfiguration& WithEncryptionOption(EncryptionOption&& value) { SetEncryptionOption(std::move(value)); return *this;}
+
 
     /**
      * <p>For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or
@@ -130,8 +132,10 @@ namespace Model
     inline EncryptionConfiguration& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
 
   private:
+
     EncryptionOption m_encryptionOption;
     bool m_encryptionOptionHasBeenSet;
+
     Aws::String m_kmsKey;
     bool m_kmsKeyHasBeenSet;
   };

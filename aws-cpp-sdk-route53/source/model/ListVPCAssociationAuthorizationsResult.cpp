@@ -29,12 +29,12 @@ ListVPCAssociationAuthorizationsResult::ListVPCAssociationAuthorizationsResult()
 {
 }
 
-ListVPCAssociationAuthorizationsResult::ListVPCAssociationAuthorizationsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListVPCAssociationAuthorizationsResult::ListVPCAssociationAuthorizationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListVPCAssociationAuthorizationsResult& ListVPCAssociationAuthorizationsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListVPCAssociationAuthorizationsResult& ListVPCAssociationAuthorizationsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

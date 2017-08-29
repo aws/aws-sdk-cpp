@@ -48,6 +48,7 @@ namespace Model
     AssessmentTarget& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN that specifies the Amazon Inspector assessment target.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline AssessmentTarget& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The name of the Amazon Inspector assessment target.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The name of the Amazon Inspector assessment target.</p>
      */
     inline AssessmentTarget& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The ARN that specifies the resource group that is associated with the
@@ -160,6 +163,7 @@ namespace Model
      */
     inline AssessmentTarget& WithResourceGroupArn(const char* value) { SetResourceGroupArn(value); return *this;}
 
+
     /**
      * <p>The time at which the assessment target is created.</p>
      */
@@ -184,6 +188,7 @@ namespace Model
      * <p>The time at which the assessment target is created.</p>
      */
     inline AssessmentTarget& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The time at which <a>UpdateAssessmentTarget</a> is called.</p>
@@ -211,14 +216,19 @@ namespace Model
     inline AssessmentTarget& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_resourceGroupArn;
     bool m_resourceGroupArnHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet;
   };

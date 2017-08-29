@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns
      * descriptions of the instances associated with the specified stack.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeInstancesRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns
      * descriptions of the instances associated with the specified layer.</p>
@@ -120,6 +122,7 @@ namespace Model
      * descriptions of the instances associated with the specified layer.</p>
      */
     inline DescribeInstancesRequest& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+
 
     /**
      * <p>An array of instance IDs to be described. If you use this parameter,
@@ -178,10 +181,13 @@ namespace Model
     inline DescribeInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_layerId;
     bool m_layerIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
   };

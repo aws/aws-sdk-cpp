@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeIdentityResult();
-    DescribeIdentityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline DescribeIdentityResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
@@ -131,6 +133,7 @@ namespace Model
      */
     inline DescribeIdentityResult& AddLogins(const char* value) { m_logins.push_back(value); return *this; }
 
+
     /**
      * <p>Date on which the identity was created.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>Date on which the identity was created.</p>
      */
     inline DescribeIdentityResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Date on which the identity was last modified.</p>
@@ -182,9 +186,13 @@ namespace Model
     inline DescribeIdentityResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_identityId;
+
     Aws::Vector<Aws::String> m_logins;
+
     Aws::Utils::DateTime m_creationDate;
+
     Aws::Utils::DateTime m_lastModifiedDate;
   };
 

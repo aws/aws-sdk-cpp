@@ -31,12 +31,12 @@ GetPasswordDataResponse::GetPasswordDataResponse()
 {
 }
 
-GetPasswordDataResponse::GetPasswordDataResponse(const AmazonWebServiceResult<XmlDocument>& result)
+GetPasswordDataResponse::GetPasswordDataResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetPasswordDataResponse& GetPasswordDataResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetPasswordDataResponse& GetPasswordDataResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

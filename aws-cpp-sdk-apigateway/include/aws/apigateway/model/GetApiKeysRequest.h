@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline GetApiKeysRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
 
+
     /**
      * <p>The maximum number of returned results per page.</p>
      */
@@ -93,6 +95,7 @@ namespace Model
      * <p>The maximum number of returned results per page.</p>
      */
     inline GetApiKeysRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The name of queried API keys.</p>
@@ -128,6 +131,7 @@ namespace Model
      * <p>The name of queried API keys.</p>
      */
     inline GetApiKeysRequest& WithNameQuery(const char* value) { SetNameQuery(value); return *this;}
+
 
     /**
      * <p>The identifier of a customer in AWS Marketplace or an external system, such
@@ -171,6 +175,7 @@ namespace Model
      */
     inline GetApiKeysRequest& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
 
+
     /**
      * <p>A boolean flag to specify whether (<code>true</code>) or not
      * (<code>false</code>) the result contains key values.</p>
@@ -190,14 +195,19 @@ namespace Model
     inline GetApiKeysRequest& WithIncludeValues(bool value) { SetIncludeValues(value); return *this;}
 
   private:
+
     Aws::String m_position;
     bool m_positionHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nameQuery;
     bool m_nameQueryHasBeenSet;
+
     Aws::String m_customerId;
     bool m_customerIdHasBeenSet;
+
     bool m_includeValues;
     bool m_includeValuesHasBeenSet;
   };

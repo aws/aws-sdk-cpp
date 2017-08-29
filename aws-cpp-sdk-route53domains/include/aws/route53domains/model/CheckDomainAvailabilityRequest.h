@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain that you want to get availability for.</p>
      * <p>Constraints: The domain name can contain only the letters a through z, the
@@ -96,6 +97,7 @@ namespace Model
      */
     inline CheckDomainAvailabilityRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -132,8 +134,10 @@ namespace Model
     inline CheckDomainAvailabilityRequest& WithIdnLangCode(const char* value) { SetIdnLangCode(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_idnLangCode;
     bool m_idnLangCodeHasBeenSet;
   };

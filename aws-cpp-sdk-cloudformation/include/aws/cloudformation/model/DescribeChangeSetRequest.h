@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
      * describe.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeChangeSetRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
 
+
     /**
      * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
      * of the change set you want to describe.</p>
@@ -125,6 +127,7 @@ namespace Model
      * of the change set you want to describe.</p>
      */
     inline DescribeChangeSetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>A string (provided by the <a>DescribeChangeSet</a> response output) that
@@ -169,10 +172,13 @@ namespace Model
     inline DescribeChangeSetRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_changeSetName;
     bool m_changeSetNameHasBeenSet;
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

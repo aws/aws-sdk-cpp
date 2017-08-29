@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The amount of time that the metrics cover (usually 10 seconds). For example,
      * you might have 5 requests (<code>request_count</code>) within the most recent
@@ -71,6 +72,7 @@ namespace Model
      */
     inline ApplicationMetrics& WithDuration(int value) { SetDuration(value); return *this;}
 
+
     /**
      * <p>Average number of requests handled by the web server per second over the last
      * 10 seconds.</p>
@@ -88,6 +90,7 @@ namespace Model
      * 10 seconds.</p>
      */
     inline ApplicationMetrics& WithRequestCount(int value) { SetRequestCount(value); return *this;}
+
 
     /**
      * <p>Represents the percentage of requests over the last 10 seconds that resulted
@@ -118,6 +121,7 @@ namespace Model
      * in each type of status code response.</p>
      */
     inline ApplicationMetrics& WithStatusCodes(StatusCodes&& value) { SetStatusCodes(std::move(value)); return *this;}
+
 
     /**
      * <p>Represents the average latency for the slowest X percent of requests over the
@@ -150,12 +154,16 @@ namespace Model
     inline ApplicationMetrics& WithLatency(Latency&& value) { SetLatency(std::move(value)); return *this;}
 
   private:
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     int m_requestCount;
     bool m_requestCountHasBeenSet;
+
     StatusCodes m_statusCodes;
     bool m_statusCodesHasBeenSet;
+
     Latency m_latency;
     bool m_latencyHasBeenSet;
   };

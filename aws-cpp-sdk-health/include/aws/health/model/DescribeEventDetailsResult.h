@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeEventDetailsResult();
-    DescribeEventDetailsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEventDetailsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the events that could be retrieved.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Information about the events that could be retrieved.</p>
      */
     inline DescribeEventDetailsResult& AddSuccessfulSet(EventDetails&& value) { m_successfulSet.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Error messages for any events that could not be retrieved.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline DescribeEventDetailsResult& AddFailedSet(EventDetailsErrorItem&& value) { m_failedSet.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<EventDetails> m_successfulSet;
+
     Aws::Vector<EventDetailsErrorItem> m_failedSet;
   };
 

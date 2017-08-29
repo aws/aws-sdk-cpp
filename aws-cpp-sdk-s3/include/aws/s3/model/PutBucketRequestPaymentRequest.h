@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -57,6 +58,7 @@ namespace Model
 
     
     inline PutBucketRequestPaymentRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
@@ -79,6 +81,7 @@ namespace Model
     
     inline PutBucketRequestPaymentRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
+
     
     inline const RequestPaymentConfiguration& GetRequestPaymentConfiguration() const{ return m_requestPaymentConfiguration; }
 
@@ -95,10 +98,13 @@ namespace Model
     inline PutBucketRequestPaymentRequest& WithRequestPaymentConfiguration(RequestPaymentConfiguration&& value) { SetRequestPaymentConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
+
     RequestPaymentConfiguration m_requestPaymentConfiguration;
     bool m_requestPaymentConfigurationHasBeenSet;
   };

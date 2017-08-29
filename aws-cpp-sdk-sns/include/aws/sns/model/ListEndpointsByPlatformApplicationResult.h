@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListEndpointsByPlatformApplicationResult();
-    ListEndpointsByPlatformApplicationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListEndpointsByPlatformApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListEndpointsByPlatformApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListEndpointsByPlatformApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
@@ -88,6 +89,7 @@ namespace Model
      * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
      */
     inline ListEndpointsByPlatformApplicationResult& AddEndpoints(const char* value) { m_endpoints.push_back(value); return *this; }
+
 
     /**
      * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
@@ -131,6 +133,7 @@ namespace Model
      */
     inline ListEndpointsByPlatformApplicationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -147,8 +150,11 @@ namespace Model
     inline ListEndpointsByPlatformApplicationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_endpoints;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

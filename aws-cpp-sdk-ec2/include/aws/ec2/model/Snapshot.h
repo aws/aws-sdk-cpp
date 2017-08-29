@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The data encryption key identifier for the snapshot. This value is a unique
      * identifier that corresponds to the data encryption key that was used to encrypt
@@ -130,6 +131,7 @@ namespace Model
      */
     inline Snapshot& WithDataEncryptionKeyId(const char* value) { SetDataEncryptionKeyId(value); return *this;}
 
+
     /**
      * <p>The description for the snapshot.</p>
      */
@@ -165,6 +167,7 @@ namespace Model
      */
     inline Snapshot& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Indicates whether the snapshot is encrypted.</p>
      */
@@ -179,6 +182,7 @@ namespace Model
      * <p>Indicates whether the snapshot is encrypted.</p>
      */
     inline Snapshot& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
@@ -229,6 +233,7 @@ namespace Model
      */
     inline Snapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>The AWS account ID of the EBS snapshot owner.</p>
      */
@@ -264,6 +269,7 @@ namespace Model
      */
     inline Snapshot& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
     /**
      * <p>The progress of the snapshot, as a percentage.</p>
      */
@@ -298,6 +304,7 @@ namespace Model
      * <p>The progress of the snapshot, as a percentage.</p>
      */
     inline Snapshot& WithProgress(const char* value) { SetProgress(value); return *this;}
+
 
     /**
      * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
@@ -341,6 +348,7 @@ namespace Model
      */
     inline Snapshot& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
@@ -366,6 +374,7 @@ namespace Model
      */
     inline Snapshot& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The snapshot state.</p>
      */
@@ -390,6 +399,7 @@ namespace Model
      * <p>The snapshot state.</p>
      */
     inline Snapshot& WithState(SnapshotState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
@@ -454,6 +464,7 @@ namespace Model
      */
     inline Snapshot& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
 
+
     /**
      * <p>The ID of the volume that was used to create the snapshot. Snapshots created
      * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
@@ -503,6 +514,7 @@ namespace Model
      */
     inline Snapshot& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     /**
      * <p>The size of the volume, in GiB.</p>
      */
@@ -517,6 +529,7 @@ namespace Model
      * <p>The size of the volume, in GiB.</p>
      */
     inline Snapshot& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
+
 
     /**
      * <p> Value from an Amazon-maintained list (<code>amazon</code> |
@@ -574,6 +587,7 @@ namespace Model
      */
     inline Snapshot& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
 
+
     /**
      * <p>Any tags assigned to the snapshot.</p>
      */
@@ -609,6 +623,7 @@ namespace Model
      */
     inline Snapshot& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -625,34 +640,49 @@ namespace Model
     inline Snapshot& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_dataEncryptionKeyId;
     bool m_dataEncryptionKeyIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     Aws::String m_progress;
     bool m_progressHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     SnapshotState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_stateMessage;
     bool m_stateMessageHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     int m_volumeSize;
     bool m_volumeSizeHasBeenSet;
+
     Aws::String m_ownerAlias;
     bool m_ownerAliasHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;
   };

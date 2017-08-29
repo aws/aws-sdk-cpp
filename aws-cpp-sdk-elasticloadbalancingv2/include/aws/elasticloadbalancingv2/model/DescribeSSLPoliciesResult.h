@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeSSLPoliciesResult();
-    DescribeSSLPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSSLPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSSLPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSSLPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the policies.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <p>Information about the policies.</p>
      */
     inline DescribeSSLPoliciesResult& AddSslPolicies(SslPolicy&& value) { m_sslPolicies.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -121,6 +123,7 @@ namespace Model
      */
     inline DescribeSSLPoliciesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -137,8 +140,11 @@ namespace Model
     inline DescribeSSLPoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<SslPolicy> m_sslPolicies;
+
     Aws::String m_nextMarker;
+
     ResponseMetadata m_responseMetadata;
   };
 

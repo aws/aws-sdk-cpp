@@ -30,12 +30,12 @@ RejectAssignmentResult::RejectAssignmentResult()
 {
 }
 
-RejectAssignmentResult::RejectAssignmentResult(const AmazonWebServiceResult<JsonValue>& result)
+RejectAssignmentResult::RejectAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RejectAssignmentResult& RejectAssignmentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RejectAssignmentResult& RejectAssignmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

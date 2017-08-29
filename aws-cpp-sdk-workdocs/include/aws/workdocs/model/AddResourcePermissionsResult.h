@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     AddResourcePermissionsResult();
-    AddResourcePermissionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddResourcePermissionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddResourcePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddResourcePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The share results.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline AddResourcePermissionsResult& AddShareResults(ShareResult&& value) { m_shareResults.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ShareResult> m_shareResults;
   };
 

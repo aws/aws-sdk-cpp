@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the parameter you want to query.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline GetParameterRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Return decrypted values for secure string parameters. This flag is ignored
      * for String and StringList parameter types.</p>
@@ -90,8 +92,10 @@ namespace Model
     inline GetParameterRequest& WithWithDecryption(bool value) { SetWithDecryption(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     bool m_withDecryption;
     bool m_withDecryptionHasBeenSet;
   };

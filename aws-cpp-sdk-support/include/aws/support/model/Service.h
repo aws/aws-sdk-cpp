@@ -48,6 +48,7 @@ namespace Model
     Service& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The code for an AWS service returned by the <a>DescribeServices</a> response.
      * The <code>name</code> element contains the corresponding friendly name.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline Service& WithCode(const char* value) { SetCode(value); return *this;}
 
+
     /**
      * <p>The friendly name for an AWS service. The <code>code</code> element contains
      * the corresponding code.</p>
@@ -131,6 +133,7 @@ namespace Model
      * the corresponding code.</p>
      */
     inline Service& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A list of categories that describe the type of support issue a case
@@ -182,10 +185,13 @@ namespace Model
     inline Service& AddCategories(Category&& value) { m_categoriesHasBeenSet = true; m_categories.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Category> m_categories;
     bool m_categoriesHasBeenSet;
   };

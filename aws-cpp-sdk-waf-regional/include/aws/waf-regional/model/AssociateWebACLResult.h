@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AssociateWebACLResult();
-    AssociateWebACLResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateWebACLResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

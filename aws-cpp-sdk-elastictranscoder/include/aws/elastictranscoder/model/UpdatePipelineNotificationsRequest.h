@@ -39,6 +39,7 @@ namespace Model
     UpdatePipelineNotificationsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the pipeline for which you want to change notification
      * settings.</p>
@@ -80,6 +81,7 @@ namespace Model
      * settings.</p>
      */
     inline UpdatePipelineNotificationsRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
@@ -182,8 +184,10 @@ namespace Model
     inline UpdatePipelineNotificationsRequest& WithNotifications(Notifications&& value) { SetNotifications(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Notifications m_notifications;
     bool m_notificationsHasBeenSet;
   };

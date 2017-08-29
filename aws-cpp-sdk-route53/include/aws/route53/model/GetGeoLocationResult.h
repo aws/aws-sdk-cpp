@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetGeoLocationResult();
-    GetGeoLocationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetGeoLocationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetGeoLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetGeoLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains the codes and full continent, country, and
@@ -78,6 +79,7 @@ namespace Model
     inline GetGeoLocationResult& WithGeoLocationDetails(GeoLocationDetails&& value) { SetGeoLocationDetails(std::move(value)); return *this;}
 
   private:
+
     GeoLocationDetails m_geoLocationDetails;
   };
 

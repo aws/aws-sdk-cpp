@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListClustersResult();
-    ListClustersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListClustersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of clusters for the account based on the given filters.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The list of clusters for the account based on the given filters.</p>
      */
     inline ListClustersResult& AddClusters(ClusterSummary&& value) { m_clusters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline ListClustersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<ClusterSummary> m_clusters;
+
     Aws::String m_marker;
   };
 

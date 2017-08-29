@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Identifiers of the job flows to receive the new visibility setting.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline SetVisibleToAllUsersRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
+
     /**
      * <p>Whether the specified clusters are visible to all IAM users of the AWS
      * account associated with the cluster. If this value is set to True, all IAM users
@@ -108,8 +110,10 @@ namespace Model
     inline SetVisibleToAllUsersRequest& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_jobFlowIds;
     bool m_jobFlowIdsHasBeenSet;
+
     bool m_visibleToAllUsers;
     bool m_visibleToAllUsersHasBeenSet;
   };

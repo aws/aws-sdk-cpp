@@ -44,6 +44,7 @@ namespace Model
     ImageQuality& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Value representing brightness of the face. The service returns a value
      * between 0 and 100 (inclusive). A higher value indicates a brighter face
@@ -65,6 +66,7 @@ namespace Model
      */
     inline ImageQuality& WithBrightness(double value) { SetBrightness(value); return *this;}
 
+
     /**
      * <p>Value representing sharpness of the face. The service returns a value between
      * 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
@@ -84,8 +86,10 @@ namespace Model
     inline ImageQuality& WithSharpness(double value) { SetSharpness(value); return *this;}
 
   private:
+
     double m_brightness;
     bool m_brightnessHasBeenSet;
+
     double m_sharpness;
     bool m_sharpnessHasBeenSet;
   };

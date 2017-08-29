@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the configuration recorder to be deleted. You can retrieve the
      * name of your configuration recorder by using the
@@ -90,6 +91,7 @@ namespace Model
     inline DeleteConfigurationRecorderRequest& WithConfigurationRecorderName(const char* value) { SetConfigurationRecorderName(value); return *this;}
 
   private:
+
     Aws::String m_configurationRecorderName;
     bool m_configurationRecorderNameHasBeenSet;
   };

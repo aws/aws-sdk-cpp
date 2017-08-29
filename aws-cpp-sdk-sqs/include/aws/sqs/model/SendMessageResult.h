@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     SendMessageResult();
-    SendMessageResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SendMessageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SendMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SendMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
@@ -104,6 +105,7 @@ namespace Model
      */
     inline SendMessageResult& WithMD5OfMessageBody(const char* value) { SetMD5OfMessageBody(value); return *this;}
 
+
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
@@ -160,6 +162,7 @@ namespace Model
      */
     inline SendMessageResult& WithMD5OfMessageAttributes(const char* value) { SetMD5OfMessageAttributes(value); return *this;}
 
+
     /**
      * <p>An attribute containing the <code>MessageId</code> of the message sent to the
      * queue. For more information, see <a
@@ -215,6 +218,7 @@ namespace Model
      * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. </p>
      */
     inline SendMessageResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
@@ -279,6 +283,7 @@ namespace Model
      */
     inline SendMessageResult& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -295,10 +300,15 @@ namespace Model
     inline SendMessageResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_mD5OfMessageBody;
+
     Aws::String m_mD5OfMessageAttributes;
+
     Aws::String m_messageId;
+
     Aws::String m_sequenceNumber;
+
     ResponseMetadata m_responseMetadata;
   };
 

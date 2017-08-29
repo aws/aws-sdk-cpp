@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the virtual private gateway (VGW).</p>
      */
@@ -85,6 +86,7 @@ namespace Model
     inline PropagatingVgw& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
 
   private:
+
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet;
   };

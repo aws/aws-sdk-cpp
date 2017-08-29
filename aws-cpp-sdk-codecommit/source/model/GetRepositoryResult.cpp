@@ -30,12 +30,12 @@ GetRepositoryResult::GetRepositoryResult()
 {
 }
 
-GetRepositoryResult::GetRepositoryResult(const AmazonWebServiceResult<JsonValue>& result)
+GetRepositoryResult::GetRepositoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetRepositoryResult& GetRepositoryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetRepositoryResult& GetRepositoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("repositoryMetadata"))

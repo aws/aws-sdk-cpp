@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon S3 bucket where the data is located.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The Amazon S3 bucket where the data is located.</p>
      */
     inline S3Location& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+
 
     /**
      * <p>The Amazon S3 key where the data is located.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline S3Location& WithS3Key(const char* value) { SetS3Key(value); return *this;}
 
   private:
+
     Aws::String m_s3Bucket;
     bool m_s3BucketHasBeenSet;
+
     Aws::String m_s3Key;
     bool m_s3KeyHasBeenSet;
   };

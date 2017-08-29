@@ -30,12 +30,12 @@ DescribeLoadBasedAutoScalingResult::DescribeLoadBasedAutoScalingResult()
 {
 }
 
-DescribeLoadBasedAutoScalingResult::DescribeLoadBasedAutoScalingResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLoadBasedAutoScalingResult::DescribeLoadBasedAutoScalingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeLoadBasedAutoScalingResult& DescribeLoadBasedAutoScalingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLoadBasedAutoScalingResult& DescribeLoadBasedAutoScalingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("LoadBasedAutoScalingConfigurations"))

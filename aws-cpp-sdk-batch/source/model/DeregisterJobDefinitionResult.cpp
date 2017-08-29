@@ -30,12 +30,12 @@ DeregisterJobDefinitionResult::DeregisterJobDefinitionResult()
 {
 }
 
-DeregisterJobDefinitionResult::DeregisterJobDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterJobDefinitionResult::DeregisterJobDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeregisterJobDefinitionResult& DeregisterJobDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterJobDefinitionResult& DeregisterJobDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -30,12 +30,12 @@ CreateNotificationResult::CreateNotificationResult()
 {
 }
 
-CreateNotificationResult::CreateNotificationResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateNotificationResult::CreateNotificationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateNotificationResult& CreateNotificationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateNotificationResult& CreateNotificationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

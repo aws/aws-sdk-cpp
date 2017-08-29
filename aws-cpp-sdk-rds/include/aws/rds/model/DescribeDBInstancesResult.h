@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeDBInstancesResult();
-    DescribeDBInstancesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -99,6 +100,7 @@ namespace Model
      */
     inline DescribeDBInstancesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p> A list of <a>DBInstance</a> instances. </p>
      */
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeDBInstancesResult& AddDBInstances(DBInstance&& value) { m_dBInstances.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline DescribeDBInstancesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<DBInstance> m_dBInstances;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -43,6 +43,7 @@ namespace Model
     SegmentLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The country filter according to ISO 3166-1 Alpha-2 codes.
      */
@@ -69,6 +70,7 @@ namespace Model
     inline SegmentLocation& WithCountry(SetDimension&& value) { SetCountry(std::move(value)); return *this;}
 
   private:
+
     SetDimension m_country;
     bool m_countryHasBeenSet;
   };

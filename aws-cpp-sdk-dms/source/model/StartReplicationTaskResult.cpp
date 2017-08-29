@@ -30,12 +30,12 @@ StartReplicationTaskResult::StartReplicationTaskResult()
 {
 }
 
-StartReplicationTaskResult::StartReplicationTaskResult(const AmazonWebServiceResult<JsonValue>& result)
+StartReplicationTaskResult::StartReplicationTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartReplicationTaskResult& StartReplicationTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartReplicationTaskResult& StartReplicationTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ReplicationTask"))

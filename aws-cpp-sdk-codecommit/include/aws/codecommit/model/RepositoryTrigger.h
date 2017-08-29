@@ -47,6 +47,7 @@ namespace Model
     RepositoryTrigger& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the trigger.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the trigger.</p>
      */
     inline RepositoryTrigger& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The ARN of the resource that is the target for a trigger. For example, the
@@ -124,6 +126,7 @@ namespace Model
      */
     inline RepositoryTrigger& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 
+
     /**
      * <p>Any custom data associated with the trigger that will be included in the
      * information sent to the target of the trigger.</p>
@@ -165,6 +168,7 @@ namespace Model
      * information sent to the target of the trigger.</p>
      */
     inline RepositoryTrigger& WithCustomData(const char* value) { SetCustomData(value); return *this;}
+
 
     /**
      * <p>The branches that will be included in the trigger configuration. If no
@@ -213,6 +217,7 @@ namespace Model
      * branches are specified, the trigger will apply to all branches.</p>
      */
     inline RepositoryTrigger& AddBranches(const char* value) { m_branchesHasBeenSet = true; m_branches.push_back(value); return *this; }
+
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another
@@ -271,14 +276,19 @@ namespace Model
     inline RepositoryTrigger& AddEvents(RepositoryTriggerEventEnum&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_destinationArn;
     bool m_destinationArnHasBeenSet;
+
     Aws::String m_customData;
     bool m_customDataHasBeenSet;
+
     Aws::Vector<Aws::String> m_branches;
     bool m_branchesHasBeenSet;
+
     Aws::Vector<RepositoryTriggerEventEnum> m_events;
     bool m_eventsHasBeenSet;
   };

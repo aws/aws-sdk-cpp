@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListTagsResult();
-    ListTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of tags currently associated with the DAX cluster.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of tags currently associated with the DAX cluster.</p>
      */
     inline ListTagsResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If this value is present, there are additional results to be displayed. To
@@ -128,7 +130,9 @@ namespace Model
     inline ListTagsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Tag> m_tags;
+
     Aws::String m_nextToken;
   };
 

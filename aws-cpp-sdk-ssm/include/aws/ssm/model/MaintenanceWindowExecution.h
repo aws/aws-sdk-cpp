@@ -48,6 +48,7 @@ namespace Model
     MaintenanceWindowExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the Maintenance Window.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The ID of the Maintenance Window.</p>
      */
     inline MaintenanceWindowExecution& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>The ID of the Maintenance Window execution.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline MaintenanceWindowExecution& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
 
+
     /**
      * <p>The status of the execution.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The status of the execution.</p>
      */
     inline MaintenanceWindowExecution& WithStatus(MaintenanceWindowExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The details explaining the Status. Only available for certain status
@@ -185,6 +189,7 @@ namespace Model
      */
     inline MaintenanceWindowExecution& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
+
     /**
      * <p>The time the execution started.</p>
      */
@@ -209,6 +214,7 @@ namespace Model
      * <p>The time the execution started.</p>
      */
     inline MaintenanceWindowExecution& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time the execution finished.</p>
@@ -236,16 +242,22 @@ namespace Model
     inline MaintenanceWindowExecution& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::String m_windowExecutionId;
     bool m_windowExecutionIdHasBeenSet;
+
     MaintenanceWindowExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusDetails;
     bool m_statusDetailsHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
   };

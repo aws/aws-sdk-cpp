@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     ListEntitiesForPolicyResult();
-    ListEntitiesForPolicyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListEntitiesForPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListEntitiesForPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListEntitiesForPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of IAM groups that the policy is attached to.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline ListEntitiesForPolicyResult& AddPolicyGroups(PolicyGroup&& value) { m_policyGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of IAM users that the policy is attached to.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>A list of IAM users that the policy is attached to.</p>
      */
     inline ListEntitiesForPolicyResult& AddPolicyUsers(PolicyUser&& value) { m_policyUsers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of IAM roles that the policy is attached to.</p>
@@ -157,6 +160,7 @@ namespace Model
      */
     inline ListEntitiesForPolicyResult& AddPolicyRoles(PolicyRole&& value) { m_policyRoles.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
@@ -189,6 +193,7 @@ namespace Model
      * results.</p>
      */
     inline ListEntitiesForPolicyResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -239,6 +244,7 @@ namespace Model
      */
     inline ListEntitiesForPolicyResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -255,11 +261,17 @@ namespace Model
     inline ListEntitiesForPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<PolicyGroup> m_policyGroups;
+
     Aws::Vector<PolicyUser> m_policyUsers;
+
     Aws::Vector<PolicyRole> m_policyRoles;
+
     bool m_isTruncated;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

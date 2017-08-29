@@ -30,12 +30,12 @@ ListTagsForDomainResult::ListTagsForDomainResult()
 {
 }
 
-ListTagsForDomainResult::ListTagsForDomainResult(const AmazonWebServiceResult<JsonValue>& result)
+ListTagsForDomainResult::ListTagsForDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListTagsForDomainResult& ListTagsForDomainResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListTagsForDomainResult& ListTagsForDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TagList"))

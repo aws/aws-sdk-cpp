@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool that the users are to be imported
      * into.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline GetCSVHeaderRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
   };

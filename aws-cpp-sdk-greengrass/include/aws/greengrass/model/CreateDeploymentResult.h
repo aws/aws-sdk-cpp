@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateDeploymentResult();
-    CreateDeploymentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDeploymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the deployment.
@@ -75,6 +76,7 @@ namespace Model
      * Arn of the deployment.
      */
     inline CreateDeploymentResult& WithDeploymentArn(const char* value) { SetDeploymentArn(value); return *this;}
+
 
     /**
      * Id of the deployment.
@@ -112,7 +114,9 @@ namespace Model
     inline CreateDeploymentResult& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
   private:
+
     Aws::String m_deploymentArn;
+
     Aws::String m_deploymentId;
   };
 

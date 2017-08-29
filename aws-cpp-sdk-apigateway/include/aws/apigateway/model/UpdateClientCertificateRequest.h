@@ -40,6 +40,7 @@ namespace Model
     UpdateClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the <a>ClientCertificate</a> resource to be updated.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The identifier of the <a>ClientCertificate</a> resource to be updated.</p>
      */
     inline UpdateClientCertificateRequest& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
+
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -118,8 +120,10 @@ namespace Model
     inline UpdateClientCertificateRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_clientCertificateId;
     bool m_clientCertificateIdHasBeenSet;
+
     Aws::Vector<PatchOperation> m_patchOperations;
     bool m_patchOperationsHasBeenSet;
   };

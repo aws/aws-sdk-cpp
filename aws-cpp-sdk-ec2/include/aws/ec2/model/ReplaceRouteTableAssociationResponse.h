@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ReplaceRouteTableAssociationResponse();
-    ReplaceRouteTableAssociationResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ReplaceRouteTableAssociationResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ReplaceRouteTableAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ReplaceRouteTableAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the new association.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ReplaceRouteTableAssociationResponse& WithNewAssociationId(const char* value) { SetNewAssociationId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline ReplaceRouteTableAssociationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_newAssociationId;
+
     ResponseMetadata m_responseMetadata;
   };
 

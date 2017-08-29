@@ -55,7 +55,7 @@ enum class LambdaErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CODE_STORAGE_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CODE_STORAGE_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   E_C2_ACCESS_DENIED,
   E_C2_THROTTLED,
   E_C2_UNEXPECTED,
@@ -79,7 +79,7 @@ enum class LambdaErrors
 };
 namespace LambdaErrorMapper
 {
-  AWS_LAMBDA_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_LAMBDA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Lambda

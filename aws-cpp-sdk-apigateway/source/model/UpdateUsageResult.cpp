@@ -30,12 +30,12 @@ UpdateUsageResult::UpdateUsageResult()
 {
 }
 
-UpdateUsageResult::UpdateUsageResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateUsageResult::UpdateUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateUsageResult& UpdateUsageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateUsageResult& UpdateUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("usagePlanId"))

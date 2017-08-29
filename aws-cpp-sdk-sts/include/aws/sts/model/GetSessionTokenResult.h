@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetSessionTokenResult();
-    GetSessionTokenResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetSessionTokenResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetSessionTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetSessionTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
@@ -99,6 +100,7 @@ namespace Model
      */
     inline GetSessionTokenResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -115,7 +117,9 @@ namespace Model
     inline GetSessionTokenResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Credentials m_credentials;
+
     ResponseMetadata m_responseMetadata;
   };
 

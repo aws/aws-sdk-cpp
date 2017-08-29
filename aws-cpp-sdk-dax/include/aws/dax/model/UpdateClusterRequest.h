@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the DAX cluster to be modified.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline UpdateClusterRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
+
     /**
      * <p>A description of the changes being made to the cluster.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>A description of the changes being made to the cluster.</p>
      */
     inline UpdateClusterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A range of time when maintenance of DAX cluster software will be performed.
@@ -163,6 +166,7 @@ namespace Model
      */
     inline UpdateClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
      */
@@ -197,6 +201,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
      */
     inline UpdateClusterRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
+
 
     /**
      * <p>The current state of the topic.</p>
@@ -233,6 +238,7 @@ namespace Model
      */
     inline UpdateClusterRequest& WithNotificationTopicStatus(const char* value) { SetNotificationTopicStatus(value); return *this;}
 
+
     /**
      * <p>The name of a parameter group for this cluster.</p>
      */
@@ -267,6 +273,7 @@ namespace Model
      * <p>The name of a parameter group for this cluster.</p>
      */
     inline UpdateClusterRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+
 
     /**
      * <p>A list of user-specified security group IDs to be assigned to each node in
@@ -325,18 +332,25 @@ namespace Model
     inline UpdateClusterRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_notificationTopicArn;
     bool m_notificationTopicArnHasBeenSet;
+
     Aws::String m_notificationTopicStatus;
     bool m_notificationTopicStatusHasBeenSet;
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
   };

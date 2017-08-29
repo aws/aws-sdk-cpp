@@ -48,6 +48,7 @@ namespace Model
     DynamoDBv2Action& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
      */
     inline DynamoDBv2Action& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>Specifies the DynamoDB table to which the message data will be written. For
@@ -129,8 +131,10 @@ namespace Model
     inline DynamoDBv2Action& WithPutItem(PutItemInput&& value) { SetPutItem(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     PutItemInput m_putItem;
     bool m_putItemHasBeenSet;
   };

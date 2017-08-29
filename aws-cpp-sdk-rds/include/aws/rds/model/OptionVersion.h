@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The version of the option.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline OptionVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>True if the version is the default version of the option; otherwise,
      * false.</p>
@@ -103,8 +105,10 @@ namespace Model
     inline OptionVersion& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 
   private:
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     bool m_isDefault;
     bool m_isDefaultHasBeenSet;
   };

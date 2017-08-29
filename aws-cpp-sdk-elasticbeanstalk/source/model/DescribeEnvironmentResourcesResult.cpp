@@ -31,12 +31,12 @@ DescribeEnvironmentResourcesResult::DescribeEnvironmentResourcesResult()
 {
 }
 
-DescribeEnvironmentResourcesResult::DescribeEnvironmentResourcesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeEnvironmentResourcesResult::DescribeEnvironmentResourcesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeEnvironmentResourcesResult& DescribeEnvironmentResourcesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeEnvironmentResourcesResult& DescribeEnvironmentResourcesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

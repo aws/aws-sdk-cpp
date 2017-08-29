@@ -45,6 +45,7 @@ namespace Model
     ResourcePathComponent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the resource path.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ID of the resource path.</p>
      */
     inline ResourcePathComponent& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the resource path.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline ResourcePathComponent& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

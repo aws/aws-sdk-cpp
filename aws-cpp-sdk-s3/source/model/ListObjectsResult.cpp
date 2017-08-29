@@ -32,7 +32,7 @@ ListObjectsResult::ListObjectsResult() :
 {
 }
 
-ListObjectsResult::ListObjectsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListObjectsResult::ListObjectsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false),
     m_maxKeys(0),
     m_encodingType(EncodingType::NOT_SET)
@@ -40,7 +40,7 @@ ListObjectsResult::ListObjectsResult(const AmazonWebServiceResult<XmlDocument>& 
   *this = result;
 }
 
-ListObjectsResult& ListObjectsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListObjectsResult& ListObjectsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

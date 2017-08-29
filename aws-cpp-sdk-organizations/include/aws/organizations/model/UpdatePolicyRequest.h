@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
@@ -84,6 +85,7 @@ namespace Model
      * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
      */
     inline UpdatePolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+
 
     /**
      * <p>If provided, the new name for the policy.</p> <p>The <a
@@ -141,6 +143,7 @@ namespace Model
      */
     inline UpdatePolicyRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>If provided, the new description for the policy.</p>
      */
@@ -175,6 +178,7 @@ namespace Model
      * <p>If provided, the new description for the policy.</p>
      */
     inline UpdatePolicyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>If provided, the new content for the policy. The text must be correctly
@@ -240,12 +244,16 @@ namespace Model
     inline UpdatePolicyRequest& WithContent(const char* value) { SetContent(value); return *this;}
 
   private:
+
     Aws::String m_policyId;
     bool m_policyIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_content;
     bool m_contentHasBeenSet;
   };

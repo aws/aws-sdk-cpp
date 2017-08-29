@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>If the previous paginated request didn't return all of the remaining results,
      * the response object's <code>NextToken</code> parameter value is set to a token.
@@ -109,6 +110,7 @@ namespace Model
      */
     inline ListStackSetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to be returned with a single call. If the
      * number of available results exceeds this maximum, the response includes a
@@ -132,6 +134,7 @@ namespace Model
      * request parameter to get the next set of results.</p>
      */
     inline ListStackSetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The status of the stack sets that you want to get summary information
@@ -164,10 +167,13 @@ namespace Model
     inline ListStackSetsRequest& WithStatus(StackSetStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     StackSetStatus m_status;
     bool m_statusHasBeenSet;
   };

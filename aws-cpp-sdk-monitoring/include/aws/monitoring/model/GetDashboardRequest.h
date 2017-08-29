@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the dashboard to be described.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline GetDashboardRequest& WithDashboardName(const char* value) { SetDashboardName(value); return *this;}
 
   private:
+
     Aws::String m_dashboardName;
     bool m_dashboardNameHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream to describe.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline DescribeStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
+
     /**
      * <p>The maximum number of shards to return in a single call. The default value is
      * 100. If you specify a value greater than 100, at most 100 shards are
@@ -95,6 +97,7 @@ namespace Model
      * returned.</p>
      */
     inline DescribeStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The shard ID of the shard to start with.</p>
@@ -132,10 +135,13 @@ namespace Model
     inline DescribeStreamRequest& WithExclusiveStartShardId(const char* value) { SetExclusiveStartShardId(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_exclusiveStartShardId;
     bool m_exclusiveStartShardIdHasBeenSet;
   };

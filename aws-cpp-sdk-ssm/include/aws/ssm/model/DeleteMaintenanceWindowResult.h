@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteMaintenanceWindowResult();
-    DeleteMaintenanceWindowResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteMaintenanceWindowResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the deleted Maintenance Window.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteMaintenanceWindowResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
   };
 

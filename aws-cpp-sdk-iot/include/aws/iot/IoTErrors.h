@@ -55,7 +55,7 @@ enum class IoTErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CERTIFICATE_CONFLICT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CERTIFICATE_CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CERTIFICATE_STATE,
   CERTIFICATE_VALIDATION,
   DELETE_CONFLICT,
@@ -74,7 +74,7 @@ enum class IoTErrors
 };
 namespace IoTErrorMapper
 {
-  AWS_IOT_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_IOT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace IoT

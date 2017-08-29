@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateLoggerDefinitionResult();
-    UpdateLoggerDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateLoggerDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateLoggerDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateLoggerDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

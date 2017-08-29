@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue to delete.</p> <p>Queue URLs are
      * case-sensitive.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DeleteQueueRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
   };

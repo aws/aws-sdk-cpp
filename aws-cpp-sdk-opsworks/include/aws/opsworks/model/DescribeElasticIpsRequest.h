@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The instance ID. If you include this parameter,
      * <code>DescribeElasticIps</code> returns a description of the Elastic IP
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeElasticIpsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code>
      * returns a description of the Elastic IP addresses that are registered with the
@@ -134,6 +136,7 @@ namespace Model
      * specified stack.</p>
      */
     inline DescribeElasticIpsRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>An array of Elastic IP addresses to be described. If you include this
@@ -200,10 +203,13 @@ namespace Model
     inline DescribeElasticIpsRequest& AddIps(const char* value) { m_ipsHasBeenSet = true; m_ips.push_back(value); return *this; }
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_ips;
     bool m_ipsHasBeenSet;
   };

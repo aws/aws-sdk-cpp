@@ -30,12 +30,12 @@ RegisterScalableTargetResult::RegisterScalableTargetResult()
 {
 }
 
-RegisterScalableTargetResult::RegisterScalableTargetResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterScalableTargetResult::RegisterScalableTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterScalableTargetResult& RegisterScalableTargetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterScalableTargetResult& RegisterScalableTargetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

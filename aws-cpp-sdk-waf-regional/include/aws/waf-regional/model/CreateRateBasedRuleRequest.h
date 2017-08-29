@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A friendly name or description of the <a>RateBasedRule</a>. You can't change
      * the name of a <code>RateBasedRule</code> after you create it.</p>
@@ -78,6 +79,7 @@ namespace Model
      * the name of a <code>RateBasedRule</code> after you create it.</p>
      */
     inline CreateRateBasedRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A friendly name or description for the metrics for this
@@ -135,6 +137,7 @@ namespace Model
      */
     inline CreateRateBasedRuleRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
+
     /**
      * <p>The field that AWS WAF uses to determine if requests are likely arriving from
      * a single source and thus subject to rate monitoring. The only valid value for
@@ -180,6 +183,7 @@ namespace Model
      */
     inline CreateRateBasedRuleRequest& WithRateKey(RateKey&& value) { SetRateKey(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of requests, which have an identical value in the field
      * that is specified by <code>RateKey</code>, allowed in a five-minute period. If
@@ -206,6 +210,7 @@ namespace Model
      * is specified for this rule.</p>
      */
     inline CreateRateBasedRuleRequest& WithRateLimit(long long value) { SetRateLimit(value); return *this;}
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -264,14 +269,19 @@ namespace Model
     inline CreateRateBasedRuleRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     RateKey m_rateKey;
     bool m_rateKeyHasBeenSet;
+
     long long m_rateLimit;
     bool m_rateLimitHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
   };

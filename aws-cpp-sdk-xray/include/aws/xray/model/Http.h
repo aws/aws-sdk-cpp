@@ -45,6 +45,7 @@ namespace Model
     Http& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The request URL.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline Http& WithHttpURL(const char* value) { SetHttpURL(value); return *this;}
 
+
     /**
      * <p>The response status.</p>
      */
@@ -94,6 +96,7 @@ namespace Model
      * <p>The response status.</p>
      */
     inline Http& WithHttpStatus(int value) { SetHttpStatus(value); return *this;}
+
 
     /**
      * <p>The request method.</p>
@@ -130,6 +133,7 @@ namespace Model
      */
     inline Http& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
+
     /**
      * <p>The request's user agent string.</p>
      */
@@ -164,6 +168,7 @@ namespace Model
      * <p>The request's user agent string.</p>
      */
     inline Http& WithUserAgent(const char* value) { SetUserAgent(value); return *this;}
+
 
     /**
      * <p>The IP address of the requestor.</p>
@@ -201,14 +206,19 @@ namespace Model
     inline Http& WithClientIp(const char* value) { SetClientIp(value); return *this;}
 
   private:
+
     Aws::String m_httpURL;
     bool m_httpURLHasBeenSet;
+
     int m_httpStatus;
     bool m_httpStatusHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
+
     Aws::String m_userAgent;
     bool m_userAgentHasBeenSet;
+
     Aws::String m_clientIp;
     bool m_clientIpHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     UserStorage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The amount of user storage for the bundle.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline UserStorage& WithCapacity(const char* value) { SetCapacity(value); return *this;}
 
   private:
+
     Aws::String m_capacity;
     bool m_capacityHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     CrawlerTargets& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies targets in AWS S3.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>Specifies targets in AWS S3.</p>
      */
     inline CrawlerTargets& AddS3Targets(S3Target&& value) { m_s3TargetsHasBeenSet = true; m_s3Targets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Specifies JDBC targets.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline CrawlerTargets& AddJdbcTargets(JdbcTarget&& value) { m_jdbcTargetsHasBeenSet = true; m_jdbcTargets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<S3Target> m_s3Targets;
     bool m_s3TargetsHasBeenSet;
+
     Aws::Vector<JdbcTarget> m_jdbcTargets;
     bool m_jdbcTargetsHasBeenSet;
   };

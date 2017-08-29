@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The schema ARN in which the new <a>Facet</a> will be created. For more
      * information, see <a>arns</a>.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline CreateFacetRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
+
     /**
      * <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      */
     inline CreateFacetRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The attributes that are associated with the <a>Facet</a>.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>The attributes that are associated with the <a>Facet</a>.</p>
      */
     inline CreateFacetRequest& AddAttributes(FacetAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Specifies whether a given object created from this facet is of type node,
@@ -212,12 +216,16 @@ namespace Model
     inline CreateFacetRequest& WithObjectType(ObjectType&& value) { SetObjectType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<FacetAttribute> m_attributes;
     bool m_attributesHasBeenSet;
+
     ObjectType m_objectType;
     bool m_objectTypeHasBeenSet;
   };

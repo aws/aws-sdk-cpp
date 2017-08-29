@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ValidatePipelineDefinitionResult();
-    ValidatePipelineDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ValidatePipelineDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ValidatePipelineDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ValidatePipelineDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Any validation errors that were found.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ValidatePipelineDefinitionResult& AddValidationErrors(ValidationError&& value) { m_validationErrors.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Any validation warnings that were found.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      */
     inline ValidatePipelineDefinitionResult& AddValidationWarnings(ValidationWarning&& value) { m_validationWarnings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether there were validation errors.</p>
      */
@@ -135,8 +138,11 @@ namespace Model
     inline ValidatePipelineDefinitionResult& WithErrored(bool value) { SetErrored(value); return *this;}
 
   private:
+
     Aws::Vector<ValidationError> m_validationErrors;
+
     Aws::Vector<ValidationWarning> m_validationWarnings;
+
     bool m_errored;
   };
 

@@ -46,6 +46,7 @@ namespace Model
     TableStatistics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The schema name.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The schema name.</p>
      */
     inline TableStatistics& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+
 
     /**
      * <p>The name of the table.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline TableStatistics& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>The number of insert actions performed on a table.</p>
      */
@@ -130,6 +133,7 @@ namespace Model
      * <p>The number of insert actions performed on a table.</p>
      */
     inline TableStatistics& WithInserts(long long value) { SetInserts(value); return *this;}
+
 
     /**
      * <p>The number of delete actions performed on a table.</p>
@@ -146,6 +150,7 @@ namespace Model
      */
     inline TableStatistics& WithDeletes(long long value) { SetDeletes(value); return *this;}
 
+
     /**
      * <p>The number of update actions performed on a table.</p>
      */
@@ -160,6 +165,7 @@ namespace Model
      * <p>The number of update actions performed on a table.</p>
      */
     inline TableStatistics& WithUpdates(long long value) { SetUpdates(value); return *this;}
+
 
     /**
      * <p>The Data Definition Language (DDL) used to build and modify the structure of
@@ -179,6 +185,7 @@ namespace Model
      */
     inline TableStatistics& WithDdls(long long value) { SetDdls(value); return *this;}
 
+
     /**
      * <p>The number of rows added during the Full Load operation.</p>
      */
@@ -193,6 +200,7 @@ namespace Model
      * <p>The number of rows added during the Full Load operation.</p>
      */
     inline TableStatistics& WithFullLoadRows(long long value) { SetFullLoadRows(value); return *this;}
+
 
     /**
      * <p>The number of rows that failed conditional checks during the Full Load
@@ -212,6 +220,7 @@ namespace Model
      */
     inline TableStatistics& WithFullLoadCondtnlChkFailedRows(long long value) { SetFullLoadCondtnlChkFailedRows(value); return *this;}
 
+
     /**
      * <p>The number of rows that failed to load during the Full Load operation (valid
      * only for DynamoDB as a target migrations).</p>
@@ -229,6 +238,7 @@ namespace Model
      * only for DynamoDB as a target migrations).</p>
      */
     inline TableStatistics& WithFullLoadErrorRows(long long value) { SetFullLoadErrorRows(value); return *this;}
+
 
     /**
      * <p>The last time the table was updated.</p>
@@ -254,6 +264,7 @@ namespace Model
      * <p>The last time the table was updated.</p>
      */
     inline TableStatistics& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The state of the table.</p>
@@ -291,26 +302,37 @@ namespace Model
     inline TableStatistics& WithTableState(const char* value) { SetTableState(value); return *this;}
 
   private:
+
     Aws::String m_schemaName;
     bool m_schemaNameHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     long long m_inserts;
     bool m_insertsHasBeenSet;
+
     long long m_deletes;
     bool m_deletesHasBeenSet;
+
     long long m_updates;
     bool m_updatesHasBeenSet;
+
     long long m_ddls;
     bool m_ddlsHasBeenSet;
+
     long long m_fullLoadRows;
     bool m_fullLoadRowsHasBeenSet;
+
     long long m_fullLoadCondtnlChkFailedRows;
     bool m_fullLoadCondtnlChkFailedRowsHasBeenSet;
+
     long long m_fullLoadErrorRows;
     bool m_fullLoadErrorRowsHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet;
+
     Aws::String m_tableState;
     bool m_tableStateHasBeenSet;
   };

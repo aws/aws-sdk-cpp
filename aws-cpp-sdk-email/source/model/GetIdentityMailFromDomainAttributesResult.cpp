@@ -31,12 +31,12 @@ GetIdentityMailFromDomainAttributesResult::GetIdentityMailFromDomainAttributesRe
 {
 }
 
-GetIdentityMailFromDomainAttributesResult::GetIdentityMailFromDomainAttributesResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetIdentityMailFromDomainAttributesResult::GetIdentityMailFromDomainAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetIdentityMailFromDomainAttributesResult& GetIdentityMailFromDomainAttributesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetIdentityMailFromDomainAttributesResult& GetIdentityMailFromDomainAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

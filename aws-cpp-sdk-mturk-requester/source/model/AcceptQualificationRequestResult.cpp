@@ -30,12 +30,12 @@ AcceptQualificationRequestResult::AcceptQualificationRequestResult()
 {
 }
 
-AcceptQualificationRequestResult::AcceptQualificationRequestResult(const AmazonWebServiceResult<JsonValue>& result)
+AcceptQualificationRequestResult::AcceptQualificationRequestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AcceptQualificationRequestResult& AcceptQualificationRequestResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AcceptQualificationRequestResult& AcceptQualificationRequestResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

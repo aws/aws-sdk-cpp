@@ -31,12 +31,12 @@ PurchaseReservedInstancesOfferingResponse::PurchaseReservedInstancesOfferingResp
 {
 }
 
-PurchaseReservedInstancesOfferingResponse::PurchaseReservedInstancesOfferingResponse(const AmazonWebServiceResult<XmlDocument>& result)
+PurchaseReservedInstancesOfferingResponse::PurchaseReservedInstancesOfferingResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-PurchaseReservedInstancesOfferingResponse& PurchaseReservedInstancesOfferingResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+PurchaseReservedInstancesOfferingResponse& PurchaseReservedInstancesOfferingResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

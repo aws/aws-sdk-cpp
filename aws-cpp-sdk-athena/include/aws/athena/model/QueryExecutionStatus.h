@@ -48,6 +48,7 @@ namespace Model
     QueryExecutionStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The state of query execution. <code>SUBMITTED</code> indicates that the query
      * is queued for execution. <code>RUNNING</code> indicates that the query is
@@ -98,6 +99,7 @@ namespace Model
      */
     inline QueryExecutionStatus& WithState(QueryExecutionState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>Further detail about the status of the query.</p>
      */
@@ -133,6 +135,7 @@ namespace Model
      */
     inline QueryExecutionStatus& WithStateChangeReason(const char* value) { SetStateChangeReason(value); return *this;}
 
+
     /**
      * <p>The date and time that the query was submitted.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>The date and time that the query was submitted.</p>
      */
     inline QueryExecutionStatus& WithSubmissionDateTime(Aws::Utils::DateTime&& value) { SetSubmissionDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time that the query completed.</p>
@@ -184,12 +188,16 @@ namespace Model
     inline QueryExecutionStatus& WithCompletionDateTime(Aws::Utils::DateTime&& value) { SetCompletionDateTime(std::move(value)); return *this;}
 
   private:
+
     QueryExecutionState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_stateChangeReason;
     bool m_stateChangeReasonHasBeenSet;
+
     Aws::Utils::DateTime m_submissionDateTime;
     bool m_submissionDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_completionDateTime;
     bool m_completionDateTimeHasBeenSet;
   };

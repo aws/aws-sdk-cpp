@@ -31,13 +31,13 @@ DescribeCrossAccountAccessRoleResult::DescribeCrossAccountAccessRoleResult() :
 {
 }
 
-DescribeCrossAccountAccessRoleResult::DescribeCrossAccountAccessRoleResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeCrossAccountAccessRoleResult::DescribeCrossAccountAccessRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_valid(false)
 {
   *this = result;
 }
 
-DescribeCrossAccountAccessRoleResult& DescribeCrossAccountAccessRoleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCrossAccountAccessRoleResult& DescribeCrossAccountAccessRoleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("roleArn"))

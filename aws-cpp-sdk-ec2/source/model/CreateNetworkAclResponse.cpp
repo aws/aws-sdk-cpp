@@ -31,12 +31,12 @@ CreateNetworkAclResponse::CreateNetworkAclResponse()
 {
 }
 
-CreateNetworkAclResponse::CreateNetworkAclResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateNetworkAclResponse::CreateNetworkAclResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateNetworkAclResponse& CreateNetworkAclResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateNetworkAclResponse& CreateNetworkAclResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

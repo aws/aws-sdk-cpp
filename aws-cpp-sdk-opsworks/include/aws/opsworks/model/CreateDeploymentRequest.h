@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline CreateDeploymentRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The app ID. This parameter is required for app deployments, but not for other
@@ -115,6 +117,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
 
+
     /**
      * <p>The instance IDs for the deployment targets.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The instance IDs for the deployment targets.</p>
      */
     inline CreateDeploymentRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+
 
     /**
      * <p>The layer IDs for the deployment targets.</p>
@@ -195,6 +199,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
+
     /**
      * <p>A <code>DeploymentCommand</code> object that specifies the deployment command
      * and any associated arguments.</p>
@@ -224,6 +229,7 @@ namespace Model
      * and any associated arguments.</p>
      */
     inline CreateDeploymentRequest& WithCommand(DeploymentCommand&& value) { SetCommand(std::move(value)); return *this;}
+
 
     /**
      * <p>A user-defined comment.</p>
@@ -259,6 +265,7 @@ namespace Model
      * <p>A user-defined comment.</p>
      */
     inline CreateDeploymentRequest& WithComment(const char* value) { SetComment(value); return *this;}
+
 
     /**
      * <p>A string that contains user-defined, custom JSON. It is used to override the
@@ -331,18 +338,25 @@ namespace Model
     inline CreateDeploymentRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_appId;
     bool m_appIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_layerIds;
     bool m_layerIdsHasBeenSet;
+
     DeploymentCommand m_command;
     bool m_commandHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     Aws::String m_customJson;
     bool m_customJsonHasBeenSet;
   };

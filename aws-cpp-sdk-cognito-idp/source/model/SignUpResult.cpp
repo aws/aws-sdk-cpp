@@ -31,13 +31,13 @@ SignUpResult::SignUpResult() :
 {
 }
 
-SignUpResult::SignUpResult(const AmazonWebServiceResult<JsonValue>& result) : 
+SignUpResult::SignUpResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_userConfirmed(false)
 {
   *this = result;
 }
 
-SignUpResult& SignUpResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SignUpResult& SignUpResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UserConfirmed"))

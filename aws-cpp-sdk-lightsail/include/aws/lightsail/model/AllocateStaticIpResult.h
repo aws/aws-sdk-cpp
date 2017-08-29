@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     AllocateStaticIpResult();
-    AllocateStaticIpResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AllocateStaticIpResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AllocateStaticIpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AllocateStaticIpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the static IP
@@ -85,6 +86,7 @@ namespace Model
     inline AllocateStaticIpResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Operation> m_operations;
   };
 

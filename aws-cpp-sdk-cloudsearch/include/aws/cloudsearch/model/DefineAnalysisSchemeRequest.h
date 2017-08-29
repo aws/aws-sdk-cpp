@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -65,6 +66,7 @@ namespace Model
     
     inline DefineAnalysisSchemeRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     
     inline const AnalysisScheme& GetAnalysisScheme() const{ return m_analysisScheme; }
 
@@ -81,8 +83,10 @@ namespace Model
     inline DefineAnalysisSchemeRequest& WithAnalysisScheme(AnalysisScheme&& value) { SetAnalysisScheme(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     AnalysisScheme m_analysisScheme;
     bool m_analysisSchemeHasBeenSet;
   };

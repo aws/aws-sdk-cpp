@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetBlueprintsResult();
-    GetBlueprintsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBlueprintsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBlueprintsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBlueprintsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs that contains information about the available
@@ -84,6 +85,7 @@ namespace Model
      * blueprints.</p>
      */
     inline GetBlueprintsResult& AddBlueprints(Blueprint&& value) { m_blueprints.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token used for advancing to the next page of results from your get
@@ -128,7 +130,9 @@ namespace Model
     inline GetBlueprintsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<Blueprint> m_blueprints;
+
     Aws::String m_nextPageToken;
   };
 

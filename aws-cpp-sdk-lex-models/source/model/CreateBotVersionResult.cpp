@@ -34,7 +34,7 @@ CreateBotVersionResult::CreateBotVersionResult() :
 {
 }
 
-CreateBotVersionResult::CreateBotVersionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateBotVersionResult::CreateBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(Status::NOT_SET),
     m_idleSessionTTLInSeconds(0),
     m_locale(Locale::NOT_SET),
@@ -43,7 +43,7 @@ CreateBotVersionResult::CreateBotVersionResult(const AmazonWebServiceResult<Json
   *this = result;
 }
 
-CreateBotVersionResult& CreateBotVersionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateBotVersionResult& CreateBotVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("name"))

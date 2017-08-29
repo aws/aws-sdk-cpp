@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     CreateIntentVersionResult();
-    CreateIntentVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateIntentVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateIntentVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateIntentVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the intent.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline CreateIntentVersionResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the intent.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>A description of the intent.</p>
      */
     inline CreateIntentVersionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>An array of slot types that defines the information required to fulfill the
@@ -161,6 +164,7 @@ namespace Model
      */
     inline CreateIntentVersionResult& AddSlots(Slot&& value) { m_slots.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>An array of sample utterances configured for the intent. </p>
      */
@@ -201,6 +205,7 @@ namespace Model
      */
     inline CreateIntentVersionResult& AddSampleUtterances(const char* value) { m_sampleUtterances.push_back(value); return *this; }
 
+
     /**
      * <p>If defined, the prompt that Amazon Lex uses to confirm the user's intent
      * before fulfilling it. </p>
@@ -230,6 +235,7 @@ namespace Model
      * before fulfilling it. </p>
      */
     inline CreateIntentVersionResult& WithConfirmationPrompt(Prompt&& value) { SetConfirmationPrompt(std::move(value)); return *this;}
+
 
     /**
      * <p>If the user answers "no" to the question defined in
@@ -266,6 +272,7 @@ namespace Model
      */
     inline CreateIntentVersionResult& WithRejectionStatement(Statement&& value) { SetRejectionStatement(std::move(value)); return *this;}
 
+
     /**
      * <p>If defined, Amazon Lex uses this prompt to solicit additional user activity
      * after the intent is fulfilled. </p>
@@ -295,6 +302,7 @@ namespace Model
      * after the intent is fulfilled. </p>
      */
     inline CreateIntentVersionResult& WithFollowUpPrompt(FollowUpPrompt&& value) { SetFollowUpPrompt(std::move(value)); return *this;}
+
 
     /**
      * <p>After the Lambda function specified in the <code>fulfillmentActivity</code>
@@ -326,6 +334,7 @@ namespace Model
      */
     inline CreateIntentVersionResult& WithConclusionStatement(Statement&& value) { SetConclusionStatement(std::move(value)); return *this;}
 
+
     /**
      * <p>If defined, Amazon Lex invokes this Lambda function for each user input.</p>
      */
@@ -351,6 +360,7 @@ namespace Model
      */
     inline CreateIntentVersionResult& WithDialogCodeHook(CodeHook&& value) { SetDialogCodeHook(std::move(value)); return *this;}
 
+
     /**
      * <p> Describes how the intent is fulfilled. </p>
      */
@@ -375,6 +385,7 @@ namespace Model
      * <p> Describes how the intent is fulfilled. </p>
      */
     inline CreateIntentVersionResult& WithFulfillmentActivity(FulfillmentActivity&& value) { SetFulfillmentActivity(std::move(value)); return *this;}
+
 
     /**
      * <p>A unique identifier for a built-in intent.</p>
@@ -411,6 +422,7 @@ namespace Model
      */
     inline CreateIntentVersionResult& WithParentIntentSignature(const char* value) { SetParentIntentSignature(value); return *this;}
 
+
     /**
      * <p>The date that the intent was updated. </p>
      */
@@ -436,6 +448,7 @@ namespace Model
      */
     inline CreateIntentVersionResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date that the intent was created.</p>
      */
@@ -460,6 +473,7 @@ namespace Model
      * <p>The date that the intent was created.</p>
      */
     inline CreateIntentVersionResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The version number assigned to the new version of the intent.</p>
@@ -495,6 +509,7 @@ namespace Model
      * <p>The version number assigned to the new version of the intent.</p>
      */
     inline CreateIntentVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>Checksum of the intent version created.</p>
@@ -532,20 +547,35 @@ namespace Model
     inline CreateIntentVersionResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_description;
+
     Aws::Vector<Slot> m_slots;
+
     Aws::Vector<Aws::String> m_sampleUtterances;
+
     Prompt m_confirmationPrompt;
+
     Statement m_rejectionStatement;
+
     FollowUpPrompt m_followUpPrompt;
+
     Statement m_conclusionStatement;
+
     CodeHook m_dialogCodeHook;
+
     FulfillmentActivity m_fulfillmentActivity;
+
     Aws::String m_parentIntentSignature;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::String m_version;
+
     Aws::String m_checksum;
   };
 

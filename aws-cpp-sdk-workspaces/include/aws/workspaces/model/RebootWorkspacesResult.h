@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     RebootWorkspacesResult();
-    RebootWorkspacesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RebootWorkspacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RebootWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RebootWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of structures representing any WorkSpaces that could not be
@@ -91,6 +92,7 @@ namespace Model
     inline RebootWorkspacesResult& AddFailedRequests(FailedWorkspaceChangeRequest&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<FailedWorkspaceChangeRequest> m_failedRequests;
   };
 

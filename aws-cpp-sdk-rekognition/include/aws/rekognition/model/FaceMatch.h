@@ -46,6 +46,7 @@ namespace Model
     FaceMatch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Confidence in the match of this face with the input face.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>Confidence in the match of this face with the input face.</p>
      */
     inline FaceMatch& WithSimilarity(double value) { SetSimilarity(value); return *this;}
+
 
     /**
      * <p>Describes the face properties such as the bounding box, face ID, image ID of
@@ -92,8 +94,10 @@ namespace Model
     inline FaceMatch& WithFace(Face&& value) { SetFace(std::move(value)); return *this;}
 
   private:
+
     double m_similarity;
     bool m_similarityHasBeenSet;
+
     Face m_face;
     bool m_faceHasBeenSet;
   };

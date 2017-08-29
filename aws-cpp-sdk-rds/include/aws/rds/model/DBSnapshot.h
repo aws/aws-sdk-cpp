@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies the identifier for the DB snapshot.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>Specifies the identifier for the DB snapshot.</p>
      */
     inline DBSnapshot& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>Specifies the DB instance identifier of the DB instance this DB snapshot was
@@ -129,6 +131,7 @@ namespace Model
      */
     inline DBSnapshot& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC).</p>
@@ -158,6 +161,7 @@ namespace Model
      * (UTC).</p>
      */
     inline DBSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the name of the database engine.</p>
@@ -194,6 +198,7 @@ namespace Model
      */
     inline DBSnapshot& WithEngine(const char* value) { SetEngine(value); return *this;}
 
+
     /**
      * <p>Specifies the allocated storage size in gigabytes (GB).</p>
      */
@@ -208,6 +213,7 @@ namespace Model
      * <p>Specifies the allocated storage size in gigabytes (GB).</p>
      */
     inline DBSnapshot& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+
 
     /**
      * <p>Specifies the status of this DB snapshot.</p>
@@ -244,6 +250,7 @@ namespace Model
      */
     inline DBSnapshot& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>Specifies the port that the database engine was listening on at the time of
      * the snapshot.</p>
@@ -261,6 +268,7 @@ namespace Model
      * the snapshot.</p>
      */
     inline DBSnapshot& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>Specifies the name of the Availability Zone the DB instance was located in at
@@ -304,6 +312,7 @@ namespace Model
      */
     inline DBSnapshot& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>Provides the VPC ID associated with the DB snapshot.</p>
      */
@@ -339,6 +348,7 @@ namespace Model
      */
     inline DBSnapshot& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>Specifies the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC).</p>
@@ -368,6 +378,7 @@ namespace Model
      * (UTC).</p>
      */
     inline DBSnapshot& WithInstanceCreateTime(Aws::Utils::DateTime&& value) { SetInstanceCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the master username for the DB snapshot.</p>
@@ -404,6 +415,7 @@ namespace Model
      */
     inline DBSnapshot& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
+
     /**
      * <p>Specifies the version of the database engine.</p>
      */
@@ -438,6 +450,7 @@ namespace Model
      * <p>Specifies the version of the database engine.</p>
      */
     inline DBSnapshot& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
 
     /**
      * <p>License model information for the restored DB instance.</p>
@@ -474,6 +487,7 @@ namespace Model
      */
     inline DBSnapshot& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
+
     /**
      * <p>Provides the type of the DB snapshot.</p>
      */
@@ -509,6 +523,7 @@ namespace Model
      */
     inline DBSnapshot& WithSnapshotType(const char* value) { SetSnapshotType(value); return *this;}
 
+
     /**
      * <p>Specifies the Provisioned IOPS (I/O operations per second) value of the DB
      * instance at the time of the snapshot.</p>
@@ -526,6 +541,7 @@ namespace Model
      * instance at the time of the snapshot.</p>
      */
     inline DBSnapshot& WithIops(int value) { SetIops(value); return *this;}
+
 
     /**
      * <p>Provides the option group name for the DB snapshot.</p>
@@ -562,6 +578,7 @@ namespace Model
      */
     inline DBSnapshot& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
+
     /**
      * <p>The percentage of the estimated data that has been transferred.</p>
      */
@@ -576,6 +593,7 @@ namespace Model
      * <p>The percentage of the estimated data that has been transferred.</p>
      */
     inline DBSnapshot& WithPercentProgress(int value) { SetPercentProgress(value); return *this;}
+
 
     /**
      * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
@@ -611,6 +629,7 @@ namespace Model
      * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
      */
     inline DBSnapshot& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
+
 
     /**
      * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
@@ -654,6 +673,7 @@ namespace Model
      */
     inline DBSnapshot& WithSourceDBSnapshotIdentifier(const char* value) { SetSourceDBSnapshotIdentifier(value); return *this;}
 
+
     /**
      * <p>Specifies the storage type associated with DB snapshot.</p>
      */
@@ -688,6 +708,7 @@ namespace Model
      * <p>Specifies the storage type associated with DB snapshot.</p>
      */
     inline DBSnapshot& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
@@ -731,6 +752,7 @@ namespace Model
      */
     inline DBSnapshot& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
 
+
     /**
      * <p>Specifies whether the DB snapshot is encrypted.</p>
      */
@@ -745,6 +767,7 @@ namespace Model
      * <p>Specifies whether the DB snapshot is encrypted.</p>
      */
     inline DBSnapshot& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p> If <code>Encrypted</code> is true, the KMS key identifier for the encrypted
@@ -788,6 +811,7 @@ namespace Model
      */
     inline DBSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
      */
@@ -822,6 +846,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
      */
     inline DBSnapshot& WithDBSnapshotArn(const char* value) { SetDBSnapshotArn(value); return *this;}
+
 
     /**
      * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
@@ -879,6 +904,7 @@ namespace Model
      */
     inline DBSnapshot& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
+
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
      * database accounts is enabled; otherwise false.</p>
@@ -898,56 +924,82 @@ namespace Model
     inline DBSnapshot& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
   private:
+
     Aws::String m_dBSnapshotIdentifier;
     bool m_dBSnapshotIdentifierHasBeenSet;
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     Aws::Utils::DateTime m_snapshotCreateTime;
     bool m_snapshotCreateTimeHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::Utils::DateTime m_instanceCreateTime;
     bool m_instanceCreateTimeHasBeenSet;
+
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     int m_percentProgress;
     bool m_percentProgressHasBeenSet;
+
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet;
+
     Aws::String m_sourceDBSnapshotIdentifier;
     bool m_sourceDBSnapshotIdentifierHasBeenSet;
+
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
+
     Aws::String m_tdeCredentialArn;
     bool m_tdeCredentialArnHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_dBSnapshotArn;
     bool m_dBSnapshotArnHasBeenSet;
+
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet;
+
     bool m_iAMDatabaseAuthenticationEnabled;
     bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
   };

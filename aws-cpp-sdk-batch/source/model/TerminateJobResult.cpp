@@ -30,12 +30,12 @@ TerminateJobResult::TerminateJobResult()
 {
 }
 
-TerminateJobResult::TerminateJobResult(const AmazonWebServiceResult<JsonValue>& result)
+TerminateJobResult::TerminateJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-TerminateJobResult& TerminateJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TerminateJobResult& TerminateJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -30,13 +30,13 @@ ListBucketInventoryConfigurationsResult::ListBucketInventoryConfigurationsResult
 {
 }
 
-ListBucketInventoryConfigurationsResult::ListBucketInventoryConfigurationsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListBucketInventoryConfigurationsResult::ListBucketInventoryConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListBucketInventoryConfigurationsResult& ListBucketInventoryConfigurationsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListBucketInventoryConfigurationsResult& ListBucketInventoryConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

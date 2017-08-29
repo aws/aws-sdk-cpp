@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The unique ID name of the instance of the stack.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The unique ID name of the instance of the stack.</p>
      */
     inline StackEvent& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The unique ID of this event.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline StackEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
 
+
     /**
      * <p>The name associated with a stack.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      */
     inline StackEvent& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+
     /**
      * <p>The logical name of the resource specified in the template.</p>
      */
@@ -189,6 +193,7 @@ namespace Model
      * <p>The logical name of the resource specified in the template.</p>
      */
     inline StackEvent& WithLogicalResourceId(const char* value) { SetLogicalResourceId(value); return *this;}
+
 
     /**
      * <p>The name or unique identifier associated with the physical instance of the
@@ -231,6 +236,7 @@ namespace Model
      * resource.</p>
      */
     inline StackEvent& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
+
 
     /**
      * <p>Type of resource. (For more information, go to <a
@@ -281,6 +287,7 @@ namespace Model
      */
     inline StackEvent& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>Time the status was updated.</p>
      */
@@ -306,6 +313,7 @@ namespace Model
      */
     inline StackEvent& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>Current status of the resource.</p>
      */
@@ -330,6 +338,7 @@ namespace Model
      * <p>Current status of the resource.</p>
      */
     inline StackEvent& WithResourceStatus(ResourceStatus&& value) { SetResourceStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Success/failure message associated with the resource.</p>
@@ -366,6 +375,7 @@ namespace Model
      */
     inline StackEvent& WithResourceStatusReason(const char* value) { SetResourceStatusReason(value); return *this;}
 
+
     /**
      * <p>BLOB of the properties used to create the resource.</p>
      */
@@ -400,6 +410,7 @@ namespace Model
      * <p>BLOB of the properties used to create the resource.</p>
      */
     inline StackEvent& WithResourceProperties(const char* value) { SetResourceProperties(value); return *this;}
+
 
     /**
      * <p>The token passed to the operation that generated this event.</p> <p>All
@@ -514,26 +525,37 @@ namespace Model
     inline StackEvent& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet;
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_logicalResourceId;
     bool m_logicalResourceIdHasBeenSet;
+
     Aws::String m_physicalResourceId;
     bool m_physicalResourceIdHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
     ResourceStatus m_resourceStatus;
     bool m_resourceStatusHasBeenSet;
+
     Aws::String m_resourceStatusReason;
     bool m_resourceStatusReasonHasBeenSet;
+
     Aws::String m_resourceProperties;
     bool m_resourcePropertiesHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
   };

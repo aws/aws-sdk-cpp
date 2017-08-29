@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cache engine.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline CacheEngineVersion& WithEngine(const char* value) { SetEngine(value); return *this;}
 
+
     /**
      * <p>The version number of the cache engine.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The version number of the cache engine.</p>
      */
     inline CacheEngineVersion& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
 
     /**
      * <p>The name of the cache parameter group family associated with this cache
@@ -168,6 +171,7 @@ namespace Model
      */
     inline CacheEngineVersion& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>The description of the cache engine.</p>
      */
@@ -202,6 +206,7 @@ namespace Model
      * <p>The description of the cache engine.</p>
      */
     inline CacheEngineVersion& WithCacheEngineDescription(const char* value) { SetCacheEngineDescription(value); return *this;}
+
 
     /**
      * <p>The description of the cache engine version.</p>
@@ -239,14 +244,19 @@ namespace Model
     inline CacheEngineVersion& WithCacheEngineVersionDescription(const char* value) { SetCacheEngineVersionDescription(value); return *this;}
 
   private:
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_cacheParameterGroupFamily;
     bool m_cacheParameterGroupFamilyHasBeenSet;
+
     Aws::String m_cacheEngineDescription;
     bool m_cacheEngineDescriptionHasBeenSet;
+
     Aws::String m_cacheEngineVersionDescription;
     bool m_cacheEngineVersionDescriptionHasBeenSet;
   };

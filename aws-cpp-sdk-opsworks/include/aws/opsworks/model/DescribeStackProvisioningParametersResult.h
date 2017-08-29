@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeStackProvisioningParametersResult();
-    DescribeStackProvisioningParametersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStackProvisioningParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStackProvisioningParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStackProvisioningParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The AWS OpsWorks Stacks agent installer's URL.</p>
      */
     inline DescribeStackProvisioningParametersResult& WithAgentInstallerUrl(const char* value) { SetAgentInstallerUrl(value); return *this;}
+
 
     /**
      * <p>An embedded object that contains the provisioning parameters.</p>
@@ -144,7 +146,9 @@ namespace Model
     inline DescribeStackProvisioningParametersResult& AddParameters(const char* key, const char* value) { m_parameters.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_agentInstallerUrl;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
   };
 

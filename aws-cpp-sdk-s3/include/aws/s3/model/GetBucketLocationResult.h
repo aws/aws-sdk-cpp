@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetBucketLocationResult();
-    GetBucketLocationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketLocationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const BucketLocationConstraint& GetLocationConstraint() const{ return m_locationConstraint; }
@@ -57,6 +58,7 @@ namespace Model
     inline GetBucketLocationResult& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(std::move(value)); return *this;}
 
   private:
+
     BucketLocationConstraint m_locationConstraint;
   };
 

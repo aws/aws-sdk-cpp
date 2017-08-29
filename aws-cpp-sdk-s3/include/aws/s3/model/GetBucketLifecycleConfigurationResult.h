@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetBucketLifecycleConfigurationResult();
-    GetBucketLifecycleConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketLifecycleConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketLifecycleConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::Vector<LifecycleRule>& GetRules() const{ return m_rules; }
@@ -64,6 +65,7 @@ namespace Model
     inline GetBucketLifecycleConfigurationResult& AddRules(LifecycleRule&& value) { m_rules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<LifecycleRule> m_rules;
   };
 

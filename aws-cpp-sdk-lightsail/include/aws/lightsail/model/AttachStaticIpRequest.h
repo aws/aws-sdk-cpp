@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the static IP.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the static IP.</p>
      */
     inline AttachStaticIpRequest& WithStaticIpName(const char* value) { SetStaticIpName(value); return *this;}
+
 
     /**
      * <p>The instance name to which you want to attach the static IP address.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline AttachStaticIpRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
   private:
+
     Aws::String m_staticIpName;
     bool m_staticIpNameHasBeenSet;
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
   };

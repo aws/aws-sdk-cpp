@@ -47,6 +47,7 @@ namespace Model
     PutRecordsRequestEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The data blob to put into the record, which is base64-encoded when the blob
      * is serialized. When the data blob (the payload before base64-encoding) is added
@@ -86,6 +87,7 @@ namespace Model
      * size (1 MB).</p>
      */
     inline PutRecordsRequestEntry& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+
 
     /**
      * <p>The hash value used to determine explicitly the shard that the data record is
@@ -128,6 +130,7 @@ namespace Model
      * assigned to by overriding the partition key hash.</p>
      */
     inline PutRecordsRequestEntry& WithExplicitHashKey(const char* value) { SetExplicitHashKey(value); return *this;}
+
 
     /**
      * <p>Determines which shard in the stream the data record is assigned to.
@@ -214,10 +217,13 @@ namespace Model
     inline PutRecordsRequestEntry& WithPartitionKey(const char* value) { SetPartitionKey(value); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_data;
     bool m_dataHasBeenSet;
+
     Aws::String m_explicitHashKey;
     bool m_explicitHashKeyHasBeenSet;
+
     Aws::String m_partitionKey;
     bool m_partitionKeyHasBeenSet;
   };

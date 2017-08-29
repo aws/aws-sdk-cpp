@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListCertificatesByCAResult();
-    ListCertificatesByCAResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCertificatesByCAResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCertificatesByCAResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCertificatesByCAResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The device certificates signed by the specified CA certificate.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The device certificates signed by the specified CA certificate.</p>
      */
     inline ListCertificatesByCAResult& AddCertificates(Certificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker for the next set of results, or null if there are no additional
@@ -127,7 +129,9 @@ namespace Model
     inline ListCertificatesByCAResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
   private:
+
     Aws::Vector<Certificate> m_certificates;
+
     Aws::String m_nextMarker;
   };
 

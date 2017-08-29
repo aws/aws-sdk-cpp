@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The IPv4 CIDR block for the VPC.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The IPv4 CIDR block for the VPC.</p>
      */
     inline VpcPeeringConnectionVpcInfo& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+
 
     /**
      * <p>The IPv6 CIDR block for the VPC.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline VpcPeeringConnectionVpcInfo& AddIpv6CidrBlockSet(Ipv6CidrBlock&& value) { m_ipv6CidrBlockSetHasBeenSet = true; m_ipv6CidrBlockSet.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The AWS account ID of the VPC owner.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      */
     inline VpcPeeringConnectionVpcInfo& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
     /**
      * <p>Information about the VPC peering connection options for the accepter or
      * requester VPC.</p>
@@ -185,6 +189,7 @@ namespace Model
      * requester VPC.</p>
      */
     inline VpcPeeringConnectionVpcInfo& WithPeeringOptions(VpcPeeringConnectionOptionsDescription&& value) { SetPeeringOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -222,14 +227,19 @@ namespace Model
     inline VpcPeeringConnectionVpcInfo& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
+
     Aws::Vector<Ipv6CidrBlock> m_ipv6CidrBlockSet;
     bool m_ipv6CidrBlockSetHasBeenSet;
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     VpcPeeringConnectionOptionsDescription m_peeringOptions;
     bool m_peeringOptionsHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     ParameterMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The parameter name.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ParameterMetadata& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The type of parameter. Valid parameter types include the following: String,
      * String list, Secure string.</p>
@@ -112,6 +114,7 @@ namespace Model
      * String list, Secure string.</p>
      */
     inline ParameterMetadata& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the query key used for this parameter.</p>
@@ -148,6 +151,7 @@ namespace Model
      */
     inline ParameterMetadata& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>Date the parameter was last changed or updated.</p>
      */
@@ -172,6 +176,7 @@ namespace Model
      * <p>Date the parameter was last changed or updated.</p>
      */
     inline ParameterMetadata& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
@@ -215,6 +220,7 @@ namespace Model
      */
     inline ParameterMetadata& WithLastModifiedUser(const char* value) { SetLastModifiedUser(value); return *this;}
 
+
     /**
      * <p>Description of the parameter actions.</p>
      */
@@ -249,6 +255,7 @@ namespace Model
      * <p>Description of the parameter actions.</p>
      */
     inline ParameterMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A parameter name can include only the following letters and symbols.</p>
@@ -293,18 +300,25 @@ namespace Model
     inline ParameterMetadata& WithAllowedPattern(const char* value) { SetAllowedPattern(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ParameterType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::String m_lastModifiedUser;
     bool m_lastModifiedUserHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_allowedPattern;
     bool m_allowedPatternHasBeenSet;
   };

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeWorkspacesResult();
-    DescribeWorkspacesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkspacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of structures that contain the information about the WorkSpaces.</p>
@@ -97,6 +98,7 @@ namespace Model
      * information may be incomplete for a newly-created WorkSpace.</p>
      */
     inline DescribeWorkspacesResult& AddWorkspaces(Workspace&& value) { m_workspaces.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If not null, more results are available. Pass this value for the
@@ -155,7 +157,9 @@ namespace Model
     inline DescribeWorkspacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Workspace> m_workspaces;
+
     Aws::String m_nextToken;
   };
 

@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name (friendly name, not ARN) identifying the user that the policy is
      * embedded in.</p> <p>This parameter allows (per its <a
@@ -101,6 +102,7 @@ namespace Model
      */
     inline DeleteUserPolicyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The name identifying the policy document to delete.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -158,8 +160,10 @@ namespace Model
     inline DeleteUserPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
   };

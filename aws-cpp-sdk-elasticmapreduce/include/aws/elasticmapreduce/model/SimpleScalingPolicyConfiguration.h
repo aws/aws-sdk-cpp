@@ -48,6 +48,7 @@ namespace Model
     SimpleScalingPolicyConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The way in which EC2 instances are added (if <code>ScalingAdjustment</code>
      * is a positive number) or terminated (if <code>ScalingAdjustment</code> is a
@@ -133,6 +134,7 @@ namespace Model
      */
     inline SimpleScalingPolicyConfiguration& WithAdjustmentType(AdjustmentType&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
+
     /**
      * <p>The amount by which to scale in or scale out, based on the specified
      * <code>AdjustmentType</code>. A positive value adds to the instance group's EC2
@@ -169,6 +171,7 @@ namespace Model
      */
     inline SimpleScalingPolicyConfiguration& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
 
+
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before any
      * further trigger-related scaling activities can start. The default value is
@@ -191,10 +194,13 @@ namespace Model
     inline SimpleScalingPolicyConfiguration& WithCoolDown(int value) { SetCoolDown(value); return *this;}
 
   private:
+
     AdjustmentType m_adjustmentType;
     bool m_adjustmentTypeHasBeenSet;
+
     int m_scalingAdjustment;
     bool m_scalingAdjustmentHasBeenSet;
+
     int m_coolDown;
     bool m_coolDownHasBeenSet;
   };

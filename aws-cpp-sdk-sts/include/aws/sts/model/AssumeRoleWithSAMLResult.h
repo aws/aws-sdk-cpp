@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     AssumeRoleWithSAMLResult();
-    AssumeRoleWithSAMLResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssumeRoleWithSAMLResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssumeRoleWithSAMLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssumeRoleWithSAMLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The temporary security credentials, which include an access key ID, a secret
@@ -101,6 +102,7 @@ namespace Model
      */
     inline AssumeRoleWithSAMLResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
 
+
     /**
      * <p>The identifiers for the temporary security credentials that the operation
      * returns.</p>
@@ -131,6 +133,7 @@ namespace Model
      */
     inline AssumeRoleWithSAMLResult& WithAssumedRoleUser(AssumedRoleUser&& value) { SetAssumedRoleUser(std::move(value)); return *this;}
 
+
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
@@ -151,6 +154,7 @@ namespace Model
      * means the policy exceeded the allowed space.</p>
      */
     inline AssumeRoleWithSAMLResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
+
 
     /**
      * <p>The value of the <code>NameID</code> element in the <code>Subject</code>
@@ -193,6 +197,7 @@ namespace Model
      * element of the SAML assertion.</p>
      */
     inline AssumeRoleWithSAMLResult& WithSubject(const char* value) { SetSubject(value); return *this;}
+
 
     /**
      * <p> The format of the name ID, as defined by the <code>Format</code> attribute
@@ -278,6 +283,7 @@ namespace Model
      */
     inline AssumeRoleWithSAMLResult& WithSubjectType(const char* value) { SetSubjectType(value); return *this;}
 
+
     /**
      * <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
      */
@@ -312,6 +318,7 @@ namespace Model
      * <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
      */
     inline AssumeRoleWithSAMLResult& WithIssuer(const char* value) { SetIssuer(value); return *this;}
+
 
     /**
      * <p> The value of the <code>Recipient</code> attribute of the
@@ -354,6 +361,7 @@ namespace Model
      * <code>SubjectConfirmationData</code> element of the SAML assertion. </p>
      */
     inline AssumeRoleWithSAMLResult& WithAudience(const char* value) { SetAudience(value); return *this;}
+
 
     /**
      * <p>A hash value based on the concatenation of the <code>Issuer</code> response
@@ -432,6 +440,7 @@ namespace Model
      */
     inline AssumeRoleWithSAMLResult& WithNameQualifier(const char* value) { SetNameQualifier(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -448,14 +457,23 @@ namespace Model
     inline AssumeRoleWithSAMLResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Credentials m_credentials;
+
     AssumedRoleUser m_assumedRoleUser;
+
     int m_packedPolicySize;
+
     Aws::String m_subject;
+
     Aws::String m_subjectType;
+
     Aws::String m_issuer;
+
     Aws::String m_audience;
+
     Aws::String m_nameQualifier;
+
     ResponseMetadata m_responseMetadata;
   };
 

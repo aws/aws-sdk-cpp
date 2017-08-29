@@ -46,6 +46,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>If true, enables a local VPC to resolve public DNS hostnames to private IP
      * addresses when queried from instances in the peer VPC.</p>
@@ -64,6 +65,7 @@ namespace Model
      */
     inline PeeringConnectionOptions& WithAllowDnsResolutionFromRemoteVpc(bool value) { SetAllowDnsResolutionFromRemoteVpc(value); return *this;}
 
+
     /**
      * <p>If true, enables outbound communication from an EC2-Classic instance that's
      * linked to a local VPC via ClassicLink to instances in a peer VPC.</p>
@@ -81,6 +83,7 @@ namespace Model
      * linked to a local VPC via ClassicLink to instances in a peer VPC.</p>
      */
     inline PeeringConnectionOptions& WithAllowEgressFromLocalClassicLinkToRemoteVpc(bool value) { SetAllowEgressFromLocalClassicLinkToRemoteVpc(value); return *this;}
+
 
     /**
      * <p>If true, enables outbound communication from instances in a local VPC to an
@@ -101,10 +104,13 @@ namespace Model
     inline PeeringConnectionOptions& WithAllowEgressFromLocalVpcToRemoteClassicLink(bool value) { SetAllowEgressFromLocalVpcToRemoteClassicLink(value); return *this;}
 
   private:
+
     bool m_allowDnsResolutionFromRemoteVpc;
     bool m_allowDnsResolutionFromRemoteVpcHasBeenSet;
+
     bool m_allowEgressFromLocalClassicLinkToRemoteVpc;
     bool m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet;
+
     bool m_allowEgressFromLocalVpcToRemoteClassicLink;
     bool m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet;
   };

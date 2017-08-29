@@ -40,6 +40,7 @@ namespace Model
     SetIdentityPoolConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A name-spaced GUID (for example,
      * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This
@@ -89,6 +90,7 @@ namespace Model
      */
     inline SetIdentityPoolConfigurationRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * <p>Options to apply to this identity pool for push synchronization.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>Options to apply to this identity pool for push synchronization.</p>
      */
     inline SetIdentityPoolConfigurationRequest& WithPushSync(PushSync&& value) { SetPushSync(std::move(value)); return *this;}
+
 
     /**
      * Options to apply to this identity pool for Amazon Cognito streams.
@@ -140,10 +143,13 @@ namespace Model
     inline SetIdentityPoolConfigurationRequest& WithCognitoStreams(CognitoStreams&& value) { SetCognitoStreams(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     PushSync m_pushSync;
     bool m_pushSyncHasBeenSet;
+
     CognitoStreams m_cognitoStreams;
     bool m_cognitoStreamsHasBeenSet;
   };

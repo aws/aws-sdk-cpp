@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeServicesResult();
-    DescribeServicesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeServicesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of services described.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of services described.</p>
      */
     inline DescribeServicesResult& AddServices(Service&& value) { m_services.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline DescribeServicesResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Service> m_services;
+
     Aws::Vector<Failure> m_failures;
   };
 

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the solution stack.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the solution stack.</p>
      */
     inline SolutionStackDescription& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
+
 
     /**
      * <p>The permitted file types allowed for a solution stack.</p>
@@ -125,8 +127,10 @@ namespace Model
     inline SolutionStackDescription& AddPermittedFileTypes(const char* value) { m_permittedFileTypesHasBeenSet = true; m_permittedFileTypes.push_back(value); return *this; }
 
   private:
+
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_permittedFileTypes;
     bool m_permittedFileTypesHasBeenSet;
   };

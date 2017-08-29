@@ -49,6 +49,7 @@ namespace Model
     StorageGatewayError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Additional information about the error.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>Additional information about the error.</p>
      */
     inline StorageGatewayError& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+
 
     /**
      * <p>Human-readable text that provides detail about the error that occurred.</p>
@@ -135,8 +137,10 @@ namespace Model
     inline StorageGatewayError& AddErrorDetails(const char* key, const char* value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace(key, value); return *this; }
 
   private:
+
     ErrorCode m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_errorDetails;
     bool m_errorDetailsHasBeenSet;
   };

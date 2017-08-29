@@ -45,6 +45,7 @@ namespace Model
     GroupMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the user group.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ID of the user group.</p>
      */
     inline GroupMetadata& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the group.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline GroupMetadata& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

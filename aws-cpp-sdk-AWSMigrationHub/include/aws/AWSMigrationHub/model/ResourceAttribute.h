@@ -46,6 +46,7 @@ namespace Model
     ResourceAttribute& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Type of resource.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Type of resource.</p>
      */
     inline ResourceAttribute& WithType(ResourceAttributeType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Value of the resource type.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline ResourceAttribute& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     ResourceAttributeType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

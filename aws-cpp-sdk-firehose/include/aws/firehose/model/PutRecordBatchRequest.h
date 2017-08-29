@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the delivery stream.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the delivery stream.</p>
      */
     inline PutRecordBatchRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
+
 
     /**
      * <p>One or more records.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline PutRecordBatchRequest& AddRecords(Record&& value) { m_recordsHasBeenSet = true; m_records.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet;
+
     Aws::Vector<Record> m_records;
     bool m_recordsHasBeenSet;
   };

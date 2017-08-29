@@ -30,12 +30,12 @@ CreateAssessmentTargetResult::CreateAssessmentTargetResult()
 {
 }
 
-CreateAssessmentTargetResult::CreateAssessmentTargetResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateAssessmentTargetResult::CreateAssessmentTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateAssessmentTargetResult& CreateAssessmentTargetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateAssessmentTargetResult& CreateAssessmentTargetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("assessmentTargetArn"))

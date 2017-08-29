@@ -30,12 +30,12 @@ CreateKeysAndCertificateResult::CreateKeysAndCertificateResult()
 {
 }
 
-CreateKeysAndCertificateResult::CreateKeysAndCertificateResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateKeysAndCertificateResult::CreateKeysAndCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateKeysAndCertificateResult& CreateKeysAndCertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateKeysAndCertificateResult& CreateKeysAndCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("certificateArn"))

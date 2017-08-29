@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
 
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline StartOnDemandReplicationRunRequest& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
+
 
     
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -79,8 +81,10 @@ namespace Model
     inline StartOnDemandReplicationRunRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_replicationJobId;
     bool m_replicationJobIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

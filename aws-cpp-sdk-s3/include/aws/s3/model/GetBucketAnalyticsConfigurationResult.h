@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetBucketAnalyticsConfigurationResult();
-    GetBucketAnalyticsConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketAnalyticsConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketAnalyticsConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketAnalyticsConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * The configuration and any analyses for the analytics filter.
@@ -67,6 +68,7 @@ namespace Model
     inline GetBucketAnalyticsConfigurationResult& WithAnalyticsConfiguration(AnalyticsConfiguration&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
 
   private:
+
     AnalyticsConfiguration m_analyticsConfiguration;
   };
 

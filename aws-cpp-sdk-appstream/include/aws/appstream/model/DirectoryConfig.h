@@ -49,6 +49,7 @@ namespace Model
     DirectoryConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The fully qualified name of the directory, such as corp.example.com</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The fully qualified name of the directory, such as corp.example.com</p>
      */
     inline DirectoryConfig& WithDirectoryName(const char* value) { SetDirectoryName(value); return *this;}
+
 
     /**
      * <p>The list of the distinguished names of organizational units in which to place
@@ -132,6 +134,7 @@ namespace Model
      */
     inline DirectoryConfig& AddOrganizationalUnitDistinguishedNames(const char* value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames.push_back(value); return *this; }
 
+
     /**
      * <p>The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to
      * be used by the streaming instance to connect to the directory.</p>
@@ -161,6 +164,7 @@ namespace Model
      * be used by the streaming instance to connect to the directory.</p>
      */
     inline DirectoryConfig& WithServiceAccountCredentials(ServiceAccountCredentials&& value) { SetServiceAccountCredentials(std::move(value)); return *this;}
+
 
     /**
      * <p>The time stamp when the directory configuration was created within AppStream
@@ -193,12 +197,16 @@ namespace Model
     inline DirectoryConfig& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryName;
     bool m_directoryNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_organizationalUnitDistinguishedNames;
     bool m_organizationalUnitDistinguishedNamesHasBeenSet;
+
     ServiceAccountCredentials m_serviceAccountCredentials;
     bool m_serviceAccountCredentialsHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
   };

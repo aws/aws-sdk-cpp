@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
      * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
@@ -96,6 +97,7 @@ namespace Model
      */
     inline ListTagsRequest& AddResourceIdList(const char* value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(value); return *this; }
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -132,8 +134,10 @@ namespace Model
     inline ListTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_resourceIdList;
     bool m_resourceIdListHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

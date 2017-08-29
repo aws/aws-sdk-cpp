@@ -31,12 +31,12 @@ ModifyClusterIamRolesResult::ModifyClusterIamRolesResult()
 {
 }
 
-ModifyClusterIamRolesResult::ModifyClusterIamRolesResult(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyClusterIamRolesResult::ModifyClusterIamRolesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifyClusterIamRolesResult& ModifyClusterIamRolesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyClusterIamRolesResult& ModifyClusterIamRolesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

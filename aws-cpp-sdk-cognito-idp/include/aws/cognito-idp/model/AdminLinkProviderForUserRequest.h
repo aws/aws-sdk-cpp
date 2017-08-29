@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The user pool ID for the user pool.</p>
      */
     inline AdminLinkProviderForUserRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The existing user in the user pool to be linked to the external identity
@@ -131,6 +133,7 @@ namespace Model
      * <code>ProviderAttributeName</code> will always be ignored.</p>
      */
     inline AdminLinkProviderForUserRequest& WithDestinationUser(ProviderUserIdentifierType&& value) { SetDestinationUser(std::move(value)); return *this;}
+
 
     /**
      * <p>An external identity provider account for a user who does not currently exist
@@ -253,10 +256,13 @@ namespace Model
     inline AdminLinkProviderForUserRequest& WithSourceUser(ProviderUserIdentifierType&& value) { SetSourceUser(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     ProviderUserIdentifierType m_destinationUser;
     bool m_destinationUserHasBeenSet;
+
     ProviderUserIdentifierType m_sourceUser;
     bool m_sourceUserHasBeenSet;
   };

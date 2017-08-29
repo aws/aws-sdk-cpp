@@ -30,12 +30,12 @@ UpdatePipelineResult::UpdatePipelineResult()
 {
 }
 
-UpdatePipelineResult::UpdatePipelineResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdatePipelineResult::UpdatePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdatePipelineResult& UpdatePipelineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdatePipelineResult& UpdatePipelineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("pipeline"))

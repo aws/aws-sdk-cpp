@@ -39,6 +39,7 @@ namespace Model
     UpdateTrafficPolicyInstanceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the traffic policy instance that you want to update.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline UpdateTrafficPolicyInstanceRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The TTL that you want Amazon Route 53 to assign to all of the updated
      * resource record sets.</p>
@@ -91,6 +93,7 @@ namespace Model
      * resource record sets.</p>
      */
     inline UpdateTrafficPolicyInstanceRequest& WithTTL(long long value) { SetTTL(value); return *this;}
+
 
     /**
      * <p>The ID of the traffic policy that you want Amazon Route 53 to use to update
@@ -134,6 +137,7 @@ namespace Model
      */
     inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyId(const char* value) { SetTrafficPolicyId(value); return *this;}
 
+
     /**
      * <p>The version of the traffic policy that you want Amazon Route 53 to use to
      * update resource record sets for the specified traffic policy instance.</p>
@@ -153,12 +157,16 @@ namespace Model
     inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyVersion(int value) { SetTrafficPolicyVersion(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     long long m_tTL;
     bool m_tTLHasBeenSet;
+
     Aws::String m_trafficPolicyId;
     bool m_trafficPolicyIdHasBeenSet;
+
     int m_trafficPolicyVersion;
     bool m_trafficPolicyVersionHasBeenSet;
   };

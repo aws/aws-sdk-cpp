@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     BatchGetItemResult();
-    BatchGetItemResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetItemResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A map of table name to a list of items. Each object in <code>Responses</code>
@@ -128,6 +129,7 @@ namespace Model
      * data type and attribute value.</p>
      */
     inline BatchGetItemResult& AddResponses(const char* key, const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_responses.emplace(key, value); return *this; }
+
 
     /**
      * <p>A map of tables and their respective keys that were not processed with the
@@ -338,6 +340,7 @@ namespace Model
      */
     inline BatchGetItemResult& AddUnprocessedKeys(const char* key, const KeysAndAttributes& value) { m_unprocessedKeys.emplace(key, value); return *this; }
 
+
     /**
      * <p>The read capacity units consumed by the entire <code>BatchGetItem</code>
      * operation.</p> <p>Each element consists of:</p> <ul> <li> <p>
@@ -402,8 +405,11 @@ namespace Model
     inline BatchGetItemResult& AddConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>> m_responses;
+
     Aws::Map<Aws::String, KeysAndAttributes> m_unprocessedKeys;
+
     Aws::Vector<ConsumedCapacity> m_consumedCapacity;
   };
 

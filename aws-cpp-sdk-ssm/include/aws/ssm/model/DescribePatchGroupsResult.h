@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribePatchGroupsResult();
-    DescribePatchGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePatchGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePatchGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePatchGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Each entry in the array contains:</p> <p>PatchGroup: string (between 1 and
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribePatchGroupsResult& AddMappings(PatchGroupPatchBaselineMapping&& value) { m_mappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
@@ -135,7 +137,9 @@ namespace Model
     inline DescribePatchGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PatchGroupPatchBaselineMapping> m_mappings;
+
     Aws::String m_nextToken;
   };
 

@@ -31,12 +31,12 @@ DeleteDBClusterResult::DeleteDBClusterResult()
 {
 }
 
-DeleteDBClusterResult::DeleteDBClusterResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteDBClusterResult::DeleteDBClusterResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteDBClusterResult& DeleteDBClusterResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteDBClusterResult& DeleteDBClusterResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

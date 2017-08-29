@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Identifier of the directory for which to retrieve the domain controller
      * information.</p>
@@ -78,6 +79,7 @@ namespace Model
      * information.</p>
      */
     inline DescribeDomainControllersRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>A list of identifiers for the domain controllers whose information will be
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeDomainControllersRequest& AddDomainControllerIds(const char* value) { m_domainControllerIdsHasBeenSet = true; m_domainControllerIds.push_back(value); return *this; }
 
+
     /**
      * <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to
      * <a>DescribeDomainControllers</a>. Pass null if this is the first call. </p>
@@ -169,6 +172,7 @@ namespace Model
      */
     inline DescribeDomainControllersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return.</p>
      */
@@ -185,12 +189,16 @@ namespace Model
     inline DescribeDomainControllersRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_domainControllerIds;
     bool m_domainControllerIdsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

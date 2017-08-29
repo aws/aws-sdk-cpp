@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ModifyDBSnapshotAttributeResult();
-    ModifyDBSnapshotAttributeResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyDBSnapshotAttributeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyDBSnapshotAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyDBSnapshotAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DBSnapshotAttributesResult& GetDBSnapshotAttributesResult() const{ return m_dBSnapshotAttributesResult; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline ModifyDBSnapshotAttributeResult& WithDBSnapshotAttributesResult(DBSnapshotAttributesResult&& value) { SetDBSnapshotAttributesResult(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline ModifyDBSnapshotAttributeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DBSnapshotAttributesResult m_dBSnapshotAttributesResult;
+
     ResponseMetadata m_responseMetadata;
   };
 

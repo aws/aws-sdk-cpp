@@ -30,12 +30,12 @@ PutReportDefinitionResult::PutReportDefinitionResult()
 {
 }
 
-PutReportDefinitionResult::PutReportDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+PutReportDefinitionResult::PutReportDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutReportDefinitionResult& PutReportDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutReportDefinitionResult& PutReportDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

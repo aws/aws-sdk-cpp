@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of your security group.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline SecurityGroupReference& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
+
     /**
      * <p>The ID of the VPC with the referencing security group.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The ID of the VPC with the referencing security group.</p>
      */
     inline SecurityGroupReference& WithReferencingVpcId(const char* value) { SetReferencingVpcId(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC peering connection.</p>
@@ -155,10 +158,13 @@ namespace Model
     inline SecurityGroupReference& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
   private:
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::String m_referencingVpcId;
     bool m_referencingVpcIdHasBeenSet;
+
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
   };

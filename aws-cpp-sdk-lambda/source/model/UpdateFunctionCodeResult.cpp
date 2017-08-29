@@ -34,7 +34,7 @@ UpdateFunctionCodeResult::UpdateFunctionCodeResult() :
 {
 }
 
-UpdateFunctionCodeResult::UpdateFunctionCodeResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateFunctionCodeResult::UpdateFunctionCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_runtime(Runtime::NOT_SET),
     m_codeSize(0),
     m_timeout(0),
@@ -43,7 +43,7 @@ UpdateFunctionCodeResult::UpdateFunctionCodeResult(const AmazonWebServiceResult<
   *this = result;
 }
 
-UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FunctionName"))

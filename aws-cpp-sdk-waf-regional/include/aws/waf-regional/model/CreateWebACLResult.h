@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateWebACLResult();
-    CreateWebACLResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateWebACLResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <a>WebACL</a> returned in the <code>CreateWebACL</code> response.</p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>The <a>WebACL</a> returned in the <code>CreateWebACL</code> response.</p>
      */
     inline CreateWebACLResult& WithWebACL(WebACL&& value) { SetWebACL(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -124,7 +126,9 @@ namespace Model
     inline CreateWebACLResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     WebACL m_webACL;
+
     Aws::String m_changeToken;
   };
 

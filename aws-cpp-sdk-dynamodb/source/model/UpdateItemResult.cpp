@@ -30,12 +30,12 @@ UpdateItemResult::UpdateItemResult()
 {
 }
 
-UpdateItemResult::UpdateItemResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateItemResult::UpdateItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateItemResult& UpdateItemResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateItemResult& UpdateItemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Attributes"))

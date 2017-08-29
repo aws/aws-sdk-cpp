@@ -50,6 +50,7 @@ namespace Model
     PlacementConstraint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
      * task in a particular group is running on a different container instance. Use
@@ -89,6 +90,7 @@ namespace Model
      * that <code>distinctInstance</code> is not supported in task definitions.</p>
      */
     inline PlacementConstraint& WithType(PlacementConstraintType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>A cluster query language expression to apply to the constraint. Note you
@@ -161,8 +163,10 @@ namespace Model
     inline PlacementConstraint& WithExpression(const char* value) { SetExpression(value); return *this;}
 
   private:
+
     PlacementConstraintType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_expression;
     bool m_expressionHasBeenSet;
   };

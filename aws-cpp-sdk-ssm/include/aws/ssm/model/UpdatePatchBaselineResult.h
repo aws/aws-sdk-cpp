@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdatePatchBaselineResult();
-    UpdatePatchBaselineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePatchBaselineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePatchBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the deleted patch baseline.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline UpdatePatchBaselineResult& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
 
+
     /**
      * <p>The name of the patch baseline.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      */
     inline UpdatePatchBaselineResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The operating system rule used by the updated patch baseline.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      * <p>The operating system rule used by the updated patch baseline.</p>
      */
     inline UpdatePatchBaselineResult& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+
 
     /**
      * <p>A set of global filters used to exclude patches from the baseline.</p>
@@ -167,6 +171,7 @@ namespace Model
      */
     inline UpdatePatchBaselineResult& WithGlobalFilters(PatchFilterGroup&& value) { SetGlobalFilters(std::move(value)); return *this;}
 
+
     /**
      * <p>A set of rules used to include patches in the baseline.</p>
      */
@@ -191,6 +196,7 @@ namespace Model
      * <p>A set of rules used to include patches in the baseline.</p>
      */
     inline UpdatePatchBaselineResult& WithApprovalRules(PatchRuleGroup&& value) { SetApprovalRules(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of explicitly approved patches for the baseline.</p>
@@ -232,6 +238,7 @@ namespace Model
      */
     inline UpdatePatchBaselineResult& AddApprovedPatches(const char* value) { m_approvedPatches.push_back(value); return *this; }
 
+
     /**
      * <p>The compliance severity level assigned to the patch baseline after the update
      * completed.</p>
@@ -261,6 +268,7 @@ namespace Model
      * completed.</p>
      */
     inline UpdatePatchBaselineResult& WithApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { SetApprovedPatchesComplianceLevel(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p>
@@ -302,6 +310,7 @@ namespace Model
      */
     inline UpdatePatchBaselineResult& AddRejectedPatches(const char* value) { m_rejectedPatches.push_back(value); return *this; }
 
+
     /**
      * <p>The date when the patch baseline was created.</p>
      */
@@ -327,6 +336,7 @@ namespace Model
      */
     inline UpdatePatchBaselineResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date when the patch baseline was last modified.</p>
      */
@@ -351,6 +361,7 @@ namespace Model
      * <p>The date when the patch baseline was last modified.</p>
      */
     inline UpdatePatchBaselineResult& WithModifiedDate(Aws::Utils::DateTime&& value) { SetModifiedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the Patch Baseline.</p>
@@ -388,16 +399,27 @@ namespace Model
     inline UpdatePatchBaselineResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_baselineId;
+
     Aws::String m_name;
+
     OperatingSystem m_operatingSystem;
+
     PatchFilterGroup m_globalFilters;
+
     PatchRuleGroup m_approvalRules;
+
     Aws::Vector<Aws::String> m_approvedPatches;
+
     PatchComplianceLevel m_approvedPatchesComplianceLevel;
+
     Aws::Vector<Aws::String> m_rejectedPatches;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::Utils::DateTime m_modifiedDate;
+
     Aws::String m_description;
   };
 

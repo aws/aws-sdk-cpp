@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether to block or allow incoming mail from the specified IP
      * addresses.</p>
@@ -82,6 +83,7 @@ namespace Model
      * addresses.</p>
      */
     inline ReceiptIpFilter& WithPolicy(ReceiptFilterPolicy&& value) { SetPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>A single IP address or a range of IP addresses that you want to block or
@@ -147,8 +149,10 @@ namespace Model
     inline ReceiptIpFilter& WithCidr(const char* value) { SetCidr(value); return *this;}
 
   private:
+
     ReceiptFilterPolicy m_policy;
     bool m_policyHasBeenSet;
+
     Aws::String m_cidr;
     bool m_cidrHasBeenSet;
   };

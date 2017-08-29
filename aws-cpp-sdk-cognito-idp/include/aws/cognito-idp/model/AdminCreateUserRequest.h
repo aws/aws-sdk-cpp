@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool where the user will be created.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The user pool ID for the user pool where the user will be created.</p>
      */
     inline AdminCreateUserRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The username for the user. Must be unique within the user pool. Must be a
@@ -127,6 +129,7 @@ namespace Model
      * username cannot be changed.</p>
      */
     inline AdminCreateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>An array of name-value pairs that contain user attributes and attribute
@@ -338,6 +341,7 @@ namespace Model
      */
     inline AdminCreateUserRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The user's validation data. This is an array of name-value pairs that contain
      * user attributes and attribute values that you can use for custom validation,
@@ -421,6 +425,7 @@ namespace Model
      * validation process.</p> <p>The user's validation data is not persisted.</p>
      */
     inline AdminCreateUserRequest& AddValidationData(AttributeType&& value) { m_validationDataHasBeenSet = true; m_validationData.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The user's temporary password. This password must conform to the password
@@ -520,6 +525,7 @@ namespace Model
      */
     inline AdminCreateUserRequest& WithTemporaryPassword(const char* value) { SetTemporaryPassword(value); return *this;}
 
+
     /**
      * <p>This parameter is only used if the <code>phone_number_verified</code> or
      * <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it
@@ -558,6 +564,7 @@ namespace Model
      * the alias already exists. The default value is <code>False</code>.</p>
      */
     inline AdminCreateUserRequest& WithForceAliasCreation(bool value) { SetForceAliasCreation(value); return *this;}
+
 
     /**
      * <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that
@@ -598,6 +605,7 @@ namespace Model
      * specified.</p>
      */
     inline AdminCreateUserRequest& WithMessageAction(MessageActionType&& value) { SetMessageAction(std::move(value)); return *this;}
+
 
     /**
      * <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome
@@ -649,20 +657,28 @@ namespace Model
     inline AdminCreateUserRequest& AddDesiredDeliveryMediums(DeliveryMediumType&& value) { m_desiredDeliveryMediumsHasBeenSet = true; m_desiredDeliveryMediums.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::Vector<AttributeType> m_userAttributes;
     bool m_userAttributesHasBeenSet;
+
     Aws::Vector<AttributeType> m_validationData;
     bool m_validationDataHasBeenSet;
+
     Aws::String m_temporaryPassword;
     bool m_temporaryPasswordHasBeenSet;
+
     bool m_forceAliasCreation;
     bool m_forceAliasCreationHasBeenSet;
+
     MessageActionType m_messageAction;
     bool m_messageActionHasBeenSet;
+
     Aws::Vector<DeliveryMediumType> m_desiredDeliveryMediums;
     bool m_desiredDeliveryMediumsHasBeenSet;
   };

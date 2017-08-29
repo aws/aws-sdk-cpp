@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeMatchmakingConfigurationsResult();
-    DescribeMatchmakingConfigurationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMatchmakingConfigurationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMatchmakingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMatchmakingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of requested matchmaking configuration objects.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Collection of requested matchmaking configuration objects.</p>
      */
     inline DescribeMatchmakingConfigurationsResult& AddConfigurations(MatchmakingConfiguration&& value) { m_configurations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -134,7 +136,9 @@ namespace Model
     inline DescribeMatchmakingConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<MatchmakingConfiguration> m_configurations;
+
     Aws::String m_nextToken;
   };
 

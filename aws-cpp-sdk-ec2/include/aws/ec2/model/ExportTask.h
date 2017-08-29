@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A description of the resource being exported.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>A description of the resource being exported.</p>
      */
     inline ExportTask& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The ID of the export task.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline ExportTask& WithExportTaskId(const char* value) { SetExportTaskId(value); return *this;}
 
+
     /**
      * <p>Information about the export task.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>Information about the export task.</p>
      */
     inline ExportTask& WithExportToS3Task(ExportToS3Task&& value) { SetExportToS3Task(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the instance to export.</p>
@@ -171,6 +175,7 @@ namespace Model
      */
     inline ExportTask& WithInstanceExportDetails(InstanceExportDetails&& value) { SetInstanceExportDetails(std::move(value)); return *this;}
 
+
     /**
      * <p>The state of the export task.</p>
      */
@@ -195,6 +200,7 @@ namespace Model
      * <p>The state of the export task.</p>
      */
     inline ExportTask& WithState(ExportTaskState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The status message related to the export task.</p>
@@ -232,16 +238,22 @@ namespace Model
     inline ExportTask& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_exportTaskId;
     bool m_exportTaskIdHasBeenSet;
+
     ExportToS3Task m_exportToS3Task;
     bool m_exportToS3TaskHasBeenSet;
+
     InstanceExportDetails m_instanceExportDetails;
     bool m_instanceExportDetailsHasBeenSet;
+
     ExportTaskState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
   };

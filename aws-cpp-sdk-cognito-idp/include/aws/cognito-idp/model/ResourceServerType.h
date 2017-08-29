@@ -48,6 +48,7 @@ namespace Model
     ResourceServerType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user pool ID for the user pool that hosts the resource server.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The user pool ID for the user pool that hosts the resource server.</p>
      */
     inline ResourceServerType& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The identifier for the resource server.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline ResourceServerType& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
+
     /**
      * <p>The name of the resource server.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The name of the resource server.</p>
      */
     inline ResourceServerType& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A list of scopes that are defined for the resource server.</p>
@@ -189,12 +193,16 @@ namespace Model
     inline ResourceServerType& AddScopes(ResourceServerScopeType&& value) { m_scopesHasBeenSet = true; m_scopes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_identifier;
     bool m_identifierHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<ResourceServerScopeType> m_scopes;
     bool m_scopesHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the security group. Required for a nondefault VPC.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The ID of the security group. Required for a nondefault VPC.</p>
      */
     inline DeleteSecurityGroupRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group. You can specify
@@ -119,6 +121,7 @@ namespace Model
      */
     inline DeleteSecurityGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -144,10 +147,13 @@ namespace Model
     inline DeleteSecurityGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

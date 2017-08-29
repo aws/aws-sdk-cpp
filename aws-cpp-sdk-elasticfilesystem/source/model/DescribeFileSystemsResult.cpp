@@ -30,12 +30,12 @@ DescribeFileSystemsResult::DescribeFileSystemsResult()
 {
 }
 
-DescribeFileSystemsResult::DescribeFileSystemsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeFileSystemsResult::DescribeFileSystemsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeFileSystemsResult& DescribeFileSystemsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeFileSystemsResult& DescribeFileSystemsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Marker"))

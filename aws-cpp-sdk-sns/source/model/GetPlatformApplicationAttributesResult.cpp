@@ -31,12 +31,12 @@ GetPlatformApplicationAttributesResult::GetPlatformApplicationAttributesResult()
 {
 }
 
-GetPlatformApplicationAttributesResult::GetPlatformApplicationAttributesResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetPlatformApplicationAttributesResult::GetPlatformApplicationAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetPlatformApplicationAttributesResult& GetPlatformApplicationAttributesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetPlatformApplicationAttributesResult& GetPlatformApplicationAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

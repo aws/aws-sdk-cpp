@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the
      * repositories to be described. If you do not specify a registry, the default
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeRepositoriesRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
      * repositories in a registry are described.</p>
@@ -133,6 +135,7 @@ namespace Model
      * repositories in a registry are described.</p>
      */
     inline DescribeRepositoriesRequest& AddRepositoryNames(const char* value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -218,6 +221,7 @@ namespace Model
      */
     inline DescribeRepositoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of repository results returned by
      * <code>DescribeRepositories</code> in paginated output. When this parameter is
@@ -258,12 +262,16 @@ namespace Model
     inline DescribeRepositoriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_repositoryNames;
     bool m_repositoryNamesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

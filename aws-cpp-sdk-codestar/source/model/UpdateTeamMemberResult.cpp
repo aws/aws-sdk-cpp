@@ -31,13 +31,13 @@ UpdateTeamMemberResult::UpdateTeamMemberResult() :
 {
 }
 
-UpdateTeamMemberResult::UpdateTeamMemberResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateTeamMemberResult::UpdateTeamMemberResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_remoteAccessAllowed(false)
 {
   *this = result;
 }
 
-UpdateTeamMemberResult& UpdateTeamMemberResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateTeamMemberResult& UpdateTeamMemberResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("userArn"))

@@ -48,6 +48,7 @@ namespace Model
     StorageType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetStorageTypeName() const{ return m_storageTypeName; }
 
@@ -69,6 +70,7 @@ namespace Model
     
     inline StorageType& WithStorageTypeName(const char* value) { SetStorageTypeName(value); return *this;}
 
+
     
     inline const Aws::String& GetStorageSubTypeName() const{ return m_storageSubTypeName; }
 
@@ -89,6 +91,7 @@ namespace Model
 
     
     inline StorageType& WithStorageSubTypeName(const char* value) { SetStorageSubTypeName(value); return *this;}
+
 
     /**
      * <p>List of limits that are applicable for given storage type. </p>
@@ -126,10 +129,13 @@ namespace Model
     inline StorageType& AddStorageTypeLimits(StorageTypeLimit&& value) { m_storageTypeLimitsHasBeenSet = true; m_storageTypeLimits.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_storageTypeName;
     bool m_storageTypeNameHasBeenSet;
+
     Aws::String m_storageSubTypeName;
     bool m_storageSubTypeNameHasBeenSet;
+
     Aws::Vector<StorageTypeLimit> m_storageTypeLimits;
     bool m_storageTypeLimitsHasBeenSet;
   };

@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the build project.</p> <note> <p>You cannot change a build
      * project's name.</p> </note>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline UpdateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A new or replacement description of the build project.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline UpdateProjectRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Information to be changed about the build input source code for the build
      * project.</p>
@@ -147,6 +150,7 @@ namespace Model
      * project.</p>
      */
     inline UpdateProjectRequest& WithSource(ProjectSource&& value) { SetSource(std::move(value)); return *this;}
+
 
     /**
      * <p>Information to be changed about the build output artifacts for the build
@@ -178,6 +182,7 @@ namespace Model
      */
     inline UpdateProjectRequest& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(std::move(value)); return *this;}
 
+
     /**
      * <p>Information to be changed about the build environment for the build
      * project.</p>
@@ -207,6 +212,7 @@ namespace Model
      * project.</p>
      */
     inline UpdateProjectRequest& WithEnvironment(ProjectEnvironment&& value) { SetEnvironment(std::move(value)); return *this;}
+
 
     /**
      * <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that
@@ -257,6 +263,7 @@ namespace Model
      */
     inline UpdateProjectRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
+
     /**
      * <p>The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild
      * to wait before timing out any related build that did not get marked as
@@ -277,6 +284,7 @@ namespace Model
      * completed.</p>
      */
     inline UpdateProjectRequest& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
+
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
@@ -334,6 +342,7 @@ namespace Model
      */
     inline UpdateProjectRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
+
     /**
      * <p>The replacement set of tags for this build project.</p> <p>These tags are
      * available for use by AWS services that support AWS CodeBuild build project
@@ -384,22 +393,31 @@ namespace Model
     inline UpdateProjectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ProjectSource m_source;
     bool m_sourceHasBeenSet;
+
     ProjectArtifacts m_artifacts;
     bool m_artifactsHasBeenSet;
+
     ProjectEnvironment m_environment;
     bool m_environmentHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
+
     Aws::String m_encryptionKey;
     bool m_encryptionKeyHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -30,12 +30,12 @@ CreateAssociationBatchResult::CreateAssociationBatchResult()
 {
 }
 
-CreateAssociationBatchResult::CreateAssociationBatchResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateAssociationBatchResult::CreateAssociationBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateAssociationBatchResult& CreateAssociationBatchResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateAssociationBatchResult& CreateAssociationBatchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Successful"))

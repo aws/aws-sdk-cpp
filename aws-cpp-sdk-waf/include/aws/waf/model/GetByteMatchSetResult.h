@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetByteMatchSetResult();
-    GetByteMatchSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetByteMatchSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetByteMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetByteMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the <a>ByteMatchSet</a> that you specified in the
@@ -112,6 +113,7 @@ namespace Model
     inline GetByteMatchSetResult& WithByteMatchSet(ByteMatchSet&& value) { SetByteMatchSet(std::move(value)); return *this;}
 
   private:
+
     ByteMatchSet m_byteMatchSet;
   };
 

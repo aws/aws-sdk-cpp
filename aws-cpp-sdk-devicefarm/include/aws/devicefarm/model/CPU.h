@@ -47,6 +47,7 @@ namespace Model
     CPU& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The CPU's frequency.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The CPU's frequency.</p>
      */
     inline CPU& WithFrequency(const char* value) { SetFrequency(value); return *this;}
+
 
     /**
      * <p>The CPU's architecture, for example x86 or ARM.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline CPU& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
 
+
     /**
      * <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a
      * 1.2 GHz CPU is expressed as 1200000000.</p>
@@ -136,10 +139,13 @@ namespace Model
     inline CPU& WithClock(double value) { SetClock(value); return *this;}
 
   private:
+
     Aws::String m_frequency;
     bool m_frequencyHasBeenSet;
+
     Aws::String m_architecture;
     bool m_architectureHasBeenSet;
+
     double m_clock;
     bool m_clockHasBeenSet;
   };

@@ -51,6 +51,7 @@ namespace Model
     GlobalSecondaryIndexUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of an existing global secondary index, along with new provisioned
      * throughput settings to be applied to that index.</p>
@@ -80,6 +81,7 @@ namespace Model
      * throughput settings to be applied to that index.</p>
      */
     inline GlobalSecondaryIndexUpdate& WithUpdate(UpdateGlobalSecondaryIndexAction&& value) { SetUpdate(std::move(value)); return *this;}
+
 
     /**
      * <p>The parameters required for creating a global secondary index on an existing
@@ -126,6 +128,7 @@ namespace Model
      */
     inline GlobalSecondaryIndexUpdate& WithCreate(CreateGlobalSecondaryIndexAction&& value) { SetCreate(std::move(value)); return *this;}
 
+
     /**
      * <p>The name of an existing global secondary index to be removed.</p>
      */
@@ -152,10 +155,13 @@ namespace Model
     inline GlobalSecondaryIndexUpdate& WithDelete(DeleteGlobalSecondaryIndexAction&& value) { SetDelete(std::move(value)); return *this;}
 
   private:
+
     UpdateGlobalSecondaryIndexAction m_update;
     bool m_updateHasBeenSet;
+
     CreateGlobalSecondaryIndexAction m_create;
     bool m_createHasBeenSet;
+
     DeleteGlobalSecondaryIndexAction m_delete;
     bool m_deleteHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteDomainEntryResult();
-    DeleteDomainEntryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDomainEntryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDomainEntryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDomainEntryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteDomainEntryResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
+
     Operation m_operation;
   };
 

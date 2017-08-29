@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeWorkspaceDirectoriesResult();
-    DescribeWorkspaceDirectoriesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkspaceDirectoriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkspaceDirectoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkspaceDirectoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of structures that contain information about the directories.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>An array of structures that contain information about the directories.</p>
      */
     inline DescribeWorkspaceDirectoriesResult& AddDirectories(WorkspaceDirectory&& value) { m_directories.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If not null, more results are available. Pass this value for the
@@ -141,7 +143,9 @@ namespace Model
     inline DescribeWorkspaceDirectoriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<WorkspaceDirectory> m_directories;
+
     Aws::String m_nextToken;
   };
 

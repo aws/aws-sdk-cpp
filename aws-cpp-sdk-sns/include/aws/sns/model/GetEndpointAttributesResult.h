@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetEndpointAttributesResult();
-    GetEndpointAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetEndpointAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetEndpointAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetEndpointAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
@@ -229,6 +230,7 @@ namespace Model
      */
     inline GetEndpointAttributesResult& AddAttributes(const char* key, const char* value) { m_attributes.emplace(key, value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -245,7 +247,9 @@ namespace Model
     inline GetEndpointAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
+
     ResponseMetadata m_responseMetadata;
   };
 

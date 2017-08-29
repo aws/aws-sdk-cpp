@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CancelKeyDeletionResult();
-    CancelKeyDeletionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelKeyDeletionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelKeyDeletionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelKeyDeletionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique identifier of the master key for which deletion is canceled.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CancelKeyDeletionResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     Aws::String m_keyId;
   };
 

@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The IDs of the Reserved Instances to modify.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The IDs of the Reserved Instances to modify.</p>
      */
     inline ModifyReservedInstancesRequest& AddReservedInstancesIds(const char* value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(value); return *this; }
+
 
     /**
      * <p>A unique, case-sensitive token you provide to ensure idempotency of your
@@ -140,6 +142,7 @@ namespace Model
      */
     inline ModifyReservedInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The configuration settings for the Reserved Instances to modify.</p>
      */
@@ -176,10 +179,13 @@ namespace Model
     inline ModifyReservedInstancesRequest& AddTargetConfigurations(ReservedInstancesConfiguration&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_reservedInstancesIds;
     bool m_reservedInstancesIdsHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::Vector<ReservedInstancesConfiguration> m_targetConfigurations;
     bool m_targetConfigurationsHasBeenSet;
   };

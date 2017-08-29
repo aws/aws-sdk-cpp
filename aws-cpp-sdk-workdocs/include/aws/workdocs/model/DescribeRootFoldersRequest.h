@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeRootFoldersRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return.</p>
      */
@@ -98,6 +100,7 @@ namespace Model
      * <p>The maximum number of items to return.</p>
      */
     inline DescribeRootFoldersRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -142,10 +145,13 @@ namespace Model
     inline DescribeRootFoldersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

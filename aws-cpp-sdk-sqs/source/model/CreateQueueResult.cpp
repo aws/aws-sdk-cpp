@@ -31,12 +31,12 @@ CreateQueueResult::CreateQueueResult()
 {
 }
 
-CreateQueueResult::CreateQueueResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateQueueResult::CreateQueueResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateQueueResult& CreateQueueResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateQueueResult& CreateQueueResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

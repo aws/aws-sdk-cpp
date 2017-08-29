@@ -52,6 +52,7 @@ namespace Model
     GameProperty& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Game property identifier.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>Game property identifier.</p>
      */
     inline GameProperty& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>Game property value.</p>
@@ -123,8 +125,10 @@ namespace Model
     inline GameProperty& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

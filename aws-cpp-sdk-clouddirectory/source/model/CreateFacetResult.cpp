@@ -30,12 +30,12 @@ CreateFacetResult::CreateFacetResult()
 {
 }
 
-CreateFacetResult::CreateFacetResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateFacetResult::CreateFacetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateFacetResult& CreateFacetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateFacetResult& CreateFacetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

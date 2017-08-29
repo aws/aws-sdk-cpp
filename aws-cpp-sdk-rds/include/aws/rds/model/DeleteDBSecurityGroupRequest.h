@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the DB security group to delete.</p> <note> <p>You cannot delete
      * the default DB security group.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must
@@ -105,6 +106,7 @@ namespace Model
     inline DeleteDBSecurityGroupRequest& WithDBSecurityGroupName(const char* value) { SetDBSecurityGroupName(value); return *this;}
 
   private:
+
     Aws::String m_dBSecurityGroupName;
     bool m_dBSecurityGroupNameHasBeenSet;
   };

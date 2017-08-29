@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain recordset to update.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline UpdateDomainEntryRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>An array of key-value pairs containing information about the domain
      * entry.</p>
@@ -103,8 +105,10 @@ namespace Model
     inline UpdateDomainEntryRequest& WithDomainEntry(DomainEntry&& value) { SetDomainEntry(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     DomainEntry m_domainEntry;
     bool m_domainEntryHasBeenSet;
   };

@@ -30,12 +30,12 @@ ScanProvisionedProductsResult::ScanProvisionedProductsResult()
 {
 }
 
-ScanProvisionedProductsResult::ScanProvisionedProductsResult(const AmazonWebServiceResult<JsonValue>& result)
+ScanProvisionedProductsResult::ScanProvisionedProductsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ScanProvisionedProductsResult& ScanProvisionedProductsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ScanProvisionedProductsResult& ScanProvisionedProductsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ProvisionedProducts"))

@@ -31,13 +31,13 @@ ListHITsForQualificationTypeResult::ListHITsForQualificationTypeResult() :
 {
 }
 
-ListHITsForQualificationTypeResult::ListHITsForQualificationTypeResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListHITsForQualificationTypeResult::ListHITsForQualificationTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_numResults(0)
 {
   *this = result;
 }
 
-ListHITsForQualificationTypeResult& ListHITsForQualificationTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListHITsForQualificationTypeResult& ListHITsForQualificationTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

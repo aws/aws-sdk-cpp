@@ -48,6 +48,7 @@ namespace Model
     SuggestModel& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The query string specified in the suggest request.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline SuggestModel& WithQuery(const char* value) { SetQuery(value); return *this;}
 
+
     /**
      * <p>The number of documents that were found to match the query string.</p>
      */
@@ -97,6 +99,7 @@ namespace Model
      * <p>The number of documents that were found to match the query string.</p>
      */
     inline SuggestModel& WithFound(long long value) { SetFound(value); return *this;}
+
 
     /**
      * <p>The documents that match the query string.</p>
@@ -134,10 +137,13 @@ namespace Model
     inline SuggestModel& AddSuggestions(SuggestionMatch&& value) { m_suggestionsHasBeenSet = true; m_suggestions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_query;
     bool m_queryHasBeenSet;
+
     long long m_found;
     bool m_foundHasBeenSet;
+
     Aws::Vector<SuggestionMatch> m_suggestions;
     bool m_suggestionsHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetBucketMetricsConfigurationResult();
-    GetBucketMetricsConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketMetricsConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketMetricsConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketMetricsConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * Specifies the metrics configuration.
@@ -67,6 +68,7 @@ namespace Model
     inline GetBucketMetricsConfigurationResult& WithMetricsConfiguration(MetricsConfiguration&& value) { SetMetricsConfiguration(std::move(value)); return *this;}
 
   private:
+
     MetricsConfiguration m_metricsConfiguration;
   };
 

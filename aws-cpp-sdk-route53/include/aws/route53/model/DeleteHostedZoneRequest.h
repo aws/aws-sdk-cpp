@@ -37,6 +37,7 @@ namespace Model
     DeleteHostedZoneRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the hosted zone you want to delete.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline DeleteHostedZoneRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

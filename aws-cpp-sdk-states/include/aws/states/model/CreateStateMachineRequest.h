@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the state machine. This name must be unique for your AWS account
      * and region.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline CreateStateMachineRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The Amazon States Language definition of the state machine.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The Amazon States Language definition of the state machine.</p>
      */
     inline CreateStateMachineRequest& WithDefinition(const char* value) { SetDefinition(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to use for this state
@@ -156,10 +159,13 @@ namespace Model
     inline CreateStateMachineRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_definition;
     bool m_definitionHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ReplaceNetworkAclAssociationResponse();
-    ReplaceNetworkAclAssociationResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ReplaceNetworkAclAssociationResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ReplaceNetworkAclAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ReplaceNetworkAclAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the new association.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ReplaceNetworkAclAssociationResponse& WithNewAssociationId(const char* value) { SetNewAssociationId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline ReplaceNetworkAclAssociationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_newAssociationId;
+
     ResponseMetadata m_responseMetadata;
   };
 

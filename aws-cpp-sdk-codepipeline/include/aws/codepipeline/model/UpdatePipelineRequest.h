@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the pipeline to be updated.</p>
      */
@@ -66,6 +67,7 @@ namespace Model
     inline UpdatePipelineRequest& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
 
   private:
+
     PipelineDeclaration m_pipeline;
     bool m_pipelineHasBeenSet;
   };

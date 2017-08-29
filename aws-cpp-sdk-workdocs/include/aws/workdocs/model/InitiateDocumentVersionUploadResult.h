@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     InitiateDocumentVersionUploadResult();
-    InitiateDocumentVersionUploadResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InitiateDocumentVersionUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateDocumentVersionUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateDocumentVersionUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The document metadata.</p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>The document metadata.</p>
      */
     inline InitiateDocumentVersionUploadResult& WithMetadata(DocumentMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+
 
     /**
      * <p>The upload metadata.</p>
@@ -93,7 +95,9 @@ namespace Model
     inline InitiateDocumentVersionUploadResult& WithUploadMetadata(UploadMetadata&& value) { SetUploadMetadata(std::move(value)); return *this;}
 
   private:
+
     DocumentMetadata m_metadata;
+
     UploadMetadata m_uploadMetadata;
   };
 

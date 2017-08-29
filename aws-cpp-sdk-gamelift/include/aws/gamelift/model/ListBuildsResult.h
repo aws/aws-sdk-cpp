@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListBuildsResult();
-    ListBuildsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBuildsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListBuildsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListBuildsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of build records that match the request.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Collection of build records that match the request.</p>
      */
     inline ListBuildsResult& AddBuilds(Build&& value) { m_builds.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -134,7 +136,9 @@ namespace Model
     inline ListBuildsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Build> m_builds;
+
     Aws::String m_nextToken;
   };
 

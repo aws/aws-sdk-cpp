@@ -49,6 +49,7 @@ namespace Model
     InstanceFleetStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A code representing the instance fleet status.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline InstanceFleetStatus& WithState(InstanceFleetState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides status change reason details for the instance fleet.</p>
      */
@@ -98,6 +100,7 @@ namespace Model
      * <p>Provides status change reason details for the instance fleet.</p>
      */
     inline InstanceFleetStatus& WithStateChangeReason(InstanceFleetStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides historical timestamps for the instance fleet, including the time of
@@ -130,10 +133,13 @@ namespace Model
     inline InstanceFleetStatus& WithTimeline(InstanceFleetTimeline&& value) { SetTimeline(std::move(value)); return *this;}
 
   private:
+
     InstanceFleetState m_state;
     bool m_stateHasBeenSet;
+
     InstanceFleetStateChangeReason m_stateChangeReason;
     bool m_stateChangeReasonHasBeenSet;
+
     InstanceFleetTimeline m_timeline;
     bool m_timelineHasBeenSet;
   };

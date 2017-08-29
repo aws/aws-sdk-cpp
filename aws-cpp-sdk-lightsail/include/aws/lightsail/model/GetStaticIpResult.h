@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetStaticIpResult();
-    GetStaticIpResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetStaticIpResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetStaticIpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetStaticIpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the requested static
@@ -72,6 +73,7 @@ namespace Model
     inline GetStaticIpResult& WithStaticIp(StaticIp&& value) { SetStaticIp(std::move(value)); return *this;}
 
   private:
+
     StaticIp m_staticIp;
   };
 

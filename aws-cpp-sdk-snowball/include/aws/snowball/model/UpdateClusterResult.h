@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateClusterResult();
-    UpdateClusterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

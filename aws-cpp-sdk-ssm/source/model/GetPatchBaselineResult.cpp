@@ -32,14 +32,14 @@ GetPatchBaselineResult::GetPatchBaselineResult() :
 {
 }
 
-GetPatchBaselineResult::GetPatchBaselineResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetPatchBaselineResult::GetPatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET)
 {
   *this = result;
 }
 
-GetPatchBaselineResult& GetPatchBaselineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetPatchBaselineResult& GetPatchBaselineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("BaselineId"))

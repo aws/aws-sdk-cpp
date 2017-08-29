@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     TestRepositoryTriggersResult();
-    TestRepositoryTriggersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TestRepositoryTriggersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestRepositoryTriggersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestRepositoryTriggersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of triggers that were successfully tested. This list provides the
@@ -97,6 +98,7 @@ namespace Model
      */
     inline TestRepositoryTriggersResult& AddSuccessfulExecutions(const char* value) { m_successfulExecutions.push_back(value); return *this; }
 
+
     /**
      * <p>The list of triggers that were not able to be tested. This list provides the
      * names of the triggers that could not be tested, separated by commas.</p>
@@ -140,7 +142,9 @@ namespace Model
     inline TestRepositoryTriggersResult& AddFailedExecutions(RepositoryTriggerExecutionFailure&& value) { m_failedExecutions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_successfulExecutions;
+
     Aws::Vector<RepositoryTriggerExecutionFailure> m_failedExecutions;
   };
 

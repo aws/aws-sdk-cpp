@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the role that you want to modify.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the role that you want to modify.</p>
      */
     inline UpdateRoleDescriptionRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
 
     /**
      * <p>The new description that you want to apply to the specified role.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline UpdateRoleDescriptionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

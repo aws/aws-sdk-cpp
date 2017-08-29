@@ -46,6 +46,7 @@ namespace Model
     SqsAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The ARN of the IAM role that grants access.</p>
      */
     inline SqsAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>The URL of the Amazon SQS queue.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline SqsAction& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
+
     /**
      * <p>Specifies whether to use Base64 encoding.</p>
      */
@@ -132,10 +135,13 @@ namespace Model
     inline SqsAction& WithUseBase64(bool value) { SetUseBase64(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     bool m_useBase64;
     bool m_useBase64HasBeenSet;
   };

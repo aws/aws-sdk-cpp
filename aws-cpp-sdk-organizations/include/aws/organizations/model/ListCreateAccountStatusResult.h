@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListCreateAccountStatusResult();
-    ListCreateAccountStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCreateAccountStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCreateAccountStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCreateAccountStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of objects with details about the requests. Certain elements, such as
@@ -91,6 +92,7 @@ namespace Model
      * successfully created.</p>
      */
     inline ListCreateAccountStatusResult& AddCreateAccountStatuses(CreateAccountStatus&& value) { m_createAccountStatuses.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -156,7 +158,9 @@ namespace Model
     inline ListCreateAccountStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<CreateAccountStatus> m_createAccountStatuses;
+
     Aws::String m_nextToken;
   };
 

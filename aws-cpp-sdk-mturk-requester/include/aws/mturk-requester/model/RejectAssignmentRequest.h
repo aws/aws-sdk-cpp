@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The ID of the assignment. The assignment must correspond to a HIT created by
      * the Requester. </p>
@@ -77,6 +78,7 @@ namespace Model
      * the Requester. </p>
      */
     inline RejectAssignmentRequest& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
+
 
     /**
      * <p> A message for the Worker, which the Worker can see in the Status section of
@@ -121,8 +123,10 @@ namespace Model
     inline RejectAssignmentRequest& WithRequesterFeedback(const char* value) { SetRequesterFeedback(value); return *this;}
 
   private:
+
     Aws::String m_assignmentId;
     bool m_assignmentIdHasBeenSet;
+
     Aws::String m_requesterFeedback;
     bool m_requesterFeedbackHasBeenSet;
   };

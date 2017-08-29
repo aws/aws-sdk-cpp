@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ARN of the Amazon SNS topic to which you want to publish email sending
      * events. An example of an Amazon SNS topic ARN is
@@ -124,6 +125,7 @@ namespace Model
     inline SNSDestination& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
 
   private:
+
     Aws::String m_topicARN;
     bool m_topicARNHasBeenSet;
   };

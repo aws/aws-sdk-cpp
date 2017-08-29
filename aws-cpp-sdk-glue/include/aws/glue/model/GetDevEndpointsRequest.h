@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The maximum size of information to return.</p>
      */
@@ -50,6 +51,7 @@ namespace Model
      * <p>The maximum size of information to return.</p>
      */
     inline GetDevEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A continuation token, if this is a continuation call.</p>
@@ -87,8 +89,10 @@ namespace Model
     inline GetDevEndpointsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

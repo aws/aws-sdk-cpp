@@ -48,6 +48,7 @@ namespace Model
     Principal& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the resource.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Principal& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The type of resource.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The type of resource.</p>
      */
     inline Principal& WithType(PrincipalType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The permission information for the resource.</p>
@@ -144,10 +147,13 @@ namespace Model
     inline Principal& AddRoles(PermissionInfo&& value) { m_rolesHasBeenSet = true; m_roles.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     PrincipalType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<PermissionInfo> m_roles;
     bool m_rolesHasBeenSet;
   };

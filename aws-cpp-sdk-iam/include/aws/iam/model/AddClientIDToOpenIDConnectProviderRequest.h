@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
      * resource to add the client ID to. You can get a list of OIDC provider ARNs by
@@ -87,6 +88,7 @@ namespace Model
      */
     inline AddClientIDToOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
 
+
     /**
      * <p>The client ID (also known as audience) to add to the IAM OpenID Connect
      * provider resource.</p>
@@ -130,8 +132,10 @@ namespace Model
     inline AddClientIDToOpenIDConnectProviderRequest& WithClientID(const char* value) { SetClientID(value); return *this;}
 
   private:
+
     Aws::String m_openIDConnectProviderArn;
     bool m_openIDConnectProviderArnHasBeenSet;
+
     Aws::String m_clientID;
     bool m_clientIDHasBeenSet;
   };

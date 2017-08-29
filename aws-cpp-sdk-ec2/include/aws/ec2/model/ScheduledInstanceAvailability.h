@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline ScheduledInstanceAvailability& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The number of available instances.</p>
      */
@@ -100,6 +102,7 @@ namespace Model
      * <p>The number of available instances.</p>
      */
     inline ScheduledInstanceAvailability& WithAvailableInstanceCount(int value) { SetAvailableInstanceCount(value); return *this;}
+
 
     /**
      * <p>The time period for the first schedule to start.</p>
@@ -125,6 +128,7 @@ namespace Model
      * <p>The time period for the first schedule to start.</p>
      */
     inline ScheduledInstanceAvailability& WithFirstSlotStartTime(Aws::Utils::DateTime&& value) { SetFirstSlotStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The hourly price for a single instance.</p>
@@ -160,6 +164,7 @@ namespace Model
      * <p>The hourly price for a single instance.</p>
      */
     inline ScheduledInstanceAvailability& WithHourlyPrice(const char* value) { SetHourlyPrice(value); return *this;}
+
 
     /**
      * <p>The instance type. You can specify one of the C3, C4, M4, or R3 instance
@@ -203,6 +208,7 @@ namespace Model
      */
     inline ScheduledInstanceAvailability& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The maximum term. The only possible value is 365 days.</p>
      */
@@ -218,6 +224,7 @@ namespace Model
      */
     inline ScheduledInstanceAvailability& WithMaxTermDurationInDays(int value) { SetMaxTermDurationInDays(value); return *this;}
 
+
     /**
      * <p>The minimum term. The only possible value is 365 days.</p>
      */
@@ -232,6 +239,7 @@ namespace Model
      * <p>The minimum term. The only possible value is 365 days.</p>
      */
     inline ScheduledInstanceAvailability& WithMinTermDurationInDays(int value) { SetMinTermDurationInDays(value); return *this;}
+
 
     /**
      * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
@@ -268,6 +276,7 @@ namespace Model
      */
     inline ScheduledInstanceAvailability& WithNetworkPlatform(const char* value) { SetNetworkPlatform(value); return *this;}
 
+
     /**
      * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
      */
@@ -302,6 +311,7 @@ namespace Model
      * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
      */
     inline ScheduledInstanceAvailability& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+
 
     /**
      * <p>The purchase token. This token expires in two hours.</p>
@@ -338,6 +348,7 @@ namespace Model
      */
     inline ScheduledInstanceAvailability& WithPurchaseToken(const char* value) { SetPurchaseToken(value); return *this;}
 
+
     /**
      * <p>The schedule recurrence.</p>
      */
@@ -363,6 +374,7 @@ namespace Model
      */
     inline ScheduledInstanceAvailability& WithRecurrence(ScheduledInstanceRecurrence&& value) { SetRecurrence(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of hours in the schedule.</p>
      */
@@ -377,6 +389,7 @@ namespace Model
      * <p>The number of hours in the schedule.</p>
      */
     inline ScheduledInstanceAvailability& WithSlotDurationInHours(int value) { SetSlotDurationInHours(value); return *this;}
+
 
     /**
      * <p>The total number of hours for a single instance for the entire term.</p>
@@ -394,30 +407,43 @@ namespace Model
     inline ScheduledInstanceAvailability& WithTotalScheduledInstanceHours(int value) { SetTotalScheduledInstanceHours(value); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     int m_availableInstanceCount;
     bool m_availableInstanceCountHasBeenSet;
+
     Aws::Utils::DateTime m_firstSlotStartTime;
     bool m_firstSlotStartTimeHasBeenSet;
+
     Aws::String m_hourlyPrice;
     bool m_hourlyPriceHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     int m_maxTermDurationInDays;
     bool m_maxTermDurationInDaysHasBeenSet;
+
     int m_minTermDurationInDays;
     bool m_minTermDurationInDaysHasBeenSet;
+
     Aws::String m_networkPlatform;
     bool m_networkPlatformHasBeenSet;
+
     Aws::String m_platform;
     bool m_platformHasBeenSet;
+
     Aws::String m_purchaseToken;
     bool m_purchaseTokenHasBeenSet;
+
     ScheduledInstanceRecurrence m_recurrence;
     bool m_recurrenceHasBeenSet;
+
     int m_slotDurationInHours;
     bool m_slotDurationInHoursHasBeenSet;
+
     int m_totalScheduledInstanceHours;
     bool m_totalScheduledInstanceHoursHasBeenSet;
   };

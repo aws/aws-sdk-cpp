@@ -47,6 +47,7 @@ namespace Model
     AttributeDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A name for the attribute.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>A name for the attribute.</p>
      */
     inline AttributeDefinition& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+
 
     /**
      * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
@@ -123,8 +125,10 @@ namespace Model
     inline AttributeDefinition& WithAttributeType(ScalarAttributeType&& value) { SetAttributeType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     ScalarAttributeType m_attributeType;
     bool m_attributeTypeHasBeenSet;
   };

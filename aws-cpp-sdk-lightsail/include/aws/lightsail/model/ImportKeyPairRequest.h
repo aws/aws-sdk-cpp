@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the key pair for which you want to import the public key.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the key pair for which you want to import the public key.</p>
      */
     inline ImportKeyPairRequest& WithKeyPairName(const char* value) { SetKeyPairName(value); return *this;}
+
 
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline ImportKeyPairRequest& WithPublicKeyBase64(const char* value) { SetPublicKeyBase64(value); return *this;}
 
   private:
+
     Aws::String m_keyPairName;
     bool m_keyPairNameHasBeenSet;
+
     Aws::String m_publicKeyBase64;
     bool m_publicKeyBase64HasBeenSet;
   };

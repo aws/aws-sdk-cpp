@@ -30,12 +30,12 @@ TestRepositoryTriggersResult::TestRepositoryTriggersResult()
 {
 }
 
-TestRepositoryTriggersResult::TestRepositoryTriggersResult(const AmazonWebServiceResult<JsonValue>& result)
+TestRepositoryTriggersResult::TestRepositoryTriggersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-TestRepositoryTriggersResult& TestRepositoryTriggersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TestRepositoryTriggersResult& TestRepositoryTriggersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("successfulExecutions"))

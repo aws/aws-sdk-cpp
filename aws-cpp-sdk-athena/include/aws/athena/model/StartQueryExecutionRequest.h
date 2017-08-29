@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The SQL query statements to be executed.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The SQL query statements to be executed.</p>
      */
     inline StartQueryExecutionRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+
 
     /**
      * <p>A unique case-sensitive string used to ensure the request to create the query
@@ -158,6 +160,7 @@ namespace Model
      */
     inline StartQueryExecutionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
     /**
      * <p>The database within which the query executes.</p>
      */
@@ -182,6 +185,7 @@ namespace Model
      * <p>The database within which the query executes.</p>
      */
     inline StartQueryExecutionRequest& WithQueryExecutionContext(QueryExecutionContext&& value) { SetQueryExecutionContext(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies information about where and how to save the results of the query
@@ -214,12 +218,16 @@ namespace Model
     inline StartQueryExecutionRequest& WithResultConfiguration(ResultConfiguration&& value) { SetResultConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_queryString;
     bool m_queryStringHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
     QueryExecutionContext m_queryExecutionContext;
     bool m_queryExecutionContextHasBeenSet;
+
     ResultConfiguration m_resultConfiguration;
     bool m_resultConfigurationHasBeenSet;
   };

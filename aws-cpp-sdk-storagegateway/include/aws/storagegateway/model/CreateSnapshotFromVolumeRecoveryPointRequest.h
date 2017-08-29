@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
 
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline CreateSnapshotFromVolumeRecoveryPointRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+
 
     
     inline const Aws::String& GetSnapshotDescription() const{ return m_snapshotDescription; }
@@ -79,8 +81,10 @@ namespace Model
     inline CreateSnapshotFromVolumeRecoveryPointRequest& WithSnapshotDescription(const char* value) { SetSnapshotDescription(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
     bool m_volumeARNHasBeenSet;
+
     Aws::String m_snapshotDescription;
     bool m_snapshotDescriptionHasBeenSet;
   };

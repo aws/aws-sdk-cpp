@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     RegisterTaskWithMaintenanceWindowResult();
-    RegisterTaskWithMaintenanceWindowResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterTaskWithMaintenanceWindowResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterTaskWithMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterTaskWithMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The id of the task in the Maintenance Window.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline RegisterTaskWithMaintenanceWindowResult& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
 
   private:
+
     Aws::String m_windowTaskId;
   };
 

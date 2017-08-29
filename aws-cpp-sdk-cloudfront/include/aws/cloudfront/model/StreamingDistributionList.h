@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The value you provided for the <code>Marker</code> request parameter. </p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The value you provided for the <code>Marker</code> request parameter. </p>
      */
     inline StreamingDistributionList& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
@@ -132,6 +134,7 @@ namespace Model
      */
     inline StreamingDistributionList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>The value you provided for the <code>MaxItems</code> request parameter. </p>
      */
@@ -146,6 +149,7 @@ namespace Model
      * <p>The value you provided for the <code>MaxItems</code> request parameter. </p>
      */
     inline StreamingDistributionList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+
 
     /**
      * <p>A flag that indicates whether more streaming distributions remain to be
@@ -171,6 +175,7 @@ namespace Model
      */
     inline StreamingDistributionList& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
+
     /**
      * <p>The number of streaming distributions that were created by the current AWS
      * account. </p>
@@ -188,6 +193,7 @@ namespace Model
      * account. </p>
      */
     inline StreamingDistributionList& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>A complex type that contains one <code>StreamingDistributionSummary</code>
@@ -232,16 +238,22 @@ namespace Model
     inline StreamingDistributionList& AddItems(StreamingDistributionSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
+
     bool m_isTruncated;
     bool m_isTruncatedHasBeenSet;
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<StreamingDistributionSummary> m_items;
     bool m_itemsHasBeenSet;
   };

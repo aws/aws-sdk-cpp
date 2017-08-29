@@ -56,6 +56,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the API action tested on the indicated resource.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      * <p>The name of the API action tested on the indicated resource.</p>
      */
     inline EvaluationResult& WithEvalActionName(const char* value) { SetEvalActionName(value); return *this;}
+
 
     /**
      * <p>The ARN of the resource that the indicated API action was tested on.</p>
@@ -126,6 +128,7 @@ namespace Model
      */
     inline EvaluationResult& WithEvalResourceName(const char* value) { SetEvalResourceName(value); return *this;}
 
+
     /**
      * <p>The result of the simulation.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>The result of the simulation.</p>
      */
     inline EvaluationResult& WithEvalDecision(PolicyEvaluationDecisionType&& value) { SetEvalDecision(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the statements in the input policies that determine the result for
@@ -213,6 +217,7 @@ namespace Model
      * result.</p>
      */
     inline EvaluationResult& AddMatchedStatements(Statement&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of context keys that are required by the included input policies but
@@ -310,6 +315,7 @@ namespace Model
      */
     inline EvaluationResult& AddMissingContextValues(const char* value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
 
+
     /**
      * <p>A structure that details how AWS Organizations and its service control
      * policies affect the results of the simulation. Only applies if the simulated
@@ -344,6 +350,7 @@ namespace Model
      * user's account is part of an organization.</p>
      */
     inline EvaluationResult& WithOrganizationsDecisionDetail(OrganizationsDecisionDetail&& value) { SetOrganizationsDecisionDetail(std::move(value)); return *this;}
+
 
     /**
      * <p>Additional details about the results of the evaluation decision. When there
@@ -466,6 +473,7 @@ namespace Model
      */
     inline EvaluationResult& AddEvalDecisionDetails(const char* key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, value); return *this; }
 
+
     /**
      * <p>The individual results of the simulation of the API action specified in
      * EvalActionName on each resource.</p>
@@ -509,20 +517,28 @@ namespace Model
     inline EvaluationResult& AddResourceSpecificResults(ResourceSpecificResult&& value) { m_resourceSpecificResultsHasBeenSet = true; m_resourceSpecificResults.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_evalActionName;
     bool m_evalActionNameHasBeenSet;
+
     Aws::String m_evalResourceName;
     bool m_evalResourceNameHasBeenSet;
+
     PolicyEvaluationDecisionType m_evalDecision;
     bool m_evalDecisionHasBeenSet;
+
     Aws::Vector<Statement> m_matchedStatements;
     bool m_matchedStatementsHasBeenSet;
+
     Aws::Vector<Aws::String> m_missingContextValues;
     bool m_missingContextValuesHasBeenSet;
+
     OrganizationsDecisionDetail m_organizationsDecisionDetail;
     bool m_organizationsDecisionDetailHasBeenSet;
+
     Aws::Map<Aws::String, PolicyEvaluationDecisionType> m_evalDecisionDetails;
     bool m_evalDecisionDetailsHasBeenSet;
+
     Aws::Vector<ResourceSpecificResult> m_resourceSpecificResults;
     bool m_resourceSpecificResultsHasBeenSet;
   };

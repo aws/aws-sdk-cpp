@@ -59,6 +59,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
      * Lambda action is taken. An example of an Amazon SNS topic ARN is
@@ -129,6 +130,7 @@ namespace Model
      */
     inline LambdaAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an
      * AWS Lambda function ARN is
@@ -198,6 +200,7 @@ namespace Model
      * Developer Guide</a>.</p>
      */
     inline LambdaAction& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+
 
     /**
      * <p>The invocation type of the AWS Lambda function. An invocation type of
@@ -275,10 +278,13 @@ namespace Model
     inline LambdaAction& WithInvocationType(InvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_functionArn;
     bool m_functionArnHasBeenSet;
+
     InvocationType m_invocationType;
     bool m_invocationTypeHasBeenSet;
   };

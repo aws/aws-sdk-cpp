@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeAttackResult();
-    DescribeAttackResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAttackResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAttackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAttackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The attack that is described.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeAttackResult& WithAttack(AttackDetail&& value) { SetAttack(std::move(value)); return *this;}
 
   private:
+
     AttackDetail m_attack;
   };
 

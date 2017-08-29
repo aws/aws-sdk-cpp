@@ -52,6 +52,7 @@ namespace Model
     Fleet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN for the fleet.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The ARN for the fleet.</p>
      */
     inline Fleet& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The name of the fleet.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline Fleet& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
      */
     inline Fleet& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
 
     /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline Fleet& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The image used by the fleet.</p>
      */
@@ -226,6 +231,7 @@ namespace Model
      * <p>The image used by the fleet.</p>
      */
     inline Fleet& WithImageName(const char* value) { SetImageName(value); return *this;}
+
 
     /**
      * <p>The instance type of compute resources for the fleet. The fleet instances are
@@ -269,6 +275,7 @@ namespace Model
      */
     inline Fleet& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The capacity information for the fleet.</p>
      */
@@ -294,6 +301,7 @@ namespace Model
      */
     inline Fleet& WithComputeCapacityStatus(ComputeCapacityStatus&& value) { SetComputeCapacityStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum time for which a streaming session can run. The value can be any
      * numeric value in seconds between 600 and 57600.</p>
@@ -311,6 +319,7 @@ namespace Model
      * numeric value in seconds between 600 and 57600.</p>
      */
     inline Fleet& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
+
 
     /**
      * <p>The time after disconnection when a session is considered to have ended. If a
@@ -335,6 +344,7 @@ namespace Model
      * seconds between 60 and 57600.</p>
      */
     inline Fleet& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
+
 
     /**
      * <p>The current state for the fleet.</p>
@@ -361,6 +371,7 @@ namespace Model
      */
     inline Fleet& WithState(FleetState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The VPC configuration for the fleet.</p>
      */
@@ -386,6 +397,7 @@ namespace Model
      */
     inline Fleet& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>The time at which the fleet was created.</p>
      */
@@ -410,6 +422,7 @@ namespace Model
      * <p>The time at which the fleet was created.</p>
      */
     inline Fleet& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The list of fleet errors is appended to this list.</p>
@@ -446,6 +459,7 @@ namespace Model
      */
     inline Fleet& AddFleetErrors(FleetError&& value) { m_fleetErrorsHasBeenSet = true; m_fleetErrors.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Whether default internet access is enabled for the fleet. </p>
      */
@@ -460,6 +474,7 @@ namespace Model
      * <p>Whether default internet access is enabled for the fleet. </p>
      */
     inline Fleet& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
+
 
     /**
      * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
@@ -497,34 +512,49 @@ namespace Model
     inline Fleet& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_imageName;
     bool m_imageNameHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     ComputeCapacityStatus m_computeCapacityStatus;
     bool m_computeCapacityStatusHasBeenSet;
+
     int m_maxUserDurationInSeconds;
     bool m_maxUserDurationInSecondsHasBeenSet;
+
     int m_disconnectTimeoutInSeconds;
     bool m_disconnectTimeoutInSecondsHasBeenSet;
+
     FleetState m_state;
     bool m_stateHasBeenSet;
+
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
     Aws::Vector<FleetError> m_fleetErrors;
     bool m_fleetErrorsHasBeenSet;
+
     bool m_enableDefaultInternetAccess;
     bool m_enableDefaultInternetAccessHasBeenSet;
+
     DomainJoinInfo m_domainJoinInfo;
     bool m_domainJoinInfoHasBeenSet;
   };

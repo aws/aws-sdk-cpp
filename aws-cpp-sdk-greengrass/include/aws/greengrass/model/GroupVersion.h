@@ -45,6 +45,7 @@ namespace Model
     GroupVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Core definition version arn for this group.
      */
@@ -79,6 +80,7 @@ namespace Model
      * Core definition version arn for this group.
      */
     inline GroupVersion& WithCoreDefinitionVersionArn(const char* value) { SetCoreDefinitionVersionArn(value); return *this;}
+
 
     /**
      * Device definition version arn for this group.
@@ -115,6 +117,7 @@ namespace Model
      */
     inline GroupVersion& WithDeviceDefinitionVersionArn(const char* value) { SetDeviceDefinitionVersionArn(value); return *this;}
 
+
     /**
      * Function definition version arn for this group.
      */
@@ -150,6 +153,7 @@ namespace Model
      */
     inline GroupVersion& WithFunctionDefinitionVersionArn(const char* value) { SetFunctionDefinitionVersionArn(value); return *this;}
 
+
     /**
      * Logger definitionv ersion arn for this group.
      */
@@ -184,6 +188,7 @@ namespace Model
      * Logger definitionv ersion arn for this group.
      */
     inline GroupVersion& WithLoggerDefinitionVersionArn(const char* value) { SetLoggerDefinitionVersionArn(value); return *this;}
+
 
     /**
      * Subscription definition version arn for this group.
@@ -221,14 +226,19 @@ namespace Model
     inline GroupVersion& WithSubscriptionDefinitionVersionArn(const char* value) { SetSubscriptionDefinitionVersionArn(value); return *this;}
 
   private:
+
     Aws::String m_coreDefinitionVersionArn;
     bool m_coreDefinitionVersionArnHasBeenSet;
+
     Aws::String m_deviceDefinitionVersionArn;
     bool m_deviceDefinitionVersionArnHasBeenSet;
+
     Aws::String m_functionDefinitionVersionArn;
     bool m_functionDefinitionVersionArnHasBeenSet;
+
     Aws::String m_loggerDefinitionVersionArn;
     bool m_loggerDefinitionVersionArnHasBeenSet;
+
     Aws::String m_subscriptionDefinitionVersionArn;
     bool m_subscriptionDefinitionVersionArnHasBeenSet;
   };

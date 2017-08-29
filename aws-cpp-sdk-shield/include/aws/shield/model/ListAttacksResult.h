@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListAttacksResult();
-    ListAttacksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAttacksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAttacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAttacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The attack information for the specified time range.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The attack information for the specified time range.</p>
      */
     inline ListAttacksResult& AddAttackSummaries(AttackSummary&& value) { m_attackSummaries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data
@@ -135,7 +137,9 @@ namespace Model
     inline ListAttacksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<AttackSummary> m_attackSummaries;
+
     Aws::String m_nextToken;
   };
 

@@ -41,6 +41,7 @@ namespace Model
     ChangeTagsForResourceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
@@ -76,6 +77,7 @@ namespace Model
      */
     inline ChangeTagsForResourceRequest& WithResourceType(TagResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID of the resource for which you want to add, change, or delete tags.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The ID of the resource for which you want to add, change, or delete tags.</p>
      */
     inline ChangeTagsForResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>A complex type that contains a list of the tags that you want to add to the
@@ -167,6 +170,7 @@ namespace Model
      */
     inline ChangeTagsForResourceRequest& AddAddTags(Tag&& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A complex type that contains a list of the tags that you want to delete from
      * the specified health check or hosted zone. You can specify up to 10 keys.</p>
@@ -216,12 +220,16 @@ namespace Model
     inline ChangeTagsForResourceRequest& AddRemoveTagKeys(const char* value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys.push_back(value); return *this; }
 
   private:
+
     TagResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<Tag> m_addTags;
     bool m_addTagsHasBeenSet;
+
     Aws::Vector<Aws::String> m_removeTagKeys;
     bool m_removeTagKeysHasBeenSet;
   };

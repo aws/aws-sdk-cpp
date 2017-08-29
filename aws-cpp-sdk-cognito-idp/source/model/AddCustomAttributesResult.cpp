@@ -30,12 +30,12 @@ AddCustomAttributesResult::AddCustomAttributesResult()
 {
 }
 
-AddCustomAttributesResult::AddCustomAttributesResult(const AmazonWebServiceResult<JsonValue>& result)
+AddCustomAttributesResult::AddCustomAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddCustomAttributesResult& AddCustomAttributesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddCustomAttributesResult& AddCustomAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

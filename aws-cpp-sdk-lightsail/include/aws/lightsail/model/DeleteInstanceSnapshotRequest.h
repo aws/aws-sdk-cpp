@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the snapshot to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteInstanceSnapshotRequest& WithInstanceSnapshotName(const char* value) { SetInstanceSnapshotName(value); return *this;}
 
   private:
+
     Aws::String m_instanceSnapshotName;
     bool m_instanceSnapshotNameHasBeenSet;
   };

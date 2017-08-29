@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeSubscribersForNotificationResult();
-    DescribeSubscribersForNotificationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSubscribersForNotificationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSubscribersForNotificationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSubscribersForNotificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::Vector<Subscriber>& GetSubscribers() const{ return m_subscribers; }
@@ -68,6 +69,7 @@ namespace Model
 
     
     inline DescribeSubscribersForNotificationResult& AddSubscribers(Subscriber&& value) { m_subscribers.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -91,7 +93,9 @@ namespace Model
     inline DescribeSubscribersForNotificationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Subscriber> m_subscribers;
+
     Aws::String m_nextToken;
   };
 

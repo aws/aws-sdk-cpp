@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the group to delete.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline DeleteAutoScalingGroupRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
+
     /**
      * <p>Specifies that the group will be deleted along with all instances associated
      * with the group, without waiting for all instances to be terminated. This
@@ -99,8 +101,10 @@ namespace Model
     inline DeleteAutoScalingGroupRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     bool m_forceDelete;
     bool m_forceDeleteHasBeenSet;
   };

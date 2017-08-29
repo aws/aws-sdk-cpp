@@ -30,12 +30,12 @@ DescribeScalableTargetsResult::DescribeScalableTargetsResult()
 {
 }
 
-DescribeScalableTargetsResult::DescribeScalableTargetsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeScalableTargetsResult::DescribeScalableTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeScalableTargetsResult& DescribeScalableTargetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeScalableTargetsResult& DescribeScalableTargetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ScalableTargets"))

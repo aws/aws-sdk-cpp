@@ -30,12 +30,12 @@ UpdateOrganizationalUnitResult::UpdateOrganizationalUnitResult()
 {
 }
 
-UpdateOrganizationalUnitResult::UpdateOrganizationalUnitResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateOrganizationalUnitResult::UpdateOrganizationalUnitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateOrganizationalUnitResult& UpdateOrganizationalUnitResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateOrganizationalUnitResult& UpdateOrganizationalUnitResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OrganizationalUnit"))

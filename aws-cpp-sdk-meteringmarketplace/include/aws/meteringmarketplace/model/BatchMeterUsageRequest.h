@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
      * UsageRecords at a time.</p>
@@ -83,6 +84,7 @@ namespace Model
      * UsageRecords at a time.</p>
      */
     inline BatchMeterUsageRequest& AddUsageRecords(UsageRecord&& value) { m_usageRecordsHasBeenSet = true; m_usageRecords.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
@@ -134,8 +136,10 @@ namespace Model
     inline BatchMeterUsageRequest& WithProductCode(const char* value) { SetProductCode(value); return *this;}
 
   private:
+
     Aws::Vector<UsageRecord> m_usageRecords;
     bool m_usageRecordsHasBeenSet;
+
     Aws::String m_productCode;
     bool m_productCodeHasBeenSet;
   };

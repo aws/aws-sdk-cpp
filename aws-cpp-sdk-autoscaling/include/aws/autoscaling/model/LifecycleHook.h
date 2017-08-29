@@ -56,6 +56,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the lifecycle hook.</p>
      */
@@ -91,6 +92,7 @@ namespace Model
      */
     inline LifecycleHook& WithLifecycleHookName(const char* value) { SetLifecycleHookName(value); return *this;}
 
+
     /**
      * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
      */
     inline LifecycleHook& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
@@ -167,6 +170,7 @@ namespace Model
      * For a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.</p>
      */
     inline LifecycleHook& WithLifecycleTransition(const char* value) { SetLifecycleTransition(value); return *this;}
+
 
     /**
      * <p>The ARN of the notification target that Auto Scaling uses to notify you when
@@ -252,6 +256,7 @@ namespace Model
      */
     inline LifecycleHook& WithNotificationTargetARN(const char* value) { SetNotificationTargetARN(value); return *this;}
 
+
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
      * specified notification target.</p>
@@ -293,6 +298,7 @@ namespace Model
      * specified notification target.</p>
      */
     inline LifecycleHook& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
 
     /**
      * <p>Additional information that you want to include any time Auto Scaling sends a
@@ -336,6 +342,7 @@ namespace Model
      */
     inline LifecycleHook& WithNotificationMetadata(const char* value) { SetNotificationMetadata(value); return *this;}
 
+
     /**
      * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
      * out. The default is 3600 seconds (1 hour). When the lifecycle hook times out,
@@ -360,6 +367,7 @@ namespace Model
      */
     inline LifecycleHook& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}
 
+
     /**
      * <p>The maximum time, in seconds, that an instance can remain in a
      * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
@@ -383,6 +391,7 @@ namespace Model
      * is smaller.</p>
      */
     inline LifecycleHook& WithGlobalTimeout(int value) { SetGlobalTimeout(value); return *this;}
+
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
@@ -441,22 +450,31 @@ namespace Model
     inline LifecycleHook& WithDefaultResult(const char* value) { SetDefaultResult(value); return *this;}
 
   private:
+
     Aws::String m_lifecycleHookName;
     bool m_lifecycleHookNameHasBeenSet;
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_lifecycleTransition;
     bool m_lifecycleTransitionHasBeenSet;
+
     Aws::String m_notificationTargetARN;
     bool m_notificationTargetARNHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::String m_notificationMetadata;
     bool m_notificationMetadataHasBeenSet;
+
     int m_heartbeatTimeout;
     bool m_heartbeatTimeoutHasBeenSet;
+
     int m_globalTimeout;
     bool m_globalTimeoutHasBeenSet;
+
     Aws::String m_defaultResult;
     bool m_defaultResultHasBeenSet;
   };

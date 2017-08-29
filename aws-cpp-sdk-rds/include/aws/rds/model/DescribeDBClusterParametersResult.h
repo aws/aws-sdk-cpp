@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeDBClusterParametersResult();
-    DescribeDBClusterParametersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBClusterParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBClusterParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBClusterParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Provides a list of parameters for the DB cluster parameter group.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>Provides a list of parameters for the DB cluster parameter group.</p>
      */
     inline DescribeDBClusterParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -141,6 +143,7 @@ namespace Model
      */
     inline DescribeDBClusterParametersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -157,8 +160,11 @@ namespace Model
     inline DescribeDBClusterParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Parameter> m_parameters;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -31,13 +31,13 @@ ResendContactReachabilityEmailResult::ResendContactReachabilityEmailResult() :
 {
 }
 
-ResendContactReachabilityEmailResult::ResendContactReachabilityEmailResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ResendContactReachabilityEmailResult::ResendContactReachabilityEmailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_isAlreadyVerified(false)
 {
   *this = result;
 }
 
-ResendContactReachabilityEmailResult& ResendContactReachabilityEmailResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ResendContactReachabilityEmailResult& ResendContactReachabilityEmailResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("domainName"))

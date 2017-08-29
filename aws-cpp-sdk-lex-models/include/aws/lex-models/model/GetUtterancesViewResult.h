@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetUtterancesViewResult();
-    GetUtterancesViewResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUtterancesViewResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUtterancesViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUtterancesViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the bot for which utterance information was returned.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name of the bot for which utterance information was returned.</p>
      */
     inline GetUtterancesViewResult& WithBotName(const char* value) { SetBotName(value); return *this;}
+
 
     /**
      * <p>An array of <a>UtteranceList</a> objects, each containing a list of
@@ -135,7 +137,9 @@ namespace Model
     inline GetUtterancesViewResult& AddUtterances(UtteranceList&& value) { m_utterances.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_botName;
+
     Aws::Vector<UtteranceList> m_utterances;
   };
 

@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The beginning date and time for the time period for which you want a list of
      * billing records. Specify the date in Unix time format.</p>
@@ -71,6 +72,7 @@ namespace Model
      */
     inline ViewBillingRequest& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
 
+
     /**
      * <p>The end date and time for the time period for which you want a list of
      * billing records. Specify the date in Unix time format.</p>
@@ -100,6 +102,7 @@ namespace Model
      * billing records. Specify the date in Unix time format.</p>
      */
     inline ViewBillingRequest& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
+
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
@@ -192,6 +195,7 @@ namespace Model
      */
     inline ViewBillingRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The number of billing records to be returned.</p> <p>Default: 20</p>
      */
@@ -208,12 +212,16 @@ namespace Model
     inline ViewBillingRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_start;
     bool m_startHasBeenSet;
+
     Aws::Utils::DateTime m_end;
     bool m_endHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

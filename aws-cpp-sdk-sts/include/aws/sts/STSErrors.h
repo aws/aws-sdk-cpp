@@ -55,7 +55,7 @@ enum class STSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  EXPIRED_TOKEN= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXPIRED_TOKEN= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_AUTHORIZATION_MESSAGE,
   INVALID_IDENTITY_TOKEN,
   I_D_P_COMMUNICATION_ERROR,
@@ -66,7 +66,7 @@ enum class STSErrors
 };
 namespace STSErrorMapper
 {
-  AWS_STS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_STS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace STS

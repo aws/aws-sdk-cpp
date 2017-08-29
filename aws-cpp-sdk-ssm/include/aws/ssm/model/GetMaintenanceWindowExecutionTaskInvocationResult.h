@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     GetMaintenanceWindowExecutionTaskInvocationResult();
-    GetMaintenanceWindowExecutionTaskInvocationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMaintenanceWindowExecutionTaskInvocationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetMaintenanceWindowExecutionTaskInvocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetMaintenanceWindowExecutionTaskInvocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Maintenance Window execution ID.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
 
+
     /**
      * <p>The task execution ID.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The task execution ID.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithTaskExecutionId(const char* value) { SetTaskExecutionId(value); return *this;}
+
 
     /**
      * <p>The invocation ID.</p>
@@ -149,6 +152,7 @@ namespace Model
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithInvocationId(const char* value) { SetInvocationId(value); return *this;}
 
+
     /**
      * <p>The execution ID.</p>
      */
@@ -184,6 +188,7 @@ namespace Model
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
 
+
     /**
      * <p>Retrieves the task type for a Maintenance Window. Task types include the
      * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
@@ -213,6 +218,7 @@ namespace Model
      * following: LAMBDA, STEP_FUNCTION, AUTOMATION, RUN_COMMAND.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
+
 
     /**
      * <p>The parameters used at the time that the task executed.</p>
@@ -249,6 +255,7 @@ namespace Model
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithParameters(const char* value) { SetParameters(value); return *this;}
 
+
     /**
      * <p>The task status for an invocation.</p>
      */
@@ -273,6 +280,7 @@ namespace Model
      * <p>The task status for an invocation.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithStatus(MaintenanceWindowExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The details explaining the status. Details are only available for certain
@@ -316,6 +324,7 @@ namespace Model
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
+
     /**
      * <p>The time that the task started executing on the target.</p>
      */
@@ -341,6 +350,7 @@ namespace Model
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time that the task finished executing on the target.</p>
      */
@@ -365,6 +375,7 @@ namespace Model
      * <p>The time that the task finished executing on the target.</p>
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>User-provided value to be included in any CloudWatch events raised while
@@ -408,6 +419,7 @@ namespace Model
      */
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
+
     /**
      * <p>The Maintenance Window target ID.</p>
      */
@@ -444,17 +456,29 @@ namespace Model
     inline GetMaintenanceWindowExecutionTaskInvocationResult& WithWindowTargetId(const char* value) { SetWindowTargetId(value); return *this;}
 
   private:
+
     Aws::String m_windowExecutionId;
+
     Aws::String m_taskExecutionId;
+
     Aws::String m_invocationId;
+
     Aws::String m_executionId;
+
     MaintenanceWindowTaskType m_taskType;
+
     Aws::String m_parameters;
+
     MaintenanceWindowExecutionStatus m_status;
+
     Aws::String m_statusDetails;
+
     Aws::Utils::DateTime m_startTime;
+
     Aws::Utils::DateTime m_endTime;
+
     Aws::String m_ownerInformation;
+
     Aws::String m_windowTargetId;
   };
 

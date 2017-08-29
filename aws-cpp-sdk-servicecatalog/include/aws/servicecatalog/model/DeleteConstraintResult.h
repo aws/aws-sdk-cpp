@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteConstraintResult();
-    DeleteConstraintResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConstraintResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteConstraintResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteConstraintResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

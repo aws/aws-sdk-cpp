@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateByteMatchSetResult();
-    CreateByteMatchSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateByteMatchSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateByteMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateByteMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A <a>ByteMatchSet</a> that contains no <code>ByteMatchTuple</code>
@@ -71,6 +72,7 @@ namespace Model
      * objects.</p>
      */
     inline CreateByteMatchSetResult& WithByteMatchSet(ByteMatchSet&& value) { SetByteMatchSet(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -129,7 +131,9 @@ namespace Model
     inline CreateByteMatchSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     ByteMatchSet m_byteMatchSet;
+
     Aws::String m_changeToken;
   };
 

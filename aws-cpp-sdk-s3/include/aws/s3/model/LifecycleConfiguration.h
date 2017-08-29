@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
@@ -64,6 +65,7 @@ namespace Model
     inline LifecycleConfiguration& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet;
   };

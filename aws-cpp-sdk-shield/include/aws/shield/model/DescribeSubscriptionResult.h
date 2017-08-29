@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeSubscriptionResult();
-    DescribeSubscriptionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSubscriptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The AWS Shield Advanced subscription details for an account.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeSubscriptionResult& WithSubscription(Subscription&& value) { SetSubscription(std::move(value)); return *this;}
 
   private:
+
     Subscription m_subscription;
   };
 

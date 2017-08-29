@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p> An ARN of a CloudFront resource.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
     inline ListTagsForResource2017_03_25Request& WithResource(const char* value) { SetResource(value); return *this;}
 
   private:
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
   };

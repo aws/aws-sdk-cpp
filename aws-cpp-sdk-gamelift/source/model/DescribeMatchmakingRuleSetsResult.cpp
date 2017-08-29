@@ -30,12 +30,12 @@ DescribeMatchmakingRuleSetsResult::DescribeMatchmakingRuleSetsResult()
 {
 }
 
-DescribeMatchmakingRuleSetsResult::DescribeMatchmakingRuleSetsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMatchmakingRuleSetsResult::DescribeMatchmakingRuleSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeMatchmakingRuleSetsResult& DescribeMatchmakingRuleSetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMatchmakingRuleSetsResult& DescribeMatchmakingRuleSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("RuleSets"))

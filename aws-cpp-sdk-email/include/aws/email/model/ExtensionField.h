@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the header to add. Must be between 1 and 50 characters,
      * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
@@ -101,6 +102,7 @@ namespace Model
      */
     inline ExtensionField& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The value of the header to add. Must be less than 2048 characters, and must
      * not contain newline characters ("\r" or "\n").</p>
@@ -144,8 +146,10 @@ namespace Model
     inline ExtensionField& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateHITTypeOfHITResult();
-    UpdateHITTypeOfHITResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateHITTypeOfHITResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateHITTypeOfHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateHITTypeOfHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -47,6 +47,7 @@ namespace Model
     ShippingDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
      * you'll get the Snowball from the job's creation date. This speed represents how
@@ -122,6 +123,7 @@ namespace Model
      */
     inline ShippingDetails& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
+
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
      * being delivered to the address that you specified for a particular job.</p>
@@ -151,6 +153,7 @@ namespace Model
      * being delivered to the address that you specified for a particular job.</p>
      */
     inline ShippingDetails& WithInboundShipment(Shipment&& value) { SetInboundShipment(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
@@ -183,10 +186,13 @@ namespace Model
     inline ShippingDetails& WithOutboundShipment(Shipment&& value) { SetOutboundShipment(std::move(value)); return *this;}
 
   private:
+
     ShippingOption m_shippingOption;
     bool m_shippingOptionHasBeenSet;
+
     Shipment m_inboundShipment;
     bool m_inboundShipmentHasBeenSet;
+
     Shipment m_outboundShipment;
     bool m_outboundShipmentHasBeenSet;
   };

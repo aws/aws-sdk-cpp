@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetDocumentVersionResult();
-    GetDocumentVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDocumentVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDocumentVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDocumentVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The version metadata.</p>
@@ -67,6 +68,7 @@ namespace Model
      * <p>The version metadata.</p>
      */
     inline GetDocumentVersionResult& WithMetadata(DocumentVersionMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+
 
     /**
      * <p>The custom metadata on the document version.</p>
@@ -129,7 +131,9 @@ namespace Model
     inline GetDocumentVersionResult& AddCustomMetadata(const char* key, const char* value) { m_customMetadata.emplace(key, value); return *this; }
 
   private:
+
     DocumentVersionMetadata m_metadata;
+
     Aws::Map<Aws::String, Aws::String> m_customMetadata;
   };
 

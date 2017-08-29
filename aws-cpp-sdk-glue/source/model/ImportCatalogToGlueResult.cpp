@@ -30,12 +30,12 @@ ImportCatalogToGlueResult::ImportCatalogToGlueResult()
 {
 }
 
-ImportCatalogToGlueResult::ImportCatalogToGlueResult(const AmazonWebServiceResult<JsonValue>& result)
+ImportCatalogToGlueResult::ImportCatalogToGlueResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ImportCatalogToGlueResult& ImportCatalogToGlueResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ImportCatalogToGlueResult& ImportCatalogToGlueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

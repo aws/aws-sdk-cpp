@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes
      * may only be attached to instances that support Amazon EBS encryption.</p>
@@ -67,6 +68,7 @@ namespace Model
      */
     inline EbsBlockDevice& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
+
     /**
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
      */
@@ -81,6 +83,7 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
      */
     inline EbsBlockDevice& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
@@ -133,6 +136,7 @@ namespace Model
      */
     inline EbsBlockDevice& WithIops(int value) { SetIops(value); return *this;}
 
+
     /**
      * <p>The ID of the snapshot.</p>
      */
@@ -167,6 +171,7 @@ namespace Model
      * <p>The ID of the snapshot.</p>
      */
     inline EbsBlockDevice& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+
 
     /**
      * <p>The size of the volume, in GiB.</p> <p>Constraints: 1-16384 for General
@@ -204,6 +209,7 @@ namespace Model
      */
     inline EbsBlockDevice& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
+
     /**
      * <p>The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>,
      * <code>sc1</code>, or <code>standard</code>.</p> <p>Default:
@@ -240,16 +246,22 @@ namespace Model
     inline EbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
   private:
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     int m_volumeSize;
     bool m_volumeSizeHasBeenSet;
+
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
   };

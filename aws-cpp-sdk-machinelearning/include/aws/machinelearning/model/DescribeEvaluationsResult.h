@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeEvaluationsResult();
-    DescribeEvaluationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEvaluationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEvaluationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEvaluationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
      */
     inline DescribeEvaluationsResult& AddResults(Evaluation&& value) { m_results.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one
@@ -128,7 +130,9 @@ namespace Model
     inline DescribeEvaluationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Evaluation> m_results;
+
     Aws::String m_nextToken;
   };
 

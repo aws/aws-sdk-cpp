@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or unique ID of the stack set that you want to get operation results
      * for.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline ListStackSetOperationResultsRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
+
     /**
      * <p>The ID of the stack set operation.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>The ID of the stack set operation.</p>
      */
     inline ListStackSetOperationResultsRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+
 
     /**
      * <p>If the previous request didn't return all of the remaining results, the
@@ -185,6 +188,7 @@ namespace Model
      */
     inline ListStackSetOperationResultsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to be returned with a single call. If the
      * number of available results exceeds this maximum, the response includes a
@@ -210,12 +214,16 @@ namespace Model
     inline ListStackSetOperationResultsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

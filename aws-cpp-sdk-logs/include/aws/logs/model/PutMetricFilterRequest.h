@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline PutMetricFilterRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>A name for the metric filter.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline PutMetricFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
+
     /**
      * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
     inline PutMetricFilterRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
+
 
     /**
      * <p>A collection of information needed to define how metric data gets
@@ -186,12 +190,16 @@ namespace Model
     inline PutMetricFilterRequest& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_filterName;
     bool m_filterNameHasBeenSet;
+
     Aws::String m_filterPattern;
     bool m_filterPatternHasBeenSet;
+
     Aws::Vector<MetricTransformation> m_metricTransformations;
     bool m_metricTransformationsHasBeenSet;
   };

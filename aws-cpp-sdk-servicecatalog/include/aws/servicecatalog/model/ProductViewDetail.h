@@ -48,6 +48,7 @@ namespace Model
     ProductViewDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The summary metadata about the specified product view.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The summary metadata about the specified product view.</p>
      */
     inline ProductViewDetail& WithProductViewSummary(ProductViewSummary&& value) { SetProductViewSummary(std::move(value)); return *this;}
+
 
     /**
      * <p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is
@@ -108,6 +110,7 @@ namespace Model
      */
     inline ProductViewDetail& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The ARN associated with the product.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      */
     inline ProductViewDetail& WithProductARN(const char* value) { SetProductARN(value); return *this;}
 
+
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
@@ -169,12 +173,16 @@ namespace Model
     inline ProductViewDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
   private:
+
     ProductViewSummary m_productViewSummary;
     bool m_productViewSummaryHasBeenSet;
+
     Status m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_productARN;
     bool m_productARNHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
   };

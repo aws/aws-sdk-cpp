@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateSecurityGroupResponse();
-    CreateSecurityGroupResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateSecurityGroupResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateSecurityGroupResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateSecurityGroupResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the security group.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CreateSecurityGroupResponse& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline CreateSecurityGroupResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_groupId;
+
     ResponseMetadata m_responseMetadata;
   };
 

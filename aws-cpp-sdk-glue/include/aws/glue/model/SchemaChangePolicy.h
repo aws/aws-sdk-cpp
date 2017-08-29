@@ -47,6 +47,7 @@ namespace Model
     SchemaChangePolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The update behavior.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The update behavior.</p>
      */
     inline SchemaChangePolicy& WithUpdateBehavior(UpdateBehavior&& value) { SetUpdateBehavior(std::move(value)); return *this;}
+
 
     /**
      * <p>The deletion behavior.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline SchemaChangePolicy& WithDeleteBehavior(DeleteBehavior&& value) { SetDeleteBehavior(std::move(value)); return *this;}
 
   private:
+
     UpdateBehavior m_updateBehavior;
     bool m_updateBehaviorHasBeenSet;
+
     DeleteBehavior m_deleteBehavior;
     bool m_deleteBehaviorHasBeenSet;
   };

@@ -30,12 +30,12 @@ ListUsersResult::ListUsersResult()
 {
 }
 
-ListUsersResult::ListUsersResult(const AmazonWebServiceResult<JsonValue>& result)
+ListUsersResult::ListUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListUsersResult& ListUsersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListUsersResult& ListUsersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Users"))

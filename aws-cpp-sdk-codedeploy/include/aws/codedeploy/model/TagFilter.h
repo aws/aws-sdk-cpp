@@ -47,6 +47,7 @@ namespace Model
     TagFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The on-premises instance tag filter key.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline TagFilter& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The on-premises instance tag filter value.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The on-premises instance tag filter value.</p>
      */
     inline TagFilter& WithValue(const char* value) { SetValue(value); return *this;}
+
 
     /**
      * <p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key
@@ -153,10 +156,13 @@ namespace Model
     inline TagFilter& WithType(TagFilterType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     TagFilterType m_type;
     bool m_typeHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The message ID of the message to be bounced.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The message ID of the message to be bounced.</p>
      */
     inline SendBounceRequest& WithOriginalMessageId(const char* value) { SetOriginalMessageId(value); return *this;}
+
 
     /**
      * <p>The address to use in the "From" header of the bounce message. This must be
@@ -121,6 +123,7 @@ namespace Model
      * an identity that you have verified with Amazon SES.</p>
      */
     inline SendBounceRequest& WithBounceSender(const char* value) { SetBounceSender(value); return *this;}
+
 
     /**
      * <p>Human-readable text for the bounce message to explain the failure. If not
@@ -171,6 +174,7 @@ namespace Model
      */
     inline SendBounceRequest& WithExplanation(const char* value) { SetExplanation(value); return *this;}
 
+
     /**
      * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
      * values.</p>
@@ -200,6 +204,7 @@ namespace Model
      * values.</p>
      */
     inline SendBounceRequest& WithMessageDsn(MessageDsn&& value) { SetMessageDsn(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of recipients of the bounced message, including the information
@@ -249,6 +254,7 @@ namespace Model
      * You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
      */
     inline SendBounceRequest& AddBouncedRecipientInfoList(BouncedRecipientInfo&& value) { m_bouncedRecipientInfoListHasBeenSet = true; m_bouncedRecipientInfoList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -321,16 +327,22 @@ namespace Model
     inline SendBounceRequest& WithBounceSenderArn(const char* value) { SetBounceSenderArn(value); return *this;}
 
   private:
+
     Aws::String m_originalMessageId;
     bool m_originalMessageIdHasBeenSet;
+
     Aws::String m_bounceSender;
     bool m_bounceSenderHasBeenSet;
+
     Aws::String m_explanation;
     bool m_explanationHasBeenSet;
+
     MessageDsn m_messageDsn;
     bool m_messageDsnHasBeenSet;
+
     Aws::Vector<BouncedRecipientInfo> m_bouncedRecipientInfoList;
     bool m_bouncedRecipientInfoListHasBeenSet;
+
     Aws::String m_bounceSenderArn;
     bool m_bounceSenderArnHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The IDs of the Dedicated Hosts you want to release.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
     inline ReleaseHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_hostIds;
     bool m_hostIdsHasBeenSet;
   };

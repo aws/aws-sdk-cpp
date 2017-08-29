@@ -53,6 +53,7 @@ namespace Model
     Preset& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identifier for the new preset. You use this value to get settings for the
      * preset or to delete it.</p>
@@ -95,6 +96,7 @@ namespace Model
      */
     inline Preset& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the preset.</p>
      */
@@ -129,6 +131,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the preset.</p>
      */
     inline Preset& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The name of the preset.</p>
@@ -165,6 +168,7 @@ namespace Model
      */
     inline Preset& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the preset.</p>
      */
@@ -199,6 +203,7 @@ namespace Model
      * <p>A description of the preset.</p>
      */
     inline Preset& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The container type for the output file. Valid values include
@@ -256,6 +261,7 @@ namespace Model
      */
     inline Preset& WithContainer(const char* value) { SetContainer(value); return *this;}
 
+
     /**
      * <p>A section of the response body that provides information about the audio
      * preset values.</p>
@@ -285,6 +291,7 @@ namespace Model
      * preset values.</p>
      */
     inline Preset& WithAudio(AudioParameters&& value) { SetAudio(std::move(value)); return *this;}
+
 
     /**
      * <p>A section of the response body that provides information about the video
@@ -316,6 +323,7 @@ namespace Model
      */
     inline Preset& WithVideo(VideoParameters&& value) { SetVideo(std::move(value)); return *this;}
 
+
     /**
      * <p>A section of the response body that provides information about the thumbnail
      * preset values, if any.</p>
@@ -345,6 +353,7 @@ namespace Model
      * preset values, if any.</p>
      */
     inline Preset& WithThumbnails(Thumbnails&& value) { SetThumbnails(std::move(value)); return *this;}
+
 
     /**
      * <p>Whether the preset is a default preset provided by Elastic Transcoder
@@ -396,22 +405,31 @@ namespace Model
     inline Preset& WithType(const char* value) { SetType(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_container;
     bool m_containerHasBeenSet;
+
     AudioParameters m_audio;
     bool m_audioHasBeenSet;
+
     VideoParameters m_video;
     bool m_videoHasBeenSet;
+
     Thumbnails m_thumbnails;
     bool m_thumbnailsHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
   };

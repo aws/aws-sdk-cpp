@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of a deployment configuration associated with the applicable IAM
      * user or AWS account.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DeleteDeploymentConfigRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
   private:
+
     Aws::String m_deploymentConfigName;
     bool m_deploymentConfigNameHasBeenSet;
   };

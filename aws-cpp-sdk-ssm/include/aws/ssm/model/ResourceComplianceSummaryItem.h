@@ -51,6 +51,7 @@ namespace Model
     ResourceComplianceSummaryItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The compliance type.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The compliance type.</p>
      */
     inline ResourceComplianceSummaryItem& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
+
 
     /**
      * <p>The resource type.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline ResourceComplianceSummaryItem& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>The resource ID.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      */
     inline ResourceComplianceSummaryItem& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The compliance status for the resource.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      * <p>The compliance status for the resource.</p>
      */
     inline ResourceComplianceSummaryItem& WithStatus(ComplianceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The highest severity item found for the resource. The resource is compliant
@@ -211,6 +216,7 @@ namespace Model
      */
     inline ResourceComplianceSummaryItem& WithOverallSeverity(ComplianceSeverity&& value) { SetOverallSeverity(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the execution.</p>
      */
@@ -236,6 +242,7 @@ namespace Model
      */
     inline ResourceComplianceSummaryItem& WithExecutionSummary(ComplianceExecutionSummary&& value) { SetExecutionSummary(std::move(value)); return *this;}
 
+
     /**
      * <p>A list of items that are compliant for the resource.</p>
      */
@@ -260,6 +267,7 @@ namespace Model
      * <p>A list of items that are compliant for the resource.</p>
      */
     inline ResourceComplianceSummaryItem& WithCompliantSummary(CompliantSummary&& value) { SetCompliantSummary(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of items that aren't compliant for the resource.</p>
@@ -287,20 +295,28 @@ namespace Model
     inline ResourceComplianceSummaryItem& WithNonCompliantSummary(NonCompliantSummary&& value) { SetNonCompliantSummary(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_complianceType;
     bool m_complianceTypeHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     ComplianceStatus m_status;
     bool m_statusHasBeenSet;
+
     ComplianceSeverity m_overallSeverity;
     bool m_overallSeverityHasBeenSet;
+
     ComplianceExecutionSummary m_executionSummary;
     bool m_executionSummaryHasBeenSet;
+
     CompliantSummary m_compliantSummary;
     bool m_compliantSummaryHasBeenSet;
+
     NonCompliantSummary m_nonCompliantSummary;
     bool m_nonCompliantSummaryHasBeenSet;
   };

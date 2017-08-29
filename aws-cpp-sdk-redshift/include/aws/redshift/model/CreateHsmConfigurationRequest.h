@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier to be assigned to the new Amazon Redshift HSM
      * configuration.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline CreateHsmConfigurationRequest& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
 
+
     /**
      * <p>A text description of the HSM configuration to be created.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>A text description of the HSM configuration to be created.</p>
      */
     inline CreateHsmConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The IP address that the Amazon Redshift cluster must use to access the
@@ -162,6 +165,7 @@ namespace Model
      */
     inline CreateHsmConfigurationRequest& WithHsmIpAddress(const char* value) { SetHsmIpAddress(value); return *this;}
 
+
     /**
      * <p>The name of the partition in the HSM where the Amazon Redshift clusters will
      * store their database encryption keys.</p>
@@ -204,6 +208,7 @@ namespace Model
      */
     inline CreateHsmConfigurationRequest& WithHsmPartitionName(const char* value) { SetHsmPartitionName(value); return *this;}
 
+
     /**
      * <p>The password required to access the HSM partition.</p>
      */
@@ -238,6 +243,7 @@ namespace Model
      * <p>The password required to access the HSM partition.</p>
      */
     inline CreateHsmConfigurationRequest& WithHsmPartitionPassword(const char* value) { SetHsmPartitionPassword(value); return *this;}
+
 
     /**
      * <p>The HSMs public certificate file. When using Cloud HSM, the file name is
@@ -281,6 +287,7 @@ namespace Model
      */
     inline CreateHsmConfigurationRequest& WithHsmServerPublicCertificate(const char* value) { SetHsmServerPublicCertificate(value); return *this;}
 
+
     /**
      * <p>A list of tag instances.</p>
      */
@@ -317,18 +324,25 @@ namespace Model
     inline CreateHsmConfigurationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_hsmConfigurationIdentifier;
     bool m_hsmConfigurationIdentifierHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_hsmIpAddress;
     bool m_hsmIpAddressHasBeenSet;
+
     Aws::String m_hsmPartitionName;
     bool m_hsmPartitionNameHasBeenSet;
+
     Aws::String m_hsmPartitionPassword;
     bool m_hsmPartitionPasswordHasBeenSet;
+
     Aws::String m_hsmServerPublicCertificate;
     bool m_hsmServerPublicCertificateHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

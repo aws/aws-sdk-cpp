@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The app client ID of the app associated with the user pool.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The app client ID of the app associated with the user pool.</p>
      */
     inline ConfirmForgotPasswordRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ConfirmForgotPasswordRequest& WithSecretHash(const char* value) { SetSecretHash(value); return *this;}
 
+
     /**
      * <p>The user name of the user for whom you want to enter a code to retrieve a
      * forgotten password.</p>
@@ -158,6 +161,7 @@ namespace Model
      * forgotten password.</p>
      */
     inline ConfirmForgotPasswordRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
@@ -208,6 +212,7 @@ namespace Model
      */
     inline ConfirmForgotPasswordRequest& WithConfirmationCode(const char* value) { SetConfirmationCode(value); return *this;}
 
+
     /**
      * <p>The password sent by a user's request to retrieve a forgotten password.</p>
      */
@@ -244,14 +249,19 @@ namespace Model
     inline ConfirmForgotPasswordRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
   private:
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
     Aws::String m_secretHash;
     bool m_secretHashHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_confirmationCode;
     bool m_confirmationCodeHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
   };

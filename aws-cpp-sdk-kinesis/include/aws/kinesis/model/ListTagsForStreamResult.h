@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListTagsForStreamResult();
-    ListTagsForStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of tags associated with <code>StreamName</code>, starting with the
@@ -97,6 +98,7 @@ namespace Model
      */
     inline ListTagsForStreamResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If set to <code>true</code>, more tags are available. To request additional
      * tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag
@@ -119,7 +121,9 @@ namespace Model
     inline ListTagsForStreamResult& WithHasMoreTags(bool value) { SetHasMoreTags(value); return *this;}
 
   private:
+
     Aws::Vector<Tag> m_tags;
+
     bool m_hasMoreTags;
   };
 

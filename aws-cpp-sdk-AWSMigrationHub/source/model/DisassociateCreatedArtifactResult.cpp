@@ -30,12 +30,12 @@ DisassociateCreatedArtifactResult::DisassociateCreatedArtifactResult()
 {
 }
 
-DisassociateCreatedArtifactResult::DisassociateCreatedArtifactResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateCreatedArtifactResult::DisassociateCreatedArtifactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateCreatedArtifactResult& DisassociateCreatedArtifactResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateCreatedArtifactResult& DisassociateCreatedArtifactResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

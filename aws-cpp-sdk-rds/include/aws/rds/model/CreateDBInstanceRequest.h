@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The meaning of this parameter differs according to the database engine you
      * use.</p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p>The name of the database
@@ -267,6 +268,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 
+
     /**
      * <p>The DB instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
@@ -329,6 +331,7 @@ namespace Model
      * hyphens.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+
 
     /**
      * <p>The amount of storage (in gigabytes) to be initially allocated for the
@@ -447,6 +450,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
+
     /**
      * <p>The compute and memory capacity of the DB instance. Note that not all
      * instance classes are available in all regions for all DB engines.</p> <p> Valid
@@ -530,6 +534,7 @@ namespace Model
      * db.t2.medium | db.t2.large</code> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
+
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
@@ -628,6 +633,7 @@ namespace Model
      * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
@@ -790,6 +796,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
+
     /**
      * <p>The password for the master user. Can be any printable ASCII character except
      * "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
@@ -881,6 +888,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
+
     /**
      * <p>A list of DB security groups to associate with this DB instance.</p>
      * <p>Default: The default DB security group for the database engine.</p>
@@ -928,6 +936,7 @@ namespace Model
      * <p>Default: The default DB security group for the database engine.</p>
      */
     inline CreateDBInstanceRequest& AddDBSecurityGroups(const char* value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
+
 
     /**
      * <p>A list of EC2 VPC security groups to associate with this DB instance.</p> <p>
@@ -1000,6 +1009,7 @@ namespace Model
      * the DB subnet group's VPC.</p>
      */
     inline CreateDBInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p> The EC2 Availability Zone that the database instance will be created in. For
@@ -1092,6 +1102,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>A DB subnet group to associate with this DB instance.</p> <p>If there is no
      * DB subnet group, then it is a non-VPC DB instance.</p>
@@ -1133,6 +1144,7 @@ namespace Model
      * DB subnet group, then it is a non-VPC DB instance.</p>
      */
     inline CreateDBInstanceRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
+
 
     /**
      * <p> The weekly time range during which system maintenance can occur, in
@@ -1239,6 +1251,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
      * this argument is omitted, the default DBParameterGroup for the specified engine
@@ -1302,6 +1315,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
+
     /**
      * <p>The number of days for which automated backups are retained. Setting this
      * parameter to a positive number enables backups. Setting this parameter to 0
@@ -1337,6 +1351,7 @@ namespace Model
      * </ul>
      */
     inline CreateDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
+
 
     /**
      * <p> The daily time range during which automated backups are created if automated
@@ -1478,6 +1493,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
+
     /**
      * <p>The port number on which the database accepts connections.</p> <p>
      * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
@@ -1529,6 +1545,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithPort(int value) { SetPort(value); return *this;}
 
+
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
      * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
@@ -1546,6 +1563,7 @@ namespace Model
      * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
      */
     inline CreateDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p>The version number of the database engine to use.</p> <p>The following are
@@ -2135,6 +2153,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>Indicates that minor engine upgrades will be applied automatically to the DB
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
@@ -2152,6 +2171,7 @@ namespace Model
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
      */
     inline CreateDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
@@ -2202,6 +2222,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
+
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance.</p> <p>Constraints: Must be a multiple
@@ -2228,6 +2249,7 @@ namespace Model
      * GB, then your <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
      */
     inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
+
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
@@ -2292,6 +2314,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
+
     /**
      * <p>For supported engines, indicates that the DB instance should be associated
      * with the specified CharacterSet.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
@@ -2348,6 +2371,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
 
+
     /**
      * <p>Specifies the accessibility options for the DB instance. A value of true
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
@@ -2396,6 +2420,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -2416,6 +2441,7 @@ namespace Model
 
     
     inline CreateDBInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p> <p>For
@@ -2465,6 +2491,7 @@ namespace Model
      * String</p>
      */
     inline CreateDBInstanceRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -2529,6 +2556,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
+
     /**
      * <p>The ARN from the Key Store with which to associate the instance for TDE
      * encryption.</p>
@@ -2570,6 +2598,7 @@ namespace Model
      * encryption.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
+
 
     /**
      * <p>The password for the given ARN from the Key Store in order to access the
@@ -2613,6 +2642,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
 
+
     /**
      * <p>Specifies whether the DB instance is encrypted.</p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The encryption for DB instances is managed by the DB
@@ -2636,6 +2666,7 @@ namespace Model
      * false</p>
      */
     inline CreateDBInstanceRequest& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
+
 
     /**
      * <p>The KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
@@ -2742,6 +2773,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>Specify the Active Directory Domain to create the instance in.</p>
      */
@@ -2777,6 +2809,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
     /**
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance;
      * otherwise false. The default is false.</p>
@@ -2794,6 +2827,7 @@ namespace Model
      * otherwise false. The default is false.</p>
      */
     inline CreateDBInstanceRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -2821,6 +2855,7 @@ namespace Model
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
     inline CreateDBInstanceRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
+
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
@@ -2906,6 +2941,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
+
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
      * Directory Service.</p>
@@ -2948,6 +2984,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
+
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
@@ -2977,6 +3014,7 @@ namespace Model
      * Values: 0 - 15</p>
      */
     inline CreateDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
+
 
     /**
      * <p>The time zone of the DB instance. The time zone parameter is currently
@@ -3034,6 +3072,7 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
+
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
      * to database accounts; otherwise false. </p> <p> You can enable IAM database
@@ -3071,82 +3110,121 @@ namespace Model
     inline CreateDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
   private:
+
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
+
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;
+
     Aws::String m_masterUserPassword;
     bool m_masterUserPasswordHasBeenSet;
+
     Aws::Vector<Aws::String> m_dBSecurityGroups;
     bool m_dBSecurityGroupsHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet;
+
     int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
+
     Aws::String m_tdeCredentialArn;
     bool m_tdeCredentialArnHasBeenSet;
+
     Aws::String m_tdeCredentialPassword;
     bool m_tdeCredentialPasswordHasBeenSet;
+
     bool m_storageEncrypted;
     bool m_storageEncryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
+
     int m_monitoringInterval;
     bool m_monitoringIntervalHasBeenSet;
+
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;
+
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet;
+
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;
+
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet;
+
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };

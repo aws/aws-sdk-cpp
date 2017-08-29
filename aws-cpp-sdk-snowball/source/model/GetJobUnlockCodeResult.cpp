@@ -30,12 +30,12 @@ GetJobUnlockCodeResult::GetJobUnlockCodeResult()
 {
 }
 
-GetJobUnlockCodeResult::GetJobUnlockCodeResult(const AmazonWebServiceResult<JsonValue>& result)
+GetJobUnlockCodeResult::GetJobUnlockCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetJobUnlockCodeResult& GetJobUnlockCodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetJobUnlockCodeResult& GetJobUnlockCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UnlockCode"))

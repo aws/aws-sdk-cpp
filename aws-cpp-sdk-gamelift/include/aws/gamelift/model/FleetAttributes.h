@@ -68,6 +68,7 @@ namespace Model
     FleetAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a fleet.</p>
      */
@@ -102,6 +103,7 @@ namespace Model
      * <p>Unique identifier for a fleet.</p>
      */
     inline FleetAttributes& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Identifier for a fleet that is unique across all regions.</p>
@@ -138,6 +140,7 @@ namespace Model
      */
     inline FleetAttributes& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
 
+
     /**
      * <p>Human-readable description of the fleet.</p>
      */
@@ -172,6 +175,7 @@ namespace Model
      * <p>Human-readable description of the fleet.</p>
      */
     inline FleetAttributes& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
@@ -215,6 +219,7 @@ namespace Model
      */
     inline FleetAttributes& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
@@ -244,6 +249,7 @@ namespace Model
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline FleetAttributes& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
@@ -279,6 +285,7 @@ namespace Model
      * "1469498468.057").</p>
      */
     inline FleetAttributes& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
@@ -350,6 +357,7 @@ namespace Model
      */
     inline FleetAttributes& WithStatus(FleetStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Unique identifier for a build.</p>
      */
@@ -384,6 +392,7 @@ namespace Model
      * <p>Unique identifier for a build.</p>
      */
     inline FleetAttributes& WithBuildId(const char* value) { SetBuildId(value); return *this;}
+
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
@@ -441,6 +450,7 @@ namespace Model
      */
     inline FleetAttributes& WithServerLaunchPath(const char* value) { SetServerLaunchPath(value); return *this;}
 
+
     /**
      * <p>Game server launch parameters specified for fleets created before 2016-08-04
      * (or AWS SDK v. 0.12.16). Server launch parameters for fleets created after this
@@ -489,6 +499,7 @@ namespace Model
      * date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(const char* value) { SetServerLaunchParameters(value); return *this;}
+
 
     /**
      * <p>Location of default log files. When a server process is shut down, Amazon
@@ -586,6 +597,7 @@ namespace Model
      */
     inline FleetAttributes& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
+
     /**
      * <p>Type of game session protection to set for all new instances started in the
      * fleet.</p> <ul> <li> <p> <b>NoProtection</b> – The game session can be
@@ -631,6 +643,7 @@ namespace Model
      */
     inline FleetAttributes& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>Operating system of the fleet's computing resources. A fleet's operating
      * system depends on the OS specified for the build that is deployed on this
@@ -666,6 +679,7 @@ namespace Model
      */
     inline FleetAttributes& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
+
     /**
      * <p>Fleet policy to limit the number of game sessions an individual player can
      * create over a span of time.</p>
@@ -695,6 +709,7 @@ namespace Model
      * create over a span of time.</p>
      */
     inline FleetAttributes& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
@@ -761,34 +776,49 @@ namespace Model
     inline FleetAttributes& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::String m_fleetArn;
     bool m_fleetArnHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_terminationTime;
     bool m_terminationTimeHasBeenSet;
+
     FleetStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_buildId;
     bool m_buildIdHasBeenSet;
+
     Aws::String m_serverLaunchPath;
     bool m_serverLaunchPathHasBeenSet;
+
     Aws::String m_serverLaunchParameters;
     bool m_serverLaunchParametersHasBeenSet;
+
     Aws::Vector<Aws::String> m_logPaths;
     bool m_logPathsHasBeenSet;
+
     ProtectionPolicy m_newGameSessionProtectionPolicy;
     bool m_newGameSessionProtectionPolicyHasBeenSet;
+
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet;
+
     ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
     bool m_resourceCreationLimitPolicyHasBeenSet;
+
     Aws::Vector<Aws::String> m_metricGroups;
     bool m_metricGroupsHasBeenSet;
   };

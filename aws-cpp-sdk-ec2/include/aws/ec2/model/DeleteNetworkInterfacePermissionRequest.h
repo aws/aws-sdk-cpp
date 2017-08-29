@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the network interface permission.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline DeleteNetworkInterfacePermissionRequest& WithNetworkInterfacePermissionId(const char* value) { SetNetworkInterfacePermissionId(value); return *this;}
 
+
     /**
      * <p>Specify <code>true</code> to remove the permission even if the network
      * interface is attached to an instance.</p>
@@ -94,6 +96,7 @@ namespace Model
      * interface is attached to an instance.</p>
      */
     inline DeleteNetworkInterfacePermissionRequest& WithForce(bool value) { SetForce(value); return *this;}
+
 
     /**
      * <p>Checks whether you have the required permissions for the action, without
@@ -120,10 +123,13 @@ namespace Model
     inline DeleteNetworkInterfacePermissionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_networkInterfacePermissionId;
     bool m_networkInterfacePermissionIdHasBeenSet;
+
     bool m_force;
     bool m_forceHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     AssignIpv6AddressesResponse();
-    AssignIpv6AddressesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssignIpv6AddressesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssignIpv6AddressesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssignIpv6AddressesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The IPv6 addresses assigned to the network interface.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline AssignIpv6AddressesResponse& AddAssignedIpv6Addresses(const char* value) { m_assignedIpv6Addresses.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of the network interface.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline AssignIpv6AddressesResponse& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -134,8 +137,11 @@ namespace Model
     inline AssignIpv6AddressesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_assignedIpv6Addresses;
+
     Aws::String m_networkInterfaceId;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -46,6 +46,7 @@ namespace Model
     EnvironmentVariable& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name or key of the environment variable.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name or key of the environment variable.</p>
      */
     inline EnvironmentVariable& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The value of the environment variable.</p> <important> <p>We strongly
@@ -145,8 +147,10 @@ namespace Model
     inline EnvironmentVariable& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

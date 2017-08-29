@@ -45,6 +45,7 @@ namespace Model
     FunctionCodeLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The repository from which you can download the function.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The repository from which you can download the function.</p>
      */
     inline FunctionCodeLocation& WithRepositoryType(const char* value) { SetRepositoryType(value); return *this;}
+
 
     /**
      * <p>The presigned URL you can use to download the function's .zip file that you
@@ -123,8 +125,10 @@ namespace Model
     inline FunctionCodeLocation& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:
+
     Aws::String m_repositoryType;
     bool m_repositoryTypeHasBeenSet;
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
   };

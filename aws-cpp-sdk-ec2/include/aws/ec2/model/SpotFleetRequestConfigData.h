@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates how to allocate the target capacity across the Spot pools specified
      * by the Spot fleet request. The default is <code>lowestPrice</code>.</p>
@@ -84,6 +85,7 @@ namespace Model
      * by the Spot fleet request. The default is <code>lowestPrice</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithAllocationStrategy(AllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+
 
     /**
      * <p>A unique, case-sensitive identifier you provide to ensure idempotency of your
@@ -141,6 +143,7 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>Indicates whether running Spot instances should be terminated if the target
      * capacity of the Spot fleet request is decreased below the current size of the
@@ -176,6 +179,7 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { SetExcessCapacityTerminationPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of units fulfilled by this request compared to the set target
      * capacity.</p>
@@ -193,6 +197,7 @@ namespace Model
      * capacity.</p>
      */
     inline SpotFleetRequestConfigData& WithFulfilledCapacity(double value) { SetFulfilledCapacity(value); return *this;}
+
 
     /**
      * <p>Grants the Spot fleet permission to terminate Spot instances on your behalf
@@ -250,6 +255,7 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithIamFleetRole(const char* value) { SetIamFleetRole(value); return *this;}
 
+
     /**
      * <p>Information about the launch specifications for the Spot fleet request.</p>
      */
@@ -284,6 +290,7 @@ namespace Model
      * <p>Information about the launch specifications for the Spot fleet request.</p>
      */
     inline SpotFleetRequestConfigData& AddLaunchSpecifications(SpotFleetLaunchSpecification&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The bid price per unit hour.</p>
@@ -320,6 +327,7 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
+
     /**
      * <p>The number of units to request. You can choose to set the target capacity in
      * terms of instances or a performance characteristic that is important to your
@@ -341,6 +349,7 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithTargetCapacity(int value) { SetTargetCapacity(value); return *this;}
 
+
     /**
      * <p>Indicates whether running Spot instances should be terminated when the Spot
      * fleet request expires.</p>
@@ -358,6 +367,7 @@ namespace Model
      * fleet request expires.</p>
      */
     inline SpotFleetRequestConfigData& WithTerminateInstancesWithExpiration(bool value) { SetTerminateInstancesWithExpiration(value); return *this;}
+
 
     /**
      * <p>The type of request. Indicates whether the fleet will only
@@ -424,6 +434,7 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithType(FleetType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The start date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is
@@ -458,6 +469,7 @@ namespace Model
      * to start fulfilling the request immediately.</p>
      */
     inline SpotFleetRequestConfigData& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(std::move(value)); return *this;}
+
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
@@ -494,6 +506,7 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether Spot fleet should replace unhealthy instances.</p>
      */
@@ -510,30 +523,43 @@ namespace Model
     inline SpotFleetRequestConfigData& WithReplaceUnhealthyInstances(bool value) { SetReplaceUnhealthyInstances(value); return *this;}
 
   private:
+
     AllocationStrategy m_allocationStrategy;
     bool m_allocationStrategyHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
     bool m_excessCapacityTerminationPolicyHasBeenSet;
+
     double m_fulfilledCapacity;
     bool m_fulfilledCapacityHasBeenSet;
+
     Aws::String m_iamFleetRole;
     bool m_iamFleetRoleHasBeenSet;
+
     Aws::Vector<SpotFleetLaunchSpecification> m_launchSpecifications;
     bool m_launchSpecificationsHasBeenSet;
+
     Aws::String m_spotPrice;
     bool m_spotPriceHasBeenSet;
+
     int m_targetCapacity;
     bool m_targetCapacityHasBeenSet;
+
     bool m_terminateInstancesWithExpiration;
     bool m_terminateInstancesWithExpirationHasBeenSet;
+
     FleetType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Utils::DateTime m_validFrom;
     bool m_validFromHasBeenSet;
+
     Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
+
     bool m_replaceUnhealthyInstances;
     bool m_replaceUnhealthyInstancesHasBeenSet;
   };

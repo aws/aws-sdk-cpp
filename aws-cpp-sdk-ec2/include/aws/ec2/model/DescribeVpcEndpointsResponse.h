@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeVpcEndpointsResponse();
-    DescribeVpcEndpointsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVpcEndpointsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpcEndpointsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpcEndpointsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -91,6 +92,7 @@ namespace Model
      */
     inline DescribeVpcEndpointsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Information about the endpoints.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      */
     inline DescribeVpcEndpointsResponse& AddVpcEndpoints(VpcEndpoint&& value) { m_vpcEndpoints.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline DescribeVpcEndpointsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<VpcEndpoint> m_vpcEndpoints;
+
     ResponseMetadata m_responseMetadata;
   };
 

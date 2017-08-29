@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The name of the load balancer.</p>
      */
     inline CreateLoadBalancerPolicyRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+
 
     /**
      * <p>The name of the load balancer policy to be created. This name must be unique
@@ -121,6 +123,7 @@ namespace Model
      */
     inline CreateLoadBalancerPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
+
     /**
      * <p>The name of the base policy type. To get the list of policy types, use
      * <a>DescribeLoadBalancerPolicyTypes</a>.</p>
@@ -163,6 +166,7 @@ namespace Model
      */
     inline CreateLoadBalancerPolicyRequest& WithPolicyTypeName(const char* value) { SetPolicyTypeName(value); return *this;}
 
+
     /**
      * <p>The policy attributes.</p>
      */
@@ -199,12 +203,16 @@ namespace Model
     inline CreateLoadBalancerPolicyRequest& AddPolicyAttributes(PolicyAttribute&& value) { m_policyAttributesHasBeenSet = true; m_policyAttributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyTypeName;
     bool m_policyTypeNameHasBeenSet;
+
     Aws::Vector<PolicyAttribute> m_policyAttributes;
     bool m_policyAttributesHasBeenSet;
   };

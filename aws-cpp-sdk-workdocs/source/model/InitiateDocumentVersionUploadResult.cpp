@@ -30,12 +30,12 @@ InitiateDocumentVersionUploadResult::InitiateDocumentVersionUploadResult()
 {
 }
 
-InitiateDocumentVersionUploadResult::InitiateDocumentVersionUploadResult(const AmazonWebServiceResult<JsonValue>& result)
+InitiateDocumentVersionUploadResult::InitiateDocumentVersionUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-InitiateDocumentVersionUploadResult& InitiateDocumentVersionUploadResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+InitiateDocumentVersionUploadResult& InitiateDocumentVersionUploadResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Metadata"))

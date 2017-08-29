@@ -46,6 +46,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Lambda function name.</p> <p> You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
@@ -130,6 +131,7 @@ namespace Model
      */
     inline InvokeRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>By default, the <code>Invoke</code> API assumes <code>RequestResponse</code>
      * invocation type. You can optionally request asynchronous execution by specifying
@@ -190,6 +192,7 @@ namespace Model
      */
     inline InvokeRequest& WithInvocationType(InvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
 
+
     /**
      * <p>You can set this optional parameter to <code>Tail</code> in the request only
      * if you specify the <code>InvocationType</code> parameter with value
@@ -234,6 +237,7 @@ namespace Model
      * <code>x-amz-log-result</code> header. </p>
      */
     inline InvokeRequest& WithLogType(LogType&& value) { SetLogType(std::move(value)); return *this;}
+
 
     /**
      * <p>Using the <code>ClientContext</code> you can pass client-specific information
@@ -311,6 +315,7 @@ namespace Model
      * ClientContext JSON must be base64-encoded.</p>
      */
     inline InvokeRequest& WithClientContext(const char* value) { SetClientContext(value); return *this;}
+
 
     /**
      * <p>You can use this optional parameter to specify a Lambda function version or
@@ -390,14 +395,20 @@ namespace Model
     inline InvokeRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     InvocationType m_invocationType;
     bool m_invocationTypeHasBeenSet;
+
     LogType m_logType;
     bool m_logTypeHasBeenSet;
+
     Aws::String m_clientContext;
     bool m_clientContextHasBeenSet;
+
+
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet;
   };

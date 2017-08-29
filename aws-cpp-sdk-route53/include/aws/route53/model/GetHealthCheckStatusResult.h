@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetHealthCheckStatusResult();
-    GetHealthCheckStatusResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetHealthCheckStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHealthCheckStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHealthCheckStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list that contains one <code>HealthCheckObservation</code> element for each
@@ -98,6 +99,7 @@ namespace Model
     inline GetHealthCheckStatusResult& AddHealthCheckObservations(HealthCheckObservation&& value) { m_healthCheckObservations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<HealthCheckObservation> m_healthCheckObservations;
   };
 

@@ -50,6 +50,7 @@ namespace Model
     CreateGlobalSecondaryIndexAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the global secondary index to be created.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The name of the global secondary index to be created.</p>
      */
     inline CreateGlobalSecondaryIndexAction& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
 
     /**
      * <p>The key schema for the global secondary index.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline CreateGlobalSecondaryIndexAction& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Represents attributes that are copied (projected) from the table into an
      * index. These are in addition to the primary key attributes and index key
@@ -154,6 +157,7 @@ namespace Model
      * attributes, which are automatically projected.</p>
      */
     inline CreateGlobalSecondaryIndexAction& WithProjection(Projection&& value) { SetProjection(std::move(value)); return *this;}
+
 
     /**
      * <p>Represents the provisioned throughput settings for the specified global
@@ -201,12 +205,16 @@ namespace Model
     inline CreateGlobalSecondaryIndexAction& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet;
+
     Aws::Vector<KeySchemaElement> m_keySchema;
     bool m_keySchemaHasBeenSet;
+
     Projection m_projection;
     bool m_projectionHasBeenSet;
+
     ProvisionedThroughput m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet;
   };

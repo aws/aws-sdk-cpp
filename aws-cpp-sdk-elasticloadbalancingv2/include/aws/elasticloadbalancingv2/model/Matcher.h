@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The HTTP codes. You can specify values between 200 and 499. The default value
      * is 200. You can specify multiple values (for example, "200,202") or a range of
@@ -99,6 +100,7 @@ namespace Model
     inline Matcher& WithHttpCode(const char* value) { SetHttpCode(value); return *this;}
 
   private:
+
     Aws::String m_httpCode;
     bool m_httpCodeHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeJobResult();
-    DescribeJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about a specific job, including shipping information, job status,
@@ -71,6 +72,7 @@ namespace Model
      * and other important metadata.</p>
      */
     inline DescribeJobResult& WithJobMetadata(JobMetadata&& value) { SetJobMetadata(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about a specific job part (in the case of an export job),
@@ -115,7 +117,9 @@ namespace Model
     inline DescribeJobResult& AddSubJobMetadata(JobMetadata&& value) { m_subJobMetadata.push_back(std::move(value)); return *this; }
 
   private:
+
     JobMetadata m_jobMetadata;
+
     Aws::Vector<JobMetadata> m_subJobMetadata;
   };
 

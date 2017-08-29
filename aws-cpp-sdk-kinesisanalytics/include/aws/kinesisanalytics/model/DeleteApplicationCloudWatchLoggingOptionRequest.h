@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Kinesis Analytics application name.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline DeleteApplicationCloudWatchLoggingOptionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The version ID of the Kinesis Analytics application.</p>
      */
@@ -85,6 +87,7 @@ namespace Model
      * <p>The version ID of the Kinesis Analytics application.</p>
      */
     inline DeleteApplicationCloudWatchLoggingOptionRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+
 
     /**
      * <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option
@@ -136,10 +139,13 @@ namespace Model
     inline DeleteApplicationCloudWatchLoggingOptionRequest& WithCloudWatchLoggingOptionId(const char* value) { SetCloudWatchLoggingOptionId(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     long long m_currentApplicationVersionId;
     bool m_currentApplicationVersionIdHasBeenSet;
+
     Aws::String m_cloudWatchLoggingOptionId;
     bool m_cloudWatchLoggingOptionIdHasBeenSet;
   };

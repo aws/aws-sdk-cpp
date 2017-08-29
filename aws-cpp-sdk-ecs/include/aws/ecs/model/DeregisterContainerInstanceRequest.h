@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the container instance to deregister. If you do not specify a cluster, the
@@ -84,6 +85,7 @@ namespace Model
      * default cluster is assumed.</p>
      */
     inline DeregisterContainerInstanceRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
@@ -162,6 +164,7 @@ namespace Model
      */
     inline DeregisterContainerInstanceRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
 
+
     /**
      * <p>Forces the deregistration of the container instance. If you have tasks
      * running on the container instance when you deregister it with the
@@ -208,10 +211,13 @@ namespace Model
     inline DeregisterContainerInstanceRequest& WithForce(bool value) { SetForce(value); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_containerInstance;
     bool m_containerInstanceHasBeenSet;
+
     bool m_force;
     bool m_forceHasBeenSet;
   };

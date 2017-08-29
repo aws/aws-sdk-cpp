@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
      * The ID of the Reserved Instances.</p> </li> <li> <p>
@@ -121,6 +122,7 @@ namespace Model
      */
     inline DescribeReservedInstancesListingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>One or more Reserved Instance IDs.</p>
      */
@@ -155,6 +157,7 @@ namespace Model
      * <p>One or more Reserved Instance IDs.</p>
      */
     inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
+
 
     /**
      * <p>One or more Reserved Instance listing IDs.</p>
@@ -192,10 +195,13 @@ namespace Model
     inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet;
+
     Aws::String m_reservedInstancesListingId;
     bool m_reservedInstancesListingIdHasBeenSet;
   };

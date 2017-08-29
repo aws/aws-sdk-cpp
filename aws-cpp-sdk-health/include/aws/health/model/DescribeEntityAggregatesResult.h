@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeEntityAggregatesResult();
-    DescribeEntityAggregatesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEntityAggregatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEntityAggregatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEntityAggregatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of entities that are affected by each of the specified events.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline DescribeEntityAggregatesResult& AddEntityAggregates(EntityAggregate&& value) { m_entityAggregates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<EntityAggregate> m_entityAggregates;
   };
 

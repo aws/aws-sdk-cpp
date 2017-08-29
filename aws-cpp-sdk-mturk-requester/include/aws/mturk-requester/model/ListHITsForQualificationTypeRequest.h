@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The ID of the Qualification type to use when querying HITs. </p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p> The ID of the Qualification type to use when querying HITs. </p>
      */
     inline ListHITsForQualificationTypeRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
+
 
     /**
      * <p>Pagination Token</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline ListHITsForQualificationTypeRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p> Limit the number of results returned. </p>
      */
@@ -122,10 +125,13 @@ namespace Model
     inline ListHITsForQualificationTypeRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

@@ -30,12 +30,12 @@ CreateClassifierResult::CreateClassifierResult()
 {
 }
 
-CreateClassifierResult::CreateClassifierResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateClassifierResult::CreateClassifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateClassifierResult& CreateClassifierResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateClassifierResult& CreateClassifierResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

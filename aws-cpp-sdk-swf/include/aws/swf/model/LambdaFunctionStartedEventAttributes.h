@@ -44,6 +44,7 @@ namespace Model
     LambdaFunctionStartedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
      * when this activity task was scheduled. To help diagnose issues, use this
@@ -66,6 +67,7 @@ namespace Model
     inline LambdaFunctionStartedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
 
   private:
+
     long long m_scheduledEventId;
     bool m_scheduledEventIdHasBeenSet;
   };

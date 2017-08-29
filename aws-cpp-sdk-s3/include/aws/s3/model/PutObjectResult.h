@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     PutObjectResult();
-    PutObjectResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PutObjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PutObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PutObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * If the object expiration is configured, this will contain the expiration date
@@ -85,6 +86,7 @@ namespace Model
      */
     inline PutObjectResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
+
     /**
      * Entity tag for the uploaded object.
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline PutObjectResult& WithETag(const char* value) { SetETag(value); return *this;}
 
+
     /**
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
      * AES256, aws:kms).
@@ -149,6 +152,7 @@ namespace Model
      * AES256, aws:kms).
      */
     inline PutObjectResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
+
 
     /**
      * Version of the object.
@@ -184,6 +188,7 @@ namespace Model
      * Version of the object.
      */
     inline PutObjectResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -226,6 +231,7 @@ namespace Model
      * the response will include this header confirming the encryption algorithm used.
      */
     inline PutObjectResult& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -276,6 +282,7 @@ namespace Model
      */
     inline PutObjectResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
+
     /**
      * If present, specifies the ID of the AWS Key Management Service (KMS) master
      * encryption key that was used for the object.
@@ -318,6 +325,7 @@ namespace Model
      */
     inline PutObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -334,13 +342,21 @@ namespace Model
     inline PutObjectResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_expiration;
+
     Aws::String m_eTag;
+
     ServerSideEncryption m_serverSideEncryption;
+
     Aws::String m_versionId;
+
     Aws::String m_sSECustomerAlgorithm;
+
     Aws::String m_sSECustomerKeyMD5;
+
     Aws::String m_sSEKMSKeyId;
+
     RequestCharged m_requestCharged;
   };
 

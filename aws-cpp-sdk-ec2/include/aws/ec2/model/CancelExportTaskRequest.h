@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the export task. This is the ID returned by
      * <code>CreateInstanceExportTask</code>.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline CancelExportTaskRequest& WithExportTaskId(const char* value) { SetExportTaskId(value); return *this;}
 
   private:
+
     Aws::String m_exportTaskId;
     bool m_exportTaskIdHasBeenSet;
   };

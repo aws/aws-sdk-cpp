@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     PutInventoryResult();
-    PutInventoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutInventoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutInventoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutInventoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

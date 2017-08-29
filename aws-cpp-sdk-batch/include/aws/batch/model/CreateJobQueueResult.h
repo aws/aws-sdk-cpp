@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateJobQueueResult();
-    CreateJobQueueResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateJobQueueResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateJobQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateJobQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the job queue.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the job queue.</p>
      */
     inline CreateJobQueueResult& WithJobQueueName(const char* value) { SetJobQueueName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
@@ -112,7 +114,9 @@ namespace Model
     inline CreateJobQueueResult& WithJobQueueArn(const char* value) { SetJobQueueArn(value); return *this;}
 
   private:
+
     Aws::String m_jobQueueName;
+
     Aws::String m_jobQueueArn;
   };
 

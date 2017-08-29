@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the parameter.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the parameter.</p>
      */
     inline ClusterParameterStatus& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+
 
     /**
      * <p>The status of the parameter that indicates whether the parameter is in sync
@@ -216,6 +218,7 @@ namespace Model
      */
     inline ClusterParameterStatus& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
 
+
     /**
      * <p>The error that prevented the parameter from being applied to the
      * database.</p>
@@ -259,10 +262,13 @@ namespace Model
     inline ClusterParameterStatus& WithParameterApplyErrorDescription(const char* value) { SetParameterApplyErrorDescription(value); return *this;}
 
   private:
+
     Aws::String m_parameterName;
     bool m_parameterNameHasBeenSet;
+
     Aws::String m_parameterApplyStatus;
     bool m_parameterApplyStatusHasBeenSet;
+
     Aws::String m_parameterApplyErrorDescription;
     bool m_parameterApplyErrorDescriptionHasBeenSet;
   };

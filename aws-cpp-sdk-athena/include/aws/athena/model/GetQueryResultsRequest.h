@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique ID of the query execution.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The unique ID of the query execution.</p>
      */
     inline GetQueryResultsRequest& WithQueryExecutionId(const char* value) { SetQueryExecutionId(value); return *this;}
+
 
     /**
      * <p>The token that specifies where to start pagination if a previous request was
@@ -113,6 +115,7 @@ namespace Model
      */
     inline GetQueryResultsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results (rows) to return in this request.</p>
      */
@@ -129,10 +132,13 @@ namespace Model
     inline GetQueryResultsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_queryExecutionId;
     bool m_queryExecutionIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

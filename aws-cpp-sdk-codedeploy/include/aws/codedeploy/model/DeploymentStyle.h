@@ -48,6 +48,7 @@ namespace Model
     DeploymentStyle& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Indicates whether to run an in-place deployment or a blue/green
      * deployment.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DeploymentStyle& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
      */
@@ -104,8 +106,10 @@ namespace Model
     inline DeploymentStyle& WithDeploymentOption(DeploymentOption&& value) { SetDeploymentOption(std::move(value)); return *this;}
 
   private:
+
     DeploymentType m_deploymentType;
     bool m_deploymentTypeHasBeenSet;
+
     DeploymentOption m_deploymentOption;
     bool m_deploymentOptionHasBeenSet;
   };

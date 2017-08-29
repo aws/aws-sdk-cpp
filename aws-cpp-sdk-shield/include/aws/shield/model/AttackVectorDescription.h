@@ -45,6 +45,7 @@ namespace Model
     AttackVectorDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline AttackVectorDescription& WithVectorType(const char* value) { SetVectorType(value); return *this;}
 
   private:
+
     Aws::String m_vectorType;
     bool m_vectorTypeHasBeenSet;
   };

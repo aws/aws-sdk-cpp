@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline UpdateShardCountRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
+
     /**
      * <p>The new number of shards.</p>
      */
@@ -86,6 +88,7 @@ namespace Model
      * <p>The new number of shards.</p>
      */
     inline UpdateShardCountRequest& WithTargetShardCount(int value) { SetTargetShardCount(value); return *this;}
+
 
     /**
      * <p>The scaling type. Uniform scaling creates shards of equal size.</p>
@@ -113,10 +116,13 @@ namespace Model
     inline UpdateShardCountRequest& WithScalingType(ScalingType&& value) { SetScalingType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     int m_targetShardCount;
     bool m_targetShardCountHasBeenSet;
+
     ScalingType m_scalingType;
     bool m_scalingTypeHasBeenSet;
   };

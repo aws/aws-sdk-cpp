@@ -46,6 +46,7 @@ namespace Model
     Destination& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the destination.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the destination.</p>
      */
     inline Destination& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the physical target where the log events
@@ -123,6 +125,7 @@ namespace Model
      */
     inline Destination& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
+
     /**
      * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
     inline Destination& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>An IAM policy document that governs which AWS accounts can create
@@ -200,6 +204,7 @@ namespace Model
      */
     inline Destination& WithAccessPolicy(const char* value) { SetAccessPolicy(value); return *this;}
 
+
     /**
      * <p>The ARN of this destination.</p>
      */
@@ -235,6 +240,7 @@ namespace Model
      */
     inline Destination& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The creation time of the destination, expressed as the number of milliseconds
      * since Jan 1, 1970 00:00:00 UTC.</p>
@@ -254,16 +260,22 @@ namespace Model
     inline Destination& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
   private:
+
     Aws::String m_destinationName;
     bool m_destinationNameHasBeenSet;
+
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_accessPolicy;
     bool m_accessPolicyHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     long long m_creationTime;
     bool m_creationTimeHasBeenSet;
   };

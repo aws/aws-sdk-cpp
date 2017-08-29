@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
      * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
@@ -121,6 +122,7 @@ namespace Model
      */
     inline DescribeNatGatewaysRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of items to return for this request. The request returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -144,6 +146,7 @@ namespace Model
      * return only 1000 items.</p>
      */
     inline DescribeNatGatewaysRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>One or more NAT gateway IDs.</p>
@@ -185,6 +188,7 @@ namespace Model
      */
     inline DescribeNatGatewaysRequest& AddNatGatewayIds(const char* value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(value); return *this; }
 
+
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
@@ -221,12 +225,16 @@ namespace Model
     inline DescribeNatGatewaysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filter;
     bool m_filterHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::Vector<Aws::String> m_natGatewayIds;
     bool m_natGatewayIdsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

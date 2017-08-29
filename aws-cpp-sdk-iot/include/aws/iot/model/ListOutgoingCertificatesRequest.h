@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The result page size.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>The result page size.</p>
      */
     inline ListOutgoingCertificatesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -94,6 +96,7 @@ namespace Model
      */
     inline ListOutgoingCertificatesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Specifies the order for results. If True, the results are returned in
      * ascending order, based on the creation date.</p>
@@ -113,10 +116,13 @@ namespace Model
     inline ListOutgoingCertificatesRequest& WithAscendingOrder(bool value) { SetAscendingOrder(value); return *this;}
 
   private:
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     bool m_ascendingOrder;
     bool m_ascendingOrderHasBeenSet;
   };

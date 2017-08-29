@@ -31,13 +31,13 @@ ListStreamsResult::ListStreamsResult() :
 {
 }
 
-ListStreamsResult::ListStreamsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListStreamsResult::ListStreamsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_hasMoreStreams(false)
 {
   *this = result;
 }
 
-ListStreamsResult& ListStreamsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListStreamsResult& ListStreamsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StreamNames"))

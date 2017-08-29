@@ -48,8 +48,9 @@ namespace Model
     InvokeResult& operator=(const InvokeResult&) = delete;
 
 
-    InvokeResult(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
-    InvokeResult& operator=(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
+    InvokeResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    InvokeResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+
 
 
     /**
@@ -75,6 +76,7 @@ namespace Model
      * <code>DryRun</code> invocation type the status code will be 204. </p>
      */
     inline InvokeResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p>Indicates whether an error occurred while executing the Lambda function. If
@@ -167,6 +169,7 @@ namespace Model
      */
     inline InvokeResult& WithFunctionError(const char* value) { SetFunctionError(value); return *this;}
 
+
     /**
      * <p> It is the base64-encoded logs for the Lambda function invocation. This is
      * present only if the invocation type is <code>RequestResponse</code> and the logs
@@ -216,6 +219,7 @@ namespace Model
      */
     inline InvokeResult& WithLogResult(const char* value) { SetLogResult(value); return *this;}
 
+
     /**
      * <p> It is the JSON representation of the object returned by the Lambda function.
      * This is present only if the invocation type is <code>RequestResponse</code>.
@@ -237,10 +241,14 @@ namespace Model
     inline void ReplaceBody(Aws::IOStream* body) { m_payload = Aws::Utils::Stream::ResponseStream(body); }
     
   private:
+
     int m_statusCode;
+
     Aws::String m_functionError;
+
     Aws::String m_logResult;
-    Utils::Stream::ResponseStream m_payload;
+
+  Aws::Utils::Stream::ResponseStream m_payload;
   };
 
 } // namespace Model

@@ -38,6 +38,7 @@ namespace Model
     GetDocumentationPartRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetDocumentationPartRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline GetDocumentationPartRequest& WithDocumentationPartId(const char* value) { SetDocumentationPartId(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_documentationPartId;
     bool m_documentationPartIdHasBeenSet;
   };

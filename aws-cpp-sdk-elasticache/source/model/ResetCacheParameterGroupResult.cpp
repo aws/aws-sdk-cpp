@@ -31,12 +31,12 @@ ResetCacheParameterGroupResult::ResetCacheParameterGroupResult()
 {
 }
 
-ResetCacheParameterGroupResult::ResetCacheParameterGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+ResetCacheParameterGroupResult::ResetCacheParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ResetCacheParameterGroupResult& ResetCacheParameterGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ResetCacheParameterGroupResult& ResetCacheParameterGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

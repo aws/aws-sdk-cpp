@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DeleteFacesResult();
-    DeleteFacesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteFacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteFacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of strings (face IDs) of the faces that were deleted.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DeleteFacesResult& AddDeletedFaces(const char* value) { m_deletedFaces.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_deletedFaces;
   };
 

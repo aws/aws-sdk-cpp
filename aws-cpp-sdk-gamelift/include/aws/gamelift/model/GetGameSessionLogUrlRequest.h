@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for the game session to get logs for.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline GetGameSessionLogUrlRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
   private:
+
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet;
   };

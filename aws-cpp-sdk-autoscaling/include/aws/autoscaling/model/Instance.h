@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline Instance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The Availability Zone in which the instance is running.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Instance& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>A description of the current lifecycle state. Note that the
      * <code>Quarantined</code> state is not used.</p>
@@ -148,6 +151,7 @@ namespace Model
      * <code>Quarantined</code> state is not used.</p>
      */
     inline Instance& WithLifecycleState(LifecycleState&& value) { SetLifecycleState(std::move(value)); return *this;}
+
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
@@ -198,6 +202,7 @@ namespace Model
      */
     inline Instance& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
 
+
     /**
      * <p>The launch configuration associated with the instance.</p>
      */
@@ -233,6 +238,7 @@ namespace Model
      */
     inline Instance& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
 
+
     /**
      * <p>Indicates whether the instance is protected from termination by Auto Scaling
      * when scaling in.</p>
@@ -252,16 +258,22 @@ namespace Model
     inline Instance& WithProtectedFromScaleIn(bool value) { SetProtectedFromScaleIn(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     LifecycleState m_lifecycleState;
     bool m_lifecycleStateHasBeenSet;
+
     Aws::String m_healthStatus;
     bool m_healthStatusHasBeenSet;
+
     Aws::String m_launchConfigurationName;
     bool m_launchConfigurationNameHasBeenSet;
+
     bool m_protectedFromScaleIn;
     bool m_protectedFromScaleInHasBeenSet;
   };

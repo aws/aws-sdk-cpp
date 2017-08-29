@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the configuration set from which to delete the event
      * destination.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DeleteConfigurationSetEventDestinationRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 
+
     /**
      * <p>The name of the event destination to delete.</p>
      */
@@ -124,8 +126,10 @@ namespace Model
     inline DeleteConfigurationSetEventDestinationRequest& WithEventDestinationName(const char* value) { SetEventDestinationName(value); return *this;}
 
   private:
+
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet;
+
     Aws::String m_eventDestinationName;
     bool m_eventDestinationNameHasBeenSet;
   };

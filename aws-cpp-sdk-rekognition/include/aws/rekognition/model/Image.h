@@ -62,6 +62,7 @@ namespace Model
     Image& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Blob of image bytes up to 5 MBs.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>Blob of image bytes up to 5 MBs.</p>
      */
     inline Image& WithBytes(Aws::Utils::ByteBuffer&& value) { SetBytes(std::move(value)); return *this;}
+
 
     /**
      * <p>Identifies an S3 object as the image source.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline Image& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_bytes;
     bool m_bytesHasBeenSet;
+
     S3Object m_s3Object;
     bool m_s3ObjectHasBeenSet;
   };

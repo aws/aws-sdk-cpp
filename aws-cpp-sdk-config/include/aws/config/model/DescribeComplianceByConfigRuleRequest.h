@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
      */
     inline DescribeComplianceByConfigRuleRequest& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
+
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
@@ -130,6 +132,7 @@ namespace Model
      */
     inline DescribeComplianceByConfigRuleRequest& AddComplianceTypes(ComplianceType&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
@@ -173,10 +176,13 @@ namespace Model
     inline DescribeComplianceByConfigRuleRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_configRuleNames;
     bool m_configRuleNamesHasBeenSet;
+
     Aws::Vector<ComplianceType> m_complianceTypes;
     bool m_complianceTypesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A list of policy documents to include in the simulation. Each document is
      * specified as a string containing the complete, valid JSON text of an IAM policy.
@@ -200,6 +201,7 @@ namespace Model
      */
     inline SimulateCustomPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
+
     /**
      * <p>A list of names of API actions to evaluate in the simulation. Each action is
      * evaluated against each resource. Each action must include the service
@@ -255,6 +257,7 @@ namespace Model
      * identifier, such as <code>iam:CreateUser</code>.</p>
      */
     inline SimulateCustomPolicyRequest& AddActionNames(const char* value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
+
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
@@ -400,6 +403,7 @@ namespace Model
      */
     inline SimulateCustomPolicyRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
+
     /**
      * <p>A resource-based policy to include in the simulation provided as a string.
      * Each resource in the simulation is treated as if it had this policy attached.
@@ -490,6 +494,7 @@ namespace Model
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline SimulateCustomPolicyRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
+
 
     /**
      * <p>An AWS account ID that specifies the owner of any simulated resource that
@@ -589,6 +594,7 @@ namespace Model
      */
     inline SimulateCustomPolicyRequest& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
 
+
     /**
      * <p>The ARN of the IAM user that you want to use as the simulated caller of the
      * APIs. <code>CallerArn</code> is required if you include a
@@ -659,6 +665,7 @@ namespace Model
      */
     inline SimulateCustomPolicyRequest& WithCallerArn(const char* value) { SetCallerArn(value); return *this;}
 
+
     /**
      * <p>A list of context keys and corresponding values for the simulation to use.
      * Whenever a context key is evaluated in one of the simulated IAM permission
@@ -707,6 +714,7 @@ namespace Model
      * policies, the corresponding value is supplied.</p>
      */
     inline SimulateCustomPolicyRequest& AddContextEntries(ContextEntry&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Specifies the type of simulation to run. Different APIs that support
@@ -904,6 +912,7 @@ namespace Model
      */
     inline SimulateCustomPolicyRequest& WithResourceHandlingOption(const char* value) { SetResourceHandlingOption(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this only when paginating results to indicate the maximum
      * number of items you want in the response. If additional items exist beyond the
@@ -939,6 +948,7 @@ namespace Model
      * subsequent call that tells the service where to continue from.</p>
      */
     inline SimulateCustomPolicyRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -997,24 +1007,34 @@ namespace Model
     inline SimulateCustomPolicyRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_policyInputList;
     bool m_policyInputListHasBeenSet;
+
     Aws::Vector<Aws::String> m_actionNames;
     bool m_actionNamesHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourceArns;
     bool m_resourceArnsHasBeenSet;
+
     Aws::String m_resourcePolicy;
     bool m_resourcePolicyHasBeenSet;
+
     Aws::String m_resourceOwner;
     bool m_resourceOwnerHasBeenSet;
+
     Aws::String m_callerArn;
     bool m_callerArnHasBeenSet;
+
     Aws::Vector<ContextEntry> m_contextEntries;
     bool m_contextEntriesHasBeenSet;
+
     Aws::String m_resourceHandlingOption;
     bool m_resourceHandlingOptionHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

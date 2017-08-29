@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ImportInstanceResponse();
-    ImportInstanceResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ImportInstanceResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ImportInstanceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ImportInstanceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the conversion task.</p>
@@ -72,6 +73,7 @@ namespace Model
      */
     inline ImportInstanceResponse& WithConversionTask(ConversionTask&& value) { SetConversionTask(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -88,7 +90,9 @@ namespace Model
     inline ImportInstanceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ConversionTask m_conversionTask;
+
     ResponseMetadata m_responseMetadata;
   };
 

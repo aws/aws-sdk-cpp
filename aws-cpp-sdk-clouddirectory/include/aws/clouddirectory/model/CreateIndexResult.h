@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateIndexResult();
-    CreateIndexResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateIndexResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateIndexResult& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_objectIdentifier;
   };
 

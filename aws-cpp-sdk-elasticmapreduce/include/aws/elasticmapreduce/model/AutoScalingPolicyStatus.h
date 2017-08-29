@@ -46,6 +46,7 @@ namespace Model
     AutoScalingPolicyStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Indicates the status of the automatic scaling policy.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Indicates the status of the automatic scaling policy.</p>
      */
     inline AutoScalingPolicyStatus& WithState(AutoScalingPolicyState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason for a change in status.</p>
@@ -97,8 +99,10 @@ namespace Model
     inline AutoScalingPolicyStatus& WithStateChangeReason(AutoScalingPolicyStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
 
   private:
+
     AutoScalingPolicyState m_state;
     bool m_stateHasBeenSet;
+
     AutoScalingPolicyStateChangeReason m_stateChangeReason;
     bool m_stateChangeReasonHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     RemoveSourceIdentifierFromSubscriptionResult();
-    RemoveSourceIdentifierFromSubscriptionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RemoveSourceIdentifierFromSubscriptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RemoveSourceIdentifierFromSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RemoveSourceIdentifierFromSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const EventSubscription& GetEventSubscription() const{ return m_eventSubscription; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline RemoveSourceIdentifierFromSubscriptionResult& WithEventSubscription(EventSubscription&& value) { SetEventSubscription(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline RemoveSourceIdentifierFromSubscriptionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     EventSubscription m_eventSubscription;
+
     ResponseMetadata m_responseMetadata;
   };
 

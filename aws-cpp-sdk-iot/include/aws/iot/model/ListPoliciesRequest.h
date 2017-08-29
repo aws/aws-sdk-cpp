@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The marker for the next set of results.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ListPoliciesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The result page size.</p>
      */
@@ -92,6 +94,7 @@ namespace Model
      * <p>The result page size.</p>
      */
     inline ListPoliciesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+
 
     /**
      * <p>Specifies the order for results. If true, the results are returned in
@@ -112,10 +115,13 @@ namespace Model
     inline ListPoliciesRequest& WithAscendingOrder(bool value) { SetAscendingOrder(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     bool m_ascendingOrder;
     bool m_ascendingOrderHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteClassifierResult();
-    DeleteClassifierResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteClassifierResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteClassifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteClassifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

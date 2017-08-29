@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the container instance to update. If you do not specify a cluster, the default
@@ -87,6 +88,7 @@ namespace Model
      */
     inline UpdateContainerInstancesStateRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
+
     /**
      * <p>A list of container instance IDs or full Amazon Resource Name (ARN)
      * entries.</p>
@@ -135,6 +137,7 @@ namespace Model
      */
     inline UpdateContainerInstancesStateRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
+
     /**
      * <p>The container instance state with which to update the container instance.</p>
      */
@@ -161,10 +164,13 @@ namespace Model
     inline UpdateContainerInstancesStateRequest& WithStatus(ContainerInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::Vector<Aws::String> m_containerInstances;
     bool m_containerInstancesHasBeenSet;
+
     ContainerInstanceStatus m_status;
     bool m_statusHasBeenSet;
   };

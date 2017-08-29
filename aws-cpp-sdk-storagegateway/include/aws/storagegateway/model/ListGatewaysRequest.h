@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An opaque string that indicates the position at which to begin the returned
      * list of gateways.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ListGatewaysRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Specifies that the list of gateways returned be limited to the specified
      * number of items.</p>
@@ -102,8 +104,10 @@ namespace Model
     inline ListGatewaysRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

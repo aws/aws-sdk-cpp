@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeAvailabilityOptionsResult();
-    DescribeAvailabilityOptionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAvailabilityOptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAvailabilityOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAvailabilityOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The availability options configured for the domain. Indicates whether
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeAvailabilityOptionsResult& WithAvailabilityOptions(AvailabilityOptionsStatus&& value) { SetAvailabilityOptions(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -95,7 +97,9 @@ namespace Model
     inline DescribeAvailabilityOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     AvailabilityOptionsStatus m_availabilityOptions;
+
     ResponseMetadata m_responseMetadata;
   };
 

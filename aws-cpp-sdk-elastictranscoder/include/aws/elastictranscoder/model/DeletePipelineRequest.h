@@ -38,6 +38,7 @@ namespace Model
     DeletePipelineRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the pipeline that you want to delete.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DeletePipelineRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

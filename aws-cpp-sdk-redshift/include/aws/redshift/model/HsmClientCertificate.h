@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier of the HSM client certificate.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The identifier of the HSM client certificate.</p>
      */
     inline HsmClientCertificate& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
+
 
     /**
      * <p>The public key that the Amazon Redshift cluster will use to connect to the
@@ -129,6 +131,7 @@ namespace Model
      */
     inline HsmClientCertificate& WithHsmClientCertificatePublicKey(const char* value) { SetHsmClientCertificatePublicKey(value); return *this;}
 
+
     /**
      * <p>The list of tags for the HSM client certificate.</p>
      */
@@ -165,10 +168,13 @@ namespace Model
     inline HsmClientCertificate& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_hsmClientCertificateIdentifier;
     bool m_hsmClientCertificateIdentifierHasBeenSet;
+
     Aws::String m_hsmClientCertificatePublicKey;
     bool m_hsmClientCertificatePublicKeyHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

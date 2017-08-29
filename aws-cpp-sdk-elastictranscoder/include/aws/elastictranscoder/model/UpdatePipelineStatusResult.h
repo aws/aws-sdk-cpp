@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdatePipelineStatusResult();
-    UpdatePipelineStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePipelineStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePipelineStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePipelineStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A section of the response body that provides information about the
@@ -78,6 +79,7 @@ namespace Model
     inline UpdatePipelineStatusResult& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
 
   private:
+
     Pipeline m_pipeline;
   };
 

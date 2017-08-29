@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The unique identifier of a cluster whose resize progress you are requesting.
      * This parameter is case-sensitive.</p> <p>By default, resize operations for all
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeResizeRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
   };

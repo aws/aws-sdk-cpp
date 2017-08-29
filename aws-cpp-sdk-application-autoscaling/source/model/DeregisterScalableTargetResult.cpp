@@ -30,12 +30,12 @@ DeregisterScalableTargetResult::DeregisterScalableTargetResult()
 {
 }
 
-DeregisterScalableTargetResult::DeregisterScalableTargetResult(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterScalableTargetResult::DeregisterScalableTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeregisterScalableTargetResult& DeregisterScalableTargetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterScalableTargetResult& DeregisterScalableTargetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -46,6 +46,7 @@ namespace Model
     RevisionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Information about the location and type of an application revision.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Information about the location and type of an application revision.</p>
      */
     inline RevisionInfo& WithRevisionLocation(RevisionLocation&& value) { SetRevisionLocation(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about an application revision, including usage details and
@@ -102,8 +104,10 @@ namespace Model
     inline RevisionInfo& WithGenericRevisionInfo(GenericRevisionInfo&& value) { SetGenericRevisionInfo(std::move(value)); return *this;}
 
   private:
+
     RevisionLocation m_revisionLocation;
     bool m_revisionLocationHasBeenSet;
+
     GenericRevisionInfo m_genericRevisionInfo;
     bool m_genericRevisionInfoHasBeenSet;
   };

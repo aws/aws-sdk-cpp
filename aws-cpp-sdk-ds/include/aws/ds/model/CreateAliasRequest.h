@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the directory for which to create the alias.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The identifier of the directory for which to create the alias.</p>
      */
     inline CreateAliasRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in
@@ -125,8 +127,10 @@ namespace Model
     inline CreateAliasRequest& WithAlias(const char* value) { SetAlias(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_alias;
     bool m_aliasHasBeenSet;
   };

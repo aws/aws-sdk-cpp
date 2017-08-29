@@ -48,6 +48,7 @@ namespace Model
     Predicate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Currently "OR" is not supported.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>Currently "OR" is not supported.</p>
      */
     inline Predicate& WithLogical(Logical&& value) { SetLogical(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the conditions that determine when the trigger will fire.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline Predicate& AddConditions(Condition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
 
   private:
+
     Logical m_logical;
     bool m_logicalHasBeenSet;
+
     Aws::Vector<Condition> m_conditions;
     bool m_conditionsHasBeenSet;
   };

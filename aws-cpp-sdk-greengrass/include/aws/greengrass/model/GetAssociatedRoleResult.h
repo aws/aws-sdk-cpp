@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetAssociatedRoleResult();
-    GetAssociatedRoleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAssociatedRoleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAssociatedRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAssociatedRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Time when the role was associated for the group.
@@ -75,6 +76,7 @@ namespace Model
      * Time when the role was associated for the group.
      */
     inline GetAssociatedRoleResult& WithAssociatedAt(const char* value) { SetAssociatedAt(value); return *this;}
+
 
     /**
      * Arn of the role that is associated with the group.
@@ -112,7 +114,9 @@ namespace Model
     inline GetAssociatedRoleResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_associatedAt;
+
     Aws::String m_roleArn;
   };
 

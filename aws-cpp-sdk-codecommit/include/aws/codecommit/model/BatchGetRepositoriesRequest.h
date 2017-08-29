@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The names of the repositories to get information about.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline BatchGetRepositoriesRequest& AddRepositoryNames(const char* value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_repositoryNames;
     bool m_repositoryNamesHasBeenSet;
   };

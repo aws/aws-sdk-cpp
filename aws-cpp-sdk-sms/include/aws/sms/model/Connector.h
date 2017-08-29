@@ -50,6 +50,7 @@ namespace Model
     Connector& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetConnectorId() const{ return m_connectorId; }
 
@@ -70,6 +71,7 @@ namespace Model
 
     
     inline Connector& WithConnectorId(const char* value) { SetConnectorId(value); return *this;}
+
 
     
     inline const Aws::String& GetVersion() const{ return m_version; }
@@ -92,6 +94,7 @@ namespace Model
     
     inline Connector& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     
     inline const ConnectorStatus& GetStatus() const{ return m_status; }
 
@@ -106,6 +109,7 @@ namespace Model
 
     
     inline Connector& WithStatus(ConnectorStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     
     inline const Aws::Vector<ConnectorCapability>& GetCapabilityList() const{ return m_capabilityList; }
@@ -128,6 +132,7 @@ namespace Model
     
     inline Connector& AddCapabilityList(ConnectorCapability&& value) { m_capabilityListHasBeenSet = true; m_capabilityList.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::String& GetVmManagerName() const{ return m_vmManagerName; }
 
@@ -149,6 +154,7 @@ namespace Model
     
     inline Connector& WithVmManagerName(const char* value) { SetVmManagerName(value); return *this;}
 
+
     
     inline const VmManagerType& GetVmManagerType() const{ return m_vmManagerType; }
 
@@ -163,6 +169,7 @@ namespace Model
 
     
     inline Connector& WithVmManagerType(VmManagerType&& value) { SetVmManagerType(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetVmManagerId() const{ return m_vmManagerId; }
@@ -185,6 +192,7 @@ namespace Model
     
     inline Connector& WithVmManagerId(const char* value) { SetVmManagerId(value); return *this;}
 
+
     
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
@@ -205,6 +213,7 @@ namespace Model
 
     
     inline Connector& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
 
     
     inline const Aws::String& GetMacAddress() const{ return m_macAddress; }
@@ -227,6 +236,7 @@ namespace Model
     
     inline Connector& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetAssociatedOn() const{ return m_associatedOn; }
 
@@ -243,24 +253,34 @@ namespace Model
     inline Connector& WithAssociatedOn(Aws::Utils::DateTime&& value) { SetAssociatedOn(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_connectorId;
     bool m_connectorIdHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     ConnectorStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Vector<ConnectorCapability> m_capabilityList;
     bool m_capabilityListHasBeenSet;
+
     Aws::String m_vmManagerName;
     bool m_vmManagerNameHasBeenSet;
+
     VmManagerType m_vmManagerType;
     bool m_vmManagerTypeHasBeenSet;
+
     Aws::String m_vmManagerId;
     bool m_vmManagerIdHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     Aws::String m_macAddress;
     bool m_macAddressHasBeenSet;
+
     Aws::Utils::DateTime m_associatedOn;
     bool m_associatedOnHasBeenSet;
   };

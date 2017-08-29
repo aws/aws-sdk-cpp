@@ -49,6 +49,7 @@ namespace Model
     BatchListPolicyAttachments& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The reference that identifies the policy object.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The reference that identifies the policy object.</p>
      */
     inline BatchListPolicyAttachments& WithPolicyReference(ObjectReference&& value) { SetPolicyReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline BatchListPolicyAttachments& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -125,10 +128,13 @@ namespace Model
     inline BatchListPolicyAttachments& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     ObjectReference m_policyReference;
     bool m_policyReferenceHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

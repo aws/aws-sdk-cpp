@@ -50,6 +50,7 @@ namespace Model
     User& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the user.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The ID of the user.</p>
      */
     inline User& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The login name of the user.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline User& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
     /**
      * <p>The email address of the user.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The email address of the user.</p>
      */
     inline User& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+
 
     /**
      * <p>The given name of the user.</p>
@@ -190,6 +194,7 @@ namespace Model
      */
     inline User& WithGivenName(const char* value) { SetGivenName(value); return *this;}
 
+
     /**
      * <p>The surname of the user.</p>
      */
@@ -224,6 +229,7 @@ namespace Model
      * <p>The surname of the user.</p>
      */
     inline User& WithSurname(const char* value) { SetSurname(value); return *this;}
+
 
     /**
      * <p>The ID of the organization.</p>
@@ -260,6 +266,7 @@ namespace Model
      */
     inline User& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 
+
     /**
      * <p>The ID of the root folder.</p>
      */
@@ -294,6 +301,7 @@ namespace Model
      * <p>The ID of the root folder.</p>
      */
     inline User& WithRootFolderId(const char* value) { SetRootFolderId(value); return *this;}
+
 
     /**
      * <p>The ID of the recycle bin folder.</p>
@@ -330,6 +338,7 @@ namespace Model
      */
     inline User& WithRecycleBinFolderId(const char* value) { SetRecycleBinFolderId(value); return *this;}
 
+
     /**
      * <p>The status of the user.</p>
      */
@@ -354,6 +363,7 @@ namespace Model
      * <p>The status of the user.</p>
      */
     inline User& WithStatus(UserStatusType&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of user.</p>
@@ -380,6 +390,7 @@ namespace Model
      */
     inline User& WithType(UserType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The time when the user was created.</p>
      */
@@ -405,6 +416,7 @@ namespace Model
      */
     inline User& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The time when the user was modified.</p>
      */
@@ -429,6 +441,7 @@ namespace Model
      * <p>The time when the user was modified.</p>
      */
     inline User& WithModifiedTimestamp(Aws::Utils::DateTime&& value) { SetModifiedTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The time zone ID of the user.</p>
@@ -465,6 +478,7 @@ namespace Model
      */
     inline User& WithTimeZoneId(const char* value) { SetTimeZoneId(value); return *this;}
 
+
     /**
      * <p>The locale of the user.</p>
      */
@@ -489,6 +503,7 @@ namespace Model
      * <p>The locale of the user.</p>
      */
     inline User& WithLocale(LocaleType&& value) { SetLocale(std::move(value)); return *this;}
+
 
     /**
      * <p>The storage for the user.</p>
@@ -516,34 +531,49 @@ namespace Model
     inline User& WithStorage(UserStorageMetadata&& value) { SetStorage(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_emailAddress;
     bool m_emailAddressHasBeenSet;
+
     Aws::String m_givenName;
     bool m_givenNameHasBeenSet;
+
     Aws::String m_surname;
     bool m_surnameHasBeenSet;
+
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet;
+
     Aws::String m_rootFolderId;
     bool m_rootFolderIdHasBeenSet;
+
     Aws::String m_recycleBinFolderId;
     bool m_recycleBinFolderIdHasBeenSet;
+
     UserStatusType m_status;
     bool m_statusHasBeenSet;
+
     UserType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_modifiedTimestamp;
     bool m_modifiedTimestampHasBeenSet;
+
     Aws::String m_timeZoneId;
     bool m_timeZoneIdHasBeenSet;
+
     LocaleType m_locale;
     bool m_localeHasBeenSet;
+
     UserStorageMetadata m_storage;
     bool m_storageHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the CMK to import the key material into. The CMK's
      * <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>A valid identifier is
@@ -116,6 +117,7 @@ namespace Model
      */
     inline ImportKeyMaterialRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>The import token that you received in the response to a previous
      * <a>GetParametersForImport</a> request. It must be from the same response that
@@ -150,6 +152,7 @@ namespace Model
      * contained the public key that you used to encrypt the key material.</p>
      */
     inline ImportKeyMaterialRequest& WithImportToken(Aws::Utils::ByteBuffer&& value) { SetImportToken(std::move(value)); return *this;}
+
 
     /**
      * <p>The encrypted key material to import. It must be encrypted with the public
@@ -191,6 +194,7 @@ namespace Model
      */
     inline ImportKeyMaterialRequest& WithEncryptedKeyMaterial(Aws::Utils::ByteBuffer&& value) { SetEncryptedKeyMaterial(std::move(value)); return *this;}
 
+
     /**
      * <p>The time at which the imported key material expires. When the key material
      * expires, AWS KMS deletes the key material and the CMK becomes unusable. You must
@@ -230,6 +234,7 @@ namespace Model
      * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.</p>
      */
     inline ImportKeyMaterialRequest& WithValidTo(Aws::Utils::DateTime&& value) { SetValidTo(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies whether the key material expires. The default is
@@ -277,14 +282,19 @@ namespace Model
     inline ImportKeyMaterialRequest& WithExpirationModel(ExpirationModelType&& value) { SetExpirationModel(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::Utils::ByteBuffer m_importToken;
     bool m_importTokenHasBeenSet;
+
     Aws::Utils::ByteBuffer m_encryptedKeyMaterial;
     bool m_encryptedKeyMaterialHasBeenSet;
+
     Aws::Utils::DateTime m_validTo;
     bool m_validToHasBeenSet;
+
     ExpirationModelType m_expirationModel;
     bool m_expirationModelHasBeenSet;
   };

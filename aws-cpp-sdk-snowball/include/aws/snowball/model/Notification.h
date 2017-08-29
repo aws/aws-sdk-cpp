@@ -54,6 +54,7 @@ namespace Model
     Notification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
      * You can create Amazon Resource Names (ARNs) for topics by using the <a
@@ -131,6 +132,7 @@ namespace Model
      */
     inline Notification& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
 
+
     /**
      * <p>The list of job states that will trigger a notification for this job.</p>
      */
@@ -166,6 +168,7 @@ namespace Model
      */
     inline Notification& AddJobStatesToNotify(JobState&& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Any change in job state will trigger a notification for this job.</p>
      */
@@ -182,10 +185,13 @@ namespace Model
     inline Notification& WithNotifyAll(bool value) { SetNotifyAll(value); return *this;}
 
   private:
+
     Aws::String m_snsTopicARN;
     bool m_snsTopicARNHasBeenSet;
+
     Aws::Vector<JobState> m_jobStatesToNotify;
     bool m_jobStatesToNotifyHasBeenSet;
+
     bool m_notifyAll;
     bool m_notifyAllHasBeenSet;
   };

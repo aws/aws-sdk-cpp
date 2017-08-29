@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListPrincipalThingsResult();
-    ListPrincipalThingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPrincipalThingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPrincipalThingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPrincipalThingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The things.</p>
@@ -87,6 +88,7 @@ namespace Model
      * <p>The things.</p>
      */
     inline ListPrincipalThingsResult& AddThings(const char* value) { m_things.push_back(value); return *this; }
+
 
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
@@ -131,7 +133,9 @@ namespace Model
     inline ListPrincipalThingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_things;
+
     Aws::String m_nextToken;
   };
 

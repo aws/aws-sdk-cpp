@@ -55,7 +55,7 @@ enum class PollyErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_LEXICON= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_LEXICON= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_NEXT_TOKEN,
   INVALID_SAMPLE_RATE,
   INVALID_SSML,
@@ -72,7 +72,7 @@ enum class PollyErrors
 };
 namespace PollyErrorMapper
 {
-  AWS_POLLY_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_POLLY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Polly

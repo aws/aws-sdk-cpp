@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Unique stack identifier.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>Unique stack identifier.</p>
      */
     inline StackSummary& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The name associated with the stack.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline StackSummary& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+
     /**
      * <p>The template description of the template used to create the stack.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      */
     inline StackSummary& WithTemplateDescription(const char* value) { SetTemplateDescription(value); return *this;}
 
+
     /**
      * <p>The time the stack was created.</p>
      */
@@ -179,6 +183,7 @@ namespace Model
      * <p>The time the stack was created.</p>
      */
     inline StackSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
@@ -210,6 +215,7 @@ namespace Model
      */
     inline StackSummary& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time the stack was deleted.</p>
      */
@@ -235,6 +241,7 @@ namespace Model
      */
     inline StackSummary& WithDeletionTime(Aws::Utils::DateTime&& value) { SetDeletionTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The current status of the stack.</p>
      */
@@ -259,6 +266,7 @@ namespace Model
      * <p>The current status of the stack.</p>
      */
     inline StackSummary& WithStackStatus(StackStatus&& value) { SetStackStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Success/Failure message associated with the stack status.</p>
@@ -296,20 +304,28 @@ namespace Model
     inline StackSummary& WithStackStatusReason(const char* value) { SetStackStatusReason(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_templateDescription;
     bool m_templateDescriptionHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
     Aws::Utils::DateTime m_deletionTime;
     bool m_deletionTimeHasBeenSet;
+
     StackStatus m_stackStatus;
     bool m_stackStatusHasBeenSet;
+
     Aws::String m_stackStatusReason;
     bool m_stackStatusReasonHasBeenSet;
   };

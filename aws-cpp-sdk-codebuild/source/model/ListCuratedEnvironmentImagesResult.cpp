@@ -30,12 +30,12 @@ ListCuratedEnvironmentImagesResult::ListCuratedEnvironmentImagesResult()
 {
 }
 
-ListCuratedEnvironmentImagesResult::ListCuratedEnvironmentImagesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListCuratedEnvironmentImagesResult::ListCuratedEnvironmentImagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListCuratedEnvironmentImagesResult& ListCuratedEnvironmentImagesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListCuratedEnvironmentImagesResult& ListCuratedEnvironmentImagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("platforms"))

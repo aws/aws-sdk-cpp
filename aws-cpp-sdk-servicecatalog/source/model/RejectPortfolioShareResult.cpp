@@ -30,12 +30,12 @@ RejectPortfolioShareResult::RejectPortfolioShareResult()
 {
 }
 
-RejectPortfolioShareResult::RejectPortfolioShareResult(const AmazonWebServiceResult<JsonValue>& result)
+RejectPortfolioShareResult::RejectPortfolioShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RejectPortfolioShareResult& RejectPortfolioShareResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RejectPortfolioShareResult& RejectPortfolioShareResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

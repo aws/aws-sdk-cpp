@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline StopExecutionRequest& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
 
+
     /**
      * <p>An arbitrary error code that identifies the cause of the termination.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>An arbitrary error code that identifies the cause of the termination.</p>
      */
     inline StopExecutionRequest& WithError(const char* value) { SetError(value); return *this;}
+
 
     /**
      * <p>A more detailed explanation of the cause of the termination.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline StopExecutionRequest& WithCause(const char* value) { SetCause(value); return *this;}
 
   private:
+
     Aws::String m_executionArn;
     bool m_executionArnHasBeenSet;
+
     Aws::String m_error;
     bool m_errorHasBeenSet;
+
     Aws::String m_cause;
     bool m_causeHasBeenSet;
   };

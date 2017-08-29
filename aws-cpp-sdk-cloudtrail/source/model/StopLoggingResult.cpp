@@ -30,12 +30,12 @@ StopLoggingResult::StopLoggingResult()
 {
 }
 
-StopLoggingResult::StopLoggingResult(const AmazonWebServiceResult<JsonValue>& result)
+StopLoggingResult::StopLoggingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopLoggingResult& StopLoggingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopLoggingResult& StopLoggingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

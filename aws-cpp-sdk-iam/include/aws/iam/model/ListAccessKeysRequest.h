@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the user.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
@@ -93,6 +94,7 @@ namespace Model
      * can also include any of the following characters: =,.@-</p>
      */
     inline ListAccessKeysRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -150,6 +152,7 @@ namespace Model
      */
     inline ListAccessKeysRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this only when paginating results to indicate the maximum
      * number of items you want in the response. If additional items exist beyond the
@@ -187,10 +190,13 @@ namespace Model
     inline ListAccessKeysRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

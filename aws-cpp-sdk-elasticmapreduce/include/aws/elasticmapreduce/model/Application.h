@@ -60,6 +60,7 @@ namespace Model
     Application& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the application.</p>
      */
@@ -95,6 +96,7 @@ namespace Model
      */
     inline Application& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The version of the application.</p>
      */
@@ -129,6 +131,7 @@ namespace Model
      * <p>The version of the application.</p>
      */
     inline Application& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>Arguments for Amazon EMR to pass to the application.</p>
@@ -169,6 +172,7 @@ namespace Model
      * <p>Arguments for Amazon EMR to pass to the application.</p>
      */
     inline Application& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
+
 
     /**
      * <p>This option is for advanced users only. This is meta information about
@@ -243,12 +247,16 @@ namespace Model
     inline Application& AddAdditionalInfo(const char* key, const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::Vector<Aws::String> m_args;
     bool m_argsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_additionalInfo;
     bool m_additionalInfoHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack or layer's Amazon Resource Number (ARN).</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The stack or layer's Amazon Resource Number (ARN).</p>
      */
     inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
 
     /**
      * <p>A list of the keys of tags to be removed from a stack or layer.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

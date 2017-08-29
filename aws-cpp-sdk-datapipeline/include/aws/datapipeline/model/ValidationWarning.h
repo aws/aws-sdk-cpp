@@ -48,6 +48,7 @@ namespace Model
     ValidationWarning& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the object that contains the validation warning.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The identifier of the object that contains the validation warning.</p>
      */
     inline ValidationWarning& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>A description of the validation warning.</p>
@@ -124,8 +126,10 @@ namespace Model
     inline ValidationWarning& AddWarnings(const char* value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Vector<Aws::String> m_warnings;
     bool m_warningsHasBeenSet;
   };

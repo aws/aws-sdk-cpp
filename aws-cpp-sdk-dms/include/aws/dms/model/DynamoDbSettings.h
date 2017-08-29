@@ -45,6 +45,7 @@ namespace Model
     DynamoDbSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline DynamoDbSettings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_serviceAccessRoleArn;
     bool m_serviceAccessRoleArnHasBeenSet;
   };

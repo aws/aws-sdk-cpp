@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -157,6 +158,7 @@ namespace Model
      */
     inline UploadServerCertificateRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The name for the server certificate. Do not include the path in this value.
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
@@ -219,6 +221,7 @@ namespace Model
      * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline UploadServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
+
 
     /**
      * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
@@ -297,6 +300,7 @@ namespace Model
      */
     inline UploadServerCertificateRequest& WithCertificateBody(const char* value) { SetCertificateBody(value); return *this;}
 
+
     /**
      * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -373,6 +377,7 @@ namespace Model
      * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
      */
     inline UploadServerCertificateRequest& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
+
 
     /**
      * <p>The contents of the certificate chain. This is typically a concatenation of
@@ -459,14 +464,19 @@ namespace Model
     inline UploadServerCertificateRequest& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_serverCertificateName;
     bool m_serverCertificateNameHasBeenSet;
+
     Aws::String m_certificateBody;
     bool m_certificateBodyHasBeenSet;
+
     Aws::String m_privateKey;
     bool m_privateKeyHasBeenSet;
+
     Aws::String m_certificateChain;
     bool m_certificateChainHasBeenSet;
   };

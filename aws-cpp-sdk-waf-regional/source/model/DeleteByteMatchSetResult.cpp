@@ -30,12 +30,12 @@ DeleteByteMatchSetResult::DeleteByteMatchSetResult()
 {
 }
 
-DeleteByteMatchSetResult::DeleteByteMatchSetResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteByteMatchSetResult::DeleteByteMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteByteMatchSetResult& DeleteByteMatchSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteByteMatchSetResult& DeleteByteMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

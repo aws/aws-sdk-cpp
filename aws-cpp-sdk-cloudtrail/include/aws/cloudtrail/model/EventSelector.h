@@ -52,6 +52,7 @@ namespace Model
     EventSelector& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specify if you want your trail to log read-only events, write-only events, or
      * all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API
@@ -92,6 +93,7 @@ namespace Model
      */
     inline EventSelector& WithReadWriteType(ReadWriteType&& value) { SetReadWriteType(std::move(value)); return *this;}
 
+
     /**
      * <p>Specify if you want your event selector to include management events for your
      * trail.</p> <p> For more information, see <a
@@ -118,6 +120,7 @@ namespace Model
      * is <code>true</code>.</p>
      */
     inline EventSelector& WithIncludeManagementEvents(bool value) { SetIncludeManagementEvents(value); return *this;}
+
 
     /**
      * <p>CloudTrail supports logging only data events for S3 objects. You can specify
@@ -183,10 +186,13 @@ namespace Model
     inline EventSelector& AddDataResources(DataResource&& value) { m_dataResourcesHasBeenSet = true; m_dataResources.push_back(std::move(value)); return *this; }
 
   private:
+
     ReadWriteType m_readWriteType;
     bool m_readWriteTypeHasBeenSet;
+
     bool m_includeManagementEvents;
     bool m_includeManagementEventsHasBeenSet;
+
     Aws::Vector<DataResource> m_dataResources;
     bool m_dataResourcesHasBeenSet;
   };

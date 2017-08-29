@@ -30,12 +30,12 @@ ListContainerInstancesResult::ListContainerInstancesResult()
 {
 }
 
-ListContainerInstancesResult::ListContainerInstancesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListContainerInstancesResult::ListContainerInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListContainerInstancesResult& ListContainerInstancesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListContainerInstancesResult& ListContainerInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("containerInstanceArns"))

@@ -55,7 +55,7 @@ enum class GlueErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONCURRENT_MODIFICATION,
   CONCURRENT_RUNS_EXCEEDED,
   CRAWLER_NOT_RUNNING,
@@ -75,7 +75,7 @@ enum class GlueErrors
 };
 namespace GlueErrorMapper
 {
-  AWS_GLUE_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_GLUE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Glue

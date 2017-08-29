@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon Resource Name (ARN) of the streaming source.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the streaming source.</p>
      */
     inline DiscoverInputSchemaRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
@@ -117,6 +119,7 @@ namespace Model
      */
     inline DiscoverInputSchemaRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>Point at which you want Amazon Kinesis Analytics to start reading records
      * from the specified streaming source discovery purposes.</p>
@@ -148,10 +151,13 @@ namespace Model
     inline DiscoverInputSchemaRequest& WithInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { SetInputStartingPositionConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_resourceARN;
     bool m_resourceARNHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
     bool m_inputStartingPositionConfigurationHasBeenSet;
   };

@@ -30,12 +30,12 @@ DescribeChapCredentialsResult::DescribeChapCredentialsResult()
 {
 }
 
-DescribeChapCredentialsResult::DescribeChapCredentialsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeChapCredentialsResult::DescribeChapCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeChapCredentialsResult& DescribeChapCredentialsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeChapCredentialsResult& DescribeChapCredentialsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChapCredentials"))

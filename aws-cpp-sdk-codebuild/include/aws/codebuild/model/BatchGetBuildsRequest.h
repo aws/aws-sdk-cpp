@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The IDs of the builds.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline BatchGetBuildsRequest& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_ids;
     bool m_idsHasBeenSet;
   };

@@ -30,12 +30,12 @@ CreateGroupResult::CreateGroupResult()
 {
 }
 
-CreateGroupResult::CreateGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateGroupResult::CreateGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateGroupResult& CreateGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateGroupResult& CreateGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Group"))

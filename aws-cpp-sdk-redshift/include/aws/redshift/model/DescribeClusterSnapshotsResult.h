@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeClusterSnapshotsResult();
-    DescribeClusterSnapshotsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeClusterSnapshotsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClusterSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClusterSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -120,6 +121,7 @@ namespace Model
      */
     inline DescribeClusterSnapshotsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of <a>Snapshot</a> instances. </p>
      */
@@ -155,6 +157,7 @@ namespace Model
      */
     inline DescribeClusterSnapshotsResult& AddSnapshots(Snapshot&& value) { m_snapshots.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -171,8 +174,11 @@ namespace Model
     inline DescribeClusterSnapshotsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<Snapshot> m_snapshots;
+
     ResponseMetadata m_responseMetadata;
   };
 

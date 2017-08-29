@@ -30,12 +30,12 @@ GetConfigResult::GetConfigResult()
 {
 }
 
-GetConfigResult::GetConfigResult(const AmazonWebServiceResult<JsonValue>& result)
+GetConfigResult::GetConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetConfigResult& GetConfigResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetConfigResult& GetConfigResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ConfigType"))

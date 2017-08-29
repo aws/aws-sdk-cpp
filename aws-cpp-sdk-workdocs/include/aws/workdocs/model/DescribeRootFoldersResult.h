@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeRootFoldersResult();
-    DescribeRootFoldersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRootFoldersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRootFoldersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRootFoldersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The user's special folders.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The user's special folders.</p>
      */
     inline DescribeRootFoldersResult& AddFolders(FolderMetadata&& value) { m_folders.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline DescribeRootFoldersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<FolderMetadata> m_folders;
+
     Aws::String m_marker;
   };
 

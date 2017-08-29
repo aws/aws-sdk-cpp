@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListAliasesResult();
-    ListAliasesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAliasesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A string, present if there are more aliases.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A string, present if there are more aliases.</p>
      */
     inline ListAliasesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+
 
     /**
      * <p>A list of aliases.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline ListAliasesResult& AddAliases(AliasConfiguration&& value) { m_aliases.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextMarker;
+
     Aws::Vector<AliasConfiguration> m_aliases;
   };
 

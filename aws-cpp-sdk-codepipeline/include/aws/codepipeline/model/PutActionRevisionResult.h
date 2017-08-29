@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     PutActionRevisionResult();
-    PutActionRevisionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutActionRevisionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutActionRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutActionRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Indicates whether the artifact revision was previously used in an execution
@@ -64,6 +65,7 @@ namespace Model
      * of the specified pipeline.</p>
      */
     inline PutActionRevisionResult& WithNewRevision(bool value) { SetNewRevision(value); return *this;}
+
 
     /**
      * <p>The ID of the current workflow state of the pipeline.</p>
@@ -101,7 +103,9 @@ namespace Model
     inline PutActionRevisionResult& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
 
   private:
+
     bool m_newRevision;
+
     Aws::String m_pipelineExecutionId;
   };
 

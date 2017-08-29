@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of strings representing the user attribute names you wish to
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
@@ -97,6 +98,7 @@ namespace Model
      */
     inline DeleteUserAttributesRequest& AddUserAttributeNames(const char* value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames.push_back(value); return *this; }
 
+
     /**
      * <p>The access token used in the request to delete user attributes.</p>
      */
@@ -133,8 +135,10 @@ namespace Model
     inline DeleteUserAttributesRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_userAttributeNames;
     bool m_userAttributeNamesHasBeenSet;
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
   };

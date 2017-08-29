@@ -45,6 +45,7 @@ namespace Model
     Deployment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Timestamp when the deployment was created.
      */
@@ -79,6 +80,7 @@ namespace Model
      * Timestamp when the deployment was created.
      */
     inline Deployment& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
 
     /**
      * Arn of the deployment.
@@ -115,6 +117,7 @@ namespace Model
      */
     inline Deployment& WithDeploymentArn(const char* value) { SetDeploymentArn(value); return *this;}
 
+
     /**
      * Id of the deployment.
      */
@@ -149,6 +152,7 @@ namespace Model
      * Id of the deployment.
      */
     inline Deployment& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+
 
     /**
      * Arn of the group for this deployment.
@@ -186,12 +190,16 @@ namespace Model
     inline Deployment& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
 
   private:
+
     Aws::String m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::String m_deploymentArn;
     bool m_deploymentArnHasBeenSet;
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::String m_groupArn;
     bool m_groupArnHasBeenSet;
   };

@@ -35,6 +35,7 @@ namespace Model
     UpdateSmsChannelRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -56,6 +57,7 @@ namespace Model
     
     inline UpdateSmsChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     
     inline const SMSChannelRequest& GetSMSChannelRequest() const{ return m_sMSChannelRequest; }
 
@@ -72,8 +74,10 @@ namespace Model
     inline UpdateSmsChannelRequest& WithSMSChannelRequest(SMSChannelRequest&& value) { SetSMSChannelRequest(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     SMSChannelRequest m_sMSChannelRequest;
     bool m_sMSChannelRequestHasBeenSet;
   };

@@ -30,12 +30,12 @@ AddInstanceFleetResult::AddInstanceFleetResult()
 {
 }
 
-AddInstanceFleetResult::AddInstanceFleetResult(const AmazonWebServiceResult<JsonValue>& result)
+AddInstanceFleetResult::AddInstanceFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddInstanceFleetResult& AddInstanceFleetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddInstanceFleetResult& AddInstanceFleetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ClusterId"))

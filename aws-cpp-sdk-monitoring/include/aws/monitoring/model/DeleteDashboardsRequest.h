@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The dashboards to be deleted.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
     inline DeleteDashboardsRequest& AddDashboardNames(const char* value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_dashboardNames;
     bool m_dashboardNamesHasBeenSet;
   };

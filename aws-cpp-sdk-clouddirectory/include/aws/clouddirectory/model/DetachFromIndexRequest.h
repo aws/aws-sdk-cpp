@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the directory the index and object exist
      * in.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DetachFromIndexRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>A reference to the index object.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p>A reference to the index object.</p>
      */
     inline DetachFromIndexRequest& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
+
 
     /**
      * <p>A reference to the object being detached from the index.</p>
@@ -130,10 +133,13 @@ namespace Model
     inline DetachFromIndexRequest& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_indexReference;
     bool m_indexReferenceHasBeenSet;
+
     ObjectReference m_targetReference;
     bool m_targetReferenceHasBeenSet;
   };

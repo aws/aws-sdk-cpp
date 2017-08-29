@@ -30,12 +30,12 @@ GetCatalogImportStatusResult::GetCatalogImportStatusResult()
 {
 }
 
-GetCatalogImportStatusResult::GetCatalogImportStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCatalogImportStatusResult::GetCatalogImportStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCatalogImportStatusResult& GetCatalogImportStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCatalogImportStatusResult& GetCatalogImportStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ImportStatus"))

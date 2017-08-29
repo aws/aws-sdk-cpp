@@ -32,13 +32,13 @@ DescribeLoggingStatusResult::DescribeLoggingStatusResult() :
 {
 }
 
-DescribeLoggingStatusResult::DescribeLoggingStatusResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+DescribeLoggingStatusResult::DescribeLoggingStatusResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_loggingEnabled(false)
 {
   *this = result;
 }
 
-DescribeLoggingStatusResult& DescribeLoggingStatusResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeLoggingStatusResult& DescribeLoggingStatusResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -47,6 +47,7 @@ namespace Model
     DocumentationPartLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of API entity to which the documentation content applies. It is a
      * valid and required field for API entity types of <code>API</code>,
@@ -111,6 +112,7 @@ namespace Model
      * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
      */
     inline DocumentationPartLocation& WithType(DocumentationPartType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The URL path of the target. It is a valid field for the API entity types of
@@ -203,6 +205,7 @@ namespace Model
      */
     inline DocumentationPartLocation& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The HTTP verb of a method. It is a valid field for the API entity types of
      * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>,
@@ -287,6 +290,7 @@ namespace Model
      */
     inline DocumentationPartLocation& WithMethod(const char* value) { SetMethod(value); return *this;}
 
+
     /**
      * <p>The HTTP status code of a response. It is a valid field for the API entity
      * types of <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and
@@ -364,6 +368,7 @@ namespace Model
      */
     inline DocumentationPartLocation& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
 
+
     /**
      * <p>The name of the targeted API entity. It is a valid and required field for the
      * API entity types of <code>AUTHORIZER</code>, <code>MODEL</code>,
@@ -435,14 +440,19 @@ namespace Model
     inline DocumentationPartLocation& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     DocumentationPartType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_method;
     bool m_methodHasBeenSet;
+
     Aws::String m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

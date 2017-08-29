@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     SearchResult();
-    SearchResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SearchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SearchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status information returned for the search request.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline SearchResult& WithStatus(SearchStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The documents that match the search criteria.</p>
      */
@@ -102,6 +104,7 @@ namespace Model
      * <p>The documents that match the search criteria.</p>
      */
     inline SearchResult& WithHits(Hits&& value) { SetHits(std::move(value)); return *this;}
+
 
     /**
      * <p>The requested facet information.</p>
@@ -157,6 +160,7 @@ namespace Model
      * <p>The requested facet information.</p>
      */
     inline SearchResult& AddFacets(const char* key, const BucketInfo& value) { m_facets.emplace(key, value); return *this; }
+
 
     /**
      * <p>The requested field statistics information.</p>
@@ -214,9 +218,13 @@ namespace Model
     inline SearchResult& AddStats(const char* key, const FieldStats& value) { m_stats.emplace(key, value); return *this; }
 
   private:
+
     SearchStatus m_status;
+
     Hits m_hits;
+
     Aws::Map<Aws::String, BucketInfo> m_facets;
+
     Aws::Map<Aws::String, FieldStats> m_stats;
   };
 

@@ -34,6 +34,7 @@ namespace Model
     DeleteBotVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the bot.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>The name of the bot.</p>
      */
     inline DeleteBotVersionRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code>
@@ -119,8 +121,10 @@ namespace Model
     inline DeleteBotVersionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

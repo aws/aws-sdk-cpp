@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CountClosedWorkflowExecutionsResult();
-    CountClosedWorkflowExecutionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CountClosedWorkflowExecutionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CountClosedWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CountClosedWorkflowExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of workflow executions.</p>
@@ -60,6 +61,7 @@ namespace Model
      * <p>The number of workflow executions.</p>
      */
     inline CountClosedWorkflowExecutionsResult& WithCount(int value) { SetCount(value); return *this;}
+
 
     /**
      * <p>If set to true, indicates that the actual count was more than the maximum
@@ -80,7 +82,9 @@ namespace Model
     inline CountClosedWorkflowExecutionsResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
 
   private:
+
     int m_count;
+
     bool m_truncated;
   };
 

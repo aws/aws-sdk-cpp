@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to get.
      * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
@@ -86,6 +87,7 @@ namespace Model
     inline GetRateBasedRuleRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 
   private:
+
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
      */
     inline LaunchPermissionModifications& AddAdd(LaunchPermission&& value) { m_addHasBeenSet = true; m_add.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The AWS account ID to remove from the list of launch permissions for the
@@ -127,8 +129,10 @@ namespace Model
     inline LaunchPermissionModifications& AddRemove(LaunchPermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<LaunchPermission> m_add;
     bool m_addHasBeenSet;
+
     Aws::Vector<LaunchPermission> m_remove;
     bool m_removeHasBeenSet;
   };

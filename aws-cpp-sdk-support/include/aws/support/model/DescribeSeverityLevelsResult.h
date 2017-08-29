@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeSeverityLevelsResult();
-    DescribeSeverityLevelsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSeverityLevelsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSeverityLevelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSeverityLevelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The available severity levels for the support case. Available severity levels
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeSeverityLevelsResult& AddSeverityLevels(SeverityLevel&& value) { m_severityLevels.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<SeverityLevel> m_severityLevels;
   };
 

@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
      * to list. If you do not specify an <code>AssignmentStatus</code>, the action
@@ -78,6 +79,7 @@ namespace Model
      * MFA devices.</p>
      */
     inline ListVirtualMFADevicesRequest& WithAssignmentStatus(AssignmentStatusType&& value) { SetAssignmentStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -135,6 +137,7 @@ namespace Model
      */
     inline ListVirtualMFADevicesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this only when paginating results to indicate the maximum
      * number of items you want in the response. If additional items exist beyond the
@@ -172,10 +175,13 @@ namespace Model
     inline ListVirtualMFADevicesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     AssignmentStatusType m_assignmentStatus;
     bool m_assignmentStatusHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

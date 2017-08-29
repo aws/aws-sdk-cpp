@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     BatchGetApplicationsResult();
-    BatchGetApplicationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetApplicationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the applications.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline BatchGetApplicationsResult& AddApplicationsInfo(ApplicationInfo&& value) { m_applicationsInfo.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ApplicationInfo> m_applicationsInfo;
   };
 

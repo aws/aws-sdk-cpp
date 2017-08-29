@@ -48,6 +48,7 @@ namespace Model
     InstanceFleetProvisioningSpecifications& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The launch specification for Spot instances in the fleet, which determines
      * the defined duration and provisioning timeout behavior.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline InstanceFleetProvisioningSpecifications& WithSpotSpecification(SpotProvisioningSpecification&& value) { SetSpotSpecification(std::move(value)); return *this;}
 
   private:
+
     SpotProvisioningSpecification m_spotSpecification;
     bool m_spotSpecificationHasBeenSet;
   };

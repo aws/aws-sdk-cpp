@@ -30,12 +30,12 @@ ListLaunchPathsResult::ListLaunchPathsResult()
 {
 }
 
-ListLaunchPathsResult::ListLaunchPathsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListLaunchPathsResult::ListLaunchPathsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListLaunchPathsResult& ListLaunchPathsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListLaunchPathsResult& ListLaunchPathsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("LaunchPathSummaries"))

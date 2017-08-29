@@ -51,6 +51,7 @@ namespace Model
     Scope& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The resource types of only those AWS resources that you want to trigger an
      * evaluation for the rule. You can only specify one type if you also specify a
@@ -107,6 +108,7 @@ namespace Model
      */
     inline Scope& AddComplianceResourceTypes(const char* value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes.push_back(value); return *this; }
 
+
     /**
      * <p>The tag key that is applied to only those AWS resources that you want you
      * want to trigger an evaluation for the rule.</p>
@@ -148,6 +150,7 @@ namespace Model
      * want to trigger an evaluation for the rule.</p>
      */
     inline Scope& WithTagKey(const char* value) { SetTagKey(value); return *this;}
+
 
     /**
      * <p>The tag value applied to only those AWS resources that you want to trigger an
@@ -197,6 +200,7 @@ namespace Model
      * must also specify a value for <code>TagKey</code>.</p>
      */
     inline Scope& WithTagValue(const char* value) { SetTagValue(value); return *this;}
+
 
     /**
      * <p>The IDs of the only AWS resource that you want to trigger an evaluation for
@@ -248,12 +252,16 @@ namespace Model
     inline Scope& WithComplianceResourceId(const char* value) { SetComplianceResourceId(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_complianceResourceTypes;
     bool m_complianceResourceTypesHasBeenSet;
+
     Aws::String m_tagKey;
     bool m_tagKeyHasBeenSet;
+
     Aws::String m_tagValue;
     bool m_tagValueHasBeenSet;
+
     Aws::String m_complianceResourceId;
     bool m_complianceResourceIdHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     MeterUsageResult();
-    MeterUsageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    MeterUsageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    MeterUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    MeterUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetMeteringRecordId() const{ return m_meteringRecordId; }
@@ -63,6 +64,7 @@ namespace Model
     inline MeterUsageResult& WithMeteringRecordId(const char* value) { SetMeteringRecordId(value); return *this;}
 
   private:
+
     Aws::String m_meteringRecordId;
   };
 

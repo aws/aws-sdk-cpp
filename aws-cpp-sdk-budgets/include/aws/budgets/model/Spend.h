@@ -46,6 +46,7 @@ namespace Model
     Spend& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetAmount() const{ return m_amount; }
 
@@ -66,6 +67,7 @@ namespace Model
 
     
     inline Spend& WithAmount(const char* value) { SetAmount(value); return *this;}
+
 
     
     inline const Aws::String& GetUnit() const{ return m_unit; }
@@ -89,8 +91,10 @@ namespace Model
     inline Spend& WithUnit(const char* value) { SetUnit(value); return *this;}
 
   private:
+
     Aws::String m_amount;
     bool m_amountHasBeenSet;
+
     Aws::String m_unit;
     bool m_unitHasBeenSet;
   };

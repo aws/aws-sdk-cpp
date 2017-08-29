@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeEventsResult();
-    DescribeEventsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> A list of <a>EventDescription</a>. </p>
@@ -84,6 +85,7 @@ namespace Model
      * <p> A list of <a>EventDescription</a>. </p>
      */
     inline DescribeEventsResult& AddEvents(EventDescription&& value) { m_events.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> If returned, this indicates that there are more results to obtain. Use this
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline DescribeEventsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<EventDescription> m_events;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

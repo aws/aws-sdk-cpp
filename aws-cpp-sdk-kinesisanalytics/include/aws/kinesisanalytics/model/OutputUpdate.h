@@ -49,6 +49,7 @@ namespace Model
     OutputUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identifies the specific output configuration that you want to update.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>Identifies the specific output configuration that you want to update.</p>
      */
     inline OutputUpdate& WithOutputId(const char* value) { SetOutputId(value); return *this;}
+
 
     /**
      * <p>If you want to specify a different in-application stream for this output
@@ -126,6 +128,7 @@ namespace Model
      */
     inline OutputUpdate& WithNameUpdate(const char* value) { SetNameUpdate(value); return *this;}
 
+
     /**
      * <p>Describes an Amazon Kinesis stream as the destination for the output.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>Describes an Amazon Kinesis stream as the destination for the output.</p>
      */
     inline OutputUpdate& WithKinesisStreamsOutputUpdate(KinesisStreamsOutputUpdate&& value) { SetKinesisStreamsOutputUpdate(std::move(value)); return *this;}
+
 
     /**
      * <p>Describes a Amazon Kinesis Firehose delivery stream as the destination for
@@ -181,6 +185,7 @@ namespace Model
      */
     inline OutputUpdate& WithKinesisFirehoseOutputUpdate(KinesisFirehoseOutputUpdate&& value) { SetKinesisFirehoseOutputUpdate(std::move(value)); return *this;}
 
+
     
     inline const DestinationSchema& GetDestinationSchemaUpdate() const{ return m_destinationSchemaUpdate; }
 
@@ -197,14 +202,19 @@ namespace Model
     inline OutputUpdate& WithDestinationSchemaUpdate(DestinationSchema&& value) { SetDestinationSchemaUpdate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_outputId;
     bool m_outputIdHasBeenSet;
+
     Aws::String m_nameUpdate;
     bool m_nameUpdateHasBeenSet;
+
     KinesisStreamsOutputUpdate m_kinesisStreamsOutputUpdate;
     bool m_kinesisStreamsOutputUpdateHasBeenSet;
+
     KinesisFirehoseOutputUpdate m_kinesisFirehoseOutputUpdate;
     bool m_kinesisFirehoseOutputUpdateHasBeenSet;
+
     DestinationSchema m_destinationSchemaUpdate;
     bool m_destinationSchemaUpdateHasBeenSet;
   };

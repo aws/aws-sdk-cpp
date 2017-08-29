@@ -49,6 +49,7 @@ namespace Model
     AttackSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) of the attack.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The unique identifier (ID) of the attack.</p>
      */
     inline AttackSummary& WithAttackId(const char* value) { SetAttackId(value); return *this;}
+
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline AttackSummary& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
+
     /**
      * <p>The start time of the attack, in the format 2016-12-16T13:50Z.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      */
     inline AttackSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The end time of the attack, in the format 2016-12-16T13:50Z.</p>
      */
@@ -168,6 +172,7 @@ namespace Model
      * <p>The end time of the attack, in the format 2016-12-16T13:50Z.</p>
      */
     inline AttackSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The list of attacks for a specified time period.</p>
@@ -205,14 +210,19 @@ namespace Model
     inline AttackSummary& AddAttackVectors(AttackVectorDescription&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_attackId;
     bool m_attackIdHasBeenSet;
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::Vector<AttackVectorDescription> m_attackVectors;
     bool m_attackVectorsHasBeenSet;
   };

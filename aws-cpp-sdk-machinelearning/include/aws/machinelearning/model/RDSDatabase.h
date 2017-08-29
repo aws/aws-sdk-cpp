@@ -45,6 +45,7 @@ namespace Model
     RDSDatabase& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of an RDS DB instance.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline RDSDatabase& WithInstanceIdentifier(const char* value) { SetInstanceIdentifier(value); return *this;}
 
+
     
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
@@ -102,8 +104,10 @@ namespace Model
     inline RDSDatabase& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
   private:
+
     Aws::String m_instanceIdentifier;
     bool m_instanceIdentifierHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
   };

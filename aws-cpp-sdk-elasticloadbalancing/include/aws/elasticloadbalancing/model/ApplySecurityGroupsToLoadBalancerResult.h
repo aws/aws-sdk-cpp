@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ApplySecurityGroupsToLoadBalancerResult();
-    ApplySecurityGroupsToLoadBalancerResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ApplySecurityGroupsToLoadBalancerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ApplySecurityGroupsToLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ApplySecurityGroupsToLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The IDs of the security groups associated with the load balancer.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ApplySecurityGroupsToLoadBalancerResult& AddSecurityGroups(const char* value) { m_securityGroups.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,7 +107,9 @@ namespace Model
     inline ApplySecurityGroupsToLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_securityGroups;
+
     ResponseMetadata m_responseMetadata;
   };
 

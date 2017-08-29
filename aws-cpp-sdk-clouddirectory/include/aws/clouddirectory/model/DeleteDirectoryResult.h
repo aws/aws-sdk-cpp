@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteDirectoryResult();
-    DeleteDirectoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDirectoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the deleted directory.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteDirectoryResult& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
   };
 

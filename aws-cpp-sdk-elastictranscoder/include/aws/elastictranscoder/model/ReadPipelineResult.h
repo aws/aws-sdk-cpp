@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ReadPipelineResult();
-    ReadPipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReadPipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReadPipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReadPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A section of the response body that provides information about the
@@ -78,6 +79,7 @@ namespace Model
      * pipeline.</p>
      */
     inline ReadPipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
+
 
     /**
      * <p>Elastic Transcoder returns a warning if the resources used by your pipeline
@@ -136,7 +138,9 @@ namespace Model
     inline ReadPipelineResult& AddWarnings(Warning&& value) { m_warnings.push_back(std::move(value)); return *this; }
 
   private:
+
     Pipeline m_pipeline;
+
     Aws::Vector<Warning> m_warnings;
   };
 

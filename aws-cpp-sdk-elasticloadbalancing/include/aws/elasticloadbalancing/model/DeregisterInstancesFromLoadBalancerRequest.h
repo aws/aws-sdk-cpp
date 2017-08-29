@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The name of the load balancer.</p>
      */
     inline DeregisterInstancesFromLoadBalancerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+
 
     /**
      * <p>The IDs of the instances.</p>
@@ -115,8 +117,10 @@ namespace Model
     inline DeregisterInstancesFromLoadBalancerRequest& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     Aws::Vector<Instance> m_instances;
     bool m_instancesHasBeenSet;
   };

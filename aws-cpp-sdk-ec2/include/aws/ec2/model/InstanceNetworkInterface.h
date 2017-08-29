@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The association information for an Elastic IPv4 associated with the network
      * interface.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline InstanceNetworkInterface& WithAssociation(InstanceNetworkInterfaceAssociation&& value) { SetAssociation(std::move(value)); return *this;}
 
+
     /**
      * <p>The network interface attachment.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The network interface attachment.</p>
      */
     inline InstanceNetworkInterface& WithAttachment(InstanceNetworkInterfaceAttachment&& value) { SetAttachment(std::move(value)); return *this;}
+
 
     /**
      * <p>The description.</p>
@@ -145,6 +148,7 @@ namespace Model
      */
     inline InstanceNetworkInterface& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>One or more security groups.</p>
      */
@@ -179,6 +183,7 @@ namespace Model
      * <p>One or more security groups.</p>
      */
     inline InstanceNetworkInterface& AddGroups(GroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>One or more IPv6 addresses associated with the network interface.</p>
@@ -215,6 +220,7 @@ namespace Model
      */
     inline InstanceNetworkInterface& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The MAC address.</p>
      */
@@ -249,6 +255,7 @@ namespace Model
      * <p>The MAC address.</p>
      */
     inline InstanceNetworkInterface& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
+
 
     /**
      * <p>The ID of the network interface.</p>
@@ -285,6 +292,7 @@ namespace Model
      */
     inline InstanceNetworkInterface& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
+
     /**
      * <p>The ID of the AWS account that created the network interface.</p>
      */
@@ -319,6 +327,7 @@ namespace Model
      * <p>The ID of the AWS account that created the network interface.</p>
      */
     inline InstanceNetworkInterface& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
 
     /**
      * <p>The private DNS name.</p>
@@ -355,6 +364,7 @@ namespace Model
      */
     inline InstanceNetworkInterface& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
 
+
     /**
      * <p>The IPv4 address of the network interface within the subnet.</p>
      */
@@ -389,6 +399,7 @@ namespace Model
      * <p>The IPv4 address of the network interface within the subnet.</p>
      */
     inline InstanceNetworkInterface& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+
 
     /**
      * <p>One or more private IPv4 addresses associated with the network interface.</p>
@@ -425,6 +436,7 @@ namespace Model
      */
     inline InstanceNetworkInterface& AddPrivateIpAddresses(InstancePrivateIpAddress&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether to validate network traffic to or from this network
      * interface.</p>
@@ -442,6 +454,7 @@ namespace Model
      * interface.</p>
      */
     inline InstanceNetworkInterface& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}
+
 
     /**
      * <p>The status of the network interface.</p>
@@ -467,6 +480,7 @@ namespace Model
      * <p>The status of the network interface.</p>
      */
     inline InstanceNetworkInterface& WithStatus(NetworkInterfaceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the subnet.</p>
@@ -502,6 +516,7 @@ namespace Model
      * <p>The ID of the subnet.</p>
      */
     inline InstanceNetworkInterface& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -539,34 +554,49 @@ namespace Model
     inline InstanceNetworkInterface& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     InstanceNetworkInterfaceAssociation m_association;
     bool m_associationHasBeenSet;
+
     InstanceNetworkInterfaceAttachment m_attachment;
     bool m_attachmentHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<GroupIdentifier> m_groups;
     bool m_groupsHasBeenSet;
+
     Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
     bool m_ipv6AddressesHasBeenSet;
+
     Aws::String m_macAddress;
     bool m_macAddressHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     Aws::String m_privateDnsName;
     bool m_privateDnsNameHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+
     Aws::Vector<InstancePrivateIpAddress> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
+
     bool m_sourceDestCheck;
     bool m_sourceDestCheckHasBeenSet;
+
     NetworkInterfaceStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

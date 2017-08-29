@@ -49,6 +49,7 @@ namespace Model
     VirtualGateway& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
 
@@ -69,6 +70,7 @@ namespace Model
 
     
     inline VirtualGateway& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
+
 
     
     inline const Aws::String& GetVirtualGatewayState() const{ return m_virtualGatewayState; }
@@ -92,8 +94,10 @@ namespace Model
     inline VirtualGateway& WithVirtualGatewayState(const char* value) { SetVirtualGatewayState(value); return *this;}
 
   private:
+
     Aws::String m_virtualGatewayId;
     bool m_virtualGatewayIdHasBeenSet;
+
     Aws::String m_virtualGatewayState;
     bool m_virtualGatewayStateHasBeenSet;
   };

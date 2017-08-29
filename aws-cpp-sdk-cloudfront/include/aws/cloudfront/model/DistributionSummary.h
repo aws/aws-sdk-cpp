@@ -57,6 +57,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The identifier for the distribution. For example:
      * <code>EDFDVBD632BHDS5</code>.</p>
@@ -98,6 +99,7 @@ namespace Model
      * <code>EDFDVBD632BHDS5</code>.</p>
      */
     inline DistributionSummary& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
@@ -148,6 +150,7 @@ namespace Model
      */
     inline DistributionSummary& WithARN(const char* value) { SetARN(value); return *this;}
 
+
     /**
      * <p>The current status of the distribution. When the status is
      * <code>Deployed</code>, the distribution's information is propagated to all
@@ -197,6 +200,7 @@ namespace Model
      */
     inline DistributionSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The date and time the distribution was last modified.</p>
      */
@@ -221,6 +225,7 @@ namespace Model
      * <p>The date and time the distribution was last modified.</p>
      */
     inline DistributionSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The domain name that corresponds to the distribution. For example:
@@ -264,6 +269,7 @@ namespace Model
      */
     inline DistributionSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>A complex type that contains information about CNAMEs (alternate domain
      * names), if any, for this distribution.</p>
@@ -294,6 +300,7 @@ namespace Model
      */
     inline DistributionSummary& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
 
+
     /**
      * <p>A complex type that contains information about origins for this
      * distribution.</p>
@@ -323,6 +330,7 @@ namespace Model
      * distribution.</p>
      */
     inline DistributionSummary& WithOrigins(Origins&& value) { SetOrigins(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that describes the default cache behavior if you do not
@@ -364,6 +372,7 @@ namespace Model
      */
     inline DistributionSummary& WithDefaultCacheBehavior(DefaultCacheBehavior&& value) { SetDefaultCacheBehavior(std::move(value)); return *this;}
 
+
     /**
      * <p>A complex type that contains zero or more <code>CacheBehavior</code>
      * elements.</p>
@@ -394,6 +403,7 @@ namespace Model
      */
     inline DistributionSummary& WithCacheBehaviors(CacheBehaviors&& value) { SetCacheBehaviors(std::move(value)); return *this;}
 
+
     /**
      * <p>A complex type that contains zero or more <code>CustomErrorResponses</code>
      * elements.</p>
@@ -423,6 +433,7 @@ namespace Model
      * elements.</p>
      */
     inline DistributionSummary& WithCustomErrorResponses(CustomErrorResponses&& value) { SetCustomErrorResponses(std::move(value)); return *this;}
+
 
     /**
      * <p>The comment originally specified when this distribution was created.</p>
@@ -459,6 +470,7 @@ namespace Model
      */
     inline DistributionSummary& WithComment(const char* value) { SetComment(value); return *this;}
 
+
     
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
 
@@ -473,6 +485,7 @@ namespace Model
 
     
     inline DistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
+
 
     /**
      * <p>Whether the distribution is enabled to accept user requests for content.</p>
@@ -489,6 +502,7 @@ namespace Model
      */
     inline DistributionSummary& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
     
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
 
@@ -504,6 +518,7 @@ namespace Model
     
     inline DistributionSummary& WithViewerCertificate(ViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
 
+
     
     inline const Restrictions& GetRestrictions() const{ return m_restrictions; }
 
@@ -518,6 +533,7 @@ namespace Model
 
     
     inline DistributionSummary& WithRestrictions(Restrictions&& value) { SetRestrictions(std::move(value)); return *this;}
+
 
     /**
      * <p>The Web ACL Id (if any) associated with the distribution.</p>
@@ -553,6 +569,7 @@ namespace Model
      * <p>The Web ACL Id (if any) associated with the distribution.</p>
      */
     inline DistributionSummary& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+
 
     /**
      * <p> Specify the maximum HTTP version that you want viewers to use to communicate
@@ -594,6 +611,7 @@ namespace Model
      */
     inline DistributionSummary& WithHttpVersion(HttpVersion&& value) { SetHttpVersion(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for
      * your distribution.</p>
@@ -613,40 +631,58 @@ namespace Model
     inline DistributionSummary& WithIsIPV6Enabled(bool value) { SetIsIPV6Enabled(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aliases m_aliases;
     bool m_aliasesHasBeenSet;
+
     Origins m_origins;
     bool m_originsHasBeenSet;
+
     DefaultCacheBehavior m_defaultCacheBehavior;
     bool m_defaultCacheBehaviorHasBeenSet;
+
     CacheBehaviors m_cacheBehaviors;
     bool m_cacheBehaviorsHasBeenSet;
+
     CustomErrorResponses m_customErrorResponses;
     bool m_customErrorResponsesHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     PriceClass m_priceClass;
     bool m_priceClassHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     ViewerCertificate m_viewerCertificate;
     bool m_viewerCertificateHasBeenSet;
+
     Restrictions m_restrictions;
     bool m_restrictionsHasBeenSet;
+
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
+
     HttpVersion m_httpVersion;
     bool m_httpVersionHasBeenSet;
+
     bool m_isIPV6Enabled;
     bool m_isIPV6EnabledHasBeenSet;
   };

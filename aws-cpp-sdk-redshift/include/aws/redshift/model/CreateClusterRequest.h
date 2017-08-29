@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the first database to be created when the cluster is created.</p>
      * <p>To create additional databases after the cluster is created, connect to the
@@ -155,6 +156,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 
+
     /**
      * <p>A unique identifier for the cluster. You use this identifier to refer to the
      * cluster for any subsequent cluster operations such as deleting or modifying. The
@@ -246,6 +248,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The type of the cluster. When cluster type is specified as</p> <ul> <li> <p>
      * <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not
@@ -308,6 +311,7 @@ namespace Model
      * | <code>single-node</code> </p> <p>Default: <code>multi-node</code> </p>
      */
     inline CreateClusterRequest& WithClusterType(const char* value) { SetClusterType(value); return *this;}
+
 
     /**
      * <p>The node type to be provisioned for the cluster. For information about node
@@ -386,6 +390,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
+
     /**
      * <p>The user name associated with the master user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
@@ -455,6 +460,7 @@ namespace Model
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline CreateClusterRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
+
 
     /**
      * <p>The password associated with the master user account for the cluster that is
@@ -533,6 +539,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
+
     /**
      * <p>A list of security groups to be associated with this cluster.</p> <p>Default:
      * The default cluster security group for Amazon Redshift.</p>
@@ -580,6 +587,7 @@ namespace Model
      * The default cluster security group for Amazon Redshift.</p>
      */
     inline CreateClusterRequest& AddClusterSecurityGroups(const char* value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(value); return *this; }
+
 
     /**
      * <p>A list of Virtual Private Cloud (VPC) security groups to be associated with
@@ -637,6 +645,7 @@ namespace Model
      */
     inline CreateClusterRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The name of a cluster subnet group to be associated with this cluster.</p>
      * <p>If this parameter is not provided the resulting cluster will be deployed
@@ -685,6 +694,7 @@ namespace Model
      * outside virtual private cloud (VPC).</p>
      */
     inline CreateClusterRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
+
 
     /**
      * <p>The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision
@@ -769,6 +779,7 @@ namespace Model
      * endpoint.</p>
      */
     inline CreateClusterRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>The weekly time range (in UTC) during which automated cluster maintenance can
@@ -861,6 +872,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
@@ -945,6 +957,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithClusterParameterGroupName(const char* value) { SetClusterParameterGroupName(value); return *this;}
 
+
     /**
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
@@ -972,6 +985,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
+
     /**
      * <p>The port number on which the cluster accepts incoming connections.</p> <p>The
      * cluster is accessible only via the JDBC and ODBC connection strings. Part of the
@@ -998,6 +1012,7 @@ namespace Model
      * <code>1150-65535</code> </p>
      */
     inline CreateClusterRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The version of the Amazon Redshift engine software that you want to deploy on
@@ -1055,6 +1070,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, major version upgrades can be applied during the
      * maintenance window to the Amazon Redshift engine that is running on the
@@ -1084,6 +1100,7 @@ namespace Model
      * cluster.</p> <p>Default: <code>true</code> </p>
      */
     inline CreateClusterRequest& WithAllowVersionUpgrade(bool value) { SetAllowVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>The number of compute nodes in the cluster. This parameter is required when
@@ -1124,6 +1141,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
      */
@@ -1138,6 +1156,7 @@ namespace Model
      * <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
      */
     inline CreateClusterRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+
 
     /**
      * <p>If <code>true</code>, the data in the cluster is encrypted at rest. </p>
@@ -1156,6 +1175,7 @@ namespace Model
      * <p>Default: false</p>
      */
     inline CreateClusterRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
@@ -1199,6 +1219,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
+
     /**
      * <p>Specifies the name of the HSM configuration that contains the information the
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
@@ -1240,6 +1261,7 @@ namespace Model
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
      */
     inline CreateClusterRequest& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
+
 
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
@@ -1311,6 +1333,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
 
+
     /**
      * <p>A list of tag instances.</p>
      */
@@ -1345,6 +1368,7 @@ namespace Model
      * <p>A list of tag instances.</p>
      */
     inline CreateClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
@@ -1388,6 +1412,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
@@ -1420,6 +1445,7 @@ namespace Model
      * false</p>
      */
     inline CreateClusterRequest& WithEnhancedVpcRouting(bool value) { SetEnhancedVpcRouting(value); return *this;}
+
 
     /**
      * <p>Reserved.</p>
@@ -1455,6 +1481,7 @@ namespace Model
      * <p>Reserved.</p>
      */
     inline CreateClusterRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+
 
     /**
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
@@ -1529,58 +1556,85 @@ namespace Model
     inline CreateClusterRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
   private:
+
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::String m_clusterType;
     bool m_clusterTypeHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;
+
     Aws::String m_masterUserPassword;
     bool m_masterUserPasswordHasBeenSet;
+
     Aws::Vector<Aws::String> m_clusterSecurityGroups;
     bool m_clusterSecurityGroupsHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     Aws::String m_clusterSubnetGroupName;
     bool m_clusterSubnetGroupNameHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_clusterParameterGroupName;
     bool m_clusterParameterGroupNameHasBeenSet;
+
     int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
     bool m_allowVersionUpgrade;
     bool m_allowVersionUpgradeHasBeenSet;
+
     int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     Aws::String m_hsmClientCertificateIdentifier;
     bool m_hsmClientCertificateIdentifierHasBeenSet;
+
     Aws::String m_hsmConfigurationIdentifier;
     bool m_hsmConfigurationIdentifierHasBeenSet;
+
     Aws::String m_elasticIp;
     bool m_elasticIpHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet;
+
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet;
+
     Aws::Vector<Aws::String> m_iamRoles;
     bool m_iamRolesHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the delivery stream.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline PutRecordRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
 
+
     /**
      * <p>The record.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline PutRecordRequest& WithRecord(Record&& value) { SetRecord(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet;
+
     Record m_record;
     bool m_recordHasBeenSet;
   };

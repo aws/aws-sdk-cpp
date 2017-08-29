@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateStackInstancesResult();
-    CreateStackInstancesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateStackInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateStackInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateStackInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The unique identifier for this stack set operation.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline CreateStackInstancesResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -93,7 +95,9 @@ namespace Model
     inline CreateStackInstancesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_operationId;
+
     ResponseMetadata m_responseMetadata;
   };
 

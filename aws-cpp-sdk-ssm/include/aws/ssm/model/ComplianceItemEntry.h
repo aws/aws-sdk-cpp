@@ -48,6 +48,7 @@ namespace Model
     ComplianceItemEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The compliance item ID. For example, if the compliance item is a Windows
      * patch, the ID could be the number of the KB article.</p>
@@ -89,6 +90,7 @@ namespace Model
      * patch, the ID could be the number of the KB article.</p>
      */
     inline ComplianceItemEntry& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The title of the compliance item. For example, if the compliance item is a
@@ -146,6 +148,7 @@ namespace Model
      */
     inline ComplianceItemEntry& WithTitle(const char* value) { SetTitle(value); return *this;}
 
+
     /**
      * <p>The severity of the compliance status. Severity can be one of the following:
      * Critical, High, Medium, Low, Informational, Unspecified.</p>
@@ -176,6 +179,7 @@ namespace Model
      */
     inline ComplianceItemEntry& WithSeverity(ComplianceSeverity&& value) { SetSeverity(std::move(value)); return *this;}
 
+
     /**
      * <p>The status of the compliance item. An item is either COMPLIANT or
      * NON_COMPLIANT.</p>
@@ -205,6 +209,7 @@ namespace Model
      * NON_COMPLIANT.</p>
      */
     inline ComplianceItemEntry& WithStatus(ComplianceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A "Key": "Value" tag combination for the compliance item.</p>
@@ -267,14 +272,19 @@ namespace Model
     inline ComplianceItemEntry& AddDetails(const char* key, const char* value) { m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     ComplianceSeverity m_severity;
     bool m_severityHasBeenSet;
+
     ComplianceStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_details;
     bool m_detailsHasBeenSet;
   };

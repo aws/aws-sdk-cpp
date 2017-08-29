@@ -37,6 +37,7 @@ namespace Model
     CreateDomainNameRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>(Required) The name of the <a>DomainName</a> resource.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateDomainNameRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The user-friendly name of the certificate.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The user-friendly name of the certificate.</p>
      */
     inline CreateDomainNameRequest& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
+
 
     /**
      * <p>[Deprecated] The body of the server certificate provided by your certificate
@@ -149,6 +152,7 @@ namespace Model
      */
     inline CreateDomainNameRequest& WithCertificateBody(const char* value) { SetCertificateBody(value); return *this;}
 
+
     /**
      * <p>[Deprecated] Your certificate's private key.</p>
      */
@@ -183,6 +187,7 @@ namespace Model
      * <p>[Deprecated] Your certificate's private key.</p>
      */
     inline CreateDomainNameRequest& WithCertificatePrivateKey(const char* value) { SetCertificatePrivateKey(value); return *this;}
+
 
     /**
      * <p>[Deprecated] The intermediate certificates and optionally the root
@@ -254,6 +259,7 @@ namespace Model
      */
     inline CreateDomainNameRequest& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 
+
     /**
      * <p>The reference to an AWS-managed certificate. AWS Certificate Manager is the
      * only supported source.</p>
@@ -297,16 +303,22 @@ namespace Model
     inline CreateDomainNameRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_certificateName;
     bool m_certificateNameHasBeenSet;
+
     Aws::String m_certificateBody;
     bool m_certificateBodyHasBeenSet;
+
     Aws::String m_certificatePrivateKey;
     bool m_certificatePrivateKeyHasBeenSet;
+
     Aws::String m_certificateChain;
     bool m_certificateChainHasBeenSet;
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
   };

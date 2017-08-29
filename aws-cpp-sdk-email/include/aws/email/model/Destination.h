@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The To: field(s) of the message.</p>
      */
@@ -95,6 +96,7 @@ namespace Model
      */
     inline Destination& AddToAddresses(const char* value) { m_toAddressesHasBeenSet = true; m_toAddresses.push_back(value); return *this; }
 
+
     /**
      * <p>The CC: field(s) of the message.</p>
      */
@@ -134,6 +136,7 @@ namespace Model
      * <p>The CC: field(s) of the message.</p>
      */
     inline Destination& AddCcAddresses(const char* value) { m_ccAddressesHasBeenSet = true; m_ccAddresses.push_back(value); return *this; }
+
 
     /**
      * <p>The BCC: field(s) of the message.</p>
@@ -176,10 +179,13 @@ namespace Model
     inline Destination& AddBccAddresses(const char* value) { m_bccAddressesHasBeenSet = true; m_bccAddresses.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_toAddresses;
     bool m_toAddressesHasBeenSet;
+
     Aws::Vector<Aws::String> m_ccAddresses;
     bool m_ccAddressesHasBeenSet;
+
     Aws::Vector<Aws::String> m_bccAddresses;
     bool m_bccAddressesHasBeenSet;
   };

@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     AdminUpdateDeviceStatusResult();
-    AdminUpdateDeviceStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminUpdateDeviceStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminUpdateDeviceStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminUpdateDeviceStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

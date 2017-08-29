@@ -38,6 +38,7 @@ namespace Model
     CreateThingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the thing to create.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateThingRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
+
     /**
      * <p>The name of the thing type associated with the new thing.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The name of the thing type associated with the new thing.</p>
      */
     inline CreateThingRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+
 
     /**
      * <p>The attribute payload, which consists of up to three name/value pairs in a
@@ -144,10 +147,13 @@ namespace Model
     inline CreateThingRequest& WithAttributePayload(AttributePayload&& value) { SetAttributePayload(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
+
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet;
+
     AttributePayload m_attributePayload;
     bool m_attributePayloadHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A grok classifier to create.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
     inline CreateClassifierRequest& WithGrokClassifier(CreateGrokClassifierRequest&& value) { SetGrokClassifier(std::move(value)); return *this;}
 
   private:
+
     CreateGrokClassifierRequest m_grokClassifier;
     bool m_grokClassifierHasBeenSet;
   };

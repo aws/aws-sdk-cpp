@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateSAMLProviderResult();
-    CreateSAMLProviderResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateSAMLProviderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateSAMLProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateSAMLProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CreateSAMLProviderResult& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline CreateSAMLProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_sAMLProviderArn;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::Vector<CompletedPart>& GetParts() const{ return m_parts; }
 
@@ -64,6 +65,7 @@ namespace Model
     inline CompletedMultipartUpload& AddParts(CompletedPart&& value) { m_partsHasBeenSet = true; m_parts.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CompletedPart> m_parts;
     bool m_partsHasBeenSet;
   };

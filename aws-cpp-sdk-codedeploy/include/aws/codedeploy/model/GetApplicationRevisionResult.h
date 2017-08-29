@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetApplicationRevisionResult();
-    GetApplicationRevisionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApplicationRevisionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetApplicationRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetApplicationRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the application that corresponds to the revision.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline GetApplicationRevisionResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>Additional information about the revision, including type and location.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      * <p>Additional information about the revision, including type and location.</p>
      */
     inline GetApplicationRevisionResult& WithRevision(RevisionLocation&& value) { SetRevision(std::move(value)); return *this;}
+
 
     /**
      * <p>General information about the revision.</p>
@@ -135,8 +138,11 @@ namespace Model
     inline GetApplicationRevisionResult& WithRevisionInfo(GenericRevisionInfo&& value) { SetRevisionInfo(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
+
     RevisionLocation m_revision;
+
     GenericRevisionInfo m_revisionInfo;
   };
 

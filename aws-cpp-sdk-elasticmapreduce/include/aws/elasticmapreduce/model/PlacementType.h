@@ -47,6 +47,7 @@ namespace Model
     PlacementType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon EC2 Availability Zone for the cluster.
      * <code>AvailabilityZone</code> is used for uniform instance groups, while
@@ -95,6 +96,7 @@ namespace Model
      * <code>AvailabilityZones</code> (plural) is used for instance fleets.</p>
      */
     inline PlacementType& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>When multiple Availability Zones are specified, Amazon EMR evaluates them and
@@ -177,8 +179,10 @@ namespace Model
     inline PlacementType& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
   };

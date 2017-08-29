@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier for the DB cluster snapshot to describe the attributes
      * for.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeDBClusterSnapshotAttributesRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_dBClusterSnapshotIdentifier;
     bool m_dBClusterSnapshotIdentifierHasBeenSet;
   };

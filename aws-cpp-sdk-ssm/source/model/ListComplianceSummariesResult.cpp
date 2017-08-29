@@ -30,12 +30,12 @@ ListComplianceSummariesResult::ListComplianceSummariesResult()
 {
 }
 
-ListComplianceSummariesResult::ListComplianceSummariesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListComplianceSummariesResult::ListComplianceSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListComplianceSummariesResult& ListComplianceSummariesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListComplianceSummariesResult& ListComplianceSummariesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ComplianceSummaryItems"))

@@ -48,6 +48,7 @@ namespace Model
     InstanceInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the on-premises instance.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the on-premises instance.</p>
      */
     inline InstanceInfo& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+
 
     /**
      * <p>The ARN of the IAM session associated with the on-premises instance.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline InstanceInfo& WithIamSessionArn(const char* value) { SetIamSessionArn(value); return *this;}
 
+
     /**
      * <p>The IAM user ARN associated with the on-premises instance.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The IAM user ARN associated with the on-premises instance.</p>
      */
     inline InstanceInfo& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
+
 
     /**
      * <p>The ARN of the on-premises instance.</p>
@@ -188,6 +192,7 @@ namespace Model
      */
     inline InstanceInfo& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
 
+
     /**
      * <p>The time at which the on-premises instance was registered.</p>
      */
@@ -212,6 +217,7 @@ namespace Model
      * <p>The time at which the on-premises instance was registered.</p>
      */
     inline InstanceInfo& WithRegisterTime(Aws::Utils::DateTime&& value) { SetRegisterTime(std::move(value)); return *this;}
+
 
     /**
      * <p>If the on-premises instance was deregistered, the time at which the
@@ -242,6 +248,7 @@ namespace Model
      * on-premises instance was deregistered.</p>
      */
     inline InstanceInfo& WithDeregisterTime(Aws::Utils::DateTime&& value) { SetDeregisterTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The tags currently associated with the on-premises instance.</p>
@@ -279,18 +286,25 @@ namespace Model
     inline InstanceInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
+
     Aws::String m_iamSessionArn;
     bool m_iamSessionArnHasBeenSet;
+
     Aws::String m_iamUserArn;
     bool m_iamUserArnHasBeenSet;
+
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet;
+
     Aws::Utils::DateTime m_registerTime;
     bool m_registerTimeHasBeenSet;
+
     Aws::Utils::DateTime m_deregisterTime;
     bool m_deregisterTimeHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

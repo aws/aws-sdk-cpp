@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
@@ -93,6 +94,7 @@ namespace Model
      */
     inline ImportCertificateRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
     /**
      * <p>The certificate to import. It must meet the following requirements:</p> <ul>
      * <li> <p>Must be PEM-encoded.</p> </li> <li> <p>Must contain a 1024-bit or
@@ -143,6 +145,7 @@ namespace Model
      */
     inline ImportCertificateRequest& WithCertificate(Aws::Utils::ByteBuffer&& value) { SetCertificate(std::move(value)); return *this;}
 
+
     /**
      * <p>The private key that matches the public key in the certificate. It must meet
      * the following requirements:</p> <ul> <li> <p>Must be PEM-encoded.</p> </li> <li>
@@ -183,6 +186,7 @@ namespace Model
      */
     inline ImportCertificateRequest& WithPrivateKey(Aws::Utils::ByteBuffer&& value) { SetPrivateKey(std::move(value)); return *this;}
 
+
     /**
      * <p>The certificate chain. It must be PEM-encoded.</p>
      */
@@ -209,12 +213,16 @@ namespace Model
     inline ImportCertificateRequest& WithCertificateChain(Aws::Utils::ByteBuffer&& value) { SetCertificateChain(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     Aws::Utils::ByteBuffer m_certificate;
     bool m_certificateHasBeenSet;
+
     Aws::Utils::ByteBuffer m_privateKey;
     bool m_privateKeyHasBeenSet;
+
     Aws::Utils::ByteBuffer m_certificateChain;
     bool m_certificateChainHasBeenSet;
   };

@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ARN of the resource that has pending maintenance actions.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The ARN of the resource that has pending maintenance actions.</p>
      */
     inline ResourcePendingMaintenanceActions& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+
 
     /**
      * <p>A list that provides details about the pending maintenance actions for the
@@ -129,8 +131,10 @@ namespace Model
     inline ResourcePendingMaintenanceActions& AddPendingMaintenanceActionDetails(PendingMaintenanceAction&& value) { m_pendingMaintenanceActionDetailsHasBeenSet = true; m_pendingMaintenanceActionDetails.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet;
+
     Aws::Vector<PendingMaintenanceAction> m_pendingMaintenanceActionDetails;
     bool m_pendingMaintenanceActionDetailsHasBeenSet;
   };

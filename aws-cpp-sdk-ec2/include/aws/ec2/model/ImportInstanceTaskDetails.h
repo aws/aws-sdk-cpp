@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A description of the task.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>A description of the task.</p>
      */
     inline ImportInstanceTaskDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline ImportInstanceTaskDetails& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The instance operating system.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>The instance operating system.</p>
      */
     inline ImportInstanceTaskDetails& WithPlatform(PlatformValues&& value) { SetPlatform(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more volumes.</p>
@@ -182,12 +186,16 @@ namespace Model
     inline ImportInstanceTaskDetails& AddVolumes(ImportInstanceVolumeDetailItem&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     PlatformValues m_platform;
     bool m_platformHasBeenSet;
+
     Aws::Vector<ImportInstanceVolumeDetailItem> m_volumes;
     bool m_volumesHasBeenSet;
   };

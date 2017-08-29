@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier of the manual DB snapshot that the attributes apply to.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The identifier of the manual DB snapshot that the attributes apply to.</p>
      */
     inline DBSnapshotAttributesResult& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The list of attributes and values for the manual DB snapshot.</p>
@@ -125,8 +127,10 @@ namespace Model
     inline DBSnapshotAttributesResult& AddDBSnapshotAttributes(DBSnapshotAttribute&& value) { m_dBSnapshotAttributesHasBeenSet = true; m_dBSnapshotAttributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_dBSnapshotIdentifier;
     bool m_dBSnapshotIdentifierHasBeenSet;
+
     Aws::Vector<DBSnapshotAttribute> m_dBSnapshotAttributes;
     bool m_dBSnapshotAttributesHasBeenSet;
   };

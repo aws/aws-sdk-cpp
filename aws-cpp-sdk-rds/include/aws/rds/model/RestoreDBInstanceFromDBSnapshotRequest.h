@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
@@ -105,6 +106,7 @@ namespace Model
      * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
@@ -175,6 +177,7 @@ namespace Model
      * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance.</p> <p>Valid
@@ -253,6 +256,7 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
+
     /**
      * <p>The port number on which the database accepts connections.</p> <p>Default:
      * The same port as the original DB instance</p> <p>Constraints: Value must be
@@ -273,6 +277,7 @@ namespace Model
      * <code>1150-65535</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The EC2 Availability Zone that the database instance will be created in.</p>
@@ -330,6 +335,7 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:
      * Must contain no more than 255 alphanumeric characters, periods, underscores,
@@ -386,6 +392,7 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment.</p> <p>Constraint: You
      * cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
@@ -406,6 +413,7 @@ namespace Model
      * <code>true</code>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p>Specifies the accessibility options for the DB instance. A value of true
@@ -455,6 +463,7 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
+
     /**
      * <p>Indicates that minor version upgrades will be applied automatically to the DB
      * instance during the maintenance window.</p>
@@ -472,6 +481,7 @@ namespace Model
      * instance during the maintenance window.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>Default: Same
@@ -522,6 +532,7 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
+
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
      * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
@@ -563,6 +574,7 @@ namespace Model
      * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
+
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
@@ -641,6 +653,7 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
+
     /**
      * <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in
      * I/O operations per second. If this parameter is not specified, the IOPS value
@@ -676,6 +689,7 @@ namespace Model
      * not supported.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithIops(int value) { SetIops(value); return *this;}
+
 
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
@@ -733,6 +747,7 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -753,6 +768,7 @@ namespace Model
 
     
     inline RestoreDBInstanceFromDBSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -817,6 +833,7 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
+
     /**
      * <p>The ARN from the Key Store with which to associate the instance for TDE
      * encryption.</p>
@@ -858,6 +875,7 @@ namespace Model
      * encryption.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
+
 
     /**
      * <p>The password for the given ARN from the Key Store in order to access the
@@ -901,6 +919,7 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
 
+
     /**
      * <p>Specify the Active Directory Domain to restore the instance in.</p>
      */
@@ -936,6 +955,7 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
     /**
      * <p>True to copy all tags from the restored DB instance to snapshots of the DB
      * instance; otherwise false. The default is false.</p>
@@ -953,6 +973,7 @@ namespace Model
      * instance; otherwise false. The default is false.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
@@ -996,6 +1017,7 @@ namespace Model
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
+
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
      * to database accounts; otherwise false.</p> <p>You can enable IAM database
@@ -1027,48 +1049,70 @@ namespace Model
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
   private:
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     Aws::String m_dBSnapshotIdentifier;
     bool m_dBSnapshotIdentifierHasBeenSet;
+
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
+
     Aws::String m_tdeCredentialArn;
     bool m_tdeCredentialArnHasBeenSet;
+
     Aws::String m_tdeCredentialPassword;
     bool m_tdeCredentialPasswordHasBeenSet;
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
+
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet;
+
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };

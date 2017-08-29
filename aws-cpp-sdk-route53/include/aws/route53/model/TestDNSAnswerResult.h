@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     TestDNSAnswerResult();
-    TestDNSAnswerResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    TestDNSAnswerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    TestDNSAnswerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    TestDNSAnswerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The Amazon Route 53 name server used to respond to the request.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline TestDNSAnswerResult& WithNameserver(const char* value) { SetNameserver(value); return *this;}
 
+
     /**
      * <p>The name of the resource record set that you submitted a request for.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      */
     inline TestDNSAnswerResult& WithRecordName(const char* value) { SetRecordName(value); return *this;}
 
+
     /**
      * <p>The type of the resource record set that you submitted a request for.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      * <p>The type of the resource record set that you submitted a request for.</p>
      */
     inline TestDNSAnswerResult& WithRecordType(RRType&& value) { SetRecordType(std::move(value)); return *this;}
+
 
     /**
      * <p>A list that contains values that Amazon Route 53 returned for this resource
@@ -191,6 +195,7 @@ namespace Model
      * record set.</p>
      */
     inline TestDNSAnswerResult& AddRecordData(const char* value) { m_recordData.push_back(value); return *this; }
+
 
     /**
      * <p>A code that indicates whether the request is valid or not. The most common
@@ -262,6 +267,7 @@ namespace Model
      */
     inline TestDNSAnswerResult& WithResponseCode(const char* value) { SetResponseCode(value); return *this;}
 
+
     /**
      * <p>The protocol that Amazon Route 53 used to respond to the request, either
      * <code>UDP</code> or <code>TCP</code>. </p>
@@ -305,11 +311,17 @@ namespace Model
     inline TestDNSAnswerResult& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
   private:
+
     Aws::String m_nameserver;
+
     Aws::String m_recordName;
+
     RRType m_recordType;
+
     Aws::Vector<Aws::String> m_recordData;
+
     Aws::String m_responseCode;
+
     Aws::String m_protocol;
   };
 

@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Lambda function whose resource policy you want to remove a permission
      * from.</p> <p> You can specify a function name (for example,
@@ -134,6 +135,7 @@ namespace Model
      */
     inline RemovePermissionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>Statement ID of the permission to remove.</p>
      */
@@ -168,6 +170,7 @@ namespace Model
      * <p>Statement ID of the permission to remove.</p>
      */
     inline RemovePermissionRequest& WithStatementId(const char* value) { SetStatementId(value); return *this;}
+
 
     /**
      * <p>You can specify this optional parameter to remove permission associated with
@@ -226,10 +229,13 @@ namespace Model
     inline RemovePermissionRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_statementId;
     bool m_statementIdHasBeenSet;
+
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet;
   };

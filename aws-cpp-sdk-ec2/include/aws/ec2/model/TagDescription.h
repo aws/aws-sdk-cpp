@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The tag key.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The tag key.</p>
      */
     inline TagDescription& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The ID of the resource. For example, <code>ami-1a2b3c4d</code>.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline TagDescription& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The resource type.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      * <p>The resource type.</p>
      */
     inline TagDescription& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The tag value.</p>
@@ -180,12 +184,16 @@ namespace Model
     inline TagDescription& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

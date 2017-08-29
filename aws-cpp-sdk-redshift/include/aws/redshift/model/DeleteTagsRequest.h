@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
      * For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DeleteTagsRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
     /**
      * <p>The tag key that you want to delete.</p>
      */
@@ -126,8 +128,10 @@ namespace Model
     inline DeleteTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateByteMatchSetResult();
-    UpdateByteMatchSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateByteMatchSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateByteMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateByteMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -98,6 +99,7 @@ namespace Model
     inline UpdateByteMatchSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_changeToken;
   };
 

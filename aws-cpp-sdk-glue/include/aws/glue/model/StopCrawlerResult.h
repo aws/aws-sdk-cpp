@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     StopCrawlerResult();
-    StopCrawlerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopCrawlerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopCrawlerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopCrawlerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

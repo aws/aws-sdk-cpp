@@ -49,6 +49,7 @@ namespace Model
     OfferingTransaction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The status of an offering transaction.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The status of an offering transaction.</p>
      */
     inline OfferingTransaction& WithOfferingStatus(OfferingStatus&& value) { SetOfferingStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The transaction ID of the offering transaction.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline OfferingTransaction& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 
+
     /**
      * <p>The ID that corresponds to a device offering promotion.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      */
     inline OfferingTransaction& WithOfferingPromotionId(const char* value) { SetOfferingPromotionId(value); return *this;}
 
+
     /**
      * <p>The date on which an offering transaction was created.</p>
      */
@@ -168,6 +172,7 @@ namespace Model
      * <p>The date on which an offering transaction was created.</p>
      */
     inline OfferingTransaction& WithCreatedOn(Aws::Utils::DateTime&& value) { SetCreatedOn(std::move(value)); return *this;}
+
 
     /**
      * <p>The cost of an offering transaction.</p>
@@ -195,14 +200,19 @@ namespace Model
     inline OfferingTransaction& WithCost(MonetaryAmount&& value) { SetCost(std::move(value)); return *this;}
 
   private:
+
     OfferingStatus m_offeringStatus;
     bool m_offeringStatusHasBeenSet;
+
     Aws::String m_transactionId;
     bool m_transactionIdHasBeenSet;
+
     Aws::String m_offeringPromotionId;
     bool m_offeringPromotionIdHasBeenSet;
+
     Aws::Utils::DateTime m_createdOn;
     bool m_createdOnHasBeenSet;
+
     MonetaryAmount m_cost;
     bool m_costHasBeenSet;
   };

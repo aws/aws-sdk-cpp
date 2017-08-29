@@ -31,12 +31,12 @@ DeleteNatGatewayResponse::DeleteNatGatewayResponse()
 {
 }
 
-DeleteNatGatewayResponse::DeleteNatGatewayResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteNatGatewayResponse::DeleteNatGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteNatGatewayResponse& DeleteNatGatewayResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteNatGatewayResponse& DeleteNatGatewayResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

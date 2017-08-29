@@ -46,6 +46,7 @@ namespace Model
     LoggingInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of an Amazon S3 bucket where execution logs are stored .</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline LoggingInfo& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
+
     /**
      * <p>(Optional) The Amazon S3 bucket subfolder. </p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>(Optional) The Amazon S3 bucket subfolder. </p>
      */
     inline LoggingInfo& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
+
 
     /**
      * <p>The region where the Amazon S3 bucket is located.</p>
@@ -152,10 +155,13 @@ namespace Model
     inline LoggingInfo& WithS3Region(const char* value) { SetS3Region(value); return *this;}
 
   private:
+
     Aws::String m_s3BucketName;
     bool m_s3BucketNameHasBeenSet;
+
     Aws::String m_s3KeyPrefix;
     bool m_s3KeyPrefixHasBeenSet;
+
     Aws::String m_s3Region;
     bool m_s3RegionHasBeenSet;
   };

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeDBParametersResult();
-    DescribeDBParametersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> A list of <a>Parameter</a> values. </p>
@@ -84,6 +85,7 @@ namespace Model
      * <p> A list of <a>Parameter</a> values. </p>
      */
     inline DescribeDBParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeDBParametersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline DescribeDBParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Parameter> m_parameters;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

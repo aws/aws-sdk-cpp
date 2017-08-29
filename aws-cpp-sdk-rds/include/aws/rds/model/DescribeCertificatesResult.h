@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeCertificatesResult();
-    DescribeCertificatesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCertificatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The list of <a>Certificate</a> objects for the AWS account.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>The list of <a>Certificate</a> objects for the AWS account.</p>
      */
     inline DescribeCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -141,6 +143,7 @@ namespace Model
      */
     inline DescribeCertificatesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -157,8 +160,11 @@ namespace Model
     inline DescribeCertificatesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Certificate> m_certificates;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

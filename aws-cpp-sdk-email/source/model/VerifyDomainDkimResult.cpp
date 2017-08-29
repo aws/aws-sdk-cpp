@@ -31,12 +31,12 @@ VerifyDomainDkimResult::VerifyDomainDkimResult()
 {
 }
 
-VerifyDomainDkimResult::VerifyDomainDkimResult(const AmazonWebServiceResult<XmlDocument>& result)
+VerifyDomainDkimResult::VerifyDomainDkimResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-VerifyDomainDkimResult& VerifyDomainDkimResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+VerifyDomainDkimResult& VerifyDomainDkimResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The name of the load balancer.</p>
      */
     inline CreateLoadBalancerListenersRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+
 
     /**
      * <p>The listeners.</p>
@@ -115,8 +117,10 @@ namespace Model
     inline CreateLoadBalancerListenersRequest& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     Aws::Vector<Listener> m_listeners;
     bool m_listenersHasBeenSet;
   };

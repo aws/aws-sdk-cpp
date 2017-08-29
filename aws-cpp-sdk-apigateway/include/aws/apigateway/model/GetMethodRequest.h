@@ -38,6 +38,7 @@ namespace Model
     GetMethodRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline GetMethodRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
     inline GetMethodRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>Specifies the method request's HTTP method type.</p>
@@ -144,10 +147,13 @@ namespace Model
     inline GetMethodRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
   };

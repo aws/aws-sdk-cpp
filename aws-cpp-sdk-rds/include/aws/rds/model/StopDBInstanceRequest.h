@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p> The user-supplied instance identifier. </p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p> The user-supplied instance identifier. </p>
      */
     inline StopDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+
 
     /**
      * <p> The user-supplied instance identifier of the DB Snapshot created immediately
@@ -116,8 +118,10 @@ namespace Model
     inline StopDBInstanceRequest& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     Aws::String m_dBSnapshotIdentifier;
     bool m_dBSnapshotIdentifierHasBeenSet;
   };

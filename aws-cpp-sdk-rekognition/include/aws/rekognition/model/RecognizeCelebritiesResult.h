@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     RecognizeCelebritiesResult();
-    RecognizeCelebritiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RecognizeCelebritiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RecognizeCelebritiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RecognizeCelebritiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Details about each celebrity found in the image. Amazon Rekognition can
@@ -86,6 +87,7 @@ namespace Model
      */
     inline RecognizeCelebritiesResult& AddCelebrityFaces(Celebrity&& value) { m_celebrityFaces.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Details about each unrecognized face in the image.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>Details about each unrecognized face in the image.</p>
      */
     inline RecognizeCelebritiesResult& AddUnrecognizedFaces(ComparedFace&& value) { m_unrecognizedFaces.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The orientation of the input image (counterclockwise direction). If your
@@ -202,8 +205,11 @@ namespace Model
     inline RecognizeCelebritiesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Celebrity> m_celebrityFaces;
+
     Aws::Vector<ComparedFace> m_unrecognizedFaces;
+
     OrientationCorrection m_orientationCorrection;
   };
 

@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more customer gateway IDs.</p> <p>Default: Describes all your customer
      * gateways.</p>
@@ -91,6 +92,7 @@ namespace Model
      * gateways.</p>
      */
     inline DescribeCustomerGatewaysRequest& AddCustomerGatewayIds(const char* value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds.push_back(value); return *this; }
+
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>bgp-asn</code> - The customer
@@ -281,6 +283,7 @@ namespace Model
      */
     inline DescribeCustomerGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -306,10 +309,13 @@ namespace Model
     inline DescribeCustomerGatewaysRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_customerGatewayIds;
     bool m_customerGatewayIdsHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

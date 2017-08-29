@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline UpdateSubscriberRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
 
     
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
@@ -83,6 +85,7 @@ namespace Model
     
     inline UpdateSubscriberRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
 
+
     
     inline const Notification& GetNotification() const{ return m_notification; }
 
@@ -98,6 +101,7 @@ namespace Model
     
     inline UpdateSubscriberRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
+
     
     inline const Subscriber& GetOldSubscriber() const{ return m_oldSubscriber; }
 
@@ -112,6 +116,7 @@ namespace Model
 
     
     inline UpdateSubscriberRequest& WithOldSubscriber(Subscriber&& value) { SetOldSubscriber(std::move(value)); return *this;}
+
 
     
     inline const Subscriber& GetNewSubscriber() const{ return m_newSubscriber; }
@@ -129,14 +134,19 @@ namespace Model
     inline UpdateSubscriberRequest& WithNewSubscriber(Subscriber&& value) { SetNewSubscriber(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_budgetName;
     bool m_budgetNameHasBeenSet;
+
     Notification m_notification;
     bool m_notificationHasBeenSet;
+
     Subscriber m_oldSubscriber;
     bool m_oldSubscriberHasBeenSet;
+
     Subscriber m_newSubscriber;
     bool m_newSubscriberHasBeenSet;
   };

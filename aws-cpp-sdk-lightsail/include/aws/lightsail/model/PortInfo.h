@@ -46,6 +46,7 @@ namespace Model
     PortInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The first port in the range.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      */
     inline PortInfo& WithFromPort(int value) { SetFromPort(value); return *this;}
 
+
     /**
      * <p>The last port in the range.</p>
      */
@@ -75,6 +77,7 @@ namespace Model
      * <p>The last port in the range.</p>
      */
     inline PortInfo& WithToPort(int value) { SetToPort(value); return *this;}
+
 
     /**
      * <p>The protocol. </p>
@@ -102,10 +105,13 @@ namespace Model
     inline PortInfo& WithProtocol(NetworkProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
+
     int m_fromPort;
     bool m_fromPortHasBeenSet;
+
     int m_toPort;
     bool m_toPortHasBeenSet;
+
     NetworkProtocol m_protocol;
     bool m_protocolHasBeenSet;
   };

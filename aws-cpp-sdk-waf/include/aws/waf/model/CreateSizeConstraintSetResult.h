@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateSizeConstraintSetResult();
-    CreateSizeConstraintSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSizeConstraintSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSizeConstraintSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSizeConstraintSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A <a>SizeConstraintSet</a> that contains no <code>SizeConstraint</code>
@@ -71,6 +72,7 @@ namespace Model
      * objects.</p>
      */
     inline CreateSizeConstraintSetResult& WithSizeConstraintSet(SizeConstraintSet&& value) { SetSizeConstraintSet(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -129,7 +131,9 @@ namespace Model
     inline CreateSizeConstraintSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     SizeConstraintSet m_sizeConstraintSet;
+
     Aws::String m_changeToken;
   };
 

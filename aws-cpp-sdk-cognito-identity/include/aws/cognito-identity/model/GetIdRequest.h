@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A standard AWS account ID (9+ digits).</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline GetIdRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline GetIdRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
@@ -267,10 +270,13 @@ namespace Model
     inline GetIdRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_logins;
     bool m_loginsHasBeenSet;
   };

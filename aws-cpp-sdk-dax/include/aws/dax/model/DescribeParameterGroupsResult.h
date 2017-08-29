@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeParameterGroupsResult();
-    DescribeParameterGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeParameterGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeParameterGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeParameterGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline DescribeParameterGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>An array of parameter groups. Each element in the array represents one
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeParameterGroupsResult& AddParameterGroups(ParameterGroup&& value) { m_parameterGroups.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<ParameterGroup> m_parameterGroups;
   };
 

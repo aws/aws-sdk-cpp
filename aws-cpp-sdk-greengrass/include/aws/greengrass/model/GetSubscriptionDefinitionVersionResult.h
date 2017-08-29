@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetSubscriptionDefinitionVersionResult();
-    GetSubscriptionDefinitionVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSubscriptionDefinitionVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSubscriptionDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSubscriptionDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the subscription definition version.
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetSubscriptionDefinitionVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * Timestamp of when the subscription definition version was created.
      */
@@ -112,6 +114,7 @@ namespace Model
      */
     inline GetSubscriptionDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
+
     /**
      * Information on the definition
      */
@@ -136,6 +139,7 @@ namespace Model
      * Information on the definition
      */
     inline GetSubscriptionDefinitionVersionResult& WithDefinition(SubscriptionDefinitionVersion&& value) { SetDefinition(std::move(value)); return *this;}
+
 
     /**
      * Id of the subscription definition the version belongs to.
@@ -171,6 +175,7 @@ namespace Model
      * Id of the subscription definition the version belongs to.
      */
     inline GetSubscriptionDefinitionVersionResult& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Version of the subscription definition version.
@@ -208,10 +213,15 @@ namespace Model
     inline GetSubscriptionDefinitionVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_arn;
+
     Aws::String m_creationTimestamp;
+
     SubscriptionDefinitionVersion m_definition;
+
     Aws::String m_id;
+
     Aws::String m_version;
   };
 

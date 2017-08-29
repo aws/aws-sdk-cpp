@@ -30,12 +30,12 @@ CreateTriggerResult::CreateTriggerResult()
 {
 }
 
-CreateTriggerResult::CreateTriggerResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateTriggerResult::CreateTriggerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateTriggerResult& CreateTriggerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateTriggerResult& CreateTriggerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Name"))

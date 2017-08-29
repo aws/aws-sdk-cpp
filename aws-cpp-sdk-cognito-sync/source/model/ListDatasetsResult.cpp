@@ -31,13 +31,13 @@ ListDatasetsResult::ListDatasetsResult() :
 {
 }
 
-ListDatasetsResult::ListDatasetsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListDatasetsResult::ListDatasetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_count(0)
 {
   *this = result;
 }
 
-ListDatasetsResult& ListDatasetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListDatasetsResult& ListDatasetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Datasets"))

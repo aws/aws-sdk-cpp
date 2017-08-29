@@ -30,12 +30,12 @@ ListDocumentsResult::ListDocumentsResult()
 {
 }
 
-ListDocumentsResult::ListDocumentsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListDocumentsResult::ListDocumentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListDocumentsResult& ListDocumentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListDocumentsResult& ListDocumentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DocumentIdentifiers"))

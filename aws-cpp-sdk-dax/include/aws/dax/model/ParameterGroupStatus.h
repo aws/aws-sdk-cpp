@@ -46,6 +46,7 @@ namespace Model
     ParameterGroupStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the parameter group.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline ParameterGroupStatus& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
 
+
     /**
      * <p>The status of parameter updates. </p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The status of parameter updates. </p>
      */
     inline ParameterGroupStatus& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
+
 
     /**
      * <p>The node IDs of one or more nodes to be rebooted.</p>
@@ -157,10 +160,13 @@ namespace Model
     inline ParameterGroupStatus& AddNodeIdsToReboot(const char* value) { m_nodeIdsToRebootHasBeenSet = true; m_nodeIdsToReboot.push_back(value); return *this; }
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     Aws::String m_parameterApplyStatus;
     bool m_parameterApplyStatusHasBeenSet;
+
     Aws::Vector<Aws::String> m_nodeIdsToReboot;
     bool m_nodeIdsToRebootHasBeenSet;
   };

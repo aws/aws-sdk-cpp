@@ -31,12 +31,12 @@ DescribeSpotFleetInstancesResponse::DescribeSpotFleetInstancesResponse()
 {
 }
 
-DescribeSpotFleetInstancesResponse::DescribeSpotFleetInstancesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSpotFleetInstancesResponse::DescribeSpotFleetInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeSpotFleetInstancesResponse& DescribeSpotFleetInstancesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSpotFleetInstancesResponse& DescribeSpotFleetInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

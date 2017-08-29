@@ -30,12 +30,12 @@ UpdateXssMatchSetResult::UpdateXssMatchSetResult()
 {
 }
 
-UpdateXssMatchSetResult::UpdateXssMatchSetResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateXssMatchSetResult::UpdateXssMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateXssMatchSetResult& UpdateXssMatchSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateXssMatchSetResult& UpdateXssMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

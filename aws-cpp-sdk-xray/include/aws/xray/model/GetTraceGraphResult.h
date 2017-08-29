@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetTraceGraphResult();
-    GetTraceGraphResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTraceGraphResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTraceGraphResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTraceGraphResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The services that have processed one of the specified requests.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The services that have processed one of the specified requests.</p>
      */
     inline GetTraceGraphResult& AddServices(Service&& value) { m_services.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Pagination token. Not used.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline GetTraceGraphResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Service> m_services;
+
     Aws::String m_nextToken;
   };
 

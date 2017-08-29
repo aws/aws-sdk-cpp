@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListStateMachinesResult();
-    ListStateMachinesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListStateMachinesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListStateMachinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListStateMachinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::Vector<StateMachineListItem>& GetStateMachines() const{ return m_stateMachines; }
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline ListStateMachinesResult& AddStateMachines(StateMachineListItem&& value) { m_stateMachines.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a <code>nextToken</code> is returned, there are more results available. To
@@ -128,7 +130,9 @@ namespace Model
     inline ListStateMachinesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<StateMachineListItem> m_stateMachines;
+
     Aws::String m_nextToken;
   };
 

@@ -66,6 +66,7 @@ namespace Model
     FleetCapacity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a fleet.</p>
      */
@@ -100,6 +101,7 @@ namespace Model
      * <p>Unique identifier for a fleet.</p>
      */
     inline FleetCapacity& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
@@ -151,6 +153,7 @@ namespace Model
      */
     inline FleetCapacity& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>Current status of fleet capacity.</p>
      */
@@ -177,10 +180,13 @@ namespace Model
     inline FleetCapacity& WithInstanceCounts(EC2InstanceCounts&& value) { SetInstanceCounts(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     EC2InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     EC2InstanceCounts m_instanceCounts;
     bool m_instanceCountsHasBeenSet;
   };

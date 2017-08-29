@@ -46,6 +46,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
      */
     inline IcmpTypeCode& WithCode(int value) { SetCode(value); return *this;}
+
 
     /**
      * <p>The ICMP type. A value of -1 means all types.</p>
@@ -77,8 +79,10 @@ namespace Model
     inline IcmpTypeCode& WithType(int value) { SetType(value); return *this;}
 
   private:
+
     int m_code;
     bool m_codeHasBeenSet;
+
     int m_type;
     bool m_typeHasBeenSet;
   };

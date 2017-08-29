@@ -30,12 +30,12 @@ ListMultipartUploadsResult::ListMultipartUploadsResult()
 {
 }
 
-ListMultipartUploadsResult::ListMultipartUploadsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListMultipartUploadsResult::ListMultipartUploadsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UploadsList"))

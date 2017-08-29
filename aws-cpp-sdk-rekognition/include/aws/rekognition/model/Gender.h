@@ -46,6 +46,7 @@ namespace Model
     Gender& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Gender of the face.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline Gender& WithValue(GenderType&& value) { SetValue(std::move(value)); return *this;}
 
+
     /**
      * <p>Level of confidence in the determination.</p>
      */
@@ -87,8 +89,10 @@ namespace Model
     inline Gender& WithConfidence(double value) { SetConfidence(value); return *this;}
 
   private:
+
     GenderType m_value;
     bool m_valueHasBeenSet;
+
     double m_confidence;
     bool m_confidenceHasBeenSet;
   };

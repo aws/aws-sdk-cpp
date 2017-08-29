@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetSlotTypeVersionsResult();
-    GetSlotTypeVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSlotTypeVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSlotTypeVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSlotTypeVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered
@@ -84,6 +85,7 @@ namespace Model
      * version of the slot type plus one for the <code>$LATEST</code> version.</p>
      */
     inline GetSlotTypeVersionsResult& AddSlotTypes(SlotTypeMetadata&& value) { m_slotTypes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token for fetching the next page of slot type versions. If the
@@ -142,7 +144,9 @@ namespace Model
     inline GetSlotTypeVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<SlotTypeMetadata> m_slotTypes;
+
     Aws::String m_nextToken;
   };
 

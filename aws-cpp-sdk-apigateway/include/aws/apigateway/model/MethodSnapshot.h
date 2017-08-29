@@ -46,6 +46,7 @@ namespace Model
     MethodSnapshot& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The method's authorization type. Valid values are <code>NONE</code> for open
      * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
@@ -102,6 +103,7 @@ namespace Model
      */
     inline MethodSnapshot& WithAuthorizationType(const char* value) { SetAuthorizationType(value); return *this;}
 
+
     /**
      * <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
      */
@@ -118,8 +120,10 @@ namespace Model
     inline MethodSnapshot& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
 
   private:
+
     Aws::String m_authorizationType;
     bool m_authorizationTypeHasBeenSet;
+
     bool m_apiKeyRequired;
     bool m_apiKeyRequiredHasBeenSet;
   };

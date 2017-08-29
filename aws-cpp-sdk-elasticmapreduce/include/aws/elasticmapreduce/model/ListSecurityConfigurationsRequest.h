@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The pagination token that indicates the set of results to retrieve.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline ListSecurityConfigurationsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

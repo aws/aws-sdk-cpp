@@ -55,7 +55,7 @@ enum class SimpleDBErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ATTRIBUTE_DOES_NOT_EXIST= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ATTRIBUTE_DOES_NOT_EXIST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DUPLICATE_ITEM_NAME,
   INVALID_NEXT_TOKEN,
   INVALID_NUMBER_PREDICATES,
@@ -73,7 +73,7 @@ enum class SimpleDBErrors
 };
 namespace SimpleDBErrorMapper
 {
-  AWS_SIMPLEDB_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_SIMPLEDB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace SimpleDB

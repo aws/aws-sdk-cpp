@@ -47,6 +47,7 @@ namespace Model
     TargetGroupInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>For blue/green deployments, the name of the target group that instances in
      * the original environment are deregistered from, and instances in the replacement
@@ -118,6 +119,7 @@ namespace Model
     inline TargetGroupInfo& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

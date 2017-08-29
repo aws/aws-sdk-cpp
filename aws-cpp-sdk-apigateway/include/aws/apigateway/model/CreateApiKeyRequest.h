@@ -39,6 +39,7 @@ namespace Model
     CreateApiKeyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the <a>ApiKey</a>.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The name of the <a>ApiKey</a>.</p>
      */
     inline CreateApiKeyRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The description of the <a>ApiKey</a>.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline CreateApiKeyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
      */
@@ -123,6 +126,7 @@ namespace Model
      * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
      */
     inline CreateApiKeyRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
@@ -141,6 +145,7 @@ namespace Model
      * identifier is distinct from the created API key value.</p>
      */
     inline CreateApiKeyRequest& WithGenerateDistinctId(bool value) { SetGenerateDistinctId(value); return *this;}
+
 
     /**
      * <p>Specifies a value of the API key.</p>
@@ -176,6 +181,7 @@ namespace Model
      * <p>Specifies a value of the API key.</p>
      */
     inline CreateApiKeyRequest& WithValue(const char* value) { SetValue(value); return *this;}
+
 
     /**
      * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
@@ -218,6 +224,7 @@ namespace Model
      * key.</p>
      */
     inline CreateApiKeyRequest& AddStageKeys(StageKey&& value) { m_stageKeysHasBeenSet = true; m_stageKeys.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
@@ -262,18 +269,25 @@ namespace Model
     inline CreateApiKeyRequest& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     bool m_generateDistinctId;
     bool m_generateDistinctIdHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     Aws::Vector<StageKey> m_stageKeys;
     bool m_stageKeysHasBeenSet;
+
     Aws::String m_customerId;
     bool m_customerIdHasBeenSet;
   };

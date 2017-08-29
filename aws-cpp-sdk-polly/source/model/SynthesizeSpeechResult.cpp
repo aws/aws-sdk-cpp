@@ -52,13 +52,13 @@ SynthesizeSpeechResult& SynthesizeSpeechResult::operator=(SynthesizeSpeechResult
    return *this;
 }
 
-SynthesizeSpeechResult::SynthesizeSpeechResult(AmazonWebServiceResult<ResponseStream>&& result) : 
+SynthesizeSpeechResult::SynthesizeSpeechResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
     m_requestCharacters(0)
 {
   *this = std::move(result);
 }
 
-SynthesizeSpeechResult& SynthesizeSpeechResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+SynthesizeSpeechResult& SynthesizeSpeechResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_audioStream = result.TakeOwnershipOfPayload();
 

@@ -46,6 +46,7 @@ namespace Model
     SnapshotOptionsStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the daily snapshot options specified for the Elasticsearch
      * domain.</p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline SnapshotOptionsStatus& WithOptions(SnapshotOptions&& value) { SetOptions(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the status of a daily automated snapshot.</p>
      */
@@ -102,8 +104,10 @@ namespace Model
     inline SnapshotOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     SnapshotOptions m_options;
     bool m_optionsHasBeenSet;
+
     OptionStatus m_status;
     bool m_statusHasBeenSet;
   };

@@ -86,8 +86,9 @@ namespace Model
   {
   public:
     UpdateGatewayResponseResult();
-    UpdateGatewayResponseResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateGatewayResponseResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateGatewayResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateGatewayResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The response type of the associated <a>GatewayResponse</a>. Valid values are
@@ -134,6 +135,7 @@ namespace Model
      */
     inline UpdateGatewayResponseResult& WithResponseType(GatewayResponseType&& value) { SetResponseType(std::move(value)); return *this;}
 
+
     /**
      * <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
      */
@@ -168,6 +170,7 @@ namespace Model
      * <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
      */
     inline UpdateGatewayResponseResult& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p>Response parameters (paths, query strings and headers) of the
@@ -241,6 +244,7 @@ namespace Model
      */
     inline UpdateGatewayResponseResult& AddResponseParameters(const char* key, const char* value) { m_responseParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of
      * key-value pairs.</p>
@@ -313,6 +317,7 @@ namespace Model
      */
     inline UpdateGatewayResponseResult& AddResponseTemplates(const char* key, const char* value) { m_responseTemplates.emplace(key, value); return *this; }
 
+
     /**
      * <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default
      * gateway response (<code>true</code>) or not (<code>false</code>). A default
@@ -338,10 +343,15 @@ namespace Model
     inline UpdateGatewayResponseResult& WithDefaultResponse(bool value) { SetDefaultResponse(value); return *this;}
 
   private:
+
     GatewayResponseType m_responseType;
+
     Aws::String m_statusCode;
+
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
+
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
+
     bool m_defaultResponse;
   };
 

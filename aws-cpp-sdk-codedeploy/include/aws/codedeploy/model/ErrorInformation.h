@@ -46,6 +46,7 @@ namespace Model
     ErrorInformation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>For information about additional error codes, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
@@ -196,6 +197,7 @@ namespace Model
      */
     inline ErrorInformation& WithCode(ErrorCode&& value) { SetCode(std::move(value)); return *this;}
 
+
     /**
      * <p>An accompanying error message.</p>
      */
@@ -232,8 +234,10 @@ namespace Model
     inline ErrorInformation& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     ErrorCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

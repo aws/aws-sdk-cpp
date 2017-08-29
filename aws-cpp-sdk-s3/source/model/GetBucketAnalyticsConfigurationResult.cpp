@@ -29,12 +29,12 @@ GetBucketAnalyticsConfigurationResult::GetBucketAnalyticsConfigurationResult()
 {
 }
 
-GetBucketAnalyticsConfigurationResult::GetBucketAnalyticsConfigurationResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketAnalyticsConfigurationResult::GetBucketAnalyticsConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetBucketAnalyticsConfigurationResult& GetBucketAnalyticsConfigurationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketAnalyticsConfigurationResult& GetBucketAnalyticsConfigurationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

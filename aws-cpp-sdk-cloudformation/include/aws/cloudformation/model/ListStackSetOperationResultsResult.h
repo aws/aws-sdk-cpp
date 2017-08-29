@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     ListStackSetOperationResultsResult();
-    ListStackSetOperationResultsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListStackSetOperationResultsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListStackSetOperationResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListStackSetOperationResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of <code>StackSetOperationResultSummary</code> structures that contain
@@ -92,6 +93,7 @@ namespace Model
      * are included in the operation.</p>
      */
     inline ListStackSetOperationResultsResult& AddSummaries(StackSetOperationResultSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the request doesn't return all results, <code>NextToken</code> is set to a
@@ -156,6 +158,7 @@ namespace Model
      */
     inline ListStackSetOperationResultsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -172,8 +175,11 @@ namespace Model
     inline ListStackSetOperationResultsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<StackSetOperationResultSummary> m_summaries;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

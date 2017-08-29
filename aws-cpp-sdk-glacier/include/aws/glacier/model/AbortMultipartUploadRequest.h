@@ -42,6 +42,7 @@ namespace Model
     AbortMultipartUploadRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -105,6 +106,7 @@ namespace Model
      */
     inline AbortMultipartUploadRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -139,6 +141,7 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline AbortMultipartUploadRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
 
     /**
      * <p>The upload ID of the multipart upload to delete.</p>
@@ -176,10 +179,13 @@ namespace Model
     inline AbortMultipartUploadRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;
   };

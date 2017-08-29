@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for the game session to update.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline UpdateGameSessionRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
+
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session.</p>
@@ -93,6 +95,7 @@ namespace Model
      * session.</p>
      */
     inline UpdateGameSessionRequest& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -136,6 +139,7 @@ namespace Model
      */
     inline UpdateGameSessionRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Policy determining whether or not the game session accepts new players.</p>
      */
@@ -160,6 +164,7 @@ namespace Model
      * <p>Policy determining whether or not the game session accepts new players.</p>
      */
     inline UpdateGameSessionRequest& WithPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { SetPlayerSessionCreationPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>Game session protection policy to apply to this game session only.</p> <ul>
@@ -207,14 +212,19 @@ namespace Model
     inline UpdateGameSessionRequest& WithProtectionPolicy(ProtectionPolicy&& value) { SetProtectionPolicy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet;
+
     int m_maximumPlayerSessionCount;
     bool m_maximumPlayerSessionCountHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     PlayerSessionCreationPolicy m_playerSessionCreationPolicy;
     bool m_playerSessionCreationPolicyHasBeenSet;
+
     ProtectionPolicy m_protectionPolicy;
     bool m_protectionPolicyHasBeenSet;
   };

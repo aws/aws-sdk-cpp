@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the group.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the group.</p>
      */
     inline UpdateGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>The user pool ID for the user pool.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline UpdateGroupRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>A string containing the new description of the group.</p>
      */
@@ -140,6 +143,7 @@ namespace Model
      * <p>A string containing the new description of the group.</p>
      */
     inline UpdateGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The new role ARN for the group. This is used for setting the
@@ -190,6 +194,7 @@ namespace Model
      */
     inline UpdateGroupRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>The new precedence value for the group. For more information about this
      * parameter, see <a href="API_CreateGroup.html">CreateGroup</a>.</p>
@@ -209,14 +214,19 @@ namespace Model
     inline UpdateGroupRequest& WithPrecedence(int value) { SetPrecedence(value); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     int m_precedence;
     bool m_precedenceHasBeenSet;
   };

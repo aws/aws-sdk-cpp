@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
@@ -104,6 +105,7 @@ namespace Model
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceIdentifier(const char* value) { SetReplicationInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p>The amount of storage (in gigabytes) to be initially allocated for the
      * replication instance.</p>
@@ -121,6 +123,7 @@ namespace Model
      * replication instance.</p>
      */
     inline CreateReplicationInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+
 
     /**
      * <p>The compute and memory capacity of the replication instance as specified by
@@ -178,6 +181,7 @@ namespace Model
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
+
     /**
      * <p> Specifies the VPC security group to be used with the replication instance.
      * The VPC security group must work with the VPC containing the replication
@@ -234,6 +238,7 @@ namespace Model
      */
     inline CreateReplicationInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The EC2 Availability Zone that the replication instance will be created
      * in.</p> <p>Default: A random, system-chosen Availability Zone in the endpoint's
@@ -283,6 +288,7 @@ namespace Model
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>A subnet group to associate with the replication instance.</p>
      */
@@ -317,6 +323,7 @@ namespace Model
      * <p>A subnet group to associate with the replication instance.</p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationSubnetGroupIdentifier(const char* value) { SetReplicationSubnetGroupIdentifier(value); return *this;}
+
 
     /**
      * <p>The weekly time range during which system maintenance can occur, in Universal
@@ -381,6 +388,7 @@ namespace Model
      */
     inline CreateReplicationInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
      * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
@@ -401,6 +409,7 @@ namespace Model
      * to <code>true</code>. </p>
      */
     inline CreateReplicationInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p>The engine version number of the replication instance.</p>
@@ -437,6 +446,7 @@ namespace Model
      */
     inline CreateReplicationInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>Indicates that minor engine upgrades will be applied automatically to the
      * replication instance during the maintenance window.</p> <p>Default:
@@ -457,6 +467,7 @@ namespace Model
      * <code>true</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>Tags to be associated with the replication instance.</p>
@@ -492,6 +503,7 @@ namespace Model
      * <p>Tags to be associated with the replication instance.</p>
      */
     inline CreateReplicationInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The KMS key identifier that will be used to encrypt the content on the
@@ -556,6 +568,7 @@ namespace Model
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p> Specifies the accessibility options for the replication instance. A value of
      * <code>true</code> represents an instance with a public IP address. A value of
@@ -581,30 +594,43 @@ namespace Model
     inline CreateReplicationInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
   private:
+
     Aws::String m_replicationInstanceIdentifier;
     bool m_replicationInstanceIdentifierHasBeenSet;
+
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
+
     Aws::String m_replicationInstanceClass;
     bool m_replicationInstanceClassHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_replicationSubnetGroupIdentifier;
     bool m_replicationSubnetGroupIdentifierHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
   };

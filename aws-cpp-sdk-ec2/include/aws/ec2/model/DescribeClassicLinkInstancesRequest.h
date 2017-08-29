@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>group-id</code> - The ID of a
      * VPC security group that's associated with the instance.</p> </li> <li> <p>
@@ -177,6 +178,7 @@ namespace Model
      */
     inline DescribeClassicLinkInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -200,6 +202,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeClassicLinkInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>One or more instance IDs. Must be instances linked to a VPC through
@@ -249,6 +252,7 @@ namespace Model
      */
     inline DescribeClassicLinkInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results of the initial request can be seen by sending another request
@@ -281,6 +285,7 @@ namespace Model
      * 1000, we return only 1000 items.</p>
      */
     inline DescribeClassicLinkInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -318,14 +323,19 @@ namespace Model
     inline DescribeClassicLinkInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

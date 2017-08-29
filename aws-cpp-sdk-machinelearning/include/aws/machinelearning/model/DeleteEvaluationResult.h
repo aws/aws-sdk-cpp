@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     DeleteEvaluationResult();
-    DeleteEvaluationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEvaluationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteEvaluationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This
@@ -101,6 +102,7 @@ namespace Model
     inline DeleteEvaluationResult& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
 
   private:
+
     Aws::String m_evaluationId;
   };
 

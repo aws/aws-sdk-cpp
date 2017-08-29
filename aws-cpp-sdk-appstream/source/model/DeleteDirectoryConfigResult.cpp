@@ -30,12 +30,12 @@ DeleteDirectoryConfigResult::DeleteDirectoryConfigResult()
 {
 }
 
-DeleteDirectoryConfigResult::DeleteDirectoryConfigResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDirectoryConfigResult::DeleteDirectoryConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteDirectoryConfigResult& DeleteDirectoryConfigResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDirectoryConfigResult& DeleteDirectoryConfigResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

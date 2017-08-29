@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetDomainsResult();
-    GetDomainsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDomainsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about each of the domain
@@ -84,6 +85,7 @@ namespace Model
      * entries in the user's account.</p>
      */
     inline GetDomainsResult& AddDomains(Domain&& value) { m_domains.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token used for advancing to the next page of results from your get active
@@ -128,7 +130,9 @@ namespace Model
     inline GetDomainsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<Domain> m_domains;
+
     Aws::String m_nextPageToken;
   };
 

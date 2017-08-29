@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListTagsResult();
-    ListTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A set of key-value pairs that contain tag keys and tag values that are
@@ -120,6 +121,7 @@ namespace Model
      */
     inline ListTagsResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
     /**
      * <p>If a paginated request does not return all of the remaining results, this
      * parameter is set to a token that you can assign to the request object's
@@ -184,7 +186,9 @@ namespace Model
     inline ListTagsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_tags;
+
     Aws::String m_nextToken;
   };
 

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the LoadBalancer.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline LoadBalancerDescription& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
+
     /**
      * <p>The domain name of the LoadBalancer.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The domain name of the LoadBalancer.</p>
      */
     inline LoadBalancerDescription& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>A list of Listeners used by the LoadBalancer.</p>
@@ -156,10 +159,13 @@ namespace Model
     inline LoadBalancerDescription& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::Vector<Listener> m_listeners;
     bool m_listenersHasBeenSet;
   };

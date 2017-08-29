@@ -31,13 +31,13 @@ UpdateProvisioningArtifactResult::UpdateProvisioningArtifactResult() :
 {
 }
 
-UpdateProvisioningArtifactResult::UpdateProvisioningArtifactResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateProvisioningArtifactResult::UpdateProvisioningArtifactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(Status::NOT_SET)
 {
   *this = result;
 }
 
-UpdateProvisioningArtifactResult& UpdateProvisioningArtifactResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateProvisioningArtifactResult& UpdateProvisioningArtifactResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ProvisioningArtifactDetail"))

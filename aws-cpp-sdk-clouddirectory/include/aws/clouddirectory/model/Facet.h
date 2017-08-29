@@ -48,6 +48,7 @@ namespace Model
     Facet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the <a>Facet</a>.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Facet& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The object type that is associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
@@ -114,8 +116,10 @@ namespace Model
     inline Facet& WithObjectType(ObjectType&& value) { SetObjectType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ObjectType m_objectType;
     bool m_objectTypeHasBeenSet;
   };

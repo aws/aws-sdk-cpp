@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream to delete.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline DeleteStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
   };

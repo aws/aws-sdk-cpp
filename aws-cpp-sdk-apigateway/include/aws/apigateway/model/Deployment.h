@@ -59,6 +59,7 @@ namespace Model
     Deployment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier for the deployment resource.</p>
      */
@@ -93,6 +94,7 @@ namespace Model
      * <p>The identifier for the deployment resource.</p>
      */
     inline Deployment& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The description for the deployment resource.</p>
@@ -129,6 +131,7 @@ namespace Model
      */
     inline Deployment& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The date and time that the deployment resource was created.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>The date and time that the deployment resource was created.</p>
      */
     inline Deployment& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>A summary of the <a>RestApi</a> at the date and time that the deployment
@@ -221,12 +225,16 @@ namespace Model
     inline Deployment& AddApiSummary(const char* key, const Aws::Map<Aws::String, MethodSnapshot>& value) { m_apiSummaryHasBeenSet = true; m_apiSummary.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Map<Aws::String, MethodSnapshot>> m_apiSummary;
     bool m_apiSummaryHasBeenSet;
   };

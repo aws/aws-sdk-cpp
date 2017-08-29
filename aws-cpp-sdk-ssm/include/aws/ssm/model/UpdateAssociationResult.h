@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateAssociationResult();
-    UpdateAssociationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAssociationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The description of the association that was updated.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateAssociationResult& WithAssociationDescription(AssociationDescription&& value) { SetAssociationDescription(std::move(value)); return *this;}
 
   private:
+
     AssociationDescription m_associationDescription;
   };
 

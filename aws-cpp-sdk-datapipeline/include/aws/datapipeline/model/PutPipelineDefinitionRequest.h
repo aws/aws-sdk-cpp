@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the pipeline.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The ID of the pipeline.</p>
      */
     inline PutPipelineDefinitionRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+
 
     /**
      * <p>The objects that define the pipeline. These objects overwrite the existing
@@ -121,6 +123,7 @@ namespace Model
      */
     inline PutPipelineDefinitionRequest& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The parameter objects used with the pipeline.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The parameter objects used with the pipeline.</p>
      */
     inline PutPipelineDefinitionRequest& AddParameterObjects(ParameterObject&& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The parameter values used with the pipeline.</p>
@@ -192,12 +196,16 @@ namespace Model
     inline PutPipelineDefinitionRequest& AddParameterValues(ParameterValue&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     Aws::Vector<PipelineObject> m_pipelineObjects;
     bool m_pipelineObjectsHasBeenSet;
+
     Aws::Vector<ParameterObject> m_parameterObjects;
     bool m_parameterObjectsHasBeenSet;
+
     Aws::Vector<ParameterValue> m_parameterValues;
     bool m_parameterValuesHasBeenSet;
   };

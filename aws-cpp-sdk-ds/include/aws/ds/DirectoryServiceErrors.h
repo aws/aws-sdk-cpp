@@ -55,7 +55,7 @@ enum class DirectoryServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  AUTHENTICATION_FAILED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AUTHENTICATION_FAILED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CLIENT,
   DIRECTORY_LIMIT_EXCEEDED,
   DIRECTORY_UNAVAILABLE,
@@ -73,7 +73,7 @@ enum class DirectoryServiceErrors
 };
 namespace DirectoryServiceErrorMapper
 {
-  AWS_DIRECTORYSERVICE_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_DIRECTORYSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace DirectoryService

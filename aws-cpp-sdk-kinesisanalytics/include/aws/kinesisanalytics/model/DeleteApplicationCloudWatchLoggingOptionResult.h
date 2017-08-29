@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteApplicationCloudWatchLoggingOptionResult();
-    DeleteApplicationCloudWatchLoggingOptionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteApplicationCloudWatchLoggingOptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteApplicationCloudWatchLoggingOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

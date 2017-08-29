@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     ReportTaskProgressResult();
-    ReportTaskProgressResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReportTaskProgressResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReportTaskProgressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReportTaskProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If true, the calling task runner should cancel processing of the task. The
@@ -63,6 +64,7 @@ namespace Model
     inline ReportTaskProgressResult& WithCanceled(bool value) { SetCanceled(value); return *this;}
 
   private:
+
     bool m_canceled;
   };
 

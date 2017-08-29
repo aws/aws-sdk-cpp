@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DeleteDeploymentGroupResult();
-    DeleteDeploymentGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDeploymentGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDeploymentGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDeploymentGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If the output contains no data, and the corresponding deployment group
@@ -119,6 +120,7 @@ namespace Model
     inline DeleteDeploymentGroupResult& AddHooksNotCleanedUp(AutoScalingGroup&& value) { m_hooksNotCleanedUp.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<AutoScalingGroup> m_hooksNotCleanedUp;
   };
 

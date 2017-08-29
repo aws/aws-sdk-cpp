@@ -46,6 +46,7 @@ namespace Model
     FunctionDefinitionVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Lambda functions in this function definition version.
      */
@@ -82,6 +83,7 @@ namespace Model
     inline FunctionDefinitionVersion& AddFunctions(Function&& value) { m_functionsHasBeenSet = true; m_functions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Function> m_functions;
     bool m_functionsHasBeenSet;
   };

@@ -32,13 +32,13 @@ CheckIfPhoneNumberIsOptedOutResult::CheckIfPhoneNumberIsOptedOutResult() :
 {
 }
 
-CheckIfPhoneNumberIsOptedOutResult::CheckIfPhoneNumberIsOptedOutResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+CheckIfPhoneNumberIsOptedOutResult::CheckIfPhoneNumberIsOptedOutResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isOptedOut(false)
 {
   *this = result;
 }
 
-CheckIfPhoneNumberIsOptedOutResult& CheckIfPhoneNumberIsOptedOutResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CheckIfPhoneNumberIsOptedOutResult& CheckIfPhoneNumberIsOptedOutResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -39,6 +39,7 @@ namespace Model
     UpdateAccountRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A list of update operations to be applied to the specified resource and in
      * the order specified in this list.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline UpdateAccountRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<PatchOperation> m_patchOperations;
     bool m_patchOperationsHasBeenSet;
   };

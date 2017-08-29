@@ -30,12 +30,12 @@ BatchGetOnPremisesInstancesResult::BatchGetOnPremisesInstancesResult()
 {
 }
 
-BatchGetOnPremisesInstancesResult::BatchGetOnPremisesInstancesResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetOnPremisesInstancesResult::BatchGetOnPremisesInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchGetOnPremisesInstancesResult& BatchGetOnPremisesInstancesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetOnPremisesInstancesResult& BatchGetOnPremisesInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("instanceInfos"))

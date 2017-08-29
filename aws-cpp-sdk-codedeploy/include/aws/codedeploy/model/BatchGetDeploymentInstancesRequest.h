@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique ID of a deployment.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The unique ID of a deployment.</p>
      */
     inline BatchGetDeploymentInstancesRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+
 
     /**
      * <p>The unique IDs of instances in the deployment group.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline BatchGetDeploymentInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
   };

@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     CreateVolumeResponse();
-    CreateVolumeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateVolumeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateVolumeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateVolumeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the volume attachments.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline CreateVolumeResponse& AddAttachments(VolumeAttachment&& value) { m_attachments.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The Availability Zone for the volume.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      */
     inline CreateVolumeResponse& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The time stamp when volume creation was initiated.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      */
     inline CreateVolumeResponse& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether the volume will be encrypted.</p>
      */
@@ -162,6 +166,7 @@ namespace Model
      * <p>Indicates whether the volume will be encrypted.</p>
      */
     inline CreateVolumeResponse& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
@@ -205,6 +210,7 @@ namespace Model
      */
     inline CreateVolumeResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>The size of the volume, in GiBs.</p>
      */
@@ -219,6 +225,7 @@ namespace Model
      * <p>The size of the volume, in GiBs.</p>
      */
     inline CreateVolumeResponse& WithSize(int value) { SetSize(value); return *this;}
+
 
     /**
      * <p>The snapshot from which the volume was created, if applicable.</p>
@@ -255,6 +262,7 @@ namespace Model
      */
     inline CreateVolumeResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>The volume state.</p>
      */
@@ -279,6 +287,7 @@ namespace Model
      * <p>The volume state.</p>
      */
     inline CreateVolumeResponse& WithState(VolumeState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the volume.</p>
@@ -314,6 +323,7 @@ namespace Model
      * <p>The ID of the volume.</p>
      */
     inline CreateVolumeResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
@@ -366,6 +376,7 @@ namespace Model
      */
     inline CreateVolumeResponse& WithIops(int value) { SetIops(value); return *this;}
 
+
     /**
      * <p>Any tags assigned to the volume.</p>
      */
@@ -400,6 +411,7 @@ namespace Model
      * <p>Any tags assigned to the volume.</p>
      */
     inline CreateVolumeResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
@@ -441,6 +453,7 @@ namespace Model
      */
     inline CreateVolumeResponse& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -457,18 +470,31 @@ namespace Model
     inline CreateVolumeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<VolumeAttachment> m_attachments;
+
     Aws::String m_availabilityZone;
+
     Aws::Utils::DateTime m_createTime;
+
     bool m_encrypted;
+
     Aws::String m_kmsKeyId;
+
     int m_size;
+
     Aws::String m_snapshotId;
+
     VolumeState m_state;
+
     Aws::String m_volumeId;
+
     int m_iops;
+
     Aws::Vector<Tag> m_tags;
+
     VolumeType m_volumeType;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -31,12 +31,12 @@ CreateInstanceProfileResult::CreateInstanceProfileResult()
 {
 }
 
-CreateInstanceProfileResult::CreateInstanceProfileResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateInstanceProfileResult::CreateInstanceProfileResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateInstanceProfileResult& CreateInstanceProfileResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateInstanceProfileResult& CreateInstanceProfileResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

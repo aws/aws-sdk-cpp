@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of IAM or federated user ARNs that identify the users to be
      * described.</p>
@@ -86,6 +87,7 @@ namespace Model
     inline DescribeUserProfilesRequest& AddIamUserArns(const char* value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_iamUserArns;
     bool m_iamUserArnsHasBeenSet;
   };

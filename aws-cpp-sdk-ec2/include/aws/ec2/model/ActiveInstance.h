@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline ActiveInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The instance type.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline ActiveInstance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The ID of the Spot instance request.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>The ID of the Spot instance request.</p>
      */
     inline ActiveInstance& WithSpotInstanceRequestId(const char* value) { SetSpotInstanceRequestId(value); return *this;}
+
 
     /**
      * <p>The health status of the instance. If the status of either the instance
@@ -195,12 +199,16 @@ namespace Model
     inline ActiveInstance& WithInstanceHealth(InstanceHealthStatus&& value) { SetInstanceHealth(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_spotInstanceRequestId;
     bool m_spotInstanceRequestIdHasBeenSet;
+
     InstanceHealthStatus m_instanceHealth;
     bool m_instanceHealthHasBeenSet;
   };

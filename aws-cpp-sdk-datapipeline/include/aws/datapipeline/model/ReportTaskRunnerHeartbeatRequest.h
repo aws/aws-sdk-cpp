@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the task runner. This value should be unique across your AWS
      * account. In the case of AWS Data Pipeline Task Runner launched on a resource
@@ -102,6 +103,7 @@ namespace Model
      * should assign a unique identifier for the task runner.</p>
      */
     inline ReportTaskRunnerHeartbeatRequest& WithTaskrunnerId(const char* value) { SetTaskrunnerId(value); return *this;}
+
 
     /**
      * <p>The type of task the task runner is configured to accept and process. The
@@ -166,6 +168,7 @@ namespace Model
      */
     inline ReportTaskRunnerHeartbeatRequest& WithWorkerGroup(const char* value) { SetWorkerGroup(value); return *this;}
 
+
     /**
      * <p>The public DNS name of the task runner.</p>
      */
@@ -202,10 +205,13 @@ namespace Model
     inline ReportTaskRunnerHeartbeatRequest& WithHostname(const char* value) { SetHostname(value); return *this;}
 
   private:
+
     Aws::String m_taskrunnerId;
     bool m_taskrunnerIdHasBeenSet;
+
     Aws::String m_workerGroup;
     bool m_workerGroupHasBeenSet;
+
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
   };

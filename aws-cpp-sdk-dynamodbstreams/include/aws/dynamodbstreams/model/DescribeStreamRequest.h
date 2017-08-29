@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DescribeStreamRequest& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
 
+
     /**
      * <p>The maximum number of shard objects to return. The upper limit is 100.</p>
      */
@@ -86,6 +88,7 @@ namespace Model
      * <p>The maximum number of shard objects to return. The upper limit is 100.</p>
      */
     inline DescribeStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The shard ID of the first item that this operation will evaluate. Use the
@@ -137,10 +140,13 @@ namespace Model
     inline DescribeStreamRequest& WithExclusiveStartShardId(const char* value) { SetExclusiveStartShardId(value); return *this;}
 
   private:
+
     Aws::String m_streamArn;
     bool m_streamArnHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_exclusiveStartShardId;
     bool m_exclusiveStartShardIdHasBeenSet;
   };

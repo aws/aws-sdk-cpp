@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeHsmResult();
-    DescribeHsmResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeHsmResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeHsmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeHsmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the HSM.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeHsmResult& WithHsmArn(const char* value) { SetHsmArn(value); return *this;}
 
+
     /**
      * <p>The status of the HSM.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The status of the HSM.</p>
      */
     inline DescribeHsmResult& WithStatus(HsmStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Contains additional information about the status of the HSM.</p>
@@ -145,6 +148,7 @@ namespace Model
      */
     inline DescribeHsmResult& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
+
     /**
      * <p>The Availability Zone that the HSM is in.</p>
      */
@@ -179,6 +183,7 @@ namespace Model
      * <p>The Availability Zone that the HSM is in.</p>
      */
     inline DescribeHsmResult& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>The identifier of the elastic network interface (ENI) attached to the
@@ -222,6 +227,7 @@ namespace Model
      */
     inline DescribeHsmResult& WithEniId(const char* value) { SetEniId(value); return *this;}
 
+
     /**
      * <p>The IP address assigned to the HSM's ENI.</p>
      */
@@ -257,6 +263,7 @@ namespace Model
      */
     inline DescribeHsmResult& WithEniIp(const char* value) { SetEniIp(value); return *this;}
 
+
     
     inline const SubscriptionType& GetSubscriptionType() const{ return m_subscriptionType; }
 
@@ -271,6 +278,7 @@ namespace Model
 
     
     inline DescribeHsmResult& WithSubscriptionType(SubscriptionType&& value) { SetSubscriptionType(std::move(value)); return *this;}
+
 
     /**
      * <p>The subscription start date.</p>
@@ -307,6 +315,7 @@ namespace Model
      */
     inline DescribeHsmResult& WithSubscriptionStartDate(const char* value) { SetSubscriptionStartDate(value); return *this;}
 
+
     /**
      * <p>The subscription end date.</p>
      */
@@ -341,6 +350,7 @@ namespace Model
      * <p>The subscription end date.</p>
      */
     inline DescribeHsmResult& WithSubscriptionEndDate(const char* value) { SetSubscriptionEndDate(value); return *this;}
+
 
     /**
      * <p>The identifier of the VPC that the HSM is in.</p>
@@ -377,6 +387,7 @@ namespace Model
      */
     inline DescribeHsmResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>The identifier of the subnet that the HSM is in.</p>
      */
@@ -411,6 +422,7 @@ namespace Model
      * <p>The identifier of the subnet that the HSM is in.</p>
      */
     inline DescribeHsmResult& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The ARN of the IAM role assigned to the HSM.</p>
@@ -447,6 +459,7 @@ namespace Model
      */
     inline DescribeHsmResult& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 
+
     /**
      * <p>The serial number of the HSM.</p>
      */
@@ -481,6 +494,7 @@ namespace Model
      * <p>The serial number of the HSM.</p>
      */
     inline DescribeHsmResult& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
+
 
     /**
      * <p>The name of the HSM vendor.</p>
@@ -517,6 +531,7 @@ namespace Model
      */
     inline DescribeHsmResult& WithVendorName(const char* value) { SetVendorName(value); return *this;}
 
+
     /**
      * <p>The HSM model type.</p>
      */
@@ -551,6 +566,7 @@ namespace Model
      * <p>The HSM model type.</p>
      */
     inline DescribeHsmResult& WithHsmType(const char* value) { SetHsmType(value); return *this;}
+
 
     /**
      * <p>The HSM software version.</p>
@@ -587,6 +603,7 @@ namespace Model
      */
     inline DescribeHsmResult& WithSoftwareVersion(const char* value) { SetSoftwareVersion(value); return *this;}
 
+
     /**
      * <p>The public SSH key.</p>
      */
@@ -621,6 +638,7 @@ namespace Model
      * <p>The public SSH key.</p>
      */
     inline DescribeHsmResult& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
+
 
     /**
      * <p>The date and time that the SSH key was last updated.</p>
@@ -657,6 +675,7 @@ namespace Model
      */
     inline DescribeHsmResult& WithSshKeyLastUpdated(const char* value) { SetSshKeyLastUpdated(value); return *this;}
 
+
     /**
      * <p>The URI of the certificate server.</p>
      */
@@ -692,6 +711,7 @@ namespace Model
      */
     inline DescribeHsmResult& WithServerCertUri(const char* value) { SetServerCertUri(value); return *this;}
 
+
     /**
      * <p>The date and time that the server certificate was last updated.</p>
      */
@@ -726,6 +746,7 @@ namespace Model
      * <p>The date and time that the server certificate was last updated.</p>
      */
     inline DescribeHsmResult& WithServerCertLastUpdated(const char* value) { SetServerCertLastUpdated(value); return *this;}
+
 
     /**
      * <p>The list of partitions on the HSM.</p>
@@ -768,26 +789,47 @@ namespace Model
     inline DescribeHsmResult& AddPartitions(const char* value) { m_partitions.push_back(value); return *this; }
 
   private:
+
     Aws::String m_hsmArn;
+
     HsmStatus m_status;
+
     Aws::String m_statusDetails;
+
     Aws::String m_availabilityZone;
+
     Aws::String m_eniId;
+
     Aws::String m_eniIp;
+
     SubscriptionType m_subscriptionType;
+
     Aws::String m_subscriptionStartDate;
+
     Aws::String m_subscriptionEndDate;
+
     Aws::String m_vpcId;
+
     Aws::String m_subnetId;
+
     Aws::String m_iamRoleArn;
+
     Aws::String m_serialNumber;
+
     Aws::String m_vendorName;
+
     Aws::String m_hsmType;
+
     Aws::String m_softwareVersion;
+
     Aws::String m_sshPublicKey;
+
     Aws::String m_sshKeyLastUpdated;
+
     Aws::String m_serverCertUri;
+
     Aws::String m_serverCertLastUpdated;
+
     Aws::Vector<Aws::String> m_partitions;
   };
 

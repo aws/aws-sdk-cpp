@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     RegisterJobDefinitionResult();
-    RegisterJobDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterJobDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterJobDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterJobDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the job definition. </p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline RegisterJobDefinitionResult& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the job definition. </p>
      */
@@ -111,6 +113,7 @@ namespace Model
      */
     inline RegisterJobDefinitionResult& WithJobDefinitionArn(const char* value) { SetJobDefinitionArn(value); return *this;}
 
+
     /**
      * <p>The revision of the job definition.</p>
      */
@@ -127,8 +130,11 @@ namespace Model
     inline RegisterJobDefinitionResult& WithRevision(int value) { SetRevision(value); return *this;}
 
   private:
+
     Aws::String m_jobDefinitionName;
+
     Aws::String m_jobDefinitionArn;
+
     int m_revision;
   };
 

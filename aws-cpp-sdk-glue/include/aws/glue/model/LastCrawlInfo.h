@@ -48,6 +48,7 @@ namespace Model
     LastCrawlInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Status of the last crawl.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>Status of the last crawl.</p>
      */
     inline LastCrawlInfo& WithStatus(LastCrawlStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Error information about the last crawl, if an error occurred.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline LastCrawlInfo& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
+
     /**
      * <p>The log group for the last crawl.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The log group for the last crawl.</p>
      */
     inline LastCrawlInfo& WithLogGroup(const char* value) { SetLogGroup(value); return *this;}
+
 
     /**
      * <p>The log stream for the last crawl.</p>
@@ -178,6 +182,7 @@ namespace Model
      */
     inline LastCrawlInfo& WithLogStream(const char* value) { SetLogStream(value); return *this;}
 
+
     /**
      * <p>The prefix for a message about this crawl.</p>
      */
@@ -213,6 +218,7 @@ namespace Model
      */
     inline LastCrawlInfo& WithMessagePrefix(const char* value) { SetMessagePrefix(value); return *this;}
 
+
     /**
      * <p>The time at which the crawl started.</p>
      */
@@ -239,16 +245,22 @@ namespace Model
     inline LastCrawlInfo& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
   private:
+
     LastCrawlStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
+
     Aws::String m_logGroup;
     bool m_logGroupHasBeenSet;
+
     Aws::String m_logStream;
     bool m_logStreamHasBeenSet;
+
     Aws::String m_messagePrefix;
     bool m_messagePrefixHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
   };

@@ -30,12 +30,12 @@ GetActivityTaskResult::GetActivityTaskResult()
 {
 }
 
-GetActivityTaskResult::GetActivityTaskResult(const AmazonWebServiceResult<JsonValue>& result)
+GetActivityTaskResult::GetActivityTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetActivityTaskResult& GetActivityTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetActivityTaskResult& GetActivityTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("taskToken"))

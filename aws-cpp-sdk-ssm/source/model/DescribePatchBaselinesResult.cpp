@@ -30,12 +30,12 @@ DescribePatchBaselinesResult::DescribePatchBaselinesResult()
 {
 }
 
-DescribePatchBaselinesResult::DescribePatchBaselinesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribePatchBaselinesResult::DescribePatchBaselinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribePatchBaselinesResult& DescribePatchBaselinesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribePatchBaselinesResult& DescribePatchBaselinesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("BaselineIdentities"))

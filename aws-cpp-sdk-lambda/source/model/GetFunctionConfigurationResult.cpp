@@ -34,7 +34,7 @@ GetFunctionConfigurationResult::GetFunctionConfigurationResult() :
 {
 }
 
-GetFunctionConfigurationResult::GetFunctionConfigurationResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetFunctionConfigurationResult::GetFunctionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_runtime(Runtime::NOT_SET),
     m_codeSize(0),
     m_timeout(0),
@@ -43,7 +43,7 @@ GetFunctionConfigurationResult::GetFunctionConfigurationResult(const AmazonWebSe
   *this = result;
 }
 
-GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FunctionName"))

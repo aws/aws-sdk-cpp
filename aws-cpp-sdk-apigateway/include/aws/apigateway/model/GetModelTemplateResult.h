@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetModelTemplateResult();
-    GetModelTemplateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetModelTemplateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetModelTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetModelTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Apache <a
@@ -106,6 +107,7 @@ namespace Model
     inline GetModelTemplateResult& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_value;
   };
 

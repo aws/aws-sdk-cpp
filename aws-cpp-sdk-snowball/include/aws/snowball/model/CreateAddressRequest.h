@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The address that you want the Snowball shipped to.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
     inline CreateAddressRequest& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
 
   private:
+
     Address m_address;
     bool m_addressHasBeenSet;
   };

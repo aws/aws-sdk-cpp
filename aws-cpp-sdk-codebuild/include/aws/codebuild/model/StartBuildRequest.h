@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the build project to start running a build.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The name of the build project to start running a build.</p>
      */
     inline StartBuildRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+
 
     /**
      * <p>A version of the build input to be built, for this build only. If not
@@ -137,6 +139,7 @@ namespace Model
      */
     inline StartBuildRequest& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 
+
     /**
      * <p>Build output artifact settings that override, for this build only, the latest
      * ones already defined in the build project.</p>
@@ -166,6 +169,7 @@ namespace Model
      * ones already defined in the build project.</p>
      */
     inline StartBuildRequest& WithArtifactsOverride(ProjectArtifacts&& value) { SetArtifactsOverride(std::move(value)); return *this;}
+
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
@@ -209,6 +213,7 @@ namespace Model
      */
     inline StartBuildRequest& AddEnvironmentVariablesOverride(EnvironmentVariable&& value) { m_environmentVariablesOverrideHasBeenSet = true; m_environmentVariablesOverride.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
      * already defined in the build project.</p>
@@ -251,6 +256,7 @@ namespace Model
      */
     inline StartBuildRequest& WithBuildspecOverride(const char* value) { SetBuildspecOverride(value); return *this;}
 
+
     /**
      * <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides,
      * for this build only, the latest setting already defined in the build
@@ -273,16 +279,22 @@ namespace Model
     inline StartBuildRequest& WithTimeoutInMinutesOverride(int value) { SetTimeoutInMinutesOverride(value); return *this;}
 
   private:
+
     Aws::String m_projectName;
     bool m_projectNameHasBeenSet;
+
     Aws::String m_sourceVersion;
     bool m_sourceVersionHasBeenSet;
+
     ProjectArtifacts m_artifactsOverride;
     bool m_artifactsOverrideHasBeenSet;
+
     Aws::Vector<EnvironmentVariable> m_environmentVariablesOverride;
     bool m_environmentVariablesOverrideHasBeenSet;
+
     Aws::String m_buildspecOverride;
     bool m_buildspecOverrideHasBeenSet;
+
     int m_timeoutInMinutesOverride;
     bool m_timeoutInMinutesOverrideHasBeenSet;
   };

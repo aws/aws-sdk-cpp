@@ -56,6 +56,7 @@ namespace Model
     ByteMatchSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
      * <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>
@@ -140,6 +141,7 @@ namespace Model
      */
     inline ByteMatchSet& WithByteMatchSetId(const char* value) { SetByteMatchSetId(value); return *this;}
 
+
     /**
      * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
      * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
@@ -181,6 +183,7 @@ namespace Model
      * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
      */
     inline ByteMatchSet& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Specifies the bytes (typically a string that corresponds with ASCII
@@ -232,10 +235,13 @@ namespace Model
     inline ByteMatchSet& AddByteMatchTuples(ByteMatchTuple&& value) { m_byteMatchTuplesHasBeenSet = true; m_byteMatchTuples.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_byteMatchSetId;
     bool m_byteMatchSetIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<ByteMatchTuple> m_byteMatchTuples;
     bool m_byteMatchTuplesHasBeenSet;
   };

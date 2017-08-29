@@ -30,12 +30,12 @@ UpdateNotificationSettingsResult::UpdateNotificationSettingsResult()
 {
 }
 
-UpdateNotificationSettingsResult::UpdateNotificationSettingsResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateNotificationSettingsResult::UpdateNotificationSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateNotificationSettingsResult& UpdateNotificationSettingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateNotificationSettingsResult& UpdateNotificationSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

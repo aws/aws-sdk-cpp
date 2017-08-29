@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code>
      * returns descriptions of the RAID arrays associated with the specified instance.
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeRaidArraysRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline DescribeRaidArraysRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>An array of RAID array IDs. If you use this parameter,
@@ -178,10 +181,13 @@ namespace Model
     inline DescribeRaidArraysRequest& AddRaidArrayIds(const char* value) { m_raidArrayIdsHasBeenSet = true; m_raidArrayIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_raidArrayIds;
     bool m_raidArrayIdsHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     InventoryResultEntity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>ID of the inventory result entity. For example, for managed instance
      * inventory the result will be the managed instance ID. For EC2 instance
@@ -95,6 +96,7 @@ namespace Model
      * inventory, the result will be the instance ID. </p>
      */
     inline InventoryResultEntity& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The data section in the inventory result entity json.</p>
@@ -152,8 +154,10 @@ namespace Model
     inline InventoryResultEntity& AddData(const char* key, const InventoryResultItem& value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Map<Aws::String, InventoryResultItem> m_data;
     bool m_dataHasBeenSet;
   };

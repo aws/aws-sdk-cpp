@@ -30,12 +30,12 @@ PutBotAliasResult::PutBotAliasResult()
 {
 }
 
-PutBotAliasResult::PutBotAliasResult(const AmazonWebServiceResult<JsonValue>& result)
+PutBotAliasResult::PutBotAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutBotAliasResult& PutBotAliasResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutBotAliasResult& PutBotAliasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("name"))

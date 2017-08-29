@@ -51,6 +51,7 @@ namespace Model
     Command& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for this command.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline Command& WithCommandId(const char* value) { SetCommandId(value); return *this;}
 
+
     /**
      * <p>The name of the document requested for execution.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>The name of the document requested for execution.</p>
      */
     inline Command& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
+
 
     /**
      * <p>User-specified information about the command, such as a brief description of
@@ -163,6 +166,7 @@ namespace Model
      */
     inline Command& WithComment(const char* value) { SetComment(value); return *this;}
 
+
     /**
      * <p>If this time is reached and the command has not already started executing, it
      * will not execute. Calculated based on the ExpiresAfter user input provided as
@@ -197,6 +201,7 @@ namespace Model
      * part of the SendCommand API.</p>
      */
     inline Command& WithExpiresAfter(Aws::Utils::DateTime&& value) { SetExpiresAfter(std::move(value)); return *this;}
+
 
     /**
      * <p>The parameter values to be inserted in the document when executing the
@@ -264,6 +269,7 @@ namespace Model
      */
     inline Command& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The instance IDs against which this command was requested.</p>
      */
@@ -303,6 +309,7 @@ namespace Model
      * <p>The instance IDs against which this command was requested.</p>
      */
     inline Command& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+
 
     /**
      * <p>An array of search criteria that targets instances using a Key,Value
@@ -353,6 +360,7 @@ namespace Model
      */
     inline Command& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The date and time the command was requested.</p>
      */
@@ -378,6 +386,7 @@ namespace Model
      */
     inline Command& WithRequestedDateTime(Aws::Utils::DateTime&& value) { SetRequestedDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The status of the command.</p>
      */
@@ -402,6 +411,7 @@ namespace Model
      * <p>The status of the command.</p>
      */
     inline Command& WithStatus(CommandStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A detailed status of the command execution. StatusDetails includes more
@@ -592,6 +602,7 @@ namespace Model
      */
     inline Command& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
+
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
      * Instead, Systems Manager automatically determines the Amazon S3 bucket
@@ -641,6 +652,7 @@ namespace Model
      */
     inline Command& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
 
+
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
      * This was requested when issuing the command.</p>
@@ -683,6 +695,7 @@ namespace Model
      */
     inline Command& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
 
+
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
      * executions should be stored. This was requested when issuing the command.</p>
@@ -724,6 +737,7 @@ namespace Model
      * executions should be stored. This was requested when issuing the command.</p>
      */
     inline Command& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
+
 
     /**
      * <p>The maximum number of instances that are allowed to execute the command at
@@ -795,6 +809,7 @@ namespace Model
      */
     inline Command& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
+
     /**
      * <p>The maximum number of errors allowed before the system stops sending the
      * command to additional targets. You can specify a number of errors, such as 10,
@@ -865,6 +880,7 @@ namespace Model
      */
     inline Command& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
+
     /**
      * <p>The number of targets for the command.</p>
      */
@@ -879,6 +895,7 @@ namespace Model
      * <p>The number of targets for the command.</p>
      */
     inline Command& WithTargetCount(int value) { SetTargetCount(value); return *this;}
+
 
     /**
      * <p>The number of targets for which the command invocation reached a terminal
@@ -901,6 +918,7 @@ namespace Model
      */
     inline Command& WithCompletedCount(int value) { SetCompletedCount(value); return *this;}
 
+
     /**
      * <p>The number of targets for which the status is Failed or Execution Timed
      * Out.</p>
@@ -918,6 +936,7 @@ namespace Model
      * Out.</p>
      */
     inline Command& WithErrorCount(int value) { SetErrorCount(value); return *this;}
+
 
     /**
      * <p>The IAM service role that Run Command uses to act on your behalf when sending
@@ -961,6 +980,7 @@ namespace Model
      */
     inline Command& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
+
     /**
      * <p>Configurations for sending notifications about command status changes. </p>
      */
@@ -987,44 +1007,64 @@ namespace Model
     inline Command& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_commandId;
     bool m_commandIdHasBeenSet;
+
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     Aws::Utils::DateTime m_expiresAfter;
     bool m_expiresAfterHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::Utils::DateTime m_requestedDateTime;
     bool m_requestedDateTimeHasBeenSet;
+
     CommandStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusDetails;
     bool m_statusDetailsHasBeenSet;
+
     Aws::String m_outputS3Region;
     bool m_outputS3RegionHasBeenSet;
+
     Aws::String m_outputS3BucketName;
     bool m_outputS3BucketNameHasBeenSet;
+
     Aws::String m_outputS3KeyPrefix;
     bool m_outputS3KeyPrefixHasBeenSet;
+
     Aws::String m_maxConcurrency;
     bool m_maxConcurrencyHasBeenSet;
+
     Aws::String m_maxErrors;
     bool m_maxErrorsHasBeenSet;
+
     int m_targetCount;
     bool m_targetCountHasBeenSet;
+
     int m_completedCount;
     bool m_completedCountHasBeenSet;
+
     int m_errorCount;
     bool m_errorCountHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
     NotificationConfig m_notificationConfig;
     bool m_notificationConfigHasBeenSet;
   };

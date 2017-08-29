@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     ConfirmForgotPasswordResult();
-    ConfirmForgotPasswordResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ConfirmForgotPasswordResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ConfirmForgotPasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ConfirmForgotPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

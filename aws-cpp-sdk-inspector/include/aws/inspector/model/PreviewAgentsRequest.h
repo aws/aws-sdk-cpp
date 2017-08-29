@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the assessment target whose agents you want to preview.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ARN of the assessment target whose agents you want to preview.</p>
      */
     inline PreviewAgentsRequest& WithPreviewAgentsArn(const char* value) { SetPreviewAgentsArn(value); return *this;}
+
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -134,6 +136,7 @@ namespace Model
      */
     inline PreviewAgentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 10. The maximum value is 500.</p>
@@ -153,10 +156,13 @@ namespace Model
     inline PreviewAgentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_previewAgentsArn;
     bool m_previewAgentsArnHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain in which to register the workflow type.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the domain in which to register the workflow type.</p>
      */
     inline RegisterWorkflowTypeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>The name of the workflow type.</p> <p>The specified string must not start or
@@ -135,6 +137,7 @@ namespace Model
      * contain the literal string <code>arn</code>.</p>
      */
     inline RegisterWorkflowTypeRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The version of the workflow type.</p> <note> <p>The workflow type consists of
@@ -220,6 +223,7 @@ namespace Model
      */
     inline RegisterWorkflowTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>Textual description of the workflow type.</p>
      */
@@ -254,6 +258,7 @@ namespace Model
      * <p>Textual description of the workflow type.</p>
      */
     inline RegisterWorkflowTypeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>If set, specifies the default maximum duration of decision tasks for this
@@ -324,6 +329,7 @@ namespace Model
      * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline RegisterWorkflowTypeRequest& WithDefaultTaskStartToCloseTimeout(const char* value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
+
 
     /**
      * <p>If set, specifies the default maximum duration for executions of this
@@ -416,6 +422,7 @@ namespace Model
      */
     inline RegisterWorkflowTypeRequest& WithDefaultExecutionStartToCloseTimeout(const char* value) { SetDefaultExecutionStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p>If set, specifies the default task list to use for scheduling decision tasks
      * for executions of this workflow type. This default is used only if a task list
@@ -460,6 +467,7 @@ namespace Model
      * <a>Decision</a>.</p>
      */
     inline RegisterWorkflowTypeRequest& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(std::move(value)); return *this;}
+
 
     /**
      * <p>The default task priority to assign to the workflow type. If not assigned,
@@ -537,6 +545,7 @@ namespace Model
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline RegisterWorkflowTypeRequest& WithDefaultTaskPriority(const char* value) { SetDefaultTaskPriority(value); return *this;}
+
 
     /**
      * <p>If set, specifies the default policy to use for the child workflow executions
@@ -623,6 +632,7 @@ namespace Model
      */
     inline RegisterWorkflowTypeRequest& WithDefaultChildPolicy(ChildPolicy&& value) { SetDefaultChildPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
@@ -694,24 +704,34 @@ namespace Model
     inline RegisterWorkflowTypeRequest& WithDefaultLambdaRole(const char* value) { SetDefaultLambdaRole(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_defaultTaskStartToCloseTimeout;
     bool m_defaultTaskStartToCloseTimeoutHasBeenSet;
+
     Aws::String m_defaultExecutionStartToCloseTimeout;
     bool m_defaultExecutionStartToCloseTimeoutHasBeenSet;
+
     TaskList m_defaultTaskList;
     bool m_defaultTaskListHasBeenSet;
+
     Aws::String m_defaultTaskPriority;
     bool m_defaultTaskPriorityHasBeenSet;
+
     ChildPolicy m_defaultChildPolicy;
     bool m_defaultChildPolicyHasBeenSet;
+
     Aws::String m_defaultLambdaRole;
     bool m_defaultLambdaRoleHasBeenSet;
   };

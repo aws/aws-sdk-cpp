@@ -47,6 +47,7 @@ namespace Model
     WorkflowExecutionSignaledEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the signal received. The decider can use the signal name and
      * inputs to determine how to the process the signal.</p>
@@ -88,6 +89,7 @@ namespace Model
      * inputs to determine how to the process the signal.</p>
      */
     inline WorkflowExecutionSignaledEventAttributes& WithSignalName(const char* value) { SetSignalName(value); return *this;}
+
 
     /**
      * <p>The inputs provided with the signal. The decider can use the signal name and
@@ -131,6 +133,7 @@ namespace Model
      */
     inline WorkflowExecutionSignaledEventAttributes& WithInput(const char* value) { SetInput(value); return *this;}
 
+
     /**
      * <p>The workflow execution that sent the signal. This is set only of the signal
      * was sent by another workflow execution.</p>
@@ -160,6 +163,7 @@ namespace Model
      * was sent by another workflow execution.</p>
      */
     inline WorkflowExecutionSignaledEventAttributes& WithExternalWorkflowExecution(WorkflowExecution&& value) { SetExternalWorkflowExecution(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event
@@ -192,12 +196,16 @@ namespace Model
     inline WorkflowExecutionSignaledEventAttributes& WithExternalInitiatedEventId(long long value) { SetExternalInitiatedEventId(value); return *this;}
 
   private:
+
     Aws::String m_signalName;
     bool m_signalNameHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     WorkflowExecution m_externalWorkflowExecution;
     bool m_externalWorkflowExecutionHasBeenSet;
+
     long long m_externalInitiatedEventId;
     bool m_externalInitiatedEventIdHasBeenSet;
   };

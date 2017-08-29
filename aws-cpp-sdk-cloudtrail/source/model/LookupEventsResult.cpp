@@ -30,12 +30,12 @@ LookupEventsResult::LookupEventsResult()
 {
 }
 
-LookupEventsResult::LookupEventsResult(const AmazonWebServiceResult<JsonValue>& result)
+LookupEventsResult::LookupEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-LookupEventsResult& LookupEventsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+LookupEventsResult& LookupEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Events"))

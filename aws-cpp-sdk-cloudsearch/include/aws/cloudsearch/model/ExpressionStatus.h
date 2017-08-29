@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The expression that is evaluated for sorting while processing a search
      * request.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline ExpressionStatus& WithOptions(Expression&& value) { SetOptions(std::move(value)); return *this;}
 
+
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
 
@@ -96,8 +98,10 @@ namespace Model
     inline ExpressionStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Expression m_options;
     bool m_optionsHasBeenSet;
+
     OptionStatus m_status;
     bool m_statusHasBeenSet;
   };

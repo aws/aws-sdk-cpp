@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
      * run your task. If you do not specify a cluster, the default cluster is
@@ -88,6 +89,7 @@ namespace Model
      * assumed.</p>
      */
     inline RunTaskRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
@@ -144,6 +146,7 @@ namespace Model
      * <code>ACTIVE</code> revision is used.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
+
 
     /**
      * <p>A list of container overrides in JSON format that specify the name of a
@@ -210,6 +213,7 @@ namespace Model
      */
     inline RunTaskRequest& WithOverrides(TaskOverride&& value) { SetOverrides(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of instantiations of the specified task to place on your cluster.
      * You can specify up to 10 tasks per call.</p>
@@ -227,6 +231,7 @@ namespace Model
      * You can specify up to 10 tasks per call.</p>
      */
     inline RunTaskRequest& WithCount(int value) { SetCount(value); return *this;}
+
 
     /**
      * <p>An optional tag specified when a task is started. For example if you
@@ -319,6 +324,7 @@ namespace Model
      */
     inline RunTaskRequest& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
+
     /**
      * <p>The name of the task group to associate with the task. The default value is
      * the family name of the task definition (for example, family:my-family-name).</p>
@@ -360,6 +366,7 @@ namespace Model
      * the family name of the task definition (for example, family:my-family-name).</p>
      */
     inline RunTaskRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
+
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
@@ -410,6 +417,7 @@ namespace Model
      */
     inline RunTaskRequest& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The placement strategy objects to use for the task. You can specify a maximum
      * of 5 strategy rules per task.</p>
@@ -453,20 +461,28 @@ namespace Model
     inline RunTaskRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;
+
     TaskOverride m_overrides;
     bool m_overridesHasBeenSet;
+
     int m_count;
     bool m_countHasBeenSet;
+
     Aws::String m_startedBy;
     bool m_startedByHasBeenSet;
+
     Aws::String m_group;
     bool m_groupHasBeenSet;
+
     Aws::Vector<PlacementConstraint> m_placementConstraints;
     bool m_placementConstraintsHasBeenSet;
+
     Aws::Vector<PlacementStrategy> m_placementStrategy;
     bool m_placementStrategyHasBeenSet;
   };

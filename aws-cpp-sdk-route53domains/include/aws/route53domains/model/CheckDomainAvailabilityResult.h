@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CheckDomainAvailabilityResult();
-    CheckDomainAvailabilityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CheckDomainAvailabilityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CheckDomainAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CheckDomainAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Whether the domain name is available for registering.</p> <note> <p>You can
@@ -153,6 +154,7 @@ namespace Model
     inline CheckDomainAvailabilityResult& WithAvailability(DomainAvailability&& value) { SetAvailability(std::move(value)); return *this;}
 
   private:
+
     DomainAvailability m_availability;
   };
 

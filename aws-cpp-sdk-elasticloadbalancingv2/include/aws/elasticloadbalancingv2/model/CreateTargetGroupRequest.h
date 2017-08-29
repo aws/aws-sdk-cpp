@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the target group.</p> <p>This name must be unique per region per
      * account, can have a maximum of 32 characters, must contain only alphanumeric
@@ -89,6 +90,7 @@ namespace Model
      */
     inline CreateTargetGroupRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The protocol to use for routing traffic to the targets.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      */
     inline CreateTargetGroupRequest& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}
 
+
     /**
      * <p>The port on which the targets receive traffic. This port is used unless you
      * specify a port override when registering the target.</p>
@@ -131,6 +134,7 @@ namespace Model
      * specify a port override when registering the target.</p>
      */
     inline CreateTargetGroupRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The identifier of the virtual private cloud (VPC).</p>
@@ -167,6 +171,7 @@ namespace Model
      */
     inline CreateTargetGroupRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The default is the HTTP protocol.</p>
@@ -196,6 +201,7 @@ namespace Model
      * The default is the HTTP protocol.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
+
 
     /**
      * <p>The port the load balancer uses when performing health checks on targets. The
@@ -246,6 +252,7 @@ namespace Model
      */
     inline CreateTargetGroupRequest& WithHealthCheckPort(const char* value) { SetHealthCheckPort(value); return *this;}
 
+
     /**
      * <p>The ping path that is the destination on the targets for health checks. The
      * default is /.</p>
@@ -288,6 +295,7 @@ namespace Model
      */
     inline CreateTargetGroupRequest& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
 
+
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target. The default is 30 seconds.</p>
@@ -305,6 +313,7 @@ namespace Model
      * individual target. The default is 30 seconds.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
+
 
     /**
      * <p>The amount of time, in seconds, during which no response from a target means
@@ -324,6 +333,7 @@ namespace Model
      */
     inline CreateTargetGroupRequest& WithHealthCheckTimeoutSeconds(int value) { SetHealthCheckTimeoutSeconds(value); return *this;}
 
+
     /**
      * <p>The number of consecutive health checks successes required before considering
      * an unhealthy target healthy. The default is 5.</p>
@@ -342,6 +352,7 @@ namespace Model
      */
     inline CreateTargetGroupRequest& WithHealthyThresholdCount(int value) { SetHealthyThresholdCount(value); return *this;}
 
+
     /**
      * <p>The number of consecutive health check failures required before considering a
      * target unhealthy. The default is 2.</p>
@@ -359,6 +370,7 @@ namespace Model
      * target unhealthy. The default is 2.</p>
      */
     inline CreateTargetGroupRequest& WithUnhealthyThresholdCount(int value) { SetUnhealthyThresholdCount(value); return *this;}
+
 
     /**
      * <p>The HTTP codes to use when checking for a successful response from a target.
@@ -391,28 +403,40 @@ namespace Model
     inline CreateTargetGroupRequest& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ProtocolEnum m_protocol;
     bool m_protocolHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     ProtocolEnum m_healthCheckProtocol;
     bool m_healthCheckProtocolHasBeenSet;
+
     Aws::String m_healthCheckPort;
     bool m_healthCheckPortHasBeenSet;
+
     Aws::String m_healthCheckPath;
     bool m_healthCheckPathHasBeenSet;
+
     int m_healthCheckIntervalSeconds;
     bool m_healthCheckIntervalSecondsHasBeenSet;
+
     int m_healthCheckTimeoutSeconds;
     bool m_healthCheckTimeoutSecondsHasBeenSet;
+
     int m_healthyThresholdCount;
     bool m_healthyThresholdCountHasBeenSet;
+
     int m_unhealthyThresholdCount;
     bool m_unhealthyThresholdCountHasBeenSet;
+
     Matcher m_matcher;
     bool m_matcherHasBeenSet;
   };

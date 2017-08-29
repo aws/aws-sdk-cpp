@@ -46,6 +46,7 @@ namespace Model
     TimestampRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The minimum value of the timestamp range.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The minimum value of the timestamp range.</p>
      */
     inline TimestampRange& WithBeginDate(Aws::Utils::DateTime&& value) { SetBeginDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The maximum value of the timestamp range.</p>
@@ -97,8 +99,10 @@ namespace Model
     inline TimestampRange& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_beginDate;
     bool m_beginDateHasBeenSet;
+
     Aws::Utils::DateTime m_endDate;
     bool m_endDateHasBeenSet;
   };

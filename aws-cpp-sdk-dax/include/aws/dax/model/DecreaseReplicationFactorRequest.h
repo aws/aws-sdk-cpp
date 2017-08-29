@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the DAX cluster from which you want to remove nodes.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DecreaseReplicationFactorRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
+
     /**
      * <p>The new number of nodes for the DAX cluster.</p>
      */
@@ -86,6 +88,7 @@ namespace Model
      * <p>The new number of nodes for the DAX cluster.</p>
      */
     inline DecreaseReplicationFactorRequest& WithNewReplicationFactor(int value) { SetNewReplicationFactor(value); return *this;}
+
 
     /**
      * <p>The Availability Zone(s) from which to remove nodes.</p>
@@ -126,6 +129,7 @@ namespace Model
      * <p>The Availability Zone(s) from which to remove nodes.</p>
      */
     inline DecreaseReplicationFactorRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
 
     /**
      * <p>The unique identifiers of the nodes to be removed from the cluster.</p>
@@ -168,12 +172,16 @@ namespace Model
     inline DecreaseReplicationFactorRequest& AddNodeIdsToRemove(const char* value) { m_nodeIdsToRemoveHasBeenSet = true; m_nodeIdsToRemove.push_back(value); return *this; }
 
   private:
+
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet;
+
     int m_newReplicationFactor;
     bool m_newReplicationFactorHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     Aws::Vector<Aws::String> m_nodeIdsToRemove;
     bool m_nodeIdsToRemoveHasBeenSet;
   };

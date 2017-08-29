@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the parameter group to apply to all of the clusters in this
      * replication group.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline CreateParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
 
+
     /**
      * <p>A description of the parameter group.</p>
      */
@@ -114,8 +116,10 @@ namespace Model
     inline CreateParameterGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

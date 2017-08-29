@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether to assign a public IPv4 address to an instance you launch
      * in a VPC. The public IP address can only be assigned to a network interface for
@@ -78,6 +79,7 @@ namespace Model
      */
     inline InstanceNetworkInterfaceSpecification& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 
+
     /**
      * <p>If set to <code>true</code>, the interface is deleted when the instance is
      * terminated. You can specify <code>true</code> only if creating a new network
@@ -98,6 +100,7 @@ namespace Model
      * interface when launching an instance.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+
 
     /**
      * <p>The description of the network interface. Applies only if creating a network
@@ -141,6 +144,7 @@ namespace Model
      */
     inline InstanceNetworkInterfaceSpecification& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The index of the device on the instance for the network interface attachment.
      * If you are specifying a network interface in a <a>RunInstances</a> request, you
@@ -161,6 +165,7 @@ namespace Model
      * must provide the device index.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
+
 
     /**
      * <p>The IDs of the security groups for the network interface. Applies only if
@@ -210,6 +215,7 @@ namespace Model
      */
     inline InstanceNetworkInterfaceSpecification& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
+
     /**
      * <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2
      * chooses the IPv6 addresses from the range of the subnet. You cannot specify this
@@ -236,6 +242,7 @@ namespace Model
      * launch.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+
 
     /**
      * <p>One or more IPv6 addresses to assign to the network interface. You cannot
@@ -293,6 +300,7 @@ namespace Model
      */
     inline InstanceNetworkInterfaceSpecification& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the network interface.</p>
      */
@@ -327,6 +335,7 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
 
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
@@ -376,6 +385,7 @@ namespace Model
      * you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+
 
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
@@ -433,6 +443,7 @@ namespace Model
      */
     inline InstanceNetworkInterfaceSpecification& AddPrivateIpAddresses(PrivateIpAddressSpecification&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The number of secondary private IPv4 addresses. You can't specify this option
      * and specify more than one private IP address using the private IP addresses
@@ -456,6 +467,7 @@ namespace Model
      * instance in a <a>RunInstances</a> request.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
+
 
     /**
      * <p>The ID of the subnet associated with the network string. Applies only if
@@ -500,28 +512,40 @@ namespace Model
     inline InstanceNetworkInterfaceSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
+
     bool m_associatePublicIpAddress;
     bool m_associatePublicIpAddressHasBeenSet;
+
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
+
     Aws::Vector<Aws::String> m_groups;
     bool m_groupsHasBeenSet;
+
     int m_ipv6AddressCount;
     bool m_ipv6AddressCountHasBeenSet;
+
     Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
     bool m_ipv6AddressesHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+
     Aws::Vector<PrivateIpAddressSpecification> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
+
     int m_secondaryPrivateIpAddressCount;
     bool m_secondaryPrivateIpAddressCountHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
   };

@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeIamInstanceProfileAssociationsResponse();
-    DescribeIamInstanceProfileAssociationsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeIamInstanceProfileAssociationsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeIamInstanceProfileAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeIamInstanceProfileAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more IAM instance profile associations.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <p>Information about one or more IAM instance profile associations.</p>
      */
     inline DescribeIamInstanceProfileAssociationsResponse& AddIamInstanceProfileAssociations(IamInstanceProfileAssociation&& value) { m_iamInstanceProfileAssociations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -121,6 +123,7 @@ namespace Model
      */
     inline DescribeIamInstanceProfileAssociationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -137,8 +140,11 @@ namespace Model
     inline DescribeIamInstanceProfileAssociationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<IamInstanceProfileAssociation> m_iamInstanceProfileAssociations;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

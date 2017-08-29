@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListInstanceFleetsResult();
-    ListInstanceFleetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListInstanceFleetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListInstanceFleetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListInstanceFleetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of instance fleets for the cluster and given filters.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of instance fleets for the cluster and given filters.</p>
      */
     inline ListInstanceFleetsResult& AddInstanceFleets(InstanceFleet&& value) { m_instanceFleets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline ListInstanceFleetsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<InstanceFleet> m_instanceFleets;
+
     Aws::String m_marker;
   };
 

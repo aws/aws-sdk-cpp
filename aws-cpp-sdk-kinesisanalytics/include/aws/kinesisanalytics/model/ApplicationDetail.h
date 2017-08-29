@@ -54,6 +54,7 @@ namespace Model
     ApplicationDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the application.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>Name of the application.</p>
      */
     inline ApplicationDetail& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>Description of the application.</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline ApplicationDetail& WithApplicationDescription(const char* value) { SetApplicationDescription(value); return *this;}
 
+
     /**
      * <p>ARN of the application.</p>
      */
@@ -159,6 +162,7 @@ namespace Model
      */
     inline ApplicationDetail& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
 
+
     /**
      * <p>Status of the application.</p>
      */
@@ -183,6 +187,7 @@ namespace Model
      * <p>Status of the application.</p>
      */
     inline ApplicationDetail& WithApplicationStatus(ApplicationStatus&& value) { SetApplicationStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Timestamp when the application version was created.</p>
@@ -209,6 +214,7 @@ namespace Model
      */
     inline ApplicationDetail& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>Timestamp when the application was last updated.</p>
      */
@@ -233,6 +239,7 @@ namespace Model
      * <p>Timestamp when the application was last updated.</p>
      */
     inline ApplicationDetail& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>Describes the application input configuration. For more information, see <a
@@ -283,6 +290,7 @@ namespace Model
      */
     inline ApplicationDetail& AddInputDescriptions(InputDescription&& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Describes the application output configuration. For more information, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
@@ -331,6 +339,7 @@ namespace Model
      * Application Output</a>. </p>
      */
     inline ApplicationDetail& AddOutputDescriptions(OutputDescription&& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Describes reference data sources configured for the application. For more
@@ -387,6 +396,7 @@ namespace Model
      * Application Input</a>. </p>
      */
     inline ApplicationDetail& AddReferenceDataSourceDescriptions(ReferenceDataSourceDescription&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Describes the CloudWatch log streams that are configured to receive
@@ -451,6 +461,7 @@ namespace Model
      */
     inline ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescription&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Returns the application code that you provided to perform data analysis on
      * any of the in-application streams in your application.</p>
@@ -493,6 +504,7 @@ namespace Model
      */
     inline ApplicationDetail& WithApplicationCode(const char* value) { SetApplicationCode(value); return *this;}
 
+
     /**
      * <p>Provides the current application version.</p>
      */
@@ -509,28 +521,40 @@ namespace Model
     inline ApplicationDetail& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_applicationDescription;
     bool m_applicationDescriptionHasBeenSet;
+
     Aws::String m_applicationARN;
     bool m_applicationARNHasBeenSet;
+
     ApplicationStatus m_applicationStatus;
     bool m_applicationStatusHasBeenSet;
+
     Aws::Utils::DateTime m_createTimestamp;
     bool m_createTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdateTimestamp;
     bool m_lastUpdateTimestampHasBeenSet;
+
     Aws::Vector<InputDescription> m_inputDescriptions;
     bool m_inputDescriptionsHasBeenSet;
+
     Aws::Vector<OutputDescription> m_outputDescriptions;
     bool m_outputDescriptionsHasBeenSet;
+
     Aws::Vector<ReferenceDataSourceDescription> m_referenceDataSourceDescriptions;
     bool m_referenceDataSourceDescriptionsHasBeenSet;
+
     Aws::Vector<CloudWatchLoggingOptionDescription> m_cloudWatchLoggingOptionDescriptions;
     bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet;
+
     Aws::String m_applicationCode;
     bool m_applicationCodeHasBeenSet;
+
     long long m_applicationVersionId;
     bool m_applicationVersionIdHasBeenSet;
   };

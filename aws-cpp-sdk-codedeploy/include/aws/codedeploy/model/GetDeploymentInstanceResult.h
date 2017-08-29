@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetDeploymentInstanceResult();
-    GetDeploymentInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeploymentInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeploymentInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeploymentInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the instance.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline GetDeploymentInstanceResult& WithInstanceSummary(InstanceSummary&& value) { SetInstanceSummary(std::move(value)); return *this;}
 
   private:
+
     InstanceSummary m_instanceSummary;
   };
 

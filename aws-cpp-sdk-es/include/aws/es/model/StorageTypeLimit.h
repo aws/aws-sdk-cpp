@@ -47,6 +47,7 @@ namespace Model
     StorageTypeLimit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Name of storage limits that are applicable for given storage type. If <code>
      * <a>StorageType</a> </code> is ebs, following storage options are applicable <ol>
@@ -145,6 +146,7 @@ namespace Model
      */
     inline StorageTypeLimit& WithLimitName(const char* value) { SetLimitName(value); return *this;}
 
+
     /**
      * <p> Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> . </p>
      */
@@ -186,8 +188,10 @@ namespace Model
     inline StorageTypeLimit& AddLimitValues(const char* value) { m_limitValuesHasBeenSet = true; m_limitValues.push_back(value); return *this; }
 
   private:
+
     Aws::String m_limitName;
     bool m_limitNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_limitValues;
     bool m_limitValuesHasBeenSet;
   };

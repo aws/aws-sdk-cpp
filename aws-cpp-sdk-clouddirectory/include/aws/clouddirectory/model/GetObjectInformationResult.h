@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetObjectInformationResult();
-    GetObjectInformationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetObjectInformationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetObjectInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetObjectInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The facets attached to the specified object.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The facets attached to the specified object.</p>
      */
     inline GetObjectInformationResult& AddSchemaFacets(SchemaFacet&& value) { m_schemaFacets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline GetObjectInformationResult& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::Vector<SchemaFacet> m_schemaFacets;
+
     Aws::String m_objectIdentifier;
   };
 

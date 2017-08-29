@@ -46,6 +46,7 @@ namespace Model
     BootstrapActionDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A description of the bootstrap action.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline BootstrapActionDetail& WithBootstrapActionConfig(BootstrapActionConfig&& value) { SetBootstrapActionConfig(std::move(value)); return *this;}
 
   private:
+
     BootstrapActionConfig m_bootstrapActionConfig;
     bool m_bootstrapActionConfigHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AddApplicationCloudWatchLoggingOptionResult();
-    AddApplicationCloudWatchLoggingOptionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddApplicationCloudWatchLoggingOptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddApplicationCloudWatchLoggingOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the subnet group.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline DescribeSubnetGroupsRequest& AddSubnetGroupNames(const char* value) { m_subnetGroupNamesHasBeenSet = true; m_subnetGroupNames.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of results to include in the response. If more results
      * exist than the specified <code>MaxResults</code> value, a token is included in
@@ -100,6 +102,7 @@ namespace Model
      * for <code>MaxResults</code> must be between 20 and 100.</p>
      */
     inline DescribeSubnetGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>An optional token returned from a prior request. Use this token for
@@ -158,10 +161,13 @@ namespace Model
     inline DescribeSubnetGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_subnetGroupNames;
     bool m_subnetGroupNamesHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -30,12 +30,12 @@ RebuildWorkspacesResult::RebuildWorkspacesResult()
 {
 }
 
-RebuildWorkspacesResult::RebuildWorkspacesResult(const AmazonWebServiceResult<JsonValue>& result)
+RebuildWorkspacesResult::RebuildWorkspacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RebuildWorkspacesResult& RebuildWorkspacesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RebuildWorkspacesResult& RebuildWorkspacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FailedRequests"))

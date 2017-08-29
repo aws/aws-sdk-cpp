@@ -30,12 +30,12 @@ ListPublicKeysResult::ListPublicKeysResult()
 {
 }
 
-ListPublicKeysResult::ListPublicKeysResult(const AmazonWebServiceResult<JsonValue>& result)
+ListPublicKeysResult::ListPublicKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListPublicKeysResult& ListPublicKeysResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListPublicKeysResult& ListPublicKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PublicKeyList"))

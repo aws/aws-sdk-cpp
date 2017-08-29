@@ -46,6 +46,7 @@ namespace Model
     HandshakeParty& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) for the party.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
@@ -95,6 +96,7 @@ namespace Model
      */
     inline HandshakeParty& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The type of party.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline HandshakeParty& WithType(HandshakePartyType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     HandshakePartyType m_type;
     bool m_typeHasBeenSet;
   };

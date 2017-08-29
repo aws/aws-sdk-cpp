@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     ListTapesResult();
-    ListTapesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTapesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTapesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTapesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::Vector<TapeInfo>& GetTapeInfos() const{ return m_tapeInfos; }
@@ -70,6 +71,7 @@ namespace Model
 
     
     inline ListTapesResult& AddTapeInfos(TapeInfo&& value) { m_tapeInfos.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A string that indicates the position at which to begin returning the next
@@ -128,7 +130,9 @@ namespace Model
     inline ListTapesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<TapeInfo> m_tapeInfos;
+
     Aws::String m_marker;
   };
 

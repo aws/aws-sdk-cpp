@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     PollForActivityTaskResult();
-    PollForActivityTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PollForActivityTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PollForActivityTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PollForActivityTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The opaque string used as a handle on the task. This token is used by workers
@@ -97,6 +98,7 @@ namespace Model
      */
     inline PollForActivityTaskResult& WithTaskToken(const char* value) { SetTaskToken(value); return *this;}
 
+
     /**
      * <p>The unique ID of the task.</p>
      */
@@ -132,6 +134,7 @@ namespace Model
      */
     inline PollForActivityTaskResult& WithActivityId(const char* value) { SetActivityId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the
      * history.</p>
@@ -149,6 +152,7 @@ namespace Model
      * history.</p>
      */
     inline PollForActivityTaskResult& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
+
 
     /**
      * <p>The workflow execution that started this activity task.</p>
@@ -175,6 +179,7 @@ namespace Model
      */
     inline PollForActivityTaskResult& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of this activity task.</p>
      */
@@ -199,6 +204,7 @@ namespace Model
      * <p>The type of this activity task.</p>
      */
     inline PollForActivityTaskResult& WithActivityType(ActivityType&& value) { SetActivityType(std::move(value)); return *this;}
+
 
     /**
      * <p>The inputs provided when the activity task was scheduled. The form of the
@@ -250,11 +256,17 @@ namespace Model
     inline PollForActivityTaskResult& WithInput(const char* value) { SetInput(value); return *this;}
 
   private:
+
     Aws::String m_taskToken;
+
     Aws::String m_activityId;
+
     long long m_startedEventId;
+
     WorkflowExecution m_workflowExecution;
+
     ActivityType m_activityType;
+
     Aws::String m_input;
   };
 

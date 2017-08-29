@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeDBSubnetGroupsResult();
-    DescribeDBSubnetGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBSubnetGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBSubnetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBSubnetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -99,6 +100,7 @@ namespace Model
      */
     inline DescribeDBSubnetGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p> A list of <a>DBSubnetGroup</a> instances. </p>
      */
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeDBSubnetGroupsResult& AddDBSubnetGroups(DBSubnetGroup&& value) { m_dBSubnetGroups.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline DescribeDBSubnetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<DBSubnetGroup> m_dBSubnetGroups;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -47,6 +47,7 @@ namespace Model
     BatchListPolicyAttachmentsResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline BatchListPolicyAttachmentsResponse& AddObjectIdentifiers(const char* value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers.push_back(value); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -123,8 +125,10 @@ namespace Model
     inline BatchListPolicyAttachmentsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_objectIdentifiers;
     bool m_objectIdentifiersHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

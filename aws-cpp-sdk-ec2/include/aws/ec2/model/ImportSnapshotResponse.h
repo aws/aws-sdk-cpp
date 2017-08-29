@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ImportSnapshotResponse();
-    ImportSnapshotResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ImportSnapshotResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ImportSnapshotResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ImportSnapshotResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A description of the import snapshot task.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ImportSnapshotResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The ID of the import snapshot task.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline ImportSnapshotResponse& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
 
+
     /**
      * <p>Information about the import snapshot task.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      */
     inline ImportSnapshotResponse& WithSnapshotTaskDetail(SnapshotTaskDetail&& value) { SetSnapshotTaskDetail(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -159,9 +163,13 @@ namespace Model
     inline ImportSnapshotResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_description;
+
     Aws::String m_importTaskId;
+
     SnapshotTaskDetail m_snapshotTaskDetail;
+
     ResponseMetadata m_responseMetadata;
   };
 

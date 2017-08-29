@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     ModifyInstancePlacementResponse();
-    ModifyInstancePlacementResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyInstancePlacementResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyInstancePlacementResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyInstancePlacementResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
@@ -60,6 +61,7 @@ namespace Model
      * <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
      */
     inline ModifyInstancePlacementResponse& WithReturn(bool value) { SetReturn(value); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -77,7 +79,9 @@ namespace Model
     inline ModifyInstancePlacementResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     bool m_return;
+
     ResponseMetadata m_responseMetadata;
   };
 

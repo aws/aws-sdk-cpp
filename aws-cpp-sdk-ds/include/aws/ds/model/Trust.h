@@ -50,6 +50,7 @@ namespace Model
     Trust& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline Trust& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
+
     /**
      * <p>The unique ID of the trust relationship.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The unique ID of the trust relationship.</p>
      */
     inline Trust& WithTrustId(const char* value) { SetTrustId(value); return *this;}
+
 
     /**
      * <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the
@@ -162,6 +165,7 @@ namespace Model
      */
     inline Trust& WithRemoteDomainName(const char* value) { SetRemoteDomainName(value); return *this;}
 
+
     /**
      * <p>The trust relationship type.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      * <p>The trust relationship type.</p>
      */
     inline Trust& WithTrustType(TrustType&& value) { SetTrustType(std::move(value)); return *this;}
+
 
     /**
      * <p>The trust relationship direction.</p>
@@ -212,6 +217,7 @@ namespace Model
      */
     inline Trust& WithTrustDirection(TrustDirection&& value) { SetTrustDirection(std::move(value)); return *this;}
 
+
     /**
      * <p>The trust relationship state.</p>
      */
@@ -236,6 +242,7 @@ namespace Model
      * <p>The trust relationship state.</p>
      */
     inline Trust& WithTrustState(TrustState&& value) { SetTrustState(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time that the trust relationship was created.</p>
@@ -262,6 +269,7 @@ namespace Model
      */
     inline Trust& WithCreatedDateTime(Aws::Utils::DateTime&& value) { SetCreatedDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time that the trust relationship was last updated.</p>
      */
@@ -287,6 +295,7 @@ namespace Model
      */
     inline Trust& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time that the TrustState was last updated.</p>
      */
@@ -311,6 +320,7 @@ namespace Model
      * <p>The date and time that the TrustState was last updated.</p>
      */
     inline Trust& WithStateLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetStateLastUpdatedDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason for the TrustState.</p>
@@ -348,24 +358,34 @@ namespace Model
     inline Trust& WithTrustStateReason(const char* value) { SetTrustStateReason(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_trustId;
     bool m_trustIdHasBeenSet;
+
     Aws::String m_remoteDomainName;
     bool m_remoteDomainNameHasBeenSet;
+
     TrustType m_trustType;
     bool m_trustTypeHasBeenSet;
+
     TrustDirection m_trustDirection;
     bool m_trustDirectionHasBeenSet;
+
     TrustState m_trustState;
     bool m_trustStateHasBeenSet;
+
     Aws::Utils::DateTime m_createdDateTime;
     bool m_createdDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedDateTime;
     bool m_lastUpdatedDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_stateLastUpdatedDateTime;
     bool m_stateLastUpdatedDateTimeHasBeenSet;
+
     Aws::String m_trustStateReason;
     bool m_trustStateReasonHasBeenSet;
   };

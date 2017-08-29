@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p> The path to the instance profile. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -104,6 +105,7 @@ namespace Model
      */
     inline InstanceProfile& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The name identifying the instance profile.</p>
      */
@@ -138,6 +140,7 @@ namespace Model
      * <p>The name identifying the instance profile.</p>
      */
     inline InstanceProfile& WithInstanceProfileName(const char* value) { SetInstanceProfileName(value); return *this;}
+
 
     /**
      * <p> The stable and unique string identifying the instance profile. For more
@@ -195,6 +198,7 @@ namespace Model
      */
     inline InstanceProfile& WithInstanceProfileId(const char* value) { SetInstanceProfileId(value); return *this;}
 
+
     /**
      * <p> The Amazon Resource Name (ARN) specifying the instance profile. For more
      * information about ARNs and how to use them in policies, see <a
@@ -251,6 +255,7 @@ namespace Model
      */
     inline InstanceProfile& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The date when the instance profile was created.</p>
      */
@@ -275,6 +280,7 @@ namespace Model
      * <p>The date when the instance profile was created.</p>
      */
     inline InstanceProfile& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The role associated with the instance profile.</p>
@@ -312,16 +318,22 @@ namespace Model
     inline InstanceProfile& AddRoles(Role&& value) { m_rolesHasBeenSet = true; m_roles.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_instanceProfileName;
     bool m_instanceProfileNameHasBeenSet;
+
     Aws::String m_instanceProfileId;
     bool m_instanceProfileIdHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     Aws::Vector<Role> m_roles;
     bool m_rolesHasBeenSet;
   };

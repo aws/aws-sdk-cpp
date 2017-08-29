@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN that specifies the assessment run that has the telemetry data that
      * you want to obtain.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline GetTelemetryMetadataRequest& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
 
   private:
+
     Aws::String m_assessmentRunArn;
     bool m_assessmentRunArnHasBeenSet;
   };

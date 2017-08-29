@@ -34,6 +34,7 @@ namespace Model
     DeleteSlotTypeRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the slot type. The name is case sensitive. </p>
      */
@@ -70,6 +71,7 @@ namespace Model
     inline DeleteSlotTypeRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

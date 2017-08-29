@@ -32,13 +32,13 @@ ListMFADevicesResult::ListMFADevicesResult() :
 {
 }
 
-ListMFADevicesResult::ListMFADevicesResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListMFADevicesResult::ListMFADevicesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListMFADevicesResult& ListMFADevicesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListMFADevicesResult& ListMFADevicesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

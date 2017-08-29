@@ -47,6 +47,7 @@ namespace Model
     Container& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the container.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container.</p>
      */
     inline Container& WithContainerArn(const char* value) { SetContainerArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline Container& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
+
     /**
      * <p>The name of the container.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The name of the container.</p>
      */
     inline Container& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The last known status of the container.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline Container& WithLastStatus(const char* value) { SetLastStatus(value); return *this;}
 
+
     /**
      * <p>The exit code returned from the container.</p>
      */
@@ -201,6 +206,7 @@ namespace Model
      * <p>The exit code returned from the container.</p>
      */
     inline Container& WithExitCode(int value) { SetExitCode(value); return *this;}
+
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
@@ -244,6 +250,7 @@ namespace Model
      */
     inline Container& WithReason(const char* value) { SetReason(value); return *this;}
 
+
     /**
      * <p>The network bindings associated with the container.</p>
      */
@@ -280,18 +287,25 @@ namespace Model
     inline Container& AddNetworkBindings(NetworkBinding&& value) { m_networkBindingsHasBeenSet = true; m_networkBindings.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_containerArn;
     bool m_containerArnHasBeenSet;
+
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_lastStatus;
     bool m_lastStatusHasBeenSet;
+
     int m_exitCode;
     bool m_exitCodeHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::Vector<NetworkBinding> m_networkBindings;
     bool m_networkBindingsHasBeenSet;
   };

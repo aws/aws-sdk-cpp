@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
      * run your service. If you do not specify a cluster, the default cluster is
@@ -89,6 +90,7 @@ namespace Model
      * assumed.</p>
      */
     inline CreateServiceRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
@@ -146,6 +148,7 @@ namespace Model
      */
     inline CreateServiceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
+
     /**
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
@@ -201,6 +204,7 @@ namespace Model
      * the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
+
 
     /**
      * <p>A load balancer object representing the load balancer to use with your
@@ -335,6 +339,7 @@ namespace Model
      */
     inline CreateServiceRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The number of instantiations of the specified task definition to place and
      * keep running on your cluster.</p>
@@ -352,6 +357,7 @@ namespace Model
      * keep running on your cluster.</p>
      */
     inline CreateServiceRequest& WithDesiredCount(int value) { SetDesiredCount(value); return *this;}
+
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -394,6 +400,7 @@ namespace Model
      * the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline CreateServiceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
@@ -507,6 +514,7 @@ namespace Model
      */
     inline CreateServiceRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
+
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
      * deployment and the ordering of stopping and starting tasks.</p>
@@ -536,6 +544,7 @@ namespace Model
      * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline CreateServiceRequest& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of placement constraint objects to use for tasks in your service.
@@ -586,6 +595,7 @@ namespace Model
      */
     inline CreateServiceRequest& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The placement strategy objects to use for tasks in your service. You can
      * specify a maximum of 5 strategy rules per service.</p>
@@ -629,24 +639,34 @@ namespace Model
     inline CreateServiceRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;
+
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;
+
     Aws::Vector<LoadBalancer> m_loadBalancers;
     bool m_loadBalancersHasBeenSet;
+
     int m_desiredCount;
     bool m_desiredCountHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     DeploymentConfiguration m_deploymentConfiguration;
     bool m_deploymentConfigurationHasBeenSet;
+
     Aws::Vector<PlacementConstraint> m_placementConstraints;
     bool m_placementConstraintsHasBeenSet;
+
     Aws::Vector<PlacementStrategy> m_placementStrategy;
     bool m_placementStrategyHasBeenSet;
   };

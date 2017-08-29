@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_FIREHOSE_API FirehoseErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_FIREHOSE_API FirehoseErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Firehose
+} // namespace Client
 } // namespace Aws

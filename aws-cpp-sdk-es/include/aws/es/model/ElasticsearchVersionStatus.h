@@ -47,6 +47,7 @@ namespace Model
     ElasticsearchVersionStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Specifies the Elasticsearch version for the specified Elasticsearch
      * domain.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ElasticsearchVersionStatus& WithOptions(const char* value) { SetOptions(value); return *this;}
 
+
     /**
      * <p> Specifies the status of the Elasticsearch version options for the specified
      * Elasticsearch domain.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline ElasticsearchVersionStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_options;
     bool m_optionsHasBeenSet;
+
     OptionStatus m_status;
     bool m_statusHasBeenSet;
   };

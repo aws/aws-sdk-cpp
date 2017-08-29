@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeRdsDbInstancesResult();
-    DescribeRdsDbInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRdsDbInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRdsDbInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRdsDbInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An a array of <code>RdsDbInstance</code> objects that describe the
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeRdsDbInstancesResult& AddRdsDbInstances(RdsDbInstance&& value) { m_rdsDbInstances.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<RdsDbInstance> m_rdsDbInstances;
   };
 

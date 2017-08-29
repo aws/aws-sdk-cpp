@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A list of security groups.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>A list of security groups.</p>
      */
     inline ClassicLinkInstance& AddGroups(GroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline ClassicLinkInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>Any tags assigned to the instance.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>Any tags assigned to the instance.</p>
      */
     inline ClassicLinkInstance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -192,12 +196,16 @@ namespace Model
     inline ClassicLinkInstance& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::Vector<GroupIdentifier> m_groups;
     bool m_groupsHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

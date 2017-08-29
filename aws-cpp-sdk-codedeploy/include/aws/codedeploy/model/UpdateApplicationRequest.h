@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The current name of the application you want to change.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The current name of the application you want to change.</p>
      */
     inline UpdateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The new name to give the application.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline UpdateApplicationRequest& WithNewApplicationName(const char* value) { SetNewApplicationName(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_newApplicationName;
     bool m_newApplicationNameHasBeenSet;
   };

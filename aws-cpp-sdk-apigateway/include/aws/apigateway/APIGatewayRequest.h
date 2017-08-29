@@ -24,7 +24,7 @@ namespace Aws
 {
 namespace APIGateway
 {
-  class AWS_APIGATEWAY_API APIGatewayRequest : public AmazonSerializableWebServiceRequest
+  class AWS_APIGATEWAY_API APIGatewayRequest : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
     virtual ~APIGatewayRequest () {}
@@ -38,7 +38,7 @@ namespace APIGateway
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, AMZN_JSON_CONTENT_TYPE_1_1 ));
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_1 ));
         headers.insert(Aws::Http::HeaderValuePair(Aws::Http::ACCEPT_HEADER, "application/json"));
       }
 
@@ -50,7 +50,7 @@ namespace APIGateway
 
   };
 
-  typedef AmazonStreamingWebServiceRequest StreamingAPIGatewayRequest;
+  typedef Aws::AmazonStreamingWebServiceRequest StreamingAPIGatewayRequest;
 
 } // namespace APIGateway
 } // namespace Aws

@@ -49,6 +49,7 @@ namespace Model
     EndpointResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The address or token of the endpoint as provided by your push provider (e.g.
      * DeviceToken or RegistrationId).
@@ -91,6 +92,7 @@ namespace Model
      */
     inline EndpointResponse& WithAddress(const char* value) { SetAddress(value); return *this;}
 
+
     /**
      * The ID of the application associated with the endpoint.
      */
@@ -125,6 +127,7 @@ namespace Model
      * The ID of the application associated with the endpoint.
      */
     inline EndpointResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     /**
      * Custom attributes that your app reports to Amazon Pinpoint. You can use these
@@ -192,6 +195,7 @@ namespace Model
      */
     inline EndpointResponse& AddAttributes(const char* key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * The channel type.
 
@@ -226,6 +230,7 @@ Valid values: GCM | APNS | SMS | EMAIL
 Valid values: GCM | APNS | SMS | EMAIL
      */
     inline EndpointResponse& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
+
 
     /**
      * A number from 0 - 99 that represents the cohort the endpoint is assigned to.
@@ -283,6 +288,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      */
     inline EndpointResponse& WithCohortId(const char* value) { SetCohortId(value); return *this;}
 
+
     /**
      * The last time the endpoint was created. Provided in ISO 8601 format.
      */
@@ -318,6 +324,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      */
     inline EndpointResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
+
     /**
      * The endpoint demographic attributes.
      */
@@ -342,6 +349,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      * The endpoint demographic attributes.
      */
     inline EndpointResponse& WithDemographic(EndpointDemographic&& value) { SetDemographic(std::move(value)); return *this;}
+
 
     /**
      * The last time the endpoint was updated. Provided in ISO 8601 format.
@@ -377,6 +385,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      * The last time the endpoint was updated. Provided in ISO 8601 format.
      */
     inline EndpointResponse& WithEffectiveDate(const char* value) { SetEffectiveDate(value); return *this;}
+
 
     /**
      * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
@@ -419,6 +428,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      * if a delivery fails. Will be set to ACTIVE if the address is updated.
      */
     inline EndpointResponse& WithEndpointStatus(const char* value) { SetEndpointStatus(value); return *this;}
+
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally
@@ -469,6 +479,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      */
     inline EndpointResponse& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * The endpoint location attributes.
      */
@@ -493,6 +504,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      * The endpoint location attributes.
      */
     inline EndpointResponse& WithLocation(EndpointLocation&& value) { SetLocation(std::move(value)); return *this;}
+
 
     /**
      * Custom metrics that your app reports to Amazon Pinpoint.
@@ -533,6 +545,7 @@ Valid values: GCM | APNS | SMS | EMAIL
      * Custom metrics that your app reports to Amazon Pinpoint.
      */
     inline EndpointResponse& AddMetrics(const char* key, double value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
+
 
     /**
      * Indicates whether a user has opted out of receiving messages with one of the
@@ -611,6 +624,7 @@ NONE - Users has
      */
     inline EndpointResponse& WithOptOut(const char* value) { SetOptOut(value); return *this;}
 
+
     /**
      * The unique ID for the most recent request to update the endpoint.
      */
@@ -646,6 +660,7 @@ NONE - Users has
      */
     inline EndpointResponse& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
+
     /**
      * Custom user-specific attributes that your app reports to Amazon Pinpoint.
      */
@@ -670,6 +685,7 @@ NONE - Users has
      * Custom user-specific attributes that your app reports to Amazon Pinpoint.
      */
     inline EndpointResponse& WithUser(EndpointUser&& value) { SetUser(std::move(value)); return *this;}
+
 
     /**
      * The ShardId of endpoint
@@ -707,36 +723,52 @@ NONE - Users has
     inline EndpointResponse& WithShardId(const char* value) { SetShardId(value); return *this;}
 
   private:
+
     Aws::String m_address;
     bool m_addressHasBeenSet;
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_attributes;
     bool m_attributesHasBeenSet;
+
     ChannelType m_channelType;
     bool m_channelTypeHasBeenSet;
+
     Aws::String m_cohortId;
     bool m_cohortIdHasBeenSet;
+
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
+
     EndpointDemographic m_demographic;
     bool m_demographicHasBeenSet;
+
     Aws::String m_effectiveDate;
     bool m_effectiveDateHasBeenSet;
+
     Aws::String m_endpointStatus;
     bool m_endpointStatusHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     EndpointLocation m_location;
     bool m_locationHasBeenSet;
+
     Aws::Map<Aws::String, double> m_metrics;
     bool m_metricsHasBeenSet;
+
     Aws::String m_optOut;
     bool m_optOutHasBeenSet;
+
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
+
     EndpointUser m_user;
     bool m_userHasBeenSet;
+
     Aws::String m_shardId;
     bool m_shardIdHasBeenSet;
   };

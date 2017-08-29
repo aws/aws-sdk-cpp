@@ -30,12 +30,12 @@ DescribeJobDefinitionsResult::DescribeJobDefinitionsResult()
 {
 }
 
-DescribeJobDefinitionsResult::DescribeJobDefinitionsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeJobDefinitionsResult::DescribeJobDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeJobDefinitionsResult& DescribeJobDefinitionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeJobDefinitionsResult& DescribeJobDefinitionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("jobDefinitions"))

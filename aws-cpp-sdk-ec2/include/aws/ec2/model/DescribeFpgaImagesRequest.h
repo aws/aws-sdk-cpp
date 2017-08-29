@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -63,6 +64,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeFpgaImagesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>One or more AFI IDs.</p>
@@ -103,6 +105,7 @@ namespace Model
      * <p>One or more AFI IDs.</p>
      */
     inline DescribeFpgaImagesRequest& AddFpgaImageIds(const char* value) { m_fpgaImageIdsHasBeenSet = true; m_fpgaImageIds.push_back(value); return *this; }
+
 
     /**
      * <p>Filters the AFI by owner. Specify an AWS account ID, <code>self</code> (owner
@@ -159,6 +162,7 @@ namespace Model
      * <code>amazon</code> | <code>aws-marketplace</code>).</p>
      */
     inline DescribeFpgaImagesRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
+
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The
@@ -370,6 +374,7 @@ namespace Model
      */
     inline DescribeFpgaImagesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
@@ -405,6 +410,7 @@ namespace Model
      */
     inline DescribeFpgaImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return in a single call.</p>
      */
@@ -421,16 +427,22 @@ namespace Model
     inline DescribeFpgaImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Aws::String> m_fpgaImageIds;
     bool m_fpgaImageIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_owners;
     bool m_ownersHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

@@ -30,12 +30,12 @@ CreateWorkspacesResult::CreateWorkspacesResult()
 {
 }
 
-CreateWorkspacesResult::CreateWorkspacesResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateWorkspacesResult::CreateWorkspacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateWorkspacesResult& CreateWorkspacesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateWorkspacesResult& CreateWorkspacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FailedRequests"))

@@ -31,12 +31,12 @@ ListImportsResult::ListImportsResult()
 {
 }
 
-ListImportsResult::ListImportsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListImportsResult::ListImportsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListImportsResult& ListImportsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListImportsResult& ListImportsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

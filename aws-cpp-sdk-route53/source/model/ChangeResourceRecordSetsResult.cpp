@@ -29,12 +29,12 @@ ChangeResourceRecordSetsResult::ChangeResourceRecordSetsResult()
 {
 }
 
-ChangeResourceRecordSetsResult::ChangeResourceRecordSetsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ChangeResourceRecordSetsResult::ChangeResourceRecordSetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ChangeResourceRecordSetsResult& ChangeResourceRecordSetsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ChangeResourceRecordSetsResult& ChangeResourceRecordSetsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

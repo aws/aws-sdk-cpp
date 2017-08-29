@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateInternetGatewayResponse();
-    CreateInternetGatewayResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateInternetGatewayResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateInternetGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateInternetGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the Internet gateway.</p>
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateInternetGatewayResponse& WithInternetGateway(InternetGateway&& value) { SetInternetGateway(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -88,7 +90,9 @@ namespace Model
     inline CreateInternetGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     InternetGateway m_internetGateway;
+
     ResponseMetadata m_responseMetadata;
   };
 

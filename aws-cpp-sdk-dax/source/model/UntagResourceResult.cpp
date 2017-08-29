@@ -30,12 +30,12 @@ UntagResourceResult::UntagResourceResult()
 {
 }
 
-UntagResourceResult::UntagResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+UntagResourceResult::UntagResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UntagResourceResult& UntagResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UntagResourceResult& UntagResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Tags"))

@@ -46,6 +46,7 @@ namespace Model
     UsageInstruction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The usage instruction type for the value.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The usage instruction type for the value.</p>
      */
     inline UsageInstruction& WithType(const char* value) { SetType(value); return *this;}
+
 
     /**
      * <p>The usage instruction value for this type.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline UsageInstruction& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListThingTypesResult();
-    ListThingTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListThingTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListThingTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListThingTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The thing types.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The thing types.</p>
      */
     inline ListThingTypesResult& AddThingTypes(ThingTypeDefinition&& value) { m_thingTypes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
@@ -126,7 +128,9 @@ namespace Model
     inline ListThingTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ThingTypeDefinition> m_thingTypes;
+
     Aws::String m_nextToken;
   };
 

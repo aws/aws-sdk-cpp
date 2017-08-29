@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateMatchmakingRuleSetResult();
-    CreateMatchmakingRuleSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMatchmakingRuleSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateMatchmakingRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that describes the newly created matchmaking rule set.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline CreateMatchmakingRuleSetResult& WithRuleSet(MatchmakingRuleSet&& value) { SetRuleSet(std::move(value)); return *this;}
 
   private:
+
     MatchmakingRuleSet m_ruleSet;
   };
 

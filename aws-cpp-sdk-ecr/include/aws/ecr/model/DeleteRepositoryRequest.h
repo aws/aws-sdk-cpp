@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
      * to delete. If you do not specify a registry, the default registry is
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DeleteRepositoryRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The name of the repository to delete.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline DeleteRepositoryRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>Force the deletion of the repository if it contains images.</p>
      */
@@ -136,10 +139,13 @@ namespace Model
     inline DeleteRepositoryRequest& WithForce(bool value) { SetForce(value); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     bool m_force;
     bool m_forceHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the Automation document to use for this execution.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline StartAutomationExecutionRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
+
     /**
      * <p>The version of the Automation document to use for this execution.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The version of the Automation document to use for this execution.</p>
      */
     inline StartAutomationExecutionRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
@@ -175,10 +178,13 @@ namespace Model
     inline StartAutomationExecutionRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
   };

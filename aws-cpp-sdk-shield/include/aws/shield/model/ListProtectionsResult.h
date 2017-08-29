@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListProtectionsResult();
-    ListProtectionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProtectionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProtectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProtectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The array of enabled <a>Protection</a> objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The array of enabled <a>Protection</a> objects.</p>
      */
     inline ListProtectionsResult& AddProtections(Protection&& value) { m_protections.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
@@ -149,7 +151,9 @@ namespace Model
     inline ListProtectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Protection> m_protections;
+
     Aws::String m_nextToken;
   };
 

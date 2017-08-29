@@ -39,6 +39,7 @@ namespace Model
 
     inline bool ShouldComputeContentMd5() const override { return true; }
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -59,6 +60,7 @@ namespace Model
 
     
     inline PutBucketTaggingRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
@@ -81,6 +83,7 @@ namespace Model
     
     inline PutBucketTaggingRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
+
     
     inline const Tagging& GetTagging() const{ return m_tagging; }
 
@@ -97,10 +100,13 @@ namespace Model
     inline PutBucketTaggingRequest& WithTagging(Tagging&& value) { SetTagging(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
+
     Tagging m_tagging;
     bool m_taggingHasBeenSet;
   };

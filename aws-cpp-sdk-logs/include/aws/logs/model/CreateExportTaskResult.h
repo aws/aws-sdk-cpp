@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateExportTaskResult();
-    CreateExportTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateExportTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateExportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateExportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the export task.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateExportTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
 
   private:
+
     Aws::String m_taskId;
   };
 

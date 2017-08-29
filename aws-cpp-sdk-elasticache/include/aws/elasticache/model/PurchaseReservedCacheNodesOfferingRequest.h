@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the reserved cache node offering to purchase.</p> <p>Example:
      * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
@@ -83,6 +84,7 @@ namespace Model
      * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
      */
     inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodesOfferingId(const char* value) { SetReservedCacheNodesOfferingId(value); return *this;}
+
 
     /**
      * <p>A customer-specified identifier to track this reservation.</p> <note> <p>The
@@ -147,6 +149,7 @@ namespace Model
      */
     inline PurchaseReservedCacheNodesOfferingRequest& WithReservedCacheNodeId(const char* value) { SetReservedCacheNodeId(value); return *this;}
 
+
     /**
      * <p>The number of cache node instances to reserve.</p> <p>Default: <code>1</code>
      * </p>
@@ -166,10 +169,13 @@ namespace Model
     inline PurchaseReservedCacheNodesOfferingRequest& WithCacheNodeCount(int value) { SetCacheNodeCount(value); return *this;}
 
   private:
+
     Aws::String m_reservedCacheNodesOfferingId;
     bool m_reservedCacheNodesOfferingIdHasBeenSet;
+
     Aws::String m_reservedCacheNodeId;
     bool m_reservedCacheNodeIdHasBeenSet;
+
     int m_cacheNodeCount;
     bool m_cacheNodeCountHasBeenSet;
   };

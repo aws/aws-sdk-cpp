@@ -45,6 +45,7 @@ namespace Model
     OrderableReplicationInstance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The version of the replication engine.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The version of the replication engine.</p>
      */
     inline OrderableReplicationInstance& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
 
     /**
      * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
@@ -129,6 +131,7 @@ namespace Model
      */
     inline OrderableReplicationInstance& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
+
     /**
      * <p>The type of storage used by the replication instance.</p>
      */
@@ -164,6 +167,7 @@ namespace Model
      */
     inline OrderableReplicationInstance& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
+
     /**
      * <p>The minimum amount of storage (in gigabytes) that can be allocated for the
      * replication instance.</p>
@@ -181,6 +185,7 @@ namespace Model
      * replication instance.</p>
      */
     inline OrderableReplicationInstance& WithMinAllocatedStorage(int value) { SetMinAllocatedStorage(value); return *this;}
+
 
     /**
      * <p>The minimum amount of storage (in gigabytes) that can be allocated for the
@@ -200,6 +205,7 @@ namespace Model
      */
     inline OrderableReplicationInstance& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
 
+
     /**
      * <p>The default amount of storage (in gigabytes) that is allocated for the
      * replication instance.</p>
@@ -217,6 +223,7 @@ namespace Model
      * replication instance.</p>
      */
     inline OrderableReplicationInstance& WithDefaultAllocatedStorage(int value) { SetDefaultAllocatedStorage(value); return *this;}
+
 
     /**
      * <p>The amount of storage (in gigabytes) that is allocated for the replication
@@ -237,18 +244,25 @@ namespace Model
     inline OrderableReplicationInstance& WithIncludedAllocatedStorage(int value) { SetIncludedAllocatedStorage(value); return *this;}
 
   private:
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_replicationInstanceClass;
     bool m_replicationInstanceClassHasBeenSet;
+
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
+
     int m_minAllocatedStorage;
     bool m_minAllocatedStorageHasBeenSet;
+
     int m_maxAllocatedStorage;
     bool m_maxAllocatedStorageHasBeenSet;
+
     int m_defaultAllocatedStorage;
     bool m_defaultAllocatedStorageHasBeenSet;
+
     int m_includedAllocatedStorage;
     bool m_includedAllocatedStorageHasBeenSet;
   };

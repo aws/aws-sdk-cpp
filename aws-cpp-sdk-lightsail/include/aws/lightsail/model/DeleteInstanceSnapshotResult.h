@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DeleteInstanceSnapshotResult();
-    DeleteInstanceSnapshotResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteInstanceSnapshotResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteInstanceSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteInstanceSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -85,6 +86,7 @@ namespace Model
     inline DeleteInstanceSnapshotResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Operation> m_operations;
   };
 

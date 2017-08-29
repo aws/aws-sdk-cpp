@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeEventsResult();
-    DescribeEventsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Contains the response to a <code>DescribeEvents</code> request. </p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Contains the response to a <code>DescribeEvents</code> request. </p>
      */
     inline DescribeEventsResult& AddServerEvents(ServerEvent&& value) { m_serverEvents.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It
@@ -170,7 +172,9 @@ namespace Model
     inline DescribeEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ServerEvent> m_serverEvents;
+
     Aws::String m_nextToken;
   };
 

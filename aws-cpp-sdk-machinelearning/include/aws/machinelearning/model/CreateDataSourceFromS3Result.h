@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     CreateDataSourceFromS3Result();
-    CreateDataSourceFromS3Result(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDataSourceFromS3Result& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDataSourceFromS3Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDataSourceFromS3Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
@@ -100,6 +101,7 @@ namespace Model
     inline CreateDataSourceFromS3Result& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
   private:
+
     Aws::String m_dataSourceId;
   };
 

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the policy type.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline PolicyTypeDescription& WithPolicyTypeName(const char* value) { SetPolicyTypeName(value); return *this;}
 
+
     /**
      * <p>A description of the policy type.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>A description of the policy type.</p>
      */
     inline PolicyTypeDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The description of the policy attributes associated with the policies defined
@@ -163,10 +166,13 @@ namespace Model
     inline PolicyTypeDescription& AddPolicyAttributeTypeDescriptions(PolicyAttributeTypeDescription&& value) { m_policyAttributeTypeDescriptionsHasBeenSet = true; m_policyAttributeTypeDescriptions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_policyTypeName;
     bool m_policyTypeNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<PolicyAttributeTypeDescription> m_policyAttributeTypeDescriptions;
     bool m_policyAttributeTypeDescriptionsHasBeenSet;
   };

@@ -30,12 +30,12 @@ DeleteMatchmakingConfigurationResult::DeleteMatchmakingConfigurationResult()
 {
 }
 
-DeleteMatchmakingConfigurationResult::DeleteMatchmakingConfigurationResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteMatchmakingConfigurationResult::DeleteMatchmakingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteMatchmakingConfigurationResult& DeleteMatchmakingConfigurationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteMatchmakingConfigurationResult& DeleteMatchmakingConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

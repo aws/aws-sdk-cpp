@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeClustersResult();
-    DescribeClustersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeClustersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of clusters.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of clusters.</p>
      */
     inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An opaque string that indicates that the response contains only a subset of
@@ -128,7 +130,9 @@ namespace Model
     inline DescribeClustersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Cluster> m_clusters;
+
     Aws::String m_nextToken;
   };
 

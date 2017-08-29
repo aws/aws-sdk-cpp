@@ -30,12 +30,12 @@ StopCrawlerResult::StopCrawlerResult()
 {
 }
 
-StopCrawlerResult::StopCrawlerResult(const AmazonWebServiceResult<JsonValue>& result)
+StopCrawlerResult::StopCrawlerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopCrawlerResult& StopCrawlerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopCrawlerResult& StopCrawlerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

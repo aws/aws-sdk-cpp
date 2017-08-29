@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     UnsubscribeFromDatasetResult();
-    UnsubscribeFromDatasetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UnsubscribeFromDatasetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UnsubscribeFromDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UnsubscribeFromDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

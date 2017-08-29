@@ -30,12 +30,12 @@ GetApiKeysResult::GetApiKeysResult()
 {
 }
 
-GetApiKeysResult::GetApiKeysResult(const AmazonWebServiceResult<JsonValue>& result)
+GetApiKeysResult::GetApiKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetApiKeysResult& GetApiKeysResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetApiKeysResult& GetApiKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("warnings"))

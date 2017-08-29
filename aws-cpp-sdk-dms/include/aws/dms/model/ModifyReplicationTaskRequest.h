@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
+
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
@@ -132,6 +134,7 @@ namespace Model
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskIdentifier(const char* value) { SetReplicationTaskIdentifier(value); return *this;}
 
+
     /**
      * <p>The migration type.</p> <p>Valid values: full-load | cdc |
      * full-load-and-cdc</p>
@@ -161,6 +164,7 @@ namespace Model
      * full-load-and-cdc</p>
      */
     inline ModifyReplicationTaskRequest& WithMigrationType(MigrationTypeValue&& value) { SetMigrationType(std::move(value)); return *this;}
+
 
     /**
      * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
@@ -218,6 +222,7 @@ namespace Model
      */
     inline ModifyReplicationTaskRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
 
+
     /**
      * <p>JSON file that contains settings for the task, such as target metadata
      * settings.</p>
@@ -260,6 +265,7 @@ namespace Model
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskSettings(const char* value) { SetReplicationTaskSettings(value); return *this;}
 
+
     /**
      * <p>The start time for the Change Data Capture (CDC) operation.</p>
      */
@@ -286,16 +292,22 @@ namespace Model
     inline ModifyReplicationTaskRequest& WithCdcStartTime(Aws::Utils::DateTime&& value) { SetCdcStartTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_replicationTaskArn;
     bool m_replicationTaskArnHasBeenSet;
+
     Aws::String m_replicationTaskIdentifier;
     bool m_replicationTaskIdentifierHasBeenSet;
+
     MigrationTypeValue m_migrationType;
     bool m_migrationTypeHasBeenSet;
+
     Aws::String m_tableMappings;
     bool m_tableMappingsHasBeenSet;
+
     Aws::String m_replicationTaskSettings;
     bool m_replicationTaskSettingsHasBeenSet;
+
     Aws::Utils::DateTime m_cdcStartTime;
     bool m_cdcStartTimeHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The input image as bytes or an S3 object.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The input image as bytes or an S3 object.</p>
      */
     inline DetectModerationLabelsRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the minimum confidence level for the labels to return. Amazon
@@ -89,8 +91,10 @@ namespace Model
     inline DetectModerationLabelsRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
 
   private:
+
     Image m_image;
     bool m_imageHasBeenSet;
+
     double m_minConfidence;
     bool m_minConfidenceHasBeenSet;
   };

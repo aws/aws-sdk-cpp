@@ -43,6 +43,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * A list of grants.
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline AccessControlPolicy& AddGrants(Grant&& value) { m_grantsHasBeenSet = true; m_grants.push_back(std::move(value)); return *this; }
 
+
     
     inline const Owner& GetOwner() const{ return m_owner; }
 
@@ -94,8 +96,10 @@ namespace Model
     inline AccessControlPolicy& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Grant> m_grants;
     bool m_grantsHasBeenSet;
+
     Owner m_owner;
     bool m_ownerHasBeenSet;
   };

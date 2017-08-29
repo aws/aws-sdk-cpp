@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The access token returned by the server response to get information about the
      * user.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline GetUserRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
   private:
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
   };

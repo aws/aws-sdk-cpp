@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateNFSFileShareResult();
-    CreateNFSFileShareResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateNFSFileShareResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateNFSFileShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateNFSFileShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the newly created file share. </p>
@@ -82,6 +83,7 @@ namespace Model
     inline CreateNFSFileShareResult& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
 
   private:
+
     Aws::String m_fileShareARN;
   };
 

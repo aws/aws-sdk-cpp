@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateHealthCheckResult();
-    CreateHealthCheckResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateHealthCheckResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateHealthCheckResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateHealthCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains identifying information about the health
@@ -77,6 +78,7 @@ namespace Model
      * check.</p>
      */
     inline CreateHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
+
 
     /**
      * <p>The unique URL representing the new health check.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline CreateHealthCheckResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:
+
     HealthCheck m_healthCheck;
+
     Aws::String m_location;
   };
 

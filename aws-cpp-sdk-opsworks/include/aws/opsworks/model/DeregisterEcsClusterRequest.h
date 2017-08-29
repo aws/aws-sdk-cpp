@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The cluster's ARN.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeregisterEcsClusterRequest& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
 
   private:
+
     Aws::String m_ecsClusterArn;
     bool m_ecsClusterArnHasBeenSet;
   };

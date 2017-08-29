@@ -46,6 +46,7 @@ namespace Model
     JdbcTarget& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the connection to use for the JDBC target.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline JdbcTarget& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
+
     /**
      * <p>The path of the JDBC target.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The path of the JDBC target.</p>
      */
     inline JdbcTarget& WithPath(const char* value) { SetPath(value); return *this;}
+
 
     /**
      * <p>A list of items to exclude from the crawl.</p>
@@ -157,10 +160,13 @@ namespace Model
     inline JdbcTarget& AddExclusions(const char* value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
 
   private:
+
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::Vector<Aws::String> m_exclusions;
     bool m_exclusionsHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>(Optional) Specifies the maximum number of file systems to return in the
      * response (integer). This parameter value must be greater than 0. The number of
@@ -69,6 +70,7 @@ namespace Model
      * items per page. </p>
      */
     inline DescribeFileSystemsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+
 
     /**
      * <p>(Optional) Opaque pagination token returned from a previous
@@ -119,6 +121,7 @@ namespace Model
      */
     inline DescribeFileSystemsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>(Optional) Restricts the list to the file system with this creation token
      * (String). You specify a creation token when you create an Amazon EFS file
@@ -168,6 +171,7 @@ namespace Model
      */
     inline DescribeFileSystemsRequest& WithCreationToken(const char* value) { SetCreationToken(value); return *this;}
 
+
     /**
      * <p>(Optional) ID of the file system whose description you want to retrieve
      * (String).</p>
@@ -211,12 +215,16 @@ namespace Model
     inline DescribeFileSystemsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
   private:
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_creationToken;
     bool m_creationTokenHasBeenSet;
+
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet;
   };

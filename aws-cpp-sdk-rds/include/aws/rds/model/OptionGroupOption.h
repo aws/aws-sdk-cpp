@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the option.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name of the option.</p>
      */
     inline OptionGroupOption& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The description of the option.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline OptionGroupOption& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The name of the engine that this option can be applied to.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The name of the engine that this option can be applied to.</p>
      */
     inline OptionGroupOption& WithEngineName(const char* value) { SetEngineName(value); return *this;}
+
 
     /**
      * <p>Indicates the major engine version that the option is available for.</p>
@@ -191,6 +195,7 @@ namespace Model
      */
     inline OptionGroupOption& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
 
+
     /**
      * <p>The minimum required engine version for the option to be applied.</p>
      */
@@ -226,6 +231,7 @@ namespace Model
      */
     inline OptionGroupOption& WithMinimumRequiredMinorEngineVersion(const char* value) { SetMinimumRequiredMinorEngineVersion(value); return *this;}
 
+
     /**
      * <p>Specifies whether the option requires a port.</p>
      */
@@ -241,6 +247,7 @@ namespace Model
      */
     inline OptionGroupOption& WithPortRequired(bool value) { SetPortRequired(value); return *this;}
 
+
     /**
      * <p>If the option requires a port, specifies the default port for the option.</p>
      */
@@ -255,6 +262,7 @@ namespace Model
      * <p>If the option requires a port, specifies the default port for the option.</p>
      */
     inline OptionGroupOption& WithDefaultPort(int value) { SetDefaultPort(value); return *this;}
+
 
     /**
      * <p>The options that are prerequisites for this option.</p>
@@ -296,6 +304,7 @@ namespace Model
      */
     inline OptionGroupOption& AddOptionsDependedOn(const char* value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn.push_back(value); return *this; }
 
+
     /**
      * <p>The options that conflict with this option.</p>
      */
@@ -336,6 +345,7 @@ namespace Model
      */
     inline OptionGroupOption& AddOptionsConflictsWith(const char* value) { m_optionsConflictsWithHasBeenSet = true; m_optionsConflictsWith.push_back(value); return *this; }
 
+
     /**
      * <p>Persistent options can't be removed from an option group while DB instances
      * are associated with the option group. If you disassociate all DB instances from
@@ -360,6 +370,7 @@ namespace Model
      */
     inline OptionGroupOption& WithPersistent(bool value) { SetPersistent(value); return *this;}
 
+
     /**
      * <p>Permanent options can never be removed from an option group. An option group
      * containing a permanent option can't be removed from a DB instance.</p>
@@ -377,6 +388,7 @@ namespace Model
      * containing a permanent option can't be removed from a DB instance.</p>
      */
     inline OptionGroupOption& WithPermanent(bool value) { SetPermanent(value); return *this;}
+
 
     /**
      * <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB
@@ -402,6 +414,7 @@ namespace Model
      */
     inline OptionGroupOption& WithRequiresAutoMinorEngineVersionUpgrade(bool value) { SetRequiresAutoMinorEngineVersionUpgrade(value); return *this;}
 
+
     /**
      * <p>If true, you can only use this option with a DB instance that is in a VPC.
      * </p>
@@ -420,6 +433,7 @@ namespace Model
      */
     inline OptionGroupOption& WithVpcOnly(bool value) { SetVpcOnly(value); return *this;}
 
+
     /**
      * <p>If true, you can change the option to an earlier version of the option. This
      * only applies to options that have different versions available. </p>
@@ -437,6 +451,7 @@ namespace Model
      * only applies to options that have different versions available. </p>
      */
     inline OptionGroupOption& WithSupportsOptionVersionDowngrade(bool value) { SetSupportsOptionVersionDowngrade(value); return *this;}
+
 
     /**
      * <p>The option settings that are available (and the default value) for each
@@ -480,6 +495,7 @@ namespace Model
      */
     inline OptionGroupOption& AddOptionGroupOptionSettings(OptionGroupOptionSetting&& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The versions that are available for the option.</p>
      */
@@ -516,36 +532,52 @@ namespace Model
     inline OptionGroupOption& AddOptionGroupOptionVersions(OptionVersion&& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_engineName;
     bool m_engineNameHasBeenSet;
+
     Aws::String m_majorEngineVersion;
     bool m_majorEngineVersionHasBeenSet;
+
     Aws::String m_minimumRequiredMinorEngineVersion;
     bool m_minimumRequiredMinorEngineVersionHasBeenSet;
+
     bool m_portRequired;
     bool m_portRequiredHasBeenSet;
+
     int m_defaultPort;
     bool m_defaultPortHasBeenSet;
+
     Aws::Vector<Aws::String> m_optionsDependedOn;
     bool m_optionsDependedOnHasBeenSet;
+
     Aws::Vector<Aws::String> m_optionsConflictsWith;
     bool m_optionsConflictsWithHasBeenSet;
+
     bool m_persistent;
     bool m_persistentHasBeenSet;
+
     bool m_permanent;
     bool m_permanentHasBeenSet;
+
     bool m_requiresAutoMinorEngineVersionUpgrade;
     bool m_requiresAutoMinorEngineVersionUpgradeHasBeenSet;
+
     bool m_vpcOnly;
     bool m_vpcOnlyHasBeenSet;
+
     bool m_supportsOptionVersionDowngrade;
     bool m_supportsOptionVersionDowngradeHasBeenSet;
+
     Aws::Vector<OptionGroupOptionSetting> m_optionGroupOptionSettings;
     bool m_optionGroupOptionSettingsHasBeenSet;
+
     Aws::Vector<OptionVersion> m_optionGroupOptionVersions;
     bool m_optionGroupOptionVersionsHasBeenSet;
   };

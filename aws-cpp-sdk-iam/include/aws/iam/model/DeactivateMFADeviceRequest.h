@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the user whose MFA device you want to deactivate.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -100,6 +101,7 @@ namespace Model
      * following characters: =,.@-</p>
      */
     inline DeactivateMFADeviceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
@@ -165,8 +167,10 @@ namespace Model
     inline DeactivateMFADeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
   };

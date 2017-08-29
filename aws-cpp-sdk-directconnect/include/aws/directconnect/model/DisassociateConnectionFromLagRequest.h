@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the connection to disassociate from the LAG.</p> <p>Example:
      * dxcon-abc123</p> <p>Default: None</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline DisassociateConnectionFromLagRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
+
     /**
      * <p>The ID of the LAG.</p> <p>Example: dxlag-abc123</p> <p>Default: None</p>
      */
@@ -118,8 +120,10 @@ namespace Model
     inline DisassociateConnectionFromLagRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
 
   private:
+
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
+
     Aws::String m_lagId;
     bool m_lagIdHasBeenSet;
   };

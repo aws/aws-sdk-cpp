@@ -31,12 +31,12 @@ DeleteFlowLogsResponse::DeleteFlowLogsResponse()
 {
 }
 
-DeleteFlowLogsResponse::DeleteFlowLogsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteFlowLogsResponse::DeleteFlowLogsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteFlowLogsResponse& DeleteFlowLogsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteFlowLogsResponse& DeleteFlowLogsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

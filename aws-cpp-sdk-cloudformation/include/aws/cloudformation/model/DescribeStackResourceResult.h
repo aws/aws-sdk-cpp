@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeStackResourceResult();
-    DescribeStackResourceResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeStackResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStackResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStackResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A <code>StackResourceDetail</code> structure containing the description of
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeStackResourceResult& WithStackResourceDetail(StackResourceDetail&& value) { SetStackResourceDetail(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline DescribeStackResourceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     StackResourceDetail m_stackResourceDetail;
+
     ResponseMetadata m_responseMetadata;
   };
 

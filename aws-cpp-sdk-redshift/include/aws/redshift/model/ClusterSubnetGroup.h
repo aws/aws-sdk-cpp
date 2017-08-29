@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cluster subnet group.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name of the cluster subnet group.</p>
      */
     inline ClusterSubnetGroup& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
+
 
     /**
      * <p>The description of the cluster subnet group.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline ClusterSubnetGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The VPC ID of the cluster subnet group.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The VPC ID of the cluster subnet group.</p>
      */
     inline ClusterSubnetGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>The status of the cluster subnet group. Possible values are
@@ -198,6 +202,7 @@ namespace Model
      */
     inline ClusterSubnetGroup& WithSubnetGroupStatus(const char* value) { SetSubnetGroupStatus(value); return *this;}
 
+
     /**
      * <p>A list of the VPC <a>Subnet</a> elements. </p>
      */
@@ -232,6 +237,7 @@ namespace Model
      * <p>A list of the VPC <a>Subnet</a> elements. </p>
      */
     inline ClusterSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The list of tags for the cluster subnet group.</p>
@@ -269,16 +275,22 @@ namespace Model
     inline ClusterSubnetGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_clusterSubnetGroupName;
     bool m_clusterSubnetGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::String m_subnetGroupStatus;
     bool m_subnetGroupStatusHasBeenSet;
+
     Aws::Vector<Subnet> m_subnets;
     bool m_subnetsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

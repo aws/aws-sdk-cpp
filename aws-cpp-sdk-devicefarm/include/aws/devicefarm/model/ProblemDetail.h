@@ -45,6 +45,7 @@ namespace Model
     ProblemDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The problem detail's ARN.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The problem detail's ARN.</p>
      */
     inline ProblemDetail& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The problem detail's name.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline ProblemDetail& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

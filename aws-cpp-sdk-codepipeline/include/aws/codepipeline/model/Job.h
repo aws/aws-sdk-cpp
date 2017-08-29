@@ -46,6 +46,7 @@ namespace Model
     Job& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique system-generated ID of the job.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline Job& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>Additional data about a job.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>Additional data about a job.</p>
      */
     inline Job& WithData(JobData&& value) { SetData(std::move(value)); return *this;}
+
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
@@ -155,6 +158,7 @@ namespace Model
      */
     inline Job& WithNonce(const char* value) { SetNonce(value); return *this;}
 
+
     /**
      * <p>The ID of the AWS account to use when performing the job.</p>
      */
@@ -191,12 +195,16 @@ namespace Model
     inline Job& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     JobData m_data;
     bool m_dataHasBeenSet;
+
     Aws::String m_nonce;
     bool m_nonceHasBeenSet;
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
   };

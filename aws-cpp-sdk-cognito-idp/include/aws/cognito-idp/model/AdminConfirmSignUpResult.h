@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     AdminConfirmSignUpResult();
-    AdminConfirmSignUpResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminConfirmSignUpResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminConfirmSignUpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminConfirmSignUpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

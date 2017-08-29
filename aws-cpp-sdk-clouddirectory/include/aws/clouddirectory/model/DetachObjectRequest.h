@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where objects reside. For more information, see <a>arns</a>.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DetachObjectRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>The parent reference from which the object with the specified link name is
      * detached.</p>
@@ -108,6 +110,7 @@ namespace Model
      * detached.</p>
      */
     inline DetachObjectRequest& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The link name associated with the object that needs to be detached.</p>
@@ -145,10 +148,13 @@ namespace Model
     inline DetachObjectRequest& WithLinkName(const char* value) { SetLinkName(value); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_parentReference;
     bool m_parentReferenceHasBeenSet;
+
     Aws::String m_linkName;
     bool m_linkNameHasBeenSet;
   };

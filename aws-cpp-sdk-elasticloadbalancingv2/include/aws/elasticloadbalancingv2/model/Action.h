@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The type of action.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The type of action.</p>
      */
     inline Action& WithType(ActionTypeEnum&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
@@ -110,8 +112,10 @@ namespace Model
     inline Action& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
 
   private:
+
     ActionTypeEnum m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_targetGroupArn;
     bool m_targetGroupArnHasBeenSet;
   };

@@ -30,12 +30,12 @@ ListHsmsResult::ListHsmsResult()
 {
 }
 
-ListHsmsResult::ListHsmsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListHsmsResult::ListHsmsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListHsmsResult& ListHsmsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListHsmsResult& ListHsmsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("HsmList"))

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The app ID.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteAppRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
 
   private:
+
     Aws::String m_appId;
     bool m_appIdHasBeenSet;
   };

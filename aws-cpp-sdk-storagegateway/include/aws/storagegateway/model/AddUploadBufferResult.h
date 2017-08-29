@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     AddUploadBufferResult();
-    AddUploadBufferResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddUploadBufferResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddUploadBufferResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddUploadBufferResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -63,6 +64,7 @@ namespace Model
     inline AddUploadBufferResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
   };
 

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DeleteTrustResult();
-    DeleteTrustResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTrustResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTrustResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTrustResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Trust ID of the trust relationship that was deleted.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline DeleteTrustResult& WithTrustId(const char* value) { SetTrustId(value); return *this;}
 
   private:
+
     Aws::String m_trustId;
   };
 

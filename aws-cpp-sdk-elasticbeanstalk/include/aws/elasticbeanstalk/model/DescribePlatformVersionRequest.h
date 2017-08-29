@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the version of the platform.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DescribePlatformVersionRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
 
   private:
+
     Aws::String m_platformArn;
     bool m_platformArnHasBeenSet;
   };

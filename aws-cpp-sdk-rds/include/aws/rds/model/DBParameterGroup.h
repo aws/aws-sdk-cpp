@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Provides the name of the DB parameter group.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>Provides the name of the DB parameter group.</p>
      */
     inline DBParameterGroup& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
+
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB parameter
@@ -129,6 +131,7 @@ namespace Model
      */
     inline DBParameterGroup& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>Provides the customer-specified description for this DB parameter group.</p>
      */
@@ -163,6 +166,7 @@ namespace Model
      * <p>Provides the customer-specified description for this DB parameter group.</p>
      */
     inline DBParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
@@ -200,12 +204,16 @@ namespace Model
     inline DBParameterGroup& WithDBParameterGroupArn(const char* value) { SetDBParameterGroupArn(value); return *this;}
 
   private:
+
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet;
+
     Aws::String m_dBParameterGroupFamily;
     bool m_dBParameterGroupFamilyHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_dBParameterGroupArn;
     bool m_dBParameterGroupArnHasBeenSet;
   };

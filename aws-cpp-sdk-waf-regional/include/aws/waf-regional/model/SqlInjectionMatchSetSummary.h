@@ -46,6 +46,7 @@ namespace Model
     SqlInjectionMatchSetSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
      * <code>SqlInjectionMatchSetId</code> to get information about a
@@ -144,6 +145,7 @@ namespace Model
      */
     inline SqlInjectionMatchSetSummary& WithSqlInjectionMatchSetId(const char* value) { SetSqlInjectionMatchSetId(value); return *this;}
 
+
     /**
      * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
      * <code>Id</code>.</p>
@@ -187,8 +189,10 @@ namespace Model
     inline SqlInjectionMatchSetSummary& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_sqlInjectionMatchSetId;
     bool m_sqlInjectionMatchSetIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

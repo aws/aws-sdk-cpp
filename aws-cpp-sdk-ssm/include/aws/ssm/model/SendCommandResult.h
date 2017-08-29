@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     SendCommandResult();
-    SendCommandResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendCommandResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendCommandResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendCommandResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The request as it was received by Systems Manager. Also provides the command
@@ -72,6 +73,7 @@ namespace Model
     inline SendCommandResult& WithCommand(Command&& value) { SetCommand(std::move(value)); return *this;}
 
   private:
+
     Command m_command;
   };
 

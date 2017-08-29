@@ -30,12 +30,12 @@ CloneStackResult::CloneStackResult()
 {
 }
 
-CloneStackResult::CloneStackResult(const AmazonWebServiceResult<JsonValue>& result)
+CloneStackResult::CloneStackResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CloneStackResult& CloneStackResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CloneStackResult& CloneStackResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StackId"))

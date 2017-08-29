@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetOpenIdTokenResult();
-    GetOpenIdTokenResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetOpenIdTokenResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOpenIdTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOpenIdTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique identifier in the format REGION:GUID. Note that the IdentityId
@@ -89,6 +90,7 @@ namespace Model
      */
     inline GetOpenIdTokenResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
+
     /**
      * <p>An OpenID token, valid for 15 minutes.</p>
      */
@@ -125,7 +127,9 @@ namespace Model
     inline GetOpenIdTokenResult& WithToken(const char* value) { SetToken(value); return *this;}
 
   private:
+
     Aws::String m_identityId;
+
     Aws::String m_token;
   };
 

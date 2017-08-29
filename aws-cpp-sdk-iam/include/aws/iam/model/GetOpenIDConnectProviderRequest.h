@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to
      * get information for. You can get a list of OIDC provider resource ARNs by using
@@ -116,6 +117,7 @@ namespace Model
     inline GetOpenIDConnectProviderRequest& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
 
   private:
+
     Aws::String m_openIDConnectProviderArn;
     bool m_openIDConnectProviderArnHasBeenSet;
   };

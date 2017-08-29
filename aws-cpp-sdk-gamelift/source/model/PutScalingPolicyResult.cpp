@@ -30,12 +30,12 @@ PutScalingPolicyResult::PutScalingPolicyResult()
 {
 }
 
-PutScalingPolicyResult::PutScalingPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+PutScalingPolicyResult::PutScalingPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutScalingPolicyResult& PutScalingPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutScalingPolicyResult& PutScalingPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Name"))

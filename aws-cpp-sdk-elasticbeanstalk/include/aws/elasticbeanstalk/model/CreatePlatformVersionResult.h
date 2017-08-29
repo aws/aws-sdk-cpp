@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     CreatePlatformVersionResult();
-    CreatePlatformVersionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreatePlatformVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreatePlatformVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreatePlatformVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Detailed information about the new version of the custom platform.</p>
@@ -68,6 +69,7 @@ namespace Model
      */
     inline CreatePlatformVersionResult& WithPlatformSummary(PlatformSummary&& value) { SetPlatformSummary(std::move(value)); return *this;}
 
+
     /**
      * <p>The builder used to create the custom platform.</p>
      */
@@ -93,6 +95,7 @@ namespace Model
      */
     inline CreatePlatformVersionResult& WithBuilder(Builder&& value) { SetBuilder(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -109,8 +112,11 @@ namespace Model
     inline CreatePlatformVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     PlatformSummary m_platformSummary;
+
     Builder m_builder;
+
     ResponseMetadata m_responseMetadata;
   };
 

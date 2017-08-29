@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeHostReservationOfferingsResponse();
-    DescribeHostReservationOfferingsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeHostReservationOfferingsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeHostReservationOfferingsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeHostReservationOfferingsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeHostReservationOfferingsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Information about the offerings.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      */
     inline DescribeHostReservationOfferingsResponse& AddOfferingSet(HostOffering&& value) { m_offeringSet.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -137,8 +140,11 @@ namespace Model
     inline DescribeHostReservationOfferingsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<HostOffering> m_offeringSet;
+
     ResponseMetadata m_responseMetadata;
   };
 

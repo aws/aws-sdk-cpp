@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     CreateJobResult();
-    CreateJobResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -71,6 +72,7 @@ namespace Model
     
     inline CreateJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
     
     inline const JobType& GetJobType() const{ return m_jobType; }
 
@@ -85,6 +87,7 @@ namespace Model
 
     
     inline CreateJobResult& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetSignature() const{ return m_signature; }
@@ -107,6 +110,7 @@ namespace Model
     
     inline CreateJobResult& WithSignature(const char* value) { SetSignature(value); return *this;}
 
+
     
     inline const Aws::String& GetSignatureFileContents() const{ return m_signatureFileContents; }
 
@@ -127,6 +131,7 @@ namespace Model
 
     
     inline CreateJobResult& WithSignatureFileContents(const char* value) { SetSignatureFileContents(value); return *this;}
+
 
     
     inline const Aws::String& GetWarningMessage() const{ return m_warningMessage; }
@@ -149,6 +154,7 @@ namespace Model
     
     inline CreateJobResult& WithWarningMessage(const char* value) { SetWarningMessage(value); return *this;}
 
+
     
     inline const Aws::Vector<Artifact>& GetArtifactList() const{ return m_artifactList; }
 
@@ -170,6 +176,7 @@ namespace Model
     
     inline CreateJobResult& AddArtifactList(Artifact&& value) { m_artifactList.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -186,12 +193,19 @@ namespace Model
     inline CreateJobResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobId;
+
     JobType m_jobType;
+
     Aws::String m_signature;
+
     Aws::String m_signatureFileContents;
+
     Aws::String m_warningMessage;
+
     Aws::Vector<Artifact> m_artifactList;
+
     ResponseMetadata m_responseMetadata;
   };
 

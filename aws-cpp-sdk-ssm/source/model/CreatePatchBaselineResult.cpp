@@ -30,12 +30,12 @@ CreatePatchBaselineResult::CreatePatchBaselineResult()
 {
 }
 
-CreatePatchBaselineResult::CreatePatchBaselineResult(const AmazonWebServiceResult<JsonValue>& result)
+CreatePatchBaselineResult::CreatePatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreatePatchBaselineResult& CreatePatchBaselineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreatePatchBaselineResult& CreatePatchBaselineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("BaselineId"))

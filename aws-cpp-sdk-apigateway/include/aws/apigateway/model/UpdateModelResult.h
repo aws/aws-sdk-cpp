@@ -52,8 +52,9 @@ namespace Model
   {
   public:
     UpdateModelResult();
-    UpdateModelResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateModelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier for the model resource.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline UpdateModelResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name of the model.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      */
     inline UpdateModelResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The description of the model.</p>
      */
@@ -159,6 +162,7 @@ namespace Model
      * <p>The description of the model.</p>
      */
     inline UpdateModelResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
@@ -237,6 +241,7 @@ namespace Model
      */
     inline UpdateModelResult& WithSchema(const char* value) { SetSchema(value); return *this;}
 
+
     /**
      * <p>The content-type for the model.</p>
      */
@@ -273,10 +278,15 @@ namespace Model
     inline UpdateModelResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 
   private:
+
     Aws::String m_id;
+
     Aws::String m_name;
+
     Aws::String m_description;
+
     Aws::String m_schema;
+
     Aws::String m_contentType;
   };
 

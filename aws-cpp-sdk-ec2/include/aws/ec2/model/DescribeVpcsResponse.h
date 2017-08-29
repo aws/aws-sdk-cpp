@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeVpcsResponse();
-    DescribeVpcsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVpcsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpcsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpcsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more VPCs.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeVpcsResponse& AddVpcs(Vpc&& value) { m_vpcs.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribeVpcsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Vpc> m_vpcs;
+
     ResponseMetadata m_responseMetadata;
   };
 

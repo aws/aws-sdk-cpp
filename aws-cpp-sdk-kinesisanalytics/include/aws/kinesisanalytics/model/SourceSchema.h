@@ -50,6 +50,7 @@ namespace Model
     SourceSchema& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the format of the records on the streaming source.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>Specifies the format of the records on the streaming source.</p>
      */
     inline SourceSchema& WithRecordFormat(RecordFormat&& value) { SetRecordFormat(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the encoding of the records in the streaming source. For example,
@@ -117,6 +119,7 @@ namespace Model
      */
     inline SourceSchema& WithRecordEncoding(const char* value) { SetRecordEncoding(value); return *this;}
 
+
     /**
      * <p>A list of <code>RecordColumn</code> objects.</p>
      */
@@ -153,10 +156,13 @@ namespace Model
     inline SourceSchema& AddRecordColumns(RecordColumn&& value) { m_recordColumnsHasBeenSet = true; m_recordColumns.push_back(std::move(value)); return *this; }
 
   private:
+
     RecordFormat m_recordFormat;
     bool m_recordFormatHasBeenSet;
+
     Aws::String m_recordEncoding;
     bool m_recordEncodingHasBeenSet;
+
     Aws::Vector<RecordColumn> m_recordColumns;
     bool m_recordColumnsHasBeenSet;
   };

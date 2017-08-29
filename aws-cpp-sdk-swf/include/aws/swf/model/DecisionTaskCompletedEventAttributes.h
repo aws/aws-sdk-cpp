@@ -46,6 +46,7 @@ namespace Model
     DecisionTaskCompletedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>User defined context for the workflow execution.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline DecisionTaskCompletedEventAttributes& WithExecutionContext(const char* value) { SetExecutionContext(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
      * this decision task was scheduled. This information can be useful for diagnosing
@@ -101,6 +103,7 @@ namespace Model
      * problems by tracing back the chain of events leading up to this event.</p>
      */
     inline DecisionTaskCompletedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
+
 
     /**
      * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
@@ -124,10 +127,13 @@ namespace Model
     inline DecisionTaskCompletedEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 
   private:
+
     Aws::String m_executionContext;
     bool m_executionContextHasBeenSet;
+
     long long m_scheduledEventId;
     bool m_scheduledEventIdHasBeenSet;
+
     long long m_startedEventId;
     bool m_startedEventIdHasBeenSet;
   };

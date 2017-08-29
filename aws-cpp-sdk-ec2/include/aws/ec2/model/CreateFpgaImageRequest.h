@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -62,6 +63,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CreateFpgaImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The location of the encrypted design checkpoint in Amazon S3. The input must
@@ -93,6 +95,7 @@ namespace Model
      */
     inline CreateFpgaImageRequest& WithInputStorageLocation(StorageLocation&& value) { SetInputStorageLocation(std::move(value)); return *this;}
 
+
     /**
      * <p>The location in Amazon S3 for the output logs.</p>
      */
@@ -117,6 +120,7 @@ namespace Model
      * <p>The location in Amazon S3 for the output logs.</p>
      */
     inline CreateFpgaImageRequest& WithLogsStorageLocation(StorageLocation&& value) { SetLogsStorageLocation(std::move(value)); return *this;}
+
 
     /**
      * <p>A description for the AFI.</p>
@@ -153,6 +157,7 @@ namespace Model
      */
     inline CreateFpgaImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A name for the AFI.</p>
      */
@@ -187,6 +192,7 @@ namespace Model
      * <p>A name for the AFI.</p>
      */
     inline CreateFpgaImageRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
@@ -245,16 +251,22 @@ namespace Model
     inline CreateFpgaImageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     StorageLocation m_inputStorageLocation;
     bool m_inputStorageLocationHasBeenSet;
+
     StorageLocation m_logsStorageLocation;
     bool m_logsStorageLocationHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
   };

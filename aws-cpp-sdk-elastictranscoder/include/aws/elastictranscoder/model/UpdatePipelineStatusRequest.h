@@ -38,6 +38,7 @@ namespace Model
     UpdatePipelineStatusRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the pipeline to update.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The identifier of the pipeline to update.</p>
      */
     inline UpdatePipelineStatusRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>:
@@ -123,8 +125,10 @@ namespace Model
     inline UpdatePipelineStatusRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the attribute involved in the condition.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The name of the attribute involved in the condition.</p>
      */
     inline UpdateCondition& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The value of an attribute. This value can only be specified when the
@@ -129,6 +131,7 @@ namespace Model
      */
     inline UpdateCondition& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>A value specifying whether or not the specified attribute must exist with the
      * specified value in order for the update condition to be satisfied. Specify
@@ -157,10 +160,13 @@ namespace Model
     inline UpdateCondition& WithExists(bool value) { SetExists(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     bool m_exists;
     bool m_existsHasBeenSet;
   };

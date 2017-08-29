@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     SearchProductsAsAdminResult();
-    SearchProductsAsAdminResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchProductsAsAdminResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SearchProductsAsAdminResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SearchProductsAsAdminResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of detailed product view information objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>List of detailed product view information objects.</p>
      */
     inline SearchProductsAsAdminResult& AddProductViewDetails(ProductViewDetail&& value) { m_productViewDetails.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -121,7 +123,9 @@ namespace Model
     inline SearchProductsAsAdminResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<ProductViewDetail> m_productViewDetails;
+
     Aws::String m_nextPageToken;
   };
 

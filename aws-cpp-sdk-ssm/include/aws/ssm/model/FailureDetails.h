@@ -47,6 +47,7 @@ namespace Model
     FailureDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The stage of the Automation execution when the failure occurred. The stages
      * include the following: InputValidation, PreVerification, Invocation,
@@ -96,6 +97,7 @@ namespace Model
      */
     inline FailureDetails& WithFailureStage(const char* value) { SetFailureStage(value); return *this;}
 
+
     /**
      * <p>The type of Automation failure. Failure types include the following: Action,
      * Permission, Throttling, Verification, Internal.</p>
@@ -137,6 +139,7 @@ namespace Model
      * Permission, Throttling, Verification, Internal.</p>
      */
     inline FailureDetails& WithFailureType(const char* value) { SetFailureType(value); return *this;}
+
 
     /**
      * <p>Detailed information about the Automation step failure.</p>
@@ -194,10 +197,13 @@ namespace Model
     inline FailureDetails& AddDetails(const char* key, const Aws::Vector<Aws::String>& value) { m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_failureStage;
     bool m_failureStageHasBeenSet;
+
     Aws::String m_failureType;
     bool m_failureTypeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_details;
     bool m_detailsHasBeenSet;
   };

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetIdentityPoolRolesResult();
-    GetIdentityPoolRolesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetIdentityPoolRolesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetIdentityPoolRolesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetIdentityPoolRolesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline GetIdentityPoolRolesResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+
 
     /**
      * <p>The map of roles associated with this pool. Currently only authenticated and
@@ -155,6 +157,7 @@ namespace Model
      * unauthenticated roles are supported.</p>
      */
     inline GetIdentityPoolRolesResult& AddRoles(const char* key, const char* value) { m_roles.emplace(key, value); return *this; }
+
 
     /**
      * <p>How users for a specific identity provider are to mapped to roles. This is a
@@ -245,8 +248,11 @@ namespace Model
     inline GetIdentityPoolRolesResult& AddRoleMappings(const char* key, const RoleMapping& value) { m_roleMappings.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_identityPoolId;
+
     Aws::Map<Aws::String, Aws::String> m_roles;
+
     Aws::Map<Aws::String, RoleMapping> m_roleMappings;
   };
 

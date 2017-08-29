@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the role to update with the new policy.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -100,6 +101,7 @@ namespace Model
      * _+=,.@-</p>
      */
     inline UpdateAssumeRolePolicyRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
 
     /**
      * <p>The policy that grants an entity permission to assume the role.</p> <p>The <a
@@ -179,8 +181,10 @@ namespace Model
     inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
   private:
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet;
   };

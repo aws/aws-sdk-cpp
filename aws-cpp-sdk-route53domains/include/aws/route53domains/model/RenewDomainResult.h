@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     RenewDomainResult();
-    RenewDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RenewDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RenewDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RenewDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier for tracking the progress of the request. To use this ID to
@@ -84,6 +85,7 @@ namespace Model
     inline RenewDomainResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
   private:
+
     Aws::String m_operationId;
   };
 

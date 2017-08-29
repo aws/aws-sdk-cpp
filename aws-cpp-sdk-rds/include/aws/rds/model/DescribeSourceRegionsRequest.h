@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The source AWS Region name. For example, <code>us-east-1</code>.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid AWS Region name.</p> </li>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeSourceRegionsRequest& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 
+
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -115,6 +117,7 @@ namespace Model
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeSourceRegionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -172,6 +175,7 @@ namespace Model
      */
     inline DescribeSourceRegionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>This parameter is not currently supported.</p>
      */
@@ -208,12 +212,16 @@ namespace Model
     inline DescribeSourceRegionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_regionName;
     bool m_regionNameHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
   };

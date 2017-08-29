@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
     inline DescribeTargetGroupsRequest& WithLoadBalancerArn(const char* value) { SetLoadBalancerArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline DescribeTargetGroupsRequest& AddTargetGroupArns(const char* value) { m_targetGroupArnsHasBeenSet = true; m_targetGroupArns.push_back(value); return *this; }
 
+
     /**
      * <p>The names of the target groups.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>The names of the target groups.</p>
      */
     inline DescribeTargetGroupsRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -196,6 +200,7 @@ namespace Model
      */
     inline DescribeTargetGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return with this call.</p>
      */
@@ -212,14 +217,19 @@ namespace Model
     inline DescribeTargetGroupsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
   private:
+
     Aws::String m_loadBalancerArn;
     bool m_loadBalancerArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_targetGroupArns;
     bool m_targetGroupArnsHasBeenSet;
+
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
   };

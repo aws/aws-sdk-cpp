@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ProvisionProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The product identifier.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      * <p>The product identifier.</p>
      */
     inline ProvisionProductRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
+
 
     /**
      * <p>The provisioning artifact identifier for this product. This is sometimes
@@ -165,6 +168,7 @@ namespace Model
      * referred to as the product version.</p>
      */
     inline ProvisionProductRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
+
 
     /**
      * <p>The identifier of the path for this product's provisioning. This value is
@@ -215,6 +219,7 @@ namespace Model
      */
     inline ProvisionProductRequest& WithPathId(const char* value) { SetPathId(value); return *this;}
 
+
     /**
      * <p>A user-friendly name to identify the ProvisionedProduct object. This value
      * must be unique for the AWS account and cannot be updated after the product is
@@ -264,6 +269,7 @@ namespace Model
      */
     inline ProvisionProductRequest& WithProvisionedProductName(const char* value) { SetProvisionedProductName(value); return *this;}
 
+
     /**
      * <p>Parameters specified by the administrator that are required for provisioning
      * the product.</p>
@@ -306,6 +312,7 @@ namespace Model
      */
     inline ProvisionProductRequest& AddProvisioningParameters(ProvisioningParameter&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of tags to use as provisioning options.</p>
      */
@@ -340,6 +347,7 @@ namespace Model
      * <p>A list of tags to use as provisioning options.</p>
      */
     inline ProvisionProductRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Passed to CloudFormation. The SNS topic ARNs to which to publish
@@ -389,6 +397,7 @@ namespace Model
      */
     inline ProvisionProductRequest& AddNotificationArns(const char* value) { m_notificationArnsHasBeenSet = true; m_notificationArns.push_back(value); return *this; }
 
+
     /**
      * <p>An idempotency token that uniquely identifies the provisioning request. </p>
      */
@@ -425,22 +434,31 @@ namespace Model
     inline ProvisionProductRequest& WithProvisionToken(const char* value) { SetProvisionToken(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
     Aws::String m_provisioningArtifactId;
     bool m_provisioningArtifactIdHasBeenSet;
+
     Aws::String m_pathId;
     bool m_pathIdHasBeenSet;
+
     Aws::String m_provisionedProductName;
     bool m_provisionedProductNameHasBeenSet;
+
     Aws::Vector<ProvisioningParameter> m_provisioningParameters;
     bool m_provisioningParametersHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Vector<Aws::String> m_notificationArns;
     bool m_notificationArnsHasBeenSet;
+
     Aws::String m_provisionToken;
     bool m_provisionTokenHasBeenSet;
   };

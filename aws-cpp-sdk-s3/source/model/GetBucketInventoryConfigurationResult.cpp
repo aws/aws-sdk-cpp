@@ -29,12 +29,12 @@ GetBucketInventoryConfigurationResult::GetBucketInventoryConfigurationResult()
 {
 }
 
-GetBucketInventoryConfigurationResult::GetBucketInventoryConfigurationResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketInventoryConfigurationResult::GetBucketInventoryConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetBucketInventoryConfigurationResult& GetBucketInventoryConfigurationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketInventoryConfigurationResult& GetBucketInventoryConfigurationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

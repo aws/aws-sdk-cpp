@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     GetHostedZoneCountResult();
-    GetHostedZoneCountResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetHostedZoneCountResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHostedZoneCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHostedZoneCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The total number of public and private hosted zones that are associated with
@@ -64,6 +65,7 @@ namespace Model
     inline GetHostedZoneCountResult& WithHostedZoneCount(long long value) { SetHostedZoneCount(value); return *this;}
 
   private:
+
     long long m_hostedZoneCount;
   };
 

@@ -31,13 +31,13 @@ ListAliasesResult::ListAliasesResult() :
 {
 }
 
-ListAliasesResult::ListAliasesResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListAliasesResult::ListAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_truncated(false)
 {
   *this = result;
 }
 
-ListAliasesResult& ListAliasesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListAliasesResult& ListAliasesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Aliases"))

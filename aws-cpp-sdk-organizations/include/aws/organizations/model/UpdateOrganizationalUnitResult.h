@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateOrganizationalUnitResult();
-    UpdateOrganizationalUnitResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateOrganizationalUnitResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateOrganizationalUnitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateOrganizationalUnitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains the details about the specified OU, including its
@@ -72,6 +73,7 @@ namespace Model
     inline UpdateOrganizationalUnitResult& WithOrganizationalUnit(OrganizationalUnit&& value) { SetOrganizationalUnit(std::move(value)); return *this;}
 
   private:
+
     OrganizationalUnit m_organizationalUnit;
   };
 

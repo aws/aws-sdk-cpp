@@ -49,6 +49,7 @@ namespace Model
     JobDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the job definition. </p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the job definition. </p>
      */
     inline JobDefinition& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for the job definition. </p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline JobDefinition& WithJobDefinitionArn(const char* value) { SetJobDefinitionArn(value); return *this;}
 
+
     /**
      * <p>The revision of the job definition.</p>
      */
@@ -133,6 +136,7 @@ namespace Model
      * <p>The revision of the job definition.</p>
      */
     inline JobDefinition& WithRevision(int value) { SetRevision(value); return *this;}
+
 
     /**
      * <p>The status of the job definition.</p>
@@ -169,6 +173,7 @@ namespace Model
      */
     inline JobDefinition& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The type of job definition.</p>
      */
@@ -203,6 +208,7 @@ namespace Model
      * <p>The type of job definition.</p>
      */
     inline JobDefinition& WithType(const char* value) { SetType(value); return *this;}
+
 
     /**
      * <p>Default parameters or parameter substitution placeholders that are set in the
@@ -300,6 +306,7 @@ namespace Model
      */
     inline JobDefinition& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition.</p>
@@ -330,6 +337,7 @@ namespace Model
      */
     inline JobDefinition& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
 
+
     /**
      * <p>An object with various properties specific to container-based jobs. </p>
      */
@@ -356,20 +364,28 @@ namespace Model
     inline JobDefinition& WithContainerProperties(ContainerProperties&& value) { SetContainerProperties(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobDefinitionName;
     bool m_jobDefinitionNameHasBeenSet;
+
     Aws::String m_jobDefinitionArn;
     bool m_jobDefinitionArnHasBeenSet;
+
     int m_revision;
     bool m_revisionHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet;
+
     ContainerProperties m_containerProperties;
     bool m_containerPropertiesHasBeenSet;
   };

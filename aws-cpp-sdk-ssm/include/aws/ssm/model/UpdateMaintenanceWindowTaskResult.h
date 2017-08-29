@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateMaintenanceWindowTaskResult();
-    UpdateMaintenanceWindowTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateMaintenanceWindowTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateMaintenanceWindowTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the Maintenance Window that was updated.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
+
     /**
      * <p>The task ID of the Maintenance Window that was updated.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The task ID of the Maintenance Window that was updated.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
+
 
     /**
      * <p>The updated target values.</p>
@@ -152,6 +155,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskResult& AddTargets(Target&& value) { m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The updated task ARN value.</p>
      */
@@ -187,6 +191,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
+
     /**
      * <p>The updated service role ARN value.</p>
      */
@@ -221,6 +226,7 @@ namespace Model
      * <p>The updated service role ARN value.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+
 
     /**
      * <p>The updated parameter values.</p>
@@ -277,6 +283,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskResult& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The updated parameter values.</p>
      */
@@ -302,6 +309,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskResult& WithTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { SetTaskInvocationParameters(std::move(value)); return *this;}
 
+
     /**
      * <p>The updated priority value.</p>
      */
@@ -316,6 +324,7 @@ namespace Model
      * <p>The updated priority value.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
      * <p>The updated MaxConcurrency value.</p>
@@ -352,6 +361,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskResult& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
+
     /**
      * <p>The updated MaxErrors value.</p>
      */
@@ -387,6 +397,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTaskResult& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
+
     /**
      * <p>The updated logging information in Amazon S3.</p>
      */
@@ -411,6 +422,7 @@ namespace Model
      * <p>The updated logging information in Amazon S3.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>The updated task name.</p>
@@ -446,6 +458,7 @@ namespace Model
      * <p>The updated task name.</p>
      */
     inline UpdateMaintenanceWindowTaskResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The updated task description.</p>
@@ -483,18 +496,31 @@ namespace Model
     inline UpdateMaintenanceWindowTaskResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
+
     Aws::String m_windowTaskId;
+
     Aws::Vector<Target> m_targets;
+
     Aws::String m_taskArn;
+
     Aws::String m_serviceRoleArn;
+
     Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> m_taskParameters;
+
     MaintenanceWindowTaskInvocationParameters m_taskInvocationParameters;
+
     int m_priority;
+
     Aws::String m_maxConcurrency;
+
     Aws::String m_maxErrors;
+
     LoggingInfo m_loggingInfo;
+
     Aws::String m_name;
+
     Aws::String m_description;
   };
 

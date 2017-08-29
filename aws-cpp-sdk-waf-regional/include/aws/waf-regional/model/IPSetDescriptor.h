@@ -48,6 +48,7 @@ namespace Model
     IPSetDescriptor& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
      */
     inline IPSetDescriptor& WithType(IPSetDescriptorType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Specify an IPv4 address by using CIDR notation. For example:</p> <ul> <li>
@@ -221,8 +223,10 @@ namespace Model
     inline IPSetDescriptor& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     IPSetDescriptorType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

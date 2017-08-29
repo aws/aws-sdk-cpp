@@ -48,6 +48,7 @@ namespace Model
     InstancePortInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The first port in the range.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      */
     inline InstancePortInfo& WithFromPort(int value) { SetFromPort(value); return *this;}
 
+
     /**
      * <p>The last port in the range.</p>
      */
@@ -77,6 +79,7 @@ namespace Model
      * <p>The last port in the range.</p>
      */
     inline InstancePortInfo& WithToPort(int value) { SetToPort(value); return *this;}
+
 
     /**
      * <p>The protocol being used. Can be one of the following.</p> <ul> <li> <p>
@@ -173,6 +176,7 @@ namespace Model
      */
     inline InstancePortInfo& WithProtocol(NetworkProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
+
     /**
      * <p>The location from which access is allowed (e.g., <code>Anywhere
      * (0.0.0.0/0)</code>).</p>
@@ -215,6 +219,7 @@ namespace Model
      */
     inline InstancePortInfo& WithAccessFrom(const char* value) { SetAccessFrom(value); return *this;}
 
+
     /**
      * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
      */
@@ -239,6 +244,7 @@ namespace Model
      * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
      */
     inline InstancePortInfo& WithAccessType(PortAccessType&& value) { SetAccessType(std::move(value)); return *this;}
+
 
     /**
      * <p>The common name.</p>
@@ -275,6 +281,7 @@ namespace Model
      */
     inline InstancePortInfo& WithCommonName(const char* value) { SetCommonName(value); return *this;}
 
+
     /**
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
      */
@@ -301,18 +308,25 @@ namespace Model
     inline InstancePortInfo& WithAccessDirection(AccessDirection&& value) { SetAccessDirection(std::move(value)); return *this;}
 
   private:
+
     int m_fromPort;
     bool m_fromPortHasBeenSet;
+
     int m_toPort;
     bool m_toPortHasBeenSet;
+
     NetworkProtocol m_protocol;
     bool m_protocolHasBeenSet;
+
     Aws::String m_accessFrom;
     bool m_accessFromHasBeenSet;
+
     PortAccessType m_accessType;
     bool m_accessTypeHasBeenSet;
+
     Aws::String m_commonName;
     bool m_commonNameHasBeenSet;
+
     AccessDirection m_accessDirection;
     bool m_accessDirectionHasBeenSet;
   };

@@ -30,12 +30,12 @@ DeleteEmailChannelResult::DeleteEmailChannelResult()
 {
 }
 
-DeleteEmailChannelResult::DeleteEmailChannelResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteEmailChannelResult::DeleteEmailChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteEmailChannelResult& DeleteEmailChannelResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteEmailChannelResult& DeleteEmailChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EmailChannelResponse"))

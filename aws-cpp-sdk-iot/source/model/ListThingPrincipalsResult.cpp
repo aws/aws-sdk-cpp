@@ -30,12 +30,12 @@ ListThingPrincipalsResult::ListThingPrincipalsResult()
 {
 }
 
-ListThingPrincipalsResult::ListThingPrincipalsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListThingPrincipalsResult::ListThingPrincipalsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListThingPrincipalsResult& ListThingPrincipalsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListThingPrincipalsResult& ListThingPrincipalsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("principals"))

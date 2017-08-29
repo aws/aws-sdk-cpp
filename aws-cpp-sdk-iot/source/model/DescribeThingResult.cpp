@@ -31,13 +31,13 @@ DescribeThingResult::DescribeThingResult() :
 {
 }
 
-DescribeThingResult::DescribeThingResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeThingResult::DescribeThingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_version(0)
 {
   *this = result;
 }
 
-DescribeThingResult& DescribeThingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeThingResult& DescribeThingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("defaultClientId"))

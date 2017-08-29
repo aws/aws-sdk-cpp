@@ -50,6 +50,7 @@ namespace Model
     DocumentVersionMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the version.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The ID of the version.</p>
      */
     inline DocumentVersionMetadata& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the version.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline DocumentVersionMetadata& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The content type of the document.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      */
     inline DocumentVersionMetadata& WithContentType(const char* value) { SetContentType(value); return *this;}
 
+
     /**
      * <p>The size of the document, in bytes.</p>
      */
@@ -169,6 +173,7 @@ namespace Model
      * <p>The size of the document, in bytes.</p>
      */
     inline DocumentVersionMetadata& WithSize(long long value) { SetSize(value); return *this;}
+
 
     /**
      * <p>The signature of the document.</p>
@@ -205,6 +210,7 @@ namespace Model
      */
     inline DocumentVersionMetadata& WithSignature(const char* value) { SetSignature(value); return *this;}
 
+
     /**
      * <p>The status of the document.</p>
      */
@@ -229,6 +235,7 @@ namespace Model
      * <p>The status of the document.</p>
      */
     inline DocumentVersionMetadata& WithStatus(DocumentStatusType&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The time stamp when the document was first uploaded.</p>
@@ -255,6 +262,7 @@ namespace Model
      */
     inline DocumentVersionMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The time stamp when the document was last uploaded.</p>
      */
@@ -279,6 +287,7 @@ namespace Model
      * <p>The time stamp when the document was last uploaded.</p>
      */
     inline DocumentVersionMetadata& WithModifiedTimestamp(Aws::Utils::DateTime&& value) { SetModifiedTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The time stamp when the content of the document was originally created.</p>
@@ -305,6 +314,7 @@ namespace Model
      */
     inline DocumentVersionMetadata& WithContentCreatedTimestamp(Aws::Utils::DateTime&& value) { SetContentCreatedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The time stamp when the content of the document was modified.</p>
      */
@@ -329,6 +339,7 @@ namespace Model
      * <p>The time stamp when the content of the document was modified.</p>
      */
     inline DocumentVersionMetadata& WithContentModifiedTimestamp(Aws::Utils::DateTime&& value) { SetContentModifiedTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the creator.</p>
@@ -364,6 +375,7 @@ namespace Model
      * <p>The ID of the creator.</p>
      */
     inline DocumentVersionMetadata& WithCreatorId(const char* value) { SetCreatorId(value); return *this;}
+
 
     /**
      * <p>The thumbnail of the document.</p>
@@ -419,6 +431,7 @@ namespace Model
      * <p>The thumbnail of the document.</p>
      */
     inline DocumentVersionMetadata& AddThumbnail(const DocumentThumbnailType& key, const char* value) { m_thumbnailHasBeenSet = true; m_thumbnail.emplace(key, value); return *this; }
+
 
     /**
      * <p>The source of the document.</p>
@@ -476,30 +489,43 @@ namespace Model
     inline DocumentVersionMetadata& AddSource(const DocumentSourceType& key, const char* value) { m_sourceHasBeenSet = true; m_source.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet;
+
     long long m_size;
     bool m_sizeHasBeenSet;
+
     Aws::String m_signature;
     bool m_signatureHasBeenSet;
+
     DocumentStatusType m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_modifiedTimestamp;
     bool m_modifiedTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_contentCreatedTimestamp;
     bool m_contentCreatedTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_contentModifiedTimestamp;
     bool m_contentModifiedTimestampHasBeenSet;
+
     Aws::String m_creatorId;
     bool m_creatorIdHasBeenSet;
+
     Aws::Map<DocumentThumbnailType, Aws::String> m_thumbnail;
     bool m_thumbnailHasBeenSet;
+
     Aws::Map<DocumentSourceType, Aws::String> m_source;
     bool m_sourceHasBeenSet;
   };

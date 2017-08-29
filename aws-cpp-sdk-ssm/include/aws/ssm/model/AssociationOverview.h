@@ -46,6 +46,7 @@ namespace Model
     AssociationOverview& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The status of the association. Status can be: Pending, Success, or
      * Failed.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline AssociationOverview& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>A detailed status of the association.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>A detailed status of the association.</p>
      */
     inline AssociationOverview& WithDetailedStatus(const char* value) { SetDetailedStatus(value); return *this;}
+
 
     /**
      * <p>Returns the number of targets for the association status. For example, if you
@@ -180,10 +183,13 @@ namespace Model
     inline AssociationOverview& AddAssociationStatusAggregatedCount(const char* key, int value) { m_associationStatusAggregatedCountHasBeenSet = true; m_associationStatusAggregatedCount.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_detailedStatus;
     bool m_detailedStatusHasBeenSet;
+
     Aws::Map<Aws::String, int> m_associationStatusAggregatedCount;
     bool m_associationStatusAggregatedCountHasBeenSet;
   };

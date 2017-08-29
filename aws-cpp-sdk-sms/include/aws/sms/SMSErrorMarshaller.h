@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_SMS_API SMSErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_SMS_API SMSErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace SMS
+} // namespace Client
 } // namespace Aws

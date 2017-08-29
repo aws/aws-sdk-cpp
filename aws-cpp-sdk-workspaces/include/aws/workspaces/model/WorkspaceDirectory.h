@@ -50,6 +50,7 @@ namespace Model
     WorkspaceDirectory& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The directory identifier.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The directory identifier.</p>
      */
     inline WorkspaceDirectory& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The directory alias.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline WorkspaceDirectory& WithAlias(const char* value) { SetAlias(value); return *this;}
 
+
     /**
      * <p>The name of the directory.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The name of the directory.</p>
      */
     inline WorkspaceDirectory& WithDirectoryName(const char* value) { SetDirectoryName(value); return *this;}
+
 
     /**
      * <p>The registration code for the directory. This is the code that users enter in
@@ -196,6 +200,7 @@ namespace Model
      * their Amazon WorkSpaces client application to connect to the directory.</p>
      */
     inline WorkspaceDirectory& WithRegistrationCode(const char* value) { SetRegistrationCode(value); return *this;}
+
 
     /**
      * <p>An array of strings that contains the identifiers of the subnets used with
@@ -245,6 +250,7 @@ namespace Model
      */
     inline WorkspaceDirectory& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
     /**
      * <p>An array of strings that contains the IP addresses of the DNS servers for the
      * directory.</p>
@@ -293,6 +299,7 @@ namespace Model
      */
     inline WorkspaceDirectory& AddDnsIpAddresses(const char* value) { m_dnsIpAddressesHasBeenSet = true; m_dnsIpAddresses.push_back(value); return *this; }
 
+
     /**
      * <p>The user name for the service account.</p>
      */
@@ -327,6 +334,7 @@ namespace Model
      * <p>The user name for the service account.</p>
      */
     inline WorkspaceDirectory& WithCustomerUserName(const char* value) { SetCustomerUserName(value); return *this;}
+
 
     /**
      * <p>The identifier of the IAM role. This is the role that allows Amazon
@@ -377,6 +385,7 @@ namespace Model
      */
     inline WorkspaceDirectory& WithIamRoleId(const char* value) { SetIamRoleId(value); return *this;}
 
+
     /**
      * <p>The directory type.</p>
      */
@@ -401,6 +410,7 @@ namespace Model
      * <p>The directory type.</p>
      */
     inline WorkspaceDirectory& WithDirectoryType(WorkspaceDirectoryType&& value) { SetDirectoryType(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
@@ -437,6 +447,7 @@ namespace Model
      */
     inline WorkspaceDirectory& WithWorkspaceSecurityGroupId(const char* value) { SetWorkspaceSecurityGroupId(value); return *this;}
 
+
     /**
      * <p>The state of the directory's registration with Amazon WorkSpaces</p>
      */
@@ -461,6 +472,7 @@ namespace Model
      * <p>The state of the directory's registration with Amazon WorkSpaces</p>
      */
     inline WorkspaceDirectory& WithState(WorkspaceDirectoryState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>A structure that specifies the default creation properties for all WorkSpaces
@@ -493,28 +505,40 @@ namespace Model
     inline WorkspaceDirectory& WithWorkspaceCreationProperties(DefaultWorkspaceCreationProperties&& value) { SetWorkspaceCreationProperties(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_alias;
     bool m_aliasHasBeenSet;
+
     Aws::String m_directoryName;
     bool m_directoryNameHasBeenSet;
+
     Aws::String m_registrationCode;
     bool m_registrationCodeHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_dnsIpAddresses;
     bool m_dnsIpAddressesHasBeenSet;
+
     Aws::String m_customerUserName;
     bool m_customerUserNameHasBeenSet;
+
     Aws::String m_iamRoleId;
     bool m_iamRoleIdHasBeenSet;
+
     WorkspaceDirectoryType m_directoryType;
     bool m_directoryTypeHasBeenSet;
+
     Aws::String m_workspaceSecurityGroupId;
     bool m_workspaceSecurityGroupIdHasBeenSet;
+
     WorkspaceDirectoryState m_state;
     bool m_stateHasBeenSet;
+
     DefaultWorkspaceCreationProperties m_workspaceCreationProperties;
     bool m_workspaceCreationPropertiesHasBeenSet;
   };

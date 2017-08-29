@@ -47,6 +47,7 @@ namespace Model
     BatchGetObjectInformation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A reference to the object.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline BatchGetObjectInformation& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
   };

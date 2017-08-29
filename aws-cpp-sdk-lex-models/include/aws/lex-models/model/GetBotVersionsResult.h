@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetBotVersionsResult();
-    GetBotVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBotVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>BotMetadata</code> objects, one for each numbered version
@@ -84,6 +85,7 @@ namespace Model
      * of the bot plus one for the <code>$LATEST</code> version.</p>
      */
     inline GetBotVersionsResult& AddBots(BotMetadata&& value) { m_bots.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token for fetching the next page of bot versions. If the
@@ -142,7 +144,9 @@ namespace Model
     inline GetBotVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<BotMetadata> m_bots;
+
     Aws::String m_nextToken;
   };
 

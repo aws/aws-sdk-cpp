@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> for which you want to get
      * a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by
@@ -85,6 +86,7 @@ namespace Model
      */
     inline GetRateBasedRuleManagedKeysRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 
+
     /**
      * <p>A null value and not currently used. Do not include this in your request.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline GetRateBasedRuleManagedKeysRequest& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
   private:
+
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;
+
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet;
   };

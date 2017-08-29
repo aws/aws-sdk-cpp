@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * The maximum number of domain names you want returned. The range is 1 to 100. The
      * default setting is 100.
@@ -55,6 +56,7 @@ namespace Model
      * default setting is 100.
      */
     inline ListDomainsRequest& WithMaxNumberOfDomains(int value) { SetMaxNumberOfDomains(value); return *this;}
+
 
     /**
      * A string informing Amazon SimpleDB where to start the next list of domain names.
@@ -92,8 +94,10 @@ namespace Model
     inline ListDomainsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     int m_maxNumberOfDomains;
     bool m_maxNumberOfDomainsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
      * want to update. <code>SizeConstraintSetId</code> is returned by
@@ -87,6 +88,7 @@ namespace Model
      */
     inline UpdateSizeConstraintSetRequest& WithSizeConstraintSetId(const char* value) { SetSizeConstraintSetId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline UpdateSizeConstraintSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+
 
     /**
      * <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to
@@ -207,10 +210,13 @@ namespace Model
     inline UpdateSizeConstraintSetRequest& AddUpdates(SizeConstraintSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_sizeConstraintSetId;
     bool m_sizeConstraintSetIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
+
     Aws::Vector<SizeConstraintSetUpdate> m_updates;
     bool m_updatesHasBeenSet;
   };

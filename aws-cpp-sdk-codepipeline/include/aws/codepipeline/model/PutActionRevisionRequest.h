@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the pipeline that will start processing the revision to the
      * source.</p>
@@ -82,6 +83,7 @@ namespace Model
      * source.</p>
      */
     inline PutActionRevisionRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+
 
     /**
      * <p>The name of the stage that contains the action that will act upon the
@@ -125,6 +127,7 @@ namespace Model
      */
     inline PutActionRevisionRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
+
     /**
      * <p>The name of the action that will process the revision.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      */
     inline PutActionRevisionRequest& WithActionName(const char* value) { SetActionName(value); return *this;}
 
+
     /**
      * <p>Represents information about the version (or revision) of an action.</p>
      */
@@ -186,12 +190,16 @@ namespace Model
     inline PutActionRevisionRequest& WithActionRevision(ActionRevision&& value) { SetActionRevision(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     Aws::String m_actionName;
     bool m_actionNameHasBeenSet;
+
     ActionRevision m_actionRevision;
     bool m_actionRevisionHasBeenSet;
   };

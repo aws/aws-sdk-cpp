@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     ResendContactReachabilityEmailResult();
-    ResendContactReachabilityEmailResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResendContactReachabilityEmailResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResendContactReachabilityEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResendContactReachabilityEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The domain name for which you requested a confirmation email.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The domain name for which you requested a confirmation email.</p>
      */
     inline ResendContactReachabilityEmailResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>The email address for the registrant contact at the time that we sent the
@@ -118,6 +120,7 @@ namespace Model
      */
     inline ResendContactReachabilityEmailResult& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 
+
     /**
      * <p> <code>True</code> if the email address for the registrant contact has
      * already been verified, and <code>false</code> otherwise. If the email address
@@ -140,8 +143,11 @@ namespace Model
     inline ResendContactReachabilityEmailResult& WithIsAlreadyVerified(bool value) { SetIsAlreadyVerified(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
+
     Aws::String m_emailAddress;
+
     bool m_isAlreadyVerified;
   };
 

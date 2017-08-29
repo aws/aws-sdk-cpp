@@ -31,12 +31,12 @@ GetSSHPublicKeyResult::GetSSHPublicKeyResult()
 {
 }
 
-GetSSHPublicKeyResult::GetSSHPublicKeyResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetSSHPublicKeyResult::GetSSHPublicKeyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetSSHPublicKeyResult& GetSSHPublicKeyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetSSHPublicKeyResult& GetSSHPublicKeyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

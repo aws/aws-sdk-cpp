@@ -121,9 +121,9 @@ namespace Model
         typedef Aws::Utils::Outcome<CountOpenWorkflowExecutionsResult, Aws::Client::AWSError<SWFErrors>> CountOpenWorkflowExecutionsOutcome;
         typedef Aws::Utils::Outcome<CountPendingActivityTasksResult, Aws::Client::AWSError<SWFErrors>> CountPendingActivityTasksOutcome;
         typedef Aws::Utils::Outcome<CountPendingDecisionTasksResult, Aws::Client::AWSError<SWFErrors>> CountPendingDecisionTasksOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> DeprecateActivityTypeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> DeprecateDomainOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> DeprecateWorkflowTypeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> DeprecateActivityTypeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> DeprecateDomainOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> DeprecateWorkflowTypeOutcome;
         typedef Aws::Utils::Outcome<DescribeActivityTypeResult, Aws::Client::AWSError<SWFErrors>> DescribeActivityTypeOutcome;
         typedef Aws::Utils::Outcome<DescribeDomainResult, Aws::Client::AWSError<SWFErrors>> DescribeDomainOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkflowExecutionResult, Aws::Client::AWSError<SWFErrors>> DescribeWorkflowExecutionOutcome;
@@ -137,17 +137,17 @@ namespace Model
         typedef Aws::Utils::Outcome<PollForActivityTaskResult, Aws::Client::AWSError<SWFErrors>> PollForActivityTaskOutcome;
         typedef Aws::Utils::Outcome<PollForDecisionTaskResult, Aws::Client::AWSError<SWFErrors>> PollForDecisionTaskOutcome;
         typedef Aws::Utils::Outcome<RecordActivityTaskHeartbeatResult, Aws::Client::AWSError<SWFErrors>> RecordActivityTaskHeartbeatOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> RegisterActivityTypeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> RegisterDomainOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> RegisterWorkflowTypeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> RequestCancelWorkflowExecutionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> RespondActivityTaskCanceledOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> RespondActivityTaskCompletedOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> RespondActivityTaskFailedOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> RespondDecisionTaskCompletedOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> SignalWorkflowExecutionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> RegisterActivityTypeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> RegisterDomainOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> RegisterWorkflowTypeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> RequestCancelWorkflowExecutionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> RespondActivityTaskCanceledOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> RespondActivityTaskCompletedOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> RespondActivityTaskFailedOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> RespondDecisionTaskCompletedOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> SignalWorkflowExecutionOutcome;
         typedef Aws::Utils::Outcome<StartWorkflowExecutionResult, Aws::Client::AWSError<SWFErrors>> StartWorkflowExecutionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SWFErrors>> TerminateWorkflowExecutionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SWFErrors>> TerminateWorkflowExecutionOutcome;
 
         typedef std::future<CountClosedWorkflowExecutionsOutcome> CountClosedWorkflowExecutionsOutcomeCallable;
         typedef std::future<CountOpenWorkflowExecutionsOutcome> CountOpenWorkflowExecutionsOutcomeCallable;
@@ -240,22 +240,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SWFClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SWFClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SWFClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SWFClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        SWFClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        SWFClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~SWFClient();
+
 
         /**
          * <p>Returns the number of closed workflow executions within the given domain that
@@ -3071,7 +3072,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void CountClosedWorkflowExecutionsAsyncHelper(const Model::CountClosedWorkflowExecutionsRequest& request, const CountClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

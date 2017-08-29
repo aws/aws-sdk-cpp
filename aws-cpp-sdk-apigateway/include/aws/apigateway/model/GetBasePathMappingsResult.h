@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetBasePathMappingsResult();
-    GetBasePathMappingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBasePathMappingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBasePathMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBasePathMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetPosition() const{ return m_position; }
@@ -71,6 +72,7 @@ namespace Model
 
     
     inline GetBasePathMappingsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+
 
     /**
      * <p>The current page of elements from this collection.</p>
@@ -108,7 +110,9 @@ namespace Model
     inline GetBasePathMappingsResult& AddItems(BasePathMapping&& value) { m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_position;
+
     Aws::Vector<BasePathMapping> m_items;
   };
 

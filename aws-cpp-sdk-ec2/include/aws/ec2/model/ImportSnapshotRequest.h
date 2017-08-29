@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The client-specific data.</p>
      */
@@ -67,6 +68,7 @@ namespace Model
      * <p>The client-specific data.</p>
      */
     inline ImportSnapshotRequest& WithClientData(ClientData&& value) { SetClientData(std::move(value)); return *this;}
+
 
     /**
      * <p>Token to enable idempotency for VM import requests.</p>
@@ -103,6 +105,7 @@ namespace Model
      */
     inline ImportSnapshotRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The description string for the import snapshot task.</p>
      */
@@ -138,6 +141,7 @@ namespace Model
      */
     inline ImportSnapshotRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Information about the disk container.</p>
      */
@@ -163,6 +167,7 @@ namespace Model
      */
     inline ImportSnapshotRequest& WithDiskContainer(SnapshotDiskContainer&& value) { SetDiskContainer(std::move(value)); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -186,6 +191,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ImportSnapshotRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The name of the role to use when not using the default role, 'vmimport'.</p>
@@ -223,16 +229,22 @@ namespace Model
     inline ImportSnapshotRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
   private:
+
     ClientData m_clientData;
     bool m_clientDataHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     SnapshotDiskContainer m_diskContainer;
     bool m_diskContainerHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
   };

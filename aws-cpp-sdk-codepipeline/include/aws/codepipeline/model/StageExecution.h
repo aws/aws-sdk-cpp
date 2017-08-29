@@ -47,6 +47,7 @@ namespace Model
     StageExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the pipeline execution associated with the stage.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline StageExecution& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
 
+
     /**
      * <p>The status of the stage, or for a completed stage, the last status of the
      * stage.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline StageExecution& WithStatus(StageExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_pipelineExecutionId;
     bool m_pipelineExecutionIdHasBeenSet;
+
     StageExecutionStatus m_status;
     bool m_statusHasBeenSet;
   };

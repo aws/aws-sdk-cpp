@@ -30,12 +30,12 @@ TagResourcesResult::TagResourcesResult()
 {
 }
 
-TagResourcesResult::TagResourcesResult(const AmazonWebServiceResult<JsonValue>& result)
+TagResourcesResult::TagResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-TagResourcesResult& TagResourcesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TagResourcesResult& TagResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FailedResourcesMap"))

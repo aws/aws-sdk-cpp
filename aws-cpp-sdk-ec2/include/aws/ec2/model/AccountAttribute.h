@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the account attribute.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The name of the account attribute.</p>
      */
     inline AccountAttribute& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+
 
     /**
      * <p>One or more values for the account attribute.</p>
@@ -121,8 +123,10 @@ namespace Model
     inline AccountAttribute& AddAttributeValues(AccountAttributeValue&& value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     Aws::Vector<AccountAttributeValue> m_attributeValues;
     bool m_attributeValuesHasBeenSet;
   };

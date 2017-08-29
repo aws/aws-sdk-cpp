@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The app stack ID. If you use this parameter, <code>DescribeApps</code>
      * returns a description of the apps in the specified stack.</p>
@@ -78,6 +79,7 @@ namespace Model
      * returns a description of the apps in the specified stack.</p>
      */
     inline DescribeAppsRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>An array of app IDs for the apps to be described. If you use this parameter,
@@ -136,8 +138,10 @@ namespace Model
     inline DescribeAppsRequest& AddAppIds(const char* value) { m_appIdsHasBeenSet = true; m_appIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_appIds;
     bool m_appIdsHasBeenSet;
   };

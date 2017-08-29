@@ -31,12 +31,12 @@ DescribeIamInstanceProfileAssociationsResponse::DescribeIamInstanceProfileAssoci
 {
 }
 
-DescribeIamInstanceProfileAssociationsResponse::DescribeIamInstanceProfileAssociationsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeIamInstanceProfileAssociationsResponse::DescribeIamInstanceProfileAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeIamInstanceProfileAssociationsResponse& DescribeIamInstanceProfileAssociationsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeIamInstanceProfileAssociationsResponse& DescribeIamInstanceProfileAssociationsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -46,6 +46,7 @@ namespace Model
     DiscoveredResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The configurationId in ADS that uniquely identifies the on-premise
      * resource.</p>
@@ -87,6 +88,7 @@ namespace Model
      * resource.</p>
      */
     inline DiscoveredResource& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
+
 
     /**
      * <p>A description that can be free-form text to record additional detail about
@@ -131,8 +133,10 @@ namespace Model
     inline DiscoveredResource& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_configurationId;
     bool m_configurationIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

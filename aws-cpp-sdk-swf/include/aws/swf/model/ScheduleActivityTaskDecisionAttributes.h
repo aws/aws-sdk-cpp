@@ -66,6 +66,7 @@ namespace Model
     ScheduleActivityTaskDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The type of the activity task to schedule.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      * <p> The type of the activity task to schedule.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithActivityType(ActivityType&& value) { SetActivityType(std::move(value)); return *this;}
+
 
     /**
      * <p> The <code>activityId</code> of the activity task.</p> <p>The specified
@@ -161,6 +163,7 @@ namespace Model
      */
     inline ScheduleActivityTaskDecisionAttributes& WithActivityId(const char* value) { SetActivityId(value); return *this;}
 
+
     /**
      * <p>Data attached to the event that can be used by the decider in subsequent
      * workflow tasks. This data isn't sent to the activity.</p>
@@ -203,6 +206,7 @@ namespace Model
      */
     inline ScheduleActivityTaskDecisionAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 
+
     /**
      * <p>The input provided to the activity task.</p>
      */
@@ -237,6 +241,7 @@ namespace Model
      * <p>The input provided to the activity task.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithInput(const char* value) { SetInput(value); return *this;}
+
 
     /**
      * <p>The maximum duration for this activity task.</p> <p>The duration is specified
@@ -315,6 +320,7 @@ namespace Model
      */
     inline ScheduleActivityTaskDecisionAttributes& WithScheduleToCloseTimeout(const char* value) { SetScheduleToCloseTimeout(value); return *this;}
 
+
     /**
      * <p>If set, specifies the name of the task list in which to schedule the activity
      * task. If not specified, the <code>defaultTaskList</code> registered with the
@@ -384,6 +390,7 @@ namespace Model
      * contain the literal string <code>arn</code>.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+
 
     /**
      * <p> If set, specifies the priority with which the activity task is to be
@@ -468,6 +475,7 @@ namespace Model
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
+
 
     /**
      * <p> If set, specifies the maximum duration the activity task can wait to be
@@ -567,6 +575,7 @@ namespace Model
      */
     inline ScheduleActivityTaskDecisionAttributes& WithScheduleToStartTimeout(const char* value) { SetScheduleToStartTimeout(value); return *this;}
 
+
     /**
      * <p>If set, specifies the maximum duration a worker may take to process this
      * activity task. This overrides the default start-to-close timeout specified when
@@ -658,6 +667,7 @@ namespace Model
      */
     inline ScheduleActivityTaskDecisionAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p>If set, specifies the maximum time before which a worker processing a task of
      * this type must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If
@@ -743,24 +753,34 @@ namespace Model
     inline ScheduleActivityTaskDecisionAttributes& WithHeartbeatTimeout(const char* value) { SetHeartbeatTimeout(value); return *this;}
 
   private:
+
     ActivityType m_activityType;
     bool m_activityTypeHasBeenSet;
+
     Aws::String m_activityId;
     bool m_activityIdHasBeenSet;
+
     Aws::String m_control;
     bool m_controlHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     Aws::String m_scheduleToCloseTimeout;
     bool m_scheduleToCloseTimeoutHasBeenSet;
+
     TaskList m_taskList;
     bool m_taskListHasBeenSet;
+
     Aws::String m_taskPriority;
     bool m_taskPriorityHasBeenSet;
+
     Aws::String m_scheduleToStartTimeout;
     bool m_scheduleToStartTimeoutHasBeenSet;
+
     Aws::String m_startToCloseTimeout;
     bool m_startToCloseTimeoutHasBeenSet;
+
     Aws::String m_heartbeatTimeout;
     bool m_heartbeatTimeoutHasBeenSet;
   };

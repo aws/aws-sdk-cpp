@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DeleteCustomMetadataRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the resource, either a document or folder.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The ID of the resource, either a document or folder.</p>
      */
     inline DeleteCustomMetadataRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>The ID of the version, if the custom metadata is being deleted from a
@@ -162,6 +165,7 @@ namespace Model
      */
     inline DeleteCustomMetadataRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     /**
      * <p>List of properties to remove.</p>
      */
@@ -202,6 +206,7 @@ namespace Model
      */
     inline DeleteCustomMetadataRequest& AddKeys(const char* value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
 
+
     /**
      * <p>Flag to indicate removal of all custom metadata properties from the specified
      * resource.</p>
@@ -221,14 +226,19 @@ namespace Model
     inline DeleteCustomMetadataRequest& WithDeleteAll(bool value) { SetDeleteAll(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_keys;
     bool m_keysHasBeenSet;
+
     bool m_deleteAll;
     bool m_deleteAllHasBeenSet;
   };

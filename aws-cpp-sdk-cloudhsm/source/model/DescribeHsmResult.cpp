@@ -32,14 +32,14 @@ DescribeHsmResult::DescribeHsmResult() :
 {
 }
 
-DescribeHsmResult::DescribeHsmResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeHsmResult::DescribeHsmResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(HsmStatus::NOT_SET),
     m_subscriptionType(SubscriptionType::NOT_SET)
 {
   *this = result;
 }
 
-DescribeHsmResult& DescribeHsmResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeHsmResult& DescribeHsmResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("HsmArn"))

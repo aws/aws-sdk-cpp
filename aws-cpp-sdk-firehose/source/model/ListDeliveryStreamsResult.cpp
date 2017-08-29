@@ -31,13 +31,13 @@ ListDeliveryStreamsResult::ListDeliveryStreamsResult() :
 {
 }
 
-ListDeliveryStreamsResult::ListDeliveryStreamsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListDeliveryStreamsResult::ListDeliveryStreamsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_hasMoreDeliveryStreams(false)
 {
   *this = result;
 }
 
-ListDeliveryStreamsResult& ListDeliveryStreamsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListDeliveryStreamsResult& ListDeliveryStreamsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DeliveryStreamNames"))

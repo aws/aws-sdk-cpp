@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeElasticsearchDomainResult();
-    DescribeElasticsearchDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeElasticsearchDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticsearchDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticsearchDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The current status of the Elasticsearch domain.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeElasticsearchDomainResult& WithDomainStatus(ElasticsearchDomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
 
   private:
+
     ElasticsearchDomainStatus m_domainStatus;
   };
 

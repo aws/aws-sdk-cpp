@@ -30,12 +30,12 @@ DeleteSnapshotScheduleResult::DeleteSnapshotScheduleResult()
 {
 }
 
-DeleteSnapshotScheduleResult::DeleteSnapshotScheduleResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSnapshotScheduleResult::DeleteSnapshotScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteSnapshotScheduleResult& DeleteSnapshotScheduleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSnapshotScheduleResult& DeleteSnapshotScheduleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("VolumeARN"))

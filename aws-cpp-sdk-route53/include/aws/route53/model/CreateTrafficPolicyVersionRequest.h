@@ -38,6 +38,7 @@ namespace Model
     CreateTrafficPolicyVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the traffic policy for which you want to create a new version.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The ID of the traffic policy for which you want to create a new version.</p>
      */
     inline CreateTrafficPolicyVersionRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The definition of this version of the traffic policy, in JSON format. You
@@ -122,6 +124,7 @@ namespace Model
      */
     inline CreateTrafficPolicyVersionRequest& WithDocument(const char* value) { SetDocument(value); return *this;}
 
+
     /**
      * <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code>
      * request, if any.</p>
@@ -165,10 +168,13 @@ namespace Model
     inline CreateTrafficPolicyVersionRequest& WithComment(const char* value) { SetComment(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_document;
     bool m_documentHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
   };

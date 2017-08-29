@@ -30,12 +30,12 @@ DetachPolicyResult::DetachPolicyResult()
 {
 }
 
-DetachPolicyResult::DetachPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+DetachPolicyResult::DetachPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DetachPolicyResult& DetachPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DetachPolicyResult& DetachPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PutRecordResult();
-    PutRecordResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRecordResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the record.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline PutRecordResult& WithRecordId(const char* value) { SetRecordId(value); return *this;}
 
   private:
+
     Aws::String m_recordId;
   };
 

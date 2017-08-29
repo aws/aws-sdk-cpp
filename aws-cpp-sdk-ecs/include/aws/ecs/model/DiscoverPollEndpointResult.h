@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DiscoverPollEndpointResult();
-    DiscoverPollEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DiscoverPollEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DiscoverPollEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DiscoverPollEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The endpoint for the Amazon ECS agent to poll.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The endpoint for the Amazon ECS agent to poll.</p>
      */
     inline DiscoverPollEndpointResult& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+
 
     /**
      * <p>The telemetry endpoint for the Amazon ECS agent.</p>
@@ -112,7 +114,9 @@ namespace Model
     inline DiscoverPollEndpointResult& WithTelemetryEndpoint(const char* value) { SetTelemetryEndpoint(value); return *this;}
 
   private:
+
     Aws::String m_endpoint;
+
     Aws::String m_telemetryEndpoint;
   };
 

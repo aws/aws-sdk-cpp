@@ -47,6 +47,7 @@ namespace Model
     ResourceTag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the ARN of the resource.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>Specifies the ARN of the resource.</p>
      */
     inline ResourceTag& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>A list of tags.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline ResourceTag& AddTagsList(Tag&& value) { m_tagsListHasBeenSet = true; m_tagsList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<Tag> m_tagsList;
     bool m_tagsListHasBeenSet;
   };

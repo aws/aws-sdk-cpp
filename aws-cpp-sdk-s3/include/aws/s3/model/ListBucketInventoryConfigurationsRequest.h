@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * The name of the bucket containing the inventory configurations to retrieve.
      */
@@ -74,6 +75,7 @@ namespace Model
      * The name of the bucket containing the inventory configurations to retrieve.
      */
     inline ListBucketInventoryConfigurationsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * The marker used to continue an inventory configuration listing that has been
@@ -132,8 +134,10 @@ namespace Model
     inline ListBucketInventoryConfigurationsRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_continuationToken;
     bool m_continuationTokenHasBeenSet;
   };

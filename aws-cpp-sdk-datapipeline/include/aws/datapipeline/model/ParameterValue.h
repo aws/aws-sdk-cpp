@@ -45,6 +45,7 @@ namespace Model
     ParameterValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the parameter value.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ID of the parameter value.</p>
      */
     inline ParameterValue& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The field value, expressed as a String.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline ParameterValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet;
   };

@@ -51,6 +51,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::Vector<TopicConfiguration>& GetTopicConfigurations() const{ return m_topicConfigurations; }
 
@@ -72,6 +73,7 @@ namespace Model
     
     inline NotificationConfiguration& AddTopicConfigurations(TopicConfiguration&& value) { m_topicConfigurationsHasBeenSet = true; m_topicConfigurations.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::Vector<QueueConfiguration>& GetQueueConfigurations() const{ return m_queueConfigurations; }
 
@@ -92,6 +94,7 @@ namespace Model
 
     
     inline NotificationConfiguration& AddQueueConfigurations(QueueConfiguration&& value) { m_queueConfigurationsHasBeenSet = true; m_queueConfigurations.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::Vector<LambdaFunctionConfiguration>& GetLambdaFunctionConfigurations() const{ return m_lambdaFunctionConfigurations; }
@@ -115,10 +118,13 @@ namespace Model
     inline NotificationConfiguration& AddLambdaFunctionConfigurations(LambdaFunctionConfiguration&& value) { m_lambdaFunctionConfigurationsHasBeenSet = true; m_lambdaFunctionConfigurations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<TopicConfiguration> m_topicConfigurations;
     bool m_topicConfigurationsHasBeenSet;
+
     Aws::Vector<QueueConfiguration> m_queueConfigurations;
     bool m_queueConfigurationsHasBeenSet;
+
     Aws::Vector<LambdaFunctionConfiguration> m_lambdaFunctionConfigurations;
     bool m_lambdaFunctionConfigurationsHasBeenSet;
   };

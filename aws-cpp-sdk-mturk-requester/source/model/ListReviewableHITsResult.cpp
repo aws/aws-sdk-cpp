@@ -31,13 +31,13 @@ ListReviewableHITsResult::ListReviewableHITsResult() :
 {
 }
 
-ListReviewableHITsResult::ListReviewableHITsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListReviewableHITsResult::ListReviewableHITsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_numResults(0)
 {
   *this = result;
 }
 
-ListReviewableHITsResult& ListReviewableHITsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListReviewableHITsResult& ListReviewableHITsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

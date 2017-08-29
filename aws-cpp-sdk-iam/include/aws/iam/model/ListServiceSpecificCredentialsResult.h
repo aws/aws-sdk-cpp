@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListServiceSpecificCredentialsResult();
-    ListServiceSpecificCredentialsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListServiceSpecificCredentialsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListServiceSpecificCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListServiceSpecificCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of structures that each contain details about a service-specific
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListServiceSpecificCredentialsResult& AddServiceSpecificCredentials(ServiceSpecificCredentialMetadata&& value) { m_serviceSpecificCredentials.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -101,7 +103,9 @@ namespace Model
     inline ListServiceSpecificCredentialsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ServiceSpecificCredentialMetadata> m_serviceSpecificCredentials;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -63,6 +63,7 @@ namespace Model
     RoutingStrategy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Type of routing strategy.</p> <p>Possible routing types include the
      * following:</p> <ul> <li> <p> <b>SIMPLE</b> – The alias resolves to one specific
@@ -118,6 +119,7 @@ namespace Model
      */
     inline RoutingStrategy& WithType(RoutingStrategyType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>Unique identifier for a fleet that the alias points to.</p>
      */
@@ -152,6 +154,7 @@ namespace Model
      * <p>Unique identifier for a fleet that the alias points to.</p>
      */
     inline RoutingStrategy& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Message text to be used with a terminal routing strategy.</p>
@@ -189,10 +192,13 @@ namespace Model
     inline RoutingStrategy& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     RoutingStrategyType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

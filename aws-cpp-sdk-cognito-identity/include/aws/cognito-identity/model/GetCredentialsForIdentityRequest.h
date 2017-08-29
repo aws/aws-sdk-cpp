@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline GetCredentialsForIdentityRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
@@ -148,6 +150,7 @@ namespace Model
      */
     inline GetCredentialsForIdentityRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins.emplace(key, value); return *this; }
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles
      * were received in the token from the identity provider. For example, a SAML-based
@@ -205,10 +208,13 @@ namespace Model
     inline GetCredentialsForIdentityRequest& WithCustomRoleArn(const char* value) { SetCustomRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_logins;
     bool m_loginsHasBeenSet;
+
     Aws::String m_customRoleArn;
     bool m_customRoleArnHasBeenSet;
   };

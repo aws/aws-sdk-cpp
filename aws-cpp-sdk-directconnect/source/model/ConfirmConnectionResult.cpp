@@ -31,13 +31,13 @@ ConfirmConnectionResult::ConfirmConnectionResult() :
 {
 }
 
-ConfirmConnectionResult::ConfirmConnectionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ConfirmConnectionResult::ConfirmConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_connectionState(ConnectionState::NOT_SET)
 {
   *this = result;
 }
 
-ConfirmConnectionResult& ConfirmConnectionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ConfirmConnectionResult& ConfirmConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("connectionState"))

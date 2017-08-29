@@ -41,6 +41,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline int GetMaximumReplicationCount() const{ return m_maximumReplicationCount; }
 
@@ -49,6 +50,7 @@ namespace Model
 
     
     inline Limits& WithMaximumReplicationCount(int value) { SetMaximumReplicationCount(value); return *this;}
+
 
     
     inline int GetMaximumPartitionCount() const{ return m_maximumPartitionCount; }
@@ -60,8 +62,10 @@ namespace Model
     inline Limits& WithMaximumPartitionCount(int value) { SetMaximumPartitionCount(value); return *this;}
 
   private:
+
     int m_maximumReplicationCount;
     bool m_maximumReplicationCountHasBeenSet;
+
     int m_maximumPartitionCount;
     bool m_maximumPartitionCountHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The resource type.</p>
      */
@@ -67,6 +68,7 @@ namespace Model
      * <p>The resource type.</p>
      */
     inline GetResourceConfigHistoryRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
@@ -103,6 +105,7 @@ namespace Model
      */
     inline GetResourceConfigHistoryRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The time stamp that indicates a later time. If not specified, current time is
      * taken.</p>
@@ -132,6 +135,7 @@ namespace Model
      * taken.</p>
      */
     inline GetResourceConfigHistoryRequest& WithLaterTime(Aws::Utils::DateTime&& value) { SetLaterTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time stamp that indicates an earlier time. If not specified, the action
@@ -168,6 +172,7 @@ namespace Model
      */
     inline GetResourceConfigHistoryRequest& WithEarlierTime(Aws::Utils::DateTime&& value) { SetEarlierTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The chronological order for configuration items listed. By default the
      * results are listed in reverse chronological order.</p>
@@ -198,6 +203,7 @@ namespace Model
      */
     inline GetResourceConfigHistoryRequest& WithChronologicalOrder(ChronologicalOrder&& value) { SetChronologicalOrder(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of configuration items returned on each page. The default
      * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
@@ -218,6 +224,7 @@ namespace Model
      * uses the default.</p>
      */
     inline GetResourceConfigHistoryRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
@@ -262,18 +269,25 @@ namespace Model
     inline GetResourceConfigHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Utils::DateTime m_laterTime;
     bool m_laterTimeHasBeenSet;
+
     Aws::Utils::DateTime m_earlierTime;
     bool m_earlierTimeHasBeenSet;
+
     ChronologicalOrder m_chronologicalOrder;
     bool m_chronologicalOrderHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

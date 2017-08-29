@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the filter. The valid values are:
      * <code>"auto-scaling-group"</code>, <code>"key"</code>, <code>"value"</code>, and
@@ -98,6 +99,7 @@ namespace Model
      */
     inline Filter& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The value of the filter.</p>
      */
@@ -139,8 +141,10 @@ namespace Model
     inline Filter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

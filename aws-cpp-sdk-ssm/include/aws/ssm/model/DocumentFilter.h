@@ -46,6 +46,7 @@ namespace Model
     DocumentFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the filter.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the filter.</p>
      */
     inline DocumentFilter& WithKey(DocumentFilterKey&& value) { SetKey(std::move(value)); return *this;}
+
 
     /**
      * <p>The value of the filter.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline DocumentFilter& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     DocumentFilterKey m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

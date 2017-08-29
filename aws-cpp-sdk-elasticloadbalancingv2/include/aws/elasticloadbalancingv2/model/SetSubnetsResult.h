@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     SetSubnetsResult();
-    SetSubnetsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetSubnetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetSubnetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetSubnetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the subnet and Availability Zone.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline SetSubnetsResult& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZones.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline SetSubnetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<AvailabilityZone> m_availabilityZones;
+
     ResponseMetadata m_responseMetadata;
   };
 

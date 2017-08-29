@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline VerifyTrustRequest& WithTrustId(const char* value) { SetTrustId(value); return *this;}
 
   private:
+
     Aws::String m_trustId;
     bool m_trustIdHasBeenSet;
   };

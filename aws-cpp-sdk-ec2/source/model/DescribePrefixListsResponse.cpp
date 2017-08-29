@@ -31,12 +31,12 @@ DescribePrefixListsResponse::DescribePrefixListsResponse()
 {
 }
 
-DescribePrefixListsResponse::DescribePrefixListsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribePrefixListsResponse::DescribePrefixListsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribePrefixListsResponse& DescribePrefixListsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribePrefixListsResponse& DescribePrefixListsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -51,6 +51,7 @@ namespace Model
     Activity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The activity type.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline Activity& WithType(ActivityType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The timestamp when the action was performed.</p>
      */
@@ -100,6 +102,7 @@ namespace Model
      * <p>The timestamp when the action was performed.</p>
      */
     inline Activity& WithTimeStamp(Aws::Utils::DateTime&& value) { SetTimeStamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the organization.</p>
@@ -136,6 +139,7 @@ namespace Model
      */
     inline Activity& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 
+
     /**
      * <p>The user who performed the action.</p>
      */
@@ -160,6 +164,7 @@ namespace Model
      * <p>The user who performed the action.</p>
      */
     inline Activity& WithInitiator(UserMetadata&& value) { SetInitiator(std::move(value)); return *this;}
+
 
     /**
      * <p>The list of users or groups impacted by this action. This is an optional
@@ -196,6 +201,7 @@ namespace Model
      */
     inline Activity& WithParticipants(Participants&& value) { SetParticipants(std::move(value)); return *this;}
 
+
     /**
      * <p>The metadata of the resource involved in the user action.</p>
      */
@@ -220,6 +226,7 @@ namespace Model
      * <p>The metadata of the resource involved in the user action.</p>
      */
     inline Activity& WithResourceMetadata(ResourceMetadata&& value) { SetResourceMetadata(std::move(value)); return *this;}
+
 
     /**
      * <p>The original parent of the resource. This is an optional field and is filled
@@ -250,6 +257,7 @@ namespace Model
      * for move activities.</p>
      */
     inline Activity& WithOriginalParent(ResourceMetadata&& value) { SetOriginalParent(std::move(value)); return *this;}
+
 
     /**
      * <p>Metadata of the commenting activity. This is an optional field and is filled
@@ -282,20 +290,28 @@ namespace Model
     inline Activity& WithCommentMetadata(CommentMetadata&& value) { SetCommentMetadata(std::move(value)); return *this;}
 
   private:
+
     ActivityType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Utils::DateTime m_timeStamp;
     bool m_timeStampHasBeenSet;
+
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet;
+
     UserMetadata m_initiator;
     bool m_initiatorHasBeenSet;
+
     Participants m_participants;
     bool m_participantsHasBeenSet;
+
     ResourceMetadata m_resourceMetadata;
     bool m_resourceMetadataHasBeenSet;
+
     ResourceMetadata m_originalParent;
     bool m_originalParentHasBeenSet;
+
     CommentMetadata m_commentMetadata;
     bool m_commentMetadataHasBeenSet;
   };

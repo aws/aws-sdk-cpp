@@ -43,6 +43,7 @@ namespace Model
     EndpointDemographic& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The version of the application associated with the endpoint.
      */
@@ -77,6 +78,7 @@ namespace Model
      * The version of the application associated with the endpoint.
      */
     inline EndpointDemographic& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
+
 
     /**
      * The endpoint locale in the following format: The ISO 639-1 alpha-2 code,
@@ -127,6 +129,7 @@ namespace Model
      */
     inline EndpointDemographic& WithLocale(const char* value) { SetLocale(value); return *this;}
 
+
     /**
      * The endpoint make, such as such as Apple or Samsung.
      */
@@ -161,6 +164,7 @@ namespace Model
      * The endpoint make, such as such as Apple or Samsung.
      */
     inline EndpointDemographic& WithMake(const char* value) { SetMake(value); return *this;}
+
 
     /**
      * The endpoint model, such as iPhone.
@@ -197,6 +201,7 @@ namespace Model
      */
     inline EndpointDemographic& WithModel(const char* value) { SetModel(value); return *this;}
 
+
     /**
      * The endpoint model version.
      */
@@ -231,6 +236,7 @@ namespace Model
      * The endpoint model version.
      */
     inline EndpointDemographic& WithModelVersion(const char* value) { SetModelVersion(value); return *this;}
+
 
     /**
      * The endpoint platform, such as ios or android.
@@ -267,6 +273,7 @@ namespace Model
      */
     inline EndpointDemographic& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
+
     /**
      * The endpoint platform version.
      */
@@ -301,6 +308,7 @@ namespace Model
      * The endpoint platform version.
      */
     inline EndpointDemographic& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+
 
     /**
      * The timezone of the endpoint. Specified as a tz database value, such as
@@ -345,20 +353,28 @@ namespace Model
     inline EndpointDemographic& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
   private:
+
     Aws::String m_appVersion;
     bool m_appVersionHasBeenSet;
+
     Aws::String m_locale;
     bool m_localeHasBeenSet;
+
     Aws::String m_make;
     bool m_makeHasBeenSet;
+
     Aws::String m_model;
     bool m_modelHasBeenSet;
+
     Aws::String m_modelVersion;
     bool m_modelVersionHasBeenSet;
+
     Aws::String m_platform;
     bool m_platformHasBeenSet;
+
     Aws::String m_platformVersion;
     bool m_platformVersionHasBeenSet;
+
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
     GetDistribution2017_03_25Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The distribution's ID.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline GetDistribution2017_03_25Request& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

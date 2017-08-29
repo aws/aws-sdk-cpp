@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the DevEndpoint to be updated.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the DevEndpoint to be updated.</p>
      */
     inline UpdateDevEndpointRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+
 
     /**
      * <p>The public key for the DevEndpoint to use.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline UpdateDevEndpointRequest& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
 
+
     /**
      * <p>Custom Python or Java custom libraries to be loaded in the DevEndpoint.</p>
      */
@@ -133,10 +136,13 @@ namespace Model
     inline UpdateDevEndpointRequest& WithCustomLibraries(DevEndpointCustomLibraries&& value) { SetCustomLibraries(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_endpointName;
     bool m_endpointNameHasBeenSet;
+
     Aws::String m_publicKey;
     bool m_publicKeyHasBeenSet;
+
     DevEndpointCustomLibraries m_customLibraries;
     bool m_customLibrariesHasBeenSet;
   };

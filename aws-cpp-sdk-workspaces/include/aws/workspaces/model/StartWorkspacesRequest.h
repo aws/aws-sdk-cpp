@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The requests.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline StartWorkspacesRequest& AddStartWorkspaceRequests(StartRequest&& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<StartRequest> m_startWorkspaceRequests;
     bool m_startWorkspaceRequestsHasBeenSet;
   };

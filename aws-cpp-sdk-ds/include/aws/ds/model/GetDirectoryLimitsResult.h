@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetDirectoryLimitsResult();
-    GetDirectoryLimitsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDirectoryLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDirectoryLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDirectoryLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
@@ -78,6 +79,7 @@ namespace Model
     inline GetDirectoryLimitsResult& WithDirectoryLimits(DirectoryLimits&& value) { SetDirectoryLimits(std::move(value)); return *this;}
 
   private:
+
     DirectoryLimits m_directoryLimits;
   };
 

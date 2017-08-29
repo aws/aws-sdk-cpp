@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListIdentitiesResult();
-    ListIdentitiesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListIdentitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of identities.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ListIdentitiesResult& AddIdentities(const char* value) { m_identities.push_back(value); return *this; }
 
+
     /**
      * <p>The token used for pagination.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      */
     inline ListIdentitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -140,8 +143,11 @@ namespace Model
     inline ListIdentitiesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_identities;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

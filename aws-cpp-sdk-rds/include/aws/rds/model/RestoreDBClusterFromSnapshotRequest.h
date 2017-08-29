@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Provides the list of EC2 Availability Zones that instances in the restored DB
      * cluster can be created in.</p>
@@ -90,6 +91,7 @@ namespace Model
      * cluster can be created in.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
 
     /**
      * <p>The name of the DB cluster to create from the DB cluster snapshot. This
@@ -161,6 +163,7 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The identifier for the DB cluster snapshot to restore from.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric
@@ -224,6 +227,7 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
 
+
     /**
      * <p>The database engine to use for the new DB cluster.</p> <p>Default: The same
      * as source</p> <p>Constraint: Must be compatible with the engine of the
@@ -273,6 +277,7 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
+
     /**
      * <p>The version of the database engine to use for the new DB cluster.</p>
      */
@@ -308,6 +313,7 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
@@ -328,6 +334,7 @@ namespace Model
      * port as the original DB cluster.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The name of the DB subnet group to use for the new DB cluster.</p>
@@ -385,6 +392,7 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>The database name for the restored DB cluster.</p>
      */
@@ -420,6 +428,7 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>The name of the option group to use for the restored DB cluster.</p>
      */
@@ -454,6 +463,7 @@ namespace Model
      * <p>The name of the option group to use for the restored DB cluster.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+
 
     /**
      * <p>A list of VPC security groups that the new DB cluster will belong to.</p>
@@ -495,6 +505,7 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The tags to be assigned to the restored DB cluster.</p>
      */
@@ -529,6 +540,7 @@ namespace Model
      * <p>The tags to be assigned to the restored DB cluster.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The KMS key identifier to use when restoring an encrypted DB cluster from a
@@ -642,6 +654,7 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts, and otherwise false.</p>
@@ -664,30 +677,43 @@ namespace Model
     inline RestoreDBClusterFromSnapshotRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };

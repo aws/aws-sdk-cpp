@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ScheduledInstance& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The date when the Scheduled Instance was purchased.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The date when the Scheduled Instance was purchased.</p>
      */
     inline ScheduledInstance& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The hourly price for a single instance.</p>
@@ -145,6 +148,7 @@ namespace Model
      */
     inline ScheduledInstance& WithHourlyPrice(const char* value) { SetHourlyPrice(value); return *this;}
 
+
     /**
      * <p>The number of instances.</p>
      */
@@ -159,6 +163,7 @@ namespace Model
      * <p>The number of instances.</p>
      */
     inline ScheduledInstance& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>The instance type.</p>
@@ -195,6 +200,7 @@ namespace Model
      */
     inline ScheduledInstance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
      */
@@ -230,6 +236,7 @@ namespace Model
      */
     inline ScheduledInstance& WithNetworkPlatform(const char* value) { SetNetworkPlatform(value); return *this;}
 
+
     /**
      * <p>The time for the next schedule to start.</p>
      */
@@ -254,6 +261,7 @@ namespace Model
      * <p>The time for the next schedule to start.</p>
      */
     inline ScheduledInstance& WithNextSlotStartTime(Aws::Utils::DateTime&& value) { SetNextSlotStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
@@ -290,6 +298,7 @@ namespace Model
      */
     inline ScheduledInstance& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
+
     /**
      * <p>The time that the previous schedule ended or will end.</p>
      */
@@ -315,6 +324,7 @@ namespace Model
      */
     inline ScheduledInstance& WithPreviousSlotEndTime(Aws::Utils::DateTime&& value) { SetPreviousSlotEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The schedule recurrence.</p>
      */
@@ -339,6 +349,7 @@ namespace Model
      * <p>The schedule recurrence.</p>
      */
     inline ScheduledInstance& WithRecurrence(ScheduledInstanceRecurrence&& value) { SetRecurrence(std::move(value)); return *this;}
+
 
     /**
      * <p>The Scheduled Instance ID.</p>
@@ -375,6 +386,7 @@ namespace Model
      */
     inline ScheduledInstance& WithScheduledInstanceId(const char* value) { SetScheduledInstanceId(value); return *this;}
 
+
     /**
      * <p>The number of hours in the schedule.</p>
      */
@@ -389,6 +401,7 @@ namespace Model
      * <p>The number of hours in the schedule.</p>
      */
     inline ScheduledInstance& WithSlotDurationInHours(int value) { SetSlotDurationInHours(value); return *this;}
+
 
     /**
      * <p>The end date for the Scheduled Instance.</p>
@@ -415,6 +428,7 @@ namespace Model
      */
     inline ScheduledInstance& WithTermEndDate(Aws::Utils::DateTime&& value) { SetTermEndDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The start date for the Scheduled Instance.</p>
      */
@@ -440,6 +454,7 @@ namespace Model
      */
     inline ScheduledInstance& WithTermStartDate(Aws::Utils::DateTime&& value) { SetTermStartDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The total number of hours for a single instance for the entire term.</p>
      */
@@ -456,34 +471,49 @@ namespace Model
     inline ScheduledInstance& WithTotalScheduledInstanceHours(int value) { SetTotalScheduledInstanceHours(value); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     Aws::String m_hourlyPrice;
     bool m_hourlyPriceHasBeenSet;
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_networkPlatform;
     bool m_networkPlatformHasBeenSet;
+
     Aws::Utils::DateTime m_nextSlotStartTime;
     bool m_nextSlotStartTimeHasBeenSet;
+
     Aws::String m_platform;
     bool m_platformHasBeenSet;
+
     Aws::Utils::DateTime m_previousSlotEndTime;
     bool m_previousSlotEndTimeHasBeenSet;
+
     ScheduledInstanceRecurrence m_recurrence;
     bool m_recurrenceHasBeenSet;
+
     Aws::String m_scheduledInstanceId;
     bool m_scheduledInstanceIdHasBeenSet;
+
     int m_slotDurationInHours;
     bool m_slotDurationInHoursHasBeenSet;
+
     Aws::Utils::DateTime m_termEndDate;
     bool m_termEndDateHasBeenSet;
+
     Aws::Utils::DateTime m_termStartDate;
     bool m_termStartDateHasBeenSet;
+
     int m_totalScheduledInstanceHours;
     bool m_totalScheduledInstanceHoursHasBeenSet;
   };

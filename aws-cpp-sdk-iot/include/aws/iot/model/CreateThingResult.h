@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateThingResult();
-    CreateThingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateThingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the new thing.</p>
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the new thing.</p>
      */
     inline CreateThingResult& WithThingName(const char* value) { SetThingName(value); return *this;}
+
 
     /**
      * <p>The ARN of the new thing.</p>
@@ -117,7 +119,9 @@ namespace Model
     inline CreateThingResult& WithThingArn(const char* value) { SetThingArn(value); return *this;}
 
   private:
+
     Aws::String m_thingName;
+
     Aws::String m_thingArn;
   };
 

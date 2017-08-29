@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -67,6 +68,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline AuthorizeSecurityGroupEgressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The ID of the security group.</p>
@@ -102,6 +104,7 @@ namespace Model
      * <p>The ID of the security group.</p>
      */
     inline AuthorizeSecurityGroupEgressRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+
 
     /**
      * <p>A set of IP permissions. You can't specify a destination security group and a
@@ -145,6 +148,7 @@ namespace Model
      */
     inline AuthorizeSecurityGroupEgressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The CIDR IPv4 address range. We recommend that you specify the CIDR range in
      * a set of IP permissions instead.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline AuthorizeSecurityGroupEgressRequest& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
 
+
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
      * number. We recommend that you specify the port range in a set of IP permissions
@@ -207,6 +212,7 @@ namespace Model
      * instead.</p>
      */
     inline AuthorizeSecurityGroupEgressRequest& WithFromPort(int value) { SetFromPort(value); return *this;}
+
 
     /**
      * <p>The IP protocol name or number. We recommend that you specify the protocol in
@@ -250,6 +256,7 @@ namespace Model
      */
     inline AuthorizeSecurityGroupEgressRequest& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
 
+
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP type number.
      * We recommend that you specify the port range in a set of IP permissions
@@ -270,6 +277,7 @@ namespace Model
      * instead.</p>
      */
     inline AuthorizeSecurityGroupEgressRequest& WithToPort(int value) { SetToPort(value); return *this;}
+
 
     /**
      * <p>The name of a destination security group. To authorize outbound access to a
@@ -319,6 +327,7 @@ namespace Model
      * instead.</p>
      */
     inline AuthorizeSecurityGroupEgressRequest& WithSourceSecurityGroupName(const char* value) { SetSourceSecurityGroupName(value); return *this;}
+
 
     /**
      * <p>The AWS account number for a destination security group. To authorize
@@ -370,22 +379,31 @@ namespace Model
     inline AuthorizeSecurityGroupEgressRequest& WithSourceSecurityGroupOwnerId(const char* value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::Vector<IpPermission> m_ipPermissions;
     bool m_ipPermissionsHasBeenSet;
+
     Aws::String m_cidrIp;
     bool m_cidrIpHasBeenSet;
+
     int m_fromPort;
     bool m_fromPortHasBeenSet;
+
     Aws::String m_ipProtocol;
     bool m_ipProtocolHasBeenSet;
+
     int m_toPort;
     bool m_toPortHasBeenSet;
+
     Aws::String m_sourceSecurityGroupName;
     bool m_sourceSecurityGroupNameHasBeenSet;
+
     Aws::String m_sourceSecurityGroupOwnerId;
     bool m_sourceSecurityGroupOwnerIdHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     LastDeploymentInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The deployment ID.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline LastDeploymentInfo& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
+
     /**
      * <p>The status of the most recent deployment.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The status of the most recent deployment.</p>
      */
     inline LastDeploymentInfo& WithStatus(DeploymentStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A timestamp indicating when the most recent deployment to the deployment
@@ -137,6 +140,7 @@ namespace Model
      * group completed.</p>
      */
     inline LastDeploymentInfo& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>A timestamp indicating when the most recent deployment to the deployment
@@ -169,12 +173,16 @@ namespace Model
     inline LastDeploymentInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     DeploymentStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
   };

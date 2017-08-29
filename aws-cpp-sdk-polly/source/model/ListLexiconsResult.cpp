@@ -30,12 +30,12 @@ ListLexiconsResult::ListLexiconsResult()
 {
 }
 
-ListLexiconsResult::ListLexiconsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListLexiconsResult::ListLexiconsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListLexiconsResult& ListLexiconsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListLexiconsResult& ListLexiconsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Lexicons"))

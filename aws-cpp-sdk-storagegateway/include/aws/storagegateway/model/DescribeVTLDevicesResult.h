@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeVTLDevicesResult();
-    DescribeVTLDevicesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeVTLDevicesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeVTLDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeVTLDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -68,6 +69,7 @@ namespace Model
 
     
     inline DescribeVTLDevicesResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     /**
      * <p>An array of VTL device objects composed of the Amazon Resource Name(ARN) of
@@ -110,6 +112,7 @@ namespace Model
      * the VTL devices.</p>
      */
     inline DescribeVTLDevicesResult& AddVTLDevices(VTLDevice&& value) { m_vTLDevices.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An opaque string that indicates the position at which the VTL devices that
@@ -168,8 +171,11 @@ namespace Model
     inline DescribeVTLDevicesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
+
     Aws::Vector<VTLDevice> m_vTLDevices;
+
     Aws::String m_marker;
   };
 

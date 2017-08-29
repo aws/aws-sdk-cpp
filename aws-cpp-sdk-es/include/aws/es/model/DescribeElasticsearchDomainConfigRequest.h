@@ -39,6 +39,7 @@ namespace Model
     DescribeElasticsearchDomainConfigRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Elasticsearch domain that you want to get information about.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline DescribeElasticsearchDomainConfigRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

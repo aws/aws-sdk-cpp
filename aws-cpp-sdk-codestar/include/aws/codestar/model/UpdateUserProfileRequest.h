@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name that will be displayed as the friendly name for the user in AWS
      * CodeStar.</p>
@@ -77,6 +78,7 @@ namespace Model
      * CodeStar.</p>
      */
     inline UpdateUserProfileRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+
 
     /**
      * <p>The name that is displayed as the friendly name for the user in AWS
@@ -120,6 +122,7 @@ namespace Model
      */
     inline UpdateUserProfileRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
     /**
      * <p>The email address that is displayed as part of the user's profile in AWS
      * CodeStar.</p>
@@ -161,6 +164,7 @@ namespace Model
      * CodeStar.</p>
      */
     inline UpdateUserProfileRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+
 
     /**
      * <p>The SSH public key associated with the user in AWS CodeStar. If a project
@@ -212,12 +216,16 @@ namespace Model
     inline UpdateUserProfileRequest& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
 
   private:
+
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     Aws::String m_emailAddress;
     bool m_emailAddressHasBeenSet;
+
     Aws::String m_sshPublicKey;
     bool m_sshPublicKeyHasBeenSet;
   };

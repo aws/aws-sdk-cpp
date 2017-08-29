@@ -30,12 +30,12 @@ GetBlueprintsResult::GetBlueprintsResult()
 {
 }
 
-GetBlueprintsResult::GetBlueprintsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetBlueprintsResult::GetBlueprintsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetBlueprintsResult& GetBlueprintsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetBlueprintsResult& GetBlueprintsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("blueprints"))

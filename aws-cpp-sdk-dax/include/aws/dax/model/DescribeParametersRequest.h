@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the parameter group.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the parameter group.</p>
      */
     inline DescribeParametersRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+
 
     /**
      * <p>How the parameter is defined. For example, <code>system</code> denotes a
@@ -113,6 +115,7 @@ namespace Model
      */
     inline DescribeParametersRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to include in the response. If more results
      * exist than the specified <code>MaxResults</code> value, a token is included in
@@ -136,6 +139,7 @@ namespace Model
      * for <code>MaxResults</code> must be between 20 and 100.</p>
      */
     inline DescribeParametersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>An optional token returned from a prior request. Use this token for
@@ -194,12 +198,16 @@ namespace Model
     inline DescribeParametersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

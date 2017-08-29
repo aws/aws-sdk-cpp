@@ -47,6 +47,7 @@ namespace Model
     EbsConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An array of Amazon EBS volume specifications attached to a cluster
      * instance.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline EbsConfiguration& AddEbsBlockDeviceConfigs(EbsBlockDeviceConfig&& value) { m_ebsBlockDeviceConfigsHasBeenSet = true; m_ebsBlockDeviceConfigs.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
      */
@@ -105,8 +107,10 @@ namespace Model
     inline EbsConfiguration& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
   private:
+
     Aws::Vector<EbsBlockDeviceConfig> m_ebsBlockDeviceConfigs;
     bool m_ebsBlockDeviceConfigsHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
   };

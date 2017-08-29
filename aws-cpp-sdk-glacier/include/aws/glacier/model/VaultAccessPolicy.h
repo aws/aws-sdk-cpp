@@ -45,6 +45,7 @@ namespace Model
     VaultAccessPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The vault access policy.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline VaultAccessPolicy& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
   private:
+
     Aws::String m_policy;
     bool m_policyHasBeenSet;
   };

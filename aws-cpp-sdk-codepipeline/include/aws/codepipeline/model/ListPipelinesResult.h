@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListPipelinesResult();
-    ListPipelinesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPipelinesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPipelinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPipelinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of pipelines.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The list of pipelines.</p>
      */
     inline ListPipelinesResult& AddPipelines(PipelineSummary&& value) { m_pipelines.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the amount of returned information is significantly large, an identifier
@@ -134,7 +136,9 @@ namespace Model
     inline ListPipelinesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PipelineSummary> m_pipelines;
+
     Aws::String m_nextToken;
   };
 

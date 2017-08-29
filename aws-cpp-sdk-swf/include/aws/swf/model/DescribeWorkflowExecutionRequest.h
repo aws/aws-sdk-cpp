@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain containing the workflow execution.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DescribeWorkflowExecutionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
     /**
      * <p>The workflow execution to describe.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline DescribeWorkflowExecutionRequest& WithExecution(WorkflowExecution&& value) { SetExecution(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     WorkflowExecution m_execution;
     bool m_executionHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     CoreDefinitionVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Cores in the definition version.
      */
@@ -82,6 +83,7 @@ namespace Model
     inline CoreDefinitionVersion& AddCores(Core&& value) { m_coresHasBeenSet = true; m_cores.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Core> m_cores;
     bool m_coresHasBeenSet;
   };

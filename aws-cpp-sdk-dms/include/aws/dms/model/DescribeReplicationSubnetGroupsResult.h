@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeReplicationSubnetGroupsResult();
-    DescribeReplicationSubnetGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeReplicationSubnetGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeReplicationSubnetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeReplicationSubnetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -97,6 +98,7 @@ namespace Model
      */
     inline DescribeReplicationSubnetGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A description of the replication subnet groups.</p>
      */
@@ -133,7 +135,9 @@ namespace Model
     inline DescribeReplicationSubnetGroupsResult& AddReplicationSubnetGroups(ReplicationSubnetGroup&& value) { m_replicationSubnetGroups.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<ReplicationSubnetGroup> m_replicationSubnetGroups;
   };
 

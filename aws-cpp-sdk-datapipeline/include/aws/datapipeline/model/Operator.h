@@ -48,6 +48,7 @@ namespace Model
     Operator& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The logical operation to be performed: equal (<code>EQ</code>), equal
      * reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater
@@ -158,6 +159,7 @@ namespace Model
      */
     inline Operator& WithType(OperatorType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The value that the actual field value will be compared with.</p>
      */
@@ -199,8 +201,10 @@ namespace Model
     inline Operator& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     OperatorType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

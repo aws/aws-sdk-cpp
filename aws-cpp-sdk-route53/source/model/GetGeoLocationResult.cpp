@@ -29,12 +29,12 @@ GetGeoLocationResult::GetGeoLocationResult()
 {
 }
 
-GetGeoLocationResult::GetGeoLocationResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetGeoLocationResult::GetGeoLocationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetGeoLocationResult& GetGeoLocationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetGeoLocationResult& GetGeoLocationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

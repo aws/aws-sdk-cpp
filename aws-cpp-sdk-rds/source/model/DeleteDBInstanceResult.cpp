@@ -31,12 +31,12 @@ DeleteDBInstanceResult::DeleteDBInstanceResult()
 {
 }
 
-DeleteDBInstanceResult::DeleteDBInstanceResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteDBInstanceResult::DeleteDBInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteDBInstanceResult& DeleteDBInstanceResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteDBInstanceResult& DeleteDBInstanceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

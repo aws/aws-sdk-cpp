@@ -30,12 +30,12 @@ ListElasticsearchVersionsResult::ListElasticsearchVersionsResult()
 {
 }
 
-ListElasticsearchVersionsResult::ListElasticsearchVersionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListElasticsearchVersionsResult::ListElasticsearchVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListElasticsearchVersionsResult& ListElasticsearchVersionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListElasticsearchVersionsResult& ListElasticsearchVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ElasticsearchVersions"))

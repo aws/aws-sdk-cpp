@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>This is enabled by default. This property allows instances to be
      * automatically placed onto available Dedicated Hosts, when you are launching
@@ -77,6 +78,7 @@ namespace Model
      */
     inline AllocateHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
 
+
     /**
      * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
     inline AllocateHostsRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -175,6 +178,7 @@ namespace Model
      */
     inline AllocateHostsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>Specify the instance type that you want your Dedicated Hosts to be configured
      * for. When you specify the instance type, that is the only instance type that you
@@ -224,6 +228,7 @@ namespace Model
      */
     inline AllocateHostsRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The number of Dedicated Hosts you want to allocate to your account with these
      * parameters.</p>
@@ -243,14 +248,19 @@ namespace Model
     inline AllocateHostsRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
 
   private:
+
     AutoPlacement m_autoPlacement;
     bool m_autoPlacementHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     int m_quantity;
     bool m_quantityHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     ReplicationInstance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
@@ -113,6 +114,7 @@ namespace Model
      */
     inline ReplicationInstance& WithReplicationInstanceIdentifier(const char* value) { SetReplicationInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
@@ -162,6 +164,7 @@ namespace Model
      */
     inline ReplicationInstance& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
+
     /**
      * <p>The status of the replication instance.</p>
      */
@@ -197,6 +200,7 @@ namespace Model
      */
     inline ReplicationInstance& WithReplicationInstanceStatus(const char* value) { SetReplicationInstanceStatus(value); return *this;}
 
+
     /**
      * <p>The amount of storage (in gigabytes) that is allocated for the replication
      * instance.</p>
@@ -214,6 +218,7 @@ namespace Model
      * instance.</p>
      */
     inline ReplicationInstance& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+
 
     /**
      * <p>The time the replication instance was created.</p>
@@ -239,6 +244,7 @@ namespace Model
      * <p>The time the replication instance was created.</p>
      */
     inline ReplicationInstance& WithInstanceCreateTime(Aws::Utils::DateTime&& value) { SetInstanceCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The VPC security group for the instance.</p>
@@ -275,6 +281,7 @@ namespace Model
      */
     inline ReplicationInstance& AddVpcSecurityGroups(VpcSecurityGroupMembership&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The Availability Zone for the instance.</p>
      */
@@ -310,6 +317,7 @@ namespace Model
      */
     inline ReplicationInstance& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The subnet group for the replication instance.</p>
      */
@@ -334,6 +342,7 @@ namespace Model
      * <p>The subnet group for the replication instance.</p>
      */
     inline ReplicationInstance& WithReplicationSubnetGroup(ReplicationSubnetGroup&& value) { SetReplicationSubnetGroup(std::move(value)); return *this;}
+
 
     /**
      * <p>The maintenance window times for the replication instance.</p>
@@ -370,6 +379,7 @@ namespace Model
      */
     inline ReplicationInstance& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The pending modification values.</p>
      */
@@ -395,6 +405,7 @@ namespace Model
      */
     inline ReplicationInstance& WithPendingModifiedValues(ReplicationPendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
 
+
     /**
      * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
      * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
@@ -415,6 +426,7 @@ namespace Model
      * to <code>true</code>. </p>
      */
     inline ReplicationInstance& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p>The engine version number of the replication instance.</p>
@@ -451,6 +463,7 @@ namespace Model
      */
     inline ReplicationInstance& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>Boolean value indicating if minor version upgrades will be automatically
      * applied to the instance.</p>
@@ -468,6 +481,7 @@ namespace Model
      * applied to the instance.</p>
      */
     inline ReplicationInstance& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>The KMS key identifier that is used to encrypt the content on the replication
@@ -532,6 +546,7 @@ namespace Model
      */
     inline ReplicationInstance& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
@@ -566,6 +581,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline ReplicationInstance& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
+
 
     /**
      * <p>The public IP address of the replication instance.</p>
@@ -607,6 +623,7 @@ namespace Model
      */
     inline ReplicationInstance& AddReplicationInstancePublicIpAddresses(const char* value) { m_replicationInstancePublicIpAddressesHasBeenSet = true; m_replicationInstancePublicIpAddresses.push_back(value); return *this; }
 
+
     /**
      * <p>The private IP address of the replication instance.</p>
      */
@@ -647,6 +664,7 @@ namespace Model
      */
     inline ReplicationInstance& AddReplicationInstancePrivateIpAddresses(const char* value) { m_replicationInstancePrivateIpAddressesHasBeenSet = true; m_replicationInstancePrivateIpAddresses.push_back(value); return *this; }
 
+
     /**
      * <p> Specifies the accessibility options for the replication instance. A value of
      * <code>true</code> represents an instance with a public IP address. A value of
@@ -670,6 +688,7 @@ namespace Model
      * value is <code>true</code>. </p>
      */
     inline ReplicationInstance& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+
 
     /**
      * <p>The availability zone of the standby replication instance in a Multi-AZ
@@ -714,42 +733,61 @@ namespace Model
     inline ReplicationInstance& WithSecondaryAvailabilityZone(const char* value) { SetSecondaryAvailabilityZone(value); return *this;}
 
   private:
+
     Aws::String m_replicationInstanceIdentifier;
     bool m_replicationInstanceIdentifierHasBeenSet;
+
     Aws::String m_replicationInstanceClass;
     bool m_replicationInstanceClassHasBeenSet;
+
     Aws::String m_replicationInstanceStatus;
     bool m_replicationInstanceStatusHasBeenSet;
+
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
+
     Aws::Utils::DateTime m_instanceCreateTime;
     bool m_instanceCreateTimeHasBeenSet;
+
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
     bool m_vpcSecurityGroupsHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     ReplicationSubnetGroup m_replicationSubnetGroup;
     bool m_replicationSubnetGroupHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     ReplicationPendingModifiedValues m_pendingModifiedValues;
     bool m_pendingModifiedValuesHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_replicationInstancePublicIpAddresses;
     bool m_replicationInstancePublicIpAddressesHasBeenSet;
+
     Aws::Vector<Aws::String> m_replicationInstancePrivateIpAddresses;
     bool m_replicationInstancePrivateIpAddressesHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
     Aws::String m_secondaryAvailabilityZone;
     bool m_secondaryAvailabilityZoneHasBeenSet;
   };

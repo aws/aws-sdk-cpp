@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix
      * length.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline AssociateSubnetCidrBlockRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
 
+
     /**
      * <p>The ID of your subnet.</p>
      */
@@ -116,8 +118,10 @@ namespace Model
     inline AssociateSubnetCidrBlockRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
+
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
   };

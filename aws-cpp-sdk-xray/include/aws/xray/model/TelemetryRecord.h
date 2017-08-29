@@ -46,6 +46,7 @@ namespace Model
     TelemetryRecord& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p/>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline TelemetryRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p/>
      */
@@ -85,6 +87,7 @@ namespace Model
      * <p/>
      */
     inline TelemetryRecord& WithSegmentsReceivedCount(int value) { SetSegmentsReceivedCount(value); return *this;}
+
 
     /**
      * <p/>
@@ -101,6 +104,7 @@ namespace Model
      */
     inline TelemetryRecord& WithSegmentsSentCount(int value) { SetSegmentsSentCount(value); return *this;}
 
+
     /**
      * <p/>
      */
@@ -116,6 +120,7 @@ namespace Model
      */
     inline TelemetryRecord& WithSegmentsSpilloverCount(int value) { SetSegmentsSpilloverCount(value); return *this;}
 
+
     /**
      * <p/>
      */
@@ -130,6 +135,7 @@ namespace Model
      * <p/>
      */
     inline TelemetryRecord& WithSegmentsRejectedCount(int value) { SetSegmentsRejectedCount(value); return *this;}
+
 
     /**
      * <p/>
@@ -157,16 +163,22 @@ namespace Model
     inline TelemetryRecord& WithBackendConnectionErrors(BackendConnectionErrors&& value) { SetBackendConnectionErrors(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
     int m_segmentsReceivedCount;
     bool m_segmentsReceivedCountHasBeenSet;
+
     int m_segmentsSentCount;
     bool m_segmentsSentCountHasBeenSet;
+
     int m_segmentsSpilloverCount;
     bool m_segmentsSpilloverCountHasBeenSet;
+
     int m_segmentsRejectedCount;
     bool m_segmentsRejectedCountHasBeenSet;
+
     BackendConnectionErrors m_backendConnectionErrors;
     bool m_backendConnectionErrorsHasBeenSet;
   };

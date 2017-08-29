@@ -30,12 +30,12 @@ DeleteCustomMetadataResult::DeleteCustomMetadataResult()
 {
 }
 
-DeleteCustomMetadataResult::DeleteCustomMetadataResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteCustomMetadataResult::DeleteCustomMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteCustomMetadataResult& DeleteCustomMetadataResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteCustomMetadataResult& DeleteCustomMetadataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

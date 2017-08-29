@@ -29,12 +29,12 @@ GetBucketMetricsConfigurationResult::GetBucketMetricsConfigurationResult()
 {
 }
 
-GetBucketMetricsConfigurationResult::GetBucketMetricsConfigurationResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketMetricsConfigurationResult::GetBucketMetricsConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetBucketMetricsConfigurationResult& GetBucketMetricsConfigurationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketMetricsConfigurationResult& GetBucketMetricsConfigurationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

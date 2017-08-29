@@ -50,6 +50,7 @@ namespace Model
     CreateJobOutput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The name to assign to the transcoded file. Elastic Transcoder saves the file
      * in the Amazon S3 bucket specified by the <code>OutputBucket</code> object in the
@@ -105,6 +106,7 @@ namespace Model
      * already exists in the output bucket, the job fails. </p>
      */
     inline CreateJobOutput& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>Whether you want Elastic Transcoder to create thumbnails for your videos and,
@@ -309,6 +311,7 @@ namespace Model
      */
     inline CreateJobOutput& WithThumbnailPattern(const char* value) { SetThumbnailPattern(value); return *this;}
 
+
     /**
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your thumbnail.</p>
@@ -338,6 +341,7 @@ namespace Model
      * your thumbnail.</p>
      */
     inline CreateJobOutput& WithThumbnailEncryption(Encryption&& value) { SetThumbnailEncryption(std::move(value)); return *this;}
+
 
     /**
      * <p> The number of degrees clockwise by which you want Elastic Transcoder to
@@ -402,6 +406,7 @@ namespace Model
      */
     inline CreateJobOutput& WithRotate(const char* value) { SetRotate(value); return *this;}
 
+
     /**
      * <p> The <code>Id</code> of the preset to use for this job. The preset determines
      * the audio, video, and thumbnail settings that Elastic Transcoder uses for
@@ -450,6 +455,7 @@ namespace Model
      * transcoding. </p>
      */
     inline CreateJobOutput& WithPresetId(const char* value) { SetPresetId(value); return *this;}
+
 
     /**
      * <important> <p>(Outputs in Fragmented MP4 or MPEG-TS format only.</p>
@@ -591,6 +597,7 @@ namespace Model
      */
     inline CreateJobOutput& WithSegmentDuration(const char* value) { SetSegmentDuration(value); return *this;}
 
+
     /**
      * <p>Information about the watermarks that you want Elastic Transcoder to add to
      * the video during transcoding. You can specify up to four watermarks for each
@@ -647,6 +654,7 @@ namespace Model
      */
     inline CreateJobOutput& AddWatermarks(JobWatermark&& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Information about the album art that you want Elastic Transcoder to add to
      * the file during transcoding. You can specify up to twenty album artworks for
@@ -686,6 +694,7 @@ namespace Model
      * current output.</p>
      */
     inline CreateJobOutput& WithAlbumArt(JobAlbumArt&& value) { SetAlbumArt(std::move(value)); return *this;}
+
 
     /**
      * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
@@ -862,6 +871,7 @@ namespace Model
      */
     inline CreateJobOutput& WithCaptions(Captions&& value) { SetCaptions(std::move(value)); return *this;}
 
+
     /**
      * <p>You can specify encryption settings for any output files that you want to use
      * for a transcoding job. This includes the output file and any watermarks,
@@ -903,24 +913,34 @@ namespace Model
     inline CreateJobOutput& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_thumbnailPattern;
     bool m_thumbnailPatternHasBeenSet;
+
     Encryption m_thumbnailEncryption;
     bool m_thumbnailEncryptionHasBeenSet;
+
     Aws::String m_rotate;
     bool m_rotateHasBeenSet;
+
     Aws::String m_presetId;
     bool m_presetIdHasBeenSet;
+
     Aws::String m_segmentDuration;
     bool m_segmentDurationHasBeenSet;
+
     Aws::Vector<JobWatermark> m_watermarks;
     bool m_watermarksHasBeenSet;
+
     JobAlbumArt m_albumArt;
     bool m_albumArtHasBeenSet;
+
     Captions m_captions;
     bool m_captionsHasBeenSet;
+
     Encryption m_encryption;
     bool m_encryptionHasBeenSet;
   };

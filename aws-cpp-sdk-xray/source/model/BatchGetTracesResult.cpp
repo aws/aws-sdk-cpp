@@ -30,12 +30,12 @@ BatchGetTracesResult::BatchGetTracesResult()
 {
 }
 
-BatchGetTracesResult::BatchGetTracesResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetTracesResult::BatchGetTracesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchGetTracesResult& BatchGetTracesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchGetTracesResult& BatchGetTracesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Traces"))

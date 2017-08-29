@@ -30,12 +30,12 @@ StartAssessmentRunResult::StartAssessmentRunResult()
 {
 }
 
-StartAssessmentRunResult::StartAssessmentRunResult(const AmazonWebServiceResult<JsonValue>& result)
+StartAssessmentRunResult::StartAssessmentRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartAssessmentRunResult& StartAssessmentRunResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartAssessmentRunResult& StartAssessmentRunResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("assessmentRunArn"))

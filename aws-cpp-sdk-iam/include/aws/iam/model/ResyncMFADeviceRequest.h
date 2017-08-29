@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -101,6 +102,7 @@ namespace Model
      */
     inline ResyncMFADeviceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -157,6 +159,7 @@ namespace Model
      */
     inline ResyncMFADeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
+
     /**
      * <p>An authentication code emitted by the device.</p> <p>The format for this
      * parameter is a sequence of six digits.</p>
@@ -198,6 +201,7 @@ namespace Model
      * parameter is a sequence of six digits.</p>
      */
     inline ResyncMFADeviceRequest& WithAuthenticationCode1(const char* value) { SetAuthenticationCode1(value); return *this;}
+
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
@@ -242,12 +246,16 @@ namespace Model
     inline ResyncMFADeviceRequest& WithAuthenticationCode2(const char* value) { SetAuthenticationCode2(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
+
     Aws::String m_authenticationCode1;
     bool m_authenticationCode1HasBeenSet;
+
     Aws::String m_authenticationCode2;
     bool m_authenticationCode2HasBeenSet;
   };

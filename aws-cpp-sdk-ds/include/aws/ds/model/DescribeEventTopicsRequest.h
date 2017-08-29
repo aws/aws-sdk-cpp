@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Directory ID for which to get the list of associated SNS topics. If this
      * member is null, associations for all Directory IDs are returned.</p>
@@ -81,6 +82,7 @@ namespace Model
      * member is null, associations for all Directory IDs are returned.</p>
      */
     inline DescribeEventTopicsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>A list of SNS topic names for which to obtain the information. If this member
@@ -147,8 +149,10 @@ namespace Model
     inline DescribeEventTopicsRequest& AddTopicNames(const char* value) { m_topicNamesHasBeenSet = true; m_topicNames.push_back(value); return *this; }
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_topicNames;
     bool m_topicNamesHasBeenSet;
   };

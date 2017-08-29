@@ -30,12 +30,12 @@ UpdatePartitionResult::UpdatePartitionResult()
 {
 }
 
-UpdatePartitionResult::UpdatePartitionResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdatePartitionResult::UpdatePartitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdatePartitionResult& UpdatePartitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdatePartitionResult& UpdatePartitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

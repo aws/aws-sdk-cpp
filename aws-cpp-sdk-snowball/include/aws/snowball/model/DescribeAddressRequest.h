@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The automatically generated ID for a specific address.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DescribeAddressRequest& WithAddressId(const char* value) { SetAddressId(value); return *this;}
 
   private:
+
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet;
   };

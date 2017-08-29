@@ -38,6 +38,7 @@ namespace Model
     DeleteUsagePlanKeyRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
      * containing the to-be-deleted <a>UsagePlanKey</a> resource representing a plan
@@ -87,6 +88,7 @@ namespace Model
      */
     inline DeleteUsagePlanKeyRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
+
     /**
      * <p>The Id of the <a>UsagePlanKey</a> resource to be deleted.</p>
      */
@@ -123,8 +125,10 @@ namespace Model
     inline DeleteUsagePlanKeyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     Aws::String m_usagePlanId;
     bool m_usagePlanIdHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
   };

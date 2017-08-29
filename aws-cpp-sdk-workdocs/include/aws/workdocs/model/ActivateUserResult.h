@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     ActivateUserResult();
-    ActivateUserResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ActivateUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ActivateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ActivateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The user information.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline ActivateUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
 
   private:
+
     User m_user;
   };
 

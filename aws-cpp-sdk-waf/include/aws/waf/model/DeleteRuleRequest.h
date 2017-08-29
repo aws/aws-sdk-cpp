@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>RuleId</code> of the <a>Rule</a> that you want to delete.
      * <code>RuleId</code> is returned by <a>CreateRule</a> and by
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DeleteRuleRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 
+
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline DeleteRuleRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;
+
     Aws::String m_changeToken;
     bool m_changeTokenHasBeenSet;
   };

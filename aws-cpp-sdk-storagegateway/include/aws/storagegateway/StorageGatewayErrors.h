@@ -55,11 +55,11 @@ enum class StorageGatewayErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_GATEWAY_REQUEST= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  INVALID_GATEWAY_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
 namespace StorageGatewayErrorMapper
 {
-  AWS_STORAGEGATEWAY_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_STORAGEGATEWAY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace StorageGateway

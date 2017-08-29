@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeDataSourcesResult();
-    DescribeDataSourcesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDataSourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDataSourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDataSourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>A list of <code>DataSource</code> that meet the search criteria. </p>
      */
     inline DescribeDataSourcesResult& AddResults(DataSource&& value) { m_results.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An ID of the next page in the paginated results that indicates at least one
@@ -128,7 +130,9 @@ namespace Model
     inline DescribeDataSourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<DataSource> m_results;
+
     Aws::String m_nextToken;
   };
 

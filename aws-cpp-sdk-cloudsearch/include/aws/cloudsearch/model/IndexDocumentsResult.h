@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     IndexDocumentsResult();
-    IndexDocumentsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    IndexDocumentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    IndexDocumentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    IndexDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The names of the fields that are currently being indexed.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline IndexDocumentsResult& AddFieldNames(const char* value) { m_fieldNames.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -106,7 +108,9 @@ namespace Model
     inline IndexDocumentsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_fieldNames;
+
     ResponseMetadata m_responseMetadata;
   };
 

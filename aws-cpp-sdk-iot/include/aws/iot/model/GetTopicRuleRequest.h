@@ -37,6 +37,7 @@ namespace Model
     GetTopicRuleRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the rule.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline GetTopicRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 
   private:
+
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet;
   };

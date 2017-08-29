@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeCacheEngineVersionsResult();
-    DescribeCacheEngineVersionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCacheEngineVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeCacheEngineVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeCacheEngineVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline DescribeCacheEngineVersionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>A list of cache engine version details. Each element in the list contains
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeCacheEngineVersionsResult& AddCacheEngineVersions(CacheEngineVersion&& value) { m_cacheEngineVersions.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeCacheEngineVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<CacheEngineVersion> m_cacheEngineVersions;
+
     ResponseMetadata m_responseMetadata;
   };
 

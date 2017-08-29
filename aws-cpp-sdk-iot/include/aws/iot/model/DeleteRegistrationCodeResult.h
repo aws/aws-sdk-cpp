@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     DeleteRegistrationCodeResult();
-    DeleteRegistrationCodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteRegistrationCodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteRegistrationCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteRegistrationCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

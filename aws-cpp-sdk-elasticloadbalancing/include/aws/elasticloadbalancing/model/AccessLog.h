@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies whether access logs are enabled for the load balancer.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>Specifies whether access logs are enabled for the load balancer.</p>
      */
     inline AccessLog& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
@@ -99,6 +101,7 @@ namespace Model
      */
     inline AccessLog& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
+
     /**
      * <p>The interval for publishing the access logs. You can specify an interval of
      * either 5 minutes or 60 minutes.</p> <p>Default: 60 minutes</p>
@@ -116,6 +119,7 @@ namespace Model
      * either 5 minutes or 60 minutes.</p> <p>Default: 60 minutes</p>
      */
     inline AccessLog& WithEmitInterval(int value) { SetEmitInterval(value); return *this;}
+
 
     /**
      * <p>The logical hierarchy you created for your Amazon S3 bucket, for example
@@ -167,12 +171,16 @@ namespace Model
     inline AccessLog& WithS3BucketPrefix(const char* value) { SetS3BucketPrefix(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_s3BucketName;
     bool m_s3BucketNameHasBeenSet;
+
     int m_emitInterval;
     bool m_emitIntervalHasBeenSet;
+
     Aws::String m_s3BucketPrefix;
     bool m_s3BucketPrefixHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the attribute.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the attribute.</p>
      */
     inline PolicyAttributeTypeDescription& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+
 
     /**
      * <p>The type of the attribute. For example, <code>Boolean</code> or
@@ -125,6 +127,7 @@ namespace Model
      */
     inline PolicyAttributeTypeDescription& WithAttributeType(const char* value) { SetAttributeType(value); return *this;}
 
+
     /**
      * <p>A description of the attribute.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      */
     inline PolicyAttributeTypeDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The default value of the attribute, if applicable.</p>
      */
@@ -194,6 +198,7 @@ namespace Model
      * <p>The default value of the attribute, if applicable.</p>
      */
     inline PolicyAttributeTypeDescription& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+
 
     /**
      * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>
@@ -259,14 +264,19 @@ namespace Model
     inline PolicyAttributeTypeDescription& WithCardinality(const char* value) { SetCardinality(value); return *this;}
 
   private:
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     Aws::String m_attributeType;
     bool m_attributeTypeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     Aws::String m_cardinality;
     bool m_cardinalityHasBeenSet;
   };

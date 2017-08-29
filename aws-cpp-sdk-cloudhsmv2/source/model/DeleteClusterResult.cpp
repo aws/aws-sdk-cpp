@@ -30,12 +30,12 @@ DeleteClusterResult::DeleteClusterResult()
 {
 }
 
-DeleteClusterResult::DeleteClusterResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteClusterResult::DeleteClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteClusterResult& DeleteClusterResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteClusterResult& DeleteClusterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Cluster"))

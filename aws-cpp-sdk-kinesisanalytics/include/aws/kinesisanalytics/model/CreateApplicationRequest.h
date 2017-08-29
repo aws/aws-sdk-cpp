@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of your Amazon Kinesis Analytics application (for example,
      * <code>sample-app</code>).</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline CreateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>Summary description of the application.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>Summary description of the application.</p>
      */
     inline CreateApplicationRequest& WithApplicationDescription(const char* value) { SetApplicationDescription(value); return *this;}
+
 
     /**
      * <p>Use this parameter to configure the application input.</p> <p>You can
@@ -232,6 +235,7 @@ namespace Model
      */
     inline CreateApplicationRequest& AddInputs(Input&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>You can configure application output to write data from any of the
      * in-application streams to up to five destinations.</p> <p>These destinations can
@@ -337,6 +341,7 @@ namespace Model
      */
     inline CreateApplicationRequest& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Use this parameter to configure a CloudWatch log stream to monitor
      * application configuration errors. For more information, see <a
@@ -392,6 +397,7 @@ namespace Model
      * with Amazon CloudWatch Logs</a>.</p>
      */
     inline CreateApplicationRequest& AddCloudWatchLoggingOptions(CloudWatchLoggingOption&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>One or more SQL statements that read input data, transform it, and generate
@@ -527,16 +533,22 @@ namespace Model
     inline CreateApplicationRequest& WithApplicationCode(const char* value) { SetApplicationCode(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_applicationDescription;
     bool m_applicationDescriptionHasBeenSet;
+
     Aws::Vector<Input> m_inputs;
     bool m_inputsHasBeenSet;
+
     Aws::Vector<Output> m_outputs;
     bool m_outputsHasBeenSet;
+
     Aws::Vector<CloudWatchLoggingOption> m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
+
     Aws::String m_applicationCode;
     bool m_applicationCodeHasBeenSet;
   };

@@ -54,6 +54,7 @@ namespace Model
     ActivatedRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code>
      * are evaluated. Rules with a lower value for <code>Priority</code> are evaluated
@@ -80,6 +81,7 @@ namespace Model
      * values don't need to be consecutive.</p>
      */
     inline ActivatedRule& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
      * <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code>
@@ -158,6 +160,7 @@ namespace Model
      */
     inline ActivatedRule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 
+
     /**
      * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
      * matches the conditions in the <code>Rule</code>. Valid values for
@@ -218,6 +221,7 @@ namespace Model
      */
     inline ActivatedRule& WithAction(WafAction&& value) { SetAction(std::move(value)); return *this;}
 
+
     /**
      * <p>The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or
      * <code>RATE_BASED</code>, as defined by <a>RateBasedRule</a>. The default is
@@ -269,12 +273,16 @@ namespace Model
     inline ActivatedRule& WithType(WafRuleType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     int m_priority;
     bool m_priorityHasBeenSet;
+
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;
+
     WafAction m_action;
     bool m_actionHasBeenSet;
+
     WafRuleType m_type;
     bool m_typeHasBeenSet;
   };

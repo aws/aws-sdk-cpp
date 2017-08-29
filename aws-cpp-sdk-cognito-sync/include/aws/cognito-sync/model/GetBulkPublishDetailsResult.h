@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetBulkPublishDetailsResult();
-    GetBulkPublishDetailsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBulkPublishDetailsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBulkPublishDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBulkPublishDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -90,6 +91,7 @@ namespace Model
      */
     inline GetBulkPublishDetailsResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * The date/time at which the last bulk publish was initiated.
      */
@@ -114,6 +116,7 @@ namespace Model
      * The date/time at which the last bulk publish was initiated.
      */
     inline GetBulkPublishDetailsResult& WithBulkPublishStartTime(Aws::Utils::DateTime&& value) { SetBulkPublishStartTime(std::move(value)); return *this;}
+
 
     /**
      * If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation
@@ -144,6 +147,7 @@ namespace Model
      * completed.
      */
     inline GetBulkPublishDetailsResult& WithBulkPublishCompleteTime(Aws::Utils::DateTime&& value) { SetBulkPublishCompleteTime(std::move(value)); return *this;}
+
 
     /**
      * Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No
@@ -195,6 +199,7 @@ namespace Model
      */
     inline GetBulkPublishDetailsResult& WithBulkPublishStatus(BulkPublishStatus&& value) { SetBulkPublishStatus(std::move(value)); return *this;}
 
+
     /**
      * If BulkPublishStatus is FAILED this field will contain the error message that
      * caused the bulk publish to fail.
@@ -238,10 +243,15 @@ namespace Model
     inline GetBulkPublishDetailsResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
+
     Aws::Utils::DateTime m_bulkPublishStartTime;
+
     Aws::Utils::DateTime m_bulkPublishCompleteTime;
+
     BulkPublishStatus m_bulkPublishStatus;
+
     Aws::String m_failureMessage;
   };
 

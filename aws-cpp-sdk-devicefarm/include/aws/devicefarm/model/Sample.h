@@ -46,6 +46,7 @@ namespace Model
     Sample& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The sample's ARN.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The sample's ARN.</p>
      */
     inline Sample& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The sample's type.</p> <p>Must be one of the following values:</p> <ul> <li>
@@ -176,6 +178,7 @@ namespace Model
      */
     inline Sample& WithType(SampleType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The pre-signed Amazon S3 URL that can be used with a corresponding GET
      * request to download the sample's file.</p>
@@ -219,10 +222,13 @@ namespace Model
     inline Sample& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     SampleType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
   };

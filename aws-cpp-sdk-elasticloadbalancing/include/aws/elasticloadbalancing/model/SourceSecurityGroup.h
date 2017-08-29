@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The owner of the security group.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The owner of the security group.</p>
      */
     inline SourceSecurityGroup& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
+
 
     /**
      * <p>The name of the security group.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline SourceSecurityGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
   private:
+
     Aws::String m_ownerAlias;
     bool m_ownerAliasHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
   };

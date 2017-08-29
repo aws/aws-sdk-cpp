@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CloneStackResult();
-    CloneStackResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CloneStackResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CloneStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CloneStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The cloned stack ID.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CloneStackResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
   };
 

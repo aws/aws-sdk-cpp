@@ -59,6 +59,7 @@ namespace Model
     BatchWriteOperationResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Creates an object in a <a>Directory</a>.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>Creates an object in a <a>Directory</a>.</p>
      */
     inline BatchWriteOperationResponse& WithCreateObject(BatchCreateObjectResponse&& value) { SetCreateObject(std::move(value)); return *this;}
+
 
     /**
      * <p>Attaches an object to a <a>Directory</a>.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline BatchWriteOperationResponse& WithAttachObject(BatchAttachObjectResponse&& value) { SetAttachObject(std::move(value)); return *this;}
 
+
     /**
      * <p>Detaches an object from a <a>Directory</a>.</p>
      */
@@ -133,6 +136,7 @@ namespace Model
      * <p>Detaches an object from a <a>Directory</a>.</p>
      */
     inline BatchWriteOperationResponse& WithDetachObject(BatchDetachObjectResponse&& value) { SetDetachObject(std::move(value)); return *this;}
+
 
     /**
      * <p>Updates a given object’s attributes.</p>
@@ -159,6 +163,7 @@ namespace Model
      */
     inline BatchWriteOperationResponse& WithUpdateObjectAttributes(BatchUpdateObjectAttributesResponse&& value) { SetUpdateObjectAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>Deletes an object in a <a>Directory</a>.</p>
      */
@@ -183,6 +188,7 @@ namespace Model
      * <p>Deletes an object in a <a>Directory</a>.</p>
      */
     inline BatchWriteOperationResponse& WithDeleteObject(BatchDeleteObjectResponse&& value) { SetDeleteObject(std::move(value)); return *this;}
+
 
     /**
      * <p>The result of an add facet to object batch operation.</p>
@@ -209,6 +215,7 @@ namespace Model
      */
     inline BatchWriteOperationResponse& WithAddFacetToObject(BatchAddFacetToObjectResponse&& value) { SetAddFacetToObject(std::move(value)); return *this;}
 
+
     /**
      * <p>The result of a batch remove facet from object operation.</p>
      */
@@ -233,6 +240,7 @@ namespace Model
      * <p>The result of a batch remove facet from object operation.</p>
      */
     inline BatchWriteOperationResponse& WithRemoveFacetFromObject(BatchRemoveFacetFromObjectResponse&& value) { SetRemoveFacetFromObject(std::move(value)); return *this;}
+
 
     /**
      * <p>Attaches a policy object to a regular object. An object can have a limited
@@ -264,6 +272,7 @@ namespace Model
      */
     inline BatchWriteOperationResponse& WithAttachPolicy(BatchAttachPolicyResponse&& value) { SetAttachPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>Detaches a policy from a <a>Directory</a>.</p>
      */
@@ -288,6 +297,7 @@ namespace Model
      * <p>Detaches a policy from a <a>Directory</a>.</p>
      */
     inline BatchWriteOperationResponse& WithDetachPolicy(BatchDetachPolicyResponse&& value) { SetDetachPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>Creates an index object. See <a
@@ -324,6 +334,7 @@ namespace Model
      */
     inline BatchWriteOperationResponse& WithCreateIndex(BatchCreateIndexResponse&& value) { SetCreateIndex(std::move(value)); return *this;}
 
+
     /**
      * <p>Attaches the specified object to the specified index.</p>
      */
@@ -349,6 +360,7 @@ namespace Model
      */
     inline BatchWriteOperationResponse& WithAttachToIndex(BatchAttachToIndexResponse&& value) { SetAttachToIndex(std::move(value)); return *this;}
 
+
     /**
      * <p>Detaches the specified object from the specified index.</p>
      */
@@ -373,6 +385,7 @@ namespace Model
      * <p>Detaches the specified object from the specified index.</p>
      */
     inline BatchWriteOperationResponse& WithDetachFromIndex(BatchDetachFromIndexResponse&& value) { SetDetachFromIndex(std::move(value)); return *this;}
+
 
     /**
      * <p>Attaches a typed link to a specified source and target object. For more
@@ -413,6 +426,7 @@ namespace Model
      * link</a>.</p>
      */
     inline BatchWriteOperationResponse& WithAttachTypedLink(BatchAttachTypedLinkResponse&& value) { SetAttachTypedLink(std::move(value)); return *this;}
+
 
     /**
      * <p>Detaches a typed link from a specified source and target object. For more
@@ -455,32 +469,46 @@ namespace Model
     inline BatchWriteOperationResponse& WithDetachTypedLink(BatchDetachTypedLinkResponse&& value) { SetDetachTypedLink(std::move(value)); return *this;}
 
   private:
+
     BatchCreateObjectResponse m_createObject;
     bool m_createObjectHasBeenSet;
+
     BatchAttachObjectResponse m_attachObject;
     bool m_attachObjectHasBeenSet;
+
     BatchDetachObjectResponse m_detachObject;
     bool m_detachObjectHasBeenSet;
+
     BatchUpdateObjectAttributesResponse m_updateObjectAttributes;
     bool m_updateObjectAttributesHasBeenSet;
+
     BatchDeleteObjectResponse m_deleteObject;
     bool m_deleteObjectHasBeenSet;
+
     BatchAddFacetToObjectResponse m_addFacetToObject;
     bool m_addFacetToObjectHasBeenSet;
+
     BatchRemoveFacetFromObjectResponse m_removeFacetFromObject;
     bool m_removeFacetFromObjectHasBeenSet;
+
     BatchAttachPolicyResponse m_attachPolicy;
     bool m_attachPolicyHasBeenSet;
+
     BatchDetachPolicyResponse m_detachPolicy;
     bool m_detachPolicyHasBeenSet;
+
     BatchCreateIndexResponse m_createIndex;
     bool m_createIndexHasBeenSet;
+
     BatchAttachToIndexResponse m_attachToIndex;
     bool m_attachToIndexHasBeenSet;
+
     BatchDetachFromIndexResponse m_detachFromIndex;
     bool m_detachFromIndexHasBeenSet;
+
     BatchAttachTypedLinkResponse m_attachTypedLink;
     bool m_attachTypedLinkHasBeenSet;
+
     BatchDetachTypedLinkResponse m_detachTypedLink;
     bool m_detachTypedLinkHasBeenSet;
   };

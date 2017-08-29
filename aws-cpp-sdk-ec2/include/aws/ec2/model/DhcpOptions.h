@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>One or more DHCP options in the set.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DhcpOptions& AddDhcpConfigurations(DhcpConfiguration&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the set of DHCP options.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>The ID of the set of DHCP options.</p>
      */
     inline DhcpOptions& WithDhcpOptionsId(const char* value) { SetDhcpOptionsId(value); return *this;}
+
 
     /**
      * <p>Any tags assigned to the DHCP options set.</p>
@@ -157,10 +160,13 @@ namespace Model
     inline DhcpOptions& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<DhcpConfiguration> m_dhcpConfigurations;
     bool m_dhcpConfigurationsHasBeenSet;
+
     Aws::String m_dhcpOptionsId;
     bool m_dhcpOptionsIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

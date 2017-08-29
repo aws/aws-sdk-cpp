@@ -31,12 +31,12 @@ DescribeDBEngineVersionsResult::DescribeDBEngineVersionsResult()
 {
 }
 
-DescribeDBEngineVersionsResult::DescribeDBEngineVersionsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBEngineVersionsResult::DescribeDBEngineVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeDBEngineVersionsResult& DescribeDBEngineVersionsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeDBEngineVersionsResult& DescribeDBEngineVersionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

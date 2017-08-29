@@ -52,6 +52,7 @@ namespace Model
     HIT& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> A unique identifier for the HIT.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p> A unique identifier for the HIT.</p>
      */
     inline HIT& WithHITId(const char* value) { SetHITId(value); return *this;}
+
 
     /**
      * <p>The ID of the HIT type of this HIT</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline HIT& WithHITTypeId(const char* value) { SetHITTypeId(value); return *this;}
 
+
     /**
      * <p> The ID of the HIT Group of this HIT.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p> The ID of the HIT Group of this HIT.</p>
      */
     inline HIT& WithHITGroupId(const char* value) { SetHITGroupId(value); return *this;}
+
 
     /**
      * <p> The ID of the HIT Layout of this HIT.</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline HIT& WithHITLayoutId(const char* value) { SetHITLayoutId(value); return *this;}
 
+
     /**
      * <p> The date and time the HIT was created.</p>
      */
@@ -216,6 +221,7 @@ namespace Model
      * <p> The date and time the HIT was created.</p>
      */
     inline HIT& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p> The title of the HIT.</p>
@@ -252,6 +258,7 @@ namespace Model
      */
     inline HIT& WithTitle(const char* value) { SetTitle(value); return *this;}
 
+
     /**
      * <p> A general description of the HIT.</p>
      */
@@ -286,6 +293,7 @@ namespace Model
      * <p> A general description of the HIT.</p>
      */
     inline HIT& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p> The data the Worker completing the HIT uses produce the results. This is
@@ -336,6 +344,7 @@ namespace Model
      */
     inline HIT& WithQuestion(const char* value) { SetQuestion(value); return *this;}
 
+
     /**
      * <p> One or more words or phrases that describe the HIT, separated by commas.
      * Search terms similar to the keywords of a HIT are more likely to have the HIT in
@@ -385,6 +394,7 @@ namespace Model
      */
     inline HIT& WithKeywords(const char* value) { SetKeywords(value); return *this;}
 
+
     /**
      * <p>The status of the HIT and its assignments. Valid Values are Assignable |
      * Unassignable | Reviewable | Reviewing | Disposed. </p>
@@ -415,6 +425,7 @@ namespace Model
      */
     inline HIT& WithHITStatus(HITStatus&& value) { SetHITStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of times the HIT can be accepted and completed before the HIT
      * becomes unavailable. </p>
@@ -432,6 +443,7 @@ namespace Model
      * becomes unavailable. </p>
      */
     inline HIT& WithMaxAssignments(int value) { SetMaxAssignments(value); return *this;}
+
 
     
     inline const Aws::String& GetReward() const{ return m_reward; }
@@ -453,6 +465,7 @@ namespace Model
 
     
     inline HIT& WithReward(const char* value) { SetReward(value); return *this;}
+
 
     /**
      * <p>The amount of time, in seconds, after the Worker submits an assignment for
@@ -477,6 +490,7 @@ namespace Model
      * by a Worker before the assignment is auto-approved and the Worker is paid. </p>
      */
     inline HIT& WithAutoApprovalDelayInSeconds(long long value) { SetAutoApprovalDelayInSeconds(value); return *this;}
+
 
     /**
      * <p>The date and time the HIT expires.</p>
@@ -503,6 +517,7 @@ namespace Model
      */
     inline HIT& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 
+
     /**
      * <p> The length of time, in seconds, that a Worker has to complete the HIT after
      * accepting it.</p>
@@ -520,6 +535,7 @@ namespace Model
      * accepting it.</p>
      */
     inline HIT& WithAssignmentDurationInSeconds(long long value) { SetAssignmentDurationInSeconds(value); return *this;}
+
 
     /**
      * <p> An arbitrary data field the Requester who created the HIT can use. This
@@ -562,6 +578,7 @@ namespace Model
      * field is visible only to the creator of the HIT.</p>
      */
     inline HIT& WithRequesterAnnotation(const char* value) { SetRequesterAnnotation(value); return *this;}
+
 
     /**
      * <p> A condition that a Worker's Qualifications must meet in order to accept the
@@ -619,6 +636,7 @@ namespace Model
      */
     inline HIT& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> Indicates the review status of the HIT. Valid Values are NotReviewed |
      * MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
@@ -649,6 +667,7 @@ namespace Model
      */
     inline HIT& WithHITReviewStatus(HITReviewStatus&& value) { SetHITReviewStatus(std::move(value)); return *this;}
 
+
     /**
      * <p> The number of assignments for this HIT that are being previewed or have been
      * accepted by Workers, but have not yet been submitted, returned, or
@@ -670,6 +689,7 @@ namespace Model
      */
     inline HIT& WithNumberOfAssignmentsPending(int value) { SetNumberOfAssignmentsPending(value); return *this;}
 
+
     /**
      * <p> The number of assignments for this HIT that are available for Workers to
      * accept.</p>
@@ -687,6 +707,7 @@ namespace Model
      * accept.</p>
      */
     inline HIT& WithNumberOfAssignmentsAvailable(int value) { SetNumberOfAssignmentsAvailable(value); return *this;}
+
 
     /**
      * <p> The number of assignments for this HIT that have been approved or
@@ -707,46 +728,67 @@ namespace Model
     inline HIT& WithNumberOfAssignmentsCompleted(int value) { SetNumberOfAssignmentsCompleted(value); return *this;}
 
   private:
+
     Aws::String m_hITId;
     bool m_hITIdHasBeenSet;
+
     Aws::String m_hITTypeId;
     bool m_hITTypeIdHasBeenSet;
+
     Aws::String m_hITGroupId;
     bool m_hITGroupIdHasBeenSet;
+
     Aws::String m_hITLayoutId;
     bool m_hITLayoutIdHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_question;
     bool m_questionHasBeenSet;
+
     Aws::String m_keywords;
     bool m_keywordsHasBeenSet;
+
     HITStatus m_hITStatus;
     bool m_hITStatusHasBeenSet;
+
     int m_maxAssignments;
     bool m_maxAssignmentsHasBeenSet;
+
     Aws::String m_reward;
     bool m_rewardHasBeenSet;
+
     long long m_autoApprovalDelayInSeconds;
     bool m_autoApprovalDelayInSecondsHasBeenSet;
+
     Aws::Utils::DateTime m_expiration;
     bool m_expirationHasBeenSet;
+
     long long m_assignmentDurationInSeconds;
     bool m_assignmentDurationInSecondsHasBeenSet;
+
     Aws::String m_requesterAnnotation;
     bool m_requesterAnnotationHasBeenSet;
+
     Aws::Vector<QualificationRequirement> m_qualificationRequirements;
     bool m_qualificationRequirementsHasBeenSet;
+
     HITReviewStatus m_hITReviewStatus;
     bool m_hITReviewStatusHasBeenSet;
+
     int m_numberOfAssignmentsPending;
     bool m_numberOfAssignmentsPendingHasBeenSet;
+
     int m_numberOfAssignmentsAvailable;
     bool m_numberOfAssignmentsAvailableHasBeenSet;
+
     int m_numberOfAssignmentsCompleted;
     bool m_numberOfAssignmentsCompletedHasBeenSet;
   };

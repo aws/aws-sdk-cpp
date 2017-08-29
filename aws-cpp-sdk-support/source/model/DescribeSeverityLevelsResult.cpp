@@ -30,12 +30,12 @@ DescribeSeverityLevelsResult::DescribeSeverityLevelsResult()
 {
 }
 
-DescribeSeverityLevelsResult::DescribeSeverityLevelsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeSeverityLevelsResult::DescribeSeverityLevelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeSeverityLevelsResult& DescribeSeverityLevelsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeSeverityLevelsResult& DescribeSeverityLevelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("severityLevels"))

@@ -50,6 +50,7 @@ namespace Model
     AttributeValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>For single string values. Maximum string length is 100 characters.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline AttributeValue& WithS(const char* value) { SetS(value); return *this;}
 
+
     /**
      * <p>For number values, expressed as double.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>For number values, expressed as double.</p>
      */
     inline AttributeValue& WithN(double value) { SetN(value); return *this;}
+
 
     /**
      * <p>For a list of up to 10 strings. Maximum length for each string is 100
@@ -156,6 +159,7 @@ namespace Model
      */
     inline AttributeValue& AddSL(const char* value) { m_sLHasBeenSet = true; m_sL.push_back(value); return *this; }
 
+
     /**
      * <p>For a map of up to 10 type:value pairs. Maximum length for each string value
      * is 100 characters. </p>
@@ -205,12 +209,16 @@ namespace Model
     inline AttributeValue& AddSDM(const char* key, double value) { m_sDMHasBeenSet = true; m_sDM.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_s;
     bool m_sHasBeenSet;
+
     double m_n;
     bool m_nHasBeenSet;
+
     Aws::Vector<Aws::String> m_sL;
     bool m_sLHasBeenSet;
+
     Aws::Map<Aws::String, double> m_sDM;
     bool m_sDMHasBeenSet;
   };

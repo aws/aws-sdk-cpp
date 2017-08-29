@@ -46,6 +46,7 @@ namespace Model
     EventDetailsErrorItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the event. Format:
      * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i>
@@ -102,6 +103,7 @@ namespace Model
      */
     inline EventDetailsErrorItem& WithEventArn(const char* value) { SetEventArn(value); return *this;}
 
+
     /**
      * <p>The name of the error.</p>
      */
@@ -136,6 +138,7 @@ namespace Model
      * <p>The name of the error.</p>
      */
     inline EventDetailsErrorItem& WithErrorName(const char* value) { SetErrorName(value); return *this;}
+
 
     /**
      * <p>A message that describes the error.</p>
@@ -173,10 +176,13 @@ namespace Model
     inline EventDetailsErrorItem& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     Aws::String m_eventArn;
     bool m_eventArnHasBeenSet;
+
     Aws::String m_errorName;
     bool m_errorNameHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

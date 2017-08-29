@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The version filter value. Specify this parameter to show only the available
      * offerings matching the specified version.</p> <p>Default: All versions.</p>
@@ -97,6 +98,7 @@ namespace Model
      */
     inline DescribeOrderableClusterOptionsRequest& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
 
+
     /**
      * <p>The node type filter value. Specify this parameter to show only the available
      * offerings matching the specified node type.</p>
@@ -139,6 +141,7 @@ namespace Model
      */
     inline DescribeOrderableClusterOptionsRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
+
     /**
      * <p>The maximum number of response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
@@ -168,6 +171,7 @@ namespace Model
      * maximum 100.</p>
      */
     inline DescribeOrderableClusterOptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -240,12 +244,16 @@ namespace Model
     inline DescribeOrderableClusterOptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

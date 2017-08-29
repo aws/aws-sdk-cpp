@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeSchemasResult();
-    DescribeSchemasResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSchemasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSchemasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSchemasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -96,6 +97,7 @@ namespace Model
      */
     inline DescribeSchemasResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The described schema.</p>
      */
@@ -137,7 +139,9 @@ namespace Model
     inline DescribeSchemasResult& AddSchemas(const char* value) { m_schemas.push_back(value); return *this; }
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<Aws::String> m_schemas;
   };
 

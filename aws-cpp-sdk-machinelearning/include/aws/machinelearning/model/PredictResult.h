@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PredictResult();
-    PredictResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PredictResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PredictResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PredictResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Prediction& GetPrediction() const{ return m_prediction; }
@@ -57,6 +58,7 @@ namespace Model
     inline PredictResult& WithPrediction(Prediction&& value) { SetPrediction(std::move(value)); return *this;}
 
   private:
+
     Prediction m_prediction;
   };
 

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The checksum computed for the disk image.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DiskImageDescription& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
+
     /**
      * <p>The disk image format.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      * <p>The disk image format.</p>
      */
     inline DiskImageDescription& WithFormat(DiskImageFormat&& value) { SetFormat(std::move(value)); return *this;}
+
 
     /**
      * <p>A presigned URL for the import manifest stored in Amazon S3. For information
@@ -200,6 +203,7 @@ namespace Model
      */
     inline DiskImageDescription& WithImportManifestUrl(const char* value) { SetImportManifestUrl(value); return *this;}
 
+
     /**
      * <p>The size of the disk image, in GiB.</p>
      */
@@ -216,12 +220,16 @@ namespace Model
     inline DiskImageDescription& WithSize(long long value) { SetSize(value); return *this;}
 
   private:
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
+
     DiskImageFormat m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_importManifestUrl;
     bool m_importManifestUrlHasBeenSet;
+
     long long m_size;
     bool m_sizeHasBeenSet;
   };

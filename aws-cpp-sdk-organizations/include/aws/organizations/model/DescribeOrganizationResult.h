@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeOrganizationResult();
-    DescribeOrganizationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOrganizationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains information about the organization.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeOrganizationResult& WithOrganization(Organization&& value) { SetOrganization(std::move(value)); return *this;}
 
   private:
+
     Organization m_organization;
   };
 

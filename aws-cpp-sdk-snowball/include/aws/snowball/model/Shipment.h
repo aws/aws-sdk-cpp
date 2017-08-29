@@ -46,6 +46,7 @@ namespace Model
     Shipment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Status information for a shipment.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>Status information for a shipment.</p>
      */
     inline Shipment& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your
@@ -138,8 +140,10 @@ namespace Model
     inline Shipment& WithTrackingNumber(const char* value) { SetTrackingNumber(value); return *this;}
 
   private:
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_trackingNumber;
     bool m_trackingNumberHasBeenSet;
   };

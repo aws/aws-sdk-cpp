@@ -51,6 +51,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The application name corresponding to the deployment group to update.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The application name corresponding to the deployment group to update.</p>
      */
     inline UpdateDeploymentGroupRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The current name of the deployment group.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline UpdateDeploymentGroupRequest& WithCurrentDeploymentGroupName(const char* value) { SetCurrentDeploymentGroupName(value); return *this;}
 
+
     /**
      * <p>The new name of the deployment group, if you want to change it.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The new name of the deployment group, if you want to change it.</p>
      */
     inline UpdateDeploymentGroupRequest& WithNewDeploymentGroupName(const char* value) { SetNewDeploymentGroupName(value); return *this;}
+
 
     /**
      * <p>The replacement deployment configuration name to use, if you want to change
@@ -197,6 +201,7 @@ namespace Model
      * it.</p>
      */
     inline UpdateDeploymentGroupRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
+
 
     /**
      * <p>The replacement set of Amazon EC2 tags on which to filter, if you want to
@@ -247,6 +252,7 @@ namespace Model
      */
     inline UpdateDeploymentGroupRequest& AddEc2TagFilters(EC2TagFilter&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The replacement set of on-premises instance tags on which to filter, if you
      * want to change them. To keep the existing tags, enter their names. To remove
@@ -295,6 +301,7 @@ namespace Model
      * tags, do not enter any tag names.</p>
      */
     inline UpdateDeploymentGroupRequest& AddOnPremisesInstanceTagFilters(TagFilter&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
@@ -360,6 +367,7 @@ namespace Model
      */
     inline UpdateDeploymentGroupRequest& AddAutoScalingGroups(const char* value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
+
     /**
      * <p>A replacement ARN for the service role, if you want to change it.</p>
      */
@@ -394,6 +402,7 @@ namespace Model
      * <p>A replacement ARN for the service role, if you want to change it.</p>
      */
     inline UpdateDeploymentGroupRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+
 
     /**
      * <p>Information about triggers to change when the deployment group is updated.
@@ -458,6 +467,7 @@ namespace Model
      */
     inline UpdateDeploymentGroupRequest& AddTriggerConfigurations(TriggerConfig&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Information to add or change about Amazon CloudWatch alarms when the
      * deployment group is updated.</p>
@@ -487,6 +497,7 @@ namespace Model
      * deployment group is updated.</p>
      */
     inline UpdateDeploymentGroupRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>Information for an automatic rollback configuration that is added or changed
@@ -518,6 +529,7 @@ namespace Model
      */
     inline UpdateDeploymentGroupRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
@@ -548,6 +560,7 @@ namespace Model
      */
     inline UpdateDeploymentGroupRequest& WithDeploymentStyle(DeploymentStyle&& value) { SetDeploymentStyle(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about blue/green deployment options for a deployment group.</p>
      */
@@ -573,6 +586,7 @@ namespace Model
      */
     inline UpdateDeploymentGroupRequest& WithBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfiguration&& value) { SetBlueGreenDeploymentConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the load balancer used in a deployment.</p>
      */
@@ -597,6 +611,7 @@ namespace Model
      * <p>Information about the load balancer used in a deployment.</p>
      */
     inline UpdateDeploymentGroupRequest& WithLoadBalancerInfo(LoadBalancerInfo&& value) { SetLoadBalancerInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
@@ -633,6 +648,7 @@ namespace Model
      */
     inline UpdateDeploymentGroupRequest& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about an on-premises instance tag set. The deployment group will
      * include only on-premises instances identified by all the tag groups.</p>
@@ -664,36 +680,52 @@ namespace Model
     inline UpdateDeploymentGroupRequest& WithOnPremisesTagSet(OnPremisesTagSet&& value) { SetOnPremisesTagSet(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_currentDeploymentGroupName;
     bool m_currentDeploymentGroupNameHasBeenSet;
+
     Aws::String m_newDeploymentGroupName;
     bool m_newDeploymentGroupNameHasBeenSet;
+
     Aws::String m_deploymentConfigName;
     bool m_deploymentConfigNameHasBeenSet;
+
     Aws::Vector<EC2TagFilter> m_ec2TagFilters;
     bool m_ec2TagFiltersHasBeenSet;
+
     Aws::Vector<TagFilter> m_onPremisesInstanceTagFilters;
     bool m_onPremisesInstanceTagFiltersHasBeenSet;
+
     Aws::Vector<Aws::String> m_autoScalingGroups;
     bool m_autoScalingGroupsHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     Aws::Vector<TriggerConfig> m_triggerConfigurations;
     bool m_triggerConfigurationsHasBeenSet;
+
     AlarmConfiguration m_alarmConfiguration;
     bool m_alarmConfigurationHasBeenSet;
+
     AutoRollbackConfiguration m_autoRollbackConfiguration;
     bool m_autoRollbackConfigurationHasBeenSet;
+
     DeploymentStyle m_deploymentStyle;
     bool m_deploymentStyleHasBeenSet;
+
     BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
     bool m_blueGreenDeploymentConfigurationHasBeenSet;
+
     LoadBalancerInfo m_loadBalancerInfo;
     bool m_loadBalancerInfoHasBeenSet;
+
     EC2TagSet m_ec2TagSet;
     bool m_ec2TagSetHasBeenSet;
+
     OnPremisesTagSet m_onPremisesTagSet;
     bool m_onPremisesTagSetHasBeenSet;
   };

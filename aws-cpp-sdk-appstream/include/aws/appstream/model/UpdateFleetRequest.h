@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The image name from which a fleet is created.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline UpdateFleetRequest& WithImageName(const char* value) { SetImageName(value); return *this;}
 
+
     /**
      * <p>The name of the fleet.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The name of the fleet.</p>
      */
     inline UpdateFleetRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The instance type of compute resources for the fleet. Fleet instances are
@@ -223,6 +226,7 @@ namespace Model
      */
     inline UpdateFleetRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The parameters for the capacity allocated to the fleet. </p>
      */
@@ -247,6 +251,7 @@ namespace Model
      * <p>The parameters for the capacity allocated to the fleet. </p>
      */
     inline UpdateFleetRequest& WithComputeCapacity(ComputeCapacity&& value) { SetComputeCapacity(std::move(value)); return *this;}
+
 
     /**
      * <p>The VPC configuration for the fleet.</p>
@@ -273,6 +278,7 @@ namespace Model
      */
     inline UpdateFleetRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum time for which a streaming session can run. The input can be any
      * numeric value in seconds between 600 and 57600.</p>
@@ -290,6 +296,7 @@ namespace Model
      * numeric value in seconds between 600 and 57600.</p>
      */
     inline UpdateFleetRequest& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
+
 
     /**
      * <p>The time after disconnection when a session is considered to have ended. If a
@@ -314,6 +321,7 @@ namespace Model
      * seconds between 60 and 57600.</p>
      */
     inline UpdateFleetRequest& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
+
 
     /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
@@ -350,6 +358,7 @@ namespace Model
      */
     inline UpdateFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
      */
@@ -385,6 +394,7 @@ namespace Model
      */
     inline UpdateFleetRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
     /**
      * <p>Enables or disables default internet access for the fleet.</p>
      */
@@ -399,6 +409,7 @@ namespace Model
      * <p>Enables or disables default internet access for the fleet.</p>
      */
     inline UpdateFleetRequest& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
+
 
     /**
      * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
@@ -434,6 +445,7 @@ namespace Model
      * instances.</p>
      */
     inline UpdateFleetRequest& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>Fleet attributes to be deleted.</p>
@@ -471,28 +483,40 @@ namespace Model
     inline UpdateFleetRequest& AddAttributesToDelete(FleetAttribute&& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_imageName;
     bool m_imageNameHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     ComputeCapacity m_computeCapacity;
     bool m_computeCapacityHasBeenSet;
+
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
     int m_maxUserDurationInSeconds;
     bool m_maxUserDurationInSecondsHasBeenSet;
+
     int m_disconnectTimeoutInSeconds;
     bool m_disconnectTimeoutInSecondsHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     bool m_enableDefaultInternetAccess;
     bool m_enableDefaultInternetAccessHasBeenSet;
+
     DomainJoinInfo m_domainJoinInfo;
     bool m_domainJoinInfoHasBeenSet;
+
     Aws::Vector<FleetAttribute> m_attributesToDelete;
     bool m_attributesToDeleteHasBeenSet;
   };

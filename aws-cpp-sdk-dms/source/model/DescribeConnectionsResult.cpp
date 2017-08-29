@@ -30,12 +30,12 @@ DescribeConnectionsResult::DescribeConnectionsResult()
 {
 }
 
-DescribeConnectionsResult::DescribeConnectionsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConnectionsResult::DescribeConnectionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeConnectionsResult& DescribeConnectionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConnectionsResult& DescribeConnectionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Marker"))

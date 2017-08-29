@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The CIDR IP address range. You can't specify this parameter when specifying a
      * source security group.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline RevokeSecurityGroupIngressRequest& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
 
+
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
      * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
@@ -106,6 +108,7 @@ namespace Model
      * types.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithFromPort(int value) { SetFromPort(value); return *this;}
+
 
     /**
      * <p>The ID of the security group. Required for a security group in a nondefault
@@ -149,6 +152,7 @@ namespace Model
      */
     inline RevokeSecurityGroupIngressRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
+
     /**
      * <p>[EC2-Classic, default VPC] The name of the security group.</p>
      */
@@ -183,6 +187,7 @@ namespace Model
      * <p>[EC2-Classic, default VPC] The name of the security group.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>A set of IP permissions. You can't specify a source security group and a CIDR
@@ -225,6 +230,7 @@ namespace Model
      * IP address range.</p>
      */
     inline RevokeSecurityGroupIngressRequest& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
@@ -281,6 +287,7 @@ namespace Model
      * Numbers</a>). Use <code>-1</code> to specify all.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
+
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
@@ -352,6 +359,7 @@ namespace Model
      */
     inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupName(const char* value) { SetSourceSecurityGroupName(value); return *this;}
 
+
     /**
      * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
      * security group is in a different account. You can't specify this parameter in
@@ -422,6 +430,7 @@ namespace Model
      */
     inline RevokeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(const char* value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
+
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
      * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
@@ -442,6 +451,7 @@ namespace Model
      * ICMP type.</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithToPort(int value) { SetToPort(value); return *this;}
+
 
     /**
      * <p>Checks whether you have the required permissions for the action, without
@@ -468,24 +478,34 @@ namespace Model
     inline RevokeSecurityGroupIngressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_cidrIp;
     bool m_cidrIpHasBeenSet;
+
     int m_fromPort;
     bool m_fromPortHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::Vector<IpPermission> m_ipPermissions;
     bool m_ipPermissionsHasBeenSet;
+
     Aws::String m_ipProtocol;
     bool m_ipProtocolHasBeenSet;
+
     Aws::String m_sourceSecurityGroupName;
     bool m_sourceSecurityGroupNameHasBeenSet;
+
     Aws::String m_sourceSecurityGroupOwnerId;
     bool m_sourceSecurityGroupOwnerIdHasBeenSet;
+
     int m_toPort;
     bool m_toPortHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

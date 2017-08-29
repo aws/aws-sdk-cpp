@@ -30,12 +30,12 @@ UpdateNetworkProfileResult::UpdateNetworkProfileResult()
 {
 }
 
-UpdateNetworkProfileResult::UpdateNetworkProfileResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateNetworkProfileResult::UpdateNetworkProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateNetworkProfileResult& UpdateNetworkProfileResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateNetworkProfileResult& UpdateNetworkProfileResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("networkProfile"))

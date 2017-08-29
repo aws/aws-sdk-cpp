@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -64,6 +65,7 @@ namespace Model
     
     inline UpdateBandwidthRateLimitRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     /**
      * <p>The average upload bandwidth rate limit in bits per second.</p>
      */
@@ -78,6 +80,7 @@ namespace Model
      * <p>The average upload bandwidth rate limit in bits per second.</p>
      */
     inline UpdateBandwidthRateLimitRequest& WithAverageUploadRateLimitInBitsPerSec(long long value) { SetAverageUploadRateLimitInBitsPerSec(value); return *this;}
+
 
     /**
      * <p>The average download bandwidth rate limit in bits per second.</p>
@@ -95,10 +98,13 @@ namespace Model
     inline UpdateBandwidthRateLimitRequest& WithAverageDownloadRateLimitInBitsPerSec(long long value) { SetAverageDownloadRateLimitInBitsPerSec(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     long long m_averageUploadRateLimitInBitsPerSec;
     bool m_averageUploadRateLimitInBitsPerSecHasBeenSet;
+
     long long m_averageDownloadRateLimitInBitsPerSec;
     bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet;
   };

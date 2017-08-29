@@ -30,12 +30,12 @@ DeregisterTaskFromMaintenanceWindowResult::DeregisterTaskFromMaintenanceWindowRe
 {
 }
 
-DeregisterTaskFromMaintenanceWindowResult::DeregisterTaskFromMaintenanceWindowResult(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterTaskFromMaintenanceWindowResult::DeregisterTaskFromMaintenanceWindowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeregisterTaskFromMaintenanceWindowResult& DeregisterTaskFromMaintenanceWindowResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterTaskFromMaintenanceWindowResult& DeregisterTaskFromMaintenanceWindowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WindowId"))

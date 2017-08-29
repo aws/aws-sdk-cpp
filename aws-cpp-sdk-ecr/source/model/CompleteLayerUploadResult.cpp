@@ -30,12 +30,12 @@ CompleteLayerUploadResult::CompleteLayerUploadResult()
 {
 }
 
-CompleteLayerUploadResult::CompleteLayerUploadResult(const AmazonWebServiceResult<JsonValue>& result)
+CompleteLayerUploadResult::CompleteLayerUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CompleteLayerUploadResult& CompleteLayerUploadResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CompleteLayerUploadResult& CompleteLayerUploadResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("registryId"))

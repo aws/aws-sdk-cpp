@@ -47,6 +47,7 @@ namespace Model
     Category& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The category code for the support case.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The category code for the support case.</p>
      */
     inline Category& WithCode(const char* value) { SetCode(value); return *this;}
+
 
     /**
      * <p>The category name for the support case.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline Category& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

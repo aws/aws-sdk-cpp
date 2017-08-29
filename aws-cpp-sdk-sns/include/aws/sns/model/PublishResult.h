@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     PublishResult();
-    PublishResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PublishResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PublishResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PublishResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Unique identifier assigned to the published message.</p> <p>Length
@@ -89,6 +90,7 @@ namespace Model
      */
     inline PublishResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,7 +107,9 @@ namespace Model
     inline PublishResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_messageId;
+
     ResponseMetadata m_responseMetadata;
   };
 

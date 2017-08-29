@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeNFSFileSharesResult();
-    DescribeNFSFileSharesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeNFSFileSharesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeNFSFileSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeNFSFileSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array containing a description for each requested file share. </p>
@@ -83,6 +84,7 @@ namespace Model
     inline DescribeNFSFileSharesResult& AddNFSFileShareInfoList(NFSFileShareInfo&& value) { m_nFSFileShareInfoList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<NFSFileShareInfo> m_nFSFileShareInfoList;
   };
 

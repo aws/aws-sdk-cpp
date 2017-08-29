@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeNotificationConfigurationsResult();
-    DescribeNotificationConfigurationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeNotificationConfigurationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeNotificationConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeNotificationConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The notification configurations.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>The notification configurations.</p>
      */
     inline DescribeNotificationConfigurationsResult& AddNotificationConfigurations(NotificationConfiguration&& value) { m_notificationConfigurations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeNotificationConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeNotificationConfigurationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<NotificationConfiguration> m_notificationConfigurations;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

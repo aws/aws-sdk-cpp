@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The continuation token to be used to return the next set of results, if the
      * results cannot be returned in one response.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ListProjectsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum amount of data that can be contained in a single set of
      * results.</p>
@@ -97,8 +99,10 @@ namespace Model
     inline ListProjectsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

@@ -30,12 +30,12 @@ DescribeSecurityConfigurationResult::DescribeSecurityConfigurationResult()
 {
 }
 
-DescribeSecurityConfigurationResult::DescribeSecurityConfigurationResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeSecurityConfigurationResult::DescribeSecurityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeSecurityConfigurationResult& DescribeSecurityConfigurationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeSecurityConfigurationResult& DescribeSecurityConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Name"))

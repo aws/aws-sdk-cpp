@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM user to create a password for. The user must already
      * exist.</p> <p>This parameter allows (per its <a
@@ -100,6 +101,7 @@ namespace Model
      * can also include any of the following characters: =,.@-</p>
      */
     inline CreateLoginProfileRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The new password for the user.</p> <p>The <a
@@ -192,6 +194,7 @@ namespace Model
      */
     inline CreateLoginProfileRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
     /**
      * <p>Specifies whether the user is required to set a new password on next
      * sign-in.</p>
@@ -211,10 +214,13 @@ namespace Model
     inline CreateLoginProfileRequest& WithPasswordResetRequired(bool value) { SetPasswordResetRequired(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     bool m_passwordResetRequired;
     bool m_passwordResetRequiredHasBeenSet;
   };

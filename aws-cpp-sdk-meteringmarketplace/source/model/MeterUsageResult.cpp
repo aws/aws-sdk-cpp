@@ -30,12 +30,12 @@ MeterUsageResult::MeterUsageResult()
 {
 }
 
-MeterUsageResult::MeterUsageResult(const AmazonWebServiceResult<JsonValue>& result)
+MeterUsageResult::MeterUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-MeterUsageResult& MeterUsageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+MeterUsageResult& MeterUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MeteringRecordId"))

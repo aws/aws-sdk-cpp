@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateGrantResult();
-    CreateGrantResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateGrantResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateGrantResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateGrantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The grant token.</p> <p>For more information, see <a
@@ -89,6 +90,7 @@ namespace Model
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantResult& WithGrantToken(const char* value) { SetGrantToken(value); return *this;}
+
 
     /**
      * <p>The unique identifier for the grant.</p> <p>You can use the
@@ -140,7 +142,9 @@ namespace Model
     inline CreateGrantResult& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 
   private:
+
     Aws::String m_grantToken;
+
     Aws::String m_grantId;
   };
 

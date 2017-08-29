@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
      * product code should be the same as the one used during the publishing of a new
@@ -86,6 +87,7 @@ namespace Model
      */
     inline MeterUsageRequest& WithProductCode(const char* value) { SetProductCode(value); return *this;}
 
+
     /**
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
      * of the timestamp will be ignored.</p>
@@ -115,6 +117,7 @@ namespace Model
      * of the timestamp will be ignored.</p>
      */
     inline MeterUsageRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>It will be one of the fcp dimension name provided during the publishing of
@@ -158,6 +161,7 @@ namespace Model
      */
     inline MeterUsageRequest& WithUsageDimension(const char* value) { SetUsageDimension(value); return *this;}
 
+
     /**
      * <p>Consumption value for the hour.</p>
      */
@@ -172,6 +176,7 @@ namespace Model
      * <p>Consumption value for the hour.</p>
      */
     inline MeterUsageRequest& WithUsageQuantity(int value) { SetUsageQuantity(value); return *this;}
+
 
     /**
      * <p>Checks whether you have the permissions required for the action, but does not
@@ -195,14 +200,19 @@ namespace Model
     inline MeterUsageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_productCode;
     bool m_productCodeHasBeenSet;
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
     Aws::String m_usageDimension;
     bool m_usageDimensionHasBeenSet;
+
     int m_usageQuantity;
     bool m_usageQuantityHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

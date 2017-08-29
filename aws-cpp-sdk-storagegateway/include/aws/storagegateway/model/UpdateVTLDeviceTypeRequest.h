@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
      */
     inline UpdateVTLDeviceTypeRequest& WithVTLDeviceARN(const char* value) { SetVTLDeviceARN(value); return *this;}
+
 
     /**
      * <p>The type of medium changer you want to select.</p> <p> Valid Values:
@@ -114,8 +116,10 @@ namespace Model
     inline UpdateVTLDeviceTypeRequest& WithDeviceType(const char* value) { SetDeviceType(value); return *this;}
 
   private:
+
     Aws::String m_vTLDeviceARN;
     bool m_vTLDeviceARNHasBeenSet;
+
     Aws::String m_deviceType;
     bool m_deviceTypeHasBeenSet;
   };

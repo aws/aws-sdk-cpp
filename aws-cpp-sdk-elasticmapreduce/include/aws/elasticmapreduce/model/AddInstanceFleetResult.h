@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     AddInstanceFleetResult();
-    AddInstanceFleetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddInstanceFleetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddInstanceFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddInstanceFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique identifier of the cluster.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The unique identifier of the cluster.</p>
      */
     inline AddInstanceFleetResult& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
 
     /**
      * <p>The unique identifier of the instance fleet.</p>
@@ -112,7 +114,9 @@ namespace Model
     inline AddInstanceFleetResult& WithInstanceFleetId(const char* value) { SetInstanceFleetId(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
+
     Aws::String m_instanceFleetId;
   };
 

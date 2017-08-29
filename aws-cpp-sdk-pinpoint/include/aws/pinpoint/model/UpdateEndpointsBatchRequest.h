@@ -35,6 +35,7 @@ namespace Model
     UpdateEndpointsBatchRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -56,6 +57,7 @@ namespace Model
     
     inline UpdateEndpointsBatchRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     
     inline const EndpointBatchRequest& GetEndpointBatchRequest() const{ return m_endpointBatchRequest; }
 
@@ -72,8 +74,10 @@ namespace Model
     inline UpdateEndpointsBatchRequest& WithEndpointBatchRequest(EndpointBatchRequest&& value) { SetEndpointBatchRequest(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     EndpointBatchRequest m_endpointBatchRequest;
     bool m_endpointBatchRequestHasBeenSet;
   };

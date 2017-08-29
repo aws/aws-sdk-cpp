@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the directory to delete.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DeleteDirectoryRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
   };

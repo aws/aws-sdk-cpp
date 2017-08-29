@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the stream.</p>
      */
     inline ListTagsForStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * <p>The key to use as the starting point for the list of tags. If this parameter
@@ -124,6 +126,7 @@ namespace Model
      */
     inline ListTagsForStreamRequest& WithExclusiveStartTagKey(const char* value) { SetExclusiveStartTagKey(value); return *this;}
 
+
     /**
      * <p>The number of tags to return. If this number is less than the total number of
      * tags associated with the stream, <code>HasMoreTags</code> is set to
@@ -149,10 +152,13 @@ namespace Model
     inline ListTagsForStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::String m_exclusiveStartTagKey;
     bool m_exclusiveStartTagKeyHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The canned ACL to apply to the bucket.
      */
@@ -63,6 +64,7 @@ namespace Model
      */
     inline PutBucketAclRequest& WithACL(BucketCannedACL&& value) { SetACL(std::move(value)); return *this;}
 
+
     
     inline const AccessControlPolicy& GetAccessControlPolicy() const{ return m_accessControlPolicy; }
 
@@ -77,6 +79,7 @@ namespace Model
 
     
     inline PutBucketAclRequest& WithAccessControlPolicy(AccessControlPolicy&& value) { SetAccessControlPolicy(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
@@ -99,6 +102,7 @@ namespace Model
     
     inline PutBucketAclRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
@@ -119,6 +123,7 @@ namespace Model
 
     
     inline PutBucketAclRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
+
 
     /**
      * Allows grantee the read, write, read ACP, and write ACP permissions on the
@@ -162,6 +167,7 @@ namespace Model
      */
     inline PutBucketAclRequest& WithGrantFullControl(const char* value) { SetGrantFullControl(value); return *this;}
 
+
     /**
      * Allows grantee to list the objects in the bucket.
      */
@@ -196,6 +202,7 @@ namespace Model
      * Allows grantee to list the objects in the bucket.
      */
     inline PutBucketAclRequest& WithGrantRead(const char* value) { SetGrantRead(value); return *this;}
+
 
     /**
      * Allows grantee to read the bucket ACL.
@@ -232,6 +239,7 @@ namespace Model
      */
     inline PutBucketAclRequest& WithGrantReadACP(const char* value) { SetGrantReadACP(value); return *this;}
 
+
     /**
      * Allows grantee to create, overwrite, and delete any object in the bucket.
      */
@@ -266,6 +274,7 @@ namespace Model
      * Allows grantee to create, overwrite, and delete any object in the bucket.
      */
     inline PutBucketAclRequest& WithGrantWrite(const char* value) { SetGrantWrite(value); return *this;}
+
 
     /**
      * Allows grantee to write the ACL for the applicable bucket.
@@ -303,22 +312,31 @@ namespace Model
     inline PutBucketAclRequest& WithGrantWriteACP(const char* value) { SetGrantWriteACP(value); return *this;}
 
   private:
+
     BucketCannedACL m_aCL;
     bool m_aCLHasBeenSet;
+
     AccessControlPolicy m_accessControlPolicy;
     bool m_accessControlPolicyHasBeenSet;
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
+
     Aws::String m_grantFullControl;
     bool m_grantFullControlHasBeenSet;
+
     Aws::String m_grantRead;
     bool m_grantReadHasBeenSet;
+
     Aws::String m_grantReadACP;
     bool m_grantReadACPHasBeenSet;
+
     Aws::String m_grantWrite;
     bool m_grantWriteHasBeenSet;
+
     Aws::String m_grantWriteACP;
     bool m_grantWriteACPHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     UploadSigningCertificateResult();
-    UploadSigningCertificateResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UploadSigningCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UploadSigningCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UploadSigningCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the certificate.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline UploadSigningCertificateResult& WithCertificate(SigningCertificate&& value) { SetCertificate(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline UploadSigningCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     SigningCertificate m_certificate;
+
     ResponseMetadata m_responseMetadata;
   };
 

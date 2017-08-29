@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The reserved cache node identifier filter value. Use this parameter to show
      * only the reservation that matches the specified reservation ID.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeReservedCacheNodesRequest& WithReservedCacheNodeId(const char* value) { SetReservedCacheNodeId(value); return *this;}
 
+
     /**
      * <p>The offering identifier filter value. Use this parameter to show only
      * purchased reservations matching the specified offering identifier.</p>
@@ -125,6 +127,7 @@ namespace Model
      * purchased reservations matching the specified offering identifier.</p>
      */
     inline DescribeReservedCacheNodesRequest& WithReservedCacheNodesOfferingId(const char* value) { SetReservedCacheNodesOfferingId(value); return *this;}
+
 
     /**
      * <p>The cache node type filter value. Use this parameter to show only those
@@ -371,6 +374,7 @@ namespace Model
      */
     inline DescribeReservedCacheNodesRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
+
     /**
      * <p>The duration filter value, specified in years or seconds. Use this parameter
      * to show only reservations for this duration.</p> <p>Valid Values: <code>1 | 3 |
@@ -420,6 +424,7 @@ namespace Model
      */
     inline DescribeReservedCacheNodesRequest& WithDuration(const char* value) { SetDuration(value); return *this;}
 
+
     /**
      * <p>The product description filter value. Use this parameter to show only those
      * reservations matching the specified product description.</p>
@@ -461,6 +466,7 @@ namespace Model
      * reservations matching the specified product description.</p>
      */
     inline DescribeReservedCacheNodesRequest& WithProductDescription(const char* value) { SetProductDescription(value); return *this;}
+
 
     /**
      * <p>The offering type filter value. Use this parameter to show only the available
@@ -511,6 +517,7 @@ namespace Model
      */
     inline DescribeReservedCacheNodesRequest& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
 
+
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a marker is included in
@@ -534,6 +541,7 @@ namespace Model
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
      */
     inline DescribeReservedCacheNodesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
@@ -592,20 +600,28 @@ namespace Model
     inline DescribeReservedCacheNodesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_reservedCacheNodeId;
     bool m_reservedCacheNodeIdHasBeenSet;
+
     Aws::String m_reservedCacheNodesOfferingId;
     bool m_reservedCacheNodesOfferingIdHasBeenSet;
+
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+
     Aws::String m_duration;
     bool m_durationHasBeenSet;
+
     Aws::String m_productDescription;
     bool m_productDescriptionHasBeenSet;
+
     Aws::String m_offeringType;
     bool m_offeringTypeHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

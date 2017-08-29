@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Maintenance Window ID with which to modify the target.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The Maintenance Window ID with which to modify the target.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>The target ID to modify.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTargetRequest& WithWindowTargetId(const char* value) { SetWindowTargetId(value); return *this;}
 
+
     /**
      * <p>The targets to add or replace.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The targets to add or replace.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
@@ -185,6 +189,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTargetRequest& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
+
     /**
      * <p>A name for the update.</p>
      */
@@ -219,6 +224,7 @@ namespace Model
      * <p>A name for the update.</p>
      */
     inline UpdateMaintenanceWindowTargetRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>An optional description for the update.</p>
@@ -255,6 +261,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowTargetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>If True, then all fields that are required by the
      * RegisterTargetWithMaintenanceWindow action are also required for this API
@@ -277,18 +284,25 @@ namespace Model
     inline UpdateMaintenanceWindowTargetRequest& WithReplace(bool value) { SetReplace(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::String m_windowTargetId;
     bool m_windowTargetIdHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_ownerInformation;
     bool m_ownerInformationHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_replace;
     bool m_replaceHasBeenSet;
   };

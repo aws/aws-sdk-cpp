@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the destination.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteDestinationRequest& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
 
   private:
+
     Aws::String m_destinationName;
     bool m_destinationNameHasBeenSet;
   };

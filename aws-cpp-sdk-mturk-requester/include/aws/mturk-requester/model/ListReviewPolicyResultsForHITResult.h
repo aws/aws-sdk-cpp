@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListReviewPolicyResultsForHITResult();
-    ListReviewPolicyResultsForHITResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListReviewPolicyResultsForHITResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListReviewPolicyResultsForHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListReviewPolicyResultsForHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The HITId of the HIT for which results have been returned.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ListReviewPolicyResultsForHITResult& WithHITId(const char* value) { SetHITId(value); return *this;}
 
+
     /**
      * <p> The name of the Assignment-level Review Policy. This contains only the
      * PolicyName element. </p>
@@ -107,6 +109,7 @@ namespace Model
      * PolicyName element. </p>
      */
     inline ListReviewPolicyResultsForHITResult& WithAssignmentReviewPolicy(ReviewPolicy&& value) { SetAssignmentReviewPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the HIT-level Review Policy. This contains only the PolicyName
@@ -138,6 +141,7 @@ namespace Model
      */
     inline ListReviewPolicyResultsForHITResult& WithHITReviewPolicy(ReviewPolicy&& value) { SetHITReviewPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
      */
@@ -162,6 +166,7 @@ namespace Model
      * <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
      */
     inline ListReviewPolicyResultsForHITResult& WithAssignmentReviewReport(ReviewReport&& value) { SetAssignmentReviewReport(std::move(value)); return *this;}
+
 
     /**
      * <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.
@@ -193,6 +198,7 @@ namespace Model
      */
     inline ListReviewPolicyResultsForHITResult& WithHITReviewReport(ReviewReport&& value) { SetHITReviewReport(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -215,11 +221,17 @@ namespace Model
     inline ListReviewPolicyResultsForHITResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_hITId;
+
     ReviewPolicy m_assignmentReviewPolicy;
+
     ReviewPolicy m_hITReviewPolicy;
+
     ReviewReport m_assignmentReviewReport;
+
     ReviewReport m_hITReviewReport;
+
     Aws::String m_nextToken;
   };
 

@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The description of the event.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The description of the event.</p>
      */
     inline EventInformation& WithEventDescription(const char* value) { SetEventDescription(value); return *this;}
+
 
     /**
      * <p>The event.</p> <p>The following are the <code>error</code> events.</p> <ul>
@@ -349,6 +351,7 @@ namespace Model
      */
     inline EventInformation& WithEventSubType(const char* value) { SetEventSubType(value); return *this;}
 
+
     /**
      * <p>The ID of the instance. This information is available only for
      * <code>instanceChange</code> events.</p>
@@ -392,10 +395,13 @@ namespace Model
     inline EventInformation& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_eventDescription;
     bool m_eventDescriptionHasBeenSet;
+
     Aws::String m_eventSubType;
     bool m_eventSubTypeHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
   };

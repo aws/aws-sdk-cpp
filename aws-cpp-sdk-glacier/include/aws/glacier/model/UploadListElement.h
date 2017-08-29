@@ -46,6 +46,7 @@ namespace Model
     UploadListElement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of a multipart upload.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline UploadListElement& WithMultipartUploadId(const char* value) { SetMultipartUploadId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
      */
     inline UploadListElement& WithVaultARN(const char* value) { SetVaultARN(value); return *this;}
+
 
     /**
      * <p>The description of the archive that was specified in the Initiate Multipart
@@ -158,6 +161,7 @@ namespace Model
      */
     inline UploadListElement& WithArchiveDescription(const char* value) { SetArchiveDescription(value); return *this;}
 
+
     /**
      * <p>The part size, in bytes, specified in the Initiate Multipart Upload request.
      * This is the size of all the parts in the upload except the last part, which may
@@ -178,6 +182,7 @@ namespace Model
      * be smaller than this size.</p>
      */
     inline UploadListElement& WithPartSizeInBytes(long long value) { SetPartSizeInBytes(value); return *this;}
+
 
     /**
      * <p>The UTC time at which the multipart upload was initiated.</p>
@@ -215,14 +220,19 @@ namespace Model
     inline UploadListElement& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
   private:
+
     Aws::String m_multipartUploadId;
     bool m_multipartUploadIdHasBeenSet;
+
     Aws::String m_vaultARN;
     bool m_vaultARNHasBeenSet;
+
     Aws::String m_archiveDescription;
     bool m_archiveDescriptionHasBeenSet;
+
     long long m_partSizeInBytes;
     bool m_partSizeInBytesHasBeenSet;
+
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
   };

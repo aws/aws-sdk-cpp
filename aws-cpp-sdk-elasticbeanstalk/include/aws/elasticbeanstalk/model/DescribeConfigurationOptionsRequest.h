@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application associated with the configuration template or
      * environment. Only needed if you want to describe the configuration options
@@ -93,6 +94,7 @@ namespace Model
      */
     inline DescribeConfigurationOptionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The name of the configuration template whose configuration options you want
      * to describe.</p>
@@ -134,6 +136,7 @@ namespace Model
      * to describe.</p>
      */
     inline DescribeConfigurationOptionsRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+
 
     /**
      * <p>The name of the environment whose configuration options you want to
@@ -177,6 +180,7 @@ namespace Model
      */
     inline DescribeConfigurationOptionsRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The name of the solution stack whose configuration options you want to
      * describe.</p>
@@ -219,6 +223,7 @@ namespace Model
      */
     inline DescribeConfigurationOptionsRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
+
     /**
      * <p>The ARN of the custom platform.</p>
      */
@@ -253,6 +258,7 @@ namespace Model
      * <p>The ARN of the custom platform.</p>
      */
     inline DescribeConfigurationOptionsRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
 
     /**
      * <p>If specified, restricts the descriptions to only the specified options.</p>
@@ -290,16 +296,22 @@ namespace Model
     inline DescribeConfigurationOptionsRequest& AddOptions(OptionSpecification&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet;
+
     Aws::String m_platformArn;
     bool m_platformArnHasBeenSet;
+
     Aws::Vector<OptionSpecification> m_options;
     bool m_optionsHasBeenSet;
   };

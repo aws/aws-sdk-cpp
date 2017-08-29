@@ -46,12 +46,12 @@ GetThingShadowResult& GetThingShadowResult::operator=(GetThingShadowResult&& toM
    return *this;
 }
 
-GetThingShadowResult::GetThingShadowResult(AmazonWebServiceResult<ResponseStream>&& result)
+GetThingShadowResult::GetThingShadowResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
 }
 
-GetThingShadowResult& GetThingShadowResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+GetThingShadowResult& GetThingShadowResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_payload = result.TakeOwnershipOfPayload();
 

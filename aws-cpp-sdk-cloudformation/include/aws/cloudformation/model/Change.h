@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The type of entity that AWS CloudFormation changes. Currently, the only
      * entity type is <code>Resource</code>.</p>
@@ -79,6 +80,7 @@ namespace Model
      * entity type is <code>Resource</code>.</p>
      */
     inline Change& WithType(ChangeType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>A <code>ResourceChange</code> structure that describes the resource and
@@ -111,8 +113,10 @@ namespace Model
     inline Change& WithResourceChange(ResourceChange&& value) { SetResourceChange(std::move(value)); return *this;}
 
   private:
+
     ChangeType m_type;
     bool m_typeHasBeenSet;
+
     ResourceChange m_resourceChange;
     bool m_resourceChangeHasBeenSet;
   };

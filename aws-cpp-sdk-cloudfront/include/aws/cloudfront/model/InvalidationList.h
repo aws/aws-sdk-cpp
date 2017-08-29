@@ -52,6 +52,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The value that you provided for the <code>Marker</code> request
      * parameter.</p>
@@ -93,6 +94,7 @@ namespace Model
      * parameter.</p>
      */
     inline InvalidationList& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
@@ -143,6 +145,7 @@ namespace Model
      */
     inline InvalidationList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>The value that you provided for the <code>MaxItems</code> request
      * parameter.</p>
@@ -160,6 +163,7 @@ namespace Model
      * parameter.</p>
      */
     inline InvalidationList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+
 
     /**
      * <p>A flag that indicates whether more invalidation batch requests remain to be
@@ -185,6 +189,7 @@ namespace Model
      */
     inline InvalidationList& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
+
     /**
      * <p>The number of invalidation batches that were created by the current AWS
      * account. </p>
@@ -202,6 +207,7 @@ namespace Model
      * account. </p>
      */
     inline InvalidationList& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>A complex type that contains one <code>InvalidationSummary</code> element for
@@ -246,16 +252,22 @@ namespace Model
     inline InvalidationList& AddItems(InvalidationSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
+
     bool m_isTruncated;
     bool m_isTruncatedHasBeenSet;
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<InvalidationSummary> m_items;
     bool m_itemsHasBeenSet;
   };

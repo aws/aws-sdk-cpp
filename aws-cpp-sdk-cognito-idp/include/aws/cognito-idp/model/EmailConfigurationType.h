@@ -45,6 +45,7 @@ namespace Model
     EmailConfigurationType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the email source.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the email source.</p>
      */
     inline EmailConfigurationType& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+
 
     /**
      * <p>The REPLY-TO email address.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline EmailConfigurationType& WithReplyToEmailAddress(const char* value) { SetReplyToEmailAddress(value); return *this;}
 
   private:
+
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet;
+
     Aws::String m_replyToEmailAddress;
     bool m_replyToEmailAddressHasBeenSet;
   };

@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The full name of a condition context key, including the service prefix. For
      * example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
@@ -96,6 +97,7 @@ namespace Model
      * example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
      */
     inline ContextEntry& WithContextKeyName(const char* value) { SetContextKeyName(value); return *this;}
+
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
@@ -153,6 +155,7 @@ namespace Model
      */
     inline ContextEntry& AddContextKeyValues(const char* value) { m_contextKeyValuesHasBeenSet = true; m_contextKeyValues.push_back(value); return *this; }
 
+
     /**
      * <p>The data type of the value (or values) specified in the
      * <code>ContextKeyValues</code> parameter.</p>
@@ -184,10 +187,13 @@ namespace Model
     inline ContextEntry& WithContextKeyType(ContextKeyTypeEnum&& value) { SetContextKeyType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_contextKeyName;
     bool m_contextKeyNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_contextKeyValues;
     bool m_contextKeyValuesHasBeenSet;
+
     ContextKeyTypeEnum m_contextKeyType;
     bool m_contextKeyTypeHasBeenSet;
   };

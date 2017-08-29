@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
      * returns a list of all projects for the AWS account. You can also specify a
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ListProjectsRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
@@ -132,8 +134,10 @@ namespace Model
     inline ListProjectsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

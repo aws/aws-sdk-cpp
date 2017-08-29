@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the Reserved Instance listing.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline CancelReservedInstancesListingRequest& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
 
   private:
+
     Aws::String m_reservedInstancesListingId;
     bool m_reservedInstancesListingIdHasBeenSet;
   };

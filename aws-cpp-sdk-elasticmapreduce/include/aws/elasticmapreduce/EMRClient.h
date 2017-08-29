@@ -132,15 +132,15 @@ namespace Model
         typedef Aws::Utils::Outcome<ListInstancesResult, Aws::Client::AWSError<EMRErrors>> ListInstancesOutcome;
         typedef Aws::Utils::Outcome<ListSecurityConfigurationsResult, Aws::Client::AWSError<EMRErrors>> ListSecurityConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListStepsResult, Aws::Client::AWSError<EMRErrors>> ListStepsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> ModifyInstanceFleetOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> ModifyInstanceGroupsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EMRErrors>> ModifyInstanceFleetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EMRErrors>> ModifyInstanceGroupsOutcome;
         typedef Aws::Utils::Outcome<PutAutoScalingPolicyResult, Aws::Client::AWSError<EMRErrors>> PutAutoScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<RemoveAutoScalingPolicyResult, Aws::Client::AWSError<EMRErrors>> RemoveAutoScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<EMRErrors>> RemoveTagsOutcome;
         typedef Aws::Utils::Outcome<RunJobFlowResult, Aws::Client::AWSError<EMRErrors>> RunJobFlowOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> SetTerminationProtectionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> SetVisibleToAllUsersOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> TerminateJobFlowsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EMRErrors>> SetTerminationProtectionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EMRErrors>> SetVisibleToAllUsersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EMRErrors>> TerminateJobFlowsOutcome;
 
         typedef std::future<AddInstanceFleetOutcome> AddInstanceFleetOutcomeCallable;
         typedef std::future<AddInstanceGroupsOutcome> AddInstanceGroupsOutcomeCallable;
@@ -214,22 +214,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EMRClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        EMRClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EMRClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        EMRClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        EMRClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        EMRClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~EMRClient();
+
 
         /**
          * <p>Adds an instance fleet to a running cluster.</p> <note> <p>The instance fleet
@@ -1237,7 +1238,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AddInstanceFleetAsyncHelper(const Model::AddInstanceFleetRequest& request, const AddInstanceFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

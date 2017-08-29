@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeRepositoriesResult();
-    DescribeRepositoriesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRepositoriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of repository objects corresponding to valid repositories.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of repository objects corresponding to valid repositories.</p>
      */
     inline DescribeRepositoriesResult& AddRepositories(Repository&& value) { m_repositories.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -142,7 +144,9 @@ namespace Model
     inline DescribeRepositoriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Repository> m_repositories;
+
     Aws::String m_nextToken;
   };
 

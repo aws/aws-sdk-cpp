@@ -24,7 +24,7 @@ namespace Aws
 {
 namespace Glacier
 {
-  class AWS_GLACIER_API GlacierRequest : public AmazonSerializableWebServiceRequest
+  class AWS_GLACIER_API GlacierRequest : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
     virtual ~GlacierRequest () {}
@@ -38,7 +38,7 @@ namespace Glacier
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, AMZN_JSON_CONTENT_TYPE_1_1 ));
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_1 ));
       }
 
       headers.insert(Aws::Http::HeaderValuePair("x-amz-glacier-version", "2012-06-01"));
@@ -51,7 +51,7 @@ namespace Glacier
 
   };
 
-  typedef AmazonStreamingWebServiceRequest StreamingGlacierRequest;
+  typedef Aws::AmazonStreamingWebServiceRequest StreamingGlacierRequest;
 
 } // namespace Glacier
 } // namespace Aws

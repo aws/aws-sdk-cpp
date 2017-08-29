@@ -30,12 +30,12 @@ DeleteConstraintResult::DeleteConstraintResult()
 {
 }
 
-DeleteConstraintResult::DeleteConstraintResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteConstraintResult::DeleteConstraintResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteConstraintResult& DeleteConstraintResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteConstraintResult& DeleteConstraintResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

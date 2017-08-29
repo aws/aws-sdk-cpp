@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeTrailsResult();
-    DescribeTrailsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTrailsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTrailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTrailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of trail objects.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeTrailsResult& AddTrailList(Trail&& value) { m_trailList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Trail> m_trailList;
   };
 

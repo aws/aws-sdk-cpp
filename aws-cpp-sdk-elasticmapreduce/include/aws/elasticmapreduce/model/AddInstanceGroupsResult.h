@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     AddInstanceGroupsResult();
-    AddInstanceGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddInstanceGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddInstanceGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddInstanceGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The job flow ID in which the instance groups are added.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The job flow ID in which the instance groups are added.</p>
      */
     inline AddInstanceGroupsResult& WithJobFlowId(const char* value) { SetJobFlowId(value); return *this;}
+
 
     /**
      * <p>Instance group IDs of the newly created instance groups.</p>
@@ -123,7 +125,9 @@ namespace Model
     inline AddInstanceGroupsResult& AddInstanceGroupIds(const char* value) { m_instanceGroupIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_jobFlowId;
+
     Aws::Vector<Aws::String> m_instanceGroupIds;
   };
 

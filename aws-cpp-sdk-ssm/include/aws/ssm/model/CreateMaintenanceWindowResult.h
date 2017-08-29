@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateMaintenanceWindowResult();
-    CreateMaintenanceWindowResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMaintenanceWindowResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the created Maintenance Window.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateMaintenanceWindowResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
   };
 

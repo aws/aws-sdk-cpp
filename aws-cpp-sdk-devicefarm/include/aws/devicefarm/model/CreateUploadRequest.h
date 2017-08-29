@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the project for the upload.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ARN of the project for the upload.</p>
      */
     inline CreateUploadRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+
 
     /**
      * <p>The upload's file name. The name should not contain the '/' character. If
@@ -138,6 +140,7 @@ namespace Model
      * <code>.zip</code> file extension.</p>
      */
     inline CreateUploadRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
@@ -259,6 +262,7 @@ namespace Model
      */
     inline CreateUploadRequest& WithType(UploadType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The upload's content type (for example, "application/octet-stream").</p>
      */
@@ -295,12 +299,16 @@ namespace Model
     inline CreateUploadRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
 
   private:
+
     Aws::String m_projectArn;
     bool m_projectArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     UploadType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet;
   };

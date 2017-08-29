@@ -30,12 +30,12 @@ UpdateBatchPredictionResult::UpdateBatchPredictionResult()
 {
 }
 
-UpdateBatchPredictionResult::UpdateBatchPredictionResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateBatchPredictionResult::UpdateBatchPredictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateBatchPredictionResult& UpdateBatchPredictionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateBatchPredictionResult& UpdateBatchPredictionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("BatchPredictionId"))

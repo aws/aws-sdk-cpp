@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application to which the version belongs.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the application to which the version belongs.</p>
      */
     inline DeleteApplicationVersionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The label of the version to delete.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline DeleteApplicationVersionRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
+
     /**
      * <p>Set to <code>true</code> to delete the source bundle from your storage
      * bucket. Otherwise, the application version is deleted only from Elastic
@@ -133,10 +136,13 @@ namespace Model
     inline DeleteApplicationVersionRequest& WithDeleteSourceBundle(bool value) { SetDeleteSourceBundle(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+
     bool m_deleteSourceBundle;
     bool m_deleteSourceBundleHasBeenSet;
   };

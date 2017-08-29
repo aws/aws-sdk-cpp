@@ -30,12 +30,12 @@ GetIPSetResult::GetIPSetResult()
 {
 }
 
-GetIPSetResult::GetIPSetResult(const AmazonWebServiceResult<JsonValue>& result)
+GetIPSetResult::GetIPSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetIPSetResult& GetIPSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetIPSetResult& GetIPSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IPSet"))

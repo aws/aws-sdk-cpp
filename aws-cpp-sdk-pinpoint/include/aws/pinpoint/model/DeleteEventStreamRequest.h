@@ -35,6 +35,7 @@ namespace Model
     DeleteEventStreamRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * ApplicationId
      */
@@ -71,6 +72,7 @@ namespace Model
     inline DeleteEventStreamRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
   };

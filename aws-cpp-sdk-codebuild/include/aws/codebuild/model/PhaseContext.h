@@ -47,6 +47,7 @@ namespace Model
     PhaseContext& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The status code for the context of the build phase.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The status code for the context of the build phase.</p>
      */
     inline PhaseContext& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p>An explanation of the build phase's context. This explanation might include a
@@ -125,8 +127,10 @@ namespace Model
     inline PhaseContext& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

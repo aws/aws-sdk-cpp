@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetAccessKeyLastUsedResult();
-    GetAccessKeyLastUsedResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccessKeyLastUsedResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetAccessKeyLastUsedResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetAccessKeyLastUsedResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The name of the AWS IAM user that owns this access key.</p> <p/>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline GetAccessKeyLastUsedResult& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>Contains information about the last time the access key was used.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      */
     inline GetAccessKeyLastUsedResult& WithAccessKeyLastUsed(AccessKeyLastUsed&& value) { SetAccessKeyLastUsed(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -126,8 +129,11 @@ namespace Model
     inline GetAccessKeyLastUsedResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userName;
+
     AccessKeyLastUsed m_accessKeyLastUsed;
+
     ResponseMetadata m_responseMetadata;
   };
 

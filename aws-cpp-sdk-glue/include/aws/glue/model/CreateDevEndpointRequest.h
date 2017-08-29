@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name to be assigned to the new DevEndpoint.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateDevEndpointRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
 
+
     /**
      * <p>The IAM role for the DevEndpoint.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The IAM role for the DevEndpoint.</p>
      */
     inline CreateDevEndpointRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>Security group IDs for the security groups to be used by the new
@@ -155,6 +158,7 @@ namespace Model
      */
     inline CreateDevEndpointRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The subnet ID for the new DevEndpoint to use.</p>
      */
@@ -189,6 +193,7 @@ namespace Model
      * <p>The subnet ID for the new DevEndpoint to use.</p>
      */
     inline CreateDevEndpointRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The public key to use for authentication.</p>
@@ -225,6 +230,7 @@ namespace Model
      */
     inline CreateDevEndpointRequest& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
 
+
     /**
      * <p>The number of nodes to use.</p>
      */
@@ -239,6 +245,7 @@ namespace Model
      * <p>The number of nodes to use.</p>
      */
     inline CreateDevEndpointRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
+
 
     /**
      * <p>Path to one or more Python libraries in an S3 bucket that should be loaded in
@@ -281,6 +288,7 @@ namespace Model
      * your DevEndpoint.</p>
      */
     inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(const char* value) { SetExtraPythonLibsS3Path(value); return *this;}
+
 
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
@@ -325,20 +333,28 @@ namespace Model
     inline CreateDevEndpointRequest& WithExtraJarsS3Path(const char* value) { SetExtraJarsS3Path(value); return *this;}
 
   private:
+
     Aws::String m_endpointName;
     bool m_endpointNameHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_publicKey;
     bool m_publicKeyHasBeenSet;
+
     int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
+
     Aws::String m_extraPythonLibsS3Path;
     bool m_extraPythonLibsS3PathHasBeenSet;
+
     Aws::String m_extraJarsS3Path;
     bool m_extraJarsS3PathHasBeenSet;
   };

@@ -30,12 +30,12 @@ RetrieveTapeArchiveResult::RetrieveTapeArchiveResult()
 {
 }
 
-RetrieveTapeArchiveResult::RetrieveTapeArchiveResult(const AmazonWebServiceResult<JsonValue>& result)
+RetrieveTapeArchiveResult::RetrieveTapeArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RetrieveTapeArchiveResult& RetrieveTapeArchiveResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RetrieveTapeArchiveResult& RetrieveTapeArchiveResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TapeARN"))

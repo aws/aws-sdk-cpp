@@ -62,6 +62,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The lower bound for the difference between the alarm threshold and the
      * CloudWatch metric. If the metric value is above the breach threshold, the lower
@@ -91,6 +92,7 @@ namespace Model
      * infinity.</p>
      */
     inline StepAdjustment& WithMetricIntervalLowerBound(double value) { SetMetricIntervalLowerBound(value); return *this;}
+
 
     /**
      * <p>The upper bound for the difference between the alarm threshold and the
@@ -122,6 +124,7 @@ namespace Model
      */
     inline StepAdjustment& WithMetricIntervalUpperBound(double value) { SetMetricIntervalUpperBound(value); return *this;}
 
+
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
@@ -144,10 +147,13 @@ namespace Model
     inline StepAdjustment& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
 
   private:
+
     double m_metricIntervalLowerBound;
     bool m_metricIntervalLowerBoundHasBeenSet;
+
     double m_metricIntervalUpperBound;
     bool m_metricIntervalUpperBoundHasBeenSet;
+
     int m_scalingAdjustment;
     bool m_scalingAdjustmentHasBeenSet;
   };

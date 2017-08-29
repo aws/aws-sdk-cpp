@@ -48,6 +48,7 @@ namespace Model
     ConfigStreamDeliveryInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
@@ -93,6 +94,7 @@ namespace Model
      */
     inline ConfigStreamDeliveryInfo& WithLastStatus(DeliveryStatus&& value) { SetLastStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The error code from the last attempted delivery.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      * <p>The error code from the last attempted delivery.</p>
      */
     inline ConfigStreamDeliveryInfo& WithLastErrorCode(const char* value) { SetLastErrorCode(value); return *this;}
+
 
     /**
      * <p>The error message from the last attempted delivery.</p>
@@ -163,6 +166,7 @@ namespace Model
      */
     inline ConfigStreamDeliveryInfo& WithLastErrorMessage(const char* value) { SetLastErrorMessage(value); return *this;}
 
+
     /**
      * <p>The time from the last status change.</p>
      */
@@ -189,12 +193,16 @@ namespace Model
     inline ConfigStreamDeliveryInfo& WithLastStatusChangeTime(Aws::Utils::DateTime&& value) { SetLastStatusChangeTime(std::move(value)); return *this;}
 
   private:
+
     DeliveryStatus m_lastStatus;
     bool m_lastStatusHasBeenSet;
+
     Aws::String m_lastErrorCode;
     bool m_lastErrorCodeHasBeenSet;
+
     Aws::String m_lastErrorMessage;
     bool m_lastErrorMessageHasBeenSet;
+
     Aws::Utils::DateTime m_lastStatusChangeTime;
     bool m_lastStatusChangeTimeHasBeenSet;
   };

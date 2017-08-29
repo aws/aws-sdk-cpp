@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Size of the list to return (optional).</p>
      */
@@ -50,6 +51,7 @@ namespace Model
      * <p>Size of the list to return (optional).</p>
      */
     inline GetClassifiersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>An optional continuation token.</p>
@@ -87,8 +89,10 @@ namespace Model
     inline GetClassifiersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

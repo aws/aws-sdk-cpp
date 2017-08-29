@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeVirtualInterfacesResult();
-    DescribeVirtualInterfacesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeVirtualInterfacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeVirtualInterfacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeVirtualInterfacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of virtual interfaces.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeVirtualInterfacesResult& AddVirtualInterfaces(VirtualInterface&& value) { m_virtualInterfaces.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<VirtualInterface> m_virtualInterfaces;
   };
 

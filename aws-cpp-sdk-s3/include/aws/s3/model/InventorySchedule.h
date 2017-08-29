@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Specifies how frequently inventory results are produced.
      */
@@ -67,6 +68,7 @@ namespace Model
     inline InventorySchedule& WithFrequency(InventoryFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 
   private:
+
     InventoryFrequency m_frequency;
     bool m_frequencyHasBeenSet;
   };

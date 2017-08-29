@@ -32,14 +32,14 @@ PutObjectResult::PutObjectResult() :
 {
 }
 
-PutObjectResult::PutObjectResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+PutObjectResult::PutObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }
 
-PutObjectResult& PutObjectResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+PutObjectResult& PutObjectResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

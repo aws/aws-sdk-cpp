@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeAddressResult();
-    DescribeAddressResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAddressResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The address that you want the Snowball or Snowballs associated with a
@@ -72,6 +73,7 @@ namespace Model
     inline DescribeAddressResult& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
 
   private:
+
     Address m_address;
   };
 

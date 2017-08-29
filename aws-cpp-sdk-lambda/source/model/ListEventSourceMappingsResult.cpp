@@ -30,12 +30,12 @@ ListEventSourceMappingsResult::ListEventSourceMappingsResult()
 {
 }
 
-ListEventSourceMappingsResult::ListEventSourceMappingsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListEventSourceMappingsResult::ListEventSourceMappingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListEventSourceMappingsResult& ListEventSourceMappingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListEventSourceMappingsResult& ListEventSourceMappingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextMarker"))

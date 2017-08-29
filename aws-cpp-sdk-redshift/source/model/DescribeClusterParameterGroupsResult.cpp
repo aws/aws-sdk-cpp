@@ -31,12 +31,12 @@ DescribeClusterParameterGroupsResult::DescribeClusterParameterGroupsResult()
 {
 }
 
-DescribeClusterParameterGroupsResult::DescribeClusterParameterGroupsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeClusterParameterGroupsResult::DescribeClusterParameterGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeClusterParameterGroupsResult& DescribeClusterParameterGroupsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeClusterParameterGroupsResult& DescribeClusterParameterGroupsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

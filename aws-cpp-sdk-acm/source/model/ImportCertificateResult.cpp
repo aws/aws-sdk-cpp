@@ -30,12 +30,12 @@ ImportCertificateResult::ImportCertificateResult()
 {
 }
 
-ImportCertificateResult::ImportCertificateResult(const AmazonWebServiceResult<JsonValue>& result)
+ImportCertificateResult::ImportCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ImportCertificateResult& ImportCertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ImportCertificateResult& ImportCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CertificateArn"))

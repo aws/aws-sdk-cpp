@@ -48,6 +48,7 @@ namespace Model
     StepSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the cluster step.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The identifier of the cluster step.</p>
      */
     inline StepSummary& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the cluster step.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline StepSummary& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The Hadoop job configuration of the cluster step.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The Hadoop job configuration of the cluster step.</p>
      */
     inline StepSummary& WithConfig(HadoopStepConfig&& value) { SetConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>This specifies what action to take when the cluster step fails. Possible
@@ -173,6 +177,7 @@ namespace Model
      */
     inline StepSummary& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(std::move(value)); return *this;}
 
+
     /**
      * <p>The current execution status details of the cluster step.</p>
      */
@@ -199,14 +204,19 @@ namespace Model
     inline StepSummary& WithStatus(StepStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     HadoopStepConfig m_config;
     bool m_configHasBeenSet;
+
     ActionOnFailure m_actionOnFailure;
     bool m_actionOnFailureHasBeenSet;
+
     StepStatus m_status;
     bool m_statusHasBeenSet;
   };

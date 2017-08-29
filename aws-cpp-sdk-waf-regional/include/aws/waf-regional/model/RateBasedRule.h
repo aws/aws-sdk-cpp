@@ -58,6 +58,7 @@ namespace Model
     RateBasedRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for a <code>RateBasedRule</code>. You use
      * <code>RuleId</code> to get more information about a <code>RateBasedRule</code>
@@ -135,6 +136,7 @@ namespace Model
      */
     inline RateBasedRule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 
+
     /**
      * <p>A friendly name or description for a <code>RateBasedRule</code>. You can't
      * change the name of a <code>RateBasedRule</code> after you create it.</p>
@@ -176,6 +178,7 @@ namespace Model
      * change the name of a <code>RateBasedRule</code> after you create it.</p>
      */
     inline RateBasedRule& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A friendly name or description for the metrics for a
@@ -233,6 +236,7 @@ namespace Model
      */
     inline RateBasedRule& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
+
     /**
      * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
      * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
@@ -289,6 +293,7 @@ namespace Model
      */
     inline RateBasedRule& AddMatchPredicates(Predicate&& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The field that AWS WAF uses to determine if requests are likely arriving from
      * single source and thus subject to rate monitoring. The only valid value for
@@ -334,6 +339,7 @@ namespace Model
      */
     inline RateBasedRule& WithRateKey(RateKey&& value) { SetRateKey(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of requests, which have an identical value in the field
      * specified by the <code>RateKey</code>, allowed in a five-minute period. If the
@@ -362,16 +368,22 @@ namespace Model
     inline RateBasedRule& WithRateLimit(long long value) { SetRateLimit(value); return *this;}
 
   private:
+
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::Vector<Predicate> m_matchPredicates;
     bool m_matchPredicatesHasBeenSet;
+
     RateKey m_rateKey;
     bool m_rateKeyHasBeenSet;
+
     long long m_rateLimit;
     bool m_rateLimitHasBeenSet;
   };

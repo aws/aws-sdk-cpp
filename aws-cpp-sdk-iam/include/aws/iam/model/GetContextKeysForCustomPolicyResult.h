@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetContextKeysForCustomPolicyResult();
-    GetContextKeysForCustomPolicyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetContextKeysForCustomPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetContextKeysForCustomPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetContextKeysForCustomPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The list of context keys that are referenced in the input policies.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline GetContextKeysForCustomPolicyResult& AddContextKeyNames(const char* value) { m_contextKeyNames.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,7 +107,9 @@ namespace Model
     inline GetContextKeysForCustomPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_contextKeyNames;
+
     ResponseMetadata m_responseMetadata;
   };
 

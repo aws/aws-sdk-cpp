@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetActiveNamesResult();
-    GetActiveNamesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetActiveNamesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetActiveNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetActiveNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of active names returned by the get active names request.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The list of active names returned by the get active names request.</p>
      */
     inline GetActiveNamesResult& AddActiveNames(const char* value) { m_activeNames.push_back(value); return *this; }
+
 
     /**
      * <p>A token used for advancing to the next page of results from your get active
@@ -125,7 +127,9 @@ namespace Model
     inline GetActiveNamesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_activeNames;
+
     Aws::String m_nextPageToken;
   };
 

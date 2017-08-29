@@ -31,12 +31,12 @@ CreateDBSnapshotResult::CreateDBSnapshotResult()
 {
 }
 
-CreateDBSnapshotResult::CreateDBSnapshotResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateDBSnapshotResult::CreateDBSnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateDBSnapshotResult& CreateDBSnapshotResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateDBSnapshotResult& CreateDBSnapshotResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

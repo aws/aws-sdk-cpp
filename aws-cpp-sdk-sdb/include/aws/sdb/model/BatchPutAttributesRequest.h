@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * The name of the domain in which the attributes are being stored.
      */
@@ -74,6 +75,7 @@ namespace Model
      * The name of the domain in which the attributes are being stored.
      */
     inline BatchPutAttributesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * A list of items on which to perform the operation.
@@ -111,8 +113,10 @@ namespace Model
     inline BatchPutAttributesRequest& AddItems(ReplaceableItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::Vector<ReplaceableItem> m_items;
     bool m_itemsHasBeenSet;
   };

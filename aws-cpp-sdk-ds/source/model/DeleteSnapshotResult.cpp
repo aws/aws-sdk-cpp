@@ -30,12 +30,12 @@ DeleteSnapshotResult::DeleteSnapshotResult()
 {
 }
 
-DeleteSnapshotResult::DeleteSnapshotResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSnapshotResult::DeleteSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteSnapshotResult& DeleteSnapshotResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSnapshotResult& DeleteSnapshotResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SnapshotId"))

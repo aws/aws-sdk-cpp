@@ -46,6 +46,7 @@ namespace Model
     AuthenticationResultType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The access token of the authentication result.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline AuthenticationResultType& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
+
     /**
      * <p>The expiration period of the authentication result.</p>
      */
@@ -95,6 +97,7 @@ namespace Model
      * <p>The expiration period of the authentication result.</p>
      */
     inline AuthenticationResultType& WithExpiresIn(int value) { SetExpiresIn(value); return *this;}
+
 
     /**
      * <p>The token type of the authentication result.</p>
@@ -131,6 +134,7 @@ namespace Model
      */
     inline AuthenticationResultType& WithTokenType(const char* value) { SetTokenType(value); return *this;}
 
+
     /**
      * <p>The refresh token of the authentication result.</p>
      */
@@ -165,6 +169,7 @@ namespace Model
      * <p>The refresh token of the authentication result.</p>
      */
     inline AuthenticationResultType& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
+
 
     /**
      * <p>The ID token of the authentication result.</p>
@@ -201,6 +206,7 @@ namespace Model
      */
     inline AuthenticationResultType& WithIdToken(const char* value) { SetIdToken(value); return *this;}
 
+
     /**
      * <p>The new device metadata from an authentication result.</p>
      */
@@ -227,16 +233,22 @@ namespace Model
     inline AuthenticationResultType& WithNewDeviceMetadata(NewDeviceMetadataType&& value) { SetNewDeviceMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
+
     int m_expiresIn;
     bool m_expiresInHasBeenSet;
+
     Aws::String m_tokenType;
     bool m_tokenTypeHasBeenSet;
+
     Aws::String m_refreshToken;
     bool m_refreshTokenHasBeenSet;
+
     Aws::String m_idToken;
     bool m_idTokenHasBeenSet;
+
     NewDeviceMetadataType m_newDeviceMetadata;
     bool m_newDeviceMetadataHasBeenSet;
   };

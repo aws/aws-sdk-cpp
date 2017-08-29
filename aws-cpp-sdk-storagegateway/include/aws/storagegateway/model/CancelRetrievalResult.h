@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CancelRetrievalResult();
-    CancelRetrievalResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelRetrievalResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelRetrievalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelRetrievalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape for which retrieval was
@@ -89,6 +90,7 @@ namespace Model
     inline CancelRetrievalResult& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
   };
 

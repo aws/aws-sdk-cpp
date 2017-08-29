@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
@@ -60,6 +61,7 @@ namespace Model
 
     
     inline DescribeSubscribersForNotificationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
 
     
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
@@ -82,6 +84,7 @@ namespace Model
     
     inline DescribeSubscribersForNotificationRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
 
+
     
     inline const Notification& GetNotification() const{ return m_notification; }
 
@@ -97,6 +100,7 @@ namespace Model
     
     inline DescribeSubscribersForNotificationRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
+
     
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -105,6 +109,7 @@ namespace Model
 
     
     inline DescribeSubscribersForNotificationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -128,14 +133,19 @@ namespace Model
     inline DescribeSubscribersForNotificationRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_budgetName;
     bool m_budgetNameHasBeenSet;
+
     Notification m_notification;
     bool m_notificationHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

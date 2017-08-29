@@ -45,6 +45,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of attributes that describe the key schema for the table and
      * indexes. If you are adding a new global secondary index to the table,
@@ -101,6 +102,7 @@ namespace Model
      */
     inline UpdateTableRequest& AddAttributeDefinitions(AttributeDefinition&& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name of the table to be updated.</p>
      */
@@ -136,6 +138,7 @@ namespace Model
      */
     inline UpdateTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>The new provisioned throughput settings for the specified table or index.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      * <p>The new provisioned throughput settings for the specified table or index.</p>
      */
     inline UpdateTableRequest& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
@@ -252,6 +256,7 @@ namespace Model
      */
     inline UpdateTableRequest& AddGlobalSecondaryIndexUpdates(GlobalSecondaryIndexUpdate&& value) { m_globalSecondaryIndexUpdatesHasBeenSet = true; m_globalSecondaryIndexUpdates.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
      * <p>You will receive a <code>ResourceInUseException</code> if you attempt to
@@ -293,14 +298,19 @@ namespace Model
     inline UpdateTableRequest& WithStreamSpecification(StreamSpecification&& value) { SetStreamSpecification(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
     bool m_attributeDefinitionsHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     ProvisionedThroughput m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet;
+
     Aws::Vector<GlobalSecondaryIndexUpdate> m_globalSecondaryIndexUpdates;
     bool m_globalSecondaryIndexUpdatesHasBeenSet;
+
     StreamSpecification m_streamSpecification;
     bool m_streamSpecificationHasBeenSet;
   };

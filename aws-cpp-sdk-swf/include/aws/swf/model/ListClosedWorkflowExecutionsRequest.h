@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain that contains the workflow executions to list.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the domain that contains the workflow executions to list.</p>
      */
     inline ListClosedWorkflowExecutionsRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>If specified, the workflow executions are included in the returned results
@@ -126,6 +128,7 @@ namespace Model
      */
     inline ListClosedWorkflowExecutionsRequest& WithStartTimeFilter(ExecutionTimeFilter&& value) { SetStartTimeFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>If specified, the workflow executions are included in the returned results
      * based on whether their close times are within the range specified by this
@@ -176,6 +179,7 @@ namespace Model
      */
     inline ListClosedWorkflowExecutionsRequest& WithCloseTimeFilter(ExecutionTimeFilter&& value) { SetCloseTimeFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
      * the filter are returned.</p> <note> <p> <code>closeStatusFilter</code>,
@@ -220,6 +224,7 @@ namespace Model
      * </note>
      */
     inline ListClosedWorkflowExecutionsRequest& WithExecutionFilter(WorkflowExecutionFilter&& value) { SetExecutionFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>If specified, only workflow executions that match this <i>close status</i>
@@ -271,6 +276,7 @@ namespace Model
      */
     inline ListClosedWorkflowExecutionsRequest& WithCloseStatusFilter(CloseStatusFilter&& value) { SetCloseStatusFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>If specified, only executions of the type specified in the filter are
      * returned.</p> <note> <p> <code>closeStatusFilter</code>,
@@ -316,6 +322,7 @@ namespace Model
      */
     inline ListClosedWorkflowExecutionsRequest& WithTypeFilter(WorkflowTypeFilter&& value) { SetTypeFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
      * <note> <p> <code>closeStatusFilter</code>, <code>executionFilter</code>,
@@ -355,6 +362,7 @@ namespace Model
      * can specify at most one of these in a request.</p> </note>
      */
     inline ListClosedWorkflowExecutionsRequest& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -419,6 +427,7 @@ namespace Model
      */
     inline ListClosedWorkflowExecutionsRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results that are returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of results. The
@@ -449,6 +458,7 @@ namespace Model
      */
     inline ListClosedWorkflowExecutionsRequest& WithMaximumPageSize(int value) { SetMaximumPageSize(value); return *this;}
 
+
     /**
      * <p>When set to <code>true</code>, returns the results in reverse order. By
      * default the results are returned in descending order of the start or the close
@@ -471,24 +481,34 @@ namespace Model
     inline ListClosedWorkflowExecutionsRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     ExecutionTimeFilter m_startTimeFilter;
     bool m_startTimeFilterHasBeenSet;
+
     ExecutionTimeFilter m_closeTimeFilter;
     bool m_closeTimeFilterHasBeenSet;
+
     WorkflowExecutionFilter m_executionFilter;
     bool m_executionFilterHasBeenSet;
+
     CloseStatusFilter m_closeStatusFilter;
     bool m_closeStatusFilterHasBeenSet;
+
     WorkflowTypeFilter m_typeFilter;
     bool m_typeFilterHasBeenSet;
+
     TagFilter m_tagFilter;
     bool m_tagFilterHasBeenSet;
+
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet;
+
     int m_maximumPageSize;
     bool m_maximumPageSizeHasBeenSet;
+
     bool m_reverseOrder;
     bool m_reverseOrderHasBeenSet;
   };

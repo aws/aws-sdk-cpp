@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetKeyPolicyResult();
-    GetKeyPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetKeyPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetKeyPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetKeyPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A policy document in JSON format.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline GetKeyPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
   private:
+
     Aws::String m_policy;
   };
 

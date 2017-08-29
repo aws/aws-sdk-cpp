@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM user that is to be associated with the credentials. The
      * new service-specific credentials have the same permissions as the associated
@@ -115,6 +116,7 @@ namespace Model
      */
     inline CreateServiceSpecificCredentialRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The name of the AWS service that is to be associated with the credentials.
      * The service you specify here is the only service that can be accessed using
@@ -165,8 +167,10 @@ namespace Model
     inline CreateServiceSpecificCredentialRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;
   };

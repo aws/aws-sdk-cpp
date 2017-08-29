@@ -46,6 +46,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ListPrincipalThingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return in this operation.</p>
      */
@@ -102,6 +104,7 @@ namespace Model
      * <p>The maximum number of results to return in this operation.</p>
      */
     inline ListPrincipalThingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The principal.</p>
@@ -139,10 +142,13 @@ namespace Model
     inline ListPrincipalThingsRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_principal;
     bool m_principalHasBeenSet;
   };

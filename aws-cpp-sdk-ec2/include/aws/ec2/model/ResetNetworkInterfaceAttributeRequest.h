@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -65,6 +66,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ResetNetworkInterfaceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The ID of the network interface.</p>
@@ -100,6 +102,7 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline ResetNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
 
     /**
      * <p>The source/destination checking attribute. Resets the value to
@@ -144,10 +147,13 @@ namespace Model
     inline ResetNetworkInterfaceAttributeRequest& WithSourceDestCheck(const char* value) { SetSourceDestCheck(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::String m_sourceDestCheck;
     bool m_sourceDestCheckHasBeenSet;
   };

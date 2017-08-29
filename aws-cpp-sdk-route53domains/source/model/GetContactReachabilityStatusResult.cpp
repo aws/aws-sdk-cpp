@@ -31,13 +31,13 @@ GetContactReachabilityStatusResult::GetContactReachabilityStatusResult() :
 {
 }
 
-GetContactReachabilityStatusResult::GetContactReachabilityStatusResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetContactReachabilityStatusResult::GetContactReachabilityStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(ReachabilityStatus::NOT_SET)
 {
   *this = result;
 }
 
-GetContactReachabilityStatusResult& GetContactReachabilityStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetContactReachabilityStatusResult& GetContactReachabilityStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("domainName"))

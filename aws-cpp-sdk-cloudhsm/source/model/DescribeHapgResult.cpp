@@ -31,13 +31,13 @@ DescribeHapgResult::DescribeHapgResult() :
 {
 }
 
-DescribeHapgResult::DescribeHapgResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeHapgResult::DescribeHapgResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_state(CloudHsmObjectState::NOT_SET)
 {
   *this = result;
 }
 
-DescribeHapgResult& DescribeHapgResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeHapgResult& DescribeHapgResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("HapgArn"))

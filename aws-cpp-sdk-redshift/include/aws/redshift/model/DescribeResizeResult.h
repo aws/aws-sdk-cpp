@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeResizeResult();
-    DescribeResizeResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeResizeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeResizeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeResizeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The node type that the cluster will have after the resize operation is
@@ -91,6 +92,7 @@ namespace Model
      */
     inline DescribeResizeResult& WithTargetNodeType(const char* value) { SetTargetNodeType(value); return *this;}
 
+
     /**
      * <p>The number of nodes that the cluster will have after the resize operation is
      * complete.</p>
@@ -108,6 +110,7 @@ namespace Model
      * complete.</p>
      */
     inline DescribeResizeResult& WithTargetNumberOfNodes(int value) { SetTargetNumberOfNodes(value); return *this;}
+
 
     /**
      * <p>The cluster type after the resize operation is complete.</p> <p>Valid Values:
@@ -151,6 +154,7 @@ namespace Model
      */
     inline DescribeResizeResult& WithTargetClusterType(const char* value) { SetTargetClusterType(value); return *this;}
 
+
     /**
      * <p>The status of the resize operation.</p> <p>Valid Values: <code>NONE</code> |
      * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> </p>
@@ -192,6 +196,7 @@ namespace Model
      * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> </p>
      */
     inline DescribeResizeResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The names of tables that have been completely imported .</p> <p>Valid Values:
@@ -241,6 +246,7 @@ namespace Model
      */
     inline DescribeResizeResult& AddImportTablesCompleted(const char* value) { m_importTablesCompleted.push_back(value); return *this; }
 
+
     /**
      * <p>The names of tables that are being currently imported.</p> <p>Valid Values:
      * List of table names.</p>
@@ -288,6 +294,7 @@ namespace Model
      * List of table names.</p>
      */
     inline DescribeResizeResult& AddImportTablesInProgress(const char* value) { m_importTablesInProgress.push_back(value); return *this; }
+
 
     /**
      * <p>The names of tables that have not been yet imported.</p> <p>Valid Values:
@@ -337,6 +344,7 @@ namespace Model
      */
     inline DescribeResizeResult& AddImportTablesNotStarted(const char* value) { m_importTablesNotStarted.push_back(value); return *this; }
 
+
     /**
      * <p>The average rate of the resize operation over the last few minutes, measured
      * in megabytes per second. After the resize operation completes, this value shows
@@ -358,6 +366,7 @@ namespace Model
      */
     inline DescribeResizeResult& WithAvgResizeRateInMegaBytesPerSecond(double value) { SetAvgResizeRateInMegaBytesPerSecond(value); return *this;}
 
+
     /**
      * <p>The estimated total amount of data, in megabytes, on the cluster before the
      * resize operation began.</p>
@@ -375,6 +384,7 @@ namespace Model
      * resize operation began.</p>
      */
     inline DescribeResizeResult& WithTotalResizeDataInMegaBytes(long long value) { SetTotalResizeDataInMegaBytes(value); return *this;}
+
 
     /**
      * <p>While the resize operation is in progress, this value shows the current
@@ -403,6 +413,7 @@ namespace Model
      */
     inline DescribeResizeResult& WithProgressInMegaBytes(long long value) { SetProgressInMegaBytes(value); return *this;}
 
+
     /**
      * <p>The amount of seconds that have elapsed since the resize operation began.
      * After the resize operation completes, this value shows the total actual time, in
@@ -423,6 +434,7 @@ namespace Model
      * seconds, for the resize operation.</p>
      */
     inline DescribeResizeResult& WithElapsedTimeInSeconds(long long value) { SetElapsedTimeInSeconds(value); return *this;}
+
 
     /**
      * <p>The estimated time remaining, in seconds, until the resize operation is
@@ -448,6 +460,7 @@ namespace Model
      */
     inline DescribeResizeResult& WithEstimatedTimeToCompletionInSeconds(long long value) { SetEstimatedTimeToCompletionInSeconds(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -464,18 +477,31 @@ namespace Model
     inline DescribeResizeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_targetNodeType;
+
     int m_targetNumberOfNodes;
+
     Aws::String m_targetClusterType;
+
     Aws::String m_status;
+
     Aws::Vector<Aws::String> m_importTablesCompleted;
+
     Aws::Vector<Aws::String> m_importTablesInProgress;
+
     Aws::Vector<Aws::String> m_importTablesNotStarted;
+
     double m_avgResizeRateInMegaBytesPerSecond;
+
     long long m_totalResizeDataInMegaBytes;
+
     long long m_progressInMegaBytes;
+
     long long m_elapsedTimeInSeconds;
+
     long long m_estimatedTimeToCompletionInSeconds;
+
     ResponseMetadata m_responseMetadata;
   };
 

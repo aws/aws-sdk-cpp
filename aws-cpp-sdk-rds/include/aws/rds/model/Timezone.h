@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the time zone.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
     inline Timezone& WithTimezoneName(const char* value) { SetTimezoneName(value); return *this;}
 
   private:
+
     Aws::String m_timezoneName;
     bool m_timezoneNameHasBeenSet;
   };

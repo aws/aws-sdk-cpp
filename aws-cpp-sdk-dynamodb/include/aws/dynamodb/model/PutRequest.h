@@ -48,6 +48,7 @@ namespace Model
     PutRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A map of attribute name to attribute values, representing the primary key of
      * an item to be processed by <code>PutItem</code>. All of the table's primary key
@@ -159,6 +160,7 @@ namespace Model
     inline PutRequest& AddItem(const char* key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, AttributeValue> m_item;
     bool m_itemHasBeenSet;
   };

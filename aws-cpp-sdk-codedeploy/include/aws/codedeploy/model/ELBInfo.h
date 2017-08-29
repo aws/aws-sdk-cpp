@@ -47,6 +47,7 @@ namespace Model
     ELBInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>For blue/green deployments, the name of the load balancer that will be used
      * to route traffic from original instances to replacement instances in a
@@ -111,6 +112,7 @@ namespace Model
     inline ELBInfo& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

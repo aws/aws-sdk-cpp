@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateStorageLocationResult();
-    CreateStorageLocationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateStorageLocationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateStorageLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateStorageLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The name of the Amazon S3 bucket created.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CreateStorageLocationResult& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline CreateStorageLocationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_s3Bucket;
+
     ResponseMetadata m_responseMetadata;
   };
 

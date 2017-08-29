@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or the unique stack ID of the stack set that you want to get stack
      * instance information for.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline DescribeStackInstanceRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
+
     /**
      * <p>The ID of an AWS account that's associated with this stack instance.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>The ID of an AWS account that's associated with this stack instance.</p>
      */
     inline DescribeStackInstanceRequest& WithStackInstanceAccount(const char* value) { SetStackInstanceAccount(value); return *this;}
+
 
     /**
      * <p>The name of a region that's associated with this stack instance.</p>
@@ -151,10 +154,13 @@ namespace Model
     inline DescribeStackInstanceRequest& WithStackInstanceRegion(const char* value) { SetStackInstanceRegion(value); return *this;}
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
     Aws::String m_stackInstanceAccount;
     bool m_stackInstanceAccountHasBeenSet;
+
     Aws::String m_stackInstanceRegion;
     bool m_stackInstanceRegionHasBeenSet;
   };

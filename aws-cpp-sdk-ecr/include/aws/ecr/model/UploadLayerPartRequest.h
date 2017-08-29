@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that you are uploading layer
      * parts to. If you do not specify a registry, the default registry is assumed.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline UploadLayerPartRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The name of the repository that you are uploading layer parts to.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The name of the repository that you are uploading layer parts to.</p>
      */
     inline UploadLayerPartRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
@@ -156,6 +159,7 @@ namespace Model
      */
     inline UploadLayerPartRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
+
     /**
      * <p>The integer value of the first byte of the layer part.</p>
      */
@@ -171,6 +175,7 @@ namespace Model
      */
     inline UploadLayerPartRequest& WithPartFirstByte(long long value) { SetPartFirstByte(value); return *this;}
 
+
     /**
      * <p>The integer value of the last byte of the layer part.</p>
      */
@@ -185,6 +190,7 @@ namespace Model
      * <p>The integer value of the last byte of the layer part.</p>
      */
     inline UploadLayerPartRequest& WithPartLastByte(long long value) { SetPartLastByte(value); return *this;}
+
 
     /**
      * <p>The base64-encoded layer part payload.</p>
@@ -212,16 +218,22 @@ namespace Model
     inline UploadLayerPartRequest& WithLayerPartBlob(Aws::Utils::ByteBuffer&& value) { SetLayerPartBlob(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;
+
     long long m_partFirstByte;
     bool m_partFirstByteHasBeenSet;
+
     long long m_partLastByte;
     bool m_partLastByteHasBeenSet;
+
     Aws::Utils::ByteBuffer m_layerPartBlob;
     bool m_layerPartBlobHasBeenSet;
   };

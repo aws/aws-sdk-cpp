@@ -23,7 +23,7 @@ namespace Aws
 {
 namespace EC2
 {
-  class AWS_EC2_API EC2Request : public AmazonSerializableWebServiceRequest
+  class AWS_EC2_API EC2Request : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
     virtual ~EC2Request () {}
@@ -37,7 +37,7 @@ namespace EC2
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, FORM_CONTENT_TYPE ));
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::FORM_CONTENT_TYPE ));
       }
 
       return headers;

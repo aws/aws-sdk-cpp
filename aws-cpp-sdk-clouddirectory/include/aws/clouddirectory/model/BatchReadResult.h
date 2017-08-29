@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     BatchReadResult();
-    BatchReadResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchReadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchReadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchReadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of all the responses for each batch read.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline BatchReadResult& AddResponses(BatchReadOperationResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<BatchReadOperationResponse> m_responses;
   };
 

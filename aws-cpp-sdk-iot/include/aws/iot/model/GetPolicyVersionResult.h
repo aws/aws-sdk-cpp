@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetPolicyVersionResult();
-    GetPolicyVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPolicyVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPolicyVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPolicyVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The policy ARN.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline GetPolicyVersionResult& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
+
     /**
      * <p>The policy name.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The policy name.</p>
      */
     inline GetPolicyVersionResult& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The JSON document that describes the policy.</p>
@@ -151,6 +154,7 @@ namespace Model
      */
     inline GetPolicyVersionResult& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
+
     /**
      * <p>The policy version ID.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      */
     inline GetPolicyVersionResult& WithPolicyVersionId(const char* value) { SetPolicyVersionId(value); return *this;}
 
+
     /**
      * <p>Specifies whether the policy version is the default.</p>
      */
@@ -202,10 +207,15 @@ namespace Model
     inline GetPolicyVersionResult& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
 
   private:
+
     Aws::String m_policyArn;
+
     Aws::String m_policyName;
+
     Aws::String m_policyDocument;
+
     Aws::String m_policyVersionId;
+
     bool m_isDefaultVersion;
   };
 

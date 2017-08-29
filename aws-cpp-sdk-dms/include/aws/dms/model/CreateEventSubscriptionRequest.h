@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the DMS event notification subscription. </p> <p>Constraints: The
      * name must be less than 255 characters. </p>
@@ -82,6 +83,7 @@ namespace Model
      * name must be less than 255 characters. </p>
      */
     inline CreateEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event
@@ -131,6 +133,7 @@ namespace Model
      * subscribe to it. </p>
      */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+
 
     /**
      * <p> The type of AWS DMS resource that generates the events. For example, if you
@@ -194,6 +197,7 @@ namespace Model
      * migration-task</p>
      */
     inline CreateEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+
 
     /**
      * <p> A list of event categories for a source type that you want to subscribe to.
@@ -275,6 +279,7 @@ namespace Model
      */
     inline CreateEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
+
     /**
      * <p> The list of identifiers of the event sources for which events will be
      * returned. If not specified, then all sources are included in the response. An
@@ -347,6 +352,7 @@ namespace Model
      */
     inline CreateEventSubscriptionRequest& AddSourceIds(const char* value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
 
+
     /**
      * <p> A Boolean value; set to <b>true</b> to activate the subscription, or set to
      * <b>false</b> to create the subscription but not activate it. </p>
@@ -364,6 +370,7 @@ namespace Model
      * <b>false</b> to create the subscription but not activate it. </p>
      */
     inline CreateEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>A tag to be attached to the event subscription.</p>
@@ -401,18 +408,25 @@ namespace Model
     inline CreateEventSubscriptionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_subscriptionName;
     bool m_subscriptionNameHasBeenSet;
+
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet;
+
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventCategories;
     bool m_eventCategoriesHasBeenSet;
+
     Aws::Vector<Aws::String> m_sourceIds;
     bool m_sourceIdsHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

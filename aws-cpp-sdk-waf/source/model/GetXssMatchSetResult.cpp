@@ -30,12 +30,12 @@ GetXssMatchSetResult::GetXssMatchSetResult()
 {
 }
 
-GetXssMatchSetResult::GetXssMatchSetResult(const AmazonWebServiceResult<JsonValue>& result)
+GetXssMatchSetResult::GetXssMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetXssMatchSetResult& GetXssMatchSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetXssMatchSetResult& GetXssMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("XssMatchSet"))

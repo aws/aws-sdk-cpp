@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>message</code> - Information
      * about the Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The
@@ -128,6 +129,7 @@ namespace Model
      */
     inline DescribeAvailabilityZonesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The names of one or more Availability Zones.</p>
      */
@@ -168,6 +170,7 @@ namespace Model
      */
     inline DescribeAvailabilityZonesRequest& AddZoneNames(const char* value) { m_zoneNamesHasBeenSet = true; m_zoneNames.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -193,10 +196,13 @@ namespace Model
     inline DescribeAvailabilityZonesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_zoneNames;
     bool m_zoneNamesHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

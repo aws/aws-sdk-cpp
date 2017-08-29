@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The name of the Lambda function for which you want to retrieve the
      * configuration information.</p> <p> You can specify a function name (for example,
@@ -134,6 +135,7 @@ namespace Model
      */
     inline GetFunctionConfigurationRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>Using this optional parameter you can specify a function version or an alias
      * name. If you specify function version, the API uses qualified function ARN and
@@ -212,8 +214,10 @@ namespace Model
     inline GetFunctionConfigurationRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     Locale& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The country of the locale. Must be a valid ISO 3166 country code. For
      * example, the code US refers to the United States of America. </p>
@@ -87,6 +88,7 @@ namespace Model
      * example, the code US refers to the United States of America. </p>
      */
     inline Locale& WithCountry(const char* value) { SetCountry(value); return *this;}
+
 
     /**
      * <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code.
@@ -131,8 +133,10 @@ namespace Model
     inline Locale& WithSubdivision(const char* value) { SetSubdivision(value); return *this;}
 
   private:
+
     Aws::String m_country;
     bool m_countryHasBeenSet;
+
     Aws::String m_subdivision;
     bool m_subdivisionHasBeenSet;
   };

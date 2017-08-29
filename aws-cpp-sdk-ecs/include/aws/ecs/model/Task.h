@@ -49,6 +49,7 @@ namespace Model
     Task& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the task.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline Task& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
      */
     inline Task& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task definition that creates the
@@ -161,6 +164,7 @@ namespace Model
      */
     inline Task& WithTaskDefinitionArn(const char* value) { SetTaskDefinitionArn(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the container instances that host the
      * task.</p>
@@ -203,6 +207,7 @@ namespace Model
      */
     inline Task& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
 
+
     /**
      * <p>One or more container overrides.</p>
      */
@@ -227,6 +232,7 @@ namespace Model
      * <p>One or more container overrides.</p>
      */
     inline Task& WithOverrides(TaskOverride&& value) { SetOverrides(std::move(value)); return *this;}
+
 
     /**
      * <p>The last known status of the task.</p>
@@ -263,6 +269,7 @@ namespace Model
      */
     inline Task& WithLastStatus(const char* value) { SetLastStatus(value); return *this;}
 
+
     /**
      * <p>The desired status of the task.</p>
      */
@@ -298,6 +305,7 @@ namespace Model
      */
     inline Task& WithDesiredStatus(const char* value) { SetDesiredStatus(value); return *this;}
 
+
     /**
      * <p>The containers associated with the task.</p>
      */
@@ -332,6 +340,7 @@ namespace Model
      * <p>The containers associated with the task.</p>
      */
     inline Task& AddContainers(Container&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The tag specified when a task is started. If the task is started by an Amazon
@@ -382,6 +391,7 @@ namespace Model
      */
     inline Task& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
+
     /**
      * <p>The version counter for the task. Every time a task experiences a change that
      * triggers a CloudWatch event, the version counter is incremented. If you are
@@ -411,6 +421,7 @@ namespace Model
      * verify that the version in your event stream is current.</p>
      */
     inline Task& WithVersion(long long value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The reason the task was stopped.</p>
@@ -447,6 +458,7 @@ namespace Model
      */
     inline Task& WithStoppedReason(const char* value) { SetStoppedReason(value); return *this;}
 
+
     /**
      * <p>The Unix timestamp for when the task was created (the task entered the
      * <code>PENDING</code> state).</p>
@@ -476,6 +488,7 @@ namespace Model
      * <code>PENDING</code> state).</p>
      */
     inline Task& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The Unix timestamp for when the task was started (the task transitioned from
@@ -507,6 +520,7 @@ namespace Model
      */
     inline Task& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The Unix timestamp for when the task was stopped (the task transitioned from
      * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
@@ -536,6 +550,7 @@ namespace Model
      * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline Task& WithStoppedAt(Aws::Utils::DateTime&& value) { SetStoppedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the task group associated with the task.</p>
@@ -573,34 +588,49 @@ namespace Model
     inline Task& WithGroup(const char* value) { SetGroup(value); return *this;}
 
   private:
+
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet;
+
     Aws::String m_clusterArn;
     bool m_clusterArnHasBeenSet;
+
     Aws::String m_taskDefinitionArn;
     bool m_taskDefinitionArnHasBeenSet;
+
     Aws::String m_containerInstanceArn;
     bool m_containerInstanceArnHasBeenSet;
+
     TaskOverride m_overrides;
     bool m_overridesHasBeenSet;
+
     Aws::String m_lastStatus;
     bool m_lastStatusHasBeenSet;
+
     Aws::String m_desiredStatus;
     bool m_desiredStatusHasBeenSet;
+
     Aws::Vector<Container> m_containers;
     bool m_containersHasBeenSet;
+
     Aws::String m_startedBy;
     bool m_startedByHasBeenSet;
+
     long long m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_stoppedReason;
     bool m_stoppedReasonHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Utils::DateTime m_startedAt;
     bool m_startedAtHasBeenSet;
+
     Aws::Utils::DateTime m_stoppedAt;
     bool m_stoppedAtHasBeenSet;
+
     Aws::String m_group;
     bool m_groupHasBeenSet;
   };

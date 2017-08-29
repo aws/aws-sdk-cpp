@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool where you want to list user pool
      * clients.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ListUserPoolClientsRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The maximum number of results you want the request to return when listing the
      * user pool clients.</p>
@@ -99,6 +101,7 @@ namespace Model
      * user pool clients.</p>
      */
     inline ListUserPoolClientsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -143,10 +146,13 @@ namespace Model
     inline ListUserPoolClientsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

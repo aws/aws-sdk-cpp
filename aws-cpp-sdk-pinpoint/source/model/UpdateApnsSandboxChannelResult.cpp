@@ -30,12 +30,12 @@ UpdateApnsSandboxChannelResult::UpdateApnsSandboxChannelResult()
 {
 }
 
-UpdateApnsSandboxChannelResult::UpdateApnsSandboxChannelResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateApnsSandboxChannelResult::UpdateApnsSandboxChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateApnsSandboxChannelResult& UpdateApnsSandboxChannelResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateApnsSandboxChannelResult& UpdateApnsSandboxChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("APNSSandboxChannelResponse"))

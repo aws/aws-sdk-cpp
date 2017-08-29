@@ -31,13 +31,13 @@ ConfirmDeviceResult::ConfirmDeviceResult() :
 {
 }
 
-ConfirmDeviceResult::ConfirmDeviceResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ConfirmDeviceResult::ConfirmDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_userConfirmationNecessary(false)
 {
   *this = result;
 }
 
-ConfirmDeviceResult& ConfirmDeviceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ConfirmDeviceResult& ConfirmDeviceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UserConfirmationNecessary"))

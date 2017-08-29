@@ -30,12 +30,12 @@ GetTelemetryMetadataResult::GetTelemetryMetadataResult()
 {
 }
 
-GetTelemetryMetadataResult::GetTelemetryMetadataResult(const AmazonWebServiceResult<JsonValue>& result)
+GetTelemetryMetadataResult::GetTelemetryMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetTelemetryMetadataResult& GetTelemetryMetadataResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetTelemetryMetadataResult& GetTelemetryMetadataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("telemetryMetadata"))

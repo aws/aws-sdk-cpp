@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetRateBasedRuleManagedKeysResult();
-    GetRateBasedRuleManagedKeysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRateBasedRuleManagedKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRateBasedRuleManagedKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRateBasedRuleManagedKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of IP addresses that currently are blocked by the specified
@@ -90,6 +91,7 @@ namespace Model
      */
     inline GetRateBasedRuleManagedKeysResult& AddManagedKeys(const char* value) { m_managedKeys.push_back(value); return *this; }
 
+
     /**
      * <p>A null value and not currently used.</p>
      */
@@ -126,7 +128,9 @@ namespace Model
     inline GetRateBasedRuleManagedKeysResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_managedKeys;
+
     Aws::String m_nextMarker;
   };
 

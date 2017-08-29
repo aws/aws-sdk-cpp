@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeLagsResult();
-    DescribeLagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of LAGs.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DescribeLagsResult& AddLags(Lag&& value) { m_lags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Lag> m_lags;
   };
 

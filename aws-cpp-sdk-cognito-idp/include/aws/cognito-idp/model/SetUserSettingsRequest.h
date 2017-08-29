@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The access token for the set user settings request.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The access token for the set user settings request.</p>
      */
     inline SetUserSettingsRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+
 
     /**
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>
@@ -112,8 +114,10 @@ namespace Model
     inline SetUserSettingsRequest& AddMFAOptions(MFAOptionType&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
+
     Aws::Vector<MFAOptionType> m_mFAOptions;
     bool m_mFAOptionsHasBeenSet;
   };

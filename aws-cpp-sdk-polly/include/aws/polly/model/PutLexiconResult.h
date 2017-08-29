@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     PutLexiconResult();
-    PutLexiconResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutLexiconResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutLexiconResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutLexiconResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

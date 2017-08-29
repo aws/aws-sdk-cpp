@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline SetInstanceHealthRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The health status of the instance. Set to <code>Healthy</code> if you want
@@ -132,6 +134,7 @@ namespace Model
      */
     inline SetInstanceHealthRequest& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
 
+
     /**
      * <p>If the Auto Scaling group of the specified instance has a
      * <code>HealthCheckGracePeriod</code> specified for the group, by default, this
@@ -163,10 +166,13 @@ namespace Model
     inline SetInstanceHealthRequest& WithShouldRespectGracePeriod(bool value) { SetShouldRespectGracePeriod(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_healthStatus;
     bool m_healthStatusHasBeenSet;
+
     bool m_shouldRespectGracePeriod;
     bool m_shouldRespectGracePeriodHasBeenSet;
   };

@@ -55,7 +55,7 @@ enum class CloudSearchErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BASE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BASE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DISABLED_OPERATION,
   INTERNAL,
   INVALID_TYPE,
@@ -63,7 +63,7 @@ enum class CloudSearchErrors
 };
 namespace CloudSearchErrorMapper
 {
-  AWS_CLOUDSEARCH_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CLOUDSEARCH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CloudSearch

@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or ARN of the group.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline PutScalingPolicyRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
+
     /**
      * <p>The name of the policy.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The name of the policy.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The policy type. The valid values are <code>SimpleScaling</code>,
@@ -162,6 +165,7 @@ namespace Model
      * type is null, the value is treated as <code>SimpleScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
+
 
     /**
      * <p>The adjustment type. The valid values are <code>ChangeInCapacity</code>,
@@ -233,6 +237,7 @@ namespace Model
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(const char* value) { SetAdjustmentType(value); return *this;}
 
+
     /**
      * <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
      * instead.</p>
@@ -250,6 +255,7 @@ namespace Model
      * instead.</p>
      */
     inline PutScalingPolicyRequest& WithMinAdjustmentStep(int value) { SetMinAdjustmentStep(value); return *this;}
+
 
     /**
      * <p>The minimum number of instances to scale. If the value of
@@ -281,6 +287,7 @@ namespace Model
      */
     inline PutScalingPolicyRequest& WithMinAdjustmentMagnitude(int value) { SetMinAdjustmentMagnitude(value); return *this;}
 
+
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
@@ -304,6 +311,7 @@ namespace Model
      * <code>SimpleScaling</code> and not supported otherwise.</p>
      */
     inline PutScalingPolicyRequest& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
+
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes and before
@@ -337,6 +345,7 @@ namespace Model
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithCooldown(int value) { SetCooldown(value); return *this;}
+
 
     /**
      * <p>The aggregation type for the CloudWatch metrics. The valid values are
@@ -401,6 +410,7 @@ namespace Model
      */
     inline PutScalingPolicyRequest& WithMetricAggregationType(const char* value) { SetMetricAggregationType(value); return *this;}
 
+
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
      * breach.</p> <p>This parameter is required if the policy type is
@@ -450,6 +460,7 @@ namespace Model
      */
     inline PutScalingPolicyRequest& AddStepAdjustments(StepAdjustment&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The estimated time, in seconds, until a newly launched instance can
      * contribute to the CloudWatch metrics. The default is to use the value specified
@@ -476,6 +487,7 @@ namespace Model
      * <code>TargetTrackingScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithEstimatedInstanceWarmup(int value) { SetEstimatedInstanceWarmup(value); return *this;}
+
 
     /**
      * <p>The configuration of a target tracking policy.</p> <p>This parameter is
@@ -513,28 +525,40 @@ namespace Model
     inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyType;
     bool m_policyTypeHasBeenSet;
+
     Aws::String m_adjustmentType;
     bool m_adjustmentTypeHasBeenSet;
+
     int m_minAdjustmentStep;
     bool m_minAdjustmentStepHasBeenSet;
+
     int m_minAdjustmentMagnitude;
     bool m_minAdjustmentMagnitudeHasBeenSet;
+
     int m_scalingAdjustment;
     bool m_scalingAdjustmentHasBeenSet;
+
     int m_cooldown;
     bool m_cooldownHasBeenSet;
+
     Aws::String m_metricAggregationType;
     bool m_metricAggregationTypeHasBeenSet;
+
     Aws::Vector<StepAdjustment> m_stepAdjustments;
     bool m_stepAdjustmentsHasBeenSet;
+
     int m_estimatedInstanceWarmup;
     bool m_estimatedInstanceWarmupHasBeenSet;
+
     TargetTrackingConfiguration m_targetTrackingConfiguration;
     bool m_targetTrackingConfigurationHasBeenSet;
   };

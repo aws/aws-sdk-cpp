@@ -31,12 +31,12 @@ SetLoadBalancerListenerSSLCertificateResult::SetLoadBalancerListenerSSLCertifica
 {
 }
 
-SetLoadBalancerListenerSSLCertificateResult::SetLoadBalancerListenerSSLCertificateResult(const AmazonWebServiceResult<XmlDocument>& result)
+SetLoadBalancerListenerSSLCertificateResult::SetLoadBalancerListenerSSLCertificateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SetLoadBalancerListenerSSLCertificateResult& SetLoadBalancerListenerSSLCertificateResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SetLoadBalancerListenerSSLCertificateResult& SetLoadBalancerListenerSSLCertificateResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

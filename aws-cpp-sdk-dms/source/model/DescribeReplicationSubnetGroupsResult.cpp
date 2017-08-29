@@ -30,12 +30,12 @@ DescribeReplicationSubnetGroupsResult::DescribeReplicationSubnetGroupsResult()
 {
 }
 
-DescribeReplicationSubnetGroupsResult::DescribeReplicationSubnetGroupsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeReplicationSubnetGroupsResult::DescribeReplicationSubnetGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeReplicationSubnetGroupsResult& DescribeReplicationSubnetGroupsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeReplicationSubnetGroupsResult& DescribeReplicationSubnetGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Marker"))

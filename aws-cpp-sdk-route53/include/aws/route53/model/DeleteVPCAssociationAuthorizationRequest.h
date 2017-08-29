@@ -41,6 +41,7 @@ namespace Model
     DeleteVPCAssociationAuthorizationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>When removing authorization to associate a VPC that was created by one AWS
      * account with a hosted zone that was created with a different AWS account, the ID
@@ -90,6 +91,7 @@ namespace Model
      */
     inline DeleteVPCAssociationAuthorizationRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
+
     /**
      * <p>When removing authorization to associate a VPC that was created by one AWS
      * account with a hosted zone that was created with a different AWS account, a
@@ -126,8 +128,10 @@ namespace Model
     inline DeleteVPCAssociationAuthorizationRequest& WithVPC(VPC&& value) { SetVPC(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     VPC m_vPC;
     bool m_vPCHasBeenSet;
   };

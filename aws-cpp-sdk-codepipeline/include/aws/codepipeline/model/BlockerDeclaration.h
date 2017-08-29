@@ -46,6 +46,7 @@ namespace Model
     BlockerDeclaration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline BlockerDeclaration& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -107,8 +109,10 @@ namespace Model
     inline BlockerDeclaration& WithType(BlockerType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     BlockerType m_type;
     bool m_typeHasBeenSet;
   };

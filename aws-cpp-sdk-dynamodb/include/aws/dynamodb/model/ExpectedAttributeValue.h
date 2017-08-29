@@ -65,6 +65,7 @@ namespace Model
     ExpectedAttributeValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Represents the data for the expected attribute.</p> <p>Each attribute value
      * is described as a name-value pair. The name is the data type, and the value is
@@ -109,6 +110,7 @@ namespace Model
      * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ExpectedAttributeValue& WithValue(AttributeValue&& value) { SetValue(std::move(value)); return *this;}
+
 
     /**
      * <p>Causes DynamoDB to evaluate the value before attempting a conditional
@@ -181,6 +183,7 @@ namespace Model
      * </ul>
      */
     inline ExpectedAttributeValue& WithExists(bool value) { SetExists(value); return *this;}
+
 
     /**
      * <p>A comparator for evaluating attributes in the
@@ -727,6 +730,7 @@ namespace Model
      */
     inline ExpectedAttributeValue& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
+
     /**
      * <p>One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the <code>ComparisonOperator</code> being
@@ -840,12 +844,16 @@ namespace Model
     inline ExpectedAttributeValue& AddAttributeValueList(AttributeValue&& value) { m_attributeValueListHasBeenSet = true; m_attributeValueList.push_back(std::move(value)); return *this; }
 
   private:
+
     AttributeValue m_value;
     bool m_valueHasBeenSet;
+
     bool m_exists;
     bool m_existsHasBeenSet;
+
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
+
     Aws::Vector<AttributeValue> m_attributeValueList;
     bool m_attributeValueListHasBeenSet;
   };

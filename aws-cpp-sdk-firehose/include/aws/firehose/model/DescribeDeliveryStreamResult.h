@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeDeliveryStreamResult();
-    DescribeDeliveryStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDeliveryStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDeliveryStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDeliveryStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the delivery stream.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DescribeDeliveryStreamResult& WithDeliveryStreamDescription(DeliveryStreamDescription&& value) { SetDeliveryStreamDescription(std::move(value)); return *this;}
 
   private:
+
     DeliveryStreamDescription m_deliveryStreamDescription;
   };
 

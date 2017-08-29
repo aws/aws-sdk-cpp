@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The details of the operation.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The details of the operation.</p>
      */
     inline VolumeStatusItem& AddActions(VolumeStatusAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The Availability Zone of the volume.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline VolumeStatusItem& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>A list of events associated with the volume.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>A list of events associated with the volume.</p>
      */
     inline VolumeStatusItem& AddEvents(VolumeStatusEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The volume ID.</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline VolumeStatusItem& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     /**
      * <p>The volume status.</p>
      */
@@ -218,14 +223,19 @@ namespace Model
     inline VolumeStatusItem& WithVolumeStatus(VolumeStatusInfo&& value) { SetVolumeStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<VolumeStatusAction> m_actions;
     bool m_actionsHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::Vector<VolumeStatusEvent> m_events;
     bool m_eventsHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     VolumeStatusInfo m_volumeStatus;
     bool m_volumeStatusHasBeenSet;
   };

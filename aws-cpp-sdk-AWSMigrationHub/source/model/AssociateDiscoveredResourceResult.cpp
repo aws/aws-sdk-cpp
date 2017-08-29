@@ -30,12 +30,12 @@ AssociateDiscoveredResourceResult::AssociateDiscoveredResourceResult()
 {
 }
 
-AssociateDiscoveredResourceResult::AssociateDiscoveredResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+AssociateDiscoveredResourceResult::AssociateDiscoveredResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AssociateDiscoveredResourceResult& AssociateDiscoveredResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AssociateDiscoveredResourceResult& AssociateDiscoveredResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

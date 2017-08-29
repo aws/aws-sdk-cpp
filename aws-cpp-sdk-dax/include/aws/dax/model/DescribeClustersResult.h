@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeClustersResult();
-    DescribeClustersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeClustersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline DescribeClustersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>The descriptions of your DAX clusters, in response to a
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<Cluster> m_clusters;
   };
 

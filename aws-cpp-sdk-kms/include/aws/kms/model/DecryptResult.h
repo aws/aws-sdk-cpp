@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DecryptResult();
-    DecryptResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DecryptResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DecryptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DecryptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>ARN of the key used to perform the decryption. This value is returned if no
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DecryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>Decrypted plaintext data. This value may not be returned if the customer
      * master key is not available or if you didn't have permission to use it.</p>
@@ -115,7 +117,9 @@ namespace Model
     inline DecryptResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_keyId;
+
     Aws::Utils::ByteBuffer m_plaintext;
   };
 

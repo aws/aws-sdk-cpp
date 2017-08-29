@@ -49,6 +49,7 @@ namespace Model
     CSVMappingParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row
      * delimiter.</p>
@@ -90,6 +91,7 @@ namespace Model
      * delimiter.</p>
      */
     inline CSVMappingParameters& WithRecordRowDelimiter(const char* value) { SetRecordRowDelimiter(value); return *this;}
+
 
     /**
      * <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical
@@ -134,8 +136,10 @@ namespace Model
     inline CSVMappingParameters& WithRecordColumnDelimiter(const char* value) { SetRecordColumnDelimiter(value); return *this;}
 
   private:
+
     Aws::String m_recordRowDelimiter;
     bool m_recordRowDelimiterHasBeenSet;
+
     Aws::String m_recordColumnDelimiter;
     bool m_recordColumnDelimiterHasBeenSet;
   };

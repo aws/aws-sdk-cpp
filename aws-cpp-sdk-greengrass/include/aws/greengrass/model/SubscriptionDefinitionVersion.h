@@ -46,6 +46,7 @@ namespace Model
     SubscriptionDefinitionVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Subscriptions in the version.
      */
@@ -82,6 +83,7 @@ namespace Model
     inline SubscriptionDefinitionVersion& AddSubscriptions(Subscription&& value) { m_subscriptionsHasBeenSet = true; m_subscriptions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Subscription> m_subscriptions;
     bool m_subscriptionsHasBeenSet;
   };

@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
      * assume.</p>
@@ -95,6 +96,7 @@ namespace Model
      */
     inline ApplicationResourceLifecycleConfig& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
+
     /**
      * <p>The application version lifecycle configuration.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline ApplicationResourceLifecycleConfig& WithVersionLifecycleConfig(ApplicationVersionLifecycleConfig&& value) { SetVersionLifecycleConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
     ApplicationVersionLifecycleConfig m_versionLifecycleConfig;
     bool m_versionLifecycleConfigHasBeenSet;
   };

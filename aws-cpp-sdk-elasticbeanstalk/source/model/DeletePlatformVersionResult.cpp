@@ -31,12 +31,12 @@ DeletePlatformVersionResult::DeletePlatformVersionResult()
 {
 }
 
-DeletePlatformVersionResult::DeletePlatformVersionResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeletePlatformVersionResult::DeletePlatformVersionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeletePlatformVersionResult& DeletePlatformVersionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeletePlatformVersionResult& DeletePlatformVersionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

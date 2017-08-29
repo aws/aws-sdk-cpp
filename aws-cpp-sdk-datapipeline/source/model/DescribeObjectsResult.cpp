@@ -31,13 +31,13 @@ DescribeObjectsResult::DescribeObjectsResult() :
 {
 }
 
-DescribeObjectsResult::DescribeObjectsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeObjectsResult::DescribeObjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_hasMoreResults(false)
 {
   *this = result;
 }
 
-DescribeObjectsResult& DescribeObjectsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeObjectsResult& DescribeObjectsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("pipelineObjects"))

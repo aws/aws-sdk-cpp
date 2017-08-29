@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The key associated with the output.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The key associated with the output.</p>
      */
     inline Output& WithOutputKey(const char* value) { SetOutputKey(value); return *this;}
+
 
     /**
      * <p>The value associated with the output.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline Output& WithOutputValue(const char* value) { SetOutputValue(value); return *this;}
 
+
     /**
      * <p>User defined description associated with the output.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>User defined description associated with the output.</p>
      */
     inline Output& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The name of the export associated with the output.</p>
@@ -189,12 +193,16 @@ namespace Model
     inline Output& WithExportName(const char* value) { SetExportName(value); return *this;}
 
   private:
+
     Aws::String m_outputKey;
     bool m_outputKeyHasBeenSet;
+
     Aws::String m_outputValue;
     bool m_outputValueHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_exportName;
     bool m_exportNameHasBeenSet;
   };

@@ -31,12 +31,12 @@ DeleteStackInstancesResult::DeleteStackInstancesResult()
 {
 }
 
-DeleteStackInstancesResult::DeleteStackInstancesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteStackInstancesResult::DeleteStackInstancesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteStackInstancesResult& DeleteStackInstancesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteStackInstancesResult& DeleteStackInstancesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

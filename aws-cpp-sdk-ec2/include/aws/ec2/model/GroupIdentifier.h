@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the security group.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the security group.</p>
      */
     inline GroupIdentifier& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>The ID of the security group.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline GroupIdentifier& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     ParameterConstraints& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The values that the administrator has allowed for the parameter.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
     inline ParameterConstraints& AddAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_allowedValues;
     bool m_allowedValuesHasBeenSet;
   };

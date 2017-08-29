@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListInventoryEntriesResult();
-    ListInventoryEntriesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListInventoryEntriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListInventoryEntriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListInventoryEntriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The type of inventory item returned by the request.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ListInventoryEntriesResult& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
+
     /**
      * <p>The instance ID targeted by the request to query inventory information.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The instance ID targeted by the request to query inventory information.</p>
      */
     inline ListInventoryEntriesResult& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The inventory schema version used by the instance(s).</p>
@@ -148,6 +151,7 @@ namespace Model
      */
     inline ListInventoryEntriesResult& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
 
+
     /**
      * <p>The time that inventory information was collected for the instance(s).</p>
      */
@@ -183,6 +187,7 @@ namespace Model
      */
     inline ListInventoryEntriesResult& WithCaptureTime(const char* value) { SetCaptureTime(value); return *this;}
 
+
     /**
      * <p>A list of inventory items on the instance(s).</p>
      */
@@ -217,6 +222,7 @@ namespace Model
      * <p>A list of inventory items on the instance(s).</p>
      */
     inline ListInventoryEntriesResult& AddEntries(Aws::Map<Aws::String, Aws::String>&& value) { m_entries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -261,11 +267,17 @@ namespace Model
     inline ListInventoryEntriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_typeName;
+
     Aws::String m_instanceId;
+
     Aws::String m_schemaVersion;
+
     Aws::String m_captureTime;
+
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_entries;
+
     Aws::String m_nextToken;
   };
 

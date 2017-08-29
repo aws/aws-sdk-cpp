@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline TagDescription& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
 
     /**
      * <p>Information about the tags.</p>
@@ -121,8 +123,10 @@ namespace Model
     inline TagDescription& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

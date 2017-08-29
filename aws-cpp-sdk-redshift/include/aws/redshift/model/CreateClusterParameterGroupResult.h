@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateClusterParameterGroupResult();
-    CreateClusterParameterGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateClusterParameterGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateClusterParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateClusterParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ClusterParameterGroup& GetClusterParameterGroup() const{ return m_clusterParameterGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline CreateClusterParameterGroupResult& WithClusterParameterGroup(ClusterParameterGroup&& value) { SetClusterParameterGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline CreateClusterParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ClusterParameterGroup m_clusterParameterGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 
