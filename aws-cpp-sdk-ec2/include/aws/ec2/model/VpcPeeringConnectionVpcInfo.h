@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VpcPeeringConnectionOptionsDescription.h>
 #include <aws/ec2/model/Ipv6CidrBlock.h>
+#include <aws/ec2/model/CidrBlock.h>
 #include <utility>
 
 namespace Aws
@@ -122,6 +123,42 @@ namespace Model
      * <p>The IPv6 CIDR block for the VPC.</p>
      */
     inline VpcPeeringConnectionVpcInfo& AddIpv6CidrBlockSet(Ipv6CidrBlock&& value) { m_ipv6CidrBlockSetHasBeenSet = true; m_ipv6CidrBlockSet.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline const Aws::Vector<CidrBlock>& GetCidrBlockSet() const{ return m_cidrBlockSet; }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline void SetCidrBlockSet(const Aws::Vector<CidrBlock>& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet = value; }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline void SetCidrBlockSet(Aws::Vector<CidrBlock>&& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet = std::move(value); }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& WithCidrBlockSet(const Aws::Vector<CidrBlock>& value) { SetCidrBlockSet(value); return *this;}
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& WithCidrBlockSet(Aws::Vector<CidrBlock>&& value) { SetCidrBlockSet(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& AddCidrBlockSet(const CidrBlock& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
+    inline VpcPeeringConnectionVpcInfo& AddCidrBlockSet(CidrBlock&& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -233,6 +270,9 @@ namespace Model
 
     Aws::Vector<Ipv6CidrBlock> m_ipv6CidrBlockSet;
     bool m_ipv6CidrBlockSetHasBeenSet;
+
+    Aws::Vector<CidrBlock> m_cidrBlockSet;
+    bool m_cidrBlockSetHasBeenSet;
 
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;

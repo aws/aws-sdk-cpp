@@ -53,6 +53,11 @@ AssociateVpcCidrBlockResponse& AssociateVpcCidrBlockResponse::operator =(const A
     {
       m_ipv6CidrBlockAssociation = ipv6CidrBlockAssociationNode;
     }
+    XmlNode cidrBlockAssociationNode = resultNode.FirstChild("cidrBlockAssociation");
+    if(!cidrBlockAssociationNode.IsNull())
+    {
+      m_cidrBlockAssociation = cidrBlockAssociationNode;
+    }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {

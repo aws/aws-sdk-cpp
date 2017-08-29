@@ -45,13 +45,19 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The IPv4 CIDR
-     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
-     * block for information to be returned for the VPC. Must contain the slash
+     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
+     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
-     * <p> <code>dhcp-options-id</code> - The ID of a set of DHCP options.</p> </li>
-     * <li> <p> <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR
-     * block associated with the VPC.</p> </li> <li> <p>
+     * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.association-id</code> - The association ID for an
+     * IPv4 CIDR block associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.state</code> - The state of an IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p> <code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -77,13 +83,19 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The IPv4 CIDR
-     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
-     * block for information to be returned for the VPC. Must contain the slash
+     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
+     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
-     * <p> <code>dhcp-options-id</code> - The ID of a set of DHCP options.</p> </li>
-     * <li> <p> <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR
-     * block associated with the VPC.</p> </li> <li> <p>
+     * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.association-id</code> - The association ID for an
+     * IPv4 CIDR block associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.state</code> - The state of an IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p> <code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -109,13 +121,19 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The IPv4 CIDR
-     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
-     * block for information to be returned for the VPC. Must contain the slash
+     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
+     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
-     * <p> <code>dhcp-options-id</code> - The ID of a set of DHCP options.</p> </li>
-     * <li> <p> <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR
-     * block associated with the VPC.</p> </li> <li> <p>
+     * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.association-id</code> - The association ID for an
+     * IPv4 CIDR block associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.state</code> - The state of an IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p> <code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -141,13 +159,19 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The IPv4 CIDR
-     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
-     * block for information to be returned for the VPC. Must contain the slash
+     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
+     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
-     * <p> <code>dhcp-options-id</code> - The ID of a set of DHCP options.</p> </li>
-     * <li> <p> <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR
-     * block associated with the VPC.</p> </li> <li> <p>
+     * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.association-id</code> - The association ID for an
+     * IPv4 CIDR block associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.state</code> - The state of an IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p> <code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -173,13 +197,19 @@ namespace Model
     inline DescribeVpcsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The IPv4 CIDR
-     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
-     * block for information to be returned for the VPC. Must contain the slash
+     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
+     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
-     * <p> <code>dhcp-options-id</code> - The ID of a set of DHCP options.</p> </li>
-     * <li> <p> <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR
-     * block associated with the VPC.</p> </li> <li> <p>
+     * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.association-id</code> - The association ID for an
+     * IPv4 CIDR block associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.state</code> - The state of an IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p> <code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -205,13 +235,19 @@ namespace Model
     inline DescribeVpcsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The IPv4 CIDR
-     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
-     * block for information to be returned for the VPC. Must contain the slash
+     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
+     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
-     * <p> <code>dhcp-options-id</code> - The ID of a set of DHCP options.</p> </li>
-     * <li> <p> <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR
-     * block associated with the VPC.</p> </li> <li> <p>
+     * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.association-id</code> - The association ID for an
+     * IPv4 CIDR block associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.state</code> - The state of an IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p> <code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -237,13 +273,19 @@ namespace Model
     inline DescribeVpcsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The IPv4 CIDR
-     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
-     * block for information to be returned for the VPC. Must contain the slash
+     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
+     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
+     * CIDR block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
-     * <p> <code>dhcp-options-id</code> - The ID of a set of DHCP options.</p> </li>
-     * <li> <p> <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR
-     * block associated with the VPC.</p> </li> <li> <p>
+     * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.association-id</code> - The association ID for an
+     * IPv4 CIDR block associated with the VPC.</p> </li> <li> <p>
+     * <code>cidr-block-association.state</code> - The state of an IPv4 CIDR block
+     * associated with the VPC.</p> </li> <li> <p> <code>dhcp-options-id</code> - The
+     * ID of a set of DHCP options.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block

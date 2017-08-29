@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/VpcIpv6CidrBlockAssociation.h>
+#include <aws/ec2/model/VpcCidrBlockAssociation.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
@@ -68,6 +69,32 @@ namespace Model
      * <p>Information about the IPv6 CIDR block association.</p>
      */
     inline AssociateVpcCidrBlockResponse& WithIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the IPv4 CIDR block association.</p>
+     */
+    inline const VpcCidrBlockAssociation& GetCidrBlockAssociation() const{ return m_cidrBlockAssociation; }
+
+    /**
+     * <p>Information about the IPv4 CIDR block association.</p>
+     */
+    inline void SetCidrBlockAssociation(const VpcCidrBlockAssociation& value) { m_cidrBlockAssociation = value; }
+
+    /**
+     * <p>Information about the IPv4 CIDR block association.</p>
+     */
+    inline void SetCidrBlockAssociation(VpcCidrBlockAssociation&& value) { m_cidrBlockAssociation = std::move(value); }
+
+    /**
+     * <p>Information about the IPv4 CIDR block association.</p>
+     */
+    inline AssociateVpcCidrBlockResponse& WithCidrBlockAssociation(const VpcCidrBlockAssociation& value) { SetCidrBlockAssociation(value); return *this;}
+
+    /**
+     * <p>Information about the IPv4 CIDR block association.</p>
+     */
+    inline AssociateVpcCidrBlockResponse& WithCidrBlockAssociation(VpcCidrBlockAssociation&& value) { SetCidrBlockAssociation(std::move(value)); return *this;}
 
 
     /**
@@ -124,6 +151,8 @@ namespace Model
   private:
 
     VpcIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
+
+    VpcCidrBlockAssociation m_cidrBlockAssociation;
 
     Aws::String m_vpcId;
 

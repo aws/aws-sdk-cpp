@@ -33,6 +33,7 @@ namespace Model
 VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo() : 
     m_cidrBlockHasBeenSet(false),
     m_ipv6CidrBlockSetHasBeenSet(false),
+    m_cidrBlockSetHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_peeringOptionsHasBeenSet(false),
     m_vpcIdHasBeenSet(false)
@@ -42,6 +43,7 @@ VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo() :
 VpcPeeringConnectionVpcInfo::VpcPeeringConnectionVpcInfo(const XmlNode& xmlNode) : 
     m_cidrBlockHasBeenSet(false),
     m_ipv6CidrBlockSetHasBeenSet(false),
+    m_cidrBlockSetHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_peeringOptionsHasBeenSet(false),
     m_vpcIdHasBeenSet(false)
@@ -72,6 +74,18 @@ VpcPeeringConnectionVpcInfo& VpcPeeringConnectionVpcInfo::operator =(const XmlNo
       }
 
       m_ipv6CidrBlockSetHasBeenSet = true;
+    }
+    XmlNode cidrBlockSetNode = resultNode.FirstChild("cidrBlockSet");
+    if(!cidrBlockSetNode.IsNull())
+    {
+      XmlNode cidrBlockSetMember = cidrBlockSetNode.FirstChild("item");
+      while(!cidrBlockSetMember.IsNull())
+      {
+        m_cidrBlockSet.push_back(cidrBlockSetMember);
+        cidrBlockSetMember = cidrBlockSetMember.NextNode("item");
+      }
+
+      m_cidrBlockSetHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
@@ -114,6 +128,17 @@ void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const ch
       }
   }
 
+  if(m_cidrBlockSetHasBeenSet)
+  {
+      unsigned cidrBlockSetIdx = 1;
+      for(auto& item : m_cidrBlockSet)
+      {
+        Aws::StringStream cidrBlockSetSs;
+        cidrBlockSetSs << location << index << locationValue << ".CidrBlockSet." << cidrBlockSetIdx++;
+        item.OutputToStream(oStream, cidrBlockSetSs.str().c_str());
+      }
+  }
+
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
@@ -147,6 +172,16 @@ void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const ch
         Aws::StringStream ipv6CidrBlockSetSs;
         ipv6CidrBlockSetSs << location <<  ".Ipv6CidrBlockSet." << ipv6CidrBlockSetIdx++;
         item.OutputToStream(oStream, ipv6CidrBlockSetSs.str().c_str());
+      }
+  }
+  if(m_cidrBlockSetHasBeenSet)
+  {
+      unsigned cidrBlockSetIdx = 1;
+      for(auto& item : m_cidrBlockSet)
+      {
+        Aws::StringStream cidrBlockSetSs;
+        cidrBlockSetSs << location <<  ".CidrBlockSet." << cidrBlockSetIdx++;
+        item.OutputToStream(oStream, cidrBlockSetSs.str().c_str());
       }
   }
   if(m_ownerIdHasBeenSet)

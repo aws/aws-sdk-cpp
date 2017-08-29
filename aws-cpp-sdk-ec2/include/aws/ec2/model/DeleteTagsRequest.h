@@ -70,106 +70,112 @@ namespace Model
 
 
     /**
-     * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
-     * one resource ID.</p>
+     * <p>The IDs of one or more resources.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
-     * one resource ID.</p>
+     * <p>The IDs of one or more resources.</p>
      */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
-     * one resource ID.</p>
+     * <p>The IDs of one or more resources.</p>
      */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
-     * one resource ID.</p>
+     * <p>The IDs of one or more resources.</p>
      */
     inline DeleteTagsRequest& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
-     * one resource ID.</p>
+     * <p>The IDs of one or more resources.</p>
      */
     inline DeleteTagsRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
-     * one resource ID.</p>
+     * <p>The IDs of one or more resources.</p>
      */
     inline DeleteTagsRequest& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
-     * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
-     * one resource ID.</p>
+     * <p>The IDs of one or more resources.</p>
      */
     inline DeleteTagsRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ID of the resource. For example, ami-1a2b3c4d. You can specify more than
-     * one resource ID.</p>
+     * <p>The IDs of one or more resources.</p>
      */
     inline DeleteTagsRequest& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
 
     /**
-     * <p>One or more tags to delete. If you omit the <code>value</code> parameter, we
-     * delete the tag regardless of its value. If you specify this parameter with an
-     * empty string as the value, we delete the key only if its value is an empty
+     * <p>One or more tags to delete. If you omit this parameter, we delete all tags
+     * for the specified resources. Specify a tag key and an optional tag value to
+     * delete specific tags. If you specify a tag key without a tag value, we delete
+     * any tag with this key regardless of its value. If you specify a tag key with an
+     * empty string as the tag value, we delete the tag only if its value is an empty
      * string.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>One or more tags to delete. If you omit the <code>value</code> parameter, we
-     * delete the tag regardless of its value. If you specify this parameter with an
-     * empty string as the value, we delete the key only if its value is an empty
+     * <p>One or more tags to delete. If you omit this parameter, we delete all tags
+     * for the specified resources. Specify a tag key and an optional tag value to
+     * delete specific tags. If you specify a tag key without a tag value, we delete
+     * any tag with this key regardless of its value. If you specify a tag key with an
+     * empty string as the tag value, we delete the tag only if its value is an empty
      * string.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>One or more tags to delete. If you omit the <code>value</code> parameter, we
-     * delete the tag regardless of its value. If you specify this parameter with an
-     * empty string as the value, we delete the key only if its value is an empty
+     * <p>One or more tags to delete. If you omit this parameter, we delete all tags
+     * for the specified resources. Specify a tag key and an optional tag value to
+     * delete specific tags. If you specify a tag key without a tag value, we delete
+     * any tag with this key regardless of its value. If you specify a tag key with an
+     * empty string as the tag value, we delete the tag only if its value is an empty
      * string.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>One or more tags to delete. If you omit the <code>value</code> parameter, we
-     * delete the tag regardless of its value. If you specify this parameter with an
-     * empty string as the value, we delete the key only if its value is an empty
+     * <p>One or more tags to delete. If you omit this parameter, we delete all tags
+     * for the specified resources. Specify a tag key and an optional tag value to
+     * delete specific tags. If you specify a tag key without a tag value, we delete
+     * any tag with this key regardless of its value. If you specify a tag key with an
+     * empty string as the tag value, we delete the tag only if its value is an empty
      * string.</p>
      */
     inline DeleteTagsRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>One or more tags to delete. If you omit the <code>value</code> parameter, we
-     * delete the tag regardless of its value. If you specify this parameter with an
-     * empty string as the value, we delete the key only if its value is an empty
+     * <p>One or more tags to delete. If you omit this parameter, we delete all tags
+     * for the specified resources. Specify a tag key and an optional tag value to
+     * delete specific tags. If you specify a tag key without a tag value, we delete
+     * any tag with this key regardless of its value. If you specify a tag key with an
+     * empty string as the tag value, we delete the tag only if its value is an empty
      * string.</p>
      */
     inline DeleteTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>One or more tags to delete. If you omit the <code>value</code> parameter, we
-     * delete the tag regardless of its value. If you specify this parameter with an
-     * empty string as the value, we delete the key only if its value is an empty
+     * <p>One or more tags to delete. If you omit this parameter, we delete all tags
+     * for the specified resources. Specify a tag key and an optional tag value to
+     * delete specific tags. If you specify a tag key without a tag value, we delete
+     * any tag with this key regardless of its value. If you specify a tag key with an
+     * empty string as the tag value, we delete the tag only if its value is an empty
      * string.</p>
      */
     inline DeleteTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>One or more tags to delete. If you omit the <code>value</code> parameter, we
-     * delete the tag regardless of its value. If you specify this parameter with an
-     * empty string as the value, we delete the key only if its value is an empty
+     * <p>One or more tags to delete. If you omit this parameter, we delete all tags
+     * for the specified resources. Specify a tag key and an optional tag value to
+     * delete specific tags. If you specify a tag key without a tag value, we delete
+     * any tag with this key regardless of its value. If you specify a tag key with an
+     * empty string as the tag value, we delete the tag only if its value is an empty
      * string.</p>
      */
     inline DeleteTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

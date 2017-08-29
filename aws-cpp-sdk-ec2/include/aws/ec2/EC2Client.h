@@ -1730,18 +1730,26 @@ namespace Model
         virtual void AssociateSubnetCidrBlockAsync(const Model::AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a CIDR block with your VPC. You can only associate a single
-         * Amazon-provided IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed
-         * at /56.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a CIDR block with your VPC. You can associate a secondary IPv4
+         * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
+         * CIDR block size is fixed at /56.</p> <p>For more information about associating
+         * CIDR blocks with your VPC and applicable restrictions, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateVpcCidrBlockOutcome AssociateVpcCidrBlock(const Model::AssociateVpcCidrBlockRequest& request) const;
 
         /**
-         * <p>Associates a CIDR block with your VPC. You can only associate a single
-         * Amazon-provided IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed
-         * at /56.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a CIDR block with your VPC. You can associate a secondary IPv4
+         * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
+         * CIDR block size is fixed at /56.</p> <p>For more information about associating
+         * CIDR blocks with your VPC and applicable restrictions, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
          *
@@ -1750,9 +1758,13 @@ namespace Model
         virtual Model::AssociateVpcCidrBlockOutcomeCallable AssociateVpcCidrBlockCallable(const Model::AssociateVpcCidrBlockRequest& request) const;
 
         /**
-         * <p>Associates a CIDR block with your VPC. You can only associate a single
-         * Amazon-provided IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed
-         * at /56.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a CIDR block with your VPC. You can associate a secondary IPv4
+         * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
+         * CIDR block size is fixed at /56.</p> <p>For more information about associating
+         * CIDR blocks with your VPC and applicable restrictions, see <a
+         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+         * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
          * API Reference</a></p>
          *
@@ -3878,24 +3890,23 @@ namespace Model
 
         /**
          * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
-         * provide the VPC ID and the CIDR block you want for the subnet. After you create
-         * a subnet, you can't change its CIDR block. The subnet's IPv4 CIDR block can be
-         * the same as the VPC's IPv4 CIDR block (assuming you want only a single subnet in
-         * the VPC), or a subset of the VPC's IPv4 CIDR block. If you create more than one
-         * subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4
-         * subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
-         * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
-         * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
-         * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
-         * first four and the last IPv4 address in each subnet's CIDR block. They're not
-         * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
-         * they're set up in a star topology with a logical router in the middle.</p> <p>If
-         * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
-         * doesn't change if you stop and restart the instance (unlike a similar instance
-         * launched outside a VPC, which gets a new IP address when restarted). It's
-         * therefore possible to have a subnet with no running instances (they're all
-         * stopped), but no remaining IP addresses available.</p> <p>For more information
-         * about subnets, see <a
+         * provide the VPC ID and the IPv4 CIDR block you want for the subnet. After you
+         * create a subnet, you can't change its CIDR block. The size of the subnet's IPv4
+         * CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
+         * IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR
+         * blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
+         * a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
+         * IPv4 addresses).</p> <p>If you've associated an IPv6 CIDR block with your VPC,
+         * you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
+         * </p> <important> <p>AWS reserves both the first four and the last IPv4 address
+         * in each subnet's CIDR block. They're not available for use.</p> </important>
+         * <p>If you add more than one subnet to a VPC, they're set up in a star topology
+         * with a logical router in the middle.</p> <p>If you launch an instance in a VPC
+         * using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and
+         * restart the instance (unlike a similar instance launched outside a VPC, which
+         * gets a new IP address when restarted). It's therefore possible to have a subnet
+         * with no running instances (they're all stopped), but no remaining IP addresses
+         * available.</p> <p>For more information about subnets, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3906,24 +3917,23 @@ namespace Model
 
         /**
          * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
-         * provide the VPC ID and the CIDR block you want for the subnet. After you create
-         * a subnet, you can't change its CIDR block. The subnet's IPv4 CIDR block can be
-         * the same as the VPC's IPv4 CIDR block (assuming you want only a single subnet in
-         * the VPC), or a subset of the VPC's IPv4 CIDR block. If you create more than one
-         * subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4
-         * subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
-         * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
-         * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
-         * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
-         * first four and the last IPv4 address in each subnet's CIDR block. They're not
-         * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
-         * they're set up in a star topology with a logical router in the middle.</p> <p>If
-         * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
-         * doesn't change if you stop and restart the instance (unlike a similar instance
-         * launched outside a VPC, which gets a new IP address when restarted). It's
-         * therefore possible to have a subnet with no running instances (they're all
-         * stopped), but no remaining IP addresses available.</p> <p>For more information
-         * about subnets, see <a
+         * provide the VPC ID and the IPv4 CIDR block you want for the subnet. After you
+         * create a subnet, you can't change its CIDR block. The size of the subnet's IPv4
+         * CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
+         * IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR
+         * blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
+         * a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
+         * IPv4 addresses).</p> <p>If you've associated an IPv6 CIDR block with your VPC,
+         * you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
+         * </p> <important> <p>AWS reserves both the first four and the last IPv4 address
+         * in each subnet's CIDR block. They're not available for use.</p> </important>
+         * <p>If you add more than one subnet to a VPC, they're set up in a star topology
+         * with a logical router in the middle.</p> <p>If you launch an instance in a VPC
+         * using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and
+         * restart the instance (unlike a similar instance launched outside a VPC, which
+         * gets a new IP address when restarted). It's therefore possible to have a subnet
+         * with no running instances (they're all stopped), but no remaining IP addresses
+         * available.</p> <p>For more information about subnets, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3936,24 +3946,23 @@ namespace Model
 
         /**
          * <p>Creates a subnet in an existing VPC.</p> <p>When you create each subnet, you
-         * provide the VPC ID and the CIDR block you want for the subnet. After you create
-         * a subnet, you can't change its CIDR block. The subnet's IPv4 CIDR block can be
-         * the same as the VPC's IPv4 CIDR block (assuming you want only a single subnet in
-         * the VPC), or a subset of the VPC's IPv4 CIDR block. If you create more than one
-         * subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest IPv4
-         * subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
-         * largest uses a /16 netmask (65,536 IPv4 addresses).</p> <p>If you've associated
-         * an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR
-         * block that uses a /64 prefix length. </p> <important> <p>AWS reserves both the
-         * first four and the last IPv4 address in each subnet's CIDR block. They're not
-         * available for use.</p> </important> <p>If you add more than one subnet to a VPC,
-         * they're set up in a star topology with a logical router in the middle.</p> <p>If
-         * you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address
-         * doesn't change if you stop and restart the instance (unlike a similar instance
-         * launched outside a VPC, which gets a new IP address when restarted). It's
-         * therefore possible to have a subnet with no running instances (they're all
-         * stopped), but no remaining IP addresses available.</p> <p>For more information
-         * about subnets, see <a
+         * provide the VPC ID and the IPv4 CIDR block you want for the subnet. After you
+         * create a subnet, you can't change its CIDR block. The size of the subnet's IPv4
+         * CIDR block can be the same as a VPC's IPv4 CIDR block, or a subset of a VPC's
+         * IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR
+         * blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses
+         * a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
+         * IPv4 addresses).</p> <p>If you've associated an IPv6 CIDR block with your VPC,
+         * you can create a subnet with an IPv6 CIDR block that uses a /64 prefix length.
+         * </p> <important> <p>AWS reserves both the first four and the last IPv4 address
+         * in each subnet's CIDR block. They're not available for use.</p> </important>
+         * <p>If you add more than one subnet to a VPC, they're set up in a star topology
+         * with a logical router in the middle.</p> <p>If you launch an instance in a VPC
+         * using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and
+         * restart the instance (unlike a similar instance launched outside a VPC, which
+         * gets a new IP address when restarted). It's therefore possible to have a subnet
+         * with no running instances (they're all stopped), but no remaining IP addresses
+         * available.</p> <p>For more information about subnets, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -4990,9 +4999,9 @@ namespace Model
         virtual void DeleteSubnetAsync(const Model::DeleteSubnetRequest& request, const DeleteSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified set of tags from the specified set of resources. This
-         * call is designed to follow a <code>DescribeTags</code> request.</p> <p>For more
-         * information about tags, see <a
+         * <p>Deletes the specified set of tags from the specified set of resources.</p>
+         * <p>To list the current tags, use <a>DescribeTags</a>. For more information about
+         * tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5002,9 +5011,9 @@ namespace Model
         virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * <p>Deletes the specified set of tags from the specified set of resources. This
-         * call is designed to follow a <code>DescribeTags</code> request.</p> <p>For more
-         * information about tags, see <a
+         * <p>Deletes the specified set of tags from the specified set of resources.</p>
+         * <p>To list the current tags, use <a>DescribeTags</a>. For more information about
+         * tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5016,9 +5025,9 @@ namespace Model
         virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
 
         /**
-         * <p>Deletes the specified set of tags from the specified set of resources. This
-         * call is designed to follow a <code>DescribeTags</code> request.</p> <p>For more
-         * information about tags, see <a
+         * <p>Deletes the specified set of tags from the specified set of resources.</p>
+         * <p>To list the current tags, use <a>DescribeTags</a>. For more information about
+         * tags, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -8681,20 +8690,24 @@ namespace Model
         virtual void DisassociateSubnetCidrBlockAsync(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates a CIDR block from a VPC. Currently, you can disassociate an
-         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
-         * are associated with the CIDR block before you can disassociate it.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you
+         * must specify its association ID. You can get the association ID by using
+         * <a>DescribeVpcs</a>. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p> <p>You
+         * cannot disassociate the CIDR block with which you originally created the VPC
+         * (the primary CIDR block).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateVpcCidrBlockOutcome DisassociateVpcCidrBlock(const Model::DisassociateVpcCidrBlockRequest& request) const;
 
         /**
-         * <p>Disassociates a CIDR block from a VPC. Currently, you can disassociate an
-         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
-         * are associated with the CIDR block before you can disassociate it.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you
+         * must specify its association ID. You can get the association ID by using
+         * <a>DescribeVpcs</a>. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p> <p>You
+         * cannot disassociate the CIDR block with which you originally created the VPC
+         * (the primary CIDR block).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">AWS
          * API Reference</a></p>
          *
@@ -8703,10 +8716,12 @@ namespace Model
         virtual Model::DisassociateVpcCidrBlockOutcomeCallable DisassociateVpcCidrBlockCallable(const Model::DisassociateVpcCidrBlockRequest& request) const;
 
         /**
-         * <p>Disassociates a CIDR block from a VPC. Currently, you can disassociate an
-         * IPv6 CIDR block only. You must detach or delete all gateways and resources that
-         * are associated with the CIDR block before you can disassociate it.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you
+         * must specify its association ID. You can get the association ID by using
+         * <a>DescribeVpcs</a>. You must detach or delete all gateways and resources that
+         * are associated with the CIDR block before you can disassociate it. </p> <p>You
+         * cannot disassociate the CIDR block with which you originally created the VPC
+         * (the primary CIDR block).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">AWS
          * API Reference</a></p>
          *

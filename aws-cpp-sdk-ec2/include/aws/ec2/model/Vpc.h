@@ -21,6 +21,7 @@
 #include <aws/ec2/model/Tenancy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VpcIpv6CidrBlockAssociation.h>
+#include <aws/ec2/model/VpcCidrBlockAssociation.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -55,37 +56,37 @@ namespace Model
 
 
     /**
-     * <p>The IPv4 CIDR block for the VPC.</p>
+     * <p>The primary IPv4 CIDR block for the VPC.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
 
     /**
-     * <p>The IPv4 CIDR block for the VPC.</p>
+     * <p>The primary IPv4 CIDR block for the VPC.</p>
      */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
-     * <p>The IPv4 CIDR block for the VPC.</p>
+     * <p>The primary IPv4 CIDR block for the VPC.</p>
      */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
 
     /**
-     * <p>The IPv4 CIDR block for the VPC.</p>
+     * <p>The primary IPv4 CIDR block for the VPC.</p>
      */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
 
     /**
-     * <p>The IPv4 CIDR block for the VPC.</p>
+     * <p>The primary IPv4 CIDR block for the VPC.</p>
      */
     inline Vpc& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
 
     /**
-     * <p>The IPv4 CIDR block for the VPC.</p>
+     * <p>The primary IPv4 CIDR block for the VPC.</p>
      */
     inline Vpc& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
 
     /**
-     * <p>The IPv4 CIDR block for the VPC.</p>
+     * <p>The primary IPv4 CIDR block for the VPC.</p>
      */
     inline Vpc& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
@@ -258,6 +259,42 @@ namespace Model
 
 
     /**
+     * <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
+     */
+    inline const Aws::Vector<VpcCidrBlockAssociation>& GetCidrBlockAssociationSet() const{ return m_cidrBlockAssociationSet; }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
+     */
+    inline void SetCidrBlockAssociationSet(const Aws::Vector<VpcCidrBlockAssociation>& value) { m_cidrBlockAssociationSetHasBeenSet = true; m_cidrBlockAssociationSet = value; }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
+     */
+    inline void SetCidrBlockAssociationSet(Aws::Vector<VpcCidrBlockAssociation>&& value) { m_cidrBlockAssociationSetHasBeenSet = true; m_cidrBlockAssociationSet = std::move(value); }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
+     */
+    inline Vpc& WithCidrBlockAssociationSet(const Aws::Vector<VpcCidrBlockAssociation>& value) { SetCidrBlockAssociationSet(value); return *this;}
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
+     */
+    inline Vpc& WithCidrBlockAssociationSet(Aws::Vector<VpcCidrBlockAssociation>&& value) { SetCidrBlockAssociationSet(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
+     */
+    inline Vpc& AddCidrBlockAssociationSet(const VpcCidrBlockAssociation& value) { m_cidrBlockAssociationSetHasBeenSet = true; m_cidrBlockAssociationSet.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
+     */
+    inline Vpc& AddCidrBlockAssociationSet(VpcCidrBlockAssociation&& value) { m_cidrBlockAssociationSetHasBeenSet = true; m_cidrBlockAssociationSet.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Indicates whether the VPC is the default VPC.</p>
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
@@ -327,6 +364,9 @@ namespace Model
 
     Aws::Vector<VpcIpv6CidrBlockAssociation> m_ipv6CidrBlockAssociationSet;
     bool m_ipv6CidrBlockAssociationSetHasBeenSet;
+
+    Aws::Vector<VpcCidrBlockAssociation> m_cidrBlockAssociationSet;
+    bool m_cidrBlockAssociationSetHasBeenSet;
 
     bool m_isDefault;
     bool m_isDefaultHasBeenSet;
