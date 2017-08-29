@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p> <p>This name must be unique within your
      * set of load balancers for the region, must have a maximum of 32 characters, must
@@ -100,6 +101,7 @@ namespace Model
      */
     inline CreateLoadBalancerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
+
     /**
      * <p>The listeners.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
@@ -155,6 +157,7 @@ namespace Model
      * Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>One or more Availability Zones from the same region as the load balancer.</p>
@@ -220,6 +223,7 @@ namespace Model
      */
     inline CreateLoadBalancerRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
+
     /**
      * <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify
      * one subnet per Availability Zone specified in
@@ -276,6 +280,7 @@ namespace Model
      */
     inline CreateLoadBalancerRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
+
     /**
      * <p>The IDs of the security groups to assign to the load balancer.</p>
      */
@@ -315,6 +320,7 @@ namespace Model
      * <p>The IDs of the security groups to assign to the load balancer.</p>
      */
     inline CreateLoadBalancerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
 
     /**
      * <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
@@ -400,6 +406,7 @@ namespace Model
      */
     inline CreateLoadBalancerRequest& WithScheme(const char* value) { SetScheme(value); return *this;}
 
+
     /**
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
@@ -457,18 +464,25 @@ namespace Model
     inline CreateLoadBalancerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     Aws::Vector<Listener> m_listeners;
     bool m_listenersHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
     Aws::String m_scheme;
     bool m_schemeHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     InventoryResultItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the inventory result item type.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the inventory result item type.</p>
      */
     inline InventoryResultItem& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+
 
     /**
      * <p>The schema version for the inventory result item/</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline InventoryResultItem& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
 
+
     /**
      * <p>The time inventory item data was captured.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The time inventory item data was captured.</p>
      */
     inline InventoryResultItem& WithCaptureTime(const char* value) { SetCaptureTime(value); return *this;}
+
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
@@ -208,6 +212,7 @@ namespace Model
      */
     inline InventoryResultItem& WithContentHash(const char* value) { SetContentHash(value); return *this;}
 
+
     /**
      * <p>Contains all the inventory data of the item type. Results include attribute
      * names and values. </p>
@@ -251,14 +256,19 @@ namespace Model
     inline InventoryResultItem& AddContent(Aws::Map<Aws::String, Aws::String>&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet;
+
     Aws::String m_schemaVersion;
     bool m_schemaVersionHasBeenSet;
+
     Aws::String m_captureTime;
     bool m_captureTimeHasBeenSet;
+
     Aws::String m_contentHash;
     bool m_contentHashHasBeenSet;
+
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_content;
     bool m_contentHasBeenSet;
   };

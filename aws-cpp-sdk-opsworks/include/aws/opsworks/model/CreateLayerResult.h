@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateLayerResult();
-    CreateLayerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateLayerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateLayerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateLayerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The layer ID.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateLayerResult& WithLayerId(const char* value) { SetLayerId(value); return *this;}
 
   private:
+
     Aws::String m_layerId;
   };
 

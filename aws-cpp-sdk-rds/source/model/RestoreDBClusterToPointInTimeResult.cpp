@@ -31,12 +31,12 @@ RestoreDBClusterToPointInTimeResult::RestoreDBClusterToPointInTimeResult()
 {
 }
 
-RestoreDBClusterToPointInTimeResult::RestoreDBClusterToPointInTimeResult(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreDBClusterToPointInTimeResult::RestoreDBClusterToPointInTimeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RestoreDBClusterToPointInTimeResult& RestoreDBClusterToPointInTimeResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreDBClusterToPointInTimeResult& RestoreDBClusterToPointInTimeResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DetectFacesResult();
-    DetectFacesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetectFacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetectFacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetectFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Details of each face found in the image. </p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Details of each face found in the image. </p>
      */
     inline DetectFacesResult& AddFaceDetails(FaceDetail&& value) { m_faceDetails.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> The orientation of the input image (counter-clockwise direction). If your
@@ -154,7 +156,9 @@ namespace Model
     inline DetectFacesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<FaceDetail> m_faceDetails;
+
     OrientationCorrection m_orientationCorrection;
   };
 

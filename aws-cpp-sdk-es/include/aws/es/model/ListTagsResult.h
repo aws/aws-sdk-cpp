@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListTagsResult();
-    ListTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline ListTagsResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Tag> m_tagList;
   };
 

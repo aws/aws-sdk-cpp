@@ -31,12 +31,12 @@ TestFailoverResult::TestFailoverResult()
 {
 }
 
-TestFailoverResult::TestFailoverResult(const AmazonWebServiceResult<XmlDocument>& result)
+TestFailoverResult::TestFailoverResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-TestFailoverResult& TestFailoverResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+TestFailoverResult& TestFailoverResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

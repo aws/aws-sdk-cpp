@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the project for which you want to list
      * network profiles.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline ListNetworkProfilesRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The type of network profile you wish to return information about. Valid
      * values are listed below.</p>
@@ -108,6 +110,7 @@ namespace Model
      * values are listed below.</p>
      */
     inline ListNetworkProfilesRequest& WithType(NetworkProfileType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -152,10 +155,13 @@ namespace Model
     inline ListNetworkProfilesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     NetworkProfileType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the log file for the specified DB instance.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeDBLogFilesDetails& WithLogFileName(const char* value) { SetLogFileName(value); return *this;}
 
+
     /**
      * <p>A POSIX timestamp when the last log entry was written.</p>
      */
@@ -98,6 +100,7 @@ namespace Model
      * <p>A POSIX timestamp when the last log entry was written.</p>
      */
     inline DescribeDBLogFilesDetails& WithLastWritten(long long value) { SetLastWritten(value); return *this;}
+
 
     /**
      * <p>The size, in bytes, of the log file for the specified DB instance.</p>
@@ -115,10 +118,13 @@ namespace Model
     inline DescribeDBLogFilesDetails& WithSize(long long value) { SetSize(value); return *this;}
 
   private:
+
     Aws::String m_logFileName;
     bool m_logFileNameHasBeenSet;
+
     long long m_lastWritten;
     bool m_lastWrittenHasBeenSet;
+
     long long m_size;
     bool m_sizeHasBeenSet;
   };

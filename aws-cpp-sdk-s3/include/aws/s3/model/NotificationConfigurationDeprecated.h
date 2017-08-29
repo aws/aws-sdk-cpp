@@ -43,6 +43,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const TopicConfigurationDeprecated& GetTopicConfiguration() const{ return m_topicConfiguration; }
 
@@ -58,6 +59,7 @@ namespace Model
     
     inline NotificationConfigurationDeprecated& WithTopicConfiguration(TopicConfigurationDeprecated&& value) { SetTopicConfiguration(std::move(value)); return *this;}
 
+
     
     inline const QueueConfigurationDeprecated& GetQueueConfiguration() const{ return m_queueConfiguration; }
 
@@ -72,6 +74,7 @@ namespace Model
 
     
     inline NotificationConfigurationDeprecated& WithQueueConfiguration(QueueConfigurationDeprecated&& value) { SetQueueConfiguration(std::move(value)); return *this;}
+
 
     
     inline const CloudFunctionConfiguration& GetCloudFunctionConfiguration() const{ return m_cloudFunctionConfiguration; }
@@ -89,10 +92,13 @@ namespace Model
     inline NotificationConfigurationDeprecated& WithCloudFunctionConfiguration(CloudFunctionConfiguration&& value) { SetCloudFunctionConfiguration(std::move(value)); return *this;}
 
   private:
+
     TopicConfigurationDeprecated m_topicConfiguration;
     bool m_topicConfigurationHasBeenSet;
+
     QueueConfigurationDeprecated m_queueConfiguration;
     bool m_queueConfigurationHasBeenSet;
+
     CloudFunctionConfiguration m_cloudFunctionConfiguration;
     bool m_cloudFunctionConfigurationHasBeenSet;
   };

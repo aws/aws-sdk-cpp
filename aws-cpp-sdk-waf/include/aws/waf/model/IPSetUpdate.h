@@ -47,6 +47,7 @@ namespace Model
     IPSetUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies whether to insert or delete an IP address with
      * <a>UpdateIPSet</a>.</p>
@@ -76,6 +77,7 @@ namespace Model
      * <a>UpdateIPSet</a>.</p>
      */
     inline IPSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
@@ -108,8 +110,10 @@ namespace Model
     inline IPSetUpdate& WithIPSetDescriptor(IPSetDescriptor&& value) { SetIPSetDescriptor(std::move(value)); return *this;}
 
   private:
+
     ChangeAction m_action;
     bool m_actionHasBeenSet;
+
     IPSetDescriptor m_iPSetDescriptor;
     bool m_iPSetDescriptorHasBeenSet;
   };

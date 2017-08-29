@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of ARNs that specifies the assessment targets whose assessment
      * templates you want to list.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline ListAssessmentTemplatesRequest& AddAssessmentTargetArns(const char* value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns.push_back(value); return *this; }
 
+
     /**
      * <p>You can use this parameter to specify a subset of data to be included in the
      * action's response.</p> <p>For a record to match a filter, all specified filter
@@ -125,6 +127,7 @@ namespace Model
      * attribute, any of the values can match.</p>
      */
     inline ListAssessmentTemplatesRequest& WithFilter(AssessmentTemplateFilter&& value) { SetFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -189,6 +192,7 @@ namespace Model
      */
     inline ListAssessmentTemplatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 10. The maximum value is 500.</p>
@@ -208,12 +212,16 @@ namespace Model
     inline ListAssessmentTemplatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_assessmentTargetArns;
     bool m_assessmentTargetArnsHasBeenSet;
+
     AssessmentTemplateFilter m_filter;
     bool m_filterHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The phone number to opt in.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline OptInPhoneNumberRequest& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
 
   private:
+
     Aws::String m_phoneNumber;
     bool m_phoneNumberHasBeenSet;
   };

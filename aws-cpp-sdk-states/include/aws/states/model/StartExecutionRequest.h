@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
      */
     inline StartExecutionRequest& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
+
 
     /**
      * <p>The name of the execution. This name must be unique for your AWS account and
@@ -113,6 +115,7 @@ namespace Model
      */
     inline StartExecutionRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The JSON input data for the execution.</p>
      */
@@ -149,10 +152,13 @@ namespace Model
     inline StartExecutionRequest& WithInput(const char* value) { SetInput(value); return *this;}
 
   private:
+
     Aws::String m_stateMachineArn;
     bool m_stateMachineArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
   };

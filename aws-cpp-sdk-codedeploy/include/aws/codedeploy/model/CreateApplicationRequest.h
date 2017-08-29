@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the application. This name must be unique with the applicable IAM
      * user or AWS account.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
   };

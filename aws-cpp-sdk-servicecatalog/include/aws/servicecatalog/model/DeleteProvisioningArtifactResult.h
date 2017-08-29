@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteProvisioningArtifactResult();
-    DeleteProvisioningArtifactResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteProvisioningArtifactResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteProvisioningArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteProvisioningArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

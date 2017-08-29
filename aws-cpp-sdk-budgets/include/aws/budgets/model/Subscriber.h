@@ -47,6 +47,7 @@ namespace Model
     Subscriber& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const SubscriptionType& GetSubscriptionType() const{ return m_subscriptionType; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline Subscriber& WithSubscriptionType(SubscriptionType&& value) { SetSubscriptionType(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetAddress() const{ return m_address; }
@@ -84,8 +86,10 @@ namespace Model
     inline Subscriber& WithAddress(const char* value) { SetAddress(value); return *this;}
 
   private:
+
     SubscriptionType m_subscriptionType;
     bool m_subscriptionTypeHasBeenSet;
+
     Aws::String m_address;
     bool m_addressHasBeenSet;
   };

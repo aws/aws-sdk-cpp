@@ -30,12 +30,12 @@ DescribeFleetAttributesResult::DescribeFleetAttributesResult()
 {
 }
 
-DescribeFleetAttributesResult::DescribeFleetAttributesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeFleetAttributesResult::DescribeFleetAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeFleetAttributesResult& DescribeFleetAttributesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeFleetAttributesResult& DescribeFleetAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FleetAttributes"))

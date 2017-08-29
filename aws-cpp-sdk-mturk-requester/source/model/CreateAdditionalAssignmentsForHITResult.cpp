@@ -30,12 +30,12 @@ CreateAdditionalAssignmentsForHITResult::CreateAdditionalAssignmentsForHITResult
 {
 }
 
-CreateAdditionalAssignmentsForHITResult::CreateAdditionalAssignmentsForHITResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateAdditionalAssignmentsForHITResult::CreateAdditionalAssignmentsForHITResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateAdditionalAssignmentsForHITResult& CreateAdditionalAssignmentsForHITResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateAdditionalAssignmentsForHITResult& CreateAdditionalAssignmentsForHITResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

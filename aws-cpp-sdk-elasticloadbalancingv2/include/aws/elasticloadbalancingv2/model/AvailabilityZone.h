@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the Availability Zone.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the Availability Zone.</p>
      */
     inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}
+
 
     /**
      * <p>The ID of the subnet.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline AvailabilityZone& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
   private:
+
     Aws::String m_zoneName;
     bool m_zoneNameHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
   };

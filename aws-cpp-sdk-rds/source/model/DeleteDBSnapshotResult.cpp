@@ -31,12 +31,12 @@ DeleteDBSnapshotResult::DeleteDBSnapshotResult()
 {
 }
 
-DeleteDBSnapshotResult::DeleteDBSnapshotResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteDBSnapshotResult::DeleteDBSnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteDBSnapshotResult& DeleteDBSnapshotResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteDBSnapshotResult& DeleteDBSnapshotResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -38,6 +38,7 @@ namespace Model
     GetRequestValidatorRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetRequestValidatorRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline GetRequestValidatorRequest& WithRequestValidatorId(const char* value) { SetRequestValidatorId(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_requestValidatorId;
     bool m_requestValidatorIdHasBeenSet;
   };

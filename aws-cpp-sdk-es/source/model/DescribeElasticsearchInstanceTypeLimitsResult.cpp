@@ -30,12 +30,12 @@ DescribeElasticsearchInstanceTypeLimitsResult::DescribeElasticsearchInstanceType
 {
 }
 
-DescribeElasticsearchInstanceTypeLimitsResult::DescribeElasticsearchInstanceTypeLimitsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeElasticsearchInstanceTypeLimitsResult::DescribeElasticsearchInstanceTypeLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeElasticsearchInstanceTypeLimitsResult& DescribeElasticsearchInstanceTypeLimitsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeElasticsearchInstanceTypeLimitsResult& DescribeElasticsearchInstanceTypeLimitsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("LimitsByRole"))

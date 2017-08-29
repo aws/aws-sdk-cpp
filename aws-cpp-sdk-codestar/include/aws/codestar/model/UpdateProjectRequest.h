@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the project you want to update.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline UpdateProjectRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name of the project you want to update.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The name of the project you want to update.</p>
      */
     inline UpdateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The description of the project, if any.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline UpdateProjectRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

@@ -44,6 +44,7 @@ namespace Model
     Radios& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>True if Wi-Fi is enabled at the beginning of the test; otherwise, false.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>True if Wi-Fi is enabled at the beginning of the test; otherwise, false.</p>
      */
     inline Radios& WithWifi(bool value) { SetWifi(value); return *this;}
+
 
     /**
      * <p>True if Bluetooth is enabled at the beginning of the test; otherwise,
@@ -77,6 +79,7 @@ namespace Model
      */
     inline Radios& WithBluetooth(bool value) { SetBluetooth(value); return *this;}
 
+
     /**
      * <p>True if NFC is enabled at the beginning of the test; otherwise, false.</p>
      */
@@ -91,6 +94,7 @@ namespace Model
      * <p>True if NFC is enabled at the beginning of the test; otherwise, false.</p>
      */
     inline Radios& WithNfc(bool value) { SetNfc(value); return *this;}
+
 
     /**
      * <p>True if GPS is enabled at the beginning of the test; otherwise, false.</p>
@@ -108,12 +112,16 @@ namespace Model
     inline Radios& WithGps(bool value) { SetGps(value); return *this;}
 
   private:
+
     bool m_wifi;
     bool m_wifiHasBeenSet;
+
     bool m_bluetooth;
     bool m_bluetoothHasBeenSet;
+
     bool m_nfc;
     bool m_nfcHasBeenSet;
+
     bool m_gps;
     bool m_gpsHasBeenSet;
   };

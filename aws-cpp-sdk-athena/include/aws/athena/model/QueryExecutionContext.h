@@ -46,6 +46,7 @@ namespace Model
     QueryExecutionContext& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the database.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline QueryExecutionContext& WithDatabase(const char* value) { SetDatabase(value); return *this;}
 
   private:
+
     Aws::String m_database;
     bool m_databaseHasBeenSet;
   };

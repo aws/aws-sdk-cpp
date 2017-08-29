@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The prefix matching the rule name.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The prefix matching the rule name.</p>
      */
     inline ListRulesRequest& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
+
 
     /**
      * <p>The token returned by a previous call to retrieve the next set of
@@ -113,6 +115,7 @@ namespace Model
      */
     inline ListRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return.</p>
      */
@@ -129,10 +132,13 @@ namespace Model
     inline ListRulesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_namePrefix;
     bool m_namePrefixHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

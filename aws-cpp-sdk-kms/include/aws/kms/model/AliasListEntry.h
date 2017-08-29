@@ -45,6 +45,7 @@ namespace Model
     AliasListEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>String that contains the alias.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline AliasListEntry& WithAliasName(const char* value) { SetAliasName(value); return *this;}
 
+
     /**
      * <p>String that contains the key ARN.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>String that contains the key ARN.</p>
      */
     inline AliasListEntry& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}
+
 
     /**
      * <p>String that contains the key identifier referred to by the alias.</p>
@@ -151,10 +154,13 @@ namespace Model
     inline AliasListEntry& WithTargetKeyId(const char* value) { SetTargetKeyId(value); return *this;}
 
   private:
+
     Aws::String m_aliasName;
     bool m_aliasNameHasBeenSet;
+
     Aws::String m_aliasArn;
     bool m_aliasArnHasBeenSet;
+
     Aws::String m_targetKeyId;
     bool m_targetKeyIdHasBeenSet;
   };

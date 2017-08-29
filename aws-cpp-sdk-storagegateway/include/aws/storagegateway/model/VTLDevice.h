@@ -47,6 +47,7 @@ namespace Model
     VTLDevice& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or
      * media changer).</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline VTLDevice& WithVTLDeviceARN(const char* value) { SetVTLDeviceARN(value); return *this;}
 
+
     
     inline const Aws::String& GetVTLDeviceType() const{ return m_vTLDeviceType; }
 
@@ -109,6 +111,7 @@ namespace Model
 
     
     inline VTLDevice& WithVTLDeviceType(const char* value) { SetVTLDeviceType(value); return *this;}
+
 
     
     inline const Aws::String& GetVTLDeviceVendor() const{ return m_vTLDeviceVendor; }
@@ -131,6 +134,7 @@ namespace Model
     
     inline VTLDevice& WithVTLDeviceVendor(const char* value) { SetVTLDeviceVendor(value); return *this;}
 
+
     
     inline const Aws::String& GetVTLDeviceProductIdentifier() const{ return m_vTLDeviceProductIdentifier; }
 
@@ -151,6 +155,7 @@ namespace Model
 
     
     inline VTLDevice& WithVTLDeviceProductIdentifier(const char* value) { SetVTLDeviceProductIdentifier(value); return *this;}
+
 
     /**
      * <p>A list of iSCSI information about a VTL device.</p>
@@ -178,14 +183,19 @@ namespace Model
     inline VTLDevice& WithDeviceiSCSIAttributes(DeviceiSCSIAttributes&& value) { SetDeviceiSCSIAttributes(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_vTLDeviceARN;
     bool m_vTLDeviceARNHasBeenSet;
+
     Aws::String m_vTLDeviceType;
     bool m_vTLDeviceTypeHasBeenSet;
+
     Aws::String m_vTLDeviceVendor;
     bool m_vTLDeviceVendorHasBeenSet;
+
     Aws::String m_vTLDeviceProductIdentifier;
     bool m_vTLDeviceProductIdentifierHasBeenSet;
+
     DeviceiSCSIAttributes m_deviceiSCSIAttributes;
     bool m_deviceiSCSIAttributesHasBeenSet;
   };

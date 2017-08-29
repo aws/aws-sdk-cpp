@@ -50,6 +50,7 @@ namespace Model
     Qualification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The ID of the Qualification type for the Qualification.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline Qualification& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
 
+
     /**
      * <p> The ID of the Worker who possesses the Qualification. </p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p> The ID of the Worker who possesses the Qualification. </p>
      */
     inline Qualification& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+
 
     /**
      * <p> The date and time the Qualification was granted to the Worker. If the
@@ -160,6 +163,7 @@ namespace Model
      */
     inline Qualification& WithGrantTime(Aws::Utils::DateTime&& value) { SetGrantTime(std::move(value)); return *this;}
 
+
     /**
      * <p> The value (score) of the Qualification, if the Qualification has an integer
      * value.</p>
@@ -178,6 +182,7 @@ namespace Model
      */
     inline Qualification& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
 
+
     
     inline const Locale& GetLocaleValue() const{ return m_localeValue; }
 
@@ -192,6 +197,7 @@ namespace Model
 
     
     inline Qualification& WithLocaleValue(Locale&& value) { SetLocaleValue(std::move(value)); return *this;}
+
 
     /**
      * <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
@@ -219,16 +225,22 @@ namespace Model
     inline Qualification& WithStatus(QualificationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
+
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet;
+
     Aws::Utils::DateTime m_grantTime;
     bool m_grantTimeHasBeenSet;
+
     int m_integerValue;
     bool m_integerValueHasBeenSet;
+
     Locale m_localeValue;
     bool m_localeValueHasBeenSet;
+
     QualificationStatus m_status;
     bool m_statusHasBeenSet;
   };

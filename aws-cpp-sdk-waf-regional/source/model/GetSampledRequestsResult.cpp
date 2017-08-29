@@ -31,13 +31,13 @@ GetSampledRequestsResult::GetSampledRequestsResult() :
 {
 }
 
-GetSampledRequestsResult::GetSampledRequestsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetSampledRequestsResult::GetSampledRequestsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_populationSize(0)
 {
   *this = result;
 }
 
-GetSampledRequestsResult& GetSampledRequestsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSampledRequestsResult& GetSampledRequestsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SampledRequests"))

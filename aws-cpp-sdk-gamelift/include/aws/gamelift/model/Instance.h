@@ -51,6 +51,7 @@ namespace Model
     Instance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a fleet that the instance is in.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>Unique identifier for a fleet that the instance is in.</p>
      */
     inline Instance& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Unique identifier for an instance.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline Instance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>IP address assigned to the instance.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      */
     inline Instance& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
+
     /**
      * <p>Operating system that is running on this instance. </p>
      */
@@ -181,6 +185,7 @@ namespace Model
      */
     inline Instance& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
+
     /**
      * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
@@ -205,6 +210,7 @@ namespace Model
      * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline Instance& WithType(EC2InstanceType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Current status of the instance. Possible statuses include the following:</p>
@@ -276,6 +282,7 @@ namespace Model
      */
     inline Instance& WithStatus(InstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
@@ -307,18 +314,25 @@ namespace Model
     inline Instance& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet;
+
     EC2InstanceType m_type;
     bool m_typeHasBeenSet;
+
     InstanceStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetPartitionsResult();
-    GetPartitionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPartitionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPartitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPartitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of requested partitions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of requested partitions.</p>
      */
     inline GetPartitionsResult& AddPartitions(Partition&& value) { m_partitions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token, if the returned list of partitions does not does not
@@ -121,7 +123,9 @@ namespace Model
     inline GetPartitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Partition> m_partitions;
+
     Aws::String m_nextToken;
   };
 

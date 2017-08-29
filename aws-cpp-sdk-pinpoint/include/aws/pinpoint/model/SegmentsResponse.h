@@ -45,6 +45,7 @@ namespace Model
     SegmentsResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The list of segments.
      */
@@ -79,6 +80,7 @@ namespace Model
      * The list of segments.
      */
     inline SegmentsResponse& AddItem(SegmentResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
+
 
     /**
      * An identifier used to retrieve the next page of results. The token is null if no
@@ -123,8 +125,10 @@ namespace Model
     inline SegmentsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<SegmentResponse> m_item;
     bool m_itemHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

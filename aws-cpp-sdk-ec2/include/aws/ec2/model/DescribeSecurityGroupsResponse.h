@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeSecurityGroupsResponse();
-    DescribeSecurityGroupsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSecurityGroupsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSecurityGroupsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSecurityGroupsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more security groups.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeSecurityGroupsResponse& AddSecurityGroups(SecurityGroup&& value) { m_securityGroups.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribeSecurityGroupsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<SecurityGroup> m_securityGroups;
+
     ResponseMetadata m_responseMetadata;
   };
 

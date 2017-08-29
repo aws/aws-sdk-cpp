@@ -53,6 +53,7 @@ namespace Model
     ExtendedS3DestinationUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the AWS credentials.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ExtendedS3DestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>The ARN of the S3 bucket.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>The ARN of the S3 bucket.</p>
      */
     inline ExtendedS3DestinationUpdate& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
+
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
@@ -200,6 +203,7 @@ namespace Model
      */
     inline ExtendedS3DestinationUpdate& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     /**
      * <p>The buffering option.</p>
      */
@@ -224,6 +228,7 @@ namespace Model
      * <p>The buffering option.</p>
      */
     inline ExtendedS3DestinationUpdate& WithBufferingHints(BufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
+
 
     /**
      * <p>The compression format. If no value is specified, the default is
@@ -255,6 +260,7 @@ namespace Model
      */
     inline ExtendedS3DestinationUpdate& WithCompressionFormat(CompressionFormat&& value) { SetCompressionFormat(std::move(value)); return *this;}
 
+
     /**
      * <p>The encryption configuration. If no value is specified, the default is no
      * encryption.</p>
@@ -285,6 +291,7 @@ namespace Model
      */
     inline ExtendedS3DestinationUpdate& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
      */
@@ -309,6 +316,7 @@ namespace Model
      * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline ExtendedS3DestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>The data processing configuration.</p>
@@ -335,6 +343,7 @@ namespace Model
      */
     inline ExtendedS3DestinationUpdate& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Enables or disables Amazon S3 backup mode.</p>
      */
@@ -359,6 +368,7 @@ namespace Model
      * <p>Enables or disables Amazon S3 backup mode.</p>
      */
     inline ExtendedS3DestinationUpdate& WithS3BackupMode(S3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon S3 destination for backup.</p>
@@ -386,24 +396,34 @@ namespace Model
     inline ExtendedS3DestinationUpdate& WithS3BackupUpdate(S3DestinationUpdate&& value) { SetS3BackupUpdate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::String m_bucketARN;
     bool m_bucketARNHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     BufferingHints m_bufferingHints;
     bool m_bufferingHintsHasBeenSet;
+
     CompressionFormat m_compressionFormat;
     bool m_compressionFormatHasBeenSet;
+
     EncryptionConfiguration m_encryptionConfiguration;
     bool m_encryptionConfigurationHasBeenSet;
+
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
+
     ProcessingConfiguration m_processingConfiguration;
     bool m_processingConfigurationHasBeenSet;
+
     S3BackupMode m_s3BackupMode;
     bool m_s3BackupModeHasBeenSet;
+
     S3DestinationUpdate m_s3BackupUpdate;
     bool m_s3BackupUpdateHasBeenSet;
   };

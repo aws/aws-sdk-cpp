@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetSqlInjectionMatchSetResult();
-    GetSqlInjectionMatchSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSqlInjectionMatchSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSqlInjectionMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the <a>SqlInjectionMatchSet</a> that you specified in the
@@ -113,6 +114,7 @@ namespace Model
     inline GetSqlInjectionMatchSetResult& WithSqlInjectionMatchSet(SqlInjectionMatchSet&& value) { SetSqlInjectionMatchSet(std::move(value)); return *this;}
 
   private:
+
     SqlInjectionMatchSet m_sqlInjectionMatchSet;
   };
 

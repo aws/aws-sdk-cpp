@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when
      * replicating the objects.
@@ -90,6 +91,7 @@ namespace Model
      * replicating the objects.
      */
     inline ReplicationConfiguration& WithRole(const char* value) { SetRole(value); return *this;}
+
 
     /**
      * Container for information about a particular replication rule. Replication
@@ -134,8 +136,10 @@ namespace Model
     inline ReplicationConfiguration& AddRules(ReplicationRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     Aws::Vector<ReplicationRule> m_rules;
     bool m_rulesHasBeenSet;
   };

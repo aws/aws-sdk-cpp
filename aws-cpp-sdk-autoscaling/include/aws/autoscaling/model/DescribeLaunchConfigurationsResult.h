@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeLaunchConfigurationsResult();
-    DescribeLaunchConfigurationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeLaunchConfigurationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeLaunchConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeLaunchConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The launch configurations.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>The launch configurations.</p>
      */
     inline DescribeLaunchConfigurationsResult& AddLaunchConfigurations(LaunchConfiguration&& value) { m_launchConfigurations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeLaunchConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeLaunchConfigurationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<LaunchConfiguration> m_launchConfigurations;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

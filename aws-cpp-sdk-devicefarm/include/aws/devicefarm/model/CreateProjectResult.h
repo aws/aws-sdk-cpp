@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateProjectResult();
-    CreateProjectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateProjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The newly created project.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline CreateProjectResult& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
 
   private:
+
     Project m_project;
   };
 

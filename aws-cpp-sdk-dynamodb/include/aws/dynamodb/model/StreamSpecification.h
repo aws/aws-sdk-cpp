@@ -46,6 +46,7 @@ namespace Model
     StreamSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on
      * the table.</p>
@@ -63,6 +64,7 @@ namespace Model
      * the table.</p>
      */
     inline StreamSpecification& WithStreamEnabled(bool value) { SetStreamEnabled(value); return *this;}
+
 
     /**
      * <p> When an item in the table is modified, <code>StreamViewType</code>
@@ -135,8 +137,10 @@ namespace Model
     inline StreamSpecification& WithStreamViewType(StreamViewType&& value) { SetStreamViewType(std::move(value)); return *this;}
 
   private:
+
     bool m_streamEnabled;
     bool m_streamEnabledHasBeenSet;
+
     StreamViewType m_streamViewType;
     bool m_streamViewTypeHasBeenSet;
   };

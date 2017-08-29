@@ -31,12 +31,12 @@ GetIdentityNotificationAttributesResult::GetIdentityNotificationAttributesResult
 {
 }
 
-GetIdentityNotificationAttributesResult::GetIdentityNotificationAttributesResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetIdentityNotificationAttributesResult::GetIdentityNotificationAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetIdentityNotificationAttributesResult& GetIdentityNotificationAttributesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetIdentityNotificationAttributesResult& GetIdentityNotificationAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

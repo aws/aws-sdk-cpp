@@ -34,6 +34,7 @@ namespace Model
     CreateSlotTypeVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the slot type that you want to create a new version for. The name
      * is case sensitive. </p>
@@ -75,6 +76,7 @@ namespace Model
      * is case sensitive. </p>
      */
     inline CreateSlotTypeVersionRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Checksum for the <code>$LATEST</code> version of the slot type that you want
@@ -147,8 +149,10 @@ namespace Model
     inline CreateSlotTypeVersionRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
   };

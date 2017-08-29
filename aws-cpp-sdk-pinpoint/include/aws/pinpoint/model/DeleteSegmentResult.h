@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteSegmentResult();
-    DeleteSegmentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSegmentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSegmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSegmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const SegmentResponse& GetSegmentResponse() const{ return m_segmentResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline DeleteSegmentResult& WithSegmentResponse(SegmentResponse&& value) { SetSegmentResponse(std::move(value)); return *this;}
 
   private:
+
     SegmentResponse m_segmentResponse;
   };
 

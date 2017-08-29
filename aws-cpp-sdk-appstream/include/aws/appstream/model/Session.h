@@ -48,6 +48,7 @@ namespace Model
     Session& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique ID for a streaming session.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The unique ID for a streaming session.</p>
      */
     inline Session& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The identifier of the user for whom the session was created.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline Session& WithUserId(const char* value) { SetUserId(value); return *this;}
 
+
     /**
      * <p>The name of the stack for which the streaming session was created.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The name of the stack for which the streaming session was created.</p>
      */
     inline Session& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>The name of the fleet for which the streaming session was created.</p>
@@ -188,6 +192,7 @@ namespace Model
      */
     inline Session& WithFleetName(const char* value) { SetFleetName(value); return *this;}
 
+
     /**
      * <p>The current state of the streaming session.</p>
      */
@@ -212,6 +217,7 @@ namespace Model
      * <p>The current state of the streaming session.</p>
      */
     inline Session& WithState(SessionState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The authentication method of the user for whom the session was created. It
@@ -249,16 +255,22 @@ namespace Model
     inline Session& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_fleetName;
     bool m_fleetNameHasBeenSet;
+
     SessionState m_state;
     bool m_stateHasBeenSet;
+
     AuthenticationType m_authenticationType;
     bool m_authenticationTypeHasBeenSet;
   };

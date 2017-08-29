@@ -55,7 +55,7 @@ enum class SSMErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ASSOCIATED_INSTANCES,
   ASSOCIATION_ALREADY_EXISTS,
   ASSOCIATION_DOES_NOT_EXIST,
@@ -142,7 +142,7 @@ enum class SSMErrors
 };
 namespace SSMErrorMapper
 {
-  AWS_SSM_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_SSM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace SSM

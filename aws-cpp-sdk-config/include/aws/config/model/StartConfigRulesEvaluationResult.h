@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     StartConfigRulesEvaluationResult();
-    StartConfigRulesEvaluationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartConfigRulesEvaluationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartConfigRulesEvaluationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartConfigRulesEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const LifecycleExpiration& GetExpiration() const{ return m_expiration; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline Rule& WithExpiration(LifecycleExpiration&& value) { SetExpiration(std::move(value)); return *this;}
+
 
     /**
      * Unique identifier for the rule. The value cannot be longer than 255 characters.
@@ -97,6 +99,7 @@ namespace Model
      */
     inline Rule& WithID(const char* value) { SetID(value); return *this;}
 
+
     /**
      * Prefix identifying one or more objects to which the rule applies.
      */
@@ -132,6 +135,7 @@ namespace Model
      */
     inline Rule& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     /**
      * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
      * not currently being applied.
@@ -162,6 +166,7 @@ namespace Model
      */
     inline Rule& WithStatus(ExpirationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     
     inline const Transition& GetTransition() const{ return m_transition; }
 
@@ -176,6 +181,7 @@ namespace Model
 
     
     inline Rule& WithTransition(Transition&& value) { SetTransition(std::move(value)); return *this;}
+
 
     
     inline const NoncurrentVersionTransition& GetNoncurrentVersionTransition() const{ return m_noncurrentVersionTransition; }
@@ -192,6 +198,7 @@ namespace Model
     
     inline Rule& WithNoncurrentVersionTransition(NoncurrentVersionTransition&& value) { SetNoncurrentVersionTransition(std::move(value)); return *this;}
 
+
     
     inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
 
@@ -206,6 +213,7 @@ namespace Model
 
     
     inline Rule& WithNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { SetNoncurrentVersionExpiration(std::move(value)); return *this;}
+
 
     
     inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
@@ -223,20 +231,28 @@ namespace Model
     inline Rule& WithAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { SetAbortIncompleteMultipartUpload(std::move(value)); return *this;}
 
   private:
+
     LifecycleExpiration m_expiration;
     bool m_expirationHasBeenSet;
+
     Aws::String m_iD;
     bool m_iDHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     ExpirationStatus m_status;
     bool m_statusHasBeenSet;
+
     Transition m_transition;
     bool m_transitionHasBeenSet;
+
     NoncurrentVersionTransition m_noncurrentVersionTransition;
     bool m_noncurrentVersionTransitionHasBeenSet;
+
     NoncurrentVersionExpiration m_noncurrentVersionExpiration;
     bool m_noncurrentVersionExpirationHasBeenSet;
+
     AbortIncompleteMultipartUpload m_abortIncompleteMultipartUpload;
     bool m_abortIncompleteMultipartUploadHasBeenSet;
   };

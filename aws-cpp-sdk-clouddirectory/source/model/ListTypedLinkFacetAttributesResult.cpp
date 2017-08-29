@@ -30,12 +30,12 @@ ListTypedLinkFacetAttributesResult::ListTypedLinkFacetAttributesResult()
 {
 }
 
-ListTypedLinkFacetAttributesResult::ListTypedLinkFacetAttributesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListTypedLinkFacetAttributesResult::ListTypedLinkFacetAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListTypedLinkFacetAttributesResult& ListTypedLinkFacetAttributesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListTypedLinkFacetAttributesResult& ListTypedLinkFacetAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Attributes"))

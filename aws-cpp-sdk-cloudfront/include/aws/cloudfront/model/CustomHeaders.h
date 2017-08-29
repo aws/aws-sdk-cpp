@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The number of custom headers, if any, for this distribution.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
      * <p>The number of custom headers, if any, for this distribution.</p>
      */
     inline CustomHeaders& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p> <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code>
@@ -113,8 +115,10 @@ namespace Model
     inline CustomHeaders& AddItems(OriginCustomHeader&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<OriginCustomHeader> m_items;
     bool m_itemsHasBeenSet;
   };

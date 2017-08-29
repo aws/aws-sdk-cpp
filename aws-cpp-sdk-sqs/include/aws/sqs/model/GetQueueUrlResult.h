@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetQueueUrlResult();
-    GetQueueUrlResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetQueueUrlResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetQueueUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetQueueUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The URL of the queue.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline GetQueueUrlResult& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline GetQueueUrlResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_queueUrl;
+
     ResponseMetadata m_responseMetadata;
   };
 

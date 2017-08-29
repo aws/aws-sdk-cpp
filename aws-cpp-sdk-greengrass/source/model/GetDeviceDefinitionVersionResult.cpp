@@ -30,12 +30,12 @@ GetDeviceDefinitionVersionResult::GetDeviceDefinitionVersionResult()
 {
 }
 
-GetDeviceDefinitionVersionResult::GetDeviceDefinitionVersionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDeviceDefinitionVersionResult::GetDeviceDefinitionVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDeviceDefinitionVersionResult& GetDeviceDefinitionVersionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDeviceDefinitionVersionResult& GetDeviceDefinitionVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Arn"))

@@ -31,12 +31,12 @@ CreateClusterSecurityGroupResult::CreateClusterSecurityGroupResult()
 {
 }
 
-CreateClusterSecurityGroupResult::CreateClusterSecurityGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateClusterSecurityGroupResult::CreateClusterSecurityGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateClusterSecurityGroupResult& CreateClusterSecurityGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateClusterSecurityGroupResult& CreateClusterSecurityGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

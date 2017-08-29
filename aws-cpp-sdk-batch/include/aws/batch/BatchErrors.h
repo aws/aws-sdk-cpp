@@ -55,12 +55,12 @@ enum class BatchErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLIENT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLIENT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   SERVER
 };
 namespace BatchErrorMapper
 {
-  AWS_BATCH_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_BATCH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Batch

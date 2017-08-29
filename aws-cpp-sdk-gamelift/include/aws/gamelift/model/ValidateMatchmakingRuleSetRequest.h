@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Collection of matchmaking rules to validate, formatted as a JSON string.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline ValidateMatchmakingRuleSetRequest& WithRuleSetBody(const char* value) { SetRuleSetBody(value); return *this;}
 
   private:
+
     Aws::String m_ruleSetBody;
     bool m_ruleSetBodyHasBeenSet;
   };

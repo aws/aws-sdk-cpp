@@ -47,6 +47,7 @@ namespace Model
     TaskOverride& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>One or more container overrides sent to a task.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>One or more container overrides sent to a task.</p>
      */
     inline TaskOverride& AddContainerOverrides(ContainerOverride&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
@@ -132,8 +134,10 @@ namespace Model
     inline TaskOverride& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
 
   private:
+
     Aws::Vector<ContainerOverride> m_containerOverrides;
     bool m_containerOverridesHasBeenSet;
+
     Aws::String m_taskRoleArn;
     bool m_taskRoleArnHasBeenSet;
   };

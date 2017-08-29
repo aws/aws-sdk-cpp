@@ -46,6 +46,7 @@ namespace Model
     ImageStateChangeReason& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The state change reason code of the image.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The state change reason code of the image.</p>
      */
     inline ImageStateChangeReason& WithCode(ImageStateChangeReasonCode&& value) { SetCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The state change reason message to the end user.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline ImageStateChangeReason& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     ImageStateChangeReasonCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

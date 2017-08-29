@@ -31,12 +31,12 @@ StopInstancesResponse::StopInstancesResponse()
 {
 }
 
-StopInstancesResponse::StopInstancesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+StopInstancesResponse::StopInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-StopInstancesResponse& StopInstancesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+StopInstancesResponse& StopInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

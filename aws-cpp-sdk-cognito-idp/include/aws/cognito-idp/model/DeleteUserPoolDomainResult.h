@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteUserPoolDomainResult();
-    DeleteUserPoolDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteUserPoolDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteUserPoolDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteUserPoolDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

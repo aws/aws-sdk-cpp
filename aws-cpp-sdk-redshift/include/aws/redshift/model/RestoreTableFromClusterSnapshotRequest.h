@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
      */
     inline RestoreTableFromClusterSnapshotRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>The identifier of the snapshot to restore the table from. This snapshot must
@@ -125,6 +127,7 @@ namespace Model
      */
     inline RestoreTableFromClusterSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
 
+
     /**
      * <p>The name of the source database that contains the table to restore from.</p>
      */
@@ -159,6 +162,7 @@ namespace Model
      * <p>The name of the source database that contains the table to restore from.</p>
      */
     inline RestoreTableFromClusterSnapshotRequest& WithSourceDatabaseName(const char* value) { SetSourceDatabaseName(value); return *this;}
+
 
     /**
      * <p>The name of the source schema that contains the table to restore from. If you
@@ -209,6 +213,7 @@ namespace Model
      */
     inline RestoreTableFromClusterSnapshotRequest& WithSourceSchemaName(const char* value) { SetSourceSchemaName(value); return *this;}
 
+
     /**
      * <p>The name of the source table to restore from.</p>
      */
@@ -243,6 +248,7 @@ namespace Model
      * <p>The name of the source table to restore from.</p>
      */
     inline RestoreTableFromClusterSnapshotRequest& WithSourceTableName(const char* value) { SetSourceTableName(value); return *this;}
+
 
     /**
      * <p>The name of the database to restore the table to.</p>
@@ -279,6 +285,7 @@ namespace Model
      */
     inline RestoreTableFromClusterSnapshotRequest& WithTargetDatabaseName(const char* value) { SetTargetDatabaseName(value); return *this;}
 
+
     /**
      * <p>The name of the schema to restore the table to.</p>
      */
@@ -313,6 +320,7 @@ namespace Model
      * <p>The name of the schema to restore the table to.</p>
      */
     inline RestoreTableFromClusterSnapshotRequest& WithTargetSchemaName(const char* value) { SetTargetSchemaName(value); return *this;}
+
 
     /**
      * <p>The name of the table to create as a result of the current request.</p>
@@ -350,20 +358,28 @@ namespace Model
     inline RestoreTableFromClusterSnapshotRequest& WithNewTableName(const char* value) { SetNewTableName(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;
+
     Aws::String m_sourceDatabaseName;
     bool m_sourceDatabaseNameHasBeenSet;
+
     Aws::String m_sourceSchemaName;
     bool m_sourceSchemaNameHasBeenSet;
+
     Aws::String m_sourceTableName;
     bool m_sourceTableNameHasBeenSet;
+
     Aws::String m_targetDatabaseName;
     bool m_targetDatabaseNameHasBeenSet;
+
     Aws::String m_targetSchemaName;
     bool m_targetSchemaNameHasBeenSet;
+
     Aws::String m_newTableName;
     bool m_newTableNameHasBeenSet;
   };

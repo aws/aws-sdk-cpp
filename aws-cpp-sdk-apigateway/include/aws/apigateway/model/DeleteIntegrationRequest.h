@@ -37,6 +37,7 @@ namespace Model
     DeleteIntegrationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DeleteIntegrationRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>Specifies a delete integration request's resource identifier.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>Specifies a delete integration request's resource identifier.</p>
      */
     inline DeleteIntegrationRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>Specifies a delete integration request's HTTP method.</p>
@@ -143,10 +146,13 @@ namespace Model
     inline DeleteIntegrationRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     LambdaFunctionTimedOutEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
      * when this activity task was scheduled. To help diagnose issues, use this
@@ -67,6 +68,7 @@ namespace Model
      */
     inline LambdaFunctionTimedOutEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when
      * this activity task started. To help diagnose issues, use this information to
@@ -87,6 +89,7 @@ namespace Model
      * trace back the chain of events leading up to this event.</p>
      */
     inline LambdaFunctionTimedOutEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
+
 
     /**
      * <p>The type of the timeout that caused this event.</p>
@@ -114,10 +117,13 @@ namespace Model
     inline LambdaFunctionTimedOutEventAttributes& WithTimeoutType(LambdaFunctionTimeoutType&& value) { SetTimeoutType(std::move(value)); return *this;}
 
   private:
+
     long long m_scheduledEventId;
     bool m_scheduledEventIdHasBeenSet;
+
     long long m_startedEventId;
     bool m_startedEventIdHasBeenSet;
+
     LambdaFunctionTimeoutType m_timeoutType;
     bool m_timeoutTypeHasBeenSet;
   };

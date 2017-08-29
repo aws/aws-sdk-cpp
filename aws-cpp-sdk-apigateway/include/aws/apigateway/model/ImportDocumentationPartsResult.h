@@ -51,8 +51,9 @@ namespace Model
   {
   public:
     ImportDocumentationPartsResult();
-    ImportDocumentationPartsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportDocumentationPartsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportDocumentationPartsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportDocumentationPartsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of the returned documentation part identifiers.</p>
@@ -93,6 +94,7 @@ namespace Model
      * <p>A list of the returned documentation part identifiers.</p>
      */
     inline ImportDocumentationPartsResult& AddIds(const char* value) { m_ids.push_back(value); return *this; }
+
 
     /**
      * <p>A list of warning messages reported during import of documentation parts.</p>
@@ -135,7 +137,9 @@ namespace Model
     inline ImportDocumentationPartsResult& AddWarnings(const char* value) { m_warnings.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_ids;
+
     Aws::Vector<Aws::String> m_warnings;
   };
 

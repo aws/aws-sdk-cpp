@@ -34,7 +34,7 @@ GetDomainDetailResult::GetDomainDetailResult() :
 {
 }
 
-GetDomainDetailResult::GetDomainDetailResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetDomainDetailResult::GetDomainDetailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_autoRenew(false),
     m_adminPrivacy(false),
     m_registrantPrivacy(false),
@@ -43,7 +43,7 @@ GetDomainDetailResult::GetDomainDetailResult(const AmazonWebServiceResult<JsonVa
   *this = result;
 }
 
-GetDomainDetailResult& GetDomainDetailResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DomainName"))

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateReplicationJobResult();
-    CreateReplicationJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateReplicationJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateReplicationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateReplicationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
@@ -63,6 +64,7 @@ namespace Model
     inline CreateReplicationJobResult& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
 
   private:
+
     Aws::String m_replicationJobId;
   };
 

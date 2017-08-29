@@ -31,12 +31,12 @@ ConfirmSubscriptionResult::ConfirmSubscriptionResult()
 {
 }
 
-ConfirmSubscriptionResult::ConfirmSubscriptionResult(const AmazonWebServiceResult<XmlDocument>& result)
+ConfirmSubscriptionResult::ConfirmSubscriptionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ConfirmSubscriptionResult& ConfirmSubscriptionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ConfirmSubscriptionResult& ConfirmSubscriptionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

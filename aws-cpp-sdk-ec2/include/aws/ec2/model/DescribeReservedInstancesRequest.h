@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone where the Reserved Instance can be used.</p> </li> <li> <p>
@@ -368,6 +369,7 @@ namespace Model
      */
     inline DescribeReservedInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
      */
@@ -392,6 +394,7 @@ namespace Model
      * <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
      */
     inline DescribeReservedInstancesRequest& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more Reserved Instance IDs.</p> <p>Default: Describes all your
@@ -441,6 +444,7 @@ namespace Model
      */
     inline DescribeReservedInstancesRequest& AddReservedInstancesIds(const char* value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -464,6 +468,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeReservedInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The Reserved Instance offering type. If you are using tools that predate the
@@ -501,14 +506,19 @@ namespace Model
     inline DescribeReservedInstancesRequest& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     OfferingClassType m_offeringClass;
     bool m_offeringClassHasBeenSet;
+
     Aws::Vector<Aws::String> m_reservedInstancesIds;
     bool m_reservedInstancesIdsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     OfferingTypeValues m_offeringType;
     bool m_offeringTypeHasBeenSet;
   };

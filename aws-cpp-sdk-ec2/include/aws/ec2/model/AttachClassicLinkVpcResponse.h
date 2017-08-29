@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     AttachClassicLinkVpcResponse();
-    AttachClassicLinkVpcResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AttachClassicLinkVpcResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AttachClassicLinkVpcResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AttachClassicLinkVpcResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
@@ -64,6 +65,7 @@ namespace Model
      */
     inline AttachClassicLinkVpcResponse& WithReturn(bool value) { SetReturn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -80,7 +82,9 @@ namespace Model
     inline AttachClassicLinkVpcResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     bool m_return;
+
     ResponseMetadata m_responseMetadata;
   };
 

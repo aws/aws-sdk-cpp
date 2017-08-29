@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     RegisterTargetWithMaintenanceWindowResult();
-    RegisterTargetWithMaintenanceWindowResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterTargetWithMaintenanceWindowResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterTargetWithMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterTargetWithMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the target definition in this Maintenance Window.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline RegisterTargetWithMaintenanceWindowResult& WithWindowTargetId(const char* value) { SetWindowTargetId(value); return *this;}
 
   private:
+
     Aws::String m_windowTargetId;
   };
 

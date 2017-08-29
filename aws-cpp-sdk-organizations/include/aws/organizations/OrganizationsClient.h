@@ -136,28 +136,28 @@ namespace Model
         class UpdatePolicyRequest;
 
         typedef Aws::Utils::Outcome<AcceptHandshakeResult, Aws::Client::AWSError<OrganizationsErrors>> AcceptHandshakeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OrganizationsErrors>> AttachPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OrganizationsErrors>> AttachPolicyOutcome;
         typedef Aws::Utils::Outcome<CancelHandshakeResult, Aws::Client::AWSError<OrganizationsErrors>> CancelHandshakeOutcome;
         typedef Aws::Utils::Outcome<CreateAccountResult, Aws::Client::AWSError<OrganizationsErrors>> CreateAccountOutcome;
         typedef Aws::Utils::Outcome<CreateOrganizationResult, Aws::Client::AWSError<OrganizationsErrors>> CreateOrganizationOutcome;
         typedef Aws::Utils::Outcome<CreateOrganizationalUnitResult, Aws::Client::AWSError<OrganizationsErrors>> CreateOrganizationalUnitOutcome;
         typedef Aws::Utils::Outcome<CreatePolicyResult, Aws::Client::AWSError<OrganizationsErrors>> CreatePolicyOutcome;
         typedef Aws::Utils::Outcome<DeclineHandshakeResult, Aws::Client::AWSError<OrganizationsErrors>> DeclineHandshakeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OrganizationsErrors>> DeleteOrganizationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OrganizationsErrors>> DeleteOrganizationalUnitOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OrganizationsErrors>> DeletePolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OrganizationsErrors>> DeleteOrganizationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OrganizationsErrors>> DeleteOrganizationalUnitOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OrganizationsErrors>> DeletePolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountResult, Aws::Client::AWSError<OrganizationsErrors>> DescribeAccountOutcome;
         typedef Aws::Utils::Outcome<DescribeCreateAccountStatusResult, Aws::Client::AWSError<OrganizationsErrors>> DescribeCreateAccountStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeHandshakeResult, Aws::Client::AWSError<OrganizationsErrors>> DescribeHandshakeOutcome;
         typedef Aws::Utils::Outcome<DescribeOrganizationResult, Aws::Client::AWSError<OrganizationsErrors>> DescribeOrganizationOutcome;
         typedef Aws::Utils::Outcome<DescribeOrganizationalUnitResult, Aws::Client::AWSError<OrganizationsErrors>> DescribeOrganizationalUnitOutcome;
         typedef Aws::Utils::Outcome<DescribePolicyResult, Aws::Client::AWSError<OrganizationsErrors>> DescribePolicyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OrganizationsErrors>> DetachPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OrganizationsErrors>> DetachPolicyOutcome;
         typedef Aws::Utils::Outcome<DisablePolicyTypeResult, Aws::Client::AWSError<OrganizationsErrors>> DisablePolicyTypeOutcome;
         typedef Aws::Utils::Outcome<EnableAllFeaturesResult, Aws::Client::AWSError<OrganizationsErrors>> EnableAllFeaturesOutcome;
         typedef Aws::Utils::Outcome<EnablePolicyTypeResult, Aws::Client::AWSError<OrganizationsErrors>> EnablePolicyTypeOutcome;
         typedef Aws::Utils::Outcome<InviteAccountToOrganizationResult, Aws::Client::AWSError<OrganizationsErrors>> InviteAccountToOrganizationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OrganizationsErrors>> LeaveOrganizationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OrganizationsErrors>> LeaveOrganizationOutcome;
         typedef Aws::Utils::Outcome<ListAccountsResult, Aws::Client::AWSError<OrganizationsErrors>> ListAccountsOutcome;
         typedef Aws::Utils::Outcome<ListAccountsForParentResult, Aws::Client::AWSError<OrganizationsErrors>> ListAccountsForParentOutcome;
         typedef Aws::Utils::Outcome<ListChildrenResult, Aws::Client::AWSError<OrganizationsErrors>> ListChildrenOutcome;
@@ -170,8 +170,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPoliciesForTargetResult, Aws::Client::AWSError<OrganizationsErrors>> ListPoliciesForTargetOutcome;
         typedef Aws::Utils::Outcome<ListRootsResult, Aws::Client::AWSError<OrganizationsErrors>> ListRootsOutcome;
         typedef Aws::Utils::Outcome<ListTargetsForPolicyResult, Aws::Client::AWSError<OrganizationsErrors>> ListTargetsForPolicyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OrganizationsErrors>> MoveAccountOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OrganizationsErrors>> RemoveAccountFromOrganizationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OrganizationsErrors>> MoveAccountOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OrganizationsErrors>> RemoveAccountFromOrganizationOutcome;
         typedef Aws::Utils::Outcome<UpdateOrganizationalUnitResult, Aws::Client::AWSError<OrganizationsErrors>> UpdateOrganizationalUnitOutcome;
         typedef Aws::Utils::Outcome<UpdatePolicyResult, Aws::Client::AWSError<OrganizationsErrors>> UpdatePolicyOutcome;
 
@@ -356,22 +356,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OrganizationsClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        OrganizationsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OrganizationsClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        OrganizationsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        OrganizationsClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        OrganizationsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~OrganizationsClient();
+
 
         /**
          * <p>Sends a response to the originator of a handshake agreeing to the action
@@ -2169,7 +2170,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AcceptHandshakeAsyncHelper(const Model::AcceptHandshakeRequest& request, const AcceptHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

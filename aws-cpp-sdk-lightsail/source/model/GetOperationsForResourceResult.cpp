@@ -30,12 +30,12 @@ GetOperationsForResourceResult::GetOperationsForResourceResult()
 {
 }
 
-GetOperationsForResourceResult::GetOperationsForResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+GetOperationsForResourceResult::GetOperationsForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetOperationsForResourceResult& GetOperationsForResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetOperationsForResourceResult& GetOperationsForResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operations"))

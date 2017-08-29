@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_DEVICEFARM_API DeviceFarmErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_DEVICEFARM_API DeviceFarmErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace DeviceFarm
+} // namespace Client
 } // namespace Aws

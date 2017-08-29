@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetDeploymentRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The identifier of the <a>Deployment</a> resource to get information
@@ -121,6 +123,7 @@ namespace Model
      * about.</p>
      */
     inline GetDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+
 
     /**
      * <p>A query parameter to retrieve the specified embedded resources of the
@@ -235,10 +238,13 @@ namespace Model
     inline GetDeploymentRequest& AddEmbed(const char* value) { m_embedHasBeenSet = true; m_embed.push_back(value); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_embed;
     bool m_embedHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the source AWS Region.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline SourceRegion& WithRegionName(const char* value) { SetRegionName(value); return *this;}
 
+
     /**
      * <p>The endpoint for the source AWS Region endpoint.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The endpoint for the source AWS Region endpoint.</p>
      */
     inline SourceRegion& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+
 
     /**
      * <p>The status of the source AWS Region.</p>
@@ -155,10 +158,13 @@ namespace Model
     inline SourceRegion& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_regionName;
     bool m_regionNameHasBeenSet;
+
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

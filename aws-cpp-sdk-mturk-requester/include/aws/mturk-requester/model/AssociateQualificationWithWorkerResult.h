@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AssociateQualificationWithWorkerResult();
-    AssociateQualificationWithWorkerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateQualificationWithWorkerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateQualificationWithWorkerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateQualificationWithWorkerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

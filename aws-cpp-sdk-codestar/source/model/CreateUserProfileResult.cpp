@@ -30,12 +30,12 @@ CreateUserProfileResult::CreateUserProfileResult()
 {
 }
 
-CreateUserProfileResult::CreateUserProfileResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateUserProfileResult::CreateUserProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateUserProfileResult& CreateUserProfileResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateUserProfileResult& CreateUserProfileResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("userArn"))

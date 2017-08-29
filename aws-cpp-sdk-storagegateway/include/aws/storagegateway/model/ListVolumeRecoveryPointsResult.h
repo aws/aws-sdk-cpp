@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListVolumeRecoveryPointsResult();
-    ListVolumeRecoveryPointsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVolumeRecoveryPointsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListVolumeRecoveryPointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListVolumeRecoveryPointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline ListVolumeRecoveryPointsResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     
     inline const Aws::Vector<VolumeRecoveryPointInfo>& GetVolumeRecoveryPointInfos() const{ return m_volumeRecoveryPointInfos; }
@@ -86,7 +88,9 @@ namespace Model
     inline ListVolumeRecoveryPointsResult& AddVolumeRecoveryPointInfos(VolumeRecoveryPointInfo&& value) { m_volumeRecoveryPointInfos.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_gatewayARN;
+
     Aws::Vector<VolumeRecoveryPointInfo> m_volumeRecoveryPointInfos;
   };
 

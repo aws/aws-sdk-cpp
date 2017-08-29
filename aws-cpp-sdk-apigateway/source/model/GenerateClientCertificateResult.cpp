@@ -30,12 +30,12 @@ GenerateClientCertificateResult::GenerateClientCertificateResult()
 {
 }
 
-GenerateClientCertificateResult::GenerateClientCertificateResult(const AmazonWebServiceResult<JsonValue>& result)
+GenerateClientCertificateResult::GenerateClientCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GenerateClientCertificateResult& GenerateClientCertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GenerateClientCertificateResult& GenerateClientCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("clientCertificateId"))

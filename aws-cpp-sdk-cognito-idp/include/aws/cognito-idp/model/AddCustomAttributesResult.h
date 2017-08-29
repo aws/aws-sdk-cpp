@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     AddCustomAttributesResult();
-    AddCustomAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddCustomAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddCustomAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddCustomAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

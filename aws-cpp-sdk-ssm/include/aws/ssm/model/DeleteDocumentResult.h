@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteDocumentResult();
-    DeleteDocumentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDocumentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

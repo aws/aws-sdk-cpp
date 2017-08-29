@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateComputerResult();
-    CreateComputerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateComputerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateComputerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateComputerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A <a>Computer</a> object that represents the computer account.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline CreateComputerResult& WithComputer(Computer&& value) { SetComputer(std::move(value)); return *this;}
 
   private:
+
     Computer m_computer;
   };
 

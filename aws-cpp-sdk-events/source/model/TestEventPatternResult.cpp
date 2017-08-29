@@ -31,13 +31,13 @@ TestEventPatternResult::TestEventPatternResult() :
 {
 }
 
-TestEventPatternResult::TestEventPatternResult(const AmazonWebServiceResult<JsonValue>& result) : 
+TestEventPatternResult::TestEventPatternResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_result(false)
 {
   *this = result;
 }
 
-TestEventPatternResult& TestEventPatternResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TestEventPatternResult& TestEventPatternResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Result"))

@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The IDs of one or more DHCP options sets.</p> <p>Default: Describes all your
      * DHCP options sets.</p>
@@ -91,6 +92,7 @@ namespace Model
      * DHCP options sets.</p>
      */
     inline DescribeDhcpOptionsRequest& AddDhcpOptionsIds(const char* value) { m_dhcpOptionsIdsHasBeenSet = true; m_dhcpOptionsIds.push_back(value); return *this; }
+
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
@@ -246,6 +248,7 @@ namespace Model
      */
     inline DescribeDhcpOptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -271,10 +274,13 @@ namespace Model
     inline DescribeDhcpOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_dhcpOptionsIds;
     bool m_dhcpOptionsIdsHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

@@ -30,12 +30,12 @@ DeleteRuleResult::DeleteRuleResult()
 {
 }
 
-DeleteRuleResult::DeleteRuleResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRuleResult::DeleteRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteRuleResult& DeleteRuleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRuleResult& DeleteRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

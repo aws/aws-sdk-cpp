@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The job's ARN.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline GetJobRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
   };

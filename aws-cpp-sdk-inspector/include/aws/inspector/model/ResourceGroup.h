@@ -51,6 +51,7 @@ namespace Model
     ResourceGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the resource group.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The ARN of the resource group.</p>
      */
     inline ResourceGroup& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The tags (key and value pairs) of the resource group. This data type property
@@ -128,6 +130,7 @@ namespace Model
      */
     inline ResourceGroup& AddTags(ResourceGroupTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time at which resource group is created.</p>
      */
@@ -154,10 +157,13 @@ namespace Model
     inline ResourceGroup& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::Vector<ResourceGroupTag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
   };

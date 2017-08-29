@@ -40,6 +40,7 @@ namespace Model
     UpdateStageRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline UpdateStageRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>The name of the <a>Stage</a> resource to change information about.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The name of the <a>Stage</a> resource to change information about.</p>
      */
     inline UpdateStageRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
+
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -153,10 +156,13 @@ namespace Model
     inline UpdateStageRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     Aws::Vector<PatchOperation> m_patchOperations;
     bool m_patchOperationsHasBeenSet;
   };

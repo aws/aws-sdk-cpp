@@ -37,6 +37,7 @@ namespace Model
     GetSdkTypeRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the queried <a>SdkType</a> instance.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline GetSdkTypeRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

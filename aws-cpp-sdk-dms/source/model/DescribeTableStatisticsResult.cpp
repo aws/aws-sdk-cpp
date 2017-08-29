@@ -30,12 +30,12 @@ DescribeTableStatisticsResult::DescribeTableStatisticsResult()
 {
 }
 
-DescribeTableStatisticsResult::DescribeTableStatisticsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTableStatisticsResult::DescribeTableStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeTableStatisticsResult& DescribeTableStatisticsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTableStatisticsResult& DescribeTableStatisticsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ReplicationTaskArn"))

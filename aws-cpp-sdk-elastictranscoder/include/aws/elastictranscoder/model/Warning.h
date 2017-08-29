@@ -49,6 +49,7 @@ namespace Model
     Warning& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The code of the cross-regional warning.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The code of the cross-regional warning.</p>
      */
     inline Warning& WithCode(const char* value) { SetCode(value); return *this;}
+
 
     /**
      * <p>The message explaining what resources are in a different region from the
@@ -134,8 +136,10 @@ namespace Model
     inline Warning& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

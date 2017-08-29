@@ -46,6 +46,7 @@ namespace Model
     ActionContext& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the action within the context of a job.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline ActionContext& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

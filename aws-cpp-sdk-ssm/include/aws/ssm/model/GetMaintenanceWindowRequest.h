@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the desired Maintenance Window.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
   };

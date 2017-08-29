@@ -50,6 +50,7 @@ namespace Model
     Dataset& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
@@ -91,6 +92,7 @@ namespace Model
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
     inline Dataset& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_'
@@ -134,6 +136,7 @@ namespace Model
      */
     inline Dataset& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
 
+
     /**
      * Date on which the dataset was created.
      */
@@ -159,6 +162,7 @@ namespace Model
      */
     inline Dataset& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
+
     /**
      * Date when the dataset was last modified.
      */
@@ -183,6 +187,7 @@ namespace Model
      * Date when the dataset was last modified.
      */
     inline Dataset& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+
 
     /**
      * The device that made the last change to this dataset.
@@ -219,6 +224,7 @@ namespace Model
      */
     inline Dataset& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
+
     /**
      * Total size in bytes of the records in this dataset.
      */
@@ -233,6 +239,7 @@ namespace Model
      * Total size in bytes of the records in this dataset.
      */
     inline Dataset& WithDataStorage(long long value) { SetDataStorage(value); return *this;}
+
 
     /**
      * Number of records in this dataset.
@@ -250,18 +257,25 @@ namespace Model
     inline Dataset& WithNumRecords(long long value) { SetNumRecords(value); return *this;}
 
   private:
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::String m_datasetName;
     bool m_datasetNameHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::String m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet;
+
     long long m_dataStorage;
     bool m_dataStorageHasBeenSet;
+
     long long m_numRecords;
     bool m_numRecordsHasBeenSet;
   };

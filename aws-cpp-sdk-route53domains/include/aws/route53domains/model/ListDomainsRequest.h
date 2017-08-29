@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>For an initial request for a list of domains, omit this element. If the
      * number of domains that are associated with the current AWS account is greater
@@ -124,6 +125,7 @@ namespace Model
      */
     inline ListDomainsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Number of domains to be returned.</p> <p>Default: 20</p>
      */
@@ -140,8 +142,10 @@ namespace Model
     inline ListDomainsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

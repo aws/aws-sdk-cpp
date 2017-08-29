@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     ListStreamsResult();
-    ListStreamsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListStreamsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of stream descriptors associated with the current account and
@@ -87,6 +88,7 @@ namespace Model
      * endpoint.</p>
      */
     inline ListStreamsResult& AddStreams(Stream&& value) { m_streams.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The stream ARN of the item where the operation stopped, inclusive of the
@@ -173,7 +175,9 @@ namespace Model
     inline ListStreamsResult& WithLastEvaluatedStreamArn(const char* value) { SetLastEvaluatedStreamArn(value); return *this;}
 
   private:
+
     Aws::Vector<Stream> m_streams;
+
     Aws::String m_lastEvaluatedStreamArn;
   };
 

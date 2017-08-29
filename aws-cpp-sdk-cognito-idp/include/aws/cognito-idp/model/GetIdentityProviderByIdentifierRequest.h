@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The user pool ID.</p>
      */
     inline GetIdentityProviderByIdentifierRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The identity provider ID.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline GetIdentityProviderByIdentifierRequest& WithIdpIdentifier(const char* value) { SetIdpIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_idpIdentifier;
     bool m_idpIdentifierHasBeenSet;
   };

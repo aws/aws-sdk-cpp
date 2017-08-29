@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The duration, in seconds, that the credentials should remain valid.
      * Acceptable durations for IAM user sessions range from 900 seconds (15 minutes)
@@ -67,6 +68,7 @@ namespace Model
      * owners defaults to one hour.</p>
      */
     inline GetSessionTokenRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
+
 
     /**
      * <p>The identification number of the MFA device that is associated with the IAM
@@ -173,6 +175,7 @@ namespace Model
      */
     inline GetSessionTokenRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
+
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy
      * requires the IAM user to submit an MFA code, specify this value. If MFA
@@ -251,10 +254,13 @@ namespace Model
     inline GetSessionTokenRequest& WithTokenCode(const char* value) { SetTokenCode(value); return *this;}
 
   private:
+
     int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
+
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
+
     Aws::String m_tokenCode;
     bool m_tokenCodeHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A name for the configuration.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateResourceDataSyncRequest& WithSyncName(const char* value) { SetSyncName(value); return *this;}
 
+
     /**
      * <p>Amazon S3 configuration details for the sync.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline CreateResourceDataSyncRequest& WithS3Destination(ResourceDataSyncS3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_syncName;
     bool m_syncNameHasBeenSet;
+
     ResourceDataSyncS3Destination m_s3Destination;
     bool m_s3DestinationHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeRaidArraysResult();
-    DescribeRaidArraysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRaidArraysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRaidArraysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRaidArraysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A <code>RaidArrays</code> object that describes the specified RAID
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeRaidArraysResult& AddRaidArrays(RaidArray&& value) { m_raidArrays.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<RaidArray> m_raidArrays;
   };
 

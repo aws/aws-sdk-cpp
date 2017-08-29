@@ -46,6 +46,7 @@ namespace Model
     Function& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Arn of the Lambda function.
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline Function& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
+
     /**
      * Configuration of the function
      */
@@ -105,6 +107,7 @@ namespace Model
      * Configuration of the function
      */
     inline Function& WithFunctionConfiguration(FunctionConfiguration&& value) { SetFunctionConfiguration(std::move(value)); return *this;}
+
 
     /**
      * Id of the function in this version.
@@ -142,10 +145,13 @@ namespace Model
     inline Function& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_functionArn;
     bool m_functionArnHasBeenSet;
+
     FunctionConfiguration m_functionConfiguration;
     bool m_functionConfigurationHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

@@ -31,12 +31,12 @@ DescribeSSLPoliciesResult::DescribeSSLPoliciesResult()
 {
 }
 
-DescribeSSLPoliciesResult::DescribeSSLPoliciesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSSLPoliciesResult::DescribeSSLPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeSSLPoliciesResult& DescribeSSLPoliciesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSSLPoliciesResult& DescribeSSLPoliciesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

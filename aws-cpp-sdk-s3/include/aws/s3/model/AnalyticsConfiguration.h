@@ -43,6 +43,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The identifier used to represent an analytics configuration.
      */
@@ -77,6 +78,7 @@ namespace Model
      * The identifier used to represent an analytics configuration.
      */
     inline AnalyticsConfiguration& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * The filter used to describe a set of objects for analyses. A filter must have
@@ -113,6 +115,7 @@ namespace Model
      */
     inline AnalyticsConfiguration& WithFilter(AnalyticsFilter&& value) { SetFilter(std::move(value)); return *this;}
 
+
     /**
      * If present, it indicates that data related to access patterns will be collected
      * and made available to analyze the tradeoffs between different storage classes.
@@ -144,10 +147,13 @@ namespace Model
     inline AnalyticsConfiguration& WithStorageClassAnalysis(StorageClassAnalysis&& value) { SetStorageClassAnalysis(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     AnalyticsFilter m_filter;
     bool m_filterHasBeenSet;
+
     StorageClassAnalysis m_storageClassAnalysis;
     bool m_storageClassAnalysisHasBeenSet;
   };

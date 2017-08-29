@@ -30,12 +30,12 @@ RegisterDefaultPatchBaselineResult::RegisterDefaultPatchBaselineResult()
 {
 }
 
-RegisterDefaultPatchBaselineResult::RegisterDefaultPatchBaselineResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterDefaultPatchBaselineResult::RegisterDefaultPatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterDefaultPatchBaselineResult& RegisterDefaultPatchBaselineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterDefaultPatchBaselineResult& RegisterDefaultPatchBaselineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("BaselineId"))

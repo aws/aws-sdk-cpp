@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetDeploymentStatusResult();
-    GetDeploymentStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeploymentStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeploymentStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeploymentStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Status of the deployment.
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetDeploymentStatusResult& WithDeploymentStatus(const char* value) { SetDeploymentStatus(value); return *this;}
 
+
     /**
      * Error Message
      */
@@ -110,6 +112,7 @@ namespace Model
      * Error Message
      */
     inline GetDeploymentStatusResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+
 
     /**
      * Last time the deployment status was updated.
@@ -147,8 +150,11 @@ namespace Model
     inline GetDeploymentStatusResult& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
 
   private:
+
     Aws::String m_deploymentStatus;
+
     Aws::String m_errorMessage;
+
     Aws::String m_updatedAt;
   };
 

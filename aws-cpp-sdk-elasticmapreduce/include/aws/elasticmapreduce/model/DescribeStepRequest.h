@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the cluster with steps to describe.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The identifier of the cluster with steps to describe.</p>
      */
     inline DescribeStepRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
 
     /**
      * <p>The identifier of the step to describe.</p>
@@ -110,8 +112,10 @@ namespace Model
     inline DescribeStepRequest& WithStepId(const char* value) { SetStepId(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_stepId;
     bool m_stepIdHasBeenSet;
   };

@@ -31,13 +31,13 @@ ListTagsForStreamResult::ListTagsForStreamResult() :
 {
 }
 
-ListTagsForStreamResult::ListTagsForStreamResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListTagsForStreamResult::ListTagsForStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_hasMoreTags(false)
 {
   *this = result;
 }
 
-ListTagsForStreamResult& ListTagsForStreamResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListTagsForStreamResult& ListTagsForStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Tags"))

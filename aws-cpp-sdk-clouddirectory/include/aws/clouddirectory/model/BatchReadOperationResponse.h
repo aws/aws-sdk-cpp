@@ -47,6 +47,7 @@ namespace Model
     BatchReadOperationResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identifies which operation in a batch has succeeded.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>Identifies which operation in a batch has succeeded.</p>
      */
     inline BatchReadOperationResponse& WithSuccessfulResponse(BatchReadSuccessfulResponse&& value) { SetSuccessfulResponse(std::move(value)); return *this;}
+
 
     /**
      * <p>Identifies which operation in a batch has failed.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline BatchReadOperationResponse& WithExceptionResponse(BatchReadException&& value) { SetExceptionResponse(std::move(value)); return *this;}
 
   private:
+
     BatchReadSuccessfulResponse m_successfulResponse;
     bool m_successfulResponseHasBeenSet;
+
     BatchReadException m_exceptionResponse;
     bool m_exceptionResponseHasBeenSet;
   };

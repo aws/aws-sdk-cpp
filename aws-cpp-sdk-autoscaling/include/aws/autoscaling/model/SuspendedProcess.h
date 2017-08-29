@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the suspended process.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the suspended process.</p>
      */
     inline SuspendedProcess& WithProcessName(const char* value) { SetProcessName(value); return *this;}
+
 
     /**
      * <p>The reason that the process was suspended.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline SuspendedProcess& WithSuspensionReason(const char* value) { SetSuspensionReason(value); return *this;}
 
   private:
+
     Aws::String m_processName;
     bool m_processNameHasBeenSet;
+
     Aws::String m_suspensionReason;
     bool m_suspensionReasonHasBeenSet;
   };

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     ListChangeSetsResult();
-    ListChangeSetsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListChangeSetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListChangeSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListChangeSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and
@@ -92,6 +93,7 @@ namespace Model
      */
     inline ListChangeSetsResult& AddSummaries(ChangeSetSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of change
      * sets. If there is no additional page, this value is null.</p>
@@ -134,6 +136,7 @@ namespace Model
      */
     inline ListChangeSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline ListChangeSetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ChangeSetSummary> m_summaries;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

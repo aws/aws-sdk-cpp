@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The destination region that snapshots are automatically copied to when
      * cross-region snapshot copy is enabled.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline ClusterSnapshotCopyStatus& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}
 
+
     /**
      * <p>The number of days that automated snapshots are retained in the destination
      * region after they are copied from a source region.</p>
@@ -108,6 +110,7 @@ namespace Model
      * region after they are copied from a source region.</p>
      */
     inline ClusterSnapshotCopyStatus& WithRetentionPeriod(long long value) { SetRetentionPeriod(value); return *this;}
+
 
     /**
      * <p>The name of the snapshot copy grant.</p>
@@ -145,10 +148,13 @@ namespace Model
     inline ClusterSnapshotCopyStatus& WithSnapshotCopyGrantName(const char* value) { SetSnapshotCopyGrantName(value); return *this;}
 
   private:
+
     Aws::String m_destinationRegion;
     bool m_destinationRegionHasBeenSet;
+
     long long m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet;
+
     Aws::String m_snapshotCopyGrantName;
     bool m_snapshotCopyGrantNameHasBeenSet;
   };

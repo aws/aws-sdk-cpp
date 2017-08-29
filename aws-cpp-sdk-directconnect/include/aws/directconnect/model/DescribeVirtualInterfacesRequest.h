@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
@@ -60,6 +61,7 @@ namespace Model
 
     
     inline DescribeVirtualInterfacesRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+
 
     
     inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
@@ -83,8 +85,10 @@ namespace Model
     inline DescribeVirtualInterfacesRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
 
   private:
+
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
+
     Aws::String m_virtualInterfaceId;
     bool m_virtualInterfaceIdHasBeenSet;
   };

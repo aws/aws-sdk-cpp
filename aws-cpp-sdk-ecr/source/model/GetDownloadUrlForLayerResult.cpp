@@ -30,12 +30,12 @@ GetDownloadUrlForLayerResult::GetDownloadUrlForLayerResult()
 {
 }
 
-GetDownloadUrlForLayerResult::GetDownloadUrlForLayerResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDownloadUrlForLayerResult::GetDownloadUrlForLayerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDownloadUrlForLayerResult& GetDownloadUrlForLayerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDownloadUrlForLayerResult& GetDownloadUrlForLayerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("downloadUrl"))

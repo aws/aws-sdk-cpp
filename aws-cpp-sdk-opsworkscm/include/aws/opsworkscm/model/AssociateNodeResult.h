@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     AssociateNodeResult();
-    AssociateNodeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateNodeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateNodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Contains a token which can be passed to the
@@ -91,6 +92,7 @@ namespace Model
     inline AssociateNodeResult& WithNodeAssociationStatusToken(const char* value) { SetNodeAssociationStatusToken(value); return *this;}
 
   private:
+
     Aws::String m_nodeAssociationStatusToken;
   };
 

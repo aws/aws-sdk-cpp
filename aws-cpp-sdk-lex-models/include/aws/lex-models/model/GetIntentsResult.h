@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetIntentsResult();
-    GetIntentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetIntentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetIntentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetIntentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>Intent</code> objects. For more information, see
@@ -84,6 +85,7 @@ namespace Model
      * <a>PutBot</a>.</p>
      */
     inline GetIntentsResult& AddIntents(IntentMetadata&& value) { m_intents.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the response is truncated, the response includes a pagination token that
@@ -128,7 +130,9 @@ namespace Model
     inline GetIntentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<IntentMetadata> m_intents;
+
     Aws::String m_nextToken;
   };
 

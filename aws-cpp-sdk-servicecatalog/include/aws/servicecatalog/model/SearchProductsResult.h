@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     SearchProductsResult();
-    SearchProductsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchProductsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SearchProductsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SearchProductsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of the product view summary objects.</p>
@@ -79,6 +80,7 @@ namespace Model
      * <p>A list of the product view summary objects.</p>
      */
     inline SearchProductsResult& AddProductViewSummaries(ProductViewSummary&& value) { m_productViewSummaries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of the product view aggregation value objects.</p>
@@ -135,6 +137,7 @@ namespace Model
      */
     inline SearchProductsResult& AddProductViewAggregations(const char* key, const Aws::Vector<ProductViewAggregationValue>& value) { m_productViewAggregations.emplace(key, value); return *this; }
 
+
     /**
      * <p>The page token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
@@ -178,8 +181,11 @@ namespace Model
     inline SearchProductsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<ProductViewSummary> m_productViewSummaries;
+
     Aws::Map<Aws::String, Aws::Vector<ProductViewAggregationValue>> m_productViewAggregations;
+
     Aws::String m_nextPageToken;
   };
 

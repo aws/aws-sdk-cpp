@@ -44,6 +44,7 @@ namespace Model
     Shard& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The system-generated identifier for this shard.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline Shard& WithShardId(const char* value) { SetShardId(value); return *this;}
 
+
     /**
      * <p>The range of possible sequence numbers for the shard.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p>The range of possible sequence numbers for the shard.</p>
      */
     inline Shard& WithSequenceNumberRange(SequenceNumberRange&& value) { SetSequenceNumberRange(std::move(value)); return *this;}
+
 
     /**
      * <p>The shard ID of the current shard's parent.</p>
@@ -140,10 +143,13 @@ namespace Model
     inline Shard& WithParentShardId(const char* value) { SetParentShardId(value); return *this;}
 
   private:
+
     Aws::String m_shardId;
     bool m_shardIdHasBeenSet;
+
     SequenceNumberRange m_sequenceNumberRange;
     bool m_sequenceNumberRangeHasBeenSet;
+
     Aws::String m_parentShardId;
     bool m_parentShardIdHasBeenSet;
   };

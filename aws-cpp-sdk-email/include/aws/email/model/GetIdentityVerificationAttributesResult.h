@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetIdentityVerificationAttributesResult();
-    GetIdentityVerificationAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetIdentityVerificationAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetIdentityVerificationAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetIdentityVerificationAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A map of Identities to IdentityVerificationAttributes objects.</p>
@@ -106,6 +107,7 @@ namespace Model
      */
     inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(const char* key, const IdentityVerificationAttributes& value) { m_verificationAttributes.emplace(key, value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -122,7 +124,9 @@ namespace Model
     inline GetIdentityVerificationAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, IdentityVerificationAttributes> m_verificationAttributes;
+
     ResponseMetadata m_responseMetadata;
   };
 

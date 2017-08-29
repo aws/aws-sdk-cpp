@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     PutTraceSegmentsResult();
-    PutTraceSegmentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutTraceSegmentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutTraceSegmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutTraceSegmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Segments that failed processing.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline PutTraceSegmentsResult& AddUnprocessedTraceSegments(UnprocessedTraceSegment&& value) { m_unprocessedTraceSegments.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<UnprocessedTraceSegment> m_unprocessedTraceSegments;
   };
 

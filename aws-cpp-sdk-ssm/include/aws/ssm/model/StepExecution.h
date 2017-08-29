@@ -51,6 +51,7 @@ namespace Model
     StepExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of this execution step.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name of this execution step.</p>
      */
     inline StepExecution& WithStepName(const char* value) { SetStepName(value); return *this;}
+
 
     /**
      * <p>The action this step performs. The action determines the behavior of the
@@ -128,6 +130,7 @@ namespace Model
      */
     inline StepExecution& WithAction(const char* value) { SetAction(value); return *this;}
 
+
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
      * the step is in Pending status, this field is not populated.</p>
@@ -157,6 +160,7 @@ namespace Model
      * the step is in Pending status, this field is not populated.</p>
      */
     inline StepExecution& WithExecutionStartTime(Aws::Utils::DateTime&& value) { SetExecutionStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>If a step has finished execution, this contains the time the execution ended.
@@ -188,6 +192,7 @@ namespace Model
      */
     inline StepExecution& WithExecutionEndTime(Aws::Utils::DateTime&& value) { SetExecutionEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The execution status for this step. Valid values include: Pending,
      * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
@@ -217,6 +222,7 @@ namespace Model
      * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
      */
     inline StepExecution& WithStepStatus(AutomationExecutionStatus&& value) { SetStepStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The response code returned by the execution of the step.</p>
@@ -252,6 +258,7 @@ namespace Model
      * <p>The response code returned by the execution of the step.</p>
      */
     inline StepExecution& WithResponseCode(const char* value) { SetResponseCode(value); return *this;}
+
 
     /**
      * <p>Fully-resolved values passed into the step before execution.</p>
@@ -313,6 +320,7 @@ namespace Model
      */
     inline StepExecution& AddInputs(const char* key, const char* value) { m_inputsHasBeenSet = true; m_inputs.emplace(key, value); return *this; }
 
+
     /**
      * <p>Returned values from the execution of the step.</p>
      */
@@ -368,6 +376,7 @@ namespace Model
      */
     inline StepExecution& AddOutputs(const char* key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, value); return *this; }
 
+
     /**
      * <p>A message associated with the response code for an execution.</p>
      */
@@ -402,6 +411,7 @@ namespace Model
      * <p>A message associated with the response code for an execution.</p>
      */
     inline StepExecution& WithResponse(const char* value) { SetResponse(value); return *this;}
+
 
     /**
      * <p>If a step failed, this message explains why the execution failed.</p>
@@ -438,6 +448,7 @@ namespace Model
      */
     inline StepExecution& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 
+
     /**
      * <p>Information about the Automation failure.</p>
      */
@@ -464,26 +475,37 @@ namespace Model
     inline StepExecution& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stepName;
     bool m_stepNameHasBeenSet;
+
     Aws::String m_action;
     bool m_actionHasBeenSet;
+
     Aws::Utils::DateTime m_executionStartTime;
     bool m_executionStartTimeHasBeenSet;
+
     Aws::Utils::DateTime m_executionEndTime;
     bool m_executionEndTimeHasBeenSet;
+
     AutomationExecutionStatus m_stepStatus;
     bool m_stepStatusHasBeenSet;
+
     Aws::String m_responseCode;
     bool m_responseCodeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_inputs;
     bool m_inputsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_outputs;
     bool m_outputsHasBeenSet;
+
     Aws::String m_response;
     bool m_responseHasBeenSet;
+
     Aws::String m_failureMessage;
     bool m_failureMessageHasBeenSet;
+
     FailureDetails m_failureDetails;
     bool m_failureDetailsHasBeenSet;
   };

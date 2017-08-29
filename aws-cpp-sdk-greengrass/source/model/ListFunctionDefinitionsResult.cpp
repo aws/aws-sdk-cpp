@@ -30,12 +30,12 @@ ListFunctionDefinitionsResult::ListFunctionDefinitionsResult()
 {
 }
 
-ListFunctionDefinitionsResult::ListFunctionDefinitionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListFunctionDefinitionsResult::ListFunctionDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListFunctionDefinitionsResult& ListFunctionDefinitionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListFunctionDefinitionsResult& ListFunctionDefinitionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Definitions"))

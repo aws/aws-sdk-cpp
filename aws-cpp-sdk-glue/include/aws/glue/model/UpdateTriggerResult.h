@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateTriggerResult();
-    UpdateTriggerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTriggerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTriggerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateTriggerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resulting trigger definition.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateTriggerResult& WithTrigger(Trigger&& value) { SetTrigger(std::move(value)); return *this;}
 
   private:
+
     Trigger m_trigger;
   };
 

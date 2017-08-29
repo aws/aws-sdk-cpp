@@ -55,7 +55,7 @@ enum class ShieldErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_ERROR= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_OPERATION,
   INVALID_PARAMETER,
   INVALID_RESOURCE,
@@ -66,7 +66,7 @@ enum class ShieldErrors
 };
 namespace ShieldErrorMapper
 {
-  AWS_SHIELD_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_SHIELD_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Shield

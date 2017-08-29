@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     BatchCreatePartitionResult();
-    BatchCreatePartitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchCreatePartitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchCreatePartitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchCreatePartitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Errors encountered when trying to create the requested partitions.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline BatchCreatePartitionResult& AddErrors(PartitionError&& value) { m_errors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<PartitionError> m_errors;
   };
 

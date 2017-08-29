@@ -30,12 +30,12 @@ AdminListDevicesResult::AdminListDevicesResult()
 {
 }
 
-AdminListDevicesResult::AdminListDevicesResult(const AmazonWebServiceResult<JsonValue>& result)
+AdminListDevicesResult::AdminListDevicesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AdminListDevicesResult& AdminListDevicesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AdminListDevicesResult& AdminListDevicesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Devices"))

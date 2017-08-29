@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline DeleteBandwidthRateLimitRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     /**
      * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
@@ -112,8 +114,10 @@ namespace Model
     inline DeleteBandwidthRateLimitRequest& WithBandwidthType(const char* value) { SetBandwidthType(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     Aws::String m_bandwidthType;
     bool m_bandwidthTypeHasBeenSet;
   };

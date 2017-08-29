@@ -46,6 +46,7 @@ namespace Model
     TagFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Specifies the tag that must be associated with the execution for it to meet
      * the filter criteria.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline TagFilter& WithTag(const char* value) { SetTag(value); return *this;}
 
   private:
+
     Aws::String m_tag;
     bool m_tagHasBeenSet;
   };

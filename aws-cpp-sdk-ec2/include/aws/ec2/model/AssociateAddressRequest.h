@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
      */
     inline AssociateAddressRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+
 
     /**
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
@@ -132,6 +134,7 @@ namespace Model
      */
     inline AssociateAddressRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The Elastic IP address. This is required for EC2-Classic.</p>
      */
@@ -167,6 +170,7 @@ namespace Model
      */
     inline AssociateAddressRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
+
     /**
      * <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an
      * Elastic IP address that is already associated with an instance or network
@@ -200,6 +204,7 @@ namespace Model
      */
     inline AssociateAddressRequest& WithAllowReassociation(bool value) { SetAllowReassociation(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -223,6 +228,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline AssociateAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
@@ -265,6 +271,7 @@ namespace Model
      * network interface, you must specify a network interface ID.</p>
      */
     inline AssociateAddressRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
 
     /**
      * <p>[EC2-VPC] The primary or secondary private IP address to associate with the
@@ -316,18 +323,25 @@ namespace Model
     inline AssociateAddressRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
   private:
+
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
+
     bool m_allowReassociation;
     bool m_allowReassociationHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
   };

@@ -31,12 +31,12 @@ DeleteListenerResult::DeleteListenerResult()
 {
 }
 
-DeleteListenerResult::DeleteListenerResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteListenerResult::DeleteListenerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteListenerResult& DeleteListenerResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteListenerResult& DeleteListenerResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

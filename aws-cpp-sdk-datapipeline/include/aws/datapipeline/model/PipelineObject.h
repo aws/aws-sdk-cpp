@@ -49,6 +49,7 @@ namespace Model
     PipelineObject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the object.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline PipelineObject& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name of the object.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The name of the object.</p>
      */
     inline PipelineObject& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Key-value pairs that define the properties of the object.</p>
@@ -155,10 +158,13 @@ namespace Model
     inline PipelineObject& AddFields(Field&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Field> m_fields;
     bool m_fieldsHasBeenSet;
   };

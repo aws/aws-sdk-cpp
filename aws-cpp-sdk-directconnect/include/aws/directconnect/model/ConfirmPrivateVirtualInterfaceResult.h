@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ConfirmPrivateVirtualInterfaceResult();
-    ConfirmPrivateVirtualInterfaceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ConfirmPrivateVirtualInterfaceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ConfirmPrivateVirtualInterfaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ConfirmPrivateVirtualInterfaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const VirtualInterfaceState& GetVirtualInterfaceState() const{ return m_virtualInterfaceState; }
@@ -63,6 +64,7 @@ namespace Model
     inline ConfirmPrivateVirtualInterfaceResult& WithVirtualInterfaceState(VirtualInterfaceState&& value) { SetVirtualInterfaceState(std::move(value)); return *this;}
 
   private:
+
     VirtualInterfaceState m_virtualInterfaceState;
   };
 

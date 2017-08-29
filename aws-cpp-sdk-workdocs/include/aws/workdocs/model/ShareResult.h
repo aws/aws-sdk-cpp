@@ -47,6 +47,7 @@ namespace Model
     ShareResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the principal.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ShareResult& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
+
     /**
      * <p>The role.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      */
     inline ShareResult& WithRole(RoleType&& value) { SetRole(std::move(value)); return *this;}
 
+
     /**
      * <p>The status.</p>
      */
@@ -131,6 +134,7 @@ namespace Model
      * <p>The status.</p>
      */
     inline ShareResult& WithStatus(ShareStatusType&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the resource that was shared.</p>
@@ -166,6 +170,7 @@ namespace Model
      * <p>The ID of the resource that was shared.</p>
      */
     inline ShareResult& WithShareId(const char* value) { SetShareId(value); return *this;}
+
 
     /**
      * <p>The status message.</p>
@@ -203,14 +208,19 @@ namespace Model
     inline ShareResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
   private:
+
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet;
+
     RoleType m_role;
     bool m_roleHasBeenSet;
+
     ShareStatusType m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_shareId;
     bool m_shareIdHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
   };

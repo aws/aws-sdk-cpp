@@ -31,13 +31,13 @@ ListRetirableGrantsResult::ListRetirableGrantsResult() :
 {
 }
 
-ListRetirableGrantsResult::ListRetirableGrantsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListRetirableGrantsResult::ListRetirableGrantsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_truncated(false)
 {
   *this = result;
 }
 
-ListRetirableGrantsResult& ListRetirableGrantsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListRetirableGrantsResult& ListRetirableGrantsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Grants"))

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     StopWorkspacesResult();
-    StopWorkspacesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopWorkspacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The failed requests.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline StopWorkspacesResult& AddFailedRequests(FailedWorkspaceChangeRequest&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<FailedWorkspaceChangeRequest> m_failedRequests;
   };
 

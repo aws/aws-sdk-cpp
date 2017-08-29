@@ -30,12 +30,12 @@ DeleteRemoteAccessSessionResult::DeleteRemoteAccessSessionResult()
 {
 }
 
-DeleteRemoteAccessSessionResult::DeleteRemoteAccessSessionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRemoteAccessSessionResult::DeleteRemoteAccessSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteRemoteAccessSessionResult& DeleteRemoteAccessSessionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRemoteAccessSessionResult& DeleteRemoteAccessSessionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The token for the next set of results, or <b>null</b> if there are no
      * additional results.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListThingTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return in this operation.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The maximum number of results to return in this operation.</p>
      */
     inline ListThingTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The name of the thing type.</p>
@@ -136,10 +139,13 @@ namespace Model
     inline ListThingTypesRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet;
   };

@@ -31,12 +31,12 @@ DescribeStacksResult::DescribeStacksResult()
 {
 }
 
-DescribeStacksResult::DescribeStacksResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeStacksResult::DescribeStacksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeStacksResult& DescribeStacksResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeStacksResult& DescribeStacksResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

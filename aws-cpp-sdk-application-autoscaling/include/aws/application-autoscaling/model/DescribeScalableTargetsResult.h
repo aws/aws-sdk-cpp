@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeScalableTargetsResult();
-    DescribeScalableTargetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeScalableTargetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeScalableTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeScalableTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of scalable targets that matches the request parameters.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of scalable targets that matches the request parameters.</p>
      */
     inline DescribeScalableTargetsResult& AddScalableTargets(ScalableTarget&& value) { m_scalableTargets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token required to get the next set of results. This value is
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeScalableTargetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ScalableTarget> m_scalableTargets;
+
     Aws::String m_nextToken;
   };
 

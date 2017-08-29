@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Required: Yes</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline BundleInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The bucket in which to store the AMI. You can specify a bucket that you
      * already own or a new bucket that Amazon EC2 creates on your behalf. If you
@@ -119,6 +121,7 @@ namespace Model
      */
     inline BundleInstanceRequest& WithStorage(Storage&& value) { SetStorage(std::move(value)); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -144,10 +147,13 @@ namespace Model
     inline BundleInstanceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Storage m_storage;
     bool m_storageHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

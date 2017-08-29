@@ -30,12 +30,12 @@ GetDirectoryLimitsResult::GetDirectoryLimitsResult()
 {
 }
 
-GetDirectoryLimitsResult::GetDirectoryLimitsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDirectoryLimitsResult::GetDirectoryLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDirectoryLimitsResult& GetDirectoryLimitsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDirectoryLimitsResult& GetDirectoryLimitsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DirectoryLimits"))

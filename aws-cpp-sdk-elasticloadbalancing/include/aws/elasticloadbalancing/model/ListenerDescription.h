@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The listener.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The listener.</p>
      */
     inline ListenerDescription& WithListener(Listener&& value) { SetListener(std::move(value)); return *this;}
+
 
     /**
      * <p>The policies. If there are no policies enabled, the list is empty.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline ListenerDescription& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
   private:
+
     Listener m_listener;
     bool m_listenerHasBeenSet;
+
     Aws::Vector<Aws::String> m_policyNames;
     bool m_policyNamesHasBeenSet;
   };

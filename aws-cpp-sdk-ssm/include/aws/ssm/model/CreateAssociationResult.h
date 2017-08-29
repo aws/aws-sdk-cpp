@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateAssociationResult();
-    CreateAssociationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAssociationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the association.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateAssociationResult& WithAssociationDescription(AssociationDescription&& value) { SetAssociationDescription(std::move(value)); return *this;}
 
   private:
+
     AssociationDescription m_associationDescription;
   };
 

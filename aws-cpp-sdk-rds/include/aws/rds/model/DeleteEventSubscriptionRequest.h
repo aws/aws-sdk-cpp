@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the RDS event notification subscription you want to delete.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionName;
     bool m_subscriptionNameHasBeenSet;
   };

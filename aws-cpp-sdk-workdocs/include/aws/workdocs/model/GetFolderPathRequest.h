@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline GetFolderPathRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the folder.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      */
     inline GetFolderPathRequest& WithFolderId(const char* value) { SetFolderId(value); return *this;}
 
+
     /**
      * <p>The maximum number of levels in the hierarchy to return.</p>
      */
@@ -133,6 +136,7 @@ namespace Model
      * <p>The maximum number of levels in the hierarchy to return.</p>
      */
     inline GetFolderPathRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>A comma-separated list of values. Specify "NAME" to include the names of the
@@ -176,6 +180,7 @@ namespace Model
      */
     inline GetFolderPathRequest& WithFields(const char* value) { SetFields(value); return *this;}
 
+
     /**
      * <p>This value is not supported.</p>
      */
@@ -212,14 +217,19 @@ namespace Model
     inline GetFolderPathRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_folderId;
     bool m_folderIdHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_fields;
     bool m_fieldsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

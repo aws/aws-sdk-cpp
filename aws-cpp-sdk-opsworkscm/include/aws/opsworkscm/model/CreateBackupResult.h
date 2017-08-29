@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateBackupResult();
-    CreateBackupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateBackupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Backup created by request.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateBackupResult& WithBackup(Backup&& value) { SetBackup(std::move(value)); return *this;}
 
   private:
+
     Backup m_backup;
   };
 

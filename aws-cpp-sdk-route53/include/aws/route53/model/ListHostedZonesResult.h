@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListHostedZonesResult();
-    ListHostedZonesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListHostedZonesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListHostedZonesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListHostedZonesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline ListHostedZonesResult& AddHostedZones(HostedZone&& value) { m_hostedZones.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>For the second and subsequent calls to <code>ListHostedZones</code>,
@@ -127,6 +129,7 @@ namespace Model
      */
     inline ListHostedZonesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A flag indicating whether there are more hosted zones to be listed. If the
      * response was truncated, you can get more hosted zones by submitting another
@@ -150,6 +153,7 @@ namespace Model
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
     inline ListHostedZonesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
@@ -221,6 +225,7 @@ namespace Model
      */
     inline ListHostedZonesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
      * call to <code>ListHostedZones</code> that produced the current response.</p>
@@ -264,10 +269,15 @@ namespace Model
     inline ListHostedZonesResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::Vector<HostedZone> m_hostedZones;
+
     Aws::String m_marker;
+
     bool m_isTruncated;
+
     Aws::String m_nextMarker;
+
     Aws::String m_maxItems;
   };
 

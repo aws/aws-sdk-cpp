@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The customer-assigned name of the certificate. Valid characters are A-z and
      * 0-9.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline ImportCertificateRequest& WithCertificateIdentifier(const char* value) { SetCertificateIdentifier(value); return *this;}
 
+
     /**
      * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      */
     inline ImportCertificateRequest& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
 
+
     /**
      * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
      */
@@ -140,6 +143,7 @@ namespace Model
      * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
      */
     inline ImportCertificateRequest& WithCertificateWallet(Aws::Utils::ByteBuffer&& value) { SetCertificateWallet(std::move(value)); return *this;}
+
 
     /**
      * <p>The tags associated with the certificate.</p>
@@ -177,12 +181,16 @@ namespace Model
     inline ImportCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_certificateIdentifier;
     bool m_certificateIdentifierHasBeenSet;
+
     Aws::String m_certificatePem;
     bool m_certificatePemHasBeenSet;
+
     Aws::Utils::ByteBuffer m_certificateWallet;
     bool m_certificateWalletHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

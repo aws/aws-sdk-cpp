@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetRolePolicyResult();
-    GetRolePolicyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetRolePolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetRolePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetRolePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The role the policy is associated with.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline GetRolePolicyResult& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
+
     /**
      * <p>The name of the policy.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The name of the policy.</p>
      */
     inline GetRolePolicyResult& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The policy document.</p>
@@ -153,6 +156,7 @@ namespace Model
      */
     inline GetRolePolicyResult& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -169,9 +173,13 @@ namespace Model
     inline GetRolePolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_roleName;
+
     Aws::String m_policyName;
+
     Aws::String m_policyDocument;
+
     ResponseMetadata m_responseMetadata;
   };
 

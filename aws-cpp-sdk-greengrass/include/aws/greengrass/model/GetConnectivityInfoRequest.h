@@ -34,6 +34,7 @@ namespace Model
     GetConnectivityInfoRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * Thing Name
      */
@@ -70,6 +71,7 @@ namespace Model
     inline GetConnectivityInfoRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
   private:
+
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
   };

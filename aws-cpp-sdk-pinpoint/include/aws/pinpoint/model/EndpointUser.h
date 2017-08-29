@@ -45,6 +45,7 @@ namespace Model
     EndpointUser& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Custom attributes specific to the user.
      */
@@ -100,6 +101,7 @@ namespace Model
      */
     inline EndpointUser& AddUserAttributes(const char* key, const Aws::Vector<Aws::String>& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, value); return *this; }
 
+
     /**
      * The unique ID of the user.
      */
@@ -136,8 +138,10 @@ namespace Model
     inline EndpointUser& WithUserId(const char* value) { SetUserId(value); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_userAttributes;
     bool m_userAttributesHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
   };

@@ -31,13 +31,13 @@ DescribeUsersResult::DescribeUsersResult() :
 {
 }
 
-DescribeUsersResult::DescribeUsersResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeUsersResult::DescribeUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_totalNumberOfUsers(0)
 {
   *this = result;
 }
 
-DescribeUsersResult& DescribeUsersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeUsersResult& DescribeUsersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Users"))

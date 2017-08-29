@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_WORKSPACES_API WorkSpacesErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_WORKSPACES_API WorkSpacesErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace WorkSpaces
+} // namespace Client
 } // namespace Aws

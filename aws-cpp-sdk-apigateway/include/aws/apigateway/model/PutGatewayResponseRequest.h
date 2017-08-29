@@ -40,6 +40,7 @@ namespace Model
     PutGatewayResponseRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline PutGatewayResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p><p>The response type of the associated <a>GatewayResponse</a>. Valid values
@@ -125,6 +127,7 @@ namespace Model
      */
     inline PutGatewayResponseRequest& WithResponseType(GatewayResponseType&& value) { SetResponseType(std::move(value)); return *this;}
 
+
     /**
      * The HTTP status code of the <a>GatewayResponse</a>.
      */
@@ -159,6 +162,7 @@ namespace Model
      * The HTTP status code of the <a>GatewayResponse</a>.
      */
     inline PutGatewayResponseRequest& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p><p>Response parameters (paths, query strings and headers) of the
@@ -231,6 +235,7 @@ namespace Model
      * <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p></p>
      */
     inline PutGatewayResponseRequest& AddResponseParameters(const char* key, const char* value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
+
 
     /**
      * <p><p>Response templates of the <a>GatewayResponse</a> as a string-to-string map
@@ -305,14 +310,19 @@ namespace Model
     inline PutGatewayResponseRequest& AddResponseTemplates(const char* key, const char* value) { m_responseTemplatesHasBeenSet = true; m_responseTemplates.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     GatewayResponseType m_responseType;
     bool m_responseTypeHasBeenSet;
+
     Aws::String m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
     bool m_responseParametersHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
     bool m_responseTemplatesHasBeenSet;
   };

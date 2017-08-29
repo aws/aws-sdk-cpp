@@ -30,12 +30,12 @@ MergeDeveloperIdentitiesResult::MergeDeveloperIdentitiesResult()
 {
 }
 
-MergeDeveloperIdentitiesResult::MergeDeveloperIdentitiesResult(const AmazonWebServiceResult<JsonValue>& result)
+MergeDeveloperIdentitiesResult::MergeDeveloperIdentitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-MergeDeveloperIdentitiesResult& MergeDeveloperIdentitiesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+MergeDeveloperIdentitiesResult& MergeDeveloperIdentitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityId"))

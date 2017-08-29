@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
      * uses to retrieve the data encryption keys stored in an HSM.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline HsmStatus& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
+
     /**
      * <p>Specifies the name of the HSM configuration that contains the information the
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
@@ -132,6 +134,7 @@ namespace Model
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
      */
     inline HsmStatus& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
+
 
     /**
      * <p>Reports whether the Amazon Redshift cluster has finished applying any HSM
@@ -183,10 +186,13 @@ namespace Model
     inline HsmStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_hsmClientCertificateIdentifier;
     bool m_hsmClientCertificateIdentifierHasBeenSet;
+
     Aws::String m_hsmConfigurationIdentifier;
     bool m_hsmConfigurationIdentifierHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

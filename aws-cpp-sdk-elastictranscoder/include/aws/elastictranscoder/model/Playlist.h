@@ -53,6 +53,7 @@ namespace Model
     Playlist& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name that you want Elastic Transcoder to assign to the master playlist,
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
@@ -151,6 +152,7 @@ namespace Model
      */
     inline Playlist& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The format of the output playlist. Valid formats include <code>HLSv3</code>,
      * <code>HLSv4</code>, and <code>Smooth</code>.</p>
@@ -192,6 +194,7 @@ namespace Model
      * <code>HLSv4</code>, and <code>Smooth</code>.</p>
      */
     inline Playlist& WithFormat(const char* value) { SetFormat(value); return *this;}
+
 
     /**
      * <p>For each output in this job that you want to include in a master playlist,
@@ -441,6 +444,7 @@ namespace Model
      */
     inline Playlist& AddOutputKeys(const char* value) { m_outputKeysHasBeenSet = true; m_outputKeys.push_back(value); return *this; }
 
+
     /**
      * <p>The HLS content protection settings, if any, that you want Elastic Transcoder
      * to apply to the output files associated with this playlist.</p>
@@ -471,6 +475,7 @@ namespace Model
      */
     inline Playlist& WithHlsContentProtection(HlsContentProtection&& value) { SetHlsContentProtection(std::move(value)); return *this;}
 
+
     /**
      * <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the
      * output files associated with this playlist.</p>
@@ -500,6 +505,7 @@ namespace Model
      * output files associated with this playlist.</p>
      */
     inline Playlist& WithPlayReadyDrm(PlayReadyDrm&& value) { SetPlayReadyDrm(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the job with which the playlist is associated.</p>
@@ -535,6 +541,7 @@ namespace Model
      * <p>The status of the job with which the playlist is associated.</p>
      */
     inline Playlist& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>Information that further explains the status.</p>
@@ -572,18 +579,25 @@ namespace Model
     inline Playlist& WithStatusDetail(const char* value) { SetStatusDetail(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_format;
     bool m_formatHasBeenSet;
+
     Aws::Vector<Aws::String> m_outputKeys;
     bool m_outputKeysHasBeenSet;
+
     HlsContentProtection m_hlsContentProtection;
     bool m_hlsContentProtectionHasBeenSet;
+
     PlayReadyDrm m_playReadyDrm;
     bool m_playReadyDrmHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusDetail;
     bool m_statusDetailHasBeenSet;
   };

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeSnapshotsResponse();
-    DescribeSnapshotsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSnapshotsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSnapshotsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSnapshotsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the snapshots.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the snapshots.</p>
      */
     inline DescribeSnapshotsResponse& AddSnapshots(Snapshot&& value) { m_snapshots.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -147,6 +149,7 @@ namespace Model
      */
     inline DescribeSnapshotsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -163,8 +166,11 @@ namespace Model
     inline DescribeSnapshotsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Snapshot> m_snapshots;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

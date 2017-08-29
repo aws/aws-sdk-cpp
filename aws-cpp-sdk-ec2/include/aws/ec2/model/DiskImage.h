@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A description of the disk image.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DiskImage& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Information about the disk image.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>Information about the disk image.</p>
      */
     inline DiskImage& WithImage(DiskImageDetail&& value) { SetImage(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the volume.</p>
@@ -136,10 +139,13 @@ namespace Model
     inline DiskImage& WithVolume(VolumeDetail&& value) { SetVolume(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     DiskImageDetail m_image;
     bool m_imageHasBeenSet;
+
     VolumeDetail m_volume;
     bool m_volumeHasBeenSet;
   };

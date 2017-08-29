@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListDevicesResult();
-    ListDevicesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDevicesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The devices returned in the list devices response.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The devices returned in the list devices response.</p>
      */
     inline ListDevicesResult& AddDevices(DeviceType&& value) { m_devices.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token for the list device response.</p>
@@ -119,7 +121,9 @@ namespace Model
     inline ListDevicesResult& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
   private:
+
     Aws::Vector<DeviceType> m_devices;
+
     Aws::String m_paginationToken;
   };
 

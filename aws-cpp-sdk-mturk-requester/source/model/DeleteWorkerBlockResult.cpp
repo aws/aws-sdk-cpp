@@ -30,12 +30,12 @@ DeleteWorkerBlockResult::DeleteWorkerBlockResult()
 {
 }
 
-DeleteWorkerBlockResult::DeleteWorkerBlockResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteWorkerBlockResult::DeleteWorkerBlockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteWorkerBlockResult& DeleteWorkerBlockResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteWorkerBlockResult& DeleteWorkerBlockResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

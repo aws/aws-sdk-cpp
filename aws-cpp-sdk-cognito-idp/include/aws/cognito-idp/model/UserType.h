@@ -50,6 +50,7 @@ namespace Model
     UserType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user name of the user you wish to describe.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The user name of the user you wish to describe.</p>
      */
     inline UserType& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>A container with information about the user type attributes.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline UserType& AddAttributes(AttributeType&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The creation date of the user.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>The creation date of the user.</p>
      */
     inline UserType& WithUserCreateDate(Aws::Utils::DateTime&& value) { SetUserCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The last modified date of the user.</p>
@@ -170,6 +174,7 @@ namespace Model
      */
     inline UserType& WithUserLastModifiedDate(Aws::Utils::DateTime&& value) { SetUserLastModifiedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies whether the user is enabled.</p>
      */
@@ -184,6 +189,7 @@ namespace Model
      * <p>Specifies whether the user is enabled.</p>
      */
     inline UserType& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
@@ -230,6 +236,7 @@ namespace Model
      */
     inline UserType& WithUserStatus(UserStatusType&& value) { SetUserStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The MFA options for the user.</p>
      */
@@ -266,18 +273,25 @@ namespace Model
     inline UserType& AddMFAOptions(MFAOptionType&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::Vector<AttributeType> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::Utils::DateTime m_userCreateDate;
     bool m_userCreateDateHasBeenSet;
+
     Aws::Utils::DateTime m_userLastModifiedDate;
     bool m_userLastModifiedDateHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     UserStatusType m_userStatus;
     bool m_userStatusHasBeenSet;
+
     Aws::Vector<MFAOptionType> m_mFAOptions;
     bool m_mFAOptionsHasBeenSet;
   };

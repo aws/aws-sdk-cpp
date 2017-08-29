@@ -31,12 +31,12 @@ SubscribeResult::SubscribeResult()
 {
 }
 
-SubscribeResult::SubscribeResult(const AmazonWebServiceResult<XmlDocument>& result)
+SubscribeResult::SubscribeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SubscribeResult& SubscribeResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SubscribeResult& SubscribeResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

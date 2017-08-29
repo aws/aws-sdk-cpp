@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The number of instances the Covertible Reserved Instance offering can be
      * applied to. This parameter is reserved and cannot be specified in a request</p>
@@ -65,6 +66,7 @@ namespace Model
      * applied to. This parameter is reserved and cannot be specified in a request</p>
      */
     inline TargetConfigurationRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>The Convertible Reserved Instance offering ID.</p>
@@ -102,8 +104,10 @@ namespace Model
     inline TargetConfigurationRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 
   private:
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet;
   };

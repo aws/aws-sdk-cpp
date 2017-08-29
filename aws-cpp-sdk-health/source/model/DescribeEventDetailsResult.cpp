@@ -30,12 +30,12 @@ DescribeEventDetailsResult::DescribeEventDetailsResult()
 {
 }
 
-DescribeEventDetailsResult::DescribeEventDetailsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEventDetailsResult::DescribeEventDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeEventDetailsResult& DescribeEventDetailsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEventDetailsResult& DescribeEventDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("successfulSet"))

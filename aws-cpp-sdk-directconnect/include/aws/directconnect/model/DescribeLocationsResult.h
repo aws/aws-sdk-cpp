@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     DescribeLocationsResult();
-    DescribeLocationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLocationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLocationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLocationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of colocation hubs where network providers have equipment. Most
@@ -94,6 +95,7 @@ namespace Model
     inline DescribeLocationsResult& AddLocations(Location&& value) { m_locations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Location> m_locations;
   };
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdatePolicyResult();
-    UpdatePolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains details about the updated policy, showing the
@@ -72,6 +73,7 @@ namespace Model
     inline UpdatePolicyResult& WithPolicy(Policy&& value) { SetPolicy(std::move(value)); return *this;}
 
   private:
+
     Policy m_policy;
   };
 

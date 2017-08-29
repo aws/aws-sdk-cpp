@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeStacksResult();
-    DescribeStacksResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeStacksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of stack structures.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list of stack structures.</p>
      */
     inline DescribeStacksResult& AddStacks(Stack&& value) { m_stacks.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
@@ -126,6 +128,7 @@ namespace Model
      */
     inline DescribeStacksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline DescribeStacksResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Stack> m_stacks;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

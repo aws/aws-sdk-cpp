@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing DB
@@ -104,6 +105,7 @@ namespace Model
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+
 
     /**
      * <p> The new storage capacity of the RDS instance. Changing this setting does not
@@ -215,6 +217,7 @@ namespace Model
      * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
      */
     inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+
 
     /**
      * <p> The new compute and memory capacity of the DB instance. To determine the
@@ -335,6 +338,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
+
     /**
      * <p>The new DB subnet group for the DB instance. You can use this parameter to
      * move your DB instance to a different VPC. If your DB instance is not in a VPC,
@@ -440,6 +444,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
@@ -519,6 +524,7 @@ namespace Model
      * </li> </ul>
      */
     inline ModifyDBInstanceRequest& AddDBSecurityGroups(const char* value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
+
 
     /**
      * <p>A list of EC2 VPC security groups to authorize on this DB instance. This
@@ -616,6 +622,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies whether the modifications in this request and any pending
      * modifications are asynchronously applied as soon as possible, regardless of the
@@ -663,6 +670,7 @@ namespace Model
      * changes will be applied. </p> <p>Default: <code>false</code> </p>
      */
     inline ModifyDBInstanceRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
+
 
     /**
      * <p>The new password for the master user. Can be any printable ASCII character
@@ -797,6 +805,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
+
     /**
      * <p>The name of the DB parameter group to apply to the DB instance. Changing this
      * setting does not result in an outage. The parameter group name itself is changed
@@ -881,6 +890,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
+
     /**
      * <p>The number of days to retain automated backups. Setting this parameter to a
      * positive number enables backups. Setting this parameter to 0 disables automated
@@ -940,6 +950,7 @@ namespace Model
      * DB instance is a source to Read Replicas</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
+
 
     /**
      * <p> The daily time range during which automated backups are created if automated
@@ -1038,6 +1049,7 @@ namespace Model
      * <p>Must be at least 30 minutes</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
+
 
     /**
      * <p>The weekly time range (in UTC) during which system maintenance can occur,
@@ -1144,6 +1156,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p> Specifies if the DB instance is a Multi-AZ deployment. Changing this
      * parameter does not result in an outage and the change is applied during the next
@@ -1170,6 +1183,7 @@ namespace Model
      * the DB instance is a Read Replica.</p>
      */
     inline ModifyDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p> The version number of the database engine to upgrade to. Changing this
@@ -1262,6 +1276,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>Indicates that major version upgrades are allowed. Changing this parameter
      * does not result in an outage and the change is asynchronously applied as soon as
@@ -1288,6 +1303,7 @@ namespace Model
      * the DB instance's current version.</p>
      */
     inline ModifyDBInstanceRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p> Indicates that minor version upgrades will be applied automatically to the
@@ -1321,6 +1337,7 @@ namespace Model
      * version. </p>
      */
     inline ModifyDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>The license model for the DB instance.</p> <p>Valid values:
@@ -1370,6 +1387,7 @@ namespace Model
      * <code>general-public-license</code> </p>
      */
     inline ModifyDBInstanceRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
+
 
     /**
      * <p> The new Provisioned IOPS (I/O operations per second) value for the RDS
@@ -1454,6 +1472,7 @@ namespace Model
      * creating a DB snapshot of the instance.</p>
      */
     inline ModifyDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
+
 
     /**
      * <p> Indicates that the DB instance should be associated with the specified
@@ -1553,6 +1572,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
+
     /**
      * <p> The new DB instance identifier for the DB instance when renaming a DB
      * instance. When you change the DB instance identifier, an instance reboot will
@@ -1637,6 +1657,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithNewDBInstanceIdentifier(const char* value) { SetNewDBInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
@@ -1700,6 +1721,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
+
     /**
      * <p>The ARN from the Key Store with which to associate the instance for TDE
      * encryption.</p>
@@ -1741,6 +1763,7 @@ namespace Model
      * encryption.</p>
      */
     inline ModifyDBInstanceRequest& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
+
 
     /**
      * <p>The password for the given ARN from the Key Store in order to access the
@@ -1784,6 +1807,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
 
+
     /**
      * <p>Indicates the certificate that needs to be associated with the instance.</p>
      */
@@ -1818,6 +1842,7 @@ namespace Model
      * <p>Indicates the certificate that needs to be associated with the instance.</p>
      */
     inline ModifyDBInstanceRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
+
 
     /**
      * <p>The Active Directory Domain to move the instance to. Specify
@@ -1875,6 +1900,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
     /**
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance;
      * otherwise false. The default is false.</p>
@@ -1892,6 +1918,7 @@ namespace Model
      * otherwise false. The default is false.</p>
      */
     inline ModifyDBInstanceRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -1919,6 +1946,7 @@ namespace Model
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
     inline ModifyDBInstanceRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
+
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>The value
@@ -1980,6 +2008,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithDBPortNumber(int value) { SetDBPortNumber(value); return *this;}
 
+
     /**
      * <p>Boolean value that indicates if the DB instance has a publicly resolvable DNS
      * name. Set to <code>True</code> to make the DB instance Internet-facing with a
@@ -2021,6 +2050,7 @@ namespace Model
      * <code>ApplyImmediately</code> parameter.</p> <p>Default: false</p>
      */
     inline ModifyDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
@@ -2106,6 +2136,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
+
     /**
      * <p>The name of the IAM role to use when making API calls to the Directory
      * Service.</p>
@@ -2148,6 +2179,7 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
+
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
@@ -2177,6 +2209,7 @@ namespace Model
      * Values: 0 - 15</p>
      */
     inline ModifyDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
+
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
@@ -2215,70 +2248,103 @@ namespace Model
     inline ModifyDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
   private:
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
+
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_dBSecurityGroups;
     bool m_dBSecurityGroupsHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     bool m_applyImmediately;
     bool m_applyImmediatelyHasBeenSet;
+
     Aws::String m_masterUserPassword;
     bool m_masterUserPasswordHasBeenSet;
+
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet;
+
     int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     bool m_allowMajorVersionUpgrade;
     bool m_allowMajorVersionUpgradeHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::String m_newDBInstanceIdentifier;
     bool m_newDBInstanceIdentifierHasBeenSet;
+
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
+
     Aws::String m_tdeCredentialArn;
     bool m_tdeCredentialArnHasBeenSet;
+
     Aws::String m_tdeCredentialPassword;
     bool m_tdeCredentialPasswordHasBeenSet;
+
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet;
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
+
     int m_monitoringInterval;
     bool m_monitoringIntervalHasBeenSet;
+
     int m_dBPortNumber;
     bool m_dBPortNumberHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;
+
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet;
+
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;
+
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };

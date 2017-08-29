@@ -47,6 +47,7 @@ namespace Model
     S3ReferenceDataSourceUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline S3ReferenceDataSourceUpdate& WithBucketARNUpdate(const char* value) { SetBucketARNUpdate(value); return *this;}
 
+
     /**
      * <p>Object key name.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>Object key name.</p>
      */
     inline S3ReferenceDataSourceUpdate& WithFileKeyUpdate(const char* value) { SetFileKeyUpdate(value); return *this;}
+
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the
@@ -160,10 +163,13 @@ namespace Model
     inline S3ReferenceDataSourceUpdate& WithReferenceRoleARNUpdate(const char* value) { SetReferenceRoleARNUpdate(value); return *this;}
 
   private:
+
     Aws::String m_bucketARNUpdate;
     bool m_bucketARNUpdateHasBeenSet;
+
     Aws::String m_fileKeyUpdate;
     bool m_fileKeyUpdateHasBeenSet;
+
     Aws::String m_referenceRoleARNUpdate;
     bool m_referenceRoleARNUpdateHasBeenSet;
   };

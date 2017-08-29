@@ -30,12 +30,12 @@ CreateCaseResult::CreateCaseResult()
 {
 }
 
-CreateCaseResult::CreateCaseResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateCaseResult::CreateCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateCaseResult& CreateCaseResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateCaseResult& CreateCaseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("caseId"))

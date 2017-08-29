@@ -23,7 +23,7 @@ namespace Aws
 {
 namespace STS
 {
-  class AWS_STS_API STSRequest : public AmazonSerializableWebServiceRequest
+  class AWS_STS_API STSRequest : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
     virtual ~STSRequest () {}
@@ -37,7 +37,7 @@ namespace STS
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, FORM_CONTENT_TYPE ));
+        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::FORM_CONTENT_TYPE ));
       }
 
       return headers;

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
      * is supplied, the AWS account ID is used by default.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline GetPartitionsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
+
     /**
      * <p>The name of the catalog database where the partitions reside.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The name of the catalog database where the partitions reside.</p>
      */
     inline GetPartitionsRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+
 
     /**
      * <p>The name of the partitions' table.</p>
@@ -149,6 +152,7 @@ namespace Model
      */
     inline GetPartitionsRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>An expression filtering the partitions to be returned.</p>
      */
@@ -183,6 +187,7 @@ namespace Model
      * <p>An expression filtering the partitions to be returned.</p>
      */
     inline GetPartitionsRequest& WithExpression(const char* value) { SetExpression(value); return *this;}
+
 
     /**
      * <p>A continuation token, if this is not the first call to retrieve these
@@ -226,6 +231,7 @@ namespace Model
      */
     inline GetPartitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The segment of the table's partitions to scan in this request.</p>
      */
@@ -251,6 +257,7 @@ namespace Model
      */
     inline GetPartitionsRequest& WithSegment(Segment&& value) { SetSegment(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of partitions to return in a single response.</p>
      */
@@ -267,18 +274,25 @@ namespace Model
     inline GetPartitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::String m_expression;
     bool m_expressionHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Segment m_segment;
     bool m_segmentHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

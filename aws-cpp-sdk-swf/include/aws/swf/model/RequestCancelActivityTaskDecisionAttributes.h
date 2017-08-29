@@ -59,6 +59,7 @@ namespace Model
     RequestCancelActivityTaskDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>activityId</code> of the activity task to be canceled.</p>
      */
@@ -95,6 +96,7 @@ namespace Model
     inline RequestCancelActivityTaskDecisionAttributes& WithActivityId(const char* value) { SetActivityId(value); return *this;}
 
   private:
+
     Aws::String m_activityId;
     bool m_activityIdHasBeenSet;
   };

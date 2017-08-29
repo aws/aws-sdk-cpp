@@ -30,12 +30,12 @@ PutSchemaFromJsonResult::PutSchemaFromJsonResult()
 {
 }
 
-PutSchemaFromJsonResult::PutSchemaFromJsonResult(const AmazonWebServiceResult<JsonValue>& result)
+PutSchemaFromJsonResult::PutSchemaFromJsonResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutSchemaFromJsonResult& PutSchemaFromJsonResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutSchemaFromJsonResult& PutSchemaFromJsonResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Arn"))

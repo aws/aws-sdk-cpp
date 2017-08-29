@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     PollForDecisionTaskResult();
-    PollForDecisionTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PollForDecisionTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PollForDecisionTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PollForDecisionTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The opaque string used as a handle on the task. This token is used by workers
@@ -100,6 +101,7 @@ namespace Model
      */
     inline PollForDecisionTaskResult& WithTaskToken(const char* value) { SetTaskToken(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskStarted</code> event recorded in the
      * history.</p>
@@ -117,6 +119,7 @@ namespace Model
      * history.</p>
      */
     inline PollForDecisionTaskResult& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
+
 
     /**
      * <p>The workflow execution for which this decision task was created.</p>
@@ -142,6 +145,7 @@ namespace Model
      * <p>The workflow execution for which this decision task was created.</p>
      */
     inline PollForDecisionTaskResult& WithWorkflowExecution(WorkflowExecution&& value) { SetWorkflowExecution(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of the workflow execution for which this decision task was
@@ -172,6 +176,7 @@ namespace Model
      * created.</p>
      */
     inline PollForDecisionTaskResult& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+
 
     /**
      * <p>A paginated list of history events of the workflow execution. The decider
@@ -214,6 +219,7 @@ namespace Model
      * uses this during the processing of the decision task.</p>
      */
     inline PollForDecisionTaskResult& AddEvents(HistoryEvent&& value) { m_events.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -278,6 +284,7 @@ namespace Model
      */
     inline PollForDecisionTaskResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
+
     /**
      * <p>The ID of the DecisionTaskStarted event of the previous decision task of this
      * workflow execution that was processed by the decider. This can be used to
@@ -303,12 +310,19 @@ namespace Model
     inline PollForDecisionTaskResult& WithPreviousStartedEventId(long long value) { SetPreviousStartedEventId(value); return *this;}
 
   private:
+
     Aws::String m_taskToken;
+
     long long m_startedEventId;
+
     WorkflowExecution m_workflowExecution;
+
     WorkflowType m_workflowType;
+
     Aws::Vector<HistoryEvent> m_events;
+
     Aws::String m_nextPageToken;
+
     long long m_previousStartedEventId;
   };
 

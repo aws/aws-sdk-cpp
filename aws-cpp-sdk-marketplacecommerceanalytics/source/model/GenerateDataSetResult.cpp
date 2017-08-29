@@ -30,12 +30,12 @@ GenerateDataSetResult::GenerateDataSetResult()
 {
 }
 
-GenerateDataSetResult::GenerateDataSetResult(const AmazonWebServiceResult<JsonValue>& result)
+GenerateDataSetResult::GenerateDataSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GenerateDataSetResult& GenerateDataSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GenerateDataSetResult& GenerateDataSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("dataSetRequestId"))

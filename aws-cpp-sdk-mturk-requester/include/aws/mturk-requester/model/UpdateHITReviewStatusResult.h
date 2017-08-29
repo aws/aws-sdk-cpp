@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateHITReviewStatusResult();
-    UpdateHITReviewStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateHITReviewStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateHITReviewStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateHITReviewStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

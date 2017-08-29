@@ -46,6 +46,7 @@ namespace Model
     FunctionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Environment of the function configuration
      */
@@ -70,6 +71,7 @@ namespace Model
      * Environment of the function configuration
      */
     inline FunctionConfiguration& WithEnvironment(FunctionConfigurationEnvironment&& value) { SetEnvironment(std::move(value)); return *this;}
+
 
     /**
      * Execution Arguments
@@ -106,6 +108,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithExecArgs(const char* value) { SetExecArgs(value); return *this;}
 
+
     /**
      * Executable
      */
@@ -141,6 +144,7 @@ namespace Model
      */
     inline FunctionConfiguration& WithExecutable(const char* value) { SetExecutable(value); return *this;}
 
+
     /**
      * The memory size, in KB, you configured for the function.
      */
@@ -155,6 +159,7 @@ namespace Model
      * The memory size, in KB, you configured for the function.
      */
     inline FunctionConfiguration& WithMemorySize(int value) { SetMemorySize(value); return *this;}
+
 
     /**
      * Whether the function is pinned or not. Pinned means the function is long-lived
@@ -173,6 +178,7 @@ namespace Model
      * and starts when the core starts.
      */
     inline FunctionConfiguration& WithPinned(bool value) { SetPinned(value); return *this;}
+
 
     /**
      * The function execution time at which Lambda should terminate the function. This
@@ -193,16 +199,22 @@ namespace Model
     inline FunctionConfiguration& WithTimeout(int value) { SetTimeout(value); return *this;}
 
   private:
+
     FunctionConfigurationEnvironment m_environment;
     bool m_environmentHasBeenSet;
+
     Aws::String m_execArgs;
     bool m_execArgsHasBeenSet;
+
     Aws::String m_executable;
     bool m_executableHasBeenSet;
+
     int m_memorySize;
     bool m_memorySizeHasBeenSet;
+
     bool m_pinned;
     bool m_pinnedHasBeenSet;
+
     int m_timeout;
     bool m_timeoutHasBeenSet;
   };

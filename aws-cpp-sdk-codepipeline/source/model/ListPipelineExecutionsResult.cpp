@@ -30,12 +30,12 @@ ListPipelineExecutionsResult::ListPipelineExecutionsResult()
 {
 }
 
-ListPipelineExecutionsResult::ListPipelineExecutionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListPipelineExecutionsResult::ListPipelineExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListPipelineExecutionsResult& ListPipelineExecutionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListPipelineExecutionsResult& ListPipelineExecutionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("pipelineExecutionSummaries"))

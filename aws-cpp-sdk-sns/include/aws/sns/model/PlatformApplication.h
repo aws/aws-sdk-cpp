@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>PlatformApplicationArn for platform application object.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>PlatformApplicationArn for platform application object.</p>
      */
     inline PlatformApplication& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
+
 
     /**
      * <p>Attributes for platform application object.</p>
@@ -145,8 +147,10 @@ namespace Model
     inline PlatformApplication& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_platformApplicationArn;
     bool m_platformApplicationArnHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
   };

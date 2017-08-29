@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Lifetime of the active copy in days
      */
@@ -55,6 +56,7 @@ namespace Model
      * Lifetime of the active copy in days
      */
     inline RestoreRequest& WithDays(int value) { SetDays(value); return *this;}
+
 
     /**
      * Glacier related prameters pertaining to this job.
@@ -82,8 +84,10 @@ namespace Model
     inline RestoreRequest& WithGlacierJobParameters(GlacierJobParameters&& value) { SetGlacierJobParameters(std::move(value)); return *this;}
 
   private:
+
     int m_days;
     bool m_daysHasBeenSet;
+
     GlacierJobParameters m_glacierJobParameters;
     bool m_glacierJobParametersHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     SetLoadBalancerListenerSSLCertificateResult();
-    SetLoadBalancerListenerSSLCertificateResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetLoadBalancerListenerSSLCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetLoadBalancerListenerSSLCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetLoadBalancerListenerSSLCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -63,6 +64,7 @@ namespace Model
     inline SetLoadBalancerListenerSSLCertificateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ResponseMetadata m_responseMetadata;
   };
 

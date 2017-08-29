@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The total value of the Convertible Reserved Instance that you are
      * exchanging.</p>
@@ -79,6 +80,7 @@ namespace Model
      * exchanging.</p>
      */
     inline ReservedInstanceReservationValue& WithReservationValue(ReservationValue&& value) { SetReservationValue(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline ReservedInstanceReservationValue& WithReservedInstanceId(const char* value) { SetReservedInstanceId(value); return *this;}
 
   private:
+
     ReservationValue m_reservationValue;
     bool m_reservationValueHasBeenSet;
+
     Aws::String m_reservedInstanceId;
     bool m_reservedInstanceIdHasBeenSet;
   };

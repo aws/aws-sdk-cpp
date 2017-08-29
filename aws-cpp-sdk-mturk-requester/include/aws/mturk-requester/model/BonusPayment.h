@@ -47,6 +47,7 @@ namespace Model
     BonusPayment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the Worker to whom the bonus was paid.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline BonusPayment& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
 
+
     
     inline const Aws::String& GetBonusAmount() const{ return m_bonusAmount; }
 
@@ -102,6 +104,7 @@ namespace Model
 
     
     inline BonusPayment& WithBonusAmount(const char* value) { SetBonusAmount(value); return *this;}
+
 
     /**
      * <p>The ID of the assignment associated with this bonus payment.</p>
@@ -138,6 +141,7 @@ namespace Model
      */
     inline BonusPayment& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
 
+
     /**
      * <p>The Reason text given when the bonus was granted, if any.</p>
      */
@@ -173,6 +177,7 @@ namespace Model
      */
     inline BonusPayment& WithReason(const char* value) { SetReason(value); return *this;}
 
+
     /**
      * <p>The date and time of when the bonus was granted.</p>
      */
@@ -199,14 +204,19 @@ namespace Model
     inline BonusPayment& WithGrantTime(Aws::Utils::DateTime&& value) { SetGrantTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet;
+
     Aws::String m_bonusAmount;
     bool m_bonusAmountHasBeenSet;
+
     Aws::String m_assignmentId;
     bool m_assignmentIdHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::Utils::DateTime m_grantTime;
     bool m_grantTimeHasBeenSet;
   };

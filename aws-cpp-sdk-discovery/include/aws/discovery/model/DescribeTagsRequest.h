@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can
      * separate these items by using logical operators. Allowed filters include
@@ -94,6 +95,7 @@ namespace Model
      */
     inline DescribeTagsRequest& AddFilters(TagFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The total number of items to return in a single page of output. The maximum
      * value is 100.</p>
@@ -111,6 +113,7 @@ namespace Model
      * value is 100.</p>
      */
     inline DescribeTagsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -148,10 +151,13 @@ namespace Model
     inline DescribeTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<TagFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

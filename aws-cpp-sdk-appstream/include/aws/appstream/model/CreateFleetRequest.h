@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the fleet.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline CreateFleetRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Unique name of the image used by the fleet.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>Unique name of the image used by the fleet.</p>
      */
     inline CreateFleetRequest& WithImageName(const char* value) { SetImageName(value); return *this;}
+
 
     /**
      * <p>The instance type of compute resources for the fleet. Fleet instances are
@@ -225,6 +228,7 @@ namespace Model
      */
     inline CreateFleetRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The parameters for the capacity allocated to the fleet.</p>
      */
@@ -249,6 +253,7 @@ namespace Model
      * <p>The parameters for the capacity allocated to the fleet.</p>
      */
     inline CreateFleetRequest& WithComputeCapacity(ComputeCapacity&& value) { SetComputeCapacity(std::move(value)); return *this;}
+
 
     /**
      * <p>The VPC configuration for the fleet.</p>
@@ -275,6 +280,7 @@ namespace Model
      */
     inline CreateFleetRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum time for which a streaming session can run. The input can be any
      * numeric value in seconds between 600 and 57600.</p>
@@ -292,6 +298,7 @@ namespace Model
      * numeric value in seconds between 600 and 57600.</p>
      */
     inline CreateFleetRequest& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
+
 
     /**
      * <p>The time after disconnection when a session is considered to have ended. If a
@@ -316,6 +323,7 @@ namespace Model
      * seconds between 60 and 57600. </p>
      */
     inline CreateFleetRequest& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
+
 
     /**
      * <p>The description of the fleet.</p>
@@ -352,6 +360,7 @@ namespace Model
      */
     inline CreateFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The display name of the fleet.</p>
      */
@@ -387,6 +396,7 @@ namespace Model
      */
     inline CreateFleetRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
     /**
      * <p>Enables or disables default internet access for the fleet.</p>
      */
@@ -401,6 +411,7 @@ namespace Model
      * <p>Enables or disables default internet access for the fleet.</p>
      */
     inline CreateFleetRequest& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
+
 
     /**
      * <p>The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i>
@@ -438,26 +449,37 @@ namespace Model
     inline CreateFleetRequest& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_imageName;
     bool m_imageNameHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     ComputeCapacity m_computeCapacity;
     bool m_computeCapacityHasBeenSet;
+
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
     int m_maxUserDurationInSeconds;
     bool m_maxUserDurationInSecondsHasBeenSet;
+
     int m_disconnectTimeoutInSeconds;
     bool m_disconnectTimeoutInSecondsHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     bool m_enableDefaultInternetAccess;
     bool m_enableDefaultInternetAccessHasBeenSet;
+
     DomainJoinInfo m_domainJoinInfo;
     bool m_domainJoinInfoHasBeenSet;
   };

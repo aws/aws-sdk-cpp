@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     SendBonusResult();
-    SendBonusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendBonusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendBonusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SendBonusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

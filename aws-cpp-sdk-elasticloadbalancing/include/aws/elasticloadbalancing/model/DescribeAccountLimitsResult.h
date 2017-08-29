@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeAccountLimitsResult();
-    DescribeAccountLimitsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAccountLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAccountLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAccountLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the limits.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <p>Information about the limits.</p>
      */
     inline DescribeAccountLimitsResult& AddLimits(Limit&& value) { m_limits.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -121,6 +123,7 @@ namespace Model
      */
     inline DescribeAccountLimitsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -137,8 +140,11 @@ namespace Model
     inline DescribeAccountLimitsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Limit> m_limits;
+
     Aws::String m_nextMarker;
+
     ResponseMetadata m_responseMetadata;
   };
 

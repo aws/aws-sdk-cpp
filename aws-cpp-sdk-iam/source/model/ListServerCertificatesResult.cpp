@@ -32,13 +32,13 @@ ListServerCertificatesResult::ListServerCertificatesResult() :
 {
 }
 
-ListServerCertificatesResult::ListServerCertificatesResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListServerCertificatesResult::ListServerCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListServerCertificatesResult& ListServerCertificatesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListServerCertificatesResult& ListServerCertificatesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -50,6 +50,7 @@ namespace Model
     S3ReferenceDataSource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline S3ReferenceDataSource& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
 
+
     /**
      * <p>Object key name containing reference data.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>Object key name containing reference data.</p>
      */
     inline S3ReferenceDataSource& WithFileKey(const char* value) { SetFileKey(value); return *this;}
+
 
     /**
      * <p>ARN of the IAM role that the service can assume to read data on your behalf.
@@ -177,10 +180,13 @@ namespace Model
     inline S3ReferenceDataSource& WithReferenceRoleARN(const char* value) { SetReferenceRoleARN(value); return *this;}
 
   private:
+
     Aws::String m_bucketARN;
     bool m_bucketARNHasBeenSet;
+
     Aws::String m_fileKey;
     bool m_fileKeyHasBeenSet;
+
     Aws::String m_referenceRoleARN;
     bool m_referenceRoleARNHasBeenSet;
   };

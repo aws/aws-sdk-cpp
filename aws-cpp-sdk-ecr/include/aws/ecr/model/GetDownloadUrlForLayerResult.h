@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetDownloadUrlForLayerResult();
-    GetDownloadUrlForLayerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDownloadUrlForLayerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDownloadUrlForLayerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDownloadUrlForLayerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
      */
     inline GetDownloadUrlForLayerResult& WithDownloadUrl(const char* value) { SetDownloadUrl(value); return *this;}
+
 
     /**
      * <p>The digest of the image layer to download.</p>
@@ -112,7 +114,9 @@ namespace Model
     inline GetDownloadUrlForLayerResult& WithLayerDigest(const char* value) { SetLayerDigest(value); return *this;}
 
   private:
+
     Aws::String m_downloadUrl;
+
     Aws::String m_layerDigest;
   };
 

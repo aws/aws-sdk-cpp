@@ -47,6 +47,7 @@ namespace Model
     PolicyTypeSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the policy type.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the policy type.</p>
      */
     inline PolicyTypeSummary& WithType(PolicyType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the policy type as it relates to the associated root. To attach
@@ -108,8 +110,10 @@ namespace Model
     inline PolicyTypeSummary& WithStatus(PolicyTypeStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     PolicyType m_type;
     bool m_typeHasBeenSet;
+
     PolicyTypeStatus m_status;
     bool m_statusHasBeenSet;
   };

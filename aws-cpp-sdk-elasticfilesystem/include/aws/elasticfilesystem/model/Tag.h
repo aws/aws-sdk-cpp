@@ -47,6 +47,7 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Tag key (String). The key can't start with <code>aws:</code>.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>Tag key (String). The key can't start with <code>aws:</code>.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>Value of the tag key.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

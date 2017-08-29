@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -106,6 +107,7 @@ namespace Model
      */
     inline CompleteMultipartUploadRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -141,6 +143,7 @@ namespace Model
      */
     inline CompleteMultipartUploadRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
 
+
     /**
      * <p>The upload ID of the multipart upload.</p>
      */
@@ -175,6 +178,7 @@ namespace Model
      * <p>The upload ID of the multipart upload.</p>
      */
     inline CompleteMultipartUploadRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
+
 
     /**
      * <p>The total size, in bytes, of the entire archive. This value should be the sum
@@ -217,6 +221,7 @@ namespace Model
      * of all the sizes of the individual parts that you uploaded.</p>
      */
     inline CompleteMultipartUploadRequest& WithArchiveSize(const char* value) { SetArchiveSize(value); return *this;}
+
 
     /**
      * <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256
@@ -275,14 +280,19 @@ namespace Model
     inline CompleteMultipartUploadRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;
+
     Aws::String m_archiveSize;
     bool m_archiveSizeHasBeenSet;
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
   };

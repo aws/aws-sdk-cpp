@@ -62,6 +62,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the event destination. The name must:</p> <ul> <li> <p>Contain
      * only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
@@ -111,6 +112,7 @@ namespace Model
      */
     inline EventDestination& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Sets whether Amazon SES publishes events to this destination when you send an
      * email with the associated configuration set. Set to <code>true</code> to enable
@@ -134,6 +136,7 @@ namespace Model
      * to this destination. The default value is <code>false</code>.</p>
      */
     inline EventDestination& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
@@ -170,6 +173,7 @@ namespace Model
      */
     inline EventDestination& AddMatchingEventTypes(EventType&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>An object that contains the delivery stream ARN and the IAM role ARN
      * associated with an Amazon Kinesis Firehose event destination.</p>
@@ -200,6 +204,7 @@ namespace Model
      */
     inline EventDestination& WithKinesisFirehoseDestination(KinesisFirehoseDestination&& value) { SetKinesisFirehoseDestination(std::move(value)); return *this;}
 
+
     /**
      * <p>An object that contains the names, default values, and sources of the
      * dimensions associated with an Amazon CloudWatch event destination.</p>
@@ -229,6 +234,7 @@ namespace Model
      * dimensions associated with an Amazon CloudWatch event destination.</p>
      */
     inline EventDestination& WithCloudWatchDestination(CloudWatchDestination&& value) { SetCloudWatchDestination(std::move(value)); return *this;}
+
 
     /**
      * <p>An object that contains the topic ARN associated with an Amazon Simple
@@ -261,16 +267,22 @@ namespace Model
     inline EventDestination& WithSNSDestination(SNSDestination&& value) { SetSNSDestination(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::Vector<EventType> m_matchingEventTypes;
     bool m_matchingEventTypesHasBeenSet;
+
     KinesisFirehoseDestination m_kinesisFirehoseDestination;
     bool m_kinesisFirehoseDestinationHasBeenSet;
+
     CloudWatchDestination m_cloudWatchDestination;
     bool m_cloudWatchDestinationHasBeenSet;
+
     SNSDestination m_sNSDestination;
     bool m_sNSDestinationHasBeenSet;
   };

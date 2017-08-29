@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AssociateDiscoveredResourceResult();
-    AssociateDiscoveredResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateDiscoveredResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateDiscoveredResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateDiscoveredResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

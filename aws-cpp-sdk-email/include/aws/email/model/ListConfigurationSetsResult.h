@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     ListConfigurationSetsResult();
-    ListConfigurationSetsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListConfigurationSetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListConfigurationSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListConfigurationSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of configuration sets.</p>
@@ -87,6 +88,7 @@ namespace Model
      * <p>A list of configuration sets.</p>
      */
     inline ListConfigurationSetsResult& AddConfigurationSets(ConfigurationSet&& value) { m_configurationSets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token indicating that there are additional configuration sets available to
@@ -137,6 +139,7 @@ namespace Model
      */
     inline ListConfigurationSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -153,8 +156,11 @@ namespace Model
     inline ListConfigurationSetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ConfigurationSet> m_configurationSets;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

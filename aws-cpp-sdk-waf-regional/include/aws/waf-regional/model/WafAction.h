@@ -50,6 +50,7 @@ namespace Model
     WafAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies how you want AWS WAF to respond to requests that match the settings
      * in a <code>Rule</code>. Valid settings include the following:</p> <ul> <li> <p>
@@ -116,6 +117,7 @@ namespace Model
     inline WafAction& WithType(WafActionType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     WafActionType m_type;
     bool m_typeHasBeenSet;
   };

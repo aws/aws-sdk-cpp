@@ -30,12 +30,12 @@ DescribeBackupsResult::DescribeBackupsResult()
 {
 }
 
-DescribeBackupsResult::DescribeBackupsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeBackupsResult::DescribeBackupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeBackupsResult& DescribeBackupsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeBackupsResult& DescribeBackupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Backups"))

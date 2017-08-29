@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateHsmResult();
-    CreateHsmResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateHsmResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateHsmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateHsmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the HSM.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateHsmResult& WithHsmArn(const char* value) { SetHsmArn(value); return *this;}
 
   private:
+
     Aws::String m_hsmArn;
   };
 

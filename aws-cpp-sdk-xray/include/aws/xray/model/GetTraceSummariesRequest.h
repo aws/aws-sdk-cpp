@@ -35,6 +35,7 @@ namespace Model
     GetTraceSummariesRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The start of the time frame for which to retrieve traces.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
      * <p>The start of the time frame for which to retrieve traces.</p>
      */
     inline GetTraceSummariesRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The end of the time frame for which to retrieve traces.</p>
@@ -85,6 +87,7 @@ namespace Model
      */
     inline GetTraceSummariesRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Set to <code>true</code> to get summaries for only a subset of available
      * traces.</p>
@@ -102,6 +105,7 @@ namespace Model
      * traces.</p>
      */
     inline GetTraceSummariesRequest& WithSampling(bool value) { SetSampling(value); return *this;}
+
 
     /**
      * <p>Specify a filter expression to retrieve trace summaries for services or
@@ -144,6 +148,7 @@ namespace Model
      * requests that meet certain requirements.</p>
      */
     inline GetTraceSummariesRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
+
 
     /**
      * <p>Specify the pagination token returned by a previous request to retrieve the
@@ -188,14 +193,19 @@ namespace Model
     inline GetTraceSummariesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     bool m_sampling;
     bool m_samplingHasBeenSet;
+
     Aws::String m_filterExpression;
     bool m_filterExpressionHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

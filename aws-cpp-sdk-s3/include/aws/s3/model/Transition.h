@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Indicates at what date the object is to be moved or deleted. Should be in GMT
      * ISO 8601 Format.
@@ -72,6 +73,7 @@ namespace Model
      */
     inline Transition& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
 
+
     /**
      * Indicates the lifetime, in days, of the objects that are subject to the rule.
      * The value must be a non-zero positive integer.
@@ -89,6 +91,7 @@ namespace Model
      * The value must be a non-zero positive integer.
      */
     inline Transition& WithDays(int value) { SetDays(value); return *this;}
+
 
     /**
      * The class of storage used to store the object.
@@ -116,10 +119,13 @@ namespace Model
     inline Transition& WithStorageClass(TransitionStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
+
     int m_days;
     bool m_daysHasBeenSet;
+
     TransitionStorageClass m_storageClass;
     bool m_storageClassHasBeenSet;
   };

@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the tag. The name must:</p> <ul> <li> <p>Contain only ASCII
      * letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
@@ -101,6 +102,7 @@ namespace Model
      * <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline MessageTag& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The value of the tag. The value must:</p> <ul> <li> <p>Contain only ASCII
@@ -152,8 +154,10 @@ namespace Model
     inline MessageTag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

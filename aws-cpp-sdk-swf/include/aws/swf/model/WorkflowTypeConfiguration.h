@@ -47,6 +47,7 @@ namespace Model
     WorkflowTypeConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The default maximum duration, specified when registering the workflow type,
      * that a decision task for executions of this workflow type might take before
@@ -145,6 +146,7 @@ namespace Model
      */
     inline WorkflowTypeConfiguration& WithDefaultTaskStartToCloseTimeout(const char* value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p> The default maximum duration, specified when registering the workflow type,
      * for executions of this workflow type. This default can be overridden when
@@ -215,6 +217,7 @@ namespace Model
      */
     inline WorkflowTypeConfiguration& WithDefaultExecutionStartToCloseTimeout(const char* value) { SetDefaultExecutionStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p> The default task list, specified when registering the workflow type, for
      * decisions tasks scheduled for workflow executions of this type. This default can
@@ -259,6 +262,7 @@ namespace Model
      * <code>StartChildWorkflowExecution</code> <a>Decision</a>.</p>
      */
     inline WorkflowTypeConfiguration& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(std::move(value)); return *this;}
+
 
     /**
      * <p> The default task priority, specified when registering the workflow type, for
@@ -351,6 +355,7 @@ namespace Model
      */
     inline WorkflowTypeConfiguration& WithDefaultTaskPriority(const char* value) { SetDefaultTaskPriority(value); return *this;}
 
+
     /**
      * <p> The default policy to use for the child workflow executions when a workflow
      * execution of this type is terminated, by calling the
@@ -436,6 +441,7 @@ namespace Model
      */
     inline WorkflowTypeConfiguration& WithDefaultChildPolicy(ChildPolicy&& value) { SetDefaultChildPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>The default IAM role attached to this workflow type.</p> <note> <p>Executions
      * of this workflow type need IAM roles to invoke Lambda functions. If you don't
@@ -507,16 +513,22 @@ namespace Model
     inline WorkflowTypeConfiguration& WithDefaultLambdaRole(const char* value) { SetDefaultLambdaRole(value); return *this;}
 
   private:
+
     Aws::String m_defaultTaskStartToCloseTimeout;
     bool m_defaultTaskStartToCloseTimeoutHasBeenSet;
+
     Aws::String m_defaultExecutionStartToCloseTimeout;
     bool m_defaultExecutionStartToCloseTimeoutHasBeenSet;
+
     TaskList m_defaultTaskList;
     bool m_defaultTaskListHasBeenSet;
+
     Aws::String m_defaultTaskPriority;
     bool m_defaultTaskPriorityHasBeenSet;
+
     ChildPolicy m_defaultChildPolicy;
     bool m_defaultChildPolicyHasBeenSet;
+
     Aws::String m_defaultLambdaRole;
     bool m_defaultLambdaRoleHasBeenSet;
   };

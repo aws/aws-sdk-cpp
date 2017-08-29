@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The IAM user's current password.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The IAM user's current password.</p>
      */
     inline ChangePasswordRequest& WithOldPassword(const char* value) { SetOldPassword(value); return *this;}
+
 
     /**
      * <p>The new password. The new password must conform to the AWS account's password
@@ -172,8 +174,10 @@ namespace Model
     inline ChangePasswordRequest& WithNewPassword(const char* value) { SetNewPassword(value); return *this;}
 
   private:
+
     Aws::String m_oldPassword;
     bool m_oldPasswordHasBeenSet;
+
     Aws::String m_newPassword;
     bool m_newPasswordHasBeenSet;
   };

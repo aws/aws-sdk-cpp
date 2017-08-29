@@ -47,6 +47,7 @@ namespace Model
     DomainJoinInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The fully qualified name of the directory, such as corp.example.com</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The fully qualified name of the directory, such as corp.example.com</p>
      */
     inline DomainJoinInfo& WithDirectoryName(const char* value) { SetDirectoryName(value); return *this;}
+
 
     /**
      * <p>The distinguished name of the organizational unit to place the computer
@@ -125,8 +127,10 @@ namespace Model
     inline DomainJoinInfo& WithOrganizationalUnitDistinguishedName(const char* value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
 
   private:
+
     Aws::String m_directoryName;
     bool m_directoryNameHasBeenSet;
+
     Aws::String m_organizationalUnitDistinguishedName;
     bool m_organizationalUnitDistinguishedNameHasBeenSet;
   };

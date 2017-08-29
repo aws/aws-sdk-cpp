@@ -31,13 +31,13 @@ AcknowledgeJobResult::AcknowledgeJobResult() :
 {
 }
 
-AcknowledgeJobResult::AcknowledgeJobResult(const AmazonWebServiceResult<JsonValue>& result) : 
+AcknowledgeJobResult::AcknowledgeJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(JobStatus::NOT_SET)
 {
   *this = result;
 }
 
-AcknowledgeJobResult& AcknowledgeJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AcknowledgeJobResult& AcknowledgeJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("status"))

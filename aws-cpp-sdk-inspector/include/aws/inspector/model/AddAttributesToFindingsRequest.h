@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline AddAttributesToFindingsRequest& AddFindingArns(const char* value) { m_findingArnsHasBeenSet = true; m_findingArns.push_back(value); return *this; }
 
+
     /**
      * <p>The array of attributes that you want to assign to specified findings.</p>
      */
@@ -114,8 +116,10 @@ namespace Model
     inline AddAttributesToFindingsRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_findingArns;
     bool m_findingArnsHasBeenSet;
+
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
   };

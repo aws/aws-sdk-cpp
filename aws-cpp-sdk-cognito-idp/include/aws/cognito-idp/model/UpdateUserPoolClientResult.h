@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateUserPoolClientResult();
-    UpdateUserPoolClientResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateUserPoolClientResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateUserPoolClientResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateUserPoolClientResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The user pool client value from the response from the server when an update
@@ -78,6 +79,7 @@ namespace Model
     inline UpdateUserPoolClientResult& WithUserPoolClient(UserPoolClientType&& value) { SetUserPoolClient(std::move(value)); return *this;}
 
   private:
+
     UserPoolClientType m_userPoolClient;
   };
 

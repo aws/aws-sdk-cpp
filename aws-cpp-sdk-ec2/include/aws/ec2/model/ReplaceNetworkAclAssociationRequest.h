@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the current association between the original network ACL and the
      * subnet.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ReplaceNetworkAclAssociationRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -107,6 +109,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ReplaceNetworkAclAssociationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The ID of the new network ACL to associate with the subnet.</p>
@@ -144,10 +147,13 @@ namespace Model
     inline ReplaceNetworkAclAssociationRequest& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
 
   private:
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet;
   };

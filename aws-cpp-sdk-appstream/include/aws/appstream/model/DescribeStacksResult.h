@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeStacksResult();
-    DescribeStacksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStacksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of stack details.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of stack details.</p>
      */
     inline DescribeStacksResult& AddStacks(Stack&& value) { m_stacks.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeStacksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Stack> m_stacks;
+
     Aws::String m_nextToken;
   };
 

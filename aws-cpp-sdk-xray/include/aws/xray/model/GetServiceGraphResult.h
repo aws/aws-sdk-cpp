@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     GetServiceGraphResult();
-    GetServiceGraphResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetServiceGraphResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetServiceGraphResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetServiceGraphResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The start of the time frame for which the graph was generated.</p>
@@ -69,6 +70,7 @@ namespace Model
      */
     inline GetServiceGraphResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The end of the time frame for which the graph was generated.</p>
      */
@@ -93,6 +95,7 @@ namespace Model
      * <p>The end of the time frame for which the graph was generated.</p>
      */
     inline GetServiceGraphResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The services that have processed a traced request during the specified time
@@ -136,6 +139,7 @@ namespace Model
      */
     inline GetServiceGraphResult& AddServices(Service&& value) { m_services.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Pagination token. Not used.</p>
      */
@@ -172,9 +176,13 @@ namespace Model
     inline GetServiceGraphResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_startTime;
+
     Aws::Utils::DateTime m_endTime;
+
     Aws::Vector<Service> m_services;
+
     Aws::String m_nextToken;
   };
 

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateAliasResult();
-    CreateAliasResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAliasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of the directory.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The identifier of the directory.</p>
      */
     inline CreateAliasResult& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The alias for the directory.</p>
@@ -118,7 +120,9 @@ namespace Model
     inline CreateAliasResult& WithAlias(const char* value) { SetAlias(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
+
     Aws::String m_alias;
   };
 

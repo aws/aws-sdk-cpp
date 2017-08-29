@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon RDS resource the tags will be added to. This value is an Amazon
      * Resource Name (ARN). For information about creating an ARN, see <a
@@ -99,6 +100,7 @@ namespace Model
      */
     inline AddTagsToResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
     /**
      * <p>The tags to be assigned to the Amazon RDS resource.</p>
      */
@@ -135,8 +137,10 @@ namespace Model
     inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

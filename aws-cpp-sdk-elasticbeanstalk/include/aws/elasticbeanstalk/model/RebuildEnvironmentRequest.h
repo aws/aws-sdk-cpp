@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the environment to rebuild.</p> <p> Condition: You must specify
      * either this or an EnvironmentName, or both. If you do not specify either, AWS
@@ -89,6 +90,7 @@ namespace Model
      * Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
      */
     inline RebuildEnvironmentRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>The name of the environment to rebuild.</p> <p> Condition: You must specify
@@ -140,8 +142,10 @@ namespace Model
     inline RebuildEnvironmentRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
   private:
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
   };

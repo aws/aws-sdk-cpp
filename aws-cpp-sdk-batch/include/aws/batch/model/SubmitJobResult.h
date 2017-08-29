@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     SubmitJobResult();
-    SubmitJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SubmitJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SubmitJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SubmitJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the job. </p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the job. </p>
      */
     inline SubmitJobResult& WithJobName(const char* value) { SetJobName(value); return *this;}
+
 
     /**
      * <p>The unique identifier for the job.</p>
@@ -112,7 +114,9 @@ namespace Model
     inline SubmitJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 
   private:
+
     Aws::String m_jobName;
+
     Aws::String m_jobId;
   };
 

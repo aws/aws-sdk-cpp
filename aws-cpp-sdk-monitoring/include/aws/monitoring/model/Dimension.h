@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the dimension.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the dimension.</p>
      */
     inline Dimension& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The value representing the dimension measurement.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline Dimension& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

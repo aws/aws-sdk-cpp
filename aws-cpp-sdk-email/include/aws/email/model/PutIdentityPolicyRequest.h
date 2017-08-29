@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identity to which the policy will apply. You can specify an identity by
      * using its name or by using its Amazon Resource Name (ARN). Examples:
@@ -108,6 +109,7 @@ namespace Model
      */
     inline PutIdentityPolicyRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
+
     /**
      * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
      * and can only include alphanumeric characters, dashes, and underscores.</p>
@@ -149,6 +151,7 @@ namespace Model
      * and can only include alphanumeric characters, dashes, and underscores.</p>
      */
     inline PutIdentityPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
@@ -214,10 +217,13 @@ namespace Model
     inline PutIdentityPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policy;
     bool m_policyHasBeenSet;
   };

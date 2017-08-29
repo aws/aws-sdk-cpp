@@ -49,6 +49,7 @@ namespace Model
     AssessmentRunNotification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The date of the notification.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline AssessmentRunNotification& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The event for which a notification is sent.</p>
      */
@@ -98,6 +100,7 @@ namespace Model
      * <p>The event for which a notification is sent.</p>
      */
     inline AssessmentRunNotification& WithEvent(InspectorEvent&& value) { SetEvent(std::move(value)); return *this;}
+
 
     /**
      * <p>The message included in the notification.</p>
@@ -134,6 +137,7 @@ namespace Model
      */
     inline AssessmentRunNotification& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The Boolean value that specifies whether the notification represents an
      * error.</p>
@@ -151,6 +155,7 @@ namespace Model
      * error.</p>
      */
     inline AssessmentRunNotification& WithError(bool value) { SetError(value); return *this;}
+
 
     /**
      * <p>The SNS topic to which the SNS notification is sent.</p>
@@ -187,6 +192,7 @@ namespace Model
      */
     inline AssessmentRunNotification& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
 
+
     /**
      * <p>The status code of the SNS notification.</p>
      */
@@ -213,16 +219,22 @@ namespace Model
     inline AssessmentRunNotification& WithSnsPublishStatusCode(AssessmentRunNotificationSnsStatusCode&& value) { SetSnsPublishStatusCode(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
+
     InspectorEvent m_event;
     bool m_eventHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     bool m_error;
     bool m_errorHasBeenSet;
+
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet;
+
     AssessmentRunNotificationSnsStatusCode m_snsPublishStatusCode;
     bool m_snsPublishStatusCodeHasBeenSet;
   };

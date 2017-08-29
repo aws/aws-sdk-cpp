@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     SetIdentityNotificationTopicResult();
-    SetIdentityNotificationTopicResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetIdentityNotificationTopicResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetIdentityNotificationTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetIdentityNotificationTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -63,6 +64,7 @@ namespace Model
     inline SetIdentityNotificationTopicResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ResponseMetadata m_responseMetadata;
   };
 

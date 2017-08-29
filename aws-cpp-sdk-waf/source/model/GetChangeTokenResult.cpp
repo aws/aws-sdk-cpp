@@ -30,12 +30,12 @@ GetChangeTokenResult::GetChangeTokenResult()
 {
 }
 
-GetChangeTokenResult::GetChangeTokenResult(const AmazonWebServiceResult<JsonValue>& result)
+GetChangeTokenResult::GetChangeTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetChangeTokenResult& GetChangeTokenResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetChangeTokenResult& GetChangeTokenResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

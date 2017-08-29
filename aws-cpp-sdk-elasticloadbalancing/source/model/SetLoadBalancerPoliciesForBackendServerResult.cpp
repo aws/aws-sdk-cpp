@@ -31,12 +31,12 @@ SetLoadBalancerPoliciesForBackendServerResult::SetLoadBalancerPoliciesForBackend
 {
 }
 
-SetLoadBalancerPoliciesForBackendServerResult::SetLoadBalancerPoliciesForBackendServerResult(const AmazonWebServiceResult<XmlDocument>& result)
+SetLoadBalancerPoliciesForBackendServerResult::SetLoadBalancerPoliciesForBackendServerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SetLoadBalancerPoliciesForBackendServerResult& SetLoadBalancerPoliciesForBackendServerResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SetLoadBalancerPoliciesForBackendServerResult& SetLoadBalancerPoliciesForBackendServerResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

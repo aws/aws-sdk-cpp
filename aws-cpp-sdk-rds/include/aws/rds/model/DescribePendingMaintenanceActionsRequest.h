@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of a resource to return pending maintenance actions for.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The ARN of a resource to return pending maintenance actions for.</p>
      */
     inline DescribePendingMaintenanceActionsRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+
 
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
@@ -162,6 +164,7 @@ namespace Model
      */
     inline DescribePendingMaintenanceActionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> An optional pagination token provided by a previous
      * <code>DescribePendingMaintenanceActions</code> request. If this parameter is
@@ -218,6 +221,7 @@ namespace Model
      */
     inline DescribePendingMaintenanceActionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -243,12 +247,16 @@ namespace Model
     inline DescribePendingMaintenanceActionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
   private:
+
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
   };

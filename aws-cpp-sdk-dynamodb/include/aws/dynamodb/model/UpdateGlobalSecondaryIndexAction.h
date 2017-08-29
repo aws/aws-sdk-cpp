@@ -47,6 +47,7 @@ namespace Model
     UpdateGlobalSecondaryIndexAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the global secondary index to be updated.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the global secondary index to be updated.</p>
      */
     inline UpdateGlobalSecondaryIndexAction& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
 
     /**
      * <p>Represents the provisioned throughput settings for the specified global
@@ -128,8 +130,10 @@ namespace Model
     inline UpdateGlobalSecondaryIndexAction& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet;
+
     ProvisionedThroughput m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet;
   };

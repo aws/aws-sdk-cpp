@@ -49,6 +49,7 @@ namespace Model
     Filter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the filter.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the filter.</p>
      */
     inline Filter& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A string value on which to filter. For example, if you choose the
@@ -139,6 +141,7 @@ namespace Model
      * <code>Ubuntu</code> for the value.</p>
      */
     inline Filter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+
 
     /**
      * <p>A conditional operator. The following operators are valid: EQUALS,
@@ -218,10 +221,13 @@ namespace Model
     inline Filter& WithCondition(const char* value) { SetCondition(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
+
     Aws::String m_condition;
     bool m_conditionHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     StartUserImportJobResult();
-    StartUserImportJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartUserImportJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartUserImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartUserImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The job object that represents the user import job.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline StartUserImportJobResult& WithUserImportJob(UserImportJobType&& value) { SetUserImportJob(std::move(value)); return *this;}
 
   private:
+
     UserImportJobType m_userImportJob;
   };
 

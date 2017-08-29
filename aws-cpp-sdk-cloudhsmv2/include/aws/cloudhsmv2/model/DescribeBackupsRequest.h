@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>NextToken</code> value that you received in the previous response.
      * Use this value to get more backups.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline DescribeBackupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of backups to return in the response. When there are more
      * backups than the number you specify, the response contains a
@@ -100,6 +102,7 @@ namespace Model
      * <code>NextToken</code> value.</p>
      */
     inline DescribeBackupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>One or more filters to limit the items returned in the response.</p> <p>Use
@@ -212,10 +215,13 @@ namespace Model
     inline DescribeBackupsRequest& AddFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_filters;
     bool m_filtersHasBeenSet;
   };

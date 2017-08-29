@@ -42,6 +42,7 @@ namespace Model
     UpdateFunctionConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the Lambda function.</p> <p> You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
@@ -126,6 +127,7 @@ namespace Model
      */
     inline UpdateFunctionConfigurationRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda will assume when
      * it executes your function.</p>
@@ -167,6 +169,7 @@ namespace Model
      * it executes your function.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithRole(const char* value) { SetRole(value); return *this;}
+
 
     /**
      * <p>The function that Lambda calls to begin executing your function. For Node.js,
@@ -210,6 +213,7 @@ namespace Model
      */
     inline UpdateFunctionConfigurationRequest& WithHandler(const char* value) { SetHandler(value); return *this;}
 
+
     /**
      * <p>A short user-defined function description. AWS Lambda does not use this
      * value. Assign a meaningful description as you see fit.</p>
@@ -252,6 +256,7 @@ namespace Model
      */
     inline UpdateFunctionConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The function execution time at which AWS Lambda should terminate the
      * function. Because the execution time has cost implications, we recommend you set
@@ -272,6 +277,7 @@ namespace Model
      * this value based on your expected execution time. The default is 3 seconds.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithTimeout(int value) { SetTimeout(value); return *this;}
+
 
     /**
      * <p>The amount of memory, in MB, your Lambda function is given. AWS Lambda uses
@@ -303,6 +309,7 @@ namespace Model
      */
     inline UpdateFunctionConfigurationRequest& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
+
     
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
@@ -317,6 +324,7 @@ namespace Model
 
     
     inline UpdateFunctionConfigurationRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The parent object that contains your environment's configuration
@@ -347,6 +355,7 @@ namespace Model
      * settings.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithEnvironment(Environment&& value) { SetEnvironment(std::move(value)); return *this;}
+
 
     /**
      * <p>The runtime environment for the Lambda function.</p> <p>To use the Python
@@ -428,6 +437,7 @@ namespace Model
      */
     inline UpdateFunctionConfigurationRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
+
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic.</p>
@@ -457,6 +467,7 @@ namespace Model
      * Amazon SQS queue or Amazon SNS topic.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
@@ -507,6 +518,7 @@ namespace Model
      */
     inline UpdateFunctionConfigurationRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
+
     /**
      * <p>The parent object that contains your function's tracing settings.</p>
      */
@@ -533,28 +545,40 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithTracingConfig(TracingConfig&& value) { SetTracingConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     Aws::String m_handler;
     bool m_handlerHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     int m_timeout;
     bool m_timeoutHasBeenSet;
+
     int m_memorySize;
     bool m_memorySizeHasBeenSet;
+
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
     Environment m_environment;
     bool m_environmentHasBeenSet;
+
     Runtime m_runtime;
     bool m_runtimeHasBeenSet;
+
     DeadLetterConfig m_deadLetterConfig;
     bool m_deadLetterConfigHasBeenSet;
+
     Aws::String m_kMSKeyArn;
     bool m_kMSKeyArnHasBeenSet;
+
     TracingConfig m_tracingConfig;
     bool m_tracingConfigHasBeenSet;
   };

@@ -30,12 +30,12 @@ GetSegmentsResult::GetSegmentsResult()
 {
 }
 
-GetSegmentsResult::GetSegmentsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetSegmentsResult::GetSegmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetSegmentsResult& GetSegmentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSegmentsResult& GetSegmentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SegmentsResponse"))

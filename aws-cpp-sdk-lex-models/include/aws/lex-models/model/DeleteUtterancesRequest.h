@@ -34,6 +34,7 @@ namespace Model
     DeleteUtterancesRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the bot that stored the utterances.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>The name of the bot that stored the utterances.</p>
      */
     inline DeleteUtterancesRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+
 
     /**
      * <p> The unique identifier for the user that made the utterances. This is the
@@ -140,8 +142,10 @@ namespace Model
     inline DeleteUtterancesRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 
   private:
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
   };

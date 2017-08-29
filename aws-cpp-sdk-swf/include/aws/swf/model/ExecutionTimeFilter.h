@@ -49,6 +49,7 @@ namespace Model
     ExecutionTimeFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the oldest start or close date and time to return.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>Specifies the oldest start or close date and time to return.</p>
      */
     inline ExecutionTimeFilter& WithOldestDate(Aws::Utils::DateTime&& value) { SetOldestDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the latest start or close date and time to return.</p>
@@ -100,8 +102,10 @@ namespace Model
     inline ExecutionTimeFilter& WithLatestDate(Aws::Utils::DateTime&& value) { SetLatestDate(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_oldestDate;
     bool m_oldestDateHasBeenSet;
+
     Aws::Utils::DateTime m_latestDate;
     bool m_latestDateHasBeenSet;
   };

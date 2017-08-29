@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The DNS hostname of the cache node.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
 
+
     /**
      * <p>The port number that the cache engine is listening on.</p>
      */
@@ -100,8 +102,10 @@ namespace Model
     inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
 
   private:
+
     Aws::String m_address;
     bool m_addressHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
   };

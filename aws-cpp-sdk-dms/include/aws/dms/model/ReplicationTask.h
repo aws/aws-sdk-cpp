@@ -48,6 +48,7 @@ namespace Model
     ReplicationTask& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
@@ -104,6 +105,7 @@ namespace Model
      */
     inline ReplicationTask& WithReplicationTaskIdentifier(const char* value) { SetReplicationTaskIdentifier(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
@@ -145,6 +147,7 @@ namespace Model
      * endpoint.</p>
      */
     inline ReplicationTask& WithSourceEndpointArn(const char* value) { SetSourceEndpointArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
@@ -188,6 +191,7 @@ namespace Model
      */
     inline ReplicationTask& WithTargetEndpointArn(const char* value) { SetTargetEndpointArn(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
@@ -223,6 +227,7 @@ namespace Model
      */
     inline ReplicationTask& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 
+
     /**
      * <p>The type of migration.</p>
      */
@@ -247,6 +252,7 @@ namespace Model
      * <p>The type of migration.</p>
      */
     inline ReplicationTask& WithMigrationType(MigrationTypeValue&& value) { SetMigrationType(std::move(value)); return *this;}
+
 
     /**
      * <p>Table mappings specified in the task.</p>
@@ -283,6 +289,7 @@ namespace Model
      */
     inline ReplicationTask& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
 
+
     /**
      * <p>The settings for the replication task.</p>
      */
@@ -317,6 +324,7 @@ namespace Model
      * <p>The settings for the replication task.</p>
      */
     inline ReplicationTask& WithReplicationTaskSettings(const char* value) { SetReplicationTaskSettings(value); return *this;}
+
 
     /**
      * <p>The status of the replication task.</p>
@@ -353,6 +361,7 @@ namespace Model
      */
     inline ReplicationTask& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The last error (failure) message generated for the replication instance.</p>
      */
@@ -387,6 +396,7 @@ namespace Model
      * <p>The last error (failure) message generated for the replication instance.</p>
      */
     inline ReplicationTask& WithLastFailureMessage(const char* value) { SetLastFailureMessage(value); return *this;}
+
 
     /**
      * <p>The reason the replication task was stopped.</p>
@@ -423,6 +433,7 @@ namespace Model
      */
     inline ReplicationTask& WithStopReason(const char* value) { SetStopReason(value); return *this;}
 
+
     /**
      * <p>The date the replication task was created.</p>
      */
@@ -448,6 +459,7 @@ namespace Model
      */
     inline ReplicationTask& WithReplicationTaskCreationDate(Aws::Utils::DateTime&& value) { SetReplicationTaskCreationDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date the replication task is scheduled to start.</p>
      */
@@ -472,6 +484,7 @@ namespace Model
      * <p>The date the replication task is scheduled to start.</p>
      */
     inline ReplicationTask& WithReplicationTaskStartDate(Aws::Utils::DateTime&& value) { SetReplicationTaskStartDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
@@ -508,6 +521,7 @@ namespace Model
      */
     inline ReplicationTask& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
 
+
     /**
      * <p>The statistics for the task, including elapsed time, tables loaded, and table
      * errors.</p>
@@ -539,32 +553,46 @@ namespace Model
     inline ReplicationTask& WithReplicationTaskStats(ReplicationTaskStats&& value) { SetReplicationTaskStats(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_replicationTaskIdentifier;
     bool m_replicationTaskIdentifierHasBeenSet;
+
     Aws::String m_sourceEndpointArn;
     bool m_sourceEndpointArnHasBeenSet;
+
     Aws::String m_targetEndpointArn;
     bool m_targetEndpointArnHasBeenSet;
+
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet;
+
     MigrationTypeValue m_migrationType;
     bool m_migrationTypeHasBeenSet;
+
     Aws::String m_tableMappings;
     bool m_tableMappingsHasBeenSet;
+
     Aws::String m_replicationTaskSettings;
     bool m_replicationTaskSettingsHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_lastFailureMessage;
     bool m_lastFailureMessageHasBeenSet;
+
     Aws::String m_stopReason;
     bool m_stopReasonHasBeenSet;
+
     Aws::Utils::DateTime m_replicationTaskCreationDate;
     bool m_replicationTaskCreationDateHasBeenSet;
+
     Aws::Utils::DateTime m_replicationTaskStartDate;
     bool m_replicationTaskStartDateHasBeenSet;
+
     Aws::String m_replicationTaskArn;
     bool m_replicationTaskArnHasBeenSet;
+
     ReplicationTaskStats m_replicationTaskStats;
     bool m_replicationTaskStatsHasBeenSet;
   };

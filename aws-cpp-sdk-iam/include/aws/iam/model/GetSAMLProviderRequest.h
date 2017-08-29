@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to
      * get information about.</p> <p>For more information about ARNs, see <a
@@ -102,6 +103,7 @@ namespace Model
     inline GetSAMLProviderRequest& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
 
   private:
+
     Aws::String m_sAMLProviderArn;
     bool m_sAMLProviderArnHasBeenSet;
   };

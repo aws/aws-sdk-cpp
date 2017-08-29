@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
      * replicas of the object identified by the rule.
@@ -84,6 +85,7 @@ namespace Model
      */
     inline Destination& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     /**
      * The class of storage used to store the object.
      */
@@ -110,8 +112,10 @@ namespace Model
     inline Destination& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     StorageClass m_storageClass;
     bool m_storageClassHasBeenSet;
   };

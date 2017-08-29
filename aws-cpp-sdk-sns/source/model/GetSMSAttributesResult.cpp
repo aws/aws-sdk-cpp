@@ -31,12 +31,12 @@ GetSMSAttributesResult::GetSMSAttributesResult()
 {
 }
 
-GetSMSAttributesResult::GetSMSAttributesResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetSMSAttributesResult::GetSMSAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetSMSAttributesResult& GetSMSAttributesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetSMSAttributesResult& GetSMSAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

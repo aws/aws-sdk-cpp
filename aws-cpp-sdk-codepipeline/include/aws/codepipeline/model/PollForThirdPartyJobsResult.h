@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     PollForThirdPartyJobsResult();
-    PollForThirdPartyJobsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PollForThirdPartyJobsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PollForThirdPartyJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PollForThirdPartyJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the jobs to take action on.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline PollForThirdPartyJobsResult& AddJobs(ThirdPartyJob&& value) { m_jobs.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ThirdPartyJob> m_jobs;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The ID of the backup that you want to use to restore a server. </p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline RestoreServerRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
 
+
     /**
      * <p> The name of the server that you want to restore. </p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p> The name of the server that you want to restore. </p>
      */
     inline RestoreServerRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
+
 
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
@@ -169,6 +172,7 @@ namespace Model
      */
     inline RestoreServerRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
      * if the administrator no longer has the SSH key. </p>
@@ -212,12 +216,16 @@ namespace Model
     inline RestoreServerRequest& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
 
   private:
+
     Aws::String m_backupId;
     bool m_backupIdHasBeenSet;
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_keyPair;
     bool m_keyPairHasBeenSet;
   };

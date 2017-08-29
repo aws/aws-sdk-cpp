@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The replication group identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 20
@@ -108,6 +109,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 
+
     /**
      * <p>A user-created description for the replication group.</p>
      */
@@ -142,6 +144,7 @@ namespace Model
      * <p>A user-created description for the replication group.</p>
      */
     inline CreateReplicationGroupRequest& WithReplicationGroupDescription(const char* value) { SetReplicationGroupDescription(value); return *this;}
+
 
     /**
      * <p>The identifier of the cache cluster that serves as the primary for this
@@ -206,6 +209,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& WithPrimaryClusterId(const char* value) { SetPrimaryClusterId(value); return *this;}
 
+
     /**
      * <p>Specifies whether a read-only replica is automatically promoted to read/write
      * primary if the existing primary fails.</p> <p>If <code>true</code>, Multi-AZ is
@@ -245,6 +249,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
 
+
     /**
      * <p>The number of clusters this replication group initially has.</p> <p>This
      * parameter is not used if there is more than one node group (shard). You should
@@ -280,6 +285,7 @@ namespace Model
      * value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).</p>
      */
     inline CreateReplicationGroupRequest& WithNumCacheClusters(int value) { SetNumCacheClusters(value); return *this;}
+
 
     /**
      * <p>A list of EC2 Availability Zones in which the replication group's cache
@@ -401,6 +407,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& AddPreferredCacheClusterAZs(const char* value) { m_preferredCacheClusterAZsHasBeenSet = true; m_preferredCacheClusterAZs.push_back(value); return *this; }
 
+
     /**
      * <p>An optional parameter that specifies the number of node groups (shards) for
      * this Redis (cluster mode enabled) replication group. For Redis (cluster mode
@@ -422,6 +429,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& WithNumNodeGroups(int value) { SetNumNodeGroups(value); return *this;}
 
+
     /**
      * <p>An optional parameter that specifies the number of replica nodes in each node
      * group (shard). Valid values are 0 to 5.</p>
@@ -439,6 +447,7 @@ namespace Model
      * group (shard). Valid values are 0 to 5.</p>
      */
     inline CreateReplicationGroupRequest& WithReplicasPerNodeGroup(int value) { SetReplicasPerNodeGroup(value); return *this;}
+
 
     /**
      * <p>A list of node group (shard) configuration options. Each node group (shard)
@@ -509,6 +518,7 @@ namespace Model
      * can omit this parameter.</p>
      */
     inline CreateReplicationGroupRequest& AddNodeGroupConfiguration(NodeGroupConfiguration&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The compute and memory capacity of the nodes in the node group (shard).</p>
@@ -755,6 +765,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
+
     /**
      * <p>The name of the cache engine to be used for the cache clusters in this
      * replication group.</p>
@@ -796,6 +807,7 @@ namespace Model
      * replication group.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p>The version number of the cache engine to be used for the cache clusters in
@@ -887,6 +899,7 @@ namespace Model
      * and create it anew with the earlier engine version. </p>
      */
     inline CreateReplicationGroupRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
 
     /**
      * <p>The name of the parameter group to associate with this replication group. If
@@ -986,6 +999,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
 
+
     /**
      * <p>The name of the cache subnet group to be used for the replication group.</p>
      * <important> <p>If you're going to launch your cluster in an Amazon VPC, you need
@@ -1056,6 +1070,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>A list of cache security group names to associate with this replication
      * group.</p>
@@ -1103,6 +1118,7 @@ namespace Model
      * group.</p>
      */
     inline CreateReplicationGroupRequest& AddCacheSecurityGroupNames(const char* value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
+
 
     /**
      * <p>One or more Amazon VPC security groups associated with this replication
@@ -1160,6 +1176,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>A list of cost allocation tags to be added to this resource. A tag is a
      * key-value pair. A tag key must be accompanied by a tag value.</p>
@@ -1201,6 +1218,7 @@ namespace Model
      * key-value pair. A tag key must be accompanied by a tag value.</p>
      */
     inline CreateReplicationGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
@@ -1306,6 +1324,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& AddSnapshotArns(const char* value) { m_snapshotArnsHasBeenSet = true; m_snapshotArns.push_back(value); return *this; }
 
+
     /**
      * <p>The name of a snapshot from which to restore data into the new replication
      * group. The snapshot status changes to <code>restoring</code> while the new
@@ -1361,6 +1380,7 @@ namespace Model
      * if the <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline CreateReplicationGroupRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
+
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
@@ -1474,6 +1494,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The port number on which each member of the replication group accepts
      * connections.</p>
@@ -1491,6 +1512,7 @@ namespace Model
      * connections.</p>
      */
     inline CreateReplicationGroupRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -1541,6 +1563,7 @@ namespace Model
      */
     inline CreateReplicationGroupRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
 
+
     /**
      * <p>This parameter is currently disabled.</p>
      */
@@ -1555,6 +1578,7 @@ namespace Model
      * <p>This parameter is currently disabled.</p>
      */
     inline CreateReplicationGroupRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>The number of days for which ElastiCache retains automatic snapshots before
@@ -1585,6 +1609,7 @@ namespace Model
      * disabled for this cache cluster).</p>
      */
     inline CreateReplicationGroupRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
+
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -1648,6 +1673,7 @@ namespace Model
      * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline CreateReplicationGroupRequest& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
+
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
@@ -1727,56 +1753,82 @@ namespace Model
     inline CreateReplicationGroupRequest& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}
 
   private:
+
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
     Aws::String m_replicationGroupDescription;
     bool m_replicationGroupDescriptionHasBeenSet;
+
     Aws::String m_primaryClusterId;
     bool m_primaryClusterIdHasBeenSet;
+
     bool m_automaticFailoverEnabled;
     bool m_automaticFailoverEnabledHasBeenSet;
+
     int m_numCacheClusters;
     bool m_numCacheClustersHasBeenSet;
+
     Aws::Vector<Aws::String> m_preferredCacheClusterAZs;
     bool m_preferredCacheClusterAZsHasBeenSet;
+
     int m_numNodeGroups;
     bool m_numNodeGroupsHasBeenSet;
+
     int m_replicasPerNodeGroup;
     bool m_replicasPerNodeGroupHasBeenSet;
+
     Aws::Vector<NodeGroupConfiguration> m_nodeGroupConfiguration;
     bool m_nodeGroupConfigurationHasBeenSet;
+
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_cacheParameterGroupName;
     bool m_cacheParameterGroupNameHasBeenSet;
+
     Aws::String m_cacheSubnetGroupName;
     bool m_cacheSubnetGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_cacheSecurityGroupNames;
     bool m_cacheSecurityGroupNamesHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Vector<Aws::String> m_snapshotArns;
     bool m_snapshotArnsHasBeenSet;
+
     Aws::String m_snapshotName;
     bool m_snapshotNameHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_notificationTopicArn;
     bool m_notificationTopicArnHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     int m_snapshotRetentionLimit;
     bool m_snapshotRetentionLimitHasBeenSet;
+
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;
+
     Aws::String m_authToken;
     bool m_authTokenHasBeenSet;
   };

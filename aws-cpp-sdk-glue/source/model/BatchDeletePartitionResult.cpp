@@ -30,12 +30,12 @@ BatchDeletePartitionResult::BatchDeletePartitionResult()
 {
 }
 
-BatchDeletePartitionResult::BatchDeletePartitionResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchDeletePartitionResult::BatchDeletePartitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchDeletePartitionResult& BatchDeletePartitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchDeletePartitionResult& BatchDeletePartitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Errors"))

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Maintenance Window the target should be registered with.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
+
     /**
      * <p>The type of target being registered with the Maintenance Window.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The type of target being registered with the Maintenance Window.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithResourceType(MaintenanceWindowResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
@@ -149,6 +152,7 @@ namespace Model
      */
     inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
      * while running tasks for these targets in this Maintenance Window.</p>
@@ -191,6 +195,7 @@ namespace Model
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
+
     /**
      * <p>An optional name for the target.</p>
      */
@@ -226,6 +231,7 @@ namespace Model
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>An optional description for the target.</p>
      */
@@ -260,6 +266,7 @@ namespace Model
      * <p>An optional description for the target.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>User-provided idempotency token.</p>
@@ -297,18 +304,25 @@ namespace Model
     inline RegisterTargetWithMaintenanceWindowRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     MaintenanceWindowResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_ownerInformation;
     bool m_ownerInformationHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
   };

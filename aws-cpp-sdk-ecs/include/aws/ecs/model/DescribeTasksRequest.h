@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the task to describe. If you do not specify a cluster, the default cluster is
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeTasksRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
+
     /**
      * <p>A list of up to 100 task IDs or full Amazon Resource Name (ARN) entries.</p>
      */
@@ -127,8 +129,10 @@ namespace Model
     inline DescribeTasksRequest& AddTasks(const char* value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::Vector<Aws::String> m_tasks;
     bool m_tasksHasBeenSet;
   };

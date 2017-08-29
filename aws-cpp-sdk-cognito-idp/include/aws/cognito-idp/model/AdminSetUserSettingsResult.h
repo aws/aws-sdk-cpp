@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     AdminSetUserSettingsResult();
-    AdminSetUserSettingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminSetUserSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminSetUserSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminSetUserSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

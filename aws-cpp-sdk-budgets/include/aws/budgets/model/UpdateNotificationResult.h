@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     UpdateNotificationResult();
-    UpdateNotificationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateNotificationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateNotificationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateNotificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

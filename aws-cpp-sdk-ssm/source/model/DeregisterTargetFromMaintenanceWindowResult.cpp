@@ -30,12 +30,12 @@ DeregisterTargetFromMaintenanceWindowResult::DeregisterTargetFromMaintenanceWind
 {
 }
 
-DeregisterTargetFromMaintenanceWindowResult::DeregisterTargetFromMaintenanceWindowResult(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterTargetFromMaintenanceWindowResult::DeregisterTargetFromMaintenanceWindowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeregisterTargetFromMaintenanceWindowResult& DeregisterTargetFromMaintenanceWindowResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterTargetFromMaintenanceWindowResult& DeregisterTargetFromMaintenanceWindowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WindowId"))

@@ -30,12 +30,12 @@ GetGroupVersionResult::GetGroupVersionResult()
 {
 }
 
-GetGroupVersionResult::GetGroupVersionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetGroupVersionResult::GetGroupVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetGroupVersionResult& GetGroupVersionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetGroupVersionResult& GetGroupVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Arn"))

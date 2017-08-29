@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeLoadBalancerAttributesResult();
-    DescribeLoadBalancerAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeLoadBalancerAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeLoadBalancerAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeLoadBalancerAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the load balancer attributes.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline DescribeLoadBalancerAttributesResult& WithLoadBalancerAttributes(LoadBalancerAttributes&& value) { SetLoadBalancerAttributes(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline DescribeLoadBalancerAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     LoadBalancerAttributes m_loadBalancerAttributes;
+
     ResponseMetadata m_responseMetadata;
   };
 

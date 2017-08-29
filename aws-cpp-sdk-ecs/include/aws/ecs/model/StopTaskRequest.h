@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the task to stop. If you do not specify a cluster, the default cluster is
@@ -85,6 +86,7 @@ namespace Model
      */
     inline StopTaskRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
+
     /**
      * <p>The task ID or full Amazon Resource Name (ARN) entry of the task to stop.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The task ID or full Amazon Resource Name (ARN) entry of the task to stop.</p>
      */
     inline StopTaskRequest& WithTask(const char* value) { SetTask(value); return *this;}
+
 
     /**
      * <p>An optional message specified when a task is stopped. For example, if you are
@@ -184,10 +187,13 @@ namespace Model
     inline StopTaskRequest& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_task;
     bool m_taskHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

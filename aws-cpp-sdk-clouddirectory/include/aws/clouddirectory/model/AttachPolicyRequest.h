@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where both objects reside. For more information, see <a>arns</a>.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline AttachPolicyRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>The reference that is associated with the policy object.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p>The reference that is associated with the policy object.</p>
      */
     inline AttachPolicyRequest& WithPolicyReference(ObjectReference&& value) { SetPolicyReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The reference that identifies the object to which the policy will be
@@ -135,10 +138,13 @@ namespace Model
     inline AttachPolicyRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_policyReference;
     bool m_policyReferenceHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
   };

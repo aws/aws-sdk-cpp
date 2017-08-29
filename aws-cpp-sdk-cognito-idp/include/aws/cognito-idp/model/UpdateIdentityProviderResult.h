@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateIdentityProviderResult();
-    UpdateIdentityProviderResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateIdentityProviderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateIdentityProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateIdentityProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identity provider object.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateIdentityProviderResult& WithIdentityProvider(IdentityProviderType&& value) { SetIdentityProvider(std::move(value)); return *this;}
 
   private:
+
     IdentityProviderType m_identityProvider;
   };
 

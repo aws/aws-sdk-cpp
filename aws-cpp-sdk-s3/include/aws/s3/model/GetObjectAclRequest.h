@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -64,6 +65,7 @@ namespace Model
     
     inline GetObjectAclRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -84,6 +86,7 @@ namespace Model
 
     
     inline GetObjectAclRequest& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * VersionId used to reference a specific version of the object.
@@ -120,6 +123,7 @@ namespace Model
      */
     inline GetObjectAclRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
@@ -136,12 +140,16 @@ namespace Model
     inline GetObjectAclRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
   };

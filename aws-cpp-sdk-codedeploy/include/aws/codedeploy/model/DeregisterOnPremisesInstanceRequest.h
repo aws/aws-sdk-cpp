@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the on-premises instance to deregister.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DeregisterOnPremisesInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
   private:
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
   };

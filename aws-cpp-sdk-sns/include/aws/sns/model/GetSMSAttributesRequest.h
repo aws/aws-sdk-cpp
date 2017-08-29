@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A list of the individual attribute names, such as
      * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all
@@ -116,6 +117,7 @@ namespace Model
     inline GetSMSAttributesRequest& AddAttributes(const char* value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
   };

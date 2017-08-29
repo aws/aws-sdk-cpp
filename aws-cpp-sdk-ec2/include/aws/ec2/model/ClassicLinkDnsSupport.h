@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
      */
     inline ClassicLinkDnsSupport& WithClassicLinkDnsSupported(bool value) { SetClassicLinkDnsSupported(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -100,8 +102,10 @@ namespace Model
     inline ClassicLinkDnsSupport& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     bool m_classicLinkDnsSupported;
     bool m_classicLinkDnsSupportedHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

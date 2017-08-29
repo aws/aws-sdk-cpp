@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_IOTDATAPLANE_API IoTDataPlaneErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_IOTDATAPLANE_API IoTDataPlaneErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace IoTDataPlane
+} // namespace Client
 } // namespace Aws

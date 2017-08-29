@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListUsersResult();
-    ListUsersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListUsersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The users returned in the request to list users.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The users returned in the request to list users.</p>
      */
     inline ListUsersResult& AddUsers(UserType&& value) { m_users.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -126,7 +128,9 @@ namespace Model
     inline ListUsersResult& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
   private:
+
     Aws::Vector<UserType> m_users;
+
     Aws::String m_paginationToken;
   };
 

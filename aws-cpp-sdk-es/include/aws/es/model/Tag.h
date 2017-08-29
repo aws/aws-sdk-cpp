@@ -45,6 +45,7 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be
      * unique for the Elasticsearch domain to which they are attached.</p>
@@ -86,6 +87,7 @@ namespace Model
      * unique for the Elasticsearch domain to which they are attached.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding
@@ -144,8 +146,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

@@ -175,10 +175,10 @@ namespace Model
         class UpdateUserProfileRequest;
         class UpdateVolumeRequest;
 
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> AssignInstanceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> AssignVolumeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> AssociateElasticIpOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> AttachElasticLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> AssignInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> AssignVolumeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> AssociateElasticIpOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> AttachElasticLoadBalancerOutcome;
         typedef Aws::Utils::Outcome<CloneStackResult, Aws::Client::AWSError<OpsWorksErrors>> CloneStackOutcome;
         typedef Aws::Utils::Outcome<CreateAppResult, Aws::Client::AWSError<OpsWorksErrors>> CreateAppOutcome;
         typedef Aws::Utils::Outcome<CreateDeploymentResult, Aws::Client::AWSError<OpsWorksErrors>> CreateDeploymentOutcome;
@@ -186,16 +186,16 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateLayerResult, Aws::Client::AWSError<OpsWorksErrors>> CreateLayerOutcome;
         typedef Aws::Utils::Outcome<CreateStackResult, Aws::Client::AWSError<OpsWorksErrors>> CreateStackOutcome;
         typedef Aws::Utils::Outcome<CreateUserProfileResult, Aws::Client::AWSError<OpsWorksErrors>> CreateUserProfileOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteAppOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteInstanceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteLayerOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteStackOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteUserProfileOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterEcsClusterOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterElasticIpOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterInstanceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterRdsDbInstanceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterVolumeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteAppOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteLayerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeleteUserProfileOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterEcsClusterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterElasticIpOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterRdsDbInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DeregisterVolumeOutcome;
         typedef Aws::Utils::Outcome<DescribeAgentVersionsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeAgentVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeAppsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeAppsOutcome;
         typedef Aws::Utils::Outcome<DescribeCommandsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeCommandsOutcome;
@@ -217,37 +217,37 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeTimeBasedAutoScalingResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeTimeBasedAutoScalingOutcome;
         typedef Aws::Utils::Outcome<DescribeUserProfilesResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeUserProfilesOutcome;
         typedef Aws::Utils::Outcome<DescribeVolumesResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeVolumesOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DetachElasticLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> DisassociateElasticIpOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DetachElasticLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> DisassociateElasticIpOutcome;
         typedef Aws::Utils::Outcome<GetHostnameSuggestionResult, Aws::Client::AWSError<OpsWorksErrors>> GetHostnameSuggestionOutcome;
         typedef Aws::Utils::Outcome<GrantAccessResult, Aws::Client::AWSError<OpsWorksErrors>> GrantAccessOutcome;
         typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<OpsWorksErrors>> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> RebootInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> RebootInstanceOutcome;
         typedef Aws::Utils::Outcome<RegisterEcsClusterResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterEcsClusterOutcome;
         typedef Aws::Utils::Outcome<RegisterElasticIpResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterElasticIpOutcome;
         typedef Aws::Utils::Outcome<RegisterInstanceResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterInstanceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterRdsDbInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterRdsDbInstanceOutcome;
         typedef Aws::Utils::Outcome<RegisterVolumeResult, Aws::Client::AWSError<OpsWorksErrors>> RegisterVolumeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> SetLoadBasedAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> SetPermissionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> SetTimeBasedAutoScalingOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> StartInstanceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> StartStackOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> StopInstanceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> StopStackOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UnassignInstanceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UnassignVolumeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateAppOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateElasticIpOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateInstanceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateLayerOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateMyUserProfileOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateRdsDbInstanceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateStackOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateUserProfileOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateVolumeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> SetLoadBasedAutoScalingOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> SetPermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> SetTimeBasedAutoScalingOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> StartInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> StartStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> StopInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> StopStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UnassignInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UnassignVolumeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateAppOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateElasticIpOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateLayerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateMyUserProfileOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateRdsDbInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateUserProfileOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<OpsWorksErrors>> UpdateVolumeOutcome;
 
         typedef std::future<AssignInstanceOutcome> AssignInstanceOutcomeCallable;
         typedef std::future<AssignVolumeOutcome> AssignVolumeOutcomeCallable;
@@ -461,22 +461,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OpsWorksClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        OpsWorksClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OpsWorksClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        OpsWorksClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        OpsWorksClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        OpsWorksClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~OpsWorksClient();
+
 
         /**
          * <p>Assign a registered instance to a layer.</p> <ul> <li> <p>You can assign
@@ -3774,7 +3775,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AssignInstanceAsyncHelper(const Model::AssignInstanceRequest& request, const AssignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -51,12 +51,12 @@ GetSdkResult& GetSdkResult::operator=(GetSdkResult&& toMove)
    return *this;
 }
 
-GetSdkResult::GetSdkResult(AmazonWebServiceResult<ResponseStream>&& result)
+GetSdkResult::GetSdkResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
 }
 
-GetSdkResult& GetSdkResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+GetSdkResult& GetSdkResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_body = result.TakeOwnershipOfPayload();
 

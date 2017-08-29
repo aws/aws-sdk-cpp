@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline PutResourceAttributesRequest& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
 
+
     /**
      * <p>Unique identifier that references the migration task.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>Unique identifier that references the migration task.</p>
      */
     inline PutResourceAttributesRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
+
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
@@ -157,6 +160,7 @@ namespace Model
      */
     inline PutResourceAttributesRequest& AddResourceAttributeList(ResourceAttribute&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Optional boolean flag to indicate whether any effect should take place. Used
      * to test if the caller has permission to make the call.</p>
@@ -176,12 +180,16 @@ namespace Model
     inline PutResourceAttributesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_progressUpdateStream;
     bool m_progressUpdateStreamHasBeenSet;
+
     Aws::String m_migrationTaskName;
     bool m_migrationTaskNameHasBeenSet;
+
     Aws::Vector<ResourceAttribute> m_resourceAttributeList;
     bool m_resourceAttributeListHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

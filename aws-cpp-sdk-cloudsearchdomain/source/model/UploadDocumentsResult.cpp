@@ -32,14 +32,14 @@ UploadDocumentsResult::UploadDocumentsResult() :
 {
 }
 
-UploadDocumentsResult::UploadDocumentsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UploadDocumentsResult::UploadDocumentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_adds(0),
     m_deletes(0)
 {
   *this = result;
 }
 
-UploadDocumentsResult& UploadDocumentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UploadDocumentsResult& UploadDocumentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("status"))

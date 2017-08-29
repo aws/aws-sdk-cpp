@@ -30,12 +30,12 @@ StartSchemaExtensionResult::StartSchemaExtensionResult()
 {
 }
 
-StartSchemaExtensionResult::StartSchemaExtensionResult(const AmazonWebServiceResult<JsonValue>& result)
+StartSchemaExtensionResult::StartSchemaExtensionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartSchemaExtensionResult& StartSchemaExtensionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartSchemaExtensionResult& StartSchemaExtensionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SchemaExtensionId"))

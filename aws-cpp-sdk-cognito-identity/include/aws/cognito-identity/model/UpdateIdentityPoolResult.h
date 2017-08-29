@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     UpdateIdentityPoolResult();
-    UpdateIdentityPoolResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateIdentityPoolResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateIdentityPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateIdentityPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline UpdateIdentityPoolResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * <p>A string that you provide.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline UpdateIdentityPoolResult& WithIdentityPoolName(const char* value) { SetIdentityPoolName(value); return *this;}
 
+
     /**
      * <p>TRUE if the identity pool supports unauthenticated logins.</p>
      */
@@ -134,6 +137,7 @@ namespace Model
      * <p>TRUE if the identity pool supports unauthenticated logins.</p>
      */
     inline UpdateIdentityPoolResult& WithAllowUnauthenticatedIdentities(bool value) { SetAllowUnauthenticatedIdentities(value); return *this;}
+
 
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -195,6 +199,7 @@ namespace Model
      */
     inline UpdateIdentityPoolResult& AddSupportedLoginProviders(const char* key, const char* value) { m_supportedLoginProviders.emplace(key, value); return *this; }
 
+
     /**
      * <p>The "domain" by which Cognito will refer to your users.</p>
      */
@@ -229,6 +234,7 @@ namespace Model
      * <p>The "domain" by which Cognito will refer to your users.</p>
      */
     inline UpdateIdentityPoolResult& WithDeveloperProviderName(const char* value) { SetDeveloperProviderName(value); return *this;}
+
 
     /**
      * <p>A list of OpendID Connect provider ARNs.</p>
@@ -269,6 +275,7 @@ namespace Model
      * <p>A list of OpendID Connect provider ARNs.</p>
      */
     inline UpdateIdentityPoolResult& AddOpenIdConnectProviderARNs(const char* value) { m_openIdConnectProviderARNs.push_back(value); return *this; }
+
 
     /**
      * <p>A list representing an Amazon Cognito Identity User Pool and its client
@@ -311,6 +318,7 @@ namespace Model
      * ID.</p>
      */
     inline UpdateIdentityPoolResult& AddCognitoIdentityProviders(CognitoIdentityProvider&& value) { m_cognitoIdentityProviders.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
@@ -361,13 +369,21 @@ namespace Model
     inline UpdateIdentityPoolResult& AddSamlProviderARNs(const char* value) { m_samlProviderARNs.push_back(value); return *this; }
 
   private:
+
     Aws::String m_identityPoolId;
+
     Aws::String m_identityPoolName;
+
     bool m_allowUnauthenticatedIdentities;
+
     Aws::Map<Aws::String, Aws::String> m_supportedLoginProviders;
+
     Aws::String m_developerProviderName;
+
     Aws::Vector<Aws::String> m_openIdConnectProviderARNs;
+
     Aws::Vector<CognitoIdentityProvider> m_cognitoIdentityProviders;
+
     Aws::Vector<Aws::String> m_samlProviderARNs;
   };
 

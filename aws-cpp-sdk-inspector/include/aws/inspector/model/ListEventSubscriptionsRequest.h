@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the assessment template for which you want to list the existing
      * event subscriptions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * event subscriptions.</p>
      */
     inline ListEventSubscriptionsRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -141,6 +143,7 @@ namespace Model
      */
     inline ListEventSubscriptionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 10. The maximum value is 500.</p>
@@ -160,10 +163,13 @@ namespace Model
     inline ListEventSubscriptionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

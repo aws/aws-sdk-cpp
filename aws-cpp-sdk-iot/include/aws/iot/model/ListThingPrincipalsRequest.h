@@ -37,6 +37,7 @@ namespace Model
     ListThingPrincipalsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the thing.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline ListThingPrincipalsRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
   private:
+
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
   };

@@ -30,12 +30,12 @@ UpdateLoggerDefinitionResult::UpdateLoggerDefinitionResult()
 {
 }
 
-UpdateLoggerDefinitionResult::UpdateLoggerDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateLoggerDefinitionResult::UpdateLoggerDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateLoggerDefinitionResult& UpdateLoggerDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateLoggerDefinitionResult& UpdateLoggerDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
      * action.</p>
@@ -83,6 +84,7 @@ namespace Model
      * action.</p>
      */
     inline ListEndpointsByPlatformApplicationRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
+
 
     /**
      * <p>NextToken string is used when calling ListEndpointsByPlatformApplication
@@ -134,8 +136,10 @@ namespace Model
     inline ListEndpointsByPlatformApplicationRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_platformApplicationArn;
     bool m_platformApplicationArnHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

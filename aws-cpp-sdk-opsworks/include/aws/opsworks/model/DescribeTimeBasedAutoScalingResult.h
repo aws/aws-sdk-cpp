@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeTimeBasedAutoScalingResult();
-    DescribeTimeBasedAutoScalingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTimeBasedAutoScalingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTimeBasedAutoScalingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTimeBasedAutoScalingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeTimeBasedAutoScalingResult& AddTimeBasedAutoScalingConfigurations(TimeBasedAutoScalingConfiguration&& value) { m_timeBasedAutoScalingConfigurations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<TimeBasedAutoScalingConfiguration> m_timeBasedAutoScalingConfigurations;
   };
 

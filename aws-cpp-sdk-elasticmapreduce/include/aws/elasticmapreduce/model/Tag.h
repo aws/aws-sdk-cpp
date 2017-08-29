@@ -50,6 +50,7 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A user-defined key, which is the minimum required information for a valid
      * tag. For more information, see <a
@@ -105,6 +106,7 @@ namespace Model
      * Amazon EMR Resources</a>. </p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>A user-defined value, which is optional in a tag. For more information, see
@@ -163,8 +165,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

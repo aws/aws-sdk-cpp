@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the project whose name you wish to
      * update.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline UpdateProjectRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>A string representing the new name of the project that you are updating.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      */
     inline UpdateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The number of minutes a test run in the project will execute before it times
      * out.</p>
@@ -136,10 +139,13 @@ namespace Model
     inline UpdateProjectRequest& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     int m_defaultJobTimeoutMinutes;
     bool m_defaultJobTimeoutMinutesHasBeenSet;
   };

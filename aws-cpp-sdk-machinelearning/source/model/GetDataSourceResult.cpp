@@ -35,7 +35,7 @@ GetDataSourceResult::GetDataSourceResult() :
 {
 }
 
-GetDataSourceResult::GetDataSourceResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetDataSourceResult::GetDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_dataSizeInBytes(0),
     m_numberOfFiles(0),
     m_status(EntityStatus::NOT_SET),
@@ -45,7 +45,7 @@ GetDataSourceResult::GetDataSourceResult(const AmazonWebServiceResult<JsonValue>
   *this = result;
 }
 
-GetDataSourceResult& GetDataSourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDataSourceResult& GetDataSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DataSourceId"))

@@ -47,6 +47,7 @@ namespace Model
     EbsBlockDevice& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
@@ -76,6 +77,7 @@ namespace Model
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
     inline EbsBlockDevice& WithVolumeSpecification(VolumeSpecification&& value) { SetVolumeSpecification(std::move(value)); return *this;}
+
 
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline EbsBlockDevice& WithDevice(const char* value) { SetDevice(value); return *this;}
 
   private:
+
     VolumeSpecification m_volumeSpecification;
     bool m_volumeSpecificationHasBeenSet;
+
     Aws::String m_device;
     bool m_deviceHasBeenSet;
   };

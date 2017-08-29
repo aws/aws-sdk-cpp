@@ -30,12 +30,12 @@ CreateQualificationTypeResult::CreateQualificationTypeResult()
 {
 }
 
-CreateQualificationTypeResult::CreateQualificationTypeResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateQualificationTypeResult::CreateQualificationTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateQualificationTypeResult& CreateQualificationTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateQualificationTypeResult& CreateQualificationTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("QualificationType"))

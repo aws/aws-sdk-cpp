@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListCreatedArtifactsResult();
-    ListCreatedArtifactsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCreatedArtifactsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCreatedArtifactsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCreatedArtifactsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If there are more created artifacts than the max result, return the next
@@ -84,6 +85,7 @@ namespace Model
      * token to be passed to the next call as a bookmark of where to start from.</p>
      */
     inline ListCreatedArtifactsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>List of created artifacts up to the maximum number of results specified in
@@ -128,7 +130,9 @@ namespace Model
     inline ListCreatedArtifactsResult& AddCreatedArtifactList(CreatedArtifact&& value) { m_createdArtifactList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<CreatedArtifact> m_createdArtifactList;
   };
 

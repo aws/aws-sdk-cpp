@@ -54,6 +54,7 @@ namespace Model
     Crawler& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>Crawler</code> name.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The <code>Crawler</code> name.</p>
      */
     inline Crawler& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The ARN of an IAM role used to access customer resources such as data in
@@ -131,6 +133,7 @@ namespace Model
      */
     inline Crawler& WithRole(const char* value) { SetRole(value); return *this;}
 
+
     /**
      * <p>A collection of targets to crawl.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>A collection of targets to crawl.</p>
      */
     inline Crawler& WithTargets(CrawlerTargets&& value) { SetTargets(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>Database</code> where this Crawler's output should be stored.</p>
@@ -191,6 +195,7 @@ namespace Model
      */
     inline Crawler& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>A description of this Crawler and where it should be used.</p>
      */
@@ -225,6 +230,7 @@ namespace Model
      * <p>A description of this Crawler and where it should be used.</p>
      */
     inline Crawler& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of custom <code>Classifier</code>s associated with this Crawler.</p>
@@ -266,6 +272,7 @@ namespace Model
      */
     inline Crawler& AddClassifiers(const char* value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(value); return *this; }
 
+
     /**
      * <p>Sets policy for the crawler's update and delete behavior.</p>
      */
@@ -291,6 +298,7 @@ namespace Model
      */
     inline Crawler& WithSchemaChangePolicy(SchemaChangePolicy&& value) { SetSchemaChangePolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether this Crawler is running, or whether a run is pending.</p>
      */
@@ -315,6 +323,7 @@ namespace Model
      * <p>Indicates whether this Crawler is running, or whether a run is pending.</p>
      */
     inline Crawler& WithState(CrawlerState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The table prefix used for catalog tables created.</p>
@@ -351,6 +360,7 @@ namespace Model
      */
     inline Crawler& WithTablePrefix(const char* value) { SetTablePrefix(value); return *this;}
 
+
     /**
      * <p>A <code>Schedule</code> object that specifies the schedule on which this
      * Crawler is to be run.</p>
@@ -381,6 +391,7 @@ namespace Model
      */
     inline Crawler& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
 
+
     /**
      * <p>If this Crawler is running, contains the total time elapsed since the last
      * crawl began.</p>
@@ -398,6 +409,7 @@ namespace Model
      * crawl began.</p>
      */
     inline Crawler& WithCrawlElapsedTime(long long value) { SetCrawlElapsedTime(value); return *this;}
+
 
     /**
      * <p>The time when the Crawler was created.</p>
@@ -424,6 +436,7 @@ namespace Model
      */
     inline Crawler& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time the Crawler was last updated.</p>
      */
@@ -448,6 +461,7 @@ namespace Model
      * <p>The time the Crawler was last updated.</p>
      */
     inline Crawler& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the last crawl, and potentially error information if an error
@@ -479,6 +493,7 @@ namespace Model
      */
     inline Crawler& WithLastCrawl(LastCrawlInfo&& value) { SetLastCrawl(std::move(value)); return *this;}
 
+
     /**
      * <p>The version of the Crawler.</p>
      */
@@ -495,34 +510,49 @@ namespace Model
     inline Crawler& WithVersion(long long value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     CrawlerTargets m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_classifiers;
     bool m_classifiersHasBeenSet;
+
     SchemaChangePolicy m_schemaChangePolicy;
     bool m_schemaChangePolicyHasBeenSet;
+
     CrawlerState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_tablePrefix;
     bool m_tablePrefixHasBeenSet;
+
     Schedule m_schedule;
     bool m_scheduleHasBeenSet;
+
     long long m_crawlElapsedTime;
     bool m_crawlElapsedTimeHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdated;
     bool m_lastUpdatedHasBeenSet;
+
     LastCrawlInfo m_lastCrawl;
     bool m_lastCrawlHasBeenSet;
+
     long long m_version;
     bool m_versionHasBeenSet;
   };

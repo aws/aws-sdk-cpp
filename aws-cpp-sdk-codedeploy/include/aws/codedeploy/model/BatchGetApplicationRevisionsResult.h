@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     BatchGetApplicationRevisionsResult();
-    BatchGetApplicationRevisionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetApplicationRevisionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetApplicationRevisionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetApplicationRevisionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the application that corresponds to the revisions.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline BatchGetApplicationRevisionsResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>Information about errors that may have occurred during the API call.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>Information about errors that may have occurred during the API call.</p>
      */
     inline BatchGetApplicationRevisionsResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+
 
     /**
      * <p>Additional information about the revisions, including the type and
@@ -162,8 +165,11 @@ namespace Model
     inline BatchGetApplicationRevisionsResult& AddRevisions(RevisionInfo&& value) { m_revisions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_applicationName;
+
     Aws::String m_errorMessage;
+
     Aws::Vector<RevisionInfo> m_revisions;
   };
 

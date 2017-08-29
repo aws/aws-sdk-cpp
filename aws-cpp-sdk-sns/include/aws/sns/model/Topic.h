@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The topic's ARN.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
     inline Topic& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
   };

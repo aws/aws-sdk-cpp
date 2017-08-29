@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeLayersResult();
-    DescribeLayersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLayersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLayersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLayersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>Layer</code> objects that describe the layers.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeLayersResult& AddLayers(Layer&& value) { m_layers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Layer> m_layers;
   };
 

@@ -38,6 +38,7 @@ namespace Model
     UpdateFunctionCodeRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The existing Lambda function name whose code you want to replace.</p> <p> You
      * can specify a function name (for example, <code>Thumbnail</code>) or you can
@@ -122,6 +123,7 @@ namespace Model
      */
     inline UpdateFunctionCodeRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>The contents of your zip file containing your deployment package. If you are
      * using the web API directly, the contents of the zip file must be base64-encoded.
@@ -172,6 +174,7 @@ namespace Model
      */
     inline UpdateFunctionCodeRequest& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 
+
     /**
      * <p>Amazon S3 bucket name where the .zip file containing your deployment package
      * is stored. This bucket must reside in the same AWS Region where you are creating
@@ -221,6 +224,7 @@ namespace Model
      */
     inline UpdateFunctionCodeRequest& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
+
     /**
      * <p>The Amazon S3 object (the deployment package) key name you want to
      * upload.</p>
@@ -263,6 +267,7 @@ namespace Model
      */
     inline UpdateFunctionCodeRequest& WithS3Key(const char* value) { SetS3Key(value); return *this;}
 
+
     /**
      * <p>The Amazon S3 object (the deployment package) version you want to upload.</p>
      */
@@ -298,6 +303,7 @@ namespace Model
      */
     inline UpdateFunctionCodeRequest& WithS3ObjectVersion(const char* value) { SetS3ObjectVersion(value); return *this;}
 
+
     /**
      * <p>This boolean parameter can be used to request AWS Lambda to update the Lambda
      * function and publish a version as an atomic operation.</p>
@@ -315,6 +321,7 @@ namespace Model
      * function and publish a version as an atomic operation.</p>
      */
     inline UpdateFunctionCodeRequest& WithPublish(bool value) { SetPublish(value); return *this;}
+
 
     /**
      * <p>This boolean parameter can be used to test your request to AWS Lambda to
@@ -347,18 +354,25 @@ namespace Model
     inline UpdateFunctionCodeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::Utils::ByteBuffer m_zipFile;
     bool m_zipFileHasBeenSet;
+
     Aws::String m_s3Bucket;
     bool m_s3BucketHasBeenSet;
+
     Aws::String m_s3Key;
     bool m_s3KeyHasBeenSet;
+
     Aws::String m_s3ObjectVersion;
     bool m_s3ObjectVersionHasBeenSet;
+
     bool m_publish;
     bool m_publishHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

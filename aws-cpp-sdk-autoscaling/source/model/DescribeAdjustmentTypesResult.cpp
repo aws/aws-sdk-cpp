@@ -31,12 +31,12 @@ DescribeAdjustmentTypesResult::DescribeAdjustmentTypesResult()
 {
 }
 
-DescribeAdjustmentTypesResult::DescribeAdjustmentTypesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAdjustmentTypesResult::DescribeAdjustmentTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeAdjustmentTypesResult& DescribeAdjustmentTypesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAdjustmentTypesResult& DescribeAdjustmentTypesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

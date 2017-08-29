@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     EnableDirectoryResult();
-    EnableDirectoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableDirectoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the enabled directory.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline EnableDirectoryResult& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
   };
 

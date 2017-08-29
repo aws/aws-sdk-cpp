@@ -31,12 +31,12 @@ ListDeadLetterSourceQueuesResult::ListDeadLetterSourceQueuesResult()
 {
 }
 
-ListDeadLetterSourceQueuesResult::ListDeadLetterSourceQueuesResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListDeadLetterSourceQueuesResult::ListDeadLetterSourceQueuesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListDeadLetterSourceQueuesResult& ListDeadLetterSourceQueuesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListDeadLetterSourceQueuesResult& ListDeadLetterSourceQueuesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

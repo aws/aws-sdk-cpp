@@ -30,12 +30,12 @@ DeclineHandshakeResult::DeclineHandshakeResult()
 {
 }
 
-DeclineHandshakeResult::DeclineHandshakeResult(const AmazonWebServiceResult<JsonValue>& result)
+DeclineHandshakeResult::DeclineHandshakeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeclineHandshakeResult& DeclineHandshakeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeclineHandshakeResult& DeclineHandshakeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Handshake"))

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>This value is currently "read replication."</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DBInstanceStatusInfo& WithStatusType(const char* value) { SetStatusType(value); return *this;}
 
+
     /**
      * <p>Boolean value that is true if the instance is operating normally, or false if
      * the instance is in an error state.</p>
@@ -101,6 +103,7 @@ namespace Model
      * the instance is in an error state.</p>
      */
     inline DBInstanceStatusInfo& WithNormal(bool value) { SetNormal(value); return *this;}
+
 
     /**
      * <p>Status of the DB instance. For a StatusType of read replica, the values can
@@ -143,6 +146,7 @@ namespace Model
      * be replicating, error, stopped, or terminated.</p>
      */
     inline DBInstanceStatusInfo& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>Details of the error if there is an error for the instance. If the instance
@@ -187,12 +191,16 @@ namespace Model
     inline DBInstanceStatusInfo& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_statusType;
     bool m_statusTypeHasBeenSet;
+
     bool m_normal;
     bool m_normalHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

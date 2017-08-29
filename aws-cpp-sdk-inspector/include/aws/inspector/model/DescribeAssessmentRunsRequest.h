@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN that specifies the assessment run that you want to describe.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline DescribeAssessmentRunsRequest& AddAssessmentRunArns(const char* value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_assessmentRunArns;
     bool m_assessmentRunArnsHasBeenSet;
   };

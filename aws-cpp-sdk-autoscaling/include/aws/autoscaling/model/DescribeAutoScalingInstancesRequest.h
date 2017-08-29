@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The instances to describe; up to 50 instance IDs. If you omit this parameter,
      * all Auto Scaling instances are described. If you specify an ID that does not
@@ -99,6 +100,7 @@ namespace Model
      */
     inline DescribeAutoScalingInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of items to return with this call. The default value is 50
      * and the maximum value is 100.</p>
@@ -116,6 +118,7 @@ namespace Model
      * and the maximum value is 100.</p>
      */
     inline DescribeAutoScalingInstancesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -160,10 +163,13 @@ namespace Model
     inline DescribeAutoScalingInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

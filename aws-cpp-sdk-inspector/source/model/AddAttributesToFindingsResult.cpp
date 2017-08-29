@@ -30,12 +30,12 @@ AddAttributesToFindingsResult::AddAttributesToFindingsResult()
 {
 }
 
-AddAttributesToFindingsResult::AddAttributesToFindingsResult(const AmazonWebServiceResult<JsonValue>& result)
+AddAttributesToFindingsResult::AddAttributesToFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddAttributesToFindingsResult& AddAttributesToFindingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddAttributesToFindingsResult& AddAttributesToFindingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("failedItems"))

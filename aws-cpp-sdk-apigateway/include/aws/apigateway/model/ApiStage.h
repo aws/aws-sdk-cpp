@@ -46,6 +46,7 @@ namespace Model
     ApiStage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>API Id of the associated API stage in a usage plan.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>API Id of the associated API stage in a usage plan.</p>
      */
     inline ApiStage& WithApiId(const char* value) { SetApiId(value); return *this;}
+
 
     /**
      * <p>API stage name of the associated API stage in a usage plan.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline ApiStage& WithStage(const char* value) { SetStage(value); return *this;}
 
   private:
+
     Aws::String m_apiId;
     bool m_apiIdHasBeenSet;
+
     Aws::String m_stage;
     bool m_stageHasBeenSet;
   };

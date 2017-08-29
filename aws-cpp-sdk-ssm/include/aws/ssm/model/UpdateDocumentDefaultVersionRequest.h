@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of a custom document that you want to set as the default
      * version.</p>
@@ -77,6 +78,7 @@ namespace Model
      * version.</p>
      */
     inline UpdateDocumentDefaultVersionRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The version of a custom document that you want to set as the default
@@ -121,8 +123,10 @@ namespace Model
     inline UpdateDocumentDefaultVersionRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
   };

@@ -44,6 +44,7 @@ namespace Model
     SnapshotLimits& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The maximum number of manual snapshots allowed.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
      */
     inline SnapshotLimits& WithManualSnapshotsLimit(int value) { SetManualSnapshotsLimit(value); return *this;}
 
+
     /**
      * <p>The current number of manual snapshots of the directory.</p>
      */
@@ -73,6 +75,7 @@ namespace Model
      * <p>The current number of manual snapshots of the directory.</p>
      */
     inline SnapshotLimits& WithManualSnapshotsCurrentCount(int value) { SetManualSnapshotsCurrentCount(value); return *this;}
+
 
     /**
      * <p>Indicates if the manual snapshot limit has been reached.</p>
@@ -90,10 +93,13 @@ namespace Model
     inline SnapshotLimits& WithManualSnapshotsLimitReached(bool value) { SetManualSnapshotsLimitReached(value); return *this;}
 
   private:
+
     int m_manualSnapshotsLimit;
     bool m_manualSnapshotsLimitHasBeenSet;
+
     int m_manualSnapshotsCurrentCount;
     bool m_manualSnapshotsCurrentCountHasBeenSet;
+
     bool m_manualSnapshotsLimitReached;
     bool m_manualSnapshotsLimitReachedHasBeenSet;
   };

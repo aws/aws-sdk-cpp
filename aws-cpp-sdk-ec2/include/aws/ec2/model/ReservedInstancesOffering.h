@@ -58,6 +58,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
@@ -93,6 +94,7 @@ namespace Model
      */
     inline ReservedInstancesOffering& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The duration of the Reserved Instance, in seconds.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      */
     inline ReservedInstancesOffering& WithDuration(long long value) { SetDuration(value); return *this;}
 
+
     /**
      * <p>The purchase price of the Reserved Instance.</p>
      */
@@ -122,6 +125,7 @@ namespace Model
      * <p>The purchase price of the Reserved Instance.</p>
      */
     inline ReservedInstancesOffering& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
+
 
     /**
      * <p>The instance type on which the Reserved Instance can be used.</p>
@@ -148,6 +152,7 @@ namespace Model
      */
     inline ReservedInstancesOffering& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The Reserved Instance product platform description.</p>
      */
@@ -172,6 +177,7 @@ namespace Model
      * <p>The Reserved Instance product platform description.</p>
      */
     inline ReservedInstancesOffering& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Reserved Instance offering. This is the offering ID used in
@@ -222,6 +228,7 @@ namespace Model
      */
     inline ReservedInstancesOffering& WithReservedInstancesOfferingId(const char* value) { SetReservedInstancesOfferingId(value); return *this;}
 
+
     /**
      * <p>The usage price of the Reserved Instance, per hour.</p>
      */
@@ -236,6 +243,7 @@ namespace Model
      * <p>The usage price of the Reserved Instance, per hour.</p>
      */
     inline ReservedInstancesOffering& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
+
 
     /**
      * <p>The currency of the Reserved Instance offering you are purchasing. It's
@@ -272,6 +280,7 @@ namespace Model
      */
     inline ReservedInstancesOffering& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
+
     /**
      * <p>The tenancy of the instance.</p>
      */
@@ -297,6 +306,7 @@ namespace Model
      */
     inline ReservedInstancesOffering& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether the offering is available through the Reserved Instance
      * Marketplace (resale) or AWS. If it's a Reserved Instance Marketplace offering,
@@ -317,6 +327,7 @@ namespace Model
      * this is <code>true</code>.</p>
      */
     inline ReservedInstancesOffering& WithMarketplace(bool value) { SetMarketplace(value); return *this;}
+
 
     /**
      * <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the
@@ -353,6 +364,7 @@ namespace Model
      */
     inline ReservedInstancesOffering& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(std::move(value)); return *this;}
 
+
     /**
      * <p>The Reserved Instance offering type.</p>
      */
@@ -377,6 +389,7 @@ namespace Model
      * <p>The Reserved Instance offering type.</p>
      */
     inline ReservedInstancesOffering& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
+
 
     /**
      * <p>The pricing details of the Reserved Instance offering.</p>
@@ -413,6 +426,7 @@ namespace Model
      */
     inline ReservedInstancesOffering& AddPricingDetails(PricingDetail&& value) { m_pricingDetailsHasBeenSet = true; m_pricingDetails.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The recurring charge tag assigned to the resource.</p>
      */
@@ -448,6 +462,7 @@ namespace Model
      */
     inline ReservedInstancesOffering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Whether the Reserved Instance is applied to instances in a region or an
      * Availability Zone.</p>
@@ -479,34 +494,49 @@ namespace Model
     inline ReservedInstancesOffering& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     long long m_duration;
     bool m_durationHasBeenSet;
+
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
+
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     RIProductDescription m_productDescription;
     bool m_productDescriptionHasBeenSet;
+
     Aws::String m_reservedInstancesOfferingId;
     bool m_reservedInstancesOfferingIdHasBeenSet;
+
     double m_usagePrice;
     bool m_usagePriceHasBeenSet;
+
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet;
+
     Tenancy m_instanceTenancy;
     bool m_instanceTenancyHasBeenSet;
+
     bool m_marketplace;
     bool m_marketplaceHasBeenSet;
+
     OfferingClassType m_offeringClass;
     bool m_offeringClassHasBeenSet;
+
     OfferingTypeValues m_offeringType;
     bool m_offeringTypeHasBeenSet;
+
     Aws::Vector<PricingDetail> m_pricingDetails;
     bool m_pricingDetailsHasBeenSet;
+
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
+
     Scope m_scope;
     bool m_scopeHasBeenSet;
   };

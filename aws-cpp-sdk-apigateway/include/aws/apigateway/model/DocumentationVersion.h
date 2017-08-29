@@ -53,6 +53,7 @@ namespace Model
     DocumentationVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The version identifier of the API documentation snapshot.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DocumentationVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>The date when the API documentation snapshot is created.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The date when the API documentation snapshot is created.</p>
      */
     inline DocumentationVersion& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The description of the API documentation snapshot.</p>
@@ -149,10 +152,13 @@ namespace Model
     inline DocumentationVersion& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

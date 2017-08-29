@@ -60,6 +60,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The status of the account gate function.</p> <ul> <li> <p>
      * <code>SUCCEEDED</code>: The account gate function has determined that the
@@ -180,6 +181,7 @@ namespace Model
      */
     inline AccountGateResult& WithStatus(AccountGateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The reason for the account gate status assigned to this account and region
      * for the stack set operation.</p>
@@ -223,8 +225,10 @@ namespace Model
     inline AccountGateResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
   private:
+
     AccountGateStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
   };

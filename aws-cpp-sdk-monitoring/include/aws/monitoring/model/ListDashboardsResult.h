@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     ListDashboardsResult();
-    ListDashboardsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListDashboardsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListDashboardsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListDashboardsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The list of matching dashboards.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline ListDashboardsResult& AddDashboardEntries(DashboardEntry&& value) { m_dashboardEntries.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token that marks the start of the next batch of returned results.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      */
     inline ListDashboardsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -130,8 +133,11 @@ namespace Model
     inline ListDashboardsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<DashboardEntry> m_dashboardEntries;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

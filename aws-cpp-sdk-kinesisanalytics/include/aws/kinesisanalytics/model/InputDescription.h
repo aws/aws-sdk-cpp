@@ -53,6 +53,7 @@ namespace Model
     InputDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Input ID associated with the application input. This is the ID that Amazon
      * Kinesis Analytics assigns to each input configuration you add to your
@@ -102,6 +103,7 @@ namespace Model
      */
     inline InputDescription& WithInputId(const char* value) { SetInputId(value); return *this;}
 
+
     /**
      * <p>In-application name prefix.</p>
      */
@@ -136,6 +138,7 @@ namespace Model
      * <p>In-application name prefix.</p>
      */
     inline InputDescription& WithNamePrefix(const char* value) { SetNamePrefix(value); return *this;}
+
 
     /**
      * <p>Returns the in-application stream names that are mapped to the stream
@@ -185,6 +188,7 @@ namespace Model
      */
     inline InputDescription& AddInAppStreamNames(const char* value) { m_inAppStreamNamesHasBeenSet = true; m_inAppStreamNames.push_back(value); return *this; }
 
+
     /**
      * <p>If an Amazon Kinesis stream is configured as streaming source, provides
      * Amazon Kinesis stream's ARN and an IAM role that enables Amazon Kinesis
@@ -219,6 +223,7 @@ namespace Model
      * Analytics to access the stream on your behalf.</p>
      */
     inline InputDescription& WithKinesisStreamsInputDescription(KinesisStreamsInputDescription&& value) { SetKinesisStreamsInputDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>If an Amazon Kinesis Firehose delivery stream is configured as a streaming
@@ -260,6 +265,7 @@ namespace Model
      */
     inline InputDescription& WithKinesisFirehoseInputDescription(KinesisFirehoseInputDescription&& value) { SetKinesisFirehoseInputDescription(std::move(value)); return *this;}
 
+
     
     inline const SourceSchema& GetInputSchema() const{ return m_inputSchema; }
 
@@ -274,6 +280,7 @@ namespace Model
 
     
     inline InputDescription& WithInputSchema(SourceSchema&& value) { SetInputSchema(std::move(value)); return *this;}
+
 
     /**
      * <p>Describes the configured parallelism (number of in-application streams mapped
@@ -304,6 +311,7 @@ namespace Model
      * to the streaming source).</p>
      */
     inline InputDescription& WithInputParallelism(InputParallelism&& value) { SetInputParallelism(std::move(value)); return *this;}
+
 
     /**
      * <p>Point at which the application is configured to read from the input
@@ -336,20 +344,28 @@ namespace Model
     inline InputDescription& WithInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { SetInputStartingPositionConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_inputId;
     bool m_inputIdHasBeenSet;
+
     Aws::String m_namePrefix;
     bool m_namePrefixHasBeenSet;
+
     Aws::Vector<Aws::String> m_inAppStreamNames;
     bool m_inAppStreamNamesHasBeenSet;
+
     KinesisStreamsInputDescription m_kinesisStreamsInputDescription;
     bool m_kinesisStreamsInputDescriptionHasBeenSet;
+
     KinesisFirehoseInputDescription m_kinesisFirehoseInputDescription;
     bool m_kinesisFirehoseInputDescriptionHasBeenSet;
+
     SourceSchema m_inputSchema;
     bool m_inputSchemaHasBeenSet;
+
     InputParallelism m_inputParallelism;
     bool m_inputParallelismHasBeenSet;
+
     InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
     bool m_inputStartingPositionConfigurationHasBeenSet;
   };

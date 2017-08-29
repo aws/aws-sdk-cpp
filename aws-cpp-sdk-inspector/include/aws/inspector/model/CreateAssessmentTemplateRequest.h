@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN that specifies the assessment target for which you want to create the
      * assessment template.</p>
@@ -79,6 +80,7 @@ namespace Model
      * assessment template.</p>
      */
     inline CreateAssessmentTemplateRequest& WithAssessmentTargetArn(const char* value) { SetAssessmentTargetArn(value); return *this;}
+
 
     /**
      * <p>The user-defined name that identifies the assessment template that you want
@@ -136,6 +138,7 @@ namespace Model
      */
     inline CreateAssessmentTemplateRequest& WithAssessmentTemplateName(const char* value) { SetAssessmentTemplateName(value); return *this;}
 
+
     /**
      * <p>The duration of the assessment run in seconds. The default value is 3600
      * seconds (one hour).</p>
@@ -153,6 +156,7 @@ namespace Model
      * seconds (one hour).</p>
      */
     inline CreateAssessmentTemplateRequest& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
+
 
     /**
      * <p>The ARNs that specify the rules packages that you want to attach to the
@@ -201,6 +205,7 @@ namespace Model
      * assessment template.</p>
      */
     inline CreateAssessmentTemplateRequest& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
+
 
     /**
      * <p>The user-defined attributes that are assigned to every finding that is
@@ -259,14 +264,19 @@ namespace Model
     inline CreateAssessmentTemplateRequest& AddUserAttributesForFindings(Attribute&& value) { m_userAttributesForFindingsHasBeenSet = true; m_userAttributesForFindings.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_assessmentTargetArn;
     bool m_assessmentTargetArnHasBeenSet;
+
     Aws::String m_assessmentTemplateName;
     bool m_assessmentTemplateNameHasBeenSet;
+
     int m_durationInSeconds;
     bool m_durationInSecondsHasBeenSet;
+
     Aws::Vector<Aws::String> m_rulesPackageArns;
     bool m_rulesPackageArnsHasBeenSet;
+
     Aws::Vector<Attribute> m_userAttributesForFindings;
     bool m_userAttributesForFindingsHasBeenSet;
   };

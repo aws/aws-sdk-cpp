@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_GLACIER_API GlacierErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_GLACIER_API GlacierErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Glacier
+} // namespace Client
 } // namespace Aws

@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     ValidateMatchmakingRuleSetResult();
-    ValidateMatchmakingRuleSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ValidateMatchmakingRuleSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ValidateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ValidateMatchmakingRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Response indicating whether or not the rule set is valid.</p>
@@ -61,6 +62,7 @@ namespace Model
     inline ValidateMatchmakingRuleSetResult& WithValid(bool value) { SetValid(value); return *this;}
 
   private:
+
     bool m_valid;
   };
 

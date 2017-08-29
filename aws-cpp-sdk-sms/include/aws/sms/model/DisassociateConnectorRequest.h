@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetConnectorId() const{ return m_connectorId; }
 
@@ -58,6 +59,7 @@ namespace Model
     inline DisassociateConnectorRequest& WithConnectorId(const char* value) { SetConnectorId(value); return *this;}
 
   private:
+
     Aws::String m_connectorId;
     bool m_connectorIdHasBeenSet;
   };

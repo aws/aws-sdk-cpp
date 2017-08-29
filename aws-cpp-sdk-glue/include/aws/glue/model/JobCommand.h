@@ -45,6 +45,7 @@ namespace Model
     JobCommand& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of this job command.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of this job command.</p>
      */
     inline JobCommand& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Specifies the location of a script that executes a job.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline JobCommand& WithScriptLocation(const char* value) { SetScriptLocation(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_scriptLocation;
     bool m_scriptLocationHasBeenSet;
   };

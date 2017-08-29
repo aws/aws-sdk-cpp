@@ -30,12 +30,12 @@ NotifyMigrationTaskStateResult::NotifyMigrationTaskStateResult()
 {
 }
 
-NotifyMigrationTaskStateResult::NotifyMigrationTaskStateResult(const AmazonWebServiceResult<JsonValue>& result)
+NotifyMigrationTaskStateResult::NotifyMigrationTaskStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-NotifyMigrationTaskStateResult& NotifyMigrationTaskStateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+NotifyMigrationTaskStateResult& NotifyMigrationTaskStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

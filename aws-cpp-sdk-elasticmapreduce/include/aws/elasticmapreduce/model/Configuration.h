@@ -56,6 +56,7 @@ namespace Model
     Configuration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The classification within a configuration.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      * <p>The classification within a configuration.</p>
      */
     inline Configuration& WithClassification(const char* value) { SetClassification(value); return *this;}
+
 
     /**
      * <p>A list of additional configurations to apply within a configuration
@@ -132,6 +134,7 @@ namespace Model
      * object.</p>
      */
     inline Configuration& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>
@@ -194,10 +197,13 @@ namespace Model
     inline Configuration& AddProperties(const char* key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_classification;
     bool m_classificationHasBeenSet;
+
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_properties;
     bool m_propertiesHasBeenSet;
   };

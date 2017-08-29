@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The system instance health or application instance health.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline InstanceStatusSummary& AddDetails(InstanceStatusDetails&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The status.</p>
      */
@@ -111,8 +113,10 @@ namespace Model
     inline InstanceStatusSummary& WithStatus(SummaryStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<InstanceStatusDetails> m_details;
     bool m_detailsHasBeenSet;
+
     SummaryStatus m_status;
     bool m_statusHasBeenSet;
   };

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeSourceRegionsResult();
-    DescribeSourceRegionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSourceRegionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSourceRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSourceRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -99,6 +100,7 @@ namespace Model
      */
     inline DescribeSourceRegionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of SourceRegion instances that contains each source AWS Region that
      * the current AWS Region can get a Read Replica or a DB snapshot from.</p>
@@ -141,6 +143,7 @@ namespace Model
      */
     inline DescribeSourceRegionsResult& AddSourceRegions(SourceRegion&& value) { m_sourceRegions.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -157,8 +160,11 @@ namespace Model
     inline DescribeSourceRegionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<SourceRegion> m_sourceRegions;
+
     ResponseMetadata m_responseMetadata;
   };
 

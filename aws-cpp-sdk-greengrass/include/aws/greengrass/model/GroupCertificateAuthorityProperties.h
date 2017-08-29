@@ -45,6 +45,7 @@ namespace Model
     GroupCertificateAuthorityProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Arn of the certificate authority for the group.
      */
@@ -79,6 +80,7 @@ namespace Model
      * Arn of the certificate authority for the group.
      */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityArn(const char* value) { SetGroupCertificateAuthorityArn(value); return *this;}
+
 
     /**
      * Id of the certificate authority for the group.
@@ -116,8 +118,10 @@ namespace Model
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityId(const char* value) { SetGroupCertificateAuthorityId(value); return *this;}
 
   private:
+
     Aws::String m_groupCertificateAuthorityArn;
     bool m_groupCertificateAuthorityArnHasBeenSet;
+
     Aws::String m_groupCertificateAuthorityId;
     bool m_groupCertificateAuthorityIdHasBeenSet;
   };

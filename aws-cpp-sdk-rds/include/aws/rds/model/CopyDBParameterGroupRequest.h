@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p> The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
@@ -120,6 +121,7 @@ namespace Model
      */
     inline CopyDBParameterGroupRequest& WithSourceDBParameterGroupIdentifier(const char* value) { SetSourceDBParameterGroupIdentifier(value); return *this;}
 
+
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
      * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
@@ -190,6 +192,7 @@ namespace Model
      */
     inline CopyDBParameterGroupRequest& WithTargetDBParameterGroupIdentifier(const char* value) { SetTargetDBParameterGroupIdentifier(value); return *this;}
 
+
     /**
      * <p>A description for the copied DB parameter group.</p>
      */
@@ -225,6 +228,7 @@ namespace Model
      */
     inline CopyDBParameterGroupRequest& WithTargetDBParameterGroupDescription(const char* value) { SetTargetDBParameterGroupDescription(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -247,12 +251,16 @@ namespace Model
     inline CopyDBParameterGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_sourceDBParameterGroupIdentifier;
     bool m_sourceDBParameterGroupIdentifierHasBeenSet;
+
     Aws::String m_targetDBParameterGroupIdentifier;
     bool m_targetDBParameterGroupIdentifierHasBeenSet;
+
     Aws::String m_targetDBParameterGroupDescription;
     bool m_targetDBParameterGroupDescriptionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

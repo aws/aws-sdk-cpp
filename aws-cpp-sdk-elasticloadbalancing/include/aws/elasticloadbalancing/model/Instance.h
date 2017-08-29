@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The instance ID.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
     inline Instance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
   };

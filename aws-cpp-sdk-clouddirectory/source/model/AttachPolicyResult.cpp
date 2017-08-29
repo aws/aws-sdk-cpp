@@ -30,12 +30,12 @@ AttachPolicyResult::AttachPolicyResult()
 {
 }
 
-AttachPolicyResult::AttachPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+AttachPolicyResult::AttachPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AttachPolicyResult& AttachPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AttachPolicyResult& AttachPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

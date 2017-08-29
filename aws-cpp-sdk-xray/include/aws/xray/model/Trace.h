@@ -48,6 +48,7 @@ namespace Model
     Trace& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the request that generated the trace's segments and
      * subsegments.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline Trace& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The length of time in seconds between the start time of the root segment and
      * the end time of the last segment that completed.</p>
@@ -107,6 +109,7 @@ namespace Model
      * the end time of the last segment that completed.</p>
      */
     inline Trace& WithDuration(double value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>Segment documents for the segments and subsegments that comprise the
@@ -151,10 +154,13 @@ namespace Model
     inline Trace& AddSegments(Segment&& value) { m_segmentsHasBeenSet = true; m_segments.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     double m_duration;
     bool m_durationHasBeenSet;
+
     Aws::Vector<Segment> m_segments;
     bool m_segmentsHasBeenSet;
   };

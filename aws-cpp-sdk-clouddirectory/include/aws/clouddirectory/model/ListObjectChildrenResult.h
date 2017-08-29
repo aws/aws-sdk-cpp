@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListObjectChildrenResult();
-    ListObjectChildrenResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListObjectChildrenResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListObjectChildrenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListObjectChildrenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Children structure, which is a map with key as the <code>LinkName</code> and
@@ -114,6 +115,7 @@ namespace Model
      */
     inline ListObjectChildrenResult& AddChildren(const char* key, const char* value) { m_children.emplace(key, value); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -150,7 +152,9 @@ namespace Model
     inline ListObjectChildrenResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_children;
+
     Aws::String m_nextToken;
   };
 

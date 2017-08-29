@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The prefix that an object must have to be included in the inventory results.
      */
@@ -77,6 +78,7 @@ namespace Model
     inline InventoryFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
   private:
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
   };

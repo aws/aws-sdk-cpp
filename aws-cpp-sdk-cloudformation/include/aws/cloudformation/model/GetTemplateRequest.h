@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
      * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
@@ -105,6 +106,7 @@ namespace Model
      */
     inline GetTemplateRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+
     /**
      * <p>The name or Amazon Resource Name (ARN) of a change set for which AWS
      * CloudFormation returns the associated template. If you specify a name, you must
@@ -153,6 +155,7 @@ namespace Model
      * also specify the <code>StackName</code>.</p>
      */
     inline GetTemplateRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+
 
     /**
      * <p>For templates that include transforms, the stage of the template that AWS
@@ -210,10 +213,13 @@ namespace Model
     inline GetTemplateRequest& WithTemplateStage(TemplateStage&& value) { SetTemplateStage(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_changeSetName;
     bool m_changeSetNameHasBeenSet;
+
     TemplateStage m_templateStage;
     bool m_templateStageHasBeenSet;
   };

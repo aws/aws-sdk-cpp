@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -66,6 +67,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CancelSpotFleetRequestsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The IDs of the Spot fleet requests.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline CancelSpotFleetRequestsRequest& AddSpotFleetRequestIds(const char* value) { m_spotFleetRequestIdsHasBeenSet = true; m_spotFleetRequestIds.push_back(value); return *this; }
 
+
     /**
      * <p>Indicates whether to terminate instances for a Spot fleet request if it is
      * canceled successfully.</p>
@@ -126,10 +129,13 @@ namespace Model
     inline CancelSpotFleetRequestsRequest& WithTerminateInstances(bool value) { SetTerminateInstances(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Aws::String> m_spotFleetRequestIds;
     bool m_spotFleetRequestIdsHasBeenSet;
+
     bool m_terminateInstances;
     bool m_terminateInstancesHasBeenSet;
   };

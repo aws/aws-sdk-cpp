@@ -47,6 +47,7 @@ namespace Model
     RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>workflowId</code> of the external workflow execution to be
      * canceled.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
+
     /**
      * <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      */
     inline RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& WithRunId(const char* value) { SetRunId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
      * decision task that resulted in the
@@ -150,6 +153,7 @@ namespace Model
      * tracing back the chain of events leading up to this event.</p>
      */
     inline RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
+
 
     /**
      * <p>Data attached to the event that can be used by the decider in subsequent
@@ -194,12 +198,16 @@ namespace Model
     inline RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 
   private:
+
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet;
+
     Aws::String m_runId;
     bool m_runIdHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
+
     Aws::String m_control;
     bool m_controlHasBeenSet;
   };

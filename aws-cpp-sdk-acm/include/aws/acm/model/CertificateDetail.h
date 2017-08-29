@@ -55,6 +55,7 @@ namespace Model
     CertificateDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
@@ -118,6 +119,7 @@ namespace Model
      */
     inline CertificateDetail& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
     /**
      * <p>The fully qualified domain name for the certificate, such as www.example.com
      * or example.com.</p>
@@ -159,6 +161,7 @@ namespace Model
      * or example.com.</p>
      */
     inline CertificateDetail& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>One or more domain names (subject alternative names) included in the
@@ -232,6 +235,7 @@ namespace Model
      */
     inline CertificateDetail& AddSubjectAlternativeNames(const char* value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
+
     /**
      * <p>Contains information about the initial validation of each domain name that
      * occurs as a result of the <a>RequestCertificate</a> request. This field exists
@@ -281,6 +285,7 @@ namespace Model
      */
     inline CertificateDetail& AddDomainValidationOptions(DomainValidation&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The serial number of the certificate.</p>
      */
@@ -315,6 +320,7 @@ namespace Model
      * <p>The serial number of the certificate.</p>
      */
     inline CertificateDetail& WithSerial(const char* value) { SetSerial(value); return *this;}
+
 
     /**
      * <p>The name of the entity that is associated with the public key contained in
@@ -358,6 +364,7 @@ namespace Model
      */
     inline CertificateDetail& WithSubject(const char* value) { SetSubject(value); return *this;}
 
+
     /**
      * <p>The name of the certificate authority that issued and signed the
      * certificate.</p>
@@ -400,6 +407,7 @@ namespace Model
      */
     inline CertificateDetail& WithIssuer(const char* value) { SetIssuer(value); return *this;}
 
+
     /**
      * <p>The time at which the certificate was requested. This value exists only when
      * the certificate type is <code>AMAZON_ISSUED</code>.</p>
@@ -429,6 +437,7 @@ namespace Model
      * the certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline CertificateDetail& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The time at which the certificate was issued. This value exists only when the
@@ -460,6 +469,7 @@ namespace Model
      */
     inline CertificateDetail& WithIssuedAt(Aws::Utils::DateTime&& value) { SetIssuedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time at which the certificate was imported. This value exists
      * only when the certificate type is <code>IMPORTED</code>.</p>
@@ -490,6 +500,7 @@ namespace Model
      */
     inline CertificateDetail& WithImportedAt(Aws::Utils::DateTime&& value) { SetImportedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The status of the certificate.</p>
      */
@@ -514,6 +525,7 @@ namespace Model
      * <p>The status of the certificate.</p>
      */
     inline CertificateDetail& WithStatus(CertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The time at which the certificate was revoked. This value exists only when
@@ -545,6 +557,7 @@ namespace Model
      */
     inline CertificateDetail& WithRevokedAt(Aws::Utils::DateTime&& value) { SetRevokedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The reason the certificate was revoked. This value exists only when the
      * certificate status is <code>REVOKED</code>.</p>
@@ -575,6 +588,7 @@ namespace Model
      */
     inline CertificateDetail& WithRevocationReason(RevocationReason&& value) { SetRevocationReason(std::move(value)); return *this;}
 
+
     /**
      * <p>The time before which the certificate is not valid.</p>
      */
@@ -600,6 +614,7 @@ namespace Model
      */
     inline CertificateDetail& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
 
+
     /**
      * <p>The time after which the certificate is not valid.</p>
      */
@@ -624,6 +639,7 @@ namespace Model
      * <p>The time after which the certificate is not valid.</p>
      */
     inline CertificateDetail& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(std::move(value)); return *this;}
+
 
     /**
      * <p>The algorithm that was used to generate the key pair (the public and private
@@ -654,6 +670,7 @@ namespace Model
      * key).</p>
      */
     inline CertificateDetail& WithKeyAlgorithm(KeyAlgorithm&& value) { SetKeyAlgorithm(std::move(value)); return *this;}
+
 
     /**
      * <p>The algorithm that was used to sign the certificate.</p>
@@ -689,6 +706,7 @@ namespace Model
      * <p>The algorithm that was used to sign the certificate.</p>
      */
     inline CertificateDetail& WithSignatureAlgorithm(const char* value) { SetSignatureAlgorithm(value); return *this;}
+
 
     /**
      * <p>A list of ARNs for the AWS resources that are using the certificate. A
@@ -738,6 +756,7 @@ namespace Model
      */
     inline CertificateDetail& AddInUseBy(const char* value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
 
+
     /**
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
@@ -777,6 +796,7 @@ namespace Model
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
      */
     inline CertificateDetail& WithFailureReason(FailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
+
 
     /**
      * <p>The source of the certificate. For certificates provided by ACM, this value
@@ -848,6 +868,7 @@ namespace Model
      */
     inline CertificateDetail& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>Contains information about the status of ACM's <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
@@ -889,46 +910,67 @@ namespace Model
     inline CertificateDetail& WithRenewalSummary(RenewalSummary&& value) { SetRenewalSummary(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_subjectAlternativeNames;
     bool m_subjectAlternativeNamesHasBeenSet;
+
     Aws::Vector<DomainValidation> m_domainValidationOptions;
     bool m_domainValidationOptionsHasBeenSet;
+
     Aws::String m_serial;
     bool m_serialHasBeenSet;
+
     Aws::String m_subject;
     bool m_subjectHasBeenSet;
+
     Aws::String m_issuer;
     bool m_issuerHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Utils::DateTime m_issuedAt;
     bool m_issuedAtHasBeenSet;
+
     Aws::Utils::DateTime m_importedAt;
     bool m_importedAtHasBeenSet;
+
     CertificateStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_revokedAt;
     bool m_revokedAtHasBeenSet;
+
     RevocationReason m_revocationReason;
     bool m_revocationReasonHasBeenSet;
+
     Aws::Utils::DateTime m_notBefore;
     bool m_notBeforeHasBeenSet;
+
     Aws::Utils::DateTime m_notAfter;
     bool m_notAfterHasBeenSet;
+
     KeyAlgorithm m_keyAlgorithm;
     bool m_keyAlgorithmHasBeenSet;
+
     Aws::String m_signatureAlgorithm;
     bool m_signatureAlgorithmHasBeenSet;
+
     Aws::Vector<Aws::String> m_inUseBy;
     bool m_inUseByHasBeenSet;
+
     FailureReason m_failureReason;
     bool m_failureReasonHasBeenSet;
+
     CertificateType m_type;
     bool m_typeHasBeenSet;
+
     RenewalSummary m_renewalSummary;
     bool m_renewalSummaryHasBeenSet;
   };

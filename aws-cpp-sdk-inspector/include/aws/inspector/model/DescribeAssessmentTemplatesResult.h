@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     DescribeAssessmentTemplatesResult();
-    DescribeAssessmentTemplatesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAssessmentTemplatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAssessmentTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAssessmentTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the assessment templates.</p>
@@ -79,6 +80,7 @@ namespace Model
      * <p>Information about the assessment templates.</p>
      */
     inline DescribeAssessmentTemplatesResult& AddAssessmentTemplates(AssessmentTemplate&& value) { m_assessmentTemplates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Assessment template details that cannot be described. An error code is
@@ -147,7 +149,9 @@ namespace Model
     inline DescribeAssessmentTemplatesResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
 
   private:
+
     Aws::Vector<AssessmentTemplate> m_assessmentTemplates;
+
     Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
   };
 

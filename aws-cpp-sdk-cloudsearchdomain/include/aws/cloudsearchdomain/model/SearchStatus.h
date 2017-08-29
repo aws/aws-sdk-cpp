@@ -46,6 +46,7 @@ namespace Model
     SearchStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>How long it took to process the request, in milliseconds.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>How long it took to process the request, in milliseconds.</p>
      */
     inline SearchStatus& WithTimems(long long value) { SetTimems(value); return *this;}
+
 
     /**
      * <p>The encrypted resource ID for the request.</p>
@@ -97,8 +99,10 @@ namespace Model
     inline SearchStatus& WithRid(const char* value) { SetRid(value); return *this;}
 
   private:
+
     long long m_timems;
     bool m_timemsHasBeenSet;
+
     Aws::String m_rid;
     bool m_ridHasBeenSet;
   };

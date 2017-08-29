@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline UpdateApplicationResourceLifecycleRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The lifecycle configuration.</p>
      */
@@ -100,8 +102,10 @@ namespace Model
     inline UpdateApplicationResourceLifecycleRequest& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
     bool m_resourceLifecycleConfigHasBeenSet;
   };

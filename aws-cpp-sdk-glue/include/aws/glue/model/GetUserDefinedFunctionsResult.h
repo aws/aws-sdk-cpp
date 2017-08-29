@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetUserDefinedFunctionsResult();
-    GetUserDefinedFunctionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUserDefinedFunctionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUserDefinedFunctionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUserDefinedFunctionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of requested function definitions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of requested function definitions.</p>
      */
     inline GetUserDefinedFunctionsResult& AddUserDefinedFunctions(UserDefinedFunction&& value) { m_userDefinedFunctions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token, if the list of functions returned does not include the
@@ -121,7 +123,9 @@ namespace Model
     inline GetUserDefinedFunctionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<UserDefinedFunction> m_userDefinedFunctions;
+
     Aws::String m_nextToken;
   };
 

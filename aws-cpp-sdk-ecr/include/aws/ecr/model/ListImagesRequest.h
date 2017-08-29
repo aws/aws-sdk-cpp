@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
      * to list images in. If you do not specify a registry, the default registry is
@@ -86,6 +87,7 @@ namespace Model
      */
     inline ListImagesRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The repository whose image IDs are to be listed.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>The repository whose image IDs are to be listed.</p>
      */
     inline ListImagesRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -205,6 +208,7 @@ namespace Model
      */
     inline ListImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of image results returned by <code>ListImages</code> in
      * paginated output. When this parameter is used, <code>ListImages</code> only
@@ -241,6 +245,7 @@ namespace Model
      */
     inline ListImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
     /**
      * <p>The filter key and value with which to filter your <code>ListImages</code>
      * results.</p>
@@ -272,14 +277,19 @@ namespace Model
     inline ListImagesRequest& WithFilter(ListImagesFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     ListImagesFilter m_filter;
     bool m_filterHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The mnemonic name for the policy being created. The name must be unique
      * within a set of policies for this load balancer.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline AppCookieStickinessPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
+
     /**
      * <p>The name of the application cookie used for stickiness.</p>
      */
@@ -127,8 +129,10 @@ namespace Model
     inline AppCookieStickinessPolicy& WithCookieName(const char* value) { SetCookieName(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_cookieName;
     bool m_cookieNameHasBeenSet;
   };

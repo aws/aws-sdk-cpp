@@ -46,6 +46,7 @@ namespace Model
     EbsVolume& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
      */
     inline EbsVolume& WithDevice(const char* value) { SetDevice(value); return *this;}
+
 
     /**
      * <p>The volume identifier of the EBS volume.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline EbsVolume& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
   private:
+
     Aws::String m_device;
     bool m_deviceHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
   };

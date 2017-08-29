@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeApplicationsResult();
-    DescribeApplicationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeApplicationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>This parameter contains a list of <a>ApplicationDescription</a>.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeApplicationsResult& AddApplications(ApplicationDescription&& value) { m_applications.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeApplicationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ApplicationDescription> m_applications;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     SuggestResult();
-    SuggestResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SuggestResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SuggestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SuggestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of a <code>SuggestRequest</code>. Contains the resource ID
@@ -83,6 +84,7 @@ namespace Model
      */
     inline SuggestResult& WithStatus(SuggestStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Container for the matching search suggestion information.</p>
      */
@@ -109,7 +111,9 @@ namespace Model
     inline SuggestResult& WithSuggest(SuggestModel&& value) { SetSuggest(std::move(value)); return *this;}
 
   private:
+
     SuggestStatus m_status;
+
     SuggestModel m_suggest;
   };
 

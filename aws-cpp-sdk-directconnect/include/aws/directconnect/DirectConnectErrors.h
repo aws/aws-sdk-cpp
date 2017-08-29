@@ -55,14 +55,14 @@ enum class DirectConnectErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DIRECT_CONNECT_CLIENT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DIRECT_CONNECT_CLIENT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DIRECT_CONNECT_SERVER,
   DUPLICATE_TAG_KEYS,
   TOO_MANY_TAGS
 };
 namespace DirectConnectErrorMapper
 {
-  AWS_DIRECTCONNECT_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_DIRECTCONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace DirectConnect

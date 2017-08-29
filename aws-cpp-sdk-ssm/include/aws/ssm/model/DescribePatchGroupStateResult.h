@@ -36,8 +36,9 @@ namespace Model
   {
   public:
     DescribePatchGroupStateResult();
-    DescribePatchGroupStateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePatchGroupStateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePatchGroupStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePatchGroupStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of instances in the patch group.</p>
@@ -54,6 +55,7 @@ namespace Model
      */
     inline DescribePatchGroupStateResult& WithInstances(int value) { SetInstances(value); return *this;}
 
+
     /**
      * <p>The number of instances with installed patches.</p>
      */
@@ -68,6 +70,7 @@ namespace Model
      * <p>The number of instances with installed patches.</p>
      */
     inline DescribePatchGroupStateResult& WithInstancesWithInstalledPatches(int value) { SetInstancesWithInstalledPatches(value); return *this;}
+
 
     /**
      * <p>The number of instances with patches installed that aren't defined in the
@@ -87,6 +90,7 @@ namespace Model
      */
     inline DescribePatchGroupStateResult& WithInstancesWithInstalledOtherPatches(int value) { SetInstancesWithInstalledOtherPatches(value); return *this;}
 
+
     /**
      * <p>The number of instances with missing patches from the patch baseline.</p>
      */
@@ -101,6 +105,7 @@ namespace Model
      * <p>The number of instances with missing patches from the patch baseline.</p>
      */
     inline DescribePatchGroupStateResult& WithInstancesWithMissingPatches(int value) { SetInstancesWithMissingPatches(value); return *this;}
+
 
     /**
      * <p>The number of instances with patches from the patch baseline that failed to
@@ -120,6 +125,7 @@ namespace Model
      */
     inline DescribePatchGroupStateResult& WithInstancesWithFailedPatches(int value) { SetInstancesWithFailedPatches(value); return *this;}
 
+
     /**
      * <p>The number of instances with patches that aren't applicable.</p>
      */
@@ -136,11 +142,17 @@ namespace Model
     inline DescribePatchGroupStateResult& WithInstancesWithNotApplicablePatches(int value) { SetInstancesWithNotApplicablePatches(value); return *this;}
 
   private:
+
     int m_instances;
+
     int m_instancesWithInstalledPatches;
+
     int m_instancesWithInstalledOtherPatches;
+
     int m_instancesWithMissingPatches;
+
     int m_instancesWithFailedPatches;
+
     int m_instancesWithNotApplicablePatches;
   };
 

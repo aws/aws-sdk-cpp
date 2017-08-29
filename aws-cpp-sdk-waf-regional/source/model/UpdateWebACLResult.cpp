@@ -30,12 +30,12 @@ UpdateWebACLResult::UpdateWebACLResult()
 {
 }
 
-UpdateWebACLResult::UpdateWebACLResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateWebACLResult::UpdateWebACLResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateWebACLResult& UpdateWebACLResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateWebACLResult& UpdateWebACLResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

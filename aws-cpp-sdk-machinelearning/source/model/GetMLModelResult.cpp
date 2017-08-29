@@ -35,7 +35,7 @@ GetMLModelResult::GetMLModelResult() :
 {
 }
 
-GetMLModelResult::GetMLModelResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetMLModelResult::GetMLModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(EntityStatus::NOT_SET),
     m_sizeInBytes(0),
     m_mLModelType(MLModelType::NOT_SET),
@@ -45,7 +45,7 @@ GetMLModelResult::GetMLModelResult(const AmazonWebServiceResult<JsonValue>& resu
   *this = result;
 }
 
-GetMLModelResult& GetMLModelResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetMLModelResult& GetMLModelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MLModelId"))

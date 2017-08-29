@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The email address of the owner to assign to the new member account. This
      * email address must not already be associated with another AWS account.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline CreateAccountRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
 
+
     /**
      * <p>The friendly name of the member account.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The friendly name of the member account.</p>
      */
     inline CreateAccountRequest& WithAccountName(const char* value) { SetAccountName(value); return *this;}
+
 
     /**
      * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
@@ -254,6 +257,7 @@ namespace Model
      */
     inline CreateAccountRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
+
     /**
      * <p>If set to <code>ALLOW</code>, the new account enables IAM users to access
      * account billing information <i>if</i> they have the required permissions. If set
@@ -320,12 +324,16 @@ namespace Model
     inline CreateAccountRequest& WithIamUserAccessToBilling(IAMUserAccessToBilling&& value) { SetIamUserAccessToBilling(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_email;
     bool m_emailHasBeenSet;
+
     Aws::String m_accountName;
     bool m_accountNameHasBeenSet;
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     IAMUserAccessToBilling m_iamUserAccessToBilling;
     bool m_iamUserAccessToBillingHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the Reserved DB instance offering to purchase.</p> <p>Example:
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
@@ -84,6 +85,7 @@ namespace Model
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
      */
     inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstancesOfferingId(const char* value) { SetReservedDBInstancesOfferingId(value); return *this;}
+
 
     /**
      * <p>Customer-specified identifier to track this reservation.</p> <p>Example:
@@ -127,6 +129,7 @@ namespace Model
      */
     inline PurchaseReservedDBInstancesOfferingRequest& WithReservedDBInstanceId(const char* value) { SetReservedDBInstanceId(value); return *this;}
 
+
     /**
      * <p>The number of instances to reserve.</p> <p>Default: <code>1</code> </p>
      */
@@ -141,6 +144,7 @@ namespace Model
      * <p>The number of instances to reserve.</p> <p>Default: <code>1</code> </p>
      */
     inline PurchaseReservedDBInstancesOfferingRequest& WithDBInstanceCount(int value) { SetDBInstanceCount(value); return *this;}
+
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -164,12 +168,16 @@ namespace Model
     inline PurchaseReservedDBInstancesOfferingRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_reservedDBInstancesOfferingId;
     bool m_reservedDBInstancesOfferingIdHasBeenSet;
+
     Aws::String m_reservedDBInstanceId;
     bool m_reservedDBInstanceIdHasBeenSet;
+
     int m_dBInstanceCount;
     bool m_dBInstanceCountHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

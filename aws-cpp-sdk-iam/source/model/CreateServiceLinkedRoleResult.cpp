@@ -31,12 +31,12 @@ CreateServiceLinkedRoleResult::CreateServiceLinkedRoleResult()
 {
 }
 
-CreateServiceLinkedRoleResult::CreateServiceLinkedRoleResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateServiceLinkedRoleResult::CreateServiceLinkedRoleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateServiceLinkedRoleResult& CreateServiceLinkedRoleResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateServiceLinkedRoleResult& CreateServiceLinkedRoleResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

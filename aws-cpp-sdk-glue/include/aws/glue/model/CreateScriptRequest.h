@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of the nodes in the DAG.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>A list of the nodes in the DAG.</p>
      */
     inline CreateScriptRequest& AddDagNodes(CodeGenNode&& value) { m_dagNodesHasBeenSet = true; m_dagNodes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of the edges in the DAG.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline CreateScriptRequest& AddDagEdges(CodeGenEdge&& value) { m_dagEdgesHasBeenSet = true; m_dagEdges.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CodeGenNode> m_dagNodes;
     bool m_dagNodesHasBeenSet;
+
     Aws::Vector<CodeGenEdge> m_dagEdges;
     bool m_dagEdgesHasBeenSet;
   };

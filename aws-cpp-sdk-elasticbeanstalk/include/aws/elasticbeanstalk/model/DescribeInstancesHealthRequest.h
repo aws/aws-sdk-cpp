@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeInstancesHealthRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
     inline DescribeInstancesHealthRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>Specifies the response elements you wish to receive. To retrieve all
@@ -163,6 +166,7 @@ namespace Model
      */
     inline DescribeInstancesHealthRequest& AddAttributeNames(InstancesHealthAttribute&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specify the pagination token returned by a previous call.</p>
      */
@@ -199,12 +203,16 @@ namespace Model
     inline DescribeInstancesHealthRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::Vector<InstancesHealthAttribute> m_attributeNames;
     bool m_attributeNamesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

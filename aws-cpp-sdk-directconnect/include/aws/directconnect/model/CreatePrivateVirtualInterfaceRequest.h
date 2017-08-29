@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline CreatePrivateVirtualInterfaceRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+
 
     /**
      * <p>Detailed information for the private virtual interface to be created.</p>
@@ -93,8 +95,10 @@ namespace Model
     inline CreatePrivateVirtualInterfaceRequest& WithNewPrivateVirtualInterface(NewPrivateVirtualInterface&& value) { SetNewPrivateVirtualInterface(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
+
     NewPrivateVirtualInterface m_newPrivateVirtualInterface;
     bool m_newPrivateVirtualInterfaceHasBeenSet;
   };

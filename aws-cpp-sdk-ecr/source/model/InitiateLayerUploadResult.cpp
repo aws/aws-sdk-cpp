@@ -31,13 +31,13 @@ InitiateLayerUploadResult::InitiateLayerUploadResult() :
 {
 }
 
-InitiateLayerUploadResult::InitiateLayerUploadResult(const AmazonWebServiceResult<JsonValue>& result) : 
+InitiateLayerUploadResult::InitiateLayerUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_partSize(0)
 {
   *this = result;
 }
 
-InitiateLayerUploadResult& InitiateLayerUploadResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+InitiateLayerUploadResult& InitiateLayerUploadResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("uploadId"))

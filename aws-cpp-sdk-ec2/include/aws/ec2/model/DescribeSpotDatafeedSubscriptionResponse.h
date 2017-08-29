@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeSpotDatafeedSubscriptionResponse();
-    DescribeSpotDatafeedSubscriptionResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSpotDatafeedSubscriptionResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotDatafeedSubscriptionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotDatafeedSubscriptionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The Spot instance data feed subscription.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline DescribeSpotDatafeedSubscriptionResponse& WithSpotDatafeedSubscription(SpotDatafeedSubscription&& value) { SetSpotDatafeedSubscription(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline DescribeSpotDatafeedSubscriptionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     SpotDatafeedSubscription m_spotDatafeedSubscription;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -30,12 +30,12 @@ DeleteLunaClientResult::DeleteLunaClientResult()
 {
 }
 
-DeleteLunaClientResult::DeleteLunaClientResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteLunaClientResult::DeleteLunaClientResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteLunaClientResult& DeleteLunaClientResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteLunaClientResult& DeleteLunaClientResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Status"))

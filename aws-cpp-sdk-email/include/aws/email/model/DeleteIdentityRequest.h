@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identity to be removed from the list of identities for the AWS
      * Account.</p>
@@ -85,6 +86,7 @@ namespace Model
     inline DeleteIdentityRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
   };

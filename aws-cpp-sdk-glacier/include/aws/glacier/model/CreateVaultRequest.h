@@ -37,6 +37,7 @@ namespace Model
     CreateVaultRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
      * the AWS account ID associated with the credentials used to sign the request. You
@@ -107,6 +108,7 @@ namespace Model
      */
     inline CreateVaultRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -143,8 +145,10 @@ namespace Model
     inline CreateVaultRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
   };

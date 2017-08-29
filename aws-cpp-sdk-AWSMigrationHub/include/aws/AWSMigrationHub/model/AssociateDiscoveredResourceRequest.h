@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the ProgressUpdateStream.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the ProgressUpdateStream.</p>
      */
     inline AssociateDiscoveredResourceRequest& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
+
 
     /**
      * <p>The identifier given to the MigrationTask.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline AssociateDiscoveredResourceRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 
+
     /**
      * <p>Object representing a Resource.</p>
      */
@@ -132,6 +135,7 @@ namespace Model
      */
     inline AssociateDiscoveredResourceRequest& WithDiscoveredResource(DiscoveredResource&& value) { SetDiscoveredResource(std::move(value)); return *this;}
 
+
     /**
      * <p>Optional boolean flag to indicate whether any effect should take place. Used
      * to test if the caller has permission to make the call.</p>
@@ -151,12 +155,16 @@ namespace Model
     inline AssociateDiscoveredResourceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_progressUpdateStream;
     bool m_progressUpdateStreamHasBeenSet;
+
     Aws::String m_migrationTaskName;
     bool m_migrationTaskNameHasBeenSet;
+
     DiscoveredResource m_discoveredResource;
     bool m_discoveredResourceHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

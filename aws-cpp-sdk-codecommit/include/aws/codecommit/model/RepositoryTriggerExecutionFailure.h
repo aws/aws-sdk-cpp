@@ -45,6 +45,7 @@ namespace Model
     RepositoryTriggerExecutionFailure& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the trigger that did not run.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of the trigger that did not run.</p>
      */
     inline RepositoryTriggerExecutionFailure& WithTrigger(const char* value) { SetTrigger(value); return *this;}
+
 
     /**
      * <p>Additional message information about the trigger that did not run.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline RepositoryTriggerExecutionFailure& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 
   private:
+
     Aws::String m_trigger;
     bool m_triggerHasBeenSet;
+
     Aws::String m_failureMessage;
     bool m_failureMessageHasBeenSet;
   };

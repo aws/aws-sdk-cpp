@@ -57,6 +57,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
      */
@@ -91,6 +92,7 @@ namespace Model
      * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
      */
     inline DBSecurityGroup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
 
     /**
      * <p>Specifies the name of the DB security group.</p>
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DBSecurityGroup& WithDBSecurityGroupName(const char* value) { SetDBSecurityGroupName(value); return *this;}
 
+
     /**
      * <p>Provides the description of the DB security group.</p>
      */
@@ -161,6 +164,7 @@ namespace Model
      * <p>Provides the description of the DB security group.</p>
      */
     inline DBSecurityGroup& WithDBSecurityGroupDescription(const char* value) { SetDBSecurityGroupDescription(value); return *this;}
+
 
     /**
      * <p>Provides the VpcId of the DB security group.</p>
@@ -197,6 +201,7 @@ namespace Model
      */
     inline DBSecurityGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p> Contains a list of <a>EC2SecurityGroup</a> elements. </p>
      */
@@ -232,6 +237,7 @@ namespace Model
      */
     inline DBSecurityGroup& AddEC2SecurityGroups(EC2SecurityGroup&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> Contains a list of <a>IPRange</a> elements. </p>
      */
@@ -266,6 +272,7 @@ namespace Model
      * <p> Contains a list of <a>IPRange</a> elements. </p>
      */
     inline DBSecurityGroup& AddIPRanges(IPRange&& value) { m_iPRangesHasBeenSet = true; m_iPRanges.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for the DB security group.</p>
@@ -303,18 +310,25 @@ namespace Model
     inline DBSecurityGroup& WithDBSecurityGroupArn(const char* value) { SetDBSecurityGroupArn(value); return *this;}
 
   private:
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     Aws::String m_dBSecurityGroupName;
     bool m_dBSecurityGroupNameHasBeenSet;
+
     Aws::String m_dBSecurityGroupDescription;
     bool m_dBSecurityGroupDescriptionHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::Vector<EC2SecurityGroup> m_eC2SecurityGroups;
     bool m_eC2SecurityGroupsHasBeenSet;
+
     Aws::Vector<IPRange> m_iPRanges;
     bool m_iPRangesHasBeenSet;
+
     Aws::String m_dBSecurityGroupArn;
     bool m_dBSecurityGroupArnHasBeenSet;
   };

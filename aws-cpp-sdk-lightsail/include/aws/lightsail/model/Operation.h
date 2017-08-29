@@ -50,6 +50,7 @@ namespace Model
     Operation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the operation.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The ID of the operation.</p>
      */
     inline Operation& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The resource name.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline Operation& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
     /**
      * <p>The resource type. </p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>The resource type. </p>
      */
     inline Operation& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The timestamp when the operation was initialized (e.g.,
@@ -175,6 +179,7 @@ namespace Model
      */
     inline Operation& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The region and Availability Zone.</p>
      */
@@ -200,6 +205,7 @@ namespace Model
      */
     inline Operation& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
+
     /**
      * <p>A Boolean value indicating whether the operation is terminal.</p>
      */
@@ -214,6 +220,7 @@ namespace Model
      * <p>A Boolean value indicating whether the operation is terminal.</p>
      */
     inline Operation& WithIsTerminal(bool value) { SetIsTerminal(value); return *this;}
+
 
     /**
      * <p>Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).</p>
@@ -250,6 +257,7 @@ namespace Model
      */
     inline Operation& WithOperationDetails(const char* value) { SetOperationDetails(value); return *this;}
 
+
     /**
      * <p>The type of operation. </p>
      */
@@ -275,6 +283,7 @@ namespace Model
      */
     inline Operation& WithOperationType(OperationType&& value) { SetOperationType(std::move(value)); return *this;}
 
+
     /**
      * <p>The status of the operation. </p>
      */
@@ -299,6 +308,7 @@ namespace Model
      * <p>The status of the operation. </p>
      */
     inline Operation& WithStatus(OperationStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The timestamp when the status was changed (e.g.,
@@ -329,6 +339,7 @@ namespace Model
      * <code>1479816991.349</code>).</p>
      */
     inline Operation& WithStatusChangedAt(Aws::Utils::DateTime&& value) { SetStatusChangedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The error code.</p>
@@ -364,6 +375,7 @@ namespace Model
      * <p>The error code.</p>
      */
     inline Operation& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The error details.</p>
@@ -401,28 +413,40 @@ namespace Model
     inline Operation& WithErrorDetails(const char* value) { SetErrorDetails(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     ResourceLocation m_location;
     bool m_locationHasBeenSet;
+
     bool m_isTerminal;
     bool m_isTerminalHasBeenSet;
+
     Aws::String m_operationDetails;
     bool m_operationDetailsHasBeenSet;
+
     OperationType m_operationType;
     bool m_operationTypeHasBeenSet;
+
     OperationStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_statusChangedAt;
     bool m_statusChangedAtHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorDetails;
     bool m_errorDetailsHasBeenSet;
   };

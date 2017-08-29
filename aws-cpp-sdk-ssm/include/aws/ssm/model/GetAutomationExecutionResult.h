@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetAutomationExecutionResult();
-    GetAutomationExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAutomationExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAutomationExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAutomationExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Detailed information about the current state of an automation execution.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetAutomationExecutionResult& WithAutomationExecution(AutomationExecution&& value) { SetAutomationExecution(std::move(value)); return *this;}
 
   private:
+
     AutomationExecution m_automationExecution;
   };
 

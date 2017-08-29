@@ -34,6 +34,7 @@ namespace Model
     AssociateServiceRoleToAccountRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * Role arn you wish to associate with this account.
      */
@@ -70,6 +71,7 @@ namespace Model
     inline AssociateServiceRoleToAccountRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

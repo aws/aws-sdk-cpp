@@ -50,6 +50,7 @@ namespace Model
     StartChildWorkflowExecutionInitiatedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>workflowId</code> of the child workflow execution.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionInitiatedEventAttributes& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
+
     /**
      * <p>The type of the child workflow execution.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The type of the child workflow execution.</p>
      */
     inline StartChildWorkflowExecutionInitiatedEventAttributes& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
+
 
     /**
      * <p>Data attached to the event that can be used by the decider in subsequent
@@ -152,6 +155,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionInitiatedEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 
+
     /**
      * <p>The inputs provided to the child workflow execution.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      * <p>The inputs provided to the child workflow execution.</p>
      */
     inline StartChildWorkflowExecutionInitiatedEventAttributes& WithInput(const char* value) { SetInput(value); return *this;}
+
 
     /**
      * <p>The maximum duration for the child workflow execution. If the workflow
@@ -250,6 +255,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionInitiatedEventAttributes& WithExecutionStartToCloseTimeout(const char* value) { SetExecutionStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p>The name of the task list used for the decision tasks of the child workflow
      * execution.</p>
@@ -279,6 +285,7 @@ namespace Model
      * execution.</p>
      */
     inline StartChildWorkflowExecutionInitiatedEventAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+
 
     /**
      * <p> The priority assigned for the decision tasks for this workflow execution.
@@ -357,6 +364,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionInitiatedEventAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
      * decision task that resulted in the <code>StartChildWorkflowExecution</code>
@@ -380,6 +388,7 @@ namespace Model
      * be useful for diagnosing problems by tracing back the cause of events.</p>
      */
     inline StartChildWorkflowExecutionInitiatedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
+
 
     /**
      * <p>The policy to use for the child workflow executions if this execution gets
@@ -451,6 +460,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionInitiatedEventAttributes& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum duration allowed for the decision tasks for this workflow
      * execution.</p> <p>The duration is specified in seconds, an integer greater than
@@ -507,6 +517,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionInitiatedEventAttributes& WithTaskStartToCloseTimeout(const char* value) { SetTaskStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p>The list of tags to associated with the child workflow execution.</p>
      */
@@ -547,6 +558,7 @@ namespace Model
      */
     inline StartChildWorkflowExecutionInitiatedEventAttributes& AddTagList(const char* value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
 
+
     /**
      * <p>The IAM role to attach to the child workflow execution.</p>
      */
@@ -583,28 +595,40 @@ namespace Model
     inline StartChildWorkflowExecutionInitiatedEventAttributes& WithLambdaRole(const char* value) { SetLambdaRole(value); return *this;}
 
   private:
+
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet;
+
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet;
+
     Aws::String m_control;
     bool m_controlHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     Aws::String m_executionStartToCloseTimeout;
     bool m_executionStartToCloseTimeoutHasBeenSet;
+
     TaskList m_taskList;
     bool m_taskListHasBeenSet;
+
     Aws::String m_taskPriority;
     bool m_taskPriorityHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
+
     ChildPolicy m_childPolicy;
     bool m_childPolicyHasBeenSet;
+
     Aws::String m_taskStartToCloseTimeout;
     bool m_taskStartToCloseTimeoutHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagList;
     bool m_tagListHasBeenSet;
+
     Aws::String m_lambdaRole;
     bool m_lambdaRoleHasBeenSet;
   };

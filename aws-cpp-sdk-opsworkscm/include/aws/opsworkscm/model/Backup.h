@@ -49,6 +49,7 @@ namespace Model
     Backup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the backup. </p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ARN of the backup. </p>
      */
     inline Backup& WithBackupArn(const char* value) { SetBackupArn(value); return *this;}
+
 
     /**
      * <p> The generated ID of the backup. Example:
@@ -126,6 +128,7 @@ namespace Model
      */
     inline Backup& WithBackupId(const char* value) { SetBackupId(value); return *this;}
 
+
     /**
      * <p> The backup type. Valid values are <code>automated</code> or
      * <code>manual</code>. </p>
@@ -156,6 +159,7 @@ namespace Model
      */
     inline Backup& WithBackupType(BackupType&& value) { SetBackupType(std::move(value)); return *this;}
 
+
     /**
      * <p> The time stamp when the backup was created in the database. Example:
      * <code>2016-07-29T13:38:47.520Z</code> </p>
@@ -185,6 +189,7 @@ namespace Model
      * <code>2016-07-29T13:38:47.520Z</code> </p>
      */
     inline Backup& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p> A user-provided description for a manual backup. This field is empty for
@@ -228,6 +233,7 @@ namespace Model
      */
     inline Backup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p> The engine type that is obtained from the server when the backup is created.
      * </p>
@@ -269,6 +275,7 @@ namespace Model
      * </p>
      */
     inline Backup& WithEngine(const char* value) { SetEngine(value); return *this;}
+
 
     /**
      * <p> The engine model that is obtained from the server when the backup is
@@ -312,6 +319,7 @@ namespace Model
      */
     inline Backup& WithEngineModel(const char* value) { SetEngineModel(value); return *this;}
 
+
     /**
      * <p> The engine version that is obtained from the server when the backup is
      * created. </p>
@@ -353,6 +361,7 @@ namespace Model
      * created. </p>
      */
     inline Backup& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
 
     /**
      * <p> The EC2 instance profile ARN that is obtained from the server when the
@@ -403,6 +412,7 @@ namespace Model
      */
     inline Backup& WithInstanceProfileArn(const char* value) { SetInstanceProfileArn(value); return *this;}
 
+
     /**
      * <p> The instance type that is obtained from the server when the backup is
      * created. </p>
@@ -444,6 +454,7 @@ namespace Model
      * created. </p>
      */
     inline Backup& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
 
     /**
      * <p> The key pair that is obtained from the server when the backup is created.
@@ -487,6 +498,7 @@ namespace Model
      */
     inline Backup& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
 
+
     /**
      * <p> The preferred backup period that is obtained from the server when the backup
      * is created. </p>
@@ -528,6 +540,7 @@ namespace Model
      * is created. </p>
      */
     inline Backup& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
+
 
     /**
      * <p> The preferred maintenance period that is obtained from the server when the
@@ -571,6 +584,7 @@ namespace Model
      */
     inline Backup& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p> The Amazon S3 URL of the backup's log file. </p>
      */
@@ -605,6 +619,7 @@ namespace Model
      * <p> The Amazon S3 URL of the backup's log file. </p>
      */
     inline Backup& WithS3LogUrl(const char* value) { SetS3LogUrl(value); return *this;}
+
 
     /**
      * <p> The security group IDs that are obtained from the server when the backup is
@@ -654,6 +669,7 @@ namespace Model
      */
     inline Backup& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p> The name of the server from which the backup was made. </p>
      */
@@ -688,6 +704,7 @@ namespace Model
      * <p> The name of the server from which the backup was made. </p>
      */
     inline Backup& WithServerName(const char* value) { SetServerName(value); return *this;}
+
 
     /**
      * <p> The service role ARN that is obtained from the server when the backup is
@@ -731,6 +748,7 @@ namespace Model
      */
     inline Backup& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
+
     /**
      * <p>The status of a backup while in progress. </p>
      */
@@ -755,6 +773,7 @@ namespace Model
      * <p>The status of a backup while in progress. </p>
      */
     inline Backup& WithStatus(BackupStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p> An informational message about backup status. </p>
@@ -790,6 +809,7 @@ namespace Model
      * <p> An informational message about backup status. </p>
      */
     inline Backup& WithStatusDescription(const char* value) { SetStatusDescription(value); return *this;}
+
 
     /**
      * <p> The subnet IDs that are obtained from the server when the backup is created.
@@ -839,6 +859,7 @@ namespace Model
      */
     inline Backup& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
     /**
      * <p> The version of AWS OpsWorks for Chef Automate-specific tools that is
      * obtained from the server when the backup is created. </p>
@@ -880,6 +901,7 @@ namespace Model
      * obtained from the server when the backup is created. </p>
      */
     inline Backup& WithToolsVersion(const char* value) { SetToolsVersion(value); return *this;}
+
 
     /**
      * <p> The IAM user ARN of the requester for manual backups. This field is empty
@@ -924,48 +946,70 @@ namespace Model
     inline Backup& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 
   private:
+
     Aws::String m_backupArn;
     bool m_backupArnHasBeenSet;
+
     Aws::String m_backupId;
     bool m_backupIdHasBeenSet;
+
     BackupType m_backupType;
     bool m_backupTypeHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineModel;
     bool m_engineModelHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_instanceProfileArn;
     bool m_instanceProfileArnHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_keyPair;
     bool m_keyPairHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_s3LogUrl;
     bool m_s3LogUrlHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     BackupStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusDescription;
     bool m_statusDescriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::String m_toolsVersion;
     bool m_toolsVersionHasBeenSet;
+
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;
   };

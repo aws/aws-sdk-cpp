@@ -30,12 +30,12 @@ CreateMLModelResult::CreateMLModelResult()
 {
 }
 
-CreateMLModelResult::CreateMLModelResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateMLModelResult::CreateMLModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateMLModelResult& CreateMLModelResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateMLModelResult& CreateMLModelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MLModelId"))

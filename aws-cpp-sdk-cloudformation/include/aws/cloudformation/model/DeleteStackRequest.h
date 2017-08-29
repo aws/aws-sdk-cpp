@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or the unique stack ID that is associated with the stack.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name or the unique stack ID that is associated with the stack.</p>
      */
     inline DeleteStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource
@@ -149,6 +151,7 @@ namespace Model
      */
     inline DeleteStackRequest& AddRetainResources(const char* value) { m_retainResourcesHasBeenSet = true; m_retainResources.push_back(value); return *this; }
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
      * role that AWS CloudFormation assumes to delete the stack. AWS CloudFormation
@@ -218,6 +221,7 @@ namespace Model
      * session that is generated from your user credentials.</p>
      */
     inline DeleteStackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
 
     /**
      * <p>A unique identifier for this <code>DeleteStack</code> request. Specify this
@@ -360,12 +364,16 @@ namespace Model
     inline DeleteStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_retainResources;
     bool m_retainResourcesHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
   };

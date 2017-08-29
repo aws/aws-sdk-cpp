@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DeleteSAMLProviderRequest& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
 
   private:
+
     Aws::String m_sAMLProviderArn;
     bool m_sAMLProviderArnHasBeenSet;
   };

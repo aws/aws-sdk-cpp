@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     StartSupportDataExportResult();
-    StartSupportDataExportResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartSupportDataExportResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartSupportDataExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartSupportDataExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * A unique identifier representing a specific request to the
@@ -97,6 +98,7 @@ namespace Model
     inline StartSupportDataExportResult& WithDataSetRequestId(const char* value) { SetDataSetRequestId(value); return *this;}
 
   private:
+
     Aws::String m_dataSetRequestId;
   };
 

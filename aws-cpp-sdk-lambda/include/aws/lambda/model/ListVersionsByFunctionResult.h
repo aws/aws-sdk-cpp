@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListVersionsByFunctionResult();
-    ListVersionsByFunctionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVersionsByFunctionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListVersionsByFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListVersionsByFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A string, present if there are more function versions.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>A string, present if there are more function versions.</p>
      */
     inline ListVersionsByFunctionResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+
 
     /**
      * <p>A list of Lambda function versions.</p>
@@ -119,7 +121,9 @@ namespace Model
     inline ListVersionsByFunctionResult& AddVersions(FunctionConfiguration&& value) { m_versions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextMarker;
+
     Aws::Vector<FunctionConfiguration> m_versions;
   };
 

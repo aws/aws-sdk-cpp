@@ -48,6 +48,7 @@ namespace Model
     DestinationSchema& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the format of the records on the output stream.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DestinationSchema& WithRecordFormatType(RecordFormatType&& value) { SetRecordFormatType(std::move(value)); return *this;}
 
   private:
+
     RecordFormatType m_recordFormatType;
     bool m_recordFormatTypeHasBeenSet;
   };

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     EnableAvailabilityZonesForLoadBalancerResult();
-    EnableAvailabilityZonesForLoadBalancerResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    EnableAvailabilityZonesForLoadBalancerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    EnableAvailabilityZonesForLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    EnableAvailabilityZonesForLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The updated list of Availability Zones for the load balancer.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline EnableAvailabilityZonesForLoadBalancerResult& AddAvailabilityZones(const char* value) { m_availabilityZones.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,7 +107,9 @@ namespace Model
     inline EnableAvailabilityZonesForLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_availabilityZones;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ConnectDirectoryResult();
-    ConnectDirectoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ConnectDirectoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ConnectDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ConnectDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of the new directory.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline ConnectDirectoryResult& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Configuration ID of the application to be updated.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline UpdateApplicationRequest& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
 
+
     /**
      * <p>New name of the application to be updated.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>New name of the application to be updated.</p>
      */
     inline UpdateApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>New description of the application to be updated.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline UpdateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_configurationId;
     bool m_configurationIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

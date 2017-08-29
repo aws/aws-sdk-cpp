@@ -51,6 +51,7 @@ namespace Model
     AutoScalingPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The upper and lower EC2 instance limits for an automatic scaling policy.
      * Automatic scaling activity will not cause an instance group to grow above or
@@ -85,6 +86,7 @@ namespace Model
      * below these limits.</p>
      */
     inline AutoScalingPolicy& WithConstraints(ScalingConstraints&& value) { SetConstraints(std::move(value)); return *this;}
+
 
     /**
      * <p>The scale-in and scale-out rules that comprise the automatic scaling
@@ -129,8 +131,10 @@ namespace Model
     inline AutoScalingPolicy& AddRules(ScalingRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
+
     ScalingConstraints m_constraints;
     bool m_constraintsHasBeenSet;
+
     Aws::Vector<ScalingRule> m_rules;
     bool m_rulesHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Specifies which headers are allowed in a pre-flight OPTIONS request.
      */
@@ -81,6 +82,7 @@ namespace Model
      * Specifies which headers are allowed in a pre-flight OPTIONS request.
      */
     inline CORSRule& AddAllowedHeaders(const char* value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders.push_back(value); return *this; }
+
 
     /**
      * Identifies HTTP methods that the domain/origin specified in the rule is allowed
@@ -130,6 +132,7 @@ namespace Model
      */
     inline CORSRule& AddAllowedMethods(const char* value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods.push_back(value); return *this; }
 
+
     /**
      * One or more origins you want customers to be able to access the bucket from.
      */
@@ -169,6 +172,7 @@ namespace Model
      * One or more origins you want customers to be able to access the bucket from.
      */
     inline CORSRule& AddAllowedOrigins(const char* value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(value); return *this; }
+
 
     /**
      * One or more headers in the response that you want customers to be able to access
@@ -218,6 +222,7 @@ namespace Model
      */
     inline CORSRule& AddExposeHeaders(const char* value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders.push_back(value); return *this; }
 
+
     /**
      * The time in seconds that your browser is to cache the preflight response for the
      * specified resource.
@@ -237,14 +242,19 @@ namespace Model
     inline CORSRule& WithMaxAgeSeconds(int value) { SetMaxAgeSeconds(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_allowedHeaders;
     bool m_allowedHeadersHasBeenSet;
+
     Aws::Vector<Aws::String> m_allowedMethods;
     bool m_allowedMethodsHasBeenSet;
+
     Aws::Vector<Aws::String> m_allowedOrigins;
     bool m_allowedOriginsHasBeenSet;
+
     Aws::Vector<Aws::String> m_exposeHeaders;
     bool m_exposeHeadersHasBeenSet;
+
     int m_maxAgeSeconds;
     bool m_maxAgeSecondsHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetDeployablePatchSnapshotForInstanceResult();
-    GetDeployablePatchSnapshotForInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeployablePatchSnapshotForInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeployablePatchSnapshotForInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeployablePatchSnapshotForInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The user-defined snapshot ID.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The user-defined snapshot ID.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+
 
     /**
      * <p>A pre-signed Amazon S3 URL that can be used to download the patch
@@ -152,6 +155,7 @@ namespace Model
      * snapshot.</p>
      */
     inline GetDeployablePatchSnapshotForInstanceResult& WithSnapshotDownloadUrl(const char* value) { SetSnapshotDownloadUrl(value); return *this;}
+
 
     /**
      * <p>Returns the specific operating system (for example Windows Server 2012 or
@@ -196,9 +200,13 @@ namespace Model
     inline GetDeployablePatchSnapshotForInstanceResult& WithProduct(const char* value) { SetProduct(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
+
     Aws::String m_snapshotId;
+
     Aws::String m_snapshotDownloadUrl;
+
     Aws::String m_product;
   };
 

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of stack IDs that specify the stacks to be described. If you omit
      * this parameter, <code>DescribeStacks</code> returns a description of every
@@ -94,6 +95,7 @@ namespace Model
     inline DescribeStacksRequest& AddStackIds(const char* value) { m_stackIdsHasBeenSet = true; m_stackIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_stackIds;
     bool m_stackIdsHasBeenSet;
   };

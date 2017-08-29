@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeAutoScalingNotificationTypesResult();
-    DescribeAutoScalingNotificationTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAutoScalingNotificationTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAutoScalingNotificationTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAutoScalingNotificationTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The notification types.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline DescribeAutoScalingNotificationTypesResult& AddAutoScalingNotificationTypes(const char* value) { m_autoScalingNotificationTypes.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,7 +107,9 @@ namespace Model
     inline DescribeAutoScalingNotificationTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_autoScalingNotificationTypes;
+
     ResponseMetadata m_responseMetadata;
   };
 

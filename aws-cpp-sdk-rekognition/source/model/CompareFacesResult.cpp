@@ -32,14 +32,14 @@ CompareFacesResult::CompareFacesResult() :
 {
 }
 
-CompareFacesResult::CompareFacesResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CompareFacesResult::CompareFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_sourceImageOrientationCorrection(OrientationCorrection::NOT_SET),
     m_targetImageOrientationCorrection(OrientationCorrection::NOT_SET)
 {
   *this = result;
 }
 
-CompareFacesResult& CompareFacesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CompareFacesResult& CompareFacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SourceImageFace"))

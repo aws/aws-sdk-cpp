@@ -35,6 +35,7 @@ namespace Model
     DescribeJobDefinitionsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A space-separated list of up to 100 job definition names or full Amazon
      * Resource Name (ARN) entries.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeJobDefinitionsRequest& AddJobDefinitions(const char* value) { m_jobDefinitionsHasBeenSet = true; m_jobDefinitions.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of results returned by <code>DescribeJobDefinitions</code>
      * in paginated output. When this parameter is used,
@@ -122,6 +124,7 @@ namespace Model
      */
     inline DescribeJobDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
     /**
      * <p>The name of the job definition to describe.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      */
     inline DescribeJobDefinitionsRequest& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
 
+
     /**
      * <p>The status with which to filter job definitions.</p>
      */
@@ -191,6 +195,7 @@ namespace Model
      * <p>The status with which to filter job definitions.</p>
      */
     inline DescribeJobDefinitionsRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -277,14 +282,19 @@ namespace Model
     inline DescribeJobDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_jobDefinitions;
     bool m_jobDefinitionsHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_jobDefinitionName;
     bool m_jobDefinitionNameHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

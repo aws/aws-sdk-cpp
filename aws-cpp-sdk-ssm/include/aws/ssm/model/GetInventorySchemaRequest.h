@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The type of inventory item to return.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The type of inventory item to return.</p>
      */
     inline GetInventorySchemaRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -113,6 +115,7 @@ namespace Model
      */
     inline GetInventorySchemaRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -134,6 +137,7 @@ namespace Model
      */
     inline GetInventorySchemaRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
     /**
      * <p>Returns the sub-type schema for a specified inventory type.</p>
      */
@@ -150,12 +154,16 @@ namespace Model
     inline GetInventorySchemaRequest& WithSubType(bool value) { SetSubType(value); return *this;}
 
   private:
+
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     bool m_subType;
     bool m_subTypeHasBeenSet;
   };

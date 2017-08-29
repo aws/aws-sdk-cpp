@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateCrawlerResult();
-    CreateCrawlerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCrawlerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCrawlerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCrawlerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

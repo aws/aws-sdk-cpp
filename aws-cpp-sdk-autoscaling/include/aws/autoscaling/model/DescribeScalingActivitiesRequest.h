@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The activity IDs of the desired scaling activities. If you omit this
      * parameter, all activities for the past six weeks are described. If you specify
@@ -115,6 +116,7 @@ namespace Model
      */
     inline DescribeScalingActivitiesRequest& AddActivityIds(const char* value) { m_activityIdsHasBeenSet = true; m_activityIds.push_back(value); return *this; }
 
+
     /**
      * <p>The name of the group.</p>
      */
@@ -150,6 +152,7 @@ namespace Model
      */
     inline DescribeScalingActivitiesRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return with this call. The default value is
      * 100.</p>
@@ -167,6 +170,7 @@ namespace Model
      * 100.</p>
      */
     inline DescribeScalingActivitiesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -211,12 +215,16 @@ namespace Model
     inline DescribeScalingActivitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_activityIds;
     bool m_activityIdsHasBeenSet;
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

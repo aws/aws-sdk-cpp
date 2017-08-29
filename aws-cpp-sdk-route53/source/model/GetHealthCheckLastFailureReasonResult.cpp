@@ -29,12 +29,12 @@ GetHealthCheckLastFailureReasonResult::GetHealthCheckLastFailureReasonResult()
 {
 }
 
-GetHealthCheckLastFailureReasonResult::GetHealthCheckLastFailureReasonResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetHealthCheckLastFailureReasonResult::GetHealthCheckLastFailureReasonResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetHealthCheckLastFailureReasonResult& GetHealthCheckLastFailureReasonResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetHealthCheckLastFailureReasonResult& GetHealthCheckLastFailureReasonResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
     inline LoadBalancerTargetGroupState& WithLoadBalancerTargetGroupARN(const char* value) { SetLoadBalancerTargetGroupARN(value); return *this;}
+
 
     /**
      * <p>The state of the target group.</p> <ul> <li> <p> <code>Adding</code> - The
@@ -188,8 +190,10 @@ namespace Model
     inline LoadBalancerTargetGroupState& WithState(const char* value) { SetState(value); return *this;}
 
   private:
+
     Aws::String m_loadBalancerTargetGroupARN;
     bool m_loadBalancerTargetGroupARNHasBeenSet;
+
     Aws::String m_state;
     bool m_stateHasBeenSet;
   };

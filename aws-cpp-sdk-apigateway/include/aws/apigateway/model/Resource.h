@@ -49,6 +49,7 @@ namespace Model
     Resource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The resource's identifier.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The resource's identifier.</p>
      */
     inline Resource& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The parent resource's identifier.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Resource& WithParentId(const char* value) { SetParentId(value); return *this;}
 
+
     /**
      * <p>The last path segment for this resource.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline Resource& WithPathPart(const char* value) { SetPathPart(value); return *this;}
 
+
     /**
      * <p>The full path for this resource.</p>
      */
@@ -188,6 +192,7 @@ namespace Model
      * <p>The full path for this resource.</p>
      */
     inline Resource& WithPath(const char* value) { SetPath(value); return *this;}
+
 
     /**
      * <p>Gets an API resource's method of a given HTTP verb.</p> <div class="remarks">
@@ -1026,14 +1031,19 @@ namespace Model
     inline Resource& AddResourceMethods(const char* key, const Method& value) { m_resourceMethodsHasBeenSet = true; m_resourceMethods.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_parentId;
     bool m_parentIdHasBeenSet;
+
     Aws::String m_pathPart;
     bool m_pathPartHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::Map<Aws::String, Method> m_resourceMethods;
     bool m_resourceMethodsHasBeenSet;
   };

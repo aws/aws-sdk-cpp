@@ -46,6 +46,7 @@ namespace Model
     EventSubscription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The AWS customer account associated with the AWS DMS event notification
      * subscription.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline EventSubscription& WithCustomerAwsId(const char* value) { SetCustomerAwsId(value); return *this;}
 
+
     /**
      * <p>The AWS DMS event notification subscription Id.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      */
     inline EventSubscription& WithCustSubscriptionId(const char* value) { SetCustSubscriptionId(value); return *this;}
 
+
     /**
      * <p>The topic ARN of the AWS DMS event notification subscription.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>The topic ARN of the AWS DMS event notification subscription.</p>
      */
     inline EventSubscription& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+
 
     /**
      * <p>The status of the AWS DMS event notification subscription.</p>
@@ -228,6 +232,7 @@ namespace Model
      */
     inline EventSubscription& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The time the RDS event notification subscription was created.</p>
      */
@@ -262,6 +267,7 @@ namespace Model
      * <p>The time the RDS event notification subscription was created.</p>
      */
     inline EventSubscription& WithSubscriptionCreationTime(const char* value) { SetSubscriptionCreationTime(value); return *this;}
+
 
     /**
      * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
@@ -305,6 +311,7 @@ namespace Model
      */
     inline EventSubscription& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 
+
     /**
      * <p>A list of source Ids for the event subscription.</p>
      */
@@ -344,6 +351,7 @@ namespace Model
      * <p>A list of source Ids for the event subscription.</p>
      */
     inline EventSubscription& AddSourceIdsList(const char* value) { m_sourceIdsListHasBeenSet = true; m_sourceIdsList.push_back(value); return *this; }
+
 
     /**
      * <p>A lists of event categories.</p>
@@ -385,6 +393,7 @@ namespace Model
      */
     inline EventSubscription& AddEventCategoriesList(const char* value) { m_eventCategoriesListHasBeenSet = true; m_eventCategoriesList.push_back(value); return *this; }
 
+
     /**
      * <p>Boolean value that indicates if the event subscription is enabled.</p>
      */
@@ -401,22 +410,31 @@ namespace Model
     inline EventSubscription& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
+
     Aws::String m_customerAwsId;
     bool m_customerAwsIdHasBeenSet;
+
     Aws::String m_custSubscriptionId;
     bool m_custSubscriptionIdHasBeenSet;
+
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_subscriptionCreationTime;
     bool m_subscriptionCreationTimeHasBeenSet;
+
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_sourceIdsList;
     bool m_sourceIdsListHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventCategoriesList;
     bool m_eventCategoriesListHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
   };

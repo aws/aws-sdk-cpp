@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListIdentitiesResult();
-    ListIdentitiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListIdentitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ListIdentitiesResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * <p>An object containing a set of identities and associated mappings.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>An object containing a set of identities and associated mappings.</p>
      */
     inline ListIdentitiesResult& AddIdentities(IdentityDescription&& value) { m_identities.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token.</p>
@@ -154,8 +157,11 @@ namespace Model
     inline ListIdentitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
+
     Aws::Vector<IdentityDescription> m_identities;
+
     Aws::String m_nextToken;
   };
 

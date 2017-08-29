@@ -30,12 +30,12 @@ ReadPipelineResult::ReadPipelineResult()
 {
 }
 
-ReadPipelineResult::ReadPipelineResult(const AmazonWebServiceResult<JsonValue>& result)
+ReadPipelineResult::ReadPipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ReadPipelineResult& ReadPipelineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ReadPipelineResult& ReadPipelineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Pipeline"))

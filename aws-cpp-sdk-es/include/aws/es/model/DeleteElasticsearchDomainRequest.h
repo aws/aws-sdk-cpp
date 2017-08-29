@@ -39,6 +39,7 @@ namespace Model
     DeleteElasticsearchDomainRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the Elasticsearch domain that you want to permanently delete.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline DeleteElasticsearchDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

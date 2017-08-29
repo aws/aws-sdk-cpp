@@ -125,17 +125,17 @@ namespace Model
         class UpdateKeyDescriptionRequest;
 
         typedef Aws::Utils::Outcome<CancelKeyDeletionResult, Aws::Client::AWSError<KMSErrors>> CancelKeyDeletionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> CreateAliasOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> CreateAliasOutcome;
         typedef Aws::Utils::Outcome<CreateGrantResult, Aws::Client::AWSError<KMSErrors>> CreateGrantOutcome;
         typedef Aws::Utils::Outcome<CreateKeyResult, Aws::Client::AWSError<KMSErrors>> CreateKeyOutcome;
         typedef Aws::Utils::Outcome<DecryptResult, Aws::Client::AWSError<KMSErrors>> DecryptOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> DeleteAliasOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> DeleteImportedKeyMaterialOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> DeleteAliasOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> DeleteImportedKeyMaterialOutcome;
         typedef Aws::Utils::Outcome<DescribeKeyResult, Aws::Client::AWSError<KMSErrors>> DescribeKeyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> DisableKeyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> DisableKeyRotationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> EnableKeyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> EnableKeyRotationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> DisableKeyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> DisableKeyRotationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> EnableKeyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> EnableKeyRotationOutcome;
         typedef Aws::Utils::Outcome<EncryptResult, Aws::Client::AWSError<KMSErrors>> EncryptOutcome;
         typedef Aws::Utils::Outcome<GenerateDataKeyResult, Aws::Client::AWSError<KMSErrors>> GenerateDataKeyOutcome;
         typedef Aws::Utils::Outcome<GenerateDataKeyWithoutPlaintextResult, Aws::Client::AWSError<KMSErrors>> GenerateDataKeyWithoutPlaintextOutcome;
@@ -150,15 +150,15 @@ namespace Model
         typedef Aws::Utils::Outcome<ListKeysResult, Aws::Client::AWSError<KMSErrors>> ListKeysOutcome;
         typedef Aws::Utils::Outcome<ListResourceTagsResult, Aws::Client::AWSError<KMSErrors>> ListResourceTagsOutcome;
         typedef Aws::Utils::Outcome<ListRetirableGrantsResult, Aws::Client::AWSError<KMSErrors>> ListRetirableGrantsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> PutKeyPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> PutKeyPolicyOutcome;
         typedef Aws::Utils::Outcome<ReEncryptResult, Aws::Client::AWSError<KMSErrors>> ReEncryptOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> RetireGrantOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> RevokeGrantOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> RetireGrantOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> RevokeGrantOutcome;
         typedef Aws::Utils::Outcome<ScheduleKeyDeletionResult, Aws::Client::AWSError<KMSErrors>> ScheduleKeyDeletionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> UpdateAliasOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<KMSErrors>> UpdateKeyDescriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> UpdateAliasOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<KMSErrors>> UpdateKeyDescriptionOutcome;
 
         typedef std::future<CancelKeyDeletionOutcome> CancelKeyDeletionOutcomeCallable;
         typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
@@ -297,22 +297,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KMSClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        KMSClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KMSClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        KMSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        KMSClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        KMSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~KMSClient();
+
 
         /**
          * <p>Cancels the deletion of a customer master key (CMK). When this operation is
@@ -1857,7 +1858,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void CancelKeyDeletionAsyncHelper(const Model::CancelKeyDeletionRequest& request, const CancelKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

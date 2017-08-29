@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateVpcEndpointResponse();
-    CreateVpcEndpointResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateVpcEndpointResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateVpcEndpointResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateVpcEndpointResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -90,6 +91,7 @@ namespace Model
      */
     inline CreateVpcEndpointResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>Information about the endpoint.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      */
     inline CreateVpcEndpointResponse& WithVpcEndpoint(VpcEndpoint&& value) { SetVpcEndpoint(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -131,8 +134,11 @@ namespace Model
     inline CreateVpcEndpointResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clientToken;
+
     VpcEndpoint m_vpcEndpoint;
+
     ResponseMetadata m_responseMetadata;
   };
 

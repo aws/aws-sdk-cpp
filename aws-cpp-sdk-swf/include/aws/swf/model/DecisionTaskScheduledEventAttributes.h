@@ -47,6 +47,7 @@ namespace Model
     DecisionTaskScheduledEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the task list in which the decision task was scheduled.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the task list in which the decision task was scheduled.</p>
      */
     inline DecisionTaskScheduledEventAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+
 
     /**
      * <p> A task priority that, if set, specifies the priority for this decision task.
@@ -149,6 +151,7 @@ namespace Model
      */
     inline DecisionTaskScheduledEventAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
 
+
     /**
      * <p>The maximum duration for this decision task. The task is considered timed out
      * if it doesn't completed within this duration.</p> <p>The duration is specified
@@ -206,10 +209,13 @@ namespace Model
     inline DecisionTaskScheduledEventAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
 
   private:
+
     TaskList m_taskList;
     bool m_taskListHasBeenSet;
+
     Aws::String m_taskPriority;
     bool m_taskPriorityHasBeenSet;
+
     Aws::String m_startToCloseTimeout;
     bool m_startToCloseTimeoutHasBeenSet;
   };

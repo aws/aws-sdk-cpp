@@ -31,12 +31,12 @@ DescribeLoadBalancerPolicyTypesResult::DescribeLoadBalancerPolicyTypesResult()
 {
 }
 
-DescribeLoadBalancerPolicyTypesResult::DescribeLoadBalancerPolicyTypesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeLoadBalancerPolicyTypesResult::DescribeLoadBalancerPolicyTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeLoadBalancerPolicyTypesResult& DescribeLoadBalancerPolicyTypesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeLoadBalancerPolicyTypesResult& DescribeLoadBalancerPolicyTypesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

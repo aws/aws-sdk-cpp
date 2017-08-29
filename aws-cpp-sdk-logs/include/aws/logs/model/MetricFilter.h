@@ -49,6 +49,7 @@ namespace Model
     MetricFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the metric filter.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline MetricFilter& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
+
     
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
 
@@ -104,6 +106,7 @@ namespace Model
 
     
     inline MetricFilter& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
+
 
     /**
      * <p>The metric transformations.</p>
@@ -140,6 +143,7 @@ namespace Model
      */
     inline MetricFilter& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The creation time of the metric filter, expressed as the number of
      * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
@@ -157,6 +161,7 @@ namespace Model
      * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline MetricFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
+
 
     /**
      * <p>The name of the log group.</p>
@@ -194,14 +199,19 @@ namespace Model
     inline MetricFilter& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
   private:
+
     Aws::String m_filterName;
     bool m_filterNameHasBeenSet;
+
     Aws::String m_filterPattern;
     bool m_filterPatternHasBeenSet;
+
     Aws::Vector<MetricTransformation> m_metricTransformations;
     bool m_metricTransformationsHasBeenSet;
+
     long long m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
   };

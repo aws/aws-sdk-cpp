@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
      * indicate the position in the receipt rule set list.</p>
@@ -88,6 +89,7 @@ namespace Model
     inline ListReceiptRuleSetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

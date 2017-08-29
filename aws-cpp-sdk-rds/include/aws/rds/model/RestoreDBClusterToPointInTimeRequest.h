@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the new DB cluster to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens</p> </li>
@@ -99,6 +100,7 @@ namespace Model
      * hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>The type of restore to be performed. You can specify one of the following
@@ -184,6 +186,7 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const char* value) { SetRestoreType(value); return *this;}
 
+
     /**
      * <p>The identifier of the source DB cluster from which to restore.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing database
@@ -246,6 +249,7 @@ namespace Model
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithSourceDBClusterIdentifier(const char* value) { SetSourceDBClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>The date and time to restore the DB cluster to.</p> <p>Valid Values: Value
@@ -312,6 +316,7 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreToTime(Aws::Utils::DateTime&& value) { SetRestoreToTime(std::move(value)); return *this;}
 
+
     /**
      * <p>A value that is set to <code>true</code> to restore the DB cluster to the
      * latest restorable backup time, and <code>false</code> otherwise. </p>
@@ -336,6 +341,7 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& WithUseLatestRestorableTime(bool value) { SetUseLatestRestorableTime(value); return *this;}
 
+
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
@@ -356,6 +362,7 @@ namespace Model
      * port as the original DB cluster.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The DB subnet group name to use for the new DB cluster.</p> <p>Constraints:
@@ -413,6 +420,7 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>The name of the option group for the new DB cluster.</p>
      */
@@ -447,6 +455,7 @@ namespace Model
      * <p>The name of the option group for the new DB cluster.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+
 
     /**
      * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
@@ -488,6 +497,7 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -508,6 +518,7 @@ namespace Model
 
     
     inline RestoreDBClusterToPointInTimeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The KMS key identifier to use when restoring an encrypted DB cluster from an
@@ -649,6 +660,7 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>A Boolean value that is true to enable mapping of AWS Identity and Access
      * Management (IAM) accounts to database accounts, and otherwise false.</p>
@@ -671,28 +683,40 @@ namespace Model
     inline RestoreDBClusterToPointInTimeRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
   private:
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     Aws::String m_restoreType;
     bool m_restoreTypeHasBeenSet;
+
     Aws::String m_sourceDBClusterIdentifier;
     bool m_sourceDBClusterIdentifierHasBeenSet;
+
     Aws::Utils::DateTime m_restoreToTime;
     bool m_restoreToTimeHasBeenSet;
+
     bool m_useLatestRestorableTime;
     bool m_useLatestRestorableTimeHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
   };

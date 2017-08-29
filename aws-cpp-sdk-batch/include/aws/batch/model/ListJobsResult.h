@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListJobsResult();
-    ListJobsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListJobsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of job summaries that match the request.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of job summaries that match the request.</p>
      */
     inline ListJobsResult& AddJobSummaryList(JobSummary&& value) { m_jobSummaryList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code>
@@ -142,7 +144,9 @@ namespace Model
     inline ListJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<JobSummary> m_jobSummaryList;
+
     Aws::String m_nextToken;
   };
 

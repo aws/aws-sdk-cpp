@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     DescribeEnvironmentHealthResult();
-    DescribeEnvironmentHealthResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEnvironmentHealthResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEnvironmentHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEnvironmentHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The environment's name.</p>
@@ -87,6 +88,7 @@ namespace Model
      * <p>The environment's name.</p>
      */
     inline DescribeEnvironmentHealthResult& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+
 
     /**
      * <p>The <a
@@ -137,6 +139,7 @@ namespace Model
      */
     inline DescribeEnvironmentHealthResult& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
 
+
     /**
      * <p>The environment's operational status. <code>Ready</code>,
      * <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or
@@ -171,6 +174,7 @@ namespace Model
      * <code>Terminated</code>.</p>
      */
     inline DescribeEnvironmentHealthResult& WithStatus(EnvironmentHealth&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The <a
@@ -221,6 +225,7 @@ namespace Model
      */
     inline DescribeEnvironmentHealthResult& WithColor(const char* value) { SetColor(value); return *this;}
 
+
     /**
      * <p>Descriptions of the data that contributed to the environment's current health
      * status.</p>
@@ -269,6 +274,7 @@ namespace Model
      */
     inline DescribeEnvironmentHealthResult& AddCauses(const char* value) { m_causes.push_back(value); return *this; }
 
+
     /**
      * <p>Application request metrics for the environment.</p>
      */
@@ -293,6 +299,7 @@ namespace Model
      * <p>Application request metrics for the environment.</p>
      */
     inline DescribeEnvironmentHealthResult& WithApplicationMetrics(ApplicationMetrics&& value) { SetApplicationMetrics(std::move(value)); return *this;}
+
 
     /**
      * <p>Summary health information for the instances in the environment.</p>
@@ -319,6 +326,7 @@ namespace Model
      */
     inline DescribeEnvironmentHealthResult& WithInstancesHealth(InstanceHealthSummary&& value) { SetInstancesHealth(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time that the health information was retrieved.</p>
      */
@@ -344,6 +352,7 @@ namespace Model
      */
     inline DescribeEnvironmentHealthResult& WithRefreshedAt(Aws::Utils::DateTime&& value) { SetRefreshedAt(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -360,14 +369,23 @@ namespace Model
     inline DescribeEnvironmentHealthResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_environmentName;
+
     Aws::String m_healthStatus;
+
     EnvironmentHealth m_status;
+
     Aws::String m_color;
+
     Aws::Vector<Aws::String> m_causes;
+
     ApplicationMetrics m_applicationMetrics;
+
     InstanceHealthSummary m_instancesHealth;
+
     Aws::Utils::DateTime m_refreshedAt;
+
     ResponseMetadata m_responseMetadata;
   };
 

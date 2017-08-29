@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
      * code for the event (for example, <code>enable-volume-io</code>).</p> </li> <li>
@@ -240,6 +241,7 @@ namespace Model
      */
     inline DescribeVolumeStatusRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of volume results returned by
      * <code>DescribeVolumeStatus</code> in paginated output. When this parameter is
@@ -281,6 +283,7 @@ namespace Model
      * parameter in the same request.</p>
      */
     inline DescribeVolumeStatusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -345,6 +348,7 @@ namespace Model
      */
     inline DescribeVolumeStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
      */
@@ -385,6 +389,7 @@ namespace Model
      */
     inline DescribeVolumeStatusRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -410,14 +415,19 @@ namespace Model
     inline DescribeVolumeStatusRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::Vector<Aws::String> m_volumeIds;
     bool m_volumeIdsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

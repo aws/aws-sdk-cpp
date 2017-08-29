@@ -48,6 +48,7 @@ namespace Model
     EventTopic& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Directory ID of an AWS Directory Service directory that will publish
      * status messages to an SNS topic.</p>
@@ -89,6 +90,7 @@ namespace Model
      * status messages to an SNS topic.</p>
      */
     inline EventTopic& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The name of an AWS SNS topic the receives status messages from the
@@ -132,6 +134,7 @@ namespace Model
      */
     inline EventTopic& WithTopicName(const char* value) { SetTopicName(value); return *this;}
 
+
     /**
      * <p>The SNS topic ARN (Amazon Resource Name).</p>
      */
@@ -167,6 +170,7 @@ namespace Model
      */
     inline EventTopic& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
+
     /**
      * <p>The date and time of when you associated your directory with the SNS
      * topic.</p>
@@ -197,6 +201,7 @@ namespace Model
      */
     inline EventTopic& WithCreatedDateTime(Aws::Utils::DateTime&& value) { SetCreatedDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The topic registration status.</p>
      */
@@ -223,14 +228,19 @@ namespace Model
     inline EventTopic& WithStatus(TopicStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_topicName;
     bool m_topicNameHasBeenSet;
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::Utils::DateTime m_createdDateTime;
     bool m_createdDateTimeHasBeenSet;
+
     TopicStatus m_status;
     bool m_statusHasBeenSet;
   };

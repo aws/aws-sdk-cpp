@@ -32,14 +32,14 @@ TestInvokeMethodResult::TestInvokeMethodResult() :
 {
 }
 
-TestInvokeMethodResult::TestInvokeMethodResult(const AmazonWebServiceResult<JsonValue>& result) : 
+TestInvokeMethodResult::TestInvokeMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(0),
     m_latency(0)
 {
   *this = result;
 }
 
-TestInvokeMethodResult& TestInvokeMethodResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TestInvokeMethodResult& TestInvokeMethodResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("status"))

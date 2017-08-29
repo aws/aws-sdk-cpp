@@ -48,6 +48,7 @@ namespace Model
     FaceRecord& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Describes the face properties such as the bounding box, face ID, image ID of
      * the input image, and external image ID that you assigned. </p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline FaceRecord& WithFace(Face&& value) { SetFace(std::move(value)); return *this;}
 
+
     /**
      * <p>Structure containing attributes of the face that the algorithm detected.</p>
      */
@@ -104,8 +106,10 @@ namespace Model
     inline FaceRecord& WithFaceDetail(FaceDetail&& value) { SetFaceDetail(std::move(value)); return *this;}
 
   private:
+
     Face m_face;
     bool m_faceHasBeenSet;
+
     FaceDetail m_faceDetail;
     bool m_faceDetailHasBeenSet;
   };

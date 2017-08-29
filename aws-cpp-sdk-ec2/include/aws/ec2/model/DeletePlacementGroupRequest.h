@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -65,6 +66,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DeletePlacementGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The name of the placement group.</p>
@@ -102,8 +104,10 @@ namespace Model
     inline DeletePlacementGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
   };

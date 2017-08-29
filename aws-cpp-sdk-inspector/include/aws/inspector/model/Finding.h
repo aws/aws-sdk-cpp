@@ -54,6 +54,7 @@ namespace Model
     Finding& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN that specifies the finding.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      */
     inline Finding& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The schema version of this data type.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p>The schema version of this data type.</p>
      */
     inline Finding& WithSchemaVersion(int value) { SetSchemaVersion(value); return *this;}
+
 
     /**
      * <p>The data element is set to "Inspector".</p>
@@ -139,6 +142,7 @@ namespace Model
      */
     inline Finding& WithService(const char* value) { SetService(value); return *this;}
 
+
     /**
      * <p>This data type is used in the <a>Finding</a> data type.</p>
      */
@@ -164,6 +168,7 @@ namespace Model
      */
     inline Finding& WithServiceAttributes(InspectorServiceAttributes&& value) { SetServiceAttributes(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of the host from which the finding is generated.</p>
      */
@@ -188,6 +193,7 @@ namespace Model
      * <p>The type of the host from which the finding is generated.</p>
      */
     inline Finding& WithAssetType(AssetType&& value) { SetAssetType(std::move(value)); return *this;}
+
 
     /**
      * <p>A collection of attributes of the host from which the finding is
@@ -218,6 +224,7 @@ namespace Model
      * generated.</p>
      */
     inline Finding& WithAssetAttributes(AssetAttributes&& value) { SetAssetAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the finding.</p>
@@ -254,6 +261,7 @@ namespace Model
      */
     inline Finding& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name of the finding.</p>
      */
@@ -288,6 +296,7 @@ namespace Model
      * <p>The name of the finding.</p>
      */
     inline Finding& WithTitle(const char* value) { SetTitle(value); return *this;}
+
 
     /**
      * <p>The description of the finding.</p>
@@ -324,6 +333,7 @@ namespace Model
      */
     inline Finding& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The recommendation for the finding.</p>
      */
@@ -359,6 +369,7 @@ namespace Model
      */
     inline Finding& WithRecommendation(const char* value) { SetRecommendation(value); return *this;}
 
+
     /**
      * <p>The finding severity. Values can be set to High, Medium, Low, and
      * Informational.</p>
@@ -389,6 +400,7 @@ namespace Model
      */
     inline Finding& WithSeverity(Severity&& value) { SetSeverity(std::move(value)); return *this;}
 
+
     /**
      * <p>The numeric value of the finding severity.</p>
      */
@@ -403,6 +415,7 @@ namespace Model
      * <p>The numeric value of the finding severity.</p>
      */
     inline Finding& WithNumericSeverity(double value) { SetNumericSeverity(value); return *this;}
+
 
     /**
      * <p>This data element is currently not used.</p>
@@ -419,6 +432,7 @@ namespace Model
      */
     inline Finding& WithConfidence(int value) { SetConfidence(value); return *this;}
 
+
     /**
      * <p>This data element is currently not used.</p>
      */
@@ -433,6 +447,7 @@ namespace Model
      * <p>This data element is currently not used.</p>
      */
     inline Finding& WithIndicatorOfCompromise(bool value) { SetIndicatorOfCompromise(value); return *this;}
+
 
     /**
      * <p>The system-defined attributes for the finding.</p>
@@ -469,6 +484,7 @@ namespace Model
      */
     inline Finding& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The user-defined attributes that are assigned to the finding.</p>
      */
@@ -504,6 +520,7 @@ namespace Model
      */
     inline Finding& AddUserAttributes(Attribute&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time when the finding was generated.</p>
      */
@@ -528,6 +545,7 @@ namespace Model
      * <p>The time when the finding was generated.</p>
      */
     inline Finding& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The time when <a>AddAttributesToFindings</a> is called.</p>
@@ -555,40 +573,58 @@ namespace Model
     inline Finding& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     int m_schemaVersion;
     bool m_schemaVersionHasBeenSet;
+
     Aws::String m_service;
     bool m_serviceHasBeenSet;
+
     InspectorServiceAttributes m_serviceAttributes;
     bool m_serviceAttributesHasBeenSet;
+
     AssetType m_assetType;
     bool m_assetTypeHasBeenSet;
+
     AssetAttributes m_assetAttributes;
     bool m_assetAttributesHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_recommendation;
     bool m_recommendationHasBeenSet;
+
     Severity m_severity;
     bool m_severityHasBeenSet;
+
     double m_numericSeverity;
     bool m_numericSeverityHasBeenSet;
+
     int m_confidence;
     bool m_confidenceHasBeenSet;
+
     bool m_indicatorOfCompromise;
     bool m_indicatorOfCompromiseHasBeenSet;
+
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::Vector<Attribute> m_userAttributes;
     bool m_userAttributesHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet;
   };

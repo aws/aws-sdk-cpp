@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Directory ID to remove as a publisher. This directory will no longer send
      * messages to the specified SNS topic.</p>
@@ -81,6 +82,7 @@ namespace Model
      * messages to the specified SNS topic.</p>
      */
     inline DeregisterEventTopicRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The name of the SNS topic from which to remove the directory as a
@@ -125,8 +127,10 @@ namespace Model
     inline DeregisterEventTopicRequest& WithTopicName(const char* value) { SetTopicName(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_topicName;
     bool m_topicNameHasBeenSet;
   };

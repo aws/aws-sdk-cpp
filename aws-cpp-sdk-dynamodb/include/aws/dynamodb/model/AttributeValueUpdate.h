@@ -54,6 +54,7 @@ namespace Model
     AttributeValueUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Represents the data for an attribute.</p> <p>Each attribute value is
      * described as a name-value pair. The name is the data type, and the value is the
@@ -98,6 +99,7 @@ namespace Model
      * TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline AttributeValueUpdate& WithValue(AttributeValue&& value) { SetValue(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies how to perform the update. Valid values are <code>PUT</code>
@@ -370,8 +372,10 @@ namespace Model
     inline AttributeValueUpdate& WithAction(AttributeAction&& value) { SetAction(std::move(value)); return *this;}
 
   private:
+
     AttributeValue m_value;
     bool m_valueHasBeenSet;
+
     AttributeAction m_action;
     bool m_actionHasBeenSet;
   };

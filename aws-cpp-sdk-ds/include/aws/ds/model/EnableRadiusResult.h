@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     EnableRadiusResult();
-    EnableRadiusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableRadiusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableRadiusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnableRadiusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

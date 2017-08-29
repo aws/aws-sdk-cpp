@@ -30,12 +30,12 @@ GetRateBasedRuleResult::GetRateBasedRuleResult()
 {
 }
 
-GetRateBasedRuleResult::GetRateBasedRuleResult(const AmazonWebServiceResult<JsonValue>& result)
+GetRateBasedRuleResult::GetRateBasedRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetRateBasedRuleResult& GetRateBasedRuleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetRateBasedRuleResult& GetRateBasedRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Rule"))

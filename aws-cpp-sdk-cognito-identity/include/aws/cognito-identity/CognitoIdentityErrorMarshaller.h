@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_COGNITOIDENTITY_API CognitoIdentityErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_COGNITOIDENTITY_API CognitoIdentityErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace CognitoIdentity
+} // namespace Client
 } // namespace Aws

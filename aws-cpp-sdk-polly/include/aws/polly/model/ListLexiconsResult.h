@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListLexiconsResult();
-    ListLexiconsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLexiconsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListLexiconsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListLexiconsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of lexicon names and attributes.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of lexicon names and attributes.</p>
      */
     inline ListLexiconsResult& AddLexicons(LexiconDescription&& value) { m_lexicons.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token to use in the next request to continue the listing of
@@ -128,7 +130,9 @@ namespace Model
     inline ListLexiconsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<LexiconDescription> m_lexicons;
+
     Aws::String m_nextToken;
   };
 

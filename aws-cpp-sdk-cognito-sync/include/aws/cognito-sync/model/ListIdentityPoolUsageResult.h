@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListIdentityPoolUsageResult();
-    ListIdentityPoolUsageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListIdentityPoolUsageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIdentityPoolUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIdentityPoolUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Usage information for the identity pools.
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ListIdentityPoolUsageResult& AddIdentityPoolUsages(IdentityPoolUsage&& value) { m_identityPoolUsages.push_back(std::move(value)); return *this; }
 
+
     /**
      * The maximum number of results to be returned.
      */
@@ -99,6 +101,7 @@ namespace Model
      */
     inline ListIdentityPoolUsageResult& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
     /**
      * Total number of identities for the identity pool.
      */
@@ -113,6 +116,7 @@ namespace Model
      * Total number of identities for the identity pool.
      */
     inline ListIdentityPoolUsageResult& WithCount(int value) { SetCount(value); return *this;}
+
 
     /**
      * A pagination token for obtaining the next page of results.
@@ -150,9 +154,13 @@ namespace Model
     inline ListIdentityPoolUsageResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<IdentityPoolUsage> m_identityPoolUsages;
+
     int m_maxResults;
+
     int m_count;
+
     Aws::String m_nextToken;
   };
 

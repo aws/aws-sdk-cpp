@@ -43,6 +43,7 @@ namespace Model
     EmailChannelResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The unique ID of the application to which the email channel belongs.
      */
@@ -77,6 +78,7 @@ namespace Model
      * The unique ID of the application to which the email channel belongs.
      */
     inline EmailChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     /**
      * The date that the settings were last updated in ISO 8601 format.
@@ -113,6 +115,7 @@ namespace Model
      */
     inline EmailChannelResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
+
     /**
      * If the channel is enabled for sending messages.
      */
@@ -127,6 +130,7 @@ namespace Model
      * If the channel is enabled for sending messages.
      */
     inline EmailChannelResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * The email address used to send emails from.
@@ -163,6 +167,7 @@ namespace Model
      */
     inline EmailChannelResponse& WithFromAddress(const char* value) { SetFromAddress(value); return *this;}
 
+
     /**
      * Channel ID. Not used, only for backwards compatibility.
      */
@@ -197,6 +202,7 @@ namespace Model
      * Channel ID. Not used, only for backwards compatibility.
      */
     inline EmailChannelResponse& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * The ARN of an identity verified with SES.
@@ -233,6 +239,7 @@ namespace Model
      */
     inline EmailChannelResponse& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
+
     /**
      * Is this channel archived
      */
@@ -247,6 +254,7 @@ namespace Model
      * Is this channel archived
      */
     inline EmailChannelResponse& WithIsArchived(bool value) { SetIsArchived(value); return *this;}
+
 
     /**
      * Who last updated this entry
@@ -283,6 +291,7 @@ namespace Model
      */
     inline EmailChannelResponse& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
+
     /**
      * Last date this was updated
      */
@@ -318,6 +327,7 @@ namespace Model
      */
     inline EmailChannelResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
+
     /**
      * Platform type. Will be "EMAIL"
      */
@@ -352,6 +362,7 @@ namespace Model
      * Platform type. Will be "EMAIL"
      */
     inline EmailChannelResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+
 
     /**
      * The ARN of an IAM Role used to submit events to Mobile Analytics' event
@@ -395,6 +406,7 @@ namespace Model
      */
     inline EmailChannelResponse& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * Version of channel
      */
@@ -411,28 +423,40 @@ namespace Model
     inline EmailChannelResponse& WithVersion(int value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_fromAddress;
     bool m_fromAddressHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     bool m_isArchived;
     bool m_isArchivedHasBeenSet;
+
     Aws::String m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet;
+
     Aws::String m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::String m_platform;
     bool m_platformHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
   };

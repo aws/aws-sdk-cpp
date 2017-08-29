@@ -30,12 +30,12 @@ DescribePlayerSessionsResult::DescribePlayerSessionsResult()
 {
 }
 
-DescribePlayerSessionsResult::DescribePlayerSessionsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribePlayerSessionsResult::DescribePlayerSessionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribePlayerSessionsResult& DescribePlayerSessionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribePlayerSessionsResult& DescribePlayerSessionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PlayerSessions"))

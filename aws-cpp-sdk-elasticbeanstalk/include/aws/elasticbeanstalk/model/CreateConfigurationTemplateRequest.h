@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application to associate with this configuration template. If
      * no application is found with this name, AWS Elastic Beanstalk returns an
@@ -92,6 +93,7 @@ namespace Model
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateConfigurationTemplateRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The name of the configuration template.</p> <p>Constraint: This name must be
@@ -148,6 +150,7 @@ namespace Model
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateConfigurationTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+
 
     /**
      * <p>The name of the solution stack used by this configuration. The solution stack
@@ -247,6 +250,7 @@ namespace Model
      */
     inline CreateConfigurationTemplateRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
+
     /**
      * <p>The ARN of the custome platform.</p>
      */
@@ -281,6 +285,7 @@ namespace Model
      * <p>The ARN of the custome platform.</p>
      */
     inline CreateConfigurationTemplateRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
 
     /**
      * <p>If specified, AWS Elastic Beanstalk uses the configuration values from the
@@ -352,6 +357,7 @@ namespace Model
      */
     inline CreateConfigurationTemplateRequest& WithSourceConfiguration(SourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID of the environment used with this configuration template.</p>
      */
@@ -387,6 +393,7 @@ namespace Model
      */
     inline CreateConfigurationTemplateRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 
+
     /**
      * <p>Describes this configuration.</p>
      */
@@ -421,6 +428,7 @@ namespace Model
      * <p>Describes this configuration.</p>
      */
     inline CreateConfigurationTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>If specified, AWS Elastic Beanstalk sets the specified configuration option
@@ -472,20 +480,28 @@ namespace Model
     inline CreateConfigurationTemplateRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
+
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet;
+
     Aws::String m_platformArn;
     bool m_platformArnHasBeenSet;
+
     SourceConfiguration m_sourceConfiguration;
     bool m_sourceConfigurationHasBeenSet;
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
   };

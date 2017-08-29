@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the type of policy that you want to include in the response.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>Specifies the type of policy that you want to include in the response.</p>
      */
     inline ListPoliciesRequest& WithFilter(PolicyType&& value) { SetFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -118,6 +120,7 @@ namespace Model
      */
     inline ListPoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this to limit the number of results you want included in the
      * response. If you do not include this parameter, it defaults to a value that is
@@ -158,10 +161,13 @@ namespace Model
     inline ListPoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     PolicyType m_filter;
     bool m_filterHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

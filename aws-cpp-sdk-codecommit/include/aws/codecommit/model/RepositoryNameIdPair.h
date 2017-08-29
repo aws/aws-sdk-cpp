@@ -45,6 +45,7 @@ namespace Model
     RepositoryNameIdPair& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name associated with the repository.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name associated with the repository.</p>
      */
     inline RepositoryNameIdPair& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The ID associated with the repository.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline RepositoryNameIdPair& WithRepositoryId(const char* value) { SetRepositoryId(value); return *this;}
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_repositoryId;
     bool m_repositoryIdHasBeenSet;
   };

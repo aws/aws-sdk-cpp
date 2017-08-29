@@ -31,12 +31,12 @@ ListReceiptFiltersResult::ListReceiptFiltersResult()
 {
 }
 
-ListReceiptFiltersResult::ListReceiptFiltersResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListReceiptFiltersResult::ListReceiptFiltersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListReceiptFiltersResult& ListReceiptFiltersResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListReceiptFiltersResult& ListReceiptFiltersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

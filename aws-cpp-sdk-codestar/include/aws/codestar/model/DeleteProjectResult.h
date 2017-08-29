@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteProjectResult();
-    DeleteProjectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteProjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the primary stack in AWS CloudFormation that will be deleted as
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DeleteProjectResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the deleted project.</p>
      */
@@ -119,7 +121,9 @@ namespace Model
     inline DeleteProjectResult& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
+
     Aws::String m_projectArn;
   };
 

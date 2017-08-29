@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A name for the destination.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline PutDestinationRequest& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
 
+
     /**
      * <p>The ARN of an Amazon Kinesis stream to deliver matching log events to.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The ARN of an Amazon Kinesis stream to deliver matching log events to.</p>
      */
     inline PutDestinationRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call Amazon
@@ -149,10 +152,13 @@ namespace Model
     inline PutDestinationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_destinationName;
     bool m_destinationNameHasBeenSet;
+
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

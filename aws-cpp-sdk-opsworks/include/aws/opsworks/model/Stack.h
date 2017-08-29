@@ -51,6 +51,7 @@ namespace Model
     Stack& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline Stack& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The stack name.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline Stack& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The stack's ARN.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The stack's ARN.</p>
      */
     inline Stack& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The stack AWS region, such as "ap-northeast-2". For more information about
@@ -212,6 +216,7 @@ namespace Model
      */
     inline Stack& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
     /**
      * <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
      */
@@ -246,6 +251,7 @@ namespace Model
      * <p>The VPC ID; applicable only if the stack is running in a VPC.</p>
      */
     inline Stack& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>The stack's attributes.</p>
@@ -302,6 +308,7 @@ namespace Model
      */
     inline Stack& AddAttributes(const StackAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role.</p>
      */
@@ -336,6 +343,7 @@ namespace Model
      * <p>The stack AWS Identity and Access Management (IAM) role.</p>
      */
     inline Stack& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+
 
     /**
      * <p>The ARN of an IAM profile that is the default profile for all of the stack's
@@ -393,6 +401,7 @@ namespace Model
      */
     inline Stack& WithDefaultInstanceProfileArn(const char* value) { SetDefaultInstanceProfileArn(value); return *this;}
 
+
     /**
      * <p>The stack's default operating system.</p>
      */
@@ -428,6 +437,7 @@ namespace Model
      */
     inline Stack& WithDefaultOs(const char* value) { SetDefaultOs(value); return *this;}
 
+
     /**
      * <p>The stack host name theme, with spaces replaced by underscores.</p>
      */
@@ -462,6 +472,7 @@ namespace Model
      * <p>The stack host name theme, with spaces replaced by underscores.</p>
      */
     inline Stack& WithHostnameTheme(const char* value) { SetHostnameTheme(value); return *this;}
+
 
     /**
      * <p>The stack's default Availability Zone. For more information, see <a
@@ -512,6 +523,7 @@ namespace Model
      */
     inline Stack& WithDefaultAvailabilityZone(const char* value) { SetDefaultAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
      */
@@ -546,6 +558,7 @@ namespace Model
      * <p>The default subnet ID; applicable only if the stack is running in a VPC.</p>
      */
     inline Stack& WithDefaultSubnetId(const char* value) { SetDefaultSubnetId(value); return *this;}
+
 
     /**
      * <p>A JSON object that contains user-defined attributes to be added to the stack
@@ -631,6 +644,7 @@ namespace Model
      */
     inline Stack& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
+
     /**
      * <p>The configuration manager.</p>
      */
@@ -655,6 +669,7 @@ namespace Model
      * <p>The configuration manager.</p>
      */
     inline Stack& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
+
 
     /**
      * <p>A <code>ChefConfiguration</code> object that specifies whether to enable
@@ -696,6 +711,7 @@ namespace Model
      */
     inline Stack& WithChefConfiguration(ChefConfiguration&& value) { SetChefConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether the stack uses custom cookbooks.</p>
      */
@@ -710,6 +726,7 @@ namespace Model
      * <p>Whether the stack uses custom cookbooks.</p>
      */
     inline Stack& WithUseCustomCookbooks(bool value) { SetUseCustomCookbooks(value); return *this;}
+
 
     /**
      * <p>Whether the stack automatically associates the AWS OpsWorks Stacks built-in
@@ -729,6 +746,7 @@ namespace Model
      */
     inline Stack& WithUseOpsworksSecurityGroups(bool value) { SetUseOpsworksSecurityGroups(value); return *this;}
 
+
     
     inline const Source& GetCustomCookbooksSource() const{ return m_customCookbooksSource; }
 
@@ -743,6 +761,7 @@ namespace Model
 
     
     inline Stack& WithCustomCookbooksSource(Source&& value) { SetCustomCookbooksSource(std::move(value)); return *this;}
+
 
     /**
      * <p>A default Amazon EC2 key pair for the stack's instances. You can override
@@ -786,6 +805,7 @@ namespace Model
      */
     inline Stack& WithDefaultSshKeyName(const char* value) { SetDefaultSshKeyName(value); return *this;}
 
+
     /**
      * <p>The date when the stack was created.</p>
      */
@@ -820,6 +840,7 @@ namespace Model
      * <p>The date when the stack was created.</p>
      */
     inline Stack& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
 
     /**
      * <p>The default root device type. This value is used by default for all instances
@@ -866,6 +887,7 @@ namespace Model
      */
     inline Stack& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The agent version. This parameter is set to <code>LATEST</code> for
      * auto-update. or a version number for a fixed agent version.</p>
@@ -909,48 +931,70 @@ namespace Model
     inline Stack& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::Map<StackAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     Aws::String m_defaultInstanceProfileArn;
     bool m_defaultInstanceProfileArnHasBeenSet;
+
     Aws::String m_defaultOs;
     bool m_defaultOsHasBeenSet;
+
     Aws::String m_hostnameTheme;
     bool m_hostnameThemeHasBeenSet;
+
     Aws::String m_defaultAvailabilityZone;
     bool m_defaultAvailabilityZoneHasBeenSet;
+
     Aws::String m_defaultSubnetId;
     bool m_defaultSubnetIdHasBeenSet;
+
     Aws::String m_customJson;
     bool m_customJsonHasBeenSet;
+
     StackConfigurationManager m_configurationManager;
     bool m_configurationManagerHasBeenSet;
+
     ChefConfiguration m_chefConfiguration;
     bool m_chefConfigurationHasBeenSet;
+
     bool m_useCustomCookbooks;
     bool m_useCustomCookbooksHasBeenSet;
+
     bool m_useOpsworksSecurityGroups;
     bool m_useOpsworksSecurityGroupsHasBeenSet;
+
     Source m_customCookbooksSource;
     bool m_customCookbooksSourceHasBeenSet;
+
     Aws::String m_defaultSshKeyName;
     bool m_defaultSshKeyNameHasBeenSet;
+
     Aws::String m_createdAt;
     bool m_createdAtHasBeenSet;
+
     RootDeviceType m_defaultRootDeviceType;
     bool m_defaultRootDeviceTypeHasBeenSet;
+
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The names of the load balancers.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The names of the load balancers.</p>
      */
     inline DescribeLoadBalancersRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
+
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -125,6 +127,7 @@ namespace Model
      */
     inline DescribeLoadBalancersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return with this call (a number from 1 to
      * 400). The default is 400.</p>
@@ -144,10 +147,13 @@ namespace Model
     inline DescribeLoadBalancersRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_loadBalancerNames;
     bool m_loadBalancerNamesHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
   };

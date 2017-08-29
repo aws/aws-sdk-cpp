@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeSpotInstanceRequestsResponse();
-    DescribeSpotInstanceRequestsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSpotInstanceRequestsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotInstanceRequestsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotInstanceRequestsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>One or more Spot instance requests.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeSpotInstanceRequestsResponse& AddSpotInstanceRequests(SpotInstanceRequest&& value) { m_spotInstanceRequests.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeSpotInstanceRequestsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<SpotInstanceRequest> m_spotInstanceRequests;
+
     ResponseMetadata m_responseMetadata;
   };
 

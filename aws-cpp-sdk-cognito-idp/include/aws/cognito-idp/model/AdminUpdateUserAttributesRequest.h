@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool where you want to update user
      * attributes.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline AdminUpdateUserAttributesRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The user name of the user for whom you want to update user attributes.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The user name of the user for whom you want to update user attributes.</p>
      */
     inline AdminUpdateUserAttributesRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
@@ -169,10 +172,13 @@ namespace Model
     inline AdminUpdateUserAttributesRequest& AddUserAttributes(AttributeType&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::Vector<AttributeType> m_userAttributes;
     bool m_userAttributesHasBeenSet;
   };

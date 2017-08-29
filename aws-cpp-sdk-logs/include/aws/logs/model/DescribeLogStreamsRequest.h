@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline DescribeLogStreamsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>The prefix to match.</p> <p>You cannot specify this parameter if
@@ -113,6 +115,7 @@ namespace Model
      * <code>orderBy</code> is <code>LastEventTime</code>.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const char* value) { SetLogStreamNamePrefix(value); return *this;}
+
 
     /**
      * <p>If the value is <code>LogStreamName</code>, the results are ordered by log
@@ -184,6 +187,7 @@ namespace Model
      */
     inline DescribeLogStreamsRequest& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
 
+
     /**
      * <p>If the value is true, results are returned in descending order. If the value
      * is to false, results are returned in ascending order. The default value is
@@ -204,6 +208,7 @@ namespace Model
      * false.</p>
      */
     inline DescribeLogStreamsRequest& WithDescending(bool value) { SetDescending(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -247,6 +252,7 @@ namespace Model
      */
     inline DescribeLogStreamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the
      * default is up to 50 items.</p>
@@ -266,16 +272,22 @@ namespace Model
     inline DescribeLogStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_logStreamNamePrefix;
     bool m_logStreamNamePrefixHasBeenSet;
+
     OrderBy m_orderBy;
     bool m_orderByHasBeenSet;
+
     bool m_descending;
     bool m_descendingHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

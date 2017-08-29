@@ -50,6 +50,7 @@ namespace Model
     MaintenanceWindowExecutionTaskInvocationIdentity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the Maintenance Window execution that ran the task.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The ID of the Maintenance Window execution that ran the task.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
+
 
     /**
      * <p>The ID of the specific task execution in the Maintenance Window
@@ -127,6 +129,7 @@ namespace Model
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithTaskExecutionId(const char* value) { SetTaskExecutionId(value); return *this;}
 
+
     /**
      * <p>The ID of the task invocation.</p>
      */
@@ -161,6 +164,7 @@ namespace Model
      * <p>The ID of the task invocation.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithInvocationId(const char* value) { SetInvocationId(value); return *this;}
+
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
@@ -204,6 +208,7 @@ namespace Model
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
 
+
     /**
      * <p>The task type.</p>
      */
@@ -228,6 +233,7 @@ namespace Model
      * <p>The task type.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
+
 
     /**
      * <p>The parameters that were provided for the invocation when it was
@@ -271,6 +277,7 @@ namespace Model
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithParameters(const char* value) { SetParameters(value); return *this;}
 
+
     /**
      * <p>The status of the task invocation.</p>
      */
@@ -295,6 +302,7 @@ namespace Model
      * <p>The status of the task invocation.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStatus(MaintenanceWindowExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The details explaining the status of the task invocation. Only available for
@@ -338,6 +346,7 @@ namespace Model
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
+
     /**
      * <p>The time the invocation started.</p>
      */
@@ -363,6 +372,7 @@ namespace Model
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time the invocation finished.</p>
      */
@@ -387,6 +397,7 @@ namespace Model
      * <p>The time the invocation finished.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>User-provided value that was specified when the target was registered with
@@ -437,6 +448,7 @@ namespace Model
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
+
     /**
      * <p>The ID of the target definition in this Maintenance Window the invocation was
      * performed for.</p>
@@ -480,28 +492,40 @@ namespace Model
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithWindowTargetId(const char* value) { SetWindowTargetId(value); return *this;}
 
   private:
+
     Aws::String m_windowExecutionId;
     bool m_windowExecutionIdHasBeenSet;
+
     Aws::String m_taskExecutionId;
     bool m_taskExecutionIdHasBeenSet;
+
     Aws::String m_invocationId;
     bool m_invocationIdHasBeenSet;
+
     Aws::String m_executionId;
     bool m_executionIdHasBeenSet;
+
     MaintenanceWindowTaskType m_taskType;
     bool m_taskTypeHasBeenSet;
+
     Aws::String m_parameters;
     bool m_parametersHasBeenSet;
+
     MaintenanceWindowExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusDetails;
     bool m_statusDetailsHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::String m_ownerInformation;
     bool m_ownerInformationHasBeenSet;
+
     Aws::String m_windowTargetId;
     bool m_windowTargetIdHasBeenSet;
   };

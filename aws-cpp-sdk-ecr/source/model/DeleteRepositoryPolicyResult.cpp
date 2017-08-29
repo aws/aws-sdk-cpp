@@ -30,12 +30,12 @@ DeleteRepositoryPolicyResult::DeleteRepositoryPolicyResult()
 {
 }
 
-DeleteRepositoryPolicyResult::DeleteRepositoryPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRepositoryPolicyResult::DeleteRepositoryPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteRepositoryPolicyResult& DeleteRepositoryPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRepositoryPolicyResult& DeleteRepositoryPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("registryId"))

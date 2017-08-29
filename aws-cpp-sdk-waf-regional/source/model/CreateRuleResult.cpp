@@ -30,12 +30,12 @@ CreateRuleResult::CreateRuleResult()
 {
 }
 
-CreateRuleResult::CreateRuleResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateRuleResult::CreateRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateRuleResult& CreateRuleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateRuleResult& CreateRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Rule"))

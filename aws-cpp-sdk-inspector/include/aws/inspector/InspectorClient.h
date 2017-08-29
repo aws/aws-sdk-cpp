@@ -128,9 +128,9 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateAssessmentTargetResult, Aws::Client::AWSError<InspectorErrors>> CreateAssessmentTargetOutcome;
         typedef Aws::Utils::Outcome<CreateAssessmentTemplateResult, Aws::Client::AWSError<InspectorErrors>> CreateAssessmentTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateResourceGroupResult, Aws::Client::AWSError<InspectorErrors>> CreateResourceGroupOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<InspectorErrors>> DeleteAssessmentRunOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<InspectorErrors>> DeleteAssessmentTargetOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<InspectorErrors>> DeleteAssessmentTemplateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> DeleteAssessmentRunOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> DeleteAssessmentTargetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> DeleteAssessmentTemplateOutcome;
         typedef Aws::Utils::Outcome<DescribeAssessmentRunsResult, Aws::Client::AWSError<InspectorErrors>> DescribeAssessmentRunsOutcome;
         typedef Aws::Utils::Outcome<DescribeAssessmentTargetsResult, Aws::Client::AWSError<InspectorErrors>> DescribeAssessmentTargetsOutcome;
         typedef Aws::Utils::Outcome<DescribeAssessmentTemplatesResult, Aws::Client::AWSError<InspectorErrors>> DescribeAssessmentTemplatesOutcome;
@@ -149,14 +149,14 @@ namespace Model
         typedef Aws::Utils::Outcome<ListRulesPackagesResult, Aws::Client::AWSError<InspectorErrors>> ListRulesPackagesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<InspectorErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PreviewAgentsResult, Aws::Client::AWSError<InspectorErrors>> PreviewAgentsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<InspectorErrors>> RegisterCrossAccountAccessRoleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> RegisterCrossAccountAccessRoleOutcome;
         typedef Aws::Utils::Outcome<RemoveAttributesFromFindingsResult, Aws::Client::AWSError<InspectorErrors>> RemoveAttributesFromFindingsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<InspectorErrors>> SetTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> SetTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<StartAssessmentRunResult, Aws::Client::AWSError<InspectorErrors>> StartAssessmentRunOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<InspectorErrors>> StopAssessmentRunOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<InspectorErrors>> SubscribeToEventOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<InspectorErrors>> UnsubscribeFromEventOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<InspectorErrors>> UpdateAssessmentTargetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> StopAssessmentRunOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> SubscribeToEventOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> UnsubscribeFromEventOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<InspectorErrors>> UpdateAssessmentTargetOutcome;
 
         typedef std::future<AddAttributesToFindingsOutcome> AddAttributesToFindingsOutcomeCallable;
         typedef std::future<CreateAssessmentTargetOutcome> CreateAssessmentTargetOutcomeCallable;
@@ -245,22 +245,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        InspectorClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        InspectorClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        InspectorClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        InspectorClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        InspectorClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        InspectorClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~InspectorClient();
+
 
         /**
          * <p>Assigns attributes (key and value pairs) to the findings that are specified
@@ -1241,7 +1242,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AddAttributesToFindingsAsyncHelper(const Model::AddAttributesToFindingsRequest& request, const AddAttributesToFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

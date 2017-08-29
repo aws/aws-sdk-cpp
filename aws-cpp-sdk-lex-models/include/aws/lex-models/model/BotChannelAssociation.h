@@ -49,6 +49,7 @@ namespace Model
     BotChannelAssociation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the association between the bot and the channel. </p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline BotChannelAssociation& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A text description of the association you are creating. </p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>A text description of the association you are creating. </p>
      */
     inline BotChannelAssociation& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
@@ -160,6 +163,7 @@ namespace Model
      * association is being made. </p>
      */
     inline BotChannelAssociation& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
+
 
     /**
      * <p>The name of the Amazon Lex bot to which this association is being made. </p>
@@ -210,6 +214,7 @@ namespace Model
      */
     inline BotChannelAssociation& WithBotName(const char* value) { SetBotName(value); return *this;}
 
+
     /**
      * <p>The date that the association between the Amazon Lex bot and the channel was
      * created. </p>
@@ -240,6 +245,7 @@ namespace Model
      */
     inline BotChannelAssociation& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the type of association by indicating the type of channel being
      * established between the Amazon Lex bot and the external messaging platform.</p>
@@ -269,6 +275,7 @@ namespace Model
      * established between the Amazon Lex bot and the external messaging platform.</p>
      */
     inline BotChannelAssociation& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides information necessary to communicate with the messaging platform.
@@ -343,18 +350,25 @@ namespace Model
     inline BotChannelAssociation& AddBotConfiguration(const char* key, const char* value) { m_botConfigurationHasBeenSet = true; m_botConfiguration.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_botAlias;
     bool m_botAliasHasBeenSet;
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     ChannelType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_botConfiguration;
     bool m_botConfigurationHasBeenSet;
   };

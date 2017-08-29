@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of a request to renew an offering.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline RenewOfferingRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 
+
     /**
      * <p>The quantity requested in an offering renewal.</p>
      */
@@ -90,8 +92,10 @@ namespace Model
     inline RenewOfferingRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
 
   private:
+
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet;
+
     int m_quantity;
     bool m_quantityHasBeenSet;
   };

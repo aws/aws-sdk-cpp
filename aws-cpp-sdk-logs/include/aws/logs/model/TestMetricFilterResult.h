@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     TestMetricFilterResult();
-    TestMetricFilterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TestMetricFilterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestMetricFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestMetricFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The matched events.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline TestMetricFilterResult& AddMatches(MetricFilterMatchRecord&& value) { m_matches.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<MetricFilterMatchRecord> m_matches;
   };
 

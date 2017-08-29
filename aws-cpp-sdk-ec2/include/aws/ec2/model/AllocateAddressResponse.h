@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     AllocateAddressResponse();
-    AllocateAddressResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AllocateAddressResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AllocateAddressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AllocateAddressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The Elastic IP address.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The Elastic IP address.</p>
      */
     inline AllocateAddressResponse& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
+
 
     /**
      * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
@@ -125,6 +127,7 @@ namespace Model
      */
     inline AllocateAddressResponse& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
+
     /**
      * <p>Indicates whether this Elastic IP address is for use with instances in
      * EC2-Classic (<code>standard</code>) or instances in a VPC
@@ -160,6 +163,7 @@ namespace Model
      */
     inline AllocateAddressResponse& WithDomain(DomainType&& value) { SetDomain(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -176,9 +180,13 @@ namespace Model
     inline AllocateAddressResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_publicIp;
+
     Aws::String m_allocationId;
+
     DomainType m_domain;
+
     ResponseMetadata m_responseMetadata;
   };
 

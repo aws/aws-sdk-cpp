@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     DescribeProductAsAdminResult();
-    DescribeProductAsAdminResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeProductAsAdminResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProductAsAdminResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProductAsAdminResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Detailed product view information.</p>
@@ -69,6 +70,7 @@ namespace Model
      * <p>Detailed product view information.</p>
      */
     inline DescribeProductAsAdminResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of provisioning artifact summaries for the product.</p>
@@ -105,6 +107,7 @@ namespace Model
      */
     inline DescribeProductAsAdminResult& AddProvisioningArtifactSummaries(ProvisioningArtifactSummary&& value) { m_provisioningArtifactSummaries.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Tags associated with the product.</p>
      */
@@ -139,6 +142,7 @@ namespace Model
      * <p>Tags associated with the product.</p>
      */
     inline DescribeProductAsAdminResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>List of TagOptions associated with the product.</p>
@@ -176,9 +180,13 @@ namespace Model
     inline DescribeProductAsAdminResult& AddTagOptions(TagOptionDetail&& value) { m_tagOptions.push_back(std::move(value)); return *this; }
 
   private:
+
     ProductViewDetail m_productViewDetail;
+
     Aws::Vector<ProvisioningArtifactSummary> m_provisioningArtifactSummaries;
+
     Aws::Vector<Tag> m_tags;
+
     Aws::Vector<TagOptionDetail> m_tagOptions;
   };
 

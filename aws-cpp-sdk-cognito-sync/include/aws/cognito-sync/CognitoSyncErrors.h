@@ -55,7 +55,7 @@ enum class CognitoSyncErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_STREAMED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_STREAMED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONCURRENT_MODIFICATION,
   DUPLICATE_REQUEST,
   INTERNAL_ERROR,
@@ -70,7 +70,7 @@ enum class CognitoSyncErrors
 };
 namespace CognitoSyncErrorMapper
 {
-  AWS_COGNITOSYNC_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_COGNITOSYNC_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CognitoSync

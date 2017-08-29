@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier (ID) of the cluster that contains the HSM that you are
      * deleting.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DeleteHsmRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>The identifier (ID) of the HSM that you are deleting.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The identifier (ID) of the HSM that you are deleting.</p>
      */
     inline DeleteHsmRequest& WithHsmId(const char* value) { SetHsmId(value); return *this;}
+
 
     /**
      * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
@@ -154,6 +157,7 @@ namespace Model
      * you are deleting.</p>
      */
     inline DeleteHsmRequest& WithEniId(const char* value) { SetEniId(value); return *this;}
+
 
     /**
      * <p>The IP address of the elastic network interface (ENI) of the HSM that you are
@@ -198,12 +202,16 @@ namespace Model
     inline DeleteHsmRequest& WithEniIp(const char* value) { SetEniIp(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_hsmId;
     bool m_hsmIdHasBeenSet;
+
     Aws::String m_eniId;
     bool m_eniIdHasBeenSet;
+
     Aws::String m_eniIp;
     bool m_eniIpHasBeenSet;
   };

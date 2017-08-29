@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the root in which you want to enable a policy
      * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a
@@ -93,6 +94,7 @@ namespace Model
      */
     inline EnablePolicyTypeRequest& WithRootId(const char* value) { SetRootId(value); return *this;}
 
+
     /**
      * <p>The policy type that you want to enable.</p>
      */
@@ -119,8 +121,10 @@ namespace Model
     inline EnablePolicyTypeRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_rootId;
     bool m_rootIdHasBeenSet;
+
     PolicyType m_policyType;
     bool m_policyTypeHasBeenSet;
   };

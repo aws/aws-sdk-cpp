@@ -51,8 +51,9 @@ namespace Model
   {
   public:
     UpdateDocumentationVersionResult();
-    UpdateDocumentationVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDocumentationVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDocumentationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDocumentationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The version identifier of the API documentation snapshot.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline UpdateDocumentationVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>The date when the API documentation snapshot is created.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The date when the API documentation snapshot is created.</p>
      */
     inline UpdateDocumentationVersionResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The description of the API documentation snapshot.</p>
@@ -150,8 +153,11 @@ namespace Model
     inline UpdateDocumentationVersionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_version;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::String m_description;
   };
 

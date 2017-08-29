@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -64,6 +65,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline MoveAddressToVpcRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The Elastic IP address.</p>
@@ -101,8 +103,10 @@ namespace Model
     inline MoveAddressToVpcRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
   };

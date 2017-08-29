@@ -30,12 +30,12 @@ GetLexiconResult::GetLexiconResult()
 {
 }
 
-GetLexiconResult::GetLexiconResult(const AmazonWebServiceResult<JsonValue>& result)
+GetLexiconResult::GetLexiconResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetLexiconResult& GetLexiconResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetLexiconResult& GetLexiconResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Lexicon"))

@@ -46,6 +46,7 @@ namespace Model
     ActionTypeSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The URL of a sign-up page where users can sign up for an external service and
      * perform initial configuration of the action provided by that service.</p>
@@ -87,6 +88,7 @@ namespace Model
      * perform initial configuration of the action provided by that service.</p>
      */
     inline ActionTypeSettings& WithThirdPartyConfigurationUrl(const char* value) { SetThirdPartyConfigurationUrl(value); return *this;}
+
 
     /**
      * <p>The URL returned to the AWS CodePipeline console that provides a deep link to
@@ -144,6 +146,7 @@ namespace Model
      */
     inline ActionTypeSettings& WithEntityUrlTemplate(const char* value) { SetEntityUrlTemplate(value); return *this;}
 
+
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
      * top-level landing page for the external system, such as console page for AWS
@@ -200,6 +203,7 @@ namespace Model
      */
     inline ActionTypeSettings& WithExecutionUrlTemplate(const char* value) { SetExecutionUrlTemplate(value); return *this;}
 
+
     /**
      * <p>The URL returned to the AWS CodePipeline console that contains a link to the
      * page where customers can update or change the configuration of the external
@@ -250,12 +254,16 @@ namespace Model
     inline ActionTypeSettings& WithRevisionUrlTemplate(const char* value) { SetRevisionUrlTemplate(value); return *this;}
 
   private:
+
     Aws::String m_thirdPartyConfigurationUrl;
     bool m_thirdPartyConfigurationUrlHasBeenSet;
+
     Aws::String m_entityUrlTemplate;
     bool m_entityUrlTemplateHasBeenSet;
+
     Aws::String m_executionUrlTemplate;
     bool m_executionUrlTemplateHasBeenSet;
+
     Aws::String m_revisionUrlTemplate;
     bool m_revisionUrlTemplateHasBeenSet;
   };

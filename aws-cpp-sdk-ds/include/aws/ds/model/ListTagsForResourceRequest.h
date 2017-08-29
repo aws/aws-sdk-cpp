@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
      */
     inline ListTagsForResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>Reserved for future use.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline ListTagsForResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -122,10 +125,13 @@ namespace Model
     inline ListTagsForResourceRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

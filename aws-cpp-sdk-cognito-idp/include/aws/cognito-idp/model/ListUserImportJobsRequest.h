@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool that the users are being imported
      * into.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ListUserImportJobsRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The maximum number of import jobs you want the request to return.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>The maximum number of import jobs you want the request to return.</p>
      */
     inline ListUserImportJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>An identifier that was returned from the previous call to
@@ -147,10 +150,13 @@ namespace Model
     inline ListUserImportJobsRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_paginationToken;
     bool m_paginationTokenHasBeenSet;
   };

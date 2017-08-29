@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where the object resides. For more information, see <a>arns</a>.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline ListObjectChildrenRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>The reference that identifies the object for which child objects are being
      * listed.</p>
@@ -109,6 +111,7 @@ namespace Model
      * listed.</p>
      */
     inline ListObjectChildrenRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -145,6 +148,7 @@ namespace Model
      */
     inline ListObjectChildrenRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
@@ -162,6 +166,7 @@ namespace Model
      * approximate number.</p>
      */
     inline ListObjectChildrenRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Represents the manner and timing in which the successful write or update of
@@ -194,14 +199,19 @@ namespace Model
     inline ListObjectChildrenRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     ConsistencyLevel m_consistencyLevel;
     bool m_consistencyLevelHasBeenSet;
   };

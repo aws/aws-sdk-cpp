@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application associated with this version.</p> <p> If no
      * application is found with this name, <code>UpdateApplication</code> returns an
@@ -89,6 +90,7 @@ namespace Model
      * <code>InvalidParameterValue</code> error.</p>
      */
     inline UpdateApplicationVersionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The name of the version to update.</p> <p>If no application version is found
@@ -139,6 +141,7 @@ namespace Model
      */
     inline UpdateApplicationVersionRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
+
     /**
      * <p>A new description for this version.</p>
      */
@@ -175,10 +178,13 @@ namespace Model
     inline UpdateApplicationVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

@@ -34,6 +34,7 @@ namespace Model
     GetDeploymentStatusRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * the deployment Id
      */
@@ -68,6 +69,7 @@ namespace Model
      * the deployment Id
      */
     inline GetDeploymentStatusRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+
 
     /**
      * The unique Id of the AWS Greengrass Group
@@ -105,8 +107,10 @@ namespace Model
     inline GetDeploymentStatusRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
   };

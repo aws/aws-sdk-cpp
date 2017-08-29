@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeFleetsResult();
-    DescribeFleetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFleetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFleetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeFleetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of fleet details.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of fleet details.</p>
      */
     inline DescribeFleetsResult& AddFleets(Fleet&& value) { m_fleets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeFleetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Fleet> m_fleets;
+
     Aws::String m_nextToken;
   };
 

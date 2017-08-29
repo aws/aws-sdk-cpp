@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline GetOpenIdTokenRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
@@ -184,8 +186,10 @@ namespace Model
     inline GetOpenIdTokenRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_logins;
     bool m_loginsHasBeenSet;
   };

@@ -31,12 +31,12 @@ UpdateScalingParametersResult::UpdateScalingParametersResult()
 {
 }
 
-UpdateScalingParametersResult::UpdateScalingParametersResult(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateScalingParametersResult::UpdateScalingParametersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UpdateScalingParametersResult& UpdateScalingParametersResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateScalingParametersResult& UpdateScalingParametersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

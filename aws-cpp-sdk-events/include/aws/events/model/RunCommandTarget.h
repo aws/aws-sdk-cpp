@@ -49,6 +49,7 @@ namespace Model
     RunCommandTarget& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Can be either <code>tag:</code> <i>tag-key</i> or
      * <code>InstanceIds</code>.</p>
@@ -90,6 +91,7 @@ namespace Model
      * <code>InstanceIds</code>.</p>
      */
     inline RunCommandTarget& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code>
@@ -148,8 +150,10 @@ namespace Model
     inline RunCommandTarget& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

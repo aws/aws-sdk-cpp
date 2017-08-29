@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more instance IDs.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline DetachInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
+
     /**
      * <p>The name of the group.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      */
     inline DetachInstancesRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
+
     /**
      * <p>If <code>True</code>, the Auto Scaling group decrements the desired capacity
      * value by the number of instances detached.</p>
@@ -136,10 +139,13 @@ namespace Model
     inline DetachInstancesRequest& WithShouldDecrementDesiredCapacity(bool value) { SetShouldDecrementDesiredCapacity(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     bool m_shouldDecrementDesiredCapacity;
     bool m_shouldDecrementDesiredCapacityHasBeenSet;
   };

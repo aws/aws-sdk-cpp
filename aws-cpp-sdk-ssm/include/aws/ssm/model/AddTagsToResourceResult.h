@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AddTagsToResourceResult();
-    AddTagsToResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddTagsToResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddTagsToResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddTagsToResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

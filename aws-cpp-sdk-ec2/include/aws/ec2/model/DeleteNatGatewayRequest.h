@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the NAT gateway.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteNatGatewayRequest& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
 
   private:
+
     Aws::String m_natGatewayId;
     bool m_natGatewayIdHasBeenSet;
   };

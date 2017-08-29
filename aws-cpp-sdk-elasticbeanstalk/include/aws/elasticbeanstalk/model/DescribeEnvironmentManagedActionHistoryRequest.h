@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The environment ID of the target environment.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The environment ID of the target environment.</p>
      */
     inline DescribeEnvironmentManagedActionHistoryRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>The name of the target environment.</p>
@@ -112,6 +114,7 @@ namespace Model
      */
     inline DescribeEnvironmentManagedActionHistoryRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The pagination token returned by a previous request.</p>
      */
@@ -147,6 +150,7 @@ namespace Model
      */
     inline DescribeEnvironmentManagedActionHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return for a single request.</p>
      */
@@ -163,12 +167,16 @@ namespace Model
     inline DescribeEnvironmentManagedActionHistoryRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     NodeTypeSpecificValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A node type to which the parameter value applies.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>A node type to which the parameter value applies.</p>
      */
     inline NodeTypeSpecificValue& WithNodeType(const char* value) { SetNodeType(value); return *this;}
+
 
     /**
      * <p>The parameter value for this node type.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline NodeTypeSpecificValue& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

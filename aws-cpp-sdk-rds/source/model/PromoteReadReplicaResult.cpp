@@ -31,12 +31,12 @@ PromoteReadReplicaResult::PromoteReadReplicaResult()
 {
 }
 
-PromoteReadReplicaResult::PromoteReadReplicaResult(const AmazonWebServiceResult<XmlDocument>& result)
+PromoteReadReplicaResult::PromoteReadReplicaResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-PromoteReadReplicaResult& PromoteReadReplicaResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+PromoteReadReplicaResult& PromoteReadReplicaResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

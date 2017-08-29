@@ -32,14 +32,14 @@ CreateMultipartUploadResult::CreateMultipartUploadResult() :
 {
 }
 
-CreateMultipartUploadResult::CreateMultipartUploadResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+CreateMultipartUploadResult::CreateMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }
 
-CreateMultipartUploadResult& CreateMultipartUploadResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateMultipartUploadResult& CreateMultipartUploadResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

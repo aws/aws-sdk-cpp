@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the virtual device (for example, <code>ephemeral0</code>).</p>
      */
     inline BlockDeviceMapping& WithVirtualName(const char* value) { SetVirtualName(value); return *this;}
+
 
     /**
      * <p>The device name exposed to the EC2 instance (for example,
@@ -126,6 +128,7 @@ namespace Model
      */
     inline BlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
+
     /**
      * <p>The information about the Amazon EBS volume.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      */
     inline BlockDeviceMapping& WithEbs(Ebs&& value) { SetEbs(std::move(value)); return *this;}
 
+
     /**
      * <p>Suppresses a device mapping.</p> <p>If this parameter is true for the root
      * device, the instance might fail the EC2 health check. Auto Scaling launches a
@@ -173,12 +177,16 @@ namespace Model
     inline BlockDeviceMapping& WithNoDevice(bool value) { SetNoDevice(value); return *this;}
 
   private:
+
     Aws::String m_virtualName;
     bool m_virtualNameHasBeenSet;
+
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet;
+
     Ebs m_ebs;
     bool m_ebsHasBeenSet;
+
     bool m_noDevice;
     bool m_noDeviceHasBeenSet;
   };

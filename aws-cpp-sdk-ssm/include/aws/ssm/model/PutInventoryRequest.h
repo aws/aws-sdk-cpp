@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>One or more instance IDs where you want to add or update inventory items.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>One or more instance IDs where you want to add or update inventory items.</p>
      */
     inline PutInventoryRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The inventory items that you want to add or update on instances.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline PutInventoryRequest& AddItems(InventoryItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::Vector<InventoryItem> m_items;
     bool m_itemsHasBeenSet;
   };

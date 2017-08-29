@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
@@ -59,6 +60,7 @@ namespace Model
 
     
     inline DescribeNotificationsForBudgetRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
 
     
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
@@ -81,6 +83,7 @@ namespace Model
     
     inline DescribeNotificationsForBudgetRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
 
+
     
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -89,6 +92,7 @@ namespace Model
 
     
     inline DescribeNotificationsForBudgetRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -112,12 +116,16 @@ namespace Model
     inline DescribeNotificationsForBudgetRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_budgetName;
     bool m_budgetNameHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

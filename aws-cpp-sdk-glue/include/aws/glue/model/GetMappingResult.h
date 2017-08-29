@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetMappingResult();
-    GetMappingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMappingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetMappingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetMappingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of mappings to the specified targets.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline GetMappingResult& AddMapping(MappingEntry&& value) { m_mapping.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<MappingEntry> m_mapping;
   };
 

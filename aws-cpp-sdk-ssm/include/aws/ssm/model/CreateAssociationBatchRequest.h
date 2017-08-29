@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>One or more associations.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline CreateAssociationBatchRequest& AddEntries(CreateAssociationBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CreateAssociationBatchRequestEntry> m_entries;
     bool m_entriesHasBeenSet;
   };

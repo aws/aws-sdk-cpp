@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline BatchGetDeploymentGroupsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The deployment groups' names.</p>
      */
@@ -124,8 +126,10 @@ namespace Model
     inline BatchGetDeploymentGroupsRequest& AddDeploymentGroupNames(const char* value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames.push_back(value); return *this; }
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_deploymentGroupNames;
     bool m_deploymentGroupNamesHasBeenSet;
   };

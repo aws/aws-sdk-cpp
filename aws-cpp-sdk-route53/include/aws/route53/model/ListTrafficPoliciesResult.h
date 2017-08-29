@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListTrafficPoliciesResult();
-    ListTrafficPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListTrafficPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTrafficPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTrafficPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
@@ -91,6 +92,7 @@ namespace Model
      */
     inline ListTrafficPoliciesResult& AddTrafficPolicySummaries(TrafficPolicySummary&& value) { m_trafficPolicySummaries.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A flag that indicates whether there are more traffic policies to be listed.
      * If the response was truncated, you can get the next group of traffic policies by
@@ -117,6 +119,7 @@ namespace Model
      * <code>TrafficPolicyIdMarker</code> request parameter.</p>
      */
     inline ListTrafficPoliciesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>If the value of <code>IsTruncated</code> is <code>true</code>,
@@ -167,6 +170,7 @@ namespace Model
      */
     inline ListTrafficPoliciesResult& WithTrafficPolicyIdMarker(const char* value) { SetTrafficPolicyIdMarker(value); return *this;}
 
+
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
      * <code>ListTrafficPolicies</code> request that produced the current response.</p>
@@ -210,9 +214,13 @@ namespace Model
     inline ListTrafficPoliciesResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::Vector<TrafficPolicySummary> m_trafficPolicySummaries;
+
     bool m_isTruncated;
+
     Aws::String m_trafficPolicyIdMarker;
+
     Aws::String m_maxItems;
   };
 

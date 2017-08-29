@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DeleteTapeArchiveResult();
-    DeleteTapeArchiveResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTapeArchiveResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTapeArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTapeArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the
@@ -89,6 +90,7 @@ namespace Model
     inline DeleteTapeArchiveResult& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
   };
 

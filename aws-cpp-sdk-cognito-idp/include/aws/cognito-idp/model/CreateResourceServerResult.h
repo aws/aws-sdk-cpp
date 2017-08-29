@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateResourceServerResult();
-    CreateResourceServerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateResourceServerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateResourceServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateResourceServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The newly created resource server.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateResourceServerResult& WithResourceServer(ResourceServerType&& value) { SetResourceServer(std::move(value)); return *this;}
 
   private:
+
     ResourceServerType m_resourceServer;
   };
 

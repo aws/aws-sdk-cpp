@@ -31,12 +31,12 @@ CreateCacheParameterGroupResult::CreateCacheParameterGroupResult()
 {
 }
 
-CreateCacheParameterGroupResult::CreateCacheParameterGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateCacheParameterGroupResult::CreateCacheParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateCacheParameterGroupResult& CreateCacheParameterGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateCacheParameterGroupResult& CreateCacheParameterGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

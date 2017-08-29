@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateApplicationResult();
-    CreateApplicationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> The <a>ApplicationDescription</a> of the application. </p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateApplicationResult& WithApplication(ApplicationDescription&& value) { SetApplication(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline CreateApplicationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ApplicationDescription m_application;
+
     ResponseMetadata m_responseMetadata;
   };
 

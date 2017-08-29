@@ -31,12 +31,12 @@ EstimateTemplateCostResult::EstimateTemplateCostResult()
 {
 }
 
-EstimateTemplateCostResult::EstimateTemplateCostResult(const AmazonWebServiceResult<XmlDocument>& result)
+EstimateTemplateCostResult::EstimateTemplateCostResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-EstimateTemplateCostResult& EstimateTemplateCostResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+EstimateTemplateCostResult& EstimateTemplateCostResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

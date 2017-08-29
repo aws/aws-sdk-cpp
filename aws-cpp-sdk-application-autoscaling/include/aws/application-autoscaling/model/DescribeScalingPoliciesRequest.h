@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The names of the scaling policies to describe.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeScalingPoliciesRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
+
     /**
      * <p>The namespace of the AWS service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
@@ -113,6 +115,7 @@ namespace Model
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline DescribeScalingPoliciesRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier of the resource associated with the scaling policy. This
@@ -275,6 +278,7 @@ namespace Model
      */
     inline DescribeScalingPoliciesRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The scalable dimension. This string consists of the service namespace,
      * resource type, and scaling property. If you specify a scalable dimension, you
@@ -385,6 +389,7 @@ namespace Model
      */
     inline DescribeScalingPoliciesRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of scalable target results. This value can be between 1
      * and 50. The default value is 50.</p> <p>If this parameter is used, the operation
@@ -417,6 +422,7 @@ namespace Model
      * if applicable.</p>
      */
     inline DescribeScalingPoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of results.</p>
@@ -454,16 +460,22 @@ namespace Model
     inline DescribeScalingPoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_policyNames;
     bool m_policyNamesHasBeenSet;
+
     ServiceNamespace m_serviceNamespace;
     bool m_serviceNamespaceHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     ScalableDimension m_scalableDimension;
     bool m_scalableDimensionHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

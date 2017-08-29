@@ -50,6 +50,7 @@ namespace Model
     Trigger& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the trigger.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>Name of the trigger.</p>
      */
     inline Trigger& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The trigger ID.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline Trigger& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The type of trigger that this is.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      */
     inline Trigger& WithType(TriggerType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The current state of the trigger.</p>
      */
@@ -169,6 +173,7 @@ namespace Model
      * <p>The current state of the trigger.</p>
      */
     inline Trigger& WithState(TriggerState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of this trigger.</p>
@@ -205,6 +210,7 @@ namespace Model
      */
     inline Trigger& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A cron schedule expression.</p>
      */
@@ -239,6 +245,7 @@ namespace Model
      * <p>A cron schedule expression.</p>
      */
     inline Trigger& WithSchedule(const char* value) { SetSchedule(value); return *this;}
+
 
     /**
      * <p>The actions initiated by this trigger.</p>
@@ -275,6 +282,7 @@ namespace Model
      */
     inline Trigger& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The predicate of this trigger.</p>
      */
@@ -301,20 +309,28 @@ namespace Model
     inline Trigger& WithPredicate(Predicate&& value) { SetPredicate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     TriggerType m_type;
     bool m_typeHasBeenSet;
+
     TriggerState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_schedule;
     bool m_scheduleHasBeenSet;
+
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet;
+
     Predicate m_predicate;
     bool m_predicateHasBeenSet;
   };

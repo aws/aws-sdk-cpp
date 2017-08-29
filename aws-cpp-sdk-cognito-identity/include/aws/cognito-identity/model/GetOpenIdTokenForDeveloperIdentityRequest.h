@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetOpenIdTokenForDeveloperIdentityRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline GetOpenIdTokenForDeveloperIdentityRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
@@ -267,6 +270,7 @@ namespace Model
      */
     inline GetOpenIdTokenForDeveloperIdentityRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins.emplace(key, value); return *this; }
 
+
     /**
      * <p>The expiration time of the token, in seconds. You can specify a custom
      * expiration time for the token so that you can cache it. If you don't provide an
@@ -304,12 +308,16 @@ namespace Model
     inline GetOpenIdTokenForDeveloperIdentityRequest& WithTokenDuration(long long value) { SetTokenDuration(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_logins;
     bool m_loginsHasBeenSet;
+
     long long m_tokenDuration;
     bool m_tokenDurationHasBeenSet;
   };

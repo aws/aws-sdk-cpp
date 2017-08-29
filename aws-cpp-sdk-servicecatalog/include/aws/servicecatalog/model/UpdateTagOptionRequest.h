@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the constraint to update.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The identifier of the constraint to update.</p>
      */
     inline UpdateTagOptionRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The updated value.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline UpdateTagOptionRequest& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>The updated active state.</p>
      */
@@ -122,10 +125,13 @@ namespace Model
     inline UpdateTagOptionRequest& WithActive(bool value) { SetActive(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     bool m_active;
     bool m_activeHasBeenSet;
   };

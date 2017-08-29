@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeInstanceAssociationsStatusResult();
-    DescribeInstanceAssociationsStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInstanceAssociationsStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInstanceAssociationsStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInstanceAssociationsStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Status information about the association.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Status information about the association.</p>
      */
     inline DescribeInstanceAssociationsStatusResult& AddInstanceAssociationStatusInfos(InstanceAssociationStatusInfo&& value) { m_instanceAssociationStatusInfos.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeInstanceAssociationsStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<InstanceAssociationStatusInfo> m_instanceAssociationStatusInfos;
+
     Aws::String m_nextToken;
   };
 

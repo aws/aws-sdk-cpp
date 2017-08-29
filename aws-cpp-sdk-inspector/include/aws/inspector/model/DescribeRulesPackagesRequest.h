@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN that specifies the rules package that you want to describe.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeRulesPackagesRequest& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
 
+
     /**
      * <p>The locale that you want to translate a rules package description into.</p>
      */
@@ -104,8 +106,10 @@ namespace Model
     inline DescribeRulesPackagesRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_rulesPackageArns;
     bool m_rulesPackageArnsHasBeenSet;
+
     Locale m_locale;
     bool m_localeHasBeenSet;
   };

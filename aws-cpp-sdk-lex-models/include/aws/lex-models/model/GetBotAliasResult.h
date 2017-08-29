@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetBotAliasResult();
-    GetBotAliasResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBotAliasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the bot alias.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetBotAliasResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the bot alias.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>A description of the bot alias.</p>
      */
     inline GetBotAliasResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The version of the bot that the alias points to.</p>
@@ -147,6 +150,7 @@ namespace Model
      */
     inline GetBotAliasResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
 
+
     /**
      * <p>The name of the bot that the alias points to.</p>
      */
@@ -182,6 +186,7 @@ namespace Model
      */
     inline GetBotAliasResult& WithBotName(const char* value) { SetBotName(value); return *this;}
 
+
     /**
      * <p>The date that the bot alias was updated. When you create a resource, the
      * creation date and the last updated date are the same.</p>
@@ -212,6 +217,7 @@ namespace Model
      */
     inline GetBotAliasResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date that the bot alias was created.</p>
      */
@@ -236,6 +242,7 @@ namespace Model
      * <p>The date that the bot alias was created.</p>
      */
     inline GetBotAliasResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Checksum of the bot alias.</p>
@@ -273,12 +280,19 @@ namespace Model
     inline GetBotAliasResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_description;
+
     Aws::String m_botVersion;
+
     Aws::String m_botName;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::String m_checksum;
   };
 

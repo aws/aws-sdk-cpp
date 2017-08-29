@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the static IP to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline ReleaseStaticIpRequest& WithStaticIpName(const char* value) { SetStaticIpName(value); return *this;}
 
   private:
+
     Aws::String m_staticIpName;
     bool m_staticIpNameHasBeenSet;
   };

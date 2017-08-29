@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application that contains the version to be deployed.</p> <p>
      * If no application is found with this name, <code>CreateEnvironment</code>
@@ -94,6 +95,7 @@ namespace Model
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateEnvironmentRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>A unique name for the deployment environment. Used in the application
@@ -179,6 +181,7 @@ namespace Model
      */
     inline CreateEnvironmentRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
@@ -242,6 +245,7 @@ namespace Model
      */
     inline CreateEnvironmentRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>Describes this environment.</p>
      */
@@ -276,6 +280,7 @@ namespace Model
      * <p>Describes this environment.</p>
      */
     inline CreateEnvironmentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>If specified, the environment attempts to use this value as the prefix for
@@ -326,6 +331,7 @@ namespace Model
      */
     inline CreateEnvironmentRequest& WithCNAMEPrefix(const char* value) { SetCNAMEPrefix(value); return *this;}
 
+
     /**
      * <p>This specifies the tier to use for creating this environment.</p>
      */
@@ -350,6 +356,7 @@ namespace Model
      * <p>This specifies the tier to use for creating this environment.</p>
      */
     inline CreateEnvironmentRequest& WithTier(EnvironmentTier&& value) { SetTier(std::move(value)); return *this;}
+
 
     /**
      * <p>This specifies the tags applied to resources in the environment.</p>
@@ -385,6 +392,7 @@ namespace Model
      * <p>This specifies the tags applied to resources in the environment.</p>
      */
     inline CreateEnvironmentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The name of the application version to deploy.</p> <p> If the specified
@@ -449,6 +457,7 @@ namespace Model
      */
     inline CreateEnvironmentRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
+
     /**
      * <p> The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk returns an
@@ -497,6 +506,7 @@ namespace Model
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline CreateEnvironmentRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+
 
     /**
      * <p>This is an alternative to specifying a template name. If specified, AWS
@@ -547,6 +557,7 @@ namespace Model
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
+
     /**
      * <p>The ARN of the platform.</p>
      */
@@ -581,6 +592,7 @@ namespace Model
      * <p>The ARN of the platform.</p>
      */
     inline CreateEnvironmentRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
 
     /**
      * <p>If specified, AWS Elastic Beanstalk sets the specified configuration options
@@ -638,6 +650,7 @@ namespace Model
      */
     inline CreateEnvironmentRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of custom user-defined configuration options to remove from the
      * configuration set for this new environment.</p>
@@ -681,30 +694,43 @@ namespace Model
     inline CreateEnvironmentRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_cNAMEPrefix;
     bool m_cNAMEPrefixHasBeenSet;
+
     EnvironmentTier m_tier;
     bool m_tierHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
+
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet;
+
     Aws::String m_platformArn;
     bool m_platformArnHasBeenSet;
+
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
+
     Aws::Vector<OptionSpecification> m_optionsToRemove;
     bool m_optionsToRemoveHasBeenSet;
   };

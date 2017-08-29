@@ -54,6 +54,7 @@ namespace Model
     MatchmakingTicket& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a matchmaking ticket.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>Unique identifier for a matchmaking ticket.</p>
      */
     inline MatchmakingTicket& WithTicketId(const char* value) { SetTicketId(value); return *this;}
+
 
     /**
      * <p>Name of the <a>MatchmakingConfiguration</a> that is used with this ticket.
@@ -137,6 +139,7 @@ namespace Model
      * how a new game session is created for the match.</p>
      */
     inline MatchmakingTicket& WithConfigurationName(const char* value) { SetConfigurationName(value); return *this;}
+
 
     /**
      * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> –
@@ -253,6 +256,7 @@ namespace Model
      */
     inline MatchmakingTicket& WithStatus(MatchmakingConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Code to explain the current status. For example, a status reason may indicate
      * when a ticket has returned to <code>SEARCHING</code> status after a proposed
@@ -302,6 +306,7 @@ namespace Model
      */
     inline MatchmakingTicket& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
+
     /**
      * <p>Additional information about the current status.</p>
      */
@@ -337,6 +342,7 @@ namespace Model
      */
     inline MatchmakingTicket& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
      * number expressed in Unix time as milliseconds (for example
@@ -371,6 +377,7 @@ namespace Model
      * "1469498468.057").</p>
      */
     inline MatchmakingTicket& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>A set of <code>Player</code> objects, each representing a player to find
@@ -435,6 +442,7 @@ namespace Model
      */
     inline MatchmakingTicket& AddPlayers(Player&& value) { m_playersHasBeenSet = true; m_players.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Identifier and connection information of the game session created for the
      * match. This information is added to the ticket only after the matchmaking
@@ -471,20 +479,28 @@ namespace Model
     inline MatchmakingTicket& WithGameSessionConnectionInfo(GameSessionConnectionInfo&& value) { SetGameSessionConnectionInfo(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_ticketId;
     bool m_ticketIdHasBeenSet;
+
     Aws::String m_configurationName;
     bool m_configurationNameHasBeenSet;
+
     MatchmakingConfigurationStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Vector<Player> m_players;
     bool m_playersHasBeenSet;
+
     GameSessionConnectionInfo m_gameSessionConnectionInfo;
     bool m_gameSessionConnectionInfoHasBeenSet;
   };

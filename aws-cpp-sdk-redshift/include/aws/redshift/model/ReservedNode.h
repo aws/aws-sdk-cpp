@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The unique identifier for the reservation.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The unique identifier for the reservation.</p>
      */
     inline ReservedNode& WithReservedNodeId(const char* value) { SetReservedNodeId(value); return *this;}
+
 
     /**
      * <p>The identifier for the reserved node offering.</p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline ReservedNode& WithReservedNodeOfferingId(const char* value) { SetReservedNodeOfferingId(value); return *this;}
 
+
     /**
      * <p>The node type of the reserved node.</p>
      */
@@ -158,6 +161,7 @@ namespace Model
      */
     inline ReservedNode& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
+
     /**
      * <p>The time the reservation started. You purchase a reserved node offering for a
      * duration. This is the start time of that duration.</p>
@@ -188,6 +192,7 @@ namespace Model
      */
     inline ReservedNode& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The duration of the node reservation in seconds.</p>
      */
@@ -202,6 +207,7 @@ namespace Model
      * <p>The duration of the node reservation in seconds.</p>
      */
     inline ReservedNode& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
@@ -218,6 +224,7 @@ namespace Model
      */
     inline ReservedNode& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
 
+
     /**
      * <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
      */
@@ -232,6 +239,7 @@ namespace Model
      * <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
      */
     inline ReservedNode& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
+
 
     /**
      * <p>The currency code for the reserved cluster.</p>
@@ -268,6 +276,7 @@ namespace Model
      */
     inline ReservedNode& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
 
+
     /**
      * <p>The number of reserved compute nodes.</p>
      */
@@ -282,6 +291,7 @@ namespace Model
      * <p>The number of reserved compute nodes.</p>
      */
     inline ReservedNode& WithNodeCount(int value) { SetNodeCount(value); return *this;}
+
 
     /**
      * <p>The state of the reserved compute node.</p> <p>Possible Values:</p> <ul> <li>
@@ -353,6 +363,7 @@ namespace Model
      */
     inline ReservedNode& WithState(const char* value) { SetState(value); return *this;}
 
+
     /**
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
      * node offering.</p>
@@ -395,6 +406,7 @@ namespace Model
      */
     inline ReservedNode& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
 
+
     /**
      * <p>The recurring charges for the reserved node.</p>
      */
@@ -431,28 +443,40 @@ namespace Model
     inline ReservedNode& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_reservedNodeId;
     bool m_reservedNodeIdHasBeenSet;
+
     Aws::String m_reservedNodeOfferingId;
     bool m_reservedNodeOfferingIdHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
+
     double m_usagePrice;
     bool m_usagePriceHasBeenSet;
+
     Aws::String m_currencyCode;
     bool m_currencyCodeHasBeenSet;
+
     int m_nodeCount;
     bool m_nodeCountHasBeenSet;
+
     Aws::String m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_offeringType;
     bool m_offeringTypeHasBeenSet;
+
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
   };

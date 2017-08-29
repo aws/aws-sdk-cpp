@@ -51,6 +51,7 @@ namespace Model
     Table& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the table.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>Name of the table.</p>
      */
     inline Table& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Name of the metadata database where the table metadata resides.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline Table& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>Description of the table.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>Description of the table.</p>
      */
     inline Table& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Owner of the table.</p>
@@ -191,6 +195,7 @@ namespace Model
      */
     inline Table& WithOwner(const char* value) { SetOwner(value); return *this;}
 
+
     /**
      * <p>Time when the table definition was created in the Data Catalog.</p>
      */
@@ -216,6 +221,7 @@ namespace Model
      */
     inline Table& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Last time the table was updated.</p>
      */
@@ -240,6 +246,7 @@ namespace Model
      * <p>Last time the table was updated.</p>
      */
     inline Table& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Last time the table was accessed. This is usually taken from HDFS, and may
@@ -271,6 +278,7 @@ namespace Model
      */
     inline Table& WithLastAccessTime(Aws::Utils::DateTime&& value) { SetLastAccessTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Last time column statistics were computed for this table.</p>
      */
@@ -296,6 +304,7 @@ namespace Model
      */
     inline Table& WithLastAnalyzedTime(Aws::Utils::DateTime&& value) { SetLastAnalyzedTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Retention time for this table.</p>
      */
@@ -310,6 +319,7 @@ namespace Model
      * <p>Retention time for this table.</p>
      */
     inline Table& WithRetention(int value) { SetRetention(value); return *this;}
+
 
     /**
      * <p>A storage descriptor containing information about the physical storage of
@@ -340,6 +350,7 @@ namespace Model
      * this table.</p>
      */
     inline Table& WithStorageDescriptor(StorageDescriptor&& value) { SetStorageDescriptor(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
@@ -383,6 +394,7 @@ namespace Model
      */
     inline Table& AddPartitionKeys(Column&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If the table is a view, the original text of the view; otherwise
      * <code>null</code>.</p>
@@ -424,6 +436,7 @@ namespace Model
      * <code>null</code>.</p>
      */
     inline Table& WithViewOriginalText(const char* value) { SetViewOriginalText(value); return *this;}
+
 
     /**
      * <p>If the table is a view, the expanded text of the view; otherwise
@@ -467,6 +480,7 @@ namespace Model
      */
     inline Table& WithViewExpandedText(const char* value) { SetViewExpandedText(value); return *this;}
 
+
     /**
      * <p>The type of this table (<code>EXTERNAL_TABLE</code>,
      * <code>VIRTUAL_VIEW</code>, etc.).</p>
@@ -508,6 +522,7 @@ namespace Model
      * <code>VIRTUAL_VIEW</code>, etc.).</p>
      */
     inline Table& WithTableType(const char* value) { SetTableType(value); return *this;}
+
 
     /**
      * <p>Properties associated with this table, as a list of key-value pairs.</p>
@@ -569,6 +584,7 @@ namespace Model
      */
     inline Table& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Person or entity who created the table.</p>
      */
@@ -605,36 +621,52 @@ namespace Model
     inline Table& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastAccessTime;
     bool m_lastAccessTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastAnalyzedTime;
     bool m_lastAnalyzedTimeHasBeenSet;
+
     int m_retention;
     bool m_retentionHasBeenSet;
+
     StorageDescriptor m_storageDescriptor;
     bool m_storageDescriptorHasBeenSet;
+
     Aws::Vector<Column> m_partitionKeys;
     bool m_partitionKeysHasBeenSet;
+
     Aws::String m_viewOriginalText;
     bool m_viewOriginalTextHasBeenSet;
+
     Aws::String m_viewExpandedText;
     bool m_viewExpandedTextHasBeenSet;
+
     Aws::String m_tableType;
     bool m_tableTypeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::String m_createdBy;
     bool m_createdByHasBeenSet;
   };

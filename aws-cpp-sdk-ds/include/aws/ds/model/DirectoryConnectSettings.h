@@ -47,6 +47,7 @@ namespace Model
     DirectoryConnectSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the VPC in which the AD Connector is created.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The identifier of the VPC in which the AD Connector is created.</p>
      */
     inline DirectoryConnectSettings& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>A list of subnet identifiers in the VPC in which the AD Connector is
@@ -130,6 +132,7 @@ namespace Model
      */
     inline DirectoryConnectSettings& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
     /**
      * <p>A list of one or more IP addresses of DNS servers or domain controllers in
      * the on-premises directory.</p>
@@ -177,6 +180,7 @@ namespace Model
      * the on-premises directory.</p>
      */
     inline DirectoryConnectSettings& AddCustomerDnsIps(const char* value) { m_customerDnsIpsHasBeenSet = true; m_customerDnsIps.push_back(value); return *this; }
+
 
     /**
      * <p>The username of an account in the on-premises directory that is used to
@@ -235,12 +239,16 @@ namespace Model
     inline DirectoryConnectSettings& WithCustomerUserName(const char* value) { SetCustomerUserName(value); return *this;}
 
   private:
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_customerDnsIps;
     bool m_customerDnsIpsHasBeenSet;
+
     Aws::String m_customerUserName;
     bool m_customerUserNameHasBeenSet;
   };

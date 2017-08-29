@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteMLModelRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
     bool m_mLModelIdHasBeenSet;
   };

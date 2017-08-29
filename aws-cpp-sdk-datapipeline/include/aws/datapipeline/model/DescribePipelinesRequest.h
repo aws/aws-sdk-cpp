@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers
      * in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
@@ -89,6 +90,7 @@ namespace Model
     inline DescribePipelinesRequest& AddPipelineIds(const char* value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_pipelineIds;
     bool m_pipelineIdsHasBeenSet;
   };

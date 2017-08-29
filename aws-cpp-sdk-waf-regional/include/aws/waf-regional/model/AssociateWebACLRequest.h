@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier (ID) for the web ACL.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>A unique identifier (ID) for the web ACL.</p>
      */
     inline AssociateWebACLRequest& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline AssociateWebACLRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
   private:
+
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
   };

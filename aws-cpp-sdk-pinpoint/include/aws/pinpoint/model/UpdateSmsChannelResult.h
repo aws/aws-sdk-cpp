@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateSmsChannelResult();
-    UpdateSmsChannelResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSmsChannelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateSmsChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateSmsChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const SMSChannelResponse& GetSMSChannelResponse() const{ return m_sMSChannelResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline UpdateSmsChannelResult& WithSMSChannelResponse(SMSChannelResponse&& value) { SetSMSChannelResponse(std::move(value)); return *this;}
 
   private:
+
     SMSChannelResponse m_sMSChannelResponse;
   };
 

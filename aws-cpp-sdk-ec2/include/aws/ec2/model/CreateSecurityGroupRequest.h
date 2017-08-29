@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A description for the security group. This is informational only.</p>
      * <p>Constraints: Up to 255 characters in length</p> <p>Constraints for
@@ -98,6 +99,7 @@ namespace Model
      */
     inline CreateSecurityGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The name of the security group.</p> <p>Constraints: Up to 255 characters in
      * length</p> <p>Constraints for EC2-Classic: ASCII characters</p> <p>Constraints
@@ -147,6 +149,7 @@ namespace Model
      */
     inline CreateSecurityGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>[EC2-VPC] The ID of the VPC. Required for EC2-VPC.</p>
      */
@@ -182,6 +185,7 @@ namespace Model
      */
     inline CreateSecurityGroupRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -207,12 +211,16 @@ namespace Model
     inline CreateSecurityGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

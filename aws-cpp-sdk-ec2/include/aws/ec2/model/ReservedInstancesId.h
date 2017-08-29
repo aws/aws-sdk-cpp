@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the Reserved Instance.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
     inline ReservedInstancesId& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
   private:
+
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the pipeline for which you want to get execution summary
      * information.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ListPipelineExecutionsRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned nextToken value. The
@@ -105,6 +107,7 @@ namespace Model
      * based on pipeline execution start times. Default value is 100.</p>
      */
     inline ListPipelineExecutionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token that was returned from the previous list pipeline executions call,
@@ -149,10 +152,13 @@ namespace Model
     inline ListPipelineExecutionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     TimerCanceledEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique ID of the timer that was canceled.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline TimerCanceledEventAttributes& WithTimerId(const char* value) { SetTimerId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>TimerStarted</code> event that was recorded when this
      * timer was started. This information can be useful for diagnosing problems by
@@ -101,6 +103,7 @@ namespace Model
      * tracing back the chain of events leading up to this event.</p>
      */
     inline TimerCanceledEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
+
 
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
@@ -127,10 +130,13 @@ namespace Model
     inline TimerCanceledEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
   private:
+
     Aws::String m_timerId;
     bool m_timerIdHasBeenSet;
+
     long long m_startedEventId;
     bool m_startedEventIdHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
   };

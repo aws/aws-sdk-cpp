@@ -30,12 +30,12 @@ CreateTagOptionResult::CreateTagOptionResult()
 {
 }
 
-CreateTagOptionResult::CreateTagOptionResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateTagOptionResult::CreateTagOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateTagOptionResult& CreateTagOptionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateTagOptionResult& CreateTagOptionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TagOptionDetail"))

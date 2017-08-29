@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>This specifies the ID of the environment with the in-progress update that you
      * want to cancel.</p>
@@ -82,6 +83,7 @@ namespace Model
      * want to cancel.</p>
      */
     inline AbortEnvironmentUpdateRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>This specifies the name of the environment with the in-progress update that
@@ -126,8 +128,10 @@ namespace Model
     inline AbortEnvironmentUpdateRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
   private:
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
   };

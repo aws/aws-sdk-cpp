@@ -45,6 +45,7 @@ namespace Model
     Permission& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A stack ID.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>A stack ID.</p>
      */
     inline Permission& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management
@@ -136,6 +138,7 @@ namespace Model
      */
     inline Permission& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
 
+
     /**
      * <p>Whether the user can use SSH.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      */
     inline Permission& WithAllowSsh(bool value) { SetAllowSsh(value); return *this;}
 
+
     /**
      * <p>Whether the user can use <b>sudo</b>.</p>
      */
@@ -165,6 +169,7 @@ namespace Model
      * <p>Whether the user can use <b>sudo</b>.</p>
      */
     inline Permission& WithAllowSudo(bool value) { SetAllowSudo(value); return *this;}
+
 
     /**
      * <p>The user's permission level, which must be the following:</p> <ul> <li> <p>
@@ -244,14 +249,19 @@ namespace Model
     inline Permission& WithLevel(const char* value) { SetLevel(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_iamUserArn;
     bool m_iamUserArnHasBeenSet;
+
     bool m_allowSsh;
     bool m_allowSshHasBeenSet;
+
     bool m_allowSudo;
     bool m_allowSudoHasBeenSet;
+
     Aws::String m_level;
     bool m_levelHasBeenSet;
   };

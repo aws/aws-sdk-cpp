@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DeleteAnalysisSchemeResult();
-    DeleteAnalysisSchemeResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteAnalysisSchemeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteAnalysisSchemeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteAnalysisSchemeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The status of the analysis scheme being deleted.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline DeleteAnalysisSchemeResult& WithAnalysisScheme(AnalysisSchemeStatus&& value) { SetAnalysisScheme(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline DeleteAnalysisSchemeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     AnalysisSchemeStatus m_analysisScheme;
+
     ResponseMetadata m_responseMetadata;
   };
 

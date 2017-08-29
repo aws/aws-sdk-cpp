@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetDiscoverySummaryResult();
-    GetDiscoverySummaryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDiscoverySummaryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDiscoverySummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDiscoverySummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of servers discovered.</p>
@@ -57,6 +58,7 @@ namespace Model
      */
     inline GetDiscoverySummaryResult& WithServers(long long value) { SetServers(value); return *this;}
 
+
     /**
      * <p>The number of applications discovered.</p>
      */
@@ -71,6 +73,7 @@ namespace Model
      * <p>The number of applications discovered.</p>
      */
     inline GetDiscoverySummaryResult& WithApplications(long long value) { SetApplications(value); return *this;}
+
 
     /**
      * <p>The number of servers mapped to applications.</p>
@@ -87,6 +90,7 @@ namespace Model
      */
     inline GetDiscoverySummaryResult& WithServersMappedToApplications(long long value) { SetServersMappedToApplications(value); return *this;}
 
+
     /**
      * <p>The number of servers mapped to tags.</p>
      */
@@ -101,6 +105,7 @@ namespace Model
      * <p>The number of servers mapped to tags.</p>
      */
     inline GetDiscoverySummaryResult& WithServersMappedtoTags(long long value) { SetServersMappedtoTags(value); return *this;}
+
 
     /**
      * <p>Details about discovered agents, including agent status and health.</p>
@@ -126,6 +131,7 @@ namespace Model
      * <p>Details about discovered agents, including agent status and health.</p>
      */
     inline GetDiscoverySummaryResult& WithAgentSummary(CustomerAgentInfo&& value) { SetAgentSummary(std::move(value)); return *this;}
+
 
     /**
      * <p>Details about discovered connectors, including connector status and
@@ -158,11 +164,17 @@ namespace Model
     inline GetDiscoverySummaryResult& WithConnectorSummary(CustomerConnectorInfo&& value) { SetConnectorSummary(std::move(value)); return *this;}
 
   private:
+
     long long m_servers;
+
     long long m_applications;
+
     long long m_serversMappedToApplications;
+
     long long m_serversMappedtoTags;
+
     CustomerAgentInfo m_agentSummary;
+
     CustomerConnectorInfo m_connectorSummary;
   };
 

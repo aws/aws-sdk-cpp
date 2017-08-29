@@ -52,6 +52,7 @@ namespace Model
     Target& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the target.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline Target& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the target.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the target.</p>
      */
     inline Target& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target
@@ -170,6 +173,7 @@ namespace Model
      * different IAM role for each target.</p>
      */
     inline Target& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
@@ -234,6 +238,7 @@ namespace Model
      */
     inline Target& WithInput(const char* value) { SetInput(value); return *this;}
 
+
     /**
      * <p>The value of the JSONPath that is used for extracting part of the matched
      * event when passing it to the target. You must use JSON dot notation, not bracket
@@ -290,6 +295,7 @@ namespace Model
      */
     inline Target& WithInputPath(const char* value) { SetInputPath(value); return *this;}
 
+
     /**
      * <p>Settings to enable you to provide custom input to a target based on certain
      * event data. You can extract one or more key-value pairs from the event and then
@@ -324,6 +330,7 @@ namespace Model
      * use that data to send customized input to the target.</p>
      */
     inline Target& WithInputTransformer(InputTransformer&& value) { SetInputTransformer(std::move(value)); return *this;}
+
 
     /**
      * <p>The custom parameter you can use to control shard assignment, when the target
@@ -360,6 +367,7 @@ namespace Model
      */
     inline Target& WithKinesisParameters(KinesisParameters&& value) { SetKinesisParameters(std::move(value)); return *this;}
 
+
     /**
      * <p>Parameters used when you are using the rule to invoke Amazon EC2 Run
      * Command.</p>
@@ -389,6 +397,7 @@ namespace Model
      * Command.</p>
      */
     inline Target& WithRunCommandParameters(RunCommandParameters&& value) { SetRunCommandParameters(std::move(value)); return *this;}
+
 
     /**
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
@@ -436,22 +445,31 @@ namespace Model
     inline Target& WithEcsParameters(EcsParameters&& value) { SetEcsParameters(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     Aws::String m_inputPath;
     bool m_inputPathHasBeenSet;
+
     InputTransformer m_inputTransformer;
     bool m_inputTransformerHasBeenSet;
+
     KinesisParameters m_kinesisParameters;
     bool m_kinesisParametersHasBeenSet;
+
     RunCommandParameters m_runCommandParameters;
     bool m_runCommandParametersHasBeenSet;
+
     EcsParameters m_ecsParameters;
     bool m_ecsParametersHasBeenSet;
   };

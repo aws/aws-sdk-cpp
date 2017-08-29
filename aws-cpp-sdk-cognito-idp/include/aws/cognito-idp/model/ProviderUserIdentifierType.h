@@ -46,6 +46,7 @@ namespace Model
     ProviderUserIdentifierType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the provider, for example, Facebook, Google, or Login with
      * Amazon.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ProviderUserIdentifierType& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
     /**
      * <p>The name of the provider attribute to link to, for example,
      * <code>NameID</code>.</p>
@@ -129,6 +131,7 @@ namespace Model
      * <code>NameID</code>.</p>
      */
     inline ProviderUserIdentifierType& WithProviderAttributeName(const char* value) { SetProviderAttributeName(value); return *this;}
+
 
     /**
      * <p>The value of the provider attribute to link to, for example,
@@ -173,10 +176,13 @@ namespace Model
     inline ProviderUserIdentifierType& WithProviderAttributeValue(const char* value) { SetProviderAttributeValue(value); return *this;}
 
   private:
+
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
     Aws::String m_providerAttributeName;
     bool m_providerAttributeNameHasBeenSet;
+
     Aws::String m_providerAttributeValue;
     bool m_providerAttributeValueHasBeenSet;
   };

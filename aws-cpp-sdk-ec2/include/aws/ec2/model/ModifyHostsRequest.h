@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Specify whether to enable or disable auto-placement.</p>
      */
@@ -67,6 +68,7 @@ namespace Model
      * <p>Specify whether to enable or disable auto-placement.</p>
      */
     inline ModifyHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
+
 
     /**
      * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline ModifyHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 
   private:
+
     AutoPlacement m_autoPlacement;
     bool m_autoPlacementHasBeenSet;
+
     Aws::Vector<Aws::String> m_hostIds;
     bool m_hostIdsHasBeenSet;
   };

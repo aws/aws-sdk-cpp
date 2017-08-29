@@ -48,6 +48,7 @@ namespace Model
     JobWatermark& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the watermark settings that Elastic Transcoder uses to add
      * watermarks to the video during transcoding. The settings are in the preset
@@ -103,6 +104,7 @@ namespace Model
      * Watermarks Id tells Elastic Transcoder which settings to use.</p>
      */
     inline JobWatermark& WithPresetWatermarkId(const char* value) { SetPresetWatermarkId(value); return *this;}
+
 
     /**
      * <p> The name of the .png or .jpg file that you want to use for the watermark. To
@@ -181,6 +183,7 @@ namespace Model
      */
     inline JobWatermark& WithInputKey(const char* value) { SetInputKey(value); return *this;}
 
+
     /**
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your watermarks.</p>
@@ -212,10 +215,13 @@ namespace Model
     inline JobWatermark& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_presetWatermarkId;
     bool m_presetWatermarkIdHasBeenSet;
+
     Aws::String m_inputKey;
     bool m_inputKeyHasBeenSet;
+
     Encryption m_encryption;
     bool m_encryptionHasBeenSet;
   };

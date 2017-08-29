@@ -30,12 +30,12 @@ GetModelTemplateResult::GetModelTemplateResult()
 {
 }
 
-GetModelTemplateResult::GetModelTemplateResult(const AmazonWebServiceResult<JsonValue>& result)
+GetModelTemplateResult::GetModelTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetModelTemplateResult& GetModelTemplateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetModelTemplateResult& GetModelTemplateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("value"))

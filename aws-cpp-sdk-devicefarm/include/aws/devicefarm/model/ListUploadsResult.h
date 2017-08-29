@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListUploadsResult();
-    ListUploadsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListUploadsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUploadsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListUploadsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the uploads.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the uploads.</p>
      */
     inline ListUploadsResult& AddUploads(Upload&& value) { m_uploads.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -134,7 +136,9 @@ namespace Model
     inline ListUploadsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Upload> m_uploads;
+
     Aws::String m_nextToken;
   };
 

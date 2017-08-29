@@ -30,12 +30,12 @@ RunJobFlowResult::RunJobFlowResult()
 {
 }
 
-RunJobFlowResult::RunJobFlowResult(const AmazonWebServiceResult<JsonValue>& result)
+RunJobFlowResult::RunJobFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RunJobFlowResult& RunJobFlowResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RunJobFlowResult& RunJobFlowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("JobFlowId"))

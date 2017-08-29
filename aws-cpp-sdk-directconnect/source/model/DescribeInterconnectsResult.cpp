@@ -30,12 +30,12 @@ DescribeInterconnectsResult::DescribeInterconnectsResult()
 {
 }
 
-DescribeInterconnectsResult::DescribeInterconnectsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeInterconnectsResult::DescribeInterconnectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeInterconnectsResult& DescribeInterconnectsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeInterconnectsResult& DescribeInterconnectsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("interconnects"))

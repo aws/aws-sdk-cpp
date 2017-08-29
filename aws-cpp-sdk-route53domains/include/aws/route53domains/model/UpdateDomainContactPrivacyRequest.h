@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain that you want to update the privacy setting for.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline UpdateDomainContactPrivacyRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries will return contact
@@ -99,6 +101,7 @@ namespace Model
      */
     inline UpdateDomainContactPrivacyRequest& WithAdminPrivacy(bool value) { SetAdminPrivacy(value); return *this;}
 
+
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries will return contact
@@ -122,6 +125,7 @@ namespace Model
      * that you enter.</p>
      */
     inline UpdateDomainContactPrivacyRequest& WithRegistrantPrivacy(bool value) { SetRegistrantPrivacy(value); return *this;}
+
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
@@ -148,12 +152,16 @@ namespace Model
     inline UpdateDomainContactPrivacyRequest& WithTechPrivacy(bool value) { SetTechPrivacy(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     bool m_adminPrivacy;
     bool m_adminPrivacyHasBeenSet;
+
     bool m_registrantPrivacy;
     bool m_registrantPrivacyHasBeenSet;
+
     bool m_techPrivacy;
     bool m_techPrivacyHasBeenSet;
   };

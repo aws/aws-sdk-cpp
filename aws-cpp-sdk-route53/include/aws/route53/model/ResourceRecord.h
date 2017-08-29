@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The current or new DNS record value, not to exceed 4,000 characters. In the
      * case of a <code>DELETE</code> action, if the current value does not match the
@@ -140,6 +141,7 @@ namespace Model
     inline ResourceRecord& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

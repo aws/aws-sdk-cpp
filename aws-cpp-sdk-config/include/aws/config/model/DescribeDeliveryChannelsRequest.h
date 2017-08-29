@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of delivery channel names.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline DescribeDeliveryChannelsRequest& AddDeliveryChannelNames(const char* value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_deliveryChannelNames;
     bool m_deliveryChannelNamesHasBeenSet;
   };

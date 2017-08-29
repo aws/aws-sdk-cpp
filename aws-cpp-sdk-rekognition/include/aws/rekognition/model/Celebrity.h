@@ -48,6 +48,7 @@ namespace Model
     Celebrity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An array of URLs pointing to additional information about the celebrity. If
      * there is no additional information about the celebrity, this list is empty.</p>
@@ -96,6 +97,7 @@ namespace Model
      */
     inline Celebrity& AddUrls(const char* value) { m_urlsHasBeenSet = true; m_urls.push_back(value); return *this; }
 
+
     /**
      * <p>The name of the celebrity.</p>
      */
@@ -130,6 +132,7 @@ namespace Model
      * <p>The name of the celebrity.</p>
      */
     inline Celebrity& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A unique identifier for the celebrity. </p>
@@ -166,6 +169,7 @@ namespace Model
      */
     inline Celebrity& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>Provides information about the celebrity's face, such as its location on the
      * image.</p>
@@ -196,6 +200,7 @@ namespace Model
      */
     inline Celebrity& WithFace(ComparedFace&& value) { SetFace(std::move(value)); return *this;}
 
+
     /**
      * <p>The confidence, in percentage, that Rekognition has that the recognized face
      * is the celebrity.</p>
@@ -215,14 +220,19 @@ namespace Model
     inline Celebrity& WithMatchConfidence(double value) { SetMatchConfidence(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_urls;
     bool m_urlsHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     ComparedFace m_face;
     bool m_faceHasBeenSet;
+
     double m_matchConfidence;
     bool m_matchConfidenceHasBeenSet;
   };

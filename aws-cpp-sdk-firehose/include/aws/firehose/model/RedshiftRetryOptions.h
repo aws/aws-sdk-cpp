@@ -44,6 +44,7 @@ namespace Model
     RedshiftRetryOptions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The length of time during which Kinesis Firehose retries delivery after a
      * failure, starting from the initial request and including the first attempt. The
@@ -72,6 +73,7 @@ namespace Model
     inline RedshiftRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
 
   private:
+
     int m_durationInSeconds;
     bool m_durationInSecondsHasBeenSet;
   };

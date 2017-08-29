@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     StartMatchmakingResult();
-    StartMatchmakingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartMatchmakingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartMatchmakingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartMatchmakingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Ticket representing the matchmaking request. This object include the
@@ -83,6 +84,7 @@ namespace Model
     inline StartMatchmakingResult& WithMatchmakingTicket(MatchmakingTicket&& value) { SetMatchmakingTicket(std::move(value)); return *this;}
 
   private:
+
     MatchmakingTicket m_matchmakingTicket;
   };
 

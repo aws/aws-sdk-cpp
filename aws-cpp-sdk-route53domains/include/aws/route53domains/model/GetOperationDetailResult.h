@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetOperationDetailResult();
-    GetOperationDetailResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetOperationDetailResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOperationDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOperationDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier for the operation.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline GetOperationDetailResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
+
     /**
      * <p>The current status of the requested operation in the system.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The current status of the requested operation in the system.</p>
      */
     inline GetOperationDetailResult& WithStatus(OperationStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Detailed information on the status including possible errors.</p>
@@ -145,6 +148,7 @@ namespace Model
      */
     inline GetOperationDetailResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The name of a domain.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      */
     inline GetOperationDetailResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The type of operation that was requested.</p>
      */
@@ -204,6 +209,7 @@ namespace Model
      * <p>The type of operation that was requested.</p>
      */
     inline GetOperationDetailResult& WithType(OperationType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The date when the request was submitted.</p>
@@ -231,11 +237,17 @@ namespace Model
     inline GetOperationDetailResult& WithSubmittedDate(Aws::Utils::DateTime&& value) { SetSubmittedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_operationId;
+
     OperationStatus m_status;
+
     Aws::String m_message;
+
     Aws::String m_domainName;
+
     OperationType m_type;
+
     Aws::Utils::DateTime m_submittedDate;
   };
 

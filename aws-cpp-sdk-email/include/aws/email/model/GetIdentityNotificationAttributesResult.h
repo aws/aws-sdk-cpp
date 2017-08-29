@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetIdentityNotificationAttributesResult();
-    GetIdentityNotificationAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetIdentityNotificationAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetIdentityNotificationAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetIdentityNotificationAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A map of Identity to IdentityNotificationAttributes.</p>
@@ -105,6 +106,7 @@ namespace Model
      */
     inline GetIdentityNotificationAttributesResult& AddNotificationAttributes(const char* key, const IdentityNotificationAttributes& value) { m_notificationAttributes.emplace(key, value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -121,7 +123,9 @@ namespace Model
     inline GetIdentityNotificationAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, IdentityNotificationAttributes> m_notificationAttributes;
+
     ResponseMetadata m_responseMetadata;
   };
 

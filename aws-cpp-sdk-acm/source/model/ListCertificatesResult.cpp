@@ -30,12 +30,12 @@ ListCertificatesResult::ListCertificatesResult()
 {
 }
 
-ListCertificatesResult::ListCertificatesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListCertificatesResult::ListCertificatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListCertificatesResult& ListCertificatesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListCertificatesResult& ListCertificatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The domain string.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The domain string.</p>
      */
     inline CreateUserPoolDomainRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>The user pool ID.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline CreateUserPoolDomainRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
   };

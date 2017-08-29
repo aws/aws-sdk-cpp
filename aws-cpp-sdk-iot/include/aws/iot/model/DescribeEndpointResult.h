@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DescribeEndpointResult();
-    DescribeEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The endpoint. The format of the endpoint is as follows:
@@ -89,6 +90,7 @@ namespace Model
     inline DescribeEndpointResult& WithEndpointAddress(const char* value) { SetEndpointAddress(value); return *this;}
 
   private:
+
     Aws::String m_endpointAddress;
   };
 

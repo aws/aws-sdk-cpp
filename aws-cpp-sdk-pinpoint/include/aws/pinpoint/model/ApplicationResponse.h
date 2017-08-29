@@ -43,6 +43,7 @@ namespace Model
     ApplicationResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The unique application ID.
      */
@@ -77,6 +78,7 @@ namespace Model
      * The unique application ID.
      */
     inline ApplicationResponse& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * The display name of the application.
@@ -114,8 +116,10 @@ namespace Model
     inline ApplicationResponse& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

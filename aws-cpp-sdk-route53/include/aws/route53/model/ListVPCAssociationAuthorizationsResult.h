@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListVPCAssociationAuthorizationsResult();
-    ListVPCAssociationAuthorizationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListVPCAssociationAuthorizationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListVPCAssociationAuthorizationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListVPCAssociationAuthorizationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
      */
     inline ListVPCAssociationAuthorizationsResult& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+
 
     /**
      * <p>When the response includes a <code>NextToken</code> element, there are more
@@ -147,6 +149,7 @@ namespace Model
      */
     inline ListVPCAssociationAuthorizationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The list of VPCs that are authorized to be associated with the specified
      * hosted zone.</p>
@@ -190,8 +193,11 @@ namespace Model
     inline ListVPCAssociationAuthorizationsResult& AddVPCs(VPC&& value) { m_vPCs.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_hostedZoneId;
+
     Aws::String m_nextToken;
+
     Aws::Vector<VPC> m_vPCs;
   };
 

@@ -46,6 +46,7 @@ namespace Model
     FunctionConfigurationEnvironment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Environment variables for the lambda function.
      */
@@ -107,6 +108,7 @@ namespace Model
     inline FunctionConfigurationEnvironment& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_variables;
     bool m_variablesHasBeenSet;
   };

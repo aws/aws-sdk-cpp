@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The volume ID.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline UpdateVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     /**
      * <p>The new name.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The new name.</p>
      */
     inline UpdateVolumeRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The new mount point.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline UpdateVolumeRequest& WithMountPoint(const char* value) { SetMountPoint(value); return *this;}
 
   private:
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_mountPoint;
     bool m_mountPointHasBeenSet;
   };

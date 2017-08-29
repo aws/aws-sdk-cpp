@@ -30,12 +30,12 @@ CreateParameterGroupResult::CreateParameterGroupResult()
 {
 }
 
-CreateParameterGroupResult::CreateParameterGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateParameterGroupResult::CreateParameterGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateParameterGroupResult& CreateParameterGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateParameterGroupResult& CreateParameterGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ParameterGroup"))

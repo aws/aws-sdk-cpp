@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline GetSdkRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>The name of the <a>Stage</a> that the SDK will use.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>The name of the <a>Stage</a> that the SDK will use.</p>
      */
     inline GetSdkRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
+
 
     /**
      * <p>The language for the generated SDK. Currently <code>javascript</code>,
@@ -156,6 +159,7 @@ namespace Model
      * <code>android</code>, and <code>objectivec</code> (for iOS) are supported.</p>
      */
     inline GetSdkRequest& WithSdkType(const char* value) { SetSdkType(value); return *this;}
+
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
@@ -278,12 +282,16 @@ namespace Model
     inline GetSdkRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     Aws::String m_sdkType;
     bool m_sdkTypeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
   };

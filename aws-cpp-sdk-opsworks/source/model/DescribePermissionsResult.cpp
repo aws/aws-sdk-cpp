@@ -30,12 +30,12 @@ DescribePermissionsResult::DescribePermissionsResult()
 {
 }
 
-DescribePermissionsResult::DescribePermissionsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribePermissionsResult::DescribePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribePermissionsResult& DescribePermissionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribePermissionsResult& DescribePermissionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Permissions"))

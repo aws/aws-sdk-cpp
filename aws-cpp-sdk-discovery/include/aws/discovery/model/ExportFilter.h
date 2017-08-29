@@ -49,6 +49,7 @@ namespace Model
     ExportFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A single <code>ExportFilter</code> name. Supported filters:
      * <code>agentId</code>.</p>
@@ -90,6 +91,7 @@ namespace Model
      * <code>agentId</code>.</p>
      */
     inline ExportFilter& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code>
@@ -163,6 +165,7 @@ namespace Model
      */
     inline ExportFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
+
     /**
      * <p>Supported condition: <code>EQUALS</code> </p>
      */
@@ -199,10 +202,13 @@ namespace Model
     inline ExportFilter& WithCondition(const char* value) { SetCondition(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
+
     Aws::String m_condition;
     bool m_conditionHasBeenSet;
   };

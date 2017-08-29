@@ -51,6 +51,7 @@ namespace Model
     SourceDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The source of the event, such as an AWS service, that triggers AWS Config to
      * evaluate your AWS resources.</p>
@@ -80,6 +81,7 @@ namespace Model
      * evaluate your AWS resources.</p>
      */
     inline SourceDetail& WithEventSource(EventSource&& value) { SetEventSource(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of notification that triggers AWS Config to run an evaluation for a
@@ -176,6 +178,7 @@ namespace Model
      */
     inline SourceDetail& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
 
+
     /**
      * <p>The frequency that you want AWS Config to run evaluations for a custom rule
      * with a periodic trigger. If you specify a value for
@@ -232,10 +235,13 @@ namespace Model
     inline SourceDetail& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(std::move(value)); return *this;}
 
   private:
+
     EventSource m_eventSource;
     bool m_eventSourceHasBeenSet;
+
     MessageType m_messageType;
     bool m_messageTypeHasBeenSet;
+
     MaximumExecutionFrequency m_maximumExecutionFrequency;
     bool m_maximumExecutionFrequencyHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
     SetCognitoEventsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
      */
     inline SetCognitoEventsRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+
 
     /**
      * <p>The events to configure</p>
@@ -134,8 +136,10 @@ namespace Model
     inline SetCognitoEventsRequest& AddEvents(const char* key, const char* value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_events;
     bool m_eventsHasBeenSet;
   };

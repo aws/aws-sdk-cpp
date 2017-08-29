@@ -31,12 +31,12 @@ CreateVpcPeeringConnectionResponse::CreateVpcPeeringConnectionResponse()
 {
 }
 
-CreateVpcPeeringConnectionResponse::CreateVpcPeeringConnectionResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateVpcPeeringConnectionResponse::CreateVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateVpcPeeringConnectionResponse& CreateVpcPeeringConnectionResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateVpcPeeringConnectionResponse& CreateVpcPeeringConnectionResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

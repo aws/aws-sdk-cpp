@@ -30,12 +30,12 @@ AcceptHandshakeResult::AcceptHandshakeResult()
 {
 }
 
-AcceptHandshakeResult::AcceptHandshakeResult(const AmazonWebServiceResult<JsonValue>& result)
+AcceptHandshakeResult::AcceptHandshakeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AcceptHandshakeResult& AcceptHandshakeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AcceptHandshakeResult& AcceptHandshakeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Handshake"))

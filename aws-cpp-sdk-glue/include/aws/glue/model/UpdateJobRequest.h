@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the job definition to update.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline UpdateJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 
+
     /**
      * <p>Specifies the values with which to update the job.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline UpdateJobRequest& WithJobUpdate(JobUpdate&& value) { SetJobUpdate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     JobUpdate m_jobUpdate;
     bool m_jobUpdateHasBeenSet;
   };

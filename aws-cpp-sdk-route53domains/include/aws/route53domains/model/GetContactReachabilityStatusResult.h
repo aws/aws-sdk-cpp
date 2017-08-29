@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetContactReachabilityStatusResult();
-    GetContactReachabilityStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetContactReachabilityStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetContactReachabilityStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetContactReachabilityStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The domain name for which you requested the reachability status.</p>
@@ -76,6 +77,7 @@ namespace Model
      * <p>The domain name for which you requested the reachability status.</p>
      */
     inline GetContactReachabilityStatusResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>Whether the registrant contact has responded. Values include the
@@ -128,7 +130,9 @@ namespace Model
     inline GetContactReachabilityStatusResult& WithStatus(ReachabilityStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
+
     ReachabilityStatus m_status;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the OU that you want to rename. You can get the
      * ID from the <a>ListOrganizationalUnitsForParent</a> operation.</p> <p>The <a
@@ -106,6 +107,7 @@ namespace Model
      */
     inline UpdateOrganizationalUnitRequest& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
 
+
     /**
      * <p>The new name that you want to assign to the OU.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
@@ -163,8 +165,10 @@ namespace Model
     inline UpdateOrganizationalUnitRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_organizationalUnitId;
     bool m_organizationalUnitIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

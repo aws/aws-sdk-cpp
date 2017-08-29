@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The identifier that Amazon Route 53assigned to the health check when you
      * created it. When you add or update a resource record set, you use this value to
@@ -105,6 +106,7 @@ namespace Model
      */
     inline HealthCheck& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>A unique string that you specified when you created the health check.</p>
      */
@@ -140,6 +142,7 @@ namespace Model
      */
     inline HealthCheck& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
+
     /**
      * <p>A complex type that contains detailed information about one health check.</p>
      */
@@ -165,6 +168,7 @@ namespace Model
      */
     inline HealthCheck& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>The version of the health check. You can optionally pass this value in a call
      * to <code>UpdateHealthCheck</code> to prevent overwriting another change to the
@@ -185,6 +189,7 @@ namespace Model
      * health check.</p>
      */
     inline HealthCheck& WithHealthCheckVersion(long long value) { SetHealthCheckVersion(value); return *this;}
+
 
     /**
      * <p>A complex type that contains information about the CloudWatch alarm that
@@ -217,14 +222,19 @@ namespace Model
     inline HealthCheck& WithCloudWatchAlarmConfiguration(CloudWatchAlarmConfiguration&& value) { SetCloudWatchAlarmConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
+
     HealthCheckConfig m_healthCheckConfig;
     bool m_healthCheckConfigHasBeenSet;
+
     long long m_healthCheckVersion;
     bool m_healthCheckVersionHasBeenSet;
+
     CloudWatchAlarmConfiguration m_cloudWatchAlarmConfiguration;
     bool m_cloudWatchAlarmConfigurationHasBeenSet;
   };

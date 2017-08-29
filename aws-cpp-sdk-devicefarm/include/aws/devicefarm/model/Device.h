@@ -50,6 +50,7 @@ namespace Model
     Device& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The device's ARN.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The device's ARN.</p>
      */
     inline Device& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The device's display name.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline Device& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The device's manufacturer name.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The device's manufacturer name.</p>
      */
     inline Device& WithManufacturer(const char* value) { SetManufacturer(value); return *this;}
+
 
     /**
      * <p>The device's model name.</p>
@@ -190,6 +194,7 @@ namespace Model
      */
     inline Device& WithModel(const char* value) { SetModel(value); return *this;}
 
+
     /**
      * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
      * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
@@ -224,6 +229,7 @@ namespace Model
      * factor.</p> </li> </ul>
      */
     inline Device& WithFormFactor(DeviceFormFactor&& value) { SetFormFactor(std::move(value)); return *this;}
+
 
     /**
      * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
@@ -260,6 +266,7 @@ namespace Model
      */
     inline Device& WithPlatform(DevicePlatform&& value) { SetPlatform(std::move(value)); return *this;}
 
+
     /**
      * <p>The device's operating system type.</p>
      */
@@ -295,6 +302,7 @@ namespace Model
      */
     inline Device& WithOs(const char* value) { SetOs(value); return *this;}
 
+
     /**
      * <p>Information about the device's CPU.</p>
      */
@@ -319,6 +327,7 @@ namespace Model
      * <p>Information about the device's CPU.</p>
      */
     inline Device& WithCpu(CPU&& value) { SetCpu(std::move(value)); return *this;}
+
 
     /**
      * <p>The resolution of the device.</p>
@@ -345,6 +354,7 @@ namespace Model
      */
     inline Device& WithResolution(Resolution&& value) { SetResolution(std::move(value)); return *this;}
 
+
     /**
      * <p>The device's heap size, expressed in bytes.</p>
      */
@@ -360,6 +370,7 @@ namespace Model
      */
     inline Device& WithHeapSize(long long value) { SetHeapSize(value); return *this;}
 
+
     /**
      * <p>The device's total memory size, expressed in bytes.</p>
      */
@@ -374,6 +385,7 @@ namespace Model
      * <p>The device's total memory size, expressed in bytes.</p>
      */
     inline Device& WithMemory(long long value) { SetMemory(value); return *this;}
+
 
     /**
      * <p>The device's image name.</p>
@@ -410,6 +422,7 @@ namespace Model
      */
     inline Device& WithImage(const char* value) { SetImage(value); return *this;}
 
+
     /**
      * <p>The device's carrier.</p>
      */
@@ -444,6 +457,7 @@ namespace Model
      * <p>The device's carrier.</p>
      */
     inline Device& WithCarrier(const char* value) { SetCarrier(value); return *this;}
+
 
     /**
      * <p>The device's radio.</p>
@@ -480,6 +494,7 @@ namespace Model
      */
     inline Device& WithRadio(const char* value) { SetRadio(value); return *this;}
 
+
     /**
      * <p>Specifies whether remote access has been enabled for the specified
      * device.</p>
@@ -497,6 +512,7 @@ namespace Model
      * device.</p>
      */
     inline Device& WithRemoteAccessEnabled(bool value) { SetRemoteAccessEnabled(value); return *this;}
+
 
     /**
      * <p>The type of fleet to which this device belongs. Possible values for fleet
@@ -540,6 +556,7 @@ namespace Model
      */
     inline Device& WithFleetType(const char* value) { SetFleetType(value); return *this;}
 
+
     /**
      * <p>The name of the fleet to which this device belongs.</p>
      */
@@ -576,38 +593,55 @@ namespace Model
     inline Device& WithFleetName(const char* value) { SetFleetName(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_manufacturer;
     bool m_manufacturerHasBeenSet;
+
     Aws::String m_model;
     bool m_modelHasBeenSet;
+
     DeviceFormFactor m_formFactor;
     bool m_formFactorHasBeenSet;
+
     DevicePlatform m_platform;
     bool m_platformHasBeenSet;
+
     Aws::String m_os;
     bool m_osHasBeenSet;
+
     CPU m_cpu;
     bool m_cpuHasBeenSet;
+
     Resolution m_resolution;
     bool m_resolutionHasBeenSet;
+
     long long m_heapSize;
     bool m_heapSizeHasBeenSet;
+
     long long m_memory;
     bool m_memoryHasBeenSet;
+
     Aws::String m_image;
     bool m_imageHasBeenSet;
+
     Aws::String m_carrier;
     bool m_carrierHasBeenSet;
+
     Aws::String m_radio;
     bool m_radioHasBeenSet;
+
     bool m_remoteAccessEnabled;
     bool m_remoteAccessEnabledHasBeenSet;
+
     Aws::String m_fleetType;
     bool m_fleetTypeHasBeenSet;
+
     Aws::String m_fleetName;
     bool m_fleetNameHasBeenSet;
   };

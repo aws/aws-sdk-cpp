@@ -47,6 +47,7 @@ namespace Model
     DatabaseInput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the database.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>Name of the database.</p>
      */
     inline DatabaseInput& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Description of the database</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline DatabaseInput& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The location of the database (for example, an HDFS path).</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The location of the database (for example, an HDFS path).</p>
      */
     inline DatabaseInput& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
+
 
     /**
      * <p>A list of key-value pairs that define parameters and properties of the
@@ -225,12 +229,16 @@ namespace Model
     inline DatabaseInput& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_locationUri;
     bool m_locationUriHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
   };

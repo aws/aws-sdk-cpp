@@ -30,12 +30,12 @@ DescribeConfigRuleEvaluationStatusResult::DescribeConfigRuleEvaluationStatusResu
 {
 }
 
-DescribeConfigRuleEvaluationStatusResult::DescribeConfigRuleEvaluationStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConfigRuleEvaluationStatusResult::DescribeConfigRuleEvaluationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeConfigRuleEvaluationStatusResult& DescribeConfigRuleEvaluationStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConfigRuleEvaluationStatusResult& DescribeConfigRuleEvaluationStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ConfigRulesEvaluationStatus"))

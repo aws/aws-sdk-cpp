@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PublishSchemaResult();
-    PublishSchemaResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PublishSchemaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PublishSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PublishSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN that is associated with the published schema. For more information,
@@ -84,6 +85,7 @@ namespace Model
     inline PublishSchemaResult& WithPublishedSchemaArn(const char* value) { SetPublishedSchemaArn(value); return *this;}
 
   private:
+
     Aws::String m_publishedSchemaArn;
   };
 

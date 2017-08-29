@@ -34,6 +34,7 @@ namespace Model
     PutBotAliasRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the alias. The name is <i>not</i> case sensitive.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>The name of the alias. The name is <i>not</i> case sensitive.</p>
      */
     inline PutBotAliasRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A description of the alias.</p>
@@ -104,6 +106,7 @@ namespace Model
      */
     inline PutBotAliasRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The version of the bot.</p>
      */
@@ -139,6 +142,7 @@ namespace Model
      */
     inline PutBotAliasRequest& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
 
+
     /**
      * <p>The name of the bot.</p>
      */
@@ -173,6 +177,7 @@ namespace Model
      * <p>The name of the bot.</p>
      */
     inline PutBotAliasRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+
 
     /**
      * <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
@@ -259,14 +264,19 @@ namespace Model
     inline PutBotAliasRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_botVersion;
     bool m_botVersionHasBeenSet;
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
   };

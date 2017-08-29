@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of a specific DB parameter group to return details for.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
@@ -96,6 +97,7 @@ namespace Model
      */
     inline DescribeDBParametersRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
+
     /**
      * <p>The parameter types to return.</p> <p>Default: All parameter types
      * returned</p> <p>Valid Values: <code>user | system | engine-default</code> </p>
@@ -138,6 +140,7 @@ namespace Model
      */
     inline DescribeDBParametersRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
+
     /**
      * <p>This parameter is not currently supported.</p>
      */
@@ -173,6 +176,7 @@ namespace Model
      */
     inline DescribeDBParametersRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -196,6 +200,7 @@ namespace Model
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBParametersRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -254,14 +259,19 @@ namespace Model
     inline DescribeDBParametersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet;
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

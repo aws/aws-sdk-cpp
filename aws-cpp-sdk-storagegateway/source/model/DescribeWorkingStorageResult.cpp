@@ -32,14 +32,14 @@ DescribeWorkingStorageResult::DescribeWorkingStorageResult() :
 {
 }
 
-DescribeWorkingStorageResult::DescribeWorkingStorageResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeWorkingStorageResult::DescribeWorkingStorageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_workingStorageUsedInBytes(0),
     m_workingStorageAllocatedInBytes(0)
 {
   *this = result;
 }
 
-DescribeWorkingStorageResult& DescribeWorkingStorageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeWorkingStorageResult& DescribeWorkingStorageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

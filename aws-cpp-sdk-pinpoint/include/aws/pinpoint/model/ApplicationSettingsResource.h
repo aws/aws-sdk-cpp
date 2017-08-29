@@ -45,6 +45,7 @@ namespace Model
     ApplicationSettingsResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The unique ID for the application.
      */
@@ -79,6 +80,7 @@ namespace Model
      * The unique ID for the application.
      */
     inline ApplicationSettingsResource& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     /**
      * The date that the settings were last updated in ISO 8601 format.
@@ -115,6 +117,7 @@ namespace Model
      */
     inline ApplicationSettingsResource& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
+
     /**
      * The default campaign limits for the app. These limits apply to each campaign for
      * the app, unless the campaign overrides the default with limits of its own.
@@ -144,6 +147,7 @@ namespace Model
      * the app, unless the campaign overrides the default with limits of its own.
      */
     inline ApplicationSettingsResource& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
+
 
     /**
      * The default quiet time for the app. Each campaign for this app sends no messages
@@ -181,12 +185,16 @@ namespace Model
     inline ApplicationSettingsResource& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     CampaignLimits m_limits;
     bool m_limitsHasBeenSet;
+
     QuietTime m_quietTime;
     bool m_quietTimeHasBeenSet;
   };

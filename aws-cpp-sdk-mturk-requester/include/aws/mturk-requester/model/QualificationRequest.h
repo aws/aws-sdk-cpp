@@ -47,6 +47,7 @@ namespace Model
     QualificationRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the Qualification request, a unique identifier generated when the
      * request was submitted. </p>
@@ -88,6 +89,7 @@ namespace Model
      * request was submitted. </p>
      */
     inline QualificationRequest& WithQualificationRequestId(const char* value) { SetQualificationRequestId(value); return *this;}
+
 
     /**
      * <p> The ID of the Qualification type the Worker is requesting, as returned by
@@ -131,6 +133,7 @@ namespace Model
      */
     inline QualificationRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
 
+
     /**
      * <p> The ID of the Worker requesting the Qualification.</p>
      */
@@ -165,6 +168,7 @@ namespace Model
      * <p> The ID of the Worker requesting the Qualification.</p>
      */
     inline QualificationRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+
 
     /**
      * <p> The contents of the Qualification test that was presented to the Worker, if
@@ -222,6 +226,7 @@ namespace Model
      */
     inline QualificationRequest& WithTest(const char* value) { SetTest(value); return *this;}
 
+
     /**
      * <p> The Worker's answers for the Qualification type's test contained in a
      * QuestionFormAnswers document, if the type has a test and the Worker has
@@ -278,6 +283,7 @@ namespace Model
      */
     inline QualificationRequest& WithAnswer(const char* value) { SetAnswer(value); return *this;}
 
+
     /**
      * <p>The date and time the Qualification request had a status of Submitted. This
      * is either the time the Worker submitted answers for a Qualification test, or the
@@ -319,16 +325,22 @@ namespace Model
     inline QualificationRequest& WithSubmitTime(Aws::Utils::DateTime&& value) { SetSubmitTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_qualificationRequestId;
     bool m_qualificationRequestIdHasBeenSet;
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
+
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet;
+
     Aws::String m_test;
     bool m_testHasBeenSet;
+
     Aws::String m_answer;
     bool m_answerHasBeenSet;
+
     Aws::Utils::DateTime m_submitTime;
     bool m_submitTimeHasBeenSet;
   };

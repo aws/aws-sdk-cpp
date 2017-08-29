@@ -47,6 +47,7 @@ namespace Model
     Processor& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of processor.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The type of processor.</p>
      */
     inline Processor& WithType(ProcessorType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The processor parameters.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline Processor& AddParameters(ProcessorParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
+
     ProcessorType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<ProcessorParameter> m_parameters;
     bool m_parametersHasBeenSet;
   };

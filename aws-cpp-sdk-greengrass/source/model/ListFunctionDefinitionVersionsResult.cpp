@@ -30,12 +30,12 @@ ListFunctionDefinitionVersionsResult::ListFunctionDefinitionVersionsResult()
 {
 }
 
-ListFunctionDefinitionVersionsResult::ListFunctionDefinitionVersionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListFunctionDefinitionVersionsResult::ListFunctionDefinitionVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListFunctionDefinitionVersionsResult& ListFunctionDefinitionVersionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListFunctionDefinitionVersionsResult& ListFunctionDefinitionVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

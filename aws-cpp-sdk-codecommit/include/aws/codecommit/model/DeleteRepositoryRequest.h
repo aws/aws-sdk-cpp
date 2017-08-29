@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the repository to delete.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DeleteRepositoryRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
   };

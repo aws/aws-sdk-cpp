@@ -38,6 +38,7 @@ namespace Model
     RegisterCertificateRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The certificate data, in PEM format.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The certificate data, in PEM format.</p>
      */
     inline RegisterCertificateRequest& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
+
 
     /**
      * <p>The CA certificate used to sign the device certificate being registered.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline RegisterCertificateRequest& WithCaCertificatePem(const char* value) { SetCaCertificatePem(value); return *this;}
 
+
     /**
      * <p>The status of the register certificate request.</p>
      */
@@ -134,10 +137,13 @@ namespace Model
     inline RegisterCertificateRequest& WithStatus(CertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_certificatePem;
     bool m_certificatePemHasBeenSet;
+
     Aws::String m_caCertificatePem;
     bool m_caCertificatePemHasBeenSet;
+
     CertificateStatus m_status;
     bool m_statusHasBeenSet;
   };

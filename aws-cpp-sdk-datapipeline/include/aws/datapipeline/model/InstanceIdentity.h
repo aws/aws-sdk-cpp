@@ -52,6 +52,7 @@ namespace Model
     InstanceIdentity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A description of an EC2 instance that is generated when the instance is
      * launched and exposed to the instance via the instance metadata service in the
@@ -101,6 +102,7 @@ namespace Model
      */
     inline InstanceIdentity& WithDocument(const char* value) { SetDocument(value); return *this;}
 
+
     /**
      * <p>A signature which can be used to verify the accuracy and authenticity of the
      * information provided in the instance identity document.</p>
@@ -144,8 +146,10 @@ namespace Model
     inline InstanceIdentity& WithSignature(const char* value) { SetSignature(value); return *this;}
 
   private:
+
     Aws::String m_document;
     bool m_documentHasBeenSet;
+
     Aws::String m_signature;
     bool m_signatureHasBeenSet;
   };

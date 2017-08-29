@@ -46,6 +46,7 @@ namespace Model
     AttemptContainerDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS container instance that
      * hosts the job attempt.</p>
@@ -87,6 +88,7 @@ namespace Model
      * hosts the job attempt.</p>
      */
     inline AttemptContainerDetail& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
@@ -130,6 +132,7 @@ namespace Model
      */
     inline AttemptContainerDetail& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
+
     /**
      * <p>The exit code for the job attempt. A non-zero exit code is considered a
      * failure.</p>
@@ -147,6 +150,7 @@ namespace Model
      * failure.</p>
      */
     inline AttemptContainerDetail& WithExitCode(int value) { SetExitCode(value); return *this;}
+
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
@@ -190,6 +194,7 @@ namespace Model
      */
     inline AttemptContainerDetail& WithReason(const char* value) { SetReason(value); return *this;}
 
+
     
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
 
@@ -212,14 +217,19 @@ namespace Model
     inline AttemptContainerDetail& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
   private:
+
     Aws::String m_containerInstanceArn;
     bool m_containerInstanceArnHasBeenSet;
+
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet;
+
     int m_exitCode;
     bool m_exitCodeHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
   };

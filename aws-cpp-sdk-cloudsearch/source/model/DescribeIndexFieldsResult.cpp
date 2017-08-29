@@ -31,12 +31,12 @@ DescribeIndexFieldsResult::DescribeIndexFieldsResult()
 {
 }
 
-DescribeIndexFieldsResult::DescribeIndexFieldsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeIndexFieldsResult::DescribeIndexFieldsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeIndexFieldsResult& DescribeIndexFieldsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeIndexFieldsResult& DescribeIndexFieldsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ListStreamingDistributions2017_03_25Result();
-    ListStreamingDistributions2017_03_25Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListStreamingDistributions2017_03_25Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListStreamingDistributions2017_03_25Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListStreamingDistributions2017_03_25Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The <code>StreamingDistributionList</code> type. </p>
@@ -73,6 +74,7 @@ namespace Model
     inline ListStreamingDistributions2017_03_25Result& WithStreamingDistributionList(StreamingDistributionList&& value) { SetStreamingDistributionList(std::move(value)); return *this;}
 
   private:
+
     StreamingDistributionList m_streamingDistributionList;
   };
 

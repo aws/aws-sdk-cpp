@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>description</code> - A
      * description of the snapshot.</p> </li> <li> <p> <code>owner-alias</code> - Value
@@ -267,6 +268,7 @@ namespace Model
      */
     inline DescribeSnapshotsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of snapshot results returned by
      * <code>DescribeSnapshots</code> in paginated output. When this parameter is used,
@@ -308,6 +310,7 @@ namespace Model
      * specify this parameter and the snapshot IDs parameter in the same request.</p>
      */
     inline DescribeSnapshotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The <code>NextToken</code> value returned from a previous paginated
@@ -372,6 +375,7 @@ namespace Model
      */
     inline DescribeSnapshotsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
      * specified.</p>
@@ -420,6 +424,7 @@ namespace Model
      */
     inline DescribeSnapshotsRequest& AddOwnerIds(const char* value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(value); return *this; }
 
+
     /**
      * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
      */
@@ -459,6 +464,7 @@ namespace Model
      * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
      */
     inline DescribeSnapshotsRequest& AddRestorableByUserIds(const char* value) { m_restorableByUserIdsHasBeenSet = true; m_restorableByUserIds.push_back(value); return *this; }
+
 
     /**
      * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
@@ -508,6 +514,7 @@ namespace Model
      */
     inline DescribeSnapshotsRequest& AddSnapshotIds(const char* value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -533,18 +540,25 @@ namespace Model
     inline DescribeSnapshotsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::Vector<Aws::String> m_ownerIds;
     bool m_ownerIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_restorableByUserIds;
     bool m_restorableByUserIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_snapshotIds;
     bool m_snapshotIdsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

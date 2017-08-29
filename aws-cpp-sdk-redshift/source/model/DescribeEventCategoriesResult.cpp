@@ -31,12 +31,12 @@ DescribeEventCategoriesResult::DescribeEventCategoriesResult()
 {
 }
 
-DescribeEventCategoriesResult::DescribeEventCategoriesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeEventCategoriesResult::DescribeEventCategoriesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

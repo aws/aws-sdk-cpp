@@ -55,6 +55,7 @@ namespace Model
     DirectoryDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The directory identifier.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      * <p>The directory identifier.</p>
      */
     inline DirectoryDescription& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The fully-qualified name of the directory.</p>
@@ -125,6 +127,7 @@ namespace Model
      */
     inline DirectoryDescription& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The short name of the directory.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      */
     inline DirectoryDescription& WithShortName(const char* value) { SetShortName(value); return *this;}
 
+
     /**
      * <p>The directory size.</p>
      */
@@ -184,6 +188,7 @@ namespace Model
      * <p>The directory size.</p>
      */
     inline DirectoryDescription& WithSize(DirectorySize&& value) { SetSize(std::move(value)); return *this;}
+
 
     /**
      * <p>The alias for the directory. If no alias has been created for the directory,
@@ -226,6 +231,7 @@ namespace Model
      * the alias is the directory identifier, such as <code>d-XXXXXXXXXX</code>.</p>
      */
     inline DirectoryDescription& WithAlias(const char* value) { SetAlias(value); return *this;}
+
 
     /**
      * <p>The access URL for the directory, such as
@@ -283,6 +289,7 @@ namespace Model
      */
     inline DirectoryDescription& WithAccessUrl(const char* value) { SetAccessUrl(value); return *this;}
 
+
     /**
      * <p>The textual description for the directory.</p>
      */
@@ -317,6 +324,7 @@ namespace Model
      * <p>The textual description for the directory.</p>
      */
     inline DirectoryDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The IP addresses of the DNS servers for the directory. For a Simple AD or
@@ -390,6 +398,7 @@ namespace Model
      */
     inline DirectoryDescription& AddDnsIpAddrs(const char* value) { m_dnsIpAddrsHasBeenSet = true; m_dnsIpAddrs.push_back(value); return *this; }
 
+
     /**
      * <p>The current stage of the directory.</p>
      */
@@ -414,6 +423,7 @@ namespace Model
      * <p>The current stage of the directory.</p>
      */
     inline DirectoryDescription& WithStage(DirectoryStage&& value) { SetStage(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies when the directory was created.</p>
@@ -440,6 +450,7 @@ namespace Model
      */
     inline DirectoryDescription& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time that the stage was last updated.</p>
      */
@@ -465,6 +476,7 @@ namespace Model
      */
     inline DirectoryDescription& WithStageLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetStageLastUpdatedDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The directory size.</p>
      */
@@ -489,6 +501,7 @@ namespace Model
      * <p>The directory size.</p>
      */
     inline DirectoryDescription& WithType(DirectoryType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>A <a>DirectoryVpcSettingsDescription</a> object that contains additional
@@ -525,6 +538,7 @@ namespace Model
      */
     inline DirectoryDescription& WithVpcSettings(DirectoryVpcSettingsDescription&& value) { SetVpcSettings(std::move(value)); return *this;}
 
+
     /**
      * <p>A <a>DirectoryConnectSettingsDescription</a> object that contains additional
      * information about an AD Connector directory. This member is only present if the
@@ -560,6 +574,7 @@ namespace Model
      */
     inline DirectoryDescription& WithConnectSettings(DirectoryConnectSettingsDescription&& value) { SetConnectSettings(std::move(value)); return *this;}
 
+
     /**
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
      * server configured for this directory.</p>
@@ -590,6 +605,7 @@ namespace Model
      */
     inline DirectoryDescription& WithRadiusSettings(RadiusSettings&& value) { SetRadiusSettings(std::move(value)); return *this;}
 
+
     /**
      * <p>The status of the RADIUS MFA server connection.</p>
      */
@@ -614,6 +630,7 @@ namespace Model
      * <p>The status of the RADIUS MFA server connection.</p>
      */
     inline DirectoryDescription& WithRadiusStatus(RadiusStatus&& value) { SetRadiusStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Additional information about the directory stage.</p>
@@ -650,6 +667,7 @@ namespace Model
      */
     inline DirectoryDescription& WithStageReason(const char* value) { SetStageReason(value); return *this;}
 
+
     /**
      * <p>Indicates if single-sign on is enabled for the directory. For more
      * information, see <a>EnableSso</a> and <a>DisableSso</a>.</p>
@@ -667,6 +685,7 @@ namespace Model
      * information, see <a>EnableSso</a> and <a>DisableSso</a>.</p>
      */
     inline DirectoryDescription& WithSsoEnabled(bool value) { SetSsoEnabled(value); return *this;}
+
 
     /**
      * <p>The desired number of domain controllers in the directory if the directory is
@@ -687,42 +706,61 @@ namespace Model
     inline DirectoryDescription& WithDesiredNumberOfDomainControllers(int value) { SetDesiredNumberOfDomainControllers(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_shortName;
     bool m_shortNameHasBeenSet;
+
     DirectorySize m_size;
     bool m_sizeHasBeenSet;
+
     Aws::String m_alias;
     bool m_aliasHasBeenSet;
+
     Aws::String m_accessUrl;
     bool m_accessUrlHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_dnsIpAddrs;
     bool m_dnsIpAddrsHasBeenSet;
+
     DirectoryStage m_stage;
     bool m_stageHasBeenSet;
+
     Aws::Utils::DateTime m_launchTime;
     bool m_launchTimeHasBeenSet;
+
     Aws::Utils::DateTime m_stageLastUpdatedDateTime;
     bool m_stageLastUpdatedDateTimeHasBeenSet;
+
     DirectoryType m_type;
     bool m_typeHasBeenSet;
+
     DirectoryVpcSettingsDescription m_vpcSettings;
     bool m_vpcSettingsHasBeenSet;
+
     DirectoryConnectSettingsDescription m_connectSettings;
     bool m_connectSettingsHasBeenSet;
+
     RadiusSettings m_radiusSettings;
     bool m_radiusSettingsHasBeenSet;
+
     RadiusStatus m_radiusStatus;
     bool m_radiusStatusHasBeenSet;
+
     Aws::String m_stageReason;
     bool m_stageReasonHasBeenSet;
+
     bool m_ssoEnabled;
     bool m_ssoEnabledHasBeenSet;
+
     int m_desiredNumberOfDomainControllers;
     bool m_desiredNumberOfDomainControllersHasBeenSet;
   };

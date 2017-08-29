@@ -30,12 +30,12 @@ GetDevicePoolResult::GetDevicePoolResult()
 {
 }
 
-GetDevicePoolResult::GetDevicePoolResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDevicePoolResult::GetDevicePoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDevicePoolResult& GetDevicePoolResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDevicePoolResult& GetDevicePoolResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("devicePool"))

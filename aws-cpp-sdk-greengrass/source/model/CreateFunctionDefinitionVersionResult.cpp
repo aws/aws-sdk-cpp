@@ -30,12 +30,12 @@ CreateFunctionDefinitionVersionResult::CreateFunctionDefinitionVersionResult()
 {
 }
 
-CreateFunctionDefinitionVersionResult::CreateFunctionDefinitionVersionResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateFunctionDefinitionVersionResult::CreateFunctionDefinitionVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateFunctionDefinitionVersionResult& CreateFunctionDefinitionVersionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateFunctionDefinitionVersionResult& CreateFunctionDefinitionVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Arn"))

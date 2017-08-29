@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetObjectTaggingResult();
-    GetObjectTaggingResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetObjectTaggingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetObjectTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetObjectTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline GetObjectTaggingResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+
 
     
     inline const Aws::Vector<Tag>& GetTagSet() const{ return m_tagSet; }
@@ -86,7 +88,9 @@ namespace Model
     inline GetObjectTaggingResult& AddTagSet(Tag&& value) { m_tagSet.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_versionId;
+
     Aws::Vector<Tag> m_tagSet;
   };
 

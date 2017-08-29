@@ -47,6 +47,7 @@ namespace Model
     IdentityDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline IdentityDescription& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
@@ -130,6 +132,7 @@ namespace Model
      */
     inline IdentityDescription& AddLogins(const char* value) { m_loginsHasBeenSet = true; m_logins.push_back(value); return *this; }
 
+
     /**
      * <p>Date on which the identity was created.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>Date on which the identity was created.</p>
      */
     inline IdentityDescription& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Date on which the identity was last modified.</p>
@@ -181,12 +185,16 @@ namespace Model
     inline IdentityDescription& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_logins;
     bool m_loginsHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
   };

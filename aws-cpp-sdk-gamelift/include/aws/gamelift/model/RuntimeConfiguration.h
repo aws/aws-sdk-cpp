@@ -80,6 +80,7 @@ namespace Model
     RuntimeConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Collection of server process configurations that describe which server
      * processes to run on each instance in a fleet.</p>
@@ -122,6 +123,7 @@ namespace Model
      */
     inline RuntimeConfiguration& AddServerProcesses(ServerProcess&& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Maximum number of game sessions with status <code>ACTIVATING</code> to allow
      * on an instance simultaneously. This setting limits the amount of instance
@@ -142,6 +144,7 @@ namespace Model
      * resources that can be used for new game activations at any one time.</p>
      */
     inline RuntimeConfiguration& WithMaxConcurrentGameSessionActivations(int value) { SetMaxConcurrentGameSessionActivations(value); return *this;}
+
 
     /**
      * <p>Maximum amount of time (in seconds) that a game session can remain in status
@@ -168,10 +171,13 @@ namespace Model
     inline RuntimeConfiguration& WithGameSessionActivationTimeoutSeconds(int value) { SetGameSessionActivationTimeoutSeconds(value); return *this;}
 
   private:
+
     Aws::Vector<ServerProcess> m_serverProcesses;
     bool m_serverProcessesHasBeenSet;
+
     int m_maxConcurrentGameSessionActivations;
     bool m_maxConcurrentGameSessionActivationsHasBeenSet;
+
     int m_gameSessionActivationTimeoutSeconds;
     bool m_gameSessionActivationTimeoutSecondsHasBeenSet;
   };

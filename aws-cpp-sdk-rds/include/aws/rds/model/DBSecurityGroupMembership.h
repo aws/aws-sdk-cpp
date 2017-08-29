@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the DB security group.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The name of the DB security group.</p>
      */
     inline DBSecurityGroupMembership& WithDBSecurityGroupName(const char* value) { SetDBSecurityGroupName(value); return *this;}
+
 
     /**
      * <p>The status of the DB security group.</p>
@@ -123,8 +125,10 @@ namespace Model
     inline DBSecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_dBSecurityGroupName;
     bool m_dBSecurityGroupNameHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

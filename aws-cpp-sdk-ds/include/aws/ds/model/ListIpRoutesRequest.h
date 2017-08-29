@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Identifier (ID) of the directory for which you want to retrieve the IP
      * addresses.</p>
@@ -77,6 +78,7 @@ namespace Model
      * addresses.</p>
      */
     inline ListIpRoutesRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ListIpRoutesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Maximum number of items to return. If this value is zero, the maximum number
      * of items is specified by the limitations of the operation.</p>
@@ -139,10 +142,13 @@ namespace Model
     inline ListIpRoutesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

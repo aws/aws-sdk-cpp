@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>List only the platforms where the platform member value relates to one of the
      * supplied values.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ListPlatformVersionsRequest& AddFilters(PlatformFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of platform values returned in one call.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>The maximum number of platform values returned in one call.</p>
      */
     inline ListPlatformVersionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>The starting index into the remaining list of platforms. Use the
@@ -147,10 +150,13 @@ namespace Model
     inline ListPlatformVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PlatformFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

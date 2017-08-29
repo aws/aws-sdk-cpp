@@ -30,12 +30,12 @@ ListHandshakesForOrganizationResult::ListHandshakesForOrganizationResult()
 {
 }
 
-ListHandshakesForOrganizationResult::ListHandshakesForOrganizationResult(const AmazonWebServiceResult<JsonValue>& result)
+ListHandshakesForOrganizationResult::ListHandshakesForOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListHandshakesForOrganizationResult& ListHandshakesForOrganizationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListHandshakesForOrganizationResult& ListHandshakesForOrganizationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Handshakes"))

@@ -30,12 +30,12 @@ PutItemResult::PutItemResult()
 {
 }
 
-PutItemResult::PutItemResult(const AmazonWebServiceResult<JsonValue>& result)
+PutItemResult::PutItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutItemResult& PutItemResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutItemResult& PutItemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Attributes"))

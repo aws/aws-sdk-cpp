@@ -30,13 +30,13 @@ ListHostedZonesByNameResult::ListHostedZonesByNameResult() :
 {
 }
 
-ListHostedZonesByNameResult::ListHostedZonesByNameResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListHostedZonesByNameResult::ListHostedZonesByNameResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListHostedZonesByNameResult& ListHostedZonesByNameResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListHostedZonesByNameResult& ListHostedZonesByNameResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

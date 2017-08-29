@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListBonusPaymentsResult();
-    ListBonusPaymentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBonusPaymentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListBonusPaymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListBonusPaymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of bonus payments on this page in the filtered results list,
@@ -60,6 +61,7 @@ namespace Model
      * equivalent to the number of bonus payments being returned by this call. </p>
      */
     inline ListBonusPaymentsResult& WithNumResults(int value) { SetNumResults(value); return *this;}
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -81,6 +83,7 @@ namespace Model
 
     
     inline ListBonusPaymentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>A successful request to the ListBonusPayments operation returns a list of
@@ -125,8 +128,11 @@ namespace Model
     inline ListBonusPaymentsResult& AddBonusPayments(BonusPayment&& value) { m_bonusPayments.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_numResults;
+
     Aws::String m_nextToken;
+
     Aws::Vector<BonusPayment> m_bonusPayments;
   };
 

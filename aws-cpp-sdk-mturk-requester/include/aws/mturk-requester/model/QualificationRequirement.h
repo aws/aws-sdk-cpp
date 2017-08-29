@@ -51,6 +51,7 @@ namespace Model
     QualificationRequirement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The ID of the Qualification type for the requirement.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p> The ID of the Qualification type for the requirement.</p>
      */
     inline QualificationRequirement& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
+
 
     /**
      * <p>The kind of comparison to make against a Qualification's value. You can
@@ -146,6 +148,7 @@ namespace Model
      */
     inline QualificationRequirement& WithComparator(Comparator&& value) { SetComparator(std::move(value)); return *this;}
 
+
     /**
      * <p> The integer value to compare against the Qualification's value. IntegerValue
      * must not be present if Comparator is Exists or DoesNotExist. IntegerValue can
@@ -205,6 +208,7 @@ namespace Model
      * in a QualificationRequirement data structure. </p>
      */
     inline QualificationRequirement& AddIntegerValues(int value) { m_integerValuesHasBeenSet = true; m_integerValues.push_back(value); return *this; }
+
 
     /**
      * <p> The locale value to compare against the Qualification's value. The local
@@ -290,6 +294,7 @@ namespace Model
      */
     inline QualificationRequirement& AddLocaleValues(Locale&& value) { m_localeValuesHasBeenSet = true; m_localeValues.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> If true, the question data for the HIT will not be shown when a Worker whose
      * Qualifications do not meet this requirement tries to preview the HIT. That is, a
@@ -327,14 +332,19 @@ namespace Model
     inline QualificationRequirement& WithRequiredToPreview(bool value) { SetRequiredToPreview(value); return *this;}
 
   private:
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
+
     Comparator m_comparator;
     bool m_comparatorHasBeenSet;
+
     Aws::Vector<int> m_integerValues;
     bool m_integerValuesHasBeenSet;
+
     Aws::Vector<Locale> m_localeValues;
     bool m_localeValuesHasBeenSet;
+
     bool m_requiredToPreview;
     bool m_requiredToPreviewHasBeenSet;
   };

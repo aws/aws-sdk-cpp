@@ -32,13 +32,13 @@ DownloadDBLogFilePortionResult::DownloadDBLogFilePortionResult() :
 {
 }
 
-DownloadDBLogFilePortionResult::DownloadDBLogFilePortionResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+DownloadDBLogFilePortionResult::DownloadDBLogFilePortionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_additionalDataPending(false)
 {
   *this = result;
 }
 
-DownloadDBLogFilePortionResult& DownloadDBLogFilePortionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DownloadDBLogFilePortionResult& DownloadDBLogFilePortionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

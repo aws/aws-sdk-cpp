@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The instance ID.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline StopInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
   };

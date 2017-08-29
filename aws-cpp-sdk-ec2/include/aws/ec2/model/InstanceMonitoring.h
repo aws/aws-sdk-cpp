@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline InstanceMonitoring& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The monitoring for the instance.</p>
      */
@@ -110,8 +112,10 @@ namespace Model
     inline InstanceMonitoring& WithMonitoring(Monitoring&& value) { SetMonitoring(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Monitoring m_monitoring;
     bool m_monitoringHasBeenSet;
   };

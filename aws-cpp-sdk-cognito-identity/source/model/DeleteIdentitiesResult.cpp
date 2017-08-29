@@ -30,12 +30,12 @@ DeleteIdentitiesResult::DeleteIdentitiesResult()
 {
 }
 
-DeleteIdentitiesResult::DeleteIdentitiesResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteIdentitiesResult::DeleteIdentitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteIdentitiesResult& DeleteIdentitiesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteIdentitiesResult& DeleteIdentitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UnprocessedIdentityIds"))

@@ -35,6 +35,7 @@ namespace Model
     UpdateApplicationSettingsRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -56,6 +57,7 @@ namespace Model
     
     inline UpdateApplicationSettingsRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     
     inline const WriteApplicationSettingsRequest& GetWriteApplicationSettingsRequest() const{ return m_writeApplicationSettingsRequest; }
 
@@ -72,8 +74,10 @@ namespace Model
     inline UpdateApplicationSettingsRequest& WithWriteApplicationSettingsRequest(WriteApplicationSettingsRequest&& value) { SetWriteApplicationSettingsRequest(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     WriteApplicationSettingsRequest m_writeApplicationSettingsRequest;
     bool m_writeApplicationSettingsRequestHasBeenSet;
   };

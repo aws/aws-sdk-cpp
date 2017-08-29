@@ -47,6 +47,7 @@ namespace Model
     StreamRecord& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
      */
@@ -101,6 +102,7 @@ namespace Model
      * <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
      */
     inline StreamRecord& AddKeys(const char* key, const AttributeValue& value) { m_keysHasBeenSet = true; m_keys.emplace(key, value); return *this; }
+
 
     /**
      * <p>The item in the DynamoDB table as it appeared after it was modified.</p>
@@ -157,6 +159,7 @@ namespace Model
      */
     inline StreamRecord& AddNewImage(const char* key, const AttributeValue& value) { m_newImageHasBeenSet = true; m_newImage.emplace(key, value); return *this; }
 
+
     /**
      * <p>The item in the DynamoDB table as it appeared before it was modified.</p>
      */
@@ -212,6 +215,7 @@ namespace Model
      */
     inline StreamRecord& AddOldImage(const char* key, const AttributeValue& value) { m_oldImageHasBeenSet = true; m_oldImage.emplace(key, value); return *this; }
 
+
     /**
      * <p>The sequence number of the stream record.</p>
      */
@@ -247,6 +251,7 @@ namespace Model
      */
     inline StreamRecord& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
 
+
     /**
      * <p>The size of the stream record, in bytes.</p>
      */
@@ -261,6 +266,7 @@ namespace Model
      * <p>The size of the stream record, in bytes.</p>
      */
     inline StreamRecord& WithSizeBytes(long long value) { SetSizeBytes(value); return *this;}
+
 
     /**
      * <p>The type of data from the modified DynamoDB item that was captured in this
@@ -318,16 +324,22 @@ namespace Model
     inline StreamRecord& WithStreamViewType(StreamViewType&& value) { SetStreamViewType(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, AttributeValue> m_keys;
     bool m_keysHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_newImage;
     bool m_newImageHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_oldImage;
     bool m_oldImageHasBeenSet;
+
     Aws::String m_sequenceNumber;
     bool m_sequenceNumberHasBeenSet;
+
     long long m_sizeBytes;
     bool m_sizeBytesHasBeenSet;
+
     StreamViewType m_streamViewType;
     bool m_streamViewTypeHasBeenSet;
   };

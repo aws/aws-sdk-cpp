@@ -45,6 +45,7 @@ namespace Model
     VolumeInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the storage volume. For example, the
      * following is a valid ARN:</p> <p>
@@ -108,6 +109,7 @@ namespace Model
      */
     inline VolumeInfo& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
+
     /**
      * <p>The unique identifier assigned to the volume. This ID becomes part of the
      * volume Amazon Resource Name (ARN), which you use as input for other
@@ -164,6 +166,7 @@ namespace Model
      */
     inline VolumeInfo& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -184,6 +187,7 @@ namespace Model
 
     
     inline VolumeInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     /**
      * <p>The unique identifier assigned to your gateway during activation. This ID
@@ -241,6 +245,7 @@ namespace Model
      */
     inline VolumeInfo& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
 
+
     
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
@@ -262,6 +267,7 @@ namespace Model
     
     inline VolumeInfo& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
+
     /**
      * <p>The size of the volume in bytes.</p> <p>Valid Values: 50 to 500 lowercase
      * letters, numbers, periods (.), and hyphens (-).</p>
@@ -281,16 +287,22 @@ namespace Model
     inline VolumeInfo& WithVolumeSizeInBytes(long long value) { SetVolumeSizeInBytes(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
     bool m_volumeARNHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet;
+
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     long long m_volumeSizeInBytes;
     bool m_volumeSizeInBytesHasBeenSet;
   };

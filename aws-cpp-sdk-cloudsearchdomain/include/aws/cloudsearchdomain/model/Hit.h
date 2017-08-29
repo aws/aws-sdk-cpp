@@ -48,6 +48,7 @@ namespace Model
     Hit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The document ID of a document that matches the search request.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The document ID of a document that matches the search request.</p>
      */
     inline Hit& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The fields returned from a document that matches the search request.</p>
@@ -137,6 +139,7 @@ namespace Model
      * <p>The fields returned from a document that matches the search request.</p>
      */
     inline Hit& AddFields(const char* key, const Aws::Vector<Aws::String>& value) { m_fieldsHasBeenSet = true; m_fields.emplace(key, value); return *this; }
+
 
     /**
      * <p>The expressions returned from a document that matches the search request.</p>
@@ -197,6 +200,7 @@ namespace Model
      * <p>The expressions returned from a document that matches the search request.</p>
      */
     inline Hit& AddExprs(const char* key, const char* value) { m_exprsHasBeenSet = true; m_exprs.emplace(key, value); return *this; }
+
 
     /**
      * <p>The highlights returned from a document that matches the search request.</p>
@@ -259,12 +263,16 @@ namespace Model
     inline Hit& AddHighlights(const char* key, const char* value) { m_highlightsHasBeenSet = true; m_highlights.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_fields;
     bool m_fieldsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_exprs;
     bool m_exprsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_highlights;
     bool m_highlightsHasBeenSet;
   };

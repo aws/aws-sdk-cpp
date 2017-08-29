@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ModifyListenerResult();
-    ModifyListenerResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyListenerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyListenerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyListenerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the modified listeners.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ModifyListenerResult& AddListeners(Listener&& value) { m_listeners.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline ModifyListenerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Listener> m_listeners;
+
     ResponseMetadata m_responseMetadata;
   };
 

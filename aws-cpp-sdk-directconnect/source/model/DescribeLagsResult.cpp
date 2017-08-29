@@ -30,12 +30,12 @@ DescribeLagsResult::DescribeLagsResult()
 {
 }
 
-DescribeLagsResult::DescribeLagsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLagsResult::DescribeLagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeLagsResult& DescribeLagsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLagsResult& DescribeLagsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("lags"))

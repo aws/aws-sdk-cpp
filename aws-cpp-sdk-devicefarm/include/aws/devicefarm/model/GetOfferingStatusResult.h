@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetOfferingStatusResult();
-    GetOfferingStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetOfferingStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOfferingStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOfferingStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>When specified, gets the offering status for the current period.</p>
@@ -104,6 +105,7 @@ namespace Model
      */
     inline GetOfferingStatusResult& AddCurrent(const char* key, const OfferingStatus& value) { m_current.emplace(key, value); return *this; }
 
+
     /**
      * <p>When specified, gets the offering status for the next period.</p>
      */
@@ -159,6 +161,7 @@ namespace Model
      */
     inline GetOfferingStatusResult& AddNextPeriod(const char* key, const OfferingStatus& value) { m_nextPeriod.emplace(key, value); return *this; }
 
+
     /**
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
@@ -202,8 +205,11 @@ namespace Model
     inline GetOfferingStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Map<Aws::String, OfferingStatus> m_current;
+
     Aws::Map<Aws::String, OfferingStatus> m_nextPeriod;
+
     Aws::String m_nextToken;
   };
 

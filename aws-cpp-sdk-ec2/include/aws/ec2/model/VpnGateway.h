@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone where the virtual private gateway was created, if
      * applicable. This field may be empty or not returned.</p>
@@ -95,6 +96,7 @@ namespace Model
      */
     inline VpnGateway& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The current state of the virtual private gateway.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline VpnGateway& WithState(VpnState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of VPN connection the virtual private gateway supports.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>The type of VPN connection the virtual private gateway supports.</p>
      */
     inline VpnGateway& WithType(GatewayType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Any VPCs attached to the virtual private gateway.</p>
@@ -180,6 +184,7 @@ namespace Model
      */
     inline VpnGateway& AddVpcAttachments(VpcAttachment&& value) { m_vpcAttachmentsHasBeenSet = true; m_vpcAttachments.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
@@ -214,6 +219,7 @@ namespace Model
      * <p>The ID of the virtual private gateway.</p>
      */
     inline VpnGateway& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
+
 
     /**
      * <p>Any tags assigned to the virtual private gateway.</p>
@@ -251,16 +257,22 @@ namespace Model
     inline VpnGateway& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     VpnState m_state;
     bool m_stateHasBeenSet;
+
     GatewayType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<VpcAttachment> m_vpcAttachments;
     bool m_vpcAttachmentsHasBeenSet;
+
     Aws::String m_vpnGatewayId;
     bool m_vpnGatewayIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

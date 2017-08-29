@@ -30,12 +30,12 @@ CreateDeploymentGroupResult::CreateDeploymentGroupResult()
 {
 }
 
-CreateDeploymentGroupResult::CreateDeploymentGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateDeploymentGroupResult::CreateDeploymentGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateDeploymentGroupResult& CreateDeploymentGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateDeploymentGroupResult& CreateDeploymentGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("deploymentGroupId"))

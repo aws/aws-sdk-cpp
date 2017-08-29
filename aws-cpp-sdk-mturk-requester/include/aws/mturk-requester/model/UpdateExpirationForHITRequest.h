@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> The HIT to update. </p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline UpdateExpirationForHITRequest& WithHITId(const char* value) { SetHITId(value); return *this;}
 
+
     /**
      * <p> The date and time at which you want the HIT to expire </p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline UpdateExpirationForHITRequest& WithExpireAt(Aws::Utils::DateTime&& value) { SetExpireAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_hITId;
     bool m_hITIdHasBeenSet;
+
     Aws::Utils::DateTime m_expireAt;
     bool m_expireAtHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     Subscription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Element Id for this entry in the list.
      */
@@ -79,6 +80,7 @@ namespace Model
      * Element Id for this entry in the list.
      */
     inline Subscription& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
@@ -115,6 +117,7 @@ namespace Model
      */
     inline Subscription& WithSource(const char* value) { SetSource(value); return *this;}
 
+
     /**
      * Subject of the message.
      */
@@ -149,6 +152,7 @@ namespace Model
      * Subject of the message.
      */
     inline Subscription& WithSubject(const char* value) { SetSubject(value); return *this;}
+
 
     /**
      * Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
@@ -186,12 +190,16 @@ namespace Model
     inline Subscription& WithTarget(const char* value) { SetTarget(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     Aws::String m_subject;
     bool m_subjectHasBeenSet;
+
     Aws::String m_target;
     bool m_targetHasBeenSet;
   };

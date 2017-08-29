@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The phone number for which you want to check the opt out status.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline CheckIfPhoneNumberIsOptedOutRequest& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
 
   private:
+
     Aws::String m_phoneNumber;
     bool m_phoneNumberHasBeenSet;
   };

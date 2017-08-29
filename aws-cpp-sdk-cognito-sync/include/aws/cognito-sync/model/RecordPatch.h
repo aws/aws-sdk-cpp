@@ -47,6 +47,7 @@ namespace Model
     RecordPatch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * An operation, either replace or remove.
      */
@@ -71,6 +72,7 @@ namespace Model
      * An operation, either replace or remove.
      */
     inline RecordPatch& WithOp(Operation&& value) { SetOp(std::move(value)); return *this;}
+
 
     /**
      * The key associated with the record patch.
@@ -107,6 +109,7 @@ namespace Model
      */
     inline RecordPatch& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * The value associated with the record patch.
      */
@@ -142,6 +145,7 @@ namespace Model
      */
     inline RecordPatch& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * Last known server sync count for this record. Set to 0 if unknown.
      */
@@ -156,6 +160,7 @@ namespace Model
      * Last known server sync count for this record. Set to 0 if unknown.
      */
     inline RecordPatch& WithSyncCount(long long value) { SetSyncCount(value); return *this;}
+
 
     /**
      * The last modified date of the client device.
@@ -183,14 +188,19 @@ namespace Model
     inline RecordPatch& WithDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { SetDeviceLastModifiedDate(std::move(value)); return *this;}
 
   private:
+
     Operation m_op;
     bool m_opHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     long long m_syncCount;
     bool m_syncCountHasBeenSet;
+
     Aws::Utils::DateTime m_deviceLastModifiedDate;
     bool m_deviceLastModifiedDateHasBeenSet;
   };

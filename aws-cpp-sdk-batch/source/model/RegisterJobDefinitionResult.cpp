@@ -31,13 +31,13 @@ RegisterJobDefinitionResult::RegisterJobDefinitionResult() :
 {
 }
 
-RegisterJobDefinitionResult::RegisterJobDefinitionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+RegisterJobDefinitionResult::RegisterJobDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_revision(0)
 {
   *this = result;
 }
 
-RegisterJobDefinitionResult& RegisterJobDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterJobDefinitionResult& RegisterJobDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("jobDefinitionName"))

@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The name of the Amazon Lex bot in the association.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the Amazon Lex bot in the association.</p>
      */
     inline GetBotChannelAssociationsRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+
 
     /**
      * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
@@ -116,6 +118,7 @@ namespace Model
      * association is being made.</p>
      */
     inline GetBotChannelAssociationsRequest& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
+
 
     /**
      * <p>A pagination token for fetching the next page of associations. If the
@@ -173,6 +176,7 @@ namespace Model
      */
     inline GetBotChannelAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of associations to return in the response. The default is
      * 50. </p>
@@ -190,6 +194,7 @@ namespace Model
      * 50. </p>
      */
     inline GetBotChannelAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Substring to match in channel association names. An association will be
@@ -248,14 +253,19 @@ namespace Model
     inline GetBotChannelAssociationsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
 
   private:
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
+
     Aws::String m_botAlias;
     bool m_botAliasHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet;
   };

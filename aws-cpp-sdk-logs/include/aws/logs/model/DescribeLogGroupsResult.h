@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeLogGroupsResult();
-    DescribeLogGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLogGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLogGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLogGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The log groups.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeLogGroupsResult& AddLogGroups(LogGroup&& value) { m_logGroups.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeLogGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<LogGroup> m_logGroups;
+
     Aws::String m_nextToken;
   };
 

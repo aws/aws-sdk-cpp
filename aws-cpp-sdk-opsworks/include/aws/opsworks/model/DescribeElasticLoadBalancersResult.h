@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeElasticLoadBalancersResult();
-    DescribeElasticLoadBalancersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeElasticLoadBalancersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticLoadBalancersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeElasticLoadBalancersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <code>ElasticLoadBalancer</code> objects that describe the
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeElasticLoadBalancersResult& AddElasticLoadBalancers(ElasticLoadBalancer&& value) { m_elasticLoadBalancers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ElasticLoadBalancer> m_elasticLoadBalancers;
   };
 

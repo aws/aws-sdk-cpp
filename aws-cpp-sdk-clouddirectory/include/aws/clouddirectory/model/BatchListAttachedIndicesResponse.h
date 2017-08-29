@@ -48,6 +48,7 @@ namespace Model
     BatchListAttachedIndicesResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The indices attached to the specified object.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The indices attached to the specified object.</p>
      */
     inline BatchListAttachedIndicesResponse& AddIndexAttachments(IndexAttachment&& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline BatchListAttachedIndicesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<IndexAttachment> m_indexAttachments;
     bool m_indexAttachmentsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

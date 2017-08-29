@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail
      * logs AWS API calls. The format of a trail ARN is:</p> <p>
@@ -90,6 +91,7 @@ namespace Model
     inline StartLoggingRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

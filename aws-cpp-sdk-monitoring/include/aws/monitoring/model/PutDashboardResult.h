@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     PutDashboardResult();
-    PutDashboardResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PutDashboardResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PutDashboardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PutDashboardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>If the input for <code>PutDashboard</code> was correct and the dashboard was
@@ -113,6 +114,7 @@ namespace Model
      */
     inline PutDashboardResult& AddDashboardValidationMessages(DashboardValidationMessage&& value) { m_dashboardValidationMessages.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -129,7 +131,9 @@ namespace Model
     inline PutDashboardResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<DashboardValidationMessage> m_dashboardValidationMessages;
+
     ResponseMetadata m_responseMetadata;
   };
 

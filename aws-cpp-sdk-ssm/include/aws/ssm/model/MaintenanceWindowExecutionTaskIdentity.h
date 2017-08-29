@@ -49,6 +49,7 @@ namespace Model
     MaintenanceWindowExecutionTaskIdentity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the Maintenance Window execution that ran the task.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of the Maintenance Window execution that ran the task.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
+
 
     /**
      * <p>The ID of the specific task execution in the Maintenance Window
@@ -126,6 +128,7 @@ namespace Model
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskExecutionId(const char* value) { SetTaskExecutionId(value); return *this;}
 
+
     /**
      * <p>The status of the task execution.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>The status of the task execution.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithStatus(MaintenanceWindowExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The details explaining the status of the task execution. Only available for
@@ -193,6 +197,7 @@ namespace Model
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
+
     /**
      * <p>The time the task execution started.</p>
      */
@@ -218,6 +223,7 @@ namespace Model
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time the task execution finished.</p>
      */
@@ -242,6 +248,7 @@ namespace Model
      * <p>The time the task execution finished.</p>
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The ARN of the executed task.</p>
@@ -278,6 +285,7 @@ namespace Model
      */
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
+
     /**
      * <p>The type of executed task.</p>
      */
@@ -304,20 +312,28 @@ namespace Model
     inline MaintenanceWindowExecutionTaskIdentity& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_windowExecutionId;
     bool m_windowExecutionIdHasBeenSet;
+
     Aws::String m_taskExecutionId;
     bool m_taskExecutionIdHasBeenSet;
+
     MaintenanceWindowExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusDetails;
     bool m_statusDetailsHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet;
+
     MaintenanceWindowTaskType m_taskType;
     bool m_taskTypeHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline UpdateConstraintRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The identifier of the constraint to update.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The identifier of the constraint to update.</p>
      */
     inline UpdateConstraintRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The updated text description of the constraint.</p>
@@ -156,10 +159,13 @@ namespace Model
     inline UpdateConstraintRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

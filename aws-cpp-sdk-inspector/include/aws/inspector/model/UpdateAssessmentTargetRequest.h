@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the assessment target that you want to update.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline UpdateAssessmentTargetRequest& WithAssessmentTargetArn(const char* value) { SetAssessmentTargetArn(value); return *this;}
 
+
     /**
      * <p>The name of the assessment target that you want to update.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The name of the assessment target that you want to update.</p>
      */
     inline UpdateAssessmentTargetRequest& WithAssessmentTargetName(const char* value) { SetAssessmentTargetName(value); return *this;}
+
 
     /**
      * <p>The ARN of the resource group that is used to specify the new resource group
@@ -149,10 +152,13 @@ namespace Model
     inline UpdateAssessmentTargetRequest& WithResourceGroupArn(const char* value) { SetResourceGroupArn(value); return *this;}
 
   private:
+
     Aws::String m_assessmentTargetArn;
     bool m_assessmentTargetArnHasBeenSet;
+
     Aws::String m_assessmentTargetName;
     bool m_assessmentTargetNameHasBeenSet;
+
     Aws::String m_resourceGroupArn;
     bool m_resourceGroupArnHasBeenSet;
   };

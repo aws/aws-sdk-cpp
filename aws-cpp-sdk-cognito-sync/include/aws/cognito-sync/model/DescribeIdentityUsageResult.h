@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeIdentityUsageResult();
-    DescribeIdentityUsageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeIdentityUsageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeIdentityUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeIdentityUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Usage information for the identity.
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeIdentityUsageResult& WithIdentityUsage(IdentityUsage&& value) { SetIdentityUsage(std::move(value)); return *this;}
 
   private:
+
     IdentityUsage m_identityUsage;
   };
 

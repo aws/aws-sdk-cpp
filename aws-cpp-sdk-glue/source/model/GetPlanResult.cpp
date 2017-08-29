@@ -30,12 +30,12 @@ GetPlanResult::GetPlanResult()
 {
 }
 
-GetPlanResult::GetPlanResult(const AmazonWebServiceResult<JsonValue>& result)
+GetPlanResult::GetPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetPlanResult& GetPlanResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetPlanResult& GetPlanResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PythonScript"))

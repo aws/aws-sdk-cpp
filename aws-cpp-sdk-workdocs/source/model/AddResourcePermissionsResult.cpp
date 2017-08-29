@@ -30,12 +30,12 @@ AddResourcePermissionsResult::AddResourcePermissionsResult()
 {
 }
 
-AddResourcePermissionsResult::AddResourcePermissionsResult(const AmazonWebServiceResult<JsonValue>& result)
+AddResourcePermissionsResult::AddResourcePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddResourcePermissionsResult& AddResourcePermissionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddResourcePermissionsResult& AddResourcePermissionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ShareResults"))

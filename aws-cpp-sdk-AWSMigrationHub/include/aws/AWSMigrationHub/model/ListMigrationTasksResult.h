@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListMigrationTasksResult();
-    ListMigrationTasksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMigrationTasksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListMigrationTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListMigrationTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If there are more migration tasks than the max result, return the next token
@@ -84,6 +85,7 @@ namespace Model
      * to be passed to the next call as a bookmark of where to start from.</p>
      */
     inline ListMigrationTasksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>Lists the migration task's summary which includes:
@@ -142,7 +144,9 @@ namespace Model
     inline ListMigrationTasksResult& AddMigrationTaskSummaryList(MigrationTaskSummary&& value) { m_migrationTaskSummaryList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<MigrationTaskSummary> m_migrationTaskSummaryList;
   };
 

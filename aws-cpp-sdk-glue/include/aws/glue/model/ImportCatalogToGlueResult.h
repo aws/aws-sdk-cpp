@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     ImportCatalogToGlueResult();
-    ImportCatalogToGlueResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportCatalogToGlueResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportCatalogToGlueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportCatalogToGlueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

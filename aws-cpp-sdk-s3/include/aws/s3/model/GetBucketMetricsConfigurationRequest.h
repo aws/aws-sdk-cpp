@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * The name of the bucket containing the metrics configuration to retrieve.
      */
@@ -74,6 +75,7 @@ namespace Model
      * The name of the bucket containing the metrics configuration to retrieve.
      */
     inline GetBucketMetricsConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * The ID used to identify the metrics configuration.
@@ -111,8 +113,10 @@ namespace Model
     inline GetBucketMetricsConfigurationRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

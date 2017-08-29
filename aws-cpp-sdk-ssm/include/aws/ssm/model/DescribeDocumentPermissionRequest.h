@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the document for which you are the owner.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DescribeDocumentPermissionRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The permission type for the document. The permission type can be
      * <i>Share</i>.</p>
@@ -103,8 +105,10 @@ namespace Model
     inline DescribeDocumentPermissionRequest& WithPermissionType(DocumentPermissionType&& value) { SetPermissionType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     DocumentPermissionType m_permissionType;
     bool m_permissionTypeHasBeenSet;
   };

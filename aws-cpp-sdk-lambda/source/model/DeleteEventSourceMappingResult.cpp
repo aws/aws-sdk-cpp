@@ -31,13 +31,13 @@ DeleteEventSourceMappingResult::DeleteEventSourceMappingResult() :
 {
 }
 
-DeleteEventSourceMappingResult::DeleteEventSourceMappingResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DeleteEventSourceMappingResult::DeleteEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_batchSize(0)
 {
   *this = result;
 }
 
-DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UUID"))

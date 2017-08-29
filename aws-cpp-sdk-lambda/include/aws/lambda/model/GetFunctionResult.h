@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetFunctionResult();
-    GetFunctionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFunctionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const FunctionConfiguration& GetConfiguration() const{ return m_configuration; }
@@ -65,6 +66,7 @@ namespace Model
     
     inline GetFunctionResult& WithConfiguration(FunctionConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
+
     
     inline const FunctionCodeLocation& GetCode() const{ return m_code; }
 
@@ -79,6 +81,7 @@ namespace Model
 
     
     inline GetFunctionResult& WithCode(FunctionCodeLocation&& value) { SetCode(std::move(value)); return *this;}
+
 
     /**
      * <p>Returns the list of tags associated with the function.</p>
@@ -141,8 +144,11 @@ namespace Model
     inline GetFunctionResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
   private:
+
     FunctionConfiguration m_configuration;
+
     FunctionCodeLocation m_code;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
   };
 

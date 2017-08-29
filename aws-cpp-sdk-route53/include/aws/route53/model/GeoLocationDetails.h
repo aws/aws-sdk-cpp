@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The two-letter code for the continent.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The two-letter code for the continent.</p>
      */
     inline GeoLocationDetails& WithContinentCode(const char* value) { SetContinentCode(value); return *this;}
+
 
     /**
      * <p>The full name of the continent.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline GeoLocationDetails& WithContinentName(const char* value) { SetContinentName(value); return *this;}
 
+
     /**
      * <p>The two-letter code for the country.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      */
     inline GeoLocationDetails& WithCountryCode(const char* value) { SetCountryCode(value); return *this;}
 
+
     /**
      * <p>The name of the country.</p>
      */
@@ -187,6 +191,7 @@ namespace Model
      * <p>The name of the country.</p>
      */
     inline GeoLocationDetails& WithCountryName(const char* value) { SetCountryName(value); return *this;}
+
 
     /**
      * <p>The code for the subdivision, for example, a state in the United States or a
@@ -229,6 +234,7 @@ namespace Model
      * province in Canada.</p>
      */
     inline GeoLocationDetails& WithSubdivisionCode(const char* value) { SetSubdivisionCode(value); return *this;}
+
 
     /**
      * <p>The full name of the subdivision, for example, a state in the United States
@@ -273,16 +279,22 @@ namespace Model
     inline GeoLocationDetails& WithSubdivisionName(const char* value) { SetSubdivisionName(value); return *this;}
 
   private:
+
     Aws::String m_continentCode;
     bool m_continentCodeHasBeenSet;
+
     Aws::String m_continentName;
     bool m_continentNameHasBeenSet;
+
     Aws::String m_countryCode;
     bool m_countryCodeHasBeenSet;
+
     Aws::String m_countryName;
     bool m_countryNameHasBeenSet;
+
     Aws::String m_subdivisionCode;
     bool m_subdivisionCodeHasBeenSet;
+
     Aws::String m_subdivisionName;
     bool m_subdivisionNameHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeKeyPairsResponse();
-    DescribeKeyPairsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeKeyPairsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeKeyPairsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeKeyPairsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more key pairs.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeKeyPairsResponse& AddKeyPairs(KeyPairInfo&& value) { m_keyPairs.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribeKeyPairsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<KeyPairInfo> m_keyPairs;
+
     ResponseMetadata m_responseMetadata;
   };
 

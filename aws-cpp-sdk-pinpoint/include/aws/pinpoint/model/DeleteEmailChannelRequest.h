@@ -34,6 +34,7 @@ namespace Model
     DeleteEmailChannelRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -56,6 +57,7 @@ namespace Model
     inline DeleteEmailChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
   };

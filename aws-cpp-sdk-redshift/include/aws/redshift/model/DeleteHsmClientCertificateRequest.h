@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the HSM client certificate to be deleted.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteHsmClientCertificateRequest& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_hsmClientCertificateIdentifier;
     bool m_hsmClientCertificateIdentifierHasBeenSet;
   };

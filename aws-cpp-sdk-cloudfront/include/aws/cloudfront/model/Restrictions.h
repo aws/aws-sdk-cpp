@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const GeoRestriction& GetGeoRestriction() const{ return m_geoRestriction; }
 
@@ -63,6 +64,7 @@ namespace Model
     inline Restrictions& WithGeoRestriction(GeoRestriction&& value) { SetGeoRestriction(std::move(value)); return *this;}
 
   private:
+
     GeoRestriction m_geoRestriction;
     bool m_geoRestrictionHasBeenSet;
   };

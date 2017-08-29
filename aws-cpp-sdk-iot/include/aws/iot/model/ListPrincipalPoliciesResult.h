@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListPrincipalPoliciesResult();
-    ListPrincipalPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPrincipalPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPrincipalPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPrincipalPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The policies.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The policies.</p>
      */
     inline ListPrincipalPoliciesResult& AddPolicies(Policy&& value) { m_policies.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker for the next set of results, or null if there are no additional
@@ -127,7 +129,9 @@ namespace Model
     inline ListPrincipalPoliciesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
   private:
+
     Aws::Vector<Policy> m_policies;
+
     Aws::String m_nextMarker;
   };
 

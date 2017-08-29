@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::Vector<ObjectIdentifier>& GetObjects() const{ return m_objects; }
 
@@ -63,6 +64,7 @@ namespace Model
     
     inline Delete& AddObjects(ObjectIdentifier&& value) { m_objectsHasBeenSet = true; m_objects.push_back(std::move(value)); return *this; }
 
+
     /**
      * Element to enable quiet mode for the request. When you add this element, you
      * must set its value to true.
@@ -82,8 +84,10 @@ namespace Model
     inline Delete& WithQuiet(bool value) { SetQuiet(value); return *this;}
 
   private:
+
     Aws::Vector<ObjectIdentifier> m_objects;
     bool m_objectsHasBeenSet;
+
     bool m_quiet;
     bool m_quietHasBeenSet;
   };

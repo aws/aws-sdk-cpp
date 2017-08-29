@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique string value that you supply that is used by file gateway to ensure
      * idempotent file share creation.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CreateNFSFileShareRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>File share default values. Optional.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>File share default values. Optional.</p>
      */
     inline CreateNFSFileShareRequest& WithNFSFileShareDefaults(NFSFileShareDefaults&& value) { SetNFSFileShareDefaults(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
@@ -150,6 +153,7 @@ namespace Model
      */
     inline CreateNFSFileShareRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     /**
      * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
@@ -167,6 +171,7 @@ namespace Model
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline CreateNFSFileShareRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
+
 
     /**
      * <p>The KMS key used for Amazon S3 server side encryption. This value can only be
@@ -210,6 +215,7 @@ namespace Model
      */
     inline CreateNFSFileShareRequest& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
 
+
     /**
      * <p>The ARN of the AWS Identity and Access Management (IAM) role that a file
      * gateway assumes when it accesses the underlying storage. </p>
@@ -252,6 +258,7 @@ namespace Model
      */
     inline CreateNFSFileShareRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
+
     /**
      * <p>The ARN of the backed storage used for storing file data. </p>
      */
@@ -286,6 +293,7 @@ namespace Model
      * <p>The ARN of the backed storage used for storing file data. </p>
      */
     inline CreateNFSFileShareRequest& WithLocationARN(const char* value) { SetLocationARN(value); return *this;}
+
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by file
@@ -336,6 +344,7 @@ namespace Model
      */
     inline CreateNFSFileShareRequest& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 
+
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks. </p>
@@ -383,6 +392,7 @@ namespace Model
      * must contain either valid IP addresses or valid CIDR blocks. </p>
      */
     inline CreateNFSFileShareRequest& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+
 
     /**
      * <p>Maps a user to anonymous user. Valid options are the following: </p> <ul>
@@ -440,6 +450,7 @@ namespace Model
      */
     inline CreateNFSFileShareRequest& WithSquash(const char* value) { SetSquash(value); return *this;}
 
+
     /**
      * <p>Sets the write status of a file share: "true" if the write status is
      * read-only, and otherwise "false".</p>
@@ -459,26 +470,37 @@ namespace Model
     inline CreateNFSFileShareRequest& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
   private:
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     NFSFileShareDefaults m_nFSFileShareDefaults;
     bool m_nFSFileShareDefaultsHasBeenSet;
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     bool m_kMSEncrypted;
     bool m_kMSEncryptedHasBeenSet;
+
     Aws::String m_kMSKey;
     bool m_kMSKeyHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     Aws::String m_locationARN;
     bool m_locationARNHasBeenSet;
+
     Aws::String m_defaultStorageClass;
     bool m_defaultStorageClassHasBeenSet;
+
     Aws::Vector<Aws::String> m_clientList;
     bool m_clientListHasBeenSet;
+
     Aws::String m_squash;
     bool m_squashHasBeenSet;
+
     bool m_readOnly;
     bool m_readOnlyHasBeenSet;
   };

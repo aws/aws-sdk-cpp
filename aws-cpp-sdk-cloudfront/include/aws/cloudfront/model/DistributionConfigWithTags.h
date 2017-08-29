@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>A distribution configuration.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>A distribution configuration.</p>
      */
     inline DistributionConfigWithTags& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
@@ -99,8 +101,10 @@ namespace Model
     inline DistributionConfigWithTags& WithTags(Tags&& value) { SetTags(std::move(value)); return *this;}
 
   private:
+
     DistributionConfig m_distributionConfig;
     bool m_distributionConfigHasBeenSet;
+
     Tags m_tags;
     bool m_tagsHasBeenSet;
   };

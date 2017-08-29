@@ -29,12 +29,12 @@ ListTagsForResourcesResult::ListTagsForResourcesResult()
 {
 }
 
-ListTagsForResourcesResult::ListTagsForResourcesResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListTagsForResourcesResult::ListTagsForResourcesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListTagsForResourcesResult& ListTagsForResourcesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListTagsForResourcesResult& ListTagsForResourcesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

@@ -30,12 +30,12 @@ GetAssignmentResult::GetAssignmentResult()
 {
 }
 
-GetAssignmentResult::GetAssignmentResult(const AmazonWebServiceResult<JsonValue>& result)
+GetAssignmentResult::GetAssignmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetAssignmentResult& GetAssignmentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetAssignmentResult& GetAssignmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Assignment"))

@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more Elastic GPU IDs.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline DescribeElasticGpusRequest& AddElasticGpuIds(const char* value) { m_elasticGpuIdsHasBeenSet = true; m_elasticGpuIds.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -103,6 +105,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeElasticGpusRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -188,6 +191,7 @@ namespace Model
      */
     inline DescribeElasticGpusRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned <code>NextToken</code>
@@ -208,6 +212,7 @@ namespace Model
      * value. This value can be between 5 and 1000.</p>
      */
     inline DescribeElasticGpusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token to request the next page of results.</p>
@@ -245,14 +250,19 @@ namespace Model
     inline DescribeElasticGpusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_elasticGpuIds;
     bool m_elasticGpuIdsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

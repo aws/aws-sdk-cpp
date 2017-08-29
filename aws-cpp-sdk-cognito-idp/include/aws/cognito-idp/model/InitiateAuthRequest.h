@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The authentication flow for this call to execute. The API action will depend
      * on this value. For example: </p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code>
@@ -125,6 +126,7 @@ namespace Model
      * value.</p>
      */
     inline InitiateAuthRequest& WithAuthFlow(AuthFlowType&& value) { SetAuthFlow(std::move(value)); return *this;}
+
 
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
@@ -318,6 +320,7 @@ namespace Model
      */
     inline InitiateAuthRequest& AddAuthParameters(const char* key, const char* value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>This is a random key-value pair map which can contain any key and will be
      * passed to your PreAuthentication Lambda trigger as-is. It can be used to
@@ -402,6 +405,7 @@ namespace Model
      */
     inline InitiateAuthRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
 
+
     /**
      * <p>The app client ID.</p>
      */
@@ -438,12 +442,16 @@ namespace Model
     inline InitiateAuthRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 
   private:
+
     AuthFlowType m_authFlow;
     bool m_authFlowHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_authParameters;
     bool m_authParametersHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_clientMetadata;
     bool m_clientMetadataHasBeenSet;
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     BatchDeleteObject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The reference that identifies the object.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline BatchDeleteObject& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
   };

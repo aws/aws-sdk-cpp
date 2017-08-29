@@ -55,7 +55,7 @@ enum class ECRErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  EMPTY_UPLOAD= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EMPTY_UPLOAD= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   IMAGE_ALREADY_EXISTS,
   IMAGE_NOT_FOUND,
   INVALID_LAYER,
@@ -75,7 +75,7 @@ enum class ECRErrors
 };
 namespace ECRErrorMapper
 {
-  AWS_ECR_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ECR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ECR

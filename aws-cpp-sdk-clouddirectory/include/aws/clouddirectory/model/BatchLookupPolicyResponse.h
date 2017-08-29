@@ -48,6 +48,7 @@ namespace Model
     BatchLookupPolicyResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
      * <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more
@@ -104,6 +105,7 @@ namespace Model
      */
     inline BatchLookupPolicyResponse& AddPolicyToPathList(PolicyToPath&& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -140,8 +142,10 @@ namespace Model
     inline BatchLookupPolicyResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PolicyToPath> m_policyToPathList;
     bool m_policyToPathListHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

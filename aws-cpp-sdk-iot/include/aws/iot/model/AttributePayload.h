@@ -46,6 +46,7 @@ namespace Model
     AttributePayload& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A JSON string containing up to three key-value pair in JSON format. For
      * example:</p> <p> <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
@@ -118,6 +119,7 @@ namespace Model
      */
     inline AttributePayload& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>Specifies whether the list of attributes provided in the
      * <code>AttributePayload</code> is merged with the attributes stored in the
@@ -149,8 +151,10 @@ namespace Model
     inline AttributePayload& WithMerge(bool value) { SetMerge(value); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     bool m_merge;
     bool m_mergeHasBeenSet;
   };

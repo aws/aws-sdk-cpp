@@ -46,6 +46,7 @@ namespace Model
     Alarm& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the alarm.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the alarm.</p>
      */
     inline Alarm& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline Alarm& WithAlarmARN(const char* value) { SetAlarmARN(value); return *this;}
 
   private:
+
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
+
     Aws::String m_alarmARN;
     bool m_alarmARNHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     AssociationFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the filter.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the filter.</p>
      */
     inline AssociationFilter& WithKey(AssociationFilterKey&& value) { SetKey(std::move(value)); return *this;}
+
 
     /**
      * <p>The filter value.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline AssociationFilter& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     AssociationFilterKey m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

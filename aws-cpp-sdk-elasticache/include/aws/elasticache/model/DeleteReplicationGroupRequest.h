@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier for the cluster to be deleted. This parameter is not case
      * sensitive.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DeleteReplicationGroupRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 
+
     /**
      * <p>If set to <code>true</code>, all of the read replicas are deleted, but the
      * primary node is retained.</p>
@@ -101,6 +103,7 @@ namespace Model
      * primary node is retained.</p>
      */
     inline DeleteReplicationGroupRequest& WithRetainPrimaryCluster(bool value) { SetRetainPrimaryCluster(value); return *this;}
+
 
     /**
      * <p>The name of a final node group (shard) snapshot. ElastiCache creates the
@@ -159,10 +162,13 @@ namespace Model
     inline DeleteReplicationGroupRequest& WithFinalSnapshotIdentifier(const char* value) { SetFinalSnapshotIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
     bool m_retainPrimaryCluster;
     bool m_retainPrimaryClusterHasBeenSet;
+
     Aws::String m_finalSnapshotIdentifier;
     bool m_finalSnapshotIdentifierHasBeenSet;
   };

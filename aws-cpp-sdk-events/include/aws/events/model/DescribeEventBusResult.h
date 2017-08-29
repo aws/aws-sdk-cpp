@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DescribeEventBusResult();
-    DescribeEventBusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEventBusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventBusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventBusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the event bus. Currently, this is always
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeEventBusResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the account permitted to write events to
      * the current account.</p>
@@ -124,6 +126,7 @@ namespace Model
      * the current account.</p>
      */
     inline DescribeEventBusResult& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The policy that enables the external account to send events to your
@@ -168,8 +171,11 @@ namespace Model
     inline DescribeEventBusResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_arn;
+
     Aws::String m_policy;
   };
 

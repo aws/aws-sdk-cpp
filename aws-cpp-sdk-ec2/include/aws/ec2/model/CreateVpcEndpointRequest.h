@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
@@ -98,6 +99,7 @@ namespace Model
      */
     inline CreateVpcEndpointRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -121,6 +123,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CreateVpcEndpointRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>A policy to attach to the endpoint that controls access to the service. The
@@ -171,6 +174,7 @@ namespace Model
      */
     inline CreateVpcEndpointRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
+
     /**
      * <p>One or more route table IDs.</p>
      */
@@ -210,6 +214,7 @@ namespace Model
      * <p>One or more route table IDs.</p>
      */
     inline CreateVpcEndpointRequest& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
+
 
     /**
      * <p>The AWS service name, in the form
@@ -260,6 +265,7 @@ namespace Model
      */
     inline CreateVpcEndpointRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
+
     /**
      * <p>The ID of the VPC in which the endpoint will be used.</p>
      */
@@ -296,16 +302,22 @@ namespace Model
     inline CreateVpcEndpointRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet;
+
     Aws::Vector<Aws::String> m_routeTableIds;
     bool m_routeTableIdsHasBeenSet;
+
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

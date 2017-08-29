@@ -30,12 +30,12 @@ ListDiscoveredResourcesResult::ListDiscoveredResourcesResult()
 {
 }
 
-ListDiscoveredResourcesResult::ListDiscoveredResourcesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListDiscoveredResourcesResult::ListDiscoveredResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListDiscoveredResourcesResult& ListDiscoveredResourcesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListDiscoveredResourcesResult& ListDiscoveredResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

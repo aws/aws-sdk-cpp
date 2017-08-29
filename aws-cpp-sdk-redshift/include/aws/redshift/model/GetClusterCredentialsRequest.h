@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of a database user. If a user name matching <code>DbUser</code>
      * exists in the database, the temporary user credentials have the same permissions
@@ -197,6 +198,7 @@ namespace Model
      */
     inline GetClusterCredentialsRequest& WithDbUser(const char* value) { SetDbUser(value); return *this;}
 
+
     /**
      * <p>The name of a database that <code>DbUser</code> is authorized to log on to.
      * If <code>DbName</code> is not specified, <code>DbUser</code> can log in to any
@@ -281,6 +283,7 @@ namespace Model
      */
     inline GetClusterCredentialsRequest& WithDbName(const char* value) { SetDbName(value); return *this;}
 
+
     /**
      * <p>The unique identifier of the cluster that contains the database for which
      * your are requesting credentials. This parameter is case sensitive.</p>
@@ -323,6 +326,7 @@ namespace Model
      */
     inline GetClusterCredentialsRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The number of seconds until the returned temporary password expires.</p>
      * <p>Constraint: minimum 900, maximum 3600.</p> <p>Default: 900</p>
@@ -341,6 +345,7 @@ namespace Model
      */
     inline GetClusterCredentialsRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
+
     /**
      * <p>Create a database user with the name specified for <code>DbUser</code> if one
      * does not exist.</p>
@@ -358,6 +363,7 @@ namespace Model
      * does not exist.</p>
      */
     inline GetClusterCredentialsRequest& WithAutoCreate(bool value) { SetAutoCreate(value); return *this;}
+
 
     /**
      * <p>A list of the names of existing database groups that <code>DbUser</code> will
@@ -416,16 +422,22 @@ namespace Model
     inline GetClusterCredentialsRequest& AddDbGroups(const char* value) { m_dbGroupsHasBeenSet = true; m_dbGroups.push_back(value); return *this; }
 
   private:
+
     Aws::String m_dbUser;
     bool m_dbUserHasBeenSet;
+
     Aws::String m_dbName;
     bool m_dbNameHasBeenSet;
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
+
     bool m_autoCreate;
     bool m_autoCreateHasBeenSet;
+
     Aws::Vector<Aws::String> m_dbGroups;
     bool m_dbGroupsHasBeenSet;
   };

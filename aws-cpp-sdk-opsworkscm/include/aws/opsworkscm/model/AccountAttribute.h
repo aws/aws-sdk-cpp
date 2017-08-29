@@ -45,6 +45,7 @@ namespace Model
     AccountAttribute& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The attribute name. The following are supported attribute names. </p> <ul>
      * <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of
@@ -115,6 +116,7 @@ namespace Model
      */
     inline AccountAttribute& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p> The maximum allowed value. </p>
      */
@@ -129,6 +131,7 @@ namespace Model
      * <p> The maximum allowed value. </p>
      */
     inline AccountAttribute& WithMaximum(int value) { SetMaximum(value); return *this;}
+
 
     /**
      * <p> The current usage, such as the current number of servers that are associated
@@ -149,10 +152,13 @@ namespace Model
     inline AccountAttribute& WithUsed(int value) { SetUsed(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     int m_maximum;
     bool m_maximumHasBeenSet;
+
     int m_used;
     bool m_usedHasBeenSet;
   };

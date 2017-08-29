@@ -46,6 +46,7 @@ namespace Model
     ActivityTaskCancelRequestedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
      * decision task that resulted in the <code>RequestCancelActivityTask</code>
@@ -72,6 +73,7 @@ namespace Model
      * event.</p>
      */
     inline ActivityTaskCancelRequestedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
+
 
     /**
      * <p>The unique ID of the task.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline ActivityTaskCancelRequestedEventAttributes& WithActivityId(const char* value) { SetActivityId(value); return *this;}
 
   private:
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
+
     Aws::String m_activityId;
     bool m_activityIdHasBeenSet;
   };

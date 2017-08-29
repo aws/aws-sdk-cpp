@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListFindingsResult();
-    ListFindingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFindingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of ARNs that specifies the findings returned by the action.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>A list of ARNs that specifies the findings returned by the action.</p>
      */
     inline ListFindingsResult& AddFindingArns(const char* value) { m_findingArns.push_back(value); return *this; }
+
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this
@@ -139,7 +141,9 @@ namespace Model
     inline ListFindingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_findingArns;
+
     Aws::String m_nextToken;
   };
 

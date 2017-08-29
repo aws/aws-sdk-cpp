@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DescribeBudgetResult();
-    DescribeBudgetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBudgetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBudgetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBudgetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Budget& GetBudget() const{ return m_budget; }
@@ -62,6 +63,7 @@ namespace Model
     inline DescribeBudgetResult& WithBudget(Budget&& value) { SetBudget(std::move(value)); return *this;}
 
   private:
+
     Budget m_budget;
   };
 

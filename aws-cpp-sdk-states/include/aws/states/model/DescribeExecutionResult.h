@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeExecutionResult();
-    DescribeExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeExecutionResult& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>
      */
     inline DescribeExecutionResult& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
+
 
     /**
      * <p>The name of the execution.</p>
@@ -148,6 +151,7 @@ namespace Model
      */
     inline DescribeExecutionResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The current status of the execution.</p>
      */
@@ -172,6 +176,7 @@ namespace Model
      * <p>The current status of the execution.</p>
      */
     inline DescribeExecutionResult& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the execution was started.</p>
@@ -198,6 +203,7 @@ namespace Model
      */
     inline DescribeExecutionResult& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
+
     /**
      * <p>If the execution has already ended, the date the execution stopped.</p>
      */
@@ -222,6 +228,7 @@ namespace Model
      * <p>If the execution has already ended, the date the execution stopped.</p>
      */
     inline DescribeExecutionResult& WithStopDate(Aws::Utils::DateTime&& value) { SetStopDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The JSON input data of the execution.</p>
@@ -257,6 +264,7 @@ namespace Model
      * <p>The JSON input data of the execution.</p>
      */
     inline DescribeExecutionResult& WithInput(const char* value) { SetInput(value); return *this;}
+
 
     /**
      * <p>The JSON output data of the execution.</p>
@@ -294,13 +302,21 @@ namespace Model
     inline DescribeExecutionResult& WithOutput(const char* value) { SetOutput(value); return *this;}
 
   private:
+
     Aws::String m_executionArn;
+
     Aws::String m_stateMachineArn;
+
     Aws::String m_name;
+
     ExecutionStatus m_status;
+
     Aws::Utils::DateTime m_startDate;
+
     Aws::Utils::DateTime m_stopDate;
+
     Aws::String m_input;
+
     Aws::String m_output;
   };
 

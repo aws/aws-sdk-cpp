@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AssociateConfigurationItemsToApplicationResult();
-    AssociateConfigurationItemsToApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateConfigurationItemsToApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateConfigurationItemsToApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateConfigurationItemsToApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

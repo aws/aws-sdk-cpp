@@ -30,12 +30,12 @@ CreateNotificationSubscriptionResult::CreateNotificationSubscriptionResult()
 {
 }
 
-CreateNotificationSubscriptionResult::CreateNotificationSubscriptionResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateNotificationSubscriptionResult::CreateNotificationSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateNotificationSubscriptionResult& CreateNotificationSubscriptionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateNotificationSubscriptionResult& CreateNotificationSubscriptionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Subscription"))

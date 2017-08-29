@@ -53,6 +53,7 @@ namespace Model
     XssMatchSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for an <code>XssMatchSet</code>. You use
      * <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code>
@@ -137,6 +138,7 @@ namespace Model
      */
     inline XssMatchSet& WithXssMatchSetId(const char* value) { SetXssMatchSetId(value); return *this;}
 
+
     /**
      * <p>The name, if any, of the <code>XssMatchSet</code>.</p>
      */
@@ -171,6 +173,7 @@ namespace Model
      * <p>The name, if any, of the <code>XssMatchSet</code>.</p>
      */
     inline XssMatchSet& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Specifies the parts of web requests that you want to inspect for cross-site
@@ -215,10 +218,13 @@ namespace Model
     inline XssMatchSet& AddXssMatchTuples(XssMatchTuple&& value) { m_xssMatchTuplesHasBeenSet = true; m_xssMatchTuples.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_xssMatchSetId;
     bool m_xssMatchSetIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<XssMatchTuple> m_xssMatchTuples;
     bool m_xssMatchTuplesHasBeenSet;
   };

@@ -31,12 +31,12 @@ DescribeCustomerGatewaysResponse::DescribeCustomerGatewaysResponse()
 {
 }
 
-DescribeCustomerGatewaysResponse::DescribeCustomerGatewaysResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeCustomerGatewaysResponse::DescribeCustomerGatewaysResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeCustomerGatewaysResponse& DescribeCustomerGatewaysResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeCustomerGatewaysResponse& DescribeCustomerGatewaysResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

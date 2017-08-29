@@ -31,12 +31,12 @@ DeleteIndexFieldResult::DeleteIndexFieldResult()
 {
 }
 
-DeleteIndexFieldResult::DeleteIndexFieldResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteIndexFieldResult::DeleteIndexFieldResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteIndexFieldResult& DeleteIndexFieldResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteIndexFieldResult& DeleteIndexFieldResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

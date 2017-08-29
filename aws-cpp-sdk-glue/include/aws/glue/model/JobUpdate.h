@@ -50,6 +50,7 @@ namespace Model
     JobUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Description of the job.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>Description of the job.</p>
      */
     inline JobUpdate& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Location of the logs for this job.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline JobUpdate& WithLogUri(const char* value) { SetLogUri(value); return *this;}
 
+
     /**
      * <p>The role associated with this job.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      */
     inline JobUpdate& WithRole(const char* value) { SetRole(value); return *this;}
 
+
     /**
      * <p>An ExecutionProperty specifying the maximum number of concurrent runs allowed
      * for this job.</p>
@@ -185,6 +189,7 @@ namespace Model
      */
     inline JobUpdate& WithExecutionProperty(ExecutionProperty&& value) { SetExecutionProperty(std::move(value)); return *this;}
 
+
     /**
      * <p>The JobCommand that executes this job.</p>
      */
@@ -209,6 +214,7 @@ namespace Model
      * <p>The JobCommand that executes this job.</p>
      */
     inline JobUpdate& WithCommand(JobCommand&& value) { SetCommand(std::move(value)); return *this;}
+
 
     /**
      * <p>The default parameters for this job.</p>
@@ -270,6 +276,7 @@ namespace Model
      */
     inline JobUpdate& AddDefaultArguments(const char* key, const char* value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(key, value); return *this; }
 
+
     /**
      * <p>The connections used for this job.</p>
      */
@@ -295,6 +302,7 @@ namespace Model
      */
     inline JobUpdate& WithConnections(ConnectionsList&& value) { SetConnections(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of times to retry this job if it fails.</p>
      */
@@ -309,6 +317,7 @@ namespace Model
      * <p>The maximum number of times to retry this job if it fails.</p>
      */
     inline JobUpdate& WithMaxRetries(int value) { SetMaxRetries(value); return *this;}
+
 
     /**
      * <p>The number of capacity units allocated to this job.</p>
@@ -326,22 +335,31 @@ namespace Model
     inline JobUpdate& WithAllocatedCapacity(int value) { SetAllocatedCapacity(value); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_logUri;
     bool m_logUriHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     ExecutionProperty m_executionProperty;
     bool m_executionPropertyHasBeenSet;
+
     JobCommand m_command;
     bool m_commandHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_defaultArguments;
     bool m_defaultArgumentsHasBeenSet;
+
     ConnectionsList m_connections;
     bool m_connectionsHasBeenSet;
+
     int m_maxRetries;
     bool m_maxRetriesHasBeenSet;
+
     int m_allocatedCapacity;
     bool m_allocatedCapacityHasBeenSet;
   };

@@ -30,13 +30,13 @@ TestDNSAnswerResult::TestDNSAnswerResult() :
 {
 }
 
-TestDNSAnswerResult::TestDNSAnswerResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+TestDNSAnswerResult::TestDNSAnswerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_recordType(RRType::NOT_SET)
 {
   *this = result;
 }
 
-TestDNSAnswerResult& TestDNSAnswerResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+TestDNSAnswerResult& TestDNSAnswerResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

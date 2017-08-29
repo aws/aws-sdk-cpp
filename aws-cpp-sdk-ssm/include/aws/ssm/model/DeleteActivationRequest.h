@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the activation that you want to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteActivationRequest& WithActivationId(const char* value) { SetActivationId(value); return *this;}
 
   private:
+
     Aws::String m_activationId;
     bool m_activationIdHasBeenSet;
   };

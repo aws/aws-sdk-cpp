@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the instance whose patch state information should be retrieved.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The ID of the instance whose patch state information should be retrieved.</p>
      */
     inline DescribeInstancePatchStatesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -119,6 +121,7 @@ namespace Model
      */
     inline DescribeInstancePatchStatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of instances to return (per page).</p>
      */
@@ -135,10 +138,13 @@ namespace Model
     inline DescribeInstancePatchStatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

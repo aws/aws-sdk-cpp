@@ -46,6 +46,7 @@ namespace Model
     LambdaConfigType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A pre-registration AWS Lambda trigger.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>A pre-registration AWS Lambda trigger.</p>
      */
     inline LambdaConfigType& WithPreSignUp(const char* value) { SetPreSignUp(value); return *this;}
+
 
     /**
      * <p>A custom Message AWS Lambda trigger.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline LambdaConfigType& WithCustomMessage(const char* value) { SetCustomMessage(value); return *this;}
 
+
     /**
      * <p>A post-confirmation AWS Lambda trigger.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>A post-confirmation AWS Lambda trigger.</p>
      */
     inline LambdaConfigType& WithPostConfirmation(const char* value) { SetPostConfirmation(value); return *this;}
+
 
     /**
      * <p>A pre-authentication AWS Lambda trigger.</p>
@@ -186,6 +190,7 @@ namespace Model
      */
     inline LambdaConfigType& WithPreAuthentication(const char* value) { SetPreAuthentication(value); return *this;}
 
+
     /**
      * <p>A post-authentication AWS Lambda trigger.</p>
      */
@@ -220,6 +225,7 @@ namespace Model
      * <p>A post-authentication AWS Lambda trigger.</p>
      */
     inline LambdaConfigType& WithPostAuthentication(const char* value) { SetPostAuthentication(value); return *this;}
+
 
     /**
      * <p>Defines the authentication challenge.</p>
@@ -256,6 +262,7 @@ namespace Model
      */
     inline LambdaConfigType& WithDefineAuthChallenge(const char* value) { SetDefineAuthChallenge(value); return *this;}
 
+
     /**
      * <p>Creates an authentication challenge.</p>
      */
@@ -290,6 +297,7 @@ namespace Model
      * <p>Creates an authentication challenge.</p>
      */
     inline LambdaConfigType& WithCreateAuthChallenge(const char* value) { SetCreateAuthChallenge(value); return *this;}
+
 
     /**
      * <p>Verifies the authentication challenge response.</p>
@@ -327,20 +335,28 @@ namespace Model
     inline LambdaConfigType& WithVerifyAuthChallengeResponse(const char* value) { SetVerifyAuthChallengeResponse(value); return *this;}
 
   private:
+
     Aws::String m_preSignUp;
     bool m_preSignUpHasBeenSet;
+
     Aws::String m_customMessage;
     bool m_customMessageHasBeenSet;
+
     Aws::String m_postConfirmation;
     bool m_postConfirmationHasBeenSet;
+
     Aws::String m_preAuthentication;
     bool m_preAuthenticationHasBeenSet;
+
     Aws::String m_postAuthentication;
     bool m_postAuthenticationHasBeenSet;
+
     Aws::String m_defineAuthChallenge;
     bool m_defineAuthChallengeHasBeenSet;
+
     Aws::String m_createAuthChallenge;
     bool m_createAuthChallengeHasBeenSet;
+
     Aws::String m_verifyAuthChallengeResponse;
     bool m_verifyAuthChallengeResponseHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The creation date and time beginning value filter for listing clusters.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      */
     inline ListClustersRequest& WithCreatedAfter(Aws::Utils::DateTime&& value) { SetCreatedAfter(std::move(value)); return *this;}
 
+
     /**
      * <p>The creation date and time end value filter for listing clusters.</p>
      */
@@ -92,6 +94,7 @@ namespace Model
      * <p>The creation date and time end value filter for listing clusters.</p>
      */
     inline ListClustersRequest& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(std::move(value)); return *this;}
+
 
     /**
      * <p>The cluster state filters to apply when listing clusters.</p>
@@ -127,6 +130,7 @@ namespace Model
      * <p>The cluster state filters to apply when listing clusters.</p>
      */
     inline ListClustersRequest& AddClusterStates(ClusterState&& value) { m_clusterStatesHasBeenSet = true; m_clusterStates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -164,12 +168,16 @@ namespace Model
     inline ListClustersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_createdAfter;
     bool m_createdAfterHasBeenSet;
+
     Aws::Utils::DateTime m_createdBefore;
     bool m_createdBeforeHasBeenSet;
+
     Aws::Vector<ClusterState> m_clusterStates;
     bool m_clusterStatesHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

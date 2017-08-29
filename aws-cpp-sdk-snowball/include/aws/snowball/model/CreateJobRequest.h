@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Defines the type of job that you're creating. </p>
      */
@@ -66,6 +67,7 @@ namespace Model
      * <p>Defines the type of job that you're creating. </p>
      */
     inline CreateJobRequest& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+
 
     /**
      * <p>Defines the Amazon S3 buckets associated with this job.</p> <p>With
@@ -127,6 +129,7 @@ namespace Model
      */
     inline CreateJobRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
 
+
     /**
      * <p>Defines an optional description of this specific job, for example
      * <code>Important Photos 2016-08-11</code>.</p>
@@ -169,6 +172,7 @@ namespace Model
      */
     inline CreateJobRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The ID for the address that you want the Snowball shipped to.</p>
      */
@@ -203,6 +207,7 @@ namespace Model
      * <p>The ID for the address that you want the Snowball shipped to.</p>
      */
     inline CreateJobRequest& WithAddressId(const char* value) { SetAddressId(value); return *this;}
+
 
     /**
      * <p>The <code>KmsKeyARN</code> that you want to associate with this job.
@@ -260,6 +265,7 @@ namespace Model
      */
     inline CreateJobRequest& WithKmsKeyARN(const char* value) { SetKmsKeyARN(value); return *this;}
 
+
     /**
      * <p>The <code>RoleARN</code> that you want to associate with this job.
      * <code>RoleArn</code>s are created using the <a
@@ -316,6 +322,7 @@ namespace Model
      */
     inline CreateJobRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
      * specifying what size Snowball you'd like for this job. In all other regions,
@@ -350,6 +357,7 @@ namespace Model
      * Snowballs come with 80 TB in storage capacity.</p>
      */
     inline CreateJobRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
+
 
     /**
      * <p>The shipping speed for this job. This speed doesn't dictate how soon you'll
@@ -426,6 +434,7 @@ namespace Model
      */
     inline CreateJobRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
+
     /**
      * <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification
      * settings for this job.</p>
@@ -455,6 +464,7 @@ namespace Model
      * settings for this job.</p>
      */
     inline CreateJobRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of a cluster. If you're creating a job for a node in a cluster, you
@@ -505,6 +515,7 @@ namespace Model
      */
     inline CreateJobRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>The type of AWS Snowball appliance to use for this job. Currently, the only
      * supported appliance type for cluster jobs is <code>EDGE</code>.</p>
@@ -534,6 +545,7 @@ namespace Model
      * supported appliance type for cluster jobs is <code>EDGE</code>.</p>
      */
     inline CreateJobRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
+
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
@@ -578,28 +590,40 @@ namespace Model
     inline CreateJobRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
 
   private:
+
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
+
     JobResource m_resources;
     bool m_resourcesHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet;
+
     Aws::String m_kmsKeyARN;
     bool m_kmsKeyARNHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     SnowballCapacity m_snowballCapacityPreference;
     bool m_snowballCapacityPreferenceHasBeenSet;
+
     ShippingOption m_shippingOption;
     bool m_shippingOptionHasBeenSet;
+
     Notification m_notification;
     bool m_notificationHasBeenSet;
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     SnowballType m_snowballType;
     bool m_snowballTypeHasBeenSet;
+
     Aws::String m_forwardingAddressId;
     bool m_forwardingAddressIdHasBeenSet;
   };

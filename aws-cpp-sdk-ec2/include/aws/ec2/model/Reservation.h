@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>[EC2-Classic only] One or more security groups.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>[EC2-Classic only] One or more security groups.</p>
      */
     inline Reservation& AddGroups(GroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>One or more instances.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline Reservation& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the AWS account that owns the reservation.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The ID of the AWS account that owns the reservation.</p>
      */
     inline Reservation& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
@@ -199,6 +203,7 @@ namespace Model
      */
     inline Reservation& WithRequesterId(const char* value) { SetRequesterId(value); return *this;}
 
+
     /**
      * <p>The ID of the reservation.</p>
      */
@@ -234,6 +239,7 @@ namespace Model
      */
     inline Reservation& WithReservationId(const char* value) { SetReservationId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -250,16 +256,22 @@ namespace Model
     inline Reservation& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<GroupIdentifier> m_groups;
     bool m_groupsHasBeenSet;
+
     Aws::Vector<Instance> m_instances;
     bool m_instancesHasBeenSet;
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     Aws::String m_requesterId;
     bool m_requesterIdHasBeenSet;
+
     Aws::String m_reservationId;
     bool m_reservationIdHasBeenSet;
+
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;
   };

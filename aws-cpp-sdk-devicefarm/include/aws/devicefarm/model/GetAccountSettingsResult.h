@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetAccountSettingsResult();
-    GetAccountSettingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAccountSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAccountSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAccountSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The account settings.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline GetAccountSettingsResult& WithAccountSettings(AccountSettings&& value) { SetAccountSettings(std::move(value)); return *this;}
 
   private:
+
     AccountSettings m_accountSettings;
   };
 

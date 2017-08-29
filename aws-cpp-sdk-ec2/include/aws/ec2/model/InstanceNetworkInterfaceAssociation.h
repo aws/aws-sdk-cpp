@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the owner of the Elastic IP address.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline InstanceNetworkInterfaceAssociation& WithIpOwnerId(const char* value) { SetIpOwnerId(value); return *this;}
 
+
     /**
      * <p>The public DNS name.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The public DNS name.</p>
      */
     inline InstanceNetworkInterfaceAssociation& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
+
 
     /**
      * <p>The public IP address or Elastic IP address bound to the network
@@ -162,10 +165,13 @@ namespace Model
     inline InstanceNetworkInterfaceAssociation& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
   private:
+
     Aws::String m_ipOwnerId;
     bool m_ipOwnerIdHasBeenSet;
+
     Aws::String m_publicDnsName;
     bool m_publicDnsNameHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
   };

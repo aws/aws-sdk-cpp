@@ -46,6 +46,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The first port in the range.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The first port in the range.</p>
      */
     inline PortRange& WithFrom(int value) { SetFrom(value); return *this;}
+
 
     /**
      * <p>The last port in the range.</p>
@@ -77,8 +79,10 @@ namespace Model
     inline PortRange& WithTo(int value) { SetTo(value); return *this;}
 
   private:
+
     int m_from;
     bool m_fromHasBeenSet;
+
     int m_to;
     bool m_toHasBeenSet;
   };

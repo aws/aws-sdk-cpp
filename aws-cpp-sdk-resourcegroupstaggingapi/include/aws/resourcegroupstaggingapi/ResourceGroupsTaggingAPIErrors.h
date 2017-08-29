@@ -55,14 +55,14 @@ enum class ResourceGroupsTaggingAPIErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVICE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVICE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_PARAMETER,
   PAGINATION_TOKEN_EXPIRED,
   THROTTLED
 };
 namespace ResourceGroupsTaggingAPIErrorMapper
 {
-  AWS_RESOURCEGROUPSTAGGINGAPI_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ResourceGroupsTaggingAPI

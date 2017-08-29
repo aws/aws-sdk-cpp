@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The snapshot attribute you would like to view.</p>
      */
@@ -67,6 +68,7 @@ namespace Model
      * <p>The snapshot attribute you would like to view.</p>
      */
     inline DescribeSnapshotAttributeRequest& WithAttribute(SnapshotAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the EBS snapshot.</p>
@@ -103,6 +105,7 @@ namespace Model
      */
     inline DescribeSnapshotAttributeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -128,10 +131,13 @@ namespace Model
     inline DescribeSnapshotAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     SnapshotAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

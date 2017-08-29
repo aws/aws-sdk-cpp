@@ -45,6 +45,7 @@ namespace Model
     ServiceError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The error ID.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The error ID.</p>
      */
     inline ServiceError& WithServiceErrorId(const char* value) { SetServiceErrorId(value); return *this;}
+
 
     /**
      * <p>The stack ID.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline ServiceError& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The instance ID.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline ServiceError& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The error type.</p>
@@ -185,6 +189,7 @@ namespace Model
      */
     inline ServiceError& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>A message that describes the error.</p>
      */
@@ -219,6 +224,7 @@ namespace Model
      * <p>A message that describes the error.</p>
      */
     inline ServiceError& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>When the error occurred.</p>
@@ -256,16 +262,22 @@ namespace Model
     inline ServiceError& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
   private:
+
     Aws::String m_serviceErrorId;
     bool m_serviceErrorIdHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::String m_createdAt;
     bool m_createdAtHasBeenSet;
   };

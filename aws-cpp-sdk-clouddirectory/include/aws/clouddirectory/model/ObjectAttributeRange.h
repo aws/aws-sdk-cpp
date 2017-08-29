@@ -46,6 +46,7 @@ namespace Model
     ObjectAttributeRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The key of the attribute that the attribute range covers.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The key of the attribute that the attribute range covers.</p>
      */
     inline ObjectAttributeRange& WithAttributeKey(AttributeKey&& value) { SetAttributeKey(std::move(value)); return *this;}
+
 
     /**
      * <p>The range of attribute values being selected.</p>
@@ -97,8 +99,10 @@ namespace Model
     inline ObjectAttributeRange& WithRange(TypedAttributeValueRange&& value) { SetRange(std::move(value)); return *this;}
 
   private:
+
     AttributeKey m_attributeKey;
     bool m_attributeKeyHasBeenSet;
+
     TypedAttributeValueRange m_range;
     bool m_rangeHasBeenSet;
   };

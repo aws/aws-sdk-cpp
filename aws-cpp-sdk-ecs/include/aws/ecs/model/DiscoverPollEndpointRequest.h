@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
      * instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
@@ -113,6 +114,7 @@ namespace Model
      */
     inline DiscoverPollEndpointRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that the
      * container instance belongs to.</p>
@@ -156,8 +158,10 @@ namespace Model
     inline DiscoverPollEndpointRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
   private:
+
     Aws::String m_containerInstance;
     bool m_containerInstanceHasBeenSet;
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique system-generated ID used for identifying the job.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The unique system-generated ID used for identifying the job.</p>
      */
     inline GetThirdPartyJobDetailsRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     /**
      * <p>The clientToken portion of the clientId and clientToken pair used to verify
@@ -118,8 +120,10 @@ namespace Model
     inline GetThirdPartyJobDetailsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
   };

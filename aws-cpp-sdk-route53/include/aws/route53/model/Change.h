@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The action to perform:</p> <ul> <li> <p> <code>CREATE</code>: Creates a
      * resource record set that has the specified values.</p> </li> <li> <p>
@@ -208,6 +209,7 @@ namespace Model
      */
     inline Change& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the resource record set to create, delete, or update.</p>
      */
@@ -234,8 +236,10 @@ namespace Model
     inline Change& WithResourceRecordSet(ResourceRecordSet&& value) { SetResourceRecordSet(std::move(value)); return *this;}
 
   private:
+
     ChangeAction m_action;
     bool m_actionHasBeenSet;
+
     ResourceRecordSet m_resourceRecordSet;
     bool m_resourceRecordSetHasBeenSet;
   };

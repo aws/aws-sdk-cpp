@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price
      * on the total order (instanceCount * price).</p>
@@ -66,6 +67,7 @@ namespace Model
      * on the total order (instanceCount * price).</p>
      */
     inline ReservedInstanceLimitPrice& WithAmount(double value) { SetAmount(value); return *this;}
+
 
     /**
      * <p>The currency in which the <code>limitPrice</code> amount is specified. At
@@ -98,8 +100,10 @@ namespace Model
     inline ReservedInstanceLimitPrice& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
 
   private:
+
     double m_amount;
     bool m_amountHasBeenSet;
+
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet;
   };

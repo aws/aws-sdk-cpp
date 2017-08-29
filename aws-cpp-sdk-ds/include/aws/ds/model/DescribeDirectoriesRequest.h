@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of identifiers of the directories for which to obtain the information.
      * If this member is null, all directories that belong to the current account are
@@ -105,6 +106,7 @@ namespace Model
      */
     inline DescribeDirectoriesRequest& AddDirectoryIds(const char* value) { m_directoryIdsHasBeenSet = true; m_directoryIds.push_back(value); return *this; }
 
+
     /**
      * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to
      * <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
@@ -147,6 +149,7 @@ namespace Model
      */
     inline DescribeDirectoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return. If this value is zero, the maximum
      * number of items is specified by the limitations of the operation.</p>
@@ -166,10 +169,13 @@ namespace Model
     inline DescribeDirectoriesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_directoryIds;
     bool m_directoryIdsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

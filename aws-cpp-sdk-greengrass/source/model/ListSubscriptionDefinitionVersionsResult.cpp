@@ -30,12 +30,12 @@ ListSubscriptionDefinitionVersionsResult::ListSubscriptionDefinitionVersionsResu
 {
 }
 
-ListSubscriptionDefinitionVersionsResult::ListSubscriptionDefinitionVersionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListSubscriptionDefinitionVersionsResult::ListSubscriptionDefinitionVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListSubscriptionDefinitionVersionsResult& ListSubscriptionDefinitionVersionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListSubscriptionDefinitionVersionsResult& ListSubscriptionDefinitionVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

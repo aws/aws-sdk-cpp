@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DeleteReplicationInstanceResult();
-    DeleteReplicationInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteReplicationInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteReplicationInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteReplicationInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The replication instance that was deleted.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteReplicationInstanceResult& WithReplicationInstance(ReplicationInstance&& value) { SetReplicationInstance(std::move(value)); return *this;}
 
   private:
+
     ReplicationInstance m_replicationInstance;
   };
 

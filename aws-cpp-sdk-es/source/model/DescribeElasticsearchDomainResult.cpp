@@ -30,12 +30,12 @@ DescribeElasticsearchDomainResult::DescribeElasticsearchDomainResult()
 {
 }
 
-DescribeElasticsearchDomainResult::DescribeElasticsearchDomainResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeElasticsearchDomainResult::DescribeElasticsearchDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeElasticsearchDomainResult& DescribeElasticsearchDomainResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeElasticsearchDomainResult& DescribeElasticsearchDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DomainStatus"))

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
      * operation to return a list of gateway volumes.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DeleteVolumeRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
     bool m_volumeARNHasBeenSet;
   };

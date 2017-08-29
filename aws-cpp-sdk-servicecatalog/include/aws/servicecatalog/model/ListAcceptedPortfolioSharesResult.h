@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListAcceptedPortfolioSharesResult();
-    ListAcceptedPortfolioSharesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAcceptedPortfolioSharesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAcceptedPortfolioSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAcceptedPortfolioSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of detailed portfolio information objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>List of detailed portfolio information objects.</p>
      */
     inline ListAcceptedPortfolioSharesResult& AddPortfolioDetails(PortfolioDetail&& value) { m_portfolioDetails.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -121,7 +123,9 @@ namespace Model
     inline ListAcceptedPortfolioSharesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<PortfolioDetail> m_portfolioDetails;
+
     Aws::String m_nextPageToken;
   };
 

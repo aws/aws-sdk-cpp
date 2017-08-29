@@ -47,6 +47,7 @@ namespace Model
     ThirdPartyJobDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier used to identify the job details in AWS CodePipeline.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ThirdPartyJobDetails& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The data to be returned by the third party job worker.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The data to be returned by the third party job worker.</p>
      */
     inline ThirdPartyJobDetails& WithData(ThirdPartyJobData&& value) { SetData(std::move(value)); return *this;}
+
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
@@ -157,10 +160,13 @@ namespace Model
     inline ThirdPartyJobDetails& WithNonce(const char* value) { SetNonce(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     ThirdPartyJobData m_data;
     bool m_dataHasBeenSet;
+
     Aws::String m_nonce;
     bool m_nonceHasBeenSet;
   };

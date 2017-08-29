@@ -35,6 +35,7 @@ namespace Model
     UpdateEndpointRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -55,6 +56,7 @@ namespace Model
 
     
     inline UpdateEndpointRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     
     inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
@@ -77,6 +79,7 @@ namespace Model
     
     inline UpdateEndpointRequest& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
 
+
     
     inline const EndpointRequest& GetEndpointRequest() const{ return m_endpointRequest; }
 
@@ -93,10 +96,13 @@ namespace Model
     inline UpdateEndpointRequest& WithEndpointRequest(EndpointRequest&& value) { SetEndpointRequest(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_endpointId;
     bool m_endpointIdHasBeenSet;
+
     EndpointRequest m_endpointRequest;
     bool m_endpointRequestHasBeenSet;
   };

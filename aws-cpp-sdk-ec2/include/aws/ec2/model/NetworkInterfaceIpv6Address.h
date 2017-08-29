@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The IPv6 address.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
     inline NetworkInterfaceIpv6Address& WithIpv6Address(const char* value) { SetIpv6Address(value); return *this;}
 
   private:
+
     Aws::String m_ipv6Address;
     bool m_ipv6AddressHasBeenSet;
   };

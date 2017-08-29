@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of application names separated by spaces.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline BatchGetApplicationsRequest& AddApplicationNames(const char* value) { m_applicationNamesHasBeenSet = true; m_applicationNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_applicationNames;
     bool m_applicationNamesHasBeenSet;
   };

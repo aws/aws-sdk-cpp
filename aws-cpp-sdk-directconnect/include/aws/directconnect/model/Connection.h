@@ -48,6 +48,7 @@ namespace Model
     Connection& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The AWS account that will own the new connection.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Connection& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
+
     
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
@@ -103,6 +105,7 @@ namespace Model
 
     
     inline Connection& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+
 
     
     inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
@@ -125,6 +128,7 @@ namespace Model
     
     inline Connection& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
+
     
     inline const ConnectionState& GetConnectionState() const{ return m_connectionState; }
 
@@ -139,6 +143,7 @@ namespace Model
 
     
     inline Connection& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetRegion() const{ return m_region; }
@@ -161,6 +166,7 @@ namespace Model
     
     inline Connection& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
     
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -181,6 +187,7 @@ namespace Model
 
     
     inline Connection& WithLocation(const char* value) { SetLocation(value); return *this;}
+
 
     /**
      * <p>Bandwidth of the connection.</p> <p>Example: 1Gbps (for regular connections),
@@ -224,6 +231,7 @@ namespace Model
      */
     inline Connection& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
 
+
     
     inline int GetVlan() const{ return m_vlan; }
 
@@ -232,6 +240,7 @@ namespace Model
 
     
     inline Connection& WithVlan(int value) { SetVlan(value); return *this;}
+
 
     /**
      * <p>The name of the AWS Direct Connect service provider associated with the
@@ -275,6 +284,7 @@ namespace Model
      */
     inline Connection& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
 
+
     /**
      * <p>The time of the most recent call to <a>DescribeLoa</a> for this
      * connection.</p>
@@ -305,6 +315,7 @@ namespace Model
      */
     inline Connection& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetLagId() const{ return m_lagId; }
 
@@ -325,6 +336,7 @@ namespace Model
 
     
     inline Connection& WithLagId(const char* value) { SetLagId(value); return *this;}
+
 
     /**
      * <p>The Direct Connection endpoint which the physical connection terminates
@@ -369,28 +381,40 @@ namespace Model
     inline Connection& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
 
   private:
+
     Aws::String m_ownerAccount;
     bool m_ownerAccountHasBeenSet;
+
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
+
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet;
+
     ConnectionState m_connectionState;
     bool m_connectionStateHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
     Aws::String m_bandwidth;
     bool m_bandwidthHasBeenSet;
+
     int m_vlan;
     bool m_vlanHasBeenSet;
+
     Aws::String m_partnerName;
     bool m_partnerNameHasBeenSet;
+
     Aws::Utils::DateTime m_loaIssueTime;
     bool m_loaIssueTimeHasBeenSet;
+
     Aws::String m_lagId;
     bool m_lagIdHasBeenSet;
+
     Aws::String m_awsDevice;
     bool m_awsDeviceHasBeenSet;
   };

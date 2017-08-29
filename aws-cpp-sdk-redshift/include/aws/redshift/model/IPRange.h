@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The status of the IP range, for example, "authorized".</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline IPRange& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
      */
     inline IPRange& WithCIDRIP(const char* value) { SetCIDRIP(value); return *this;}
+
 
     /**
      * <p>The list of tags for the IP range.</p>
@@ -156,10 +159,13 @@ namespace Model
     inline IPRange& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_cIDRIP;
     bool m_cIDRIPHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

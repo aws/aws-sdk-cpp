@@ -63,6 +63,7 @@ namespace Model
     EC2InstanceCounts& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Ideal number of active instances in the fleet.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>Ideal number of active instances in the fleet.</p>
      */
     inline EC2InstanceCounts& WithDESIRED(int value) { SetDESIRED(value); return *this;}
+
 
     /**
      * <p>Minimum value allowed for the fleet's instance count.</p>
@@ -93,6 +95,7 @@ namespace Model
      */
     inline EC2InstanceCounts& WithMINIMUM(int value) { SetMINIMUM(value); return *this;}
 
+
     /**
      * <p>Maximum value allowed for the fleet's instance count.</p>
      */
@@ -107,6 +110,7 @@ namespace Model
      * <p>Maximum value allowed for the fleet's instance count.</p>
      */
     inline EC2InstanceCounts& WithMAXIMUM(int value) { SetMAXIMUM(value); return *this;}
+
 
     /**
      * <p>Number of instances in the fleet that are starting but not yet active.</p>
@@ -123,6 +127,7 @@ namespace Model
      */
     inline EC2InstanceCounts& WithPENDING(int value) { SetPENDING(value); return *this;}
 
+
     /**
      * <p>Actual number of active instances in the fleet.</p>
      */
@@ -137,6 +142,7 @@ namespace Model
      * <p>Actual number of active instances in the fleet.</p>
      */
     inline EC2InstanceCounts& WithACTIVE(int value) { SetACTIVE(value); return *this;}
+
 
     /**
      * <p>Number of active instances in the fleet that are not currently hosting a game
@@ -155,6 +161,7 @@ namespace Model
      * session.</p>
      */
     inline EC2InstanceCounts& WithIDLE(int value) { SetIDLE(value); return *this;}
+
 
     /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet
@@ -175,18 +182,25 @@ namespace Model
     inline EC2InstanceCounts& WithTERMINATING(int value) { SetTERMINATING(value); return *this;}
 
   private:
+
     int m_dESIRED;
     bool m_dESIREDHasBeenSet;
+
     int m_mINIMUM;
     bool m_mINIMUMHasBeenSet;
+
     int m_mAXIMUM;
     bool m_mAXIMUMHasBeenSet;
+
     int m_pENDING;
     bool m_pENDINGHasBeenSet;
+
     int m_aCTIVE;
     bool m_aCTIVEHasBeenSet;
+
     int m_iDLE;
     bool m_iDLEHasBeenSet;
+
     int m_tERMINATING;
     bool m_tERMINATINGHasBeenSet;
   };

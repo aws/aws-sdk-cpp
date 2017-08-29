@@ -55,7 +55,7 @@ enum class CloudFrontErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BATCH_TOO_LARGE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BATCH_TOO_LARGE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_ALREADY_EXISTS,
   CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_IN_USE,
   C_N_A_M_E_ALREADY_EXISTS,
@@ -116,7 +116,7 @@ enum class CloudFrontErrors
 };
 namespace CloudFrontErrorMapper
 {
-  AWS_CLOUDFRONT_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CLOUDFRONT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CloudFront

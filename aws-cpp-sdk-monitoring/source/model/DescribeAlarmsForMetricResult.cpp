@@ -31,12 +31,12 @@ DescribeAlarmsForMetricResult::DescribeAlarmsForMetricResult()
 {
 }
 
-DescribeAlarmsForMetricResult::DescribeAlarmsForMetricResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAlarmsForMetricResult::DescribeAlarmsForMetricResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeAlarmsForMetricResult& DescribeAlarmsForMetricResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeAlarmsForMetricResult& DescribeAlarmsForMetricResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

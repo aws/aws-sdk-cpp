@@ -30,12 +30,12 @@ DescribeLogGroupsResult::DescribeLogGroupsResult()
 {
 }
 
-DescribeLogGroupsResult::DescribeLogGroupsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLogGroupsResult::DescribeLogGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeLogGroupsResult& DescribeLogGroupsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLogGroupsResult& DescribeLogGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("logGroups"))

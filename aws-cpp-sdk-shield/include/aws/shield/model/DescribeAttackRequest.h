@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) for the attack that to be described.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DescribeAttackRequest& WithAttackId(const char* value) { SetAttackId(value); return *this;}
 
   private:
+
     Aws::String m_attackId;
     bool m_attackIdHasBeenSet;
   };

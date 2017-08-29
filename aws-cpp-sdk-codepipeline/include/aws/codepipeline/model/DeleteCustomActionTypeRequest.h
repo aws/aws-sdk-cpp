@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The category of the custom action that you want to delete, such as source or
      * deploy.</p>
@@ -70,6 +71,7 @@ namespace Model
      * deploy.</p>
      */
     inline DeleteCustomActionTypeRequest& WithCategory(ActionCategory&& value) { SetCategory(std::move(value)); return *this;}
+
 
     /**
      * <p>The provider of the service used in the custom action, such as AWS
@@ -113,6 +115,7 @@ namespace Model
      */
     inline DeleteCustomActionTypeRequest& WithProvider(const char* value) { SetProvider(value); return *this;}
 
+
     /**
      * <p>The version of the custom action to delete.</p>
      */
@@ -149,10 +152,13 @@ namespace Model
     inline DeleteCustomActionTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     ActionCategory m_category;
     bool m_categoryHasBeenSet;
+
     Aws::String m_provider;
     bool m_providerHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

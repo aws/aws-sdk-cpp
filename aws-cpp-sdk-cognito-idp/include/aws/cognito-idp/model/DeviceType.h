@@ -48,6 +48,7 @@ namespace Model
     DeviceType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The device key.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The device key.</p>
      */
     inline DeviceType& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
+
 
     /**
      * <p>The device attributes.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline DeviceType& AddDeviceAttributes(AttributeType&& value) { m_deviceAttributesHasBeenSet = true; m_deviceAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The creation date of the device.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      */
     inline DeviceType& WithDeviceCreateDate(Aws::Utils::DateTime&& value) { SetDeviceCreateDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The last modified date of the device.</p>
      */
@@ -167,6 +171,7 @@ namespace Model
      * <p>The last modified date of the device.</p>
      */
     inline DeviceType& WithDeviceLastModifiedDate(Aws::Utils::DateTime&& value) { SetDeviceLastModifiedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date in which the device was last authenticated.</p>
@@ -194,14 +199,19 @@ namespace Model
     inline DeviceType& WithDeviceLastAuthenticatedDate(Aws::Utils::DateTime&& value) { SetDeviceLastAuthenticatedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deviceKey;
     bool m_deviceKeyHasBeenSet;
+
     Aws::Vector<AttributeType> m_deviceAttributes;
     bool m_deviceAttributesHasBeenSet;
+
     Aws::Utils::DateTime m_deviceCreateDate;
     bool m_deviceCreateDateHasBeenSet;
+
     Aws::Utils::DateTime m_deviceLastModifiedDate;
     bool m_deviceLastModifiedDateHasBeenSet;
+
     Aws::Utils::DateTime m_deviceLastAuthenticatedDate;
     bool m_deviceLastAuthenticatedDateHasBeenSet;
   };

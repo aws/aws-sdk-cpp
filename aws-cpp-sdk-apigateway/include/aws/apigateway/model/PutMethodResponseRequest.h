@@ -39,6 +39,7 @@ namespace Model
     PutMethodResponseRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline PutMethodResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline PutMethodResponseRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      */
     inline PutMethodResponseRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
+
     /**
      * <p>The method response's status code.</p>
      */
@@ -178,6 +182,7 @@ namespace Model
      * <p>The method response's status code.</p>
      */
     inline PutMethodResponseRequest& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p>A key-value map specifying required or optional response parameters that
@@ -323,6 +328,7 @@ namespace Model
      */
     inline PutMethodResponseRequest& AddResponseParameters(const char* key, bool value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content type.
      * Response models are represented as a key/value map, with a content type as the
@@ -408,16 +414,22 @@ namespace Model
     inline PutMethodResponseRequest& AddResponseModels(const char* key, const char* value) { m_responseModelsHasBeenSet = true; m_responseModels.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
+
     Aws::String m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::Map<Aws::String, bool> m_responseParameters;
     bool m_responseParametersHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_responseModels;
     bool m_responseModelsHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The layer ID.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetHostnameSuggestionRequest& WithLayerId(const char* value) { SetLayerId(value); return *this;}
 
   private:
+
     Aws::String m_layerId;
     bool m_layerIdHasBeenSet;
   };

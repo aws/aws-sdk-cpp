@@ -30,12 +30,12 @@ ListDeviceDefinitionVersionsResult::ListDeviceDefinitionVersionsResult()
 {
 }
 
-ListDeviceDefinitionVersionsResult::ListDeviceDefinitionVersionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListDeviceDefinitionVersionsResult::ListDeviceDefinitionVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListDeviceDefinitionVersionsResult& ListDeviceDefinitionVersionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListDeviceDefinitionVersionsResult& ListDeviceDefinitionVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

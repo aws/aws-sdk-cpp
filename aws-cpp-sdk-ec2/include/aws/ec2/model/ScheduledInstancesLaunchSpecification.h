@@ -57,6 +57,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>One or more block device mapping entries.</p>
      */
@@ -92,6 +93,7 @@ namespace Model
      */
     inline ScheduledInstancesLaunchSpecification& AddBlockDeviceMappings(ScheduledInstancesBlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether the instances are optimized for EBS I/O. This optimization
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
@@ -119,6 +121,7 @@ namespace Model
      */
     inline ScheduledInstancesLaunchSpecification& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
+
     /**
      * <p>The IAM instance profile.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      * <p>The IAM instance profile.</p>
      */
     inline ScheduledInstancesLaunchSpecification& WithIamInstanceProfile(ScheduledInstancesIamInstanceProfile&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Amazon Machine Image (AMI).</p>
@@ -179,6 +183,7 @@ namespace Model
      */
     inline ScheduledInstancesLaunchSpecification& WithImageId(const char* value) { SetImageId(value); return *this;}
 
+
     /**
      * <p>The instance type.</p>
      */
@@ -213,6 +218,7 @@ namespace Model
      * <p>The instance type.</p>
      */
     inline ScheduledInstancesLaunchSpecification& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
 
     /**
      * <p>The ID of the kernel.</p>
@@ -249,6 +255,7 @@ namespace Model
      */
     inline ScheduledInstancesLaunchSpecification& WithKernelId(const char* value) { SetKernelId(value); return *this;}
 
+
     /**
      * <p>The name of the key pair.</p>
      */
@@ -284,6 +291,7 @@ namespace Model
      */
     inline ScheduledInstancesLaunchSpecification& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
+
     /**
      * <p>Enable or disable monitoring for the instances.</p>
      */
@@ -308,6 +316,7 @@ namespace Model
      * <p>Enable or disable monitoring for the instances.</p>
      */
     inline ScheduledInstancesLaunchSpecification& WithMonitoring(ScheduledInstancesMonitoring&& value) { SetMonitoring(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more network interfaces.</p>
@@ -344,6 +353,7 @@ namespace Model
      */
     inline ScheduledInstancesLaunchSpecification& AddNetworkInterfaces(ScheduledInstancesNetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The placement information.</p>
      */
@@ -368,6 +378,7 @@ namespace Model
      * <p>The placement information.</p>
      */
     inline ScheduledInstancesLaunchSpecification& WithPlacement(ScheduledInstancesPlacement&& value) { SetPlacement(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the RAM disk.</p>
@@ -403,6 +414,7 @@ namespace Model
      * <p>The ID of the RAM disk.</p>
      */
     inline ScheduledInstancesLaunchSpecification& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
+
 
     /**
      * <p>The IDs of one or more security groups.</p>
@@ -444,6 +456,7 @@ namespace Model
      */
     inline ScheduledInstancesLaunchSpecification& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of the subnet in which to launch the instances.</p>
      */
@@ -478,6 +491,7 @@ namespace Model
      * <p>The ID of the subnet in which to launch the instances.</p>
      */
     inline ScheduledInstancesLaunchSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The base64-encoded MIME user data.</p>
@@ -515,32 +529,46 @@ namespace Model
     inline ScheduledInstancesLaunchSpecification& WithUserData(const char* value) { SetUserData(value); return *this;}
 
   private:
+
     Aws::Vector<ScheduledInstancesBlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
     ScheduledInstancesIamInstanceProfile m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_kernelId;
     bool m_kernelIdHasBeenSet;
+
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
+
     ScheduledInstancesMonitoring m_monitoring;
     bool m_monitoringHasBeenSet;
+
     Aws::Vector<ScheduledInstancesNetworkInterface> m_networkInterfaces;
     bool m_networkInterfacesHasBeenSet;
+
     ScheduledInstancesPlacement m_placement;
     bool m_placementHasBeenSet;
+
     Aws::String m_ramdiskId;
     bool m_ramdiskIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_userData;
     bool m_userDataHasBeenSet;
   };

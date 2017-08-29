@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetShippingLabelResult();
-    GetShippingLabelResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetShippingLabelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetShippingLabelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetShippingLabelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::String& GetShippingLabelURL() const{ return m_shippingLabelURL; }
@@ -63,6 +64,7 @@ namespace Model
     
     inline GetShippingLabelResult& WithShippingLabelURL(const char* value) { SetShippingLabelURL(value); return *this;}
 
+
     
     inline const Aws::String& GetWarning() const{ return m_warning; }
 
@@ -84,6 +86,7 @@ namespace Model
     
     inline GetShippingLabelResult& WithWarning(const char* value) { SetWarning(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,8 +103,11 @@ namespace Model
     inline GetShippingLabelResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_shippingLabelURL;
+
     Aws::String m_warning;
+
     ResponseMetadata m_responseMetadata;
   };
 

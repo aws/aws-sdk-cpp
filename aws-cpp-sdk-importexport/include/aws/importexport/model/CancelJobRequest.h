@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline CancelJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     
     inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
@@ -84,8 +86,10 @@ namespace Model
     inline CancelJobRequest& WithAPIVersion(const char* value) { SetAPIVersion(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_aPIVersion;
     bool m_aPIVersionHasBeenSet;
   };

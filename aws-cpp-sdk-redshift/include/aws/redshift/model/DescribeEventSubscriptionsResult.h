@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeEventSubscriptionsResult();
-    DescribeEventSubscriptionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEventSubscriptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEventSubscriptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEventSubscriptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -119,6 +120,7 @@ namespace Model
      */
     inline DescribeEventSubscriptionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of event subscriptions.</p>
      */
@@ -154,6 +156,7 @@ namespace Model
      */
     inline DescribeEventSubscriptionsResult& AddEventSubscriptionsList(EventSubscription&& value) { m_eventSubscriptionsList.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -170,8 +173,11 @@ namespace Model
     inline DescribeEventSubscriptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<EventSubscription> m_eventSubscriptionsList;
+
     ResponseMetadata m_responseMetadata;
   };
 

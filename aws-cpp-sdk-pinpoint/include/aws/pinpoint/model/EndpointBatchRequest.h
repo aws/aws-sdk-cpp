@@ -44,6 +44,7 @@ namespace Model
     EndpointBatchRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * List of items to update. Maximum 100 items
      */
@@ -80,6 +81,7 @@ namespace Model
     inline EndpointBatchRequest& AddItem(EndpointBatchItem&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<EndpointBatchItem> m_item;
     bool m_itemHasBeenSet;
   };

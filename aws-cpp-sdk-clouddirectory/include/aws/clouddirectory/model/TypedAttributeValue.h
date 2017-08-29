@@ -49,6 +49,7 @@ namespace Model
     TypedAttributeValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A string data value.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline TypedAttributeValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
+
     /**
      * <p>A binary data value.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      */
     inline TypedAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(std::move(value)); return *this;}
 
+
     /**
      * <p>A Boolean data value.</p>
      */
@@ -123,6 +126,7 @@ namespace Model
      * <p>A Boolean data value.</p>
      */
     inline TypedAttributeValue& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
+
 
     /**
      * <p>A number data value.</p>
@@ -159,6 +163,7 @@ namespace Model
      */
     inline TypedAttributeValue& WithNumberValue(const char* value) { SetNumberValue(value); return *this;}
 
+
     /**
      * <p>A date and time value.</p>
      */
@@ -185,14 +190,19 @@ namespace Model
     inline TypedAttributeValue& WithDatetimeValue(Aws::Utils::DateTime&& value) { SetDatetimeValue(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet;
+
     Aws::Utils::ByteBuffer m_binaryValue;
     bool m_binaryValueHasBeenSet;
+
     bool m_booleanValue;
     bool m_booleanValueHasBeenSet;
+
     Aws::String m_numberValue;
     bool m_numberValueHasBeenSet;
+
     Aws::Utils::DateTime m_datetimeValue;
     bool m_datetimeValueHasBeenSet;
   };

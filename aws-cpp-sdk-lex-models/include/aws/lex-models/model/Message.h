@@ -47,6 +47,7 @@ namespace Model
     Message& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The content type of the message string.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The content type of the message string.</p>
      */
     inline Message& WithContentType(ContentType&& value) { SetContentType(std::move(value)); return *this;}
+
 
     /**
      * <p>The text of the message.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline Message& WithContent(const char* value) { SetContent(value); return *this;}
 
   private:
+
     ContentType m_contentType;
     bool m_contentTypeHasBeenSet;
+
     Aws::String m_content;
     bool m_contentHasBeenSet;
   };

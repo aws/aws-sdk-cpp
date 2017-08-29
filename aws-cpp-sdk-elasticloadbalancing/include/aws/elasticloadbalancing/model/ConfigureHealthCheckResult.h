@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ConfigureHealthCheckResult();
-    ConfigureHealthCheckResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ConfigureHealthCheckResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ConfigureHealthCheckResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ConfigureHealthCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The updated health check.</p>
@@ -72,6 +73,7 @@ namespace Model
      */
     inline ConfigureHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -88,7 +90,9 @@ namespace Model
     inline ConfigureHealthCheckResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     HealthCheck m_healthCheck;
+
     ResponseMetadata m_responseMetadata;
   };
 

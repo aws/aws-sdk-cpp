@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Token that identifies the grant to be retired.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Token that identifies the grant to be retired.</p>
      */
     inline RetireGrantRequest& WithGrantToken(const char* value) { SetGrantToken(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name of the CMK associated with the grant. Example:</p>
@@ -126,6 +128,7 @@ namespace Model
      * </li> </ul>
      */
     inline RetireGrantRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+
 
     /**
      * <p>Unique identifier of the grant to retire. The grant ID is returned in the
@@ -184,10 +187,13 @@ namespace Model
     inline RetireGrantRequest& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 
   private:
+
     Aws::String m_grantToken;
     bool m_grantTokenHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::String m_grantId;
     bool m_grantIdHasBeenSet;
   };

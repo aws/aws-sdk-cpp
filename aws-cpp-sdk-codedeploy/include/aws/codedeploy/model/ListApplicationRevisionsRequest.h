@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
@@ -84,6 +85,7 @@ namespace Model
      * user or AWS account.</p>
      */
     inline ListApplicationRevisionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The column name to use to sort the list results:</p> <ul> <li>
@@ -135,6 +137,7 @@ namespace Model
      */
     inline ListApplicationRevisionsRequest& WithSortBy(ApplicationRevisionSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
+
     /**
      * <p>The order in which to sort the list results:</p> <ul> <li> <p>ascending:
      * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
@@ -174,6 +177,7 @@ namespace Model
      * set to null, the results will be sorted in an arbitrary order.</p>
      */
     inline ListApplicationRevisionsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+
 
     /**
      * <p>An Amazon S3 bucket name to limit the search for revisions.</p> <p>If set to
@@ -217,6 +221,7 @@ namespace Model
      */
     inline ListApplicationRevisionsRequest& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
+
     /**
      * <p>A key prefix for the set of Amazon S3 objects to limit the search for
      * revisions.</p>
@@ -258,6 +263,7 @@ namespace Model
      * revisions.</p>
      */
     inline ListApplicationRevisionsRequest& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
+
 
     /**
      * <p>Whether to list revisions based on whether the revision is the target
@@ -304,6 +310,7 @@ namespace Model
      */
     inline ListApplicationRevisionsRequest& WithDeployed(ListStateFilterAction&& value) { SetDeployed(std::move(value)); return *this;}
 
+
     /**
      * <p>An identifier returned from the previous list application revisions call. It
      * can be used to return the next set of applications in the list.</p>
@@ -347,18 +354,25 @@ namespace Model
     inline ListApplicationRevisionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     ApplicationRevisionSortBy m_sortBy;
     bool m_sortByHasBeenSet;
+
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet;
+
     Aws::String m_s3Bucket;
     bool m_s3BucketHasBeenSet;
+
     Aws::String m_s3KeyPrefix;
     bool m_s3KeyPrefixHasBeenSet;
+
     ListStateFilterAction m_deployed;
     bool m_deployedHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The instance ID.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline DeleteInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>Whether to delete the instance Elastic IP address.</p>
      */
@@ -85,6 +87,7 @@ namespace Model
      * <p>Whether to delete the instance Elastic IP address.</p>
      */
     inline DeleteInstanceRequest& WithDeleteElasticIp(bool value) { SetDeleteElasticIp(value); return *this;}
+
 
     /**
      * <p>Whether to delete the instance's Amazon EBS volumes.</p>
@@ -102,10 +105,13 @@ namespace Model
     inline DeleteInstanceRequest& WithDeleteVolumes(bool value) { SetDeleteVolumes(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     bool m_deleteElasticIp;
     bool m_deleteElasticIpHasBeenSet;
+
     bool m_deleteVolumes;
     bool m_deleteVolumesHasBeenSet;
   };

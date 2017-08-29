@@ -56,6 +56,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline bool GetCloudFrontDefaultCertificate() const{ return m_cloudFrontDefaultCertificate; }
 
@@ -64,6 +65,7 @@ namespace Model
 
     
     inline ViewerCertificate& WithCloudFrontDefaultCertificate(bool value) { SetCloudFrontDefaultCertificate(value); return *this;}
+
 
     
     inline const Aws::String& GetIAMCertificateId() const{ return m_iAMCertificateId; }
@@ -86,6 +88,7 @@ namespace Model
     
     inline ViewerCertificate& WithIAMCertificateId(const char* value) { SetIAMCertificateId(value); return *this;}
 
+
     
     inline const Aws::String& GetACMCertificateArn() const{ return m_aCMCertificateArn; }
 
@@ -106,6 +109,7 @@ namespace Model
 
     
     inline ViewerCertificate& WithACMCertificateArn(const char* value) { SetACMCertificateArn(value); return *this;}
+
 
     /**
      * <p>If you specify a value for <code>ACMCertificateArn</code> or for
@@ -247,6 +251,7 @@ namespace Model
      */
     inline ViewerCertificate& WithSSLSupportMethod(SSLSupportMethod&& value) { SetSSLSupportMethod(std::move(value)); return *this;}
 
+
     /**
      * <p>Specify the minimum version of the SSL/TLS protocol that you want CloudFront
      * to use for HTTPS connections between viewers and CloudFront: <code>SSLv3</code>
@@ -338,14 +343,19 @@ namespace Model
     inline ViewerCertificate& WithMinimumProtocolVersion(MinimumProtocolVersion&& value) { SetMinimumProtocolVersion(std::move(value)); return *this;}
 
   private:
+
     bool m_cloudFrontDefaultCertificate;
     bool m_cloudFrontDefaultCertificateHasBeenSet;
+
     Aws::String m_iAMCertificateId;
     bool m_iAMCertificateIdHasBeenSet;
+
     Aws::String m_aCMCertificateArn;
     bool m_aCMCertificateArnHasBeenSet;
+
     SSLSupportMethod m_sSLSupportMethod;
     bool m_sSLSupportMethodHasBeenSet;
+
     MinimumProtocolVersion m_minimumProtocolVersion;
     bool m_minimumProtocolVersionHasBeenSet;
   };

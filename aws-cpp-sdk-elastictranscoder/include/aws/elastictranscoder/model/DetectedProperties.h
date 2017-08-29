@@ -46,6 +46,7 @@ namespace Model
     DetectedProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The detected width of the input file, in pixels.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      */
     inline DetectedProperties& WithWidth(int value) { SetWidth(value); return *this;}
 
+
     /**
      * <p>The detected height of the input file, in pixels.</p>
      */
@@ -75,6 +77,7 @@ namespace Model
      * <p>The detected height of the input file, in pixels.</p>
      */
     inline DetectedProperties& WithHeight(int value) { SetHeight(value); return *this;}
+
 
     /**
      * <p>The detected frame rate of the input file, in frames per second.</p>
@@ -111,6 +114,7 @@ namespace Model
      */
     inline DetectedProperties& WithFrameRate(const char* value) { SetFrameRate(value); return *this;}
 
+
     /**
      * <p>The detected file size of the input file, in bytes.</p>
      */
@@ -125,6 +129,7 @@ namespace Model
      * <p>The detected file size of the input file, in bytes.</p>
      */
     inline DetectedProperties& WithFileSize(long long value) { SetFileSize(value); return *this;}
+
 
     /**
      * <p>The detected duration of the input file, in milliseconds.</p>
@@ -142,14 +147,19 @@ namespace Model
     inline DetectedProperties& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
 
   private:
+
     int m_width;
     bool m_widthHasBeenSet;
+
     int m_height;
     bool m_heightHasBeenSet;
+
     Aws::String m_frameRate;
     bool m_frameRateHasBeenSet;
+
     long long m_fileSize;
     bool m_fileSizeHasBeenSet;
+
     long long m_durationMillis;
     bool m_durationMillisHasBeenSet;
   };

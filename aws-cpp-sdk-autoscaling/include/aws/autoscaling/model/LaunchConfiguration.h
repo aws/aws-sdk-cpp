@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the launch configuration.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The name of the launch configuration.</p>
      */
     inline LaunchConfiguration& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the launch configuration.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline LaunchConfiguration& WithLaunchConfigurationARN(const char* value) { SetLaunchConfigurationARN(value); return *this;}
 
+
     /**
      * <p>The ID of the Amazon Machine Image (AMI).</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      */
     inline LaunchConfiguration& WithImageId(const char* value) { SetImageId(value); return *this;}
 
+
     /**
      * <p>The name of the key pair.</p>
      */
@@ -191,6 +195,7 @@ namespace Model
      * <p>The name of the key pair.</p>
      */
     inline LaunchConfiguration& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+
 
     /**
      * <p>The security groups to associate with the instances.</p>
@@ -231,6 +236,7 @@ namespace Model
      * <p>The security groups to associate with the instances.</p>
      */
     inline LaunchConfiguration& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
 
     /**
      * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
@@ -294,6 +300,7 @@ namespace Model
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(const char* value) { SetClassicLinkVPCId(value); return *this;}
+
 
     /**
      * <p>The IDs of one or more security groups for the VPC specified in
@@ -375,6 +382,7 @@ namespace Model
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const char* value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
+
     /**
      * <p>The user data available to the instances.</p>
      */
@@ -409,6 +417,7 @@ namespace Model
      * <p>The user data available to the instances.</p>
      */
     inline LaunchConfiguration& WithUserData(const char* value) { SetUserData(value); return *this;}
+
 
     /**
      * <p>The instance type for the instances.</p>
@@ -445,6 +454,7 @@ namespace Model
      */
     inline LaunchConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The ID of the kernel associated with the AMI.</p>
      */
@@ -480,6 +490,7 @@ namespace Model
      */
     inline LaunchConfiguration& WithKernelId(const char* value) { SetKernelId(value); return *this;}
 
+
     /**
      * <p>The ID of the RAM disk associated with the AMI.</p>
      */
@@ -514,6 +525,7 @@ namespace Model
      * <p>The ID of the RAM disk associated with the AMI.</p>
      */
     inline LaunchConfiguration& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
+
 
     /**
      * <p>A block device mapping, which specifies the block devices for the
@@ -557,6 +569,7 @@ namespace Model
      */
     inline LaunchConfiguration& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Controls whether instances in this group are launched with detailed
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
@@ -586,6 +599,7 @@ namespace Model
      * (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
      */
     inline LaunchConfiguration& WithInstanceMonitoring(InstanceMonitoring&& value) { SetInstanceMonitoring(std::move(value)); return *this;}
+
 
     /**
      * <p>The price to bid when launching Spot Instances.</p>
@@ -621,6 +635,7 @@ namespace Model
      * <p>The price to bid when launching Spot Instances.</p>
      */
     inline LaunchConfiguration& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
+
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the instance profile associated
@@ -664,6 +679,7 @@ namespace Model
      */
     inline LaunchConfiguration& WithIamInstanceProfile(const char* value) { SetIamInstanceProfile(value); return *this;}
 
+
     /**
      * <p>The creation date and time for the launch configuration.</p>
      */
@@ -689,6 +705,7 @@ namespace Model
      */
     inline LaunchConfiguration& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Controls whether the instance is optimized for EBS I/O (<code>true</code>) or
      * not (<code>false</code>).</p>
@@ -707,6 +724,7 @@ namespace Model
      */
     inline LaunchConfiguration& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
+
     /**
      * <p>[EC2-VPC] Indicates whether to assign a public IP address to each
      * instance.</p>
@@ -724,6 +742,7 @@ namespace Model
      * instance.</p>
      */
     inline LaunchConfiguration& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
+
 
     /**
      * <p>The tenancy of the instance, either <code>default</code> or
@@ -775,42 +794,61 @@ namespace Model
     inline LaunchConfiguration& WithPlacementTenancy(const char* value) { SetPlacementTenancy(value); return *this;}
 
   private:
+
     Aws::String m_launchConfigurationName;
     bool m_launchConfigurationNameHasBeenSet;
+
     Aws::String m_launchConfigurationARN;
     bool m_launchConfigurationARNHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
     Aws::String m_classicLinkVPCId;
     bool m_classicLinkVPCIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_classicLinkVPCSecurityGroups;
     bool m_classicLinkVPCSecurityGroupsHasBeenSet;
+
     Aws::String m_userData;
     bool m_userDataHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_kernelId;
     bool m_kernelIdHasBeenSet;
+
     Aws::String m_ramdiskId;
     bool m_ramdiskIdHasBeenSet;
+
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     InstanceMonitoring m_instanceMonitoring;
     bool m_instanceMonitoringHasBeenSet;
+
     Aws::String m_spotPrice;
     bool m_spotPriceHasBeenSet;
+
     Aws::String m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
     bool m_associatePublicIpAddress;
     bool m_associatePublicIpAddressHasBeenSet;
+
     Aws::String m_placementTenancy;
     bool m_placementTenancyHasBeenSet;
   };

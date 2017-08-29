@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListCertificatesResult();
-    ListCertificatesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCertificatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>When the list is truncated, this value is present and contains the value to
@@ -92,6 +93,7 @@ namespace Model
      */
     inline ListCertificatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>A list of ACM Certificates.</p>
      */
@@ -128,7 +130,9 @@ namespace Model
     inline ListCertificatesResult& AddCertificateSummaryList(CertificateSummary&& value) { m_certificateSummaryList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<CertificateSummary> m_certificateSummaryList;
   };
 

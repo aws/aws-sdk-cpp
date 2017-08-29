@@ -47,6 +47,7 @@ namespace Model
     CloudWatchLogsConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Whether CloudWatch Logs is enabled for a layer.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>Whether CloudWatch Logs is enabled for a layer.</p>
      */
     inline CloudWatchLogsConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>A list of configuration options for CloudWatch Logs.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline CloudWatchLogsConfiguration& AddLogStreams(CloudWatchLogsLogStream&& value) { m_logStreamsHasBeenSet = true; m_logStreams.push_back(std::move(value)); return *this; }
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::Vector<CloudWatchLogsLogStream> m_logStreams;
     bool m_logStreamsHasBeenSet;
   };

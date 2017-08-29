@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the project.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the project.</p>
      */
     inline UpdateTeamMemberRequest& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user for whom you want to change team
@@ -112,6 +114,7 @@ namespace Model
      * membership attributes.</p>
      */
     inline UpdateTeamMemberRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+
 
     /**
      * <p>The role assigned to the user in the project. Project roles have different
@@ -169,6 +172,7 @@ namespace Model
      */
     inline UpdateTeamMemberRequest& WithProjectRole(const char* value) { SetProjectRole(value); return *this;}
 
+
     /**
      * <p>Whether a team member is allowed to remotely access project resources using
      * the SSH public key associated with the user's profile. Even if this is set to
@@ -194,12 +198,16 @@ namespace Model
     inline UpdateTeamMemberRequest& WithRemoteAccessAllowed(bool value) { SetRemoteAccessAllowed(value); return *this;}
 
   private:
+
     Aws::String m_projectId;
     bool m_projectIdHasBeenSet;
+
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;
+
     Aws::String m_projectRole;
     bool m_projectRoleHasBeenSet;
+
     bool m_remoteAccessAllowed;
     bool m_remoteAccessAllowedHasBeenSet;
   };

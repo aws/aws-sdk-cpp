@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CancelImportTaskResponse();
-    CancelImportTaskResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CancelImportTaskResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CancelImportTaskResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CancelImportTaskResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the task being canceled.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CancelImportTaskResponse& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
 
+
     /**
      * <p>The current state of the task being canceled.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The current state of the task being canceled.</p>
      */
     inline CancelImportTaskResponse& WithPreviousState(const char* value) { SetPreviousState(value); return *this;}
+
 
     /**
      * <p>The current state of the task being canceled.</p>
@@ -152,6 +155,7 @@ namespace Model
      */
     inline CancelImportTaskResponse& WithState(const char* value) { SetState(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -168,9 +172,13 @@ namespace Model
     inline CancelImportTaskResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_importTaskId;
+
     Aws::String m_previousState;
+
     Aws::String m_state;
+
     ResponseMetadata m_responseMetadata;
   };
 

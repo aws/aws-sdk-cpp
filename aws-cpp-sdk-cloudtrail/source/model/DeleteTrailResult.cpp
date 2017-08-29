@@ -30,12 +30,12 @@ DeleteTrailResult::DeleteTrailResult()
 {
 }
 
-DeleteTrailResult::DeleteTrailResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTrailResult::DeleteTrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteTrailResult& DeleteTrailResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTrailResult& DeleteTrailResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

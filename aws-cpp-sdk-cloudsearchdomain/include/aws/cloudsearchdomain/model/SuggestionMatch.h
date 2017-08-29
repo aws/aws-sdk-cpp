@@ -46,6 +46,7 @@ namespace Model
     SuggestionMatch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The string that matches the query string specified in the
      * <code>SuggestRequest</code>. </p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline SuggestionMatch& WithSuggestion(const char* value) { SetSuggestion(value); return *this;}
 
+
     /**
      * <p>The relevance score of a suggested match.</p>
      */
@@ -102,6 +104,7 @@ namespace Model
      * <p>The relevance score of a suggested match.</p>
      */
     inline SuggestionMatch& WithScore(long long value) { SetScore(value); return *this;}
+
 
     /**
      * <p>The document ID of the suggested document.</p>
@@ -139,10 +142,13 @@ namespace Model
     inline SuggestionMatch& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_suggestion;
     bool m_suggestionHasBeenSet;
+
     long long m_score;
     bool m_scoreHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     KinesisStreamSourceConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the source Kinesis stream.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The ARN of the source Kinesis stream.</p>
      */
     inline KinesisStreamSourceConfiguration& WithKinesisStreamARN(const char* value) { SetKinesisStreamARN(value); return *this;}
+
 
     /**
      * <p>The ARN of the role that provides access to the source Kinesis stream.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline KinesisStreamSourceConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
   private:
+
     Aws::String m_kinesisStreamARN;
     bool m_kinesisStreamARNHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
   };

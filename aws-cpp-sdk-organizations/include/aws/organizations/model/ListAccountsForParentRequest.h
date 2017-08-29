@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) for the parent root or organization unit (OU)
      * whose accounts you want to list.</p>
@@ -77,6 +78,7 @@ namespace Model
      * whose accounts you want to list.</p>
      */
     inline ListAccountsForParentRequest& WithParentId(const char* value) { SetParentId(value); return *this;}
+
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -134,6 +136,7 @@ namespace Model
      */
     inline ListAccountsForParentRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this to limit the number of results you want included in the
      * response. If you do not include this parameter, it defaults to a value that is
@@ -174,10 +177,13 @@ namespace Model
     inline ListAccountsForParentRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_parentId;
     bool m_parentIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

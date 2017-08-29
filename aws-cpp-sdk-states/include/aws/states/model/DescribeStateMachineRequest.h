@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DescribeStateMachineRequest& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
 
   private:
+
     Aws::String m_stateMachineArn;
     bool m_stateMachineArnHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     PutRecordsResultEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The sequence number for an individual record result.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline PutRecordsResultEntry& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
 
+
     /**
      * <p>The shard ID for an individual record result.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The shard ID for an individual record result.</p>
      */
     inline PutRecordsResultEntry& WithShardId(const char* value) { SetShardId(value); return *this;}
+
 
     /**
      * <p>The error code for an individual record result. <code>ErrorCodes</code> can
@@ -167,6 +170,7 @@ namespace Model
      * <code>InternalFailure</code>.</p>
      */
     inline PutRecordsResultEntry& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The error message for an individual record result. An <code>ErrorCode</code>
@@ -232,12 +236,16 @@ namespace Model
     inline PutRecordsResultEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     Aws::String m_sequenceNumber;
     bool m_sequenceNumberHasBeenSet;
+
     Aws::String m_shardId;
     bool m_shardIdHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

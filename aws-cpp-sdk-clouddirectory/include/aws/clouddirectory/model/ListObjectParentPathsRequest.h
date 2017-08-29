@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the directory to which the parent path applies.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline ListObjectParentPathsRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>The reference that identifies the object whose parent paths are listed.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>The reference that identifies the object whose parent paths are listed.</p>
      */
     inline ListObjectParentPathsRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -132,6 +135,7 @@ namespace Model
      */
     inline ListObjectParentPathsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
@@ -151,12 +155,16 @@ namespace Model
     inline ListObjectParentPathsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

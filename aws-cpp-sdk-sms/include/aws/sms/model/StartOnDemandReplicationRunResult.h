@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StartOnDemandReplicationRunResult();
-    StartOnDemandReplicationRunResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartOnDemandReplicationRunResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartOnDemandReplicationRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartOnDemandReplicationRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetReplicationRunId() const{ return m_replicationRunId; }
@@ -63,6 +64,7 @@ namespace Model
     inline StartOnDemandReplicationRunResult& WithReplicationRunId(const char* value) { SetReplicationRunId(value); return *this;}
 
   private:
+
     Aws::String m_replicationRunId;
   };
 

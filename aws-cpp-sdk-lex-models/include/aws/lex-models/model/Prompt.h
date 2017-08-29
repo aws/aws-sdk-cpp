@@ -51,6 +51,7 @@ namespace Model
     Prompt& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An array of objects, each of which provides a message string and its type.
      * You can specify the message string in plain text or in Speech Synthesis Markup
@@ -100,6 +101,7 @@ namespace Model
      */
     inline Prompt& AddMessages(Message&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The number of times to prompt the user for information.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>The number of times to prompt the user for information.</p>
      */
     inline Prompt& WithMaxAttempts(int value) { SetMaxAttempts(value); return *this;}
+
 
     /**
      * <p>A response card. Amazon Lex uses this prompt at runtime, in the
@@ -172,10 +175,13 @@ namespace Model
     inline Prompt& WithResponseCard(const char* value) { SetResponseCard(value); return *this;}
 
   private:
+
     Aws::Vector<Message> m_messages;
     bool m_messagesHasBeenSet;
+
     int m_maxAttempts;
     bool m_maxAttemptsHasBeenSet;
+
     Aws::String m_responseCard;
     bool m_responseCardHasBeenSet;
   };

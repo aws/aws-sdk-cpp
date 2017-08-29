@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     CreateConstraintResult();
-    CreateConstraintResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateConstraintResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateConstraintResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateConstraintResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resulting detailed constraint information.</p>
@@ -67,6 +68,7 @@ namespace Model
      * <p>The resulting detailed constraint information.</p>
      */
     inline CreateConstraintResult& WithConstraintDetail(ConstraintDetail&& value) { SetConstraintDetail(std::move(value)); return *this;}
+
 
     /**
      * <p>The resulting constraint parameters.</p>
@@ -103,6 +105,7 @@ namespace Model
      */
     inline CreateConstraintResult& WithConstraintParameters(const char* value) { SetConstraintParameters(value); return *this;}
 
+
     /**
      * <p>The status of the current request.</p>
      */
@@ -129,8 +132,11 @@ namespace Model
     inline CreateConstraintResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     ConstraintDetail m_constraintDetail;
+
     Aws::String m_constraintParameters;
+
     Status m_status;
   };
 

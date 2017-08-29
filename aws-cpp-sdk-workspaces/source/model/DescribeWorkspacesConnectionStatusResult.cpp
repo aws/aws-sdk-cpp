@@ -30,12 +30,12 @@ DescribeWorkspacesConnectionStatusResult::DescribeWorkspacesConnectionStatusResu
 {
 }
 
-DescribeWorkspacesConnectionStatusResult::DescribeWorkspacesConnectionStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeWorkspacesConnectionStatusResult::DescribeWorkspacesConnectionStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeWorkspacesConnectionStatusResult& DescribeWorkspacesConnectionStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeWorkspacesConnectionStatusResult& DescribeWorkspacesConnectionStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WorkspacesConnectionStatus"))

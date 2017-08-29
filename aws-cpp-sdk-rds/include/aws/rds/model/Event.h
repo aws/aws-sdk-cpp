@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Provides the identifier for the source of the event.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline Event& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
+
     /**
      * <p>Specifies the source type for this event.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>Specifies the source type for this event.</p>
      */
     inline Event& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides the text of this event.</p>
@@ -146,6 +149,7 @@ namespace Model
      * <p>Provides the text of this event.</p>
      */
     inline Event& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>Specifies the category for the event.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline Event& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies the date and time of the event.</p>
      */
@@ -211,6 +216,7 @@ namespace Model
      * <p>Specifies the date and time of the event.</p>
      */
     inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for the event.</p>
@@ -248,16 +254,22 @@ namespace Model
     inline Event& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
   private:
+
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet;
+
     SourceType m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventCategories;
     bool m_eventCategoriesHasBeenSet;
+
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
+
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet;
   };

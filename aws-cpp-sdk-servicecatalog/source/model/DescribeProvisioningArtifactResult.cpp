@@ -31,13 +31,13 @@ DescribeProvisioningArtifactResult::DescribeProvisioningArtifactResult() :
 {
 }
 
-DescribeProvisioningArtifactResult::DescribeProvisioningArtifactResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeProvisioningArtifactResult::DescribeProvisioningArtifactResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(Status::NOT_SET)
 {
   *this = result;
 }
 
-DescribeProvisioningArtifactResult& DescribeProvisioningArtifactResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeProvisioningArtifactResult& DescribeProvisioningArtifactResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ProvisioningArtifactDetail"))

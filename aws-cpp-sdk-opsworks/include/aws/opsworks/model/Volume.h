@@ -45,6 +45,7 @@ namespace Model
     Volume& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The volume ID.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The volume ID.</p>
      */
     inline Volume& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
 
     /**
      * <p>The Amazon EC2 volume ID.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline Volume& WithEc2VolumeId(const char* value) { SetEc2VolumeId(value); return *this;}
 
+
     /**
      * <p>The volume name.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The volume name.</p>
      */
     inline Volume& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The RAID array ID.</p>
@@ -185,6 +189,7 @@ namespace Model
      */
     inline Volume& WithRaidArrayId(const char* value) { SetRaidArrayId(value); return *this;}
 
+
     /**
      * <p>The instance ID.</p>
      */
@@ -219,6 +224,7 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline Volume& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The value returned by <a
@@ -262,6 +268,7 @@ namespace Model
      */
     inline Volume& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The volume size.</p>
      */
@@ -276,6 +283,7 @@ namespace Model
      * <p>The volume size.</p>
      */
     inline Volume& WithSize(int value) { SetSize(value); return *this;}
+
 
     /**
      * <p>The device name.</p>
@@ -312,6 +320,7 @@ namespace Model
      */
     inline Volume& WithDevice(const char* value) { SetDevice(value); return *this;}
 
+
     /**
      * <p>The volume mount point. For example, "/mnt/disk1".</p>
      */
@@ -346,6 +355,7 @@ namespace Model
      * <p>The volume mount point. For example, "/mnt/disk1".</p>
      */
     inline Volume& WithMountPoint(const char* value) { SetMountPoint(value); return *this;}
+
 
     /**
      * <p>The AWS region. For more information about AWS regions, see <a
@@ -396,6 +406,7 @@ namespace Model
      */
     inline Volume& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
     /**
      * <p>The volume Availability Zone. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
@@ -445,6 +456,7 @@ namespace Model
      */
     inline Volume& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The volume type, standard or PIOPS.</p>
      */
@@ -480,6 +492,7 @@ namespace Model
      */
     inline Volume& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
+
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
@@ -496,30 +509,43 @@ namespace Model
     inline Volume& WithIops(int value) { SetIops(value); return *this;}
 
   private:
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     Aws::String m_ec2VolumeId;
     bool m_ec2VolumeIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_raidArrayId;
     bool m_raidArrayIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     int m_size;
     bool m_sizeHasBeenSet;
+
     Aws::String m_device;
     bool m_deviceHasBeenSet;
+
     Aws::String m_mountPoint;
     bool m_mountPointHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
   };

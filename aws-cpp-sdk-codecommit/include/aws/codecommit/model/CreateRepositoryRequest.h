@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the new repository to be created.</p> <note> <p>The repository
      * name must be unique across the calling AWS account. In addition, repository
@@ -117,6 +118,7 @@ namespace Model
      */
     inline CreateRepositoryRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>A comment or description about the new repository.</p> <note> <p>The
      * description field for a repository accepts all HTML characters and all valid
@@ -188,8 +190,10 @@ namespace Model
     inline CreateRepositoryRequest& WithRepositoryDescription(const char* value) { SetRepositoryDescription(value); return *this;}
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_repositoryDescription;
     bool m_repositoryDescriptionHasBeenSet;
   };

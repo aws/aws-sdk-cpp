@@ -48,6 +48,7 @@ namespace Model
     PatchOperation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An update operation to be performed with this PATCH request. The valid value
      * can be "add", "remove", or "replace". Not all valid operations are supported for
@@ -92,6 +93,7 @@ namespace Model
      * an error message.</p>
      */
     inline PatchOperation& WithOp(Op&& value) { SetOp(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>op</code> operation's target, as identified by a <a
@@ -198,6 +200,7 @@ namespace Model
      */
     inline PatchOperation& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The new target value of the update operation. When using AWS CLI to update a
      * property of a JSON value, enclose the JSON object with a pair of single quotes
@@ -261,6 +264,7 @@ namespace Model
      */
     inline PatchOperation& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p> Not supported.</p>
      */
@@ -297,12 +301,16 @@ namespace Model
     inline PatchOperation& WithFrom(const char* value) { SetFrom(value); return *this;}
 
   private:
+
     Op m_op;
     bool m_opHasBeenSet;
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     Aws::String m_from;
     bool m_fromHasBeenSet;
   };

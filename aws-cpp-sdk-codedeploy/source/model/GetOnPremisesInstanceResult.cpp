@@ -30,12 +30,12 @@ GetOnPremisesInstanceResult::GetOnPremisesInstanceResult()
 {
 }
 
-GetOnPremisesInstanceResult::GetOnPremisesInstanceResult(const AmazonWebServiceResult<JsonValue>& result)
+GetOnPremisesInstanceResult::GetOnPremisesInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetOnPremisesInstanceResult& GetOnPremisesInstanceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetOnPremisesInstanceResult& GetOnPremisesInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("instanceInfo"))

@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
     inline DescribeRulesRequest& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Names (ARN) of the rules.</p>
@@ -113,6 +115,7 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the rules.</p>
      */
     inline DescribeRulesRequest& AddRuleArns(const char* value) { m_ruleArnsHasBeenSet = true; m_ruleArns.push_back(value); return *this; }
+
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -156,6 +159,7 @@ namespace Model
      */
     inline DescribeRulesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return with this call.</p>
      */
@@ -172,12 +176,16 @@ namespace Model
     inline DescribeRulesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
   private:
+
     Aws::String m_listenerArn;
     bool m_listenerArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_ruleArns;
     bool m_ruleArnsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
   };

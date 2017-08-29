@@ -38,6 +38,7 @@ namespace Model
     CreateDocumentationVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline CreateDocumentationVersionRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>[Required] The version identifier of the new snapshot.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline CreateDocumentationVersionRequest& WithDocumentationVersion(const char* value) { SetDocumentationVersion(value); return *this;}
 
+
     /**
      * <p>The stage name to be associated with the new documentation snapshot.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The stage name to be associated with the new documentation snapshot.</p>
      */
     inline CreateDocumentationVersionRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
+
 
     /**
      * <p>A description about the new documentation snapshot.</p>
@@ -179,12 +183,16 @@ namespace Model
     inline CreateDocumentationVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_documentationVersion;
     bool m_documentationVersionHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

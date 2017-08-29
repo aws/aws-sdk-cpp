@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The low byte represents the state. The high byte is an opaque internal value
      * and should be ignored.</p> <ul> <li> <p> <code>0</code> : <code>pending</code>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline InstanceState& WithCode(int value) { SetCode(value); return *this;}
 
+
     /**
      * <p>The current state of the instance.</p>
      */
@@ -107,8 +109,10 @@ namespace Model
     inline InstanceState& WithName(InstanceStateName&& value) { SetName(std::move(value)); return *this;}
 
   private:
+
     int m_code;
     bool m_codeHasBeenSet;
+
     InstanceStateName m_name;
     bool m_nameHasBeenSet;
   };

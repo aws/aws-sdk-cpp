@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetVaultLockResult();
-    GetVaultLockResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetVaultLockResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetVaultLockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetVaultLockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The vault lock policy as a JSON string, which uses "\" as an escape
@@ -89,6 +90,7 @@ namespace Model
      */
     inline GetVaultLockResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
+
     /**
      * <p>The state of the vault lock. <code>InProgress</code> or
      * <code>Locked</code>.</p>
@@ -131,6 +133,7 @@ namespace Model
      */
     inline GetVaultLockResult& WithState(const char* value) { SetState(value); return *this;}
 
+
     /**
      * <p>The UTC date and time at which the lock ID expires. This value can be
      * <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
@@ -172,6 +175,7 @@ namespace Model
      * <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
      */
     inline GetVaultLockResult& WithExpirationDate(const char* value) { SetExpirationDate(value); return *this;}
+
 
     /**
      * <p>The UTC date and time at which the vault lock was put into the
@@ -216,9 +220,13 @@ namespace Model
     inline GetVaultLockResult& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
   private:
+
     Aws::String m_policy;
+
     Aws::String m_state;
+
     Aws::String m_expirationDate;
+
     Aws::String m_creationDate;
   };
 

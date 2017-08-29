@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     PutRestApiResult();
-    PutRestApiResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRestApiResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRestApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRestApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The API's identifier. This identifier is unique across all of your APIs in
@@ -92,6 +93,7 @@ namespace Model
      */
     inline PutRestApiResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The API's name.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      * <p>The API's name.</p>
      */
     inline PutRestApiResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The API's description.</p>
@@ -162,6 +165,7 @@ namespace Model
      */
     inline PutRestApiResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The timestamp when the API was created.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      * <p>The timestamp when the API was created.</p>
      */
     inline PutRestApiResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>A version identifier for the API.</p>
@@ -221,6 +226,7 @@ namespace Model
      * <p>A version identifier for the API.</p>
      */
     inline PutRestApiResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The warning messages reported when <code>failonwarnings</code> is turned on
@@ -269,6 +275,7 @@ namespace Model
      * during API import.</p>
      */
     inline PutRestApiResult& AddWarnings(const char* value) { m_warnings.push_back(value); return *this; }
+
 
     /**
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
@@ -319,12 +326,19 @@ namespace Model
     inline PutRestApiResult& AddBinaryMediaTypes(const char* value) { m_binaryMediaTypes.push_back(value); return *this; }
 
   private:
+
     Aws::String m_id;
+
     Aws::String m_name;
+
     Aws::String m_description;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::String m_version;
+
     Aws::Vector<Aws::String> m_warnings;
+
     Aws::Vector<Aws::String> m_binaryMediaTypes;
   };
 

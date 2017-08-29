@@ -48,6 +48,7 @@ namespace Model
     InventoryItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
      * AWS. Custom inventory type names will start with Custom. Default inventory item
@@ -104,6 +105,7 @@ namespace Model
      */
     inline InventoryItem& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
+
     /**
      * <p>The schema version for the inventory item.</p>
      */
@@ -139,6 +141,7 @@ namespace Model
      */
     inline InventoryItem& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
 
+
     /**
      * <p>The time the inventory information was collected.</p>
      */
@@ -173,6 +176,7 @@ namespace Model
      * <p>The time the inventory information was collected.</p>
      */
     inline InventoryItem& WithCaptureTime(const char* value) { SetCaptureTime(value); return *this;}
+
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
@@ -230,6 +234,7 @@ namespace Model
      */
     inline InventoryItem& WithContentHash(const char* value) { SetContentHash(value); return *this;}
 
+
     /**
      * <p>The inventory data of the inventory type.</p>
      */
@@ -264,6 +269,7 @@ namespace Model
      * <p>The inventory data of the inventory type.</p>
      */
     inline InventoryItem& AddContent(Aws::Map<Aws::String, Aws::String>&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A map of associated properties for a specified inventory type. For example,
@@ -362,16 +368,22 @@ namespace Model
     inline InventoryItem& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet;
+
     Aws::String m_schemaVersion;
     bool m_schemaVersionHasBeenSet;
+
     Aws::String m_captureTime;
     bool m_captureTimeHasBeenSet;
+
     Aws::String m_contentHash;
     bool m_contentHashHasBeenSet;
+
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_content;
     bool m_contentHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_context;
     bool m_contextHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DisableDirectoryResult();
-    DisableDirectoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisableDirectoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisableDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisableDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the directory that has been disabled.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline DisableDirectoryResult& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
   };
 

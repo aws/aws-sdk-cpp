@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Redshift cluster that the table is being restored to.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The Amazon Redshift cluster that the table is being restored to.</p>
      */
     inline DescribeTableRestoreStatusRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>The identifier of the table restore request to return status for. If you
@@ -132,6 +134,7 @@ namespace Model
      */
     inline DescribeTableRestoreStatusRequest& WithTableRestoreRequestId(const char* value) { SetTableRestoreRequestId(value); return *this;}
 
+
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -155,6 +158,7 @@ namespace Model
      * retrieved.</p>
      */
     inline DescribeTableRestoreStatusRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional pagination token provided by a previous
@@ -213,12 +217,16 @@ namespace Model
     inline DescribeTableRestoreStatusRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::String m_tableRestoreRequestId;
     bool m_tableRestoreRequestIdHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

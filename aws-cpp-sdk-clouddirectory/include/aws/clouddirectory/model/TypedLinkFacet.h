@@ -48,6 +48,7 @@ namespace Model
     TypedLinkFacet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique name of the typed link facet.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The unique name of the typed link facet.</p>
      */
     inline TypedLinkFacet& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A set of key-value pairs associated with the typed link. Typed link
@@ -145,6 +147,7 @@ namespace Model
      * objects.</p>
      */
     inline TypedLinkFacet& AddAttributes(TypedLinkAttributeDefinition&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The set of attributes that distinguish links made from this facet from each
@@ -211,10 +214,13 @@ namespace Model
     inline TypedLinkFacet& AddIdentityAttributeOrder(const char* value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<TypedLinkAttributeDefinition> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::Vector<Aws::String> m_identityAttributeOrder;
     bool m_identityAttributeOrderHasBeenSet;
   };

@@ -31,12 +31,12 @@ InitiateVaultLockResult::InitiateVaultLockResult()
 {
 }
 
-InitiateVaultLockResult::InitiateVaultLockResult(const AmazonWebServiceResult<JsonValue>& result)
+InitiateVaultLockResult::InitiateVaultLockResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-InitiateVaultLockResult& InitiateVaultLockResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+InitiateVaultLockResult& InitiateVaultLockResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -34,6 +34,7 @@ namespace Model
     ListTagsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ARN (Amazon Resource Name) of the function.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
     inline ListTagsRequest& WithResource(const char* value) { SetResource(value); return *this;}
 
   private:
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
   };

@@ -30,12 +30,12 @@ DisableEnhancedMonitoringResult::DisableEnhancedMonitoringResult()
 {
 }
 
-DisableEnhancedMonitoringResult::DisableEnhancedMonitoringResult(const AmazonWebServiceResult<JsonValue>& result)
+DisableEnhancedMonitoringResult::DisableEnhancedMonitoringResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisableEnhancedMonitoringResult& DisableEnhancedMonitoringResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisableEnhancedMonitoringResult& DisableEnhancedMonitoringResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StreamName"))

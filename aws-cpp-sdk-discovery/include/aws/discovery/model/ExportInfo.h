@@ -48,6 +48,7 @@ namespace Model
     ExportInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier used to query an export.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ExportInfo& WithExportId(const char* value) { SetExportId(value); return *this;}
 
+
     /**
      * <p>The status of the data export job.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The status of the data export job.</p>
      */
     inline ExportInfo& WithExportStatus(ExportStatus&& value) { SetExportStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A status message provided for API callers.</p>
@@ -142,6 +145,7 @@ namespace Model
      * <p>A status message provided for API callers.</p>
      */
     inline ExportInfo& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
 
     /**
      * <p>A URL for an Amazon S3 bucket where you can review the exported data. The URL
@@ -185,6 +189,7 @@ namespace Model
      */
     inline ExportInfo& WithConfigurationsDownloadUrl(const char* value) { SetConfigurationsDownloadUrl(value); return *this;}
 
+
     /**
      * <p>The time that the data export was initiated.</p>
      */
@@ -210,6 +215,7 @@ namespace Model
      */
     inline ExportInfo& WithExportRequestTime(Aws::Utils::DateTime&& value) { SetExportRequestTime(std::move(value)); return *this;}
 
+
     /**
      * <p>If true, the export of agent information exceeded the size limit for a single
      * export and the exported data is incomplete for the requested time range. To
@@ -233,6 +239,7 @@ namespace Model
      * <code>startDate</code> and <code>endDate</code>.</p>
      */
     inline ExportInfo& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>The value of <code>startTime</code> parameter in the
@@ -268,6 +275,7 @@ namespace Model
      * requested, this result does not appear in <code>ExportInfo</code>.</p>
      */
     inline ExportInfo& WithRequestedStartTime(Aws::Utils::DateTime&& value) { SetRequestedStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If
@@ -305,20 +313,28 @@ namespace Model
     inline ExportInfo& WithRequestedEndTime(Aws::Utils::DateTime&& value) { SetRequestedEndTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_exportId;
     bool m_exportIdHasBeenSet;
+
     ExportStatus m_exportStatus;
     bool m_exportStatusHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::String m_configurationsDownloadUrl;
     bool m_configurationsDownloadUrlHasBeenSet;
+
     Aws::Utils::DateTime m_exportRequestTime;
     bool m_exportRequestTimeHasBeenSet;
+
     bool m_isTruncated;
     bool m_isTruncatedHasBeenSet;
+
     Aws::Utils::DateTime m_requestedStartTime;
     bool m_requestedStartTimeHasBeenSet;
+
     Aws::Utils::DateTime m_requestedEndTime;
     bool m_requestedEndTimeHasBeenSet;
   };

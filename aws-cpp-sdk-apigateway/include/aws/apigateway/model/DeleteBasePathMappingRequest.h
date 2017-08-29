@@ -38,6 +38,7 @@ namespace Model
     DeleteBasePathMappingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The domain name of the <a>BasePathMapping</a> resource to delete.</p>
      */
     inline DeleteBasePathMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>The base path name of the <a>BasePathMapping</a> resource to delete.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline DeleteBasePathMappingRequest& WithBasePath(const char* value) { SetBasePath(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_basePath;
     bool m_basePathHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     AttachVpnGatewayResponse();
-    AttachVpnGatewayResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AttachVpnGatewayResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AttachVpnGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AttachVpnGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the attachment.</p>
@@ -72,6 +73,7 @@ namespace Model
      */
     inline AttachVpnGatewayResponse& WithVpcAttachment(VpcAttachment&& value) { SetVpcAttachment(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -88,7 +90,9 @@ namespace Model
     inline AttachVpnGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     VpcAttachment m_vpcAttachment;
+
     ResponseMetadata m_responseMetadata;
   };
 

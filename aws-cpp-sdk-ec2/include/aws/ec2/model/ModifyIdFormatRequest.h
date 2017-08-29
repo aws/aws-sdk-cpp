@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
      * <code>snapshot</code> | <code>volume</code> </p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ModifyIdFormatRequest& WithResource(const char* value) { SetResource(value); return *this;}
 
+
     /**
      * <p>Indicate whether the resource should use longer IDs (17-character IDs).</p>
      */
@@ -99,8 +101,10 @@ namespace Model
     inline ModifyIdFormatRequest& WithUseLongIds(bool value) { SetUseLongIds(value); return *this;}
 
   private:
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
+
     bool m_useLongIds;
     bool m_useLongIdsHasBeenSet;
   };

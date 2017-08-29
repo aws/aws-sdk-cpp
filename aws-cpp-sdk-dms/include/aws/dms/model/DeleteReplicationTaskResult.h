@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DeleteReplicationTaskResult();
-    DeleteReplicationTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteReplicationTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteReplicationTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteReplicationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The deleted replication task.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteReplicationTaskResult& WithReplicationTask(ReplicationTask&& value) { SetReplicationTask(std::move(value)); return *this;}
 
   private:
+
     ReplicationTask m_replicationTask;
   };
 

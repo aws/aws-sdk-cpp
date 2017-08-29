@@ -38,6 +38,7 @@ namespace Model
     CreateInvalidation2017_03_25Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The distribution's id.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateInvalidation2017_03_25Request& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
 
+
     /**
      * <p>The batch information for the invalidation.</p>
      */
@@ -99,8 +101,10 @@ namespace Model
     inline CreateInvalidation2017_03_25Request& WithInvalidationBatch(InvalidationBatch&& value) { SetInvalidationBatch(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_distributionId;
     bool m_distributionIdHasBeenSet;
+
     InvalidationBatch m_invalidationBatch;
     bool m_invalidationBatchHasBeenSet;
   };

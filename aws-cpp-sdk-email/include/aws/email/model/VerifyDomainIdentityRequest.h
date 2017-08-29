@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The domain to be verified.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline VerifyDomainIdentityRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
   };

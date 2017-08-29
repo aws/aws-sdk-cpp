@@ -30,12 +30,12 @@ UpdateIPSetResult::UpdateIPSetResult()
 {
 }
 
-UpdateIPSetResult::UpdateIPSetResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateIPSetResult::UpdateIPSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateIPSetResult& UpdateIPSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateIPSetResult& UpdateIPSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

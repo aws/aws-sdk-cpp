@@ -30,12 +30,12 @@ GetBundlesResult::GetBundlesResult()
 {
 }
 
-GetBundlesResult::GetBundlesResult(const AmazonWebServiceResult<JsonValue>& result)
+GetBundlesResult::GetBundlesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetBundlesResult& GetBundlesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetBundlesResult& GetBundlesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("bundles"))

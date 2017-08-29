@@ -40,6 +40,7 @@ namespace Model
     ListTagsForResourcesRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
@@ -74,6 +75,7 @@ namespace Model
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
     inline ListTagsForResourcesRequest& WithResourceType(TagResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that contains the ResourceId element for each resource for
@@ -124,8 +126,10 @@ namespace Model
     inline ListTagsForResourcesRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
   private:
+
     TagResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourceIds;
     bool m_resourceIdsHasBeenSet;
   };

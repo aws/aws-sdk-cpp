@@ -45,6 +45,7 @@ namespace Model
     UserMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the user.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ID of the user.</p>
      */
     inline UserMetadata& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The username of the user.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline UserMetadata& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
     /**
      * <p>The given name of the user before a rename operation.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      */
     inline UserMetadata& WithGivenName(const char* value) { SetGivenName(value); return *this;}
 
+
     /**
      * <p>The surname of the user.</p>
      */
@@ -184,6 +188,7 @@ namespace Model
      * <p>The surname of the user.</p>
      */
     inline UserMetadata& WithSurname(const char* value) { SetSurname(value); return *this;}
+
 
     /**
      * <p>The email address of the user.</p>
@@ -221,14 +226,19 @@ namespace Model
     inline UserMetadata& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_givenName;
     bool m_givenNameHasBeenSet;
+
     Aws::String m_surname;
     bool m_surnameHasBeenSet;
+
     Aws::String m_emailAddress;
     bool m_emailAddressHasBeenSet;
   };

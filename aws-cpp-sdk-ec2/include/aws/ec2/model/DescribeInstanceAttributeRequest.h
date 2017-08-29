@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
      * not supported at this time.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline DescribeInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -96,6 +98,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeInstanceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -133,10 +136,13 @@ namespace Model
     inline DescribeInstanceAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     InstanceAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
   };

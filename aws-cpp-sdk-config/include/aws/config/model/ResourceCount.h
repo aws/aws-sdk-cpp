@@ -46,6 +46,7 @@ namespace Model
     ResourceCount& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The resource type, for example <code>"AWS::EC2::Instance"</code>.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline ResourceCount& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of resources.</p>
      */
@@ -87,8 +89,10 @@ namespace Model
     inline ResourceCount& WithCount(long long value) { SetCount(value); return *this;}
 
   private:
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     long long m_count;
     bool m_countHasBeenSet;
   };

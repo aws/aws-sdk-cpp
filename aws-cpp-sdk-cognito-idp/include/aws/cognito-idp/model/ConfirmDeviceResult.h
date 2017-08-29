@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     ConfirmDeviceResult();
-    ConfirmDeviceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ConfirmDeviceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ConfirmDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ConfirmDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Indicates whether the user confirmation is necessary to confirm the device
@@ -63,6 +64,7 @@ namespace Model
     inline ConfirmDeviceResult& WithUserConfirmationNecessary(bool value) { SetUserConfirmationNecessary(value); return *this;}
 
   private:
+
     bool m_userConfirmationNecessary;
   };
 

@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Names (ARN) of the resources.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
     inline DescribeTagsRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_resourceArns;
     bool m_resourceArnsHasBeenSet;
   };

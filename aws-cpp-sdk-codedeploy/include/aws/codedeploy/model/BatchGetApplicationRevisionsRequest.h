@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of an AWS CodeDeploy application about which to get revision
      * information.</p>
@@ -83,6 +84,7 @@ namespace Model
      * information.</p>
      */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>Information to get about the application revisions, including type and
@@ -127,8 +129,10 @@ namespace Model
     inline BatchGetApplicationRevisionsRequest& AddRevisions(RevisionLocation&& value) { m_revisionsHasBeenSet = true; m_revisions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::Vector<RevisionLocation> m_revisions;
     bool m_revisionsHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     VerifyEmailIdentityResult();
-    VerifyEmailIdentityResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    VerifyEmailIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    VerifyEmailIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    VerifyEmailIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -63,6 +64,7 @@ namespace Model
     inline VerifyEmailIdentityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the user the signing certificate is associated with.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The name of the user the signing certificate is associated with.</p>
      */
     inline SigningCertificate& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The ID for the signing certificate.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline SigningCertificate& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
     /**
      * <p>The contents of the signing certificate.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      */
     inline SigningCertificate& WithCertificateBody(const char* value) { SetCertificateBody(value); return *this;}
 
+
     /**
      * <p>The status of the signing certificate. <code>Active</code> means the key is
      * valid for API calls, while <code>Inactive</code> means it is not.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline SigningCertificate& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The date when the signing certificate was uploaded.</p>
      */
@@ -213,14 +218,19 @@ namespace Model
     inline SigningCertificate& WithUploadDate(Aws::Utils::DateTime&& value) { SetUploadDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
     Aws::String m_certificateBody;
     bool m_certificateBodyHasBeenSet;
+
     StatusType m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_uploadDate;
     bool m_uploadDateHasBeenSet;
   };

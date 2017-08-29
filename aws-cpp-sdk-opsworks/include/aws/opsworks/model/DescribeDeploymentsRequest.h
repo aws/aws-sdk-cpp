@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID. If you include this parameter, <code>DescribeDeployments</code>
      * returns a description of the commands associated with the specified stack.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeDeploymentsRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The app ID. If you include this parameter, <code>DescribeDeployments</code>
      * returns a description of the commands associated with the specified app.</p>
@@ -120,6 +122,7 @@ namespace Model
      * returns a description of the commands associated with the specified app.</p>
      */
     inline DescribeDeploymentsRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+
 
     /**
      * <p>An array of deployment IDs to be described. If you include this parameter,
@@ -178,10 +181,13 @@ namespace Model
     inline DescribeDeploymentsRequest& AddDeploymentIds(const char* value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_appId;
     bool m_appIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_deploymentIds;
     bool m_deploymentIdsHasBeenSet;
   };

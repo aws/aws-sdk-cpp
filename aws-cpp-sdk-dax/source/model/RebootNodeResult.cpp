@@ -30,12 +30,12 @@ RebootNodeResult::RebootNodeResult()
 {
 }
 
-RebootNodeResult::RebootNodeResult(const AmazonWebServiceResult<JsonValue>& result)
+RebootNodeResult::RebootNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RebootNodeResult& RebootNodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RebootNodeResult& RebootNodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Cluster"))

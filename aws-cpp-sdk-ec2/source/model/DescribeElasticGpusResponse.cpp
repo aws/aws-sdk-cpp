@@ -32,13 +32,13 @@ DescribeElasticGpusResponse::DescribeElasticGpusResponse() :
 {
 }
 
-DescribeElasticGpusResponse::DescribeElasticGpusResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+DescribeElasticGpusResponse::DescribeElasticGpusResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_maxResults(0)
 {
   *this = result;
 }
 
-DescribeElasticGpusResponse& DescribeElasticGpusResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeElasticGpusResponse& DescribeElasticGpusResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

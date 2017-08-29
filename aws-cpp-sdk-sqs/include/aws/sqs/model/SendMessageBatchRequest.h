@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
      * <p>Queue URLs are case-sensitive.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline SendMessageBatchRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
+
     /**
      * <p>A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline SendMessageBatchRequest& AddEntries(SendMessageBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     Aws::Vector<SendMessageBatchRequestEntry> m_entries;
     bool m_entriesHasBeenSet;
   };

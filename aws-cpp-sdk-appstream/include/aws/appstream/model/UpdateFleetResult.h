@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateFleetResult();
-    UpdateFleetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFleetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of fleet details.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateFleetResult& WithFleet(Fleet&& value) { SetFleet(std::move(value)); return *this;}
 
   private:
+
     Fleet m_fleet;
   };
 

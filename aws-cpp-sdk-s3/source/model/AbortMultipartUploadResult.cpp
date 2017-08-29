@@ -31,13 +31,13 @@ AbortMultipartUploadResult::AbortMultipartUploadResult() :
 {
 }
 
-AbortMultipartUploadResult::AbortMultipartUploadResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+AbortMultipartUploadResult::AbortMultipartUploadResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }
 
-AbortMultipartUploadResult& AbortMultipartUploadResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AbortMultipartUploadResult& AbortMultipartUploadResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

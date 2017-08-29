@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     ListExportsResult();
-    ListExportsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListExportsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListExportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListExportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The output for the <a>ListExports</a> action.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <p>The output for the <a>ListExports</a> action.</p>
      */
     inline ListExportsResult& AddExports(Export&& value) { m_exports.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the output exceeds 100 exported output values, a string that identifies
@@ -128,6 +130,7 @@ namespace Model
      */
     inline ListExportsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -144,8 +147,11 @@ namespace Model
     inline ListExportsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Export> m_exports;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

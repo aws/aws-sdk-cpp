@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool where you want to set the user's settings,
      * such as MFA options.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline AdminSetUserSettingsRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The user name of the user for whom you wish to set user settings.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The user name of the user for whom you wish to set user settings.</p>
      */
     inline AdminSetUserSettingsRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>
@@ -155,10 +158,13 @@ namespace Model
     inline AdminSetUserSettingsRequest& AddMFAOptions(MFAOptionType&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::Vector<MFAOptionType> m_mFAOptions;
     bool m_mFAOptionsHasBeenSet;
   };

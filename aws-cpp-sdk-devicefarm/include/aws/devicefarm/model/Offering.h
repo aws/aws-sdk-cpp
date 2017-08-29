@@ -49,6 +49,7 @@ namespace Model
     Offering& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID that corresponds to a device offering.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID that corresponds to a device offering.</p>
      */
     inline Offering& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>A string describing the offering.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Offering& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The type of offering (e.g., "RECURRING") for a device.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      */
     inline Offering& WithType(OfferingType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The platform of the device (e.g., ANDROID or IOS).</p>
      */
@@ -168,6 +172,7 @@ namespace Model
      * <p>The platform of the device (e.g., ANDROID or IOS).</p>
      */
     inline Offering& WithPlatform(DevicePlatform&& value) { SetPlatform(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies whether there are recurring charges for the offering.</p>
@@ -205,14 +210,19 @@ namespace Model
     inline Offering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     OfferingType m_type;
     bool m_typeHasBeenSet;
+
     DevicePlatform m_platform;
     bool m_platformHasBeenSet;
+
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
   };

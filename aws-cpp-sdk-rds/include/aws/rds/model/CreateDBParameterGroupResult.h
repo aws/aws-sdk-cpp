@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateDBParameterGroupResult();
-    CreateDBParameterGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateDBParameterGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDBParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDBParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DBParameterGroup& GetDBParameterGroup() const{ return m_dBParameterGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline CreateDBParameterGroupResult& WithDBParameterGroup(DBParameterGroup&& value) { SetDBParameterGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline CreateDBParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DBParameterGroup m_dBParameterGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 

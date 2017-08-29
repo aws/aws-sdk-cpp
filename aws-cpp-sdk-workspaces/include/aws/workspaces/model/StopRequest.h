@@ -45,6 +45,7 @@ namespace Model
     StopRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the WorkSpace.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline StopRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
   private:
+
     Aws::String m_workspaceId;
     bool m_workspaceIdHasBeenSet;
   };

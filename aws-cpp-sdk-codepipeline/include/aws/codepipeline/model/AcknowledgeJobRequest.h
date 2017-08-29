@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique system-generated ID of the job for which you want to confirm
      * receipt.</p>
@@ -81,6 +82,7 @@ namespace Model
      * receipt.</p>
      */
     inline AcknowledgeJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
@@ -132,8 +134,10 @@ namespace Model
     inline AcknowledgeJobRequest& WithNonce(const char* value) { SetNonce(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_nonce;
     bool m_nonceHasBeenSet;
   };

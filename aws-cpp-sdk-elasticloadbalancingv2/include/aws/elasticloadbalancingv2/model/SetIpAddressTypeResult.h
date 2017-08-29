@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     SetIpAddressTypeResult();
-    SetIpAddressTypeResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetIpAddressTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetIpAddressTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetIpAddressTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The IP address type.</p>
@@ -67,6 +68,7 @@ namespace Model
      */
     inline SetIpAddressTypeResult& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -83,7 +85,9 @@ namespace Model
     inline SetIpAddressTypeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     IpAddressType m_ipAddressType;
+
     ResponseMetadata m_responseMetadata;
   };
 

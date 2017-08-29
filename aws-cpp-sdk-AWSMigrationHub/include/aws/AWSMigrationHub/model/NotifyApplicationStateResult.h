@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     NotifyApplicationStateResult();
-    NotifyApplicationStateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    NotifyApplicationStateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    NotifyApplicationStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    NotifyApplicationStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     BulkPublishResult();
-    BulkPublishResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BulkPublishResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BulkPublishResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BulkPublishResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -89,6 +90,7 @@ namespace Model
     inline BulkPublishResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
   };
 

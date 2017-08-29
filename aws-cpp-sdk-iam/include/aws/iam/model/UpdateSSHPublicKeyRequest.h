@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -102,6 +103,7 @@ namespace Model
      */
     inline UpdateSSHPublicKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
@@ -151,6 +153,7 @@ namespace Model
      */
     inline UpdateSSHPublicKeyRequest& WithSSHPublicKeyId(const char* value) { SetSSHPublicKeyId(value); return *this;}
 
+
     /**
      * <p>The status to assign to the SSH public key. <code>Active</code> means the key
      * can be used for authentication with an AWS CodeCommit repository.
@@ -187,10 +190,13 @@ namespace Model
     inline UpdateSSHPublicKeyRequest& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_sSHPublicKeyId;
     bool m_sSHPublicKeyIdHasBeenSet;
+
     StatusType m_status;
     bool m_statusHasBeenSet;
   };

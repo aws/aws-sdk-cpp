@@ -47,6 +47,7 @@ namespace Model
     MappingRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The claim name that must be present in the token, for example, "isAdmin" or
      * "paid".</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline MappingRule& WithClaim(const char* value) { SetClaim(value); return *this;}
 
+
     /**
      * <p>The match condition that specifies how closely the claim value in the IdP
      * token must match <code>Value</code>.</p>
@@ -118,6 +120,7 @@ namespace Model
      * token must match <code>Value</code>.</p>
      */
     inline MappingRule& WithMatchType(MappingRuleMatchType&& value) { SetMatchType(std::move(value)); return *this;}
+
 
     /**
      * <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
@@ -153,6 +156,7 @@ namespace Model
      * <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
      */
     inline MappingRule& WithValue(const char* value) { SetValue(value); return *this;}
+
 
     /**
      * <p>The role ARN.</p>
@@ -190,12 +194,16 @@ namespace Model
     inline MappingRule& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
   private:
+
     Aws::String m_claim;
     bool m_claimHasBeenSet;
+
     MappingRuleMatchType m_matchType;
     bool m_matchTypeHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
   };

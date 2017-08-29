@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Information about one or more block device mappings.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>Information about one or more block device mappings.</p>
      */
     inline CreateImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A description for the new image.</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline CreateImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -136,6 +139,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CreateImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -171,6 +175,7 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline CreateImageRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>A name for the new image.</p> <p>Constraints: 3-128 alphanumeric characters,
@@ -221,6 +226,7 @@ namespace Model
      */
     inline CreateImageRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before
      * creating the image. If the 'No Reboot' option is set, Amazon EC2 doesn't shut
@@ -246,16 +252,22 @@ namespace Model
     inline CreateImageRequest& WithNoReboot(bool value) { SetNoReboot(value); return *this;}
 
   private:
+
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     bool m_noReboot;
     bool m_noRebootHasBeenSet;
   };

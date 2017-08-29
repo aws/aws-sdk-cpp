@@ -30,12 +30,12 @@ UpdateDataSourceResult::UpdateDataSourceResult()
 {
 }
 
-UpdateDataSourceResult::UpdateDataSourceResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDataSourceResult::UpdateDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateDataSourceResult& UpdateDataSourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDataSourceResult& UpdateDataSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DataSourceId"))

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetSubscriptionAttributesResult();
-    GetSubscriptionAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetSubscriptionAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetSubscriptionAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetSubscriptionAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
@@ -228,6 +229,7 @@ namespace Model
      */
     inline GetSubscriptionAttributesResult& AddAttributes(const char* key, const char* value) { m_attributes.emplace(key, value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -244,7 +246,9 @@ namespace Model
     inline GetSubscriptionAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
+
     ResponseMetadata m_responseMetadata;
   };
 

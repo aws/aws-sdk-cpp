@@ -62,6 +62,7 @@ namespace Model
     PlayerSession& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a player session.</p>
      */
@@ -96,6 +97,7 @@ namespace Model
      * <p>Unique identifier for a player session.</p>
      */
     inline PlayerSession& WithPlayerSessionId(const char* value) { SetPlayerSessionId(value); return *this;}
+
 
     /**
      * <p>Unique identifier for a player that is associated with this player
@@ -139,6 +141,7 @@ namespace Model
      */
     inline PlayerSession& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
 
+
     /**
      * <p>Unique identifier for the game session that the player session is connected
      * to.</p>
@@ -180,6 +183,7 @@ namespace Model
      * to.</p>
      */
     inline PlayerSession& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
+
 
     /**
      * <p>Unique identifier for a fleet that the player's game session is running
@@ -223,6 +227,7 @@ namespace Model
      */
     inline PlayerSession& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
+
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
@@ -252,6 +257,7 @@ namespace Model
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline PlayerSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
@@ -287,6 +293,7 @@ namespace Model
      * "1469498468.057").</p>
      */
     inline PlayerSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Current status of the player session.</p> <p>Possible player session statuses
@@ -353,6 +360,7 @@ namespace Model
      */
     inline PlayerSession& WithStatus(PlayerSessionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
      * an app needs both the IP address and port number.</p>
@@ -395,6 +403,7 @@ namespace Model
      */
     inline PlayerSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
+
     /**
      * <p>Port number for the game session. To connect to a Amazon GameLift server
      * process, an app needs both the IP address and port number.</p>
@@ -412,6 +421,7 @@ namespace Model
      * process, an app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not
@@ -456,24 +466,34 @@ namespace Model
     inline PlayerSession& WithPlayerData(const char* value) { SetPlayerData(value); return *this;}
 
   private:
+
     Aws::String m_playerSessionId;
     bool m_playerSessionIdHasBeenSet;
+
     Aws::String m_playerId;
     bool m_playerIdHasBeenSet;
+
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet;
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_terminationTime;
     bool m_terminationTimeHasBeenSet;
+
     PlayerSessionStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_playerData;
     bool m_playerDataHasBeenSet;
   };

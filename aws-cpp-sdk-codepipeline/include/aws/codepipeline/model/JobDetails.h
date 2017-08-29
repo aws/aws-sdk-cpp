@@ -47,6 +47,7 @@ namespace Model
     JobDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique system-generated ID of the job.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline JobDetails& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>Represents additional information about a job required for a job worker to
      * complete the job. </p>
@@ -111,6 +113,7 @@ namespace Model
      * complete the job. </p>
      */
     inline JobDetails& WithData(JobData&& value) { SetData(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS account ID associated with the job.</p>
@@ -148,10 +151,13 @@ namespace Model
     inline JobDetails& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     JobData m_data;
     bool m_dataHasBeenSet;
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
   };

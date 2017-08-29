@@ -31,12 +31,12 @@ ReplaceNetworkAclAssociationResponse::ReplaceNetworkAclAssociationResponse()
 {
 }
 
-ReplaceNetworkAclAssociationResponse::ReplaceNetworkAclAssociationResponse(const AmazonWebServiceResult<XmlDocument>& result)
+ReplaceNetworkAclAssociationResponse::ReplaceNetworkAclAssociationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ReplaceNetworkAclAssociationResponse& ReplaceNetworkAclAssociationResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ReplaceNetworkAclAssociationResponse& ReplaceNetworkAclAssociationResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

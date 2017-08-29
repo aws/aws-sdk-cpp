@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeAlarmsResult();
-    DescribeAlarmsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAlarmsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAlarmsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAlarmsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The information for the specified alarms.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline DescribeAlarmsResult& AddMetricAlarms(MetricAlarm&& value) { m_metricAlarms.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token that marks the start of the next batch of returned results.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      */
     inline DescribeAlarmsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -130,8 +133,11 @@ namespace Model
     inline DescribeAlarmsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<MetricAlarm> m_metricAlarms;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

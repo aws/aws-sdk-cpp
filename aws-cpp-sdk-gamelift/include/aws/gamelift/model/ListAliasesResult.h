@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListAliasesResult();
-    ListAliasesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAliasesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of alias records that match the list request.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Collection of alias records that match the list request.</p>
      */
     inline ListAliasesResult& AddAliases(Alias&& value) { m_aliases.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -134,7 +136,9 @@ namespace Model
     inline ListAliasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Alias> m_aliases;
+
     Aws::String m_nextToken;
   };
 

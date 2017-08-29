@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetShardIteratorRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
+
     /**
      * <p>The shard ID of the Amazon Kinesis shard to get the iterator for.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The shard ID of the Amazon Kinesis shard to get the iterator for.</p>
      */
     inline GetShardIteratorRequest& WithShardId(const char* value) { SetShardId(value); return *this;}
+
 
     /**
      * <p>Determines how the shard iterator is used to start reading data records from
@@ -197,6 +200,7 @@ namespace Model
      */
     inline GetShardIteratorRequest& WithShardIteratorType(ShardIteratorType&& value) { SetShardIteratorType(std::move(value)); return *this;}
 
+
     /**
      * <p>The sequence number of the data record in the shard from which to start
      * reading. Used with shard iterator type AT_SEQUENCE_NUMBER and
@@ -245,6 +249,7 @@ namespace Model
      * AFTER_SEQUENCE_NUMBER.</p>
      */
     inline GetShardIteratorRequest& WithStartingSequenceNumber(const char* value) { SetStartingSequenceNumber(value); return *this;}
+
 
     /**
      * <p>The timestamp of the data record from which to start reading. Used with shard
@@ -302,14 +307,19 @@ namespace Model
     inline GetShardIteratorRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::String m_shardId;
     bool m_shardIdHasBeenSet;
+
     ShardIteratorType m_shardIteratorType;
     bool m_shardIteratorTypeHasBeenSet;
+
     Aws::String m_startingSequenceNumber;
     bool m_startingSequenceNumberHasBeenSet;
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
   };

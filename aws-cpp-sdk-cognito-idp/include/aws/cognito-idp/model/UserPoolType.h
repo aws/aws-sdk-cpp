@@ -62,6 +62,7 @@ namespace Model
     UserPoolType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the user pool.</p>
      */
@@ -96,6 +97,7 @@ namespace Model
      * <p>The ID of the user pool.</p>
      */
     inline UserPoolType& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the user pool.</p>
@@ -132,6 +134,7 @@ namespace Model
      */
     inline UserPoolType& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A container for the policies associated with a user pool.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>A container for the policies associated with a user pool.</p>
      */
     inline UserPoolType& WithPolicies(UserPoolPolicyType&& value) { SetPolicies(std::move(value)); return *this;}
+
 
     /**
      * <p>A container for the AWS Lambda triggers associated with a user pool.</p>
@@ -182,6 +186,7 @@ namespace Model
      */
     inline UserPoolType& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>The status of a user pool.</p>
      */
@@ -206,6 +211,7 @@ namespace Model
      * <p>The status of a user pool.</p>
      */
     inline UserPoolType& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the user pool was last modified.</p>
@@ -232,6 +238,7 @@ namespace Model
      */
     inline UserPoolType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date the user pool was created.</p>
      */
@@ -256,6 +263,7 @@ namespace Model
      * <p>The date the user pool was created.</p>
      */
     inline UserPoolType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>A container with the schema attributes of a user pool.</p>
@@ -292,6 +300,7 @@ namespace Model
      */
     inline UserPoolType& AddSchemaAttributes(SchemaAttributeType&& value) { m_schemaAttributesHasBeenSet = true; m_schemaAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies the attributes that are auto-verified in a user pool.</p>
      */
@@ -327,6 +336,7 @@ namespace Model
      */
     inline UserPoolType& AddAutoVerifiedAttributes(VerifiedAttributeType&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies the attributes that are aliased in a user pool.</p>
      */
@@ -361,6 +371,7 @@ namespace Model
      * <p>Specifies the attributes that are aliased in a user pool.</p>
      */
     inline UserPoolType& AddAliasAttributes(AliasAttributeType&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Specifies whether email addresses or phone numbers can be specified as
@@ -404,6 +415,7 @@ namespace Model
      */
     inline UserPoolType& AddUsernameAttributes(UsernameAttributeType&& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The contents of the SMS verification message.</p>
      */
@@ -438,6 +450,7 @@ namespace Model
      * <p>The contents of the SMS verification message.</p>
      */
     inline UserPoolType& WithSmsVerificationMessage(const char* value) { SetSmsVerificationMessage(value); return *this;}
+
 
     /**
      * <p>The contents of the email verification message.</p>
@@ -474,6 +487,7 @@ namespace Model
      */
     inline UserPoolType& WithEmailVerificationMessage(const char* value) { SetEmailVerificationMessage(value); return *this;}
 
+
     /**
      * <p>The subject of the email verification message.</p>
      */
@@ -509,6 +523,7 @@ namespace Model
      */
     inline UserPoolType& WithEmailVerificationSubject(const char* value) { SetEmailVerificationSubject(value); return *this;}
 
+
     /**
      * <p>The template for verification messages.</p>
      */
@@ -533,6 +548,7 @@ namespace Model
      * <p>The template for verification messages.</p>
      */
     inline UserPoolType& WithVerificationMessageTemplate(VerificationMessageTemplateType&& value) { SetVerificationMessageTemplate(std::move(value)); return *this;}
+
 
     /**
      * <p>The contents of the SMS authentication message.</p>
@@ -568,6 +584,7 @@ namespace Model
      * <p>The contents of the SMS authentication message.</p>
      */
     inline UserPoolType& WithSmsAuthenticationMessage(const char* value) { SetSmsAuthenticationMessage(value); return *this;}
+
 
     /**
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
@@ -619,6 +636,7 @@ namespace Model
      */
     inline UserPoolType& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The device configuration.</p>
      */
@@ -644,6 +662,7 @@ namespace Model
      */
     inline UserPoolType& WithDeviceConfiguration(DeviceConfigurationType&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>A number estimating the size of the user pool.</p>
      */
@@ -658,6 +677,7 @@ namespace Model
      * <p>A number estimating the size of the user pool.</p>
      */
     inline UserPoolType& WithEstimatedNumberOfUsers(int value) { SetEstimatedNumberOfUsers(value); return *this;}
+
 
     /**
      * <p>The email configuration.</p>
@@ -684,6 +704,7 @@ namespace Model
      */
     inline UserPoolType& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The SMS configuration.</p>
      */
@@ -708,6 +729,7 @@ namespace Model
      * <p>The SMS configuration.</p>
      */
     inline UserPoolType& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
@@ -793,6 +815,7 @@ namespace Model
      */
     inline UserPoolType& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
+
     /**
      * <p>The reason why the SMS configuration cannot send the messages to your
      * users.</p>
@@ -834,6 +857,7 @@ namespace Model
      * users.</p>
      */
     inline UserPoolType& WithSmsConfigurationFailure(const char* value) { SetSmsConfigurationFailure(value); return *this;}
+
 
     /**
      * <p>The reason why the email configuration cannot send the messages to your
@@ -877,6 +901,7 @@ namespace Model
      */
     inline UserPoolType& WithEmailConfigurationFailure(const char* value) { SetEmailConfigurationFailure(value); return *this;}
 
+
     /**
      * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
@@ -903,54 +928,79 @@ namespace Model
     inline UserPoolType& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     UserPoolPolicyType m_policies;
     bool m_policiesHasBeenSet;
+
     LambdaConfigType m_lambdaConfig;
     bool m_lambdaConfigHasBeenSet;
+
     StatusType m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::Vector<SchemaAttributeType> m_schemaAttributes;
     bool m_schemaAttributesHasBeenSet;
+
     Aws::Vector<VerifiedAttributeType> m_autoVerifiedAttributes;
     bool m_autoVerifiedAttributesHasBeenSet;
+
     Aws::Vector<AliasAttributeType> m_aliasAttributes;
     bool m_aliasAttributesHasBeenSet;
+
     Aws::Vector<UsernameAttributeType> m_usernameAttributes;
     bool m_usernameAttributesHasBeenSet;
+
     Aws::String m_smsVerificationMessage;
     bool m_smsVerificationMessageHasBeenSet;
+
     Aws::String m_emailVerificationMessage;
     bool m_emailVerificationMessageHasBeenSet;
+
     Aws::String m_emailVerificationSubject;
     bool m_emailVerificationSubjectHasBeenSet;
+
     VerificationMessageTemplateType m_verificationMessageTemplate;
     bool m_verificationMessageTemplateHasBeenSet;
+
     Aws::String m_smsAuthenticationMessage;
     bool m_smsAuthenticationMessageHasBeenSet;
+
     UserPoolMfaType m_mfaConfiguration;
     bool m_mfaConfigurationHasBeenSet;
+
     DeviceConfigurationType m_deviceConfiguration;
     bool m_deviceConfigurationHasBeenSet;
+
     int m_estimatedNumberOfUsers;
     bool m_estimatedNumberOfUsersHasBeenSet;
+
     EmailConfigurationType m_emailConfiguration;
     bool m_emailConfigurationHasBeenSet;
+
     SmsConfigurationType m_smsConfiguration;
     bool m_smsConfigurationHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_userPoolTags;
     bool m_userPoolTagsHasBeenSet;
+
     Aws::String m_smsConfigurationFailure;
     bool m_smsConfigurationFailureHasBeenSet;
+
     Aws::String m_emailConfigurationFailure;
     bool m_emailConfigurationFailureHasBeenSet;
+
     AdminCreateUserConfigType m_adminCreateUserConfig;
     bool m_adminCreateUserConfigHasBeenSet;
   };

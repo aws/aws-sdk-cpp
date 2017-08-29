@@ -31,12 +31,12 @@ GetPolicyResult::GetPolicyResult()
 {
 }
 
-GetPolicyResult::GetPolicyResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetPolicyResult::GetPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetPolicyResult& GetPolicyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetPolicyResult& GetPolicyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

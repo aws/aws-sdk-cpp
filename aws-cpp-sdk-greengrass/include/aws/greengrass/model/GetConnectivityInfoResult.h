@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetConnectivityInfoResult();
-    GetConnectivityInfoResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConnectivityInfoResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetConnectivityInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetConnectivityInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Connectivity info array
@@ -77,6 +78,7 @@ namespace Model
      * Connectivity info array
      */
     inline GetConnectivityInfoResult& AddConnectivityInfo(ConnectivityInfo&& value) { m_connectivityInfo.push_back(std::move(value)); return *this; }
+
 
     /**
      * Response Text
@@ -114,7 +116,9 @@ namespace Model
     inline GetConnectivityInfoResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::Vector<ConnectivityInfo> m_connectivityInfo;
+
     Aws::String m_message;
   };
 

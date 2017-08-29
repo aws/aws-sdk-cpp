@@ -47,6 +47,7 @@ namespace Model
     DirectoryVpcSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the VPC in which to create the directory.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The identifier of the VPC in which to create the directory.</p>
      */
     inline DirectoryVpcSettings& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>The identifiers of the subnets for the directory servers. The two subnets
@@ -139,8 +141,10 @@ namespace Model
     inline DirectoryVpcSettings& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
     APNSChannelRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The distribution certificate from Apple.
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline APNSChannelRequest& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
+
     /**
      * If the channel is enabled for sending messages.
      */
@@ -92,6 +94,7 @@ namespace Model
      * If the channel is enabled for sending messages.
      */
     inline APNSChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * The certificate private key.
@@ -129,10 +132,13 @@ namespace Model
     inline APNSChannelRequest& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
 
   private:
+
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_privateKey;
     bool m_privateKeyHasBeenSet;
   };

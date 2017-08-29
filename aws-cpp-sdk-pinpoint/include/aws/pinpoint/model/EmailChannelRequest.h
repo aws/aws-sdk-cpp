@@ -43,6 +43,7 @@ namespace Model
     EmailChannelRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * If the channel is enabled for sending messages.
      */
@@ -57,6 +58,7 @@ namespace Model
      * If the channel is enabled for sending messages.
      */
     inline EmailChannelRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * The email address used to send emails from.
@@ -93,6 +95,7 @@ namespace Model
      */
     inline EmailChannelRequest& WithFromAddress(const char* value) { SetFromAddress(value); return *this;}
 
+
     /**
      * The ARN of an identity verified with SES.
      */
@@ -127,6 +130,7 @@ namespace Model
      * The ARN of an identity verified with SES.
      */
     inline EmailChannelRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+
 
     /**
      * The ARN of an IAM Role used to submit events to Mobile Analytics' event
@@ -171,12 +175,16 @@ namespace Model
     inline EmailChannelRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_fromAddress;
     bool m_fromAddressHasBeenSet;
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

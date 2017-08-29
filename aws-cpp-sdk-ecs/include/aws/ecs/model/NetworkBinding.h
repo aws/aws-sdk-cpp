@@ -50,6 +50,7 @@ namespace Model
     NetworkBinding& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The IP address that the container is bound to on the container instance.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline NetworkBinding& WithBindIP(const char* value) { SetBindIP(value); return *this;}
 
+
     /**
      * <p>The port number on the container that is be used with the network
      * binding.</p>
@@ -103,6 +105,7 @@ namespace Model
      */
     inline NetworkBinding& WithContainerPort(int value) { SetContainerPort(value); return *this;}
 
+
     /**
      * <p>The port number on the host that is used with the network binding.</p>
      */
@@ -117,6 +120,7 @@ namespace Model
      * <p>The port number on the host that is used with the network binding.</p>
      */
     inline NetworkBinding& WithHostPort(int value) { SetHostPort(value); return *this;}
+
 
     /**
      * <p>The protocol used for the network binding.</p>
@@ -144,12 +148,16 @@ namespace Model
     inline NetworkBinding& WithProtocol(TransportProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bindIP;
     bool m_bindIPHasBeenSet;
+
     int m_containerPort;
     bool m_containerPortHasBeenSet;
+
     int m_hostPort;
     bool m_hostPortHasBeenSet;
+
     TransportProtocol m_protocol;
     bool m_protocolHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetDatabasesResult();
-    GetDatabasesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDatabasesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDatabasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <code>Database</code> objects from the specified catalog.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of <code>Database</code> objects from the specified catalog.</p>
      */
     inline GetDatabasesResult& AddDatabaseList(Database&& value) { m_databaseList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token for paginating the returned list of tokens, returned if
@@ -121,7 +123,9 @@ namespace Model
     inline GetDatabasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Database> m_databaseList;
+
     Aws::String m_nextToken;
   };
 

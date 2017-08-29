@@ -32,13 +32,13 @@ AssumeRoleResult::AssumeRoleResult() :
 {
 }
 
-AssumeRoleResult::AssumeRoleResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+AssumeRoleResult::AssumeRoleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_packedPolicySize(0)
 {
   *this = result;
 }
 
-AssumeRoleResult& AssumeRoleResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AssumeRoleResult& AssumeRoleResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

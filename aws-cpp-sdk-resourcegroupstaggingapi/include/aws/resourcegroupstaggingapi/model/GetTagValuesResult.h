@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetTagValuesResult();
-    GetTagValuesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTagValuesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTagValuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTagValuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A string that indicates that the response contains more data than can be
@@ -91,6 +92,7 @@ namespace Model
      */
     inline GetTagValuesResult& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
+
     /**
      * <p>A list of all tag values for the specified key in the AWS account.</p>
      */
@@ -132,7 +134,9 @@ namespace Model
     inline GetTagValuesResult& AddTagValues(const char* value) { m_tagValues.push_back(value); return *this; }
 
   private:
+
     Aws::String m_paginationToken;
+
     Aws::Vector<Aws::String> m_tagValues;
   };
 

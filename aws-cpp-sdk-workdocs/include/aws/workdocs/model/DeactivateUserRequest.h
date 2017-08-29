@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the user.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the user.</p>
      */
     inline DeactivateUserRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+
 
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
@@ -114,8 +116,10 @@ namespace Model
     inline DeactivateUserRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
   private:
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
   };

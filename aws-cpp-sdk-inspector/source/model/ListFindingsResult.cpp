@@ -30,12 +30,12 @@ ListFindingsResult::ListFindingsResult()
 {
 }
 
-ListFindingsResult::ListFindingsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListFindingsResult::ListFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListFindingsResult& ListFindingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListFindingsResult& ListFindingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("findingArns"))

@@ -46,6 +46,7 @@ namespace Model
     TableError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the table.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline TableError& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>Detail about the error.</p>
      */
@@ -107,8 +109,10 @@ namespace Model
     inline TableError& WithErrorDetail(ErrorDetail&& value) { SetErrorDetail(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     ErrorDetail m_errorDetail;
     bool m_errorDetailHasBeenSet;
   };

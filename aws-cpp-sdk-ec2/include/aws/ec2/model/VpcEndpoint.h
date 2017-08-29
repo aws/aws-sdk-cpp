@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The date and time the VPC endpoint was created.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The date and time the VPC endpoint was created.</p>
      */
     inline VpcEndpoint& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The policy document associated with the endpoint.</p>
@@ -110,6 +112,7 @@ namespace Model
      * <p>The policy document associated with the endpoint.</p>
      */
     inline VpcEndpoint& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+
 
     /**
      * <p>One or more route tables associated with the endpoint.</p>
@@ -151,6 +154,7 @@ namespace Model
      */
     inline VpcEndpoint& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
+
     /**
      * <p>The name of the AWS service to which the endpoint is associated.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      */
     inline VpcEndpoint& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
+
     /**
      * <p>The state of the VPC endpoint.</p>
      */
@@ -210,6 +215,7 @@ namespace Model
      * <p>The state of the VPC endpoint.</p>
      */
     inline VpcEndpoint& WithState(State&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the VPC endpoint.</p>
@@ -245,6 +251,7 @@ namespace Model
      * <p>The ID of the VPC endpoint.</p>
      */
     inline VpcEndpoint& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC to which the endpoint is associated.</p>
@@ -282,18 +289,25 @@ namespace Model
     inline VpcEndpoint& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_creationTimestamp;
     bool m_creationTimestampHasBeenSet;
+
     Aws::String m_policyDocument;
     bool m_policyDocumentHasBeenSet;
+
     Aws::Vector<Aws::String> m_routeTableIds;
     bool m_routeTableIdsHasBeenSet;
+
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;
+
     State m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_vpcEndpointId;
     bool m_vpcEndpointIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the delivery stream.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The name of the delivery stream.</p>
      */
     inline UpdateDestinationRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
+
 
     /**
      * <p>Obtain this value from the <b>VersionId</b> result of
@@ -144,6 +146,7 @@ namespace Model
      */
     inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(const char* value) { SetCurrentDeliveryStreamVersionId(value); return *this;}
 
+
     /**
      * <p>The ID of the destination.</p>
      */
@@ -179,6 +182,7 @@ namespace Model
      */
     inline UpdateDestinationRequest& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
 
+
     /**
      * <p>Describes an update for a destination in Amazon S3.</p>
      */
@@ -204,6 +208,7 @@ namespace Model
      */
     inline UpdateDestinationRequest& WithExtendedS3DestinationUpdate(ExtendedS3DestinationUpdate&& value) { SetExtendedS3DestinationUpdate(std::move(value)); return *this;}
 
+
     /**
      * <p>Describes an update for a destination in Amazon Redshift.</p>
      */
@@ -228,6 +233,7 @@ namespace Model
      * <p>Describes an update for a destination in Amazon Redshift.</p>
      */
     inline UpdateDestinationRequest& WithRedshiftDestinationUpdate(RedshiftDestinationUpdate&& value) { SetRedshiftDestinationUpdate(std::move(value)); return *this;}
+
 
     /**
      * <p>Describes an update for a destination in Amazon ES.</p>
@@ -255,16 +261,22 @@ namespace Model
     inline UpdateDestinationRequest& WithElasticsearchDestinationUpdate(ElasticsearchDestinationUpdate&& value) { SetElasticsearchDestinationUpdate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet;
+
     Aws::String m_currentDeliveryStreamVersionId;
     bool m_currentDeliveryStreamVersionIdHasBeenSet;
+
     Aws::String m_destinationId;
     bool m_destinationIdHasBeenSet;
+
     ExtendedS3DestinationUpdate m_extendedS3DestinationUpdate;
     bool m_extendedS3DestinationUpdateHasBeenSet;
+
     RedshiftDestinationUpdate m_redshiftDestinationUpdate;
     bool m_redshiftDestinationUpdateHasBeenSet;
+
     ElasticsearchDestinationUpdate m_elasticsearchDestinationUpdate;
     bool m_elasticsearchDestinationUpdateHasBeenSet;
   };

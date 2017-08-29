@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::Vector<Aws::String>& GetAssessmentTemplateArns() const{ return m_assessmentTemplateArns; }
 
@@ -62,6 +63,7 @@ namespace Model
     inline DescribeAssessmentTemplatesRequest& AddAssessmentTemplateArns(const char* value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_assessmentTemplateArns;
     bool m_assessmentTemplateArnsHasBeenSet;
   };

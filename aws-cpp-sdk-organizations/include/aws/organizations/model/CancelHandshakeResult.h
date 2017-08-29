@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CancelHandshakeResult();
-    CancelHandshakeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelHandshakeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelHandshakeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelHandshakeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains details about the handshake that you canceled.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CancelHandshakeResult& WithHandshake(Handshake&& value) { SetHandshake(std::move(value)); return *this;}
 
   private:
+
     Handshake m_handshake;
   };
 

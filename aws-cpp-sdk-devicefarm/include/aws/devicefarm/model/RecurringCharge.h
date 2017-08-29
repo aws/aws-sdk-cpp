@@ -47,6 +47,7 @@ namespace Model
     RecurringCharge& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The cost of the recurring charge.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The cost of the recurring charge.</p>
      */
     inline RecurringCharge& WithCost(MonetaryAmount&& value) { SetCost(std::move(value)); return *this;}
+
 
     /**
      * <p>The frequency in which charges will recur.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline RecurringCharge& WithFrequency(RecurringChargeFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 
   private:
+
     MonetaryAmount m_cost;
     bool m_costHasBeenSet;
+
     RecurringChargeFrequency m_frequency;
     bool m_frequencyHasBeenSet;
   };

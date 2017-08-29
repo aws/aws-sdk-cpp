@@ -34,6 +34,7 @@ namespace Model
     DeleteSegmentRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -54,6 +55,7 @@ namespace Model
 
     
     inline DeleteSegmentRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     
     inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
@@ -77,8 +79,10 @@ namespace Model
     inline DeleteSegmentRequest& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_segmentId;
     bool m_segmentIdHasBeenSet;
   };

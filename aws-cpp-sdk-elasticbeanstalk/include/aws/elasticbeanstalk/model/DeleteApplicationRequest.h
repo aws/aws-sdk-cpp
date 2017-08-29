@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application to delete.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline DeleteApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>When set to true, running environments will be terminated before deleting the
      * application.</p>
@@ -95,8 +97,10 @@ namespace Model
     inline DeleteApplicationRequest& WithTerminateEnvByForce(bool value) { SetTerminateEnvByForce(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     bool m_terminateEnvByForce;
     bool m_terminateEnvByForceHasBeenSet;
   };

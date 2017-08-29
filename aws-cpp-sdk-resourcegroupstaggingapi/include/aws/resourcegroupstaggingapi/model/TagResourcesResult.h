@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     TagResourcesResult();
-    TagResourcesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TagResourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TagResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TagResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Details of resources that could not be tagged. An error code, status code,
@@ -110,6 +111,7 @@ namespace Model
     inline TagResourcesResult& AddFailedResourcesMap(const char* key, const FailureInfo& value) { m_failedResourcesMap.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, FailureInfo> m_failedResourcesMap;
   };
 

@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     DescribeResourceGroupsResult();
-    DescribeResourceGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeResourceGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeResourceGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeResourceGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about a resource group.</p>
@@ -79,6 +80,7 @@ namespace Model
      * <p>Information about a resource group.</p>
      */
     inline DescribeResourceGroupsResult& AddResourceGroups(ResourceGroup&& value) { m_resourceGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Resource group details that cannot be described. An error code is provided
@@ -147,7 +149,9 @@ namespace Model
     inline DescribeResourceGroupsResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
 
   private:
+
     Aws::Vector<ResourceGroup> m_resourceGroups;
+
     Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
   };
 

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListHandshakesForOrganizationResult();
-    ListHandshakesForOrganizationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListHandshakesForOrganizationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListHandshakesForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListHandshakesForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
@@ -84,6 +85,7 @@ namespace Model
      * that are associated with an organization.</p>
      */
     inline ListHandshakesForOrganizationResult& AddHandshakes(Handshake&& value) { m_handshakes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -149,7 +151,9 @@ namespace Model
     inline ListHandshakesForOrganizationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Handshake> m_handshakes;
+
     Aws::String m_nextToken;
   };
 

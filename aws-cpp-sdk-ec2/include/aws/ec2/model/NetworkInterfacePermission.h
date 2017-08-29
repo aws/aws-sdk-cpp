@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the network interface permission.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The ID of the network interface permission.</p>
      */
     inline NetworkInterfacePermission& WithNetworkInterfacePermissionId(const char* value) { SetNetworkInterfacePermissionId(value); return *this;}
+
 
     /**
      * <p>The ID of the network interface.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline NetworkInterfacePermission& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
+
     /**
      * <p>The AWS account ID.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The AWS account ID.</p>
      */
     inline NetworkInterfacePermission& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+
 
     /**
      * <p>The AWS service.</p>
@@ -190,6 +194,7 @@ namespace Model
      */
     inline NetworkInterfacePermission& WithAwsService(const char* value) { SetAwsService(value); return *this;}
 
+
     /**
      * <p>The type of permission.</p>
      */
@@ -214,6 +219,7 @@ namespace Model
      * <p>The type of permission.</p>
      */
     inline NetworkInterfacePermission& WithPermission(InterfacePermissionType&& value) { SetPermission(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the state of the permission.</p>
@@ -241,16 +247,22 @@ namespace Model
     inline NetworkInterfacePermission& WithPermissionState(NetworkInterfacePermissionState&& value) { SetPermissionState(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_networkInterfacePermissionId;
     bool m_networkInterfacePermissionIdHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet;
+
     Aws::String m_awsService;
     bool m_awsServiceHasBeenSet;
+
     InterfacePermissionType m_permission;
     bool m_permissionHasBeenSet;
+
     NetworkInterfacePermissionState m_permissionState;
     bool m_permissionStateHasBeenSet;
   };

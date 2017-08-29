@@ -31,12 +31,12 @@ RegisterInstancesWithLoadBalancerResult::RegisterInstancesWithLoadBalancerResult
 {
 }
 
-RegisterInstancesWithLoadBalancerResult::RegisterInstancesWithLoadBalancerResult(const AmazonWebServiceResult<XmlDocument>& result)
+RegisterInstancesWithLoadBalancerResult::RegisterInstancesWithLoadBalancerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RegisterInstancesWithLoadBalancerResult& RegisterInstancesWithLoadBalancerResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RegisterInstancesWithLoadBalancerResult& RegisterInstancesWithLoadBalancerResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

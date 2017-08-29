@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or the unique stack ID that is associated with the stack, which are
      * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
@@ -112,6 +113,7 @@ namespace Model
      */
     inline DescribeStackResourcesRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+
     /**
      * <p>The logical name of the resource as specified in the template.</p>
      * <p>Default: There is no default value.</p>
@@ -153,6 +155,7 @@ namespace Model
      * <p>Default: There is no default value.</p>
      */
     inline DescribeStackResourcesRequest& WithLogicalResourceId(const char* value) { SetLogicalResourceId(value); return *this;}
+
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
@@ -246,10 +249,13 @@ namespace Model
     inline DescribeStackResourcesRequest& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_logicalResourceId;
     bool m_logicalResourceIdHasBeenSet;
+
     Aws::String m_physicalResourceId;
     bool m_physicalResourceIdHasBeenSet;
   };

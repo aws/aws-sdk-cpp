@@ -38,6 +38,7 @@ namespace Model
     ModifyMountTargetSecurityGroupsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>ID of the mount target whose security groups you want to modify.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>ID of the mount target whose security groups you want to modify.</p>
      */
     inline ModifyMountTargetSecurityGroupsRequest& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
+
 
     /**
      * <p>Array of up to five VPC security group IDs.</p>
@@ -114,8 +116,10 @@ namespace Model
     inline ModifyMountTargetSecurityGroupsRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
   private:
+
     Aws::String m_mountTargetId;
     bool m_mountTargetIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
   };

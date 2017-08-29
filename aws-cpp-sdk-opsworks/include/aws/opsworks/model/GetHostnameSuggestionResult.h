@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetHostnameSuggestionResult();
-    GetHostnameSuggestionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetHostnameSuggestionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetHostnameSuggestionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetHostnameSuggestionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The layer ID.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The layer ID.</p>
      */
     inline GetHostnameSuggestionResult& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+
 
     /**
      * <p>The generated host name.</p>
@@ -118,7 +120,9 @@ namespace Model
     inline GetHostnameSuggestionResult& WithHostname(const char* value) { SetHostname(value); return *this;}
 
   private:
+
     Aws::String m_layerId;
+
     Aws::String m_hostname;
   };
 

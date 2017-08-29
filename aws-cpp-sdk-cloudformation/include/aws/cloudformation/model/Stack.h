@@ -56,6 +56,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Unique identifier of the stack.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      * <p>Unique identifier of the stack.</p>
      */
     inline Stack& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The name associated with the stack.</p>
@@ -126,6 +128,7 @@ namespace Model
      */
     inline Stack& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+
     /**
      * <p>The unique ID of the change set.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      * <p>The unique ID of the change set.</p>
      */
     inline Stack& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
+
 
     /**
      * <p>A user-defined description associated with the stack.</p>
@@ -196,6 +200,7 @@ namespace Model
      */
     inline Stack& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A list of <code>Parameter</code> structures.</p>
      */
@@ -231,6 +236,7 @@ namespace Model
      */
     inline Stack& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time at which the stack was created.</p>
      */
@@ -255,6 +261,7 @@ namespace Model
      * <p>The time at which the stack was created.</p>
      */
     inline Stack& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
@@ -286,6 +293,7 @@ namespace Model
      */
     inline Stack& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
      * and updating operations, and for the specified monitoring period afterwards.</p>
@@ -316,6 +324,7 @@ namespace Model
      */
     inline Stack& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Current status of the stack.</p>
      */
@@ -340,6 +349,7 @@ namespace Model
      * <p>Current status of the stack.</p>
      */
     inline Stack& WithStackStatus(StackStatus&& value) { SetStackStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Success/failure message associated with the stack status.</p>
@@ -376,6 +386,7 @@ namespace Model
      */
     inline Stack& WithStackStatusReason(const char* value) { SetStackStatusReason(value); return *this;}
 
+
     /**
      * <p>Boolean to enable or disable rollback on stack creation failures:</p> <ul>
      * <li> <p> <code>true</code>: disable rollback</p> </li> <li> <p>
@@ -396,6 +407,7 @@ namespace Model
      * <code>false</code>: enable rollback</p> </li> </ul>
      */
     inline Stack& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
+
 
     /**
      * <p>SNS topic ARNs to which stack related events are published.</p>
@@ -437,6 +449,7 @@ namespace Model
      */
     inline Stack& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
+
     /**
      * <p>The amount of time within which stack creation should complete.</p>
      */
@@ -451,6 +464,7 @@ namespace Model
      * <p>The amount of time within which stack creation should complete.</p>
      */
     inline Stack& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
+
 
     /**
      * <p>The capabilities allowed in the stack.</p>
@@ -487,6 +501,7 @@ namespace Model
      */
     inline Stack& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of output structures.</p>
      */
@@ -521,6 +536,7 @@ namespace Model
      * <p>A list of output structures.</p>
      */
     inline Stack& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
@@ -571,6 +587,7 @@ namespace Model
      */
     inline Stack& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
@@ -607,38 +624,55 @@ namespace Model
     inline Stack& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_changeSetId;
     bool m_changeSetIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
     RollbackConfiguration m_rollbackConfiguration;
     bool m_rollbackConfigurationHasBeenSet;
+
     StackStatus m_stackStatus;
     bool m_stackStatusHasBeenSet;
+
     Aws::String m_stackStatusReason;
     bool m_stackStatusReasonHasBeenSet;
+
     bool m_disableRollback;
     bool m_disableRollbackHasBeenSet;
+
     Aws::Vector<Aws::String> m_notificationARNs;
     bool m_notificationARNsHasBeenSet;
+
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
+
     Aws::Vector<Capability> m_capabilities;
     bool m_capabilitiesHasBeenSet;
+
     Aws::Vector<Output> m_outputs;
     bool m_outputsHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

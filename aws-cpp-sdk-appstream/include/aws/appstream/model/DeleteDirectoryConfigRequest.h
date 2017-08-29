@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the directory configuration to be deleted.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteDirectoryConfigRequest& WithDirectoryName(const char* value) { SetDirectoryName(value); return *this;}
 
   private:
+
     Aws::String m_directoryName;
     bool m_directoryNameHasBeenSet;
   };

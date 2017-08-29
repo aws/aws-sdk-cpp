@@ -30,12 +30,12 @@ DescribeSubnetGroupsResult::DescribeSubnetGroupsResult()
 {
 }
 
-DescribeSubnetGroupsResult::DescribeSubnetGroupsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeSubnetGroupsResult::DescribeSubnetGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeSubnetGroupsResult& DescribeSubnetGroupsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeSubnetGroupsResult& DescribeSubnetGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

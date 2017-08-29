@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeProvisioningArtifactResult();
-    DescribeProvisioningArtifactResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeProvisioningArtifactResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProvisioningArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProvisioningArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Detailed provisioning artifact information.</p>
@@ -68,6 +69,7 @@ namespace Model
      * <p>Detailed provisioning artifact information.</p>
      */
     inline DescribeProvisioningArtifactResult& WithProvisioningArtifactDetail(ProvisioningArtifactDetail&& value) { SetProvisioningArtifactDetail(std::move(value)); return *this;}
+
 
     /**
      * <p>Additional information about the provisioning artifact.</p>
@@ -129,6 +131,7 @@ namespace Model
      */
     inline DescribeProvisioningArtifactResult& AddInfo(const char* key, const char* value) { m_info.emplace(key, value); return *this; }
 
+
     /**
      * <p>The status of the current request.</p>
      */
@@ -155,8 +158,11 @@ namespace Model
     inline DescribeProvisioningArtifactResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     ProvisioningArtifactDetail m_provisioningArtifactDetail;
+
     Aws::Map<Aws::String, Aws::String> m_info;
+
     Status m_status;
   };
 

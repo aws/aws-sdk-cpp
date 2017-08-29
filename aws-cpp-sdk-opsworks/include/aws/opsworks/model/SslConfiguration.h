@@ -45,6 +45,7 @@ namespace Model
     SslConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The contents of the certificate's domain.crt file.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline SslConfiguration& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
+
     /**
      * <p>The private key; the contents of the certificate's domain.kex file.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>The private key; the contents of the certificate's domain.kex file.</p>
      */
     inline SslConfiguration& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
+
 
     /**
      * <p>Optional. Can be used to specify an intermediate certificate authority key or
@@ -158,10 +161,13 @@ namespace Model
     inline SslConfiguration& WithChain(const char* value) { SetChain(value); return *this;}
 
   private:
+
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
+
     Aws::String m_privateKey;
     bool m_privateKeyHasBeenSet;
+
     Aws::String m_chain;
     bool m_chainHasBeenSet;
   };

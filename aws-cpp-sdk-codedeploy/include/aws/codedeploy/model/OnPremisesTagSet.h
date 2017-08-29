@@ -47,6 +47,7 @@ namespace Model
     OnPremisesTagSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list containing other lists of on-premises instance tag groups. In order
      * for an instance to be included in the deployment group, it must be identified by
@@ -97,6 +98,7 @@ namespace Model
     inline OnPremisesTagSet& AddOnPremisesTagSetList(Aws::Vector<TagFilter>&& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::Vector<TagFilter>> m_onPremisesTagSetList;
     bool m_onPremisesTagSetListHasBeenSet;
   };

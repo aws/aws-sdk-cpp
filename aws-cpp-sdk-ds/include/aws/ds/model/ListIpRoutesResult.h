@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListIpRoutesResult();
-    ListIpRoutesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListIpRoutesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIpRoutesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIpRoutesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <a>IpRoute</a>s.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of <a>IpRoute</a>s.</p>
      */
     inline ListIpRoutesResult& AddIpRoutesInfo(IpRouteInfo&& value) { m_ipRoutesInfo.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If not null, more results are available. Pass this value for the
@@ -128,7 +130,9 @@ namespace Model
     inline ListIpRoutesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<IpRouteInfo> m_ipRoutesInfo;
+
     Aws::String m_nextToken;
   };
 

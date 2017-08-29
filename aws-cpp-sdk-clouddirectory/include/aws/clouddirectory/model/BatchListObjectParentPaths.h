@@ -49,6 +49,7 @@ namespace Model
     BatchListObjectParentPaths& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
     inline BatchListObjectParentPaths& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline BatchListObjectParentPaths& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -125,10 +128,13 @@ namespace Model
     inline BatchListObjectParentPaths& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

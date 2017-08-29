@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteDashboardsResult();
-    DeleteDashboardsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteDashboardsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteDashboardsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteDashboardsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -57,6 +58,7 @@ namespace Model
     inline DeleteDashboardsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ResponseMetadata m_responseMetadata;
   };
 

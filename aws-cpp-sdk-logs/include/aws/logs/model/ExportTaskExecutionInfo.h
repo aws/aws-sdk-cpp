@@ -43,6 +43,7 @@ namespace Model
     ExportTaskExecutionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The creation time of the export task, expressed as the number of milliseconds
      * since Jan 1, 1970 00:00:00 UTC.</p>
@@ -60,6 +61,7 @@ namespace Model
      * since Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline ExportTaskExecutionInfo& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
+
 
     /**
      * <p>The completion time of the export task, expressed as the number of
@@ -80,8 +82,10 @@ namespace Model
     inline ExportTaskExecutionInfo& WithCompletionTime(long long value) { SetCompletionTime(value); return *this;}
 
   private:
+
     long long m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     long long m_completionTime;
     bool m_completionTimeHasBeenSet;
   };

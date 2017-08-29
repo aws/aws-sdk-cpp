@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline ListResourceServersRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The maximum number of resource servers to return.</p>
      */
@@ -85,6 +87,7 @@ namespace Model
      * <p>The maximum number of resource servers to return.</p>
      */
     inline ListResourceServersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A pagination token.</p>
@@ -122,10 +125,13 @@ namespace Model
     inline ListResourceServersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

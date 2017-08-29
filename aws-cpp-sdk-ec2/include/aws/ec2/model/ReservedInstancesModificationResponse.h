@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID for the Reserved Instances that were created as part of the
      * modification request. This field is only available when the modification is
@@ -98,6 +99,7 @@ namespace Model
      */
     inline ReservedInstancesModificationResponse& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
+
     /**
      * <p>The target Reserved Instances configurations supplied as part of the
      * modification request.</p>
@@ -129,8 +131,10 @@ namespace Model
     inline ReservedInstancesModificationResponse& WithTargetConfiguration(ReservedInstancesConfiguration&& value) { SetTargetConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet;
+
     ReservedInstancesConfiguration m_targetConfiguration;
     bool m_targetConfigurationHasBeenSet;
   };

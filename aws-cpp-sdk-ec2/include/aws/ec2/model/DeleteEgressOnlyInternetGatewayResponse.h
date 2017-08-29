@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteEgressOnlyInternetGatewayResponse();
-    DeleteEgressOnlyInternetGatewayResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteEgressOnlyInternetGatewayResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteEgressOnlyInternetGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteEgressOnlyInternetGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
@@ -59,6 +60,7 @@ namespace Model
      */
     inline DeleteEgressOnlyInternetGatewayResponse& WithReturnCode(bool value) { SetReturnCode(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -75,7 +77,9 @@ namespace Model
     inline DeleteEgressOnlyInternetGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     bool m_returnCode;
+
     ResponseMetadata m_responseMetadata;
   };
 

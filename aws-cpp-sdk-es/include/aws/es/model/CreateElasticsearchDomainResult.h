@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateElasticsearchDomainResult();
-    CreateElasticsearchDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateElasticsearchDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateElasticsearchDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateElasticsearchDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the newly created Elasticsearch domain. </p>
@@ -74,6 +75,7 @@ namespace Model
     inline CreateElasticsearchDomainResult& WithDomainStatus(ElasticsearchDomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
 
   private:
+
     ElasticsearchDomainStatus m_domainStatus;
   };
 

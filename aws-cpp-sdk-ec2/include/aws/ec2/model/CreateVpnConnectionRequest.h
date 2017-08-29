@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the customer gateway.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The ID of the customer gateway.</p>
      */
     inline CreateVpnConnectionRequest& WithCustomerGatewayId(const char* value) { SetCustomerGatewayId(value); return *this;}
+
 
     /**
      * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline CreateVpnConnectionRequest& WithType(const char* value) { SetType(value); return *this;}
 
+
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      */
     inline CreateVpnConnectionRequest& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -171,6 +175,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CreateVpnConnectionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>Indicates whether the VPN connection requires static routes. If you are
@@ -208,14 +213,19 @@ namespace Model
     inline CreateVpnConnectionRequest& WithOptions(VpnConnectionOptionsSpecification&& value) { SetOptions(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_customerGatewayId;
     bool m_customerGatewayIdHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_vpnGatewayId;
     bool m_vpnGatewayIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     VpnConnectionOptionsSpecification m_options;
     bool m_optionsHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetGroupCertificateAuthorityResult();
-    GetGroupCertificateAuthorityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGroupCertificateAuthorityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGroupCertificateAuthorityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGroupCertificateAuthorityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the certificate authority for the group.
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const char* value) { SetGroupCertificateAuthorityArn(value); return *this;}
 
+
     /**
      * Id of the certificate authority for the group.
      */
@@ -110,6 +112,7 @@ namespace Model
      * Id of the certificate authority for the group.
      */
     inline GetGroupCertificateAuthorityResult& WithGroupCertificateAuthorityId(const char* value) { SetGroupCertificateAuthorityId(value); return *this;}
+
 
     /**
      * PEM encoded certificate for the group.
@@ -147,8 +150,11 @@ namespace Model
     inline GetGroupCertificateAuthorityResult& WithPemEncodedCertificate(const char* value) { SetPemEncodedCertificate(value); return *this;}
 
   private:
+
     Aws::String m_groupCertificateAuthorityArn;
+
     Aws::String m_groupCertificateAuthorityId;
+
     Aws::String m_pemEncodedCertificate;
   };
 

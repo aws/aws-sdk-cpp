@@ -30,12 +30,12 @@ GetSchemaAsJsonResult::GetSchemaAsJsonResult()
 {
 }
 
-GetSchemaAsJsonResult::GetSchemaAsJsonResult(const AmazonWebServiceResult<JsonValue>& result)
+GetSchemaAsJsonResult::GetSchemaAsJsonResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetSchemaAsJsonResult& GetSchemaAsJsonResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSchemaAsJsonResult& GetSchemaAsJsonResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Name"))

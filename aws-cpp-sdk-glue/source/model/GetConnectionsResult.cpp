@@ -30,12 +30,12 @@ GetConnectionsResult::GetConnectionsResult()
 {
 }
 
-GetConnectionsResult::GetConnectionsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetConnectionsResult::GetConnectionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetConnectionsResult& GetConnectionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetConnectionsResult& GetConnectionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ConnectionList"))

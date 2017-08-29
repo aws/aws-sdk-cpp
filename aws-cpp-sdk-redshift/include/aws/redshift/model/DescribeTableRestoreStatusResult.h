@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeTableRestoreStatusResult();
-    DescribeTableRestoreStatusResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeTableRestoreStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeTableRestoreStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeTableRestoreStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of status details for one or more table restore requests.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list of status details for one or more table restore requests.</p>
      */
     inline DescribeTableRestoreStatusResult& AddTableRestoreStatusDetails(TableRestoreStatus&& value) { m_tableRestoreStatusDetails.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token that can be used in a subsequent
@@ -126,6 +128,7 @@ namespace Model
      */
     inline DescribeTableRestoreStatusResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline DescribeTableRestoreStatusResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<TableRestoreStatus> m_tableRestoreStatusDetails;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

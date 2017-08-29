@@ -30,12 +30,12 @@ DescribeVTLDevicesResult::DescribeVTLDevicesResult()
 {
 }
 
-DescribeVTLDevicesResult::DescribeVTLDevicesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeVTLDevicesResult::DescribeVTLDevicesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeVTLDevicesResult& DescribeVTLDevicesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeVTLDevicesResult& DescribeVTLDevicesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

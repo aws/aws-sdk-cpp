@@ -30,12 +30,12 @@ GetInstanceSnapshotsResult::GetInstanceSnapshotsResult()
 {
 }
 
-GetInstanceSnapshotsResult::GetInstanceSnapshotsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetInstanceSnapshotsResult::GetInstanceSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetInstanceSnapshotsResult& GetInstanceSnapshotsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetInstanceSnapshotsResult& GetInstanceSnapshotsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("instanceSnapshots"))

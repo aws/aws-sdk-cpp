@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>A streaming distribution Configuration.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>A streaming distribution Configuration.</p>
      */
     inline StreamingDistributionConfigWithTags& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
@@ -99,8 +101,10 @@ namespace Model
     inline StreamingDistributionConfigWithTags& WithTags(Tags&& value) { SetTags(std::move(value)); return *this;}
 
   private:
+
     StreamingDistributionConfig m_streamingDistributionConfig;
     bool m_streamingDistributionConfigHasBeenSet;
+
     Tags m_tags;
     bool m_tagsHasBeenSet;
   };

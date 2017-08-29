@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a game session placement to cancel.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline StopGameSessionPlacementRequest& WithPlacementId(const char* value) { SetPlacementId(value); return *this;}
 
   private:
+
     Aws::String m_placementId;
     bool m_placementIdHasBeenSet;
   };

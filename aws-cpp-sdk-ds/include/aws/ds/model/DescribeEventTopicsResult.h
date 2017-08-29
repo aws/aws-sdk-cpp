@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeEventTopicsResult();
-    DescribeEventTopicsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEventTopicsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventTopicsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEventTopicsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of SNS topic names that receive status messages from the specified
@@ -90,6 +91,7 @@ namespace Model
     inline DescribeEventTopicsResult& AddEventTopics(EventTopic&& value) { m_eventTopics.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<EventTopic> m_eventTopics;
   };
 

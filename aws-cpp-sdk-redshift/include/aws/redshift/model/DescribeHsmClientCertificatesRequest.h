@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
@@ -91,6 +92,7 @@ namespace Model
      */
     inline DescribeHsmClientCertificatesRequest& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
+
     /**
      * <p>The maximum number of response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
@@ -120,6 +122,7 @@ namespace Model
      * maximum 100.</p>
      */
     inline DescribeHsmClientCertificatesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -190,6 +193,7 @@ namespace Model
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeHsmClientCertificatesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>A tag key or keys for which you want to return all matching HSM client
@@ -278,6 +282,7 @@ namespace Model
      * them.</p>
      */
     inline DescribeHsmClientCertificatesRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+
 
     /**
      * <p>A tag value or values for which you want to return all matching HSM client
@@ -368,14 +373,19 @@ namespace Model
     inline DescribeHsmClientCertificatesRequest& AddTagValues(const char* value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
 
   private:
+
     Aws::String m_hsmClientCertificateIdentifier;
     bool m_hsmClientCertificateIdentifierHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagValues;
     bool m_tagValuesHasBeenSet;
   };

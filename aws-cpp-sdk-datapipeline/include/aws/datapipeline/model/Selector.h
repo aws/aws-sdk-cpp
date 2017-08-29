@@ -47,6 +47,7 @@ namespace Model
     Selector& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the field that the operator will be applied to. The field name is
      * the "key" portion of the field definition in the pipeline definition syntax that
@@ -103,6 +104,7 @@ namespace Model
      */
     inline Selector& WithFieldName(const char* value) { SetFieldName(value); return *this;}
 
+
     
     inline const Operator& GetOperator() const{ return m_operator; }
 
@@ -119,8 +121,10 @@ namespace Model
     inline Selector& WithOperator(Operator&& value) { SetOperator(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_fieldName;
     bool m_fieldNameHasBeenSet;
+
     Operator m_operator;
     bool m_operatorHasBeenSet;
   };

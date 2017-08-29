@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListTagsForCertificateResult();
-    ListTagsForCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The key-value pairs that define the applied tags.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline ListTagsForCertificateResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Tag> m_tags;
   };
 

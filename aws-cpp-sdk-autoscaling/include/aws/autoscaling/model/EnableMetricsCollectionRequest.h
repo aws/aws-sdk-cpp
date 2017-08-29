@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or ARN of the Auto Scaling group.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name or ARN of the Auto Scaling group.</p>
      */
     inline EnableMetricsCollectionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
@@ -174,6 +176,7 @@ namespace Model
      */
     inline EnableMetricsCollectionRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
+
     /**
      * <p>The granularity to associate with the metrics to collect. The only valid
      * value is <code>1Minute</code>.</p>
@@ -217,10 +220,13 @@ namespace Model
     inline EnableMetricsCollectionRequest& WithGranularity(const char* value) { SetGranularity(value); return *this;}
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_metrics;
     bool m_metricsHasBeenSet;
+
     Aws::String m_granularity;
     bool m_granularityHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     PutScalingPolicyResult();
-    PutScalingPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutScalingPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resulting scaling policy.</p>
      */
     inline PutScalingPolicyResult& WithPolicyARN(const char* value) { SetPolicyARN(value); return *this;}
+
 
     /**
      * <p>The CloudWatch alarms created for the target tracking policy.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline PutScalingPolicyResult& AddAlarms(Alarm&& value) { m_alarms.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_policyARN;
+
     Aws::Vector<Alarm> m_alarms;
   };
 

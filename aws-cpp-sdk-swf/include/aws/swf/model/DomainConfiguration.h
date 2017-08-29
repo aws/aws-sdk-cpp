@@ -46,6 +46,7 @@ namespace Model
     DomainConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The retention period for workflow executions in this domain.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline DomainConfiguration& WithWorkflowExecutionRetentionPeriodInDays(const char* value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
 
   private:
+
     Aws::String m_workflowExecutionRetentionPeriodInDays;
     bool m_workflowExecutionRetentionPeriodInDaysHasBeenSet;
   };

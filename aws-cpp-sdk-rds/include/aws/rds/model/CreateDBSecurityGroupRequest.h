@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name for the DB security group. This value is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
@@ -113,6 +114,7 @@ namespace Model
      */
     inline CreateDBSecurityGroupRequest& WithDBSecurityGroupName(const char* value) { SetDBSecurityGroupName(value); return *this;}
 
+
     /**
      * <p>The description for the DB security group.</p>
      */
@@ -148,6 +150,7 @@ namespace Model
      */
     inline CreateDBSecurityGroupRequest& WithDBSecurityGroupDescription(const char* value) { SetDBSecurityGroupDescription(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -170,10 +173,13 @@ namespace Model
     inline CreateDBSecurityGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_dBSecurityGroupName;
     bool m_dBSecurityGroupNameHasBeenSet;
+
     Aws::String m_dBSecurityGroupDescription;
     bool m_dBSecurityGroupDescriptionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

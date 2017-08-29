@@ -46,6 +46,7 @@ namespace Model
     BatchCreateIndexResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline BatchCreateIndexResponse& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_objectIdentifier;
     bool m_objectIdentifierHasBeenSet;
   };

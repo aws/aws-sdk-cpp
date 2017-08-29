@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteServiceResult();
-    DeleteServiceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteServiceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The full description of the deleted service.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DeleteServiceResult& WithService(Service&& value) { SetService(std::move(value)); return *this;}
 
   private:
+
     Service m_service;
   };
 

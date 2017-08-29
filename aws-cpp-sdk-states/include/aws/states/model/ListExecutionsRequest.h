@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions will be
      * listed.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline ListExecutionsRequest& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
 
+
     /**
      * <p>If specified, only list the executions whose current execution status matches
      * the given filter.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline ListExecutionsRequest& WithStatusFilter(ExecutionStatus&& value) { SetStatusFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of results that will be returned per call.
      * <code>nextToken</code> can be used to obtain further pages of results. The
@@ -135,6 +138,7 @@ namespace Model
      * than the specified maximum.</p>
      */
     inline ListExecutionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>If a <code>nextToken</code> was returned by a previous call, there are more
@@ -200,12 +204,16 @@ namespace Model
     inline ListExecutionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_stateMachineArn;
     bool m_stateMachineArnHasBeenSet;
+
     ExecutionStatus m_statusFilter;
     bool m_statusFilterHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

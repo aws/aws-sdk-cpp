@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The topic you want to publish to.</p> <p>If you don't specify a value for the
      * <code>TopicArn</code> parameter, you must specify a value for the
@@ -92,6 +93,7 @@ namespace Model
      */
     inline PublishRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
+
     /**
      * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
      * value for the <code>TargetArn</code> parameter, you must specify a value for the
@@ -140,6 +142,7 @@ namespace Model
      * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
      */
     inline PublishRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+
 
     /**
      * <p>The phone number to which you want to deliver an SMS message. Use E.164
@@ -196,6 +199,7 @@ namespace Model
      * <code>TopicArn</code> parameters.</p>
      */
     inline PublishRequest& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+
 
     /**
      * <p>The message you want to send to the topic.</p> <p>If you want to send the
@@ -365,6 +369,7 @@ namespace Model
      */
     inline PublishRequest& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>Optional parameter to be used as the "Subject" line when the message is
      * delivered to email endpoints. This field will also be included, if present, in
@@ -434,6 +439,7 @@ namespace Model
      * 100 characters long.</p>
      */
     inline PublishRequest& WithSubject(const char* value) { SetSubject(value); return *this;}
+
 
     /**
      * <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a
@@ -561,6 +567,7 @@ namespace Model
      */
     inline PublishRequest& WithMessageStructure(const char* value) { SetMessageStructure(value); return *this;}
 
+
     /**
      * <p>Message attributes for Publish action.</p>
      */
@@ -617,18 +624,25 @@ namespace Model
     inline PublishRequest& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet;
+
     Aws::String m_phoneNumber;
     bool m_phoneNumberHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::String m_subject;
     bool m_subjectHasBeenSet;
+
     Aws::String m_messageStructure;
     bool m_messageStructureHasBeenSet;
+
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
     bool m_messageAttributesHasBeenSet;
   };

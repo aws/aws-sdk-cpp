@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone where the resulting volume will reside.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ImportVolumeTaskDetails& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The number of bytes converted so far.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The number of bytes converted so far.</p>
      */
     inline ImportVolumeTaskDetails& WithBytesConverted(long long value) { SetBytesConverted(value); return *this;}
+
 
     /**
      * <p>The description you provided when starting the import volume task.</p>
@@ -135,6 +138,7 @@ namespace Model
      */
     inline ImportVolumeTaskDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The image.</p>
      */
@@ -159,6 +163,7 @@ namespace Model
      * <p>The image.</p>
      */
     inline ImportVolumeTaskDetails& WithImage(DiskImageDescription&& value) { SetImage(std::move(value)); return *this;}
+
 
     /**
      * <p>The volume.</p>
@@ -186,14 +191,19 @@ namespace Model
     inline ImportVolumeTaskDetails& WithVolume(DiskImageVolumeDescription&& value) { SetVolume(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     long long m_bytesConverted;
     bool m_bytesConvertedHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     DiskImageDescription m_image;
     bool m_imageHasBeenSet;
+
     DiskImageVolumeDescription m_volume;
     bool m_volumeHasBeenSet;
   };

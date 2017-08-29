@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name associated with the parameter.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name associated with the parameter.</p>
      */
     inline TemplateParameter& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}
+
 
     /**
      * <p>The default value associated with the parameter.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline TemplateParameter& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
+
     /**
      * <p>Flag indicating whether the parameter should be displayed as plain text in
      * logs and UIs.</p>
@@ -135,6 +138,7 @@ namespace Model
      * logs and UIs.</p>
      */
     inline TemplateParameter& WithNoEcho(bool value) { SetNoEcho(value); return *this;}
+
 
     /**
      * <p>User defined description associated with the parameter.</p>
@@ -172,12 +176,16 @@ namespace Model
     inline TemplateParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_parameterKey;
     bool m_parameterKeyHasBeenSet;
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     bool m_noEcho;
     bool m_noEchoHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

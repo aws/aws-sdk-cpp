@@ -30,12 +30,12 @@ CreateCrawlerResult::CreateCrawlerResult()
 {
 }
 
-CreateCrawlerResult::CreateCrawlerResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateCrawlerResult::CreateCrawlerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateCrawlerResult& CreateCrawlerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateCrawlerResult& CreateCrawlerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

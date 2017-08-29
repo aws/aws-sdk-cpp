@@ -45,6 +45,7 @@ namespace Model
     DeviceMinutes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>When specified, represents the total minutes used by the resource to run
      * tests.</p>
@@ -63,6 +64,7 @@ namespace Model
      */
     inline DeviceMinutes& WithTotal(double value) { SetTotal(value); return *this;}
 
+
     /**
      * <p>When specified, represents only the sum of metered minutes used by the
      * resource to run tests.</p>
@@ -80,6 +82,7 @@ namespace Model
      * resource to run tests.</p>
      */
     inline DeviceMinutes& WithMetered(double value) { SetMetered(value); return *this;}
+
 
     /**
      * <p>When specified, represents only the sum of unmetered minutes used by the
@@ -100,10 +103,13 @@ namespace Model
     inline DeviceMinutes& WithUnmetered(double value) { SetUnmetered(value); return *this;}
 
   private:
+
     double m_total;
     bool m_totalHasBeenSet;
+
     double m_metered;
     bool m_meteredHasBeenSet;
+
     double m_unmetered;
     bool m_unmeteredHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::Utils::ByteBuffer& GetValue() const{ return m_value; }
 
@@ -59,6 +60,7 @@ namespace Model
     inline BlobAttributeValue& WithValue(Aws::Utils::ByteBuffer&& value) { SetValue(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_value;
     bool m_valueHasBeenSet;
   };

@@ -30,12 +30,12 @@ GetReplicationRunsResult::GetReplicationRunsResult()
 {
 }
 
-GetReplicationRunsResult::GetReplicationRunsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetReplicationRunsResult::GetReplicationRunsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetReplicationRunsResult& GetReplicationRunsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetReplicationRunsResult& GetReplicationRunsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("replicationJob"))

@@ -51,6 +51,7 @@ namespace Model
     ItemCollectionMetrics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The partition key value of the item collection. This value is the same as the
      * partition key value of the item.</p>
@@ -116,6 +117,7 @@ namespace Model
      * partition key value of the item.</p>
      */
     inline ItemCollectionMetrics& AddItemCollectionKey(const char* key, const AttributeValue& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey.emplace(key, value); return *this; }
+
 
     /**
      * <p>An estimate of item collection size, in gigabytes. This value is a
@@ -184,8 +186,10 @@ namespace Model
     inline ItemCollectionMetrics& AddSizeEstimateRangeGB(double value) { m_sizeEstimateRangeGBHasBeenSet = true; m_sizeEstimateRangeGB.push_back(value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, AttributeValue> m_itemCollectionKey;
     bool m_itemCollectionKeyHasBeenSet;
+
     Aws::Vector<double> m_sizeEstimateRangeGB;
     bool m_sizeEstimateRangeGBHasBeenSet;
   };

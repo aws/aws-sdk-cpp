@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      */
     inline SpotPrice& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      */
     inline SpotPrice& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>A general description of the AMI.</p>
      */
@@ -136,6 +139,7 @@ namespace Model
      * <p>A general description of the AMI.</p>
      */
     inline SpotPrice& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>The maximum price (bid) that you are willing to pay for a Spot instance.</p>
@@ -172,6 +176,7 @@ namespace Model
      */
     inline SpotPrice& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
+
     /**
      * <p>The date and time the request was created, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
@@ -203,14 +208,19 @@ namespace Model
     inline SpotPrice& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     RIProductDescription m_productDescription;
     bool m_productDescriptionHasBeenSet;
+
     Aws::String m_spotPrice;
     bool m_spotPriceHasBeenSet;
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
   };

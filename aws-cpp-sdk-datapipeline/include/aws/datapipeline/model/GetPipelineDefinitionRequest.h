@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the pipeline.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ID of the pipeline.</p>
      */
     inline GetPipelineDefinitionRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+
 
     /**
      * <p>The version of the pipeline definition to retrieve. Set this parameter to
@@ -125,8 +127,10 @@ namespace Model
     inline GetPipelineDefinitionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

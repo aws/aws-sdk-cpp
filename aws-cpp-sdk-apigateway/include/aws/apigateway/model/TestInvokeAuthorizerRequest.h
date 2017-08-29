@@ -39,6 +39,7 @@ namespace Model
     TestInvokeAuthorizerRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline TestInvokeAuthorizerRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      * <p>Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
      */
     inline TestInvokeAuthorizerRequest& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
+
 
     /**
      * <p>[Optional] The URI path, including query string, of the simulated invocation
@@ -150,6 +153,7 @@ namespace Model
      * request. Use this to specify path parameters and query string parameters.</p>
      */
     inline TestInvokeAuthorizerRequest& WithPathWithQueryString(const char* value) { SetPathWithQueryString(value); return *this;}
+
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
@@ -223,6 +227,7 @@ namespace Model
      */
     inline TestInvokeAuthorizerRequest& AddStageVariables(const char* key, const char* value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, value); return *this; }
 
+
     /**
      * <p>[Optional] A key-value map of additional context variables.</p>
      */
@@ -283,6 +288,7 @@ namespace Model
      */
     inline TestInvokeAuthorizerRequest& AddAdditionalContext(const char* key, const char* value) { m_additionalContextHasBeenSet = true; m_additionalContext.emplace(key, value); return *this; }
 
+
     /**
      * <p>[Optional] The simulated request body of an incoming invocation request.</p>
      */
@@ -317,6 +323,7 @@ namespace Model
      * <p>[Optional] The simulated request body of an incoming invocation request.</p>
      */
     inline TestInvokeAuthorizerRequest& WithRequestBody(const char* value) { SetRequestBody(value); return *this;}
+
 
     /**
      * <p>[Required] A key-value map of headers to simulate an incoming invocation
@@ -403,18 +410,25 @@ namespace Model
     inline TestInvokeAuthorizerRequest& AddRequestHeaders(const char* key, const char* value) { m_requestHeadersHasBeenSet = true; m_requestHeaders.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_authorizerId;
     bool m_authorizerIdHasBeenSet;
+
     Aws::String m_pathWithQueryString;
     bool m_pathWithQueryStringHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_stageVariables;
     bool m_stageVariablesHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_additionalContext;
     bool m_additionalContextHasBeenSet;
+
     Aws::String m_requestBody;
     bool m_requestBodyHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_requestHeaders;
     bool m_requestHeadersHasBeenSet;
   };

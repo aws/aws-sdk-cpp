@@ -46,6 +46,7 @@ namespace Model
     ProgressUpdateStreamSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline ProgressUpdateStreamSummary& WithProgressUpdateStreamName(const char* value) { SetProgressUpdateStreamName(value); return *this;}
 
   private:
+
     Aws::String m_progressUpdateStreamName;
     bool m_progressUpdateStreamNameHasBeenSet;
   };

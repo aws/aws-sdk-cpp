@@ -47,6 +47,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the domain you want to describe.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the domain you want to describe.</p>
      */
     inline DescribeExpressionsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>Limits the <code><a>DescribeExpressions</a></code> response to the specified
@@ -130,6 +132,7 @@ namespace Model
      */
     inline DescribeExpressionsRequest& AddExpressionNames(const char* value) { m_expressionNamesHasBeenSet = true; m_expressionNames.push_back(value); return *this; }
 
+
     /**
      * <p>Whether to display the deployed configuration (<code>true</code>) or include
      * any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -149,10 +152,13 @@ namespace Model
     inline DescribeExpressionsRequest& WithDeployed(bool value) { SetDeployed(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_expressionNames;
     bool m_expressionNamesHasBeenSet;
+
     bool m_deployed;
     bool m_deployedHasBeenSet;
   };

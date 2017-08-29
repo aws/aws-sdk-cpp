@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The frequency (<code>Daily</code>, <code>Weekly</code>, or
      * <code>Monthly</code>).</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline ScheduledInstanceRecurrence& WithFrequency(const char* value) { SetFrequency(value); return *this;}
 
+
     /**
      * <p>The interval quantity. The interval unit depends on the value of
      * <code>frequency</code>. For example, every 2 weeks or every 2 months.</p>
@@ -109,6 +111,7 @@ namespace Model
      * <code>frequency</code>. For example, every 2 weeks or every 2 months.</p>
      */
     inline ScheduledInstanceRecurrence& WithInterval(int value) { SetInterval(value); return *this;}
+
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
@@ -152,6 +155,7 @@ namespace Model
      */
     inline ScheduledInstanceRecurrence& AddOccurrenceDaySet(int value) { m_occurrenceDaySetHasBeenSet = true; m_occurrenceDaySet.push_back(value); return *this; }
 
+
     /**
      * <p>Indicates whether the occurrence is relative to the end of the specified week
      * or month.</p>
@@ -169,6 +173,7 @@ namespace Model
      * or month.</p>
      */
     inline ScheduledInstanceRecurrence& WithOccurrenceRelativeToEnd(bool value) { SetOccurrenceRelativeToEnd(value); return *this;}
+
 
     /**
      * <p>The unit for <code>occurrenceDaySet</code> (<code>DayOfWeek</code> or
@@ -213,14 +218,19 @@ namespace Model
     inline ScheduledInstanceRecurrence& WithOccurrenceUnit(const char* value) { SetOccurrenceUnit(value); return *this;}
 
   private:
+
     Aws::String m_frequency;
     bool m_frequencyHasBeenSet;
+
     int m_interval;
     bool m_intervalHasBeenSet;
+
     Aws::Vector<int> m_occurrenceDaySet;
     bool m_occurrenceDaySetHasBeenSet;
+
     bool m_occurrenceRelativeToEnd;
     bool m_occurrenceRelativeToEndHasBeenSet;
+
     Aws::String m_occurrenceUnit;
     bool m_occurrenceUnitHasBeenSet;
   };

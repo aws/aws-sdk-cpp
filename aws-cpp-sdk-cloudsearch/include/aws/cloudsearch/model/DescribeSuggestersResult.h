@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeSuggestersResult();
-    DescribeSuggestersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSuggestersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSuggestersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSuggestersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The suggesters configured for the domain specified in the request.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeSuggestersResult& AddSuggesters(SuggesterStatus&& value) { m_suggesters.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeSuggestersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<SuggesterStatus> m_suggesters;
+
     ResponseMetadata m_responseMetadata;
   };
 

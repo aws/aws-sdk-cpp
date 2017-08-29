@@ -46,12 +46,12 @@ UpdateThingShadowResult& UpdateThingShadowResult::operator=(UpdateThingShadowRes
    return *this;
 }
 
-UpdateThingShadowResult::UpdateThingShadowResult(AmazonWebServiceResult<ResponseStream>&& result)
+UpdateThingShadowResult::UpdateThingShadowResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
 }
 
-UpdateThingShadowResult& UpdateThingShadowResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+UpdateThingShadowResult& UpdateThingShadowResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_payload = result.TakeOwnershipOfPayload();
 

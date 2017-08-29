@@ -46,6 +46,7 @@ namespace Model
     UploadMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The URL of the upload.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The URL of the upload.</p>
      */
     inline UploadMetadata& WithUploadUrl(const char* value) { SetUploadUrl(value); return *this;}
+
 
     /**
      * <p>The signed headers.</p>
@@ -142,8 +144,10 @@ namespace Model
     inline UploadMetadata& AddSignedHeaders(const char* key, const char* value) { m_signedHeadersHasBeenSet = true; m_signedHeaders.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_uploadUrl;
     bool m_uploadUrlHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_signedHeaders;
     bool m_signedHeadersHasBeenSet;
   };

@@ -30,12 +30,12 @@ UpdateFleetPortSettingsResult::UpdateFleetPortSettingsResult()
 {
 }
 
-UpdateFleetPortSettingsResult::UpdateFleetPortSettingsResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateFleetPortSettingsResult::UpdateFleetPortSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateFleetPortSettingsResult& UpdateFleetPortSettingsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateFleetPortSettingsResult& UpdateFleetPortSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FleetId"))

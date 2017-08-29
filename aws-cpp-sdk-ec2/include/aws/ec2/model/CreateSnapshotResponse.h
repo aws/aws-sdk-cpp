@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     CreateSnapshotResponse();
-    CreateSnapshotResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateSnapshotResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateSnapshotResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateSnapshotResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The data encryption key identifier for the snapshot. This value is a unique
@@ -128,6 +129,7 @@ namespace Model
      */
     inline CreateSnapshotResponse& WithDataEncryptionKeyId(const char* value) { SetDataEncryptionKeyId(value); return *this;}
 
+
     /**
      * <p>The description for the snapshot.</p>
      */
@@ -163,6 +165,7 @@ namespace Model
      */
     inline CreateSnapshotResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Indicates whether the snapshot is encrypted.</p>
      */
@@ -177,6 +180,7 @@ namespace Model
      * <p>Indicates whether the snapshot is encrypted.</p>
      */
     inline CreateSnapshotResponse& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
@@ -227,6 +231,7 @@ namespace Model
      */
     inline CreateSnapshotResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>The AWS account ID of the EBS snapshot owner.</p>
      */
@@ -262,6 +267,7 @@ namespace Model
      */
     inline CreateSnapshotResponse& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
     /**
      * <p>The progress of the snapshot, as a percentage.</p>
      */
@@ -296,6 +302,7 @@ namespace Model
      * <p>The progress of the snapshot, as a percentage.</p>
      */
     inline CreateSnapshotResponse& WithProgress(const char* value) { SetProgress(value); return *this;}
+
 
     /**
      * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
@@ -339,6 +346,7 @@ namespace Model
      */
     inline CreateSnapshotResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
@@ -364,6 +372,7 @@ namespace Model
      */
     inline CreateSnapshotResponse& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The snapshot state.</p>
      */
@@ -388,6 +397,7 @@ namespace Model
      * <p>The snapshot state.</p>
      */
     inline CreateSnapshotResponse& WithState(SnapshotState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
@@ -452,6 +462,7 @@ namespace Model
      */
     inline CreateSnapshotResponse& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
 
+
     /**
      * <p>The ID of the volume that was used to create the snapshot. Snapshots created
      * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
@@ -501,6 +512,7 @@ namespace Model
      */
     inline CreateSnapshotResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     /**
      * <p>The size of the volume, in GiB.</p>
      */
@@ -515,6 +527,7 @@ namespace Model
      * <p>The size of the volume, in GiB.</p>
      */
     inline CreateSnapshotResponse& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
+
 
     /**
      * <p> Value from an Amazon-maintained list (<code>amazon</code> |
@@ -572,6 +585,7 @@ namespace Model
      */
     inline CreateSnapshotResponse& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
 
+
     /**
      * <p>Any tags assigned to the snapshot.</p>
      */
@@ -607,6 +621,7 @@ namespace Model
      */
     inline CreateSnapshotResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -623,20 +638,35 @@ namespace Model
     inline CreateSnapshotResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_dataEncryptionKeyId;
+
     Aws::String m_description;
+
     bool m_encrypted;
+
     Aws::String m_kmsKeyId;
+
     Aws::String m_ownerId;
+
     Aws::String m_progress;
+
     Aws::String m_snapshotId;
+
     Aws::Utils::DateTime m_startTime;
+
     SnapshotState m_state;
+
     Aws::String m_stateMessage;
+
     Aws::String m_volumeId;
+
     int m_volumeSize;
+
     Aws::String m_ownerAlias;
+
     Aws::Vector<Tag> m_tags;
+
     ResponseMetadata m_responseMetadata;
   };
 

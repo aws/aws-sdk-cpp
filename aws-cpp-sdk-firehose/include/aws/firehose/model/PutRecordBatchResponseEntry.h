@@ -49,6 +49,7 @@ namespace Model
     PutRecordBatchResponseEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the record.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline PutRecordBatchResponseEntry& WithRecordId(const char* value) { SetRecordId(value); return *this;}
 
+
     /**
      * <p>The error code for an individual record result.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The error code for an individual record result.</p>
      */
     inline PutRecordBatchResponseEntry& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The error message for an individual record result.</p>
@@ -155,10 +158,13 @@ namespace Model
     inline PutRecordBatchResponseEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     Aws::String m_recordId;
     bool m_recordIdHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

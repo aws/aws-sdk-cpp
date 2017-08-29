@@ -44,6 +44,7 @@ namespace Model
     CampaignSmsMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The SMS text body.
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline CampaignSmsMessage& WithBody(const char* value) { SetBody(value); return *this;}
 
+
     /**
      * Is this is a transactional SMS message, otherwise a promotional message.
      */
@@ -103,6 +105,7 @@ namespace Model
      * Is this is a transactional SMS message, otherwise a promotional message.
      */
     inline CampaignSmsMessage& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
+
 
     /**
      * Sender ID of sent message.
@@ -140,10 +143,13 @@ namespace Model
     inline CampaignSmsMessage& WithSenderId(const char* value) { SetSenderId(value); return *this;}
 
   private:
+
     Aws::String m_body;
     bool m_bodyHasBeenSet;
+
     MessageType m_messageType;
     bool m_messageTypeHasBeenSet;
+
     Aws::String m_senderId;
     bool m_senderIdHasBeenSet;
   };

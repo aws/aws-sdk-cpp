@@ -46,6 +46,7 @@ namespace Model
     GreenFleetProvisioningOption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The method used to add instances to a replacement environment.</p> <ul> <li>
      * <p>DISCOVER_EXISTING: Use instances that already exist or will be created
@@ -92,6 +93,7 @@ namespace Model
     inline GreenFleetProvisioningOption& WithAction(GreenFleetProvisioningAction&& value) { SetAction(std::move(value)); return *this;}
 
   private:
+
     GreenFleetProvisioningAction m_action;
     bool m_actionHasBeenSet;
   };

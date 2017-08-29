@@ -108,7 +108,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<DataPipelineErrors>> AddTagsOutcome;
         typedef Aws::Utils::Outcome<CreatePipelineResult, Aws::Client::AWSError<DataPipelineErrors>> CreatePipelineOutcome;
         typedef Aws::Utils::Outcome<DeactivatePipelineResult, Aws::Client::AWSError<DataPipelineErrors>> DeactivatePipelineOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<DataPipelineErrors>> DeletePipelineOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DataPipelineErrors>> DeletePipelineOutcome;
         typedef Aws::Utils::Outcome<DescribeObjectsResult, Aws::Client::AWSError<DataPipelineErrors>> DescribeObjectsOutcome;
         typedef Aws::Utils::Outcome<DescribePipelinesResult, Aws::Client::AWSError<DataPipelineErrors>> DescribePipelinesOutcome;
         typedef Aws::Utils::Outcome<EvaluateExpressionResult, Aws::Client::AWSError<DataPipelineErrors>> EvaluateExpressionOutcome;
@@ -120,7 +120,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<DataPipelineErrors>> RemoveTagsOutcome;
         typedef Aws::Utils::Outcome<ReportTaskProgressResult, Aws::Client::AWSError<DataPipelineErrors>> ReportTaskProgressOutcome;
         typedef Aws::Utils::Outcome<ReportTaskRunnerHeartbeatResult, Aws::Client::AWSError<DataPipelineErrors>> ReportTaskRunnerHeartbeatOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<DataPipelineErrors>> SetStatusOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DataPipelineErrors>> SetStatusOutcome;
         typedef Aws::Utils::Outcome<SetTaskStatusResult, Aws::Client::AWSError<DataPipelineErrors>> SetTaskStatusOutcome;
         typedef Aws::Utils::Outcome<ValidatePipelineDefinitionResult, Aws::Client::AWSError<DataPipelineErrors>> ValidatePipelineDefinitionOutcome;
 
@@ -196,22 +196,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DataPipelineClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        DataPipelineClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DataPipelineClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        DataPipelineClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        DataPipelineClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        DataPipelineClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~DataPipelineClient();
+
 
         /**
          * <p>Validates the specified pipeline and starts processing pipeline tasks. If the
@@ -933,7 +934,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void ActivatePipelineAsyncHelper(const Model::ActivatePipelineRequest& request, const ActivatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

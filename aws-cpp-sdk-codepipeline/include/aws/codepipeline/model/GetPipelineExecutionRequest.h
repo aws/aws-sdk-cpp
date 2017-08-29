@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the pipeline about which you want to get execution details.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the pipeline about which you want to get execution details.</p>
      */
     inline GetPipelineExecutionRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+
 
     /**
      * <p>The ID of the pipeline execution about which you want to get execution
@@ -118,8 +120,10 @@ namespace Model
     inline GetPipelineExecutionRequest& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
 
   private:
+
     Aws::String m_pipelineName;
     bool m_pipelineNameHasBeenSet;
+
     Aws::String m_pipelineExecutionId;
     bool m_pipelineExecutionIdHasBeenSet;
   };

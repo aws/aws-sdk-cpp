@@ -30,12 +30,12 @@ DescribeTimeBasedAutoScalingResult::DescribeTimeBasedAutoScalingResult()
 {
 }
 
-DescribeTimeBasedAutoScalingResult::DescribeTimeBasedAutoScalingResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTimeBasedAutoScalingResult::DescribeTimeBasedAutoScalingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeTimeBasedAutoScalingResult& DescribeTimeBasedAutoScalingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTimeBasedAutoScalingResult& DescribeTimeBasedAutoScalingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TimeBasedAutoScalingConfigurations"))

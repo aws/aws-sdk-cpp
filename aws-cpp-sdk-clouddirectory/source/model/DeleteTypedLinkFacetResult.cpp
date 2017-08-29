@@ -30,12 +30,12 @@ DeleteTypedLinkFacetResult::DeleteTypedLinkFacetResult()
 {
 }
 
-DeleteTypedLinkFacetResult::DeleteTypedLinkFacetResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTypedLinkFacetResult::DeleteTypedLinkFacetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteTypedLinkFacetResult& DeleteTypedLinkFacetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTypedLinkFacetResult& DeleteTypedLinkFacetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

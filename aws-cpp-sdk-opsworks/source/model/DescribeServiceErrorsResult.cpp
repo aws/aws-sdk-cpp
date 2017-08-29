@@ -30,12 +30,12 @@ DescribeServiceErrorsResult::DescribeServiceErrorsResult()
 {
 }
 
-DescribeServiceErrorsResult::DescribeServiceErrorsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeServiceErrorsResult::DescribeServiceErrorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeServiceErrorsResult& DescribeServiceErrorsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeServiceErrorsResult& DescribeServiceErrorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ServiceErrors"))

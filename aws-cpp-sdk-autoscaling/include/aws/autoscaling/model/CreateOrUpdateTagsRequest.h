@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more tags.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline CreateOrUpdateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain that contains the task lists being polled.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the domain that contains the task lists being polled.</p>
      */
     inline PollForActivityTaskRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>Specifies the task list to poll for activity tasks.</p> <p>The specified
@@ -121,6 +123,7 @@ namespace Model
      * <code>arn</code>.</p>
      */
     inline PollForActivityTaskRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+
 
     /**
      * <p>Identity of the worker making the request, recorded in the
@@ -179,10 +182,13 @@ namespace Model
     inline PollForActivityTaskRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     TaskList m_taskList;
     bool m_taskListHasBeenSet;
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DisassociateIamInstanceProfileResponse();
-    DisassociateIamInstanceProfileResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisassociateIamInstanceProfileResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DisassociateIamInstanceProfileResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DisassociateIamInstanceProfileResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the IAM instance profile association.</p>
@@ -67,6 +68,7 @@ namespace Model
      */
     inline DisassociateIamInstanceProfileResponse& WithIamInstanceProfileAssociation(IamInstanceProfileAssociation&& value) { SetIamInstanceProfileAssociation(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -83,7 +85,9 @@ namespace Model
     inline DisassociateIamInstanceProfileResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     IamInstanceProfileAssociation m_iamInstanceProfileAssociation;
+
     ResponseMetadata m_responseMetadata;
   };
 

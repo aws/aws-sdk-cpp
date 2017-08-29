@@ -64,13 +64,13 @@ PostContentResult& PostContentResult::operator=(PostContentResult&& toMove)
    return *this;
 }
 
-PostContentResult::PostContentResult(AmazonWebServiceResult<ResponseStream>&& result) : 
+PostContentResult::PostContentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
     m_dialogState(DialogState::NOT_SET)
 {
   *this = std::move(result);
 }
 
-PostContentResult& PostContentResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+PostContentResult& PostContentResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_audioStream = result.TakeOwnershipOfPayload();
 

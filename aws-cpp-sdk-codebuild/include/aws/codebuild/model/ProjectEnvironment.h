@@ -50,6 +50,7 @@ namespace Model
     ProjectEnvironment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of build environment to use for related builds.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The type of build environment to use for related builds.</p>
      */
     inline ProjectEnvironment& WithType(EnvironmentType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Docker image to use for this build project.</p>
@@ -109,6 +111,7 @@ namespace Model
      * <p>The ID of the Docker image to use for this build project.</p>
      */
     inline ProjectEnvironment& WithImage(const char* value) { SetImage(value); return *this;}
+
 
     /**
      * <p>Information about the compute resources the build project will use. Available
@@ -160,6 +163,7 @@ namespace Model
      */
     inline ProjectEnvironment& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
+
     /**
      * <p>A set of environment variables to make available to builds for this build
      * project.</p>
@@ -201,6 +205,7 @@ namespace Model
      * project.</p>
      */
     inline ProjectEnvironment& AddEnvironmentVariables(EnvironmentVariable&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If set to true, enables running the Docker daemon inside a Docker container;
@@ -257,14 +262,19 @@ namespace Model
     inline ProjectEnvironment& WithPrivilegedMode(bool value) { SetPrivilegedMode(value); return *this;}
 
   private:
+
     EnvironmentType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_image;
     bool m_imageHasBeenSet;
+
     ComputeType m_computeType;
     bool m_computeTypeHasBeenSet;
+
     Aws::Vector<EnvironmentVariable> m_environmentVariables;
     bool m_environmentVariablesHasBeenSet;
+
     bool m_privilegedMode;
     bool m_privilegedModeHasBeenSet;
   };

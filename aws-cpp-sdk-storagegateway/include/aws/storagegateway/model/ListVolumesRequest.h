@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline ListVolumesRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     /**
      * <p>A string that indicates the position at which to begin the returned list of
@@ -111,6 +113,7 @@ namespace Model
      */
     inline ListVolumesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Specifies that the list of volumes returned be limited to the specified
      * number of items.</p>
@@ -130,10 +133,13 @@ namespace Model
     inline ListVolumesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

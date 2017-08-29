@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the role to delete.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
@@ -95,6 +96,7 @@ namespace Model
     inline DeleteRoleRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
   private:
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
   };

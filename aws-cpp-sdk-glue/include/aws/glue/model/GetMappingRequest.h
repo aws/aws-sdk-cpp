@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the source table.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
      * <p>Specifies the source table.</p>
      */
     inline GetMappingRequest& WithSource(CatalogEntry&& value) { SetSource(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of target tables.</p>
@@ -98,6 +100,7 @@ namespace Model
      */
     inline GetMappingRequest& AddSinks(CatalogEntry&& value) { m_sinksHasBeenSet = true; m_sinks.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Parameters for the mapping.</p>
      */
@@ -124,10 +127,13 @@ namespace Model
     inline GetMappingRequest& WithLocation(Location&& value) { SetLocation(std::move(value)); return *this;}
 
   private:
+
     CatalogEntry m_source;
     bool m_sourceHasBeenSet;
+
     Aws::Vector<CatalogEntry> m_sinks;
     bool m_sinksHasBeenSet;
+
     Location m_location;
     bool m_locationHasBeenSet;
   };

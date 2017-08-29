@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListNamedQueriesResult();
-    ListNamedQueriesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListNamedQueriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListNamedQueriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListNamedQueriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of unique query IDs.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ListNamedQueriesResult& AddNamedQueryIds(const char* value) { m_namedQueryIds.push_back(value); return *this; }
 
+
     /**
      * <p>A token to be used by the next request if this request is truncated.</p>
      */
@@ -118,7 +120,9 @@ namespace Model
     inline ListNamedQueriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_namedQueryIds;
+
     Aws::String m_nextToken;
   };
 

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     PutApprovalResultResult();
-    PutApprovalResultResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutApprovalResultResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutApprovalResultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutApprovalResultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The timestamp showing when the approval or rejection was submitted.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline PutApprovalResultResult& WithApprovedAt(Aws::Utils::DateTime&& value) { SetApprovedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_approvedAt;
   };
 

@@ -31,13 +31,13 @@ ListBonusPaymentsResult::ListBonusPaymentsResult() :
 {
 }
 
-ListBonusPaymentsResult::ListBonusPaymentsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListBonusPaymentsResult::ListBonusPaymentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_numResults(0)
 {
   *this = result;
 }
 
-ListBonusPaymentsResult& ListBonusPaymentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListBonusPaymentsResult& ListBonusPaymentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NumResults"))

@@ -45,6 +45,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -65,6 +66,7 @@ namespace Model
 
     
     inline CreateStorediSCSIVolumeRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     /**
      * <p>The unique identifier for the gateway local disk that is configured as a
@@ -121,6 +123,7 @@ namespace Model
      * to list disk IDs for a gateway.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithDiskId(const char* value) { SetDiskId(value); return *this;}
+
 
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
@@ -192,6 +195,7 @@ namespace Model
      */
     inline CreateStorediSCSIVolumeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     /**
      * <p>Specify this field as true if you want to preserve the data on the local
      * disk. Otherwise, specifying this field as false creates an empty volume.</p> <p>
@@ -212,6 +216,7 @@ namespace Model
      * Valid Values: true, false</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithPreserveExistingData(bool value) { SetPreserveExistingData(value); return *this;}
+
 
     /**
      * <p>The name of the iSCSI target used by initiators to connect to the target and
@@ -276,6 +281,7 @@ namespace Model
      */
     inline CreateStorediSCSIVolumeRequest& WithTargetName(const char* value) { SetTargetName(value); return *this;}
 
+
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
@@ -333,16 +339,22 @@ namespace Model
     inline CreateStorediSCSIVolumeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     Aws::String m_diskId;
     bool m_diskIdHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     bool m_preserveExistingData;
     bool m_preserveExistingDataHasBeenSet;
+
     Aws::String m_targetName;
     bool m_targetNameHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
   };

@@ -30,12 +30,12 @@ CreateSnapshotResult::CreateSnapshotResult()
 {
 }
 
-CreateSnapshotResult::CreateSnapshotResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateSnapshotResult::CreateSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateSnapshotResult& CreateSnapshotResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateSnapshotResult& CreateSnapshotResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("VolumeARN"))

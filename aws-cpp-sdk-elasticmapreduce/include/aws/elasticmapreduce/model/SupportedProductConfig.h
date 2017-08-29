@@ -48,6 +48,7 @@ namespace Model
     SupportedProductConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the product configuration.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the product configuration.</p>
      */
     inline SupportedProductConfig& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The list of user-supplied arguments.</p>
@@ -124,8 +126,10 @@ namespace Model
     inline SupportedProductConfig& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_args;
     bool m_argsHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     BatchGetOnPremisesInstancesResult();
-    BatchGetOnPremisesInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetOnPremisesInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetOnPremisesInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetOnPremisesInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the on-premises instances.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline BatchGetOnPremisesInstancesResult& AddInstanceInfos(InstanceInfo&& value) { m_instanceInfos.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<InstanceInfo> m_instanceInfos;
   };
 

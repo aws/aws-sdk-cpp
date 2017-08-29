@@ -45,6 +45,7 @@ namespace Model
     RaidArray& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The array ID.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The array ID.</p>
      */
     inline RaidArray& WithRaidArrayId(const char* value) { SetRaidArrayId(value); return *this;}
+
 
     /**
      * <p>The instance ID.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline RaidArray& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The array name.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      */
     inline RaidArray& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      * level</a>.</p>
@@ -168,6 +172,7 @@ namespace Model
      */
     inline RaidArray& WithRaidLevel(int value) { SetRaidLevel(value); return *this;}
 
+
     /**
      * <p>The number of disks in the array.</p>
      */
@@ -183,6 +188,7 @@ namespace Model
      */
     inline RaidArray& WithNumberOfDisks(int value) { SetNumberOfDisks(value); return *this;}
 
+
     /**
      * <p>The array's size.</p>
      */
@@ -197,6 +203,7 @@ namespace Model
      * <p>The array's size.</p>
      */
     inline RaidArray& WithSize(int value) { SetSize(value); return *this;}
+
 
     /**
      * <p>The array's Linux device. For example /dev/mdadm0.</p>
@@ -233,6 +240,7 @@ namespace Model
      */
     inline RaidArray& WithDevice(const char* value) { SetDevice(value); return *this;}
 
+
     /**
      * <p>The array's mount point.</p>
      */
@@ -267,6 +275,7 @@ namespace Model
      * <p>The array's mount point.</p>
      */
     inline RaidArray& WithMountPoint(const char* value) { SetMountPoint(value); return *this;}
+
 
     /**
      * <p>The array's Availability Zone. For more information, see <a
@@ -317,6 +326,7 @@ namespace Model
      */
     inline RaidArray& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>When the RAID array was created.</p>
      */
@@ -351,6 +361,7 @@ namespace Model
      * <p>When the RAID array was created.</p>
      */
     inline RaidArray& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
 
     /**
      * <p>The stack ID.</p>
@@ -387,6 +398,7 @@ namespace Model
      */
     inline RaidArray& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The volume type, standard or PIOPS.</p>
      */
@@ -422,6 +434,7 @@ namespace Model
      */
     inline RaidArray& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
+
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
@@ -438,30 +451,43 @@ namespace Model
     inline RaidArray& WithIops(int value) { SetIops(value); return *this;}
 
   private:
+
     Aws::String m_raidArrayId;
     bool m_raidArrayIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     int m_raidLevel;
     bool m_raidLevelHasBeenSet;
+
     int m_numberOfDisks;
     bool m_numberOfDisksHasBeenSet;
+
     int m_size;
     bool m_sizeHasBeenSet;
+
     Aws::String m_device;
     bool m_deviceHasBeenSet;
+
     Aws::String m_mountPoint;
     bool m_mountPointHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
   };

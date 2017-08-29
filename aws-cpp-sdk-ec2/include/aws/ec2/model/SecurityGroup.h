@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A description of the security group.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>A description of the security group.</p>
      */
     inline SecurityGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The name of the security group.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline SecurityGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>One or more inbound rules associated with the security group.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>One or more inbound rules associated with the security group.</p>
      */
     inline SecurityGroup& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The AWS account ID of the owner of the security group.</p>
@@ -191,6 +195,7 @@ namespace Model
      */
     inline SecurityGroup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
     /**
      * <p>The ID of the security group.</p>
      */
@@ -225,6 +230,7 @@ namespace Model
      * <p>The ID of the security group.</p>
      */
     inline SecurityGroup& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+
 
     /**
      * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
@@ -261,6 +267,7 @@ namespace Model
      */
     inline SecurityGroup& AddIpPermissionsEgress(IpPermission&& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Any tags assigned to the security group.</p>
      */
@@ -295,6 +302,7 @@ namespace Model
      * <p>Any tags assigned to the security group.</p>
      */
     inline SecurityGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>[EC2-VPC] The ID of the VPC for the security group.</p>
@@ -332,20 +340,28 @@ namespace Model
     inline SecurityGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::Vector<IpPermission> m_ipPermissions;
     bool m_ipPermissionsHasBeenSet;
+
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::Vector<IpPermission> m_ipPermissionsEgress;
     bool m_ipPermissionsEgressHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The number of Reserved Instances to purchase.</p>
      */
@@ -57,6 +58,7 @@ namespace Model
      * <p>The number of Reserved Instances to purchase.</p>
      */
     inline PurchaseReservedInstancesOfferingRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>The ID of the Reserved Instance offering to purchase.</p>
@@ -93,6 +95,7 @@ namespace Model
      */
     inline PurchaseReservedInstancesOfferingRequest& WithReservedInstancesOfferingId(const char* value) { SetReservedInstancesOfferingId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -116,6 +119,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline PurchaseReservedInstancesOfferingRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>Specified for Reserved Instance Marketplace offerings to limit the total
@@ -153,12 +157,16 @@ namespace Model
     inline PurchaseReservedInstancesOfferingRequest& WithLimitPrice(ReservedInstanceLimitPrice&& value) { SetLimitPrice(std::move(value)); return *this;}
 
   private:
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     Aws::String m_reservedInstancesOfferingId;
     bool m_reservedInstancesOfferingIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     ReservedInstanceLimitPrice m_limitPrice;
     bool m_limitPriceHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     ClusterSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the cluster.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The unique identifier for the cluster.</p>
      */
     inline ClusterSummary& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the cluster.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline ClusterSummary& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The details about the current status of the cluster.</p>
      */
@@ -140,6 +143,7 @@ namespace Model
      * <p>The details about the current status of the cluster.</p>
      */
     inline ClusterSummary& WithStatus(ClusterStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
@@ -172,12 +176,16 @@ namespace Model
     inline ClusterSummary& WithNormalizedInstanceHours(int value) { SetNormalizedInstanceHours(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ClusterStatus m_status;
     bool m_statusHasBeenSet;
+
     int m_normalizedInstanceHours;
     bool m_normalizedInstanceHoursHasBeenSet;
   };

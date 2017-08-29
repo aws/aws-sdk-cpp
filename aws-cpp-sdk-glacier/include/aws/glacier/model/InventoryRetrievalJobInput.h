@@ -46,6 +46,7 @@ namespace Model
     InventoryRetrievalJobInput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The start of the date range in UTC for vault inventory retrieval that
      * includes archives created on or after this date. This value should be a string
@@ -94,6 +95,7 @@ namespace Model
      * in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline InventoryRetrievalJobInput& WithStartDate(const char* value) { SetStartDate(value); return *this;}
+
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
@@ -144,6 +146,7 @@ namespace Model
      */
     inline InventoryRetrievalJobInput& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 
+
     /**
      * <p>Specifies the maximum number of inventory items returned per vault inventory
      * retrieval request. Valid values are greater than or equal to 1.</p>
@@ -185,6 +188,7 @@ namespace Model
      * retrieval request. Valid values are greater than or equal to 1.</p>
      */
     inline InventoryRetrievalJobInput& WithLimit(const char* value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>An opaque string that represents where to continue pagination of the vault
@@ -243,12 +247,16 @@ namespace Model
     inline InventoryRetrievalJobInput& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_startDate;
     bool m_startDateHasBeenSet;
+
     Aws::String m_endDate;
     bool m_endDateHasBeenSet;
+
     Aws::String m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

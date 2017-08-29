@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>String that contains the ARN of the requested certificate. The certificate
      * ARN is generated and returned by the <a>RequestCertificate</a> action as soon as
@@ -113,6 +114,7 @@ namespace Model
      */
     inline ResendValidationEmailRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
+
     /**
      * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
      * validated.</p>
@@ -154,6 +156,7 @@ namespace Model
      * validated.</p>
      */
     inline ResendValidationEmailRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>The base validation domain that will act as the suffix of the email addresses
@@ -268,10 +271,13 @@ namespace Model
     inline ResendValidationEmailRequest& WithValidationDomain(const char* value) { SetValidationDomain(value); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_validationDomain;
     bool m_validationDomainHasBeenSet;
   };

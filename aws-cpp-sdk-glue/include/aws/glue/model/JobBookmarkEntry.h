@@ -46,6 +46,7 @@ namespace Model
     JobBookmarkEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the job in question.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline JobBookmarkEntry& WithJobName(const char* value) { SetJobName(value); return *this;}
 
+
     /**
      * <p>Version of the job.</p>
      */
@@ -95,6 +97,7 @@ namespace Model
      * <p>Version of the job.</p>
      */
     inline JobBookmarkEntry& WithVersion(int value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The run ID number.</p>
@@ -111,6 +114,7 @@ namespace Model
      */
     inline JobBookmarkEntry& WithRun(int value) { SetRun(value); return *this;}
 
+
     /**
      * <p>The attempt ID number.</p>
      */
@@ -125,6 +129,7 @@ namespace Model
      * <p>The attempt ID number.</p>
      */
     inline JobBookmarkEntry& WithAttempt(int value) { SetAttempt(value); return *this;}
+
 
     /**
      * <p>The bookmark itself.</p>
@@ -162,14 +167,19 @@ namespace Model
     inline JobBookmarkEntry& WithJobBookmark(const char* value) { SetJobBookmark(value); return *this;}
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
+
     int m_run;
     bool m_runHasBeenSet;
+
     int m_attempt;
     bool m_attemptHasBeenSet;
+
     Aws::String m_jobBookmark;
     bool m_jobBookmarkHasBeenSet;
   };

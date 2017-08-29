@@ -47,6 +47,7 @@ namespace Model
     KinesisStreamSourceDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the source Kinesis stream.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The ARN of the source Kinesis stream.</p>
      */
     inline KinesisStreamSourceDescription& WithKinesisStreamARN(const char* value) { SetKinesisStreamARN(value); return *this;}
+
 
     /**
      * <p>The ARN of the role used by the source Kinesis stream.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline KinesisStreamSourceDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>Kinesis Firehose starts retrieving records from the Kinesis stream starting
      * with this time stamp.</p>
@@ -148,10 +151,13 @@ namespace Model
     inline KinesisStreamSourceDescription& WithDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { SetDeliveryStartTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_kinesisStreamARN;
     bool m_kinesisStreamARNHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::Utils::DateTime m_deliveryStartTimestamp;
     bool m_deliveryStartTimestampHasBeenSet;
   };

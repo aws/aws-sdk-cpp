@@ -31,13 +31,13 @@ CheckDomainAvailabilityResult::CheckDomainAvailabilityResult() :
 {
 }
 
-CheckDomainAvailabilityResult::CheckDomainAvailabilityResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CheckDomainAvailabilityResult::CheckDomainAvailabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_availability(DomainAvailability::NOT_SET)
 {
   *this = result;
 }
 
-CheckDomainAvailabilityResult& CheckDomainAvailabilityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CheckDomainAvailabilityResult& CheckDomainAvailabilityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Availability"))

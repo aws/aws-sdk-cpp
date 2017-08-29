@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeSecurityGroupReferencesResponse();
-    DescribeSecurityGroupReferencesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSecurityGroupReferencesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSecurityGroupReferencesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSecurityGroupReferencesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the VPCs with the referencing security groups.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeSecurityGroupReferencesResponse& AddSecurityGroupReferenceSet(SecurityGroupReference&& value) { m_securityGroupReferenceSet.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline DescribeSecurityGroupReferencesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<SecurityGroupReference> m_securityGroupReferenceSet;
+
     ResponseMetadata m_responseMetadata;
   };
 

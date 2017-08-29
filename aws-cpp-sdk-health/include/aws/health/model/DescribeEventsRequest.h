@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Values to narrow the results returned.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>Values to narrow the results returned.</p>
      */
     inline DescribeEventsRequest& WithFilter(EventFilter&& value) { SetFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -125,6 +127,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return in one batch, between 10 and 100,
      * inclusive.</p>
@@ -142,6 +145,7 @@ namespace Model
      * inclusive.</p>
      */
     inline DescribeEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The locale (language) to return information in. English (en) is the default
@@ -186,12 +190,16 @@ namespace Model
     inline DescribeEventsRequest& WithLocale(const char* value) { SetLocale(value); return *this;}
 
   private:
+
     EventFilter m_filter;
     bool m_filterHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_locale;
     bool m_localeHasBeenSet;
   };

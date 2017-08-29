@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CancelStepsResult();
-    CancelStepsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelStepsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelStepsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelStepsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <a>CancelStepsInfo</a>, which shows the status of specified cancel
@@ -91,6 +92,7 @@ namespace Model
     inline CancelStepsResult& AddCancelStepsInfoList(CancelStepsInfo&& value) { m_cancelStepsInfoList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CancelStepsInfo> m_cancelStepsInfoList;
   };
 

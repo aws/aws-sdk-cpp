@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListDeploymentsResult();
-    ListDeploymentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDeploymentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Information on deployments
@@ -77,6 +78,7 @@ namespace Model
      * Information on deployments
      */
     inline ListDeploymentsResult& AddDeployments(Deployment&& value) { m_deployments.push_back(std::move(value)); return *this; }
+
 
     /**
      * The token for the next set of results, or ''null'' if there are no additional
@@ -121,7 +123,9 @@ namespace Model
     inline ListDeploymentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Deployment> m_deployments;
+
     Aws::String m_nextToken;
   };
 

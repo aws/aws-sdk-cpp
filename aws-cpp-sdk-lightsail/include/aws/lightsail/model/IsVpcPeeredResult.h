@@ -36,8 +36,9 @@ namespace Model
   {
   public:
     IsVpcPeeredResult();
-    IsVpcPeeredResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    IsVpcPeeredResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    IsVpcPeeredResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    IsVpcPeeredResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise,
@@ -58,6 +59,7 @@ namespace Model
     inline IsVpcPeeredResult& WithIsPeered(bool value) { SetIsPeered(value); return *this;}
 
   private:
+
     bool m_isPeered;
   };
 

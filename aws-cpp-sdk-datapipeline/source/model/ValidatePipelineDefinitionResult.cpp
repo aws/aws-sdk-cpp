@@ -31,13 +31,13 @@ ValidatePipelineDefinitionResult::ValidatePipelineDefinitionResult() :
 {
 }
 
-ValidatePipelineDefinitionResult::ValidatePipelineDefinitionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ValidatePipelineDefinitionResult::ValidatePipelineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_errored(false)
 {
   *this = result;
 }
 
-ValidatePipelineDefinitionResult& ValidatePipelineDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ValidatePipelineDefinitionResult& ValidatePipelineDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("validationErrors"))

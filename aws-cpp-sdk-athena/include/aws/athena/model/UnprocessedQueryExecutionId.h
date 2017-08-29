@@ -46,6 +46,7 @@ namespace Model
     UnprocessedQueryExecutionId& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier of the query execution.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The unique identifier of the query execution.</p>
      */
     inline UnprocessedQueryExecutionId& WithQueryExecutionId(const char* value) { SetQueryExecutionId(value); return *this;}
+
 
     /**
      * <p>The error code returned when the query execution failed to process, if
@@ -122,6 +124,7 @@ namespace Model
      * applicable.</p>
      */
     inline UnprocessedQueryExecutionId& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The error message returned when the query execution failed to process, if
@@ -166,10 +169,13 @@ namespace Model
     inline UnprocessedQueryExecutionId& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     Aws::String m_queryExecutionId;
     bool m_queryExecutionIdHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

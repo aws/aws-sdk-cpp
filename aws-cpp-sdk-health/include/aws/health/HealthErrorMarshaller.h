@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_HEALTH_API HealthErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_HEALTH_API HealthErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Health
+} // namespace Client
 } // namespace Aws

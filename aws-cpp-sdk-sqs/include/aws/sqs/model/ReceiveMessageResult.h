@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ReceiveMessageResult();
-    ReceiveMessageResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ReceiveMessageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ReceiveMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ReceiveMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of messages.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ReceiveMessageResult& AddMessages(Message&& value) { m_messages.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline ReceiveMessageResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Message> m_messages;
+
     ResponseMetadata m_responseMetadata;
   };
 

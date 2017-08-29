@@ -30,12 +30,12 @@ DescribeConditionalForwardersResult::DescribeConditionalForwardersResult()
 {
 }
 
-DescribeConditionalForwardersResult::DescribeConditionalForwardersResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConditionalForwardersResult::DescribeConditionalForwardersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeConditionalForwardersResult& DescribeConditionalForwardersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConditionalForwardersResult& DescribeConditionalForwardersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ConditionalForwarders"))

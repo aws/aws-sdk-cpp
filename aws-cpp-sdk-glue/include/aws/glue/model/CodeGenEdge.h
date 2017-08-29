@@ -46,6 +46,7 @@ namespace Model
     CodeGenEdge& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the node at which the edge starts.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline CodeGenEdge& WithSource(const char* value) { SetSource(value); return *this;}
 
+
     /**
      * <p>The ID of the node at which the edge ends.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The ID of the node at which the edge ends.</p>
      */
     inline CodeGenEdge& WithTarget(const char* value) { SetTarget(value); return *this;}
+
 
     /**
      * <p>The target of the edge.</p>
@@ -152,10 +155,13 @@ namespace Model
     inline CodeGenEdge& WithTargetParameter(const char* value) { SetTargetParameter(value); return *this;}
 
   private:
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     Aws::String m_target;
     bool m_targetHasBeenSet;
+
     Aws::String m_targetParameter;
     bool m_targetParameterHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListTagsForVaultResult();
-    ListTagsForVaultResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForVaultResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForVaultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForVaultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The tags attached to the vault. Each tag is composed of a key and a
@@ -121,6 +122,7 @@ namespace Model
     inline ListTagsForVaultResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_tags;
   };
 

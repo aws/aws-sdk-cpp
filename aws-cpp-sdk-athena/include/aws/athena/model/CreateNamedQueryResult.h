@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateNamedQueryResult();
-    CreateNamedQueryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateNamedQueryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateNamedQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateNamedQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique ID of the query.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateNamedQueryResult& WithNamedQueryId(const char* value) { SetNamedQueryId(value); return *this;}
 
   private:
+
     Aws::String m_namedQueryId;
   };
 

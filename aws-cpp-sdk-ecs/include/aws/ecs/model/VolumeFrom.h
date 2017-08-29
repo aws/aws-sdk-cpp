@@ -46,6 +46,7 @@ namespace Model
     VolumeFrom& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of another container within the same task definition to mount
      * volumes from.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline VolumeFrom& WithSourceContainer(const char* value) { SetSourceContainer(value); return *this;}
 
+
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the
      * volume. If this value is <code>false</code>, then the container can write to the
@@ -110,8 +112,10 @@ namespace Model
     inline VolumeFrom& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
 
   private:
+
     Aws::String m_sourceContainer;
     bool m_sourceContainerHasBeenSet;
+
     bool m_readOnly;
     bool m_readOnlyHasBeenSet;
   };

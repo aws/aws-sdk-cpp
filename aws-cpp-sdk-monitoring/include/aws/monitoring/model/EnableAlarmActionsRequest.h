@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The names of the alarms.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
     inline EnableAlarmActionsRequest& AddAlarmNames(const char* value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_alarmNames;
     bool m_alarmNamesHasBeenSet;
   };

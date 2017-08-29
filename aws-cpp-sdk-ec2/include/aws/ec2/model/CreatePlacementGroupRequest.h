@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -66,6 +67,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CreatePlacementGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>A name for the placement group.</p> <p>Constraints: Up to 255 ASCII
@@ -109,6 +111,7 @@ namespace Model
      */
     inline CreatePlacementGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>The placement strategy.</p>
      */
@@ -135,10 +138,13 @@ namespace Model
     inline CreatePlacementGroupRequest& WithStrategy(PlacementStrategy&& value) { SetStrategy(std::move(value)); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     PlacementStrategy m_strategy;
     bool m_strategyHasBeenSet;
   };

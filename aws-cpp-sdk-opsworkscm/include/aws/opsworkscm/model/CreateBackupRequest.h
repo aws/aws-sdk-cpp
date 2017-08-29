@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the server that you want to back up. </p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the server that you want to back up. </p>
      */
     inline CreateBackupRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
+
 
     /**
      * <p> A user-defined description of the backup. </p>
@@ -107,8 +109,10 @@ namespace Model
     inline CreateBackupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

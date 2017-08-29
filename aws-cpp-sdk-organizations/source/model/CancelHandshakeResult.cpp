@@ -30,12 +30,12 @@ CancelHandshakeResult::CancelHandshakeResult()
 {
 }
 
-CancelHandshakeResult::CancelHandshakeResult(const AmazonWebServiceResult<JsonValue>& result)
+CancelHandshakeResult::CancelHandshakeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CancelHandshakeResult& CancelHandshakeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CancelHandshakeResult& CancelHandshakeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Handshake"))

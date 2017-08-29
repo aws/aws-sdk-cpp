@@ -44,6 +44,7 @@ namespace Model
     ComplianceContributorCount& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of AWS resources or AWS Config rules responsible for the current
      * compliance of the item.</p>
@@ -62,6 +63,7 @@ namespace Model
      */
     inline ComplianceContributorCount& WithCappedCount(int value) { SetCappedCount(value); return *this;}
 
+
     /**
      * <p>Indicates whether the maximum count is reached.</p>
      */
@@ -78,8 +80,10 @@ namespace Model
     inline ComplianceContributorCount& WithCapExceeded(bool value) { SetCapExceeded(value); return *this;}
 
   private:
+
     int m_cappedCount;
     bool m_cappedCountHasBeenSet;
+
     bool m_capExceeded;
     bool m_capExceededHasBeenSet;
   };

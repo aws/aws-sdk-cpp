@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The policy content to add to the new policy. For example, if you create a <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
@@ -114,6 +115,7 @@ namespace Model
      */
     inline CreatePolicyRequest& WithContent(const char* value) { SetContent(value); return *this;}
 
+
     /**
      * <p>An optional description to assign to the policy.</p>
      */
@@ -148,6 +150,7 @@ namespace Model
      * <p>An optional description to assign to the policy.</p>
      */
     inline CreatePolicyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The friendly name to assign to the policy.</p> <p>The <a
@@ -205,6 +208,7 @@ namespace Model
      */
     inline CreatePolicyRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The type of policy to create.</p> <note> <p>In the current release, the only
      * type of policy that you can create is a service control policy (SCP).</p>
@@ -241,12 +245,16 @@ namespace Model
     inline CreatePolicyRequest& WithType(PolicyType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_content;
     bool m_contentHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     PolicyType m_type;
     bool m_typeHasBeenSet;
   };

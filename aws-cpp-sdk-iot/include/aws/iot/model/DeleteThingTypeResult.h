@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     DeleteThingTypeResult();
-    DeleteThingTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteThingTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteThingTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteThingTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

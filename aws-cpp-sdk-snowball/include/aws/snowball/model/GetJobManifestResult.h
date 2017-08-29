@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetJobManifestResult();
-    GetJobManifestResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobManifestResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobManifestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetJobManifestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon S3 presigned URL for the manifest file associated with the
@@ -84,6 +85,7 @@ namespace Model
     inline GetJobManifestResult& WithManifestURI(const char* value) { SetManifestURI(value); return *this;}
 
   private:
+
     Aws::String m_manifestURI;
   };
 

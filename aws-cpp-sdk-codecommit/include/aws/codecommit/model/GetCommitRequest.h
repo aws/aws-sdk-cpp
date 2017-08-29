@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the repository to which the commit was made.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The name of the repository to which the commit was made.</p>
      */
     inline GetCommitRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The commit ID.</p>
@@ -110,8 +112,10 @@ namespace Model
     inline GetCommitRequest& WithCommitId(const char* value) { SetCommitId(value); return *this;}
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_commitId;
     bool m_commitIdHasBeenSet;
   };

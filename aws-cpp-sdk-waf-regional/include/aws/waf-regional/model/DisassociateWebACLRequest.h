@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN (Amazon Resource Name) of the resource from which the web ACL is
      * being removed.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline DisassociateWebACLRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon RDS resource the tags will be removed from. This value is an
      * Amazon Resource Name (ARN). For information about creating an ARN, see <a
@@ -98,6 +99,7 @@ namespace Model
      */
     inline RemoveTagsFromResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
     /**
      * <p>The tag key (name) of the tag to be removed.</p>
      */
@@ -139,8 +141,10 @@ namespace Model
     inline RemoveTagsFromResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

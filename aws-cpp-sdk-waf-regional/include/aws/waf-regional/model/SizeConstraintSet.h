@@ -51,6 +51,7 @@ namespace Model
     SizeConstraintSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
      * <code>SizeConstraintSetId</code> to get information about a
@@ -149,6 +150,7 @@ namespace Model
      */
     inline SizeConstraintSet& WithSizeConstraintSetId(const char* value) { SetSizeConstraintSetId(value); return *this;}
 
+
     /**
      * <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
      */
@@ -183,6 +185,7 @@ namespace Model
      * <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
      */
     inline SizeConstraintSet& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Specifies the parts of web requests that you want to inspect the size of.</p>
@@ -220,10 +223,13 @@ namespace Model
     inline SizeConstraintSet& AddSizeConstraints(SizeConstraint&& value) { m_sizeConstraintsHasBeenSet = true; m_sizeConstraints.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_sizeConstraintSetId;
     bool m_sizeConstraintSetIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<SizeConstraint> m_sizeConstraints;
     bool m_sizeConstraintsHasBeenSet;
   };

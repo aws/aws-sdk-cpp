@@ -46,6 +46,7 @@ namespace Model
     AttemptDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Details about the container in this job attempt.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline AttemptDetail& WithContainer(AttemptContainerDetail&& value) { SetContainer(std::move(value)); return *this;}
 
+
     /**
      * <p>The Unix timestamp for when the attempt was started (when the task
      * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
@@ -92,6 +94,7 @@ namespace Model
      */
     inline AttemptDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 
+
     /**
      * <p>The Unix timestamp for when the attempt was stopped (when the task
      * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
@@ -112,6 +115,7 @@ namespace Model
      * state).</p>
      */
     inline AttemptDetail& WithStoppedAt(long long value) { SetStoppedAt(value); return *this;}
+
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -156,12 +160,16 @@ namespace Model
     inline AttemptDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
   private:
+
     AttemptContainerDetail m_container;
     bool m_containerHasBeenSet;
+
     long long m_startedAt;
     bool m_startedAtHasBeenSet;
+
     long long m_stoppedAt;
     bool m_stoppedAtHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
   };

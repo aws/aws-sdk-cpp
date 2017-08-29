@@ -36,6 +36,7 @@ namespace Model
     PutSlotTypeRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the slot type. The name is <i>not</i> case sensitive. </p> <p>The
      * name can't match a built-in slot type name, or a built-in slot type name with
@@ -113,6 +114,7 @@ namespace Model
      */
     inline PutSlotTypeRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the slot type.</p>
      */
@@ -147,6 +149,7 @@ namespace Model
      * <p>A description of the slot type.</p>
      */
     inline PutSlotTypeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
@@ -189,6 +192,7 @@ namespace Model
      * the slot type can take.</p>
      */
     inline PutSlotTypeRequest& AddEnumerationValues(EnumerationValue&& value) { m_enumerationValuesHasBeenSet = true; m_enumerationValues.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
@@ -275,12 +279,16 @@ namespace Model
     inline PutSlotTypeRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<EnumerationValue> m_enumerationValues;
     bool m_enumerationValuesHasBeenSet;
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
   };

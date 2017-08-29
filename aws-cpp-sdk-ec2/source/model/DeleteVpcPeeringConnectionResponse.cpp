@@ -32,13 +32,13 @@ DeleteVpcPeeringConnectionResponse::DeleteVpcPeeringConnectionResponse() :
 {
 }
 
-DeleteVpcPeeringConnectionResponse::DeleteVpcPeeringConnectionResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+DeleteVpcPeeringConnectionResponse::DeleteVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_return(false)
 {
   *this = result;
 }
 
-DeleteVpcPeeringConnectionResponse& DeleteVpcPeeringConnectionResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteVpcPeeringConnectionResponse& DeleteVpcPeeringConnectionResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

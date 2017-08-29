@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     RegisterPatchBaselineForPatchGroupResult();
-    RegisterPatchBaselineForPatchGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterPatchBaselineForPatchGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterPatchBaselineForPatchGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterPatchBaselineForPatchGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the patch baseline the patch group was registered with.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ID of the patch baseline the patch group was registered with.</p>
      */
     inline RegisterPatchBaselineForPatchGroupResult& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
+
 
     /**
      * <p>The name of the patch group registered with the patch baseline.</p>
@@ -112,7 +114,9 @@ namespace Model
     inline RegisterPatchBaselineForPatchGroupResult& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
 
   private:
+
     Aws::String m_baselineId;
+
     Aws::String m_patchGroup;
   };
 

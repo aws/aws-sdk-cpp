@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteRepositoryResult();
-    DeleteRepositoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteRepositoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the repository that was deleted.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DeleteRepositoryResult& WithRepositoryId(const char* value) { SetRepositoryId(value); return *this;}
 
   private:
+
     Aws::String m_repositoryId;
   };
 

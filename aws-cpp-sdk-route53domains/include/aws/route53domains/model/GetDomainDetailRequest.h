@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain that you want to get detailed information about.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline GetDomainDetailRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

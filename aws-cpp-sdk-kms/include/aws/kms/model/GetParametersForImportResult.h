@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetParametersForImportResult();
-    GetParametersForImportResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetParametersForImportResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetParametersForImportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetParametersForImportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of the CMK to use in a subsequent <a>ImportKeyMaterial</a>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline GetParametersForImportResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>The import token to send in a subsequent <a>ImportKeyMaterial</a>
      * request.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline GetParametersForImportResult& WithImportToken(Aws::Utils::ByteBuffer&& value) { SetImportToken(std::move(value)); return *this;}
 
+
     /**
      * <p>The public key to use to encrypt the key material before importing it with
      * <a>ImportKeyMaterial</a>.</p>
@@ -151,6 +154,7 @@ namespace Model
      * <a>ImportKeyMaterial</a>.</p>
      */
     inline GetParametersForImportResult& WithPublicKey(Aws::Utils::ByteBuffer&& value) { SetPublicKey(std::move(value)); return *this;}
+
 
     /**
      * <p>The time at which the import token and public key are no longer valid. After
@@ -193,9 +197,13 @@ namespace Model
     inline GetParametersForImportResult& WithParametersValidTo(Aws::Utils::DateTime&& value) { SetParametersValidTo(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_keyId;
+
     Aws::Utils::ByteBuffer m_importToken;
+
     Aws::Utils::ByteBuffer m_publicKey;
+
     Aws::Utils::DateTime m_parametersValidTo;
   };
 

@@ -30,12 +30,12 @@ AssociateQualificationWithWorkerResult::AssociateQualificationWithWorkerResult()
 {
 }
 
-AssociateQualificationWithWorkerResult::AssociateQualificationWithWorkerResult(const AmazonWebServiceResult<JsonValue>& result)
+AssociateQualificationWithWorkerResult::AssociateQualificationWithWorkerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AssociateQualificationWithWorkerResult& AssociateQualificationWithWorkerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AssociateQualificationWithWorkerResult& AssociateQualificationWithWorkerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

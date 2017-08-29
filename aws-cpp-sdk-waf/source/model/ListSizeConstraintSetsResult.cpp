@@ -30,12 +30,12 @@ ListSizeConstraintSetsResult::ListSizeConstraintSetsResult()
 {
 }
 
-ListSizeConstraintSetsResult::ListSizeConstraintSetsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListSizeConstraintSetsResult::ListSizeConstraintSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListSizeConstraintSetsResult& ListSizeConstraintSetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListSizeConstraintSetsResult& ListSizeConstraintSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextMarker"))

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateSchemaResult();
-    UpdateSchemaResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSchemaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN that is associated with the updated schema. For more information, see
@@ -84,6 +85,7 @@ namespace Model
     inline UpdateSchemaResult& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
   };
 

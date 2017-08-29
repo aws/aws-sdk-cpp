@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
      * For more information, see <a>arns</a>.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline LookupPolicyRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>Reference that identifies the object whose policies will be looked up.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p>Reference that identifies the object whose policies will be looked up.</p>
      */
     inline LookupPolicyRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The token to request the next page of results.</p>
@@ -139,6 +142,7 @@ namespace Model
      */
     inline LookupPolicyRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
@@ -158,12 +162,16 @@ namespace Model
     inline LookupPolicyRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

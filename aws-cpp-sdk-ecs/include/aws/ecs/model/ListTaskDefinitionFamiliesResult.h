@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListTaskDefinitionFamiliesResult();
-    ListTaskDefinitionFamiliesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTaskDefinitionFamiliesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTaskDefinitionFamiliesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTaskDefinitionFamiliesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of task definition family names that match the
@@ -89,6 +90,7 @@ namespace Model
      * <code>ListTaskDefinitionFamilies</code> request.</p>
      */
     inline ListTaskDefinitionFamiliesResult& AddFamilies(const char* value) { m_families.push_back(value); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -154,7 +156,9 @@ namespace Model
     inline ListTaskDefinitionFamiliesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_families;
+
     Aws::String m_nextToken;
   };
 

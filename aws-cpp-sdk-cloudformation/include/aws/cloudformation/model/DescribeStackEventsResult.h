@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeStackEventsResult();
-    DescribeStackEventsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeStackEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStackEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStackEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of <code>StackEvents</code> structures.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>A list of <code>StackEvents</code> structures.</p>
      */
     inline DescribeStackEventsResult& AddStackEvents(StackEvent&& value) { m_stackEvents.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the output exceeds 1 MB in size, a string that identifies the next page of
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeStackEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeStackEventsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<StackEvent> m_stackEvents;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The ID for the origin access identity. For example:
      * <code>E74FTE3AJFJ256A</code>. </p>
@@ -88,6 +89,7 @@ namespace Model
      * <code>E74FTE3AJFJ256A</code>. </p>
      */
     inline CloudFrontOriginAccessIdentity& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The Amazon S3 canonical user ID for the origin access identity, used when
@@ -138,6 +140,7 @@ namespace Model
      */
     inline CloudFrontOriginAccessIdentity& WithS3CanonicalUserId(const char* value) { SetS3CanonicalUserId(value); return *this;}
 
+
     /**
      * <p>The current configuration information for the identity. </p>
      */
@@ -164,10 +167,13 @@ namespace Model
     inline CloudFrontOriginAccessIdentity& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_s3CanonicalUserId;
     bool m_s3CanonicalUserIdHasBeenSet;
+
     CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;
     bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet;
   };

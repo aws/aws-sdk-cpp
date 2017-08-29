@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The names for your new instances.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The names for your new instances.</p>
      */
     inline CreateInstancesFromSnapshotRequest& AddInstanceNames(const char* value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
+
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
@@ -147,6 +149,7 @@ namespace Model
      */
     inline CreateInstancesFromSnapshotRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The name of the instance snapshot on which you are basing your new instances.
      * Use the get instance snapshots operation to return information about your
@@ -196,6 +199,7 @@ namespace Model
      */
     inline CreateInstancesFromSnapshotRequest& WithInstanceSnapshotName(const char* value) { SetInstanceSnapshotName(value); return *this;}
 
+
     /**
      * <p>The bundle of specification information for your virtual private server (or
      * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
@@ -237,6 +241,7 @@ namespace Model
      * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
+
 
     /**
      * <p>You can create a launch script that configures a server with additional user
@@ -322,6 +327,7 @@ namespace Model
      */
     inline CreateInstancesFromSnapshotRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
+
     /**
      * <p>The name for your key pair.</p>
      */
@@ -358,16 +364,22 @@ namespace Model
     inline CreateInstancesFromSnapshotRequest& WithKeyPairName(const char* value) { SetKeyPairName(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instanceNames;
     bool m_instanceNamesHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_instanceSnapshotName;
     bool m_instanceSnapshotNameHasBeenSet;
+
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
     Aws::String m_userData;
     bool m_userDataHasBeenSet;
+
     Aws::String m_keyPairName;
     bool m_keyPairNameHasBeenSet;
   };

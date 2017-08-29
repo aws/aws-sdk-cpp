@@ -30,12 +30,12 @@ CreateNFSFileShareResult::CreateNFSFileShareResult()
 {
 }
 
-CreateNFSFileShareResult::CreateNFSFileShareResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateNFSFileShareResult::CreateNFSFileShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateNFSFileShareResult& CreateNFSFileShareResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateNFSFileShareResult& CreateNFSFileShareResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FileShareARN"))

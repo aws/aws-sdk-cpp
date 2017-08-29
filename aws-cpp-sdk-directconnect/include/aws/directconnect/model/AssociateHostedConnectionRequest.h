@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the hosted connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
      * None</p>
@@ -81,6 +82,7 @@ namespace Model
      * None</p>
      */
     inline AssociateHostedConnectionRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+
 
     /**
      * <p>The ID of the interconnect or the LAG.</p> <p>Example: dxcon-abc123 or
@@ -125,8 +127,10 @@ namespace Model
     inline AssociateHostedConnectionRequest& WithParentConnectionId(const char* value) { SetParentConnectionId(value); return *this;}
 
   private:
+
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
+
     Aws::String m_parentConnectionId;
     bool m_parentConnectionIdHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The reason code for the state change.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The reason code for the state change.</p>
      */
     inline StateReason& WithCode(const char* value) { SetCode(value); return *this;}
+
 
     /**
      * <p>The message for the state change.</p> <ul> <li> <p>
@@ -238,8 +240,10 @@ namespace Model
     inline StateReason& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

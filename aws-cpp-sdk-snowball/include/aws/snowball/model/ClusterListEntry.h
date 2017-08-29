@@ -48,6 +48,7 @@ namespace Model
     ClusterListEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The 39-character ID for the cluster that you want to list, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ClusterListEntry& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>The current state of this cluster. For information about the state of a
      * specific node, see <a>JobListEntry$JobState</a>.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ClusterListEntry& WithClusterState(ClusterState&& value) { SetClusterState(std::move(value)); return *this;}
 
+
     /**
      * <p>The creation date for this cluster.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>The creation date for this cluster.</p>
      */
     inline ClusterListEntry& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Defines an optional description of the cluster, for example
@@ -188,12 +192,16 @@ namespace Model
     inline ClusterListEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     ClusterState m_clusterState;
     bool m_clusterStateHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

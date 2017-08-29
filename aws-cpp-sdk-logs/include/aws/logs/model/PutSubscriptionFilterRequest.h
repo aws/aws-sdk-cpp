@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline PutSubscriptionFilterRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>A name for the subscription filter. If you are updating an existing filter,
@@ -135,6 +137,7 @@ namespace Model
      */
     inline PutSubscriptionFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
+
     /**
      * <p>A filter pattern for subscribing to a filtered stream of log events.</p>
      */
@@ -169,6 +172,7 @@ namespace Model
      * <p>A filter pattern for subscribing to a filtered stream of log events.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
+
 
     /**
      * <p>The ARN of the destination to deliver matching log events to. Currently, the
@@ -261,6 +265,7 @@ namespace Model
      */
     inline PutSubscriptionFilterRequest& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 
+
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
      * ingested log events to the destination stream. You don't need to provide the ARN
@@ -310,6 +315,7 @@ namespace Model
      */
     inline PutSubscriptionFilterRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>The method used to distribute log data to the destination, when the
      * destination is an Amazon Kinesis stream. By default, log data is grouped by log
@@ -346,16 +352,22 @@ namespace Model
     inline PutSubscriptionFilterRequest& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_filterName;
     bool m_filterNameHasBeenSet;
+
     Aws::String m_filterPattern;
     bool m_filterPatternHasBeenSet;
+
     Aws::String m_destinationArn;
     bool m_destinationArnHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Distribution m_distribution;
     bool m_distributionHasBeenSet;
   };

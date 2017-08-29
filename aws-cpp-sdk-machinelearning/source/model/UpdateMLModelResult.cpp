@@ -30,12 +30,12 @@ UpdateMLModelResult::UpdateMLModelResult()
 {
 }
 
-UpdateMLModelResult::UpdateMLModelResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateMLModelResult::UpdateMLModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateMLModelResult& UpdateMLModelResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateMLModelResult& UpdateMLModelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MLModelId"))

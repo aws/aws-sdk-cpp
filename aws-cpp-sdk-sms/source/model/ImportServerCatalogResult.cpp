@@ -30,12 +30,12 @@ ImportServerCatalogResult::ImportServerCatalogResult()
 {
 }
 
-ImportServerCatalogResult::ImportServerCatalogResult(const AmazonWebServiceResult<JsonValue>& result)
+ImportServerCatalogResult::ImportServerCatalogResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ImportServerCatalogResult& ImportServerCatalogResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ImportServerCatalogResult& ImportServerCatalogResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

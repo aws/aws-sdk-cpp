@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeTableResult();
-    DescribeTableResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTableResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The properties of the table.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeTableResult& WithTable(TableDescription&& value) { SetTable(std::move(value)); return *this;}
 
   private:
+
     TableDescription m_table;
   };
 

@@ -30,12 +30,12 @@ StartAutomationExecutionResult::StartAutomationExecutionResult()
 {
 }
 
-StartAutomationExecutionResult::StartAutomationExecutionResult(const AmazonWebServiceResult<JsonValue>& result)
+StartAutomationExecutionResult::StartAutomationExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartAutomationExecutionResult& StartAutomationExecutionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartAutomationExecutionResult& StartAutomationExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AutomationExecutionId"))

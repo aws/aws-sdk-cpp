@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateRecordsResult();
-    UpdateRecordsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRecordsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * A list of records that have been updated.
@@ -83,6 +84,7 @@ namespace Model
     inline UpdateRecordsResult& AddRecords(Record&& value) { m_records.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Record> m_records;
   };
 

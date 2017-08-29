@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListRulesPackagesResult();
-    ListRulesPackagesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRulesPackagesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRulesPackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRulesPackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of ARNs that specifies the rules packages returned by the
@@ -89,6 +90,7 @@ namespace Model
      * action.</p>
      */
     inline ListRulesPackagesResult& AddRulesPackageArns(const char* value) { m_rulesPackageArns.push_back(value); return *this; }
+
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this
@@ -147,7 +149,9 @@ namespace Model
     inline ListRulesPackagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_rulesPackageArns;
+
     Aws::String m_nextToken;
   };
 

@@ -46,6 +46,7 @@ namespace Model
     CatalogEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The database in which the table metadata resides.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The database in which the table metadata resides.</p>
      */
     inline CatalogEntry& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+
 
     /**
      * <p>The name of the table in question.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline CatalogEntry& WithTableName(const char* value) { SetTableName(value); return *this;}
 
   private:
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
   };

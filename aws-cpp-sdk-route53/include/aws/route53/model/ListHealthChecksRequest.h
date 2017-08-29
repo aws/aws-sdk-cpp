@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response was
      * <code>true</code>, you have more health checks. To get another group, submit
@@ -128,6 +129,7 @@ namespace Model
      */
     inline ListHealthChecksRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of health checks that you want
      * <code>ListHealthChecks</code> to return in response to the current request.
@@ -192,8 +194,10 @@ namespace Model
     inline ListHealthChecksRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

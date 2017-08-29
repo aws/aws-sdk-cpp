@@ -30,12 +30,12 @@ RestoreServerResult::RestoreServerResult()
 {
 }
 
-RestoreServerResult::RestoreServerResult(const AmazonWebServiceResult<JsonValue>& result)
+RestoreServerResult::RestoreServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RestoreServerResult& RestoreServerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RestoreServerResult& RestoreServerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

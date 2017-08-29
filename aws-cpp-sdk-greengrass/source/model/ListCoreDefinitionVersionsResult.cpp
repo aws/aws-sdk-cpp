@@ -30,12 +30,12 @@ ListCoreDefinitionVersionsResult::ListCoreDefinitionVersionsResult()
 {
 }
 
-ListCoreDefinitionVersionsResult::ListCoreDefinitionVersionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListCoreDefinitionVersionsResult::ListCoreDefinitionVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListCoreDefinitionVersionsResult& ListCoreDefinitionVersionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListCoreDefinitionVersionsResult& ListCoreDefinitionVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

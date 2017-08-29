@@ -30,12 +30,12 @@ StartJobRunResult::StartJobRunResult()
 {
 }
 
-StartJobRunResult::StartJobRunResult(const AmazonWebServiceResult<JsonValue>& result)
+StartJobRunResult::StartJobRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartJobRunResult& StartJobRunResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartJobRunResult& StartJobRunResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("JobRunId"))

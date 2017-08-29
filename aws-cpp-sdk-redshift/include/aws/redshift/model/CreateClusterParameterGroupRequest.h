@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
@@ -112,6 +113,7 @@ namespace Model
      * string.</p> </note>
      */
     inline CreateClusterParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+
 
     /**
      * <p>The Amazon Redshift engine version to which the cluster parameter group
@@ -204,6 +206,7 @@ namespace Model
      */
     inline CreateClusterParameterGroupRequest& WithParameterGroupFamily(const char* value) { SetParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>A description of the parameter group.</p>
      */
@@ -238,6 +241,7 @@ namespace Model
      * <p>A description of the parameter group.</p>
      */
     inline CreateClusterParameterGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of tag instances.</p>
@@ -275,12 +279,16 @@ namespace Model
     inline CreateClusterParameterGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     Aws::String m_parameterGroupFamily;
     bool m_parameterGroupFamilyHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

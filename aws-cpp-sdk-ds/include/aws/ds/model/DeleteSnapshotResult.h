@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteSnapshotResult();
-    DeleteSnapshotResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSnapshotResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of the directory snapshot that was deleted.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DeleteSnapshotResult& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
   private:
+
     Aws::String m_snapshotId;
   };
 

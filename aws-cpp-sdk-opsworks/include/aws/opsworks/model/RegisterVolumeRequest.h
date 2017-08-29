@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon EBS volume ID.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The Amazon EBS volume ID.</p>
      */
     inline RegisterVolumeRequest& WithEc2VolumeId(const char* value) { SetEc2VolumeId(value); return *this;}
+
 
     /**
      * <p>The stack ID.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline RegisterVolumeRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
   private:
+
     Aws::String m_ec2VolumeId;
     bool m_ec2VolumeIdHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
   };

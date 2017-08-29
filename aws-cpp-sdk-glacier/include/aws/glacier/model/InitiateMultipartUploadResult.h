@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     InitiateMultipartUploadResult();
-    InitiateMultipartUploadResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InitiateMultipartUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateMultipartUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateMultipartUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
@@ -80,6 +81,7 @@ namespace Model
      * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
      */
     inline InitiateMultipartUploadResult& WithLocation(const char* value) { SetLocation(value); return *this;}
+
 
     /**
      * <p>The ID of the multipart upload. This value is also included as part of the
@@ -124,7 +126,9 @@ namespace Model
     inline InitiateMultipartUploadResult& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
   private:
+
     Aws::String m_location;
+
     Aws::String m_uploadId;
   };
 

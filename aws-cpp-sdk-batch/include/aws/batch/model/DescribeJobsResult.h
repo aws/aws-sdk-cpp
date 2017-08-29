@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeJobsResult();
-    DescribeJobsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeJobsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of jobs. </p>
@@ -78,6 +79,7 @@ namespace Model
     inline DescribeJobsResult& AddJobs(JobDetail&& value) { m_jobs.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<JobDetail> m_jobs;
   };
 

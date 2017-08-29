@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Part number identifying the part. This is a positive integer between 1 and
      * 10,000.
@@ -59,6 +60,7 @@ namespace Model
      * 10,000.
      */
     inline Part& WithPartNumber(int value) { SetPartNumber(value); return *this;}
+
 
     /**
      * Date and time at which the part was uploaded.
@@ -84,6 +86,7 @@ namespace Model
      * Date and time at which the part was uploaded.
      */
     inline Part& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+
 
     /**
      * Entity tag returned when the part was uploaded.
@@ -120,6 +123,7 @@ namespace Model
      */
     inline Part& WithETag(const char* value) { SetETag(value); return *this;}
 
+
     /**
      * Size of the uploaded part data.
      */
@@ -136,12 +140,16 @@ namespace Model
     inline Part& WithSize(long long value) { SetSize(value); return *this;}
 
   private:
+
     int m_partNumber;
     bool m_partNumberHasBeenSet;
+
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
+
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
+
     long long m_size;
     bool m_sizeHasBeenSet;
   };

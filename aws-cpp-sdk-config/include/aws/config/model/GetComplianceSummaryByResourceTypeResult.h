@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetComplianceSummaryByResourceTypeResult();
-    GetComplianceSummaryByResourceTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetComplianceSummaryByResourceTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetComplianceSummaryByResourceTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetComplianceSummaryByResourceTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of resources that are compliant and the number that are
@@ -104,6 +105,7 @@ namespace Model
     inline GetComplianceSummaryByResourceTypeResult& AddComplianceSummariesByResourceType(ComplianceSummaryByResourceType&& value) { m_complianceSummariesByResourceType.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ComplianceSummaryByResourceType> m_complianceSummariesByResourceType;
   };
 

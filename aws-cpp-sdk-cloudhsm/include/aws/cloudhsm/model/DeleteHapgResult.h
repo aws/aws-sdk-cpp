@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteHapgResult();
-    DeleteHapgResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteHapgResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteHapgResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteHapgResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the action.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DeleteHapgResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_status;
   };
 

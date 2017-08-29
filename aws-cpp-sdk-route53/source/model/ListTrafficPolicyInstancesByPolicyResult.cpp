@@ -31,14 +31,14 @@ ListTrafficPolicyInstancesByPolicyResult::ListTrafficPolicyInstancesByPolicyResu
 {
 }
 
-ListTrafficPolicyInstancesByPolicyResult::ListTrafficPolicyInstancesByPolicyResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListTrafficPolicyInstancesByPolicyResult::ListTrafficPolicyInstancesByPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_trafficPolicyInstanceTypeMarker(RRType::NOT_SET),
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListTrafficPolicyInstancesByPolicyResult& ListTrafficPolicyInstancesByPolicyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListTrafficPolicyInstancesByPolicyResult& ListTrafficPolicyInstancesByPolicyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

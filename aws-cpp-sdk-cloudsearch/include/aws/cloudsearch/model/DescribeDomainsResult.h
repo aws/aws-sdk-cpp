@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeDomainsResult();
-    DescribeDomainsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDomainsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::Vector<DomainStatus>& GetDomainStatusList() const{ return m_domainStatusList; }
@@ -71,6 +72,7 @@ namespace Model
     
     inline DescribeDomainsResult& AddDomainStatusList(DomainStatus&& value) { m_domainStatusList.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -87,7 +89,9 @@ namespace Model
     inline DescribeDomainsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<DomainStatus> m_domainStatusList;
+
     ResponseMetadata m_responseMetadata;
   };
 

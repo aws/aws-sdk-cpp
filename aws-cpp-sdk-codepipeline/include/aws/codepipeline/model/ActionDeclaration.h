@@ -51,6 +51,7 @@ namespace Model
     ActionDeclaration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The action declaration's name.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline ActionDeclaration& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The configuration information for the action type.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      */
     inline ActionDeclaration& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(std::move(value)); return *this;}
 
+
     /**
      * <p>The order in which actions are run.</p>
      */
@@ -125,6 +128,7 @@ namespace Model
      * <p>The order in which actions are run.</p>
      */
     inline ActionDeclaration& WithRunOrder(int value) { SetRunOrder(value); return *this;}
+
 
     /**
      * <p>The action declaration's configuration.</p>
@@ -186,6 +190,7 @@ namespace Model
      */
     inline ActionDeclaration& AddConfiguration(const char* key, const char* value) { m_configurationHasBeenSet = true; m_configuration.emplace(key, value); return *this; }
 
+
     /**
      * <p>The name or ID of the result of the action declaration, such as a test or
      * build artifact.</p>
@@ -228,6 +233,7 @@ namespace Model
      */
     inline ActionDeclaration& AddOutputArtifacts(OutputArtifact&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name or ID of the artifact consumed by the action, such as a test or
      * build artifact.</p>
@@ -269,6 +275,7 @@ namespace Model
      * build artifact.</p>
      */
     inline ActionDeclaration& AddInputArtifacts(InputArtifact&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ARN of the IAM service role that will perform the declared action. This
@@ -313,18 +320,25 @@ namespace Model
     inline ActionDeclaration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ActionTypeId m_actionTypeId;
     bool m_actionTypeIdHasBeenSet;
+
     int m_runOrder;
     bool m_runOrderHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_configuration;
     bool m_configurationHasBeenSet;
+
     Aws::Vector<OutputArtifact> m_outputArtifacts;
     bool m_outputArtifactsHasBeenSet;
+
     Aws::Vector<InputArtifact> m_inputArtifacts;
     bool m_inputArtifactsHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
      * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
@@ -106,6 +107,7 @@ namespace Model
      */
     inline GetKeyPolicyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>String that contains the name of the policy. Currently, this must be
      * "default". Policy names can be discovered by calling <a>ListKeyPolicies</a>.</p>
@@ -149,8 +151,10 @@ namespace Model
     inline GetKeyPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Maintenance Window ID that includes the task to retrieve.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The Maintenance Window ID that includes the task to retrieve.</p>
      */
     inline GetMaintenanceWindowTaskRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>The Maintenance Window task ID to retrieve.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline GetMaintenanceWindowTaskRequest& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::String m_windowTaskId;
     bool m_windowTaskIdHasBeenSet;
   };

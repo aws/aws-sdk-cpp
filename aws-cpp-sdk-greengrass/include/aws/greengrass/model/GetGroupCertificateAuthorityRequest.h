@@ -34,6 +34,7 @@ namespace Model
     GetGroupCertificateAuthorityRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * certificate authority Id
      */
@@ -68,6 +69,7 @@ namespace Model
      * certificate authority Id
      */
     inline GetGroupCertificateAuthorityRequest& WithCertificateAuthorityId(const char* value) { SetCertificateAuthorityId(value); return *this;}
+
 
     /**
      * The unique Id of the AWS Greengrass Group
@@ -105,8 +107,10 @@ namespace Model
     inline GetGroupCertificateAuthorityRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
   private:
+
     Aws::String m_certificateAuthorityId;
     bool m_certificateAuthorityIdHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
   };

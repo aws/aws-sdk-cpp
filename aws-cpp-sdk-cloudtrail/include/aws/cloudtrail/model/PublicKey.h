@@ -48,6 +48,7 @@ namespace Model
     PublicKey& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The DER encoded public key value in PKCS#1 format.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The DER encoded public key value in PKCS#1 format.</p>
      */
     inline PublicKey& WithValue(Aws::Utils::ByteBuffer&& value) { SetValue(std::move(value)); return *this;}
+
 
     /**
      * <p>The starting time of validity of the public key.</p>
@@ -98,6 +100,7 @@ namespace Model
      */
     inline PublicKey& WithValidityStartTime(Aws::Utils::DateTime&& value) { SetValidityStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The ending time of validity of the public key.</p>
      */
@@ -122,6 +125,7 @@ namespace Model
      * <p>The ending time of validity of the public key.</p>
      */
     inline PublicKey& WithValidityEndTime(Aws::Utils::DateTime&& value) { SetValidityEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The fingerprint of the public key.</p>
@@ -159,12 +163,16 @@ namespace Model
     inline PublicKey& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_value;
     bool m_valueHasBeenSet;
+
     Aws::Utils::DateTime m_validityStartTime;
     bool m_validityStartTimeHasBeenSet;
+
     Aws::Utils::DateTime m_validityEndTime;
     bool m_validityEndTimeHasBeenSet;
+
     Aws::String m_fingerprint;
     bool m_fingerprintHasBeenSet;
   };

@@ -30,12 +30,12 @@ UpdateHITTypeOfHITResult::UpdateHITTypeOfHITResult()
 {
 }
 
-UpdateHITTypeOfHITResult::UpdateHITTypeOfHITResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateHITTypeOfHITResult::UpdateHITTypeOfHITResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateHITTypeOfHITResult& UpdateHITTypeOfHITResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateHITTypeOfHITResult& UpdateHITTypeOfHITResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

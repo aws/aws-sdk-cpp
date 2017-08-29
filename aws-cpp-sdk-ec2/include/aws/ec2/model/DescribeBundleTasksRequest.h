@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more bundle task IDs.</p> <p>Default: Describes all your bundle
      * tasks.</p>
@@ -91,6 +92,7 @@ namespace Model
      * tasks.</p>
      */
     inline DescribeBundleTasksRequest& AddBundleIds(const char* value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
+
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>bundle-id</code> - The ID of the
@@ -225,6 +227,7 @@ namespace Model
      */
     inline DescribeBundleTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -250,10 +253,13 @@ namespace Model
     inline DescribeBundleTasksRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_bundleIds;
     bool m_bundleIdsHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

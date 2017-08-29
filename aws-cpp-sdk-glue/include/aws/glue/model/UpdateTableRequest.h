@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
      * AWS account ID is used by default.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline UpdateTableRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
+
     /**
      * <p>The name of the catalog database in which the table resides.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      */
     inline UpdateTableRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>An updated <code>TableInput</code> object to define the metadata table in the
      * catalog.</p>
@@ -145,10 +148,13 @@ namespace Model
     inline UpdateTableRequest& WithTableInput(TableInput&& value) { SetTableInput(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     TableInput m_tableInput;
     bool m_tableInputHasBeenSet;
   };

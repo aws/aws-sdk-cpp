@@ -43,6 +43,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The prefix to use when evaluating an analytics filter.
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline AnalyticsFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     /**
      * The tag to use when evaluating an analytics filter.
      */
@@ -102,6 +104,7 @@ namespace Model
      * The tag to use when evaluating an analytics filter.
      */
     inline AnalyticsFilter& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
+
 
     /**
      * A conjunction (logical AND) of predicates, which is used in evaluating an
@@ -134,10 +137,13 @@ namespace Model
     inline AnalyticsFilter& WithAnd(AnalyticsAndOperator&& value) { SetAnd(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     Tag m_tag;
     bool m_tagHasBeenSet;
+
     AnalyticsAndOperator m_and;
     bool m_andHasBeenSet;
   };

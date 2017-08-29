@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the policy that you want details about. You can
      * get the ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
@@ -100,6 +101,7 @@ namespace Model
     inline DescribePolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 
   private:
+
     Aws::String m_policyId;
     bool m_policyIdHasBeenSet;
   };

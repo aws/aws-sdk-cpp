@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the snapshot copy grant to delete.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline DeleteSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(const char* value) { SetSnapshotCopyGrantName(value); return *this;}
 
   private:
+
     Aws::String m_snapshotCopyGrantName;
     bool m_snapshotCopyGrantNameHasBeenSet;
   };

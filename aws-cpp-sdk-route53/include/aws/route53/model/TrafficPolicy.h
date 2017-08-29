@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The ID that Amazon Route 53 assigned to a traffic policy when you created
      * it.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline TrafficPolicy& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The version number that Amazon Route 53 assigns to a traffic policy. For a
      * new traffic policy, the value of <code>Version</code> is always 1.</p>
@@ -107,6 +109,7 @@ namespace Model
      * new traffic policy, the value of <code>Version</code> is always 1.</p>
      */
     inline TrafficPolicy& WithVersion(int value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The name that you specified when you created the traffic policy.</p>
@@ -143,6 +146,7 @@ namespace Model
      */
     inline TrafficPolicy& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
      * you use a traffic policy to create a traffic policy instance.</p>
@@ -172,6 +176,7 @@ namespace Model
      * you use a traffic policy to create a traffic policy instance.</p>
      */
     inline TrafficPolicy& WithType(RRType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The definition of a traffic policy in JSON format. You specify the JSON
@@ -236,6 +241,7 @@ namespace Model
      */
     inline TrafficPolicy& WithDocument(const char* value) { SetDocument(value); return *this;}
 
+
     /**
      * <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request,
      * if any.</p>
@@ -279,16 +285,22 @@ namespace Model
     inline TrafficPolicy& WithComment(const char* value) { SetComment(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     RRType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_document;
     bool m_documentHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
   };

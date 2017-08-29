@@ -31,12 +31,12 @@ UploadServerCertificateResult::UploadServerCertificateResult()
 {
 }
 
-UploadServerCertificateResult::UploadServerCertificateResult(const AmazonWebServiceResult<XmlDocument>& result)
+UploadServerCertificateResult::UploadServerCertificateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UploadServerCertificateResult& UploadServerCertificateResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UploadServerCertificateResult& UploadServerCertificateResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

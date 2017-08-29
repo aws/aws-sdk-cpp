@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeAdjustmentTypesResult();
-    DescribeAdjustmentTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAdjustmentTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAdjustmentTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAdjustmentTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The policy adjustment types.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeAdjustmentTypesResult& AddAdjustmentTypes(AdjustmentType&& value) { m_adjustmentTypes.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeAdjustmentTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<AdjustmentType> m_adjustmentTypes;
+
     ResponseMetadata m_responseMetadata;
   };
 

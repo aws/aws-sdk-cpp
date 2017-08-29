@@ -47,6 +47,7 @@ namespace Model
     ApprovalResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The summary of the current status of the approval request.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ApprovalResult& WithSummary(const char* value) { SetSummary(value); return *this;}
 
+
     /**
      * <p>The response submitted by a reviewer assigned to an approval action
      * request.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline ApprovalResult& WithStatus(ApprovalStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_summary;
     bool m_summaryHasBeenSet;
+
     ApprovalStatus m_status;
     bool m_statusHasBeenSet;
   };

@@ -31,12 +31,12 @@ AssociateSubnetCidrBlockResponse::AssociateSubnetCidrBlockResponse()
 {
 }
 
-AssociateSubnetCidrBlockResponse::AssociateSubnetCidrBlockResponse(const AmazonWebServiceResult<XmlDocument>& result)
+AssociateSubnetCidrBlockResponse::AssociateSubnetCidrBlockResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-AssociateSubnetCidrBlockResponse& AssociateSubnetCidrBlockResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AssociateSubnetCidrBlockResponse& AssociateSubnetCidrBlockResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The RDS Amazon Resource Name (ARN) of the resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
@@ -97,6 +98,7 @@ namespace Model
      */
     inline ApplyPendingMaintenanceActionRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
 
+
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
      * values: <code>system-update</code>, <code>db-upgrade</code> </p>
@@ -138,6 +140,7 @@ namespace Model
      * values: <code>system-update</code>, <code>db-upgrade</code> </p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const char* value) { SetApplyAction(value); return *this;}
+
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
@@ -217,10 +220,13 @@ namespace Model
     inline ApplyPendingMaintenanceActionRequest& WithOptInType(const char* value) { SetOptInType(value); return *this;}
 
   private:
+
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet;
+
     Aws::String m_applyAction;
     bool m_applyActionHasBeenSet;
+
     Aws::String m_optInType;
     bool m_optInTypeHasBeenSet;
   };

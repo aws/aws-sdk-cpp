@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>When a buyer visits your website during the registration process, the buyer
      * submits a registration token through the browser. The registration token is
@@ -90,6 +91,7 @@ namespace Model
     inline ResolveCustomerRequest& WithRegistrationToken(const char* value) { SetRegistrationToken(value); return *this;}
 
   private:
+
     Aws::String m_registrationToken;
     bool m_registrationTokenHasBeenSet;
   };

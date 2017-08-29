@@ -52,6 +52,7 @@ namespace Model
     TraceSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the request that generated the trace's segments and
      * subsegments.</p>
@@ -94,6 +95,7 @@ namespace Model
      */
     inline TraceSummary& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The length of time in seconds between the start time of the root segment and
      * the end time of the last segment that completed.</p>
@@ -111,6 +113,7 @@ namespace Model
      * the end time of the last segment that completed.</p>
      */
     inline TraceSummary& WithDuration(double value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The length of time in seconds between the start and end times of the root
@@ -136,6 +139,7 @@ namespace Model
      */
     inline TraceSummary& WithResponseTime(double value) { SetResponseTime(value); return *this;}
 
+
     /**
      * <p>One or more of the segment documents has a 500 series error.</p>
      */
@@ -150,6 +154,7 @@ namespace Model
      * <p>One or more of the segment documents has a 500 series error.</p>
      */
     inline TraceSummary& WithHasFault(bool value) { SetHasFault(value); return *this;}
+
 
     /**
      * <p>One or more of the segment documents has a 400 series error.</p>
@@ -166,6 +171,7 @@ namespace Model
      */
     inline TraceSummary& WithHasError(bool value) { SetHasError(value); return *this;}
 
+
     /**
      * <p>One or more of the segment documents has a 429 throttling error.</p>
      */
@@ -181,6 +187,7 @@ namespace Model
      */
     inline TraceSummary& WithHasThrottle(bool value) { SetHasThrottle(value); return *this;}
 
+
     /**
      * <p>One or more of the segment documents is in progress.</p>
      */
@@ -195,6 +202,7 @@ namespace Model
      * <p>One or more of the segment documents is in progress.</p>
      */
     inline TraceSummary& WithIsPartial(bool value) { SetIsPartial(value); return *this;}
+
 
     /**
      * <p>Information about the HTTP request served by the trace.</p>
@@ -220,6 +228,7 @@ namespace Model
      * <p>Information about the HTTP request served by the trace.</p>
      */
     inline TraceSummary& WithHttp(Http&& value) { SetHttp(std::move(value)); return *this;}
+
 
     /**
      * <p>Annotations from the trace's segment documents.</p>
@@ -276,6 +285,7 @@ namespace Model
      */
     inline TraceSummary& AddAnnotations(const char* key, const Aws::Vector<ValueWithServiceIds>& value) { m_annotationsHasBeenSet = true; m_annotations.emplace(key, value); return *this; }
 
+
     /**
      * <p>Users from the trace's segment documents.</p>
      */
@@ -310,6 +320,7 @@ namespace Model
      * <p>Users from the trace's segment documents.</p>
      */
     inline TraceSummary& AddUsers(TraceUser&& value) { m_usersHasBeenSet = true; m_users.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Service IDs from the trace's segment documents.</p>
@@ -347,26 +358,37 @@ namespace Model
     inline TraceSummary& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     double m_duration;
     bool m_durationHasBeenSet;
+
     double m_responseTime;
     bool m_responseTimeHasBeenSet;
+
     bool m_hasFault;
     bool m_hasFaultHasBeenSet;
+
     bool m_hasError;
     bool m_hasErrorHasBeenSet;
+
     bool m_hasThrottle;
     bool m_hasThrottleHasBeenSet;
+
     bool m_isPartial;
     bool m_isPartialHasBeenSet;
+
     Http m_http;
     bool m_httpHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<ValueWithServiceIds>> m_annotations;
     bool m_annotationsHasBeenSet;
+
     Aws::Vector<TraceUser> m_users;
     bool m_usersHasBeenSet;
+
     Aws::Vector<ServiceId> m_serviceIds;
     bool m_serviceIdsHasBeenSet;
   };

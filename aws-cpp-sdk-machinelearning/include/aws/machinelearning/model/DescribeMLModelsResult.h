@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeMLModelsResult();
-    DescribeMLModelsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMLModelsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMLModelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMLModelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
      */
     inline DescribeMLModelsResult& AddResults(MLModel&& value) { m_results.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one
@@ -128,7 +130,9 @@ namespace Model
     inline DescribeMLModelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<MLModel> m_results;
+
     Aws::String m_nextToken;
   };
 

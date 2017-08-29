@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListPolicyVersionsResult();
-    ListPolicyVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPolicyVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPolicyVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPolicyVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The policy versions.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline ListPolicyVersionsResult& AddPolicyVersions(PolicyVersion&& value) { m_policyVersions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<PolicyVersion> m_policyVersions;
   };
 

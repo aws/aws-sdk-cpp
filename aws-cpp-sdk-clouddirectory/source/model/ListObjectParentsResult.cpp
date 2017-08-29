@@ -30,12 +30,12 @@ ListObjectParentsResult::ListObjectParentsResult()
 {
 }
 
-ListObjectParentsResult::ListObjectParentsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListObjectParentsResult::ListObjectParentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListObjectParentsResult& ListObjectParentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListObjectParentsResult& ListObjectParentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Parents"))

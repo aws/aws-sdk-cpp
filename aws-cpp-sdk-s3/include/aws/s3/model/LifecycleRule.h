@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const LifecycleExpiration& GetExpiration() const{ return m_expiration; }
 
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline LifecycleRule& WithExpiration(LifecycleExpiration&& value) { SetExpiration(std::move(value)); return *this;}
+
 
     /**
      * Unique identifier for the rule. The value cannot be longer than 255 characters.
@@ -99,6 +101,7 @@ namespace Model
      */
     inline LifecycleRule& WithID(const char* value) { SetID(value); return *this;}
 
+
     
     inline const LifecycleRuleFilter& GetFilter() const{ return m_filter; }
 
@@ -113,6 +116,7 @@ namespace Model
 
     
     inline LifecycleRule& WithFilter(LifecycleRuleFilter&& value) { SetFilter(std::move(value)); return *this;}
+
 
     /**
      * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
@@ -144,6 +148,7 @@ namespace Model
      */
     inline LifecycleRule& WithStatus(ExpirationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     
     inline const Aws::Vector<Transition>& GetTransitions() const{ return m_transitions; }
 
@@ -164,6 +169,7 @@ namespace Model
 
     
     inline LifecycleRule& AddTransitions(Transition&& value) { m_transitionsHasBeenSet = true; m_transitions.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::Vector<NoncurrentVersionTransition>& GetNoncurrentVersionTransitions() const{ return m_noncurrentVersionTransitions; }
@@ -186,6 +192,7 @@ namespace Model
     
     inline LifecycleRule& AddNoncurrentVersionTransitions(NoncurrentVersionTransition&& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions.push_back(std::move(value)); return *this; }
 
+
     
     inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
 
@@ -200,6 +207,7 @@ namespace Model
 
     
     inline LifecycleRule& WithNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { SetNoncurrentVersionExpiration(std::move(value)); return *this;}
+
 
     
     inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
@@ -217,20 +225,28 @@ namespace Model
     inline LifecycleRule& WithAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { SetAbortIncompleteMultipartUpload(std::move(value)); return *this;}
 
   private:
+
     LifecycleExpiration m_expiration;
     bool m_expirationHasBeenSet;
+
     Aws::String m_iD;
     bool m_iDHasBeenSet;
+
     LifecycleRuleFilter m_filter;
     bool m_filterHasBeenSet;
+
     ExpirationStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Vector<Transition> m_transitions;
     bool m_transitionsHasBeenSet;
+
     Aws::Vector<NoncurrentVersionTransition> m_noncurrentVersionTransitions;
     bool m_noncurrentVersionTransitionsHasBeenSet;
+
     NoncurrentVersionExpiration m_noncurrentVersionExpiration;
     bool m_noncurrentVersionExpirationHasBeenSet;
+
     AbortIncompleteMultipartUpload m_abortIncompleteMultipartUpload;
     bool m_abortIncompleteMultipartUploadHasBeenSet;
   };

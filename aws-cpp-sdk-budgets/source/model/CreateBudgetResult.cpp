@@ -30,12 +30,12 @@ CreateBudgetResult::CreateBudgetResult()
 {
 }
 
-CreateBudgetResult::CreateBudgetResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateBudgetResult::CreateBudgetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateBudgetResult& CreateBudgetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateBudgetResult& CreateBudgetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

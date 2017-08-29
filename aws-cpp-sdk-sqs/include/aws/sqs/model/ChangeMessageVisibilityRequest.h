@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
      * <p>Queue URLs are case-sensitive.</p>
@@ -79,6 +80,7 @@ namespace Model
      * <p>Queue URLs are case-sensitive.</p>
      */
     inline ChangeMessageVisibilityRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+
 
     /**
      * <p>The receipt handle associated with the message whose visibility timeout is
@@ -129,6 +131,7 @@ namespace Model
      */
     inline ChangeMessageVisibilityRequest& WithReceiptHandle(const char* value) { SetReceiptHandle(value); return *this;}
 
+
     /**
      * <p>The new value for the message's visibility timeout (in seconds). Values
      * values: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
@@ -148,10 +151,13 @@ namespace Model
     inline ChangeMessageVisibilityRequest& WithVisibilityTimeout(int value) { SetVisibilityTimeout(value); return *this;}
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     Aws::String m_receiptHandle;
     bool m_receiptHandleHasBeenSet;
+
     int m_visibilityTimeout;
     bool m_visibilityTimeoutHasBeenSet;
   };

@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The domain name that you want to register.</p> <p>Constraints: The domain
      * name can contain only the letters a through z, the numbers 0 through 9, and
@@ -90,6 +91,7 @@ namespace Model
      */
     inline RegisterDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      */
     inline RegisterDomainRequest& WithIdnLangCode(const char* value) { SetIdnLangCode(value); return *this;}
 
+
     /**
      * <p>The number of years that you want to register the domain for. Domains are
      * registered for a minimum of one year. The maximum period depends on the
@@ -155,6 +158,7 @@ namespace Model
      */
     inline RegisterDomainRequest& WithDurationInYears(int value) { SetDurationInYears(value); return *this;}
 
+
     /**
      * <p>Indicates whether the domain will be automatically renewed
      * (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect
@@ -175,6 +179,7 @@ namespace Model
      * after the account is charged.</p> <p>Default: <code>true</code> </p>
      */
     inline RegisterDomainRequest& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}
+
 
     /**
      * <p>Provides detailed contact information.</p>
@@ -201,6 +206,7 @@ namespace Model
      */
     inline RegisterDomainRequest& WithAdminContact(ContactDetail&& value) { SetAdminContact(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides detailed contact information.</p>
      */
@@ -225,6 +231,7 @@ namespace Model
      * <p>Provides detailed contact information.</p>
      */
     inline RegisterDomainRequest& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides detailed contact information.</p>
@@ -251,6 +258,7 @@ namespace Model
      */
     inline RegisterDomainRequest& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries will return contact
@@ -275,6 +283,7 @@ namespace Model
      */
     inline RegisterDomainRequest& WithPrivacyProtectAdminContact(bool value) { SetPrivacyProtectAdminContact(value); return *this;}
 
+
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries will return contact
@@ -298,6 +307,7 @@ namespace Model
      * that you enter.</p> <p>Default: <code>true</code> </p>
      */
     inline RegisterDomainRequest& WithPrivacyProtectRegistrantContact(bool value) { SetPrivacyProtectRegistrantContact(value); return *this;}
+
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
@@ -324,24 +334,34 @@ namespace Model
     inline RegisterDomainRequest& WithPrivacyProtectTechContact(bool value) { SetPrivacyProtectTechContact(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_idnLangCode;
     bool m_idnLangCodeHasBeenSet;
+
     int m_durationInYears;
     bool m_durationInYearsHasBeenSet;
+
     bool m_autoRenew;
     bool m_autoRenewHasBeenSet;
+
     ContactDetail m_adminContact;
     bool m_adminContactHasBeenSet;
+
     ContactDetail m_registrantContact;
     bool m_registrantContactHasBeenSet;
+
     ContactDetail m_techContact;
     bool m_techContactHasBeenSet;
+
     bool m_privacyProtectAdminContact;
     bool m_privacyProtectAdminContactHasBeenSet;
+
     bool m_privacyProtectRegistrantContact;
     bool m_privacyProtectRegistrantContactHasBeenSet;
+
     bool m_privacyProtectTechContact;
     bool m_privacyProtectTechContactHasBeenSet;
   };

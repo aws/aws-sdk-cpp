@@ -31,12 +31,12 @@ SendMessageBatchResult::SendMessageBatchResult()
 {
 }
 
-SendMessageBatchResult::SendMessageBatchResult(const AmazonWebServiceResult<XmlDocument>& result)
+SendMessageBatchResult::SendMessageBatchResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SendMessageBatchResult& SendMessageBatchResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SendMessageBatchResult& SendMessageBatchResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

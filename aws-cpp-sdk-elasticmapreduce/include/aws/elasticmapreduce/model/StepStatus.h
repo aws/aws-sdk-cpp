@@ -49,6 +49,7 @@ namespace Model
     StepStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The execution state of the cluster step.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline StepStatus& WithState(StepState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The reason for the step execution status change.</p>
      */
@@ -98,6 +100,7 @@ namespace Model
      * <p>The reason for the step execution status change.</p>
      */
     inline StepStatus& WithStateChangeReason(StepStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
+
 
     /**
      * <p>The details for the step failure including reason, message, and log file path
@@ -129,6 +132,7 @@ namespace Model
      */
     inline StepStatus& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
 
+
     /**
      * <p>The timeline of the cluster step status over time.</p>
      */
@@ -155,12 +159,16 @@ namespace Model
     inline StepStatus& WithTimeline(StepTimeline&& value) { SetTimeline(std::move(value)); return *this;}
 
   private:
+
     StepState m_state;
     bool m_stateHasBeenSet;
+
     StepStateChangeReason m_stateChangeReason;
     bool m_stateChangeReasonHasBeenSet;
+
     FailureDetails m_failureDetails;
     bool m_failureDetailsHasBeenSet;
+
     StepTimeline m_timeline;
     bool m_timelineHasBeenSet;
   };

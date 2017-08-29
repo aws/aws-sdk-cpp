@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the group.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the group.</p>
      */
     inline Tag& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>The type of resource. The only supported value is
@@ -125,6 +127,7 @@ namespace Model
      */
     inline Tag& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>The tag key.</p>
      */
@@ -159,6 +162,7 @@ namespace Model
      * <p>The tag key.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The tag value.</p>
@@ -195,6 +199,7 @@ namespace Model
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>Determines whether the tag is added to new instances as they are launched in
      * the group.</p>
@@ -214,14 +219,19 @@ namespace Model
     inline Tag& WithPropagateAtLaunch(bool value) { SetPropagateAtLaunch(value); return *this;}
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     bool m_propagateAtLaunch;
     bool m_propagateAtLaunchHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     TimeRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The start time of the time range.</p> <note> <p>Specify null to leave the
      * start time open-ended.</p> </note>
@@ -74,6 +75,7 @@ namespace Model
      * start time open-ended.</p> </note>
      */
     inline TimeRange& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
+
 
     /**
      * <p>The end time of the time range.</p> <note> <p>Specify null to leave the end
@@ -106,8 +108,10 @@ namespace Model
     inline TimeRange& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_start;
     bool m_startHasBeenSet;
+
     Aws::Utils::DateTime m_end;
     bool m_endHasBeenSet;
   };

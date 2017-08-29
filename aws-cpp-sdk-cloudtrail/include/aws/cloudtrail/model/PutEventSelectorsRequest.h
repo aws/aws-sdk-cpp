@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the name of the trail or trail ARN. If you specify a trail name,
      * the string must meet the following requirements:</p> <ul> <li> <p>Contain only
@@ -136,6 +137,7 @@ namespace Model
      */
     inline PutEventSelectorsRequest& WithTrailName(const char* value) { SetTrailName(value); return *this;}
 
+
     /**
      * <p>Specifies the settings for your event selectors. You can configure up to five
      * event selectors for a trail.</p>
@@ -179,8 +181,10 @@ namespace Model
     inline PutEventSelectorsRequest& AddEventSelectors(EventSelector&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_trailName;
     bool m_trailNameHasBeenSet;
+
     Aws::Vector<EventSelector> m_eventSelectors;
     bool m_eventSelectorsHasBeenSet;
   };

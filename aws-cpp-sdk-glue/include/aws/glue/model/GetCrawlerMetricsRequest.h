@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of the names of crawlers about which to retrieve metrics.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetCrawlerMetricsRequest& AddCrawlerNameList(const char* value) { m_crawlerNameListHasBeenSet = true; m_crawlerNameList.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum size of a list to return.</p>
      */
@@ -91,6 +93,7 @@ namespace Model
      * <p>The maximum size of a list to return.</p>
      */
     inline GetCrawlerMetricsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A continuation token, if this is a continuation call.</p>
@@ -128,10 +131,13 @@ namespace Model
     inline GetCrawlerMetricsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_crawlerNameList;
     bool m_crawlerNameListHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

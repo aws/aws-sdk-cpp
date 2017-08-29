@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteSnapshotScheduleResult();
-    DeleteSnapshotScheduleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSnapshotScheduleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSnapshotScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSnapshotScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
@@ -63,6 +64,7 @@ namespace Model
     inline DeleteSnapshotScheduleResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
   };
 

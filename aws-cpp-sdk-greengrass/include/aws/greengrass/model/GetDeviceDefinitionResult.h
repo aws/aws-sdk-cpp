@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetDeviceDefinitionResult();
-    GetDeviceDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeviceDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeviceDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDeviceDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the definition.
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetDeviceDefinitionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * Timestamp of when the definition was created.
      */
@@ -110,6 +112,7 @@ namespace Model
      * Timestamp of when the definition was created.
      */
     inline GetDeviceDefinitionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
+
 
     /**
      * Id of the definition.
@@ -146,6 +149,7 @@ namespace Model
      */
     inline GetDeviceDefinitionResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * Last updated timestamp of the definition.
      */
@@ -180,6 +184,7 @@ namespace Model
      * Last updated timestamp of the definition.
      */
     inline GetDeviceDefinitionResult& WithLastUpdatedTimestamp(const char* value) { SetLastUpdatedTimestamp(value); return *this;}
+
 
     /**
      * Last version of the definition.
@@ -216,6 +221,7 @@ namespace Model
      */
     inline GetDeviceDefinitionResult& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
 
+
     /**
      * Latest version arn of the definition.
      */
@@ -250,6 +256,7 @@ namespace Model
      * Latest version arn of the definition.
      */
     inline GetDeviceDefinitionResult& WithLatestVersionArn(const char* value) { SetLatestVersionArn(value); return *this;}
+
 
     /**
      * Name of the definition.
@@ -287,12 +294,19 @@ namespace Model
     inline GetDeviceDefinitionResult& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_arn;
+
     Aws::String m_creationTimestamp;
+
     Aws::String m_id;
+
     Aws::String m_lastUpdatedTimestamp;
+
     Aws::String m_latestVersion;
+
     Aws::String m_latestVersionArn;
+
     Aws::String m_name;
   };
 

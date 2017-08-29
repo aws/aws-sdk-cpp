@@ -30,12 +30,12 @@ GetRestApiResult::GetRestApiResult()
 {
 }
 
-GetRestApiResult::GetRestApiResult(const AmazonWebServiceResult<JsonValue>& result)
+GetRestApiResult::GetRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetRestApiResult& GetRestApiResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetRestApiResult& GetRestApiResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("id"))

@@ -48,6 +48,7 @@ namespace Model
     ScalableTarget& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The namespace of the AWS service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
@@ -82,6 +83,7 @@ namespace Model
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline ScalableTarget& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
@@ -237,6 +239,7 @@ namespace Model
      */
     inline ScalableTarget& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The scalable dimension associated with the scalable target. This string
      * consists of the service namespace, resource type, and scaling property.</p> <ul>
@@ -347,6 +350,7 @@ namespace Model
      */
     inline ScalableTarget& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
+
     /**
      * <p>The minimum value to scale to in response to a scale in event.</p>
      */
@@ -362,6 +366,7 @@ namespace Model
      */
     inline ScalableTarget& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
 
+
     /**
      * <p>The maximum value to scale to in response to a scale out event.</p>
      */
@@ -376,6 +381,7 @@ namespace Model
      * <p>The maximum value to scale to in response to a scale out event.</p>
      */
     inline ScalableTarget& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
+
 
     /**
      * <p>The ARN of an IAM role that allows Application Auto Scaling to modify the
@@ -419,6 +425,7 @@ namespace Model
      */
     inline ScalableTarget& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>The Unix timestamp for when the scalable target was created.</p>
      */
@@ -445,18 +452,25 @@ namespace Model
     inline ScalableTarget& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
   private:
+
     ServiceNamespace m_serviceNamespace;
     bool m_serviceNamespaceHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     ScalableDimension m_scalableDimension;
     bool m_scalableDimensionHasBeenSet;
+
     int m_minCapacity;
     bool m_minCapacityHasBeenSet;
+
     int m_maxCapacity;
     bool m_maxCapacityHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
   };

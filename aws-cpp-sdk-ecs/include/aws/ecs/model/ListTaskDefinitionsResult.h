@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListTaskDefinitionsResult();
-    ListTaskDefinitionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTaskDefinitionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTaskDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTaskDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
@@ -89,6 +90,7 @@ namespace Model
      * <code>ListTaskDefinitions</code> request.</p>
      */
     inline ListTaskDefinitionsResult& AddTaskDefinitionArns(const char* value) { m_taskDefinitionArns.push_back(value); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -154,7 +156,9 @@ namespace Model
     inline ListTaskDefinitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_taskDefinitionArns;
+
     Aws::String m_nextToken;
   };
 

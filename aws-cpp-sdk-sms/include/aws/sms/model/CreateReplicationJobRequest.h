@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
@@ -59,6 +60,7 @@ namespace Model
     
     inline CreateReplicationJobRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetSeedReplicationTime() const{ return m_seedReplicationTime; }
 
@@ -74,6 +76,7 @@ namespace Model
     
     inline CreateReplicationJobRequest& WithSeedReplicationTime(Aws::Utils::DateTime&& value) { SetSeedReplicationTime(std::move(value)); return *this;}
 
+
     
     inline int GetFrequency() const{ return m_frequency; }
 
@@ -82,6 +85,7 @@ namespace Model
 
     
     inline CreateReplicationJobRequest& WithFrequency(int value) { SetFrequency(value); return *this;}
+
 
     
     inline const LicenseType& GetLicenseType() const{ return m_licenseType; }
@@ -97,6 +101,7 @@ namespace Model
 
     
     inline CreateReplicationJobRequest& WithLicenseType(LicenseType&& value) { SetLicenseType(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
@@ -118,6 +123,7 @@ namespace Model
 
     
     inline CreateReplicationJobRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
 
     
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -141,16 +147,22 @@ namespace Model
     inline CreateReplicationJobRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_serverId;
     bool m_serverIdHasBeenSet;
+
     Aws::Utils::DateTime m_seedReplicationTime;
     bool m_seedReplicationTimeHasBeenSet;
+
     int m_frequency;
     bool m_frequencyHasBeenSet;
+
     LicenseType m_licenseType;
     bool m_licenseTypeHasBeenSet;
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

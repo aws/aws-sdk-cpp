@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The version of the output schema to use when exporting data. Must be V_1.
      */
@@ -66,6 +67,7 @@ namespace Model
      * The version of the output schema to use when exporting data. Must be V_1.
      */
     inline StorageClassAnalysisDataExport& WithOutputSchemaVersion(StorageClassAnalysisSchemaVersion&& value) { SetOutputSchemaVersion(std::move(value)); return *this;}
+
 
     /**
      * The place to store the data for an analysis.
@@ -93,8 +95,10 @@ namespace Model
     inline StorageClassAnalysisDataExport& WithDestination(AnalyticsExportDestination&& value) { SetDestination(std::move(value)); return *this;}
 
   private:
+
     StorageClassAnalysisSchemaVersion m_outputSchemaVersion;
     bool m_outputSchemaVersionHasBeenSet;
+
     AnalyticsExportDestination m_destination;
     bool m_destinationHasBeenSet;
   };

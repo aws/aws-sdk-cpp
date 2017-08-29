@@ -30,12 +30,12 @@ SubmitContainerStateChangeResult::SubmitContainerStateChangeResult()
 {
 }
 
-SubmitContainerStateChangeResult::SubmitContainerStateChangeResult(const AmazonWebServiceResult<JsonValue>& result)
+SubmitContainerStateChangeResult::SubmitContainerStateChangeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SubmitContainerStateChangeResult& SubmitContainerStateChangeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SubmitContainerStateChangeResult& SubmitContainerStateChangeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("acknowledgment"))

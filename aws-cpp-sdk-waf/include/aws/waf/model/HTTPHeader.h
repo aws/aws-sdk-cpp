@@ -49,6 +49,7 @@ namespace Model
     HTTPHeader& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of one of the headers in the sampled web request.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of one of the headers in the sampled web request.</p>
      */
     inline HTTPHeader& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The value of one of the headers in the sampled web request.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline HTTPHeader& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

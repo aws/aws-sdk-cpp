@@ -43,6 +43,7 @@ namespace Model
     CreateUsagePlanRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the usage plan.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name of the usage plan.</p>
      */
     inline CreateUsagePlanRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The description of the usage plan.</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline CreateUsagePlanRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The associated API stages of the usage plan.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      */
     inline CreateUsagePlanRequest& AddApiStages(ApiStage&& value) { m_apiStagesHasBeenSet = true; m_apiStages.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The throttling limits of the usage plan.</p>
      */
@@ -172,6 +176,7 @@ namespace Model
      * <p>The throttling limits of the usage plan.</p>
      */
     inline CreateUsagePlanRequest& WithThrottle(ThrottleSettings&& value) { SetThrottle(std::move(value)); return *this;}
+
 
     /**
      * <p>The quota of the usage plan.</p>
@@ -199,14 +204,19 @@ namespace Model
     inline CreateUsagePlanRequest& WithQuota(QuotaSettings&& value) { SetQuota(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<ApiStage> m_apiStages;
     bool m_apiStagesHasBeenSet;
+
     ThrottleSettings m_throttle;
     bool m_throttleHasBeenSet;
+
     QuotaSettings m_quota;
     bool m_quotaHasBeenSet;
   };

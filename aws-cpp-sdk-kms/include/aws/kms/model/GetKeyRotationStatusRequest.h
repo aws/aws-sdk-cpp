@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
      * unique identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN
@@ -107,6 +108,7 @@ namespace Model
     inline GetKeyRotationStatusRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
   };

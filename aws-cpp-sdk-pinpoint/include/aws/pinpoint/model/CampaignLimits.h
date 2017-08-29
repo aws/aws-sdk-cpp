@@ -42,6 +42,7 @@ namespace Model
     CampaignLimits& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The maximum number of messages that the campaign can send daily.
      */
@@ -56,6 +57,7 @@ namespace Model
      * The maximum number of messages that the campaign can send daily.
      */
     inline CampaignLimits& WithDaily(int value) { SetDaily(value); return *this;}
+
 
     /**
      * The maximum total number of messages that the campaign can send.
@@ -73,8 +75,10 @@ namespace Model
     inline CampaignLimits& WithTotal(int value) { SetTotal(value); return *this;}
 
   private:
+
     int m_daily;
     bool m_dailyHasBeenSet;
+
     int m_total;
     bool m_totalHasBeenSet;
   };

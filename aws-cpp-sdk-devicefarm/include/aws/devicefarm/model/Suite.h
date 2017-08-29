@@ -51,6 +51,7 @@ namespace Model
     Suite& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The suite's ARN.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline Suite& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The suite's name.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>The suite's name.</p>
      */
     inline Suite& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The suite's type.</p> <p>Must be one of the following values:</p> <ul> <li>
@@ -211,6 +214,7 @@ namespace Model
      */
     inline Suite& WithType(TestType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>When the suite was created.</p>
      */
@@ -235,6 +239,7 @@ namespace Model
      * <p>When the suite was created.</p>
      */
     inline Suite& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+
 
     /**
      * <p>The suite's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING:
@@ -291,6 +296,7 @@ namespace Model
      */
     inline Suite& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The suite's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING:
      * A pending condition.</p> </li> <li> <p>PASSED: A passing condition.</p> </li>
@@ -341,6 +347,7 @@ namespace Model
      */
     inline Suite& WithResult(ExecutionResult&& value) { SetResult(std::move(value)); return *this;}
 
+
     /**
      * <p>The suite's start time.</p>
      */
@@ -365,6 +372,7 @@ namespace Model
      * <p>The suite's start time.</p>
      */
     inline Suite& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(std::move(value)); return *this;}
+
 
     /**
      * <p>The suite's stop time.</p>
@@ -391,6 +399,7 @@ namespace Model
      */
     inline Suite& WithStopped(Aws::Utils::DateTime&& value) { SetStopped(std::move(value)); return *this;}
 
+
     /**
      * <p>The suite's result counters.</p>
      */
@@ -415,6 +424,7 @@ namespace Model
      * <p>The suite's result counters.</p>
      */
     inline Suite& WithCounters(Counters&& value) { SetCounters(std::move(value)); return *this;}
+
 
     /**
      * <p>A message about the suite's result.</p>
@@ -451,6 +461,7 @@ namespace Model
      */
     inline Suite& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>Represents the total (metered or unmetered) minutes used by the test
      * suite.</p>
@@ -482,26 +493,37 @@ namespace Model
     inline Suite& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     TestType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
+
     ExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     ExecutionResult m_result;
     bool m_resultHasBeenSet;
+
     Aws::Utils::DateTime m_started;
     bool m_startedHasBeenSet;
+
     Aws::Utils::DateTime m_stopped;
     bool m_stoppedHasBeenSet;
+
     Counters m_counters;
     bool m_countersHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     DeviceMinutes m_deviceMinutes;
     bool m_deviceMinutesHasBeenSet;
   };

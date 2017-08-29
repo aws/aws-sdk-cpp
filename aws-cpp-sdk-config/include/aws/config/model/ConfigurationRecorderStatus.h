@@ -48,6 +48,7 @@ namespace Model
     ConfigurationRecorderStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the configuration recorder.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ConfigurationRecorderStatus& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The time the recorder was last started.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The time the recorder was last started.</p>
      */
     inline ConfigurationRecorderStatus& WithLastStartTime(Aws::Utils::DateTime&& value) { SetLastStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time the recorder was last stopped.</p>
@@ -133,6 +136,7 @@ namespace Model
      */
     inline ConfigurationRecorderStatus& WithLastStopTime(Aws::Utils::DateTime&& value) { SetLastStopTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies whether the recorder is currently recording or not.</p>
      */
@@ -147,6 +151,7 @@ namespace Model
      * <p>Specifies whether the recorder is currently recording or not.</p>
      */
     inline ConfigurationRecorderStatus& WithRecording(bool value) { SetRecording(value); return *this;}
+
 
     /**
      * <p>The last (previous) status of the recorder.</p>
@@ -172,6 +177,7 @@ namespace Model
      * <p>The last (previous) status of the recorder.</p>
      */
     inline ConfigurationRecorderStatus& WithLastStatus(RecorderStatus&& value) { SetLastStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The error code indicating that the recording failed.</p>
@@ -208,6 +214,7 @@ namespace Model
      */
     inline ConfigurationRecorderStatus& WithLastErrorCode(const char* value) { SetLastErrorCode(value); return *this;}
 
+
     /**
      * <p>The message indicating that the recording failed due to an error.</p>
      */
@@ -243,6 +250,7 @@ namespace Model
      */
     inline ConfigurationRecorderStatus& WithLastErrorMessage(const char* value) { SetLastErrorMessage(value); return *this;}
 
+
     /**
      * <p>The time when the status was last changed.</p>
      */
@@ -269,20 +277,28 @@ namespace Model
     inline ConfigurationRecorderStatus& WithLastStatusChangeTime(Aws::Utils::DateTime&& value) { SetLastStatusChangeTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Utils::DateTime m_lastStartTime;
     bool m_lastStartTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastStopTime;
     bool m_lastStopTimeHasBeenSet;
+
     bool m_recording;
     bool m_recordingHasBeenSet;
+
     RecorderStatus m_lastStatus;
     bool m_lastStatusHasBeenSet;
+
     Aws::String m_lastErrorCode;
     bool m_lastErrorCodeHasBeenSet;
+
     Aws::String m_lastErrorMessage;
     bool m_lastErrorMessageHasBeenSet;
+
     Aws::Utils::DateTime m_lastStatusChangeTime;
     bool m_lastStatusChangeTimeHasBeenSet;
   };

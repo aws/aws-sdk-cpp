@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The source stack ID.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline CloneStackRequest& WithSourceStackId(const char* value) { SetSourceStackId(value); return *this;}
 
+
     /**
      * <p>The cloned stack name.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The cloned stack name.</p>
      */
     inline CloneStackRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
@@ -168,6 +171,7 @@ namespace Model
      * Endpoints</a>.</p>
      */
     inline CloneStackRequest& WithRegion(const char* value) { SetRegion(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC that the cloned stack is to be launched into. It must be in
@@ -344,6 +348,7 @@ namespace Model
      */
     inline CloneStackRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>A list of stack attributes and values as key/value pairs to be added to the
      * cloned stack.</p>
@@ -409,6 +414,7 @@ namespace Model
      * cloned stack.</p>
      */
     inline CloneStackRequest& AddAttributes(const StackAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+
 
     /**
      * <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS
@@ -515,6 +521,7 @@ namespace Model
      */
     inline CloneStackRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile
      * for all of the stack's EC2 instances. For more information about IAM ARNs, see
@@ -577,6 +584,7 @@ namespace Model
      * Identifiers</a>.</p>
      */
     inline CloneStackRequest& WithDefaultInstanceProfileArn(const char* value) { SetDefaultInstanceProfileArn(value); return *this;}
+
 
     /**
      * <p>The stack's operating system, which must be set to one of the following.</p>
@@ -767,6 +775,7 @@ namespace Model
      */
     inline CloneStackRequest& WithDefaultOs(const char* value) { SetDefaultOs(value); return *this;}
 
+
     /**
      * <p>The stack's host name theme, with spaces are replaced by underscores. The
      * theme is used to generate host names for the stack's instances. By default,
@@ -893,6 +902,7 @@ namespace Model
      */
     inline CloneStackRequest& WithHostnameTheme(const char* value) { SetHostnameTheme(value); return *this;}
 
+
     /**
      * <p>The cloned stack's default Availability Zone, which must be in the specified
      * region. For more information, see <a
@@ -962,6 +972,7 @@ namespace Model
      * <code>VpcId</code> parameter description. </p>
      */
     inline CloneStackRequest& WithDefaultAvailabilityZone(const char* value) { SetDefaultAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>The stack's default VPC subnet ID. This parameter is required if you specify
@@ -1033,6 +1044,7 @@ namespace Model
      */
     inline CloneStackRequest& WithDefaultSubnetId(const char* value) { SetDefaultSubnetId(value); return *this;}
 
+
     /**
      * <p>A string that contains user-defined, custom JSON. It is used to override the
      * corresponding default stack configuration JSON values. The string should be in
@@ -1103,6 +1115,7 @@ namespace Model
      */
     inline CloneStackRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
+
     /**
      * <p>The configuration manager. When you clone a stack we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
@@ -1142,6 +1155,7 @@ namespace Model
      * currently 12.</p>
      */
     inline CloneStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
+
 
     /**
      * <p>A <code>ChefConfiguration</code> object that specifies whether to enable
@@ -1188,6 +1202,7 @@ namespace Model
      */
     inline CloneStackRequest& WithChefConfiguration(ChefConfiguration&& value) { SetChefConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether to use custom cookbooks.</p>
      */
@@ -1202,6 +1217,7 @@ namespace Model
      * <p>Whether to use custom cookbooks.</p>
      */
     inline CloneStackRequest& WithUseCustomCookbooks(bool value) { SetUseCustomCookbooks(value); return *this;}
+
 
     /**
      * <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with
@@ -1266,6 +1282,7 @@ namespace Model
      */
     inline CloneStackRequest& WithUseOpsworksSecurityGroups(bool value) { SetUseOpsworksSecurityGroups(value); return *this;}
 
+
     
     inline const Source& GetCustomCookbooksSource() const{ return m_customCookbooksSource; }
 
@@ -1280,6 +1297,7 @@ namespace Model
 
     
     inline CloneStackRequest& WithCustomCookbooksSource(Source&& value) { SetCustomCookbooksSource(std::move(value)); return *this;}
+
 
     /**
      * <p>A default Amazon EC2 key pair name. The default value is none. If you specify
@@ -1386,6 +1404,7 @@ namespace Model
      */
     inline CloneStackRequest& WithDefaultSshKeyName(const char* value) { SetDefaultSshKeyName(value); return *this;}
 
+
     /**
      * <p>Whether to clone the source stack's permissions.</p>
      */
@@ -1400,6 +1419,7 @@ namespace Model
      * <p>Whether to clone the source stack's permissions.</p>
      */
     inline CloneStackRequest& WithClonePermissions(bool value) { SetClonePermissions(value); return *this;}
+
 
     /**
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
@@ -1440,6 +1460,7 @@ namespace Model
      * <p>A list of source stack app IDs to be included in the cloned stack.</p>
      */
     inline CloneStackRequest& AddCloneAppIds(const char* value) { m_cloneAppIdsHasBeenSet = true; m_cloneAppIds.push_back(value); return *this; }
+
 
     /**
      * <p>The default root device type. This value is used by default for all instances
@@ -1485,6 +1506,7 @@ namespace Model
      * for the Root Device</a>.</p>
      */
     inline CloneStackRequest& WithDefaultRootDeviceType(RootDeviceType&& value) { SetDefaultRootDeviceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The default AWS OpsWorks Stacks agent version. You have the following
@@ -1613,48 +1635,70 @@ namespace Model
     inline CloneStackRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
   private:
+
     Aws::String m_sourceStackId;
     bool m_sourceStackIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::Map<StackAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     Aws::String m_defaultInstanceProfileArn;
     bool m_defaultInstanceProfileArnHasBeenSet;
+
     Aws::String m_defaultOs;
     bool m_defaultOsHasBeenSet;
+
     Aws::String m_hostnameTheme;
     bool m_hostnameThemeHasBeenSet;
+
     Aws::String m_defaultAvailabilityZone;
     bool m_defaultAvailabilityZoneHasBeenSet;
+
     Aws::String m_defaultSubnetId;
     bool m_defaultSubnetIdHasBeenSet;
+
     Aws::String m_customJson;
     bool m_customJsonHasBeenSet;
+
     StackConfigurationManager m_configurationManager;
     bool m_configurationManagerHasBeenSet;
+
     ChefConfiguration m_chefConfiguration;
     bool m_chefConfigurationHasBeenSet;
+
     bool m_useCustomCookbooks;
     bool m_useCustomCookbooksHasBeenSet;
+
     bool m_useOpsworksSecurityGroups;
     bool m_useOpsworksSecurityGroupsHasBeenSet;
+
     Source m_customCookbooksSource;
     bool m_customCookbooksSourceHasBeenSet;
+
     Aws::String m_defaultSshKeyName;
     bool m_defaultSshKeyNameHasBeenSet;
+
     bool m_clonePermissions;
     bool m_clonePermissionsHasBeenSet;
+
     Aws::Vector<Aws::String> m_cloneAppIds;
     bool m_cloneAppIdsHasBeenSet;
+
     RootDeviceType m_defaultRootDeviceType;
     bool m_defaultRootDeviceTypeHasBeenSet;
+
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet;
   };

@@ -31,13 +31,13 @@ CreateMountTargetResult::CreateMountTargetResult() :
 {
 }
 
-CreateMountTargetResult::CreateMountTargetResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateMountTargetResult::CreateMountTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_lifeCycleState(LifeCycleState::NOT_SET)
 {
   *this = result;
 }
 
-CreateMountTargetResult& CreateMountTargetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateMountTargetResult& CreateMountTargetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OwnerId"))

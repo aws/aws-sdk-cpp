@@ -46,6 +46,7 @@ namespace Model
     SequenceNumberRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The starting sequence number for the range.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The starting sequence number for the range.</p>
      */
     inline SequenceNumberRange& WithStartingSequenceNumber(const char* value) { SetStartingSequenceNumber(value); return *this;}
+
 
     /**
      * <p>The ending sequence number for the range. Shards that are in the OPEN state
@@ -124,8 +126,10 @@ namespace Model
     inline SequenceNumberRange& WithEndingSequenceNumber(const char* value) { SetEndingSequenceNumber(value); return *this;}
 
   private:
+
     Aws::String m_startingSequenceNumber;
     bool m_startingSequenceNumberHasBeenSet;
+
     Aws::String m_endingSequenceNumber;
     bool m_endingSequenceNumberHasBeenSet;
   };

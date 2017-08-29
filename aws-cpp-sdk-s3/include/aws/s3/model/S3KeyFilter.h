@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::Vector<FilterRule>& GetFilterRules() const{ return m_filterRules; }
 
@@ -70,6 +71,7 @@ namespace Model
     inline S3KeyFilter& AddFilterRules(FilterRule&& value) { m_filterRulesHasBeenSet = true; m_filterRules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<FilterRule> m_filterRules;
     bool m_filterRulesHasBeenSet;
   };

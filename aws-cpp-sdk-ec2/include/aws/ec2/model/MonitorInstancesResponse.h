@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     MonitorInstancesResponse();
-    MonitorInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    MonitorInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    MonitorInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    MonitorInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The monitoring information.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline MonitorInstancesResponse& AddInstanceMonitorings(InstanceMonitoring&& value) { m_instanceMonitorings.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline MonitorInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<InstanceMonitoring> m_instanceMonitorings;
+
     ResponseMetadata m_responseMetadata;
   };
 

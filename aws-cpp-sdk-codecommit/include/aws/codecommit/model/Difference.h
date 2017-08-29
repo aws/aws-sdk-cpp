@@ -47,6 +47,7 @@ namespace Model
     Difference& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Information about a <code>beforeBlob</code> data type object, including the
      * ID, the file mode permission code, and the path.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline Difference& WithBeforeBlob(BlobMetadata&& value) { SetBeforeBlob(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about an <code>afterBlob</code> data type object, including the
      * ID, the file mode permission code, and the path.</p>
@@ -106,6 +108,7 @@ namespace Model
      * ID, the file mode permission code, and the path.</p>
      */
     inline Difference& WithAfterBlob(BlobMetadata&& value) { SetAfterBlob(std::move(value)); return *this;}
+
 
     /**
      * <p>Whether the change type of the difference is an addition (A), deletion (D),
@@ -138,10 +141,13 @@ namespace Model
     inline Difference& WithChangeType(ChangeTypeEnum&& value) { SetChangeType(std::move(value)); return *this;}
 
   private:
+
     BlobMetadata m_beforeBlob;
     bool m_beforeBlobHasBeenSet;
+
     BlobMetadata m_afterBlob;
     bool m_afterBlobHasBeenSet;
+
     ChangeTypeEnum m_changeType;
     bool m_changeTypeHasBeenSet;
   };

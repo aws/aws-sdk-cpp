@@ -31,12 +31,12 @@ DisableSnapshotCopyResult::DisableSnapshotCopyResult()
 {
 }
 
-DisableSnapshotCopyResult::DisableSnapshotCopyResult(const AmazonWebServiceResult<XmlDocument>& result)
+DisableSnapshotCopyResult::DisableSnapshotCopyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DisableSnapshotCopyResult& DisableSnapshotCopyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DisableSnapshotCopyResult& DisableSnapshotCopyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

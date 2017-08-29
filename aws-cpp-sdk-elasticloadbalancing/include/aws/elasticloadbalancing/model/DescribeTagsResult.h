@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeTagsResult();
-    DescribeTagsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the tags.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeTagsResult& AddTagDescriptions(TagDescription&& value) { m_tagDescriptions.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribeTagsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<TagDescription> m_tagDescriptions;
+
     ResponseMetadata m_responseMetadata;
   };
 

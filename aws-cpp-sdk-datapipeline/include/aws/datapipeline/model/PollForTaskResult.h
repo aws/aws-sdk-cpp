@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     PollForTaskResult();
-    PollForTaskResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PollForTaskResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PollForTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PollForTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The information needed to complete the task that is being assigned to the
@@ -92,6 +93,7 @@ namespace Model
     inline PollForTaskResult& WithTaskObject(TaskObject&& value) { SetTaskObject(std::move(value)); return *this;}
 
   private:
+
     TaskObject m_taskObject;
   };
 

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specify one or more resource types to get the number of resources that are
      * compliant and the number that are noncompliant for each resource type.</p>
@@ -113,6 +114,7 @@ namespace Model
     inline GetComplianceSummaryByResourceTypeRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_resourceTypes;
     bool m_resourceTypesHasBeenSet;
   };

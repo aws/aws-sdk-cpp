@@ -47,6 +47,7 @@ namespace Model
     BatchDetachPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Reference that identifies the policy object.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>Reference that identifies the policy object.</p>
      */
     inline BatchDetachPolicy& WithPolicyReference(ObjectReference&& value) { SetPolicyReference(std::move(value)); return *this;}
+
 
     /**
      * <p>Reference that identifies the object whose policy object will be
@@ -103,8 +105,10 @@ namespace Model
     inline BatchDetachPolicy& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
+
     ObjectReference m_policyReference;
     bool m_policyReferenceHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
   };

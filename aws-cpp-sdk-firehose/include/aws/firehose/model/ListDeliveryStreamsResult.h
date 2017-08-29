@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListDeliveryStreamsResult();
-    ListDeliveryStreamsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDeliveryStreamsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeliveryStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDeliveryStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The names of the delivery streams.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ListDeliveryStreamsResult& AddDeliveryStreamNames(const char* value) { m_deliveryStreamNames.push_back(value); return *this; }
 
+
     /**
      * <p>Indicates whether there are more delivery streams available to list.</p>
      */
@@ -98,7 +100,9 @@ namespace Model
     inline ListDeliveryStreamsResult& WithHasMoreDeliveryStreams(bool value) { SetHasMoreDeliveryStreams(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_deliveryStreamNames;
+
     bool m_hasMoreDeliveryStreams;
   };
 

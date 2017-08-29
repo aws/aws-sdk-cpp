@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Returns the default patch baseline for the specified operating system.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
     inline GetDefaultPatchBaselineRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
   private:
+
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet;
   };

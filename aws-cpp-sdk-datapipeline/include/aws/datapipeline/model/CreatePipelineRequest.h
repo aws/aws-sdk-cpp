@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name for the pipeline. You can use the same name for multiple pipelines
      * associated with your AWS account, because AWS Data Pipeline assigns each
@@ -89,6 +90,7 @@ namespace Model
      * pipeline a unique pipeline identifier.</p>
      */
     inline CreatePipelineRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A unique identifier. This identifier is not the same as the pipeline
@@ -195,6 +197,7 @@ namespace Model
      */
     inline CreatePipelineRequest& WithUniqueId(const char* value) { SetUniqueId(value); return *this;}
 
+
     /**
      * <p>The description for the pipeline.</p>
      */
@@ -229,6 +232,7 @@ namespace Model
      * <p>The description for the pipeline.</p>
      */
     inline CreatePipelineRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of tags to associate with the pipeline at creation. Tags let you
@@ -294,12 +298,16 @@ namespace Model
     inline CreatePipelineRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_uniqueId;
     bool m_uniqueIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

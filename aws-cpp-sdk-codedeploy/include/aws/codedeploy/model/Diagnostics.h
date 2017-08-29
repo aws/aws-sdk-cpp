@@ -47,6 +47,7 @@ namespace Model
     Diagnostics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The associated error code:</p> <ul> <li> <p>Success: The specified script
      * ran.</p> </li> <li> <p>ScriptMissing: The specified script was not found in the
@@ -107,6 +108,7 @@ namespace Model
      */
     inline Diagnostics& WithErrorCode(LifecycleErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
+
     /**
      * <p>The name of the script.</p>
      */
@@ -142,6 +144,7 @@ namespace Model
      */
     inline Diagnostics& WithScriptName(const char* value) { SetScriptName(value); return *this;}
 
+
     /**
      * <p>The message associated with the error.</p>
      */
@@ -176,6 +179,7 @@ namespace Model
      * <p>The message associated with the error.</p>
      */
     inline Diagnostics& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>The last portion of the diagnostic log.</p> <p>If available, AWS CodeDeploy
@@ -220,12 +224,16 @@ namespace Model
     inline Diagnostics& WithLogTail(const char* value) { SetLogTail(value); return *this;}
 
   private:
+
     LifecycleErrorCode m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_scriptName;
     bool m_scriptNameHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::String m_logTail;
     bool m_logTailHasBeenSet;
   };

@@ -30,12 +30,12 @@ UpdateJobResult::UpdateJobResult()
 {
 }
 
-UpdateJobResult::UpdateJobResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateJobResult::UpdateJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateJobResult& UpdateJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateJobResult& UpdateJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

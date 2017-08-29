@@ -30,13 +30,13 @@ GetBucketAccelerateConfigurationResult::GetBucketAccelerateConfigurationResult()
 {
 }
 
-GetBucketAccelerateConfigurationResult::GetBucketAccelerateConfigurationResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetBucketAccelerateConfigurationResult::GetBucketAccelerateConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_status(BucketAccelerateStatus::NOT_SET)
 {
   *this = result;
 }
 
-GetBucketAccelerateConfigurationResult& GetBucketAccelerateConfigurationResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetBucketAccelerateConfigurationResult& GetBucketAccelerateConfigurationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The line containing the specified position in the document.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
      * <p>The line containing the specified position in the document.</p>
      */
     inline Position& WithLine(int value) { SetLine(value); return *this;}
+
 
     /**
      * <p>The column in the line containing the specified position in the document.</p>
@@ -79,8 +81,10 @@ namespace Model
     inline Position& WithColumn(int value) { SetColumn(value); return *this;}
 
   private:
+
     int m_line;
     bool m_lineHasBeenSet;
+
     int m_column;
     bool m_columnHasBeenSet;
   };

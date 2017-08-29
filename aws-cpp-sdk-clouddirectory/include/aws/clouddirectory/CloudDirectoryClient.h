@@ -207,7 +207,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DetachFromIndexResult, Aws::Client::AWSError<CloudDirectoryErrors>> DetachFromIndexOutcome;
         typedef Aws::Utils::Outcome<DetachObjectResult, Aws::Client::AWSError<CloudDirectoryErrors>> DetachObjectOutcome;
         typedef Aws::Utils::Outcome<DetachPolicyResult, Aws::Client::AWSError<CloudDirectoryErrors>> DetachPolicyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudDirectoryErrors>> DetachTypedLinkOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudDirectoryErrors>> DetachTypedLinkOutcome;
         typedef Aws::Utils::Outcome<DisableDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> DisableDirectoryOutcome;
         typedef Aws::Utils::Outcome<EnableDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> EnableDirectoryOutcome;
         typedef Aws::Utils::Outcome<GetDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetDirectoryOutcome;
@@ -389,22 +389,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudDirectoryClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudDirectoryClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudDirectoryClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudDirectoryClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        CloudDirectoryClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudDirectoryClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CloudDirectoryClient();
+
 
         /**
          * <p>Adds a new <a>Facet</a> to an object.</p><p><h3>See Also:</h3>   <a
@@ -2222,7 +2223,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AddFacetToObjectAsyncHelper(const Model::AddFacetToObjectRequest& request, const AddFacetToObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

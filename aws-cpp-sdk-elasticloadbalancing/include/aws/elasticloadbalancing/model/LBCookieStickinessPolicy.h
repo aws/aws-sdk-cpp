@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the policy. This name must be unique within the set of policies
      * for this load balancer.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline LBCookieStickinessPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
+
     /**
      * <p>The time period, in seconds, after which the cookie should be considered
      * stale. If this parameter is not specified, the stickiness session lasts for the
@@ -113,8 +115,10 @@ namespace Model
     inline LBCookieStickinessPolicy& WithCookieExpirationPeriod(long long value) { SetCookieExpirationPeriod(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     long long m_cookieExpirationPeriod;
     bool m_cookieExpirationPeriodHasBeenSet;
   };

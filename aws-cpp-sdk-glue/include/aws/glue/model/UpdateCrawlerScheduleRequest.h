@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the crawler whose schedule to update.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Name of the crawler whose schedule to update.</p>
      */
     inline UpdateCrawlerScheduleRequest& WithCrawlerName(const char* value) { SetCrawlerName(value); return *this;}
+
 
     /**
      * <p>Cron expression of the updated schedule.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline UpdateCrawlerScheduleRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 
   private:
+
     Aws::String m_crawlerName;
     bool m_crawlerNameHasBeenSet;
+
     Aws::String m_schedule;
     bool m_scheduleHasBeenSet;
   };

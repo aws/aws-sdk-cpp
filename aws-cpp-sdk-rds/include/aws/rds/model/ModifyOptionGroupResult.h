@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ModifyOptionGroupResult();
-    ModifyOptionGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyOptionGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyOptionGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyOptionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const OptionGroup& GetOptionGroup() const{ return m_optionGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline ModifyOptionGroupResult& WithOptionGroup(OptionGroup&& value) { SetOptionGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline ModifyOptionGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     OptionGroup m_optionGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 

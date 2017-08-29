@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The protocol that is used by the Listener.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline Listener& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
+
     /**
      * <p>The port that is used by the Listener.</p>
      */
@@ -100,8 +102,10 @@ namespace Model
     inline Listener& WithPort(int value) { SetPort(value); return *this;}
 
   private:
+
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
   };

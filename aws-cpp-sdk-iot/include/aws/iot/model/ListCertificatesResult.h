@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListCertificatesResult();
-    ListCertificatesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCertificatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The descriptions of the certificates.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The descriptions of the certificates.</p>
      */
     inline ListCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker for the next set of results, or null if there are no additional
@@ -126,7 +128,9 @@ namespace Model
     inline ListCertificatesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
   private:
+
     Aws::Vector<Certificate> m_certificates;
+
     Aws::String m_nextMarker;
   };
 

@@ -31,12 +31,12 @@ DescribeIdentityIdFormatResponse::DescribeIdentityIdFormatResponse()
 {
 }
 
-DescribeIdentityIdFormatResponse::DescribeIdentityIdFormatResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeIdentityIdFormatResponse::DescribeIdentityIdFormatResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeIdentityIdFormatResponse& DescribeIdentityIdFormatResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeIdentityIdFormatResponse& DescribeIdentityIdFormatResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

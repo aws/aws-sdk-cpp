@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeFlowLogsResponse();
-    DescribeFlowLogsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeFlowLogsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeFlowLogsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeFlowLogsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the flow logs.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the flow logs.</p>
      */
     inline DescribeFlowLogsResponse& AddFlowLogs(FlowLog&& value) { m_flowLogs.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -126,6 +128,7 @@ namespace Model
      */
     inline DescribeFlowLogsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline DescribeFlowLogsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<FlowLog> m_flowLogs;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

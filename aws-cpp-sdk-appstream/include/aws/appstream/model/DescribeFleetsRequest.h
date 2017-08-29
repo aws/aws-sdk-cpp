@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The fleet names to describe. Use null to describe all the fleets for the AWS
      * account.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeFleetsRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
+
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If this value is null, it retrieves the first page.</p>
@@ -128,8 +130,10 @@ namespace Model
     inline DescribeFleetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -54,6 +54,7 @@ namespace Model
     ReportDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetReportName() const{ return m_reportName; }
 
@@ -75,6 +76,7 @@ namespace Model
     
     inline ReportDefinition& WithReportName(const char* value) { SetReportName(value); return *this;}
 
+
     
     inline const TimeUnit& GetTimeUnit() const{ return m_timeUnit; }
 
@@ -89,6 +91,7 @@ namespace Model
 
     
     inline ReportDefinition& WithTimeUnit(TimeUnit&& value) { SetTimeUnit(std::move(value)); return *this;}
+
 
     
     inline const ReportFormat& GetFormat() const{ return m_format; }
@@ -105,6 +108,7 @@ namespace Model
     
     inline ReportDefinition& WithFormat(ReportFormat&& value) { SetFormat(std::move(value)); return *this;}
 
+
     
     inline const CompressionFormat& GetCompression() const{ return m_compression; }
 
@@ -119,6 +123,7 @@ namespace Model
 
     
     inline ReportDefinition& WithCompression(CompressionFormat&& value) { SetCompression(std::move(value)); return *this;}
+
 
     
     inline const Aws::Vector<SchemaElement>& GetAdditionalSchemaElements() const{ return m_additionalSchemaElements; }
@@ -141,6 +146,7 @@ namespace Model
     
     inline ReportDefinition& AddAdditionalSchemaElements(SchemaElement&& value) { m_additionalSchemaElementsHasBeenSet = true; m_additionalSchemaElements.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
@@ -161,6 +167,7 @@ namespace Model
 
     
     inline ReportDefinition& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+
 
     
     inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
@@ -183,6 +190,7 @@ namespace Model
     
     inline ReportDefinition& WithS3Prefix(const char* value) { SetS3Prefix(value); return *this;}
 
+
     
     inline const AWSRegion& GetS3Region() const{ return m_s3Region; }
 
@@ -197,6 +205,7 @@ namespace Model
 
     
     inline ReportDefinition& WithS3Region(AWSRegion&& value) { SetS3Region(std::move(value)); return *this;}
+
 
     
     inline const Aws::Vector<AdditionalArtifact>& GetAdditionalArtifacts() const{ return m_additionalArtifacts; }
@@ -220,22 +229,31 @@ namespace Model
     inline ReportDefinition& AddAdditionalArtifacts(AdditionalArtifact&& value) { m_additionalArtifactsHasBeenSet = true; m_additionalArtifacts.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_reportName;
     bool m_reportNameHasBeenSet;
+
     TimeUnit m_timeUnit;
     bool m_timeUnitHasBeenSet;
+
     ReportFormat m_format;
     bool m_formatHasBeenSet;
+
     CompressionFormat m_compression;
     bool m_compressionHasBeenSet;
+
     Aws::Vector<SchemaElement> m_additionalSchemaElements;
     bool m_additionalSchemaElementsHasBeenSet;
+
     Aws::String m_s3Bucket;
     bool m_s3BucketHasBeenSet;
+
     Aws::String m_s3Prefix;
     bool m_s3PrefixHasBeenSet;
+
     AWSRegion m_s3Region;
     bool m_s3RegionHasBeenSet;
+
     Aws::Vector<AdditionalArtifact> m_additionalArtifacts;
     bool m_additionalArtifactsHasBeenSet;
   };

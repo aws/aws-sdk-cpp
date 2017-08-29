@@ -31,12 +31,12 @@ RequestSpotInstancesResponse::RequestSpotInstancesResponse()
 {
 }
 
-RequestSpotInstancesResponse::RequestSpotInstancesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+RequestSpotInstancesResponse::RequestSpotInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RequestSpotInstancesResponse& RequestSpotInstancesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RequestSpotInstancesResponse& RequestSpotInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

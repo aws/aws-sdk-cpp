@@ -46,6 +46,7 @@ namespace Model
     SegmentResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The ID of the application to which the segment applies.
      */
@@ -80,6 +81,7 @@ namespace Model
      * The ID of the application to which the segment applies.
      */
     inline SegmentResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     /**
      * The date the segment was created in ISO 8601 format.
@@ -116,6 +118,7 @@ namespace Model
      */
     inline SegmentResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
+
     /**
      * The segment dimensions attributes.
      */
@@ -140,6 +143,7 @@ namespace Model
      * The segment dimensions attributes.
      */
     inline SegmentResponse& WithDimensions(SegmentDimensions&& value) { SetDimensions(std::move(value)); return *this;}
+
 
     /**
      * The unique segment ID.
@@ -176,6 +180,7 @@ namespace Model
      */
     inline SegmentResponse& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * The import job settings.
      */
@@ -200,6 +205,7 @@ namespace Model
      * The import job settings.
      */
     inline SegmentResponse& WithImportDefinition(SegmentImportResource&& value) { SetImportDefinition(std::move(value)); return *this;}
+
 
     /**
      * The date the segment was last updated in ISO 8601 format.
@@ -236,6 +242,7 @@ namespace Model
      */
     inline SegmentResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
+
     /**
      * The name of segment
      */
@@ -270,6 +277,7 @@ namespace Model
      * The name of segment
      */
     inline SegmentResponse& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * The segment type:
@@ -336,6 +344,7 @@ IMPORT - A static segment built from an
      */
     inline SegmentResponse& WithSegmentType(SegmentType&& value) { SetSegmentType(std::move(value)); return *this;}
 
+
     /**
      * The segment version number.
      */
@@ -352,22 +361,31 @@ IMPORT - A static segment built from an
     inline SegmentResponse& WithVersion(int value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
+
     SegmentDimensions m_dimensions;
     bool m_dimensionsHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     SegmentImportResource m_importDefinition;
     bool m_importDefinitionHasBeenSet;
+
     Aws::String m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     SegmentType m_segmentType;
     bool m_segmentTypeHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
   };

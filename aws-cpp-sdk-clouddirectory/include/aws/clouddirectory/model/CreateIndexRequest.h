@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the directory where the index should be created.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The ARN of the directory where the index should be created.</p>
      */
     inline CreateIndexRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+
 
     /**
      * <p>Specifies the attributes that should be indexed on. Currently only a single
@@ -116,6 +118,7 @@ namespace Model
      */
     inline CreateIndexRequest& AddOrderedIndexedAttributeList(AttributeKey&& value) { m_orderedIndexedAttributeListHasBeenSet = true; m_orderedIndexedAttributeList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether the attribute that is being indexed has unique values or
      * not.</p>
@@ -133,6 +136,7 @@ namespace Model
      * not.</p>
      */
     inline CreateIndexRequest& WithIsUnique(bool value) { SetIsUnique(value); return *this;}
+
 
     /**
      * <p>A reference to the parent object that contains the index object.</p>
@@ -158,6 +162,7 @@ namespace Model
      * <p>A reference to the parent object that contains the index object.</p>
      */
     inline CreateIndexRequest& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the link between the parent object and the index object.</p>
@@ -195,14 +200,19 @@ namespace Model
     inline CreateIndexRequest& WithLinkName(const char* value) { SetLinkName(value); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     Aws::Vector<AttributeKey> m_orderedIndexedAttributeList;
     bool m_orderedIndexedAttributeListHasBeenSet;
+
     bool m_isUnique;
     bool m_isUniqueHasBeenSet;
+
     ObjectReference m_parentReference;
     bool m_parentReferenceHasBeenSet;
+
     Aws::String m_linkName;
     bool m_linkNameHasBeenSet;
   };

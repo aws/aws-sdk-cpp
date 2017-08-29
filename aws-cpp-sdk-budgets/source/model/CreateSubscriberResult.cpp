@@ -30,12 +30,12 @@ CreateSubscriberResult::CreateSubscriberResult()
 {
 }
 
-CreateSubscriberResult::CreateSubscriberResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateSubscriberResult::CreateSubscriberResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateSubscriberResult& CreateSubscriberResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateSubscriberResult& CreateSubscriberResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

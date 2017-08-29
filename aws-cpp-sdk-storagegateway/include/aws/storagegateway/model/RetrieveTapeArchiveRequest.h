@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from
      * the virtual tape shelf (VTS).</p>
@@ -80,6 +81,7 @@ namespace Model
      * the virtual tape shelf (VTS).</p>
      */
     inline RetrieveTapeArchiveRequest& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the
@@ -138,8 +140,10 @@ namespace Model
     inline RetrieveTapeArchiveRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
   };

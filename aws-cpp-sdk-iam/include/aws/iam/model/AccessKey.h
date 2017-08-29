@@ -56,6 +56,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the IAM user that the access key is associated with.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      * <p>The name of the IAM user that the access key is associated with.</p>
      */
     inline AccessKey& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The ID for this access key.</p>
@@ -126,6 +128,7 @@ namespace Model
      */
     inline AccessKey& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
+
     /**
      * <p>The status of the access key. <code>Active</code> means the key is valid for
      * API calls, while <code>Inactive</code> means it is not. </p>
@@ -155,6 +158,7 @@ namespace Model
      * API calls, while <code>Inactive</code> means it is not. </p>
      */
     inline AccessKey& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The secret key used to sign requests.</p>
@@ -191,6 +195,7 @@ namespace Model
      */
     inline AccessKey& WithSecretAccessKey(const char* value) { SetSecretAccessKey(value); return *this;}
 
+
     /**
      * <p>The date when the access key was created.</p>
      */
@@ -217,14 +222,19 @@ namespace Model
     inline AccessKey& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet;
+
     StatusType m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_secretAccessKey;
     bool m_secretAccessKeyHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
   };

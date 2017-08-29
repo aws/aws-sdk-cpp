@@ -31,12 +31,12 @@ GetClusterCredentialsResult::GetClusterCredentialsResult()
 {
 }
 
-GetClusterCredentialsResult::GetClusterCredentialsResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetClusterCredentialsResult::GetClusterCredentialsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetClusterCredentialsResult& GetClusterCredentialsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetClusterCredentialsResult& GetClusterCredentialsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

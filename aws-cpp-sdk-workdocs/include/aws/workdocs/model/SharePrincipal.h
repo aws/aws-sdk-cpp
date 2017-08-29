@@ -48,6 +48,7 @@ namespace Model
     SharePrincipal& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the recipient.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline SharePrincipal& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The type of the recipient.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The type of the recipient.</p>
      */
     inline SharePrincipal& WithType(PrincipalType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The role of the recipient.</p>
@@ -134,10 +137,13 @@ namespace Model
     inline SharePrincipal& WithRole(RoleType&& value) { SetRole(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     PrincipalType m_type;
     bool m_typeHasBeenSet;
+
     RoleType m_role;
     bool m_roleHasBeenSet;
   };

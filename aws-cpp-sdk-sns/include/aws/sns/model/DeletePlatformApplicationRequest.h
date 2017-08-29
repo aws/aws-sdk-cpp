@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>PlatformApplicationArn of platform application object to delete.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline DeletePlatformApplicationRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
 
   private:
+
     Aws::String m_platformApplicationArn;
     bool m_platformApplicationArnHasBeenSet;
   };

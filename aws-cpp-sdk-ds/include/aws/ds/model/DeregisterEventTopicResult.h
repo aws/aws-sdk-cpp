@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     DeregisterEventTopicResult();
-    DeregisterEventTopicResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterEventTopicResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterEventTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterEventTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

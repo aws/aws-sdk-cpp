@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     DeleteDevicePoolResult();
-    DeleteDevicePoolResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDevicePoolResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDevicePoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDevicePoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

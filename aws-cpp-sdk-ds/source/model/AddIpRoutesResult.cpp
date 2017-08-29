@@ -30,12 +30,12 @@ AddIpRoutesResult::AddIpRoutesResult()
 {
 }
 
-AddIpRoutesResult::AddIpRoutesResult(const AmazonWebServiceResult<JsonValue>& result)
+AddIpRoutesResult::AddIpRoutesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddIpRoutesResult& AddIpRoutesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddIpRoutesResult& AddIpRoutesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

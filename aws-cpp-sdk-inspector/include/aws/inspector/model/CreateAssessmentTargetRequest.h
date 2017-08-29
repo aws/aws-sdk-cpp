@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user-defined name that identifies the assessment target that you want to
      * create. The name must be unique within the AWS account.</p>
@@ -77,6 +78,7 @@ namespace Model
      * create. The name must be unique within the AWS account.</p>
      */
     inline CreateAssessmentTargetRequest& WithAssessmentTargetName(const char* value) { SetAssessmentTargetName(value); return *this;}
+
 
     /**
      * <p>The ARN that specifies the resource group that is used to create the
@@ -121,8 +123,10 @@ namespace Model
     inline CreateAssessmentTargetRequest& WithResourceGroupArn(const char* value) { SetResourceGroupArn(value); return *this;}
 
   private:
+
     Aws::String m_assessmentTargetName;
     bool m_assessmentTargetNameHasBeenSet;
+
     Aws::String m_resourceGroupArn;
     bool m_resourceGroupArnHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline InitiateDocumentVersionUploadRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the document.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The ID of the document.</p>
      */
     inline InitiateDocumentVersionUploadRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the document.</p>
@@ -149,6 +152,7 @@ namespace Model
      */
     inline InitiateDocumentVersionUploadRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The time stamp when the content of the document was originally created.</p>
      */
@@ -174,6 +178,7 @@ namespace Model
      */
     inline InitiateDocumentVersionUploadRequest& WithContentCreatedTimestamp(Aws::Utils::DateTime&& value) { SetContentCreatedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The time stamp when the content of the document was modified.</p>
      */
@@ -198,6 +203,7 @@ namespace Model
      * <p>The time stamp when the content of the document was modified.</p>
      */
     inline InitiateDocumentVersionUploadRequest& WithContentModifiedTimestamp(Aws::Utils::DateTime&& value) { SetContentModifiedTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The content type of the document.</p>
@@ -234,6 +240,7 @@ namespace Model
      */
     inline InitiateDocumentVersionUploadRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
 
+
     /**
      * <p>The size of the document, in bytes.</p>
      */
@@ -248,6 +255,7 @@ namespace Model
      * <p>The size of the document, in bytes.</p>
      */
     inline InitiateDocumentVersionUploadRequest& WithDocumentSizeInBytes(long long value) { SetDocumentSizeInBytes(value); return *this;}
+
 
     /**
      * <p>The ID of the parent folder.</p>
@@ -285,20 +293,28 @@ namespace Model
     inline InitiateDocumentVersionUploadRequest& WithParentFolderId(const char* value) { SetParentFolderId(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Utils::DateTime m_contentCreatedTimestamp;
     bool m_contentCreatedTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_contentModifiedTimestamp;
     bool m_contentModifiedTimestampHasBeenSet;
+
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet;
+
     long long m_documentSizeInBytes;
     bool m_documentSizeInBytesHasBeenSet;
+
     Aws::String m_parentFolderId;
     bool m_parentFolderIdHasBeenSet;
   };

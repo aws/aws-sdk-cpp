@@ -32,13 +32,13 @@ GenerateCredentialReportResult::GenerateCredentialReportResult() :
 {
 }
 
-GenerateCredentialReportResult::GenerateCredentialReportResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+GenerateCredentialReportResult::GenerateCredentialReportResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_state(ReportStateType::NOT_SET)
 {
   *this = result;
 }
 
-GenerateCredentialReportResult& GenerateCredentialReportResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GenerateCredentialReportResult& GenerateCredentialReportResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -30,12 +30,12 @@ GetCredentialsForIdentityResult::GetCredentialsForIdentityResult()
 {
 }
 
-GetCredentialsForIdentityResult::GetCredentialsForIdentityResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCredentialsForIdentityResult::GetCredentialsForIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCredentialsForIdentityResult& GetCredentialsForIdentityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCredentialsForIdentityResult& GetCredentialsForIdentityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityId"))

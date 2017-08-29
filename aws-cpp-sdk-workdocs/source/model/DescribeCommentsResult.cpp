@@ -30,12 +30,12 @@ DescribeCommentsResult::DescribeCommentsResult()
 {
 }
 
-DescribeCommentsResult::DescribeCommentsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCommentsResult::DescribeCommentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeCommentsResult& DescribeCommentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCommentsResult& DescribeCommentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Comments"))

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
@@ -119,6 +120,7 @@ namespace Model
      * hyphens</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
@@ -203,6 +205,7 @@ namespace Model
      * </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The type of DB cluster snapshots to be returned. You can specify one of the
@@ -372,6 +375,7 @@ namespace Model
      */
     inline DescribeDBClusterSnapshotsRequest& WithSnapshotType(const char* value) { SetSnapshotType(value); return *this;}
 
+
     /**
      * <p>This parameter is not currently supported.</p>
      */
@@ -407,6 +411,7 @@ namespace Model
      */
     inline DescribeDBClusterSnapshotsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -430,6 +435,7 @@ namespace Model
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional pagination token provided by a previous
@@ -487,6 +493,7 @@ namespace Model
      */
     inline DescribeDBClusterSnapshotsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Set this value to <code>true</code> to include shared manual DB cluster
      * snapshots from other AWS accounts that this AWS account has been given
@@ -517,6 +524,7 @@ namespace Model
      */
     inline DescribeDBClusterSnapshotsRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
 
+
     /**
      * <p>Set this value to <code>true</code> to include manual DB cluster snapshots
      * that are public and can be copied or restored by any AWS account, otherwise set
@@ -545,20 +553,28 @@ namespace Model
     inline DescribeDBClusterSnapshotsRequest& WithIncludePublic(bool value) { SetIncludePublic(value); return *this;}
 
   private:
+
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+
     Aws::String m_dBClusterSnapshotIdentifier;
     bool m_dBClusterSnapshotIdentifierHasBeenSet;
+
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     bool m_includeShared;
     bool m_includeSharedHasBeenSet;
+
     bool m_includePublic;
     bool m_includePublicHasBeenSet;
   };

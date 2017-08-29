@@ -48,6 +48,7 @@ namespace Model
     EnvironmentPlatform& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The platform's name.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The platform's name.</p>
      */
     inline EnvironmentPlatform& WithPlatform(PlatformType&& value) { SetPlatform(std::move(value)); return *this;}
+
 
     /**
      * <p>The list of programming languages that are available for the specified
@@ -116,8 +118,10 @@ namespace Model
     inline EnvironmentPlatform& AddLanguages(EnvironmentLanguage&& value) { m_languagesHasBeenSet = true; m_languages.push_back(std::move(value)); return *this; }
 
   private:
+
     PlatformType m_platform;
     bool m_platformHasBeenSet;
+
     Aws::Vector<EnvironmentLanguage> m_languages;
     bool m_languagesHasBeenSet;
   };

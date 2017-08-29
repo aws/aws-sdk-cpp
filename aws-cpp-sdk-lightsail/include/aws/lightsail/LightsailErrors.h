@@ -55,7 +55,7 @@ enum class LightsailErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCOUNT_SETUP_IN_PROGRESS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCOUNT_SETUP_IN_PROGRESS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_INPUT,
   NOT_FOUND,
   OPERATION_FAILURE,
@@ -64,7 +64,7 @@ enum class LightsailErrors
 };
 namespace LightsailErrorMapper
 {
-  AWS_LIGHTSAIL_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_LIGHTSAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Lightsail

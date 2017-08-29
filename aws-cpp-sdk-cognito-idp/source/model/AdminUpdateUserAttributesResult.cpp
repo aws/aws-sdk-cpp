@@ -30,12 +30,12 @@ AdminUpdateUserAttributesResult::AdminUpdateUserAttributesResult()
 {
 }
 
-AdminUpdateUserAttributesResult::AdminUpdateUserAttributesResult(const AmazonWebServiceResult<JsonValue>& result)
+AdminUpdateUserAttributesResult::AdminUpdateUserAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AdminUpdateUserAttributesResult& AdminUpdateUserAttributesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AdminUpdateUserAttributesResult& AdminUpdateUserAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -31,13 +31,13 @@ UpdateMethodResult::UpdateMethodResult() :
 {
 }
 
-UpdateMethodResult::UpdateMethodResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateMethodResult::UpdateMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_apiKeyRequired(false)
 {
   *this = result;
 }
 
-UpdateMethodResult& UpdateMethodResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateMethodResult& UpdateMethodResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("httpMethod"))

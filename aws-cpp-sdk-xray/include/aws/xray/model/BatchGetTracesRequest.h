@@ -35,6 +35,7 @@ namespace Model
     BatchGetTracesRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline BatchGetTracesRequest& AddTraceIds(const char* value) { m_traceIdsHasBeenSet = true; m_traceIds.push_back(value); return *this; }
 
+
     /**
      * <p>Pagination token. Not used.</p>
      */
@@ -111,8 +113,10 @@ namespace Model
     inline BatchGetTracesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_traceIds;
     bool m_traceIdsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

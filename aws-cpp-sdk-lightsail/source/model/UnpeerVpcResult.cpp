@@ -30,12 +30,12 @@ UnpeerVpcResult::UnpeerVpcResult()
 {
 }
 
-UnpeerVpcResult::UnpeerVpcResult(const AmazonWebServiceResult<JsonValue>& result)
+UnpeerVpcResult::UnpeerVpcResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UnpeerVpcResult& UnpeerVpcResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UnpeerVpcResult& UnpeerVpcResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operation"))

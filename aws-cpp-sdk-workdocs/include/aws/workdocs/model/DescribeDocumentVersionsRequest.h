@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeDocumentVersionsRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the document.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The ID of the document.</p>
      */
     inline DescribeDocumentVersionsRequest& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
+
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -161,6 +164,7 @@ namespace Model
      */
     inline DescribeDocumentVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of versions to return with this call.</p>
      */
@@ -175,6 +179,7 @@ namespace Model
      * <p>The maximum number of versions to return with this call.</p>
      */
     inline DescribeDocumentVersionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
@@ -217,6 +222,7 @@ namespace Model
      * versions.</p>
      */
     inline DescribeDocumentVersionsRequest& WithInclude(const char* value) { SetInclude(value); return *this;}
+
 
     /**
      * <p>Specify "SOURCE" to include initialized versions and a URL for the source
@@ -261,16 +267,22 @@ namespace Model
     inline DescribeDocumentVersionsRequest& WithFields(const char* value) { SetFields(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_documentId;
     bool m_documentIdHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_include;
     bool m_includeHasBeenSet;
+
     Aws::String m_fields;
     bool m_fieldsHasBeenSet;
   };

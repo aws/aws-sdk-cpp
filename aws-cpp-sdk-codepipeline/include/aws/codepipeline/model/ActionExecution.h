@@ -49,6 +49,7 @@ namespace Model
     ActionExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The status of the action, or for a completed action, the last status of the
      * action.</p>
@@ -78,6 +79,7 @@ namespace Model
      * action.</p>
      */
     inline ActionExecution& WithStatus(ActionExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A summary of the run of the action.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline ActionExecution& WithSummary(const char* value) { SetSummary(value); return *this;}
 
+
     /**
      * <p>The last status change of the action.</p>
      */
@@ -138,6 +141,7 @@ namespace Model
      * <p>The last status change of the action.</p>
      */
     inline ActionExecution& WithLastStatusChange(Aws::Utils::DateTime&& value) { SetLastStatusChange(std::move(value)); return *this;}
+
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
@@ -195,6 +199,7 @@ namespace Model
      */
     inline ActionExecution& WithToken(const char* value) { SetToken(value); return *this;}
 
+
     /**
      * <p>The ARN of the user who last changed the pipeline.</p>
      */
@@ -230,6 +235,7 @@ namespace Model
      */
     inline ActionExecution& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
 
+
     /**
      * <p>The external ID of the run of the action.</p>
      */
@@ -264,6 +270,7 @@ namespace Model
      * <p>The external ID of the run of the action.</p>
      */
     inline ActionExecution& WithExternalExecutionId(const char* value) { SetExternalExecutionId(value); return *this;}
+
 
     /**
      * <p>The URL of a resource external to AWS that will be used when running the
@@ -307,6 +314,7 @@ namespace Model
      */
     inline ActionExecution& WithExternalExecutionUrl(const char* value) { SetExternalExecutionUrl(value); return *this;}
 
+
     /**
      * <p>A percentage of completeness of the action as it runs.</p>
      */
@@ -321,6 +329,7 @@ namespace Model
      * <p>A percentage of completeness of the action as it runs.</p>
      */
     inline ActionExecution& WithPercentComplete(int value) { SetPercentComplete(value); return *this;}
+
 
     /**
      * <p>The details of an error returned by a URL external to AWS.</p>
@@ -348,22 +357,31 @@ namespace Model
     inline ActionExecution& WithErrorDetails(ErrorDetails&& value) { SetErrorDetails(std::move(value)); return *this;}
 
   private:
+
     ActionExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_summary;
     bool m_summaryHasBeenSet;
+
     Aws::Utils::DateTime m_lastStatusChange;
     bool m_lastStatusChangeHasBeenSet;
+
     Aws::String m_token;
     bool m_tokenHasBeenSet;
+
     Aws::String m_lastUpdatedBy;
     bool m_lastUpdatedByHasBeenSet;
+
     Aws::String m_externalExecutionId;
     bool m_externalExecutionIdHasBeenSet;
+
     Aws::String m_externalExecutionUrl;
     bool m_externalExecutionUrlHasBeenSet;
+
     int m_percentComplete;
     bool m_percentCompleteHasBeenSet;
+
     ErrorDetails m_errorDetails;
     bool m_errorDetailsHasBeenSet;
   };

@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon EMR resource identifier from which tags will be removed. This
      * value must be a cluster identifier.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline RemoveTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>A list of tag keys to remove from a resource.</p>
      */
@@ -124,8 +126,10 @@ namespace Model
     inline RemoveTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

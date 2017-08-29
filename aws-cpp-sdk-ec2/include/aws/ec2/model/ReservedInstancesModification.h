@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A unique, case-sensitive key supplied by the client to ensure that the
      * request is idempotent. For more information, see <a
@@ -108,6 +109,7 @@ namespace Model
      */
     inline ReservedInstancesModification& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The time when the modification request was created.</p>
      */
@@ -133,6 +135,7 @@ namespace Model
      */
     inline ReservedInstancesModification& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The time for the modification to become effective.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>The time for the modification to become effective.</p>
      */
     inline ReservedInstancesModification& WithEffectiveDate(Aws::Utils::DateTime&& value) { SetEffectiveDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Contains target configurations along with their corresponding new Reserved
@@ -200,6 +204,7 @@ namespace Model
      */
     inline ReservedInstancesModification& AddModificationResults(ReservedInstancesModificationResponse&& value) { m_modificationResultsHasBeenSet = true; m_modificationResults.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The IDs of one or more Reserved Instances.</p>
      */
@@ -234,6 +239,7 @@ namespace Model
      * <p>The IDs of one or more Reserved Instances.</p>
      */
     inline ReservedInstancesModification& AddReservedInstancesIds(ReservedInstancesId&& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A unique ID for the Reserved Instance modification.</p>
@@ -270,6 +276,7 @@ namespace Model
      */
     inline ReservedInstancesModification& WithReservedInstancesModificationId(const char* value) { SetReservedInstancesModificationId(value); return *this;}
 
+
     /**
      * <p>The status of the Reserved Instances modification request.</p>
      */
@@ -304,6 +311,7 @@ namespace Model
      * <p>The status of the Reserved Instances modification request.</p>
      */
     inline ReservedInstancesModification& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The reason for the status.</p>
@@ -340,6 +348,7 @@ namespace Model
      */
     inline ReservedInstancesModification& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     /**
      * <p>The time when the modification request was last updated.</p>
      */
@@ -366,22 +375,31 @@ namespace Model
     inline ReservedInstancesModification& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     Aws::Utils::DateTime m_effectiveDate;
     bool m_effectiveDateHasBeenSet;
+
     Aws::Vector<ReservedInstancesModificationResponse> m_modificationResults;
     bool m_modificationResultsHasBeenSet;
+
     Aws::Vector<ReservedInstancesId> m_reservedInstancesIds;
     bool m_reservedInstancesIdsHasBeenSet;
+
     Aws::String m_reservedInstancesModificationId;
     bool m_reservedInstancesModificationIdHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
   };

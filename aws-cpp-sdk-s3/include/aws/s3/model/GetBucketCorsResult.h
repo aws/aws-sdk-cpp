@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetBucketCorsResult();
-    GetBucketCorsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketCorsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketCorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketCorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::Vector<CORSRule>& GetCORSRules() const{ return m_cORSRules; }
@@ -64,6 +65,7 @@ namespace Model
     inline GetBucketCorsResult& AddCORSRules(CORSRule&& value) { m_cORSRules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CORSRule> m_cORSRules;
   };
 

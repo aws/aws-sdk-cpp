@@ -41,6 +41,7 @@ namespace Model
     AddTagsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
      */
     inline AddTagsRequest& WithARN(const char* value) { SetARN(value); return *this;}
+
 
     /**
      * <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain.
@@ -119,8 +121,10 @@ namespace Model
     inline AddTagsRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet;
   };

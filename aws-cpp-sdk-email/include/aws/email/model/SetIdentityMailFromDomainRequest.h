@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The verified identity for which you want to enable or disable the specified
      * custom MAIL FROM domain.</p>
@@ -87,6 +88,7 @@ namespace Model
      * custom MAIL FROM domain.</p>
      */
     inline SetIdentityMailFromDomainRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+
 
     /**
      * <p>The custom MAIL FROM domain that you want the verified identity to use. The
@@ -165,6 +167,7 @@ namespace Model
      */
     inline SetIdentityMailFromDomainRequest& WithMailFromDomain(const char* value) { SetMailFromDomain(value); return *this;}
 
+
     /**
      * <p>The action that you want Amazon SES to take if it cannot successfully read
      * the required MX record when you send an email. If you choose
@@ -226,10 +229,13 @@ namespace Model
     inline SetIdentityMailFromDomainRequest& WithBehaviorOnMXFailure(BehaviorOnMXFailure&& value) { SetBehaviorOnMXFailure(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     Aws::String m_mailFromDomain;
     bool m_mailFromDomainHasBeenSet;
+
     BehaviorOnMXFailure m_behaviorOnMXFailure;
     bool m_behaviorOnMXFailureHasBeenSet;
   };

@@ -31,13 +31,13 @@ GetTraceSummariesResult::GetTraceSummariesResult() :
 {
 }
 
-GetTraceSummariesResult::GetTraceSummariesResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetTraceSummariesResult::GetTraceSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_tracesProcessedCount(0)
 {
   *this = result;
 }
 
-GetTraceSummariesResult& GetTraceSummariesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetTraceSummariesResult& GetTraceSummariesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TraceSummaries"))

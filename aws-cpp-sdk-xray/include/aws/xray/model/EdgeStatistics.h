@@ -46,6 +46,7 @@ namespace Model
     EdgeStatistics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of requests that completed with a 2xx Success status code.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The number of requests that completed with a 2xx Success status code.</p>
      */
     inline EdgeStatistics& WithOkCount(long long value) { SetOkCount(value); return *this;}
+
 
     /**
      * <p>Information about requests that failed with a 4xx Client Error status
@@ -91,6 +93,7 @@ namespace Model
      */
     inline EdgeStatistics& WithErrorStatistics(ErrorStatistics&& value) { SetErrorStatistics(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about requests that failed with a 5xx Server Error status
      * code.</p>
@@ -121,6 +124,7 @@ namespace Model
      */
     inline EdgeStatistics& WithFaultStatistics(FaultStatistics&& value) { SetFaultStatistics(std::move(value)); return *this;}
 
+
     /**
      * <p>The total number of completed requests.</p>
      */
@@ -135,6 +139,7 @@ namespace Model
      * <p>The total number of completed requests.</p>
      */
     inline EdgeStatistics& WithTotalCount(long long value) { SetTotalCount(value); return *this;}
+
 
     /**
      * <p>The aggregate response time of completed requests.</p>
@@ -152,14 +157,19 @@ namespace Model
     inline EdgeStatistics& WithTotalResponseTime(double value) { SetTotalResponseTime(value); return *this;}
 
   private:
+
     long long m_okCount;
     bool m_okCountHasBeenSet;
+
     ErrorStatistics m_errorStatistics;
     bool m_errorStatisticsHasBeenSet;
+
     FaultStatistics m_faultStatistics;
     bool m_faultStatisticsHasBeenSet;
+
     long long m_totalCount;
     bool m_totalCountHasBeenSet;
+
     double m_totalResponseTime;
     bool m_totalResponseTimeHasBeenSet;
   };

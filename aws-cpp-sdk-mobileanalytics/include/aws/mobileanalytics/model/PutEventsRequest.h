@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of Event JSON objects</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>An array of Event JSON objects</p>
      */
     inline PutEventsRequest& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The client context including the client ID, app title, app version and
@@ -116,6 +118,7 @@ namespace Model
      */
     inline PutEventsRequest& WithClientContext(const char* value) { SetClientContext(value); return *this;}
 
+
     /**
      * <p>The encoding used for the client context.</p>
      */
@@ -152,10 +155,13 @@ namespace Model
     inline PutEventsRequest& WithClientContextEncoding(const char* value) { SetClientContextEncoding(value); return *this;}
 
   private:
+
     Aws::Vector<Event> m_events;
     bool m_eventsHasBeenSet;
+
     Aws::String m_clientContext;
     bool m_clientContextHasBeenSet;
+
     Aws::String m_clientContextEncoding;
     bool m_clientContextEncodingHasBeenSet;
   };

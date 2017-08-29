@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline ModifyTargetGroupRequest& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
 
+
     /**
      * <p>The protocol to use to connect with the target.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The protocol to use to connect with the target.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
+
 
     /**
      * <p>The port to use to connect with the target.</p>
@@ -135,6 +138,7 @@ namespace Model
      */
     inline ModifyTargetGroupRequest& WithHealthCheckPort(const char* value) { SetHealthCheckPort(value); return *this;}
 
+
     /**
      * <p>The ping path that is the destination for the health check request.</p>
      */
@@ -170,6 +174,7 @@ namespace Model
      */
     inline ModifyTargetGroupRequest& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
 
+
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target.</p>
@@ -187,6 +192,7 @@ namespace Model
      * individual target.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
+
 
     /**
      * <p>The amount of time, in seconds, during which no response means a failed
@@ -206,6 +212,7 @@ namespace Model
      */
     inline ModifyTargetGroupRequest& WithHealthCheckTimeoutSeconds(int value) { SetHealthCheckTimeoutSeconds(value); return *this;}
 
+
     /**
      * <p>The number of consecutive health checks successes required before considering
      * an unhealthy target healthy.</p>
@@ -224,6 +231,7 @@ namespace Model
      */
     inline ModifyTargetGroupRequest& WithHealthyThresholdCount(int value) { SetHealthyThresholdCount(value); return *this;}
 
+
     /**
      * <p>The number of consecutive health check failures required before considering
      * the target unhealthy.</p>
@@ -241,6 +249,7 @@ namespace Model
      * the target unhealthy.</p>
      */
     inline ModifyTargetGroupRequest& WithUnhealthyThresholdCount(int value) { SetUnhealthyThresholdCount(value); return *this;}
+
 
     /**
      * <p>The HTTP codes to use when checking for a successful response from a
@@ -273,22 +282,31 @@ namespace Model
     inline ModifyTargetGroupRequest& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_targetGroupArn;
     bool m_targetGroupArnHasBeenSet;
+
     ProtocolEnum m_healthCheckProtocol;
     bool m_healthCheckProtocolHasBeenSet;
+
     Aws::String m_healthCheckPort;
     bool m_healthCheckPortHasBeenSet;
+
     Aws::String m_healthCheckPath;
     bool m_healthCheckPathHasBeenSet;
+
     int m_healthCheckIntervalSeconds;
     bool m_healthCheckIntervalSecondsHasBeenSet;
+
     int m_healthCheckTimeoutSeconds;
     bool m_healthCheckTimeoutSecondsHasBeenSet;
+
     int m_healthyThresholdCount;
     bool m_healthyThresholdCountHasBeenSet;
+
     int m_unhealthyThresholdCount;
     bool m_unhealthyThresholdCountHasBeenSet;
+
     Matcher m_matcher;
     bool m_matcherHasBeenSet;
   };

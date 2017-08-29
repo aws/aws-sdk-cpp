@@ -39,6 +39,7 @@ namespace Model
     CreateRestApiRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the <a>RestApi</a>.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The name of the <a>RestApi</a>.</p>
      */
     inline CreateRestApiRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The description of the <a>RestApi</a>.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline CreateRestApiRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A version identifier for the API.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      */
     inline CreateRestApiRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
      */
@@ -178,6 +182,7 @@ namespace Model
      * <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
      */
     inline CreateRestApiRequest& WithCloneFrom(const char* value) { SetCloneFrom(value); return *this;}
+
 
     /**
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
@@ -228,14 +233,19 @@ namespace Model
     inline CreateRestApiRequest& AddBinaryMediaTypes(const char* value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes.push_back(value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_cloneFrom;
     bool m_cloneFromHasBeenSet;
+
     Aws::Vector<Aws::String> m_binaryMediaTypes;
     bool m_binaryMediaTypesHasBeenSet;
   };

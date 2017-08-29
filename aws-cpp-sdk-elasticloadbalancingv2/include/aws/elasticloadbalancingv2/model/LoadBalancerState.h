@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The state code. The initial state of the load balancer is
      * <code>provisioning</code>. After the load balancer is fully set up and ready to
@@ -90,6 +91,7 @@ namespace Model
      */
     inline LoadBalancerState& WithCode(LoadBalancerStateEnum&& value) { SetCode(std::move(value)); return *this;}
 
+
     /**
      * <p>A description of the state.</p>
      */
@@ -126,8 +128,10 @@ namespace Model
     inline LoadBalancerState& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     LoadBalancerStateEnum m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

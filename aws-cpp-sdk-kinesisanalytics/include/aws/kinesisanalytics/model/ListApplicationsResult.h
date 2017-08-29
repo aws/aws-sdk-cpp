@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ListApplicationsResult();
-    ListApplicationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListApplicationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of <code>ApplicationSummary</code> objects. </p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ListApplicationsResult& AddApplicationSummaries(ApplicationSummary&& value) { m_applicationSummaries.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Returns true if there are more applications to retrieve.</p>
      */
@@ -98,7 +100,9 @@ namespace Model
     inline ListApplicationsResult& WithHasMoreApplications(bool value) { SetHasMoreApplications(value); return *this;}
 
   private:
+
     Aws::Vector<ApplicationSummary> m_applicationSummaries;
+
     bool m_hasMoreApplications;
   };
 

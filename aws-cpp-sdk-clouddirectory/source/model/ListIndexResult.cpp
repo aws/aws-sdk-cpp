@@ -30,12 +30,12 @@ ListIndexResult::ListIndexResult()
 {
 }
 
-ListIndexResult::ListIndexResult(const AmazonWebServiceResult<JsonValue>& result)
+ListIndexResult::ListIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListIndexResult& ListIndexResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListIndexResult& ListIndexResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IndexAttachments"))

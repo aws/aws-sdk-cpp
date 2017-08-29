@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ARN of the platform.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The ARN of the platform.</p>
      */
     inline PlatformSummary& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
 
     /**
      * <p>The AWS account ID of the person who created the platform.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline PlatformSummary& WithPlatformOwner(const char* value) { SetPlatformOwner(value); return *this;}
 
+
     /**
      * <p>The status of the platform. You can create an environment from the platform
      * once it is ready.</p>
@@ -149,6 +152,7 @@ namespace Model
      * once it is ready.</p>
      */
     inline PlatformSummary& WithPlatformStatus(PlatformStatus&& value) { SetPlatformStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The category of platform.</p>
@@ -185,6 +189,7 @@ namespace Model
      */
     inline PlatformSummary& WithPlatformCategory(const char* value) { SetPlatformCategory(value); return *this;}
 
+
     /**
      * <p>The operating system used by the platform.</p>
      */
@@ -220,6 +225,7 @@ namespace Model
      */
     inline PlatformSummary& WithOperatingSystemName(const char* value) { SetOperatingSystemName(value); return *this;}
 
+
     /**
      * <p>The version of the operating system used by the platform.</p>
      */
@@ -254,6 +260,7 @@ namespace Model
      * <p>The version of the operating system used by the platform.</p>
      */
     inline PlatformSummary& WithOperatingSystemVersion(const char* value) { SetOperatingSystemVersion(value); return *this;}
+
 
     /**
      * <p>The tiers in which the platform runs.</p>
@@ -294,6 +301,7 @@ namespace Model
      * <p>The tiers in which the platform runs.</p>
      */
     inline PlatformSummary& AddSupportedTierList(const char* value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.push_back(value); return *this; }
+
 
     /**
      * <p>The additions associated with the platform.</p>
@@ -336,20 +344,28 @@ namespace Model
     inline PlatformSummary& AddSupportedAddonList(const char* value) { m_supportedAddonListHasBeenSet = true; m_supportedAddonList.push_back(value); return *this; }
 
   private:
+
     Aws::String m_platformArn;
     bool m_platformArnHasBeenSet;
+
     Aws::String m_platformOwner;
     bool m_platformOwnerHasBeenSet;
+
     PlatformStatus m_platformStatus;
     bool m_platformStatusHasBeenSet;
+
     Aws::String m_platformCategory;
     bool m_platformCategoryHasBeenSet;
+
     Aws::String m_operatingSystemName;
     bool m_operatingSystemNameHasBeenSet;
+
     Aws::String m_operatingSystemVersion;
     bool m_operatingSystemVersionHasBeenSet;
+
     Aws::Vector<Aws::String> m_supportedTierList;
     bool m_supportedTierListHasBeenSet;
+
     Aws::Vector<Aws::String> m_supportedAddonList;
     bool m_supportedAddonListHasBeenSet;
   };

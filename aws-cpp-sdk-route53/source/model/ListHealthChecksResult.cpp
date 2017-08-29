@@ -30,13 +30,13 @@ ListHealthChecksResult::ListHealthChecksResult() :
 {
 }
 
-ListHealthChecksResult::ListHealthChecksResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListHealthChecksResult::ListHealthChecksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListHealthChecksResult& ListHealthChecksResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListHealthChecksResult& ListHealthChecksResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

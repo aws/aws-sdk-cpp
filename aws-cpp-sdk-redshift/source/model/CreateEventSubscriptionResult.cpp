@@ -31,12 +31,12 @@ CreateEventSubscriptionResult::CreateEventSubscriptionResult()
 {
 }
 
-CreateEventSubscriptionResult::CreateEventSubscriptionResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateEventSubscriptionResult::CreateEventSubscriptionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateEventSubscriptionResult& CreateEventSubscriptionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateEventSubscriptionResult& CreateEventSubscriptionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

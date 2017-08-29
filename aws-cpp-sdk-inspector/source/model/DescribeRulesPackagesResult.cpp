@@ -30,12 +30,12 @@ DescribeRulesPackagesResult::DescribeRulesPackagesResult()
 {
 }
 
-DescribeRulesPackagesResult::DescribeRulesPackagesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeRulesPackagesResult::DescribeRulesPackagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeRulesPackagesResult& DescribeRulesPackagesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeRulesPackagesResult& DescribeRulesPackagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("rulesPackages"))

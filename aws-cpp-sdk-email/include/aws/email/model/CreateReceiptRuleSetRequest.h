@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the rule set to create. The name must:</p> <ul> <li> <p>Contain
      * only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or
@@ -101,6 +102,7 @@ namespace Model
     inline CreateReceiptRuleSetRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
   private:
+
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet;
   };

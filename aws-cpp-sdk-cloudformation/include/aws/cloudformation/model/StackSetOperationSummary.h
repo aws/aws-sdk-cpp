@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The unique ID of the stack set operation.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The unique ID of the stack set operation.</p>
      */
     inline StackSetOperationSummary& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+
 
     /**
      * <p>The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or
@@ -131,6 +133,7 @@ namespace Model
      * stack set instances.</p>
      */
     inline StackSetOperationSummary& WithAction(StackSetOperationAction&& value) { SetAction(std::move(value)); return *this;}
+
 
     /**
      * <p>The overall status of the operation.</p> <ul> <li> <p> <code>FAILED</code>:
@@ -222,6 +225,7 @@ namespace Model
      */
     inline StackSetOperationSummary& WithStatus(StackSetOperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The time at which the operation was initiated. Note that the creation times
      * for the stack set operation might differ from the creation time of the
@@ -267,6 +271,7 @@ namespace Model
      */
     inline StackSetOperationSummary& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The time at which the stack set operation ended, across all accounts and
      * regions specified. Note that this doesn't necessarily mean that the stack set
@@ -303,14 +308,19 @@ namespace Model
     inline StackSetOperationSummary& WithEndTimestamp(Aws::Utils::DateTime&& value) { SetEndTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet;
+
     StackSetOperationAction m_action;
     bool m_actionHasBeenSet;
+
     StackSetOperationStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_creationTimestamp;
     bool m_creationTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_endTimestamp;
     bool m_endTimestampHasBeenSet;
   };

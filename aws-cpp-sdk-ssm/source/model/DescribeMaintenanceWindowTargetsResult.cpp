@@ -30,12 +30,12 @@ DescribeMaintenanceWindowTargetsResult::DescribeMaintenanceWindowTargetsResult()
 {
 }
 
-DescribeMaintenanceWindowTargetsResult::DescribeMaintenanceWindowTargetsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMaintenanceWindowTargetsResult::DescribeMaintenanceWindowTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeMaintenanceWindowTargetsResult& DescribeMaintenanceWindowTargetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMaintenanceWindowTargetsResult& DescribeMaintenanceWindowTargetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Targets"))

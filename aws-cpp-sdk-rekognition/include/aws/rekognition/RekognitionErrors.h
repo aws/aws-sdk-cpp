@@ -55,7 +55,7 @@ enum class RekognitionErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  IMAGE_TOO_LARGE= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  IMAGE_TOO_LARGE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_IMAGE_FORMAT,
   INVALID_PAGINATION_TOKEN,
   INVALID_PARAMETER,
@@ -65,7 +65,7 @@ enum class RekognitionErrors
 };
 namespace RekognitionErrorMapper
 {
-  AWS_REKOGNITION_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_REKOGNITION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Rekognition

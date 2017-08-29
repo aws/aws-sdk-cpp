@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetVaultNotificationsResult();
-    GetVaultNotificationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetVaultNotificationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetVaultNotificationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetVaultNotificationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Returns the notification configuration set on the vault.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline GetVaultNotificationsResult& WithVaultNotificationConfig(VaultNotificationConfig&& value) { SetVaultNotificationConfig(std::move(value)); return *this;}
 
   private:
+
     VaultNotificationConfig m_vaultNotificationConfig;
   };
 

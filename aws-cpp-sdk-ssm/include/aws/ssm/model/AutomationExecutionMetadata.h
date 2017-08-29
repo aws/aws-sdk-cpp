@@ -49,6 +49,7 @@ namespace Model
     AutomationExecutionMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The execution ID.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The execution ID.</p>
      */
     inline AutomationExecutionMetadata& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
+
 
     /**
      * <p>The name of the Automation document used during execution.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline AutomationExecutionMetadata& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
+
     /**
      * <p>The document version used during the execution.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline AutomationExecutionMetadata& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
+
     /**
      * <p>The status of the execution. Valid values include: Running, Succeeded,
      * Failed, Timed out, or Cancelled.</p>
@@ -184,6 +188,7 @@ namespace Model
      */
     inline AutomationExecutionMetadata& WithAutomationExecutionStatus(AutomationExecutionStatus&& value) { SetAutomationExecutionStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The time the execution started.&gt;</p>
      */
@@ -208,6 +213,7 @@ namespace Model
      * <p>The time the execution started.&gt;</p>
      */
     inline AutomationExecutionMetadata& WithExecutionStartTime(Aws::Utils::DateTime&& value) { SetExecutionStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time the execution finished. This is not populated if the execution is
@@ -238,6 +244,7 @@ namespace Model
      * still in progress.</p>
      */
     inline AutomationExecutionMetadata& WithExecutionEndTime(Aws::Utils::DateTime&& value) { SetExecutionEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The IAM role ARN of the user who executed the Automation.</p>
@@ -274,6 +281,7 @@ namespace Model
      */
     inline AutomationExecutionMetadata& WithExecutedBy(const char* value) { SetExecutedBy(value); return *this;}
 
+
     /**
      * <p>An Amazon S3 bucket where execution information is stored.</p>
      */
@@ -308,6 +316,7 @@ namespace Model
      * <p>An Amazon S3 bucket where execution information is stored.</p>
      */
     inline AutomationExecutionMetadata& WithLogFile(const char* value) { SetLogFile(value); return *this;}
+
 
     /**
      * <p>The list of execution outputs as defined in the Automation document.</p>
@@ -365,22 +374,31 @@ namespace Model
     inline AutomationExecutionMetadata& AddOutputs(const char* key, const Aws::Vector<Aws::String>& value) { m_outputsHasBeenSet = true; m_outputs.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_automationExecutionId;
     bool m_automationExecutionIdHasBeenSet;
+
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     AutomationExecutionStatus m_automationExecutionStatus;
     bool m_automationExecutionStatusHasBeenSet;
+
     Aws::Utils::DateTime m_executionStartTime;
     bool m_executionStartTimeHasBeenSet;
+
     Aws::Utils::DateTime m_executionEndTime;
     bool m_executionEndTimeHasBeenSet;
+
     Aws::String m_executedBy;
     bool m_executedByHasBeenSet;
+
     Aws::String m_logFile;
     bool m_logFileHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_outputs;
     bool m_outputsHasBeenSet;
   };

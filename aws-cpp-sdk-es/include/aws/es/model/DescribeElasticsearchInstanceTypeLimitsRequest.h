@@ -46,6 +46,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p> DomainName represents the name of the Domain that we are trying to modify.
      * This should be present only if we are querying for Elasticsearch <code>
@@ -95,6 +96,7 @@ namespace Model
      */
     inline DescribeElasticsearchInstanceTypeLimitsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p> The instance type for an Elasticsearch cluster for which Elasticsearch
      * <code> <a>Limits</a> </code> are needed. </p>
@@ -124,6 +126,7 @@ namespace Model
      * <code> <a>Limits</a> </code> are needed. </p>
      */
     inline DescribeElasticsearchInstanceTypeLimitsRequest& WithInstanceType(ESPartitionInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+
 
     /**
      * <p> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed.
@@ -168,10 +171,13 @@ namespace Model
     inline DescribeElasticsearchInstanceTypeLimitsRequest& WithElasticsearchVersion(const char* value) { SetElasticsearchVersion(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     ESPartitionInstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_elasticsearchVersion;
     bool m_elasticsearchVersionHasBeenSet;
   };

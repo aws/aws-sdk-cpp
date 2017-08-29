@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the user whose login profile you want to retrieve.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -102,6 +103,7 @@ namespace Model
     inline GetLoginProfileRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
   };

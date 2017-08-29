@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateServiceLinkedRoleResult();
-    CreateServiceLinkedRoleResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateServiceLinkedRoleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateServiceLinkedRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateServiceLinkedRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A <a>Role</a> object that contains details about the newly created role.</p>
@@ -67,6 +68,7 @@ namespace Model
      */
     inline CreateServiceLinkedRoleResult& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -83,7 +85,9 @@ namespace Model
     inline CreateServiceLinkedRoleResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Role m_role;
+
     ResponseMetadata m_responseMetadata;
   };
 

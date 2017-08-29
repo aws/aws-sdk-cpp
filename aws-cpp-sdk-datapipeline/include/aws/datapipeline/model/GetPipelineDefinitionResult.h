@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetPipelineDefinitionResult();
-    GetPipelineDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPipelineDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPipelineDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPipelineDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The objects defined in the pipeline.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline GetPipelineDefinitionResult& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjects.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The parameter objects used in the pipeline definition.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The parameter objects used in the pipeline definition.</p>
      */
     inline GetPipelineDefinitionResult& AddParameterObjects(ParameterObject&& value) { m_parameterObjects.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The parameter values used in the pipeline definition.</p>
@@ -155,8 +158,11 @@ namespace Model
     inline GetPipelineDefinitionResult& AddParameterValues(ParameterValue&& value) { m_parameterValues.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<PipelineObject> m_pipelineObjects;
+
     Aws::Vector<ParameterObject> m_parameterObjects;
+
     Aws::Vector<ParameterValue> m_parameterValues;
   };
 

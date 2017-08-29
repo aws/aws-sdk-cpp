@@ -59,6 +59,7 @@ namespace Model
     FulfillmentActivity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> How the intent should be fulfilled, either by running a Lambda function or
      * by returning the slot data to the client application. </p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline FulfillmentActivity& WithType(FulfillmentActivityType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p> A description of the Lambda function that is run to fulfill the intent. </p>
      */
@@ -115,8 +117,10 @@ namespace Model
     inline FulfillmentActivity& WithCodeHook(CodeHook&& value) { SetCodeHook(std::move(value)); return *this;}
 
   private:
+
     FulfillmentActivityType m_type;
     bool m_typeHasBeenSet;
+
     CodeHook m_codeHook;
     bool m_codeHookHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet to retrieve all game sessions for.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>Unique identifier for a fleet to retrieve all game sessions for.</p>
      */
     inline DescribeGameSessionsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Unique identifier for the game session to retrieve. You can use either a
@@ -116,6 +118,7 @@ namespace Model
      */
     inline DescribeGameSessionsRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
+
     /**
      * <p>Unique identifier for an alias associated with the fleet to retrieve all game
      * sessions for. </p>
@@ -157,6 +160,7 @@ namespace Model
      * sessions for. </p>
      */
     inline DescribeGameSessionsRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
+
 
     /**
      * <p>Game session status to filter results on. Possible game session statuses
@@ -207,6 +211,7 @@ namespace Model
      */
     inline DescribeGameSessionsRequest& WithStatusFilter(const char* value) { SetStatusFilter(value); return *this;}
 
+
     /**
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -224,6 +229,7 @@ namespace Model
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline DescribeGameSessionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -275,16 +281,22 @@ namespace Model
     inline DescribeGameSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet;
+
     Aws::String m_aliasId;
     bool m_aliasIdHasBeenSet;
+
     Aws::String m_statusFilter;
     bool m_statusFilterHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

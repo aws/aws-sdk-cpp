@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     DeprecateThingTypeResult();
-    DeprecateThingTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeprecateThingTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeprecateThingTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeprecateThingTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

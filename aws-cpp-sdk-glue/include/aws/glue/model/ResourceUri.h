@@ -46,6 +46,7 @@ namespace Model
     ResourceUri& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of the resource.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The type of the resource.</p>
      */
     inline ResourceUri& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The URI for accessing the resource.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline ResourceUri& WithUri(const char* value) { SetUri(value); return *this;}
 
   private:
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_uri;
     bool m_uriHasBeenSet;
   };

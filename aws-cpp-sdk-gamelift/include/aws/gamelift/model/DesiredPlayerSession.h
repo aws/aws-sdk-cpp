@@ -47,6 +47,7 @@ namespace Model
     DesiredPlayerSession& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a player to associate with the player session.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>Unique identifier for a player to associate with the player session.</p>
      */
     inline DesiredPlayerSession& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
+
 
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not
@@ -125,8 +127,10 @@ namespace Model
     inline DesiredPlayerSession& WithPlayerData(const char* value) { SetPlayerData(value); return *this;}
 
   private:
+
     Aws::String m_playerId;
     bool m_playerIdHasBeenSet;
+
     Aws::String m_playerData;
     bool m_playerDataHasBeenSet;
   };

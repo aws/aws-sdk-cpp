@@ -30,12 +30,12 @@ DeleteSubscriptionDefinitionResult::DeleteSubscriptionDefinitionResult()
 {
 }
 
-DeleteSubscriptionDefinitionResult::DeleteSubscriptionDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSubscriptionDefinitionResult::DeleteSubscriptionDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteSubscriptionDefinitionResult& DeleteSubscriptionDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSubscriptionDefinitionResult& DeleteSubscriptionDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

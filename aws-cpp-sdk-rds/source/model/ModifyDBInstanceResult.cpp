@@ -31,12 +31,12 @@ ModifyDBInstanceResult::ModifyDBInstanceResult()
 {
 }
 
-ModifyDBInstanceResult::ModifyDBInstanceResult(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyDBInstanceResult::ModifyDBInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifyDBInstanceResult& ModifyDBInstanceResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyDBInstanceResult& ModifyDBInstanceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeClustersResult();
-    DescribeClustersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeClustersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -120,6 +121,7 @@ namespace Model
      */
     inline DescribeClustersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of <code>Cluster</code> objects, where each object describes one
      * cluster. </p>
@@ -162,6 +164,7 @@ namespace Model
      */
     inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -178,8 +181,11 @@ namespace Model
     inline DescribeClustersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<Cluster> m_clusters;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name associated with the stack.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name associated with the stack.</p>
      */
     inline StackResourceDetail& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>Unique identifier of the stack.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline StackResourceDetail& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The logical name of the resource specified in the template.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The logical name of the resource specified in the template.</p>
      */
     inline StackResourceDetail& WithLogicalResourceId(const char* value) { SetLogicalResourceId(value); return *this;}
+
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
@@ -197,6 +201,7 @@ namespace Model
      * resource supported by AWS CloudFormation.</p>
      */
     inline StackResourceDetail& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
+
 
     /**
      * <p>Type of resource. ((For more information, go to <a
@@ -247,6 +252,7 @@ namespace Model
      */
     inline StackResourceDetail& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>Time the status was updated.</p>
      */
@@ -272,6 +278,7 @@ namespace Model
      */
     inline StackResourceDetail& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>Current status of the resource.</p>
      */
@@ -296,6 +303,7 @@ namespace Model
      * <p>Current status of the resource.</p>
      */
     inline StackResourceDetail& WithResourceStatus(ResourceStatus&& value) { SetResourceStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Success/failure message associated with the resource.</p>
@@ -332,6 +340,7 @@ namespace Model
      */
     inline StackResourceDetail& WithResourceStatusReason(const char* value) { SetResourceStatusReason(value); return *this;}
 
+
     /**
      * <p>User defined description associated with the resource.</p>
      */
@@ -366,6 +375,7 @@ namespace Model
      * <p>User defined description associated with the resource.</p>
      */
     inline StackResourceDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The content of the <code>Metadata</code> attribute declared for the resource.
@@ -424,24 +434,34 @@ namespace Model
     inline StackResourceDetail& WithMetadata(const char* value) { SetMetadata(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_logicalResourceId;
     bool m_logicalResourceIdHasBeenSet;
+
     Aws::String m_physicalResourceId;
     bool m_physicalResourceIdHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedTimestamp;
     bool m_lastUpdatedTimestampHasBeenSet;
+
     ResourceStatus m_resourceStatus;
     bool m_resourceStatusHasBeenSet;
+
     Aws::String m_resourceStatusReason;
     bool m_resourceStatusReasonHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_metadata;
     bool m_metadataHasBeenSet;
   };

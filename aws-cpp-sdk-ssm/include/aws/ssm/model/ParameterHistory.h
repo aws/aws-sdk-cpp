@@ -47,6 +47,7 @@ namespace Model
     ParameterHistory& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the parameter.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ParameterHistory& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The type of parameter used.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The type of parameter used.</p>
      */
     inline ParameterHistory& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the query key used for this parameter.</p>
@@ -142,6 +145,7 @@ namespace Model
      */
     inline ParameterHistory& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>Date the parameter was last changed or updated.</p>
      */
@@ -166,6 +170,7 @@ namespace Model
      * <p>Date the parameter was last changed or updated.</p>
      */
     inline ParameterHistory& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
@@ -209,6 +214,7 @@ namespace Model
      */
     inline ParameterHistory& WithLastModifiedUser(const char* value) { SetLastModifiedUser(value); return *this;}
 
+
     /**
      * <p>Information about the parameter.</p>
      */
@@ -244,6 +250,7 @@ namespace Model
      */
     inline ParameterHistory& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The parameter value.</p>
      */
@@ -278,6 +285,7 @@ namespace Model
      * <p>The parameter value.</p>
      */
     inline ParameterHistory& WithValue(const char* value) { SetValue(value); return *this;}
+
 
     /**
      * <p>Parameter names can include the following letters and symbols.</p>
@@ -322,20 +330,28 @@ namespace Model
     inline ParameterHistory& WithAllowedPattern(const char* value) { SetAllowedPattern(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ParameterType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::String m_lastModifiedUser;
     bool m_lastModifiedUserHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     Aws::String m_allowedPattern;
     bool m_allowedPatternHasBeenSet;
   };

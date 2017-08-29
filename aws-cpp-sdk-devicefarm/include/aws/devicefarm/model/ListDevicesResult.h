@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListDevicesResult();
-    ListDevicesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDevicesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the devices.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the devices.</p>
      */
     inline ListDevicesResult& AddDevices(Device&& value) { m_devices.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -134,7 +136,9 @@ namespace Model
     inline ListDevicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Device> m_devices;
+
     Aws::String m_nextToken;
   };
 

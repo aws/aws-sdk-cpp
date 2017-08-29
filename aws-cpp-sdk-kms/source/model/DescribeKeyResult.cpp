@@ -30,12 +30,12 @@ DescribeKeyResult::DescribeKeyResult()
 {
 }
 
-DescribeKeyResult::DescribeKeyResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeKeyResult::DescribeKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeKeyResult& DescribeKeyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeKeyResult& DescribeKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("KeyMetadata"))

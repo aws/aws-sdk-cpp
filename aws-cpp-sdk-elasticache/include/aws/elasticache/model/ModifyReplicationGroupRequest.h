@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the replication group to modify.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The identifier of the replication group to modify.</p>
      */
     inline ModifyReplicationGroupRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
+
 
     /**
      * <p>A description for the replication group. Maximum length is 255
@@ -119,6 +121,7 @@ namespace Model
      * characters.</p>
      */
     inline ModifyReplicationGroupRequest& WithReplicationGroupDescription(const char* value) { SetReplicationGroupDescription(value); return *this;}
+
 
     /**
      * <p>For replication groups with a single primary, if this parameter is specified,
@@ -176,6 +179,7 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithPrimaryClusterId(const char* value) { SetPrimaryClusterId(value); return *this;}
 
+
     /**
      * <p>The cache cluster ID that is used as the daily snapshot source for the
      * replication group. This parameter cannot be set for Redis (cluster mode enabled)
@@ -225,6 +229,7 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithSnapshottingClusterId(const char* value) { SetSnapshottingClusterId(value); return *this;}
 
+
     /**
      * <p>Determines whether a read replica is automatically promoted to read/write
      * primary if the existing primary encounters a failure.</p> <p>Valid values:
@@ -257,6 +262,7 @@ namespace Model
      * </note>
      */
     inline ModifyReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
+
 
     /**
      * <p>A list of cache security group names to authorize for the clusters in this
@@ -338,6 +344,7 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(const char* value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies the VPC Security Groups associated with the cache clusters in the
      * replication group.</p> <p>This parameter can be used only with replication group
@@ -401,6 +408,7 @@ namespace Model
      * VPC).</p>
      */
     inline ModifyReplicationGroupRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
@@ -486,6 +494,7 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
      * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
@@ -534,6 +543,7 @@ namespace Model
      * replication group owner. </p> </note>
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
+
 
     /**
      * <p>The name of the cache parameter group to apply to all of the clusters in this
@@ -591,6 +601,7 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
 
+
     /**
      * <p>The status of the Amazon SNS notification topic for the replication group.
      * Notifications are sent only if the status is <code>active</code>.</p> <p>Valid
@@ -640,6 +651,7 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicStatus(const char* value) { SetNotificationTopicStatus(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, this parameter causes the modifications in this request
      * and any pending modifications to be applied, asynchronously and as soon as
@@ -672,6 +684,7 @@ namespace Model
      * <code>false</code> </p> <p>Default: <code>false</code> </p>
      */
     inline ModifyReplicationGroupRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
+
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
@@ -757,6 +770,7 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>This parameter is currently disabled.</p>
      */
@@ -771,6 +785,7 @@ namespace Model
      * <p>This parameter is currently disabled.</p>
      */
     inline ModifyReplicationGroupRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
 
     /**
      * <p>The number of days for which ElastiCache retains automatic node group (shard)
@@ -798,6 +813,7 @@ namespace Model
      * of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
     inline ModifyReplicationGroupRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
+
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -862,6 +878,7 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
+
     /**
      * <p>A valid cache node type that you want to scale this replication group to.</p>
      */
@@ -896,6 +913,7 @@ namespace Model
      * <p>A valid cache node type that you want to scale this replication group to.</p>
      */
     inline ModifyReplicationGroupRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
+
 
     /**
      * <p>The name of the Node Group (called shard in the console).</p>
@@ -933,40 +951,58 @@ namespace Model
     inline ModifyReplicationGroupRequest& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
 
   private:
+
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
     Aws::String m_replicationGroupDescription;
     bool m_replicationGroupDescriptionHasBeenSet;
+
     Aws::String m_primaryClusterId;
     bool m_primaryClusterIdHasBeenSet;
+
     Aws::String m_snapshottingClusterId;
     bool m_snapshottingClusterIdHasBeenSet;
+
     bool m_automaticFailoverEnabled;
     bool m_automaticFailoverEnabledHasBeenSet;
+
     Aws::Vector<Aws::String> m_cacheSecurityGroupNames;
     bool m_cacheSecurityGroupNamesHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_notificationTopicArn;
     bool m_notificationTopicArnHasBeenSet;
+
     Aws::String m_cacheParameterGroupName;
     bool m_cacheParameterGroupNameHasBeenSet;
+
     Aws::String m_notificationTopicStatus;
     bool m_notificationTopicStatusHasBeenSet;
+
     bool m_applyImmediately;
     bool m_applyImmediatelyHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
+
     int m_snapshotRetentionLimit;
     bool m_snapshotRetentionLimitHasBeenSet;
+
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;
+
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+
     Aws::String m_nodeGroupId;
     bool m_nodeGroupIdHasBeenSet;
   };

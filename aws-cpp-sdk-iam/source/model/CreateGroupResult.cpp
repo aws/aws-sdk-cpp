@@ -31,12 +31,12 @@ CreateGroupResult::CreateGroupResult()
 {
 }
 
-CreateGroupResult::CreateGroupResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateGroupResult::CreateGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateGroupResult& CreateGroupResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateGroupResult& CreateGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

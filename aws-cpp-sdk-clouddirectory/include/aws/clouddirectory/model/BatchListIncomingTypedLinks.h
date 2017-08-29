@@ -52,6 +52,7 @@ namespace Model
     BatchListIncomingTypedLinks& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
     inline BatchListIncomingTypedLinks& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides range filters for multiple attributes. When providing ranges to
@@ -133,6 +135,7 @@ namespace Model
      */
     inline BatchListIncomingTypedLinks& AddFilterAttributeRanges(TypedLinkAttributeRange&& value) { m_filterAttributeRangesHasBeenSet = true; m_filterAttributeRanges.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Filters are interpreted in the order of the attributes on the typed link
      * facet, not the order in which they are supplied to any API calls.</p>
@@ -162,6 +165,7 @@ namespace Model
      * facet, not the order in which they are supplied to any API calls.</p>
      */
     inline BatchListIncomingTypedLinks& WithFilterTypedLink(TypedLinkSchemaAndFacetName&& value) { SetFilterTypedLink(std::move(value)); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -198,6 +202,7 @@ namespace Model
      */
     inline BatchListIncomingTypedLinks& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -214,14 +219,19 @@ namespace Model
     inline BatchListIncomingTypedLinks& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
+
     Aws::Vector<TypedLinkAttributeRange> m_filterAttributeRanges;
     bool m_filterAttributeRangesHasBeenSet;
+
     TypedLinkSchemaAndFacetName m_filterTypedLink;
     bool m_filterTypedLinkHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

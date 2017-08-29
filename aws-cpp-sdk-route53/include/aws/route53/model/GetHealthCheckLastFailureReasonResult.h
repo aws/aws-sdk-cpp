@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     GetHealthCheckLastFailureReasonResult();
-    GetHealthCheckLastFailureReasonResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetHealthCheckLastFailureReasonResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHealthCheckLastFailureReasonResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetHealthCheckLastFailureReasonResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list that contains one <code>Observation</code> element for each Amazon
@@ -92,6 +93,7 @@ namespace Model
     inline GetHealthCheckLastFailureReasonResult& AddHealthCheckObservations(HealthCheckObservation&& value) { m_healthCheckObservations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<HealthCheckObservation> m_healthCheckObservations;
   };
 

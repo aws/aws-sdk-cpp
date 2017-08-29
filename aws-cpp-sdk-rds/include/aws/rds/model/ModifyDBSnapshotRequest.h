@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the DB snapshot to modify.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The identifier of the DB snapshot to modify.</p>
      */
     inline ModifyDBSnapshotRequest& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The engine version to update the DB snapshot to. </p>
@@ -109,8 +111,10 @@ namespace Model
     inline ModifyDBSnapshotRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
   private:
+
     Aws::String m_dBSnapshotIdentifier;
     bool m_dBSnapshotIdentifierHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
   };

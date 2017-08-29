@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The type of resource. Currently, the only resource type that is supported is
      * <code>instance</code>.</p>
@@ -79,6 +80,7 @@ namespace Model
      * <code>instance</code>.</p>
      */
     inline SpotFleetTagSpecification& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The tags.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline SpotFleetTagSpecification& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

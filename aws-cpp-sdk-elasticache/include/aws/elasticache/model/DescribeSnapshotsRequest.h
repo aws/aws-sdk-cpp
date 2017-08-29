@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A user-supplied replication group identifier. If this parameter is specified,
      * only snapshots associated with that specific replication group are
@@ -91,6 +92,7 @@ namespace Model
      */
     inline DescribeSnapshotsRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 
+
     /**
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
      * snapshots associated with that specific cache cluster are described.</p>
@@ -133,6 +135,7 @@ namespace Model
      */
     inline DescribeSnapshotsRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 
+
     /**
      * <p>A user-supplied name of the snapshot. If this parameter is specified, only
      * this snapshot are described.</p>
@@ -174,6 +177,7 @@ namespace Model
      * this snapshot are described.</p>
      */
     inline DescribeSnapshotsRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
+
 
     /**
      * <p>If set to <code>system</code>, the output shows snapshots that were
@@ -231,6 +235,7 @@ namespace Model
      */
     inline DescribeSnapshotsRequest& WithSnapshotSource(const char* value) { SetSnapshotSource(value); return *this;}
 
+
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
      * pagination of results from this operation. If this parameter is specified, the
@@ -287,6 +292,7 @@ namespace Model
      */
     inline DescribeSnapshotsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a marker is included in
@@ -311,6 +317,7 @@ namespace Model
      */
     inline DescribeSnapshotsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
+
     /**
      * <p>A Boolean value which if true, the node group (shard) configuration is
      * included in the snapshot description.</p>
@@ -330,18 +337,25 @@ namespace Model
     inline DescribeSnapshotsRequest& WithShowNodeGroupConfig(bool value) { SetShowNodeGroupConfig(value); return *this;}
 
   private:
+
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
+
     Aws::String m_snapshotName;
     bool m_snapshotNameHasBeenSet;
+
     Aws::String m_snapshotSource;
     bool m_snapshotSourceHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     bool m_showNodeGroupConfig;
     bool m_showNodeGroupConfigHasBeenSet;
   };

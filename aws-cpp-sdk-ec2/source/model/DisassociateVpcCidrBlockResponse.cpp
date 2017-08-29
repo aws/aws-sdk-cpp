@@ -31,12 +31,12 @@ DisassociateVpcCidrBlockResponse::DisassociateVpcCidrBlockResponse()
 {
 }
 
-DisassociateVpcCidrBlockResponse::DisassociateVpcCidrBlockResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DisassociateVpcCidrBlockResponse::DisassociateVpcCidrBlockResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DisassociateVpcCidrBlockResponse& DisassociateVpcCidrBlockResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DisassociateVpcCidrBlockResponse& DisassociateVpcCidrBlockResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

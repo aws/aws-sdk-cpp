@@ -31,13 +31,13 @@ PutMethodResult::PutMethodResult() :
 {
 }
 
-PutMethodResult::PutMethodResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PutMethodResult::PutMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_apiKeyRequired(false)
 {
   *this = result;
 }
 
-PutMethodResult& PutMethodResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutMethodResult& PutMethodResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("httpMethod"))

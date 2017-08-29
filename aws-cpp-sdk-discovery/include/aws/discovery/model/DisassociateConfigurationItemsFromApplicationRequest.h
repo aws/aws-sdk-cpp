@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Configuration ID of an application from which each item is disassociated.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>Configuration ID of an application from which each item is disassociated.</p>
      */
     inline DisassociateConfigurationItemsFromApplicationRequest& WithApplicationConfigurationId(const char* value) { SetApplicationConfigurationId(value); return *this;}
+
 
     /**
      * <p>Configuration ID of each item to be disassociated from an application.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline DisassociateConfigurationItemsFromApplicationRequest& AddConfigurationIds(const char* value) { m_configurationIdsHasBeenSet = true; m_configurationIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_applicationConfigurationId;
     bool m_applicationConfigurationIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_configurationIds;
     bool m_configurationIdsHasBeenSet;
   };

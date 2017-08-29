@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline StartStackRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
   };

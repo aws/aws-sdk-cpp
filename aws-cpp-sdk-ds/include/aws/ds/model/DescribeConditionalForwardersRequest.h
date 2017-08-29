@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The directory ID for which to get the list of associated conditional
      * forwarders.</p>
@@ -81,6 +82,7 @@ namespace Model
      * forwarders.</p>
      */
     inline DescribeConditionalForwardersRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The fully qualified domain names (FQDN) of the remote domains for which to
@@ -139,8 +141,10 @@ namespace Model
     inline DescribeConditionalForwardersRequest& AddRemoteDomainNames(const char* value) { m_remoteDomainNamesHasBeenSet = true; m_remoteDomainNames.push_back(value); return *this; }
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_remoteDomainNames;
     bool m_remoteDomainNamesHasBeenSet;
   };

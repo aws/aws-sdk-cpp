@@ -35,6 +35,7 @@ namespace Model
     DescribeComputeEnvironmentsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A list of up to 100 compute environment names or full Amazon Resource Name
      * (ARN) entries. </p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeComputeEnvironmentsRequest& AddComputeEnvironments(const char* value) { m_computeEnvironmentsHasBeenSet = true; m_computeEnvironments.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of cluster results returned by
      * <code>DescribeComputeEnvironments</code> in paginated output. When this
@@ -124,6 +126,7 @@ namespace Model
      * <code>nextToken</code> value if applicable.</p>
      */
     inline DescribeComputeEnvironmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -210,10 +213,13 @@ namespace Model
     inline DescribeComputeEnvironmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_computeEnvironments;
     bool m_computeEnvironmentsHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

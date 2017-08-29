@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the task.</p>
@@ -77,6 +78,7 @@ namespace Model
      * the task.</p>
      */
     inline SubmitTaskStateChangeRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>The task ID or full Amazon Resource Name (ARN) of the task in the state
@@ -120,6 +122,7 @@ namespace Model
      */
     inline SubmitTaskStateChangeRequest& WithTask(const char* value) { SetTask(value); return *this;}
 
+
     /**
      * <p>The status of the state change request.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The status of the state change request.</p>
      */
     inline SubmitTaskStateChangeRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The reason for the state change request.</p>
@@ -191,12 +195,16 @@ namespace Model
     inline SubmitTaskStateChangeRequest& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_task;
     bool m_taskHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The result page size.</p>
      */
@@ -57,6 +58,7 @@ namespace Model
      * <p>The result page size.</p>
      */
     inline ListCACertificatesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -93,6 +95,7 @@ namespace Model
      */
     inline ListCACertificatesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Determines the order of the results.</p>
      */
@@ -109,10 +112,13 @@ namespace Model
     inline ListCACertificatesRequest& WithAscendingOrder(bool value) { SetAscendingOrder(value); return *this;}
 
   private:
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     bool m_ascendingOrder;
     bool m_ascendingOrderHasBeenSet;
   };

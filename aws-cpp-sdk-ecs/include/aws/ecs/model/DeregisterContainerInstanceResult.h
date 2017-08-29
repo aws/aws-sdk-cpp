@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeregisterContainerInstanceResult();
-    DeregisterContainerInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterContainerInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterContainerInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeregisterContainerInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The container instance that was deregistered.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DeregisterContainerInstanceResult& WithContainerInstance(ContainerInstance&& value) { SetContainerInstance(std::move(value)); return *this;}
 
   private:
+
     ContainerInstance m_containerInstance;
   };
 

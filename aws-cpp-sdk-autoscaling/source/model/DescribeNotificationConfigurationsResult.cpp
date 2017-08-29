@@ -31,12 +31,12 @@ DescribeNotificationConfigurationsResult::DescribeNotificationConfigurationsResu
 {
 }
 
-DescribeNotificationConfigurationsResult::DescribeNotificationConfigurationsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeNotificationConfigurationsResult::DescribeNotificationConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeNotificationConfigurationsResult& DescribeNotificationConfigurationsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeNotificationConfigurationsResult& DescribeNotificationConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

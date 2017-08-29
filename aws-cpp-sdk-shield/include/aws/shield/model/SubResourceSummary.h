@@ -50,6 +50,7 @@ namespace Model
     SubResourceSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>SubResource</code> type.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The <code>SubResource</code> type.</p>
      */
     inline SubResourceSummary& WithType(SubResourceType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline SubResourceSummary& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The list of attack types and associated counters.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>The list of attack types and associated counters.</p>
      */
     inline SubResourceSummary& AddAttackVectors(SummarizedAttackVector&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The counters that describe the details of the attack.</p>
@@ -181,12 +185,16 @@ namespace Model
     inline SubResourceSummary& AddCounters(SummarizedCounter&& value) { m_countersHasBeenSet = true; m_counters.push_back(std::move(value)); return *this; }
 
   private:
+
     SubResourceType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Vector<SummarizedAttackVector> m_attackVectors;
     bool m_attackVectorsHasBeenSet;
+
     Aws::Vector<SummarizedCounter> m_counters;
     bool m_countersHasBeenSet;
   };

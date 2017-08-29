@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The Availability Zone.</p>
      */
     inline ScheduledInstancesPlacement& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>The name of the placement group.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline ScheduledInstancesPlacement& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
   };

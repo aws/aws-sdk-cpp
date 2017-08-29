@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The default settings for sending SMS messages from your account. You can set
      * values for the following attribute names:</p> <p> <code>MonthlySpendLimit</code>
@@ -655,6 +656,7 @@ namespace Model
     inline SetSMSAttributesRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     JobRun& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of this job run.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline JobRun& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The number or the attempt to run this job.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The number or the attempt to run this job.</p>
      */
     inline JobRun& WithAttempt(int value) { SetAttempt(value); return *this;}
+
 
     /**
      * <p>The ID of the previous run of this job.</p>
@@ -135,6 +138,7 @@ namespace Model
      */
     inline JobRun& WithPreviousRunId(const char* value) { SetPreviousRunId(value); return *this;}
 
+
     /**
      * <p>The name of the trigger for this job run.</p>
      */
@@ -169,6 +173,7 @@ namespace Model
      * <p>The name of the trigger for this job run.</p>
      */
     inline JobRun& WithTriggerName(const char* value) { SetTriggerName(value); return *this;}
+
 
     /**
      * <p>The name of the job being run.</p>
@@ -205,6 +210,7 @@ namespace Model
      */
     inline JobRun& WithJobName(const char* value) { SetJobName(value); return *this;}
 
+
     /**
      * <p>The date and time at which this job run was started.</p>
      */
@@ -229,6 +235,7 @@ namespace Model
      * <p>The date and time at which this job run was started.</p>
      */
     inline JobRun& WithStartedOn(Aws::Utils::DateTime&& value) { SetStartedOn(std::move(value)); return *this;}
+
 
     /**
      * <p>The last time this job run was modified.</p>
@@ -255,6 +262,7 @@ namespace Model
      */
     inline JobRun& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time this job run completed.</p>
      */
@@ -280,6 +288,7 @@ namespace Model
      */
     inline JobRun& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
 
+
     /**
      * <p>The current state of the job run.</p>
      */
@@ -304,6 +313,7 @@ namespace Model
      * <p>The current state of the job run.</p>
      */
     inline JobRun& WithJobRunState(JobRunState&& value) { SetJobRunState(std::move(value)); return *this;}
+
 
     /**
      * <p>The job arguments associated with this run.</p>
@@ -365,6 +375,7 @@ namespace Model
      */
     inline JobRun& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
+
     /**
      * <p>An error message associated with this job run.</p>
      */
@@ -399,6 +410,7 @@ namespace Model
      * <p>An error message associated with this job run.</p>
      */
     inline JobRun& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+
 
     /**
      * <p>A list of predecessors to this job run.</p>
@@ -435,6 +447,7 @@ namespace Model
      */
     inline JobRun& AddPredecessorRuns(Predecessor&& value) { m_predecessorRunsHasBeenSet = true; m_predecessorRuns.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The amount of infrastructure capacity allocated to this job run.</p>
      */
@@ -451,30 +464,43 @@ namespace Model
     inline JobRun& WithAllocatedCapacity(int value) { SetAllocatedCapacity(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     int m_attempt;
     bool m_attemptHasBeenSet;
+
     Aws::String m_previousRunId;
     bool m_previousRunIdHasBeenSet;
+
     Aws::String m_triggerName;
     bool m_triggerNameHasBeenSet;
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     Aws::Utils::DateTime m_startedOn;
     bool m_startedOnHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedOn;
     bool m_lastModifiedOnHasBeenSet;
+
     Aws::Utils::DateTime m_completedOn;
     bool m_completedOnHasBeenSet;
+
     JobRunState m_jobRunState;
     bool m_jobRunStateHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_arguments;
     bool m_argumentsHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
+
     Aws::Vector<Predecessor> m_predecessorRuns;
     bool m_predecessorRunsHasBeenSet;
+
     int m_allocatedCapacity;
     bool m_allocatedCapacityHasBeenSet;
   };

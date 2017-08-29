@@ -36,6 +36,7 @@ namespace Model
     PutTelemetryRecordsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p/>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p/>
      */
     inline PutTelemetryRecordsRequest& AddTelemetryRecords(TelemetryRecord&& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p/>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline PutTelemetryRecordsRequest& WithEC2InstanceId(const char* value) { SetEC2InstanceId(value); return *this;}
 
+
     /**
      * <p/>
      */
@@ -140,6 +143,7 @@ namespace Model
      * <p/>
      */
     inline PutTelemetryRecordsRequest& WithHostname(const char* value) { SetHostname(value); return *this;}
+
 
     /**
      * <p/>
@@ -177,12 +181,16 @@ namespace Model
     inline PutTelemetryRecordsRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 
   private:
+
     Aws::Vector<TelemetryRecord> m_telemetryRecords;
     bool m_telemetryRecordsHasBeenSet;
+
     Aws::String m_eC2InstanceId;
     bool m_eC2InstanceIdHasBeenSet;
+
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
     Aws::String m_resourceARN;
     bool m_resourceARNHasBeenSet;
   };

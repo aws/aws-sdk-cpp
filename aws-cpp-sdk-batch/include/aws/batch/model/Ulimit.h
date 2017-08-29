@@ -46,6 +46,7 @@ namespace Model
     Ulimit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The hard limit for the <code>ulimit</code> type.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The hard limit for the <code>ulimit</code> type.</p>
      */
     inline Ulimit& WithHardLimit(int value) { SetHardLimit(value); return *this;}
+
 
     /**
      * <p>The <code>type</code> of the <code>ulimit</code>.</p>
@@ -96,6 +98,7 @@ namespace Model
      */
     inline Ulimit& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The soft limit for the <code>ulimit</code> type.</p>
      */
@@ -112,10 +115,13 @@ namespace Model
     inline Ulimit& WithSoftLimit(int value) { SetSoftLimit(value); return *this;}
 
   private:
+
     int m_hardLimit;
     bool m_hardLimitHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     int m_softLimit;
     bool m_softLimitHasBeenSet;
   };

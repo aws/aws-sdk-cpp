@@ -34,6 +34,7 @@ namespace Model
     DeleteLexiconRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the lexicon to delete. Must be an existing lexicon in the
      * region.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteLexiconRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

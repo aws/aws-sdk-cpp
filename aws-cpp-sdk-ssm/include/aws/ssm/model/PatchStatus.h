@@ -47,6 +47,7 @@ namespace Model
     PatchStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The approval status of a patch (APPROVED, PENDING_APPROVAL,
      * EXPLICIT_APPROVED, EXPLICIT_REJECTED).</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline PatchStatus& WithDeploymentStatus(PatchDeploymentStatus&& value) { SetDeploymentStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The compliance severity level for a patch.</p>
      */
@@ -101,6 +103,7 @@ namespace Model
      * <p>The compliance severity level for a patch.</p>
      */
     inline PatchStatus& WithComplianceLevel(PatchComplianceLevel&& value) { SetComplianceLevel(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the patch was approved (or will be approved if the status is
@@ -133,10 +136,13 @@ namespace Model
     inline PatchStatus& WithApprovalDate(Aws::Utils::DateTime&& value) { SetApprovalDate(std::move(value)); return *this;}
 
   private:
+
     PatchDeploymentStatus m_deploymentStatus;
     bool m_deploymentStatusHasBeenSet;
+
     PatchComplianceLevel m_complianceLevel;
     bool m_complianceLevelHasBeenSet;
+
     Aws::Utils::DateTime m_approvalDate;
     bool m_approvalDateHasBeenSet;
   };

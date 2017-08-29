@@ -40,6 +40,7 @@ namespace Model
     CreateDeploymentRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline CreateDeploymentRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to
@@ -117,6 +119,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
+
     /**
      * <p>The description of the <a>Stage</a> resource for the <a>Deployment</a>
      * resource to create.</p>
@@ -159,6 +162,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithStageDescription(const char* value) { SetStageDescription(value); return *this;}
 
+
     /**
      * <p>The description for the <a>Deployment</a> resource to create.</p>
      */
@@ -194,6 +198,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Enables a cache cluster for the <a>Stage</a> resource specified in the
      * input.</p>
@@ -211,6 +216,7 @@ namespace Model
      * input.</p>
      */
     inline CreateDeploymentRequest& WithCacheClusterEnabled(bool value) { SetCacheClusterEnabled(value); return *this;}
+
 
     /**
      * <p>Specifies the cache cluster size for the <a>Stage</a> resource specified in
@@ -241,6 +247,7 @@ namespace Model
      * the input, if a cache cluster is enabled.</p>
      */
     inline CreateDeploymentRequest& WithCacheClusterSize(CacheClusterSize&& value) { SetCacheClusterSize(std::move(value)); return *this;}
+
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
@@ -339,18 +346,25 @@ namespace Model
     inline CreateDeploymentRequest& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     Aws::String m_stageDescription;
     bool m_stageDescriptionHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_cacheClusterEnabled;
     bool m_cacheClusterEnabledHasBeenSet;
+
     CacheClusterSize m_cacheClusterSize;
     bool m_cacheClusterSizeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_variables;
     bool m_variablesHasBeenSet;
   };

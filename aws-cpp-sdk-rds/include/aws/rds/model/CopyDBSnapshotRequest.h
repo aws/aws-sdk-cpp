@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier for the source DB snapshot.</p> <p>If the source snapshot is
      * in the same AWS Region as the copy, specify a valid DB snapshot identifier. For
@@ -176,6 +177,7 @@ namespace Model
      */
     inline CopyDBSnapshotRequest& WithSourceDBSnapshotIdentifier(const char* value) { SetSourceDBSnapshotIdentifier(value); return *this;}
 
+
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
      * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
@@ -238,6 +240,7 @@ namespace Model
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(const char* value) { SetTargetDBSnapshotIdentifier(value); return *this;}
+
 
     /**
      * <p>The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon
@@ -358,6 +361,7 @@ namespace Model
      */
     inline CopyDBSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -379,6 +383,7 @@ namespace Model
     
     inline CopyDBSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>True to copy all tags from the source DB snapshot to the target DB snapshot;
      * otherwise false. The default is false.</p>
@@ -396,6 +401,7 @@ namespace Model
      * otherwise false. The default is false.</p>
      */
     inline CopyDBSnapshotRequest& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
+
 
     /**
      * <p>The URL that contains a Signature Version 4 signed request for the
@@ -663,6 +669,7 @@ namespace Model
      */
     inline CopyDBSnapshotRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
+
     /**
      * <p>The name of an option group to associate with the copy of the snapshot.</p>
      * <p>Specify this option if you are copying a snapshot from one AWS Region to
@@ -748,18 +755,25 @@ namespace Model
     inline CopyDBSnapshotRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
   private:
+
     Aws::String m_sourceDBSnapshotIdentifier;
     bool m_sourceDBSnapshotIdentifierHasBeenSet;
+
     Aws::String m_targetDBSnapshotIdentifier;
     bool m_targetDBSnapshotIdentifierHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     bool m_copyTags;
     bool m_copyTagsHasBeenSet;
+
     Aws::String m_preSignedUrl;
     bool m_preSignedUrlHasBeenSet;
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
   };

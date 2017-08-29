@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListMultipartUploadsResult();
-    ListMultipartUploadsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMultipartUploadsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListMultipartUploadsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListMultipartUploadsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of in-progress multipart uploads.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list of in-progress multipart uploads.</p>
      */
     inline ListMultipartUploadsResult& AddUploadsList(UploadListElement&& value) { m_uploadsList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An opaque string that represents where to continue pagination of the results.
@@ -141,7 +143,9 @@ namespace Model
     inline ListMultipartUploadsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<UploadListElement> m_uploadsList;
+
     Aws::String m_marker;
   };
 

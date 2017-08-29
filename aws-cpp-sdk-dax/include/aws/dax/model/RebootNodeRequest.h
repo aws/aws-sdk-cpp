@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the DAX cluster containing the node to be rebooted.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the DAX cluster containing the node to be rebooted.</p>
      */
     inline RebootNodeRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+
 
     /**
      * <p>The system-assigned ID of the node to be rebooted.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline RebootNodeRequest& WithNodeId(const char* value) { SetNodeId(value); return *this;}
 
   private:
+
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet;
+
     Aws::String m_nodeId;
     bool m_nodeIdHasBeenSet;
   };

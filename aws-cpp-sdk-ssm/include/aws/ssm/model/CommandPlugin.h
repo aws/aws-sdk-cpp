@@ -47,6 +47,7 @@ namespace Model
     CommandPlugin& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
@@ -96,6 +97,7 @@ namespace Model
      */
     inline CommandPlugin& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The status of this plugin. You can execute a document with multiple
      * plugins.</p>
@@ -125,6 +127,7 @@ namespace Model
      * plugins.</p>
      */
     inline CommandPlugin& WithStatus(CommandPluginStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A detailed status of the plugin execution. StatusDetails includes more
@@ -364,6 +367,7 @@ namespace Model
      */
     inline CommandPlugin& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
+
     /**
      * <p>A numeric response code generated after executing the plugin. </p>
      */
@@ -378,6 +382,7 @@ namespace Model
      * <p>A numeric response code generated after executing the plugin. </p>
      */
     inline CommandPlugin& WithResponseCode(int value) { SetResponseCode(value); return *this;}
+
 
     /**
      * <p>The time the plugin started executing. </p>
@@ -403,6 +408,7 @@ namespace Model
      * <p>The time the plugin started executing. </p>
      */
     inline CommandPlugin& WithResponseStartDateTime(Aws::Utils::DateTime&& value) { SetResponseStartDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time the plugin stopped executing. Could stop prematurely if, for
@@ -433,6 +439,7 @@ namespace Model
      * example, a cancel command was sent. </p>
      */
     inline CommandPlugin& WithResponseFinishDateTime(Aws::Utils::DateTime&& value) { SetResponseFinishDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Output of the plugin execution.</p>
@@ -468,6 +475,7 @@ namespace Model
      * <p>Output of the plugin execution.</p>
      */
     inline CommandPlugin& WithOutput(const char* value) { SetOutput(value); return *this;}
+
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
@@ -518,6 +526,7 @@ namespace Model
      */
     inline CommandPlugin& WithStandardOutputUrl(const char* value) { SetStandardOutputUrl(value); return *this;}
 
+
     /**
      * <p>The URL for the complete text written by the plugin to stderr. If execution
      * is not yet complete, then this string is empty.</p>
@@ -559,6 +568,7 @@ namespace Model
      * is not yet complete, then this string is empty.</p>
      */
     inline CommandPlugin& WithStandardErrorUrl(const char* value) { SetStandardErrorUrl(value); return *this;}
+
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
@@ -608,6 +618,7 @@ namespace Model
      * region.</p>
      */
     inline CommandPlugin& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
+
 
     /**
      * <p>The S3 bucket where the responses to the command executions should be stored.
@@ -692,6 +703,7 @@ namespace Model
      * the plugin.</p>
      */
     inline CommandPlugin& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
+
 
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
@@ -778,28 +790,40 @@ namespace Model
     inline CommandPlugin& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     CommandPluginStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusDetails;
     bool m_statusDetailsHasBeenSet;
+
     int m_responseCode;
     bool m_responseCodeHasBeenSet;
+
     Aws::Utils::DateTime m_responseStartDateTime;
     bool m_responseStartDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_responseFinishDateTime;
     bool m_responseFinishDateTimeHasBeenSet;
+
     Aws::String m_output;
     bool m_outputHasBeenSet;
+
     Aws::String m_standardOutputUrl;
     bool m_standardOutputUrlHasBeenSet;
+
     Aws::String m_standardErrorUrl;
     bool m_standardErrorUrlHasBeenSet;
+
     Aws::String m_outputS3Region;
     bool m_outputS3RegionHasBeenSet;
+
     Aws::String m_outputS3BucketName;
     bool m_outputS3BucketNameHasBeenSet;
+
     Aws::String m_outputS3KeyPrefix;
     bool m_outputS3KeyPrefixHasBeenSet;
   };

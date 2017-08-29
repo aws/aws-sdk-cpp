@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The user pool ID.</p>
      */
     inline CreateIdentityProviderRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The identity provider name.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline CreateIdentityProviderRequest& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
     /**
      * <p>The identity provider type.</p>
      */
@@ -133,6 +136,7 @@ namespace Model
      * <p>The identity provider type.</p>
      */
     inline CreateIdentityProviderRequest& WithProviderType(IdentityProviderTypeType&& value) { SetProviderType(std::move(value)); return *this;}
+
 
     /**
      * <p>The identity provider details, such as <code>MetadataURL</code> and
@@ -206,6 +210,7 @@ namespace Model
      */
     inline CreateIdentityProviderRequest& AddProviderDetails(const char* key, const char* value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, value); return *this; }
 
+
     /**
      * <p>A mapping of identity provider attributes to standard and custom user pool
      * attributes.</p>
@@ -278,6 +283,7 @@ namespace Model
      */
     inline CreateIdentityProviderRequest& AddAttributeMapping(const char* key, const char* value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(key, value); return *this; }
 
+
     /**
      * <p>A list of identity provider identifiers.</p>
      */
@@ -319,16 +325,22 @@ namespace Model
     inline CreateIdentityProviderRequest& AddIdpIdentifiers(const char* value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers.push_back(value); return *this; }
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
     IdentityProviderTypeType m_providerType;
     bool m_providerTypeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_providerDetails;
     bool m_providerDetailsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_attributeMapping;
     bool m_attributeMappingHasBeenSet;
+
     Aws::Vector<Aws::String> m_idpIdentifiers;
     bool m_idpIdentifiersHasBeenSet;
   };

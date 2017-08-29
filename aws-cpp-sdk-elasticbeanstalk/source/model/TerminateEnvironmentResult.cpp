@@ -35,7 +35,7 @@ TerminateEnvironmentResult::TerminateEnvironmentResult() :
 {
 }
 
-TerminateEnvironmentResult::TerminateEnvironmentResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+TerminateEnvironmentResult::TerminateEnvironmentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_status(EnvironmentStatus::NOT_SET),
     m_abortableOperationInProgress(false),
     m_health(EnvironmentHealth::NOT_SET),
@@ -44,7 +44,7 @@ TerminateEnvironmentResult::TerminateEnvironmentResult(const AmazonWebServiceRes
   *this = result;
 }
 
-TerminateEnvironmentResult& TerminateEnvironmentResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+TerminateEnvironmentResult& TerminateEnvironmentResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

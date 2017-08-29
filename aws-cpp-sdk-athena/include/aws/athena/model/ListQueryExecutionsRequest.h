@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The token that specifies where to start pagination if a previous request was
      * truncated.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ListQueryExecutionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of query executions to return in this request.</p>
      */
@@ -94,8 +96,10 @@ namespace Model
     inline ListQueryExecutionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

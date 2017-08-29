@@ -30,12 +30,12 @@ DescribeInstancePatchStatesForPatchGroupResult::DescribeInstancePatchStatesForPa
 {
 }
 
-DescribeInstancePatchStatesForPatchGroupResult::DescribeInstancePatchStatesForPatchGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeInstancePatchStatesForPatchGroupResult::DescribeInstancePatchStatesForPatchGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeInstancePatchStatesForPatchGroupResult& DescribeInstancePatchStatesForPatchGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeInstancePatchStatesForPatchGroupResult& DescribeInstancePatchStatesForPatchGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("InstancePatchStates"))

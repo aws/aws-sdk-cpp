@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateBGPPeerResult();
-    CreateBGPPeerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateBGPPeerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateBGPPeerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateBGPPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const VirtualInterface& GetVirtualInterface() const{ return m_virtualInterface; }
@@ -63,6 +64,7 @@ namespace Model
     inline CreateBGPPeerResult& WithVirtualInterface(VirtualInterface&& value) { SetVirtualInterface(std::move(value)); return *this;}
 
   private:
+
     VirtualInterface m_virtualInterface;
   };
 

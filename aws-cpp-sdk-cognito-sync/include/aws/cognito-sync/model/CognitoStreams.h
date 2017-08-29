@@ -46,6 +46,7 @@ namespace Model
     CognitoStreams& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The name of the Cognito stream to receive updates. This stream must be in the
      * developers account and in the same region as the identity pool.
@@ -87,6 +88,7 @@ namespace Model
      * developers account and in the same region as the identity pool.
      */
     inline CognitoStreams& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * The ARN of the role Amazon Cognito can assume in order to publish to the stream.
@@ -137,6 +139,7 @@ namespace Model
      */
     inline CognitoStreams& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of
      * updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to
@@ -178,10 +181,13 @@ namespace Model
     inline CognitoStreams& WithStreamingStatus(StreamingStatus&& value) { SetStreamingStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     StreamingStatus m_streamingStatus;
     bool m_streamingStatusHasBeenSet;
   };

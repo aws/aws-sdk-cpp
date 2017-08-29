@@ -46,6 +46,7 @@ namespace Model
     RouteFilterPrefix& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>CIDR notation for the advertised route. Multiple routes are separated by
      * commas.</p> <p>IPv6 CIDRs must be at least a /64 or shorter</p> <p>Example:
@@ -96,6 +97,7 @@ namespace Model
     inline RouteFilterPrefix& WithCidr(const char* value) { SetCidr(value); return *this;}
 
   private:
+
     Aws::String m_cidr;
     bool m_cidrHasBeenSet;
   };

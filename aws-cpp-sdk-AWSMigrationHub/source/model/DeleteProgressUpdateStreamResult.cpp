@@ -30,12 +30,12 @@ DeleteProgressUpdateStreamResult::DeleteProgressUpdateStreamResult()
 {
 }
 
-DeleteProgressUpdateStreamResult::DeleteProgressUpdateStreamResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteProgressUpdateStreamResult::DeleteProgressUpdateStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteProgressUpdateStreamResult& DeleteProgressUpdateStreamResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteProgressUpdateStreamResult& DeleteProgressUpdateStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * The expression used to query the domain.
      */
@@ -72,6 +73,7 @@ namespace Model
      * The expression used to query the domain.
      */
     inline SelectRequest& WithSelectExpression(const char* value) { SetSelectExpression(value); return *this;}
+
 
     /**
      * A string informing Amazon SimpleDB where to start the next list of
@@ -115,6 +117,7 @@ namespace Model
      */
     inline SelectRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * Determines whether or not strong consistency should be enforced when data is
      * read from SimpleDB. If <code>true</code>, any data previously written to
@@ -140,10 +143,13 @@ namespace Model
     inline SelectRequest& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
 
   private:
+
     Aws::String m_selectExpression;
     bool m_selectExpressionHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     bool m_consistentRead;
     bool m_consistentReadHasBeenSet;
   };

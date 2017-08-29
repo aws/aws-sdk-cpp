@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the IAM user associated with the service-specific credential.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline ServiceSpecificCredentialMetadata& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The status of the service-specific credential. <code>Active</code> means the
      * key is valid for API calls, while <code>Inactive</code> means it is not.</p>
@@ -115,6 +117,7 @@ namespace Model
      * key is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
     inline ServiceSpecificCredentialMetadata& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The generated user name for the service-specific credential.</p>
@@ -151,6 +154,7 @@ namespace Model
      */
     inline ServiceSpecificCredentialMetadata& WithServiceUserName(const char* value) { SetServiceUserName(value); return *this;}
 
+
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the service-specific credential were created.</p>
@@ -180,6 +184,7 @@ namespace Model
      * date-time format</a>, when the service-specific credential were created.</p>
      */
     inline ServiceSpecificCredentialMetadata& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The unique identifier for the service-specific credential.</p>
@@ -215,6 +220,7 @@ namespace Model
      * <p>The unique identifier for the service-specific credential.</p>
      */
     inline ServiceSpecificCredentialMetadata& WithServiceSpecificCredentialId(const char* value) { SetServiceSpecificCredentialId(value); return *this;}
+
 
     /**
      * <p>The name of the service associated with the service-specific credential.</p>
@@ -252,16 +258,22 @@ namespace Model
     inline ServiceSpecificCredentialMetadata& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     StatusType m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_serviceUserName;
     bool m_serviceUserNameHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     Aws::String m_serviceSpecificCredentialId;
     bool m_serviceSpecificCredentialIdHasBeenSet;
+
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;
   };

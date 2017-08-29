@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateProjectResult();
-    UpdateProjectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateProjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the build project that was changed.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateProjectResult& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
 
   private:
+
     Project m_project;
   };
 

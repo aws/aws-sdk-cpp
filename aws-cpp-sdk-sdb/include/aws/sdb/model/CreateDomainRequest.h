@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * The name of the domain to create. The name can range between 3 and 255
      * characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-',
@@ -88,6 +89,7 @@ namespace Model
     inline CreateDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

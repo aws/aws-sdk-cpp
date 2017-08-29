@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetOpenIdTokenForDeveloperIdentityResult();
-    GetOpenIdTokenForDeveloperIdentityResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetOpenIdTokenForDeveloperIdentityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOpenIdTokenForDeveloperIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOpenIdTokenForDeveloperIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline GetOpenIdTokenForDeveloperIdentityResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * <p>An OpenID token.</p>
@@ -119,7 +121,9 @@ namespace Model
     inline GetOpenIdTokenForDeveloperIdentityResult& WithToken(const char* value) { SetToken(value); return *this;}
 
   private:
+
     Aws::String m_identityId;
+
     Aws::String m_token;
   };
 

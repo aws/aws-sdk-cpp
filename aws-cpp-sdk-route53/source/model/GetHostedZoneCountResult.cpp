@@ -30,13 +30,13 @@ GetHostedZoneCountResult::GetHostedZoneCountResult() :
 {
 }
 
-GetHostedZoneCountResult::GetHostedZoneCountResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetHostedZoneCountResult::GetHostedZoneCountResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_hostedZoneCount(0)
 {
   *this = result;
 }
 
-GetHostedZoneCountResult& GetHostedZoneCountResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetHostedZoneCountResult& GetHostedZoneCountResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

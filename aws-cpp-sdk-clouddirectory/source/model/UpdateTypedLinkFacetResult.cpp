@@ -30,12 +30,12 @@ UpdateTypedLinkFacetResult::UpdateTypedLinkFacetResult()
 {
 }
 
-UpdateTypedLinkFacetResult::UpdateTypedLinkFacetResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateTypedLinkFacetResult::UpdateTypedLinkFacetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateTypedLinkFacetResult& UpdateTypedLinkFacetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateTypedLinkFacetResult& UpdateTypedLinkFacetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeMetricCollectionTypesResult();
-    DescribeMetricCollectionTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeMetricCollectionTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeMetricCollectionTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeMetricCollectionTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>One or more metrics.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeMetricCollectionTypesResult& AddMetrics(MetricCollectionType&& value) { m_metrics.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The granularities for the metrics.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline DescribeMetricCollectionTypesResult& AddGranularities(MetricGranularityType&& value) { m_granularities.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -136,8 +139,11 @@ namespace Model
     inline DescribeMetricCollectionTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<MetricCollectionType> m_metrics;
+
     Aws::Vector<MetricGranularityType> m_granularities;
+
     ResponseMetadata m_responseMetadata;
   };
 

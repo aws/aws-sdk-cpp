@@ -46,6 +46,7 @@ namespace Model
     TimerFiredEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique ID of the timer that fired.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline TimerFiredEventAttributes& WithTimerId(const char* value) { SetTimerId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>TimerStarted</code> event that was recorded when this
      * timer was started. This information can be useful for diagnosing problems by
@@ -103,8 +105,10 @@ namespace Model
     inline TimerFiredEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 
   private:
+
     Aws::String m_timerId;
     bool m_timerIdHasBeenSet;
+
     long long m_startedEventId;
     bool m_startedEventIdHasBeenSet;
   };

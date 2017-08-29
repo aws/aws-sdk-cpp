@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The granularity. The only valid value is <code>1Minute</code>.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
     inline MetricGranularityType& WithGranularity(const char* value) { SetGranularity(value); return *this;}
 
   private:
+
     Aws::String m_granularity;
     bool m_granularityHasBeenSet;
   };

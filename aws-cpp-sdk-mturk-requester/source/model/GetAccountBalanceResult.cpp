@@ -30,12 +30,12 @@ GetAccountBalanceResult::GetAccountBalanceResult()
 {
 }
 
-GetAccountBalanceResult::GetAccountBalanceResult(const AmazonWebServiceResult<JsonValue>& result)
+GetAccountBalanceResult::GetAccountBalanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetAccountBalanceResult& GetAccountBalanceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetAccountBalanceResult& GetAccountBalanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AvailableBalance"))

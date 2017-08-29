@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     PutRecordBatchResult();
-    PutRecordBatchResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRecordBatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRecordBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRecordBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of records that might have failed processing.</p>
@@ -56,6 +57,7 @@ namespace Model
      * <p>The number of records that might have failed processing.</p>
      */
     inline PutRecordBatchResult& WithFailedPutCount(int value) { SetFailedPutCount(value); return *this;}
+
 
     /**
      * <p>The results array. For each record, the index of the response element is the
@@ -100,7 +102,9 @@ namespace Model
     inline PutRecordBatchResult& AddRequestResponses(PutRecordBatchResponseEntry&& value) { m_requestResponses.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_failedPutCount;
+
     Aws::Vector<PutRecordBatchResponseEntry> m_requestResponses;
   };
 

@@ -30,12 +30,12 @@ PutComplianceItemsResult::PutComplianceItemsResult()
 {
 }
 
-PutComplianceItemsResult::PutComplianceItemsResult(const AmazonWebServiceResult<JsonValue>& result)
+PutComplianceItemsResult::PutComplianceItemsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutComplianceItemsResult& PutComplianceItemsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutComplianceItemsResult& PutComplianceItemsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

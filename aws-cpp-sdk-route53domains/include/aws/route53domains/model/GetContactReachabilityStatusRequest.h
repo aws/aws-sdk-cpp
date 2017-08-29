@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain for which you want to know whether the registrant
      * contact has confirmed that the email address is valid.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline GetContactReachabilityStatusRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

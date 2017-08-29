@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeTagsResult();
-    DescribeTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of tags.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeTagsResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Tag> m_tagList;
   };
 

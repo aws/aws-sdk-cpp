@@ -34,6 +34,7 @@ namespace Model
     GetCampaignVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -55,6 +56,7 @@ namespace Model
     
     inline GetCampaignVersionRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     
     inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
 
@@ -75,6 +77,7 @@ namespace Model
 
     
     inline GetCampaignVersionRequest& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
+
 
     
     inline const Aws::String& GetVersion() const{ return m_version; }
@@ -98,10 +101,13 @@ namespace Model
     inline GetCampaignVersionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_campaignId;
     bool m_campaignIdHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetPartitionResult();
-    GetPartitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPartitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPartitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPartitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The requested information, in the form of a <code>Partition</code>
@@ -72,6 +73,7 @@ namespace Model
     inline GetPartitionResult& WithPartition(Partition&& value) { SetPartition(std::move(value)); return *this;}
 
   private:
+
     Partition m_partition;
   };
 

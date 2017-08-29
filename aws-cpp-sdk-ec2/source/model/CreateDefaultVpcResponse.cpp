@@ -31,12 +31,12 @@ CreateDefaultVpcResponse::CreateDefaultVpcResponse()
 {
 }
 
-CreateDefaultVpcResponse::CreateDefaultVpcResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateDefaultVpcResponse::CreateDefaultVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateDefaultVpcResponse& CreateDefaultVpcResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateDefaultVpcResponse& CreateDefaultVpcResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

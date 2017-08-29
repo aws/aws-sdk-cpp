@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_APPSTREAM_API AppStreamErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_APPSTREAM_API AppStreamErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace AppStream
+} // namespace Client
 } // namespace Aws

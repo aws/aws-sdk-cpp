@@ -50,6 +50,7 @@ namespace Model
     Server& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Associate a public IP address with a server that you are launching. </p>
      */
@@ -65,6 +66,7 @@ namespace Model
      */
     inline Server& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 
+
     /**
      * <p>The number of automated backups to keep. </p>
      */
@@ -79,6 +81,7 @@ namespace Model
      * <p>The number of automated backups to keep. </p>
      */
     inline Server& WithBackupRetentionCount(int value) { SetBackupRetentionCount(value); return *this;}
+
 
     /**
      * <p>The name of the server. </p>
@@ -115,6 +118,7 @@ namespace Model
      */
     inline Server& WithServerName(const char* value) { SetServerName(value); return *this;}
 
+
     /**
      * <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
      * </p>
@@ -144,6 +148,7 @@ namespace Model
      * </p>
      */
     inline Server& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
@@ -180,6 +185,7 @@ namespace Model
      */
     inline Server& WithCloudFormationStackArn(const char* value) { SetCloudFormationStackArn(value); return *this;}
 
+
     /**
      * <p>Disables automated backups. The number of stored backups is dependent on the
      * value of PreferredBackupCount. </p>
@@ -197,6 +203,7 @@ namespace Model
      * value of PreferredBackupCount. </p>
      */
     inline Server& WithDisableAutomatedBackup(bool value) { SetDisableAutomatedBackup(value); return *this;}
+
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
@@ -240,6 +247,7 @@ namespace Model
      */
     inline Server& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
+
     /**
      * <p>The engine type of the server. The valid value in this release is
      * <code>Chef</code>. </p>
@@ -282,6 +290,7 @@ namespace Model
      */
     inline Server& WithEngine(const char* value) { SetEngine(value); return *this;}
 
+
     /**
      * <p>The engine model of the server. The valid value in this release is
      * <code>Single</code>. </p>
@@ -323,6 +332,7 @@ namespace Model
      * <code>Single</code>. </p>
      */
     inline Server& WithEngineModel(const char* value) { SetEngineModel(value); return *this;}
+
 
     /**
      * <p>The response of a createServer() request returns the master credential to
@@ -436,6 +446,7 @@ namespace Model
      */
     inline Server& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The engine version of the server. Because Chef is the engine available in
      * this release, the valid value for EngineVersion is <code>12</code>. </p>
@@ -478,6 +489,7 @@ namespace Model
      */
     inline Server& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
+
     /**
      * <p>The instance profile ARN of the server. </p>
      */
@@ -512,6 +524,7 @@ namespace Model
      * <p>The instance profile ARN of the server. </p>
      */
     inline Server& WithInstanceProfileArn(const char* value) { SetInstanceProfileArn(value); return *this;}
+
 
     /**
      * <p> The instance type for the server, as specified in the CloudFormation stack.
@@ -555,6 +568,7 @@ namespace Model
      */
     inline Server& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>The key pair associated with the server. </p>
      */
@@ -590,6 +604,7 @@ namespace Model
      */
     inline Server& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
 
+
     /**
      * <p>The status of the most recent server maintenance run. Shows
      * <code>SUCCESS</code> or <code>FAILED</code>. </p>
@@ -619,6 +634,7 @@ namespace Model
      * <code>SUCCESS</code> or <code>FAILED</code>. </p>
      */
     inline Server& WithMaintenanceStatus(MaintenanceStatus&& value) { SetMaintenanceStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The preferred maintenance period specified for the server. </p>
@@ -655,6 +671,7 @@ namespace Model
      */
     inline Server& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The preferred backup period specified for the server. </p>
      */
@@ -689,6 +706,7 @@ namespace Model
      * <p>The preferred backup period specified for the server. </p>
      */
     inline Server& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
+
 
     /**
      * <p> The security group IDs for the server, as specified in the CloudFormation
@@ -746,6 +764,7 @@ namespace Model
      */
     inline Server& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
+
     /**
      * <p>The service role ARN used to create the server. </p>
      */
@@ -781,6 +800,7 @@ namespace Model
      */
     inline Server& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
+
     /**
      * <p> The server's status. This field displays the states of actions in progress,
      * such as creating, running, or backing up the server, as well as the server's
@@ -815,6 +835,7 @@ namespace Model
      * health state. </p>
      */
     inline Server& WithStatus(ServerStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p> Depending on the server status, this field has either a human-readable
@@ -865,6 +886,7 @@ namespace Model
      */
     inline Server& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
+
     /**
      * <p> The subnet IDs specified in a CreateServer request. </p>
      */
@@ -905,6 +927,7 @@ namespace Model
      */
     inline Server& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
     /**
      * <p>The ARN of the server. </p>
      */
@@ -941,50 +964,73 @@ namespace Model
     inline Server& WithServerArn(const char* value) { SetServerArn(value); return *this;}
 
   private:
+
     bool m_associatePublicIpAddress;
     bool m_associatePublicIpAddressHasBeenSet;
+
     int m_backupRetentionCount;
     bool m_backupRetentionCountHasBeenSet;
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::String m_cloudFormationStackArn;
     bool m_cloudFormationStackArnHasBeenSet;
+
     bool m_disableAutomatedBackup;
     bool m_disableAutomatedBackupHasBeenSet;
+
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
+
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
     Aws::String m_engineModel;
     bool m_engineModelHasBeenSet;
+
     Aws::Vector<EngineAttribute> m_engineAttributes;
     bool m_engineAttributesHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_instanceProfileArn;
     bool m_instanceProfileArnHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_keyPair;
     bool m_keyPairHasBeenSet;
+
     MaintenanceStatus m_maintenanceStatus;
     bool m_maintenanceStatusHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::String m_serviceRoleArn;
     bool m_serviceRoleArnHasBeenSet;
+
     ServerStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::String m_serverArn;
     bool m_serverArnHasBeenSet;
   };

@@ -30,12 +30,12 @@ UpdateNFSFileShareResult::UpdateNFSFileShareResult()
 {
 }
 
-UpdateNFSFileShareResult::UpdateNFSFileShareResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateNFSFileShareResult::UpdateNFSFileShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateNFSFileShareResult& UpdateNFSFileShareResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateNFSFileShareResult& UpdateNFSFileShareResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FileShareARN"))

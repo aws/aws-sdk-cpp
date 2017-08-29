@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Descriptive text about the health state of your instance.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline ReportInstanceStatusRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -104,6 +106,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ReportInstanceStatusRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The time at which the reported instance health state ended.</p>
@@ -129,6 +132,7 @@ namespace Model
      * <p>The time at which the reported instance health state ended.</p>
      */
     inline ReportInstanceStatusRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more instances.</p>
@@ -169,6 +173,7 @@ namespace Model
      * <p>One or more instances.</p>
      */
     inline ReportInstanceStatusRequest& AddInstances(const char* value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+
 
     /**
      * <p>One or more reason codes that describes the health state of your
@@ -303,6 +308,7 @@ namespace Model
      */
     inline ReportInstanceStatusRequest& AddReasonCodes(ReportInstanceReasonCodes&& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time at which the reported instance health state began.</p>
      */
@@ -327,6 +333,7 @@ namespace Model
      * <p>The time at which the reported instance health state began.</p>
      */
     inline ReportInstanceStatusRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of all instances listed.</p>
@@ -354,18 +361,25 @@ namespace Model
     inline ReportInstanceStatusRequest& WithStatus(ReportStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::Vector<Aws::String> m_instances;
     bool m_instancesHasBeenSet;
+
     Aws::Vector<ReportInstanceReasonCodes> m_reasonCodes;
     bool m_reasonCodesHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     ReportStatusType m_status;
     bool m_statusHasBeenSet;
   };

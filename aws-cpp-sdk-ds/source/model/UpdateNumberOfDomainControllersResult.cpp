@@ -30,12 +30,12 @@ UpdateNumberOfDomainControllersResult::UpdateNumberOfDomainControllersResult()
 {
 }
 
-UpdateNumberOfDomainControllersResult::UpdateNumberOfDomainControllersResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateNumberOfDomainControllersResult::UpdateNumberOfDomainControllersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateNumberOfDomainControllersResult& UpdateNumberOfDomainControllersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateNumberOfDomainControllersResult& UpdateNumberOfDomainControllersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

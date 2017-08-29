@@ -33,14 +33,14 @@ DescribeChangeSetResult::DescribeChangeSetResult() :
 {
 }
 
-DescribeChangeSetResult::DescribeChangeSetResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_executionStatus(ExecutionStatus::NOT_SET),
     m_status(ChangeSetStatus::NOT_SET)
 {
   *this = result;
 }
 
-DescribeChangeSetResult& DescribeChangeSetResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

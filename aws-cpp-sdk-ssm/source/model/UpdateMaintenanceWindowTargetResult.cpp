@@ -30,12 +30,12 @@ UpdateMaintenanceWindowTargetResult::UpdateMaintenanceWindowTargetResult()
 {
 }
 
-UpdateMaintenanceWindowTargetResult::UpdateMaintenanceWindowTargetResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateMaintenanceWindowTargetResult::UpdateMaintenanceWindowTargetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateMaintenanceWindowTargetResult& UpdateMaintenanceWindowTargetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateMaintenanceWindowTargetResult& UpdateMaintenanceWindowTargetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WindowId"))

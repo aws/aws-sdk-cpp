@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PutInstancePublicPortsResult();
-    PutInstancePublicPortsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutInstancePublicPortsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutInstancePublicPortsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutInstancePublicPortsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Describes metadata about the operation you just executed.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline PutInstancePublicPortsResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
+
     Operation m_operation;
   };
 

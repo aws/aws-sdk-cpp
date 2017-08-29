@@ -30,12 +30,12 @@ DeleteReplicationSubnetGroupResult::DeleteReplicationSubnetGroupResult()
 {
 }
 
-DeleteReplicationSubnetGroupResult::DeleteReplicationSubnetGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteReplicationSubnetGroupResult::DeleteReplicationSubnetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteReplicationSubnetGroupResult& DeleteReplicationSubnetGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteReplicationSubnetGroupResult& DeleteReplicationSubnetGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

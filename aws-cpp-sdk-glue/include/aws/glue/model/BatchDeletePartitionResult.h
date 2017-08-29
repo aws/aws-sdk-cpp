@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     BatchDeletePartitionResult();
-    BatchDeletePartitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeletePartitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchDeletePartitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchDeletePartitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Errors encountered when trying to delete the requested partitions.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline BatchDeletePartitionResult& AddErrors(PartitionError&& value) { m_errors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<PartitionError> m_errors;
   };
 

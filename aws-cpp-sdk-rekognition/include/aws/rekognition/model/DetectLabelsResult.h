@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DetectLabelsResult();
-    DetectLabelsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetectLabelsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetectLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetectLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of labels for the real-world objects detected. </p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>An array of labels for the real-world objects detected. </p>
      */
     inline DetectLabelsResult& AddLabels(Label&& value) { m_labels.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> The orientation of the input image (counter-clockwise direction). If your
@@ -134,7 +136,9 @@ namespace Model
     inline DetectLabelsResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Label> m_labels;
+
     OrientationCorrection m_orientationCorrection;
   };
 

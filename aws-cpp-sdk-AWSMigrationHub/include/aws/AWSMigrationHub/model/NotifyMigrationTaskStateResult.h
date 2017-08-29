@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     NotifyMigrationTaskStateResult();
-    NotifyMigrationTaskStateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    NotifyMigrationTaskStateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    NotifyMigrationTaskStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    NotifyMigrationTaskStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

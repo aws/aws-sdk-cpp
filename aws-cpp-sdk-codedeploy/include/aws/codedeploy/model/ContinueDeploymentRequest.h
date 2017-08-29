@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The deployment ID of the blue/green deployment for which you want to start
      * rerouting traffic to the replacement environment.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline ContinueDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The cluster ID of the cluster that you want to update, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -80,6 +81,7 @@ namespace Model
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
     inline UpdateClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
@@ -137,6 +139,7 @@ namespace Model
      */
     inline UpdateClusterRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>The updated description of this cluster.</p>
      */
@@ -172,6 +175,7 @@ namespace Model
      */
     inline UpdateClusterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The updated arrays of <a>JobResource</a> objects that can include updated
      * <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
@@ -201,6 +205,7 @@ namespace Model
      * <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
      */
     inline UpdateClusterRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the updated <a>Address</a> object.</p>
@@ -237,6 +242,7 @@ namespace Model
      */
     inline UpdateClusterRequest& WithAddressId(const char* value) { SetAddressId(value); return *this;}
 
+
     /**
      * <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
      * object.</p>
@@ -267,6 +273,7 @@ namespace Model
      */
     inline UpdateClusterRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
+
     /**
      * <p>The new or updated <a>Notification</a> object.</p>
      */
@@ -291,6 +298,7 @@ namespace Model
      * <p>The new or updated <a>Notification</a> object.</p>
      */
     inline UpdateClusterRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
+
 
     /**
      * <p>The updated ID for the forwarding address for a cluster. This field is not
@@ -335,20 +343,28 @@ namespace Model
     inline UpdateClusterRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     JobResource m_resources;
     bool m_resourcesHasBeenSet;
+
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet;
+
     ShippingOption m_shippingOption;
     bool m_shippingOptionHasBeenSet;
+
     Notification m_notification;
     bool m_notificationHasBeenSet;
+
     Aws::String m_forwardingAddressId;
     bool m_forwardingAddressIdHasBeenSet;
   };

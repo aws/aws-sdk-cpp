@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The version of the orderable cluster.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The version of the orderable cluster.</p>
      */
     inline OrderableClusterOption& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
+
 
     /**
      * <p>The cluster type, for example <code>multi-node</code>. </p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline OrderableClusterOption& WithClusterType(const char* value) { SetClusterType(value); return *this;}
 
+
     /**
      * <p>The node type for the orderable cluster.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The node type for the orderable cluster.</p>
      */
     inline OrderableClusterOption& WithNodeType(const char* value) { SetNodeType(value); return *this;}
+
 
     /**
      * <p>A list of availability zones for the orderable cluster.</p>
@@ -191,12 +195,16 @@ namespace Model
     inline OrderableClusterOption& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
     Aws::String m_clusterType;
     bool m_clusterTypeHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     Aws::Vector<AvailabilityZone> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
   };

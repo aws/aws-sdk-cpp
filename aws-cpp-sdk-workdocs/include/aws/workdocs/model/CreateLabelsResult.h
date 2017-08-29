@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateLabelsResult();
-    CreateLabelsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateLabelsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetKeyPairResult();
-    GetKeyPairResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetKeyPairResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetKeyPairResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetKeyPairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the key pair.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetKeyPairResult& WithKeyPair(KeyPair&& value) { SetKeyPair(std::move(value)); return *this;}
 
   private:
+
     KeyPair m_keyPair;
   };
 

@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the DP parameter group.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The name of the DP parameter group.</p>
      */
     inline DBParameterGroupStatus& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
+
 
     /**
      * <p>The status of parameter updates.</p>
@@ -125,8 +127,10 @@ namespace Model
     inline DBParameterGroupStatus& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
 
   private:
+
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet;
+
     Aws::String m_parameterApplyStatus;
     bool m_parameterApplyStatusHasBeenSet;
   };

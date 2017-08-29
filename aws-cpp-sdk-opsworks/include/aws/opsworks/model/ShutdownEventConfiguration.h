@@ -43,6 +43,7 @@ namespace Model
     ShutdownEventConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a
      * Shutdown event before shutting down an instance.</p>
@@ -60,6 +61,7 @@ namespace Model
      * Shutdown event before shutting down an instance.</p>
      */
     inline ShutdownEventConfiguration& WithExecutionTimeout(int value) { SetExecutionTimeout(value); return *this;}
+
 
     /**
      * <p>Whether to enable Elastic Load Balancing connection draining. For more
@@ -86,8 +88,10 @@ namespace Model
     inline ShutdownEventConfiguration& WithDelayUntilElbConnectionsDrained(bool value) { SetDelayUntilElbConnectionsDrained(value); return *this;}
 
   private:
+
     int m_executionTimeout;
     bool m_executionTimeoutHasBeenSet;
+
     bool m_delayUntilElbConnectionsDrained;
     bool m_delayUntilElbConnectionsDrainedHasBeenSet;
   };

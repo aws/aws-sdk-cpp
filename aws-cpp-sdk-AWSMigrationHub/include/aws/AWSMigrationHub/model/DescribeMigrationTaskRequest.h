@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the ProgressUpdateStream. </p>
      */
     inline DescribeMigrationTaskRequest& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
+
 
     /**
      * <p>The identifier given to the MigrationTask.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline DescribeMigrationTaskRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 
   private:
+
     Aws::String m_progressUpdateStream;
     bool m_progressUpdateStreamHasBeenSet;
+
     Aws::String m_migrationTaskName;
     bool m_migrationTaskNameHasBeenSet;
   };

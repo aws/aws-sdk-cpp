@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the cache cluster to which the node belongs.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The ID of the cache cluster to which the node belongs.</p>
      */
     inline NodeGroupMember& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+
 
     /**
      * <p>The ID of the node within its cache cluster. A node ID is a numeric
@@ -127,6 +129,7 @@ namespace Model
      */
     inline NodeGroupMember& WithCacheNodeId(const char* value) { SetCacheNodeId(value); return *this;}
 
+
     
     inline const Endpoint& GetReadEndpoint() const{ return m_readEndpoint; }
 
@@ -141,6 +144,7 @@ namespace Model
 
     
     inline NodeGroupMember& WithReadEndpoint(Endpoint&& value) { SetReadEndpoint(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the Availability Zone in which the node is located.</p>
@@ -176,6 +180,7 @@ namespace Model
      * <p>The name of the Availability Zone in which the node is located.</p>
      */
     inline NodeGroupMember& WithPreferredAvailabilityZone(const char* value) { SetPreferredAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>The role that is currently assigned to the node - <code>primary</code> or
@@ -220,14 +225,19 @@ namespace Model
     inline NodeGroupMember& WithCurrentRole(const char* value) { SetCurrentRole(value); return *this;}
 
   private:
+
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
+
     Aws::String m_cacheNodeId;
     bool m_cacheNodeIdHasBeenSet;
+
     Endpoint m_readEndpoint;
     bool m_readEndpointHasBeenSet;
+
     Aws::String m_preferredAvailabilityZone;
     bool m_preferredAvailabilityZoneHasBeenSet;
+
     Aws::String m_currentRole;
     bool m_currentRoleHasBeenSet;
   };

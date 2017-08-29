@@ -48,6 +48,7 @@ namespace Model
     BatchListOutgoingTypedLinksResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Returns a typed link specifier as output.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>Returns a typed link specifier as output.</p>
      */
     inline BatchListOutgoingTypedLinksResponse& AddTypedLinkSpecifiers(TypedLinkSpecifier&& value) { m_typedLinkSpecifiersHasBeenSet = true; m_typedLinkSpecifiers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline BatchListOutgoingTypedLinksResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<TypedLinkSpecifier> m_typedLinkSpecifiers;
     bool m_typedLinkSpecifiersHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -30,12 +30,12 @@ CreateConditionalForwarderResult::CreateConditionalForwarderResult()
 {
 }
 
-CreateConditionalForwarderResult::CreateConditionalForwarderResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateConditionalForwarderResult::CreateConditionalForwarderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateConditionalForwarderResult& CreateConditionalForwarderResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateConditionalForwarderResult& CreateConditionalForwarderResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

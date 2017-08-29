@@ -30,12 +30,12 @@ DetachThingPrincipalResult::DetachThingPrincipalResult()
 {
 }
 
-DetachThingPrincipalResult::DetachThingPrincipalResult(const AmazonWebServiceResult<JsonValue>& result)
+DetachThingPrincipalResult::DetachThingPrincipalResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DetachThingPrincipalResult& DetachThingPrincipalResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DetachThingPrincipalResult& DetachThingPrincipalResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

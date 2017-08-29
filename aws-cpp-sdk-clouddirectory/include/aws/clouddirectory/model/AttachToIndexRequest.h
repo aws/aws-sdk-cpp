@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the directory where the object and index
      * exist.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline AttachToIndexRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>A reference to the index that you are attaching the object to.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p>A reference to the index that you are attaching the object to.</p>
      */
     inline AttachToIndexRequest& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
+
 
     /**
      * <p>A reference to the object that you are attaching to the index.</p>
@@ -130,10 +133,13 @@ namespace Model
     inline AttachToIndexRequest& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_indexReference;
     bool m_indexReferenceHasBeenSet;
+
     ObjectReference m_targetReference;
     bool m_targetReferenceHasBeenSet;
   };

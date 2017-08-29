@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the resource being exported.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline InstanceExportDetails& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The target virtualization environment.</p>
      */
@@ -110,8 +112,10 @@ namespace Model
     inline InstanceExportDetails& WithTargetEnvironment(ExportEnvironment&& value) { SetTargetEnvironment(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     ExportEnvironment m_targetEnvironment;
     bool m_targetEnvironmentHasBeenSet;
   };

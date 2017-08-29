@@ -48,6 +48,7 @@ namespace Model
     AutoScalingThresholds& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of instances to add or remove when the load exceeds a
      * threshold.</p>
@@ -66,6 +67,7 @@ namespace Model
      */
     inline AutoScalingThresholds& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
+
     /**
      * <p>The amount of time, in minutes, that the load must exceed a threshold before
      * more instances are added or removed.</p>
@@ -83,6 +85,7 @@ namespace Model
      * more instances are added or removed.</p>
      */
     inline AutoScalingThresholds& WithThresholdsWaitTime(int value) { SetThresholdsWaitTime(value); return *this;}
+
 
     /**
      * <p>The amount of time (in minutes) after a scaling event occurs that AWS
@@ -120,6 +123,7 @@ namespace Model
      */
     inline AutoScalingThresholds& WithIgnoreMetricsTime(int value) { SetIgnoreMetricsTime(value); return *this;}
 
+
     /**
      * <p>The CPU utilization threshold, as a percent of the available CPU. A value of
      * -1 disables the threshold.</p>
@@ -138,6 +142,7 @@ namespace Model
      */
     inline AutoScalingThresholds& WithCpuThreshold(double value) { SetCpuThreshold(value); return *this;}
 
+
     /**
      * <p>The memory utilization threshold, as a percent of the available memory. A
      * value of -1 disables the threshold.</p>
@@ -155,6 +160,7 @@ namespace Model
      * value of -1 disables the threshold.</p>
      */
     inline AutoScalingThresholds& WithMemoryThreshold(double value) { SetMemoryThreshold(value); return *this;}
+
 
     /**
      * <p>The load threshold. A value of -1 disables the threshold. For more
@@ -179,6 +185,7 @@ namespace Model
      * (computing)</a>.</p>
      */
     inline AutoScalingThresholds& WithLoadThreshold(double value) { SetLoadThreshold(value); return *this;}
+
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
@@ -277,18 +284,25 @@ namespace Model
     inline AutoScalingThresholds& AddAlarms(const char* value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
 
   private:
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     int m_thresholdsWaitTime;
     bool m_thresholdsWaitTimeHasBeenSet;
+
     int m_ignoreMetricsTime;
     bool m_ignoreMetricsTimeHasBeenSet;
+
     double m_cpuThreshold;
     bool m_cpuThresholdHasBeenSet;
+
     double m_memoryThreshold;
     bool m_memoryThresholdHasBeenSet;
+
     double m_loadThreshold;
     bool m_loadThresholdHasBeenSet;
+
     Aws::Vector<Aws::String> m_alarms;
     bool m_alarmsHasBeenSet;
   };

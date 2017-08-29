@@ -31,12 +31,12 @@ DescribeScalingProcessTypesResult::DescribeScalingProcessTypesResult()
 {
 }
 
-DescribeScalingProcessTypesResult::DescribeScalingProcessTypesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeScalingProcessTypesResult::DescribeScalingProcessTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeScalingProcessTypesResult& DescribeScalingProcessTypesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeScalingProcessTypesResult& DescribeScalingProcessTypesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

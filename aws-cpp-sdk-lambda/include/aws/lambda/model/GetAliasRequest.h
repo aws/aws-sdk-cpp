@@ -34,6 +34,7 @@ namespace Model
     GetAliasRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>Function name for which the alias is created. An alias is a subresource that
      * exists only in the context of an existing Lambda function so you must specify
@@ -97,6 +98,7 @@ namespace Model
      */
     inline GetAliasRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>Name of the alias for which you want to retrieve information.</p>
      */
@@ -133,8 +135,10 @@ namespace Model
     inline GetAliasRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

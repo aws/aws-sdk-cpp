@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon RDS instance's ARN.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeregisterRdsDbInstanceRequest& WithRdsDbInstanceArn(const char* value) { SetRdsDbInstanceArn(value); return *this;}
 
   private:
+
     Aws::String m_rdsDbInstanceArn;
     bool m_rdsDbInstanceArnHasBeenSet;
   };

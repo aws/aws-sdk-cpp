@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the server certificate you want to retrieve information
      * about.</p> <p>This parameter allows (per its <a
@@ -102,6 +103,7 @@ namespace Model
     inline GetServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
 
   private:
+
     Aws::String m_serverCertificateName;
     bool m_serverCertificateNameHasBeenSet;
   };

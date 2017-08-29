@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeExpressionsResult();
-    DescribeExpressionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeExpressionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeExpressionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeExpressionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The expressions configured for the domain.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeExpressionsResult& AddExpressions(ExpressionStatus&& value) { m_expressions.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -101,7 +103,9 @@ namespace Model
     inline DescribeExpressionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ExpressionStatus> m_expressions;
+
     ResponseMetadata m_responseMetadata;
   };
 

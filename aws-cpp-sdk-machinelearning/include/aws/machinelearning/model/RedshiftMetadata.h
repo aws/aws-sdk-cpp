@@ -47,6 +47,7 @@ namespace Model
     RedshiftMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const RedshiftDatabase& GetRedshiftDatabase() const{ return m_redshiftDatabase; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline RedshiftMetadata& WithRedshiftDatabase(RedshiftDatabase&& value) { SetRedshiftDatabase(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetDatabaseUserName() const{ return m_databaseUserName; }
@@ -82,6 +84,7 @@ namespace Model
 
     
     inline RedshiftMetadata& WithDatabaseUserName(const char* value) { SetDatabaseUserName(value); return *this;}
+
 
     /**
      * <p> The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>.
@@ -126,10 +129,13 @@ namespace Model
     inline RedshiftMetadata& WithSelectSqlQuery(const char* value) { SetSelectSqlQuery(value); return *this;}
 
   private:
+
     RedshiftDatabase m_redshiftDatabase;
     bool m_redshiftDatabaseHasBeenSet;
+
     Aws::String m_databaseUserName;
     bool m_databaseUserNameHasBeenSet;
+
     Aws::String m_selectSqlQuery;
     bool m_selectSqlQueryHasBeenSet;
   };

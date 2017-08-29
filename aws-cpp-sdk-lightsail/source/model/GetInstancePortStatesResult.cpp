@@ -30,12 +30,12 @@ GetInstancePortStatesResult::GetInstancePortStatesResult()
 {
 }
 
-GetInstancePortStatesResult::GetInstancePortStatesResult(const AmazonWebServiceResult<JsonValue>& result)
+GetInstancePortStatesResult::GetInstancePortStatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetInstancePortStatesResult& GetInstancePortStatesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetInstancePortStatesResult& GetInstancePortStatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("portStates"))

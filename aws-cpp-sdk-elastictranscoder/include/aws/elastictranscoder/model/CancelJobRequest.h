@@ -37,6 +37,7 @@ namespace Model
     CancelJobRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the job that you want to cancel.</p> <p>To get a list of
      * the jobs (including their <code>jobId</code>) that have a status of
@@ -87,6 +88,7 @@ namespace Model
     inline CancelJobRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

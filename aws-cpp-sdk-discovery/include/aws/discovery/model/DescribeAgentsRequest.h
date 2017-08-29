@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The agent or the Connector IDs for which you want information. If you specify
      * no IDs, the system returns information about all agents/Connectors associated
@@ -94,6 +95,7 @@ namespace Model
      */
     inline DescribeAgentsRequest& AddAgentIds(const char* value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
 
+
     /**
      * <p>You can filter the request using various logical operators and a
      * <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{"key":
@@ -143,6 +145,7 @@ namespace Model
      */
     inline DescribeAgentsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The total number of agents/Connectors to return in a single page of output.
      * The maximum value is 100.</p>
@@ -160,6 +163,7 @@ namespace Model
      * The maximum value is 100.</p>
      */
     inline DescribeAgentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Token to retrieve the next set of results. For example, if you previously
@@ -225,12 +229,16 @@ namespace Model
     inline DescribeAgentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_agentIds;
     bool m_agentIdsHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

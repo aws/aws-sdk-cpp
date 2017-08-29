@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the group. Must be unique.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the group. Must be unique.</p>
      */
     inline CreateGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>The user pool ID for the user pool.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline CreateGroupRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>A string containing the description of the group.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      */
     inline CreateGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The role ARN for the group.</p>
      */
@@ -175,6 +179,7 @@ namespace Model
      * <p>The role ARN for the group.</p>
      */
     inline CreateGroupRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>A nonnegative integer value that specifies the precedence of this group
@@ -231,14 +236,19 @@ namespace Model
     inline CreateGroupRequest& WithPrecedence(int value) { SetPrecedence(value); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     int m_precedence;
     bool m_precedenceHasBeenSet;
   };

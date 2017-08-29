@@ -49,6 +49,7 @@ namespace Model
     CompareFacesMatch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Level of confidence that the faces match.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>Level of confidence that the faces match.</p>
      */
     inline CompareFacesMatch& WithSimilarity(double value) { SetSimilarity(value); return *this;}
+
 
     /**
      * <p>Provides face metadata (bounding box and confidence that the bounding box
@@ -95,8 +97,10 @@ namespace Model
     inline CompareFacesMatch& WithFace(ComparedFace&& value) { SetFace(std::move(value)); return *this;}
 
   private:
+
     double m_similarity;
     bool m_similarityHasBeenSet;
+
     ComparedFace m_face;
     bool m_faceHasBeenSet;
   };

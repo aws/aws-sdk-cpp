@@ -47,6 +47,7 @@ namespace Model
     KinesisStreamsOutputUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to
      * write the output.</p>
@@ -88,6 +89,7 @@ namespace Model
      * write the output.</p>
      */
     inline KinesisStreamsOutputUpdate& WithResourceARNUpdate(const char* value) { SetResourceARNUpdate(value); return *this;}
+
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
@@ -139,8 +141,10 @@ namespace Model
     inline KinesisStreamsOutputUpdate& WithRoleARNUpdate(const char* value) { SetRoleARNUpdate(value); return *this;}
 
   private:
+
     Aws::String m_resourceARNUpdate;
     bool m_resourceARNUpdateHasBeenSet;
+
     Aws::String m_roleARNUpdate;
     bool m_roleARNUpdateHasBeenSet;
   };

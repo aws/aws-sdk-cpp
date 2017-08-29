@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN that specifies the resource group that you want to describe.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline DescribeResourceGroupsRequest& AddResourceGroupArns(const char* value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_resourceGroupArns;
     bool m_resourceGroupArnsHasBeenSet;
   };

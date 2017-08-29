@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue to which permissions are added.</p> <p>Queue
      * URLs are case-sensitive.</p>
@@ -83,6 +84,7 @@ namespace Model
      * URLs are case-sensitive.</p>
      */
     inline AddPermissionRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+
 
     /**
      * <p>The unique identification of the permission you're setting (for example,
@@ -139,6 +141,7 @@ namespace Model
      * (<code>_</code>).</p>
      */
     inline AddPermissionRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
+
 
     /**
      * <p>The AWS account number of the <a
@@ -227,6 +230,7 @@ namespace Model
      * AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline AddPermissionRequest& AddAWSAccountIds(const char* value) { m_aWSAccountIdsHasBeenSet = true; m_aWSAccountIds.push_back(value); return *this; }
+
 
     /**
      * <p>The action the client wants to allow for the specified principal. The
@@ -373,12 +377,16 @@ namespace Model
     inline AddPermissionRequest& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     Aws::String m_label;
     bool m_labelHasBeenSet;
+
     Aws::Vector<Aws::String> m_aWSAccountIds;
     bool m_aWSAccountIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_actions;
     bool m_actionsHasBeenSet;
   };

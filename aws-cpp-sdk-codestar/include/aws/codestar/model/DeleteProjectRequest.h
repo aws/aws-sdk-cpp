@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the project to be deleted in AWS CodeStar.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the project to be deleted in AWS CodeStar.</p>
      */
     inline DeleteProjectRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
@@ -113,6 +115,7 @@ namespace Model
      */
     inline DeleteProjectRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
     /**
      * <p>Whether to send a delete request for the primary stack in AWS CloudFormation
      * originally used to generate the project and its resources. This option will
@@ -138,10 +141,13 @@ namespace Model
     inline DeleteProjectRequest& WithDeleteStack(bool value) { SetDeleteStack(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
     bool m_deleteStack;
     bool m_deleteStackHasBeenSet;
   };

@@ -60,6 +60,7 @@ namespace Model
     StepAdjustment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The lower bound for the difference between the alarm threshold and the
      * CloudWatch metric. If the metric value is above the breach threshold, the lower
@@ -89,6 +90,7 @@ namespace Model
      * infinity.</p>
      */
     inline StepAdjustment& WithMetricIntervalLowerBound(double value) { SetMetricIntervalLowerBound(value); return *this;}
+
 
     /**
      * <p>The upper bound for the difference between the alarm threshold and the
@@ -120,6 +122,7 @@ namespace Model
      */
     inline StepAdjustment& WithMetricIntervalUpperBound(double value) { SetMetricIntervalUpperBound(value); return *this;}
 
+
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current scalable dimension while a negative number
@@ -142,10 +145,13 @@ namespace Model
     inline StepAdjustment& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
 
   private:
+
     double m_metricIntervalLowerBound;
     bool m_metricIntervalLowerBoundHasBeenSet;
+
     double m_metricIntervalUpperBound;
     bool m_metricIntervalUpperBoundHasBeenSet;
+
     int m_scalingAdjustment;
     bool m_scalingAdjustmentHasBeenSet;
   };

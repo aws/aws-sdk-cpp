@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>String that contains the name of the alias to be modified. The name must
      * start with the word "alias" followed by a forward slash (alias/). Aliases that
@@ -84,6 +85,7 @@ namespace Model
      * begin with "alias/aws" are reserved.</p>
      */
     inline UpdateAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
+
 
     /**
      * <p>Unique identifier of the customer master key to be mapped to the alias. This
@@ -170,8 +172,10 @@ namespace Model
     inline UpdateAliasRequest& WithTargetKeyId(const char* value) { SetTargetKeyId(value); return *this;}
 
   private:
+
     Aws::String m_aliasName;
     bool m_aliasNameHasBeenSet;
+
     Aws::String m_targetKeyId;
     bool m_targetKeyIdHasBeenSet;
   };

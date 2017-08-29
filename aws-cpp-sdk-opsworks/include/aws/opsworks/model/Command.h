@@ -45,6 +45,7 @@ namespace Model
     Command& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The command ID.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The command ID.</p>
      */
     inline Command& WithCommandId(const char* value) { SetCommandId(value); return *this;}
+
 
     /**
      * <p>The ID of the instance where the command was executed.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline Command& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The command deployment ID.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The command deployment ID.</p>
      */
     inline Command& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+
 
     /**
      * <p>Date and time when the command was run.</p>
@@ -185,6 +189,7 @@ namespace Model
      */
     inline Command& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
+
     /**
      * <p>Date and time when the command was acknowledged.</p>
      */
@@ -220,6 +225,7 @@ namespace Model
      */
     inline Command& WithAcknowledgedAt(const char* value) { SetAcknowledgedAt(value); return *this;}
 
+
     /**
      * <p>Date when the command completed.</p>
      */
@@ -254,6 +260,7 @@ namespace Model
      * <p>Date when the command completed.</p>
      */
     inline Command& WithCompletedAt(const char* value) { SetCompletedAt(value); return *this;}
+
 
     /**
      * <p>The command status:</p> <ul> <li> <p>failed</p> </li> <li> <p>successful</p>
@@ -297,6 +304,7 @@ namespace Model
      */
     inline Command& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The command exit code.</p>
      */
@@ -311,6 +319,7 @@ namespace Model
      * <p>The command exit code.</p>
      */
     inline Command& WithExitCode(int value) { SetExitCode(value); return *this;}
+
 
     /**
      * <p>The URL of the command log.</p>
@@ -346,6 +355,7 @@ namespace Model
      * <p>The URL of the command log.</p>
      */
     inline Command& WithLogUrl(const char* value) { SetLogUrl(value); return *this;}
+
 
     /**
      * <p>The command type:</p> <ul> <li> <p> <code>configure</code> </p> </li> <li>
@@ -432,24 +442,34 @@ namespace Model
     inline Command& WithType(const char* value) { SetType(value); return *this;}
 
   private:
+
     Aws::String m_commandId;
     bool m_commandIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::String m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::String m_acknowledgedAt;
     bool m_acknowledgedAtHasBeenSet;
+
     Aws::String m_completedAt;
     bool m_completedAtHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     int m_exitCode;
     bool m_exitCodeHasBeenSet;
+
     Aws::String m_logUrl;
     bool m_logUrlHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
   };

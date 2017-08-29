@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListAssignmentsForHITResult();
-    ListAssignmentsForHITResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssignmentsForHITResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssignmentsForHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAssignmentsForHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -64,6 +65,7 @@ namespace Model
     
     inline ListAssignmentsForHITResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p> The number of assignments on the page in the filtered results list,
      * equivalent to the number of assignments returned by this call.</p>
@@ -81,6 +83,7 @@ namespace Model
      * equivalent to the number of assignments returned by this call.</p>
      */
     inline ListAssignmentsForHITResult& WithNumResults(int value) { SetNumResults(value); return *this;}
+
 
     /**
      * <p> The collection of Assignment data structures returned by this call.</p>
@@ -118,8 +121,11 @@ namespace Model
     inline ListAssignmentsForHITResult& AddAssignments(Assignment&& value) { m_assignments.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     int m_numResults;
+
     Aws::Vector<Assignment> m_assignments;
   };
 

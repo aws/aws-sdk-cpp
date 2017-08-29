@@ -47,6 +47,7 @@ namespace Model
     ClusterStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The current state of the cluster.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline ClusterStatus& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The reason for the cluster status change.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>The reason for the cluster status change.</p>
      */
     inline ClusterStatus& WithStateChangeReason(ClusterStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
+
 
     /**
      * <p>A timeline that represents the status of a cluster over the lifetime of the
@@ -128,10 +131,13 @@ namespace Model
     inline ClusterStatus& WithTimeline(ClusterTimeline&& value) { SetTimeline(std::move(value)); return *this;}
 
   private:
+
     ClusterState m_state;
     bool m_stateHasBeenSet;
+
     ClusterStateChangeReason m_stateChangeReason;
     bool m_stateChangeReasonHasBeenSet;
+
     ClusterTimeline m_timeline;
     bool m_timelineHasBeenSet;
   };

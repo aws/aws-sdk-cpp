@@ -30,12 +30,12 @@ GetGatewayResponsesResult::GetGatewayResponsesResult()
 {
 }
 
-GetGatewayResponsesResult::GetGatewayResponsesResult(const AmazonWebServiceResult<JsonValue>& result)
+GetGatewayResponsesResult::GetGatewayResponsesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetGatewayResponsesResult& GetGatewayResponsesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetGatewayResponsesResult& GetGatewayResponsesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("position"))

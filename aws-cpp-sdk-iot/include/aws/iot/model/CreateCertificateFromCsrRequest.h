@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The certificate signing request (CSR).</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline CreateCertificateFromCsrRequest& WithCertificateSigningRequest(const char* value) { SetCertificateSigningRequest(value); return *this;}
 
+
     /**
      * <p>Specifies whether the certificate is active.</p>
      */
@@ -95,8 +97,10 @@ namespace Model
     inline CreateCertificateFromCsrRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
 
   private:
+
     Aws::String m_certificateSigningRequest;
     bool m_certificateSigningRequestHasBeenSet;
+
     bool m_setAsActive;
     bool m_setAsActiveHasBeenSet;
   };

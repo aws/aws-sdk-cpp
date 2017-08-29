@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the solution stack this configuration set uses.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The name of the solution stack this configuration set uses.</p>
      */
     inline ConfigurationSettingsDescription& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
+
 
     /**
      * <p>The ARN of the platform.</p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline ConfigurationSettingsDescription& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
 
+
     /**
      * <p>The name of the application associated with this configuration set.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>The name of the application associated with this configuration set.</p>
      */
     inline ConfigurationSettingsDescription& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p> If not <code>null</code>, the name of the configuration template for this
@@ -200,6 +204,7 @@ namespace Model
      */
     inline ConfigurationSettingsDescription& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
+
     /**
      * <p>Describes this configuration set.</p>
      */
@@ -234,6 +239,7 @@ namespace Model
      * <p>Describes this configuration set.</p>
      */
     inline ConfigurationSettingsDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p> If not <code>null</code>, the name of the environment for this configuration
@@ -276,6 +282,7 @@ namespace Model
      * set. </p>
      */
     inline ConfigurationSettingsDescription& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+
 
     /**
      * <p> If this configuration set is associated with an environment, the
@@ -342,6 +349,7 @@ namespace Model
      */
     inline ConfigurationSettingsDescription& WithDeploymentStatus(ConfigurationDeploymentStatus&& value) { SetDeploymentStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The date (in UTC time) when this configuration set was created.</p>
      */
@@ -367,6 +375,7 @@ namespace Model
      */
     inline ConfigurationSettingsDescription& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
 
+
     /**
      * <p>The date (in UTC time) when this configuration set was last modified.</p>
      */
@@ -391,6 +400,7 @@ namespace Model
      * <p>The date (in UTC time) when this configuration set was last modified.</p>
      */
     inline ConfigurationSettingsDescription& WithDateUpdated(Aws::Utils::DateTime&& value) { SetDateUpdated(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the configuration options and their values in this configuration
@@ -434,6 +444,7 @@ namespace Model
      */
     inline ConfigurationSettingsDescription& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -450,26 +461,37 @@ namespace Model
     inline ConfigurationSettingsDescription& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_solutionStackName;
     bool m_solutionStackNameHasBeenSet;
+
     Aws::String m_platformArn;
     bool m_platformArnHasBeenSet;
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     ConfigurationDeploymentStatus m_deploymentStatus;
     bool m_deploymentStatusHasBeenSet;
+
     Aws::Utils::DateTime m_dateCreated;
     bool m_dateCreatedHasBeenSet;
+
     Aws::Utils::DateTime m_dateUpdated;
     bool m_dateUpdatedHasBeenSet;
+
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
+
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;
   };

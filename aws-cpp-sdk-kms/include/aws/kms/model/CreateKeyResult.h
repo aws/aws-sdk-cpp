@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateKeyResult();
-    CreateKeyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateKeyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Metadata associated with the CMK.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateKeyResult& WithKeyMetadata(KeyMetadata&& value) { SetKeyMetadata(std::move(value)); return *this;}
 
   private:
+
     KeyMetadata m_keyMetadata;
   };
 

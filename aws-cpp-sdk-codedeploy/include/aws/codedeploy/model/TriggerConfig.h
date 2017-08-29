@@ -48,6 +48,7 @@ namespace Model
     TriggerConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the notification trigger.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the notification trigger.</p>
      */
     inline TriggerConfig& WithTriggerName(const char* value) { SetTriggerName(value); return *this;}
+
 
     /**
      * <p>The ARN of the Amazon Simple Notification Service topic through which
@@ -125,6 +127,7 @@ namespace Model
      */
     inline TriggerConfig& WithTriggerTargetArn(const char* value) { SetTriggerTargetArn(value); return *this;}
 
+
     /**
      * <p>The event type or types for which notifications are triggered.</p>
      */
@@ -161,10 +164,13 @@ namespace Model
     inline TriggerConfig& AddTriggerEvents(TriggerEventType&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_triggerName;
     bool m_triggerNameHasBeenSet;
+
     Aws::String m_triggerTargetArn;
     bool m_triggerTargetArnHasBeenSet;
+
     Aws::Vector<TriggerEventType> m_triggerEvents;
     bool m_triggerEventsHasBeenSet;
   };

@@ -30,12 +30,12 @@ DetachStaticIpResult::DetachStaticIpResult()
 {
 }
 
-DetachStaticIpResult::DetachStaticIpResult(const AmazonWebServiceResult<JsonValue>& result)
+DetachStaticIpResult::DetachStaticIpResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DetachStaticIpResult& DetachStaticIpResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DetachStaticIpResult& DetachStaticIpResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operations"))

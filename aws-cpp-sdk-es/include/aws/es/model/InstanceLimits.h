@@ -46,6 +46,7 @@ namespace Model
     InstanceLimits& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const InstanceCountLimits& GetInstanceCountLimits() const{ return m_instanceCountLimits; }
 
@@ -62,6 +63,7 @@ namespace Model
     inline InstanceLimits& WithInstanceCountLimits(InstanceCountLimits&& value) { SetInstanceCountLimits(std::move(value)); return *this;}
 
   private:
+
     InstanceCountLimits m_instanceCountLimits;
     bool m_instanceCountLimitsHasBeenSet;
   };

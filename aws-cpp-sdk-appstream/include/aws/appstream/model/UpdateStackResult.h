@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateStackResult();
-    UpdateStackResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateStackResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of stack details.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateStackResult& WithStack(Stack&& value) { SetStack(std::move(value)); return *this;}
 
   private:
+
     Stack m_stack;
   };
 

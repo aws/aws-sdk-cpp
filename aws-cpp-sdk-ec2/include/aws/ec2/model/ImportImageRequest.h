@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
      * <code>i386</code> | <code>x86_64</code> </p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline ImportImageRequest& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
 
+
     /**
      * <p>The client-specific data.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The client-specific data.</p>
      */
     inline ImportImageRequest& WithClientData(ClientData&& value) { SetClientData(std::move(value)); return *this;}
+
 
     /**
      * <p>The token to enable idempotency for VM import requests.</p>
@@ -146,6 +149,7 @@ namespace Model
      */
     inline ImportImageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>A description string for the import image task.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      * <p>A description string for the import image task.</p>
      */
     inline ImportImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Information about the disk containers.</p>
@@ -216,6 +221,7 @@ namespace Model
      */
     inline ImportImageRequest& AddDiskContainers(ImageDiskContainer&& value) { m_diskContainersHasBeenSet = true; m_diskContainers.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -239,6 +245,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline ImportImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
@@ -274,6 +281,7 @@ namespace Model
      * <p>The target hypervisor platform.</p> <p>Valid values: <code>xen</code> </p>
      */
     inline ImportImageRequest& WithHypervisor(const char* value) { SetHypervisor(value); return *this;}
+
 
     /**
      * <p>The license type to be used for the Amazon Machine Image (AMI) after
@@ -352,6 +360,7 @@ namespace Model
      */
     inline ImportImageRequest& WithLicenseType(const char* value) { SetLicenseType(value); return *this;}
 
+
     /**
      * <p>The operating system of the virtual machine.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
@@ -394,6 +403,7 @@ namespace Model
      */
     inline ImportImageRequest& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
+
     /**
      * <p>The name of the role to use when not using the default role, 'vmimport'.</p>
      */
@@ -430,24 +440,34 @@ namespace Model
     inline ImportImageRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
   private:
+
     Aws::String m_architecture;
     bool m_architectureHasBeenSet;
+
     ClientData m_clientData;
     bool m_clientDataHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<ImageDiskContainer> m_diskContainers;
     bool m_diskContainersHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_hypervisor;
     bool m_hypervisorHasBeenSet;
+
     Aws::String m_licenseType;
     bool m_licenseTypeHasBeenSet;
+
     Aws::String m_platform;
     bool m_platformHasBeenSet;
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
   };

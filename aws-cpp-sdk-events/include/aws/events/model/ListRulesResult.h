@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListRulesResult();
-    ListRulesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRulesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The rules that match the specified criteria.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The rules that match the specified criteria.</p>
      */
     inline ListRulesResult& AddRules(Rule&& value) { m_rules.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Indicates whether there are additional results to retrieve. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline ListRulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Rule> m_rules;
+
     Aws::String m_nextToken;
   };
 

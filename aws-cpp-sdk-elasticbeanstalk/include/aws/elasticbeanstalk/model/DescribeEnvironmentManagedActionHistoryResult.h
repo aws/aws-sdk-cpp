@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeEnvironmentManagedActionHistoryResult();
-    DescribeEnvironmentManagedActionHistoryResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEnvironmentManagedActionHistoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEnvironmentManagedActionHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeEnvironmentManagedActionHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of completed and failed managed actions.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>A list of completed and failed managed actions.</p>
      */
     inline DescribeEnvironmentManagedActionHistoryResult& AddManagedActionHistoryItems(ManagedActionHistoryItem&& value) { m_managedActionHistoryItems.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token that you pass to
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeEnvironmentManagedActionHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline DescribeEnvironmentManagedActionHistoryResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ManagedActionHistoryItem> m_managedActionHistoryItems;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

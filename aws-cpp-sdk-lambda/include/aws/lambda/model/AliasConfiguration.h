@@ -46,6 +46,7 @@ namespace Model
     AliasConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Lambda function ARN that is qualified using the alias name as the suffix. For
      * example, if you create an alias called <code>BETA</code> that points to a
@@ -102,6 +103,7 @@ namespace Model
      */
     inline AliasConfiguration& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}
 
+
     /**
      * <p>Alias name.</p>
      */
@@ -137,6 +139,7 @@ namespace Model
      */
     inline AliasConfiguration& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Function version to which the alias points.</p>
      */
@@ -171,6 +174,7 @@ namespace Model
      * <p>Function version to which the alias points.</p>
      */
     inline AliasConfiguration& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
+
 
     /**
      * <p>Alias description.</p>
@@ -208,12 +212,16 @@ namespace Model
     inline AliasConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_aliasArn;
     bool m_aliasArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_functionVersion;
     bool m_functionVersionHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

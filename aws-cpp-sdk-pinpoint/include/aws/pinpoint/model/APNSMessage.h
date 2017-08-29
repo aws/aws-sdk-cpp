@@ -46,6 +46,7 @@ namespace Model
     APNSMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The action that occurs if the user taps a push notification delivered by the
      * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
@@ -101,6 +102,7 @@ namespace Model
      */
     inline APNSMessage& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
 
+
     /**
      * Include this key when you want the system to modify the badge of your app icon.
      * If this key is not included in the dictionary, the badge is not changed. To
@@ -121,6 +123,7 @@ namespace Model
      * remove the badge, set the value of this key to 0.
      */
     inline APNSMessage& WithBadge(int value) { SetBadge(value); return *this;}
+
 
     /**
      * The message body of the notification, the email body or the text message.
@@ -156,6 +159,7 @@ namespace Model
      * The message body of the notification, the email body or the text message.
      */
     inline APNSMessage& WithBody(const char* value) { SetBody(value); return *this;}
+
 
     /**
      * Provide this key with a string value that represents the notification's type.
@@ -205,6 +209,7 @@ namespace Model
      * app's registered categories.
      */
     inline APNSMessage& WithCategory(const char* value) { SetCategory(value); return *this;}
+
 
     /**
      * The data payload used for a silent push. This payload is added to the
@@ -278,6 +283,7 @@ namespace Model
      */
     inline APNSMessage& AddData(const char* key, const char* value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
 
+
     /**
      * The URL that points to a video used in the push notification.
      */
@@ -312,6 +318,7 @@ namespace Model
      * The URL that points to a video used in the push notification.
      */
     inline APNSMessage& WithMediaUrl(const char* value) { SetMediaUrl(value); return *this;}
+
 
     /**
      * The Raw JSON formatted string to be used as the payload. This value overrides
@@ -355,6 +362,7 @@ namespace Model
      */
     inline APNSMessage& WithRawContent(const char* value) { SetRawContent(value); return *this;}
 
+
     /**
      * Indicates if the message should display on the users device. Silent pushes can
      * be used for Remote Configuration and Phone Home use cases.
@@ -372,6 +380,7 @@ namespace Model
      * be used for Remote Configuration and Phone Home use cases.
      */
     inline APNSMessage& WithSilentPush(bool value) { SetSilentPush(value); return *this;}
+
 
     /**
      * Include this key when you want the system to play a sound. The value of this key
@@ -428,6 +437,7 @@ namespace Model
      * you specify defaultfor the value, the system plays the default alert sound.
      */
     inline APNSMessage& WithSound(const char* value) { SetSound(value); return *this;}
+
 
     /**
      * Default message substitutions. Can be overridden by individual address
@@ -495,6 +505,7 @@ namespace Model
      */
     inline APNSMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
+
     /**
      * Provide this key with a string value that represents the app-specific identifier
      * for grouping notifications. If you provide a Notification Content app extension,
@@ -544,6 +555,7 @@ namespace Model
      */
     inline APNSMessage& WithThreadId(const char* value) { SetThreadId(value); return *this;}
 
+
     /**
      * The message title that displays above the message on the user's device.
      */
@@ -578,6 +590,7 @@ namespace Model
      * The message title that displays above the message on the user's device.
      */
     inline APNSMessage& WithTitle(const char* value) { SetTitle(value); return *this;}
+
 
     /**
      * The URL to open in the user's mobile browser. Used if the value for Action is
@@ -622,30 +635,43 @@ namespace Model
     inline APNSMessage& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
     Action m_action;
     bool m_actionHasBeenSet;
+
     int m_badge;
     bool m_badgeHasBeenSet;
+
     Aws::String m_body;
     bool m_bodyHasBeenSet;
+
     Aws::String m_category;
     bool m_categoryHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_data;
     bool m_dataHasBeenSet;
+
     Aws::String m_mediaUrl;
     bool m_mediaUrlHasBeenSet;
+
     Aws::String m_rawContent;
     bool m_rawContentHasBeenSet;
+
     bool m_silentPush;
     bool m_silentPushHasBeenSet;
+
     Aws::String m_sound;
     bool m_soundHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
     bool m_substitutionsHasBeenSet;
+
     Aws::String m_threadId;
     bool m_threadIdHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     FailedCreateWorkspaceRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains
      * the information about the WorkSpace that could not be created.</p>
@@ -76,6 +77,7 @@ namespace Model
      * the information about the WorkSpace that could not be created.</p>
      */
     inline FailedCreateWorkspaceRequest& WithWorkspaceRequest(WorkspaceRequest&& value) { SetWorkspaceRequest(std::move(value)); return *this;}
+
 
     /**
      * <p>The error code.</p>
@@ -111,6 +113,7 @@ namespace Model
      * <p>The error code.</p>
      */
     inline FailedCreateWorkspaceRequest& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The textual error message.</p>
@@ -148,10 +151,13 @@ namespace Model
     inline FailedCreateWorkspaceRequest& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     WorkspaceRequest m_workspaceRequest;
     bool m_workspaceRequestHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the DAX resource from which the tags should be removed.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the DAX resource from which the tags should be removed.</p>
      */
     inline UntagResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
 
     /**
      * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the
@@ -121,8 +123,10 @@ namespace Model
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

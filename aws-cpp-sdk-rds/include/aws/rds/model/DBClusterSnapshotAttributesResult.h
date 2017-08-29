@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier of the manual DB cluster snapshot that the attributes apply
      * to.</p>
@@ -97,6 +98,7 @@ namespace Model
      */
     inline DBClusterSnapshotAttributesResult& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 
+
     /**
      * <p>The list of attributes and values for the manual DB cluster snapshot.</p>
      */
@@ -133,8 +135,10 @@ namespace Model
     inline DBClusterSnapshotAttributesResult& AddDBClusterSnapshotAttributes(DBClusterSnapshotAttribute&& value) { m_dBClusterSnapshotAttributesHasBeenSet = true; m_dBClusterSnapshotAttributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_dBClusterSnapshotIdentifier;
     bool m_dBClusterSnapshotIdentifierHasBeenSet;
+
     Aws::Vector<DBClusterSnapshotAttribute> m_dBClusterSnapshotAttributes;
     bool m_dBClusterSnapshotAttributesHasBeenSet;
   };

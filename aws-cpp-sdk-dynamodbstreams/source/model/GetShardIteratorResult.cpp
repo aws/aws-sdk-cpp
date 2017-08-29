@@ -30,12 +30,12 @@ GetShardIteratorResult::GetShardIteratorResult()
 {
 }
 
-GetShardIteratorResult::GetShardIteratorResult(const AmazonWebServiceResult<JsonValue>& result)
+GetShardIteratorResult::GetShardIteratorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetShardIteratorResult& GetShardIteratorResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetShardIteratorResult& GetShardIteratorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ShardIterator"))

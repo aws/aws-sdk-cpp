@@ -30,12 +30,12 @@ GetUserResult::GetUserResult()
 {
 }
 
-GetUserResult::GetUserResult(const AmazonWebServiceResult<JsonValue>& result)
+GetUserResult::GetUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetUserResult& GetUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetUserResult& GetUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Username"))

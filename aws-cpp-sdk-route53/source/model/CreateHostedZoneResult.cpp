@@ -30,12 +30,12 @@ CreateHostedZoneResult::CreateHostedZoneResult()
 {
 }
 
-CreateHostedZoneResult::CreateHostedZoneResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateHostedZoneResult::CreateHostedZoneResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateHostedZoneResult& CreateHostedZoneResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateHostedZoneResult& CreateHostedZoneResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

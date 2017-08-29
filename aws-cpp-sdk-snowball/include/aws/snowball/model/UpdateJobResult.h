@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateJobResult();
-    UpdateJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -32,14 +32,14 @@ CountPendingActivityTasksResult::CountPendingActivityTasksResult() :
 {
 }
 
-CountPendingActivityTasksResult::CountPendingActivityTasksResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CountPendingActivityTasksResult::CountPendingActivityTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_count(0),
     m_truncated(false)
 {
   *this = result;
 }
 
-CountPendingActivityTasksResult& CountPendingActivityTasksResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CountPendingActivityTasksResult& CountPendingActivityTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("count"))

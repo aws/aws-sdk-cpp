@@ -31,13 +31,13 @@ DescribeIdentityPoolResult::DescribeIdentityPoolResult() :
 {
 }
 
-DescribeIdentityPoolResult::DescribeIdentityPoolResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeIdentityPoolResult::DescribeIdentityPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_allowUnauthenticatedIdentities(false)
 {
   *this = result;
 }
 
-DescribeIdentityPoolResult& DescribeIdentityPoolResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeIdentityPoolResult& DescribeIdentityPoolResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityPoolId"))

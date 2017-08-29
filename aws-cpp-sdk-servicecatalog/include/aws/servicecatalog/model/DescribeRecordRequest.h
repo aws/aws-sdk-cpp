@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline DescribeRecordRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+
 
     /**
      * <p>The record identifier of the ProvisionedProduct object for which to retrieve
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeRecordRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first
      * page of size <code>PageSize</code>.</p>
@@ -176,6 +179,7 @@ namespace Model
      */
     inline DescribeRecordRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return in the results. If more results exist
      * than fit in the specified <code>PageSize</code>, the value of
@@ -198,12 +202,16 @@ namespace Model
     inline DescribeRecordRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
   };

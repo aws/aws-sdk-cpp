@@ -51,6 +51,7 @@ namespace Model
     JobListEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -93,6 +94,7 @@ namespace Model
      */
     inline JobListEntry& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
     /**
      * <p>The current state of this job.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The current state of this job.</p>
      */
     inline JobListEntry& WithJobState(JobState&& value) { SetJobState(std::move(value)); return *this;}
+
 
     /**
      * <p>A value that indicates that this job is a master job. A master job represents
@@ -148,6 +151,7 @@ namespace Model
      */
     inline JobListEntry& WithIsMaster(bool value) { SetIsMaster(value); return *this;}
 
+
     /**
      * <p>The type of job.</p>
      */
@@ -172,6 +176,7 @@ namespace Model
      * <p>The type of job.</p>
      */
     inline JobListEntry& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of appliance used with this job.</p>
@@ -198,6 +203,7 @@ namespace Model
      */
     inline JobListEntry& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
+
     /**
      * <p>The creation date for this job.</p>
      */
@@ -222,6 +228,7 @@ namespace Model
      * <p>The creation date for this job.</p>
      */
     inline JobListEntry& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The optional description of this specific job, for example <code>Important
@@ -266,18 +273,25 @@ namespace Model
     inline JobListEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     JobState m_jobState;
     bool m_jobStateHasBeenSet;
+
     bool m_isMaster;
     bool m_isMasterHasBeenSet;
+
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
+
     SnowballType m_snowballType;
     bool m_snowballTypeHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
     UpdateBasePathMappingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to change.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline UpdateBasePathMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The base path of the <a>BasePathMapping</a> resource to change.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The base path of the <a>BasePathMapping</a> resource to change.</p>
      */
     inline UpdateBasePathMappingRequest& WithBasePath(const char* value) { SetBasePath(value); return *this;}
+
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -153,10 +156,13 @@ namespace Model
     inline UpdateBasePathMappingRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_basePath;
     bool m_basePathHasBeenSet;
+
     Aws::Vector<PatchOperation> m_patchOperations;
     bool m_patchOperationsHasBeenSet;
   };

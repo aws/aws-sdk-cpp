@@ -31,13 +31,13 @@ GetKeyRotationStatusResult::GetKeyRotationStatusResult() :
 {
 }
 
-GetKeyRotationStatusResult::GetKeyRotationStatusResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetKeyRotationStatusResult::GetKeyRotationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_keyRotationEnabled(false)
 {
   *this = result;
 }
 
-GetKeyRotationStatusResult& GetKeyRotationStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetKeyRotationStatusResult& GetKeyRotationStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("KeyRotationEnabled"))

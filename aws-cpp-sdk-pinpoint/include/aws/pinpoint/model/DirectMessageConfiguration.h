@@ -47,6 +47,7 @@ namespace Model
     DirectMessageConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The message to APNS channels. Overrides the default push notification message.
      */
@@ -71,6 +72,7 @@ namespace Model
      * The message to APNS channels. Overrides the default push notification message.
      */
     inline DirectMessageConfiguration& WithAPNSMessage(APNSMessage&& value) { SetAPNSMessage(std::move(value)); return *this;}
+
 
     /**
      * The default message for all channels.
@@ -97,6 +99,7 @@ namespace Model
      */
     inline DirectMessageConfiguration& WithDefaultMessage(DefaultMessage&& value) { SetDefaultMessage(std::move(value)); return *this;}
 
+
     /**
      * The default push notification message for all push channels.
      */
@@ -122,6 +125,7 @@ namespace Model
      */
     inline DirectMessageConfiguration& WithDefaultPushNotificationMessage(DefaultPushNotificationMessage&& value) { SetDefaultPushNotificationMessage(std::move(value)); return *this;}
 
+
     /**
      * The message to GCM channels. Overrides the default push notification message.
      */
@@ -146,6 +150,7 @@ namespace Model
      * The message to GCM channels. Overrides the default push notification message.
      */
     inline DirectMessageConfiguration& WithGCMMessage(GCMMessage&& value) { SetGCMMessage(std::move(value)); return *this;}
+
 
     /**
      * The message to SMS channels. Overrides the default message.
@@ -173,14 +178,19 @@ namespace Model
     inline DirectMessageConfiguration& WithSMSMessage(SMSMessage&& value) { SetSMSMessage(std::move(value)); return *this;}
 
   private:
+
     APNSMessage m_aPNSMessage;
     bool m_aPNSMessageHasBeenSet;
+
     DefaultMessage m_defaultMessage;
     bool m_defaultMessageHasBeenSet;
+
     DefaultPushNotificationMessage m_defaultPushNotificationMessage;
     bool m_defaultPushNotificationMessageHasBeenSet;
+
     GCMMessage m_gCMMessage;
     bool m_gCMMessageHasBeenSet;
+
     SMSMessage m_sMSMessage;
     bool m_sMSMessageHasBeenSet;
   };

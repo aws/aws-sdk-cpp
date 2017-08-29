@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     CreateBuildResult();
-    CreateBuildResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateBuildResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateBuildResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateBuildResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The newly created build record, including a unique build ID and status. </p>
@@ -74,6 +75,7 @@ namespace Model
      */
     inline CreateBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 
+
     /**
      * <p>This element is not currently in use.</p>
      */
@@ -98,6 +100,7 @@ namespace Model
      * <p>This element is not currently in use.</p>
      */
     inline CreateBuildResult& WithUploadCredentials(AwsCredentials&& value) { SetUploadCredentials(std::move(value)); return *this;}
+
 
     /**
      * <p>Amazon S3 location specified in the request.</p>
@@ -125,8 +128,11 @@ namespace Model
     inline CreateBuildResult& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 
   private:
+
     Build m_build;
+
     AwsCredentials m_uploadCredentials;
+
     S3Location m_storageLocation;
   };
 

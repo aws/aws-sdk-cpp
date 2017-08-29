@@ -45,6 +45,7 @@ namespace Model
     PutRestApiRequest();
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline PutRestApiRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>The <code>mode</code> query parameter to specify the update mode. Valid
      * values are "merge" and "overwrite". By default, the update mode is "merge".</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline PutRestApiRequest& WithMode(PutMode&& value) { SetMode(std::move(value)); return *this;}
 
+
     /**
      * <p>A query parameter to indicate whether to rollback the API update
      * (<code>true</code>) or not (<code>false</code>) when a warning is encountered.
@@ -130,6 +133,7 @@ namespace Model
      * The default value is <code>false</code>.</p>
      */
     inline PutRestApiRequest& WithFailOnWarnings(bool value) { SetFailOnWarnings(value); return *this;}
+
 
     /**
      * <p>Custom header parameters as part of the request. For example, to exclude
@@ -240,14 +244,19 @@ namespace Model
     inline PutRestApiRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     PutMode m_mode;
     bool m_modeHasBeenSet;
+
     bool m_failOnWarnings;
     bool m_failOnWarningsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
   };
 
 } // namespace Model

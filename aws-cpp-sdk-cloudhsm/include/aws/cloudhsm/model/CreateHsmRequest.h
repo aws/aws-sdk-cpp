@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline CreateHsmRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
     /**
      * <p>The SSH public key to install on the HSM.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The SSH public key to install on the HSM.</p>
      */
     inline CreateHsmRequest& WithSshKey(const char* value) { SetSshKey(value); return *this;}
+
 
     /**
      * <p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not
@@ -160,6 +163,7 @@ namespace Model
      */
     inline CreateHsmRequest& WithEniIp(const char* value) { SetEniIp(value); return *this;}
 
+
     /**
      * <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI
      * on your behalf.</p>
@@ -202,6 +206,7 @@ namespace Model
      */
     inline CreateHsmRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 
+
     /**
      * <p>The external ID from <b>IamRoleArn</b>, if present.</p>
      */
@@ -237,6 +242,7 @@ namespace Model
      */
     inline CreateHsmRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
+
     
     inline const SubscriptionType& GetSubscriptionType() const{ return m_subscriptionType; }
 
@@ -251,6 +257,7 @@ namespace Model
 
     
     inline CreateHsmRequest& WithSubscriptionType(SubscriptionType&& value) { SetSubscriptionType(std::move(value)); return *this;}
+
 
     /**
      * <p>A user-defined token to ensure idempotence. Subsequent calls to this
@@ -293,6 +300,7 @@ namespace Model
      * operation with the same token will be ignored.</p>
      */
     inline CreateHsmRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
 
     /**
      * <p>The IP address for the syslog monitoring server. The AWS CloudHSM service
@@ -337,20 +345,28 @@ namespace Model
     inline CreateHsmRequest& WithSyslogIp(const char* value) { SetSyslogIp(value); return *this;}
 
   private:
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_sshKey;
     bool m_sshKeyHasBeenSet;
+
     Aws::String m_eniIp;
     bool m_eniIpHasBeenSet;
+
     Aws::String m_iamRoleArn;
     bool m_iamRoleArnHasBeenSet;
+
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
+
     SubscriptionType m_subscriptionType;
     bool m_subscriptionTypeHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::String m_syslogIp;
     bool m_syslogIpHasBeenSet;
   };

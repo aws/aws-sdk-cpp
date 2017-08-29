@@ -43,6 +43,7 @@ namespace Model
     CreateApplicationRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The display name of the application. Used in the Amazon Pinpoint console.
      */
@@ -79,6 +80,7 @@ namespace Model
     inline CreateApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

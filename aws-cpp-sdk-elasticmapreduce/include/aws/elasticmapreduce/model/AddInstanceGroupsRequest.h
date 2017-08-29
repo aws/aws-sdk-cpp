@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Instance groups to add.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>Instance groups to add.</p>
      */
     inline AddInstanceGroupsRequest& AddInstanceGroups(InstanceGroupConfig&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Job flow in which to add the instance groups.</p>
@@ -112,8 +114,10 @@ namespace Model
     inline AddInstanceGroupsRequest& WithJobFlowId(const char* value) { SetJobFlowId(value); return *this;}
 
   private:
+
     Aws::Vector<InstanceGroupConfig> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet;
+
     Aws::String m_jobFlowId;
     bool m_jobFlowIdHasBeenSet;
   };

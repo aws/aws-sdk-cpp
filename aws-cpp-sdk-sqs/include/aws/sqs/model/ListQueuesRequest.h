@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A string to use for filtering the list results. Only those queues whose name
      * begins with the specified string are returned.</p> <p>Queue names are
@@ -91,6 +92,7 @@ namespace Model
     inline ListQueuesRequest& WithQueueNamePrefix(const char* value) { SetQueueNamePrefix(value); return *this;}
 
   private:
+
     Aws::String m_queueNamePrefix;
     bool m_queueNamePrefixHasBeenSet;
   };

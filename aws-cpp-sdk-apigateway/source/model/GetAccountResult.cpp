@@ -30,12 +30,12 @@ GetAccountResult::GetAccountResult()
 {
 }
 
-GetAccountResult::GetAccountResult(const AmazonWebServiceResult<JsonValue>& result)
+GetAccountResult::GetAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetAccountResult& GetAccountResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetAccountResult& GetAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("cloudwatchRoleArn"))

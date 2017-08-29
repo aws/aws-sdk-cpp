@@ -62,6 +62,7 @@ namespace Model
     FleetUtilization& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a fleet.</p>
      */
@@ -97,6 +98,7 @@ namespace Model
      */
     inline FleetUtilization& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
+
     /**
      * <p>Number of server processes in an <code>ACTIVE</code> status currently running
      * across all instances in the fleet</p>
@@ -114,6 +116,7 @@ namespace Model
      * across all instances in the fleet</p>
      */
     inline FleetUtilization& WithActiveServerProcessCount(int value) { SetActiveServerProcessCount(value); return *this;}
+
 
     /**
      * <p>Number of active game sessions currently being hosted on all instances in the
@@ -133,6 +136,7 @@ namespace Model
      */
     inline FleetUtilization& WithActiveGameSessionCount(int value) { SetActiveGameSessionCount(value); return *this;}
 
+
     /**
      * <p>Number of active player sessions currently being hosted on all instances in
      * the fleet.</p>
@@ -150,6 +154,7 @@ namespace Model
      * the fleet.</p>
      */
     inline FleetUtilization& WithCurrentPlayerSessionCount(int value) { SetCurrentPlayerSessionCount(value); return *this;}
+
 
     /**
      * <p>Maximum players allowed across all game sessions currently being hosted on
@@ -170,14 +175,19 @@ namespace Model
     inline FleetUtilization& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     int m_activeServerProcessCount;
     bool m_activeServerProcessCountHasBeenSet;
+
     int m_activeGameSessionCount;
     bool m_activeGameSessionCountHasBeenSet;
+
     int m_currentPlayerSessionCount;
     bool m_currentPlayerSessionCountHasBeenSet;
+
     int m_maximumPlayerSessionCount;
     bool m_maximumPlayerSessionCountHasBeenSet;
   };

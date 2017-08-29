@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Retrieves a cursor value you can use to page through large result sets. Use
      * the <code>size</code> parameter to control the number of hits to include in each
@@ -135,6 +136,7 @@ namespace Model
      * Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
     inline SearchRequest& WithCursor(const char* value) { SetCursor(value); return *this;}
+
 
     /**
      * <p>Defines one or more numeric expressions that can be used to sort results or
@@ -233,6 +235,7 @@ namespace Model
      * Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
     inline SearchRequest& WithExpr(const char* value) { SetExpr(value); return *this;}
+
 
     /**
      * <p>Specifies one or more fields for which to get facet information, and options
@@ -570,6 +573,7 @@ namespace Model
      */
     inline SearchRequest& WithFacet(const char* value) { SetFacet(value); return *this;}
 
+
     /**
      * <p>Specifies a structured query that filters the results of a search without
      * affecting how the results are scored and sorted. You use
@@ -667,6 +671,7 @@ namespace Model
      * Matching Documents</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
     inline SearchRequest& WithFilterQuery(const char* value) { SetFilterQuery(value); return *this;}
+
 
     /**
      * <p>Retrieves highlights for matches in the specified <code>text</code> or
@@ -864,6 +869,7 @@ namespace Model
      */
     inline SearchRequest& WithHighlight(const char* value) { SetHighlight(value); return *this;}
 
+
     /**
      * <p>Enables partial results to be returned if one or more index partitions are
      * unavailable. When your search index is partitioned across multiple search
@@ -908,6 +914,7 @@ namespace Model
      * outage.</p>
      */
     inline SearchRequest& WithPartial(bool value) { SetPartial(value); return *this;}
+
 
     /**
      * <p>Specifies the search criteria for the request. How you specify the search
@@ -999,6 +1006,7 @@ namespace Model
      * Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
     inline SearchRequest& WithQuery(const char* value) { SetQuery(value); return *this;}
+
 
     /**
      * <p>Configures options for the query parser specified in the
@@ -1665,6 +1673,7 @@ namespace Model
      */
     inline SearchRequest& WithQueryOptions(const char* value) { SetQueryOptions(value); return *this;}
 
+
     /**
      * <p>Specifies which query parser to use to process the request. If
      * <code>queryParser</code> is not specified, Amazon CloudSearch uses the
@@ -1845,6 +1854,7 @@ namespace Model
      */
     inline SearchRequest& WithQueryParser(QueryParser&& value) { SetQueryParser(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the field and expression values to include in the response.
      * Multiple fields or expressions are specified as a comma-separated list. By
@@ -1915,6 +1925,7 @@ namespace Model
      */
     inline SearchRequest& WithReturn(const char* value) { SetReturn(value); return *this;}
 
+
     /**
      * <p>Specifies the maximum number of search hits to include in the response. </p>
      */
@@ -1929,6 +1940,7 @@ namespace Model
      * <p>Specifies the maximum number of search hits to include in the response. </p>
      */
     inline SearchRequest& WithSize(long long value) { SetSize(value); return *this;}
+
 
     /**
      * <p>Specifies the fields or custom expressions to use to sort the search results.
@@ -2042,6 +2054,7 @@ namespace Model
      */
     inline SearchRequest& WithSort(const char* value) { SetSort(value); return *this;}
 
+
     /**
      * <p>Specifies the offset of the first search hit you want to return. Note that
      * the result set is zero-based; the first result is at index 0. You can specify
@@ -2071,6 +2084,7 @@ namespace Model
      * Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
     inline SearchRequest& WithStart(long long value) { SetStart(value); return *this;}
+
 
     /**
      * <p>Specifies one or more fields for which to get statistics information. Each
@@ -2136,32 +2150,46 @@ namespace Model
     inline SearchRequest& WithStats(const char* value) { SetStats(value); return *this;}
 
   private:
+
     Aws::String m_cursor;
     bool m_cursorHasBeenSet;
+
     Aws::String m_expr;
     bool m_exprHasBeenSet;
+
     Aws::String m_facet;
     bool m_facetHasBeenSet;
+
     Aws::String m_filterQuery;
     bool m_filterQueryHasBeenSet;
+
     Aws::String m_highlight;
     bool m_highlightHasBeenSet;
+
     bool m_partial;
     bool m_partialHasBeenSet;
+
     Aws::String m_query;
     bool m_queryHasBeenSet;
+
     Aws::String m_queryOptions;
     bool m_queryOptionsHasBeenSet;
+
     QueryParser m_queryParser;
     bool m_queryParserHasBeenSet;
+
     Aws::String m_return;
     bool m_returnHasBeenSet;
+
     long long m_size;
     bool m_sizeHasBeenSet;
+
     Aws::String m_sort;
     bool m_sortHasBeenSet;
+
     long long m_start;
     bool m_startHasBeenSet;
+
     Aws::String m_stats;
     bool m_statsHasBeenSet;
   };

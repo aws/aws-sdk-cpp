@@ -46,6 +46,7 @@ namespace Model
     InventoryRetrievalJobDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The output format for the vault inventory list, which is set by the
      * <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory.
@@ -94,6 +95,7 @@ namespace Model
      * Valid values are <code>CSV</code> and <code>JSON</code>.</p>
      */
     inline InventoryRetrievalJobDescription& WithFormat(const char* value) { SetFormat(value); return *this;}
+
 
     /**
      * <p>The start of the date range in Universal Coordinated Time (UTC) for vault
@@ -151,6 +153,7 @@ namespace Model
      */
     inline InventoryRetrievalJobDescription& WithStartDate(const char* value) { SetStartDate(value); return *this;}
 
+
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
      * archives created before this date. This value should be a string in the ISO 8601
@@ -200,6 +203,7 @@ namespace Model
      */
     inline InventoryRetrievalJobDescription& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 
+
     /**
      * <p>The maximum number of inventory items returned per vault inventory retrieval
      * request. This limit is set when initiating the job with the a <b>InitiateJob</b>
@@ -248,6 +252,7 @@ namespace Model
      * request. </p>
      */
     inline InventoryRetrievalJobDescription& WithLimit(const char* value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>An opaque string that represents where to continue pagination of the vault
@@ -320,14 +325,19 @@ namespace Model
     inline InventoryRetrievalJobDescription& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_startDate;
     bool m_startDateHasBeenSet;
+
     Aws::String m_endDate;
     bool m_endDateHasBeenSet;
+
     Aws::String m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

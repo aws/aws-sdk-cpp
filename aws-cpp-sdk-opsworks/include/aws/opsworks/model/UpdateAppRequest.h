@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The app ID.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The app ID.</p>
      */
     inline UpdateAppRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+
 
     /**
      * <p>The app name.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline UpdateAppRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the app.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      * <p>A description of the app.</p>
      */
     inline UpdateAppRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The app's data sources.</p>
@@ -184,6 +188,7 @@ namespace Model
      */
     inline UpdateAppRequest& AddDataSources(DataSource&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The app type.</p>
      */
@@ -209,6 +214,7 @@ namespace Model
      */
     inline UpdateAppRequest& WithType(AppType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>A <code>Source</code> object that specifies the app repository.</p>
      */
@@ -233,6 +239,7 @@ namespace Model
      * <p>A <code>Source</code> object that specifies the app repository.</p>
      */
     inline UpdateAppRequest& WithAppSource(Source&& value) { SetAppSource(std::move(value)); return *this;}
+
 
     /**
      * <p>The app's virtual host settings, with multiple domains separated by commas.
@@ -282,6 +289,7 @@ namespace Model
      */
     inline UpdateAppRequest& AddDomains(const char* value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
 
+
     /**
      * <p>Whether SSL is enabled for the app.</p>
      */
@@ -296,6 +304,7 @@ namespace Model
      * <p>Whether SSL is enabled for the app.</p>
      */
     inline UpdateAppRequest& WithEnableSsl(bool value) { SetEnableSsl(value); return *this;}
+
 
     /**
      * <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
@@ -321,6 +330,7 @@ namespace Model
      * <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
      */
     inline UpdateAppRequest& WithSslConfiguration(SslConfiguration&& value) { SetSslConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more user-defined key/value pairs to be added to the stack
@@ -387,6 +397,7 @@ namespace Model
      * attributes.</p>
      */
     inline UpdateAppRequest& AddAttributes(const AppAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+
 
     /**
      * <p>An array of <code>EnvironmentVariable</code> objects that specify environment
@@ -508,26 +519,37 @@ namespace Model
     inline UpdateAppRequest& AddEnvironment(EnvironmentVariable&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_appId;
     bool m_appIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<DataSource> m_dataSources;
     bool m_dataSourcesHasBeenSet;
+
     AppType m_type;
     bool m_typeHasBeenSet;
+
     Source m_appSource;
     bool m_appSourceHasBeenSet;
+
     Aws::Vector<Aws::String> m_domains;
     bool m_domainsHasBeenSet;
+
     bool m_enableSsl;
     bool m_enableSslHasBeenSet;
+
     SslConfiguration m_sslConfiguration;
     bool m_sslConfigurationHasBeenSet;
+
     Aws::Map<AppAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::Vector<EnvironmentVariable> m_environment;
     bool m_environmentHasBeenSet;
   };

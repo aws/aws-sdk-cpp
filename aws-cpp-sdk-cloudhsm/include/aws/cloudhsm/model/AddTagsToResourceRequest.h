@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
      */
     inline AddTagsToResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
 
     /**
      * <p>One or more tags.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline AddTagsToResourceRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet;
   };

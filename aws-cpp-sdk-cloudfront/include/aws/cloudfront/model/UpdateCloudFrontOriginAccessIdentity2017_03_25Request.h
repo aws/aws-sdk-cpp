@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identity's configuration information.</p>
      */
@@ -65,6 +66,7 @@ namespace Model
      * <p>The identity's configuration information.</p>
      */
     inline UpdateCloudFrontOriginAccessIdentity2017_03_25Request& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The identity's id.</p>
@@ -100,6 +102,7 @@ namespace Model
      * <p>The identity's id.</p>
      */
     inline UpdateCloudFrontOriginAccessIdentity2017_03_25Request& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving
@@ -144,10 +147,13 @@ namespace Model
     inline UpdateCloudFrontOriginAccessIdentity2017_03_25Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
 
   private:
+
     CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;
     bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
   };

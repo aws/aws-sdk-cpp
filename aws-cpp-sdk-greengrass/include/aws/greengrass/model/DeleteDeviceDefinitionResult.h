@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteDeviceDefinitionResult();
-    DeleteDeviceDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDeviceDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDeviceDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDeviceDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

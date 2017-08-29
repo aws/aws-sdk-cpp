@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateInstanceResult();
-    CreateInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The instance ID.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateInstanceResult& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
   };
 

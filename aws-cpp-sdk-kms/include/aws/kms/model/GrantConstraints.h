@@ -58,6 +58,7 @@ namespace Model
     GrantConstraints& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of key-value pairs, all of which must be present in the encryption
      * context of certain subsequent operations that the grant allows. When certain
@@ -165,6 +166,7 @@ namespace Model
      * Otherwise, the grant does not allow the operation.</p>
      */
     inline GrantConstraints& AddEncryptionContextSubset(const char* key, const char* value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset.emplace(key, value); return *this; }
+
 
     /**
      * <p>A list of key-value pairs that must be present in the encryption context of
@@ -275,8 +277,10 @@ namespace Model
     inline GrantConstraints& AddEncryptionContextEquals(const char* key, const char* value) { m_encryptionContextEqualsHasBeenSet = true; m_encryptionContextEquals.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_encryptionContextSubset;
     bool m_encryptionContextSubsetHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_encryptionContextEquals;
     bool m_encryptionContextEqualsHasBeenSet;
   };

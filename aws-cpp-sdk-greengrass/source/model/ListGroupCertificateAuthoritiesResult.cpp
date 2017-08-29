@@ -30,12 +30,12 @@ ListGroupCertificateAuthoritiesResult::ListGroupCertificateAuthoritiesResult()
 {
 }
 
-ListGroupCertificateAuthoritiesResult::ListGroupCertificateAuthoritiesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListGroupCertificateAuthoritiesResult::ListGroupCertificateAuthoritiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListGroupCertificateAuthoritiesResult& ListGroupCertificateAuthoritiesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListGroupCertificateAuthoritiesResult& ListGroupCertificateAuthoritiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GroupCertificateAuthorities"))

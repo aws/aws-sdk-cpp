@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> Specifies the data set type to be written to the output csv file. The data
      * set types customer_support_contacts_data and test_customer_support_contacts_data
@@ -123,6 +124,7 @@ namespace Model
      */
     inline StartSupportDataExportRequest& WithDataSetType(SupportDataSetType&& value) { SetDataSetType(std::move(value)); return *this;}
 
+
     /**
      * The start date from which to retrieve the data set in UTC. This parameter only
      * affects the customer_support_contacts_data data set type.
@@ -152,6 +154,7 @@ namespace Model
      * affects the customer_support_contacts_data data set type.
      */
     inline StartSupportDataExportRequest& WithFromDate(Aws::Utils::DateTime&& value) { SetFromDate(std::move(value)); return *this;}
+
 
     /**
      * The Amazon Resource Name (ARN) of the Role with an attached permissions policy
@@ -195,6 +198,7 @@ namespace Model
      */
     inline StartSupportDataExportRequest& WithRoleNameArn(const char* value) { SetRoleNameArn(value); return *this;}
 
+
     /**
      * The name (friendly name, not ARN) of the destination S3 bucket.
      */
@@ -229,6 +233,7 @@ namespace Model
      * The name (friendly name, not ARN) of the destination S3 bucket.
      */
     inline StartSupportDataExportRequest& WithDestinationS3BucketName(const char* value) { SetDestinationS3BucketName(value); return *this;}
+
 
     /**
      * (Optional) The desired S3 prefix for the published data set, similar to a
@@ -300,6 +305,7 @@ namespace Model
      */
     inline StartSupportDataExportRequest& WithDestinationS3Prefix(const char* value) { SetDestinationS3Prefix(value); return *this;}
 
+
     /**
      * Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data
      * set has been published or if an error has occurred.
@@ -341,6 +347,7 @@ namespace Model
      * set has been published or if an error has occurred.
      */
     inline StartSupportDataExportRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+
 
     /**
      * (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS
@@ -415,18 +422,25 @@ namespace Model
     inline StartSupportDataExportRequest& AddCustomerDefinedValues(const char* key, const char* value) { m_customerDefinedValuesHasBeenSet = true; m_customerDefinedValues.emplace(key, value); return *this; }
 
   private:
+
     SupportDataSetType m_dataSetType;
     bool m_dataSetTypeHasBeenSet;
+
     Aws::Utils::DateTime m_fromDate;
     bool m_fromDateHasBeenSet;
+
     Aws::String m_roleNameArn;
     bool m_roleNameArnHasBeenSet;
+
     Aws::String m_destinationS3BucketName;
     bool m_destinationS3BucketNameHasBeenSet;
+
     Aws::String m_destinationS3Prefix;
     bool m_destinationS3PrefixHasBeenSet;
+
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_customerDefinedValues;
     bool m_customerDefinedValuesHasBeenSet;
   };

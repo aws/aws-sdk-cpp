@@ -30,12 +30,12 @@ RefreshTrustedAdvisorCheckResult::RefreshTrustedAdvisorCheckResult()
 {
 }
 
-RefreshTrustedAdvisorCheckResult::RefreshTrustedAdvisorCheckResult(const AmazonWebServiceResult<JsonValue>& result)
+RefreshTrustedAdvisorCheckResult::RefreshTrustedAdvisorCheckResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RefreshTrustedAdvisorCheckResult& RefreshTrustedAdvisorCheckResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RefreshTrustedAdvisorCheckResult& RefreshTrustedAdvisorCheckResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("status"))

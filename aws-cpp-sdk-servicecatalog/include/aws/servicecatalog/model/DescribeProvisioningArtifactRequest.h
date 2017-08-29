@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeProvisioningArtifactRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The identifier of the provisioning artifact. This is sometimes referred to as
      * the product version.</p>
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeProvisioningArtifactRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
 
+
     /**
      * <p>The product identifier.</p>
      */
@@ -162,6 +165,7 @@ namespace Model
      */
     inline DescribeProvisioningArtifactRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
 
+
     /**
      * <p>Enable a verbose level of details for the provisioning artifact.</p>
      */
@@ -178,12 +182,16 @@ namespace Model
     inline DescribeProvisioningArtifactRequest& WithVerbose(bool value) { SetVerbose(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_provisioningArtifactId;
     bool m_provisioningArtifactIdHasBeenSet;
+
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
     bool m_verbose;
     bool m_verboseHasBeenSet;
   };

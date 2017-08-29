@@ -46,6 +46,7 @@ namespace Model
     MarkerRecordedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the marker.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the marker.</p>
      */
     inline MarkerRecordedEventAttributes& WithMarkerName(const char* value) { SetMarkerName(value); return *this;}
+
 
     /**
      * <p>The details of the marker.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline MarkerRecordedEventAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
      * decision task that resulted in the <code>RecordMarker</code> decision that
@@ -141,10 +144,13 @@ namespace Model
     inline MarkerRecordedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
   private:
+
     Aws::String m_markerName;
     bool m_markerNameHasBeenSet;
+
     Aws::String m_details;
     bool m_detailsHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
   };

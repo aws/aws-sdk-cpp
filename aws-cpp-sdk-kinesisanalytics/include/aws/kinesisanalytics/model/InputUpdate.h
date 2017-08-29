@@ -50,6 +50,7 @@ namespace Model
     InputUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Input ID of the application input to be updated.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>Input ID of the application input to be updated.</p>
      */
     inline InputUpdate& WithInputId(const char* value) { SetInputId(value); return *this;}
+
 
     /**
      * <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
@@ -127,6 +129,7 @@ namespace Model
      */
     inline InputUpdate& WithNamePrefixUpdate(const char* value) { SetNamePrefixUpdate(value); return *this;}
 
+
     /**
      * <p>If a Amazon Kinesis stream is the streaming source to be updated, provides an
      * updated stream ARN and IAM role ARN.</p>
@@ -156,6 +159,7 @@ namespace Model
      * updated stream ARN and IAM role ARN.</p>
      */
     inline InputUpdate& WithKinesisStreamsInputUpdate(KinesisStreamsInputUpdate&& value) { SetKinesisStreamsInputUpdate(std::move(value)); return *this;}
+
 
     /**
      * <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
@@ -192,6 +196,7 @@ namespace Model
      */
     inline InputUpdate& WithKinesisFirehoseInputUpdate(KinesisFirehoseInputUpdate&& value) { SetKinesisFirehoseInputUpdate(std::move(value)); return *this;}
 
+
     /**
      * <p>Describes the data format on the streaming source, and how record elements on
      * the streaming source map to columns of the in-application stream that is
@@ -227,6 +232,7 @@ namespace Model
      */
     inline InputUpdate& WithInputSchemaUpdate(InputSchemaUpdate&& value) { SetInputSchemaUpdate(std::move(value)); return *this;}
 
+
     /**
      * <p>Describes the parallelism updates (the number in-application streams Amazon
      * Kinesis Analytics creates for the specific streaming source).</p>
@@ -258,16 +264,22 @@ namespace Model
     inline InputUpdate& WithInputParallelismUpdate(InputParallelismUpdate&& value) { SetInputParallelismUpdate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_inputId;
     bool m_inputIdHasBeenSet;
+
     Aws::String m_namePrefixUpdate;
     bool m_namePrefixUpdateHasBeenSet;
+
     KinesisStreamsInputUpdate m_kinesisStreamsInputUpdate;
     bool m_kinesisStreamsInputUpdateHasBeenSet;
+
     KinesisFirehoseInputUpdate m_kinesisFirehoseInputUpdate;
     bool m_kinesisFirehoseInputUpdateHasBeenSet;
+
     InputSchemaUpdate m_inputSchemaUpdate;
     bool m_inputSchemaUpdateHasBeenSet;
+
     InputParallelismUpdate m_inputParallelismUpdate;
     bool m_inputParallelismUpdateHasBeenSet;
   };

@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeListenersResult();
-    DescribeListenersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeListenersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeListenersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeListenersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the listeners.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <p>Information about the listeners.</p>
      */
     inline DescribeListenersResult& AddListeners(Listener&& value) { m_listeners.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -121,6 +123,7 @@ namespace Model
      */
     inline DescribeListenersResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -137,8 +140,11 @@ namespace Model
     inline DescribeListenersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Listener> m_listeners;
+
     Aws::String m_nextMarker;
+
     ResponseMetadata m_responseMetadata;
   };
 

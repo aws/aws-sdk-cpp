@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone where the resulting instance will reside.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ImportInstanceVolumeDetailItem& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The number of bytes converted so far.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The number of bytes converted so far.</p>
      */
     inline ImportInstanceVolumeDetailItem& WithBytesConverted(long long value) { SetBytesConverted(value); return *this;}
+
 
     /**
      * <p>A description of the task.</p>
@@ -135,6 +138,7 @@ namespace Model
      */
     inline ImportInstanceVolumeDetailItem& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The image.</p>
      */
@@ -159,6 +163,7 @@ namespace Model
      * <p>The image.</p>
      */
     inline ImportInstanceVolumeDetailItem& WithImage(DiskImageDescription&& value) { SetImage(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the import of this particular disk image.</p>
@@ -195,6 +200,7 @@ namespace Model
      */
     inline ImportInstanceVolumeDetailItem& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The status information or errors related to the disk image.</p>
      */
@@ -230,6 +236,7 @@ namespace Model
      */
     inline ImportInstanceVolumeDetailItem& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     /**
      * <p>The volume.</p>
      */
@@ -256,18 +263,25 @@ namespace Model
     inline ImportInstanceVolumeDetailItem& WithVolume(DiskImageVolumeDescription&& value) { SetVolume(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     long long m_bytesConverted;
     bool m_bytesConvertedHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     DiskImageDescription m_image;
     bool m_imageHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     DiskImageVolumeDescription m_volume;
     bool m_volumeHasBeenSet;
   };

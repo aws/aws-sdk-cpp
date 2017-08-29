@@ -48,6 +48,7 @@ namespace Model
     Target& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>User-defined criteria for sending commands that target instances that meet
      * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
@@ -117,6 +118,7 @@ namespace Model
      * a Command Using Systems Manager Run Command</a>.</p>
      */
     inline Target& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>User-defined criteria that maps to Key. For example, if you specified
@@ -207,8 +209,10 @@ namespace Model
     inline Target& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CreateAliasRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Human-readable description of an alias.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      */
     inline CreateAliasRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Object that specifies the fleet and routing type to use for the alias.</p>
      */
@@ -143,10 +146,13 @@ namespace Model
     inline CreateAliasRequest& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     RoutingStrategy m_routingStrategy;
     bool m_routingStrategyHasBeenSet;
   };

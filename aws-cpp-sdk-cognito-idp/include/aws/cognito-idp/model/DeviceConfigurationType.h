@@ -44,6 +44,7 @@ namespace Model
     DeviceConfigurationType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Indicates whether a challenge is required on a new device. Only applicable to
      * a new device.</p>
@@ -62,6 +63,7 @@ namespace Model
      */
     inline DeviceConfigurationType& WithChallengeRequiredOnNewDevice(bool value) { SetChallengeRequiredOnNewDevice(value); return *this;}
 
+
     /**
      * <p>If true, a device is only remembered on user prompt.</p>
      */
@@ -78,8 +80,10 @@ namespace Model
     inline DeviceConfigurationType& WithDeviceOnlyRememberedOnUserPrompt(bool value) { SetDeviceOnlyRememberedOnUserPrompt(value); return *this;}
 
   private:
+
     bool m_challengeRequiredOnNewDevice;
     bool m_challengeRequiredOnNewDeviceHasBeenSet;
+
     bool m_deviceOnlyRememberedOnUserPrompt;
     bool m_deviceOnlyRememberedOnUserPromptHasBeenSet;
   };

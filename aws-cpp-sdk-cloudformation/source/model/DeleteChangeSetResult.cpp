@@ -31,12 +31,12 @@ DeleteChangeSetResult::DeleteChangeSetResult()
 {
 }
 
-DeleteChangeSetResult::DeleteChangeSetResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteChangeSetResult::DeleteChangeSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteChangeSetResult& DeleteChangeSetResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteChangeSetResult& DeleteChangeSetResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

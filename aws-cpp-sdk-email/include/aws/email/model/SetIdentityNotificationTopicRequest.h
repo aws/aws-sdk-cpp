@@ -47,6 +47,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identity for which the Amazon SNS topic will be set. You can specify an
      * identity by using its name or by using its Amazon Resource Name (ARN). Examples:
@@ -103,6 +104,7 @@ namespace Model
      */
     inline SetIdentityNotificationTopicRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
+
     /**
      * <p>The type of notifications that will be published to the specified Amazon SNS
      * topic.</p>
@@ -132,6 +134,7 @@ namespace Model
      * topic.</p>
      */
     inline SetIdentityNotificationTopicRequest& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is
@@ -183,10 +186,13 @@ namespace Model
     inline SetIdentityNotificationTopicRequest& WithSnsTopic(const char* value) { SetSnsTopic(value); return *this;}
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     NotificationType m_notificationType;
     bool m_notificationTypeHasBeenSet;
+
     Aws::String m_snsTopic;
     bool m_snsTopicHasBeenSet;
   };

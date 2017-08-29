@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * The name of the replaceable attribute.
      */
@@ -82,6 +83,7 @@ namespace Model
      * The name of the replaceable attribute.
      */
     inline ReplaceableAttribute& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * The value of the replaceable attribute.
@@ -118,6 +120,7 @@ namespace Model
      */
     inline ReplaceableAttribute& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * A flag specifying whether or not to replace the attribute/value pair or to add a
      * new attribute/value pair. The default setting is <code>false</code>.
@@ -137,10 +140,13 @@ namespace Model
     inline ReplaceableAttribute& WithReplace(bool value) { SetReplace(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     bool m_replace;
     bool m_replaceHasBeenSet;
   };

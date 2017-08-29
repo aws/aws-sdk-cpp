@@ -50,6 +50,7 @@ namespace Model
     Predicate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow,
      * block, or count requests based on the settings in the specified
@@ -98,6 +99,7 @@ namespace Model
      */
     inline Predicate& WithNegated(bool value) { SetNegated(value); return *this;}
 
+
     /**
      * <p>The type of predicate in a <code>Rule</code>, such as
      * <code>ByteMatchSet</code> or <code>IPSet</code>.</p>
@@ -127,6 +129,7 @@ namespace Model
      * <code>ByteMatchSet</code> or <code>IPSet</code>.</p>
      */
     inline Predicate& WithType(PredicateType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>A unique identifier for a predicate in a <code>Rule</code>, such as
@@ -178,10 +181,13 @@ namespace Model
     inline Predicate& WithDataId(const char* value) { SetDataId(value); return *this;}
 
   private:
+
     bool m_negated;
     bool m_negatedHasBeenSet;
+
     PredicateType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_dataId;
     bool m_dataIdHasBeenSet;
   };

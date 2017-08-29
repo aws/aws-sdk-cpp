@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The event pattern. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
@@ -85,6 +86,7 @@ namespace Model
      */
     inline TestEventPatternRequest& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
 
+
     /**
      * <p>The event, in JSON format, to test against the event pattern.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline TestEventPatternRequest& WithEvent(const char* value) { SetEvent(value); return *this;}
 
   private:
+
     Aws::String m_eventPattern;
     bool m_eventPatternHasBeenSet;
+
     Aws::String m_event;
     bool m_eventHasBeenSet;
   };

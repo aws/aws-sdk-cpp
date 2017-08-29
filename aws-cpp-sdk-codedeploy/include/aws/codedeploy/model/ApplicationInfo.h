@@ -46,6 +46,7 @@ namespace Model
     ApplicationInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The application ID.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The application ID.</p>
      */
     inline ApplicationInfo& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     /**
      * <p>The application name.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline ApplicationInfo& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>The time at which the application was created.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      */
     inline ApplicationInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>True if the user has authenticated with GitHub for the specified application;
      * otherwise, false.</p>
@@ -158,6 +162,7 @@ namespace Model
      * otherwise, false.</p>
      */
     inline ApplicationInfo& WithLinkedToGitHub(bool value) { SetLinkedToGitHub(value); return *this;}
+
 
     /**
      * <p>The name for a connection to a GitHub account.</p>
@@ -195,14 +200,19 @@ namespace Model
     inline ApplicationInfo& WithGitHubAccountName(const char* value) { SetGitHubAccountName(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
     bool m_linkedToGitHub;
     bool m_linkedToGitHubHasBeenSet;
+
     Aws::String m_gitHubAccountName;
     bool m_gitHubAccountNameHasBeenSet;
   };

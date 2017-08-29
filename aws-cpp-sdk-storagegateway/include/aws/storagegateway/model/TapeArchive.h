@@ -47,6 +47,7 @@ namespace Model
     TapeArchive& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of an archived virtual tape.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an archived virtual tape.</p>
      */
     inline TapeArchive& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
+
 
     /**
      * <p>The barcode that identifies the archived virtual tape.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline TapeArchive& WithTapeBarcode(const char* value) { SetTapeBarcode(value); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetTapeCreatedDate() const{ return m_tapeCreatedDate; }
 
@@ -132,6 +135,7 @@ namespace Model
     
     inline TapeArchive& WithTapeCreatedDate(Aws::Utils::DateTime&& value) { SetTapeCreatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The size, in bytes, of the archived virtual tape.</p>
      */
@@ -146,6 +150,7 @@ namespace Model
      * <p>The size, in bytes, of the archived virtual tape.</p>
      */
     inline TapeArchive& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
+
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
@@ -181,6 +186,7 @@ namespace Model
      * YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline TapeArchive& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is
@@ -231,6 +237,7 @@ namespace Model
      */
     inline TapeArchive& WithRetrievedTo(const char* value) { SetRetrievedTo(value); return *this;}
 
+
     /**
      * <p>The current state of the archived virtual tape.</p>
      */
@@ -266,6 +273,7 @@ namespace Model
      */
     inline TapeArchive& WithTapeStatus(const char* value) { SetTapeStatus(value); return *this;}
 
+
     /**
      * <p>The size, in bytes, of data written to the virtual tape.</p> <note> <p>This
      * value is not available for tapes created prior to May 13, 2015.</p> </note>
@@ -285,20 +293,28 @@ namespace Model
     inline TapeArchive& WithTapeUsedInBytes(long long value) { SetTapeUsedInBytes(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
+
     Aws::String m_tapeBarcode;
     bool m_tapeBarcodeHasBeenSet;
+
     Aws::Utils::DateTime m_tapeCreatedDate;
     bool m_tapeCreatedDateHasBeenSet;
+
     long long m_tapeSizeInBytes;
     bool m_tapeSizeInBytesHasBeenSet;
+
     Aws::Utils::DateTime m_completionTime;
     bool m_completionTimeHasBeenSet;
+
     Aws::String m_retrievedTo;
     bool m_retrievedToHasBeenSet;
+
     Aws::String m_tapeStatus;
     bool m_tapeStatusHasBeenSet;
+
     long long m_tapeUsedInBytes;
     bool m_tapeUsedInBytesHasBeenSet;
   };

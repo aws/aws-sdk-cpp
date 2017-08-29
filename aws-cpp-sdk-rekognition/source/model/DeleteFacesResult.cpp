@@ -30,12 +30,12 @@ DeleteFacesResult::DeleteFacesResult()
 {
 }
 
-DeleteFacesResult::DeleteFacesResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteFacesResult::DeleteFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteFacesResult& DeleteFacesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteFacesResult& DeleteFacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DeletedFaces"))

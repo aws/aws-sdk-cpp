@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Worker being paid the bonus.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the Worker being paid the bonus.</p>
      */
     inline SendBonusRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+
 
     /**
      * <p> The Bonus amount is a US Dollar amount specified using a string (for
@@ -120,6 +122,7 @@ namespace Model
      */
     inline SendBonusRequest& WithBonusAmount(const char* value) { SetBonusAmount(value); return *this;}
 
+
     /**
      * <p>The ID of the assignment for which this bonus is paid.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The ID of the assignment for which this bonus is paid.</p>
      */
     inline SendBonusRequest& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
+
 
     /**
      * <p>A message that explains the reason for the bonus payment. The Worker
@@ -196,6 +200,7 @@ namespace Model
      * receiving the bonus can see this message.</p>
      */
     inline SendBonusRequest& WithReason(const char* value) { SetReason(value); return *this;}
+
 
     /**
      * <p>A unique identifier for this request, which allows you to retry the call on
@@ -268,14 +273,19 @@ namespace Model
     inline SendBonusRequest& WithUniqueRequestToken(const char* value) { SetUniqueRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet;
+
     Aws::String m_bonusAmount;
     bool m_bonusAmountHasBeenSet;
+
     Aws::String m_assignmentId;
     bool m_assignmentIdHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::String m_uniqueRequestToken;
     bool m_uniqueRequestTokenHasBeenSet;
   };

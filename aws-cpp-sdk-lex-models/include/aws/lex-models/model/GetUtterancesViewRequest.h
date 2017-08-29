@@ -42,6 +42,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The name of the bot for which utterance information should be returned.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name of the bot for which utterance information should be returned.</p>
      */
     inline GetUtterancesViewRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+
 
     /**
      * <p>An array of bot versions for which utterance information should be returned.
@@ -125,6 +127,7 @@ namespace Model
      */
     inline GetUtterancesViewRequest& AddBotVersions(const char* value) { m_botVersionsHasBeenSet = true; m_botVersions.push_back(value); return *this; }
 
+
     /**
      * <p>To return utterances that were recognized and handled,
      * use<code>Detected</code>. To return utterances that were not recognized, use
@@ -161,10 +164,13 @@ namespace Model
     inline GetUtterancesViewRequest& WithStatusType(StatusType&& value) { SetStatusType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_botVersions;
     bool m_botVersionsHasBeenSet;
+
     StatusType m_statusType;
     bool m_statusTypeHasBeenSet;
   };

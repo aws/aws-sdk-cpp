@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b>
      * Specifying the check ID of a check that is automatically refreshed causes an
@@ -89,6 +90,7 @@ namespace Model
     inline RefreshTrustedAdvisorCheckRequest& WithCheckId(const char* value) { SetCheckId(value); return *this;}
 
   private:
+
     Aws::String m_checkId;
     bool m_checkIdHasBeenSet;
   };

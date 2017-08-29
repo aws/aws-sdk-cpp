@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
      * <a>DescribeStorediSCSIVolumes</a> operation to return the TargetARN for
@@ -92,6 +93,7 @@ namespace Model
      * specified VolumeARN.</p>
      */
     inline UpdateChapCredentialsRequest& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}
+
 
     /**
      * <p>The secret key that the initiator (for example, the Windows client) must
@@ -142,6 +144,7 @@ namespace Model
      */
     inline UpdateChapCredentialsRequest& WithSecretToAuthenticateInitiator(const char* value) { SetSecretToAuthenticateInitiator(value); return *this;}
 
+
     /**
      * <p>The iSCSI initiator that connects to the target.</p>
      */
@@ -176,6 +179,7 @@ namespace Model
      * <p>The iSCSI initiator that connects to the target.</p>
      */
     inline UpdateChapCredentialsRequest& WithInitiatorName(const char* value) { SetInitiatorName(value); return *this;}
+
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP
@@ -234,12 +238,16 @@ namespace Model
     inline UpdateChapCredentialsRequest& WithSecretToAuthenticateTarget(const char* value) { SetSecretToAuthenticateTarget(value); return *this;}
 
   private:
+
     Aws::String m_targetARN;
     bool m_targetARNHasBeenSet;
+
     Aws::String m_secretToAuthenticateInitiator;
     bool m_secretToAuthenticateInitiatorHasBeenSet;
+
     Aws::String m_initiatorName;
     bool m_initiatorNameHasBeenSet;
+
     Aws::String m_secretToAuthenticateTarget;
     bool m_secretToAuthenticateTargetHasBeenSet;
   };

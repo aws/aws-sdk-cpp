@@ -31,12 +31,12 @@ ListChangeSetsResult::ListChangeSetsResult()
 {
 }
 
-ListChangeSetsResult::ListChangeSetsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListChangeSetsResult::ListChangeSetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListChangeSetsResult& ListChangeSetsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListChangeSetsResult& ListChangeSetsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

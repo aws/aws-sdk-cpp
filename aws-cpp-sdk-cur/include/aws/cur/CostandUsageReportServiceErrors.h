@@ -55,13 +55,13 @@ enum class CostandUsageReportServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DUPLICATE_REPORT_NAME= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DUPLICATE_REPORT_NAME= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_ERROR,
   REPORT_LIMIT_REACHED
 };
 namespace CostandUsageReportServiceErrorMapper
 {
-  AWS_COSTANDUSAGEREPORTSERVICE_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_COSTANDUSAGEREPORTSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CostandUsageReportService

@@ -48,6 +48,7 @@ namespace Model
     ActionState& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the action.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ActionState& WithActionName(const char* value) { SetActionName(value); return *this;}
 
+
     /**
      * <p>Represents information about the version (or revision) of an action.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      */
     inline ActionState& WithCurrentRevision(ActionRevision&& value) { SetCurrentRevision(std::move(value)); return *this;}
 
+
     /**
      * <p>Represents information about the run of an action.</p>
      */
@@ -132,6 +135,7 @@ namespace Model
      * <p>Represents information about the run of an action.</p>
      */
     inline ActionState& WithLatestExecution(ActionExecution&& value) { SetLatestExecution(std::move(value)); return *this;}
+
 
     /**
      * <p>A URL link for more information about the state of the action, such as a
@@ -174,6 +178,7 @@ namespace Model
      * deployment group details page.</p>
      */
     inline ActionState& WithEntityUrl(const char* value) { SetEntityUrl(value); return *this;}
+
 
     /**
      * <p>A URL link for more information about the revision, such as a commit details
@@ -218,14 +223,19 @@ namespace Model
     inline ActionState& WithRevisionUrl(const char* value) { SetRevisionUrl(value); return *this;}
 
   private:
+
     Aws::String m_actionName;
     bool m_actionNameHasBeenSet;
+
     ActionRevision m_currentRevision;
     bool m_currentRevisionHasBeenSet;
+
     ActionExecution m_latestExecution;
     bool m_latestExecutionHasBeenSet;
+
     Aws::String m_entityUrl;
     bool m_entityUrlHasBeenSet;
+
     Aws::String m_revisionUrl;
     bool m_revisionUrlHasBeenSet;
   };

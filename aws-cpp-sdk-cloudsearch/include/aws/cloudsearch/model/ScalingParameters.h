@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The instance type that you want to preconfigure for your domain. For example,
      * <code>search.m1.small</code>.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline ScalingParameters& WithDesiredInstanceType(PartitionInstanceType&& value) { SetDesiredInstanceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of replicas you want to preconfigure for each index partition.</p>
      */
@@ -93,6 +95,7 @@ namespace Model
      * <p>The number of replicas you want to preconfigure for each index partition.</p>
      */
     inline ScalingParameters& WithDesiredReplicationCount(int value) { SetDesiredReplicationCount(value); return *this;}
+
 
     /**
      * <p>The number of partitions you want to preconfigure for your domain. Only valid
@@ -113,10 +116,13 @@ namespace Model
     inline ScalingParameters& WithDesiredPartitionCount(int value) { SetDesiredPartitionCount(value); return *this;}
 
   private:
+
     PartitionInstanceType m_desiredInstanceType;
     bool m_desiredInstanceTypeHasBeenSet;
+
     int m_desiredReplicationCount;
     bool m_desiredReplicationCountHasBeenSet;
+
     int m_desiredPartitionCount;
     bool m_desiredPartitionCountHasBeenSet;
   };

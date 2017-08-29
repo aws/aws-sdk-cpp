@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListDomainNamesResult();
-    ListDomainNamesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDomainNamesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDomainNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDomainNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of Elasticsearch domain names.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline ListDomainNamesResult& AddDomainNames(DomainInfo&& value) { m_domainNames.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<DomainInfo> m_domainNames;
   };
 

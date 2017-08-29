@@ -45,6 +45,7 @@ namespace Model
     AudioCodecOptions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>You can only choose an audio profile when you specify AAC for the value of
      * Audio:Codec.</p> <p>Specify the AAC profile for the output file. Elastic
@@ -171,6 +172,7 @@ namespace Model
      */
     inline AudioCodecOptions& WithProfile(const char* value) { SetProfile(value); return *this;}
 
+
     /**
      * <p>You can only choose an audio bit depth when you specify <code>flac</code> or
      * <code>pcm</code> for the value of Audio:Codec.</p> <p>The bit depth of a sample
@@ -241,6 +243,7 @@ namespace Model
      */
     inline AudioCodecOptions& WithBitDepth(const char* value) { SetBitDepth(value); return *this;}
 
+
     /**
      * <p>You can only choose an audio bit order when you specify <code>pcm</code> for
      * the value of Audio:Codec.</p> <p>The order the bits of a PCM sample are stored
@@ -289,6 +292,7 @@ namespace Model
      * in.</p> <p>The supported value is <code>LittleEndian</code>.</p>
      */
     inline AudioCodecOptions& WithBitOrder(const char* value) { SetBitOrder(value); return *this;}
+
 
     /**
      * <p>You can only choose whether an audio sample is signed when you specify
@@ -347,12 +351,16 @@ namespace Model
     inline AudioCodecOptions& WithSigned(const char* value) { SetSigned(value); return *this;}
 
   private:
+
     Aws::String m_profile;
     bool m_profileHasBeenSet;
+
     Aws::String m_bitDepth;
     bool m_bitDepthHasBeenSet;
+
     Aws::String m_bitOrder;
     bool m_bitOrderHasBeenSet;
+
     Aws::String m_signed;
     bool m_signedHasBeenSet;
   };

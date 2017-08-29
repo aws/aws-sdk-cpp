@@ -51,8 +51,9 @@ namespace Model
   {
   public:
     GetRequestValidatorResult();
-    GetRequestValidatorResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRequestValidatorResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRequestValidatorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRequestValidatorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of this <a>RequestValidator</a>.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline GetRequestValidatorResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name of this <a>RequestValidator</a></p>
      */
@@ -124,6 +126,7 @@ namespace Model
      */
     inline GetRequestValidatorResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A Boolean flag to indicate whether to validate a request body according to
      * the configured <a>Model</a> schema.</p>
@@ -141,6 +144,7 @@ namespace Model
      * the configured <a>Model</a> schema.</p>
      */
     inline GetRequestValidatorResult& WithValidateRequestBody(bool value) { SetValidateRequestBody(value); return *this;}
+
 
     /**
      * <p>A Boolean flag to indicate whether to validate request parameters
@@ -161,9 +165,13 @@ namespace Model
     inline GetRequestValidatorResult& WithValidateRequestParameters(bool value) { SetValidateRequestParameters(value); return *this;}
 
   private:
+
     Aws::String m_id;
+
     Aws::String m_name;
+
     bool m_validateRequestBody;
+
     bool m_validateRequestParameters;
   };
 

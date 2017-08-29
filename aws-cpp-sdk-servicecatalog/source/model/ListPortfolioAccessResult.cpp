@@ -30,12 +30,12 @@ ListPortfolioAccessResult::ListPortfolioAccessResult()
 {
 }
 
-ListPortfolioAccessResult::ListPortfolioAccessResult(const AmazonWebServiceResult<JsonValue>& result)
+ListPortfolioAccessResult::ListPortfolioAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListPortfolioAccessResult& ListPortfolioAccessResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListPortfolioAccessResult& ListPortfolioAccessResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AccountIds"))

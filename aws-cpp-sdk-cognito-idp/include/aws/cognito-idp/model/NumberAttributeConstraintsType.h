@@ -46,6 +46,7 @@ namespace Model
     NumberAttributeConstraintsType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The minimum value of an attribute that is of the number data type.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The minimum value of an attribute that is of the number data type.</p>
      */
     inline NumberAttributeConstraintsType& WithMinValue(const char* value) { SetMinValue(value); return *this;}
+
 
     /**
      * <p>The maximum value of an attribute that is of the number data type.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline NumberAttributeConstraintsType& WithMaxValue(const char* value) { SetMaxValue(value); return *this;}
 
   private:
+
     Aws::String m_minValue;
     bool m_minValueHasBeenSet;
+
     Aws::String m_maxValue;
     bool m_maxValueHasBeenSet;
   };

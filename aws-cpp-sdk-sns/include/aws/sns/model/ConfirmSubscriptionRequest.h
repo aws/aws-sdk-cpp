@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
      */
     inline ConfirmSubscriptionRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+
 
     /**
      * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
@@ -117,6 +119,7 @@ namespace Model
      * action.</p>
      */
     inline ConfirmSubscriptionRequest& WithToken(const char* value) { SetToken(value); return *this;}
+
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
@@ -175,10 +178,13 @@ namespace Model
     inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(const char* value) { SetAuthenticateOnUnsubscribe(value); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_token;
     bool m_tokenHasBeenSet;
+
     Aws::String m_authenticateOnUnsubscribe;
     bool m_authenticateOnUnsubscribeHasBeenSet;
   };

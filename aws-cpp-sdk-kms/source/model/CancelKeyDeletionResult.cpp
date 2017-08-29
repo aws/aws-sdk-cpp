@@ -30,12 +30,12 @@ CancelKeyDeletionResult::CancelKeyDeletionResult()
 {
 }
 
-CancelKeyDeletionResult::CancelKeyDeletionResult(const AmazonWebServiceResult<JsonValue>& result)
+CancelKeyDeletionResult::CancelKeyDeletionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CancelKeyDeletionResult& CancelKeyDeletionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CancelKeyDeletionResult& CancelKeyDeletionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("KeyId"))

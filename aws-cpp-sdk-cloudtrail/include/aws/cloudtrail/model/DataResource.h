@@ -59,6 +59,7 @@ namespace Model
     DataResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The resource type in which you want to log data events. You can specify only
      * the following value: <code>AWS::S3::Object</code>.</p>
@@ -100,6 +101,7 @@ namespace Model
      * the following value: <code>AWS::S3::Object</code>.</p>
      */
     inline DataResource& WithType(const char* value) { SetType(value); return *this;}
+
 
     /**
      * <p>A list of ARN-like strings for the specified S3 objects.</p> <p>To log data
@@ -190,8 +192,10 @@ namespace Model
     inline DataResource& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

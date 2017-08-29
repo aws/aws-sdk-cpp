@@ -34,7 +34,7 @@ GetBotResult::GetBotResult() :
 {
 }
 
-GetBotResult::GetBotResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetBotResult::GetBotResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(Status::NOT_SET),
     m_idleSessionTTLInSeconds(0),
     m_locale(Locale::NOT_SET),
@@ -43,7 +43,7 @@ GetBotResult::GetBotResult(const AmazonWebServiceResult<JsonValue>& result) :
   *this = result;
 }
 
-GetBotResult& GetBotResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetBotResult& GetBotResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("name"))

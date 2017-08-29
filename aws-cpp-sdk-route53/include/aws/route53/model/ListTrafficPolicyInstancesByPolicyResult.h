@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     ListTrafficPolicyInstancesByPolicyResult();
-    ListTrafficPolicyInstancesByPolicyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListTrafficPolicyInstancesByPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTrafficPolicyInstancesByPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTrafficPolicyInstancesByPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list that contains one <code>TrafficPolicyInstance</code> element for each
@@ -91,6 +92,7 @@ namespace Model
      * traffic policy instance that matches the elements in the request.</p>
      */
     inline ListTrafficPolicyInstancesByPolicyResult& AddTrafficPolicyInstances(TrafficPolicyInstance&& value) { m_trafficPolicyInstances.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
@@ -140,6 +142,7 @@ namespace Model
      * traffic policy instance in the next group of traffic policy instances.</p>
      */
     inline ListTrafficPolicyInstancesByPolicyResult& WithHostedZoneIdMarker(const char* value) { SetHostedZoneIdMarker(value); return *this;}
+
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
@@ -197,6 +200,7 @@ namespace Model
      */
     inline ListTrafficPolicyInstancesByPolicyResult& WithTrafficPolicyInstanceNameMarker(const char* value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
 
+
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource
@@ -237,6 +241,7 @@ namespace Model
      */
     inline ListTrafficPolicyInstancesByPolicyResult& WithTrafficPolicyInstanceTypeMarker(RRType&& value) { SetTrafficPolicyInstanceTypeMarker(std::move(value)); return *this;}
 
+
     /**
      * <p>A flag that indicates whether there are more traffic policy instances to be
      * listed. If the response was truncated, you can get the next group of traffic
@@ -269,6 +274,7 @@ namespace Model
      * request parameters.</p>
      */
     inline ListTrafficPolicyInstancesByPolicyResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>The value that you specified for the <code>MaxItems</code> parameter in the
@@ -320,11 +326,17 @@ namespace Model
     inline ListTrafficPolicyInstancesByPolicyResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::Vector<TrafficPolicyInstance> m_trafficPolicyInstances;
+
     Aws::String m_hostedZoneIdMarker;
+
     Aws::String m_trafficPolicyInstanceNameMarker;
+
     RRType m_trafficPolicyInstanceTypeMarker;
+
     bool m_isTruncated;
+
     Aws::String m_maxItems;
   };
 

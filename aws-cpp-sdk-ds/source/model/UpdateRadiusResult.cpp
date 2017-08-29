@@ -30,12 +30,12 @@ UpdateRadiusResult::UpdateRadiusResult()
 {
 }
 
-UpdateRadiusResult::UpdateRadiusResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateRadiusResult::UpdateRadiusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateRadiusResult& UpdateRadiusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateRadiusResult& UpdateRadiusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

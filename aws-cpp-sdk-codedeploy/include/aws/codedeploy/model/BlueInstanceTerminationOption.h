@@ -47,6 +47,7 @@ namespace Model
     BlueInstanceTerminationOption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The action to take on instances in the original environment after a
      * successful blue/green deployment.</p> <ul> <li> <p>TERMINATE: Instances are
@@ -92,6 +93,7 @@ namespace Model
      */
     inline BlueInstanceTerminationOption& WithAction(InstanceAction&& value) { SetAction(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of minutes to wait after a successful blue/green deployment before
      * terminating instances from the original environment.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline BlueInstanceTerminationOption& WithTerminationWaitTimeInMinutes(int value) { SetTerminationWaitTimeInMinutes(value); return *this;}
 
   private:
+
     InstanceAction m_action;
     bool m_actionHasBeenSet;
+
     int m_terminationWaitTimeInMinutes;
     bool m_terminationWaitTimeInMinutesHasBeenSet;
   };

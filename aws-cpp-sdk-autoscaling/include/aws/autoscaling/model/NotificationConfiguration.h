@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the group.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the group.</p>
      */
     inline NotificationConfiguration& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -124,6 +126,7 @@ namespace Model
      * (SNS) topic.</p>
      */
     inline NotificationConfiguration& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
+
 
     /**
      * <p>One of the following event notification types:</p> <ul> <li> <p>
@@ -196,10 +199,13 @@ namespace Model
     inline NotificationConfiguration& WithNotificationType(const char* value) { SetNotificationType(value); return *this;}
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_topicARN;
     bool m_topicARNHasBeenSet;
+
     Aws::String m_notificationType;
     bool m_notificationTypeHasBeenSet;
   };

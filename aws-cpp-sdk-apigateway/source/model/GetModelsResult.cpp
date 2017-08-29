@@ -30,12 +30,12 @@ GetModelsResult::GetModelsResult()
 {
 }
 
-GetModelsResult::GetModelsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetModelsResult::GetModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetModelsResult& GetModelsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetModelsResult& GetModelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("position"))

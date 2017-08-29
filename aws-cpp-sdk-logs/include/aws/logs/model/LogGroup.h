@@ -45,6 +45,7 @@ namespace Model
     LogGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline LogGroup& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
+
     /**
      * <p>The creation time of the log group, expressed as the number of milliseconds
      * since Jan 1, 1970 00:00:00 UTC.</p>
@@ -98,6 +100,7 @@ namespace Model
      */
     inline LogGroup& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
+
     
     inline int GetRetentionInDays() const{ return m_retentionInDays; }
 
@@ -106,6 +109,7 @@ namespace Model
 
     
     inline LogGroup& WithRetentionInDays(int value) { SetRetentionInDays(value); return *this;}
+
 
     /**
      * <p>The number of metric filters.</p>
@@ -121,6 +125,7 @@ namespace Model
      * <p>The number of metric filters.</p>
      */
     inline LogGroup& WithMetricFilterCount(int value) { SetMetricFilterCount(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the log group.</p>
@@ -157,6 +162,7 @@ namespace Model
      */
     inline LogGroup& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The number of bytes stored.</p>
      */
@@ -173,16 +179,22 @@ namespace Model
     inline LogGroup& WithStoredBytes(long long value) { SetStoredBytes(value); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     long long m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     int m_retentionInDays;
     bool m_retentionInDaysHasBeenSet;
+
     int m_metricFilterCount;
     bool m_metricFilterCountHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     long long m_storedBytes;
     bool m_storedBytesHasBeenSet;
   };

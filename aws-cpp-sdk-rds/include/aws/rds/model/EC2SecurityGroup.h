@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Provides the status of the EC2 security group. Status can be "authorizing",
      * "authorized", "revoking", and "revoked".</p>
@@ -93,6 +94,7 @@ namespace Model
      */
     inline EC2SecurityGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>Specifies the name of the EC2 security group.</p>
      */
@@ -128,6 +130,7 @@ namespace Model
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupName(const char* value) { SetEC2SecurityGroupName(value); return *this;}
 
+
     /**
      * <p>Specifies the id of the EC2 security group.</p>
      */
@@ -162,6 +165,7 @@ namespace Model
      * <p>Specifies the id of the EC2 security group.</p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupId(const char* value) { SetEC2SecurityGroupId(value); return *this;}
+
 
     /**
      * <p> Specifies the AWS ID of the owner of the EC2 security group specified in the
@@ -206,12 +210,16 @@ namespace Model
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
   private:
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_eC2SecurityGroupName;
     bool m_eC2SecurityGroupNameHasBeenSet;
+
     Aws::String m_eC2SecurityGroupId;
     bool m_eC2SecurityGroupIdHasBeenSet;
+
     Aws::String m_eC2SecurityGroupOwnerId;
     bool m_eC2SecurityGroupOwnerIdHasBeenSet;
   };

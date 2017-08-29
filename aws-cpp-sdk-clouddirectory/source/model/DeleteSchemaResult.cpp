@@ -30,12 +30,12 @@ DeleteSchemaResult::DeleteSchemaResult()
 {
 }
 
-DeleteSchemaResult::DeleteSchemaResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSchemaResult::DeleteSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteSchemaResult& DeleteSchemaResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSchemaResult& DeleteSchemaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SchemaArn"))

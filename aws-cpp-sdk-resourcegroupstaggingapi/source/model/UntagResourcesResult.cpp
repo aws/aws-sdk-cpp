@@ -30,12 +30,12 @@ UntagResourcesResult::UntagResourcesResult()
 {
 }
 
-UntagResourcesResult::UntagResourcesResult(const AmazonWebServiceResult<JsonValue>& result)
+UntagResourcesResult::UntagResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UntagResourcesResult& UntagResourcesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UntagResourcesResult& UntagResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FailedResourcesMap"))

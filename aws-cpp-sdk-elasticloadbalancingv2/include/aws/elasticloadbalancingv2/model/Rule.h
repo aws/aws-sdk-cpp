@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline Rule& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
+
 
     /**
      * <p>The priority.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline Rule& WithPriority(const char* value) { SetPriority(value); return *this;}
 
+
     /**
      * <p>The conditions.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The conditions.</p>
      */
     inline Rule& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The actions.</p>
@@ -191,6 +195,7 @@ namespace Model
      */
     inline Rule& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether this is the default rule.</p>
      */
@@ -207,14 +212,19 @@ namespace Model
     inline Rule& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 
   private:
+
     Aws::String m_ruleArn;
     bool m_ruleArnHasBeenSet;
+
     Aws::String m_priority;
     bool m_priorityHasBeenSet;
+
     Aws::Vector<RuleCondition> m_conditions;
     bool m_conditionsHasBeenSet;
+
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet;
+
     bool m_isDefault;
     bool m_isDefaultHasBeenSet;
   };

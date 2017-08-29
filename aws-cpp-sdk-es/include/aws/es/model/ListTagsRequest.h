@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
      * are attached that you want to view.</p>
@@ -88,6 +89,7 @@ namespace Model
     inline ListTagsRequest& WithARN(const char* value) { SetARN(value); return *this;}
 
   private:
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
   };

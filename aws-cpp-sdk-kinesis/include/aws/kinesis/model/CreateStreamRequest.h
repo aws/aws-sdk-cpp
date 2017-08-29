@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A name to identify the stream. The stream name is scoped to the AWS account
      * used by the application that creates the stream. It is also scoped by region.
@@ -103,6 +104,7 @@ namespace Model
      */
     inline CreateStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
+
     /**
      * <p>The number of shards that the stream will use. The throughput of the stream
      * is a function of the number of shards; more shards are required for greater
@@ -125,8 +127,10 @@ namespace Model
     inline CreateStreamRequest& WithShardCount(int value) { SetShardCount(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     int m_shardCount;
     bool m_shardCountHasBeenSet;
   };

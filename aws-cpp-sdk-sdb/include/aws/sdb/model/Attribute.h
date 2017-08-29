@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * The name of the attribute.
      */
@@ -82,6 +83,7 @@ namespace Model
      * The name of the attribute.
      */
     inline Attribute& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p></p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline Attribute& WithAlternateNameEncoding(const char* value) { SetAlternateNameEncoding(value); return *this;}
 
+
     /**
      * The value of the attribute.
      */
@@ -152,6 +155,7 @@ namespace Model
      * The value of the attribute.
      */
     inline Attribute& WithValue(const char* value) { SetValue(value); return *this;}
+
 
     /**
      * <p></p>
@@ -189,12 +193,16 @@ namespace Model
     inline Attribute& WithAlternateValueEncoding(const char* value) { SetAlternateValueEncoding(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_alternateNameEncoding;
     bool m_alternateNameEncodingHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     Aws::String m_alternateValueEncoding;
     bool m_alternateValueEncodingHasBeenSet;
   };

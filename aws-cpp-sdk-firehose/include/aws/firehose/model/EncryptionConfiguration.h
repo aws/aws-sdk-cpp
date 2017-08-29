@@ -47,6 +47,7 @@ namespace Model
     EncryptionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifically override existing encryption information to ensure that no
      * encryption is used.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline EncryptionConfiguration& WithNoEncryptionConfig(NoEncryptionConfig&& value) { SetNoEncryptionConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>The encryption key.</p>
      */
@@ -103,8 +105,10 @@ namespace Model
     inline EncryptionConfiguration& WithKMSEncryptionConfig(KMSEncryptionConfig&& value) { SetKMSEncryptionConfig(std::move(value)); return *this;}
 
   private:
+
     NoEncryptionConfig m_noEncryptionConfig;
     bool m_noEncryptionConfigHasBeenSet;
+
     KMSEncryptionConfig m_kMSEncryptionConfig;
     bool m_kMSEncryptionConfigHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     TimerStartedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique ID of the timer that was started.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The unique ID of the timer that was started.</p>
      */
     inline TimerStartedEventAttributes& WithTimerId(const char* value) { SetTimerId(value); return *this;}
+
 
     /**
      * <p>Data attached to the event that can be used by the decider in subsequent
@@ -123,6 +125,7 @@ namespace Model
      */
     inline TimerStartedEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 
+
     /**
      * <p>The duration of time after which the timer fires.</p> <p>The duration is
      * specified in seconds, an integer greater than or equal to <code>0</code>.</p>
@@ -165,6 +168,7 @@ namespace Model
      */
     inline TimerStartedEventAttributes& WithStartToFireTimeout(const char* value) { SetStartToFireTimeout(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
      * decision task that resulted in the <code>StartTimer</code> decision for this
@@ -190,12 +194,16 @@ namespace Model
     inline TimerStartedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
   private:
+
     Aws::String m_timerId;
     bool m_timerIdHasBeenSet;
+
     Aws::String m_control;
     bool m_controlHasBeenSet;
+
     Aws::String m_startToFireTimeout;
     bool m_startToFireTimeoutHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
   };

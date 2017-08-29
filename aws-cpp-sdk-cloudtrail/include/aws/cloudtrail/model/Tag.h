@@ -46,6 +46,7 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The key in a key-value pair. The key must be must be no longer than 128
      * Unicode characters. The key must be unique for the resource to which it
@@ -95,6 +96,7 @@ namespace Model
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The value in a key-value pair of a tag. The value must be no longer than 256
      * Unicode characters.</p>
@@ -138,8 +140,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

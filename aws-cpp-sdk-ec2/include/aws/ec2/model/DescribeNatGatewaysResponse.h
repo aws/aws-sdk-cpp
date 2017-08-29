@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeNatGatewaysResponse();
-    DescribeNatGatewaysResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeNatGatewaysResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeNatGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeNatGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the NAT gateways.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the NAT gateways.</p>
      */
     inline DescribeNatGatewaysResponse& AddNatGateways(NatGateway&& value) { m_natGateways.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -126,6 +128,7 @@ namespace Model
      */
     inline DescribeNatGatewaysResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline DescribeNatGatewaysResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<NatGateway> m_natGateways;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

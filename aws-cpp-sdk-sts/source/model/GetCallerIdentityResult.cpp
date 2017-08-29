@@ -31,12 +31,12 @@ GetCallerIdentityResult::GetCallerIdentityResult()
 {
 }
 
-GetCallerIdentityResult::GetCallerIdentityResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetCallerIdentityResult::GetCallerIdentityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetCallerIdentityResult& GetCallerIdentityResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetCallerIdentityResult& GetCallerIdentityResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

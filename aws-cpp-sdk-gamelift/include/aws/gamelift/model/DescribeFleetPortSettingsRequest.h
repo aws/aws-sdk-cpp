@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet to retrieve port settings for.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline DescribeFleetPortSettingsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
   };

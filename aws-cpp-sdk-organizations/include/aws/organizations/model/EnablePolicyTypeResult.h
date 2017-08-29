@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     EnablePolicyTypeResult();
-    EnablePolicyTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnablePolicyTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnablePolicyTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    EnablePolicyTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that shows the root with the updated list of enabled policy
@@ -72,6 +73,7 @@ namespace Model
     inline EnablePolicyTypeResult& WithRoot(Root&& value) { SetRoot(std::move(value)); return *this;}
 
   private:
+
     Root m_root;
   };
 

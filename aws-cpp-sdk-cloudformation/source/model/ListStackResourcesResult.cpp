@@ -31,12 +31,12 @@ ListStackResourcesResult::ListStackResourcesResult()
 {
 }
 
-ListStackResourcesResult::ListStackResourcesResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListStackResourcesResult::ListStackResourcesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListStackResourcesResult& ListStackResourcesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListStackResourcesResult& ListStackResourcesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

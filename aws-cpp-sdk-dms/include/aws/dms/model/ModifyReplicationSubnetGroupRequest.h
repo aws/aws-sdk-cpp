@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the replication instance subnet group.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline ModifyReplicationSubnetGroupRequest& WithReplicationSubnetGroupIdentifier(const char* value) { SetReplicationSubnetGroupIdentifier(value); return *this;}
 
+
     /**
      * <p>The description of the replication instance subnet group.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The description of the replication instance subnet group.</p>
      */
     inline ModifyReplicationSubnetGroupRequest& WithReplicationSubnetGroupDescription(const char* value) { SetReplicationSubnetGroupDescription(value); return *this;}
+
 
     /**
      * <p>A list of subnet IDs.</p>
@@ -151,10 +154,13 @@ namespace Model
     inline ModifyReplicationSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_replicationSubnetGroupIdentifier;
     bool m_replicationSubnetGroupIdentifierHasBeenSet;
+
     Aws::String m_replicationSubnetGroupDescription;
     bool m_replicationSubnetGroupDescriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
   };

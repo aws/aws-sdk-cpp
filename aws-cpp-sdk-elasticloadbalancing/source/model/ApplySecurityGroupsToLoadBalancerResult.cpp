@@ -31,12 +31,12 @@ ApplySecurityGroupsToLoadBalancerResult::ApplySecurityGroupsToLoadBalancerResult
 {
 }
 
-ApplySecurityGroupsToLoadBalancerResult::ApplySecurityGroupsToLoadBalancerResult(const AmazonWebServiceResult<XmlDocument>& result)
+ApplySecurityGroupsToLoadBalancerResult::ApplySecurityGroupsToLoadBalancerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ApplySecurityGroupsToLoadBalancerResult& ApplySecurityGroupsToLoadBalancerResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ApplySecurityGroupsToLoadBalancerResult& ApplySecurityGroupsToLoadBalancerResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

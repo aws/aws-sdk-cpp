@@ -114,7 +114,7 @@ GetObjectResult& GetObjectResult::operator=(GetObjectResult&& toMove)
    return *this;
 }
 
-GetObjectResult::GetObjectResult(AmazonWebServiceResult<ResponseStream>&& result) : 
+GetObjectResult::GetObjectResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
     m_deleteMarker(false),
     m_contentLength(0),
     m_missingMeta(0),
@@ -128,7 +128,7 @@ GetObjectResult::GetObjectResult(AmazonWebServiceResult<ResponseStream>&& result
   *this = std::move(result);
 }
 
-GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+GetObjectResult& GetObjectResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_body = result.TakeOwnershipOfPayload();
 

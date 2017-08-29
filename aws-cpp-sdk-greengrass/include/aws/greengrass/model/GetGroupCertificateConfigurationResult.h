@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetGroupCertificateConfigurationResult();
-    GetGroupCertificateConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGroupCertificateConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGroupCertificateConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGroupCertificateConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Amount of time when the certificate authority expires in milliseconds.
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetGroupCertificateConfigurationResult& WithCertificateAuthorityExpiryInMilliseconds(const char* value) { SetCertificateAuthorityExpiryInMilliseconds(value); return *this;}
 
+
     /**
      * Amount of time when the certificate expires in milliseconds.
      */
@@ -110,6 +112,7 @@ namespace Model
      * Amount of time when the certificate expires in milliseconds.
      */
     inline GetGroupCertificateConfigurationResult& WithCertificateExpiryInMilliseconds(const char* value) { SetCertificateExpiryInMilliseconds(value); return *this;}
+
 
     /**
      * Id of the group the certificate configuration belongs to.
@@ -147,8 +150,11 @@ namespace Model
     inline GetGroupCertificateConfigurationResult& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
   private:
+
     Aws::String m_certificateAuthorityExpiryInMilliseconds;
+
     Aws::String m_certificateExpiryInMilliseconds;
+
     Aws::String m_groupId;
   };
 

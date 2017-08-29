@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeStepResult();
-    DescribeStepResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStepResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStepResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStepResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The step details for the requested step identifier.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeStepResult& WithStep(Step&& value) { SetStep(std::move(value)); return *this;}
 
   private:
+
     Step m_step;
   };
 

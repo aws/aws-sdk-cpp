@@ -41,8 +41,9 @@ namespace Model
     GetBucketPolicyResult& operator=(const GetBucketPolicyResult&) = delete;
 
 
-    GetBucketPolicyResult(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
-    GetBucketPolicyResult& operator=(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
+    GetBucketPolicyResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    GetBucketPolicyResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+
 
 
     /**
@@ -56,7 +57,8 @@ namespace Model
     inline void ReplaceBody(Aws::IOStream* body) { m_policy = Aws::Utils::Stream::ResponseStream(body); }
     
   private:
-    Utils::Stream::ResponseStream m_policy;
+
+  Aws::Utils::Stream::ResponseStream m_policy;
   };
 
 } // namespace Model

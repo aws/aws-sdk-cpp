@@ -31,13 +31,13 @@ InitializeClusterResult::InitializeClusterResult() :
 {
 }
 
-InitializeClusterResult::InitializeClusterResult(const AmazonWebServiceResult<JsonValue>& result) : 
+InitializeClusterResult::InitializeClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_state(ClusterState::NOT_SET)
 {
   *this = result;
 }
 
-InitializeClusterResult& InitializeClusterResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+InitializeClusterResult& InitializeClusterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("State"))

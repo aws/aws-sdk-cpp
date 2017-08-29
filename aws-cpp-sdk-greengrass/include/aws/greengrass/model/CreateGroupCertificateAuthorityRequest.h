@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The client token used to request idempotent operations.
      */
@@ -70,6 +71,7 @@ namespace Model
      * The client token used to request idempotent operations.
      */
     inline CreateGroupCertificateAuthorityRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
+
 
     /**
      * The unique Id of the AWS Greengrass Group
@@ -107,8 +109,10 @@ namespace Model
     inline CreateGroupCertificateAuthorityRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
   private:
+
     Aws::String m_amznClientToken;
     bool m_amznClientTokenHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
   };

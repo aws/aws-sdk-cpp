@@ -46,6 +46,7 @@ namespace Model
     XssMatchSetSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for an <code>XssMatchSet</code>. You use
      * <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code>
@@ -130,6 +131,7 @@ namespace Model
      */
     inline XssMatchSetSummary& WithXssMatchSetId(const char* value) { SetXssMatchSetId(value); return *this;}
 
+
     /**
      * <p>The name of the <code>XssMatchSet</code>, if any, specified by
      * <code>Id</code>.</p>
@@ -173,8 +175,10 @@ namespace Model
     inline XssMatchSetSummary& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_xssMatchSetId;
     bool m_xssMatchSetIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

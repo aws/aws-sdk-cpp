@@ -48,6 +48,7 @@ namespace Model
     Backup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier (ID) of the backup.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Backup& WithBackupId(const char* value) { SetBackupId(value); return *this;}
 
+
     /**
      * <p>The state of the backup.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The state of the backup.</p>
      */
     inline Backup& WithBackupState(BackupState&& value) { SetBackupState(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier (ID) of the cluster that was backed up.</p>
@@ -143,6 +146,7 @@ namespace Model
      */
     inline Backup& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
     /**
      * <p>The date and time when the backup was created.</p>
      */
@@ -169,12 +173,16 @@ namespace Model
     inline Backup& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_backupId;
     bool m_backupIdHasBeenSet;
+
     BackupState m_backupState;
     bool m_backupStateHasBeenSet;
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::Utils::DateTime m_createTimestamp;
     bool m_createTimestampHasBeenSet;
   };

@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p> The path to the role. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -100,6 +101,7 @@ namespace Model
      */
     inline Role& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The friendly name that identifies the role.</p>
      */
@@ -134,6 +136,7 @@ namespace Model
      * <p>The friendly name that identifies the role.</p>
      */
     inline Role& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
 
     /**
      * <p> The stable and unique string identifying the role. For more information
@@ -191,6 +194,7 @@ namespace Model
      */
     inline Role& WithRoleId(const char* value) { SetRoleId(value); return *this;}
 
+
     /**
      * <p> The Amazon Resource Name (ARN) specifying the role. For more information
      * about ARNs and how to use them in policies, see <a
@@ -247,6 +251,7 @@ namespace Model
      */
     inline Role& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the role was created.</p>
@@ -276,6 +281,7 @@ namespace Model
      * date-time format</a>, when the role was created.</p>
      */
     inline Role& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The policy that grants an entity permission to assume the role.</p>
@@ -311,6 +317,7 @@ namespace Model
      * <p>The policy that grants an entity permission to assume the role.</p>
      */
     inline Role& WithAssumeRolePolicyDocument(const char* value) { SetAssumeRolePolicyDocument(value); return *this;}
+
 
     /**
      * <p>A description of the role that you provide.</p>
@@ -348,18 +355,25 @@ namespace Model
     inline Role& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_roleId;
     bool m_roleIdHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     Aws::String m_assumeRolePolicyDocument;
     bool m_assumeRolePolicyDocumentHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

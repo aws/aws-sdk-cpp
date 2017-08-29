@@ -46,6 +46,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The size of the volume, in GiB.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
     inline VolumeDetail& WithSize(long long value) { SetSize(value); return *this;}
 
   private:
+
     long long m_size;
     bool m_sizeHasBeenSet;
   };

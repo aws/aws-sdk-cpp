@@ -31,12 +31,12 @@ DeleteLoadBalancerResult::DeleteLoadBalancerResult()
 {
 }
 
-DeleteLoadBalancerResult::DeleteLoadBalancerResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteLoadBalancerResult::DeleteLoadBalancerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteLoadBalancerResult& DeleteLoadBalancerResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteLoadBalancerResult& DeleteLoadBalancerResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

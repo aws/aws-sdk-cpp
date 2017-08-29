@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the scaling policy.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline PutScalingPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
+
     /**
      * <p>The namespace of the AWS service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
@@ -110,6 +112,7 @@ namespace Model
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline PutScalingPolicyRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+
 
     /**
      * <p>The identifier of the resource associated with the scaling policy. This
@@ -265,6 +268,7 @@ namespace Model
      */
     inline PutScalingPolicyRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The scalable dimension. This string consists of the service namespace,
      * resource type, and scaling property.</p> <ul> <li> <p>
@@ -370,6 +374,7 @@ namespace Model
      */
     inline PutScalingPolicyRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
+
     /**
      * <p>The policy type. If you are creating a new policy, this parameter is
      * required. If you are updating a policy, this parameter is not required.</p>
@@ -410,6 +415,7 @@ namespace Model
      */
     inline PutScalingPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 
+
     /**
      * <p>A step scaling policy.</p> <p>This parameter is required if you are creating
      * a policy and the policy type is <code>StepScaling</code>.</p>
@@ -439,6 +445,7 @@ namespace Model
      * a policy and the policy type is <code>StepScaling</code>.</p>
      */
     inline PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { SetStepScalingPolicyConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>A target tracking policy.</p> <p>This parameter is required if you are
@@ -476,18 +483,25 @@ namespace Model
     inline PutScalingPolicyRequest& WithTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration&& value) { SetTargetTrackingScalingPolicyConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     ServiceNamespace m_serviceNamespace;
     bool m_serviceNamespaceHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     ScalableDimension m_scalableDimension;
     bool m_scalableDimensionHasBeenSet;
+
     PolicyType m_policyType;
     bool m_policyTypeHasBeenSet;
+
     StepScalingPolicyConfiguration m_stepScalingPolicyConfiguration;
     bool m_stepScalingPolicyConfigurationHasBeenSet;
+
     TargetTrackingScalingPolicyConfiguration m_targetTrackingScalingPolicyConfiguration;
     bool m_targetTrackingScalingPolicyConfigurationHasBeenSet;
   };

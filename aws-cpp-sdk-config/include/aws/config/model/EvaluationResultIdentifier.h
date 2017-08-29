@@ -46,6 +46,7 @@ namespace Model
     EvaluationResultIdentifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identifies an AWS Config rule used to evaluate an AWS resource, and provides
      * the type and ID of the evaluated resource.</p>
@@ -75,6 +76,7 @@ namespace Model
      * the type and ID of the evaluated resource.</p>
      */
     inline EvaluationResultIdentifier& WithEvaluationResultQualifier(EvaluationResultQualifier&& value) { SetEvaluationResultQualifier(std::move(value)); return *this;}
+
 
     /**
      * <p>The time of the event that triggered the evaluation of your AWS resources.
@@ -117,8 +119,10 @@ namespace Model
     inline EvaluationResultIdentifier& WithOrderingTimestamp(Aws::Utils::DateTime&& value) { SetOrderingTimestamp(std::move(value)); return *this;}
 
   private:
+
     EvaluationResultQualifier m_evaluationResultQualifier;
     bool m_evaluationResultQualifierHasBeenSet;
+
     Aws::Utils::DateTime m_orderingTimestamp;
     bool m_orderingTimestampHasBeenSet;
   };

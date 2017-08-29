@@ -46,6 +46,7 @@ namespace Model
     VpcConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The list of subnets to which a network interface is established from the
      * fleet instance.</p>
@@ -94,6 +95,7 @@ namespace Model
      */
     inline VpcConfig& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
     /**
      * <p>Security groups associated with the fleet.</p>
      */
@@ -135,8 +137,10 @@ namespace Model
     inline VpcConfig& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
   };

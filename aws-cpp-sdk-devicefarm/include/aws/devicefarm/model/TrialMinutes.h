@@ -44,6 +44,7 @@ namespace Model
     TrialMinutes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The total number of free trial minutes that the account started with.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>The total number of free trial minutes that the account started with.</p>
      */
     inline TrialMinutes& WithTotal(double value) { SetTotal(value); return *this;}
+
 
     /**
      * <p>The number of free trial minutes remaining in the account.</p>
@@ -75,8 +77,10 @@ namespace Model
     inline TrialMinutes& WithRemaining(double value) { SetRemaining(value); return *this;}
 
   private:
+
     double m_total;
     bool m_totalHasBeenSet;
+
     double m_remaining;
     bool m_remainingHasBeenSet;
   };

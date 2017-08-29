@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListAppliedSchemaArnsResult();
-    ListAppliedSchemaArnsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAppliedSchemaArnsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAppliedSchemaArnsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAppliedSchemaArnsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARNs of schemas that are applied to the directory.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ListAppliedSchemaArnsResult& AddSchemaArns(const char* value) { m_schemaArns.push_back(value); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -118,7 +120,9 @@ namespace Model
     inline ListAppliedSchemaArnsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_schemaArns;
+
     Aws::String m_nextToken;
   };
 

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the event source for which events will be returned. If not
      * specified, then all sources are included in the response.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithSourceName(const char* value) { SetSourceName(value); return *this;}
 
+
     /**
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p>
@@ -109,6 +111,7 @@ namespace Model
      * are returned.</p>
      */
     inline DescribeEventsRequest& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The beginning of the time interval to retrieve events for, specified in ISO
@@ -140,6 +143,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format.</p>
@@ -170,6 +174,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of minutes' worth of events to retrieve.</p>
      */
@@ -184,6 +189,7 @@ namespace Model
      * <p>The number of minutes' worth of events to retrieve.</p>
      */
     inline DescribeEventsRequest& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The maximum number of results to include in the response. If more results
@@ -208,6 +214,7 @@ namespace Model
      * for <code>MaxResults</code> must be between 20 and 100.</p>
      */
     inline DescribeEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>An optional token returned from a prior request. Use this token for
@@ -266,18 +273,25 @@ namespace Model
     inline DescribeEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_sourceName;
     bool m_sourceNameHasBeenSet;
+
     SourceType m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

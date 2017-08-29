@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline UpdateFolderRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the folder.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The ID of the folder.</p>
      */
     inline UpdateFolderRequest& WithFolderId(const char* value) { SetFolderId(value); return *this;}
+
 
     /**
      * <p>The name of the folder.</p>
@@ -149,6 +152,7 @@ namespace Model
      */
     inline UpdateFolderRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The ID of the parent folder.</p>
      */
@@ -184,6 +188,7 @@ namespace Model
      */
     inline UpdateFolderRequest& WithParentFolderId(const char* value) { SetParentFolderId(value); return *this;}
 
+
     /**
      * <p>The resource state of the folder. Note that only ACTIVE and RECYCLED are
      * accepted values from the API.</p>
@@ -215,14 +220,19 @@ namespace Model
     inline UpdateFolderRequest& WithResourceState(ResourceStateType&& value) { SetResourceState(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_folderId;
     bool m_folderIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_parentFolderId;
     bool m_parentFolderIdHasBeenSet;
+
     ResourceStateType m_resourceState;
     bool m_resourceStateHasBeenSet;
   };

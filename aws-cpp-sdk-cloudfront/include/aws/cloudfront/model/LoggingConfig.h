@@ -47,6 +47,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>Specifies whether you want CloudFront to save access logs to an Amazon S3
      * bucket. If you do not want to enable logging when you create a distribution or
@@ -83,6 +84,7 @@ namespace Model
      */
     inline LoggingConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
     /**
      * <p>Specifies whether you want CloudFront to include cookies in access logs,
      * specify <code>true</code> for <code>IncludeCookies</code>. If you choose to
@@ -115,6 +117,7 @@ namespace Model
      * <code>IncludeCookies</code>.</p>
      */
     inline LoggingConfig& WithIncludeCookies(bool value) { SetIncludeCookies(value); return *this;}
+
 
     /**
      * <p>The Amazon S3 bucket to store the access logs in, for example,
@@ -157,6 +160,7 @@ namespace Model
      * <code>myawslogbucket.s3.amazonaws.com</code>.</p>
      */
     inline LoggingConfig& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * <p>An optional string that you want CloudFront to prefix to the access log
@@ -222,12 +226,16 @@ namespace Model
     inline LoggingConfig& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     bool m_includeCookies;
     bool m_includeCookiesHasBeenSet;
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
   };

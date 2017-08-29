@@ -30,12 +30,12 @@ RemoveFacetFromObjectResult::RemoveFacetFromObjectResult()
 {
 }
 
-RemoveFacetFromObjectResult::RemoveFacetFromObjectResult(const AmazonWebServiceResult<JsonValue>& result)
+RemoveFacetFromObjectResult::RemoveFacetFromObjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RemoveFacetFromObjectResult& RemoveFacetFromObjectResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RemoveFacetFromObjectResult& RemoveFacetFromObjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

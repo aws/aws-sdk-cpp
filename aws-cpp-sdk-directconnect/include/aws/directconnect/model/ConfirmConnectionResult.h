@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ConfirmConnectionResult();
-    ConfirmConnectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ConfirmConnectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ConfirmConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ConfirmConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const ConnectionState& GetConnectionState() const{ return m_connectionState; }
@@ -63,6 +64,7 @@ namespace Model
     inline ConfirmConnectionResult& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
 
   private:
+
     ConnectionState m_connectionState;
   };
 

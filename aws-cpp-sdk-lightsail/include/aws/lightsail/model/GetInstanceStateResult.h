@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetInstanceStateResult();
-    GetInstanceStateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstanceStateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The state of the instance.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetInstanceStateResult& WithState(InstanceState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     InstanceState m_state;
   };
 

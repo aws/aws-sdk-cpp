@@ -55,7 +55,7 @@ enum class DatabaseMigrationServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCESS_DENIED_FAULT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCESS_DENIED_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INSUFFICIENT_RESOURCE_CAPACITY_FAULT,
   INVALID_CERTIFICATE_FAULT,
   INVALID_RESOURCE_STATE_FAULT,
@@ -73,7 +73,7 @@ enum class DatabaseMigrationServiceErrors
 };
 namespace DatabaseMigrationServiceErrorMapper
 {
-  AWS_DATABASEMIGRATIONSERVICE_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_DATABASEMIGRATIONSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace DatabaseMigrationService

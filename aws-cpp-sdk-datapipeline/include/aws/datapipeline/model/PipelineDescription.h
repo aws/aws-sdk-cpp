@@ -48,6 +48,7 @@ namespace Model
     PipelineDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a
      * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline PipelineDescription& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
 
+
     /**
      * <p>The name of the pipeline.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      * <p>The name of the pipeline.</p>
      */
     inline PipelineDescription& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A list of read-only fields that contain metadata about the pipeline: @userId,
@@ -167,6 +170,7 @@ namespace Model
      */
     inline PipelineDescription& AddFields(Field&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Description of the pipeline.</p>
      */
@@ -201,6 +205,7 @@ namespace Model
      * <p>Description of the pipeline.</p>
      */
     inline PipelineDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of tags to associated with a pipeline. Tags let you control access to
@@ -266,14 +271,19 @@ namespace Model
     inline PipelineDescription& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Field> m_fields;
     bool m_fieldsHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

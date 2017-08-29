@@ -47,6 +47,7 @@ namespace Model
     SummarizedAttackVector& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
      */
     inline SummarizedAttackVector& WithVectorType(const char* value) { SetVectorType(value); return *this;}
+
 
     /**
      * <p>The list of counters that describe the details of the attack.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline SummarizedAttackVector& AddVectorCounters(SummarizedCounter&& value) { m_vectorCountersHasBeenSet = true; m_vectorCounters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_vectorType;
     bool m_vectorTypeHasBeenSet;
+
     Aws::Vector<SummarizedCounter> m_vectorCounters;
     bool m_vectorCountersHasBeenSet;
   };

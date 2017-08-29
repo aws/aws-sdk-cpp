@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more flow log IDs.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
     inline DeleteFlowLogsRequest& AddFlowLogIds(const char* value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_flowLogIds;
     bool m_flowLogIdsHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Qualification type to update.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The ID of the Qualification type to update.</p>
      */
     inline UpdateQualificationTypeRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
+
 
     /**
      * <p>The new description of the Qualification type.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline UpdateQualificationTypeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The new status of the Qualification type - Active | Inactive</p>
      */
@@ -131,6 +134,7 @@ namespace Model
      * <p>The new status of the Qualification type - Active | Inactive</p>
      */
     inline UpdateQualificationTypeRequest& WithQualificationTypeStatus(QualificationTypeStatus&& value) { SetQualificationTypeStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The questions for the Qualification test a Worker must answer correctly to
@@ -209,6 +213,7 @@ namespace Model
      */
     inline UpdateQualificationTypeRequest& WithTest(const char* value) { SetTest(value); return *this;}
 
+
     /**
      * <p>The answers to the Qualification test specified in the Test parameter, in the
      * form of an AnswerKey data structure.</p>
@@ -251,6 +256,7 @@ namespace Model
      */
     inline UpdateQualificationTypeRequest& WithAnswerKey(const char* value) { SetAnswerKey(value); return *this;}
 
+
     /**
      * <p>The number of seconds the Worker has to complete the Qualification test,
      * starting from the time the Worker requests the Qualification.</p>
@@ -268,6 +274,7 @@ namespace Model
      * starting from the time the Worker requests the Qualification.</p>
      */
     inline UpdateQualificationTypeRequest& WithTestDurationInSeconds(long long value) { SetTestDurationInSeconds(value); return *this;}
+
 
     /**
      * <p>The amount of time, in seconds, that Workers must wait after requesting a
@@ -302,6 +309,7 @@ namespace Model
      */
     inline UpdateQualificationTypeRequest& WithRetryDelayInSeconds(long long value) { SetRetryDelayInSeconds(value); return *this;}
 
+
     /**
      * <p>Specifies whether requests for the Qualification type are granted
      * immediately, without prompting the Worker with a Qualification test.</p>
@@ -326,6 +334,7 @@ namespace Model
      */
     inline UpdateQualificationTypeRequest& WithAutoGranted(bool value) { SetAutoGranted(value); return *this;}
 
+
     /**
      * <p>The Qualification value to use for automatically granted Qualifications. This
      * parameter is used only if the AutoGranted parameter is true.</p>
@@ -345,22 +354,31 @@ namespace Model
     inline UpdateQualificationTypeRequest& WithAutoGrantedValue(int value) { SetAutoGrantedValue(value); return *this;}
 
   private:
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     QualificationTypeStatus m_qualificationTypeStatus;
     bool m_qualificationTypeStatusHasBeenSet;
+
     Aws::String m_test;
     bool m_testHasBeenSet;
+
     Aws::String m_answerKey;
     bool m_answerKeyHasBeenSet;
+
     long long m_testDurationInSeconds;
     bool m_testDurationInSecondsHasBeenSet;
+
     long long m_retryDelayInSeconds;
     bool m_retryDelayInSecondsHasBeenSet;
+
     bool m_autoGranted;
     bool m_autoGrantedHasBeenSet;
+
     int m_autoGrantedValue;
     bool m_autoGrantedValueHasBeenSet;
   };

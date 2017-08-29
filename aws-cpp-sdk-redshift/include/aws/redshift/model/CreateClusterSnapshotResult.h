@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateClusterSnapshotResult();
-    CreateClusterSnapshotResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateClusterSnapshotResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateClusterSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateClusterSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Snapshot& GetSnapshot() const{ return m_snapshot; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline CreateClusterSnapshotResult& WithSnapshot(Snapshot&& value) { SetSnapshot(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline CreateClusterSnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Snapshot m_snapshot;
+
     ResponseMetadata m_responseMetadata;
   };
 

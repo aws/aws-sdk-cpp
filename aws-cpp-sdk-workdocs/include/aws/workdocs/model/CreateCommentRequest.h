@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline CreateCommentRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the document.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The ID of the document.</p>
      */
     inline CreateCommentRequest& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
+
 
     /**
      * <p>The ID of the document version.</p>
@@ -149,6 +152,7 @@ namespace Model
      */
     inline CreateCommentRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     /**
      * <p>The ID of the parent comment.</p>
      */
@@ -183,6 +187,7 @@ namespace Model
      * <p>The ID of the parent comment.</p>
      */
     inline CreateCommentRequest& WithParentId(const char* value) { SetParentId(value); return *this;}
+
 
     /**
      * <p>The ID of the root comment in the thread.</p>
@@ -219,6 +224,7 @@ namespace Model
      */
     inline CreateCommentRequest& WithThreadId(const char* value) { SetThreadId(value); return *this;}
 
+
     /**
      * <p>The text of the comment.</p>
      */
@@ -253,6 +259,7 @@ namespace Model
      * <p>The text of the comment.</p>
      */
     inline CreateCommentRequest& WithText(const char* value) { SetText(value); return *this;}
+
 
     /**
      * <p>The visibility of the comment. Options are either PRIVATE, where the comment
@@ -294,6 +301,7 @@ namespace Model
      */
     inline CreateCommentRequest& WithVisibility(CommentVisibilityType&& value) { SetVisibility(std::move(value)); return *this;}
 
+
     /**
      * <p>Set this parameter to TRUE to send an email out to the document collaborators
      * after the comment is created.</p>
@@ -313,20 +321,28 @@ namespace Model
     inline CreateCommentRequest& WithNotifyCollaborators(bool value) { SetNotifyCollaborators(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_documentId;
     bool m_documentIdHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     Aws::String m_parentId;
     bool m_parentIdHasBeenSet;
+
     Aws::String m_threadId;
     bool m_threadIdHasBeenSet;
+
     Aws::String m_text;
     bool m_textHasBeenSet;
+
     CommentVisibilityType m_visibility;
     bool m_visibilityHasBeenSet;
+
     bool m_notifyCollaborators;
     bool m_notifyCollaboratorsHasBeenSet;
   };

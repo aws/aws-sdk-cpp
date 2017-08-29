@@ -30,12 +30,12 @@ GetBotsResult::GetBotsResult()
 {
 }
 
-GetBotsResult::GetBotsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetBotsResult::GetBotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetBotsResult& GetBotsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetBotsResult& GetBotsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("bots"))

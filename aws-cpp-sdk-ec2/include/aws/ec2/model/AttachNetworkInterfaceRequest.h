@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The index of the device for the network interface attachment.</p>
      */
@@ -56,6 +57,7 @@ namespace Model
      * <p>The index of the device for the network interface attachment.</p>
      */
     inline AttachNetworkInterfaceRequest& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
+
 
     /**
      * <p>Checks whether you have the required permissions for the action, without
@@ -80,6 +82,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline AttachNetworkInterfaceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -115,6 +118,7 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline AttachNetworkInterfaceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The ID of the network interface.</p>
@@ -152,12 +156,16 @@ namespace Model
     inline AttachNetworkInterfaceRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
   private:
+
     int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
   };

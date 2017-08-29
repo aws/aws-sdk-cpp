@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN that specifies the assessment template that you want to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteAssessmentTemplateRequest& WithAssessmentTemplateArn(const char* value) { SetAssessmentTemplateArn(value); return *this;}
 
   private:
+
     Aws::String m_assessmentTemplateArn;
     bool m_assessmentTemplateArnHasBeenSet;
   };

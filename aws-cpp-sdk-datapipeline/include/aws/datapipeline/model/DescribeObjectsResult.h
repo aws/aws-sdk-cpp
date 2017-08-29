@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeObjectsResult();
-    DescribeObjectsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeObjectsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeObjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeObjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of object definitions.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>An array of object definitions.</p>
      */
     inline DescribeObjectsResult& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjects.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The starting point for the next page of results. To view the next page of
@@ -132,6 +134,7 @@ namespace Model
      */
     inline DescribeObjectsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Indicates whether there are more results to return.</p>
      */
@@ -148,8 +151,11 @@ namespace Model
     inline DescribeObjectsResult& WithHasMoreResults(bool value) { SetHasMoreResults(value); return *this;}
 
   private:
+
     Aws::Vector<PipelineObject> m_pipelineObjects;
+
     Aws::String m_marker;
+
     bool m_hasMoreResults;
   };
 

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetOperationsForResourceResult();
-    GetOperationsForResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetOperationsForResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOperationsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetOperationsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -84,6 +85,7 @@ namespace Model
      * get operations for resource request.</p>
      */
     inline GetOperationsForResourceResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -128,7 +130,9 @@ namespace Model
     inline GetOperationsForResourceResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<Operation> m_operations;
+
     Aws::String m_nextPageToken;
   };
 

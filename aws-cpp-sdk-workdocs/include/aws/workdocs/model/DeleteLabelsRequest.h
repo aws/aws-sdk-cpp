@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the resource.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The ID of the resource.</p>
      */
     inline DeleteLabelsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
@@ -120,6 +122,7 @@ namespace Model
      */
     inline DeleteLabelsRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>List of labels to delete from the resource.</p>
      */
@@ -160,6 +163,7 @@ namespace Model
      */
     inline DeleteLabelsRequest& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 
+
     /**
      * <p>Flag to request removal of all labels from the specified resource.</p>
      */
@@ -176,12 +180,16 @@ namespace Model
     inline DeleteLabelsRequest& WithDeleteAll(bool value) { SetDeleteAll(value); return *this;}
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::Vector<Aws::String> m_labels;
     bool m_labelsHasBeenSet;
+
     bool m_deleteAll;
     bool m_deleteAllHasBeenSet;
   };

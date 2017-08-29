@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
      * the original user name.</p> <p>This parameter allows (per its <a
@@ -100,6 +101,7 @@ namespace Model
      * can also include any of the following characters: =,.@-</p>
      */
     inline UpdateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>New path for the IAM user. Include this parameter only if you're changing the
@@ -178,6 +180,7 @@ namespace Model
      */
     inline UpdateUserRequest& WithNewPath(const char* value) { SetNewPath(value); return *this;}
 
+
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
      * user's name.</p> <p>This parameter allows (per its <a
@@ -242,10 +245,13 @@ namespace Model
     inline UpdateUserRequest& WithNewUserName(const char* value) { SetNewUserName(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_newPath;
     bool m_newPathHasBeenSet;
+
     Aws::String m_newUserName;
     bool m_newUserNameHasBeenSet;
   };

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeAutoScalingInstancesResult();
-    DescribeAutoScalingInstancesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAutoScalingInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAutoScalingInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAutoScalingInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The instances.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>The instances.</p>
      */
     inline DescribeAutoScalingInstancesResult& AddAutoScalingInstances(AutoScalingInstanceDetails&& value) { m_autoScalingInstances.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeAutoScalingInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeAutoScalingInstancesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<AutoScalingInstanceDetails> m_autoScalingInstances;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

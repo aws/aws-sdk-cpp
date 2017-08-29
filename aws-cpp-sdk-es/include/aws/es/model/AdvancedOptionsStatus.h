@@ -58,6 +58,7 @@ namespace Model
     AdvancedOptionsStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Specifies the status of advanced options for the specified Elasticsearch
      * domain.</p>
@@ -130,6 +131,7 @@ namespace Model
      */
     inline AdvancedOptionsStatus& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
 
+
     /**
      * <p> Specifies the status of <code>OptionStatus</code> for advanced options for
      * the specified Elasticsearch domain.</p>
@@ -161,8 +163,10 @@ namespace Model
     inline AdvancedOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_options;
     bool m_optionsHasBeenSet;
+
     OptionStatus m_status;
     bool m_statusHasBeenSet;
   };

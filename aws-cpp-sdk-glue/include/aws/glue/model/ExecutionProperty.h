@@ -43,6 +43,7 @@ namespace Model
     ExecutionProperty& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The maximum number of concurrent runs allowed for a job.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
     inline ExecutionProperty& WithMaxConcurrentRuns(int value) { SetMaxConcurrentRuns(value); return *this;}
 
   private:
+
     int m_maxConcurrentRuns;
     bool m_maxConcurrentRunsHasBeenSet;
   };

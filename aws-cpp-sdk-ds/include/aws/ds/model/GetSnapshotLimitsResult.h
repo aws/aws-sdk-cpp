@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetSnapshotLimitsResult();
-    GetSnapshotLimitsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSnapshotLimitsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSnapshotLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSnapshotLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A <a>SnapshotLimits</a> object that contains the manual snapshot limits for
@@ -78,6 +79,7 @@ namespace Model
     inline GetSnapshotLimitsResult& WithSnapshotLimits(SnapshotLimits&& value) { SetSnapshotLimits(std::move(value)); return *this;}
 
   private:
+
     SnapshotLimits m_snapshotLimits;
   };
 

@@ -30,12 +30,12 @@ UpdateDevEndpointResult::UpdateDevEndpointResult()
 {
 }
 
-UpdateDevEndpointResult::UpdateDevEndpointResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDevEndpointResult::UpdateDevEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateDevEndpointResult& UpdateDevEndpointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDevEndpointResult& UpdateDevEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreatePlatformApplicationResult();
-    CreatePlatformApplicationResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreatePlatformApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreatePlatformApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreatePlatformApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>PlatformApplicationArn is returned.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CreatePlatformApplicationResult& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline CreatePlatformApplicationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_platformApplicationArn;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -30,12 +30,12 @@ DeleteRegistrationCodeResult::DeleteRegistrationCodeResult()
 {
 }
 
-DeleteRegistrationCodeResult::DeleteRegistrationCodeResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRegistrationCodeResult::DeleteRegistrationCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteRegistrationCodeResult& DeleteRegistrationCodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteRegistrationCodeResult& DeleteRegistrationCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

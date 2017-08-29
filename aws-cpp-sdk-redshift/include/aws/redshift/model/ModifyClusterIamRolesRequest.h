@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The unique identifier of the cluster for which you want to associate or
      * disassociate IAM roles.</p>
@@ -83,6 +84,7 @@ namespace Model
      * disassociate IAM roles.</p>
      */
     inline ModifyClusterIamRolesRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+
 
     /**
      * <p>Zero or more IAM roles to associate with the cluster. The roles must be in
@@ -139,6 +141,7 @@ namespace Model
      * with a single cluster in a single request.</p>
      */
     inline ModifyClusterIamRolesRequest& AddAddIamRoles(const char* value) { m_addIamRolesHasBeenSet = true; m_addIamRoles.push_back(value); return *this; }
+
 
     /**
      * <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You
@@ -197,10 +200,13 @@ namespace Model
     inline ModifyClusterIamRolesRequest& AddRemoveIamRoles(const char* value) { m_removeIamRolesHasBeenSet = true; m_removeIamRoles.push_back(value); return *this; }
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::Vector<Aws::String> m_addIamRoles;
     bool m_addIamRolesHasBeenSet;
+
     Aws::Vector<Aws::String> m_removeIamRoles;
     bool m_removeIamRolesHasBeenSet;
   };

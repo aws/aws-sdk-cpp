@@ -31,12 +31,12 @@ DescribeSpotPriceHistoryResponse::DescribeSpotPriceHistoryResponse()
 {
 }
 
-DescribeSpotPriceHistoryResponse::DescribeSpotPriceHistoryResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSpotPriceHistoryResponse::DescribeSpotPriceHistoryResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeSpotPriceHistoryResponse& DescribeSpotPriceHistoryResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSpotPriceHistoryResponse& DescribeSpotPriceHistoryResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

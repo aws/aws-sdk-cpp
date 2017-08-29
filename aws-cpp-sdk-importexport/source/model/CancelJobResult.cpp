@@ -32,13 +32,13 @@ CancelJobResult::CancelJobResult() :
 {
 }
 
-CancelJobResult::CancelJobResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+CancelJobResult::CancelJobResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_success(false)
 {
   *this = result;
 }
 
-CancelJobResult& CancelJobResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CancelJobResult& CancelJobResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

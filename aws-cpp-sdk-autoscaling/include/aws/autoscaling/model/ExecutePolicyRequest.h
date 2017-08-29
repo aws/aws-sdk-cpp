@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
     inline ExecutePolicyRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>The name or ARN of the policy.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline ExecutePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
+
     /**
      * <p>If this parameter is true, Auto Scaling waits for the cooldown period to
      * complete before executing the policy. Otherwise, Auto Scaling executes the
@@ -143,6 +146,7 @@ namespace Model
      * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline ExecutePolicyRequest& WithHonorCooldown(bool value) { SetHonorCooldown(value); return *this;}
+
 
     /**
      * <p>The metric value to compare to <code>BreachThreshold</code>. This enables you
@@ -180,6 +184,7 @@ namespace Model
      */
     inline ExecutePolicyRequest& WithMetricValue(double value) { SetMetricValue(value); return *this;}
 
+
     /**
      * <p>The breach threshold for the alarm.</p> <p>This parameter is required if the
      * policy type is <code>StepScaling</code> and not supported otherwise.</p>
@@ -199,14 +204,19 @@ namespace Model
     inline ExecutePolicyRequest& WithBreachThreshold(double value) { SetBreachThreshold(value); return *this;}
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     bool m_honorCooldown;
     bool m_honorCooldownHasBeenSet;
+
     double m_metricValue;
     bool m_metricValueHasBeenSet;
+
     double m_breachThreshold;
     bool m_breachThresholdHasBeenSet;
   };

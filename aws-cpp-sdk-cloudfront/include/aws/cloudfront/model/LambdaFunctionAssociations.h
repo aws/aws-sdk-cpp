@@ -57,6 +57,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The number of Lambda function associations for this cache behavior.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The number of Lambda function associations for this cache behavior.</p>
      */
     inline LambdaFunctionAssociations& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p> <b>Optional</b>: A complex type that contains
@@ -122,8 +124,10 @@ namespace Model
     inline LambdaFunctionAssociations& AddItems(LambdaFunctionAssociation&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<LambdaFunctionAssociation> m_items;
     bool m_itemsHasBeenSet;
   };

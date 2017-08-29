@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DisassociateFleetResult();
-    DisassociateFleetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateFleetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

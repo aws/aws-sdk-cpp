@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the virtual interface.</p> <p>Example: dxvif-123dfg56</p>
      * <p>Default: None</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>Default: None</p>
      */
     inline AssociateVirtualInterfaceRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
+
 
     /**
      * <p>The ID of the LAG or connection with which to associate the virtual
@@ -125,8 +127,10 @@ namespace Model
     inline AssociateVirtualInterfaceRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
   private:
+
     Aws::String m_virtualInterfaceId;
     bool m_virtualInterfaceIdHasBeenSet;
+
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
   };

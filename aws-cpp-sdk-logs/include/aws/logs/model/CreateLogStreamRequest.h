@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline CreateLogStreamRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the log stream.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline CreateLogStreamRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the domain you want to permanently delete.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
     inline DeleteDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     ProvisioningArtifactParameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The parameter key. </p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The parameter key. </p>
      */
     inline ProvisioningArtifactParameter& WithParameterKey(const char* value) { SetParameterKey(value); return *this;}
+
 
     /**
      * <p>The default value for this parameter.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ProvisioningArtifactParameter& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
+
     /**
      * <p>The parameter type.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      */
     inline ProvisioningArtifactParameter& WithParameterType(const char* value) { SetParameterType(value); return *this;}
 
+
     /**
      * <p>If this value is true, the value for this parameter is obfuscated from view
      * when the parameter is retrieved. This parameter is used to hide sensitive
@@ -172,6 +176,7 @@ namespace Model
      * information.</p>
      */
     inline ProvisioningArtifactParameter& WithIsNoEcho(bool value) { SetIsNoEcho(value); return *this;}
+
 
     /**
      * <p>The text description of the parameter.</p>
@@ -208,6 +213,7 @@ namespace Model
      */
     inline ProvisioningArtifactParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The list of constraints that the administrator has put on the parameter.</p>
      */
@@ -234,16 +240,22 @@ namespace Model
     inline ProvisioningArtifactParameter& WithParameterConstraints(ParameterConstraints&& value) { SetParameterConstraints(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_parameterKey;
     bool m_parameterKeyHasBeenSet;
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     Aws::String m_parameterType;
     bool m_parameterTypeHasBeenSet;
+
     bool m_isNoEcho;
     bool m_isNoEchoHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ParameterConstraints m_parameterConstraints;
     bool m_parameterConstraintsHasBeenSet;
   };

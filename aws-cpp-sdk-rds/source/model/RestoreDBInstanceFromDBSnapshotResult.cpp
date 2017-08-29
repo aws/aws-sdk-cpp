@@ -31,12 +31,12 @@ RestoreDBInstanceFromDBSnapshotResult::RestoreDBInstanceFromDBSnapshotResult()
 {
 }
 
-RestoreDBInstanceFromDBSnapshotResult::RestoreDBInstanceFromDBSnapshotResult(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreDBInstanceFromDBSnapshotResult::RestoreDBInstanceFromDBSnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RestoreDBInstanceFromDBSnapshotResult& RestoreDBInstanceFromDBSnapshotResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreDBInstanceFromDBSnapshotResult& RestoreDBInstanceFromDBSnapshotResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -30,12 +30,12 @@ CancelJobResult::CancelJobResult()
 {
 }
 
-CancelJobResult::CancelJobResult(const AmazonWebServiceResult<JsonValue>& result)
+CancelJobResult::CancelJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CancelJobResult& CancelJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CancelJobResult& CancelJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

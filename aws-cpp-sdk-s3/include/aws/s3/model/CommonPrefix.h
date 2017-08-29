@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
@@ -63,6 +64,7 @@ namespace Model
     inline CommonPrefix& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
   private:
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
   };

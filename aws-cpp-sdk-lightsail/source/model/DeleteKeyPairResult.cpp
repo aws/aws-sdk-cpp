@@ -30,12 +30,12 @@ DeleteKeyPairResult::DeleteKeyPairResult()
 {
 }
 
-DeleteKeyPairResult::DeleteKeyPairResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteKeyPairResult::DeleteKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteKeyPairResult& DeleteKeyPairResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteKeyPairResult& DeleteKeyPairResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operation"))

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the Config rule for which you want to delete the evaluation
      * results.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline DeleteEvaluationResultsRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
   private:
+
     Aws::String m_configRuleName;
     bool m_configRuleNameHasBeenSet;
   };

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateReplicationSubnetGroupResult();
-    CreateReplicationSubnetGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateReplicationSubnetGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateReplicationSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateReplicationSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The replication subnet group that was created.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline CreateReplicationSubnetGroupResult& WithReplicationSubnetGroup(ReplicationSubnetGroup&& value) { SetReplicationSubnetGroup(std::move(value)); return *this;}
 
   private:
+
     ReplicationSubnetGroup m_replicationSubnetGroup;
   };
 

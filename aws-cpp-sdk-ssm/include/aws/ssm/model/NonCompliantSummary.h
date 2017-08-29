@@ -46,6 +46,7 @@ namespace Model
     NonCompliantSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The total number of compliance items that are not compliant.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The total number of compliance items that are not compliant.</p>
      */
     inline NonCompliantSummary& WithNonCompliantCount(int value) { SetNonCompliantCount(value); return *this;}
+
 
     /**
      * <p>A summary of the non-compliance severity by compliance type</p>
@@ -87,8 +89,10 @@ namespace Model
     inline NonCompliantSummary& WithSeveritySummary(SeveritySummary&& value) { SetSeveritySummary(std::move(value)); return *this;}
 
   private:
+
     int m_nonCompliantCount;
     bool m_nonCompliantCountHasBeenSet;
+
     SeveritySummary m_severitySummary;
     bool m_severitySummaryHasBeenSet;
   };

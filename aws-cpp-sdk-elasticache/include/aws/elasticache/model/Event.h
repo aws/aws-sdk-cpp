@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier for the source of the event. For example, if the event
      * occurred at the cache cluster level, the identifier would be the name of the
@@ -101,6 +102,7 @@ namespace Model
      */
     inline Event& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
+
     /**
      * <p>Specifies the origin of this event - a cache cluster, a parameter group, a
      * security group, etc.</p>
@@ -130,6 +132,7 @@ namespace Model
      * security group, etc.</p>
      */
     inline Event& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The text of the event.</p>
@@ -166,6 +169,7 @@ namespace Model
      */
     inline Event& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The date and time when the event occurred.</p>
      */
@@ -192,12 +196,16 @@ namespace Model
     inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet;
+
     SourceType m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
   };

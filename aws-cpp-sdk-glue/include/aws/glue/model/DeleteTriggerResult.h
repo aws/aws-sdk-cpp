@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteTriggerResult();
-    DeleteTriggerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTriggerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTriggerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTriggerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the trigger that was deleted.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteTriggerResult& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
   };
 

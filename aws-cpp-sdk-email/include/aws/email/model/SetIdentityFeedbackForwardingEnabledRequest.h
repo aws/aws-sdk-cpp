@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identity for which to set bounce and complaint notification forwarding.
      * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline SetIdentityFeedbackForwardingEnabledRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
+
     /**
      * <p>Sets whether Amazon SES will forward bounce and complaint notifications as
      * email. <code>true</code> specifies that Amazon SES will forward bounce and
@@ -121,8 +123,10 @@ namespace Model
     inline SetIdentityFeedbackForwardingEnabledRequest& WithForwardingEnabled(bool value) { SetForwardingEnabled(value); return *this;}
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     bool m_forwardingEnabled;
     bool m_forwardingEnabledHasBeenSet;
   };

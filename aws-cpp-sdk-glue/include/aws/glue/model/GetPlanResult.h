@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetPlanResult();
-    GetPlanResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPlanResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A python script to perform the mapping.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline GetPlanResult& WithPythonScript(const char* value) { SetPythonScript(value); return *this;}
 
   private:
+
     Aws::String m_pythonScript;
   };
 

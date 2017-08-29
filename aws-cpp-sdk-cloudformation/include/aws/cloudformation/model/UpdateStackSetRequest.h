@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or unique ID of the stack set that you want to update.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      */
     inline UpdateStackSetRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
+
     /**
      * <p>A brief description of updates that you are making.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>A brief description of updates that you are making.</p>
      */
     inline UpdateStackSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The structure that contains the template body, with a minimum length of 1
@@ -183,6 +186,7 @@ namespace Model
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
      */
     inline UpdateStackSetRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+
 
     /**
      * <p>The location of the file that contains the template body. The URL must point
@@ -261,6 +265,7 @@ namespace Model
      */
     inline UpdateStackSetRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
+
     /**
      * <p>Use the existing template that's associated with the stack set that you're
      * updating.</p> <p>Conditional: You must specify only one of the following
@@ -284,6 +289,7 @@ namespace Model
      * <code>UsePreviousTemplate</code> to true. </p>
      */
     inline UpdateStackSetRequest& WithUsePreviousTemplate(bool value) { SetUsePreviousTemplate(value); return *this;}
+
 
     /**
      * <p>A list of input parameters for the stack set template. </p>
@@ -319,6 +325,7 @@ namespace Model
      * <p>A list of input parameters for the stack set template. </p>
      */
     inline UpdateStackSetRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of values that you must specify before AWS CloudFormation can create
@@ -480,6 +487,7 @@ namespace Model
      * IAM Resources in AWS CloudFormation Templates.</a> </p>
      */
     inline UpdateStackSetRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The key-value pairs to associate with this stack set and the stacks created
@@ -656,6 +664,7 @@ namespace Model
      */
     inline UpdateStackSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
      */
@@ -680,6 +689,7 @@ namespace Model
      * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
      */
     inline UpdateStackSetRequest& WithOperationPreferences(StackSetOperationPreferences&& value) { SetOperationPreferences(std::move(value)); return *this;}
+
 
     /**
      * <p>The unique ID for this stack set operation. </p> <p>The operation ID also
@@ -766,24 +776,34 @@ namespace Model
     inline UpdateStackSetRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
   private:
+
     Aws::String m_stackSetName;
     bool m_stackSetNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_templateBody;
     bool m_templateBodyHasBeenSet;
+
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet;
+
     bool m_usePreviousTemplate;
     bool m_usePreviousTemplateHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Vector<Capability> m_capabilities;
     bool m_capabilitiesHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     StackSetOperationPreferences m_operationPreferences;
     bool m_operationPreferencesHasBeenSet;
+
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet;
   };

@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the environment to restart the server for.</p> <p> Condition: You
      * must specify either this or an EnvironmentName, or both. If you do not specify
@@ -96,6 +97,7 @@ namespace Model
      * error. </p>
      */
     inline RestartAppServerRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+
 
     /**
      * <p>The name of the environment to restart the server for.</p> <p> Condition: You
@@ -154,8 +156,10 @@ namespace Model
     inline RestartAppServerRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
   private:
+
     Aws::String m_environmentId;
     bool m_environmentIdHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
   };

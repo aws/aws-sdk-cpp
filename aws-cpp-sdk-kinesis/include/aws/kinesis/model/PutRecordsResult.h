@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     PutRecordsResult();
-    PutRecordsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRecordsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
@@ -65,6 +66,7 @@ namespace Model
      * request.</p>
      */
     inline PutRecordsResult& WithFailedRecordCount(int value) { SetFailedRecordCount(value); return *this;}
+
 
     /**
      * <p>An array of successfully and unsuccessfully processed record results,
@@ -129,6 +131,7 @@ namespace Model
      */
     inline PutRecordsResult& AddRecords(PutRecordsResultEntry&& value) { m_records.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The encryption type used on the records. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
@@ -170,8 +173,11 @@ namespace Model
     inline PutRecordsResult& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 
   private:
+
     int m_failedRecordCount;
+
     Aws::Vector<PutRecordsResultEntry> m_records;
+
     EncryptionType m_encryptionType;
   };
 

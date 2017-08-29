@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListDevicePoolsResult();
-    ListDevicePoolsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDevicePoolsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDevicePoolsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDevicePoolsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the device pools.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the device pools.</p>
      */
     inline ListDevicePoolsResult& AddDevicePools(DevicePool&& value) { m_devicePools.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
@@ -134,7 +136,9 @@ namespace Model
     inline ListDevicePoolsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<DevicePool> m_devicePools;
+
     Aws::String m_nextToken;
   };
 

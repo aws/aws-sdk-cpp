@@ -46,6 +46,7 @@ namespace Model
     EntityAggregate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the event. Format:
      * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i>
@@ -102,6 +103,7 @@ namespace Model
      */
     inline EntityAggregate& WithEventArn(const char* value) { SetEventArn(value); return *this;}
 
+
     /**
      * <p>The number entities that match the criteria for the specified events.</p>
      */
@@ -118,8 +120,10 @@ namespace Model
     inline EntityAggregate& WithCount(int value) { SetCount(value); return *this;}
 
   private:
+
     Aws::String m_eventArn;
     bool m_eventArnHasBeenSet;
+
     int m_count;
     bool m_countHasBeenSet;
   };

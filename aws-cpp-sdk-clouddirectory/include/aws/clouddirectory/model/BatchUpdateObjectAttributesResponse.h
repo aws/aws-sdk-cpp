@@ -46,6 +46,7 @@ namespace Model
     BatchUpdateObjectAttributesResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>ID that is associated with the object.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline BatchUpdateObjectAttributesResponse& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_objectIdentifier;
     bool m_objectIdentifierHasBeenSet;
   };

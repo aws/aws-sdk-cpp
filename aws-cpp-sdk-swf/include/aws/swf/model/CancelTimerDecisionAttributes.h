@@ -59,6 +59,7 @@ namespace Model
     CancelTimerDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The unique ID of the timer to cancel.</p>
      */
@@ -95,6 +96,7 @@ namespace Model
     inline CancelTimerDecisionAttributes& WithTimerId(const char* value) { SetTimerId(value); return *this;}
 
   private:
+
     Aws::String m_timerId;
     bool m_timerIdHasBeenSet;
   };

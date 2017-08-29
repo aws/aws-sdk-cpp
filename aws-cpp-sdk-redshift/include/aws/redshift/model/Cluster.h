@@ -62,6 +62,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The unique identifier of the cluster.</p>
      */
@@ -97,6 +98,7 @@ namespace Model
      */
     inline Cluster& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The node type for the nodes in the cluster.</p>
      */
@@ -131,6 +133,7 @@ namespace Model
      * <p>The node type for the nodes in the cluster.</p>
      */
     inline Cluster& WithNodeType(const char* value) { SetNodeType(value); return *this;}
+
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
@@ -244,6 +247,7 @@ namespace Model
      */
     inline Cluster& WithClusterStatus(const char* value) { SetClusterStatus(value); return *this;}
 
+
     /**
      * <p>The status of a modify operation, if any, initiated for the cluster.</p>
      */
@@ -278,6 +282,7 @@ namespace Model
      * <p>The status of a modify operation, if any, initiated for the cluster.</p>
      */
     inline Cluster& WithModifyStatus(const char* value) { SetModifyStatus(value); return *this;}
+
 
     /**
      * <p>The master user name for the cluster. This name is used to connect to the
@@ -320,6 +325,7 @@ namespace Model
      * database that is specified in the <b>DBName</b> parameter. </p>
      */
     inline Cluster& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
+
 
     /**
      * <p>The name of the initial database that was created when the cluster was
@@ -377,6 +383,7 @@ namespace Model
      */
     inline Cluster& WithDBName(const char* value) { SetDBName(value); return *this;}
 
+
     /**
      * <p>The connection endpoint.</p>
      */
@@ -401,6 +408,7 @@ namespace Model
      * <p>The connection endpoint.</p>
      */
     inline Cluster& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time that the cluster was created.</p>
@@ -427,6 +435,7 @@ namespace Model
      */
     inline Cluster& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of days that automatic cluster snapshots are retained.</p>
      */
@@ -441,6 +450,7 @@ namespace Model
      * <p>The number of days that automatic cluster snapshots are retained.</p>
      */
     inline Cluster& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+
 
     /**
      * <p>A list of cluster security group that are associated with the cluster. Each
@@ -519,6 +529,7 @@ namespace Model
      */
     inline Cluster& AddClusterSecurityGroups(ClusterSecurityGroupMembership&& value) { m_clusterSecurityGroupsHasBeenSet = true; m_clusterSecurityGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are
      * associated with the cluster. This parameter is returned only if the cluster is
@@ -568,6 +579,7 @@ namespace Model
      */
     inline Cluster& AddVpcSecurityGroups(VpcSecurityGroupMembership&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The list of cluster parameter groups that are associated with this cluster.
      * Each parameter group in the list is returned with its status.</p>
@@ -609,6 +621,7 @@ namespace Model
      * Each parameter group in the list is returned with its status.</p>
      */
     inline Cluster& AddClusterParameterGroups(ClusterParameterGroupStatus&& value) { m_clusterParameterGroupsHasBeenSet = true; m_clusterParameterGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The name of the subnet group that is associated with the cluster. This
@@ -652,6 +665,7 @@ namespace Model
      */
     inline Cluster& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>The identifier of the VPC the cluster is in, if the cluster is in a VPC.</p>
      */
@@ -687,6 +701,7 @@ namespace Model
      */
     inline Cluster& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>The name of the Availability Zone in which the cluster is located.</p>
      */
@@ -721,6 +736,7 @@ namespace Model
      * <p>The name of the Availability Zone in which the cluster is located.</p>
      */
     inline Cluster& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>The weekly time range, in Universal Coordinated Time (UTC), during which
@@ -764,6 +780,7 @@ namespace Model
      */
     inline Cluster& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>A value that, if present, indicates that changes to the cluster are pending.
      * Specific pending changes are identified by subelements.</p>
@@ -793,6 +810,7 @@ namespace Model
      * Specific pending changes are identified by subelements.</p>
      */
     inline Cluster& WithPendingModifiedValues(PendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
+
 
     /**
      * <p>The version ID of the Amazon Redshift engine that is running on the
@@ -836,6 +854,7 @@ namespace Model
      */
     inline Cluster& WithClusterVersion(const char* value) { SetClusterVersion(value); return *this;}
 
+
     /**
      * <p>A Boolean value that, if <code>true</code>, indicates that major version
      * upgrades will be applied automatically to the cluster during the maintenance
@@ -857,6 +876,7 @@ namespace Model
      */
     inline Cluster& WithAllowVersionUpgrade(bool value) { SetAllowVersionUpgrade(value); return *this;}
 
+
     /**
      * <p>The number of compute nodes in the cluster.</p>
      */
@@ -871,6 +891,7 @@ namespace Model
      * <p>The number of compute nodes in the cluster.</p>
      */
     inline Cluster& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
+
 
     /**
      * <p>A Boolean value that, if <code>true</code>, indicates that the cluster can be
@@ -890,6 +911,7 @@ namespace Model
      */
     inline Cluster& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
+
     /**
      * <p>A Boolean value that, if <code>true</code>, indicates that data in the
      * cluster is encrypted at rest.</p>
@@ -907,6 +929,7 @@ namespace Model
      * cluster is encrypted at rest.</p>
      */
     inline Cluster& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>A value that describes the status of a cluster restore action. This parameter
@@ -937,6 +960,7 @@ namespace Model
      * returns null if the cluster was not created by restoring a snapshot.</p>
      */
     inline Cluster& WithRestoreStatus(RestoreStatus&& value) { SetRestoreStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A value that reports whether the Amazon Redshift cluster has finished
@@ -973,6 +997,7 @@ namespace Model
      */
     inline Cluster& WithHsmStatus(HsmStatus&& value) { SetHsmStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>A value that returns the destination region and retention period that are
      * configured for cross-region snapshot copy.</p>
@@ -1002,6 +1027,7 @@ namespace Model
      * configured for cross-region snapshot copy.</p>
      */
     inline Cluster& WithClusterSnapshotCopyStatus(ClusterSnapshotCopyStatus&& value) { SetClusterSnapshotCopyStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The public key for the cluster.</p>
@@ -1038,6 +1064,7 @@ namespace Model
      */
     inline Cluster& WithClusterPublicKey(const char* value) { SetClusterPublicKey(value); return *this;}
 
+
     /**
      * <p>The nodes in the cluster.</p>
      */
@@ -1073,6 +1100,7 @@ namespace Model
      */
     inline Cluster& AddClusterNodes(ClusterNode&& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The status of the elastic IP (EIP) address.</p>
      */
@@ -1097,6 +1125,7 @@ namespace Model
      * <p>The status of the elastic IP (EIP) address.</p>
      */
     inline Cluster& WithElasticIpStatus(ElasticIpStatus&& value) { SetElasticIpStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The specific revision number of the database in the cluster.</p>
@@ -1133,6 +1162,7 @@ namespace Model
      */
     inline Cluster& WithClusterRevisionNumber(const char* value) { SetClusterRevisionNumber(value); return *this;}
 
+
     /**
      * <p>The list of tags for the cluster.</p>
      */
@@ -1167,6 +1197,7 @@ namespace Model
      * <p>The list of tags for the cluster.</p>
      */
     inline Cluster& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
@@ -1210,6 +1241,7 @@ namespace Model
      */
     inline Cluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
@@ -1242,6 +1274,7 @@ namespace Model
      * false</p>
      */
     inline Cluster& WithEnhancedVpcRouting(bool value) { SetEnhancedVpcRouting(value); return *this;}
+
 
     /**
      * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
@@ -1286,70 +1319,103 @@ namespace Model
     inline Cluster& AddIamRoles(ClusterIamRole&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     Aws::String m_clusterStatus;
     bool m_clusterStatusHasBeenSet;
+
     Aws::String m_modifyStatus;
     bool m_modifyStatusHasBeenSet;
+
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;
+
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
+
     Endpoint m_endpoint;
     bool m_endpointHasBeenSet;
+
     Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
+
     int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+
     Aws::Vector<ClusterSecurityGroupMembership> m_clusterSecurityGroups;
     bool m_clusterSecurityGroupsHasBeenSet;
+
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
     bool m_vpcSecurityGroupsHasBeenSet;
+
     Aws::Vector<ClusterParameterGroupStatus> m_clusterParameterGroups;
     bool m_clusterParameterGroupsHasBeenSet;
+
     Aws::String m_clusterSubnetGroupName;
     bool m_clusterSubnetGroupNameHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     PendingModifiedValues m_pendingModifiedValues;
     bool m_pendingModifiedValuesHasBeenSet;
+
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
+
     bool m_allowVersionUpgrade;
     bool m_allowVersionUpgradeHasBeenSet;
+
     int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
+
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     RestoreStatus m_restoreStatus;
     bool m_restoreStatusHasBeenSet;
+
     HsmStatus m_hsmStatus;
     bool m_hsmStatusHasBeenSet;
+
     ClusterSnapshotCopyStatus m_clusterSnapshotCopyStatus;
     bool m_clusterSnapshotCopyStatusHasBeenSet;
+
     Aws::String m_clusterPublicKey;
     bool m_clusterPublicKeyHasBeenSet;
+
     Aws::Vector<ClusterNode> m_clusterNodes;
     bool m_clusterNodesHasBeenSet;
+
     ElasticIpStatus m_elasticIpStatus;
     bool m_elasticIpStatusHasBeenSet;
+
     Aws::String m_clusterRevisionNumber;
     bool m_clusterRevisionNumberHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     bool m_enhancedVpcRouting;
     bool m_enhancedVpcRoutingHasBeenSet;
+
     Aws::Vector<ClusterIamRole> m_iamRoles;
     bool m_iamRolesHasBeenSet;
   };

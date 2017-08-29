@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     ListResourceRecordSetsResult();
-    ListResourceRecordSetsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListResourceRecordSetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListResourceRecordSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListResourceRecordSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about multiple resource record sets.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListResourceRecordSetsResult& AddResourceRecordSets(ResourceRecordSet&& value) { m_resourceRecordSets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A flag that indicates whether more resource record sets remain to be listed.
      * If your results were truncated, you can make a follow-up pagination request by
@@ -105,6 +107,7 @@ namespace Model
      * using the <code>NextRecordName</code> element.</p>
      */
     inline ListResourceRecordSetsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>If the results were truncated, the name of the next record in the list.</p>
@@ -148,6 +151,7 @@ namespace Model
      */
     inline ListResourceRecordSetsResult& WithNextRecordName(const char* value) { SetNextRecordName(value); return *this;}
 
+
     /**
      * <p>If the results were truncated, the type of the next record in the list.</p>
      * <p>This element is present only if <code>IsTruncated</code> is true. </p>
@@ -177,6 +181,7 @@ namespace Model
      * <p>This element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline ListResourceRecordSetsResult& WithNextRecordType(RRType&& value) { SetNextRecordType(std::move(value)); return *this;}
+
 
     /**
      * <p> <i>Weighted, latency, geolocation, and failover resource record sets
@@ -234,6 +239,7 @@ namespace Model
      */
     inline ListResourceRecordSetsResult& WithNextRecordIdentifier(const char* value) { SetNextRecordIdentifier(value); return *this;}
 
+
     /**
      * <p>The maximum number of records you requested.</p>
      */
@@ -270,11 +276,17 @@ namespace Model
     inline ListResourceRecordSetsResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::Vector<ResourceRecordSet> m_resourceRecordSets;
+
     bool m_isTruncated;
+
     Aws::String m_nextRecordName;
+
     RRType m_nextRecordType;
+
     Aws::String m_nextRecordIdentifier;
+
     Aws::String m_maxItems;
   };
 

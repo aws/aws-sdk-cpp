@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     TestInvokeMethodResult();
-    TestInvokeMethodResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TestInvokeMethodResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestInvokeMethodResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TestInvokeMethodResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The HTTP status code.</p>
@@ -64,6 +65,7 @@ namespace Model
      * <p>The HTTP status code.</p>
      */
     inline TestInvokeMethodResult& WithStatus(int value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The body of the HTTP response.</p>
@@ -99,6 +101,7 @@ namespace Model
      * <p>The body of the HTTP response.</p>
      */
     inline TestInvokeMethodResult& WithBody(const char* value) { SetBody(value); return *this;}
+
 
     /**
      * <p>The headers of the HTTP response.</p>
@@ -160,6 +163,7 @@ namespace Model
      */
     inline TestInvokeMethodResult& AddHeaders(const char* key, const char* value) { m_headers.emplace(key, value); return *this; }
 
+
     /**
      * <p>The Amazon API Gateway execution log for the test invoke request.</p>
      */
@@ -195,6 +199,7 @@ namespace Model
      */
     inline TestInvokeMethodResult& WithLog(const char* value) { SetLog(value); return *this;}
 
+
     /**
      * <p>The execution latency of the test invoke request.</p>
      */
@@ -211,10 +216,15 @@ namespace Model
     inline TestInvokeMethodResult& WithLatency(long long value) { SetLatency(value); return *this;}
 
   private:
+
     int m_status;
+
     Aws::String m_body;
+
     Aws::Map<Aws::String, Aws::String> m_headers;
+
     Aws::String m_log;
+
     long long m_latency;
   };
 

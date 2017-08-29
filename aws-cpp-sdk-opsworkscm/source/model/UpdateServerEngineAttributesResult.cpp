@@ -30,12 +30,12 @@ UpdateServerEngineAttributesResult::UpdateServerEngineAttributesResult()
 {
 }
 
-UpdateServerEngineAttributesResult::UpdateServerEngineAttributesResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateServerEngineAttributesResult::UpdateServerEngineAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateServerEngineAttributesResult& UpdateServerEngineAttributesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateServerEngineAttributesResult& UpdateServerEngineAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Server"))

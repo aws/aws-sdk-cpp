@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The type of resource to tag. Currently, the resource types that support
      * tagging on creation are <code>instance</code> and <code>volume</code>. </p>
@@ -80,6 +81,7 @@ namespace Model
      * tagging on creation are <code>instance</code> and <code>volume</code>. </p>
      */
     inline TagSpecification& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The tags to apply to the resource.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline TagSpecification& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

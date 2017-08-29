@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeClusterParameterGroupsResult();
-    DescribeClusterParameterGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeClusterParameterGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClusterParameterGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClusterParameterGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -120,6 +121,7 @@ namespace Model
      */
     inline DescribeClusterParameterGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of <a>ClusterParameterGroup</a> instances. Each instance describes one
      * cluster parameter group. </p>
@@ -162,6 +164,7 @@ namespace Model
      */
     inline DescribeClusterParameterGroupsResult& AddParameterGroups(ClusterParameterGroup&& value) { m_parameterGroups.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -178,8 +181,11 @@ namespace Model
     inline DescribeClusterParameterGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<ClusterParameterGroup> m_parameterGroups;
+
     ResponseMetadata m_responseMetadata;
   };
 

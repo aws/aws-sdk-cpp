@@ -47,6 +47,7 @@ namespace Model
     InstanceStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The current state of the instance.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline InstanceStatus& WithState(InstanceState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The details of the status change reason for the instance.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>The details of the status change reason for the instance.</p>
      */
     inline InstanceStatus& WithStateChangeReason(InstanceStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
+
 
     /**
      * <p>The timeline of the instance status over time.</p>
@@ -123,10 +126,13 @@ namespace Model
     inline InstanceStatus& WithTimeline(InstanceTimeline&& value) { SetTimeline(std::move(value)); return *this;}
 
   private:
+
     InstanceState m_state;
     bool m_stateHasBeenSet;
+
     InstanceStateChangeReason m_stateChangeReason;
     bool m_stateChangeReasonHasBeenSet;
+
     InstanceTimeline m_timeline;
     bool m_timelineHasBeenSet;
   };

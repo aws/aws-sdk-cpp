@@ -31,12 +31,12 @@ DescribeServiceAccessPoliciesResult::DescribeServiceAccessPoliciesResult()
 {
 }
 
-DescribeServiceAccessPoliciesResult::DescribeServiceAccessPoliciesResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeServiceAccessPoliciesResult::DescribeServiceAccessPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeServiceAccessPoliciesResult& DescribeServiceAccessPoliciesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeServiceAccessPoliciesResult& DescribeServiceAccessPoliciesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

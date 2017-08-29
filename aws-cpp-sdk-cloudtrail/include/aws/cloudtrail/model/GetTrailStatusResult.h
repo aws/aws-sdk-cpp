@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetTrailStatusResult();
-    GetTrailStatusResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTrailStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTrailStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTrailStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Whether the CloudTrail is currently logging AWS API calls.</p>
@@ -62,6 +63,7 @@ namespace Model
      * <p>Whether the CloudTrail is currently logging AWS API calls.</p>
      */
     inline GetTrailStatusResult& WithIsLogging(bool value) { SetIsLogging(value); return *this;}
+
 
     /**
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
@@ -154,6 +156,7 @@ namespace Model
      */
     inline GetTrailStatusResult& WithLatestDeliveryError(const char* value) { SetLatestDeliveryError(value); return *this;}
 
+
     /**
      * <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to
      * send a notification. For more information about Amazon SNS errors, see the <a
@@ -210,6 +213,7 @@ namespace Model
      */
     inline GetTrailStatusResult& WithLatestNotificationError(const char* value) { SetLatestNotificationError(value); return *this;}
 
+
     /**
      * <p>Specifies the date and time that CloudTrail last delivered log files to an
      * account's Amazon S3 bucket.</p>
@@ -239,6 +243,7 @@ namespace Model
      * account's Amazon S3 bucket.</p>
      */
     inline GetTrailStatusResult& WithLatestDeliveryTime(Aws::Utils::DateTime&& value) { SetLatestDeliveryTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the date and time of the most recent Amazon SNS notification that
@@ -270,6 +275,7 @@ namespace Model
      */
     inline GetTrailStatusResult& WithLatestNotificationTime(Aws::Utils::DateTime&& value) { SetLatestNotificationTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the most recent date and time when CloudTrail started recording API
      * calls for an AWS account.</p>
@@ -300,6 +306,7 @@ namespace Model
      */
     inline GetTrailStatusResult& WithStartLoggingTime(Aws::Utils::DateTime&& value) { SetStartLoggingTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the most recent date and time when CloudTrail stopped recording API
      * calls for an AWS account.</p>
@@ -329,6 +336,7 @@ namespace Model
      * calls for an AWS account.</p>
      */
     inline GetTrailStatusResult& WithStopLoggingTime(Aws::Utils::DateTime&& value) { SetStopLoggingTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Displays any CloudWatch Logs error that CloudTrail encountered when
@@ -372,6 +380,7 @@ namespace Model
      */
     inline GetTrailStatusResult& WithLatestCloudWatchLogsDeliveryError(const char* value) { SetLatestCloudWatchLogsDeliveryError(value); return *this;}
 
+
     /**
      * <p>Displays the most recent date and time when CloudTrail delivered logs to
      * CloudWatch Logs.</p>
@@ -402,6 +411,7 @@ namespace Model
      */
     inline GetTrailStatusResult& WithLatestCloudWatchLogsDeliveryTime(Aws::Utils::DateTime&& value) { SetLatestCloudWatchLogsDeliveryTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the date and time that CloudTrail last delivered a digest file to
      * an account's Amazon S3 bucket.</p>
@@ -431,6 +441,7 @@ namespace Model
      * an account's Amazon S3 bucket.</p>
      */
     inline GetTrailStatusResult& WithLatestDigestDeliveryTime(Aws::Utils::DateTime&& value) { SetLatestDigestDeliveryTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to
@@ -523,6 +534,7 @@ namespace Model
      */
     inline GetTrailStatusResult& WithLatestDigestDeliveryError(const char* value) { SetLatestDigestDeliveryError(value); return *this;}
 
+
     /**
      * <p>This field is deprecated.</p>
      */
@@ -557,6 +569,7 @@ namespace Model
      * <p>This field is deprecated.</p>
      */
     inline GetTrailStatusResult& WithLatestDeliveryAttemptTime(const char* value) { SetLatestDeliveryAttemptTime(value); return *this;}
+
 
     /**
      * <p>This field is deprecated.</p>
@@ -593,6 +606,7 @@ namespace Model
      */
     inline GetTrailStatusResult& WithLatestNotificationAttemptTime(const char* value) { SetLatestNotificationAttemptTime(value); return *this;}
 
+
     /**
      * <p>This field is deprecated.</p>
      */
@@ -627,6 +641,7 @@ namespace Model
      * <p>This field is deprecated.</p>
      */
     inline GetTrailStatusResult& WithLatestNotificationAttemptSucceeded(const char* value) { SetLatestNotificationAttemptSucceeded(value); return *this;}
+
 
     /**
      * <p>This field is deprecated.</p>
@@ -663,6 +678,7 @@ namespace Model
      */
     inline GetTrailStatusResult& WithLatestDeliveryAttemptSucceeded(const char* value) { SetLatestDeliveryAttemptSucceeded(value); return *this;}
 
+
     /**
      * <p>This field is deprecated.</p>
      */
@@ -697,6 +713,7 @@ namespace Model
      * <p>This field is deprecated.</p>
      */
     inline GetTrailStatusResult& WithTimeLoggingStarted(const char* value) { SetTimeLoggingStarted(value); return *this;}
+
 
     /**
      * <p>This field is deprecated.</p>
@@ -734,22 +751,39 @@ namespace Model
     inline GetTrailStatusResult& WithTimeLoggingStopped(const char* value) { SetTimeLoggingStopped(value); return *this;}
 
   private:
+
     bool m_isLogging;
+
     Aws::String m_latestDeliveryError;
+
     Aws::String m_latestNotificationError;
+
     Aws::Utils::DateTime m_latestDeliveryTime;
+
     Aws::Utils::DateTime m_latestNotificationTime;
+
     Aws::Utils::DateTime m_startLoggingTime;
+
     Aws::Utils::DateTime m_stopLoggingTime;
+
     Aws::String m_latestCloudWatchLogsDeliveryError;
+
     Aws::Utils::DateTime m_latestCloudWatchLogsDeliveryTime;
+
     Aws::Utils::DateTime m_latestDigestDeliveryTime;
+
     Aws::String m_latestDigestDeliveryError;
+
     Aws::String m_latestDeliveryAttemptTime;
+
     Aws::String m_latestNotificationAttemptTime;
+
     Aws::String m_latestNotificationAttemptSucceeded;
+
     Aws::String m_latestDeliveryAttemptSucceeded;
+
     Aws::String m_timeLoggingStarted;
+
     Aws::String m_timeLoggingStopped;
   };
 

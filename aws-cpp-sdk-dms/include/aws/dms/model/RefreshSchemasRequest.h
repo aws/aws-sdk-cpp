@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline RefreshSchemasRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
@@ -117,8 +119,10 @@ namespace Model
     inline RefreshSchemasRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 
   private:
+
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet;
+
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet;
   };

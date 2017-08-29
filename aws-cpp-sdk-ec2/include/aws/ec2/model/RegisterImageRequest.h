@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The full path to your AMI manifest in Amazon S3 storage.</p>
      */
     inline RegisterImageRequest& WithImageLocation(const char* value) { SetImageLocation(value); return *this;}
+
 
     /**
      * <p>The architecture of the AMI.</p> <p>Default: For Amazon EBS-backed AMIs,
@@ -114,6 +116,7 @@ namespace Model
      */
     inline RegisterImageRequest& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(std::move(value)); return *this;}
 
+
     /**
      * <p>One or more block device mapping entries.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      * <p>One or more block device mapping entries.</p>
      */
     inline RegisterImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A description for your AMI.</p>
@@ -184,6 +188,7 @@ namespace Model
      */
     inline RegisterImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -208,6 +213,7 @@ namespace Model
      */
     inline RegisterImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
     /**
      * <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI
      * and any instances that you launch from the AMI.</p> <p>This option is supported
@@ -231,6 +237,7 @@ namespace Model
      * launched from the AMI unreachable.</p>
      */
     inline RegisterImageRequest& WithEnaSupport(bool value) { SetEnaSupport(value); return *this;}
+
 
     /**
      * <p>The ID of the kernel.</p>
@@ -266,6 +273,7 @@ namespace Model
      * <p>The ID of the kernel.</p>
      */
     inline RegisterImageRequest& WithKernelId(const char* value) { SetKernelId(value); return *this;}
+
 
     /**
      * <p>A name for your AMI.</p> <p>Constraints: 3-128 alphanumeric characters,
@@ -315,6 +323,7 @@ namespace Model
      * dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
      */
     inline RegisterImageRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
@@ -372,6 +381,7 @@ namespace Model
      */
     inline RegisterImageRequest& AddBillingProducts(const char* value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of the RAM disk.</p>
      */
@@ -406,6 +416,7 @@ namespace Model
      * <p>The ID of the RAM disk.</p>
      */
     inline RegisterImageRequest& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
+
 
     /**
      * <p>The name of the root device (for example, <code>/dev/sda1</code>, or
@@ -448,6 +459,7 @@ namespace Model
      * <code>/dev/xvda</code>).</p>
      */
     inline RegisterImageRequest& WithRootDeviceName(const char* value) { SetRootDeviceName(value); return *this;}
+
 
     /**
      * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
@@ -512,6 +524,7 @@ namespace Model
      */
     inline RegisterImageRequest& WithSriovNetSupport(const char* value) { SetSriovNetSupport(value); return *this;}
 
+
     /**
      * <p>The type of virtualization.</p> <p>Default: <code>paravirtual</code> </p>
      */
@@ -548,30 +561,43 @@ namespace Model
     inline RegisterImageRequest& WithVirtualizationType(const char* value) { SetVirtualizationType(value); return *this;}
 
   private:
+
     Aws::String m_imageLocation;
     bool m_imageLocationHasBeenSet;
+
     ArchitectureValues m_architecture;
     bool m_architectureHasBeenSet;
+
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     bool m_enaSupport;
     bool m_enaSupportHasBeenSet;
+
     Aws::String m_kernelId;
     bool m_kernelIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_billingProducts;
     bool m_billingProductsHasBeenSet;
+
     Aws::String m_ramdiskId;
     bool m_ramdiskIdHasBeenSet;
+
     Aws::String m_rootDeviceName;
     bool m_rootDeviceNameHasBeenSet;
+
     Aws::String m_sriovNetSupport;
     bool m_sriovNetSupportHasBeenSet;
+
     Aws::String m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
   };

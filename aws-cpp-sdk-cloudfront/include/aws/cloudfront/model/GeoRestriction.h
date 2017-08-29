@@ -50,6 +50,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The method that you want to use to restrict distribution of your content by
      * country:</p> <ul> <li> <p> <code>none</code>: No geo restriction is enabled,
@@ -110,6 +111,7 @@ namespace Model
      */
     inline GeoRestriction& WithRestrictionType(GeoRestrictionType&& value) { SetRestrictionType(std::move(value)); return *this;}
 
+
     /**
      * <p>When geo restriction is <code>enabled</code>, this is the number of countries
      * in your <code>whitelist</code> or <code>blacklist</code>. Otherwise, when it is
@@ -133,6 +135,7 @@ namespace Model
      * <code>Items</code>.</p>
      */
     inline GeoRestriction& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p> A complex type that contains a <code>Location</code> element for each
@@ -263,10 +266,13 @@ namespace Model
     inline GeoRestriction& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
+
     GeoRestrictionType m_restrictionType;
     bool m_restrictionTypeHasBeenSet;
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<Aws::String> m_items;
     bool m_itemsHasBeenSet;
   };

@@ -51,6 +51,7 @@ namespace Model
     Organization& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) of an organization.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID
@@ -99,6 +100,7 @@ namespace Model
      * string requires "o-" followed by from 10 to 32 lower-case letters or digits.</p>
      */
     inline Organization& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
@@ -163,6 +165,7 @@ namespace Model
      */
     inline Organization& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>Specifies the functionality that currently is available to the organization.
      * If set to "ALL", then all features are enabled and policies can be applied to
@@ -217,6 +220,7 @@ namespace Model
      * Guide</i>.</p>
      */
     inline Organization& WithFeatureSet(OrganizationFeatureSet&& value) { SetFeatureSet(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
@@ -288,6 +292,7 @@ namespace Model
      */
     inline Organization& WithMasterAccountArn(const char* value) { SetMasterAccountArn(value); return *this;}
 
+
     /**
      * <p>The unique identifier (ID) of the master account of an organization.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
@@ -337,6 +342,7 @@ namespace Model
      */
     inline Organization& WithMasterAccountId(const char* value) { SetMasterAccountId(value); return *this;}
 
+
     /**
      * <p>The email address that is associated with the AWS account that is designated
      * as the master account for the organization.</p>
@@ -378,6 +384,7 @@ namespace Model
      * as the master account for the organization.</p>
      */
     inline Organization& WithMasterAccountEmail(const char* value) { SetMasterAccountEmail(value); return *this;}
+
 
     /**
      * <p>A list of policy types that are enabled for this organization. For example,
@@ -429,18 +436,25 @@ namespace Model
     inline Organization& AddAvailablePolicyTypes(PolicyTypeSummary&& value) { m_availablePolicyTypesHasBeenSet = true; m_availablePolicyTypes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     OrganizationFeatureSet m_featureSet;
     bool m_featureSetHasBeenSet;
+
     Aws::String m_masterAccountArn;
     bool m_masterAccountArnHasBeenSet;
+
     Aws::String m_masterAccountId;
     bool m_masterAccountIdHasBeenSet;
+
     Aws::String m_masterAccountEmail;
     bool m_masterAccountEmailHasBeenSet;
+
     Aws::Vector<PolicyTypeSummary> m_availablePolicyTypes;
     bool m_availablePolicyTypesHasBeenSet;
   };

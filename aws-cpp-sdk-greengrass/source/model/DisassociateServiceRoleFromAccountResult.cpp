@@ -30,12 +30,12 @@ DisassociateServiceRoleFromAccountResult::DisassociateServiceRoleFromAccountResu
 {
 }
 
-DisassociateServiceRoleFromAccountResult::DisassociateServiceRoleFromAccountResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateServiceRoleFromAccountResult::DisassociateServiceRoleFromAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateServiceRoleFromAccountResult& DisassociateServiceRoleFromAccountResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateServiceRoleFromAccountResult& DisassociateServiceRoleFromAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DisassociatedAt"))

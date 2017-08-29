@@ -165,35 +165,35 @@ namespace Model
         class UpdateCertificateRequest;
         class UpdateThingRequest;
 
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> AcceptCertificateTransferOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> AttachPrincipalPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> AcceptCertificateTransferOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> AttachPrincipalPolicyOutcome;
         typedef Aws::Utils::Outcome<AttachThingPrincipalResult, Aws::Client::AWSError<IoTErrors>> AttachThingPrincipalOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> CancelCertificateTransferOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> CancelCertificateTransferOutcome;
         typedef Aws::Utils::Outcome<CreateCertificateFromCsrResult, Aws::Client::AWSError<IoTErrors>> CreateCertificateFromCsrOutcome;
         typedef Aws::Utils::Outcome<CreateKeysAndCertificateResult, Aws::Client::AWSError<IoTErrors>> CreateKeysAndCertificateOutcome;
         typedef Aws::Utils::Outcome<CreatePolicyResult, Aws::Client::AWSError<IoTErrors>> CreatePolicyOutcome;
         typedef Aws::Utils::Outcome<CreatePolicyVersionResult, Aws::Client::AWSError<IoTErrors>> CreatePolicyVersionOutcome;
         typedef Aws::Utils::Outcome<CreateThingResult, Aws::Client::AWSError<IoTErrors>> CreateThingOutcome;
         typedef Aws::Utils::Outcome<CreateThingTypeResult, Aws::Client::AWSError<IoTErrors>> CreateThingTypeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> CreateTopicRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> CreateTopicRuleOutcome;
         typedef Aws::Utils::Outcome<DeleteCACertificateResult, Aws::Client::AWSError<IoTErrors>> DeleteCACertificateOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> DeleteCertificateOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> DeletePolicyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> DeletePolicyVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DeleteCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DeletePolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DeletePolicyVersionOutcome;
         typedef Aws::Utils::Outcome<DeleteRegistrationCodeResult, Aws::Client::AWSError<IoTErrors>> DeleteRegistrationCodeOutcome;
         typedef Aws::Utils::Outcome<DeleteThingResult, Aws::Client::AWSError<IoTErrors>> DeleteThingOutcome;
         typedef Aws::Utils::Outcome<DeleteThingTypeResult, Aws::Client::AWSError<IoTErrors>> DeleteThingTypeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> DeleteTopicRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DeleteTopicRuleOutcome;
         typedef Aws::Utils::Outcome<DeprecateThingTypeResult, Aws::Client::AWSError<IoTErrors>> DeprecateThingTypeOutcome;
         typedef Aws::Utils::Outcome<DescribeCACertificateResult, Aws::Client::AWSError<IoTErrors>> DescribeCACertificateOutcome;
         typedef Aws::Utils::Outcome<DescribeCertificateResult, Aws::Client::AWSError<IoTErrors>> DescribeCertificateOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointResult, Aws::Client::AWSError<IoTErrors>> DescribeEndpointOutcome;
         typedef Aws::Utils::Outcome<DescribeThingResult, Aws::Client::AWSError<IoTErrors>> DescribeThingOutcome;
         typedef Aws::Utils::Outcome<DescribeThingTypeResult, Aws::Client::AWSError<IoTErrors>> DescribeThingTypeOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> DetachPrincipalPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DetachPrincipalPolicyOutcome;
         typedef Aws::Utils::Outcome<DetachThingPrincipalResult, Aws::Client::AWSError<IoTErrors>> DetachThingPrincipalOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> DisableTopicRuleOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> EnableTopicRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> DisableTopicRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> EnableTopicRuleOutcome;
         typedef Aws::Utils::Outcome<GetLoggingOptionsResult, Aws::Client::AWSError<IoTErrors>> GetLoggingOptionsOutcome;
         typedef Aws::Utils::Outcome<GetPolicyResult, Aws::Client::AWSError<IoTErrors>> GetPolicyOutcome;
         typedef Aws::Utils::Outcome<GetPolicyVersionResult, Aws::Client::AWSError<IoTErrors>> GetPolicyVersionOutcome;
@@ -214,13 +214,13 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTopicRulesResult, Aws::Client::AWSError<IoTErrors>> ListTopicRulesOutcome;
         typedef Aws::Utils::Outcome<RegisterCACertificateResult, Aws::Client::AWSError<IoTErrors>> RegisterCACertificateOutcome;
         typedef Aws::Utils::Outcome<RegisterCertificateResult, Aws::Client::AWSError<IoTErrors>> RegisterCertificateOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> RejectCertificateTransferOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> ReplaceTopicRuleOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> SetDefaultPolicyVersionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> SetLoggingOptionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> RejectCertificateTransferOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> ReplaceTopicRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> SetDefaultPolicyVersionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> SetLoggingOptionsOutcome;
         typedef Aws::Utils::Outcome<TransferCertificateResult, Aws::Client::AWSError<IoTErrors>> TransferCertificateOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> UpdateCACertificateOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTErrors>> UpdateCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> UpdateCACertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> UpdateCertificateOutcome;
         typedef Aws::Utils::Outcome<UpdateThingResult, Aws::Client::AWSError<IoTErrors>> UpdateThingOutcome;
 
         typedef std::future<AcceptCertificateTransferOutcome> AcceptCertificateTransferOutcomeCallable;
@@ -363,22 +363,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        IoTClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        IoTClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        IoTClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        IoTClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~IoTClient();
+
 
         /**
          * <p>Accepts a pending certificate transfer. The default state of the certificate
@@ -2188,7 +2189,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AcceptCertificateTransferAsyncHelper(const Model::AcceptCertificateTransferRequest& request, const AcceptCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

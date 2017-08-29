@@ -39,6 +39,7 @@ namespace Model
     GetGatewayResponseRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetGatewayResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p><p>The response type of the associated <a>GatewayResponse</a>. Valid values
@@ -125,8 +127,10 @@ namespace Model
     inline GetGatewayResponseRequest& WithResponseType(GatewayResponseType&& value) { SetResponseType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     GatewayResponseType m_responseType;
     bool m_responseTypeHasBeenSet;
   };

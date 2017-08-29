@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ResolveAliasResult();
-    ResolveAliasResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResolveAliasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResolveAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ResolveAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Fleet identifier that is associated with the requested alias.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline ResolveAliasResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
   };
 

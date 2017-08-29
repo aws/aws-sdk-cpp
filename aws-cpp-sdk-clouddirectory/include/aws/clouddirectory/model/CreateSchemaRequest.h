@@ -34,6 +34,7 @@ namespace Model
     CreateSchemaRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name that is associated with the schema. This is unique to each account
      * and in each region.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateSchemaRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

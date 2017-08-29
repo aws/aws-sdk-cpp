@@ -30,12 +30,12 @@ UpdatePolicyResult::UpdatePolicyResult()
 {
 }
 
-UpdatePolicyResult::UpdatePolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdatePolicyResult::UpdatePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdatePolicyResult& UpdatePolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdatePolicyResult& UpdatePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Policy"))

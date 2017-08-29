@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool where you want to delete user
      * attributes.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline AdminDeleteUserAttributesRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The user name of the user from which you would like to delete attributes.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The user name of the user from which you would like to delete attributes.</p>
      */
     inline AdminDeleteUserAttributesRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>An array of strings representing the user attribute names you wish to
@@ -175,10 +178,13 @@ namespace Model
     inline AdminDeleteUserAttributesRequest& AddUserAttributeNames(const char* value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames.push_back(value); return *this; }
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::Vector<Aws::String> m_userAttributeNames;
     bool m_userAttributeNamesHasBeenSet;
   };

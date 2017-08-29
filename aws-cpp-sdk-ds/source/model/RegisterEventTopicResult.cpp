@@ -30,12 +30,12 @@ RegisterEventTopicResult::RegisterEventTopicResult()
 {
 }
 
-RegisterEventTopicResult::RegisterEventTopicResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterEventTopicResult::RegisterEventTopicResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterEventTopicResult& RegisterEventTopicResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterEventTopicResult& RegisterEventTopicResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

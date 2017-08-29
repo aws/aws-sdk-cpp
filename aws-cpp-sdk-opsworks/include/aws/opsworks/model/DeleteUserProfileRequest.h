@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteUserProfileRequest& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
 
   private:
+
     Aws::String m_iamUserArn;
     bool m_iamUserArnHasBeenSet;
   };

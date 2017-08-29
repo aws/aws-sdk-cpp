@@ -48,6 +48,7 @@ namespace Model
     InstanceAccess& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a fleet containing the instance being accessed.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>Unique identifier for a fleet containing the instance being accessed.</p>
      */
     inline InstanceAccess& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Unique identifier for an instance being accessed.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline InstanceAccess& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>IP address assigned to the instance.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      */
     inline InstanceAccess& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
+
     /**
      * <p>Operating system that is running on the instance.</p>
      */
@@ -177,6 +181,7 @@ namespace Model
      * <p>Operating system that is running on the instance.</p>
      */
     inline InstanceAccess& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+
 
     /**
      * <p>Credentials required to access the instance.</p>
@@ -204,14 +209,19 @@ namespace Model
     inline InstanceAccess& WithCredentials(InstanceCredentials&& value) { SetCredentials(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet;
+
     InstanceCredentials m_credentials;
     bool m_credentialsHasBeenSet;
   };

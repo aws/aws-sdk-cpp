@@ -47,6 +47,7 @@ namespace Model
     AssessmentRunStateChange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The last time the assessment run state changed.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The last time the assessment run state changed.</p>
      */
     inline AssessmentRunStateChange& WithStateChangedAt(Aws::Utils::DateTime&& value) { SetStateChangedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The assessment run state.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline AssessmentRunStateChange& WithState(AssessmentRunState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_stateChangedAt;
     bool m_stateChangedAtHasBeenSet;
+
     AssessmentRunState m_state;
     bool m_stateHasBeenSet;
   };

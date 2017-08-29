@@ -29,12 +29,12 @@ GetTrafficPolicyResult::GetTrafficPolicyResult()
 {
 }
 
-GetTrafficPolicyResult::GetTrafficPolicyResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetTrafficPolicyResult::GetTrafficPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetTrafficPolicyResult& GetTrafficPolicyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetTrafficPolicyResult& GetTrafficPolicyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

@@ -31,12 +31,12 @@ OptInPhoneNumberResult::OptInPhoneNumberResult()
 {
 }
 
-OptInPhoneNumberResult::OptInPhoneNumberResult(const AmazonWebServiceResult<XmlDocument>& result)
+OptInPhoneNumberResult::OptInPhoneNumberResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-OptInPhoneNumberResult& OptInPhoneNumberResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+OptInPhoneNumberResult& OptInPhoneNumberResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

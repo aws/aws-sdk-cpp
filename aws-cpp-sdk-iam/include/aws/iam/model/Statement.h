@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier of the policy that was provided as an input.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      */
     inline Statement& WithSourcePolicyId(const char* value) { SetSourcePolicyId(value); return *this;}
 
+
     /**
      * <p>The type of the policy.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The type of the policy.</p>
      */
     inline Statement& WithSourcePolicyType(PolicySourceType&& value) { SetSourcePolicyType(std::move(value)); return *this;}
+
 
     /**
      * <p>The row and column of the beginning of the <code>Statement</code> in an IAM
@@ -142,6 +145,7 @@ namespace Model
      * policy.</p>
      */
     inline Statement& WithStartPosition(Position&& value) { SetStartPosition(std::move(value)); return *this;}
+
 
     /**
      * <p>The row and column of the end of a <code>Statement</code> in an IAM
@@ -174,12 +178,16 @@ namespace Model
     inline Statement& WithEndPosition(Position&& value) { SetEndPosition(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_sourcePolicyId;
     bool m_sourcePolicyIdHasBeenSet;
+
     PolicySourceType m_sourcePolicyType;
     bool m_sourcePolicyTypeHasBeenSet;
+
     Position m_startPosition;
     bool m_startPositionHasBeenSet;
+
     Position m_endPosition;
     bool m_endPositionHasBeenSet;
   };

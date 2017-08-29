@@ -30,12 +30,12 @@ ListStepsResult::ListStepsResult()
 {
 }
 
-ListStepsResult::ListStepsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListStepsResult::ListStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListStepsResult& ListStepsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListStepsResult& ListStepsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Steps"))

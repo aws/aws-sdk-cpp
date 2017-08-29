@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM user the signing certificate belongs to.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -102,6 +103,7 @@ namespace Model
      */
     inline UpdateSigningCertificateRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The ID of the signing certificate you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -158,6 +160,7 @@ namespace Model
      */
     inline UpdateSigningCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
     /**
      * <p> The status you want to assign to the certificate. <code>Active</code> means
      * the certificate can be used for API calls to AWS, while <code>Inactive</code>
@@ -194,10 +197,13 @@ namespace Model
     inline UpdateSigningCertificateRequest& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
     StatusType m_status;
     bool m_statusHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The hourly rate of the reservation.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The hourly rate of the reservation.</p>
      */
     inline ReservationValue& WithHourlyPrice(const char* value) { SetHourlyPrice(value); return *this;}
+
 
     /**
      * <p>The balance of the total value (the sum of remainingUpfrontValue +
@@ -125,6 +127,7 @@ namespace Model
      */
     inline ReservationValue& WithRemainingTotalValue(const char* value) { SetRemainingTotalValue(value); return *this;}
 
+
     /**
      * <p>The remaining upfront cost of the reservation.</p>
      */
@@ -161,10 +164,13 @@ namespace Model
     inline ReservationValue& WithRemainingUpfrontValue(const char* value) { SetRemainingUpfrontValue(value); return *this;}
 
   private:
+
     Aws::String m_hourlyPrice;
     bool m_hourlyPriceHasBeenSet;
+
     Aws::String m_remainingTotalValue;
     bool m_remainingTotalValueHasBeenSet;
+
     Aws::String m_remainingUpfrontValue;
     bool m_remainingUpfrontValueHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     Location& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The code used to indicate the AWS Direct Connect location.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The code used to indicate the AWS Direct Connect location.</p>
      */
     inline Location& WithLocationCode(const char* value) { SetLocationCode(value); return *this;}
+
 
     /**
      * <p>The name of the AWS Direct Connect location. The name includes the colocation
@@ -124,8 +126,10 @@ namespace Model
     inline Location& WithLocationName(const char* value) { SetLocationName(value); return *this;}
 
   private:
+
     Aws::String m_locationCode;
     bool m_locationCodeHasBeenSet;
+
     Aws::String m_locationName;
     bool m_locationNameHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
     EndpointLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The city where the endpoint is located.
      */
@@ -77,6 +78,7 @@ namespace Model
      * The city where the endpoint is located.
      */
     inline EndpointLocation& WithCity(const char* value) { SetCity(value); return *this;}
+
 
     /**
      * Country according to ISO 3166-1 Alpha-2 codes. For example, US.
@@ -113,6 +115,7 @@ namespace Model
      */
     inline EndpointLocation& WithCountry(const char* value) { SetCountry(value); return *this;}
 
+
     /**
      * The latitude of the endpoint location. Rounded to one decimal (Roughly
      * corresponding to a mile).
@@ -131,6 +134,7 @@ namespace Model
      */
     inline EndpointLocation& WithLatitude(double value) { SetLatitude(value); return *this;}
 
+
     /**
      * The longitude of the endpoint location. Rounded to one decimal (Roughly
      * corresponding to a mile).
@@ -148,6 +152,7 @@ namespace Model
      * corresponding to a mile).
      */
     inline EndpointLocation& WithLongitude(double value) { SetLongitude(value); return *this;}
+
 
     /**
      * The postal code or zip code of the endpoint.
@@ -183,6 +188,7 @@ namespace Model
      * The postal code or zip code of the endpoint.
      */
     inline EndpointLocation& WithPostalCode(const char* value) { SetPostalCode(value); return *this;}
+
 
     /**
      * The region of the endpoint location. For example, corresponds to a state in US.
@@ -220,16 +226,22 @@ namespace Model
     inline EndpointLocation& WithRegion(const char* value) { SetRegion(value); return *this;}
 
   private:
+
     Aws::String m_city;
     bool m_cityHasBeenSet;
+
     Aws::String m_country;
     bool m_countryHasBeenSet;
+
     double m_latitude;
     bool m_latitudeHasBeenSet;
+
     double m_longitude;
     bool m_longitudeHasBeenSet;
+
     Aws::String m_postalCode;
     bool m_postalCodeHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
   };

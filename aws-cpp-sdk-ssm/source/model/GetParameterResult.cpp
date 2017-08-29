@@ -30,12 +30,12 @@ GetParameterResult::GetParameterResult()
 {
 }
 
-GetParameterResult::GetParameterResult(const AmazonWebServiceResult<JsonValue>& result)
+GetParameterResult::GetParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetParameterResult& GetParameterResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetParameterResult& GetParameterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Parameter"))

@@ -32,13 +32,13 @@ MoveAddressToVpcResponse::MoveAddressToVpcResponse() :
 {
 }
 
-MoveAddressToVpcResponse::MoveAddressToVpcResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+MoveAddressToVpcResponse::MoveAddressToVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_status(Status::NOT_SET)
 {
   *this = result;
 }
 
-MoveAddressToVpcResponse& MoveAddressToVpcResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+MoveAddressToVpcResponse& MoveAddressToVpcResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

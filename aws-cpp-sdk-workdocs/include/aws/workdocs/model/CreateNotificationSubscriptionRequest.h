@@ -36,6 +36,7 @@ namespace Model
     CreateNotificationSubscriptionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the organization.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the organization.</p>
      */
     inline CreateNotificationSubscriptionRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+
 
     /**
      * <p>The endpoint to receive the notifications. If the protocol is HTTPS, the
@@ -113,6 +115,7 @@ namespace Model
      */
     inline CreateNotificationSubscriptionRequest& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
+
     /**
      * <p>The protocol to use. The supported value is https, which delivers
      * JSON-encoded messasges using HTTPS POST.</p>
@@ -143,6 +146,7 @@ namespace Model
      */
     inline CreateNotificationSubscriptionRequest& WithProtocol(SubscriptionProtocolType&& value) { SetProtocol(std::move(value)); return *this;}
 
+
     /**
      * <p>The notification type.</p>
      */
@@ -169,12 +173,16 @@ namespace Model
     inline CreateNotificationSubscriptionRequest& WithSubscriptionType(SubscriptionType&& value) { SetSubscriptionType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet;
+
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
+
     SubscriptionProtocolType m_protocol;
     bool m_protocolHasBeenSet;
+
     SubscriptionType m_subscriptionType;
     bool m_subscriptionTypeHasBeenSet;
   };

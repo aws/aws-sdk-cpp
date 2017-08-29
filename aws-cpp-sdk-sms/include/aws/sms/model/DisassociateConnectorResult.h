@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DisassociateConnectorResult();
-    DisassociateConnectorResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateConnectorResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

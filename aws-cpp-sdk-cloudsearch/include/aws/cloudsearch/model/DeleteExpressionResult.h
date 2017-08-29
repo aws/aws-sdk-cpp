@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DeleteExpressionResult();
-    DeleteExpressionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteExpressionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteExpressionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteExpressionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The status of the expression being deleted.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline DeleteExpressionResult& WithExpression(ExpressionStatus&& value) { SetExpression(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline DeleteExpressionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ExpressionStatus m_expression;
+
     ResponseMetadata m_responseMetadata;
   };
 

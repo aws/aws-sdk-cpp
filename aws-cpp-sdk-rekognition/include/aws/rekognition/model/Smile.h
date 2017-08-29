@@ -44,6 +44,7 @@ namespace Model
     Smile& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Boolean value that indicates whether the face is smiling or not.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>Boolean value that indicates whether the face is smiling or not.</p>
      */
     inline Smile& WithValue(bool value) { SetValue(value); return *this;}
+
 
     /**
      * <p>Level of confidence in the determination.</p>
@@ -75,8 +77,10 @@ namespace Model
     inline Smile& WithConfidence(double value) { SetConfidence(value); return *this;}
 
   private:
+
     bool m_value;
     bool m_valueHasBeenSet;
+
     double m_confidence;
     bool m_confidenceHasBeenSet;
   };

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the client.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline GetConfigRequest& WithClientArn(const char* value) { SetClientArn(value); return *this;}
 
+
     /**
      * <p>The client version.</p>
      */
@@ -97,6 +99,7 @@ namespace Model
      * <p>The client version.</p>
      */
     inline GetConfigRequest& WithClientVersion(ClientVersion&& value) { SetClientVersion(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of ARNs that identify the high-availability partition groups that are
@@ -147,10 +150,13 @@ namespace Model
     inline GetConfigRequest& AddHapgList(const char* value) { m_hapgListHasBeenSet = true; m_hapgList.push_back(value); return *this; }
 
   private:
+
     Aws::String m_clientArn;
     bool m_clientArnHasBeenSet;
+
     ClientVersion m_clientVersion;
     bool m_clientVersionHasBeenSet;
+
     Aws::Vector<Aws::String> m_hapgList;
     bool m_hapgListHasBeenSet;
   };

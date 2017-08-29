@@ -55,7 +55,7 @@ enum class SESErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CANNOT_DELETE,
   CONFIGURATION_SET_ALREADY_EXISTS,
   CONFIGURATION_SET_DOES_NOT_EXIST,
@@ -77,7 +77,7 @@ enum class SESErrors
 };
 namespace SESErrorMapper
 {
-  AWS_SES_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_SES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace SES

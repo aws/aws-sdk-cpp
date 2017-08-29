@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>One or more unique identifiers used to query the status of an export
      * request.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeExportTasksRequest& AddExportIds(const char* value) { m_exportIdsHasBeenSet = true; m_exportIds.push_back(value); return *this; }
 
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
      * whose collected data will be exported</p> </li> </ul>
@@ -128,6 +130,7 @@ namespace Model
      */
     inline DescribeExportTasksRequest& AddFilters(ExportFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of volume results returned by
      * <code>DescribeExportTasks</code> in paginated output. When this parameter is
@@ -154,6 +157,7 @@ namespace Model
      * element.</p>
      */
     inline DescribeExportTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -219,12 +223,16 @@ namespace Model
     inline DescribeExportTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_exportIds;
     bool m_exportIdsHasBeenSet;
+
     Aws::Vector<ExportFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateJobResult();
-    UpdateJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Returns the name of the updated job.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline UpdateJobResult& WithJobName(const char* value) { SetJobName(value); return *this;}
 
   private:
+
     Aws::String m_jobName;
   };
 

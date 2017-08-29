@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the AWS DMS event notification subscription to be modified.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the AWS DMS event notification subscription to be modified.</p>
      */
     inline ModifyEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event
@@ -124,6 +126,7 @@ namespace Model
      */
     inline ModifyEventSubscriptionRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
 
+
     /**
      * <p> The type of AWS DMS resource that generates the events you want to subscribe
      * to. </p> <p>Valid values: replication-instance | migration-task</p>
@@ -165,6 +168,7 @@ namespace Model
      * to. </p> <p>Valid values: replication-instance | migration-task</p>
      */
     inline ModifyEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+
 
     /**
      * <p> A list of event categories for a source type that you want to subscribe to.
@@ -222,6 +226,7 @@ namespace Model
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
+
     /**
      * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
      */
@@ -238,14 +243,19 @@ namespace Model
     inline ModifyEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionName;
     bool m_subscriptionNameHasBeenSet;
+
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet;
+
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventCategories;
     bool m_eventCategoriesHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
   };

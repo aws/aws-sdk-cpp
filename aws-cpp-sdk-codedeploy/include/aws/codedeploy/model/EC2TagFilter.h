@@ -46,6 +46,7 @@ namespace Model
     EC2TagFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The tag filter key.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline EC2TagFilter& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The tag filter value.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The tag filter value.</p>
      */
     inline EC2TagFilter& WithValue(const char* value) { SetValue(value); return *this;}
+
 
     /**
      * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
@@ -152,10 +155,13 @@ namespace Model
     inline EC2TagFilter& WithType(EC2TagFilterType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     EC2TagFilterType m_type;
     bool m_typeHasBeenSet;
   };

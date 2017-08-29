@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The unique identifier of the reserved node offering you want to purchase.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline PurchaseReservedNodeOfferingRequest& WithReservedNodeOfferingId(const char* value) { SetReservedNodeOfferingId(value); return *this;}
 
+
     /**
      * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
      * <code>1</code> </p>
@@ -95,8 +97,10 @@ namespace Model
     inline PurchaseReservedNodeOfferingRequest& WithNodeCount(int value) { SetNodeCount(value); return *this;}
 
   private:
+
     Aws::String m_reservedNodeOfferingId;
     bool m_reservedNodeOfferingIdHasBeenSet;
+
     int m_nodeCount;
     bool m_nodeCountHasBeenSet;
   };

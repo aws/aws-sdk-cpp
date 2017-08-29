@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier of an AWS customer account authorized to restore a
      * snapshot.</p>
@@ -90,6 +91,7 @@ namespace Model
      * snapshot.</p>
      */
     inline AccountWithRestoreAccess& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
 
     /**
      * <p>The identifier of an AWS support account authorized to restore a snapshot.
@@ -134,8 +136,10 @@ namespace Model
     inline AccountWithRestoreAccess& WithAccountAlias(const char* value) { SetAccountAlias(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_accountAlias;
     bool m_accountAliasHasBeenSet;
   };

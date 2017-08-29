@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeAttachmentResult();
-    DescribeAttachmentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAttachmentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The attachment content and file name.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeAttachmentResult& WithAttachment(Attachment&& value) { SetAttachment(std::move(value)); return *this;}
 
   private:
+
     Attachment m_attachment;
   };
 

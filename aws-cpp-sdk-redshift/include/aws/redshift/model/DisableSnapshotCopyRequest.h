@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The unique identifier of the source cluster that you want to disable copying
      * of snapshots to a destination region.</p> <p>Constraints: Must be the valid name
@@ -91,6 +92,7 @@ namespace Model
     inline DisableSnapshotCopyRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
   };

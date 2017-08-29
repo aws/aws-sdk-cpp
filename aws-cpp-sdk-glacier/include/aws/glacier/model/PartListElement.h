@@ -46,6 +46,7 @@ namespace Model
     PartListElement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The byte range of a part, inclusive of the upper value of the range.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The byte range of a part, inclusive of the upper value of the range.</p>
      */
     inline PartListElement& WithRangeInBytes(const char* value) { SetRangeInBytes(value); return *this;}
+
 
     /**
      * <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This
@@ -124,8 +126,10 @@ namespace Model
     inline PartListElement& WithSHA256TreeHash(const char* value) { SetSHA256TreeHash(value); return *this;}
 
   private:
+
     Aws::String m_rangeInBytes;
     bool m_rangeInBytesHasBeenSet;
+
     Aws::String m_sHA256TreeHash;
     bool m_sHA256TreeHashHasBeenSet;
   };

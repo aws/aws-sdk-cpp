@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const LoggingEnabled& GetLoggingEnabled() const{ return m_loggingEnabled; }
 
@@ -57,6 +58,7 @@ namespace Model
     inline BucketLoggingStatus& WithLoggingEnabled(LoggingEnabled&& value) { SetLoggingEnabled(std::move(value)); return *this;}
 
   private:
+
     LoggingEnabled m_loggingEnabled;
     bool m_loggingEnabledHasBeenSet;
   };

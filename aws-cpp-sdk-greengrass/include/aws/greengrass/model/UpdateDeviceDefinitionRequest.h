@@ -34,6 +34,7 @@ namespace Model
     UpdateDeviceDefinitionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * device definition Id
      */
@@ -68,6 +69,7 @@ namespace Model
      * device definition Id
      */
     inline UpdateDeviceDefinitionRequest& WithDeviceDefinitionId(const char* value) { SetDeviceDefinitionId(value); return *this;}
+
 
     /**
      * name of the definition
@@ -105,8 +107,10 @@ namespace Model
     inline UpdateDeviceDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_deviceDefinitionId;
     bool m_deviceDefinitionIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique ID of the query execution.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetQueryExecutionRequest& WithQueryExecutionId(const char* value) { SetQueryExecutionId(value); return *this;}
 
   private:
+
     Aws::String m_queryExecutionId;
     bool m_queryExecutionIdHasBeenSet;
   };

@@ -32,14 +32,14 @@ GetSnowballUsageResult::GetSnowballUsageResult() :
 {
 }
 
-GetSnowballUsageResult::GetSnowballUsageResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetSnowballUsageResult::GetSnowballUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_snowballLimit(0),
     m_snowballsInUse(0)
 {
   *this = result;
 }
 
-GetSnowballUsageResult& GetSnowballUsageResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSnowballUsageResult& GetSnowballUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SnowballLimit"))

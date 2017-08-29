@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribePlacementGroupsResponse();
-    DescribePlacementGroupsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribePlacementGroupsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribePlacementGroupsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribePlacementGroupsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>One or more placement groups.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribePlacementGroupsResponse& AddPlacementGroups(PlacementGroup&& value) { m_placementGroups.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribePlacementGroupsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<PlacementGroup> m_placementGroups;
+
     ResponseMetadata m_responseMetadata;
   };
 

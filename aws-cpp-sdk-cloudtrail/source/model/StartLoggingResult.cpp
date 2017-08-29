@@ -30,12 +30,12 @@ StartLoggingResult::StartLoggingResult()
 {
 }
 
-StartLoggingResult::StartLoggingResult(const AmazonWebServiceResult<JsonValue>& result)
+StartLoggingResult::StartLoggingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartLoggingResult& StartLoggingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartLoggingResult& StartLoggingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

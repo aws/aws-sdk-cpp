@@ -43,6 +43,7 @@ namespace Model
     ReplicationTaskStats& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The percent complete for the full load migration task.</p>
      */
@@ -57,6 +58,7 @@ namespace Model
      * <p>The percent complete for the full load migration task.</p>
      */
     inline ReplicationTaskStats& WithFullLoadProgressPercent(int value) { SetFullLoadProgressPercent(value); return *this;}
+
 
     /**
      * <p>The elapsed time of the task, in milliseconds.</p>
@@ -73,6 +75,7 @@ namespace Model
      */
     inline ReplicationTaskStats& WithElapsedTimeMillis(long long value) { SetElapsedTimeMillis(value); return *this;}
 
+
     /**
      * <p>The number of tables loaded for this task.</p>
      */
@@ -87,6 +90,7 @@ namespace Model
      * <p>The number of tables loaded for this task.</p>
      */
     inline ReplicationTaskStats& WithTablesLoaded(int value) { SetTablesLoaded(value); return *this;}
+
 
     /**
      * <p>The number of tables currently loading for this task.</p>
@@ -103,6 +107,7 @@ namespace Model
      */
     inline ReplicationTaskStats& WithTablesLoading(int value) { SetTablesLoading(value); return *this;}
 
+
     /**
      * <p>The number of tables queued for this task.</p>
      */
@@ -117,6 +122,7 @@ namespace Model
      * <p>The number of tables queued for this task.</p>
      */
     inline ReplicationTaskStats& WithTablesQueued(int value) { SetTablesQueued(value); return *this;}
+
 
     /**
      * <p>The number of errors that have occurred during this task.</p>
@@ -134,16 +140,22 @@ namespace Model
     inline ReplicationTaskStats& WithTablesErrored(int value) { SetTablesErrored(value); return *this;}
 
   private:
+
     int m_fullLoadProgressPercent;
     bool m_fullLoadProgressPercentHasBeenSet;
+
     long long m_elapsedTimeMillis;
     bool m_elapsedTimeMillisHasBeenSet;
+
     int m_tablesLoaded;
     bool m_tablesLoadedHasBeenSet;
+
     int m_tablesLoading;
     bool m_tablesLoadingHasBeenSet;
+
     int m_tablesQueued;
     bool m_tablesQueuedHasBeenSet;
+
     int m_tablesErrored;
     bool m_tablesErroredHasBeenSet;
   };

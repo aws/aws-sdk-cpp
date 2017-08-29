@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeSnapshotsResult();
-    DescribeSnapshotsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSnapshotsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of <a>Snapshot</a> objects that were retrieved.</p> <p>It is
@@ -112,6 +113,7 @@ namespace Model
      */
     inline DescribeSnapshotsResult& AddSnapshots(Snapshot&& value) { m_snapshots.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If not null, more results are available. Pass this value in the
      * <i>NextToken</i> member of a subsequent call to <a>DescribeSnapshots</a>.</p>
@@ -155,7 +157,9 @@ namespace Model
     inline DescribeSnapshotsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Snapshot> m_snapshots;
+
     Aws::String m_nextToken;
   };
 

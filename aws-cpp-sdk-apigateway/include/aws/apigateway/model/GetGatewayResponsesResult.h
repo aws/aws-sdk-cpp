@@ -252,8 +252,9 @@ namespace Model
   {
   public:
     GetGatewayResponsesResult();
-    GetGatewayResponsesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGatewayResponsesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGatewayResponsesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGatewayResponsesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetPosition() const{ return m_position; }
@@ -275,6 +276,7 @@ namespace Model
 
     
     inline GetGatewayResponsesResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+
 
     /**
      * <p>Returns the entire collection, because of no pagination support.</p>
@@ -312,7 +314,9 @@ namespace Model
     inline GetGatewayResponsesResult& AddItems(GatewayResponse&& value) { m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_position;
+
     Aws::Vector<GatewayResponse> m_items;
   };
 

@@ -30,12 +30,12 @@ CreateGrantResult::CreateGrantResult()
 {
 }
 
-CreateGrantResult::CreateGrantResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateGrantResult::CreateGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateGrantResult& CreateGrantResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateGrantResult& CreateGrantResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GrantToken"))

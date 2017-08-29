@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     CreateSubscriberResult();
-    CreateSubscriberResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSubscriberResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSubscriberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSubscriberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

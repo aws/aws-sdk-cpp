@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetStagesResult();
-    GetStagesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetStagesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetStagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetStagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The current page of elements from this collection.</p>
@@ -86,6 +87,7 @@ namespace Model
     inline GetStagesResult& AddItem(Stage&& value) { m_item.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Stage> m_item;
   };
 

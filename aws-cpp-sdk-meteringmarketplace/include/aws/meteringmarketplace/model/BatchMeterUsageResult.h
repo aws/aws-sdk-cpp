@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     BatchMeterUsageResult();
-    BatchMeterUsageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchMeterUsageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchMeterUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchMeterUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Contains all UsageRecords processed by BatchMeterUsage. These records were
@@ -90,6 +91,7 @@ namespace Model
      * either honored by AWS Marketplace Metering Service or were invalid.</p>
      */
     inline BatchMeterUsageResult& AddResults(UsageRecordResult&& value) { m_results.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is
@@ -141,7 +143,9 @@ namespace Model
     inline BatchMeterUsageResult& AddUnprocessedRecords(UsageRecord&& value) { m_unprocessedRecords.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<UsageRecordResult> m_results;
+
     Aws::Vector<UsageRecord> m_unprocessedRecords;
   };
 

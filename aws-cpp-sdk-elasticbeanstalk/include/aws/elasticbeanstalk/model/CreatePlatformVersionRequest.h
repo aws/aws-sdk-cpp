@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of your custom platform.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The name of your custom platform.</p>
      */
     inline CreatePlatformVersionRequest& WithPlatformName(const char* value) { SetPlatformName(value); return *this;}
+
 
     /**
      * <p>The number, such as 1.0.2, for the new platform version.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline CreatePlatformVersionRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
+
     /**
      * <p>The location of the platform definition archive in Amazon S3.</p>
      */
@@ -138,6 +141,7 @@ namespace Model
      * <p>The location of the platform definition archive in Amazon S3.</p>
      */
     inline CreatePlatformVersionRequest& WithPlatformDefinitionBundle(S3Location&& value) { SetPlatformDefinitionBundle(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the builder environment.</p>
@@ -173,6 +177,7 @@ namespace Model
      * <p>The name of the builder environment.</p>
      */
     inline CreatePlatformVersionRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+
 
     /**
      * <p>The configuration option settings to apply to the builder environment.</p>
@@ -210,14 +215,19 @@ namespace Model
     inline CreatePlatformVersionRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_platformName;
     bool m_platformNameHasBeenSet;
+
     Aws::String m_platformVersion;
     bool m_platformVersionHasBeenSet;
+
     S3Location m_platformDefinitionBundle;
     bool m_platformDefinitionBundleHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
   };

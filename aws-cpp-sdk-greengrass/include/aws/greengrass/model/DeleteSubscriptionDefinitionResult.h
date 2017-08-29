@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteSubscriptionDefinitionResult();
-    DeleteSubscriptionDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSubscriptionDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSubscriptionDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteSubscriptionDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

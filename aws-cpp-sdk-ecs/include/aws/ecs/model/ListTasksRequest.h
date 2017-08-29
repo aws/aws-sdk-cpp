@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the tasks to list. If you do not specify a cluster, the default cluster is
@@ -85,6 +86,7 @@ namespace Model
      * assumed.</p>
      */
     inline ListTasksRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>The container instance ID or full Amazon Resource Name (ARN) of the container
@@ -142,6 +144,7 @@ namespace Model
      */
     inline ListTasksRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
 
+
     /**
      * <p>The name of the family with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>family</code> limits the results to tasks that
@@ -190,6 +193,7 @@ namespace Model
      * belong to that family.</p>
      */
     inline ListTasksRequest& WithFamily(const char* value) { SetFamily(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -275,6 +279,7 @@ namespace Model
      */
     inline ListTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of task results returned by <code>ListTasks</code> in
      * paginated output. When this parameter is used, <code>ListTasks</code> only
@@ -310,6 +315,7 @@ namespace Model
      * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline ListTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The <code>startedBy</code> value with which to filter the task results.
@@ -360,6 +366,7 @@ namespace Model
      */
     inline ListTasksRequest& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
+
     /**
      * <p>The name of the service with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>serviceName</code> limits the results to tasks that
@@ -408,6 +415,7 @@ namespace Model
      * belong to that service.</p>
      */
     inline ListTasksRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+
 
     /**
      * <p>The task desired status with which to filter the <code>ListTasks</code>
@@ -480,20 +488,28 @@ namespace Model
     inline ListTasksRequest& WithDesiredStatus(DesiredStatus&& value) { SetDesiredStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_containerInstance;
     bool m_containerInstanceHasBeenSet;
+
     Aws::String m_family;
     bool m_familyHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_startedBy;
     bool m_startedByHasBeenSet;
+
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet;
+
     DesiredStatus m_desiredStatus;
     bool m_desiredStatusHasBeenSet;
   };

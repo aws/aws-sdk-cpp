@@ -31,12 +31,12 @@ DeleteRuleResult::DeleteRuleResult()
 {
 }
 
-DeleteRuleResult::DeleteRuleResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteRuleResult::DeleteRuleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteRuleResult& DeleteRuleResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteRuleResult& DeleteRuleResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

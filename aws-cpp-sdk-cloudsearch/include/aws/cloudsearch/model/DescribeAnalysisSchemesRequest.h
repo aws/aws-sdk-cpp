@@ -48,6 +48,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the domain you want to describe.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the domain you want to describe.</p>
      */
     inline DescribeAnalysisSchemesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>The analysis schemes you want to describe.</p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline DescribeAnalysisSchemesRequest& AddAnalysisSchemeNames(const char* value) { m_analysisSchemeNamesHasBeenSet = true; m_analysisSchemeNames.push_back(value); return *this; }
 
+
     /**
      * <p>Whether to display the deployed configuration (<code>true</code>) or include
      * any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline DescribeAnalysisSchemesRequest& WithDeployed(bool value) { SetDeployed(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_analysisSchemeNames;
     bool m_analysisSchemeNamesHasBeenSet;
+
     bool m_deployed;
     bool m_deployedHasBeenSet;
   };

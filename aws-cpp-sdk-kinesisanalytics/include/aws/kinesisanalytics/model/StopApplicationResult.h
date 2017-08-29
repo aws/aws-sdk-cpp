@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     StopApplicationResult();
-    StopApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

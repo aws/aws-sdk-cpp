@@ -59,6 +59,7 @@ namespace Model
     CompleteWorkflowExecutionDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The result of the workflow execution. The form of the result is
      * implementation defined.</p>
@@ -102,6 +103,7 @@ namespace Model
     inline CompleteWorkflowExecutionDecisionAttributes& WithResult(const char* value) { SetResult(value); return *this;}
 
   private:
+
     Aws::String m_result;
     bool m_resultHasBeenSet;
   };

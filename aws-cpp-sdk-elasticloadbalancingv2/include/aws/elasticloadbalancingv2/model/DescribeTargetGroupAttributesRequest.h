@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DescribeTargetGroupAttributesRequest& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
 
   private:
+
     Aws::String m_targetGroupArn;
     bool m_targetGroupArnHasBeenSet;
   };

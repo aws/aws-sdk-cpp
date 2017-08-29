@@ -49,6 +49,7 @@ namespace Model
     JobFlowInstancesDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon EC2 master node instance type.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The Amazon EC2 master node instance type.</p>
      */
     inline JobFlowInstancesDetail& WithMasterInstanceType(const char* value) { SetMasterInstanceType(value); return *this;}
+
 
     /**
      * <p>The DNS name of the master node.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline JobFlowInstancesDetail& WithMasterPublicDnsName(const char* value) { SetMasterPublicDnsName(value); return *this;}
 
+
     /**
      * <p>The Amazon EC2 instance identifier of the master node.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>The Amazon EC2 instance identifier of the master node.</p>
      */
     inline JobFlowInstancesDetail& WithMasterInstanceId(const char* value) { SetMasterInstanceId(value); return *this;}
+
 
     /**
      * <p>The Amazon EC2 slave node instance type.</p>
@@ -189,6 +193,7 @@ namespace Model
      */
     inline JobFlowInstancesDetail& WithSlaveInstanceType(const char* value) { SetSlaveInstanceType(value); return *this;}
 
+
     /**
      * <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the
      * same instance serves as both the master and slave node. If the value is greater
@@ -209,6 +214,7 @@ namespace Model
      * than 1, one instance is the master node and all others are slave nodes.</p>
      */
     inline JobFlowInstancesDetail& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>Details about the instance groups in a cluster.</p>
@@ -245,6 +251,7 @@ namespace Model
      */
     inline JobFlowInstancesDetail& AddInstanceGroups(InstanceGroupDetail&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour that an m1.small runs. Larger
@@ -274,6 +281,7 @@ namespace Model
      * the actual billing rate.</p>
      */
     inline JobFlowInstancesDetail& WithNormalizedInstanceHours(int value) { SetNormalizedInstanceHours(value); return *this;}
+
 
     /**
      * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
@@ -317,6 +325,7 @@ namespace Model
      */
     inline JobFlowInstancesDetail& WithEc2KeyName(const char* value) { SetEc2KeyName(value); return *this;}
 
+
     /**
      * <p>For clusters launched within Amazon Virtual Private Cloud, this is the
      * identifier of the subnet where the cluster was launched.</p>
@@ -359,6 +368,7 @@ namespace Model
      */
     inline JobFlowInstancesDetail& WithEc2SubnetId(const char* value) { SetEc2SubnetId(value); return *this;}
 
+
     /**
      * <p>The Amazon EC2 Availability Zone for the cluster.</p>
      */
@@ -384,6 +394,7 @@ namespace Model
      */
     inline JobFlowInstancesDetail& WithPlacement(PlacementType&& value) { SetPlacement(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies whether the cluster should remain available after completing all
      * steps.</p>
@@ -401,6 +412,7 @@ namespace Model
      * steps.</p>
      */
     inline JobFlowInstancesDetail& WithKeepJobFlowAliveWhenNoSteps(bool value) { SetKeepJobFlowAliveWhenNoSteps(value); return *this;}
+
 
     /**
      * <p>Specifies whether the Amazon EC2 instances in the cluster are protected from
@@ -422,6 +434,7 @@ namespace Model
      * error.</p>
      */
     inline JobFlowInstancesDetail& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
+
 
     /**
      * <p>The Hadoop version for the cluster.</p>
@@ -459,30 +472,43 @@ namespace Model
     inline JobFlowInstancesDetail& WithHadoopVersion(const char* value) { SetHadoopVersion(value); return *this;}
 
   private:
+
     Aws::String m_masterInstanceType;
     bool m_masterInstanceTypeHasBeenSet;
+
     Aws::String m_masterPublicDnsName;
     bool m_masterPublicDnsNameHasBeenSet;
+
     Aws::String m_masterInstanceId;
     bool m_masterInstanceIdHasBeenSet;
+
     Aws::String m_slaveInstanceType;
     bool m_slaveInstanceTypeHasBeenSet;
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     Aws::Vector<InstanceGroupDetail> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet;
+
     int m_normalizedInstanceHours;
     bool m_normalizedInstanceHoursHasBeenSet;
+
     Aws::String m_ec2KeyName;
     bool m_ec2KeyNameHasBeenSet;
+
     Aws::String m_ec2SubnetId;
     bool m_ec2SubnetIdHasBeenSet;
+
     PlacementType m_placement;
     bool m_placementHasBeenSet;
+
     bool m_keepJobFlowAliveWhenNoSteps;
     bool m_keepJobFlowAliveWhenNoStepsHasBeenSet;
+
     bool m_terminationProtected;
     bool m_terminationProtectedHasBeenSet;
+
     Aws::String m_hadoopVersion;
     bool m_hadoopVersionHasBeenSet;
   };

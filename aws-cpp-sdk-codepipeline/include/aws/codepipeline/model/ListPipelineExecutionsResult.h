@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListPipelineExecutionsResult();
-    ListPipelineExecutionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPipelineExecutionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPipelineExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPipelineExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of executions in the history of a pipeline.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list of executions in the history of a pipeline.</p>
      */
     inline ListPipelineExecutionsResult& AddPipelineExecutionSummaries(PipelineExecutionSummary&& value) { m_pipelineExecutionSummaries.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token that can be used in the next list pipeline executions call to return
@@ -141,7 +143,9 @@ namespace Model
     inline ListPipelineExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PipelineExecutionSummary> m_pipelineExecutionSummaries;
+
     Aws::String m_nextToken;
   };
 

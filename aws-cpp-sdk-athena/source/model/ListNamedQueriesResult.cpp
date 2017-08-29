@@ -30,12 +30,12 @@ ListNamedQueriesResult::ListNamedQueriesResult()
 {
 }
 
-ListNamedQueriesResult::ListNamedQueriesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListNamedQueriesResult::ListNamedQueriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListNamedQueriesResult& ListNamedQueriesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListNamedQueriesResult& ListNamedQueriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NamedQueryIds"))

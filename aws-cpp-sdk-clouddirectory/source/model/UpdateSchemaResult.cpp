@@ -30,12 +30,12 @@ UpdateSchemaResult::UpdateSchemaResult()
 {
 }
 
-UpdateSchemaResult::UpdateSchemaResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateSchemaResult::UpdateSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateSchemaResult& UpdateSchemaResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateSchemaResult& UpdateSchemaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SchemaArn"))

@@ -31,12 +31,12 @@ DescribeVpcEndpointsResponse::DescribeVpcEndpointsResponse()
 {
 }
 
-DescribeVpcEndpointsResponse::DescribeVpcEndpointsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeVpcEndpointsResponse::DescribeVpcEndpointsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeVpcEndpointsResponse& DescribeVpcEndpointsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeVpcEndpointsResponse& DescribeVpcEndpointsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

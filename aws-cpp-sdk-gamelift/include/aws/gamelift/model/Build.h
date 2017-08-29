@@ -52,6 +52,7 @@ namespace Model
     Build& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a build.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>Unique identifier for a build.</p>
      */
     inline Build& WithBuildId(const char* value) { SetBuildId(value); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with a build. Build names do not need to
@@ -128,6 +130,7 @@ namespace Model
      * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Version that is associated with this build. Version strings do not need to be
@@ -177,6 +180,7 @@ namespace Model
      * <a>UpdateBuild</a>.</p>
      */
     inline Build& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>Current status of the build.</p> <p>Possible build statuses include the
@@ -238,6 +242,7 @@ namespace Model
      */
     inline Build& WithStatus(BuildStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
      * status is <code>INITIALIZED</code>, this value is 0.</p>
@@ -255,6 +260,7 @@ namespace Model
      * status is <code>INITIALIZED</code>, this value is 0.</p>
      */
     inline Build& WithSizeOnDisk(long long value) { SetSizeOnDisk(value); return *this;}
+
 
     /**
      * <p>Operating system that the game server binaries are built to run on. This
@@ -291,6 +297,7 @@ namespace Model
      */
     inline Build& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
+
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
@@ -322,18 +329,25 @@ namespace Model
     inline Build& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_buildId;
     bool m_buildIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     BuildStatus m_status;
     bool m_statusHasBeenSet;
+
     long long m_sizeOnDisk;
     bool m_sizeOnDiskHasBeenSet;
+
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
   };

@@ -31,12 +31,12 @@ DescribeClusterVersionsResult::DescribeClusterVersionsResult()
 {
 }
 
-DescribeClusterVersionsResult::DescribeClusterVersionsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeClusterVersionsResult::DescribeClusterVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeClusterVersionsResult& DescribeClusterVersionsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeClusterVersionsResult& DescribeClusterVersionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

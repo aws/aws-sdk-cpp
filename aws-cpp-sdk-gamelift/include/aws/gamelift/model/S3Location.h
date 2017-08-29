@@ -49,6 +49,7 @@ namespace Model
     S3Location& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline S3Location& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     /**
      * <p>Name of the zip file containing your build files. </p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>Name of the zip file containing your build files. </p>
      */
     inline S3Location& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>Amazon Resource Name (<a
@@ -169,10 +172,13 @@ namespace Model
     inline S3Location& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Function name whose resource policy you want to retrieve.</p> <p> You can
      * specify the function name (for example, <code>Thumbnail</code>) or you can
@@ -141,6 +142,7 @@ namespace Model
      */
     inline GetPolicyRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>You can specify this optional query parameter to specify a function version
      * or an alias name in which case this API will return all permissions associated
@@ -198,8 +200,10 @@ namespace Model
     inline GetPolicyRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet;
   };

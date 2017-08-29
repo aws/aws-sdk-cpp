@@ -46,6 +46,7 @@ namespace Model
     DomainDescriptionType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user pool ID.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The user pool ID.</p>
      */
     inline DomainDescriptionType& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The AWS account ID for the user pool owner.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline DomainDescriptionType& WithAWSAccountId(const char* value) { SetAWSAccountId(value); return *this;}
 
+
     /**
      * <p>The domain string.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>The domain string.</p>
      */
     inline DomainDescriptionType& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>The S3 bucket where the static files for this domain are stored.</p>
@@ -186,6 +190,7 @@ namespace Model
      */
     inline DomainDescriptionType& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
+
     /**
      * <p>The ARN of the CloudFront distribution.</p>
      */
@@ -220,6 +225,7 @@ namespace Model
      * <p>The ARN of the CloudFront distribution.</p>
      */
     inline DomainDescriptionType& WithCloudFrontDistribution(const char* value) { SetCloudFrontDistribution(value); return *this;}
+
 
     /**
      * <p>The app version.</p>
@@ -256,6 +262,7 @@ namespace Model
      */
     inline DomainDescriptionType& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>The domain status.</p>
      */
@@ -282,18 +289,25 @@ namespace Model
     inline DomainDescriptionType& WithStatus(DomainStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_aWSAccountId;
     bool m_aWSAccountIdHasBeenSet;
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_s3Bucket;
     bool m_s3BucketHasBeenSet;
+
     Aws::String m_cloudFrontDistribution;
     bool m_cloudFrontDistributionHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     DomainStatusType m_status;
     bool m_statusHasBeenSet;
   };

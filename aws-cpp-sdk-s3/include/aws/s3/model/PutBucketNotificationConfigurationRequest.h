@@ -35,6 +35,7 @@ namespace Model
     PutBucketNotificationConfigurationRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -56,6 +57,7 @@ namespace Model
     
     inline PutBucketNotificationConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     
     inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
 
@@ -72,8 +74,10 @@ namespace Model
     inline PutBucketNotificationConfigurationRequest& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     NotificationConfiguration m_notificationConfiguration;
     bool m_notificationConfigurationHasBeenSet;
   };

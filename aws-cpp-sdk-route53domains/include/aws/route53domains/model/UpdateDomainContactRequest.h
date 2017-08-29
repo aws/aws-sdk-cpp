@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain that you want to update contact information for.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline UpdateDomainContactRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>Provides detailed contact information.</p>
      */
@@ -101,6 +103,7 @@ namespace Model
      */
     inline UpdateDomainContactRequest& WithAdminContact(ContactDetail&& value) { SetAdminContact(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides detailed contact information.</p>
      */
@@ -125,6 +128,7 @@ namespace Model
      * <p>Provides detailed contact information.</p>
      */
     inline UpdateDomainContactRequest& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides detailed contact information.</p>
@@ -152,12 +156,16 @@ namespace Model
     inline UpdateDomainContactRequest& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     ContactDetail m_adminContact;
     bool m_adminContactHasBeenSet;
+
     ContactDetail m_registrantContact;
     bool m_registrantContactHasBeenSet;
+
     ContactDetail m_techContact;
     bool m_techContactHasBeenSet;
   };

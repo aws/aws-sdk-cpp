@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateGroupResult();
-    UpdateGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The group object for the group.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateGroupResult& WithGroup(GroupType&& value) { SetGroup(std::move(value)); return *this;}
 
   private:
+
     GroupType m_group;
   };
 

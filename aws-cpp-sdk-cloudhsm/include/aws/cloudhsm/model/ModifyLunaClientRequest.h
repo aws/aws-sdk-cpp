@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the client.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ARN of the client.</p>
      */
     inline ModifyLunaClientRequest& WithClientArn(const char* value) { SetClientArn(value); return *this;}
+
 
     /**
      * <p>The new certificate for the client.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline ModifyLunaClientRequest& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
   private:
+
     Aws::String m_clientArn;
     bool m_clientArnHasBeenSet;
+
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
   };

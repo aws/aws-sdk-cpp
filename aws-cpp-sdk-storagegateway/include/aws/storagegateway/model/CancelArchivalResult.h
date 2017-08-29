@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CancelArchivalResult();
-    CancelArchivalResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelArchivalResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelArchivalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelArchivalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape for which archiving was
@@ -89,6 +90,7 @@ namespace Model
     inline CancelArchivalResult& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
   };
 

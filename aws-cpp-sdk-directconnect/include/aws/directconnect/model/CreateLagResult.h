@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     CreateLagResult();
-    CreateLagResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateLagResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateLagResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateLagResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
@@ -95,6 +96,7 @@ namespace Model
      */
     inline CreateLagResult& WithConnectionsBandwidth(const char* value) { SetConnectionsBandwidth(value); return *this;}
 
+
     /**
      * <p>The number of physical connections bundled by the LAG, up to a maximum of
      * 10.</p>
@@ -112,6 +114,7 @@ namespace Model
      * 10.</p>
      */
     inline CreateLagResult& WithNumberOfConnections(int value) { SetNumberOfConnections(value); return *this;}
+
 
     
     inline const Aws::String& GetLagId() const{ return m_lagId; }
@@ -133,6 +136,7 @@ namespace Model
 
     
     inline CreateLagResult& WithLagId(const char* value) { SetLagId(value); return *this;}
+
 
     /**
      * <p>The owner of the LAG.</p>
@@ -169,6 +173,7 @@ namespace Model
      */
     inline CreateLagResult& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
+
     /**
      * <p>The name of the LAG.</p>
      */
@@ -204,6 +209,7 @@ namespace Model
      */
     inline CreateLagResult& WithLagName(const char* value) { SetLagName(value); return *this;}
 
+
     
     inline const LagState& GetLagState() const{ return m_lagState; }
 
@@ -218,6 +224,7 @@ namespace Model
 
     
     inline CreateLagResult& WithLagState(LagState&& value) { SetLagState(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetLocation() const{ return m_location; }
@@ -240,6 +247,7 @@ namespace Model
     
     inline CreateLagResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     
     inline const Aws::String& GetRegion() const{ return m_region; }
 
@@ -260,6 +268,7 @@ namespace Model
 
     
     inline CreateLagResult& WithRegion(const char* value) { SetRegion(value); return *this;}
+
 
     /**
      * <p>The minimum number of physical connections that must be operational for the
@@ -287,6 +296,7 @@ namespace Model
      * bundled connections go down.</p>
      */
     inline CreateLagResult& WithMinimumLinks(int value) { SetMinimumLinks(value); return *this;}
+
 
     /**
      * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
@@ -323,6 +333,7 @@ namespace Model
      */
     inline CreateLagResult& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
 
+
     /**
      * <p>A list of connections bundled by this LAG.</p>
      */
@@ -358,6 +369,7 @@ namespace Model
      */
     inline CreateLagResult& AddConnections(Connection&& value) { m_connections.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether the LAG can host other connections.</p> <note> <p>This is
      * intended for use by AWS Direct Connect partners only.</p> </note>
@@ -377,17 +389,29 @@ namespace Model
     inline CreateLagResult& WithAllowsHostedConnections(bool value) { SetAllowsHostedConnections(value); return *this;}
 
   private:
+
     Aws::String m_connectionsBandwidth;
+
     int m_numberOfConnections;
+
     Aws::String m_lagId;
+
     Aws::String m_ownerAccount;
+
     Aws::String m_lagName;
+
     LagState m_lagState;
+
     Aws::String m_location;
+
     Aws::String m_region;
+
     int m_minimumLinks;
+
     Aws::String m_awsDevice;
+
     Aws::Vector<Connection> m_connections;
+
     bool m_allowsHostedConnections;
   };
 

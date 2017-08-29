@@ -30,12 +30,12 @@ DeleteSmsChannelResult::DeleteSmsChannelResult()
 {
 }
 
-DeleteSmsChannelResult::DeleteSmsChannelResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSmsChannelResult::DeleteSmsChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteSmsChannelResult& DeleteSmsChannelResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSmsChannelResult& DeleteSmsChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SMSChannelResponse"))

@@ -30,12 +30,12 @@ PublishSchemaResult::PublishSchemaResult()
 {
 }
 
-PublishSchemaResult::PublishSchemaResult(const AmazonWebServiceResult<JsonValue>& result)
+PublishSchemaResult::PublishSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PublishSchemaResult& PublishSchemaResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PublishSchemaResult& PublishSchemaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("PublishedSchemaArn"))

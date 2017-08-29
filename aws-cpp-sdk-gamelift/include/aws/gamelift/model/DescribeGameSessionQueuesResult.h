@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeGameSessionQueuesResult();
-    DescribeGameSessionQueuesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeGameSessionQueuesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeGameSessionQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeGameSessionQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of objects that describes the requested game session queues.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Collection of objects that describes the requested game session queues.</p>
      */
     inline DescribeGameSessionQueuesResult& AddGameSessionQueues(GameSessionQueue&& value) { m_gameSessionQueues.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -134,7 +136,9 @@ namespace Model
     inline DescribeGameSessionQueuesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<GameSessionQueue> m_gameSessionQueues;
+
     Aws::String m_nextToken;
   };
 

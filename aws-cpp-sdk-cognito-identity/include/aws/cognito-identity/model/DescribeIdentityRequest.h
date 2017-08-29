@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DescribeIdentityRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
   private:
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
   };

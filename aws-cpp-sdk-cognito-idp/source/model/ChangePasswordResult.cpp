@@ -30,12 +30,12 @@ ChangePasswordResult::ChangePasswordResult()
 {
 }
 
-ChangePasswordResult::ChangePasswordResult(const AmazonWebServiceResult<JsonValue>& result)
+ChangePasswordResult::ChangePasswordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ChangePasswordResult& ChangePasswordResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ChangePasswordResult& ChangePasswordResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

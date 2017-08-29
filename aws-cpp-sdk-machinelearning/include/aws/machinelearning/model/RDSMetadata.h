@@ -47,6 +47,7 @@ namespace Model
     RDSMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The database details required to connect to an Amazon RDS.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline RDSMetadata& WithDatabase(RDSDatabase&& value) { SetDatabase(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetDatabaseUserName() const{ return m_databaseUserName; }
 
@@ -92,6 +94,7 @@ namespace Model
 
     
     inline RDSMetadata& WithDatabaseUserName(const char* value) { SetDatabaseUserName(value); return *this;}
+
 
     /**
      * <p>The SQL query that is supplied during <a>CreateDataSourceFromRDS</a>. Returns
@@ -134,6 +137,7 @@ namespace Model
      * only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
      */
     inline RDSMetadata& WithSelectSqlQuery(const char* value) { SetSelectSqlQuery(value); return *this;}
+
 
     /**
      * <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance
@@ -198,6 +202,7 @@ namespace Model
      */
     inline RDSMetadata& WithResourceRole(const char* value) { SetResourceRole(value); return *this;}
 
+
     /**
      * <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to
      * monitor the progress of the copy task from Amazon RDS to Amazon S3. For more
@@ -261,6 +266,7 @@ namespace Model
      */
     inline RDSMetadata& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
+
     /**
      * <p>The ID of the Data Pipeline instance that is used to carry to copy data from
      * Amazon RDS to Amazon S3. You can use the ID to find details about the instance
@@ -311,16 +317,22 @@ namespace Model
     inline RDSMetadata& WithDataPipelineId(const char* value) { SetDataPipelineId(value); return *this;}
 
   private:
+
     RDSDatabase m_database;
     bool m_databaseHasBeenSet;
+
     Aws::String m_databaseUserName;
     bool m_databaseUserNameHasBeenSet;
+
     Aws::String m_selectSqlQuery;
     bool m_selectSqlQueryHasBeenSet;
+
     Aws::String m_resourceRole;
     bool m_resourceRoleHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
     Aws::String m_dataPipelineId;
     bool m_dataPipelineIdHasBeenSet;
   };

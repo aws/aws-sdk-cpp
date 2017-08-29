@@ -31,12 +31,12 @@ DescribeRegionsResponse::DescribeRegionsResponse()
 {
 }
 
-DescribeRegionsResponse::DescribeRegionsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeRegionsResponse::DescribeRegionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeRegionsResponse& DescribeRegionsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeRegionsResponse& DescribeRegionsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

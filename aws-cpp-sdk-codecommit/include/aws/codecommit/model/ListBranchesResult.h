@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListBranchesResult();
-    ListBranchesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBranchesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListBranchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListBranchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of branch names.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ListBranchesResult& AddBranches(const char* value) { m_branches.push_back(value); return *this; }
 
+
     /**
      * <p>An enumeration token that returns the batch of the results.</p>
      */
@@ -124,7 +126,9 @@ namespace Model
     inline ListBranchesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_branches;
+
     Aws::String m_nextToken;
   };
 

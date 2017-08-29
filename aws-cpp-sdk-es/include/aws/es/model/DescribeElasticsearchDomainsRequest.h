@@ -40,6 +40,7 @@ namespace Model
     DescribeElasticsearchDomainsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Elasticsearch domains for which you want information.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline DescribeElasticsearchDomainsRequest& AddDomainNames(const char* value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_domainNames;
     bool m_domainNamesHasBeenSet;
   };

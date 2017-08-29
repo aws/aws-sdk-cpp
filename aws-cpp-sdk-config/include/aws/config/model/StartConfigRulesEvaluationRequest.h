@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The list of names of Config rules that you want to run evaluations for.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline StartConfigRulesEvaluationRequest& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_configRuleNames;
     bool m_configRuleNamesHasBeenSet;
   };

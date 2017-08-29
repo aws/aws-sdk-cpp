@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -101,6 +102,7 @@ namespace Model
      */
     inline DeleteSSHPublicKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
@@ -151,8 +153,10 @@ namespace Model
     inline DeleteSSHPublicKeyRequest& WithSSHPublicKeyId(const char* value) { SetSSHPublicKeyId(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_sSHPublicKeyId;
     bool m_sSHPublicKeyIdHasBeenSet;
   };

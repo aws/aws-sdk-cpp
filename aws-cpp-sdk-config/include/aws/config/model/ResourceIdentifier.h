@@ -49,6 +49,7 @@ namespace Model
     ResourceIdentifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of resource.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The type of resource.</p>
      */
     inline ResourceIdentifier& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline ResourceIdentifier& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The custom name of the resource (if available).</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      */
     inline ResourceIdentifier& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
     /**
      * <p>The time that the resource was deleted.</p>
      */
@@ -170,12 +174,16 @@ namespace Model
     inline ResourceIdentifier& WithResourceDeletionTime(Aws::Utils::DateTime&& value) { SetResourceDeletionTime(std::move(value)); return *this;}
 
   private:
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::Utils::DateTime m_resourceDeletionTime;
     bool m_resourceDeletionTimeHasBeenSet;
   };

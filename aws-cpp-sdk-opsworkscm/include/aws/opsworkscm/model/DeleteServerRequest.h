@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the server to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteServerRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 
   private:
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
   };

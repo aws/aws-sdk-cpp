@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the pipeline.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ID of the pipeline.</p>
      */
     inline AddTagsRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
+
 
     /**
      * <p>The tags to add, as key/value pairs.</p>
@@ -112,8 +114,10 @@ namespace Model
     inline AddTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

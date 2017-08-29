@@ -30,12 +30,12 @@ PutSlotTypeResult::PutSlotTypeResult()
 {
 }
 
-PutSlotTypeResult::PutSlotTypeResult(const AmazonWebServiceResult<JsonValue>& result)
+PutSlotTypeResult::PutSlotTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutSlotTypeResult& PutSlotTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutSlotTypeResult& PutSlotTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("name"))

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances
      * during the assessment run or when you call the <a>PreviewAgents</a> action. </p>
@@ -79,6 +80,7 @@ namespace Model
     inline RegisterCrossAccountAccessRoleRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

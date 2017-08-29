@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteHsmResult();
-    DeleteHsmResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteHsmResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteHsmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteHsmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the operation.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DeleteHsmResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_status;
   };
 

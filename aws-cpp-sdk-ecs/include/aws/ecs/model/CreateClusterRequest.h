@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of your cluster. If you do not specify a name for your cluster, you
      * create a cluster named <code>default</code>. Up to 255 letters (uppercase and
@@ -86,6 +87,7 @@ namespace Model
     inline CreateClusterRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
   private:
+
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet;
   };

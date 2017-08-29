@@ -37,6 +37,7 @@ namespace Model
     GetIntegrationResponseRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetIntegrationResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>Specifies a get integration response request's resource identifier.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline GetIntegrationResponseRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>Specifies a get integration response request's HTTP method.</p>
      */
@@ -141,6 +144,7 @@ namespace Model
      * <p>Specifies a get integration response request's HTTP method.</p>
      */
     inline GetIntegrationResponseRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
+
 
     /**
      * <p>Specifies a get integration response request's status code.</p>
@@ -178,12 +182,16 @@ namespace Model
     inline GetIntegrationResponseRequest& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
+
     Aws::String m_statusCode;
     bool m_statusCodeHasBeenSet;
   };

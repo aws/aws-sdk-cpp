@@ -47,6 +47,7 @@ namespace Model
     AccessPoliciesStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The access policy configured for the Elasticsearch domain. Access policies
      * may be resource-based, IP-based, or IAM-based. See <a
@@ -103,6 +104,7 @@ namespace Model
      */
     inline AccessPoliciesStatus& WithOptions(const char* value) { SetOptions(value); return *this;}
 
+
     /**
      * <p>The status of the access policy for the Elasticsearch domain. See
      * <code>OptionStatus</code> for the status information that's included. </p>
@@ -134,8 +136,10 @@ namespace Model
     inline AccessPoliciesStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_options;
     bool m_optionsHasBeenSet;
+
     OptionStatus m_status;
     bool m_statusHasBeenSet;
   };

@@ -30,12 +30,12 @@ DescribeVolumesResult::DescribeVolumesResult()
 {
 }
 
-DescribeVolumesResult::DescribeVolumesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeVolumesResult::DescribeVolumesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeVolumesResult& DescribeVolumesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeVolumesResult& DescribeVolumesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Volumes"))

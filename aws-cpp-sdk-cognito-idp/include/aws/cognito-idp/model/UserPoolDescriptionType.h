@@ -48,6 +48,7 @@ namespace Model
     UserPoolDescriptionType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID in a user pool description.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The ID in a user pool description.</p>
      */
     inline UserPoolDescriptionType& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name in a user pool description.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline UserPoolDescriptionType& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The AWS Lambda configuration information in a user pool description.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The AWS Lambda configuration information in a user pool description.</p>
      */
     inline UserPoolDescriptionType& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The user pool status in a user pool description.</p>
@@ -168,6 +172,7 @@ namespace Model
      */
     inline UserPoolDescriptionType& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The date the user pool description was last modified.</p>
      */
@@ -192,6 +197,7 @@ namespace Model
      * <p>The date the user pool description was last modified.</p>
      */
     inline UserPoolDescriptionType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the user pool description was created.</p>
@@ -219,16 +225,22 @@ namespace Model
     inline UserPoolDescriptionType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     LambdaConfigType m_lambdaConfig;
     bool m_lambdaConfigHasBeenSet;
+
     StatusType m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };

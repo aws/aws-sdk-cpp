@@ -45,6 +45,7 @@ namespace Model
     DocumentDefaultVersionDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the document.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of the document.</p>
      */
     inline DocumentDefaultVersionDescription& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The default version of the document.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline DocumentDefaultVersionDescription& WithDefaultVersion(const char* value) { SetDefaultVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_defaultVersion;
     bool m_defaultVersionHasBeenSet;
   };

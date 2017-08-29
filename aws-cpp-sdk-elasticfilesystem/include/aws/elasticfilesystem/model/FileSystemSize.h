@@ -52,6 +52,7 @@ namespace Model
     FileSystemSize& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Latest known metered size (in bytes) of data stored in the file system.</p>
      */
@@ -66,6 +67,7 @@ namespace Model
      * <p>Latest known metered size (in bytes) of data stored in the file system.</p>
      */
     inline FileSystemSize& WithValue(long long value) { SetValue(value); return *this;}
+
 
     /**
      * <p>Time at which the size of data, returned in the <code>Value</code> field, was
@@ -103,8 +105,10 @@ namespace Model
     inline FileSystemSize& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
   private:
+
     long long m_value;
     bool m_valueHasBeenSet;
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
   };

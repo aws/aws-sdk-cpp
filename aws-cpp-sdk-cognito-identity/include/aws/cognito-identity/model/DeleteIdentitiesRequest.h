@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of 1-60 identities that you want to delete.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline DeleteIdentitiesRequest& AddIdentityIdsToDelete(const char* value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_identityIdsToDelete;
     bool m_identityIdsToDeleteHasBeenSet;
   };

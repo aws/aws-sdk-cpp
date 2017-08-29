@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique system-generated ID of the job.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The unique system-generated ID of the job.</p>
      */
     inline AcknowledgeThirdPartyJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
@@ -124,6 +126,7 @@ namespace Model
      */
     inline AcknowledgeThirdPartyJobRequest& WithNonce(const char* value) { SetNonce(value); return *this;}
 
+
     /**
      * <p>The clientToken portion of the clientId and clientToken pair used to verify
      * that the calling entity is allowed access to the job and its details.</p>
@@ -167,10 +170,13 @@ namespace Model
     inline AcknowledgeThirdPartyJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_nonce;
     bool m_nonceHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
   };

@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A unique identifier for the reserved cache node offering.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>A unique identifier for the reserved cache node offering.</p>
      */
     inline ReservedCacheNodesOffering& WithReservedCacheNodesOfferingId(const char* value) { SetReservedCacheNodesOfferingId(value); return *this;}
+
 
     /**
      * <p>The cache node type for the reserved cache node.</p> <p>Valid node types are
@@ -324,6 +326,7 @@ namespace Model
      */
     inline ReservedCacheNodesOffering& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
+
     /**
      * <p>The duration of the offering. in seconds.</p>
      */
@@ -338,6 +341,7 @@ namespace Model
      * <p>The duration of the offering. in seconds.</p>
      */
     inline ReservedCacheNodesOffering& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The fixed price charged for this offering.</p>
@@ -354,6 +358,7 @@ namespace Model
      */
     inline ReservedCacheNodesOffering& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
 
+
     /**
      * <p>The hourly price charged for this offering.</p>
      */
@@ -368,6 +373,7 @@ namespace Model
      * <p>The hourly price charged for this offering.</p>
      */
     inline ReservedCacheNodesOffering& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
+
 
     /**
      * <p>The cache engine used by the offering.</p>
@@ -404,6 +410,7 @@ namespace Model
      */
     inline ReservedCacheNodesOffering& WithProductDescription(const char* value) { SetProductDescription(value); return *this;}
 
+
     /**
      * <p>The offering type.</p>
      */
@@ -438,6 +445,7 @@ namespace Model
      * <p>The offering type.</p>
      */
     inline ReservedCacheNodesOffering& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
+
 
     /**
      * <p>The recurring price charged to run this reserved cache node.</p>
@@ -475,20 +483,28 @@ namespace Model
     inline ReservedCacheNodesOffering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_reservedCacheNodesOfferingId;
     bool m_reservedCacheNodesOfferingIdHasBeenSet;
+
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
+
     double m_usagePrice;
     bool m_usagePriceHasBeenSet;
+
     Aws::String m_productDescription;
     bool m_productDescriptionHasBeenSet;
+
     Aws::String m_offeringType;
     bool m_offeringTypeHasBeenSet;
+
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
   };

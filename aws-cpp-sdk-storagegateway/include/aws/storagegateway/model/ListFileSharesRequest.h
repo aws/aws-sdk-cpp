@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon resource Name (ARN) of the gateway whose file shares you want to
      * list. If this field is not present, all file shares under your account are
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ListFileSharesRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     /**
      * <p>The maximum number of file shares to return in the response. The value must
      * be an integer with a value greater than zero. Optional.</p>
@@ -105,6 +107,7 @@ namespace Model
      * be an integer with a value greater than zero. Optional.</p>
      */
     inline ListFileSharesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Opaque pagination token returned from a previous ListFileShares operation. If
@@ -156,10 +159,13 @@ namespace Model
     inline ListFileSharesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

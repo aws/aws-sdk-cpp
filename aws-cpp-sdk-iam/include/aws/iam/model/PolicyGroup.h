@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name (friendly name, not ARN) identifying the group.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The name (friendly name, not ARN) identifying the group.</p>
      */
     inline PolicyGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>The stable and unique string identifying the group. For more information
@@ -146,8 +148,10 @@ namespace Model
     inline PolicyGroup& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
   };

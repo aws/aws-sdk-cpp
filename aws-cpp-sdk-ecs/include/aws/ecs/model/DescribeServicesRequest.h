@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN)the cluster that hosts the
      * service to describe. If you do not specify a cluster, the default cluster is
@@ -85,6 +86,7 @@ namespace Model
      * assumed.</p>
      */
     inline DescribeServicesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>A list of services to describe. You may specify up to 10 services to describe
@@ -135,8 +137,10 @@ namespace Model
     inline DescribeServicesRequest& AddServices(const char* value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::Vector<Aws::String> m_services;
     bool m_servicesHasBeenSet;
   };

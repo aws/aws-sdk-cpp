@@ -49,6 +49,7 @@ namespace Model
     SubnetGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the subnet group.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the subnet group.</p>
      */
     inline SubnetGroup& WithSubnetGroupName(const char* value) { SetSubnetGroupName(value); return *this;}
+
 
     /**
      * <p>The description of the subnet group.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline SubnetGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
      */
     inline SubnetGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>A list of subnets associated with the subnet group. </p>
@@ -190,12 +194,16 @@ namespace Model
     inline SubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_subnetGroupName;
     bool m_subnetGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::Vector<Subnet> m_subnets;
     bool m_subnetsHasBeenSet;
   };

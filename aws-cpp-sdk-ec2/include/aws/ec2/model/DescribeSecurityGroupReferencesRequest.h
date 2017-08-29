@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the operation, without
      * actually making the request, and provides an error response. If you have the
@@ -62,6 +63,7 @@ namespace Model
      * UnauthorizedOperation.</p>
      */
     inline DescribeSecurityGroupReferencesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>One or more security group IDs in your account.</p>
@@ -104,8 +106,10 @@ namespace Model
     inline DescribeSecurityGroupReferencesRequest& AddGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.push_back(value); return *this; }
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Aws::String> m_groupId;
     bool m_groupIdHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     ExecutionDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The summary of the current status of the actions.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The summary of the current status of the actions.</p>
      */
     inline ExecutionDetails& WithSummary(const char* value) { SetSummary(value); return *this;}
+
 
     /**
      * <p>The system-generated unique ID of this action used to identify this job
@@ -123,6 +125,7 @@ namespace Model
      */
     inline ExecutionDetails& WithExternalExecutionId(const char* value) { SetExternalExecutionId(value); return *this;}
 
+
     /**
      * <p>The percentage of work completed on the action, represented on a scale of
      * zero to one hundred percent.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline ExecutionDetails& WithPercentComplete(int value) { SetPercentComplete(value); return *this;}
 
   private:
+
     Aws::String m_summary;
     bool m_summaryHasBeenSet;
+
     Aws::String m_externalExecutionId;
     bool m_externalExecutionIdHasBeenSet;
+
     int m_percentComplete;
     bool m_percentCompleteHasBeenSet;
   };

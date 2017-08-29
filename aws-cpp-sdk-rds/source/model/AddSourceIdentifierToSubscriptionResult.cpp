@@ -31,12 +31,12 @@ AddSourceIdentifierToSubscriptionResult::AddSourceIdentifierToSubscriptionResult
 {
 }
 
-AddSourceIdentifierToSubscriptionResult::AddSourceIdentifierToSubscriptionResult(const AmazonWebServiceResult<XmlDocument>& result)
+AddSourceIdentifierToSubscriptionResult::AddSourceIdentifierToSubscriptionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-AddSourceIdentifierToSubscriptionResult& AddSourceIdentifierToSubscriptionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AddSourceIdentifierToSubscriptionResult& AddSourceIdentifierToSubscriptionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

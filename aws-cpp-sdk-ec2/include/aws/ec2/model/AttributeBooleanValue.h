@@ -47,6 +47,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The attribute value. The valid values are <code>true</code> or
      * <code>false</code>.</p>
@@ -66,6 +67,7 @@ namespace Model
     inline AttributeBooleanValue& WithValue(bool value) { SetValue(value); return *this;}
 
   private:
+
     bool m_value;
     bool m_valueHasBeenSet;
   };

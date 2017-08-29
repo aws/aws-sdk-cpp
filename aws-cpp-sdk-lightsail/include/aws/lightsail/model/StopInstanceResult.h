@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     StopInstanceResult();
-    StopInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the request
@@ -85,6 +86,7 @@ namespace Model
     inline StopInstanceResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Operation> m_operations;
   };
 

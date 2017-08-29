@@ -30,12 +30,12 @@ GetPipelineExecutionResult::GetPipelineExecutionResult()
 {
 }
 
-GetPipelineExecutionResult::GetPipelineExecutionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetPipelineExecutionResult::GetPipelineExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetPipelineExecutionResult& GetPipelineExecutionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetPipelineExecutionResult& GetPipelineExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("pipelineExecution"))

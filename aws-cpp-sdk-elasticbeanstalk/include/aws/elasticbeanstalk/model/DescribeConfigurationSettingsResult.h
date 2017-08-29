@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeConfigurationSettingsResult();
-    DescribeConfigurationSettingsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeConfigurationSettingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeConfigurationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeConfigurationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeConfigurationSettingsResult& AddConfigurationSettings(ConfigurationSettingsDescription&& value) { m_configurationSettings.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeConfigurationSettingsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ConfigurationSettingsDescription> m_configurationSettings;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListTypedLinkFacetAttributesResult();
-    ListTypedLinkFacetAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTypedLinkFacetAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTypedLinkFacetAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTypedLinkFacetAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An ordered set of attributes associate with the typed link.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>An ordered set of attributes associate with the typed link.</p>
      */
     inline ListTypedLinkFacetAttributesResult& AddAttributes(TypedLinkAttributeDefinition&& value) { m_attributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The pagination token.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline ListTypedLinkFacetAttributesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<TypedLinkAttributeDefinition> m_attributes;
+
     Aws::String m_nextToken;
   };
 

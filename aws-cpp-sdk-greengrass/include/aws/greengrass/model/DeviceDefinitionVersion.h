@@ -46,6 +46,7 @@ namespace Model
     DeviceDefinitionVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Devices in the definition version.
      */
@@ -82,6 +83,7 @@ namespace Model
     inline DeviceDefinitionVersion& AddDevices(Device&& value) { m_devicesHasBeenSet = true; m_devices.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Device> m_devices;
     bool m_devicesHasBeenSet;
   };

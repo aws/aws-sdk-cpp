@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeDBClusterSnapshotsResult();
-    DescribeDBClusterSnapshotsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBClusterSnapshotsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBClusterSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBClusterSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -106,6 +107,7 @@ namespace Model
      */
     inline DescribeDBClusterSnapshotsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Provides a list of DB cluster snapshots for the user.</p>
      */
@@ -141,6 +143,7 @@ namespace Model
      */
     inline DescribeDBClusterSnapshotsResult& AddDBClusterSnapshots(DBClusterSnapshot&& value) { m_dBClusterSnapshots.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -157,8 +160,11 @@ namespace Model
     inline DescribeDBClusterSnapshotsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<DBClusterSnapshot> m_dBClusterSnapshots;
+
     ResponseMetadata m_responseMetadata;
   };
 

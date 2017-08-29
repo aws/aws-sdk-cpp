@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The file format for the returned export data. Default value is
      * <code>CSV</code>.</p>
@@ -80,6 +81,7 @@ namespace Model
      * <code>CSV</code>.</p>
      */
     inline StartExportTaskRequest& AddExportDataFormat(ExportDataFormat&& value) { m_exportDataFormatHasBeenSet = true; m_exportDataFormat.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a filter is present, it selects the single <code>agentId</code> of the
@@ -151,6 +153,7 @@ namespace Model
      */
     inline StartExportTaskRequest& AddFilters(ExportFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The start timestamp for exported data from the single Application Discovery
      * Agent selected in the filters. If no value is specified, data is exported
@@ -185,6 +188,7 @@ namespace Model
      * starting from the first data collected by the agent.</p>
      */
     inline StartExportTaskRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The end timestamp for exported data from the single Application Discovery
@@ -222,12 +226,16 @@ namespace Model
     inline StartExportTaskRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ExportDataFormat> m_exportDataFormat;
     bool m_exportDataFormatHasBeenSet;
+
     Aws::Vector<ExportFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
   };

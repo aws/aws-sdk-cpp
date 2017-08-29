@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The job ID of the job that you want to update, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
     inline UpdateJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
@@ -138,6 +140,7 @@ namespace Model
      */
     inline UpdateJobRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>The new or updated <a>Notification</a> object.</p>
      */
@@ -162,6 +165,7 @@ namespace Model
      * <p>The new or updated <a>Notification</a> object.</p>
      */
     inline UpdateJobRequest& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
+
 
     /**
      * <p>The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key
@@ -198,6 +202,7 @@ namespace Model
      */
     inline UpdateJobRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID of the updated <a>Address</a> object.</p>
      */
@@ -233,6 +238,7 @@ namespace Model
      */
     inline UpdateJobRequest& WithAddressId(const char* value) { SetAddressId(value); return *this;}
 
+
     /**
      * <p>The updated shipping option value of this job's <a>ShippingDetails</a>
      * object.</p>
@@ -262,6 +268,7 @@ namespace Model
      * object.</p>
      */
     inline UpdateJobRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
+
 
     /**
      * <p>The updated description of this job's <a>JobMetadata</a> object.</p>
@@ -298,6 +305,7 @@ namespace Model
      */
     inline UpdateJobRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
      * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
@@ -332,6 +340,7 @@ namespace Model
      * regions.</p>
      */
     inline UpdateJobRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
+
 
     /**
      * <p>The updated ID for the forwarding address for a job. This field is not
@@ -376,22 +385,31 @@ namespace Model
     inline UpdateJobRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Notification m_notification;
     bool m_notificationHasBeenSet;
+
     JobResource m_resources;
     bool m_resourcesHasBeenSet;
+
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet;
+
     ShippingOption m_shippingOption;
     bool m_shippingOptionHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     SnowballCapacity m_snowballCapacityPreference;
     bool m_snowballCapacityPreferenceHasBeenSet;
+
     Aws::String m_forwardingAddressId;
     bool m_forwardingAddressIdHasBeenSet;
   };

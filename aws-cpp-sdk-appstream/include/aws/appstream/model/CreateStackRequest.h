@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier for this stack.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The unique identifier for this stack.</p>
      */
     inline CreateStackRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The description displayed to end users on the AppStream 2.0 portal.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline CreateStackRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The name displayed to end users on the AppStream 2.0 portal.</p>
      */
     inline CreateStackRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
 
     /**
      * <p>The storage connectors to be enabled for the stack.</p>
@@ -179,12 +183,16 @@ namespace Model
     inline CreateStackRequest& AddStorageConnectors(StorageConnector&& value) { m_storageConnectorsHasBeenSet = true; m_storageConnectors.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     Aws::Vector<StorageConnector> m_storageConnectors;
     bool m_storageConnectorsHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The elastic IP (EIP) address for the cluster.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The elastic IP (EIP) address for the cluster.</p>
      */
     inline ElasticIpStatus& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
+
 
     /**
      * <p>The status of the elastic IP (EIP) address.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline ElasticIpStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_elasticIp;
     bool m_elasticIpHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

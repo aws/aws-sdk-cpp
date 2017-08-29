@@ -31,12 +31,12 @@ AcceptReservedInstancesExchangeQuoteResponse::AcceptReservedInstancesExchangeQuo
 {
 }
 
-AcceptReservedInstancesExchangeQuoteResponse::AcceptReservedInstancesExchangeQuoteResponse(const AmazonWebServiceResult<XmlDocument>& result)
+AcceptReservedInstancesExchangeQuoteResponse::AcceptReservedInstancesExchangeQuoteResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-AcceptReservedInstancesExchangeQuoteResponse& AcceptReservedInstancesExchangeQuoteResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AcceptReservedInstancesExchangeQuoteResponse& AcceptReservedInstancesExchangeQuoteResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

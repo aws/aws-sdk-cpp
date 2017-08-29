@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
      * information, see <a>arns</a>.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline CreateTypedLinkFacetRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
+
     /**
      * <p> <a>Facet</a> structure that is associated with the typed link facet.</p>
      */
@@ -105,8 +107,10 @@ namespace Model
     inline CreateTypedLinkFacetRequest& WithFacet(TypedLinkFacet&& value) { SetFacet(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     TypedLinkFacet m_facet;
     bool m_facetHasBeenSet;
   };

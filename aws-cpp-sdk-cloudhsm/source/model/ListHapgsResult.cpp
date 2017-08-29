@@ -30,12 +30,12 @@ ListHapgsResult::ListHapgsResult()
 {
 }
 
-ListHapgsResult::ListHapgsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListHapgsResult::ListHapgsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListHapgsResult& ListHapgsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListHapgsResult& ListHapgsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("HapgList"))

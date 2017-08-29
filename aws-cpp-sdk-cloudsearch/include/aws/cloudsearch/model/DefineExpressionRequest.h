@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -65,6 +66,7 @@ namespace Model
     
     inline DefineExpressionRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     
     inline const Expression& GetExpression() const{ return m_expression; }
 
@@ -81,8 +83,10 @@ namespace Model
     inline DefineExpressionRequest& WithExpression(Expression&& value) { SetExpression(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Expression m_expression;
     bool m_expressionHasBeenSet;
   };

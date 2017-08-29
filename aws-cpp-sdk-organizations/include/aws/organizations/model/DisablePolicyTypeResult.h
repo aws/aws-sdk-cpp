@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DisablePolicyTypeResult();
-    DisablePolicyTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisablePolicyTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisablePolicyTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisablePolicyTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that shows the root with the updated list of enabled policy
@@ -72,6 +73,7 @@ namespace Model
     inline DisablePolicyTypeResult& WithRoot(Root&& value) { SetRoot(std::move(value)); return *this;}
 
   private:
+
     Root m_root;
   };
 

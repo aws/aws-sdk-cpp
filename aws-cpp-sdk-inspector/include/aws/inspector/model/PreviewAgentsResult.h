@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     PreviewAgentsResult();
-    PreviewAgentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PreviewAgentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PreviewAgentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PreviewAgentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resulting list of agents.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The resulting list of agents.</p>
      */
     inline PreviewAgentsResult& AddAgentPreviews(AgentPreview&& value) { m_agentPreviews.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> When a response is generated, if there is more data to be listed, this
@@ -135,7 +137,9 @@ namespace Model
     inline PreviewAgentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<AgentPreview> m_agentPreviews;
+
     Aws::String m_nextToken;
   };
 

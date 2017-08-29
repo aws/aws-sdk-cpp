@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DisassociateCreatedArtifactResult();
-    DisassociateCreatedArtifactResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateCreatedArtifactResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateCreatedArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateCreatedArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

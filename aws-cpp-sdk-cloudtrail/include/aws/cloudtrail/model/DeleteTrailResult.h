@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     DeleteTrailResult();
-    DeleteTrailResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTrailResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

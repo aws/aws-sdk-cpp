@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetClassifiersResult();
-    GetClassifiersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetClassifiersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetClassifiersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetClassifiersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The requested list of <code>Classifier</code> objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The requested list of <code>Classifier</code> objects.</p>
      */
     inline GetClassifiersResult& AddClassifiers(Classifier&& value) { m_classifiers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline GetClassifiersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Classifier> m_classifiers;
+
     Aws::String m_nextToken;
   };
 

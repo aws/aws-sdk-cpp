@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the assessment template that you want to set tags to.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The ARN of the assessment template that you want to set tags to.</p>
      */
     inline SetTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
 
     /**
      * <p>A collection of key and value pairs that you want to set to the assessment
@@ -116,8 +118,10 @@ namespace Model
     inline SetTagsForResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

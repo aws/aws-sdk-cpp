@@ -48,6 +48,7 @@ namespace Model
     Compliance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Indicates whether an AWS resource or AWS Config rule is compliant.</p> <p>A
      * resource is compliant if it complies with all of the AWS Config rules that
@@ -123,6 +124,7 @@ namespace Model
      */
     inline Compliance& WithComplianceType(ComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of AWS resources or AWS Config rules that cause a result of
      * <code>NON_COMPLIANT</code>, up to a maximum number.</p>
@@ -154,8 +156,10 @@ namespace Model
     inline Compliance& WithComplianceContributorCount(ComplianceContributorCount&& value) { SetComplianceContributorCount(std::move(value)); return *this;}
 
   private:
+
     ComplianceType m_complianceType;
     bool m_complianceTypeHasBeenSet;
+
     ComplianceContributorCount m_complianceContributorCount;
     bool m_complianceContributorCountHasBeenSet;
   };

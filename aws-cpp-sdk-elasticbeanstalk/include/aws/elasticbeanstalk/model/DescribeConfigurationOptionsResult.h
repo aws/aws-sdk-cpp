@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeConfigurationOptionsResult();
-    DescribeConfigurationOptionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeConfigurationOptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeConfigurationOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeConfigurationOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The name of the solution stack these configuration options belong to.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeConfigurationOptionsResult& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
+
     /**
      * <p>The ARN of the platform.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The ARN of the platform.</p>
      */
     inline DescribeConfigurationOptionsResult& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
 
     /**
      * <p> A list of <a>ConfigurationOptionDescription</a>. </p>
@@ -155,6 +158,7 @@ namespace Model
      */
     inline DescribeConfigurationOptionsResult& AddOptions(ConfigurationOptionDescription&& value) { m_options.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -171,9 +175,13 @@ namespace Model
     inline DescribeConfigurationOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_solutionStackName;
+
     Aws::String m_platformArn;
+
     Aws::Vector<ConfigurationOptionDescription> m_options;
+
     ResponseMetadata m_responseMetadata;
   };
 

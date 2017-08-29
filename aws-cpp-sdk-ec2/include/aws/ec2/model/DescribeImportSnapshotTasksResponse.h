@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeImportSnapshotTasksResponse();
-    DescribeImportSnapshotTasksResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeImportSnapshotTasksResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeImportSnapshotTasksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeImportSnapshotTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of zero or more import snapshot tasks that are currently active or
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeImportSnapshotTasksResponse& AddImportSnapshotTasks(ImportSnapshotTask&& value) { m_importSnapshotTasks.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token to use to get the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeImportSnapshotTasksResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -150,8 +153,11 @@ namespace Model
     inline DescribeImportSnapshotTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ImportSnapshotTask> m_importSnapshotTasks;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

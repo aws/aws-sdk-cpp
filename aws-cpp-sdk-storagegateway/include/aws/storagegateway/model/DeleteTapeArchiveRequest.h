@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape to delete from the virtual
      * tape shelf (VTS).</p>
@@ -82,6 +83,7 @@ namespace Model
     inline DeleteTapeArchiveRequest& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
   private:
+
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
   };

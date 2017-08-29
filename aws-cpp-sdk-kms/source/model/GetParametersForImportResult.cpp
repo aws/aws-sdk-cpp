@@ -31,12 +31,12 @@ GetParametersForImportResult::GetParametersForImportResult()
 {
 }
 
-GetParametersForImportResult::GetParametersForImportResult(const AmazonWebServiceResult<JsonValue>& result)
+GetParametersForImportResult::GetParametersForImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetParametersForImportResult& GetParametersForImportResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetParametersForImportResult& GetParametersForImportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("KeyId"))

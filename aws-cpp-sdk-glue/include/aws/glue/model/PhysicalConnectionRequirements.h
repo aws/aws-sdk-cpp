@@ -47,6 +47,7 @@ namespace Model
     PhysicalConnectionRequirements& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The subnet ID used by the connection.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The subnet ID used by the connection.</p>
      */
     inline PhysicalConnectionRequirements& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The security group ID list used by the connection.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline PhysicalConnectionRequirements& AddSecurityGroupIdList(const char* value) { m_securityGroupIdListHasBeenSet = true; m_securityGroupIdList.push_back(value); return *this; }
 
+
     /**
      * <p>The connection's availability zone.</p>
      */
@@ -158,10 +161,13 @@ namespace Model
     inline PhysicalConnectionRequirements& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
   private:
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIdList;
     bool m_securityGroupIdListHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether monitoring is enabled.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
     inline ScheduledInstancesMonitoring& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
   };

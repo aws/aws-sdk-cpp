@@ -30,12 +30,12 @@ PutTraceSegmentsResult::PutTraceSegmentsResult()
 {
 }
 
-PutTraceSegmentsResult::PutTraceSegmentsResult(const AmazonWebServiceResult<JsonValue>& result)
+PutTraceSegmentsResult::PutTraceSegmentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutTraceSegmentsResult& PutTraceSegmentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutTraceSegmentsResult& PutTraceSegmentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("UnprocessedTraceSegments"))

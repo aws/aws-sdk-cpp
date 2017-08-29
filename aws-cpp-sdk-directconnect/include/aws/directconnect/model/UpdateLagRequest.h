@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
      * None</p>
@@ -81,6 +82,7 @@ namespace Model
      * None</p>
      */
     inline UpdateLagRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
+
 
     /**
      * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline UpdateLagRequest& WithLagName(const char* value) { SetLagName(value); return *this;}
 
+
     /**
      * <p>The minimum number of physical connections that must be operational for the
      * LAG itself to be operational.</p> <p>Default: None</p>
@@ -143,10 +146,13 @@ namespace Model
     inline UpdateLagRequest& WithMinimumLinks(int value) { SetMinimumLinks(value); return *this;}
 
   private:
+
     Aws::String m_lagId;
     bool m_lagIdHasBeenSet;
+
     Aws::String m_lagName;
     bool m_lagNameHasBeenSet;
+
     int m_minimumLinks;
     bool m_minimumLinksHasBeenSet;
   };

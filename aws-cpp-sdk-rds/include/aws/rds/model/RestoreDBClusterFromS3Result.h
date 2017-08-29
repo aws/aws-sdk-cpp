@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     RestoreDBClusterFromS3Result();
-    RestoreDBClusterFromS3Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreDBClusterFromS3Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RestoreDBClusterFromS3Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RestoreDBClusterFromS3Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DBCluster& GetDBCluster() const{ return m_dBCluster; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline RestoreDBClusterFromS3Result& WithDBCluster(DBCluster&& value) { SetDBCluster(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline RestoreDBClusterFromS3Result& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DBCluster m_dBCluster;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     CancelReservedInstancesListingResponse();
-    CancelReservedInstancesListingResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CancelReservedInstancesListingResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CancelReservedInstancesListingResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CancelReservedInstancesListingResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The Reserved Instance listing.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline CancelReservedInstancesListingResponse& AddReservedInstancesListings(ReservedInstancesListing&& value) { m_reservedInstancesListings.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline CancelReservedInstancesListingResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ReservedInstancesListing> m_reservedInstancesListings;
+
     ResponseMetadata m_responseMetadata;
   };
 

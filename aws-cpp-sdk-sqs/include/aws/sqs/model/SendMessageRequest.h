@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
      * are case-sensitive.</p>
@@ -84,6 +85,7 @@ namespace Model
      * are case-sensitive.</p>
      */
     inline SendMessageRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+
 
     /**
      * <p>The message to send. The maximum string size is 256 KB.</p> <important> <p>A
@@ -176,6 +178,7 @@ namespace Model
      */
     inline SendMessageRequest& WithMessageBody(const char* value) { SetMessageBody(value); return *this;}
 
+
     /**
      * <p> The length of time, in seconds, for which to delay a specific message. Valid
      * values: 0 to 900. Maximum: 15 minutes. Messages with a positive
@@ -208,6 +211,7 @@ namespace Model
      * queue level.</p> </note>
      */
     inline SendMessageRequest& WithDelaySeconds(int value) { SetDelaySeconds(value); return *this;}
+
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
@@ -296,6 +300,7 @@ namespace Model
      * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageRequest& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
+
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
@@ -605,6 +610,7 @@ namespace Model
      */
     inline SendMessageRequest& WithMessageDeduplicationId(const char* value) { SetMessageDeduplicationId(value); return *this;}
 
+
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * tag that specifies that a message belongs to a specific message group. Messages
@@ -788,16 +794,22 @@ namespace Model
     inline SendMessageRequest& WithMessageGroupId(const char* value) { SetMessageGroupId(value); return *this;}
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     Aws::String m_messageBody;
     bool m_messageBodyHasBeenSet;
+
     int m_delaySeconds;
     bool m_delaySecondsHasBeenSet;
+
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
     bool m_messageAttributesHasBeenSet;
+
     Aws::String m_messageDeduplicationId;
     bool m_messageDeduplicationIdHasBeenSet;
+
     Aws::String m_messageGroupId;
     bool m_messageGroupIdHasBeenSet;
   };

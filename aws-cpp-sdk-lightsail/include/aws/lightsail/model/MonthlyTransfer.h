@@ -44,6 +44,7 @@ namespace Model
     MonthlyTransfer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The amount allocated per month (in GB).</p>
      */
@@ -60,6 +61,7 @@ namespace Model
     inline MonthlyTransfer& WithGbPerMonthAllocated(int value) { SetGbPerMonthAllocated(value); return *this;}
 
   private:
+
     int m_gbPerMonthAllocated;
     bool m_gbPerMonthAllocatedHasBeenSet;
   };

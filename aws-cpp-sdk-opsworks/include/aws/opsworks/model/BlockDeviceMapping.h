@@ -49,6 +49,7 @@ namespace Model
     BlockDeviceMapping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The device name that is exposed to the instance, such as
      * <code>/dev/sdh</code>. For the root device, you can use the explicit device name
@@ -105,6 +106,7 @@ namespace Model
      */
     inline BlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 
+
     /**
      * <p>Suppresses the specified device included in the AMI's block device
      * mapping.</p>
@@ -146,6 +148,7 @@ namespace Model
      * mapping.</p>
      */
     inline BlockDeviceMapping& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
+
 
     /**
      * <p>The virtual device name. For more information, see <a
@@ -189,6 +192,7 @@ namespace Model
      */
     inline BlockDeviceMapping& WithVirtualName(const char* value) { SetVirtualName(value); return *this;}
 
+
     /**
      * <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS
      * volume when the instance is launched.</p>
@@ -220,12 +224,16 @@ namespace Model
     inline BlockDeviceMapping& WithEbs(EbsBlockDevice&& value) { SetEbs(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet;
+
     Aws::String m_noDevice;
     bool m_noDeviceHasBeenSet;
+
     Aws::String m_virtualName;
     bool m_virtualNameHasBeenSet;
+
     EbsBlockDevice m_ebs;
     bool m_ebsHasBeenSet;
   };

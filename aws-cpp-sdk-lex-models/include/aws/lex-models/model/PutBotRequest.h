@@ -40,6 +40,7 @@ namespace Model
     PutBotRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the bot. The name is <i>not</i> case sensitive. </p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline PutBotRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the bot.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>A description of the bot.</p>
      */
     inline PutBotRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>An array of <code>Intent</code> objects. Each intent represents a command
@@ -158,6 +161,7 @@ namespace Model
      * OrderPizza intent. For more information, see <a>how-it-works</a>.</p>
      */
     inline PutBotRequest& AddIntents(Intent&& value) { m_intentsHasBeenSet = true; m_intents.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>When Amazon Lex doesn't understand the user's intent, it uses this message to
@@ -223,6 +227,7 @@ namespace Model
      * 'Order a drink.'"</p>
      */
     inline PutBotRequest& WithClarificationPrompt(Prompt&& value) { SetClarificationPrompt(std::move(value)); return *this;}
+
 
     /**
      * <p>When Amazon Lex can't understand the user's input in context, it tries to
@@ -309,6 +314,7 @@ namespace Model
      */
     inline PutBotRequest& WithAbortStatement(Statement&& value) { SetAbortStatement(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum time in seconds that Amazon Lex retains the data gathered in a
      * conversation.</p> <p>A user interaction session remains active for the amount of
@@ -353,6 +359,7 @@ namespace Model
      * replaces an existing bot.</p> <p>The default is 300 seconds (5 minutes).</p>
      */
     inline PutBotRequest& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
+
 
     /**
      * <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
@@ -416,6 +423,7 @@ namespace Model
      * Voices</a> in the <i>Amazon Polly Developer Guide</i>.</p>
      */
     inline PutBotRequest& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
+
 
     /**
      * <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
@@ -501,6 +509,7 @@ namespace Model
      */
     inline PutBotRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
+
     /**
      * <p>If you set the <code>processBehavior</code> element to <code>Build</code>,
      * Amazon Lex builds the bot so that it can be run. If you set the element to
@@ -541,6 +550,7 @@ namespace Model
      */
     inline PutBotRequest& WithProcessBehavior(ProcessBehavior&& value) { SetProcessBehavior(std::move(value)); return *this;}
 
+
     /**
      * <p> Specifies the target locale for the bot. Any intent used in the bot must be
      * compatible with the locale of the bot. </p> <p>The default is
@@ -575,6 +585,7 @@ namespace Model
      * <code>en-US</code>.</p>
      */
     inline PutBotRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
+
 
     /**
      * <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service,
@@ -658,26 +669,37 @@ namespace Model
     inline PutBotRequest& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Intent> m_intents;
     bool m_intentsHasBeenSet;
+
     Prompt m_clarificationPrompt;
     bool m_clarificationPromptHasBeenSet;
+
     Statement m_abortStatement;
     bool m_abortStatementHasBeenSet;
+
     int m_idleSessionTTLInSeconds;
     bool m_idleSessionTTLInSecondsHasBeenSet;
+
     Aws::String m_voiceId;
     bool m_voiceIdHasBeenSet;
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
+
     ProcessBehavior m_processBehavior;
     bool m_processBehaviorHasBeenSet;
+
     Locale m_locale;
     bool m_localeHasBeenSet;
+
     bool m_childDirected;
     bool m_childDirectedHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetUserDefinedFunctionResult();
-    GetUserDefinedFunctionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUserDefinedFunctionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUserDefinedFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUserDefinedFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The requested function definition.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetUserDefinedFunctionResult& WithUserDefinedFunction(UserDefinedFunction&& value) { SetUserDefinedFunction(std::move(value)); return *this;}
 
   private:
+
     UserDefinedFunction m_userDefinedFunction;
   };
 

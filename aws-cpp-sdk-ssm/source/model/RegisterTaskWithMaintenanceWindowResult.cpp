@@ -30,12 +30,12 @@ RegisterTaskWithMaintenanceWindowResult::RegisterTaskWithMaintenanceWindowResult
 {
 }
 
-RegisterTaskWithMaintenanceWindowResult::RegisterTaskWithMaintenanceWindowResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterTaskWithMaintenanceWindowResult::RegisterTaskWithMaintenanceWindowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterTaskWithMaintenanceWindowResult& RegisterTaskWithMaintenanceWindowResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterTaskWithMaintenanceWindowResult& RegisterTaskWithMaintenanceWindowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WindowTaskId"))

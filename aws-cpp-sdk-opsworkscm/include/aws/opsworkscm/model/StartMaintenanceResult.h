@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     StartMaintenanceResult();
-    StartMaintenanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartMaintenanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartMaintenanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartMaintenanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Contains the response to a <code>StartMaintenance</code> request. </p>
@@ -67,6 +68,7 @@ namespace Model
     inline StartMaintenanceResult& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
 
   private:
+
     Server m_server;
   };
 

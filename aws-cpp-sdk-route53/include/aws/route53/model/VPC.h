@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>(Private hosted zones only) The region in which you created an Amazon
      * VPC.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline VPC& WithVPCRegion(VPCRegion&& value) { SetVPCRegion(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetVPCId() const{ return m_vPCId; }
 
@@ -100,8 +102,10 @@ namespace Model
     inline VPC& WithVPCId(const char* value) { SetVPCId(value); return *this;}
 
   private:
+
     VPCRegion m_vPCRegion;
     bool m_vPCRegionHasBeenSet;
+
     Aws::String m_vPCId;
     bool m_vPCIdHasBeenSet;
   };

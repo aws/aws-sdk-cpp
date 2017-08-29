@@ -49,6 +49,7 @@ namespace Model
     BatchPrediction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID assigned to the <code>BatchPrediction</code> at creation. This value
      * should be identical to the value of the <code>BatchPredictionID</code> in the
@@ -98,6 +99,7 @@ namespace Model
      */
     inline BatchPrediction& WithBatchPredictionId(const char* value) { SetBatchPredictionId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>MLModel</code> that generated predictions for the
      * <code>BatchPrediction</code> request.</p>
@@ -139,6 +141,7 @@ namespace Model
      * <code>BatchPrediction</code> request.</p>
      */
     inline BatchPrediction& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+
 
     /**
      * <p>The ID of the <code>DataSource</code> that points to the group of
@@ -182,6 +185,7 @@ namespace Model
      */
     inline BatchPrediction& WithBatchPredictionDataSourceId(const char* value) { SetBatchPredictionDataSourceId(value); return *this;}
 
+
     /**
      * <p>The location of the data file or directory in Amazon Simple Storage Service
      * (Amazon S3).</p>
@@ -223,6 +227,7 @@ namespace Model
      * (Amazon S3).</p>
      */
     inline BatchPrediction& WithInputDataLocationS3(const char* value) { SetInputDataLocationS3(value); return *this;}
+
 
     /**
      * <p>The AWS user account that invoked the <code>BatchPrediction</code>. The
@@ -273,6 +278,7 @@ namespace Model
      */
     inline BatchPrediction& WithCreatedByIamUser(const char* value) { SetCreatedByIamUser(value); return *this;}
 
+
     /**
      * <p>The time that the <code>BatchPrediction</code> was created. The time is
      * expressed in epoch time.</p>
@@ -303,6 +309,7 @@ namespace Model
      */
     inline BatchPrediction& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
      * time is expressed in epoch time.</p>
@@ -332,6 +339,7 @@ namespace Model
      * time is expressed in epoch time.</p>
      */
     inline BatchPrediction& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
@@ -367,6 +375,7 @@ namespace Model
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
      */
     inline BatchPrediction& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The status of the <code>BatchPrediction</code>. This element can have one of
@@ -428,6 +437,7 @@ namespace Model
      */
     inline BatchPrediction& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
      * results. The following substrings are not allowed in the <code>s3 key</code>
@@ -477,6 +487,7 @@ namespace Model
      */
     inline BatchPrediction& WithOutputUri(const char* value) { SetOutputUri(value); return *this;}
 
+
     /**
      * <p>A description of the most recent details about processing the batch
      * prediction request.</p>
@@ -519,6 +530,7 @@ namespace Model
      */
     inline BatchPrediction& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     
     inline long long GetComputeTime() const{ return m_computeTime; }
 
@@ -527,6 +539,7 @@ namespace Model
 
     
     inline BatchPrediction& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
 
     
     inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
@@ -543,6 +556,7 @@ namespace Model
     
     inline BatchPrediction& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
 
@@ -558,6 +572,7 @@ namespace Model
     
     inline BatchPrediction& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
 
+
     
     inline long long GetTotalRecordCount() const{ return m_totalRecordCount; }
 
@@ -566,6 +581,7 @@ namespace Model
 
     
     inline BatchPrediction& WithTotalRecordCount(long long value) { SetTotalRecordCount(value); return *this;}
+
 
     
     inline long long GetInvalidRecordCount() const{ return m_invalidRecordCount; }
@@ -577,36 +593,52 @@ namespace Model
     inline BatchPrediction& WithInvalidRecordCount(long long value) { SetInvalidRecordCount(value); return *this;}
 
   private:
+
     Aws::String m_batchPredictionId;
     bool m_batchPredictionIdHasBeenSet;
+
     Aws::String m_mLModelId;
     bool m_mLModelIdHasBeenSet;
+
     Aws::String m_batchPredictionDataSourceId;
     bool m_batchPredictionDataSourceIdHasBeenSet;
+
     Aws::String m_inputDataLocationS3;
     bool m_inputDataLocationS3HasBeenSet;
+
     Aws::String m_createdByIamUser;
     bool m_createdByIamUserHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     EntityStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_outputUri;
     bool m_outputUriHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     long long m_computeTime;
     bool m_computeTimeHasBeenSet;
+
     Aws::Utils::DateTime m_finishedAt;
     bool m_finishedAtHasBeenSet;
+
     Aws::Utils::DateTime m_startedAt;
     bool m_startedAtHasBeenSet;
+
     long long m_totalRecordCount;
     bool m_totalRecordCountHasBeenSet;
+
     long long m_invalidRecordCount;
     bool m_invalidRecordCountHasBeenSet;
   };

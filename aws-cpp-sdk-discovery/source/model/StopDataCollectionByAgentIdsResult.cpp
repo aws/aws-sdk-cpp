@@ -30,12 +30,12 @@ StopDataCollectionByAgentIdsResult::StopDataCollectionByAgentIdsResult()
 {
 }
 
-StopDataCollectionByAgentIdsResult::StopDataCollectionByAgentIdsResult(const AmazonWebServiceResult<JsonValue>& result)
+StopDataCollectionByAgentIdsResult::StopDataCollectionByAgentIdsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopDataCollectionByAgentIdsResult& StopDataCollectionByAgentIdsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopDataCollectionByAgentIdsResult& StopDataCollectionByAgentIdsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("agentsConfigurationStatus"))

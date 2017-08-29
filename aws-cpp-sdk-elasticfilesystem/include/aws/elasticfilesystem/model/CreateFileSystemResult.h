@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     CreateFileSystemResult();
-    CreateFileSystemResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateFileSystemResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateFileSystemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateFileSystemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>AWS account that created the file system. If the file system was created by
@@ -92,6 +93,7 @@ namespace Model
      */
     inline CreateFileSystemResult& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
     /**
      * <p>Opaque string specified in the request.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      * <p>Opaque string specified in the request.</p>
      */
     inline CreateFileSystemResult& WithCreationToken(const char* value) { SetCreationToken(value); return *this;}
+
 
     /**
      * <p>ID of the file system, assigned by Amazon EFS.</p>
@@ -162,6 +165,7 @@ namespace Model
      */
     inline CreateFileSystemResult& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
+
     /**
      * <p>Time that the file system was created, in seconds (since
      * 1970-01-01T00:00:00Z).</p>
@@ -192,6 +196,7 @@ namespace Model
      */
     inline CreateFileSystemResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Lifecycle phase of the file system.</p>
      */
@@ -216,6 +221,7 @@ namespace Model
      * <p>Lifecycle phase of the file system.</p>
      */
     inline CreateFileSystemResult& WithLifeCycleState(LifeCycleState&& value) { SetLifeCycleState(std::move(value)); return *this;}
+
 
     /**
      * <p>You can add tags to a file system, including a <code>Name</code> tag. For
@@ -266,6 +272,7 @@ namespace Model
      */
     inline CreateFileSystemResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Current number of mount targets that the file system has. For more
      * information, see <a>CreateMountTarget</a>.</p>
@@ -283,6 +290,7 @@ namespace Model
      * information, see <a>CreateMountTarget</a>.</p>
      */
     inline CreateFileSystemResult& WithNumberOfMountTargets(int value) { SetNumberOfMountTargets(value); return *this;}
+
 
     /**
      * <p>Latest known metered size (in bytes) of data stored in the file system, in
@@ -349,6 +357,7 @@ namespace Model
      */
     inline CreateFileSystemResult& WithSizeInBytes(FileSystemSize&& value) { SetSizeInBytes(std::move(value)); return *this;}
 
+
     /**
      * <p>The <code>PerformanceMode</code> of the file system.</p>
      */
@@ -374,6 +383,7 @@ namespace Model
      */
     inline CreateFileSystemResult& WithPerformanceMode(PerformanceMode&& value) { SetPerformanceMode(std::move(value)); return *this;}
 
+
     /**
      * <p>A boolean value that, if true, indicates that the file system is
      * encrypted.</p>
@@ -391,6 +401,7 @@ namespace Model
      * encrypted.</p>
      */
     inline CreateFileSystemResult& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
@@ -435,16 +446,27 @@ namespace Model
     inline CreateFileSystemResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
+
     Aws::String m_ownerId;
+
     Aws::String m_creationToken;
+
     Aws::String m_fileSystemId;
+
     Aws::Utils::DateTime m_creationTime;
+
     LifeCycleState m_lifeCycleState;
+
     Aws::String m_name;
+
     int m_numberOfMountTargets;
+
     FileSystemSize m_sizeInBytes;
+
     PerformanceMode m_performanceMode;
+
     bool m_encrypted;
+
     Aws::String m_kmsKeyId;
   };
 

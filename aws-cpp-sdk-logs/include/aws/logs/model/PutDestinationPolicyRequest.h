@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A name for an existing destination.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>A name for an existing destination.</p>
      */
     inline PutDestinationPolicyRequest& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
+
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their
@@ -114,8 +116,10 @@ namespace Model
     inline PutDestinationPolicyRequest& WithAccessPolicy(const char* value) { SetAccessPolicy(value); return *this;}
 
   private:
+
     Aws::String m_destinationName;
     bool m_destinationNameHasBeenSet;
+
     Aws::String m_accessPolicy;
     bool m_accessPolicyHasBeenSet;
   };

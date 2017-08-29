@@ -47,6 +47,7 @@ namespace Model
     PolicyParameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> Name of the parameter from the list of Review Polices. </p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p> Name of the parameter from the list of Review Polices. </p>
      */
     inline PolicyParameter& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p> The list of values of the Parameter</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline PolicyParameter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
+
     /**
      * <p> List of ParameterMapEntry objects. </p>
      */
@@ -158,10 +161,13 @@ namespace Model
     inline PolicyParameter& AddMapEntries(ParameterMapEntry&& value) { m_mapEntriesHasBeenSet = true; m_mapEntries.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
+
     Aws::Vector<ParameterMapEntry> m_mapEntries;
     bool m_mapEntriesHasBeenSet;
   };

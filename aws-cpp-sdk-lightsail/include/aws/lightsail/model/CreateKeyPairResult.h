@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     CreateKeyPairResult();
-    CreateKeyPairResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateKeyPairResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateKeyPairResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateKeyPairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the new key pair you
@@ -72,6 +73,7 @@ namespace Model
      * just created.</p>
      */
     inline CreateKeyPairResult& WithKeyPair(KeyPair&& value) { SetKeyPair(std::move(value)); return *this;}
+
 
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline CreateKeyPairResult& WithPublicKeyBase64(const char* value) { SetPublicKeyBase64(value); return *this;}
 
+
     /**
      * <p>A base64-encoded RSA private key.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      */
     inline CreateKeyPairResult& WithPrivateKeyBase64(const char* value) { SetPrivateKeyBase64(value); return *this;}
 
+
     /**
      * <p>An array of key-value pairs containing information about the results of your
      * create key pair request.</p>
@@ -174,9 +178,13 @@ namespace Model
     inline CreateKeyPairResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
+
     KeyPair m_keyPair;
+
     Aws::String m_publicKeyBase64;
+
     Aws::String m_privateKeyBase64;
+
     Operation m_operation;
   };
 

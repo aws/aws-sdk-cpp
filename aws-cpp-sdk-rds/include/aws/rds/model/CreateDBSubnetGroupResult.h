@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateDBSubnetGroupResult();
-    CreateDBSubnetGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateDBSubnetGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDBSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDBSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DBSubnetGroup& GetDBSubnetGroup() const{ return m_dBSubnetGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline CreateDBSubnetGroupResult& WithDBSubnetGroup(DBSubnetGroup&& value) { SetDBSubnetGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline CreateDBSubnetGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DBSubnetGroup m_dBSubnetGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 

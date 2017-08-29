@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cache security group to return details for.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline DescribeCacheSecurityGroupsRequest& WithCacheSecurityGroupName(const char* value) { SetCacheSecurityGroupName(value); return *this;}
 
+
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a marker is included in
@@ -100,6 +102,7 @@ namespace Model
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
      */
     inline DescribeCacheSecurityGroupsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
@@ -158,10 +161,13 @@ namespace Model
     inline DescribeCacheSecurityGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_cacheSecurityGroupName;
     bool m_cacheSecurityGroupNameHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

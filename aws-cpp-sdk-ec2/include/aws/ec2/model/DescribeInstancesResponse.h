@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeInstancesResponse();
-    DescribeInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Zero or more reservations.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Zero or more reservations.</p>
      */
     inline DescribeInstancesResponse& AddReservations(Reservation&& value) { m_reservations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use to retrieve the next page of results. This value is
@@ -126,6 +128,7 @@ namespace Model
      */
     inline DescribeInstancesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline DescribeInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Reservation> m_reservations;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

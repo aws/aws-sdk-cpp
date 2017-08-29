@@ -46,6 +46,7 @@ namespace Model
     UnprocessedNamedQueryId& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier of the named query.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The unique identifier of the named query.</p>
      */
     inline UnprocessedNamedQueryId& WithNamedQueryId(const char* value) { SetNamedQueryId(value); return *this;}
+
 
     /**
      * <p>The error code returned when the processing request for the named query
@@ -122,6 +124,7 @@ namespace Model
      * failed, if applicable.</p>
      */
     inline UnprocessedNamedQueryId& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+
 
     /**
      * <p>The error message returned when the processing request for the named query
@@ -166,10 +169,13 @@ namespace Model
     inline UnprocessedNamedQueryId& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     Aws::String m_namedQueryId;
     bool m_namedQueryIdHasBeenSet;
+
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
   };

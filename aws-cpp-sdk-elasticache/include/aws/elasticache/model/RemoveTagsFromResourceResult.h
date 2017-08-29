@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     RemoveTagsFromResourceResult();
-    RemoveTagsFromResourceResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RemoveTagsFromResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RemoveTagsFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RemoveTagsFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of cost allocation tags as key-value pairs.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline RemoveTagsFromResourceResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -101,7 +103,9 @@ namespace Model
     inline RemoveTagsFromResourceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Tag> m_tagList;
+
     ResponseMetadata m_responseMetadata;
   };
 

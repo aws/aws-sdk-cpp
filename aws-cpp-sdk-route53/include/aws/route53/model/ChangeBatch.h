@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p> <i>Optional:</i> Any comments you want to include about a change batch
      * request.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline ChangeBatch& WithComment(const char* value) { SetComment(value); return *this;}
 
+
     /**
      * <p>Information about the changes to make to the record sets.</p>
      */
@@ -126,8 +128,10 @@ namespace Model
     inline ChangeBatch& AddChanges(Change&& value) { m_changesHasBeenSet = true; m_changes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     Aws::Vector<Change> m_changes;
     bool m_changesHasBeenSet;
   };

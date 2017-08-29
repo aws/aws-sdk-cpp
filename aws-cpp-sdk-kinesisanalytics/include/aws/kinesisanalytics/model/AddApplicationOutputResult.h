@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     AddApplicationOutputResult();
-    AddApplicationOutputResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddApplicationOutputResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddApplicationOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddApplicationOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

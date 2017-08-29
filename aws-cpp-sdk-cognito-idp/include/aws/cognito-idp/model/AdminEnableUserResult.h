@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     AdminEnableUserResult();
-    AdminEnableUserResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminEnableUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminEnableUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminEnableUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -30,12 +30,12 @@ GetOpenIdTokenForDeveloperIdentityResult::GetOpenIdTokenForDeveloperIdentityResu
 {
 }
 
-GetOpenIdTokenForDeveloperIdentityResult::GetOpenIdTokenForDeveloperIdentityResult(const AmazonWebServiceResult<JsonValue>& result)
+GetOpenIdTokenForDeveloperIdentityResult::GetOpenIdTokenForDeveloperIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetOpenIdTokenForDeveloperIdentityResult& GetOpenIdTokenForDeveloperIdentityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetOpenIdTokenForDeveloperIdentityResult& GetOpenIdTokenForDeveloperIdentityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityId"))

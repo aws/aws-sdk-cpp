@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier of the VPC security group.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The identifier of the VPC security group.</p>
      */
     inline VpcSecurityGroupMembership& WithVpcSecurityGroupId(const char* value) { SetVpcSecurityGroupId(value); return *this;}
+
 
     /**
      * <p>The status of the VPC security group.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline VpcSecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_vpcSecurityGroupId;
     bool m_vpcSecurityGroupIdHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

@@ -44,6 +44,7 @@ namespace Model
     InstancesCount& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of instances in the Assigning state.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>The number of instances in the Assigning state.</p>
      */
     inline InstancesCount& WithAssigning(int value) { SetAssigning(value); return *this;}
+
 
     /**
      * <p>The number of instances with <code>booting</code> status.</p>
@@ -74,6 +76,7 @@ namespace Model
      */
     inline InstancesCount& WithBooting(int value) { SetBooting(value); return *this;}
 
+
     /**
      * <p>The number of instances with <code>connection_lost</code> status.</p>
      */
@@ -88,6 +91,7 @@ namespace Model
      * <p>The number of instances with <code>connection_lost</code> status.</p>
      */
     inline InstancesCount& WithConnectionLost(int value) { SetConnectionLost(value); return *this;}
+
 
     /**
      * <p>The number of instances in the Deregistering state.</p>
@@ -104,6 +108,7 @@ namespace Model
      */
     inline InstancesCount& WithDeregistering(int value) { SetDeregistering(value); return *this;}
 
+
     /**
      * <p>The number of instances with <code>online</code> status.</p>
      */
@@ -118,6 +123,7 @@ namespace Model
      * <p>The number of instances with <code>online</code> status.</p>
      */
     inline InstancesCount& WithOnline(int value) { SetOnline(value); return *this;}
+
 
     /**
      * <p>The number of instances with <code>pending</code> status.</p>
@@ -134,6 +140,7 @@ namespace Model
      */
     inline InstancesCount& WithPending(int value) { SetPending(value); return *this;}
 
+
     /**
      * <p>The number of instances with <code>rebooting</code> status.</p>
      */
@@ -148,6 +155,7 @@ namespace Model
      * <p>The number of instances with <code>rebooting</code> status.</p>
      */
     inline InstancesCount& WithRebooting(int value) { SetRebooting(value); return *this;}
+
 
     /**
      * <p>The number of instances in the Registered state.</p>
@@ -164,6 +172,7 @@ namespace Model
      */
     inline InstancesCount& WithRegistered(int value) { SetRegistered(value); return *this;}
 
+
     /**
      * <p>The number of instances in the Registering state.</p>
      */
@@ -178,6 +187,7 @@ namespace Model
      * <p>The number of instances in the Registering state.</p>
      */
     inline InstancesCount& WithRegistering(int value) { SetRegistering(value); return *this;}
+
 
     /**
      * <p>The number of instances with <code>requested</code> status.</p>
@@ -194,6 +204,7 @@ namespace Model
      */
     inline InstancesCount& WithRequested(int value) { SetRequested(value); return *this;}
 
+
     /**
      * <p>The number of instances with <code>running_setup</code> status.</p>
      */
@@ -208,6 +219,7 @@ namespace Model
      * <p>The number of instances with <code>running_setup</code> status.</p>
      */
     inline InstancesCount& WithRunningSetup(int value) { SetRunningSetup(value); return *this;}
+
 
     /**
      * <p>The number of instances with <code>setup_failed</code> status.</p>
@@ -224,6 +236,7 @@ namespace Model
      */
     inline InstancesCount& WithSetupFailed(int value) { SetSetupFailed(value); return *this;}
 
+
     /**
      * <p>The number of instances with <code>shutting_down</code> status.</p>
      */
@@ -238,6 +251,7 @@ namespace Model
      * <p>The number of instances with <code>shutting_down</code> status.</p>
      */
     inline InstancesCount& WithShuttingDown(int value) { SetShuttingDown(value); return *this;}
+
 
     /**
      * <p>The number of instances with <code>start_failed</code> status.</p>
@@ -254,6 +268,7 @@ namespace Model
      */
     inline InstancesCount& WithStartFailed(int value) { SetStartFailed(value); return *this;}
 
+
     /**
      * <p>The number of instances with <code>stopped</code> status.</p>
      */
@@ -268,6 +283,7 @@ namespace Model
      * <p>The number of instances with <code>stopped</code> status.</p>
      */
     inline InstancesCount& WithStopped(int value) { SetStopped(value); return *this;}
+
 
     /**
      * <p>The number of instances with <code>stopping</code> status.</p>
@@ -284,6 +300,7 @@ namespace Model
      */
     inline InstancesCount& WithStopping(int value) { SetStopping(value); return *this;}
 
+
     /**
      * <p>The number of instances with <code>terminated</code> status.</p>
      */
@@ -299,6 +316,7 @@ namespace Model
      */
     inline InstancesCount& WithTerminated(int value) { SetTerminated(value); return *this;}
 
+
     /**
      * <p>The number of instances with <code>terminating</code> status.</p>
      */
@@ -313,6 +331,7 @@ namespace Model
      * <p>The number of instances with <code>terminating</code> status.</p>
      */
     inline InstancesCount& WithTerminating(int value) { SetTerminating(value); return *this;}
+
 
     /**
      * <p>The number of instances in the Unassigning state.</p>
@@ -330,42 +349,61 @@ namespace Model
     inline InstancesCount& WithUnassigning(int value) { SetUnassigning(value); return *this;}
 
   private:
+
     int m_assigning;
     bool m_assigningHasBeenSet;
+
     int m_booting;
     bool m_bootingHasBeenSet;
+
     int m_connectionLost;
     bool m_connectionLostHasBeenSet;
+
     int m_deregistering;
     bool m_deregisteringHasBeenSet;
+
     int m_online;
     bool m_onlineHasBeenSet;
+
     int m_pending;
     bool m_pendingHasBeenSet;
+
     int m_rebooting;
     bool m_rebootingHasBeenSet;
+
     int m_registered;
     bool m_registeredHasBeenSet;
+
     int m_registering;
     bool m_registeringHasBeenSet;
+
     int m_requested;
     bool m_requestedHasBeenSet;
+
     int m_runningSetup;
     bool m_runningSetupHasBeenSet;
+
     int m_setupFailed;
     bool m_setupFailedHasBeenSet;
+
     int m_shuttingDown;
     bool m_shuttingDownHasBeenSet;
+
     int m_startFailed;
     bool m_startFailedHasBeenSet;
+
     int m_stopped;
     bool m_stoppedHasBeenSet;
+
     int m_stopping;
     bool m_stoppingHasBeenSet;
+
     int m_terminated;
     bool m_terminatedHasBeenSet;
+
     int m_terminating;
     bool m_terminatingHasBeenSet;
+
     int m_unassigning;
     bool m_unassigningHasBeenSet;
   };

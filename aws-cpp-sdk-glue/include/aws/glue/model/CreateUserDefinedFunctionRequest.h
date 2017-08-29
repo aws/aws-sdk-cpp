@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Data Catalog in which to create the function. If none is
      * supplied, the AWS account ID is used by default.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline CreateUserDefinedFunctionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
+
     /**
      * <p>The name of the catalog database in which to create the function.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      */
     inline CreateUserDefinedFunctionRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>A <code>FunctionInput</code> object that defines the function to create in
      * the Data Catalog.</p>
@@ -145,10 +148,13 @@ namespace Model
     inline CreateUserDefinedFunctionRequest& WithFunctionInput(UserDefinedFunctionInput&& value) { SetFunctionInput(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     UserDefinedFunctionInput m_functionInput;
     bool m_functionInputHasBeenSet;
   };

@@ -30,12 +30,12 @@ CreateKeyResult::CreateKeyResult()
 {
 }
 
-CreateKeyResult::CreateKeyResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateKeyResult::CreateKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateKeyResult& CreateKeyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateKeyResult& CreateKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("KeyMetadata"))

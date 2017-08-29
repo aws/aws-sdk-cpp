@@ -48,6 +48,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
@@ -181,6 +182,7 @@ namespace Model
      */
     inline SendEmailRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
+
     /**
      * <p>The destination for this email, composed of To:, CC:, and BCC: fields.</p>
      */
@@ -206,6 +208,7 @@ namespace Model
      */
     inline SendEmailRequest& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
 
+
     /**
      * <p>The message to be sent.</p>
      */
@@ -230,6 +233,7 @@ namespace Model
      * <p>The message to be sent.</p>
      */
     inline SendEmailRequest& WithMessage(Message&& value) { SetMessage(std::move(value)); return *this;}
+
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
@@ -278,6 +282,7 @@ namespace Model
      * the message, each reply-to address will receive the reply.</p>
      */
     inline SendEmailRequest& AddReplyToAddresses(const char* value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(value); return *this; }
+
 
     /**
      * <p>The email address to which bounces and complaints are to be forwarded when
@@ -355,6 +360,7 @@ namespace Model
      * Amazon SES, or from a domain that has been verified with Amazon SES. </p>
      */
     inline SendEmailRequest& WithReturnPath(const char* value) { SetReturnPath(value); return *this;}
+
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -467,6 +473,7 @@ namespace Model
      * SES Developer Guide</a>. </p>
      */
     inline SendEmailRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -587,6 +594,7 @@ namespace Model
      */
     inline SendEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}
 
+
     /**
      * <p>A list of tags, in the form of name/value pairs, to apply to an email that
      * you send using <code>SendEmail</code>. Tags correspond to characteristics of the
@@ -636,6 +644,7 @@ namespace Model
      */
     inline SendEmailRequest& AddTags(MessageTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name of the configuration set to use when you send an email using
      * <code>SendEmail</code>.</p>
@@ -679,22 +688,31 @@ namespace Model
     inline SendEmailRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 
   private:
+
     Aws::String m_source;
     bool m_sourceHasBeenSet;
+
     Destination m_destination;
     bool m_destinationHasBeenSet;
+
     Message m_message;
     bool m_messageHasBeenSet;
+
     Aws::Vector<Aws::String> m_replyToAddresses;
     bool m_replyToAddressesHasBeenSet;
+
     Aws::String m_returnPath;
     bool m_returnPathHasBeenSet;
+
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet;
+
     Aws::String m_returnPathArn;
     bool m_returnPathArnHasBeenSet;
+
     Aws::Vector<MessageTag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet;
   };

@@ -32,14 +32,14 @@ DescribeVaultResult::DescribeVaultResult() :
 {
 }
 
-DescribeVaultResult::DescribeVaultResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeVaultResult::DescribeVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_numberOfArchives(0),
     m_sizeInBytes(0)
 {
   *this = result;
 }
 
-DescribeVaultResult& DescribeVaultResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeVaultResult& DescribeVaultResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("VaultARN"))

@@ -47,6 +47,7 @@ namespace Model
     CACertificate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the CA certificate.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The ARN of the CA certificate.</p>
      */
     inline CACertificate& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
 
     /**
      * <p>The ID of the CA certificate.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline CACertificate& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
+
     /**
      * <p>The status of the CA certificate.</p> <p>The status value REGISTER_INACTIVE
      * is deprecated and should not be used.</p>
@@ -147,6 +150,7 @@ namespace Model
      */
     inline CACertificate& WithStatus(CACertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The date the CA certificate was created.</p>
      */
@@ -173,12 +177,16 @@ namespace Model
     inline CACertificate& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
+
     CACertificateStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };

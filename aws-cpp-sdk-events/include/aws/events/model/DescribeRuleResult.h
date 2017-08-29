@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeRuleResult();
-    DescribeRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the rule.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline DescribeRuleResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline DescribeRuleResult& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The event pattern. For more information, see <a
@@ -161,6 +164,7 @@ namespace Model
      */
     inline DescribeRuleResult& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
 
+
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
      * minutes)".</p>
@@ -203,6 +207,7 @@ namespace Model
      */
     inline DescribeRuleResult& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
+
     /**
      * <p>Specifies whether the rule is enabled or disabled.</p>
      */
@@ -227,6 +232,7 @@ namespace Model
      * <p>Specifies whether the rule is enabled or disabled.</p>
      */
     inline DescribeRuleResult& WithState(RuleState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The description of the rule.</p>
@@ -262,6 +268,7 @@ namespace Model
      * <p>The description of the rule.</p>
      */
     inline DescribeRuleResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
@@ -299,12 +306,19 @@ namespace Model
     inline DescribeRuleResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_arn;
+
     Aws::String m_eventPattern;
+
     Aws::String m_scheduleExpression;
+
     RuleState m_state;
+
     Aws::String m_description;
+
     Aws::String m_roleArn;
   };
 

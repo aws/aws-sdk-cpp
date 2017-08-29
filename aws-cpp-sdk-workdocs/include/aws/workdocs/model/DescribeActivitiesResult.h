@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeActivitiesResult();
-    DescribeActivitiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeActivitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeActivitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeActivitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of activities for the specified user and time period.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of activities for the specified user and time period.</p>
      */
     inline DescribeActivitiesResult& AddUserActivities(Activity&& value) { m_userActivities.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline DescribeActivitiesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<Activity> m_userActivities;
+
     Aws::String m_marker;
   };
 

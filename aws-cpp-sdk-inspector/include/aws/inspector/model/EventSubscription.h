@@ -47,6 +47,7 @@ namespace Model
     EventSubscription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The event for which Amazon Simple Notification Service (SNS) notifications
      * are sent.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline EventSubscription& WithEvent(InspectorEvent&& value) { SetEvent(std::move(value)); return *this;}
 
+
     /**
      * <p>The time at which <a>SubscribeToEvent</a> is called.</p>
      */
@@ -103,8 +105,10 @@ namespace Model
     inline EventSubscription& WithSubscribedAt(Aws::Utils::DateTime&& value) { SetSubscribedAt(std::move(value)); return *this;}
 
   private:
+
     InspectorEvent m_event;
     bool m_eventHasBeenSet;
+
     Aws::Utils::DateTime m_subscribedAt;
     bool m_subscribedAtHasBeenSet;
   };

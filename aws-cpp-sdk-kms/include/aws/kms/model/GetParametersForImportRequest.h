@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the CMK into which you will import key material. The CMK's
      * <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>A valid identifier is
@@ -115,6 +116,7 @@ namespace Model
      */
     inline GetParametersForImportRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>The algorithm you will use to encrypt the key material before importing it
      * with <a>ImportKeyMaterial</a>. For more information, see <a
@@ -160,6 +162,7 @@ namespace Model
      */
     inline GetParametersForImportRequest& WithWrappingAlgorithm(AlgorithmSpec&& value) { SetWrappingAlgorithm(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of wrapping key (public key) to return in the response. Only
      * 2048-bit RSA public keys are supported.</p>
@@ -191,10 +194,13 @@ namespace Model
     inline GetParametersForImportRequest& WithWrappingKeySpec(WrappingKeySpec&& value) { SetWrappingKeySpec(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     AlgorithmSpec m_wrappingAlgorithm;
     bool m_wrappingAlgorithmHasBeenSet;
+
     WrappingKeySpec m_wrappingKeySpec;
     bool m_wrappingKeySpecHasBeenSet;
   };

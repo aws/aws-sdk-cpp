@@ -49,6 +49,7 @@ namespace Model
     OperationSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identifier returned to track the requested action.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline OperationSummary& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 
+
     /**
      * <p>The current status of the requested operation in the system.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      */
     inline OperationSummary& WithStatus(OperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Type of the action requested.</p>
      */
@@ -133,6 +136,7 @@ namespace Model
      * <p>Type of the action requested.</p>
      */
     inline OperationSummary& WithType(OperationType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The date when the request was submitted.</p>
@@ -160,12 +164,16 @@ namespace Model
     inline OperationSummary& WithSubmittedDate(Aws::Utils::DateTime&& value) { SetSubmittedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet;
+
     OperationStatus m_status;
     bool m_statusHasBeenSet;
+
     OperationType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Utils::DateTime m_submittedDate;
     bool m_submittedDateHasBeenSet;
   };

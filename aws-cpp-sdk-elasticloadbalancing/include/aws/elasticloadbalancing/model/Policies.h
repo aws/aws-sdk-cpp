@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The stickiness policies created using
      * <a>CreateAppCookieStickinessPolicy</a>.</p>
@@ -92,6 +93,7 @@ namespace Model
      * <a>CreateAppCookieStickinessPolicy</a>.</p>
      */
     inline Policies& AddAppCookieStickinessPolicies(AppCookieStickinessPolicy&& value) { m_appCookieStickinessPoliciesHasBeenSet = true; m_appCookieStickinessPolicies.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The stickiness policies created using
@@ -135,6 +137,7 @@ namespace Model
      */
     inline Policies& AddLBCookieStickinessPolicies(LBCookieStickinessPolicy&& value) { m_lBCookieStickinessPoliciesHasBeenSet = true; m_lBCookieStickinessPolicies.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The policies other than the stickiness policies.</p>
      */
@@ -176,10 +179,13 @@ namespace Model
     inline Policies& AddOtherPolicies(const char* value) { m_otherPoliciesHasBeenSet = true; m_otherPolicies.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<AppCookieStickinessPolicy> m_appCookieStickinessPolicies;
     bool m_appCookieStickinessPoliciesHasBeenSet;
+
     Aws::Vector<LBCookieStickinessPolicy> m_lBCookieStickinessPolicies;
     bool m_lBCookieStickinessPoliciesHasBeenSet;
+
     Aws::Vector<Aws::String> m_otherPolicies;
     bool m_otherPoliciesHasBeenSet;
   };

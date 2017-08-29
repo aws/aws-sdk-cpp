@@ -47,6 +47,7 @@ namespace Model
     ProvisioningArtifactDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the provisioning artifact. This is sometimes referred to as
      * the product version.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ProvisioningArtifactDetail& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name assigned to the provisioning artifact.</p>
      */
@@ -124,6 +126,7 @@ namespace Model
      */
     inline ProvisioningArtifactDetail& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The text description of the provisioning artifact.</p>
      */
@@ -158,6 +161,7 @@ namespace Model
      * <p>The text description of the provisioning artifact.</p>
      */
     inline ProvisioningArtifactDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The type of the provisioning artifact. The following provisioning artifact
@@ -199,6 +203,7 @@ namespace Model
      */
     inline ProvisioningArtifactDetail& WithType(ProvisioningArtifactType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The UTC timestamp of the creation time.</p>
      */
@@ -225,14 +230,19 @@ namespace Model
     inline ProvisioningArtifactDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ProvisioningArtifactType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
   };

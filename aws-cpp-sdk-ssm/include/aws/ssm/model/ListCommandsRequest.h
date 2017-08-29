@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>(Optional) If provided, lists only the specified command.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>(Optional) If provided, lists only the specified command.</p>
      */
     inline ListCommandsRequest& WithCommandId(const char* value) { SetCommandId(value); return *this;}
+
 
     /**
      * <p>(Optional) Lists commands issued against this instance ID.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline ListCommandsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>(Optional) The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the next set of
@@ -128,6 +131,7 @@ namespace Model
      * results.</p>
      */
     inline ListCommandsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>(Optional) The token for the next set of items to return. (You received this
@@ -170,6 +174,7 @@ namespace Model
      * token from a previous call.)</p>
      */
     inline ListCommandsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
@@ -214,14 +219,19 @@ namespace Model
     inline ListCommandsRequest& AddFilters(CommandFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_commandId;
     bool m_commandIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::Vector<CommandFilter> m_filters;
     bool m_filtersHasBeenSet;
   };

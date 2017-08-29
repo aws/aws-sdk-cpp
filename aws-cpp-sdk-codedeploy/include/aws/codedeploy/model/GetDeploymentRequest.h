@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A deployment ID associated with the applicable IAM user or AWS account.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline GetDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
   };

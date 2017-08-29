@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateProjectResult();
-    CreateProjectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateProjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Reserved for future use.</p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline CreateProjectResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      */
     inline CreateProjectResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline CreateProjectResult& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
 
     /**
      * <p>Reserved for future use.</p>
@@ -182,9 +186,13 @@ namespace Model
     inline CreateProjectResult& WithProjectTemplateId(const char* value) { SetProjectTemplateId(value); return *this;}
 
   private:
+
     Aws::String m_id;
+
     Aws::String m_arn;
+
     Aws::String m_clientRequestToken;
+
     Aws::String m_projectTemplateId;
   };
 

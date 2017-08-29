@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the directory in which the object resides.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline RemoveFacetFromObjectRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>The facet to remove.</p>
      */
@@ -97,6 +99,7 @@ namespace Model
      * <p>The facet to remove.</p>
      */
     inline RemoveFacetFromObjectRequest& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
+
 
     /**
      * <p>A reference to the object to remove the facet from.</p>
@@ -124,10 +127,13 @@ namespace Model
     inline RemoveFacetFromObjectRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     SchemaFacet m_schemaFacet;
     bool m_schemaFacetHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
   };

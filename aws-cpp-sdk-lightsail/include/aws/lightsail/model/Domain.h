@@ -51,6 +51,7 @@ namespace Model
     Domain& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the domain.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name of the domain.</p>
      */
     inline Domain& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the domain recordset (e.g.,
@@ -127,6 +129,7 @@ namespace Model
      * <code>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</code>).</p>
      */
     inline Domain& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -177,6 +180,7 @@ namespace Model
      */
     inline Domain& WithSupportCode(const char* value) { SetSupportCode(value); return *this;}
 
+
     /**
      * <p>The date when the domain recordset was created.</p>
      */
@@ -201,6 +205,7 @@ namespace Model
      * <p>The date when the domain recordset was created.</p>
      */
     inline Domain& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS Region and Availability Zones where the domain recordset was
@@ -232,6 +237,7 @@ namespace Model
      */
     inline Domain& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
+
     /**
      * <p>The resource type. </p>
      */
@@ -256,6 +262,7 @@ namespace Model
      * <p>The resource type. </p>
      */
     inline Domain& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of key-value pairs containing information about the domain
@@ -300,18 +307,25 @@ namespace Model
     inline Domain& AddDomainEntries(DomainEntry&& value) { m_domainEntriesHasBeenSet = true; m_domainEntries.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_supportCode;
     bool m_supportCodeHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     ResourceLocation m_location;
     bool m_locationHasBeenSet;
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::Vector<DomainEntry> m_domainEntries;
     bool m_domainEntriesHasBeenSet;
   };

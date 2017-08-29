@@ -30,12 +30,12 @@ ResendConfirmationCodeResult::ResendConfirmationCodeResult()
 {
 }
 
-ResendConfirmationCodeResult::ResendConfirmationCodeResult(const AmazonWebServiceResult<JsonValue>& result)
+ResendConfirmationCodeResult::ResendConfirmationCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ResendConfirmationCodeResult& ResendConfirmationCodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ResendConfirmationCodeResult& ResendConfirmationCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CodeDeliveryDetails"))

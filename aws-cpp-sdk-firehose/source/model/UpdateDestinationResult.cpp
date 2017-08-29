@@ -30,12 +30,12 @@ UpdateDestinationResult::UpdateDestinationResult()
 {
 }
 
-UpdateDestinationResult::UpdateDestinationResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDestinationResult::UpdateDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateDestinationResult& UpdateDestinationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDestinationResult& UpdateDestinationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

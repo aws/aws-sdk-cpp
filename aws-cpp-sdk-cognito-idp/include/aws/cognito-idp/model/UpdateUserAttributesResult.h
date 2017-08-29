@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     UpdateUserAttributesResult();
-    UpdateUserAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateUserAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateUserAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateUserAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The code delivery details list from the server for the request to update user
@@ -91,6 +92,7 @@ namespace Model
     inline UpdateUserAttributesResult& AddCodeDeliveryDetailsList(CodeDeliveryDetailsType&& value) { m_codeDeliveryDetailsList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CodeDeliveryDetailsType> m_codeDeliveryDetailsList;
   };
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetDomainResult();
-    GetDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about your get domain
@@ -72,6 +73,7 @@ namespace Model
     inline GetDomainResult& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 
   private:
+
     Domain m_domain;
   };
 

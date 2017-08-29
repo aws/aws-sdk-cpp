@@ -55,7 +55,7 @@ enum class WorkDocsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CUSTOM_METADATA_LIMIT_EXCEEDED,
   DEACTIVATING_LAST_SYSTEM_USER,
   DOCUMENT_LOCKED_FOR_COMMENTS,
@@ -78,7 +78,7 @@ enum class WorkDocsErrors
 };
 namespace WorkDocsErrorMapper
 {
-  AWS_WORKDOCS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_WORKDOCS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace WorkDocs

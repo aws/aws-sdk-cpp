@@ -53,6 +53,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A string used to name the user pool.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      */
     inline CreateUserPoolRequest& WithPoolName(const char* value) { SetPoolName(value); return *this;}
 
+
     /**
      * <p>The policies associated with the new user pool.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      */
     inline CreateUserPoolRequest& WithPolicies(UserPoolPolicyType&& value) { SetPolicies(std::move(value)); return *this;}
 
+
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
      */
@@ -137,6 +140,7 @@ namespace Model
      * <p>The Lambda trigger configuration information for the new user pool.</p>
      */
     inline CreateUserPoolRequest& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The attributes to be auto-verified. Possible values: <b>email</b>,
@@ -180,6 +184,7 @@ namespace Model
      */
     inline CreateUserPoolRequest& AddAutoVerifiedAttributes(VerifiedAttributeType&& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Attributes supported as an alias for this user pool. Possible values:
      * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
@@ -221,6 +226,7 @@ namespace Model
      * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
      */
     inline CreateUserPoolRequest& AddAliasAttributes(AliasAttributeType&& value) { m_aliasAttributesHasBeenSet = true; m_aliasAttributes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Specifies whether email addresses or phone numbers can be specified as
@@ -264,6 +270,7 @@ namespace Model
      */
     inline CreateUserPoolRequest& AddUsernameAttributes(UsernameAttributeType&& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A string representing the SMS verification message.</p>
      */
@@ -298,6 +305,7 @@ namespace Model
      * <p>A string representing the SMS verification message.</p>
      */
     inline CreateUserPoolRequest& WithSmsVerificationMessage(const char* value) { SetSmsVerificationMessage(value); return *this;}
+
 
     /**
      * <p>A string representing the email verification message.</p>
@@ -334,6 +342,7 @@ namespace Model
      */
     inline CreateUserPoolRequest& WithEmailVerificationMessage(const char* value) { SetEmailVerificationMessage(value); return *this;}
 
+
     /**
      * <p>A string representing the email verification subject.</p>
      */
@@ -369,6 +378,7 @@ namespace Model
      */
     inline CreateUserPoolRequest& WithEmailVerificationSubject(const char* value) { SetEmailVerificationSubject(value); return *this;}
 
+
     /**
      * <p>The template for the verification message that the user sees when the app
      * requests permission to access the user's information.</p>
@@ -398,6 +408,7 @@ namespace Model
      * requests permission to access the user's information.</p>
      */
     inline CreateUserPoolRequest& WithVerificationMessageTemplate(VerificationMessageTemplateType&& value) { SetVerificationMessageTemplate(std::move(value)); return *this;}
+
 
     /**
      * <p>A string representing the SMS authentication message.</p>
@@ -434,6 +445,7 @@ namespace Model
      */
     inline CreateUserPoolRequest& WithSmsAuthenticationMessage(const char* value) { SetSmsAuthenticationMessage(value); return *this;}
 
+
     /**
      * <p>Specifies MFA configuration details.</p>
      */
@@ -458,6 +470,7 @@ namespace Model
      * <p>Specifies MFA configuration details.</p>
      */
     inline CreateUserPoolRequest& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The device configuration.</p>
@@ -484,6 +497,7 @@ namespace Model
      */
     inline CreateUserPoolRequest& WithDeviceConfiguration(DeviceConfigurationType&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The email configuration.</p>
      */
@@ -509,6 +523,7 @@ namespace Model
      */
     inline CreateUserPoolRequest& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The SMS configuration.</p>
      */
@@ -533,6 +548,7 @@ namespace Model
      * <p>The SMS configuration.</p>
      */
     inline CreateUserPoolRequest& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
@@ -618,6 +634,7 @@ namespace Model
      */
     inline CreateUserPoolRequest& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
+
     /**
      * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
@@ -642,6 +659,7 @@ namespace Model
      * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline CreateUserPoolRequest& WithAdminCreateUserConfig(AdminCreateUserConfigType&& value) { SetAdminCreateUserConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of schema attributes for the new user pool. These attributes can be
@@ -686,40 +704,58 @@ namespace Model
     inline CreateUserPoolRequest& AddSchema(SchemaAttributeType&& value) { m_schemaHasBeenSet = true; m_schema.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_poolName;
     bool m_poolNameHasBeenSet;
+
     UserPoolPolicyType m_policies;
     bool m_policiesHasBeenSet;
+
     LambdaConfigType m_lambdaConfig;
     bool m_lambdaConfigHasBeenSet;
+
     Aws::Vector<VerifiedAttributeType> m_autoVerifiedAttributes;
     bool m_autoVerifiedAttributesHasBeenSet;
+
     Aws::Vector<AliasAttributeType> m_aliasAttributes;
     bool m_aliasAttributesHasBeenSet;
+
     Aws::Vector<UsernameAttributeType> m_usernameAttributes;
     bool m_usernameAttributesHasBeenSet;
+
     Aws::String m_smsVerificationMessage;
     bool m_smsVerificationMessageHasBeenSet;
+
     Aws::String m_emailVerificationMessage;
     bool m_emailVerificationMessageHasBeenSet;
+
     Aws::String m_emailVerificationSubject;
     bool m_emailVerificationSubjectHasBeenSet;
+
     VerificationMessageTemplateType m_verificationMessageTemplate;
     bool m_verificationMessageTemplateHasBeenSet;
+
     Aws::String m_smsAuthenticationMessage;
     bool m_smsAuthenticationMessageHasBeenSet;
+
     UserPoolMfaType m_mfaConfiguration;
     bool m_mfaConfigurationHasBeenSet;
+
     DeviceConfigurationType m_deviceConfiguration;
     bool m_deviceConfigurationHasBeenSet;
+
     EmailConfigurationType m_emailConfiguration;
     bool m_emailConfigurationHasBeenSet;
+
     SmsConfigurationType m_smsConfiguration;
     bool m_smsConfigurationHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_userPoolTags;
     bool m_userPoolTagsHasBeenSet;
+
     AdminCreateUserConfigType m_adminCreateUserConfig;
     bool m_adminCreateUserConfigHasBeenSet;
+
     Aws::Vector<SchemaAttributeType> m_schema;
     bool m_schemaHasBeenSet;
   };

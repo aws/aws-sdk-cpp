@@ -30,12 +30,12 @@ PutParameterResult::PutParameterResult()
 {
 }
 
-PutParameterResult::PutParameterResult(const AmazonWebServiceResult<JsonValue>& result)
+PutParameterResult::PutParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutParameterResult& PutParameterResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutParameterResult& PutParameterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

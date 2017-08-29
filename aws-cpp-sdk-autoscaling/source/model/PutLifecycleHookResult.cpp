@@ -31,12 +31,12 @@ PutLifecycleHookResult::PutLifecycleHookResult()
 {
 }
 
-PutLifecycleHookResult::PutLifecycleHookResult(const AmazonWebServiceResult<XmlDocument>& result)
+PutLifecycleHookResult::PutLifecycleHookResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-PutLifecycleHookResult& PutLifecycleHookResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+PutLifecycleHookResult& PutLifecycleHookResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

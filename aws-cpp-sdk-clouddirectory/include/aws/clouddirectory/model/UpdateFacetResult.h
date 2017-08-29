@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateFacetResult();
-    UpdateFacetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFacetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateFacetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateFacetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

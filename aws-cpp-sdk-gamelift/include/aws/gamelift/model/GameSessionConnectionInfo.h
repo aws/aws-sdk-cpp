@@ -53,6 +53,7 @@ namespace Model
     GameSessionConnectionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Amazon Resource Name (<a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
@@ -102,6 +103,7 @@ namespace Model
      */
     inline GameSessionConnectionInfo& WithGameSessionArn(const char* value) { SetGameSessionArn(value); return *this;}
 
+
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
      * an app needs both the IP address and port number.</p>
@@ -144,6 +146,7 @@ namespace Model
      */
     inline GameSessionConnectionInfo& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
+
     /**
      * <p>Port number for the game session. To connect to a Amazon GameLift game
      * server, an app needs both the IP address and port number.</p>
@@ -161,6 +164,7 @@ namespace Model
      * server, an app needs both the IP address and port number.</p>
      */
     inline GameSessionConnectionInfo& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>Collection of player session IDs, one for each player ID that was included in
@@ -205,12 +209,16 @@ namespace Model
     inline GameSessionConnectionInfo& AddMatchedPlayerSessions(MatchedPlayerSession&& value) { m_matchedPlayerSessionsHasBeenSet = true; m_matchedPlayerSessions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_gameSessionArn;
     bool m_gameSessionArnHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::Vector<MatchedPlayerSession> m_matchedPlayerSessions;
     bool m_matchedPlayerSessionsHasBeenSet;
   };

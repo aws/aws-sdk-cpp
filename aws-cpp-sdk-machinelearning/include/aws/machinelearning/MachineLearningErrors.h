@@ -55,7 +55,7 @@ enum class MachineLearningErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  IDEMPOTENT_PARAMETER_MISMATCH= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  IDEMPOTENT_PARAMETER_MISMATCH= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   INVALID_INPUT,
   INVALID_TAG,
@@ -65,7 +65,7 @@ enum class MachineLearningErrors
 };
 namespace MachineLearningErrorMapper
 {
-  AWS_MACHINELEARNING_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_MACHINELEARNING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace MachineLearning

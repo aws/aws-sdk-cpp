@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name (friendly name, not ARN) identifying the role.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The name (friendly name, not ARN) identifying the role.</p>
      */
     inline PolicyRole& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
 
     /**
      * <p>The stable and unique string identifying the role. For more information about
@@ -146,8 +148,10 @@ namespace Model
     inline PolicyRole& WithRoleId(const char* value) { SetRoleId(value); return *this;}
 
   private:
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_roleId;
     bool m_roleIdHasBeenSet;
   };

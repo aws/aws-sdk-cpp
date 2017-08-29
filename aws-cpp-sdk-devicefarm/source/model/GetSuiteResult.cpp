@@ -30,12 +30,12 @@ GetSuiteResult::GetSuiteResult()
 {
 }
 
-GetSuiteResult::GetSuiteResult(const AmazonWebServiceResult<JsonValue>& result)
+GetSuiteResult::GetSuiteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetSuiteResult& GetSuiteResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSuiteResult& GetSuiteResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("suite"))

@@ -48,6 +48,7 @@ namespace Model
     RunCommandParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Currently, we support including only one RunCommandTarget block, which
      * specifies either an array of InstanceIds or a tag.</p>
@@ -91,6 +92,7 @@ namespace Model
     inline RunCommandParameters& AddRunCommandTargets(RunCommandTarget&& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<RunCommandTarget> m_runCommandTargets;
     bool m_runCommandTargetsHasBeenSet;
   };

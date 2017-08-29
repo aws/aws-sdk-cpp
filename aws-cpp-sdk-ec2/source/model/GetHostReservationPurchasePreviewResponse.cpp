@@ -32,13 +32,13 @@ GetHostReservationPurchasePreviewResponse::GetHostReservationPurchasePreviewResp
 {
 }
 
-GetHostReservationPurchasePreviewResponse::GetHostReservationPurchasePreviewResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetHostReservationPurchasePreviewResponse::GetHostReservationPurchasePreviewResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_currencyCode(CurrencyCodeValues::NOT_SET)
 {
   *this = result;
 }
 
-GetHostReservationPurchasePreviewResponse& GetHostReservationPurchasePreviewResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetHostReservationPurchasePreviewResponse& GetHostReservationPurchasePreviewResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

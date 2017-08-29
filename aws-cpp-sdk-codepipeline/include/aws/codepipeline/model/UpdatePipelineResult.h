@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdatePipelineResult();
-    UpdatePipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The structure of the updated pipeline.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline UpdatePipelineResult& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
 
   private:
+
     PipelineDeclaration m_pipeline;
   };
 

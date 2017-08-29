@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
@@ -71,6 +72,7 @@ namespace Model
     
     inline Job& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
@@ -86,6 +88,7 @@ namespace Model
     
     inline Job& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
+
     
     inline bool GetIsCanceled() const{ return m_isCanceled; }
 
@@ -94,6 +97,7 @@ namespace Model
 
     
     inline Job& WithIsCanceled(bool value) { SetIsCanceled(value); return *this;}
+
 
     
     inline const JobType& GetJobType() const{ return m_jobType; }
@@ -111,12 +115,16 @@ namespace Model
     inline Job& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     bool m_isCanceled;
     bool m_isCanceledHasBeenSet;
+
     JobType m_jobType;
     bool m_jobTypeHasBeenSet;
   };

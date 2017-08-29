@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Maintenance Window execution the task is part of.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The ID of the Maintenance Window execution the task is part of.</p>
      */
     inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
+
 
     /**
      * <p>The ID of the specific task in the Maintenance Window task that should be
@@ -114,6 +116,7 @@ namespace Model
      * retrieved.</p>
      */
     inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+
 
     /**
      * <p>Optional filters used to scope down the returned task invocations. The
@@ -164,6 +167,7 @@ namespace Model
      */
     inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -184,6 +188,7 @@ namespace Model
      * results.</p>
      */
     inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -228,14 +233,19 @@ namespace Model
     inline DescribeMaintenanceWindowExecutionTaskInvocationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_windowExecutionId;
     bool m_windowExecutionIdHasBeenSet;
+
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet;
+
     Aws::Vector<MaintenanceWindowFilter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

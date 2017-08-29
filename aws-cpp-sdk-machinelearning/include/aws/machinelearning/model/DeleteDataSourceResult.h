@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteDataSourceResult();
-    DeleteDataSourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDataSourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
@@ -97,6 +98,7 @@ namespace Model
     inline DeleteDataSourceResult& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
   private:
+
     Aws::String m_dataSourceId;
   };
 

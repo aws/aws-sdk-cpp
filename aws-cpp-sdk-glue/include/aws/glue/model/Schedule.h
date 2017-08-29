@@ -47,6 +47,7 @@ namespace Model
     Schedule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A <code>cron</code> expression that can be used as a Cloudwatch event to
      * schedule something (see <a
@@ -110,6 +111,7 @@ namespace Model
      */
     inline Schedule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
+
     /**
      * <p>The state of the schedule.</p>
      */
@@ -136,8 +138,10 @@ namespace Model
     inline Schedule& WithState(ScheduleState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet;
+
     ScheduleState m_state;
     bool m_stateHasBeenSet;
   };

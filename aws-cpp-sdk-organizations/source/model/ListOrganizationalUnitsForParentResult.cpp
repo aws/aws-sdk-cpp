@@ -30,12 +30,12 @@ ListOrganizationalUnitsForParentResult::ListOrganizationalUnitsForParentResult()
 {
 }
 
-ListOrganizationalUnitsForParentResult::ListOrganizationalUnitsForParentResult(const AmazonWebServiceResult<JsonValue>& result)
+ListOrganizationalUnitsForParentResult::ListOrganizationalUnitsForParentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListOrganizationalUnitsForParentResult& ListOrganizationalUnitsForParentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListOrganizationalUnitsForParentResult& ListOrganizationalUnitsForParentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OrganizationalUnits"))

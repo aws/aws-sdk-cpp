@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     SendMessageBatchResult();
-    SendMessageBatchResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SendMessageBatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SendMessageBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SendMessageBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.</p>
@@ -86,6 +87,7 @@ namespace Model
      * <p>A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.</p>
      */
     inline SendMessageBatchResult& AddSuccessful(SendMessageBatchResultEntry&& value) { m_successful.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items with error
@@ -129,6 +131,7 @@ namespace Model
      */
     inline SendMessageBatchResult& AddFailed(BatchResultErrorEntry&& value) { m_failed.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -145,8 +148,11 @@ namespace Model
     inline SendMessageBatchResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<SendMessageBatchResultEntry> m_successful;
+
     Aws::Vector<BatchResultErrorEntry> m_failed;
+
     ResponseMetadata m_responseMetadata;
   };
 

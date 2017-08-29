@@ -31,12 +31,12 @@ CompleteLifecycleActionResult::CompleteLifecycleActionResult()
 {
 }
 
-CompleteLifecycleActionResult::CompleteLifecycleActionResult(const AmazonWebServiceResult<XmlDocument>& result)
+CompleteLifecycleActionResult::CompleteLifecycleActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CompleteLifecycleActionResult& CompleteLifecycleActionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CompleteLifecycleActionResult& CompleteLifecycleActionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

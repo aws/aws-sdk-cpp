@@ -30,12 +30,12 @@ GetTypedLinkFacetInformationResult::GetTypedLinkFacetInformationResult()
 {
 }
 
-GetTypedLinkFacetInformationResult::GetTypedLinkFacetInformationResult(const AmazonWebServiceResult<JsonValue>& result)
+GetTypedLinkFacetInformationResult::GetTypedLinkFacetInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetTypedLinkFacetInformationResult& GetTypedLinkFacetInformationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetTypedLinkFacetInformationResult& GetTypedLinkFacetInformationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityAttributeOrder"))

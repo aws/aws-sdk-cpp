@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     AttachToIndexResult();
-    AttachToIndexResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachToIndexResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachToIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachToIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
@@ -84,6 +85,7 @@ namespace Model
     inline AttachToIndexResult& WithAttachedObjectIdentifier(const char* value) { SetAttachedObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_attachedObjectIdentifier;
   };
 

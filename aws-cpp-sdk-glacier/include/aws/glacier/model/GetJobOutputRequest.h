@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -103,6 +104,7 @@ namespace Model
      */
     inline GetJobOutputRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -138,6 +140,7 @@ namespace Model
      */
     inline GetJobOutputRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
 
+
     /**
      * <p>The job ID whose data is downloaded.</p>
      */
@@ -172,6 +175,7 @@ namespace Model
      * <p>The job ID whose data is downloaded.</p>
      */
     inline GetJobOutputRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+
 
     /**
      * <p>The range of bytes to retrieve from the output. For example, if you want to
@@ -356,12 +360,16 @@ namespace Model
     inline GetJobOutputRequest& WithRange(const char* value) { SetRange(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
     Aws::String m_range;
     bool m_rangeHasBeenSet;
   };

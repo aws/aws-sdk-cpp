@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     ImportKeyPairResult();
-    ImportKeyPairResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportKeyPairResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportKeyPairResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportKeyPairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the request
@@ -72,6 +73,7 @@ namespace Model
     inline ImportKeyPairResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
+
     Operation m_operation;
   };
 

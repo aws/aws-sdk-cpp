@@ -50,13 +50,13 @@ GetObjectTorrentResult& GetObjectTorrentResult::operator=(GetObjectTorrentResult
    return *this;
 }
 
-GetObjectTorrentResult::GetObjectTorrentResult(AmazonWebServiceResult<ResponseStream>&& result) : 
+GetObjectTorrentResult::GetObjectTorrentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = std::move(result);
 }
 
-GetObjectTorrentResult& GetObjectTorrentResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+GetObjectTorrentResult& GetObjectTorrentResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_body = result.TakeOwnershipOfPayload();
 

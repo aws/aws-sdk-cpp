@@ -46,6 +46,7 @@ namespace Model
     DirectoryVpcSettingsDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the VPC that the directory is in.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The identifier of the VPC that the directory is in.</p>
      */
     inline DirectoryVpcSettingsDescription& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
 
     /**
      * <p>The identifiers of the subnets for the directory servers.</p>
@@ -120,6 +122,7 @@ namespace Model
      * <p>The identifiers of the subnets for the directory servers.</p>
      */
     inline DirectoryVpcSettingsDescription& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+
 
     /**
      * <p>The security group identifier for the directory. If the directory was created
@@ -177,6 +180,7 @@ namespace Model
      */
     inline DirectoryVpcSettingsDescription& WithSecurityGroupId(const char* value) { SetSecurityGroupId(value); return *this;}
 
+
     /**
      * <p>The list of Availability Zones that the directory is in.</p>
      */
@@ -218,12 +222,16 @@ namespace Model
     inline DirectoryVpcSettingsDescription& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
   private:
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
     Aws::String m_securityGroupId;
     bool m_securityGroupIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
   };

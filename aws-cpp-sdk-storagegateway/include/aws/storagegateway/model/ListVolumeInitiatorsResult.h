@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ListVolumeInitiatorsResult();
-    ListVolumeInitiatorsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVolumeInitiatorsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListVolumeInitiatorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListVolumeInitiatorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The host names and port numbers of all iSCSI initiators that are connected to
@@ -96,6 +97,7 @@ namespace Model
     inline ListVolumeInitiatorsResult& AddInitiators(const char* value) { m_initiators.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_initiators;
   };
 

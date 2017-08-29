@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone of the instance.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The Availability Zone of the instance.</p>
      */
     inline InstanceStatus& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>Any scheduled events associated with the instance.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline InstanceStatus& AddEvents(InstanceStatusEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      */
     inline InstanceStatus& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The intended state of the instance. <a>DescribeInstanceStatus</a> requires
      * that an instance be in the <code>running</code> state.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline InstanceStatus& WithInstanceState(InstanceState&& value) { SetInstanceState(std::move(value)); return *this;}
 
+
     /**
      * <p>Reports impaired functionality that stems from issues internal to the
      * instance, such as impaired reachability.</p>
@@ -216,6 +221,7 @@ namespace Model
      * instance, such as impaired reachability.</p>
      */
     inline InstanceStatus& WithInstanceStatus(InstanceStatusSummary&& value) { SetInstanceStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Reports impaired functionality that stems from issues related to the systems
@@ -253,16 +259,22 @@ namespace Model
     inline InstanceStatus& WithSystemStatus(InstanceStatusSummary&& value) { SetSystemStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::Vector<InstanceStatusEvent> m_events;
     bool m_eventsHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     InstanceState m_instanceState;
     bool m_instanceStateHasBeenSet;
+
     InstanceStatusSummary m_instanceStatus;
     bool m_instanceStatusHasBeenSet;
+
     InstanceStatusSummary m_systemStatus;
     bool m_systemStatusHasBeenSet;
   };

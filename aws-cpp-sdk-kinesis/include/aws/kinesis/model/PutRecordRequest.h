@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream to put the data record into.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the stream to put the data record into.</p>
      */
     inline PutRecordRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * <p>The data blob to put into the record, which is base64-encoded when the blob
@@ -115,6 +117,7 @@ namespace Model
      * size (1 MB).</p>
      */
     inline PutRecordRequest& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+
 
     /**
      * <p>Determines which shard in the stream the data record is assigned to.
@@ -200,6 +203,7 @@ namespace Model
      */
     inline PutRecordRequest& WithPartitionKey(const char* value) { SetPartitionKey(value); return *this;}
 
+
     /**
      * <p>The hash value used to explicitly determine the shard the data record is
      * assigned to by overriding the partition key hash.</p>
@@ -241,6 +245,7 @@ namespace Model
      * assigned to by overriding the partition key hash.</p>
      */
     inline PutRecordRequest& WithExplicitHashKey(const char* value) { SetExplicitHashKey(value); return *this;}
+
 
     /**
      * <p>Guarantees strictly increasing sequence numbers, for puts from the same
@@ -313,14 +318,19 @@ namespace Model
     inline PutRecordRequest& WithSequenceNumberForOrdering(const char* value) { SetSequenceNumberForOrdering(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::Utils::ByteBuffer m_data;
     bool m_dataHasBeenSet;
+
     Aws::String m_partitionKey;
     bool m_partitionKeyHasBeenSet;
+
     Aws::String m_explicitHashKey;
     bool m_explicitHashKeyHasBeenSet;
+
     Aws::String m_sequenceNumberForOrdering;
     bool m_sequenceNumberForOrderingHasBeenSet;
   };

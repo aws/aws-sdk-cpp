@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeReplicationTasksResult();
-    DescribeReplicationTasksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeReplicationTasksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeReplicationTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeReplicationTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -97,6 +98,7 @@ namespace Model
      */
     inline DescribeReplicationTasksResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A description of the replication tasks.</p>
      */
@@ -133,7 +135,9 @@ namespace Model
     inline DescribeReplicationTasksResult& AddReplicationTasks(ReplicationTask&& value) { m_replicationTasks.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<ReplicationTask> m_replicationTasks;
   };
 

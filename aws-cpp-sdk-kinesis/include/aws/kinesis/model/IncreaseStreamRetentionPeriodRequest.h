@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream to modify.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline IncreaseStreamRetentionPeriodRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
+
     /**
      * <p>The new retention period of the stream, in hours. Must be more than the
      * current retention period.</p>
@@ -94,8 +96,10 @@ namespace Model
     inline IncreaseStreamRetentionPeriodRequest& WithRetentionPeriodHours(int value) { SetRetentionPeriodHours(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     int m_retentionPeriodHours;
     bool m_retentionPeriodHoursHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of an existing replication group. The snapshot is created from
      * this replication group.</p>
@@ -83,6 +84,7 @@ namespace Model
      * this replication group.</p>
      */
     inline CreateSnapshotRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
+
 
     /**
      * <p>The identifier of an existing cache cluster. The snapshot is created from
@@ -126,6 +128,7 @@ namespace Model
      */
     inline CreateSnapshotRequest& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
 
+
     /**
      * <p>A name for the snapshot being created.</p>
      */
@@ -162,10 +165,13 @@ namespace Model
     inline CreateSnapshotRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
 
   private:
+
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
+
     Aws::String m_snapshotName;
     bool m_snapshotNameHasBeenSet;
   };

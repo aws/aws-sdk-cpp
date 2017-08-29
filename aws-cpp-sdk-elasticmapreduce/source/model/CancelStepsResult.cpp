@@ -30,12 +30,12 @@ CancelStepsResult::CancelStepsResult()
 {
 }
 
-CancelStepsResult::CancelStepsResult(const AmazonWebServiceResult<JsonValue>& result)
+CancelStepsResult::CancelStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CancelStepsResult& CancelStepsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CancelStepsResult& CancelStepsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CancelStepsInfoList"))

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     InitiateLayerUploadResult();
-    InitiateLayerUploadResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InitiateLayerUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateLayerUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateLayerUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The upload ID for the layer upload. This parameter is passed to further
@@ -83,6 +84,7 @@ namespace Model
      */
     inline InitiateLayerUploadResult& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
+
     /**
      * <p>The size, in bytes, that Amazon ECR expects future layer part uploads to
      * be.</p>
@@ -102,7 +104,9 @@ namespace Model
     inline InitiateLayerUploadResult& WithPartSize(long long value) { SetPartSize(value); return *this;}
 
   private:
+
     Aws::String m_uploadId;
+
     long long m_partSize;
   };
 

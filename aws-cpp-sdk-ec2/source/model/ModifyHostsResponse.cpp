@@ -31,12 +31,12 @@ ModifyHostsResponse::ModifyHostsResponse()
 {
 }
 
-ModifyHostsResponse::ModifyHostsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyHostsResponse::ModifyHostsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifyHostsResponse& ModifyHostsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyHostsResponse& ModifyHostsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

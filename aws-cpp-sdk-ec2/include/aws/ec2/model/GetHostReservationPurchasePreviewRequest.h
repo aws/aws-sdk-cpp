@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID/s of the Dedicated Host/s that the reservation will be associated
      * with.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline GetHostReservationPurchasePreviewRequest& AddHostIdSet(const char* value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
 
+
     /**
      * <p>The offering ID of the reservation.</p>
      */
@@ -123,8 +125,10 @@ namespace Model
     inline GetHostReservationPurchasePreviewRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_hostIdSet;
     bool m_hostIdSetHasBeenSet;
+
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet;
   };

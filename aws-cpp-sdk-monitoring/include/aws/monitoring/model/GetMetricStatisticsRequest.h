@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The namespace of the metric, with or without spaces.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline GetMetricStatisticsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
+
     /**
      * <p>The name of the metric, with or without spaces.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The name of the metric, with or without spaces.</p>
      */
     inline GetMetricStatisticsRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+
 
     /**
      * <p>The dimensions. If the metric contains multiple dimensions, you must include
@@ -210,6 +213,7 @@ namespace Model
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline GetMetricStatisticsRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The time stamp that determines the first data point to return. Start times
@@ -326,6 +330,7 @@ namespace Model
      */
     inline GetMetricStatisticsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The time stamp that determines the last data point to return.</p> <p>The
      * value specified is exclusive; results include data points up to the specified
@@ -365,6 +370,7 @@ namespace Model
      * 2016-10-10T23:00:00Z).</p>
      */
     inline GetMetricStatisticsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The granularity, in seconds, of the returned data points. For metrics with
@@ -416,6 +422,7 @@ namespace Model
      * a multiple of 3600 seconds (1 hour).</p> </li> </ul>
      */
     inline GetMetricStatisticsRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
+
 
     /**
      * <p>The metric statistics, other than percentile. For percentile statistics, use
@@ -473,6 +480,7 @@ namespace Model
      */
     inline GetMetricStatisticsRequest& AddStatistics(Statistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
      * <code>GetMetricStatistics</code>, you must specify either
@@ -529,6 +537,7 @@ namespace Model
      */
     inline GetMetricStatisticsRequest& AddExtendedStatistics(const char* value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(value); return *this; }
 
+
     /**
      * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
      * supplying a unit results in all units being returned. If the metric only ever
@@ -565,22 +574,31 @@ namespace Model
     inline GetMetricStatisticsRequest& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     int m_period;
     bool m_periodHasBeenSet;
+
     Aws::Vector<Statistic> m_statistics;
     bool m_statisticsHasBeenSet;
+
     Aws::Vector<Aws::String> m_extendedStatistics;
     bool m_extendedStatisticsHasBeenSet;
+
     StandardUnit m_unit;
     bool m_unitHasBeenSet;
   };

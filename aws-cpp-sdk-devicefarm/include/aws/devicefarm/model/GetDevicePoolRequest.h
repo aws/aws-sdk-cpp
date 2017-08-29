@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The device pool's ARN.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline GetDevicePoolRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
   };

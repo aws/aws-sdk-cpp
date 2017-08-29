@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     StopFleetResult();
-    StopFleetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopFleetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

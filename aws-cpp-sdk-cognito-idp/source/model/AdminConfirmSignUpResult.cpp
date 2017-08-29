@@ -30,12 +30,12 @@ AdminConfirmSignUpResult::AdminConfirmSignUpResult()
 {
 }
 
-AdminConfirmSignUpResult::AdminConfirmSignUpResult(const AmazonWebServiceResult<JsonValue>& result)
+AdminConfirmSignUpResult::AdminConfirmSignUpResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AdminConfirmSignUpResult& AdminConfirmSignUpResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AdminConfirmSignUpResult& AdminConfirmSignUpResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

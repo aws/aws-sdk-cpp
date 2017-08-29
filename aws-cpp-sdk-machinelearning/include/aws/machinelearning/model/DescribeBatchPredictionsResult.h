@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeBatchPredictionsResult();
-    DescribeBatchPredictionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBatchPredictionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBatchPredictionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBatchPredictionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
@@ -91,6 +92,7 @@ namespace Model
      * </p>
      */
     inline DescribeBatchPredictionsResult& AddResults(BatchPrediction&& value) { m_results.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the next page in the paginated results that indicates at least one
@@ -135,7 +137,9 @@ namespace Model
     inline DescribeBatchPredictionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<BatchPrediction> m_results;
+
     Aws::String m_nextToken;
   };
 

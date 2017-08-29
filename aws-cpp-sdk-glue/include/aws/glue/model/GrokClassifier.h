@@ -46,6 +46,7 @@ namespace Model
     GrokClassifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the classifier.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the classifier.</p>
      */
     inline GrokClassifier& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The data form that the classifier matches, such as Twitter, JSON, Omniture
@@ -123,6 +125,7 @@ namespace Model
      */
     inline GrokClassifier& WithClassification(const char* value) { SetClassification(value); return *this;}
 
+
     /**
      * <p>The time this classifier was registered.</p>
      */
@@ -147,6 +150,7 @@ namespace Model
      * <p>The time this classifier was registered.</p>
      */
     inline GrokClassifier& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The time this classifier was last updated.</p>
@@ -173,6 +177,7 @@ namespace Model
      */
     inline GrokClassifier& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
+
     /**
      * <p>The version of this classifier.</p>
      */
@@ -187,6 +192,7 @@ namespace Model
      * <p>The version of this classifier.</p>
      */
     inline GrokClassifier& WithVersion(long long value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The grok pattern used by this classifier.</p>
@@ -222,6 +228,7 @@ namespace Model
      * <p>The grok pattern used by this classifier.</p>
      */
     inline GrokClassifier& WithGrokPattern(const char* value) { SetGrokPattern(value); return *this;}
+
 
     /**
      * <p>Custom grok patterns used by this classifier.</p>
@@ -259,18 +266,25 @@ namespace Model
     inline GrokClassifier& WithCustomPatterns(const char* value) { SetCustomPatterns(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_classification;
     bool m_classificationHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdated;
     bool m_lastUpdatedHasBeenSet;
+
     long long m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_grokPattern;
     bool m_grokPatternHasBeenSet;
+
     Aws::String m_customPatterns;
     bool m_customPatternsHasBeenSet;
   };

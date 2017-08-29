@@ -46,6 +46,7 @@ namespace Model
     AdminCreateUserConfigType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Set to <code>True</code> if only the administrator is allowed to create user
      * profiles. Set to <code>False</code> if users can sign themselves up via an
@@ -66,6 +67,7 @@ namespace Model
      * app.</p>
      */
     inline AdminCreateUserConfigType& WithAllowAdminCreateUserOnly(bool value) { SetAllowAdminCreateUserOnly(value); return *this;}
+
 
     /**
      * <p>The user account expiration limit, in days, after which the account is no
@@ -94,6 +96,7 @@ namespace Model
      */
     inline AdminCreateUserConfigType& WithUnusedAccountValidityDays(int value) { SetUnusedAccountValidityDays(value); return *this;}
 
+
     /**
      * <p>The message template to be used for the welcome message to new users.</p>
      */
@@ -120,10 +123,13 @@ namespace Model
     inline AdminCreateUserConfigType& WithInviteMessageTemplate(MessageTemplateType&& value) { SetInviteMessageTemplate(std::move(value)); return *this;}
 
   private:
+
     bool m_allowAdminCreateUserOnly;
     bool m_allowAdminCreateUserOnlyHasBeenSet;
+
     int m_unusedAccountValidityDays;
     bool m_unusedAccountValidityDaysHasBeenSet;
+
     MessageTemplateType m_inviteMessageTemplate;
     bool m_inviteMessageTemplateHasBeenSet;
   };

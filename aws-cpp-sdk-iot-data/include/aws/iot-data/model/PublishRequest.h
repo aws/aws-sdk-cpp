@@ -42,6 +42,7 @@ namespace Model
     PublishRequest();
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The name of the MQTT topic.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline PublishRequest& WithTopic(const char* value) { SetTopic(value); return *this;}
 
+
     /**
      * <p>The Quality of Service (QoS) level.</p>
      */
@@ -93,10 +95,13 @@ namespace Model
     inline PublishRequest& WithQos(int value) { SetQos(value); return *this;}
 
   private:
+
     Aws::String m_topic;
     bool m_topicHasBeenSet;
+
     int m_qos;
     bool m_qosHasBeenSet;
+
   };
 
 } // namespace Model

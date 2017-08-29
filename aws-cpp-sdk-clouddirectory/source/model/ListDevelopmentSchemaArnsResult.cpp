@@ -30,12 +30,12 @@ ListDevelopmentSchemaArnsResult::ListDevelopmentSchemaArnsResult()
 {
 }
 
-ListDevelopmentSchemaArnsResult::ListDevelopmentSchemaArnsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListDevelopmentSchemaArnsResult::ListDevelopmentSchemaArnsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListDevelopmentSchemaArnsResult& ListDevelopmentSchemaArnsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListDevelopmentSchemaArnsResult& ListDevelopmentSchemaArnsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SchemaArns"))

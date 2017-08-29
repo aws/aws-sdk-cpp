@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the AWS Config rule for which you want compliance
      * information.</p>
@@ -82,6 +83,7 @@ namespace Model
      * information.</p>
      */
     inline GetComplianceDetailsByConfigRuleRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
+
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
@@ -132,6 +134,7 @@ namespace Model
      */
     inline GetComplianceDetailsByConfigRuleRequest& AddComplianceTypes(ComplianceType&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
      * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
@@ -152,6 +155,7 @@ namespace Model
      * uses the default.</p>
      */
     inline GetComplianceDetailsByConfigRuleRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
@@ -196,12 +200,16 @@ namespace Model
     inline GetComplianceDetailsByConfigRuleRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_configRuleName;
     bool m_configRuleNameHasBeenSet;
+
     Aws::Vector<ComplianceType> m_complianceTypes;
     bool m_complianceTypesHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

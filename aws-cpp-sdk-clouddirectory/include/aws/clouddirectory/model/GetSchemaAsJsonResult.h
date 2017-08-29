@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetSchemaAsJsonResult();
-    GetSchemaAsJsonResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSchemaAsJsonResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSchemaAsJsonResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSchemaAsJsonResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the retrieved schema.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the retrieved schema.</p>
      */
     inline GetSchemaAsJsonResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The JSON representation of the schema document.</p>
@@ -112,7 +114,9 @@ namespace Model
     inline GetSchemaAsJsonResult& WithDocument(const char* value) { SetDocument(value); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_document;
   };
 

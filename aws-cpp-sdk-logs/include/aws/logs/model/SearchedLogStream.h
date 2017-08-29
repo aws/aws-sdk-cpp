@@ -45,6 +45,7 @@ namespace Model
     SearchedLogStream& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the log stream.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline SearchedLogStream& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
+
     /**
      * <p>Indicates whether all the events in this log stream were searched.</p>
      */
@@ -96,8 +98,10 @@ namespace Model
     inline SearchedLogStream& WithSearchedCompletely(bool value) { SetSearchedCompletely(value); return *this;}
 
   private:
+
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
+
     bool m_searchedCompletely;
     bool m_searchedCompletelyHasBeenSet;
   };

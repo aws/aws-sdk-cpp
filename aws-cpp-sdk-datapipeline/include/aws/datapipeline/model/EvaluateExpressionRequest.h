@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the pipeline.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline EvaluateExpressionRequest& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
 
+
     /**
      * <p>The ID of the object.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      * <p>The ID of the object.</p>
      */
     inline EvaluateExpressionRequest& WithObjectId(const char* value) { SetObjectId(value); return *this;}
+
 
     /**
      * <p>The expression to evaluate.</p>
@@ -145,10 +148,13 @@ namespace Model
     inline EvaluateExpressionRequest& WithExpression(const char* value) { SetExpression(value); return *this;}
 
   private:
+
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet;
+
     Aws::String m_objectId;
     bool m_objectIdHasBeenSet;
+
     Aws::String m_expression;
     bool m_expressionHasBeenSet;
   };

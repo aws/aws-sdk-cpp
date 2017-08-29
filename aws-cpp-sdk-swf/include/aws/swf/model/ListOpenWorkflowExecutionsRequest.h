@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain that contains the workflow executions to list.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline ListOpenWorkflowExecutionsRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
     /**
      * <p>Workflow executions are included in the returned results based on whether
      * their start times are within the range specified by this filter.</p>
@@ -104,6 +106,7 @@ namespace Model
      * their start times are within the range specified by this filter.</p>
      */
     inline ListOpenWorkflowExecutionsRequest& WithStartTimeFilter(ExecutionTimeFilter&& value) { SetStartTimeFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
@@ -145,6 +148,7 @@ namespace Model
      */
     inline ListOpenWorkflowExecutionsRequest& WithTypeFilter(WorkflowTypeFilter&& value) { SetTypeFilter(std::move(value)); return *this;}
 
+
     /**
      * <p>If specified, only executions that have the matching tag are listed.</p>
      * <note> <p> <code>executionFilter</code>, <code>typeFilter</code> and
@@ -184,6 +188,7 @@ namespace Model
      * these in a request.</p> </note>
      */
     inline ListOpenWorkflowExecutionsRequest& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -248,6 +253,7 @@ namespace Model
      */
     inline ListOpenWorkflowExecutionsRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results that are returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of results. The
@@ -278,6 +284,7 @@ namespace Model
      */
     inline ListOpenWorkflowExecutionsRequest& WithMaximumPageSize(int value) { SetMaximumPageSize(value); return *this;}
 
+
     /**
      * <p>When set to <code>true</code>, returns the results in reverse order. By
      * default the results are returned in descending order of the start time of the
@@ -298,6 +305,7 @@ namespace Model
      * executions.</p>
      */
     inline ListOpenWorkflowExecutionsRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
+
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in
@@ -340,20 +348,28 @@ namespace Model
     inline ListOpenWorkflowExecutionsRequest& WithExecutionFilter(WorkflowExecutionFilter&& value) { SetExecutionFilter(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     ExecutionTimeFilter m_startTimeFilter;
     bool m_startTimeFilterHasBeenSet;
+
     WorkflowTypeFilter m_typeFilter;
     bool m_typeFilterHasBeenSet;
+
     TagFilter m_tagFilter;
     bool m_tagFilterHasBeenSet;
+
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet;
+
     int m_maximumPageSize;
     bool m_maximumPageSizeHasBeenSet;
+
     bool m_reverseOrder;
     bool m_reverseOrderHasBeenSet;
+
     WorkflowExecutionFilter m_executionFilter;
     bool m_executionFilterHasBeenSet;
   };

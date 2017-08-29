@@ -35,6 +35,7 @@ namespace Model
     UpdateEmailChannelRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -56,6 +57,7 @@ namespace Model
     
     inline UpdateEmailChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     
     inline const EmailChannelRequest& GetEmailChannelRequest() const{ return m_emailChannelRequest; }
 
@@ -72,8 +74,10 @@ namespace Model
     inline UpdateEmailChannelRequest& WithEmailChannelRequest(EmailChannelRequest&& value) { SetEmailChannelRequest(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     EmailChannelRequest m_emailChannelRequest;
     bool m_emailChannelRequestHasBeenSet;
   };

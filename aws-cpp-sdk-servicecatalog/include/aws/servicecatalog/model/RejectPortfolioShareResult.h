@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     RejectPortfolioShareResult();
-    RejectPortfolioShareResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RejectPortfolioShareResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RejectPortfolioShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RejectPortfolioShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -47,6 +47,7 @@ namespace Model
     StorageConnector& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of storage connector. The possible values include: HOMEFOLDERS.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The type of storage connector. The possible values include: HOMEFOLDERS.</p>
      */
     inline StorageConnector& WithConnectorType(StorageConnectorType&& value) { SetConnectorType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ARN associated with the storage connector.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline StorageConnector& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
 
   private:
+
     StorageConnectorType m_connectorType;
     bool m_connectorTypeHasBeenSet;
+
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet;
   };

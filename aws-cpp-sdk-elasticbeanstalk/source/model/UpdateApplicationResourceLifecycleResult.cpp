@@ -31,12 +31,12 @@ UpdateApplicationResourceLifecycleResult::UpdateApplicationResourceLifecycleResu
 {
 }
 
-UpdateApplicationResourceLifecycleResult::UpdateApplicationResourceLifecycleResult(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateApplicationResourceLifecycleResult::UpdateApplicationResourceLifecycleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UpdateApplicationResourceLifecycleResult& UpdateApplicationResourceLifecycleResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateApplicationResourceLifecycleResult& UpdateApplicationResourceLifecycleResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

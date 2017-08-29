@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListRuleNamesByTargetResult();
-    ListRuleNamesByTargetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRuleNamesByTargetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRuleNamesByTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRuleNamesByTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The names of the rules that can invoke the given target.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The names of the rules that can invoke the given target.</p>
      */
     inline ListRuleNamesByTargetResult& AddRuleNames(const char* value) { m_ruleNames.push_back(value); return *this; }
+
 
     /**
      * <p>Indicates whether there are additional results to retrieve. If there are no
@@ -125,7 +127,9 @@ namespace Model
     inline ListRuleNamesByTargetResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_ruleNames;
+
     Aws::String m_nextToken;
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline PutRetentionPolicyRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
+
     
     inline int GetRetentionInDays() const{ return m_retentionInDays; }
 
@@ -81,8 +83,10 @@ namespace Model
     inline PutRetentionPolicyRequest& WithRetentionInDays(int value) { SetRetentionInDays(value); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     int m_retentionInDays;
     bool m_retentionInDaysHasBeenSet;
   };

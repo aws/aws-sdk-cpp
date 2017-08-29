@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetDashboardResult();
-    GetDashboardResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetDashboardResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetDashboardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetDashboardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
@@ -76,6 +77,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
      */
     inline GetDashboardResult& WithDashboardArn(const char* value) { SetDashboardArn(value); return *this;}
+
 
     /**
      * <p>The detailed information about the dashboard, including what widgets are
@@ -133,6 +135,7 @@ namespace Model
      */
     inline GetDashboardResult& WithDashboardBody(const char* value) { SetDashboardBody(value); return *this;}
 
+
     /**
      * <p>The name of the dashboard.</p>
      */
@@ -168,6 +171,7 @@ namespace Model
      */
     inline GetDashboardResult& WithDashboardName(const char* value) { SetDashboardName(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -184,9 +188,13 @@ namespace Model
     inline GetDashboardResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_dashboardArn;
+
     Aws::String m_dashboardBody;
+
     Aws::String m_dashboardName;
+
     ResponseMetadata m_responseMetadata;
   };
 

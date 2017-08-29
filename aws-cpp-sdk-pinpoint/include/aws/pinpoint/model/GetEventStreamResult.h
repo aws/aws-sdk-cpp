@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     GetEventStreamResult();
-    GetEventStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEventStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetEventStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetEventStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const EventStream& GetEventStream() const{ return m_eventStream; }
@@ -60,6 +61,7 @@ namespace Model
     inline GetEventStreamResult& WithEventStream(EventStream&& value) { SetEventStream(std::move(value)); return *this;}
 
   private:
+
     EventStream m_eventStream;
   };
 

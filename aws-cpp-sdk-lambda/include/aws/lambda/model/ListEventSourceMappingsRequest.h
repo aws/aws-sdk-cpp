@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter
      * is optional.)</p>
@@ -84,6 +85,7 @@ namespace Model
      * is optional.)</p>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
+
 
     /**
      * <p>The name of the Lambda function.</p> <p> You can specify the function name
@@ -183,6 +185,7 @@ namespace Model
      */
     inline ListEventSourceMappingsRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>Optional string. An opaque pagination token returned from a previous
      * <code>ListEventSourceMappings</code> operation. If present, specifies to
@@ -232,6 +235,7 @@ namespace Model
      */
     inline ListEventSourceMappingsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Optional integer. Specifies the maximum number of event sources to return in
      * response. This value must be greater than 0.</p>
@@ -251,12 +255,16 @@ namespace Model
     inline ListEventSourceMappingsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_eventSourceArn;
     bool m_eventSourceArnHasBeenSet;
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

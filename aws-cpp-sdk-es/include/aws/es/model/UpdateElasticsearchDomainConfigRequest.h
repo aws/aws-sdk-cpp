@@ -43,6 +43,7 @@ namespace Model
     UpdateElasticsearchDomainConfigRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the Elasticsearch domain that you are updating. </p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline UpdateElasticsearchDomainConfigRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The type and number of instances to instantiate for the domain cluster.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      */
     inline UpdateElasticsearchDomainConfigRequest& WithElasticsearchClusterConfig(ElasticsearchClusterConfig&& value) { SetElasticsearchClusterConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>Specify the type and size of the EBS volume that you want to use. </p>
      */
@@ -127,6 +130,7 @@ namespace Model
      * <p>Specify the type and size of the EBS volume that you want to use. </p>
      */
     inline UpdateElasticsearchDomainConfigRequest& WithEBSOptions(EBSOptions&& value) { SetEBSOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>Option to set the time, in UTC format, for the daily automated snapshot.
@@ -157,6 +161,7 @@ namespace Model
      * Default value is <code>0</code> hours. </p>
      */
     inline UpdateElasticsearchDomainConfigRequest& WithSnapshotOptions(SnapshotOptions&& value) { SetSnapshotOptions(std::move(value)); return *this;}
+
 
     /**
      * <p>Modifies the advanced option to allow references to indices in an HTTP
@@ -266,6 +271,7 @@ namespace Model
      */
     inline UpdateElasticsearchDomainConfigRequest& AddAdvancedOptions(const char* key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, value); return *this; }
 
+
     /**
      * <p>IAM access policy as a JSON-formatted string.</p>
      */
@@ -302,16 +308,22 @@ namespace Model
     inline UpdateElasticsearchDomainConfigRequest& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     ElasticsearchClusterConfig m_elasticsearchClusterConfig;
     bool m_elasticsearchClusterConfigHasBeenSet;
+
     EBSOptions m_eBSOptions;
     bool m_eBSOptionsHasBeenSet;
+
     SnapshotOptions m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;
+
     Aws::String m_accessPolicies;
     bool m_accessPoliciesHasBeenSet;
   };

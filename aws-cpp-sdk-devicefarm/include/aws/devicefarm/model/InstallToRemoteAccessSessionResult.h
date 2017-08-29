@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     InstallToRemoteAccessSessionResult();
-    InstallToRemoteAccessSessionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InstallToRemoteAccessSessionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InstallToRemoteAccessSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InstallToRemoteAccessSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An app to upload or that has been uploaded.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline InstallToRemoteAccessSessionResult& WithAppUpload(Upload&& value) { SetAppUpload(std::move(value)); return *this;}
 
   private:
+
     Upload m_appUpload;
   };
 

@@ -31,13 +31,13 @@ PutPipelineDefinitionResult::PutPipelineDefinitionResult() :
 {
 }
 
-PutPipelineDefinitionResult::PutPipelineDefinitionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PutPipelineDefinitionResult::PutPipelineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_errored(false)
 {
   *this = result;
 }
 
-PutPipelineDefinitionResult& PutPipelineDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutPipelineDefinitionResult& PutPipelineDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("validationErrors"))

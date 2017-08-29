@@ -48,6 +48,7 @@ namespace Model
     SegmentDimensions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Custom segment attributes.
      */
@@ -103,6 +104,7 @@ namespace Model
      */
     inline SegmentDimensions& AddAttributes(const char* key, const AttributeDimension& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * The segment behaviors attributes.
      */
@@ -127,6 +129,7 @@ namespace Model
      * The segment behaviors attributes.
      */
     inline SegmentDimensions& WithBehavior(SegmentBehaviors&& value) { SetBehavior(std::move(value)); return *this;}
+
 
     /**
      * The segment demographics attributes.
@@ -153,6 +156,7 @@ namespace Model
      */
     inline SegmentDimensions& WithDemographic(SegmentDemographics&& value) { SetDemographic(std::move(value)); return *this;}
 
+
     /**
      * The segment location attributes.
      */
@@ -177,6 +181,7 @@ namespace Model
      * The segment location attributes.
      */
     inline SegmentDimensions& WithLocation(SegmentLocation&& value) { SetLocation(std::move(value)); return *this;}
+
 
     /**
      * Custom segment user attributes.
@@ -234,14 +239,19 @@ namespace Model
     inline SegmentDimensions& AddUserAttributes(const char* key, const AttributeDimension& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, AttributeDimension> m_attributes;
     bool m_attributesHasBeenSet;
+
     SegmentBehaviors m_behavior;
     bool m_behaviorHasBeenSet;
+
     SegmentDemographics m_demographic;
     bool m_demographicHasBeenSet;
+
     SegmentLocation m_location;
     bool m_locationHasBeenSet;
+
     Aws::Map<Aws::String, AttributeDimension> m_userAttributes;
     bool m_userAttributesHasBeenSet;
   };

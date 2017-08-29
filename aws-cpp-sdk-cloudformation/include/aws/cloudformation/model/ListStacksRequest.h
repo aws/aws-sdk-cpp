@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A string that identifies the next page of stacks that you want to
      * retrieve.</p>
@@ -84,6 +85,7 @@ namespace Model
      * retrieve.</p>
      */
     inline ListStacksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>Stack status to use as a filter. Specify one or more stack status codes to
@@ -142,8 +144,10 @@ namespace Model
     inline ListStacksRequest& AddStackStatusFilter(StackStatus&& value) { m_stackStatusFilterHasBeenSet = true; m_stackStatusFilter.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::Vector<StackStatus> m_stackStatusFilter;
     bool m_stackStatusFilterHasBeenSet;
   };

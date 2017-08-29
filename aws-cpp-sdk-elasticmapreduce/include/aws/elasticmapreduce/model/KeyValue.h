@@ -45,6 +45,7 @@ namespace Model
     KeyValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier of a key value pair.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The unique identifier of a key value pair.</p>
      */
     inline KeyValue& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The value part of the identified key.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline KeyValue& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

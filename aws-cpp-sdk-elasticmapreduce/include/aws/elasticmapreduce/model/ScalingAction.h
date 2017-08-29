@@ -47,6 +47,7 @@ namespace Model
     ScalingAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Not available for instance groups. Instance groups use the market type
      * specified for the group.</p>
@@ -76,6 +77,7 @@ namespace Model
      * specified for the group.</p>
      */
     inline ScalingAction& WithMarket(MarketType&& value) { SetMarket(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of adjustment the automatic scaling activity makes when triggered,
@@ -108,8 +110,10 @@ namespace Model
     inline ScalingAction& WithSimpleScalingPolicyConfiguration(SimpleScalingPolicyConfiguration&& value) { SetSimpleScalingPolicyConfiguration(std::move(value)); return *this;}
 
   private:
+
     MarketType m_market;
     bool m_marketHasBeenSet;
+
     SimpleScalingPolicyConfiguration m_simpleScalingPolicyConfiguration;
     bool m_simpleScalingPolicyConfigurationHasBeenSet;
   };

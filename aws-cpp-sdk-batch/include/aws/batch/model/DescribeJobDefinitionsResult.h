@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeJobDefinitionsResult();
-    DescribeJobDefinitionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeJobDefinitionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeJobDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeJobDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of job definitions. </p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of job definitions. </p>
      */
     inline DescribeJobDefinitionsResult& AddJobDefinitions(JobDefinition&& value) { m_jobDefinitions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -142,7 +144,9 @@ namespace Model
     inline DescribeJobDefinitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<JobDefinition> m_jobDefinitions;
+
     Aws::String m_nextToken;
   };
 

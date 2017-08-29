@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetPipelineStateResult();
-    GetPipelineStateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPipelineStateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPipelineStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPipelineStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the pipeline for which you want to get the state.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline GetPipelineStateResult& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
 
+
     /**
      * <p>The version number of the pipeline.</p> <note> <p>A newly-created pipeline is
      * always assigned a version number of <code>1</code>.</p> </note>
@@ -102,6 +104,7 @@ namespace Model
      * always assigned a version number of <code>1</code>.</p> </note>
      */
     inline GetPipelineStateResult& WithPipelineVersion(int value) { SetPipelineVersion(value); return *this;}
+
 
     /**
      * <p>A list of the pipeline stage output information, including stage name, state,
@@ -145,6 +148,7 @@ namespace Model
      */
     inline GetPipelineStateResult& AddStageStates(StageState&& value) { m_stageStates.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
@@ -169,6 +173,7 @@ namespace Model
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
     inline GetPipelineStateResult& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time the pipeline was last updated, in timestamp format.</p>
@@ -196,10 +201,15 @@ namespace Model
     inline GetPipelineStateResult& WithUpdated(Aws::Utils::DateTime&& value) { SetUpdated(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_pipelineName;
+
     int m_pipelineVersion;
+
     Aws::Vector<StageState> m_stageStates;
+
     Aws::Utils::DateTime m_created;
+
     Aws::Utils::DateTime m_updated;
   };
 

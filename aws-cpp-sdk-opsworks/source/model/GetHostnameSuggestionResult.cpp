@@ -30,12 +30,12 @@ GetHostnameSuggestionResult::GetHostnameSuggestionResult()
 {
 }
 
-GetHostnameSuggestionResult::GetHostnameSuggestionResult(const AmazonWebServiceResult<JsonValue>& result)
+GetHostnameSuggestionResult::GetHostnameSuggestionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetHostnameSuggestionResult& GetHostnameSuggestionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetHostnameSuggestionResult& GetHostnameSuggestionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("LayerId"))

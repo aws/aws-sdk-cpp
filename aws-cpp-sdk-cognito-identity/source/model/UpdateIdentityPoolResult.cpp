@@ -31,13 +31,13 @@ UpdateIdentityPoolResult::UpdateIdentityPoolResult() :
 {
 }
 
-UpdateIdentityPoolResult::UpdateIdentityPoolResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateIdentityPoolResult::UpdateIdentityPoolResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_allowUnauthenticatedIdentities(false)
 {
   *this = result;
 }
 
-UpdateIdentityPoolResult& UpdateIdentityPoolResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateIdentityPoolResult& UpdateIdentityPoolResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityPoolId"))

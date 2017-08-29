@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The VPC attribute.</p>
      */
@@ -67,6 +68,7 @@ namespace Model
      * <p>The VPC attribute.</p>
      */
     inline DescribeVpcAttributeRequest& WithAttribute(VpcAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -103,6 +105,7 @@ namespace Model
      */
     inline DescribeVpcAttributeRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -128,10 +131,13 @@ namespace Model
     inline DescribeVpcAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     VpcAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

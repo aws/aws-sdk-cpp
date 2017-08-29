@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
      * in which to describe images. If you do not specify a registry, the default
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DescribeImagesRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
      * repositories in a registry are described.</p>
@@ -130,6 +132,7 @@ namespace Model
      */
     inline DescribeImagesRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>The list of image IDs for the requested repository.</p>
      */
@@ -164,6 +167,7 @@ namespace Model
      * <p>The list of image IDs for the requested repository.</p>
      */
     inline DescribeImagesRequest& AddImageIds(ImageIdentifier&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -228,6 +232,7 @@ namespace Model
      */
     inline DescribeImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of repository results returned by
      * <code>DescribeImages</code> in paginated output. When this parameter is used,
@@ -267,6 +272,7 @@ namespace Model
      */
     inline DescribeImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
     /**
      * <p>The filter key and value with which to filter your
      * <code>DescribeImages</code> results.</p>
@@ -298,16 +304,22 @@ namespace Model
     inline DescribeImagesRequest& WithFilter(DescribeImagesFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::Vector<ImageIdentifier> m_imageIds;
     bool m_imageIdsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     DescribeImagesFilter m_filter;
     bool m_filterHasBeenSet;
   };

@@ -30,12 +30,12 @@ UpdateDocumentDefaultVersionResult::UpdateDocumentDefaultVersionResult()
 {
 }
 
-UpdateDocumentDefaultVersionResult::UpdateDocumentDefaultVersionResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDocumentDefaultVersionResult::UpdateDocumentDefaultVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateDocumentDefaultVersionResult& UpdateDocumentDefaultVersionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDocumentDefaultVersionResult& UpdateDocumentDefaultVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Description"))

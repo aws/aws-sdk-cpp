@@ -50,6 +50,7 @@ namespace Model
     JobResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An array of <code>S3Resource</code> objects.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>An array of <code>S3Resource</code> objects.</p>
      */
     inline JobResource& AddS3Resources(S3Resource&& value) { m_s3ResourcesHasBeenSet = true; m_s3Resources.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The Python-language Lambda functions for this job.</p>
@@ -121,8 +123,10 @@ namespace Model
     inline JobResource& AddLambdaResources(LambdaResource&& value) { m_lambdaResourcesHasBeenSet = true; m_lambdaResources.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<S3Resource> m_s3Resources;
     bool m_s3ResourcesHasBeenSet;
+
     Aws::Vector<LambdaResource> m_lambdaResources;
     bool m_lambdaResourcesHasBeenSet;
   };

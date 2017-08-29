@@ -40,6 +40,7 @@ namespace Model
     UpdatePipelineRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the pipeline that you want to update.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ID of the pipeline that you want to update.</p>
      */
     inline UpdatePipelineRequest& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the pipeline. We recommend that the name be unique within the AWS
@@ -124,6 +126,7 @@ namespace Model
      */
     inline UpdatePipelineRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The Amazon S3 bucket in which you saved the media files that you want to
      * transcode and the graphics that you want to use as watermarks.</p>
@@ -166,6 +169,7 @@ namespace Model
      */
     inline UpdatePipelineRequest& WithInputBucket(const char* value) { SetInputBucket(value); return *this;}
 
+
     /**
      * <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic
      * Transcoder to use to transcode jobs for this pipeline.</p>
@@ -207,6 +211,7 @@ namespace Model
      * Transcoder to use to transcode jobs for this pipeline.</p>
      */
     inline UpdatePipelineRequest& WithRole(const char* value) { SetRole(value); return *this;}
+
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this
@@ -284,6 +289,7 @@ namespace Model
      * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.</p>
      */
     inline UpdatePipelineRequest& WithAwsKmsKeyArn(const char* value) { SetAwsKmsKeyArn(value); return *this;}
+
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
@@ -384,6 +390,7 @@ namespace Model
      * Amazon SNS returned when you created the topic.</p> </li> </ul>
      */
     inline UpdatePipelineRequest& WithNotifications(Notifications&& value) { SetNotifications(std::move(value)); return *this;}
+
 
     /**
      * <p>The optional <code>ContentConfig</code> object specifies information about
@@ -650,6 +657,7 @@ namespace Model
      */
     inline UpdatePipelineRequest& WithContentConfig(PipelineOutputConfig&& value) { SetContentConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>The <code>ThumbnailConfig</code> object specifies several values, including
      * the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail
@@ -886,20 +894,28 @@ namespace Model
     inline UpdatePipelineRequest& WithThumbnailConfig(PipelineOutputConfig&& value) { SetThumbnailConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_inputBucket;
     bool m_inputBucketHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     Aws::String m_awsKmsKeyArn;
     bool m_awsKmsKeyArnHasBeenSet;
+
     Notifications m_notifications;
     bool m_notificationsHasBeenSet;
+
     PipelineOutputConfig m_contentConfig;
     bool m_contentConfigHasBeenSet;
+
     PipelineOutputConfig m_thumbnailConfig;
     bool m_thumbnailConfigHasBeenSet;
   };

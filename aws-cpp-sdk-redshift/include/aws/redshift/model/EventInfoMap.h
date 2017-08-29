@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier of an Amazon Redshift event.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The identifier of an Amazon Redshift event.</p>
      */
     inline EventInfoMap& WithEventId(const char* value) { SetEventId(value); return *this;}
+
 
     /**
      * <p>The category of an Amazon Redshift event.</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline EventInfoMap& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
+
     /**
      * <p>The description of an Amazon Redshift event.</p>
      */
@@ -158,6 +161,7 @@ namespace Model
      * <p>The description of an Amazon Redshift event.</p>
      */
     inline EventInfoMap& WithEventDescription(const char* value) { SetEventDescription(value); return *this;}
+
 
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
@@ -195,12 +199,16 @@ namespace Model
     inline EventInfoMap& WithSeverity(const char* value) { SetSeverity(value); return *this;}
 
   private:
+
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventCategories;
     bool m_eventCategoriesHasBeenSet;
+
     Aws::String m_eventDescription;
     bool m_eventDescriptionHasBeenSet;
+
     Aws::String m_severity;
     bool m_severityHasBeenSet;
   };

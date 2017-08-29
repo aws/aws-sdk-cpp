@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline UpdateUserRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the user.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The ID of the user.</p>
      */
     inline UpdateUserRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+
 
     /**
      * <p>The given name of the user.</p>
@@ -151,6 +154,7 @@ namespace Model
      */
     inline UpdateUserRequest& WithGivenName(const char* value) { SetGivenName(value); return *this;}
 
+
     /**
      * <p>The surname of the user.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      */
     inline UpdateUserRequest& WithSurname(const char* value) { SetSurname(value); return *this;}
 
+
     /**
      * <p>The type of the user.</p>
      */
@@ -211,6 +216,7 @@ namespace Model
      */
     inline UpdateUserRequest& WithType(UserType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The amount of storage for the user.</p>
      */
@@ -235,6 +241,7 @@ namespace Model
      * <p>The amount of storage for the user.</p>
      */
     inline UpdateUserRequest& WithStorageRule(StorageRuleType&& value) { SetStorageRule(std::move(value)); return *this;}
+
 
     /**
      * <p>The time zone ID of the user.</p>
@@ -271,6 +278,7 @@ namespace Model
      */
     inline UpdateUserRequest& WithTimeZoneId(const char* value) { SetTimeZoneId(value); return *this;}
 
+
     /**
      * <p>The locale of the user.</p>
      */
@@ -297,20 +305,28 @@ namespace Model
     inline UpdateUserRequest& WithLocale(LocaleType&& value) { SetLocale(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
     Aws::String m_givenName;
     bool m_givenNameHasBeenSet;
+
     Aws::String m_surname;
     bool m_surnameHasBeenSet;
+
     UserType m_type;
     bool m_typeHasBeenSet;
+
     StorageRuleType m_storageRule;
     bool m_storageRuleHasBeenSet;
+
     Aws::String m_timeZoneId;
     bool m_timeZoneIdHasBeenSet;
+
     LocaleType m_locale;
     bool m_localeHasBeenSet;
   };

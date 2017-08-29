@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateStackResult();
-    UpdateStackResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateStackResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Unique identifier of the stack.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline UpdateStackResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline UpdateStackResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stackId;
+
     ResponseMetadata m_responseMetadata;
   };
 

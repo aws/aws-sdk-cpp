@@ -31,13 +31,13 @@ ReportTaskProgressResult::ReportTaskProgressResult() :
 {
 }
 
-ReportTaskProgressResult::ReportTaskProgressResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ReportTaskProgressResult::ReportTaskProgressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_canceled(false)
 {
   *this = result;
 }
 
-ReportTaskProgressResult& ReportTaskProgressResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ReportTaskProgressResult& ReportTaskProgressResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("canceled"))

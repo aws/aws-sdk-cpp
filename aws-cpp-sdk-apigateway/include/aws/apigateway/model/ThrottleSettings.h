@@ -43,6 +43,7 @@ namespace Model
     ThrottleSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The API request burst limit, the maximum rate limit over a time ranging from
      * one to a few seconds, depending upon whether the underlying token bucket is at
@@ -64,6 +65,7 @@ namespace Model
      */
     inline ThrottleSettings& WithBurstLimit(int value) { SetBurstLimit(value); return *this;}
 
+
     /**
      * <p>The API request steady-state rate limit.</p>
      */
@@ -80,8 +82,10 @@ namespace Model
     inline ThrottleSettings& WithRateLimit(double value) { SetRateLimit(value); return *this;}
 
   private:
+
     int m_burstLimit;
     bool m_burstLimitHasBeenSet;
+
     double m_rateLimit;
     bool m_rateLimitHasBeenSet;
   };

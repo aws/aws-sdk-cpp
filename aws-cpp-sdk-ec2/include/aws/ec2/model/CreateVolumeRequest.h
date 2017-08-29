@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Availability Zone in which to create the volume. Use
      * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
@@ -93,6 +94,7 @@ namespace Model
      */
     inline CreateVolumeRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>Specifies whether the volume should be encrypted. Encrypted Amazon EBS
      * volumes may only be attached to instances that support Amazon EBS encryption.
@@ -129,6 +131,7 @@ namespace Model
      */
     inline CreateVolumeRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
+
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
      * second (IOPS) to provision for the volume, with a maximum ratio of 50
@@ -152,6 +155,7 @@ namespace Model
      * volumes </p>
      */
     inline CreateVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
+
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
@@ -244,6 +248,7 @@ namespace Model
      */
     inline CreateVolumeRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
      * <code>gp2</code>, 4-16384 for <code>io1</code>, 500-16384 for <code>st1</code>,
@@ -273,6 +278,7 @@ namespace Model
      * specify a volume size, the default is the snapshot size.</p>
      */
     inline CreateVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
+
 
     /**
      * <p>The snapshot from which to create the volume.</p>
@@ -308,6 +314,7 @@ namespace Model
      * <p>The snapshot from which to create the volume.</p>
      */
     inline CreateVolumeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+
 
     /**
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
@@ -349,6 +356,7 @@ namespace Model
      */
     inline CreateVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -372,6 +380,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CreateVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The tags to apply to the volume during creation.</p>
@@ -409,22 +418,31 @@ namespace Model
     inline CreateVolumeRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     int m_size;
     bool m_sizeHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
   };

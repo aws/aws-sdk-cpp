@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * The name of the domain in which to perform the operation.
      */
@@ -75,6 +76,7 @@ namespace Model
      * The name of the domain in which to perform the operation.
      */
     inline DeleteAttributesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * The name of the item. Similar to rows on a spreadsheet, items represent
@@ -118,6 +120,7 @@ namespace Model
      */
     inline DeleteAttributesRequest& WithItemName(const char* value) { SetItemName(value); return *this;}
 
+
     /**
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
@@ -160,6 +163,7 @@ namespace Model
      */
     inline DeleteAttributesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * The update condition which, if specified, determines whether the specified
      * attributes will be deleted or not. The update condition must be satisfied in
@@ -196,12 +200,16 @@ namespace Model
     inline DeleteAttributesRequest& WithExpected(UpdateCondition&& value) { SetExpected(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_itemName;
     bool m_itemNameHasBeenSet;
+
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
+
     UpdateCondition m_expected;
     bool m_expectedHasBeenSet;
   };

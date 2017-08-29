@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ScheduleRunResult();
-    ScheduleRunResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ScheduleRunResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ScheduleRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ScheduleRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the scheduled run.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline ScheduleRunResult& WithRun(Run&& value) { SetRun(std::move(value)); return *this;}
 
   private:
+
     Run m_run;
   };
 

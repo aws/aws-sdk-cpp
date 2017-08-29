@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteCertificateResult();
-    DeleteCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Secure Sockets Layer (SSL) certificate.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline DeleteCertificateResult& WithCertificate(Certificate&& value) { SetCertificate(std::move(value)); return *this;}
 
   private:
+
     Certificate m_certificate;
   };
 

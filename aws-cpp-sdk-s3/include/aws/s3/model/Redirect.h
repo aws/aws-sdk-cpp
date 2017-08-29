@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The host name to use in the redirect request.
      */
@@ -76,6 +77,7 @@ namespace Model
      * The host name to use in the redirect request.
      */
     inline Redirect& WithHostName(const char* value) { SetHostName(value); return *this;}
+
 
     /**
      * The HTTP redirect code to use on the response. Not required if one of the
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Redirect& WithHttpRedirectCode(const char* value) { SetHttpRedirectCode(value); return *this;}
 
+
     /**
      * Protocol to use (http, https) when redirecting requests. The default is the
      * protocol that is used in the original request.
@@ -148,6 +151,7 @@ namespace Model
      * protocol that is used in the original request.
      */
     inline Redirect& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+
 
     /**
      * The object key prefix to use in the redirect request. For example, to redirect
@@ -212,6 +216,7 @@ namespace Model
      */
     inline Redirect& WithReplaceKeyPrefixWith(const char* value) { SetReplaceKeyPrefixWith(value); return *this;}
 
+
     /**
      * The specific object key to use in the redirect request. For example, redirect
      * request to error.html. Not required if one of the sibling is present. Can be
@@ -262,14 +267,19 @@ namespace Model
     inline Redirect& WithReplaceKeyWith(const char* value) { SetReplaceKeyWith(value); return *this;}
 
   private:
+
     Aws::String m_hostName;
     bool m_hostNameHasBeenSet;
+
     Aws::String m_httpRedirectCode;
     bool m_httpRedirectCodeHasBeenSet;
+
     Protocol m_protocol;
     bool m_protocolHasBeenSet;
+
     Aws::String m_replaceKeyPrefixWith;
     bool m_replaceKeyPrefixWithHasBeenSet;
+
     Aws::String m_replaceKeyWith;
     bool m_replaceKeyWithHasBeenSet;
   };

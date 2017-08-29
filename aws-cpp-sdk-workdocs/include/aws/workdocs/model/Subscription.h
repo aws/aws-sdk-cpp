@@ -46,6 +46,7 @@ namespace Model
     Subscription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the subscription.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The ID of the subscription.</p>
      */
     inline Subscription& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
+
 
     /**
      * <p>The endpoint of the subscription.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline Subscription& WithEndPoint(const char* value) { SetEndPoint(value); return *this;}
 
+
     /**
      * <p>The protocol of the subscription.</p>
      */
@@ -142,10 +145,13 @@ namespace Model
     inline Subscription& WithProtocol(SubscriptionProtocolType&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_subscriptionId;
     bool m_subscriptionIdHasBeenSet;
+
     Aws::String m_endPoint;
     bool m_endPointHasBeenSet;
+
     SubscriptionProtocolType m_protocol;
     bool m_protocolHasBeenSet;
   };

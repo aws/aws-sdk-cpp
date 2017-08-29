@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the configuration set to delete.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline DeleteConfigurationSetRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 
   private:
+
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet;
   };

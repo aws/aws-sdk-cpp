@@ -45,6 +45,7 @@ namespace Model
     WorkflowExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user defined identifier associated with the workflow execution.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The user defined identifier associated with the workflow execution.</p>
      */
     inline WorkflowExecution& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+
 
     /**
      * <p>A system-generated unique identifier for the workflow execution.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline WorkflowExecution& WithRunId(const char* value) { SetRunId(value); return *this;}
 
   private:
+
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet;
+
     Aws::String m_runId;
     bool m_runIdHasBeenSet;
   };

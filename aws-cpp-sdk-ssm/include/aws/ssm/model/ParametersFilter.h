@@ -48,6 +48,7 @@ namespace Model
     ParametersFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the filter.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the filter.</p>
      */
     inline ParametersFilter& WithKey(ParametersFilterKey&& value) { SetKey(std::move(value)); return *this;}
+
 
     /**
      * <p>The filter values.</p>
@@ -114,8 +116,10 @@ namespace Model
     inline ParametersFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     ParametersFilterKey m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

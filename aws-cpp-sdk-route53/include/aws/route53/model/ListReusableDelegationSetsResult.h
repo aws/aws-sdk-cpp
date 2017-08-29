@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListReusableDelegationSetsResult();
-    ListReusableDelegationSetsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListReusableDelegationSetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListReusableDelegationSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListReusableDelegationSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A complex type that contains one <code>DelegationSet</code> element for each
@@ -90,6 +91,7 @@ namespace Model
      * reusable delegation set that was created by the current AWS account.</p>
      */
     inline ListReusableDelegationSetsResult& AddDelegationSets(DelegationSet&& value) { m_delegationSets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>For the second and subsequent calls to
@@ -147,6 +149,7 @@ namespace Model
      */
     inline ListReusableDelegationSetsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A flag that indicates whether there are more reusable delegation sets to be
      * listed.</p>
@@ -164,6 +167,7 @@ namespace Model
      * listed.</p>
      */
     inline ListReusableDelegationSetsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, the value of
@@ -228,6 +232,7 @@ namespace Model
      */
     inline ListReusableDelegationSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
      * call to <code>ListReusableDelegationSets</code> that produced the current
@@ -278,10 +283,15 @@ namespace Model
     inline ListReusableDelegationSetsResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::Vector<DelegationSet> m_delegationSets;
+
     Aws::String m_marker;
+
     bool m_isTruncated;
+
     Aws::String m_nextMarker;
+
     Aws::String m_maxItems;
   };
 

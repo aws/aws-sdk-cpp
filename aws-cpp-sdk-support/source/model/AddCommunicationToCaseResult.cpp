@@ -31,13 +31,13 @@ AddCommunicationToCaseResult::AddCommunicationToCaseResult() :
 {
 }
 
-AddCommunicationToCaseResult::AddCommunicationToCaseResult(const AmazonWebServiceResult<JsonValue>& result) : 
+AddCommunicationToCaseResult::AddCommunicationToCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_result(false)
 {
   *this = result;
 }
 
-AddCommunicationToCaseResult& AddCommunicationToCaseResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddCommunicationToCaseResult& AddCommunicationToCaseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("result"))

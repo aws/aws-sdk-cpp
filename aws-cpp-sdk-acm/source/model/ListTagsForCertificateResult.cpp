@@ -30,12 +30,12 @@ ListTagsForCertificateResult::ListTagsForCertificateResult()
 {
 }
 
-ListTagsForCertificateResult::ListTagsForCertificateResult(const AmazonWebServiceResult<JsonValue>& result)
+ListTagsForCertificateResult::ListTagsForCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListTagsForCertificateResult& ListTagsForCertificateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListTagsForCertificateResult& ListTagsForCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Tags"))

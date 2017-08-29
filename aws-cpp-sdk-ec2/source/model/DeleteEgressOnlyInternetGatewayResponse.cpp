@@ -32,13 +32,13 @@ DeleteEgressOnlyInternetGatewayResponse::DeleteEgressOnlyInternetGatewayResponse
 {
 }
 
-DeleteEgressOnlyInternetGatewayResponse::DeleteEgressOnlyInternetGatewayResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+DeleteEgressOnlyInternetGatewayResponse::DeleteEgressOnlyInternetGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_returnCode(false)
 {
   *this = result;
 }
 
-DeleteEgressOnlyInternetGatewayResponse& DeleteEgressOnlyInternetGatewayResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteEgressOnlyInternetGatewayResponse& DeleteEgressOnlyInternetGatewayResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

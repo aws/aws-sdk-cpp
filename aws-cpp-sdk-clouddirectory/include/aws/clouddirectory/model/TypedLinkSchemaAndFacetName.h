@@ -46,6 +46,7 @@ namespace Model
     TypedLinkSchemaAndFacetName& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
      * information, see <a>arns</a>.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline TypedLinkSchemaAndFacetName& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
+
     /**
      * <p>The unique name of the typed link facet.</p>
      */
@@ -124,8 +126,10 @@ namespace Model
     inline TypedLinkSchemaAndFacetName& WithTypedLinkName(const char* value) { SetTypedLinkName(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     Aws::String m_typedLinkName;
     bool m_typedLinkNameHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet to update capacity for.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline UpdateFleetCapacityRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
+
     /**
      * <p>Number of EC2 instances you want this fleet to host.</p>
      */
@@ -88,6 +90,7 @@ namespace Model
      * <p>Number of EC2 instances you want this fleet to host.</p>
      */
     inline UpdateFleetCapacityRequest& WithDesiredInstances(int value) { SetDesiredInstances(value); return *this;}
+
 
     /**
      * <p>Minimum value allowed for the fleet's instance count. Default if not set is
@@ -106,6 +109,7 @@ namespace Model
      * 0.</p>
      */
     inline UpdateFleetCapacityRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
+
 
     /**
      * <p>Maximum value allowed for the fleet's instance count. Default if not set is
@@ -126,12 +130,16 @@ namespace Model
     inline UpdateFleetCapacityRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     int m_desiredInstances;
     bool m_desiredInstancesHasBeenSet;
+
     int m_minSize;
     bool m_minSizeHasBeenSet;
+
     int m_maxSize;
     bool m_maxSizeHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
     GetIntegrationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline GetIntegrationRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>Specifies a get integration request's resource identifier</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>Specifies a get integration request's resource identifier</p>
      */
     inline GetIntegrationRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>Specifies a get integration request's HTTP method.</p>
@@ -143,10 +146,13 @@ namespace Model
     inline GetIntegrationRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet;
   };

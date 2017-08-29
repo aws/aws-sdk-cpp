@@ -45,6 +45,7 @@ namespace Model
     FailedItemDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The status code of a failed item.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      */
     inline FailedItemDetails& WithFailureCode(FailedItemErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether you can immediately retry a request for this item for a
      * specified resource.</p>
@@ -89,8 +91,10 @@ namespace Model
     inline FailedItemDetails& WithRetryable(bool value) { SetRetryable(value); return *this;}
 
   private:
+
     FailedItemErrorCode m_failureCode;
     bool m_failureCodeHasBeenSet;
+
     bool m_retryable;
     bool m_retryableHasBeenSet;
   };

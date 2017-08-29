@@ -46,6 +46,7 @@ namespace Model
     BatchAttachObjectResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline BatchAttachObjectResponse& WithAttachedObjectIdentifier(const char* value) { SetAttachedObjectIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_attachedObjectIdentifier;
     bool m_attachedObjectIdentifierHasBeenSet;
   };

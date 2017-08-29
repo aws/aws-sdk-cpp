@@ -30,12 +30,12 @@ DescribeNotificationsForBudgetResult::DescribeNotificationsForBudgetResult()
 {
 }
 
-DescribeNotificationsForBudgetResult::DescribeNotificationsForBudgetResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeNotificationsForBudgetResult::DescribeNotificationsForBudgetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeNotificationsForBudgetResult& DescribeNotificationsForBudgetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeNotificationsForBudgetResult& DescribeNotificationsForBudgetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Notifications"))

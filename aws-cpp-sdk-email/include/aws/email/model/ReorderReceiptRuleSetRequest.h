@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the receipt rule set to reorder.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the receipt rule set to reorder.</p>
      */
     inline ReorderReceiptRuleSetRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
+
 
     /**
      * <p>A list of the specified receipt rule set's receipt rules in the order that
@@ -130,8 +132,10 @@ namespace Model
     inline ReorderReceiptRuleSetRequest& AddRuleNames(const char* value) { m_ruleNamesHasBeenSet = true; m_ruleNames.push_back(value); return *this; }
 
   private:
+
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_ruleNames;
     bool m_ruleNamesHasBeenSet;
   };

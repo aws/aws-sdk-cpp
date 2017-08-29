@@ -46,6 +46,7 @@ namespace Model
     ErrorDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The system ID or error number code of the error.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The system ID or error number code of the error.</p>
      */
     inline ErrorDetails& WithCode(const char* value) { SetCode(value); return *this;}
+
 
     /**
      * <p>The text of the error message.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline ErrorDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

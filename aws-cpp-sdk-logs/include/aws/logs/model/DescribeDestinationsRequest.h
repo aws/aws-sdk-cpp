@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The prefix to match. If you don't specify a value, no prefix filter is
      * applied.</p>
@@ -77,6 +78,7 @@ namespace Model
      * applied.</p>
      */
     inline DescribeDestinationsRequest& WithDestinationNamePrefix(const char* value) { SetDestinationNamePrefix(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -120,6 +122,7 @@ namespace Model
      */
     inline DescribeDestinationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the
      * default is up to 50 items.</p>
@@ -139,10 +142,13 @@ namespace Model
     inline DescribeDestinationsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_destinationNamePrefix;
     bool m_destinationNamePrefixHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

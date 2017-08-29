@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The ID of the hosted zone that you want to list traffic policy instances
      * for.</p>
@@ -86,6 +87,7 @@ namespace Model
      * for.</p>
      */
     inline ListTrafficPolicyInstancesByHostedZoneRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+
 
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response is true,
@@ -178,6 +180,7 @@ namespace Model
      */
     inline ListTrafficPolicyInstancesByHostedZoneRequest& WithTrafficPolicyInstanceNameMarker(const char* value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
 
+
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response is true,
      * you have more traffic policy instances. To get more traffic policy instances,
@@ -242,6 +245,7 @@ namespace Model
      * instances to get.</p>
      */
     inline ListTrafficPolicyInstancesByHostedZoneRequest& WithTrafficPolicyInstanceTypeMarker(RRType&& value) { SetTrafficPolicyInstanceTypeMarker(std::move(value)); return *this;}
+
 
     /**
      * <p>The maximum number of traffic policy instances to be included in the response
@@ -328,12 +332,16 @@ namespace Model
     inline ListTrafficPolicyInstancesByHostedZoneRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     Aws::String m_trafficPolicyInstanceNameMarker;
     bool m_trafficPolicyInstanceNameMarkerHasBeenSet;
+
     RRType m_trafficPolicyInstanceTypeMarker;
     bool m_trafficPolicyInstanceTypeMarkerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

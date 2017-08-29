@@ -77,7 +77,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<DeleteThingShadowResult, Aws::Client::AWSError<IoTDataPlaneErrors>> DeleteThingShadowOutcome;
         typedef Aws::Utils::Outcome<GetThingShadowResult, Aws::Client::AWSError<IoTDataPlaneErrors>> GetThingShadowOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<IoTDataPlaneErrors>> PublishOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTDataPlaneErrors>> PublishOutcome;
         typedef Aws::Utils::Outcome<UpdateThingShadowResult, Aws::Client::AWSError<IoTDataPlaneErrors>> UpdateThingShadowOutcome;
 
         typedef std::future<DeleteThingShadowOutcome> DeleteThingShadowOutcomeCallable;
@@ -110,22 +110,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTDataPlaneClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        IoTDataPlaneClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTDataPlaneClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        IoTDataPlaneClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        IoTDataPlaneClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        IoTDataPlaneClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~IoTDataPlaneClient();
+
 
         /**
          * <p>Deletes the thing shadow for the specified thing.</p> <p>For more
@@ -262,7 +263,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void DeleteThingShadowAsyncHelper(const Model::DeleteThingShadowRequest& request, const DeleteThingShadowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

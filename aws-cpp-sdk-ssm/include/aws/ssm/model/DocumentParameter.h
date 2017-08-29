@@ -47,6 +47,7 @@ namespace Model
     DocumentParameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the parameter.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline DocumentParameter& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The type of parameter. The type can be either String or StringList.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The type of parameter. The type can be either String or StringList.</p>
      */
     inline DocumentParameter& WithType(DocumentParameterType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of what the parameter does, how to use it, the default value,
@@ -148,6 +151,7 @@ namespace Model
      * and whether or not the parameter is optional.</p>
      */
     inline DocumentParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>If specified, the default values for the parameters. Parameters without a
@@ -192,12 +196,16 @@ namespace Model
     inline DocumentParameter& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     DocumentParameterType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
   };

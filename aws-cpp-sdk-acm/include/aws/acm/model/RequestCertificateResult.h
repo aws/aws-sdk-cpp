@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     RequestCertificateResult();
-    RequestCertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RequestCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RequestCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RequestCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>String that contains the ARN of the issued certificate. This must be of the
@@ -98,6 +99,7 @@ namespace Model
     inline RequestCertificateResult& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
   private:
+
     Aws::String m_certificateArn;
   };
 

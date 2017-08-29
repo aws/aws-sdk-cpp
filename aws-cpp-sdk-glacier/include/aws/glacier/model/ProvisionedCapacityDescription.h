@@ -45,6 +45,7 @@ namespace Model
     ProvisionedCapacityDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ID that identifies the provisioned capacity unit.</p>
      */
     inline ProvisionedCapacityDescription& WithCapacityId(const char* value) { SetCapacityId(value); return *this;}
+
 
     /**
      * <p>The date that the provisioned capacity unit was purchased, in Universal
@@ -121,6 +123,7 @@ namespace Model
      * Coordinated Time (UTC).</p>
      */
     inline ProvisionedCapacityDescription& WithStartDate(const char* value) { SetStartDate(value); return *this;}
+
 
     /**
      * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
@@ -165,10 +168,13 @@ namespace Model
     inline ProvisionedCapacityDescription& WithExpirationDate(const char* value) { SetExpirationDate(value); return *this;}
 
   private:
+
     Aws::String m_capacityId;
     bool m_capacityIdHasBeenSet;
+
     Aws::String m_startDate;
     bool m_startDateHasBeenSet;
+
     Aws::String m_expirationDate;
     bool m_expirationDateHasBeenSet;
   };

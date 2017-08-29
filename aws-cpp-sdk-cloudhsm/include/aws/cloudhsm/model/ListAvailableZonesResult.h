@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListAvailableZonesResult();
-    ListAvailableZonesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAvailableZonesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAvailableZonesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListAvailableZonesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline ListAvailableZonesResult& AddAZList(const char* value) { m_aZList.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_aZList;
   };
 

@@ -118,8 +118,8 @@ namespace Model
         typedef Aws::Utils::Outcome<PutItemResult, Aws::Client::AWSError<DynamoDBErrors>> PutItemOutcome;
         typedef Aws::Utils::Outcome<QueryResult, Aws::Client::AWSError<DynamoDBErrors>> QueryOutcome;
         typedef Aws::Utils::Outcome<ScanResult, Aws::Client::AWSError<DynamoDBErrors>> ScanOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<DynamoDBErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<DynamoDBErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DynamoDBErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DynamoDBErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateItemResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateItemOutcome;
         typedef Aws::Utils::Outcome<UpdateTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTableOutcome;
         typedef Aws::Utils::Outcome<UpdateTimeToLiveResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTimeToLiveOutcome;
@@ -194,22 +194,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DynamoDBClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        DynamoDBClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DynamoDBClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        DynamoDBClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        DynamoDBClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        DynamoDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~DynamoDBClient();
+
 
         /**
          * <p>The <code>BatchGetItem</code> operation returns the attributes of one or more
@@ -1771,7 +1772,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void BatchGetItemAsyncHelper(const Model::BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

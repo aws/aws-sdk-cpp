@@ -30,12 +30,12 @@ UpdateMatchmakingConfigurationResult::UpdateMatchmakingConfigurationResult()
 {
 }
 
-UpdateMatchmakingConfigurationResult::UpdateMatchmakingConfigurationResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateMatchmakingConfigurationResult::UpdateMatchmakingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateMatchmakingConfigurationResult& UpdateMatchmakingConfigurationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateMatchmakingConfigurationResult& UpdateMatchmakingConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Configuration"))

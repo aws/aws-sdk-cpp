@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the cluster for which to list the instance groups.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The identifier of the cluster for which to list the instance groups.</p>
      */
     inline ListInstanceGroupsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline ListInstanceGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

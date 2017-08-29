@@ -47,6 +47,7 @@ namespace Model
     MFAOptionType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
      */
     inline MFAOptionType& WithDeliveryMedium(DeliveryMediumType&& value) { SetDeliveryMedium(std::move(value)); return *this;}
+
 
     /**
      * <p>The attribute name of the MFA option type.</p>
@@ -108,8 +110,10 @@ namespace Model
     inline MFAOptionType& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
   private:
+
     DeliveryMediumType m_deliveryMedium;
     bool m_deliveryMediumHasBeenSet;
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
   };

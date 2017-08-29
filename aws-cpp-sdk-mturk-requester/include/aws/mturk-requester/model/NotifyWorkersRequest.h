@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The subject line of the email message to send. Can include up to 200
      * characters.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline NotifyWorkersRequest& WithSubject(const char* value) { SetSubject(value); return *this;}
 
+
     /**
      * <p>The text of the email message to send. Can include up to 4,096 characters</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>The text of the email message to send. Can include up to 4,096 characters</p>
      */
     inline NotifyWorkersRequest& WithMessageText(const char* value) { SetMessageText(value); return *this;}
+
 
     /**
      * <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a
@@ -163,10 +166,13 @@ namespace Model
     inline NotifyWorkersRequest& AddWorkerIds(const char* value) { m_workerIdsHasBeenSet = true; m_workerIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_subject;
     bool m_subjectHasBeenSet;
+
     Aws::String m_messageText;
     bool m_messageTextHasBeenSet;
+
     Aws::Vector<Aws::String> m_workerIds;
     bool m_workerIdsHasBeenSet;
   };

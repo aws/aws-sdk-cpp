@@ -45,6 +45,7 @@ namespace Model
     SchemaFacet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the schema that contains the facet.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ARN of the schema that contains the facet.</p>
      */
     inline SchemaFacet& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+
 
     /**
      * <p>The name of the facet.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline SchemaFacet& WithFacetName(const char* value) { SetFacetName(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     Aws::String m_facetName;
     bool m_facetNameHasBeenSet;
   };

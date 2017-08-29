@@ -44,6 +44,7 @@ namespace Model
     MessageResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * Delivery status of message.
      */
@@ -69,6 +70,7 @@ namespace Model
      */
     inline MessageResult& WithDeliveryStatus(DeliveryStatus&& value) { SetDeliveryStatus(std::move(value)); return *this;}
 
+
     /**
      * Downstream service status code.
      */
@@ -83,6 +85,7 @@ namespace Model
      * Downstream service status code.
      */
     inline MessageResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
+
 
     /**
      * Status message for message delivery.
@@ -118,6 +121,7 @@ namespace Model
      * Status message for message delivery.
      */
     inline MessageResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
 
     /**
      * If token was updated as part of delivery. (This is GCM Specific)
@@ -155,12 +159,16 @@ namespace Model
     inline MessageResult& WithUpdatedToken(const char* value) { SetUpdatedToken(value); return *this;}
 
   private:
+
     DeliveryStatus m_deliveryStatus;
     bool m_deliveryStatusHasBeenSet;
+
     int m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::String m_updatedToken;
     bool m_updatedTokenHasBeenSet;
   };

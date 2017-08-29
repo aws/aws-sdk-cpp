@@ -47,6 +47,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies whether connection draining is enabled for the load balancer.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>Specifies whether connection draining is enabled for the load balancer.</p>
      */
     inline ConnectionDraining& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The maximum time, in seconds, to keep the existing connections open before
@@ -81,8 +83,10 @@ namespace Model
     inline ConnectionDraining& WithTimeout(int value) { SetTimeout(value); return *this;}
 
   private:
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     int m_timeout;
     bool m_timeoutHasBeenSet;
   };

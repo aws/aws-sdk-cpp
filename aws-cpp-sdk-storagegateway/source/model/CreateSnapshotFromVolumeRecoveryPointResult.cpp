@@ -30,12 +30,12 @@ CreateSnapshotFromVolumeRecoveryPointResult::CreateSnapshotFromVolumeRecoveryPoi
 {
 }
 
-CreateSnapshotFromVolumeRecoveryPointResult::CreateSnapshotFromVolumeRecoveryPointResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateSnapshotFromVolumeRecoveryPointResult::CreateSnapshotFromVolumeRecoveryPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateSnapshotFromVolumeRecoveryPointResult& CreateSnapshotFromVolumeRecoveryPointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateSnapshotFromVolumeRecoveryPointResult& CreateSnapshotFromVolumeRecoveryPointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SnapshotId"))

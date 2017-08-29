@@ -34,6 +34,7 @@ namespace Model
     DeleteIntentVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the intent.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>The name of the intent.</p>
      */
     inline DeleteIntentVersionRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The version of the intent to delete. You cannot delete the
@@ -119,8 +121,10 @@ namespace Model
     inline DeleteIntentVersionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

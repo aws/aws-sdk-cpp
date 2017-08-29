@@ -45,6 +45,7 @@ namespace Model
     DataRetrievalRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of data retrieval policy to set.</p> <p>Valid values:
      * BytesPerHour|FreeTier|None</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline DataRetrievalRule& WithStrategy(const char* value) { SetStrategy(value); return *this;}
 
+
     /**
      * <p>The maximum number of bytes that can be retrieved in an hour.</p> <p>This
      * field is required only if the value of the Strategy field is
@@ -112,8 +114,10 @@ namespace Model
     inline DataRetrievalRule& WithBytesPerHour(long long value) { SetBytesPerHour(value); return *this;}
 
   private:
+
     Aws::String m_strategy;
     bool m_strategyHasBeenSet;
+
     long long m_bytesPerHour;
     bool m_bytesPerHourHasBeenSet;
   };

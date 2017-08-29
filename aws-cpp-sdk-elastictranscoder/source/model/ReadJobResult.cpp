@@ -30,12 +30,12 @@ ReadJobResult::ReadJobResult()
 {
 }
 
-ReadJobResult::ReadJobResult(const AmazonWebServiceResult<JsonValue>& result)
+ReadJobResult::ReadJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ReadJobResult& ReadJobResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ReadJobResult& ReadJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Job"))

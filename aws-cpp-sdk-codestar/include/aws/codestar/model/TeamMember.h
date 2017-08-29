@@ -45,6 +45,7 @@ namespace Model
     TeamMember& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
      */
     inline TeamMember& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+
 
     /**
      * <p>The role assigned to the user in the project. Project roles have different
@@ -136,6 +138,7 @@ namespace Model
      */
     inline TeamMember& WithProjectRole(const char* value) { SetProjectRole(value); return *this;}
 
+
     /**
      * <p>Whether the user is allowed to remotely access project resources using an SSH
      * public/private key pair.</p>
@@ -155,10 +158,13 @@ namespace Model
     inline TeamMember& WithRemoteAccessAllowed(bool value) { SetRemoteAccessAllowed(value); return *this;}
 
   private:
+
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;
+
     Aws::String m_projectRole;
     bool m_projectRoleHasBeenSet;
+
     bool m_remoteAccessAllowed;
     bool m_remoteAccessAllowedHasBeenSet;
   };

@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     CreateSlotTypeVersionResult();
-    CreateSlotTypeVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSlotTypeVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSlotTypeVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSlotTypeVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the slot type.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline CreateSlotTypeVersionResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the slot type.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>A description of the slot type.</p>
      */
     inline CreateSlotTypeVersionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
@@ -156,6 +159,7 @@ namespace Model
      */
     inline CreateSlotTypeVersionResult& AddEnumerationValues(EnumerationValue&& value) { m_enumerationValues.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The date that the slot type was updated. When you create a resource, the
      * creation date and last update date are the same.</p>
@@ -186,6 +190,7 @@ namespace Model
      */
     inline CreateSlotTypeVersionResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date that the slot type was created.</p>
      */
@@ -210,6 +215,7 @@ namespace Model
      * <p>The date that the slot type was created.</p>
      */
     inline CreateSlotTypeVersionResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The version assigned to the new slot type version. </p>
@@ -245,6 +251,7 @@ namespace Model
      * <p>The version assigned to the new slot type version. </p>
      */
     inline CreateSlotTypeVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
@@ -282,12 +289,19 @@ namespace Model
     inline CreateSlotTypeVersionResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_description;
+
     Aws::Vector<EnumerationValue> m_enumerationValues;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::String m_version;
+
     Aws::String m_checksum;
   };
 

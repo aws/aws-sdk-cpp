@@ -30,12 +30,12 @@ AssociateNodeResult::AssociateNodeResult()
 {
 }
 
-AssociateNodeResult::AssociateNodeResult(const AmazonWebServiceResult<JsonValue>& result)
+AssociateNodeResult::AssociateNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AssociateNodeResult& AssociateNodeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AssociateNodeResult& AssociateNodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NodeAssociationStatusToken"))

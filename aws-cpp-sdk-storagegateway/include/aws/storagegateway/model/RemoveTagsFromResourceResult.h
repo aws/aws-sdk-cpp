@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     RemoveTagsFromResourceResult();
-    RemoveTagsFromResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveTagsFromResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveTagsFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveTagsFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed
@@ -89,6 +90,7 @@ namespace Model
     inline RemoveTagsFromResourceResult& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 
   private:
+
     Aws::String m_resourceARN;
   };
 

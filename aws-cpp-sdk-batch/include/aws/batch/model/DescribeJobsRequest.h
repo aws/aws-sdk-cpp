@@ -35,6 +35,7 @@ namespace Model
     DescribeJobsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A space-separated list of up to 100 job IDs.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DescribeJobsRequest& AddJobs(const char* value) { m_jobsHasBeenSet = true; m_jobs.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_jobs;
     bool m_jobsHasBeenSet;
   };

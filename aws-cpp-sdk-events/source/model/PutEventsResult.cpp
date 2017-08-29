@@ -31,13 +31,13 @@ PutEventsResult::PutEventsResult() :
 {
 }
 
-PutEventsResult::PutEventsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PutEventsResult::PutEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_failedEntryCount(0)
 {
   *this = result;
 }
 
-PutEventsResult& PutEventsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutEventsResult& PutEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FailedEntryCount"))

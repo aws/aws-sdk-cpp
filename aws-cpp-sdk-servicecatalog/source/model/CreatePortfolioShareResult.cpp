@@ -30,12 +30,12 @@ CreatePortfolioShareResult::CreatePortfolioShareResult()
 {
 }
 
-CreatePortfolioShareResult::CreatePortfolioShareResult(const AmazonWebServiceResult<JsonValue>& result)
+CreatePortfolioShareResult::CreatePortfolioShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreatePortfolioShareResult& CreatePortfolioShareResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreatePortfolioShareResult& CreatePortfolioShareResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

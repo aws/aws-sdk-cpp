@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetCredentialReportResult();
-    GetCredentialReportResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetCredentialReportResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetCredentialReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetCredentialReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Contains the credential report. The report is Base64-encoded.</p>
@@ -75,6 +76,7 @@ namespace Model
      */
     inline GetCredentialReportResult& WithContent(Aws::Utils::ByteBuffer&& value) { SetContent(std::move(value)); return *this;}
 
+
     /**
      * <p>The format (MIME type) of the credential report.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The format (MIME type) of the credential report.</p>
      */
     inline GetCredentialReportResult& WithReportFormat(ReportFormatType&& value) { SetReportFormat(std::move(value)); return *this;}
+
 
     /**
      * <p> The date and time when the credential report was created, in <a
@@ -130,6 +133,7 @@ namespace Model
      */
     inline GetCredentialReportResult& WithGeneratedTime(Aws::Utils::DateTime&& value) { SetGeneratedTime(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -146,9 +150,13 @@ namespace Model
     inline GetCredentialReportResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_content;
+
     ReportFormatType m_reportFormat;
+
     Aws::Utils::DateTime m_generatedTime;
+
     ResponseMetadata m_responseMetadata;
   };
 

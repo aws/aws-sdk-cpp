@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -65,6 +66,7 @@ namespace Model
     inline DeleteSpotDatafeedSubscriptionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

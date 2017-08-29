@@ -30,12 +30,12 @@ CreateResourceDataSyncResult::CreateResourceDataSyncResult()
 {
 }
 
-CreateResourceDataSyncResult::CreateResourceDataSyncResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateResourceDataSyncResult::CreateResourceDataSyncResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateResourceDataSyncResult& CreateResourceDataSyncResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateResourceDataSyncResult& CreateResourceDataSyncResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -48,6 +48,7 @@ namespace Model
     BatchListAttachedIndices& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A reference to the object that has indices attached.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>A reference to the object that has indices attached.</p>
      */
     inline BatchListAttachedIndices& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline BatchListAttachedIndices& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -124,10 +127,13 @@ namespace Model
     inline BatchListAttachedIndices& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     ObjectReference m_targetReference;
     bool m_targetReferenceHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

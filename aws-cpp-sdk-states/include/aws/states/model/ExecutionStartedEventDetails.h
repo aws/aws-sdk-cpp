@@ -40,6 +40,7 @@ namespace Model
     ExecutionStartedEventDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The JSON data input to the execution.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The JSON data input to the execution.</p>
      */
     inline ExecutionStartedEventDetails& WithInput(const char* value) { SetInput(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda
@@ -118,8 +120,10 @@ namespace Model
     inline ExecutionStartedEventDetails& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
   };

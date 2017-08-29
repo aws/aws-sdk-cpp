@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Represents a message whose visibility timeout has been changed
      * successfully.</p>
@@ -92,6 +93,7 @@ namespace Model
     inline ChangeMessageVisibilityBatchResultEntry& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

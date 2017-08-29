@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The raw data of the message. This data needs to base64-encoded if you are
      * accessing Amazon SES directly through the HTTPS interface. If you are accessing
@@ -139,6 +140,7 @@ namespace Model
     inline RawMessage& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_data;
     bool m_dataHasBeenSet;
   };

@@ -31,12 +31,12 @@ DescribeSnapshotAttributeResponse::DescribeSnapshotAttributeResponse()
 {
 }
 
-DescribeSnapshotAttributeResponse::DescribeSnapshotAttributeResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSnapshotAttributeResponse::DescribeSnapshotAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeSnapshotAttributeResponse& DescribeSnapshotAttributeResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeSnapshotAttributeResponse& DescribeSnapshotAttributeResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

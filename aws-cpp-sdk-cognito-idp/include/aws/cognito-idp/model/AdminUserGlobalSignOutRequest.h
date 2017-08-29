@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The user pool ID.</p>
      */
     inline AdminUserGlobalSignOutRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The user name.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline AdminUserGlobalSignOutRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
   };

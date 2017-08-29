@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     GetBotChannelAssociationResult();
-    GetBotChannelAssociationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBotChannelAssociationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotChannelAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotChannelAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the association between the bot and the channel.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline GetBotChannelAssociationResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the association between the bot and the channel.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>A description of the association between the bot and the channel.</p>
      */
     inline GetBotChannelAssociationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
@@ -156,6 +159,7 @@ namespace Model
      */
     inline GetBotChannelAssociationResult& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
 
+
     /**
      * <p>The name of the Amazon Lex bot.</p>
      */
@@ -191,6 +195,7 @@ namespace Model
      */
     inline GetBotChannelAssociationResult& WithBotName(const char* value) { SetBotName(value); return *this;}
 
+
     /**
      * <p>The date that the association between the bot and the channel was
      * created.</p>
@@ -221,6 +226,7 @@ namespace Model
      */
     inline GetBotChannelAssociationResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of the messaging platform.</p>
      */
@@ -245,6 +251,7 @@ namespace Model
      * <p>The type of the messaging platform.</p>
      */
     inline GetBotChannelAssociationResult& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides information that the messaging platform needs to communicate with
@@ -319,12 +326,19 @@ namespace Model
     inline GetBotChannelAssociationResult& AddBotConfiguration(const char* key, const char* value) { m_botConfiguration.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_description;
+
     Aws::String m_botAlias;
+
     Aws::String m_botName;
+
     Aws::Utils::DateTime m_createdDate;
+
     ChannelType m_type;
+
     Aws::Map<Aws::String, Aws::String> m_botConfiguration;
   };
 

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeParametersResult();
-    DescribeParametersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Parameters returned by the request.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Parameters returned by the request.</p>
      */
     inline DescribeParametersResult& AddParameters(ParameterMetadata&& value) { m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeParametersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ParameterMetadata> m_parameters;
+
     Aws::String m_nextToken;
   };
 

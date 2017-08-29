@@ -30,12 +30,12 @@ GetSlotTypeVersionsResult::GetSlotTypeVersionsResult()
 {
 }
 
-GetSlotTypeVersionsResult::GetSlotTypeVersionsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetSlotTypeVersionsResult::GetSlotTypeVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetSlotTypeVersionsResult& GetSlotTypeVersionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSlotTypeVersionsResult& GetSlotTypeVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("slotTypes"))

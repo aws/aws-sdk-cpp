@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline DeleteReplicationInstanceRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 
   private:
+
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet;
   };

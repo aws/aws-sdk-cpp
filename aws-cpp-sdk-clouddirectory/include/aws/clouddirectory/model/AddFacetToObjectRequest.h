@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where the object resides. For more information, see <a>arns</a>.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline AddFacetToObjectRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>Identifiers for the facet that you are adding to the object.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>Identifiers for the facet that you are adding to the object.</p>
      */
     inline AddFacetToObjectRequest& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
+
 
     /**
      * <p>Attributes on the facet that you are adding to the object.</p>
@@ -142,6 +145,7 @@ namespace Model
      */
     inline AddFacetToObjectRequest& AddObjectAttributeList(AttributeKeyAndValue&& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A reference to the object you are adding the specified facet to.</p>
      */
@@ -168,12 +172,16 @@ namespace Model
     inline AddFacetToObjectRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     SchemaFacet m_schemaFacet;
     bool m_schemaFacetHasBeenSet;
+
     Aws::Vector<AttributeKeyAndValue> m_objectAttributeList;
     bool m_objectAttributeListHasBeenSet;
+
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet;
   };

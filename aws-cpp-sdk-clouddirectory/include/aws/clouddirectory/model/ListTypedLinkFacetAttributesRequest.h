@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
      * information, see <a>arns</a>.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ListTypedLinkFacetAttributesRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
+
     /**
      * <p>The unique name of the typed link facet.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The unique name of the typed link facet.</p>
      */
     inline ListTypedLinkFacetAttributesRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -148,6 +151,7 @@ namespace Model
      */
     inline ListTypedLinkFacetAttributesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -164,12 +168,16 @@ namespace Model
     inline ListTypedLinkFacetAttributesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

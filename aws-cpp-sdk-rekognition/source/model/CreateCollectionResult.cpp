@@ -31,13 +31,13 @@ CreateCollectionResult::CreateCollectionResult() :
 {
 }
 
-CreateCollectionResult::CreateCollectionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateCollectionResult::CreateCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_statusCode(0)
 {
   *this = result;
 }
 
-CreateCollectionResult& CreateCollectionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateCollectionResult& CreateCollectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("StatusCode"))

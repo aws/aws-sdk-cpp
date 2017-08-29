@@ -45,6 +45,7 @@ namespace Model
     WorkspaceProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly.
      * AutoStop WorkSpaces are billed by the hour and stopped when no longer being used
@@ -80,6 +81,7 @@ namespace Model
      */
     inline WorkspaceProperties& WithRunningMode(RunningMode&& value) { SetRunningMode(std::move(value)); return *this;}
 
+
     /**
      * <p>The time after a user logs off when WorkSpaces are automatically stopped.
      * Configured in 60 minute intervals.</p>
@@ -99,8 +101,10 @@ namespace Model
     inline WorkspaceProperties& WithRunningModeAutoStopTimeoutInMinutes(int value) { SetRunningModeAutoStopTimeoutInMinutes(value); return *this;}
 
   private:
+
     RunningMode m_runningMode;
     bool m_runningModeHasBeenSet;
+
     int m_runningModeAutoStopTimeoutInMinutes;
     bool m_runningModeAutoStopTimeoutInMinutesHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     PolicyVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The policy version ID.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline PolicyVersion& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     /**
      * <p>Specifies whether the policy version is the default.</p>
      */
@@ -95,6 +97,7 @@ namespace Model
      * <p>Specifies whether the policy version is the default.</p>
      */
     inline PolicyVersion& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
+
 
     /**
      * <p>The date and time the policy was created.</p>
@@ -122,10 +125,13 @@ namespace Model
     inline PolicyVersion& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     bool m_isDefaultVersion;
     bool m_isDefaultVersionHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
   };

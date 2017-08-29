@@ -30,12 +30,12 @@ DescribeEcsClustersResult::DescribeEcsClustersResult()
 {
 }
 
-DescribeEcsClustersResult::DescribeEcsClustersResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEcsClustersResult::DescribeEcsClustersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeEcsClustersResult& DescribeEcsClustersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEcsClustersResult& DescribeEcsClustersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EcsClusters"))

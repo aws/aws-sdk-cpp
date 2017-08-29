@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the remote access session you wish to
      * stop.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline StopRemoteAccessSessionRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
   };

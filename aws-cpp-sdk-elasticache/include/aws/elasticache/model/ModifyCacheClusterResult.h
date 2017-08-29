@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ModifyCacheClusterResult();
-    ModifyCacheClusterResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyCacheClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyCacheClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyCacheClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const CacheCluster& GetCacheCluster() const{ return m_cacheCluster; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline ModifyCacheClusterResult& WithCacheCluster(CacheCluster&& value) { SetCacheCluster(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline ModifyCacheClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     CacheCluster m_cacheCluster;
+
     ResponseMetadata m_responseMetadata;
   };
 

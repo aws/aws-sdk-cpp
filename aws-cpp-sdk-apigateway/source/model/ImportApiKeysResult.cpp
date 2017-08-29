@@ -30,12 +30,12 @@ ImportApiKeysResult::ImportApiKeysResult()
 {
 }
 
-ImportApiKeysResult::ImportApiKeysResult(const AmazonWebServiceResult<JsonValue>& result)
+ImportApiKeysResult::ImportApiKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ImportApiKeysResult& ImportApiKeysResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ImportApiKeysResult& ImportApiKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ids"))

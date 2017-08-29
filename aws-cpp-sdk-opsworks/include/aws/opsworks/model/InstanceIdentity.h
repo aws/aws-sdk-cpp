@@ -48,6 +48,7 @@ namespace Model
     InstanceIdentity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A JSON document that contains the metadata.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>A JSON document that contains the metadata.</p>
      */
     inline InstanceIdentity& WithDocument(const char* value) { SetDocument(value); return *this;}
+
 
     /**
      * <p>A signature that can be used to verify the document's accuracy and
@@ -126,8 +128,10 @@ namespace Model
     inline InstanceIdentity& WithSignature(const char* value) { SetSignature(value); return *this;}
 
   private:
+
     Aws::String m_document;
     bool m_documentHasBeenSet;
+
     Aws::String m_signature;
     bool m_signatureHasBeenSet;
   };

@@ -30,12 +30,12 @@ CreateHealthCheckResult::CreateHealthCheckResult()
 {
 }
 
-CreateHealthCheckResult::CreateHealthCheckResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateHealthCheckResult::CreateHealthCheckResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateHealthCheckResult& CreateHealthCheckResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateHealthCheckResult& CreateHealthCheckResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

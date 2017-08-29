@@ -31,12 +31,12 @@ ModifyEventSubscriptionResult::ModifyEventSubscriptionResult()
 {
 }
 
-ModifyEventSubscriptionResult::ModifyEventSubscriptionResult(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyEventSubscriptionResult::ModifyEventSubscriptionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifyEventSubscriptionResult& ModifyEventSubscriptionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyEventSubscriptionResult& ModifyEventSubscriptionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

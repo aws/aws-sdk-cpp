@@ -51,6 +51,7 @@ namespace Model
     InstanceGroupConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Friendly name given to the instance group.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline InstanceGroupConfig& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      */
     inline InstanceGroupConfig& WithMarket(MarketType&& value) { SetMarket(std::move(value)); return *this;}
 
+
     /**
      * <p>The role of the instance group in the cluster.</p>
      */
@@ -135,6 +138,7 @@ namespace Model
      * <p>The role of the instance group in the cluster.</p>
      */
     inline InstanceGroupConfig& WithInstanceRole(InstanceRoleType&& value) { SetInstanceRole(std::move(value)); return *this;}
+
 
     /**
      * <p>Bid price for each EC2 instance in the instance group when launching nodes as
@@ -178,6 +182,7 @@ namespace Model
      */
     inline InstanceGroupConfig& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 
+
     /**
      * <p>The EC2 instance type for all instances in the instance group.</p>
      */
@@ -213,6 +218,7 @@ namespace Model
      */
     inline InstanceGroupConfig& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>Target number of instances for the instance group.</p>
      */
@@ -227,6 +233,7 @@ namespace Model
      * <p>Target number of instances for the instance group.</p>
      */
     inline InstanceGroupConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
@@ -277,6 +284,7 @@ namespace Model
      */
     inline InstanceGroupConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>EBS configurations that will be attached to each EC2 instance in the instance
      * group.</p>
@@ -306,6 +314,7 @@ namespace Model
      * group.</p>
      */
     inline InstanceGroupConfig& WithEbsConfiguration(EbsConfiguration&& value) { SetEbsConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>An automatic scaling policy for a core instance group or task instance group
@@ -348,22 +357,31 @@ namespace Model
     inline InstanceGroupConfig& WithAutoScalingPolicy(AutoScalingPolicy&& value) { SetAutoScalingPolicy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     MarketType m_market;
     bool m_marketHasBeenSet;
+
     InstanceRoleType m_instanceRole;
     bool m_instanceRoleHasBeenSet;
+
     Aws::String m_bidPrice;
     bool m_bidPriceHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+
     EbsConfiguration m_ebsConfiguration;
     bool m_ebsConfigurationHasBeenSet;
+
     AutoScalingPolicy m_autoScalingPolicy;
     bool m_autoScalingPolicyHasBeenSet;
   };

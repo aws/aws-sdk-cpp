@@ -47,6 +47,7 @@ namespace Model
     ResourceDataSyncS3Destination& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the Amazon S3 bucket where the aggregated data is stored.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the Amazon S3 bucket where the aggregated data is stored.</p>
      */
     inline ResourceDataSyncS3Destination& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+
 
     /**
      * <p>An Amazon S3 prefix for the bucket.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ResourceDataSyncS3Destination& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     /**
      * <p>A supported sync format. The following format is currently supported:
      * JsonSerDe</p>
@@ -146,6 +149,7 @@ namespace Model
      * JsonSerDe</p>
      */
     inline ResourceDataSyncS3Destination& WithSyncFormat(ResourceDataSyncS3Format&& value) { SetSyncFormat(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS Region with the Amazon S3 bucket targeted by the Resource Data
@@ -190,12 +194,16 @@ namespace Model
     inline ResourceDataSyncS3Destination& WithRegion(const char* value) { SetRegion(value); return *this;}
 
   private:
+
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     ResourceDataSyncS3Format m_syncFormat;
     bool m_syncFormatHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
   };

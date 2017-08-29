@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The user-specified name for a logical grouping of bids.</p> <p>When you
      * specify an Availability Zone group in a Spot Instance request, all Spot
@@ -178,6 +179,7 @@ namespace Model
      */
     inline RequestSpotInstancesRequest& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
 
+
     /**
      * <p>The required duration for the Spot instances (also known as Spot blocks), in
      * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
@@ -213,6 +215,7 @@ namespace Model
      * duration.</p>
      */
     inline RequestSpotInstancesRequest& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
+
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
@@ -277,6 +280,7 @@ namespace Model
      */
     inline RequestSpotInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -301,6 +305,7 @@ namespace Model
      */
     inline RequestSpotInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
     /**
      * <p>The maximum number of Spot instances to launch.</p> <p>Default: 1</p>
      */
@@ -315,6 +320,7 @@ namespace Model
      * <p>The maximum number of Spot instances to launch.</p> <p>Default: 1</p>
      */
     inline RequestSpotInstancesRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>The instance launch group. Launch groups are Spot instances that launch
@@ -365,6 +371,7 @@ namespace Model
      */
     inline RequestSpotInstancesRequest& WithLaunchGroup(const char* value) { SetLaunchGroup(value); return *this;}
 
+
     /**
      * <p>The launch specification.</p>
      */
@@ -389,6 +396,7 @@ namespace Model
      * <p>The launch specification.</p>
      */
     inline RequestSpotInstancesRequest& WithLaunchSpecification(RequestSpotLaunchSpecification&& value) { SetLaunchSpecification(std::move(value)); return *this;}
+
 
     /**
      * <p>The maximum hourly price (bid) for any Spot instance launched to fulfill the
@@ -432,6 +440,7 @@ namespace Model
      */
     inline RequestSpotInstancesRequest& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
+
     /**
      * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
@@ -456,6 +465,7 @@ namespace Model
      * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
     inline RequestSpotInstancesRequest& WithType(SpotInstanceType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The start date of the request. If this is a one-time request, the request
@@ -507,6 +517,7 @@ namespace Model
      */
     inline RequestSpotInstancesRequest& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(std::move(value)); return *this;}
 
+
     /**
      * <p>The end date of the request. If this is a one-time request, the request
      * remains active until all instances launch, the request is canceled, or this date
@@ -553,26 +564,37 @@ namespace Model
     inline RequestSpotInstancesRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_availabilityZoneGroup;
     bool m_availabilityZoneGroupHasBeenSet;
+
     int m_blockDurationMinutes;
     bool m_blockDurationMinutesHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     Aws::String m_launchGroup;
     bool m_launchGroupHasBeenSet;
+
     RequestSpotLaunchSpecification m_launchSpecification;
     bool m_launchSpecificationHasBeenSet;
+
     Aws::String m_spotPrice;
     bool m_spotPriceHasBeenSet;
+
     SpotInstanceType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Utils::DateTime m_validFrom;
     bool m_validFromHasBeenSet;
+
     Aws::Utils::DateTime m_validUntil;
     bool m_validUntilHasBeenSet;
   };

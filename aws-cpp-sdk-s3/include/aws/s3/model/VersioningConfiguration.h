@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Specifies whether MFA delete is enabled in the bucket versioning configuration.
      * This element is only returned if the bucket has been configured with MFA delete.
@@ -77,6 +78,7 @@ namespace Model
      */
     inline VersioningConfiguration& WithMFADelete(MFADelete&& value) { SetMFADelete(std::move(value)); return *this;}
 
+
     /**
      * The versioning state of the bucket.
      */
@@ -103,8 +105,10 @@ namespace Model
     inline VersioningConfiguration& WithStatus(BucketVersioningStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     MFADelete m_mFADelete;
     bool m_mFADeleteHasBeenSet;
+
     BucketVersioningStatus m_status;
     bool m_statusHasBeenSet;
   };

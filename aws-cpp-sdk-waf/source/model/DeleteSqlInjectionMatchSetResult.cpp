@@ -30,12 +30,12 @@ DeleteSqlInjectionMatchSetResult::DeleteSqlInjectionMatchSetResult()
 {
 }
 
-DeleteSqlInjectionMatchSetResult::DeleteSqlInjectionMatchSetResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSqlInjectionMatchSetResult::DeleteSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteSqlInjectionMatchSetResult& DeleteSqlInjectionMatchSetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSqlInjectionMatchSetResult& DeleteSqlInjectionMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ChangeToken"))

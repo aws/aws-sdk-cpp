@@ -46,6 +46,7 @@ namespace Model
     TrustedAdvisorCategorySpecificSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The summary information about cost savings for a Trusted Advisor check that
      * is in the Cost Optimizing category.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline TrustedAdvisorCategorySpecificSummary& WithCostOptimizing(TrustedAdvisorCostOptimizingSummary&& value) { SetCostOptimizing(std::move(value)); return *this;}
 
   private:
+
     TrustedAdvisorCostOptimizingSummary m_costOptimizing;
     bool m_costOptimizingHasBeenSet;
   };

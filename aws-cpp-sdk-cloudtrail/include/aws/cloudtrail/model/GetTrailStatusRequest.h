@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail for which you are
      * requesting status. To get the status of a shadow trail (a replication of the
@@ -104,6 +105,7 @@ namespace Model
     inline GetTrailStatusRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

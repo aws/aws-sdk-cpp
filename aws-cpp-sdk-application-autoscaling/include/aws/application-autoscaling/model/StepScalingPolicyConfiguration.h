@@ -48,6 +48,7 @@ namespace Model
     StepScalingPolicyConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The adjustment type, which specifies how the <code>ScalingAdjustment</code>
      * parameter in a <a>StepAdjustment</a> is interpreted.</p>
@@ -77,6 +78,7 @@ namespace Model
      * parameter in a <a>StepAdjustment</a> is interpreted.</p>
      */
     inline StepScalingPolicyConfiguration& WithAdjustmentType(AdjustmentType&& value) { SetAdjustmentType(std::move(value)); return *this;}
+
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
@@ -120,6 +122,7 @@ namespace Model
      */
     inline StepScalingPolicyConfiguration& AddStepAdjustments(StepAdjustment&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The minimum number to adjust your scalable dimension as a result of a scaling
      * activity. If the adjustment type is <code>PercentChangeInCapacity</code>, the
@@ -143,6 +146,7 @@ namespace Model
      * amount.</p>
      */
     inline StepScalingPolicyConfiguration& WithMinAdjustmentMagnitude(int value) { SetMinAdjustmentMagnitude(value); return *this;}
+
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes where
@@ -210,6 +214,7 @@ namespace Model
      */
     inline StepScalingPolicyConfiguration& WithCooldown(int value) { SetCooldown(value); return *this;}
 
+
     /**
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
@@ -241,14 +246,19 @@ namespace Model
     inline StepScalingPolicyConfiguration& WithMetricAggregationType(MetricAggregationType&& value) { SetMetricAggregationType(std::move(value)); return *this;}
 
   private:
+
     AdjustmentType m_adjustmentType;
     bool m_adjustmentTypeHasBeenSet;
+
     Aws::Vector<StepAdjustment> m_stepAdjustments;
     bool m_stepAdjustmentsHasBeenSet;
+
     int m_minAdjustmentMagnitude;
     bool m_minAdjustmentMagnitudeHasBeenSet;
+
     int m_cooldown;
     bool m_cooldownHasBeenSet;
+
     MetricAggregationType m_metricAggregationType;
     bool m_metricAggregationTypeHasBeenSet;
   };

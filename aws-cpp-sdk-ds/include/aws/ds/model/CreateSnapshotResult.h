@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateSnapshotResult();
-    CreateSnapshotResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSnapshotResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of the snapshot that was created.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateSnapshotResult& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
   private:
+
     Aws::String m_snapshotId;
   };
 

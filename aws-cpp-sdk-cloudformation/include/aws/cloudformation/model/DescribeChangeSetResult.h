@@ -54,8 +54,9 @@ namespace Model
   {
   public:
     DescribeChangeSetResult();
-    DescribeChangeSetResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeChangeSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The name of the change set.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeChangeSetResult& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
 
+
     /**
      * <p>The ARN of the change set.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      * <p>The ARN of the change set.</p>
      */
     inline DescribeChangeSetResult& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
+
 
     /**
      * <p>The ARN of the stack that is associated with the change set.</p>
@@ -162,6 +165,7 @@ namespace Model
      */
     inline DescribeChangeSetResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The name of the stack that is associated with the change set.</p>
      */
@@ -197,6 +201,7 @@ namespace Model
      */
     inline DescribeChangeSetResult& WithStackName(const char* value) { SetStackName(value); return *this;}
 
+
     /**
      * <p>Information about the change set.</p>
      */
@@ -231,6 +236,7 @@ namespace Model
      * <p>Information about the change set.</p>
      */
     inline DescribeChangeSetResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of <code>Parameter</code> structures that describes the input
@@ -295,6 +301,7 @@ namespace Model
      */
     inline DescribeChangeSetResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
@@ -319,6 +326,7 @@ namespace Model
      * <p>The start time when the change set was created, in UTC.</p>
      */
     inline DescribeChangeSetResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
@@ -365,6 +373,7 @@ namespace Model
      */
     inline DescribeChangeSetResult& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The current status of the change set, such as
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or
@@ -399,6 +408,7 @@ namespace Model
      * <code>FAILED</code>.</p>
      */
     inline DescribeChangeSetResult& WithStatus(ChangeSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the change set's status. For example, if your attempt to
@@ -441,6 +451,7 @@ namespace Model
      * create a change set failed, AWS CloudFormation shows the error message.</p>
      */
     inline DescribeChangeSetResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+
 
     /**
      * <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that
@@ -490,6 +501,7 @@ namespace Model
      */
     inline DescribeChangeSetResult& AddNotificationARNs(const char* value) { m_notificationARNs.push_back(value); return *this; }
 
+
     /**
      * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
      * and updating operations, and for the specified monitoring period afterwards.</p>
@@ -519,6 +531,7 @@ namespace Model
      * and updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline DescribeChangeSetResult& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>If you execute the change set, the list of capabilities that were explicitly
@@ -562,6 +575,7 @@ namespace Model
      */
     inline DescribeChangeSetResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If you execute the change set, the tags that will be associated with the
      * stack.</p>
@@ -603,6 +617,7 @@ namespace Model
      * stack.</p>
      */
     inline DescribeChangeSetResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of <code>Change</code> structures that describes the resources AWS
@@ -646,6 +661,7 @@ namespace Model
      */
     inline DescribeChangeSetResult& AddChanges(Change&& value) { m_changes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of
      * changes. If there is no additional page, this value is null.</p>
@@ -688,6 +704,7 @@ namespace Model
      */
     inline DescribeChangeSetResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -704,22 +721,39 @@ namespace Model
     inline DescribeChangeSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_changeSetName;
+
     Aws::String m_changeSetId;
+
     Aws::String m_stackId;
+
     Aws::String m_stackName;
+
     Aws::String m_description;
+
     Aws::Vector<Parameter> m_parameters;
+
     Aws::Utils::DateTime m_creationTime;
+
     ExecutionStatus m_executionStatus;
+
     ChangeSetStatus m_status;
+
     Aws::String m_statusReason;
+
     Aws::Vector<Aws::String> m_notificationARNs;
+
     RollbackConfiguration m_rollbackConfiguration;
+
     Aws::Vector<Capability> m_capabilities;
+
     Aws::Vector<Tag> m_tags;
+
     Aws::Vector<Change> m_changes;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

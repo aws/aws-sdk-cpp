@@ -30,12 +30,12 @@ DeleteEventStreamResult::DeleteEventStreamResult()
 {
 }
 
-DeleteEventStreamResult::DeleteEventStreamResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteEventStreamResult::DeleteEventStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteEventStreamResult& DeleteEventStreamResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteEventStreamResult& DeleteEventStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EventStream"))

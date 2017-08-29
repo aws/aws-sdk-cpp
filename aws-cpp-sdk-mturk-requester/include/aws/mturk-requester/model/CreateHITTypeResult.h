@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateHITTypeResult();
-    CreateHITTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateHITTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateHITTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateHITTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> The ID of the newly registered HIT type.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateHITTypeResult& WithHITTypeId(const char* value) { SetHITTypeId(value); return *this;}
 
   private:
+
     Aws::String m_hITTypeId;
   };
 

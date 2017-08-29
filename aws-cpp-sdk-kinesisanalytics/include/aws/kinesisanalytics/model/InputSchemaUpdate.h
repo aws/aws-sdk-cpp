@@ -49,6 +49,7 @@ namespace Model
     InputSchemaUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the format of the records on the streaming source.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>Specifies the format of the records on the streaming source.</p>
      */
     inline InputSchemaUpdate& WithRecordFormatUpdate(RecordFormat&& value) { SetRecordFormatUpdate(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the encoding of the records in the streaming source. For example,
@@ -115,6 +117,7 @@ namespace Model
      * UTF-8.</p>
      */
     inline InputSchemaUpdate& WithRecordEncodingUpdate(const char* value) { SetRecordEncodingUpdate(value); return *this;}
+
 
     /**
      * <p>A list of <code>RecordColumn</code> objects. Each object describes the
@@ -166,10 +169,13 @@ namespace Model
     inline InputSchemaUpdate& AddRecordColumnUpdates(RecordColumn&& value) { m_recordColumnUpdatesHasBeenSet = true; m_recordColumnUpdates.push_back(std::move(value)); return *this; }
 
   private:
+
     RecordFormat m_recordFormatUpdate;
     bool m_recordFormatUpdateHasBeenSet;
+
     Aws::String m_recordEncodingUpdate;
     bool m_recordEncodingUpdateHasBeenSet;
+
     Aws::Vector<RecordColumn> m_recordColumnUpdates;
     bool m_recordColumnUpdatesHasBeenSet;
   };

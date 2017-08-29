@@ -47,6 +47,7 @@ namespace Model
     ProvisionedThroughputDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The date and time of the last provisioned throughput increase for this
      * table.</p>
@@ -76,6 +77,7 @@ namespace Model
      * table.</p>
      */
     inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(Aws::Utils::DateTime&& value) { SetLastIncreaseDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time of the last provisioned throughput decrease for this
@@ -107,6 +109,7 @@ namespace Model
      */
     inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(Aws::Utils::DateTime&& value) { SetLastDecreaseDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of provisioned throughput decreases for this table during this UTC
      * calendar day. For current maximums on provisioned throughput decreases, see <a
@@ -130,6 +133,7 @@ namespace Model
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ProvisionedThroughputDescription& WithNumberOfDecreasesToday(long long value) { SetNumberOfDecreasesToday(value); return *this;}
+
 
     /**
      * <p>The maximum number of strongly consistent reads consumed per second before
@@ -158,6 +162,7 @@ namespace Model
      */
     inline ProvisionedThroughputDescription& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
 
+
     /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException</code>.</p>
@@ -177,14 +182,19 @@ namespace Model
     inline ProvisionedThroughputDescription& WithWriteCapacityUnits(long long value) { SetWriteCapacityUnits(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_lastIncreaseDateTime;
     bool m_lastIncreaseDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastDecreaseDateTime;
     bool m_lastDecreaseDateTimeHasBeenSet;
+
     long long m_numberOfDecreasesToday;
     bool m_numberOfDecreasesTodayHasBeenSet;
+
     long long m_readCapacityUnits;
     bool m_readCapacityUnitsHasBeenSet;
+
     long long m_writeCapacityUnits;
     bool m_writeCapacityUnitsHasBeenSet;
   };

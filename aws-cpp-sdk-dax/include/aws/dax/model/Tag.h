@@ -50,6 +50,7 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The key for the tag. Tag keys are case sensitive. Every DAX cluster can only
      * have one tag with the same key. If you try to add an existing tag (same key),
@@ -99,6 +100,7 @@ namespace Model
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
      */
@@ -135,8 +137,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

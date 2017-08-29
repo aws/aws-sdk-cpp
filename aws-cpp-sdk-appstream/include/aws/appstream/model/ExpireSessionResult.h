@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     ExpireSessionResult();
-    ExpireSessionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExpireSessionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ExpireSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ExpireSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

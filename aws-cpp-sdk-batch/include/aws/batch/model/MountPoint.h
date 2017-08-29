@@ -46,6 +46,7 @@ namespace Model
     MountPoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The path on the container at which to mount the host volume.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline MountPoint& WithContainerPath(const char* value) { SetContainerPath(value); return *this;}
 
+
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the
      * volume; otherwise, the container can write to the volume. The default value is
@@ -101,6 +103,7 @@ namespace Model
      * <code>false</code>.</p>
      */
     inline MountPoint& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
+
 
     /**
      * <p>The name of the volume to mount.</p>
@@ -138,10 +141,13 @@ namespace Model
     inline MountPoint& WithSourceVolume(const char* value) { SetSourceVolume(value); return *this;}
 
   private:
+
     Aws::String m_containerPath;
     bool m_containerPathHasBeenSet;
+
     bool m_readOnly;
     bool m_readOnlyHasBeenSet;
+
     Aws::String m_sourceVolume;
     bool m_sourceVolumeHasBeenSet;
   };

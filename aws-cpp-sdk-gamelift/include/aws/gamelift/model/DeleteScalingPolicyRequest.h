@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline DeleteScalingPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Unique identifier for a fleet to be deleted.</p>
      */
@@ -117,8 +119,10 @@ namespace Model
     inline DeleteScalingPolicyRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
   };

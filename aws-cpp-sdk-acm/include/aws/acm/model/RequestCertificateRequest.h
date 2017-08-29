@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p> Fully qualified domain name (FQDN), such as www.example.com, of the site
      * that you want to secure with an ACM Certificate. Use an asterisk (*) to create a
@@ -164,6 +165,7 @@ namespace Model
      */
     inline RequestCertificateRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>Additional FQDNs to be included in the Subject Alternative Name extension of
      * the ACM Certificate. For example, add the name www.example.net to a certificate
@@ -260,6 +262,7 @@ namespace Model
      */
     inline RequestCertificateRequest& AddSubjectAlternativeNames(const char* value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
+
     /**
      * <p>Customer chosen string that can be used to distinguish between calls to
      * <code>RequestCertificate</code>. Idempotency tokens time out after one hour.
@@ -337,6 +340,7 @@ namespace Model
      */
     inline RequestCertificateRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
+
     /**
      * <p>The domain name that you want ACM to use to send you emails to validate your
      * ownership of the domain.</p>
@@ -380,12 +384,16 @@ namespace Model
     inline RequestCertificateRequest& AddDomainValidationOptions(DomainValidationOption&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_subjectAlternativeNames;
     bool m_subjectAlternativeNamesHasBeenSet;
+
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
+
     Aws::Vector<DomainValidationOption> m_domainValidationOptions;
     bool m_domainValidationOptionsHasBeenSet;
   };

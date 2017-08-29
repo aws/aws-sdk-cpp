@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more account attribute names.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeAccountAttributesRequest& AddAttributeNames(AccountAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -103,8 +105,10 @@ namespace Model
     inline DescribeAccountAttributesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<AccountAttributeName> m_attributeNames;
     bool m_attributeNamesHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

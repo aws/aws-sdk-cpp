@@ -45,6 +45,7 @@ namespace Model
     AutoScalingGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Auto Scaling group name.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The Auto Scaling group name.</p>
      */
     inline AutoScalingGroup& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>An Auto Scaling lifecycle event hook name.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline AutoScalingGroup& WithHook(const char* value) { SetHook(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_hook;
     bool m_hookHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeChapCredentialsResult();
-    DescribeChapCredentialsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeChapCredentialsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeChapCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeChapCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <a>ChapInfo</a> objects that represent CHAP credentials. Each
@@ -160,6 +161,7 @@ namespace Model
     inline DescribeChapCredentialsResult& AddChapCredentials(ChapInfo&& value) { m_chapCredentials.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ChapInfo> m_chapCredentials;
   };
 

@@ -47,6 +47,7 @@ namespace Model
     GameSessionDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Object that describes a game session.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>Object that describes a game session.</p>
      */
     inline GameSessionDetail& WithGameSession(GameSession&& value) { SetGameSession(std::move(value)); return *this;}
+
 
     /**
      * <p>Current status of protection for the game session.</p> <ul> <li> <p>
@@ -118,8 +120,10 @@ namespace Model
     inline GameSessionDetail& WithProtectionPolicy(ProtectionPolicy&& value) { SetProtectionPolicy(std::move(value)); return *this;}
 
   private:
+
     GameSession m_gameSession;
     bool m_gameSessionHasBeenSet;
+
     ProtectionPolicy m_protectionPolicy;
     bool m_protectionPolicyHasBeenSet;
   };

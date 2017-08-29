@@ -43,6 +43,7 @@ namespace Model
     SMSChannelResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The unique ID of the application to which the SMS channel belongs.
      */
@@ -77,6 +78,7 @@ namespace Model
      * The unique ID of the application to which the SMS channel belongs.
      */
     inline SMSChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     /**
      * The date that the settings were last updated in ISO 8601 format.
@@ -113,6 +115,7 @@ namespace Model
      */
     inline SMSChannelResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
+
     /**
      * If the channel is enabled for sending messages.
      */
@@ -127,6 +130,7 @@ namespace Model
      * If the channel is enabled for sending messages.
      */
     inline SMSChannelResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * Channel ID. Not used, only for backwards compatibility.
@@ -163,6 +167,7 @@ namespace Model
      */
     inline SMSChannelResponse& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * Is this channel archived
      */
@@ -177,6 +182,7 @@ namespace Model
      * Is this channel archived
      */
     inline SMSChannelResponse& WithIsArchived(bool value) { SetIsArchived(value); return *this;}
+
 
     /**
      * Who last updated this entry
@@ -213,6 +219,7 @@ namespace Model
      */
     inline SMSChannelResponse& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
+
     /**
      * Last date this was updated
      */
@@ -247,6 +254,7 @@ namespace Model
      * Last date this was updated
      */
     inline SMSChannelResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
+
 
     /**
      * Platform type. Will be "SMS"
@@ -283,6 +291,7 @@ namespace Model
      */
     inline SMSChannelResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
+
     /**
      * Sender identifier of your messages.
      */
@@ -317,6 +326,7 @@ namespace Model
      * Sender identifier of your messages.
      */
     inline SMSChannelResponse& WithSenderId(const char* value) { SetSenderId(value); return *this;}
+
 
     /**
      * The short code registered with the phone provider.
@@ -353,6 +363,7 @@ namespace Model
      */
     inline SMSChannelResponse& WithShortCode(const char* value) { SetShortCode(value); return *this;}
 
+
     /**
      * Version of channel
      */
@@ -369,26 +380,37 @@ namespace Model
     inline SMSChannelResponse& WithVersion(int value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     bool m_isArchived;
     bool m_isArchivedHasBeenSet;
+
     Aws::String m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet;
+
     Aws::String m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::String m_platform;
     bool m_platformHasBeenSet;
+
     Aws::String m_senderId;
     bool m_senderIdHasBeenSet;
+
     Aws::String m_shortCode;
     bool m_shortCodeHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
   };

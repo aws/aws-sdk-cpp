@@ -52,6 +52,7 @@ namespace Model
     WorkflowExecutionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The workflow execution this information is about.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The workflow execution this information is about.</p>
      */
     inline WorkflowExecutionInfo& WithExecution(WorkflowExecution&& value) { SetExecution(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of the workflow execution.</p>
@@ -102,6 +104,7 @@ namespace Model
      */
     inline WorkflowExecutionInfo& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
+
     /**
      * <p>The time when the execution was started.</p>
      */
@@ -126,6 +129,7 @@ namespace Model
      * <p>The time when the execution was started.</p>
      */
     inline WorkflowExecutionInfo& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The time when the workflow execution was closed. Set only if the execution
@@ -157,6 +161,7 @@ namespace Model
      */
     inline WorkflowExecutionInfo& WithCloseTimestamp(Aws::Utils::DateTime&& value) { SetCloseTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The current status of the execution.</p>
      */
@@ -181,6 +186,7 @@ namespace Model
      * <p>The current status of the execution.</p>
      */
     inline WorkflowExecutionInfo& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>If the execution status is closed then this specifies how the execution was
@@ -257,6 +263,7 @@ namespace Model
      */
     inline WorkflowExecutionInfo& WithCloseStatus(CloseStatus&& value) { SetCloseStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>If this workflow execution is a child of another execution then contains the
      * workflow execution that started this execution.</p>
@@ -286,6 +293,7 @@ namespace Model
      * workflow execution that started this execution.</p>
      */
     inline WorkflowExecutionInfo& WithParent(WorkflowExecution&& value) { SetParent(std::move(value)); return *this;}
+
 
     /**
      * <p>The list of tags associated with the workflow execution. Tags can be used to
@@ -343,6 +351,7 @@ namespace Model
      */
     inline WorkflowExecutionInfo& AddTagList(const char* value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
 
+
     /**
      * <p>Set to true if a cancellation is requested for this workflow execution.</p>
      */
@@ -359,22 +368,31 @@ namespace Model
     inline WorkflowExecutionInfo& WithCancelRequested(bool value) { SetCancelRequested(value); return *this;}
 
   private:
+
     WorkflowExecution m_execution;
     bool m_executionHasBeenSet;
+
     WorkflowType m_workflowType;
     bool m_workflowTypeHasBeenSet;
+
     Aws::Utils::DateTime m_startTimestamp;
     bool m_startTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_closeTimestamp;
     bool m_closeTimestampHasBeenSet;
+
     ExecutionStatus m_executionStatus;
     bool m_executionStatusHasBeenSet;
+
     CloseStatus m_closeStatus;
     bool m_closeStatusHasBeenSet;
+
     WorkflowExecution m_parent;
     bool m_parentHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagList;
     bool m_tagListHasBeenSet;
+
     bool m_cancelRequested;
     bool m_cancelRequestedHasBeenSet;
   };

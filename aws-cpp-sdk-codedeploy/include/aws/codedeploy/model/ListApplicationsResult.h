@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListApplicationsResult();
-    ListApplicationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListApplicationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of application names.</p>
@@ -87,6 +88,7 @@ namespace Model
      * <p>A list of application names.</p>
      */
     inline ListApplicationsResult& AddApplications(const char* value) { m_applications.push_back(value); return *this; }
+
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
@@ -138,7 +140,9 @@ namespace Model
     inline ListApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_applications;
+
     Aws::String m_nextToken;
   };
 

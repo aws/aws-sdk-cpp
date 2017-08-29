@@ -48,6 +48,7 @@ namespace Model
     GenericAttachment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The title of the option.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The title of the option.</p>
      */
     inline GenericAttachment& WithTitle(const char* value) { SetTitle(value); return *this;}
+
 
     /**
      * <p>The subtitle shown below the title.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline GenericAttachment& WithSubTitle(const char* value) { SetSubTitle(value); return *this;}
 
+
     /**
      * <p>The URL of an attachment to the response card.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      */
     inline GenericAttachment& WithAttachmentLinkUrl(const char* value) { SetAttachmentLinkUrl(value); return *this;}
 
+
     /**
      * <p>The URL of an image that is displayed to the user.</p>
      */
@@ -187,6 +191,7 @@ namespace Model
      * <p>The URL of an image that is displayed to the user.</p>
      */
     inline GenericAttachment& WithImageUrl(const char* value) { SetImageUrl(value); return *this;}
+
 
     /**
      * <p>The list of options to show to the user.</p>
@@ -224,14 +229,19 @@ namespace Model
     inline GenericAttachment& AddButtons(Button&& value) { m_buttonsHasBeenSet = true; m_buttons.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
     Aws::String m_subTitle;
     bool m_subTitleHasBeenSet;
+
     Aws::String m_attachmentLinkUrl;
     bool m_attachmentLinkUrlHasBeenSet;
+
     Aws::String m_imageUrl;
     bool m_imageUrlHasBeenSet;
+
     Aws::Vector<Button> m_buttons;
     bool m_buttonsHasBeenSet;
   };

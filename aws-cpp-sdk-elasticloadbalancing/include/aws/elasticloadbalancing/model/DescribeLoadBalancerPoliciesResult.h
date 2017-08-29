@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeLoadBalancerPoliciesResult();
-    DescribeLoadBalancerPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeLoadBalancerPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeLoadBalancerPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeLoadBalancerPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the policies.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeLoadBalancerPoliciesResult& AddPolicyDescriptions(PolicyDescription&& value) { m_policyDescriptions.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeLoadBalancerPoliciesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<PolicyDescription> m_policyDescriptions;
+
     ResponseMetadata m_responseMetadata;
   };
 

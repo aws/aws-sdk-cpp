@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the fleet to disassociate.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the fleet to disassociate.</p>
      */
     inline DisassociateFleetRequest& WithFleetName(const char* value) { SetFleetName(value); return *this;}
+
 
     /**
      * <p>The name of the stack with which the fleet is associated.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline DisassociateFleetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
   private:
+
     Aws::String m_fleetName;
     bool m_fleetNameHasBeenSet;
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
   };

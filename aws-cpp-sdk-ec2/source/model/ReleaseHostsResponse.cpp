@@ -31,12 +31,12 @@ ReleaseHostsResponse::ReleaseHostsResponse()
 {
 }
 
-ReleaseHostsResponse::ReleaseHostsResponse(const AmazonWebServiceResult<XmlDocument>& result)
+ReleaseHostsResponse::ReleaseHostsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ReleaseHostsResponse& ReleaseHostsResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ReleaseHostsResponse& ReleaseHostsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

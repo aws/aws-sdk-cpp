@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetCrawlersResult();
-    GetCrawlersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCrawlersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCrawlersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCrawlersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <code>Crawler</code> metadata.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of <code>Crawler</code> metadata.</p>
      */
     inline GetCrawlersResult& AddCrawlers(Crawler&& value) { m_crawlers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token, if the returned list has not reached the end of those
@@ -121,7 +123,9 @@ namespace Model
     inline GetCrawlersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Crawler> m_crawlers;
+
     Aws::String m_nextToken;
   };
 

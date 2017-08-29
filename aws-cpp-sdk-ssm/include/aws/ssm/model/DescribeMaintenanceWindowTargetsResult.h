@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeMaintenanceWindowTargetsResult();
-    DescribeMaintenanceWindowTargetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMaintenanceWindowTargetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMaintenanceWindowTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMaintenanceWindowTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the targets in the Maintenance Window.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Information about the targets in the Maintenance Window.</p>
      */
     inline DescribeMaintenanceWindowTargetsResult& AddTargets(MaintenanceWindowTarget&& value) { m_targets.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeMaintenanceWindowTargetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<MaintenanceWindowTarget> m_targets;
+
     Aws::String m_nextToken;
   };
 

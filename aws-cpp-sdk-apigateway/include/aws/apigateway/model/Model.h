@@ -54,6 +54,7 @@ namespace Model
     Model& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier for the model resource.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The identifier for the model resource.</p>
      */
     inline Model& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the model.</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline Model& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The description of the model.</p>
      */
@@ -158,6 +161,7 @@ namespace Model
      * <p>The description of the model.</p>
      */
     inline Model& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
@@ -236,6 +240,7 @@ namespace Model
      */
     inline Model& WithSchema(const char* value) { SetSchema(value); return *this;}
 
+
     /**
      * <p>The content-type for the model.</p>
      */
@@ -272,14 +277,19 @@ namespace Model
     inline Model& WithContentType(const char* value) { SetContentType(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_schema;
     bool m_schemaHasBeenSet;
+
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet;
   };

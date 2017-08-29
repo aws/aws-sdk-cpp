@@ -49,6 +49,7 @@ namespace Model
     NotificationSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The destination for notification messages. or email notifications (if
      * Transport is Email), this is an email address. For Amazon Simple Queue Service
@@ -105,6 +106,7 @@ namespace Model
      */
     inline NotificationSpecification& WithDestination(const char* value) { SetDestination(value); return *this;}
 
+
     /**
      * <p> The method Amazon Mechanical Turk uses to send the notification. Valid
      * Values: Email | SQS. </p>
@@ -134,6 +136,7 @@ namespace Model
      * Values: Email | SQS. </p>
      */
     inline NotificationSpecification& WithTransport(NotificationTransport&& value) { SetTransport(std::move(value)); return *this;}
+
 
     /**
      * <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
@@ -169,6 +172,7 @@ namespace Model
      * <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
      */
     inline NotificationSpecification& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p> The list of events that should cause notifications to be sent. Valid Values:
@@ -234,12 +238,16 @@ namespace Model
     inline NotificationSpecification& AddEventTypes(EventType&& value) { m_eventTypesHasBeenSet = true; m_eventTypes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_destination;
     bool m_destinationHasBeenSet;
+
     NotificationTransport m_transport;
     bool m_transportHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::Vector<EventType> m_eventTypes;
     bool m_eventTypesHasBeenSet;
   };

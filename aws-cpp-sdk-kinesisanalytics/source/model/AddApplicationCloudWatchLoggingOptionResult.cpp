@@ -30,12 +30,12 @@ AddApplicationCloudWatchLoggingOptionResult::AddApplicationCloudWatchLoggingOpti
 {
 }
 
-AddApplicationCloudWatchLoggingOptionResult::AddApplicationCloudWatchLoggingOptionResult(const AmazonWebServiceResult<JsonValue>& result)
+AddApplicationCloudWatchLoggingOptionResult::AddApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AddApplicationCloudWatchLoggingOptionResult& AddApplicationCloudWatchLoggingOptionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AddApplicationCloudWatchLoggingOptionResult& AddApplicationCloudWatchLoggingOptionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

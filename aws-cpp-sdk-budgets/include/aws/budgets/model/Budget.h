@@ -53,6 +53,7 @@ namespace Model
     Budget& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
 
@@ -74,6 +75,7 @@ namespace Model
     
     inline Budget& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
 
+
     
     inline const Spend& GetBudgetLimit() const{ return m_budgetLimit; }
 
@@ -88,6 +90,7 @@ namespace Model
 
     
     inline Budget& WithBudgetLimit(Spend&& value) { SetBudgetLimit(std::move(value)); return *this;}
+
 
     
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const{ return m_costFilters; }
@@ -122,6 +125,7 @@ namespace Model
     
     inline Budget& AddCostFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
 
+
     
     inline const CostTypes& GetCostTypes() const{ return m_costTypes; }
 
@@ -136,6 +140,7 @@ namespace Model
 
     
     inline Budget& WithCostTypes(CostTypes&& value) { SetCostTypes(std::move(value)); return *this;}
+
 
     
     inline const TimeUnit& GetTimeUnit() const{ return m_timeUnit; }
@@ -152,6 +157,7 @@ namespace Model
     
     inline Budget& WithTimeUnit(TimeUnit&& value) { SetTimeUnit(std::move(value)); return *this;}
 
+
     
     inline const TimePeriod& GetTimePeriod() const{ return m_timePeriod; }
 
@@ -167,6 +173,7 @@ namespace Model
     
     inline Budget& WithTimePeriod(TimePeriod&& value) { SetTimePeriod(std::move(value)); return *this;}
 
+
     
     inline const CalculatedSpend& GetCalculatedSpend() const{ return m_calculatedSpend; }
 
@@ -181,6 +188,7 @@ namespace Model
 
     
     inline Budget& WithCalculatedSpend(CalculatedSpend&& value) { SetCalculatedSpend(std::move(value)); return *this;}
+
 
     
     inline const BudgetType& GetBudgetType() const{ return m_budgetType; }
@@ -198,20 +206,28 @@ namespace Model
     inline Budget& WithBudgetType(BudgetType&& value) { SetBudgetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_budgetName;
     bool m_budgetNameHasBeenSet;
+
     Spend m_budgetLimit;
     bool m_budgetLimitHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_costFilters;
     bool m_costFiltersHasBeenSet;
+
     CostTypes m_costTypes;
     bool m_costTypesHasBeenSet;
+
     TimeUnit m_timeUnit;
     bool m_timeUnitHasBeenSet;
+
     TimePeriod m_timePeriod;
     bool m_timePeriodHasBeenSet;
+
     CalculatedSpend m_calculatedSpend;
     bool m_calculatedSpendHasBeenSet;
+
     BudgetType m_budgetType;
     bool m_budgetTypeHasBeenSet;
   };

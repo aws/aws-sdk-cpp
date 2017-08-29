@@ -30,12 +30,12 @@ CreatePipelineResult::CreatePipelineResult()
 {
 }
 
-CreatePipelineResult::CreatePipelineResult(const AmazonWebServiceResult<JsonValue>& result)
+CreatePipelineResult::CreatePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreatePipelineResult& CreatePipelineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreatePipelineResult& CreatePipelineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("pipeline"))

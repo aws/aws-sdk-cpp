@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     SearchFacesResult();
-    SearchFacesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchFacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SearchFacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SearchFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>ID of the face that was searched for matches in a collection.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>ID of the face that was searched for matches in a collection.</p>
      */
     inline SearchFacesResult& WithSearchedFaceId(const char* value) { SetSearchedFaceId(value); return *this;}
+
 
     /**
      * <p>An array of faces that matched the input face, along with the confidence in
@@ -121,7 +123,9 @@ namespace Model
     inline SearchFacesResult& AddFaceMatches(FaceMatch&& value) { m_faceMatches.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_searchedFaceId;
+
     Aws::Vector<FaceMatch> m_faceMatches;
   };
 

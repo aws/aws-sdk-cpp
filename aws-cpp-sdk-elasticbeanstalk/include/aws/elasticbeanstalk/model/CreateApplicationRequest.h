@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the application.</p> <p>Constraint: This name must be unique
      * within your account. If the specified name already exists, the action returns an
@@ -91,6 +92,7 @@ namespace Model
      */
     inline CreateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>Describes the application.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      */
     inline CreateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Specify an application resource lifecycle configuration to prevent your
      * application from accumulating too many versions.</p>
@@ -157,10 +160,13 @@ namespace Model
     inline CreateApplicationRequest& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
     bool m_resourceLifecycleConfigHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A stack ID. The action describes the stack's Elastic Load Balancing
      * instances.</p>
@@ -78,6 +79,7 @@ namespace Model
      * instances.</p>
      */
     inline DescribeElasticLoadBalancersRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>A list of layer IDs. The action describes the Elastic Load Balancing
@@ -128,8 +130,10 @@ namespace Model
     inline DescribeElasticLoadBalancersRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_layerIds;
     bool m_layerIdsHasBeenSet;
   };

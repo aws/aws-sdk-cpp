@@ -39,6 +39,7 @@ namespace Model
     RemoveTagsFromVaultRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -102,6 +103,7 @@ namespace Model
      */
     inline RemoveTagsFromVaultRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -136,6 +138,7 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline RemoveTagsFromVaultRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
 
     /**
      * <p>A list of tag keys. Each corresponding tag is removed from the vault.</p>
@@ -178,10 +181,13 @@ namespace Model
     inline RemoveTagsFromVaultRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

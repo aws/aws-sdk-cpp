@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AdminLinkProviderForUserResult();
-    AdminLinkProviderForUserResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminLinkProviderForUserResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminLinkProviderForUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminLinkProviderForUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

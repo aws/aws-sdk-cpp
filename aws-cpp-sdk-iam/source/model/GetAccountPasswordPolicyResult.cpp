@@ -31,12 +31,12 @@ GetAccountPasswordPolicyResult::GetAccountPasswordPolicyResult()
 {
 }
 
-GetAccountPasswordPolicyResult::GetAccountPasswordPolicyResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetAccountPasswordPolicyResult::GetAccountPasswordPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetAccountPasswordPolicyResult& GetAccountPasswordPolicyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetAccountPasswordPolicyResult& GetAccountPasswordPolicyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

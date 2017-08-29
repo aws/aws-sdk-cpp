@@ -46,6 +46,7 @@ namespace Model
     EC2TagSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list containing other lists of EC2 instance tag groups. In order for an
      * instance to be included in the deployment group, it must be identified by all
@@ -96,6 +97,7 @@ namespace Model
     inline EC2TagSet& AddEc2TagSetList(Aws::Vector<EC2TagFilter>&& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::Vector<EC2TagFilter>> m_ec2TagSetList;
     bool m_ec2TagSetListHasBeenSet;
   };

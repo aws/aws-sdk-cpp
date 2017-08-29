@@ -76,6 +76,7 @@ namespace Model
     ConfigSnapshotDeliveryProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The frequency with which AWS Config delivers configuration snapshots.</p>
      */
@@ -102,6 +103,7 @@ namespace Model
     inline ConfigSnapshotDeliveryProperties& WithDeliveryFrequency(MaximumExecutionFrequency&& value) { SetDeliveryFrequency(std::move(value)); return *this;}
 
   private:
+
     MaximumExecutionFrequency m_deliveryFrequency;
     bool m_deliveryFrequencyHasBeenSet;
   };

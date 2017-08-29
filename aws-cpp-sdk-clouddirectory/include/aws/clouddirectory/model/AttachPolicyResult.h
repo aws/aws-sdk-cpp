@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AttachPolicyResult();
-    AttachPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AttachPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

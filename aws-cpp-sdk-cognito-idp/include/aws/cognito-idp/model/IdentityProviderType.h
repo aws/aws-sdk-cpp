@@ -50,6 +50,7 @@ namespace Model
     IdentityProviderType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The user pool ID.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The user pool ID.</p>
      */
     inline IdentityProviderType& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The identity provider name.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline IdentityProviderType& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
     /**
      * <p>The identity provider type.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>The identity provider type.</p>
      */
     inline IdentityProviderType& WithProviderType(IdentityProviderTypeType&& value) { SetProviderType(std::move(value)); return *this;}
+
 
     /**
      * <p>The identity provider details, such as <code>MetadataURL</code> and
@@ -217,6 +221,7 @@ namespace Model
      */
     inline IdentityProviderType& AddProviderDetails(const char* key, const char* value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, value); return *this; }
 
+
     /**
      * <p>A mapping of identity provider attributes to standard and custom user pool
      * attributes.</p>
@@ -289,6 +294,7 @@ namespace Model
      */
     inline IdentityProviderType& AddAttributeMapping(const char* key, const char* value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(key, value); return *this; }
 
+
     /**
      * <p>A list of identity provider identifiers.</p>
      */
@@ -329,6 +335,7 @@ namespace Model
      */
     inline IdentityProviderType& AddIdpIdentifiers(const char* value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers.push_back(value); return *this; }
 
+
     /**
      * <p>The date the identity provider was last modified.</p>
      */
@@ -353,6 +360,7 @@ namespace Model
      * <p>The date the identity provider was last modified.</p>
      */
     inline IdentityProviderType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the identity provider was created.</p>
@@ -380,20 +388,28 @@ namespace Model
     inline IdentityProviderType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
     IdentityProviderTypeType m_providerType;
     bool m_providerTypeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_providerDetails;
     bool m_providerDetailsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_attributeMapping;
     bool m_attributeMappingHasBeenSet;
+
     Aws::Vector<Aws::String> m_idpIdentifiers;
     bool m_idpIdentifiersHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
   };

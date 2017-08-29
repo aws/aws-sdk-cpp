@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */
     inline RemovePermissionRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+
 
     /**
      * <p>The unique label of the statement you want to remove.</p>
@@ -112,8 +114,10 @@ namespace Model
     inline RemovePermissionRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_label;
     bool m_labelHasBeenSet;
   };

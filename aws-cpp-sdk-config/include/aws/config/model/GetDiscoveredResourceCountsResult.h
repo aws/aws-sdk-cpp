@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetDiscoveredResourceCountsResult();
-    GetDiscoveredResourceCountsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDiscoveredResourceCountsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDiscoveredResourceCountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDiscoveredResourceCountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The total number of resources that AWS Config is recording in the region for
@@ -85,6 +86,7 @@ namespace Model
      */
     inline GetDiscoveredResourceCountsResult& WithTotalDiscoveredResources(long long value) { SetTotalDiscoveredResources(value); return *this;}
 
+
     /**
      * <p>The list of <code>ResourceCount</code> objects. Each object is listed in
      * descending order by the number of resources.</p>
@@ -126,6 +128,7 @@ namespace Model
      * descending order by the number of resources.</p>
      */
     inline GetDiscoveredResourceCountsResult& AddResourceCounts(ResourceCount&& value) { m_resourceCounts.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The string that you use in a subsequent request to get the next page of
@@ -170,8 +173,11 @@ namespace Model
     inline GetDiscoveredResourceCountsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     long long m_totalDiscoveredResources;
+
     Aws::Vector<ResourceCount> m_resourceCounts;
+
     Aws::String m_nextToken;
   };
 

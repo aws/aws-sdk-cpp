@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The plain language name for the query.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The plain language name for the query.</p>
      */
     inline CreateNamedQueryRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A brief explanation of the query.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline CreateNamedQueryRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The database to which the query belongs.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      */
     inline CreateNamedQueryRequest& WithDatabase(const char* value) { SetDatabase(value); return *this;}
 
+
     /**
      * <p>The text of the query itself. In other words, all query statements.</p>
      */
@@ -176,6 +180,7 @@ namespace Model
      * <p>The text of the query itself. In other words, all query statements.</p>
      */
     inline CreateNamedQueryRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+
 
     /**
      * <p>A unique case-sensitive string used to ensure the request to create the query
@@ -262,14 +267,19 @@ namespace Model
     inline CreateNamedQueryRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_database;
     bool m_databaseHasBeenSet;
+
     Aws::String m_queryString;
     bool m_queryStringHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
   };

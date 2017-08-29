@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier (ID) of the AWS account that you want to invite to join your
      * organization. This is a JSON object that contains the following elements: </p>
@@ -107,6 +108,7 @@ namespace Model
      */
     inline InviteAccountToOrganizationRequest& WithTarget(HandshakeParty&& value) { SetTarget(std::move(value)); return *this;}
 
+
     /**
      * <p>Additional information that you want to include in the generated email to the
      * recipient account owner.</p>
@@ -150,8 +152,10 @@ namespace Model
     inline InviteAccountToOrganizationRequest& WithNotes(const char* value) { SetNotes(value); return *this;}
 
   private:
+
     HandshakeParty m_target;
     bool m_targetHasBeenSet;
+
     Aws::String m_notes;
     bool m_notesHasBeenSet;
   };

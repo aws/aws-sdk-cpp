@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     UntagResourcesResult();
-    UntagResourcesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagResourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UntagResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UntagResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Details of resources that could not be untagged. An error code, status code,
@@ -110,6 +111,7 @@ namespace Model
     inline UntagResourcesResult& AddFailedResourcesMap(const char* key, const FailureInfo& value) { m_failedResourcesMap.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, FailureInfo> m_failedResourcesMap;
   };
 

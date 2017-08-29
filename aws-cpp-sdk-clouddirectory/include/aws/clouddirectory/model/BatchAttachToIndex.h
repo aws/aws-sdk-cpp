@@ -47,6 +47,7 @@ namespace Model
     BatchAttachToIndex& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A reference to the index that you are attaching the object to.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>A reference to the index that you are attaching the object to.</p>
      */
     inline BatchAttachToIndex& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
+
 
     /**
      * <p>A reference to the object that you are attaching to the index.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline BatchAttachToIndex& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
 
   private:
+
     ObjectReference m_indexReference;
     bool m_indexReferenceHasBeenSet;
+
     ObjectReference m_targetReference;
     bool m_targetReferenceHasBeenSet;
   };

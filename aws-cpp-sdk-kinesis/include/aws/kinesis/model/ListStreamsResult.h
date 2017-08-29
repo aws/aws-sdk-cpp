@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListStreamsResult();
-    ListStreamsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListStreamsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The names of the streams that are associated with the AWS account making the
@@ -96,6 +97,7 @@ namespace Model
      */
     inline ListStreamsResult& AddStreamNames(const char* value) { m_streamNames.push_back(value); return *this; }
 
+
     /**
      * <p>If set to <code>true</code>, there are more streams available to list.</p>
      */
@@ -112,7 +114,9 @@ namespace Model
     inline ListStreamsResult& WithHasMoreStreams(bool value) { SetHasMoreStreams(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_streamNames;
+
     bool m_hasMoreStreams;
   };
 

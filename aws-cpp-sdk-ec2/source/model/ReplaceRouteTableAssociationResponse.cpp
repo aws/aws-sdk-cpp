@@ -31,12 +31,12 @@ ReplaceRouteTableAssociationResponse::ReplaceRouteTableAssociationResponse()
 {
 }
 
-ReplaceRouteTableAssociationResponse::ReplaceRouteTableAssociationResponse(const AmazonWebServiceResult<XmlDocument>& result)
+ReplaceRouteTableAssociationResponse::ReplaceRouteTableAssociationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ReplaceRouteTableAssociationResponse& ReplaceRouteTableAssociationResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ReplaceRouteTableAssociationResponse& ReplaceRouteTableAssociationResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateHITWithHITTypeResult();
-    CreateHITWithHITTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateHITWithHITTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateHITWithHITTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateHITWithHITTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> Contains the newly created HIT data. For a description of the HIT data
@@ -77,6 +78,7 @@ namespace Model
     inline CreateHITWithHITTypeResult& WithHIT(HIT&& value) { SetHIT(std::move(value)); return *this;}
 
   private:
+
     HIT m_hIT;
   };
 

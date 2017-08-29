@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateCustomMetadataResult();
-    CreateCustomMetadataResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCustomMetadataResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCustomMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateCustomMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

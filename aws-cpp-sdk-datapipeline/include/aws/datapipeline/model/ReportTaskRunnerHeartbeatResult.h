@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     ReportTaskRunnerHeartbeatResult();
-    ReportTaskRunnerHeartbeatResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReportTaskRunnerHeartbeatResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReportTaskRunnerHeartbeatResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReportTaskRunnerHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Indicates whether the calling task runner should terminate.</p>
@@ -61,6 +62,7 @@ namespace Model
     inline ReportTaskRunnerHeartbeatResult& WithTerminate(bool value) { SetTerminate(value); return *this;}
 
   private:
+
     bool m_terminate;
   };
 

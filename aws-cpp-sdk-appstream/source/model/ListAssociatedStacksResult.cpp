@@ -30,12 +30,12 @@ ListAssociatedStacksResult::ListAssociatedStacksResult()
 {
 }
 
-ListAssociatedStacksResult::ListAssociatedStacksResult(const AmazonWebServiceResult<JsonValue>& result)
+ListAssociatedStacksResult::ListAssociatedStacksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListAssociatedStacksResult& ListAssociatedStacksResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListAssociatedStacksResult& ListAssociatedStacksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Names"))

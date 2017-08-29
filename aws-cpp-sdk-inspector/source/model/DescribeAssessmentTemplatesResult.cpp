@@ -30,12 +30,12 @@ DescribeAssessmentTemplatesResult::DescribeAssessmentTemplatesResult()
 {
 }
 
-DescribeAssessmentTemplatesResult::DescribeAssessmentTemplatesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAssessmentTemplatesResult::DescribeAssessmentTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeAssessmentTemplatesResult& DescribeAssessmentTemplatesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAssessmentTemplatesResult& DescribeAssessmentTemplatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("assessmentTemplates"))

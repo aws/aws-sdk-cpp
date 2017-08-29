@@ -30,12 +30,12 @@ PutAutoScalingPolicyResult::PutAutoScalingPolicyResult()
 {
 }
 
-PutAutoScalingPolicyResult::PutAutoScalingPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+PutAutoScalingPolicyResult::PutAutoScalingPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutAutoScalingPolicyResult& PutAutoScalingPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutAutoScalingPolicyResult& PutAutoScalingPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ClusterId"))

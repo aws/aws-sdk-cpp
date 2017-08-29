@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateDirectoryConfigResult();
-    UpdateDirectoryConfigResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDirectoryConfigResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDirectoryConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDirectoryConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The updated directory configuration details.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateDirectoryConfigResult& WithDirectoryConfig(DirectoryConfig&& value) { SetDirectoryConfig(std::move(value)); return *this;}
 
   private:
+
     DirectoryConfig m_directoryConfig;
   };
 

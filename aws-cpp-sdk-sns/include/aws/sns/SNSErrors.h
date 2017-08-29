@@ -55,7 +55,7 @@ enum class SNSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  AUTHORIZATION_ERROR= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AUTHORIZATION_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ENDPOINT_DISABLED,
   INTERNAL_ERROR,
   INVALID_PARAMETER,
@@ -67,7 +67,7 @@ enum class SNSErrors
 };
 namespace SNSErrorMapper
 {
-  AWS_SNS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_SNS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace SNS

@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the IAM instance profile association.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline DisassociateIamInstanceProfileRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
   private:
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
   };

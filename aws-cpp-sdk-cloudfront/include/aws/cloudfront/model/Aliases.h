@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The number of CNAME aliases, if any, that you want to associate with this
      * distribution.</p>
@@ -65,6 +66,7 @@ namespace Model
      * distribution.</p>
      */
     inline Aliases& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>A complex type that contains the CNAME aliases, if any, that you want to
@@ -115,8 +117,10 @@ namespace Model
     inline Aliases& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<Aws::String> m_items;
     bool m_itemsHasBeenSet;
   };

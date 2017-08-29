@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ListTagsForResource2017_03_25Result();
-    ListTagsForResource2017_03_25Result(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListTagsForResource2017_03_25Result& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTagsForResource2017_03_25Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTagsForResource2017_03_25Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline ListTagsForResource2017_03_25Result& WithTags(Tags&& value) { SetTags(std::move(value)); return *this;}
 
   private:
+
     Tags m_tags;
   };
 

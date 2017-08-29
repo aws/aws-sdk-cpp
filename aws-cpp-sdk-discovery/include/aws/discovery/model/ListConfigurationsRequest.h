@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A valid configuration identified by Application Discovery Service. </p>
      */
@@ -64,6 +65,7 @@ namespace Model
      * <p>A valid configuration identified by Application Discovery Service. </p>
      */
     inline ListConfigurationsRequest& WithConfigurationType(ConfigurationItemType&& value) { SetConfigurationType(std::move(value)); return *this;}
+
 
     /**
      * <p>You can filter the request using various logical operators and a
@@ -135,6 +137,7 @@ namespace Model
      */
     inline ListConfigurationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The total number of items to return. The maximum value is 100.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The total number of items to return. The maximum value is 100.</p>
      */
     inline ListConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>Token to retrieve the next set of results. For example, if a previous call to
@@ -213,6 +217,7 @@ namespace Model
      */
     inline ListConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>Certain filter criteria return output that can be sorted in ascending or
      * descending order. For a list of output characteristics for each filter, see <a
@@ -270,14 +275,19 @@ namespace Model
     inline ListConfigurationsRequest& AddOrderBy(OrderByElement&& value) { m_orderByHasBeenSet = true; m_orderBy.push_back(std::move(value)); return *this; }
 
   private:
+
     ConfigurationItemType m_configurationType;
     bool m_configurationTypeHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::Vector<OrderByElement> m_orderBy;
     bool m_orderByHasBeenSet;
   };

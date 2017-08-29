@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the organizational unit that you want details
      * about. You can get the ID from the <a>ListOrganizationalUnitsForParent</a>
@@ -114,6 +115,7 @@ namespace Model
     inline DescribeOrganizationalUnitRequest& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
 
   private:
+
     Aws::String m_organizationalUnitId;
     bool m_organizationalUnitIdHasBeenSet;
   };

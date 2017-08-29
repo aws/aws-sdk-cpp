@@ -31,12 +31,12 @@ ComposeEnvironmentsResult::ComposeEnvironmentsResult()
 {
 }
 
-ComposeEnvironmentsResult::ComposeEnvironmentsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ComposeEnvironmentsResult::ComposeEnvironmentsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ComposeEnvironmentsResult& ComposeEnvironmentsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ComposeEnvironmentsResult& ComposeEnvironmentsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

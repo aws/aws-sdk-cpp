@@ -38,6 +38,7 @@ namespace Model
     GetBasePathMappingRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The domain name of the <a>BasePathMapping</a> resource to be described.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The domain name of the <a>BasePathMapping</a> resource to be described.</p>
      */
     inline GetBasePathMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
@@ -130,8 +132,10 @@ namespace Model
     inline GetBasePathMappingRequest& WithBasePath(const char* value) { SetBasePath(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_basePath;
     bool m_basePathHasBeenSet;
   };

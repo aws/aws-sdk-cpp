@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name or unique ID of the stack set that the stack instance is associated
      * with.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline StackInstanceSummary& WithStackSetId(const char* value) { SetStackSetId(value); return *this;}
 
+
     /**
      * <p>The name of the AWS region that the stack instance is associated with.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      * <p>The name of the AWS region that the stack instance is associated with.</p>
      */
     inline StackInstanceSummary& WithRegion(const char* value) { SetRegion(value); return *this;}
+
 
     /**
      * <p>The name of the AWS account that the stack instance is associated with.</p>
@@ -162,6 +165,7 @@ namespace Model
      */
     inline StackInstanceSummary& WithAccount(const char* value) { SetAccount(value); return *this;}
 
+
     /**
      * <p>The ID of the stack instance.</p>
      */
@@ -196,6 +200,7 @@ namespace Model
      * <p>The ID of the stack instance.</p>
      */
     inline StackInstanceSummary& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The status of the stack instance, in terms of its synchronization with its
@@ -292,6 +297,7 @@ namespace Model
      */
     inline StackInstanceSummary& WithStatus(StackInstanceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The explanation for the specific status code assigned to this stack
      * instance.</p>
@@ -335,16 +341,22 @@ namespace Model
     inline StackInstanceSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
   private:
+
     Aws::String m_stackSetId;
     bool m_stackSetIdHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_account;
     bool m_accountHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     StackInstanceStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
   };

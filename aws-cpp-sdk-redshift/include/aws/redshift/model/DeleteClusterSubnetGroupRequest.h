@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cluster subnet group name to be deleted.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteClusterSubnetGroupRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
 
   private:
+
     Aws::String m_clusterSubnetGroupName;
     bool m_clusterSubnetGroupNameHasBeenSet;
   };

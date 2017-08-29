@@ -40,6 +40,7 @@ namespace Model
     VolumeRecoveryPointInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
 
@@ -61,6 +62,7 @@ namespace Model
     
     inline VolumeRecoveryPointInfo& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
+
     
     inline long long GetVolumeSizeInBytes() const{ return m_volumeSizeInBytes; }
 
@@ -70,6 +72,7 @@ namespace Model
     
     inline VolumeRecoveryPointInfo& WithVolumeSizeInBytes(long long value) { SetVolumeSizeInBytes(value); return *this;}
 
+
     
     inline long long GetVolumeUsageInBytes() const{ return m_volumeUsageInBytes; }
 
@@ -78,6 +81,7 @@ namespace Model
 
     
     inline VolumeRecoveryPointInfo& WithVolumeUsageInBytes(long long value) { SetVolumeUsageInBytes(value); return *this;}
+
 
     
     inline const Aws::String& GetVolumeRecoveryPointTime() const{ return m_volumeRecoveryPointTime; }
@@ -101,12 +105,16 @@ namespace Model
     inline VolumeRecoveryPointInfo& WithVolumeRecoveryPointTime(const char* value) { SetVolumeRecoveryPointTime(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
     bool m_volumeARNHasBeenSet;
+
     long long m_volumeSizeInBytes;
     bool m_volumeSizeInBytesHasBeenSet;
+
     long long m_volumeUsageInBytes;
     bool m_volumeUsageInBytesHasBeenSet;
+
     Aws::String m_volumeRecoveryPointTime;
     bool m_volumeRecoveryPointTimeHasBeenSet;
   };

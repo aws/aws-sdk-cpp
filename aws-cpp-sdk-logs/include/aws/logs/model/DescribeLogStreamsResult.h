@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeLogStreamsResult();
-    DescribeLogStreamsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLogStreamsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLogStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLogStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The log streams.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeLogStreamsResult& AddLogStreams(LogStream&& value) { m_logStreams.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeLogStreamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<LogStream> m_logStreams;
+
     Aws::String m_nextToken;
   };
 

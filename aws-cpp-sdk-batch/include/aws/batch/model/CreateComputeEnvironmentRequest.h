@@ -37,6 +37,7 @@ namespace Model
     CreateComputeEnvironmentRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name for your compute environment. Up to 128 letters (uppercase and
      * lowercase), numbers, and underscores are allowed.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline CreateComputeEnvironmentRequest& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The type of the compute environment. </p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p>The type of the compute environment. </p>
      */
     inline CreateComputeEnvironmentRequest& WithType(CEType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The state of the compute environment. If the state is <code>ENABLED</code>,
@@ -139,6 +142,7 @@ namespace Model
      */
     inline CreateComputeEnvironmentRequest& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>Details of the compute resources managed by the compute environment. This
      * parameter is required for managed compute environments.</p>
@@ -168,6 +172,7 @@ namespace Model
      * parameter is required for managed compute environments.</p>
      */
     inline CreateComputeEnvironmentRequest& WithComputeResources(ComputeResource&& value) { SetComputeResources(std::move(value)); return *this;}
+
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
@@ -212,14 +217,19 @@ namespace Model
     inline CreateComputeEnvironmentRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
   private:
+
     Aws::String m_computeEnvironmentName;
     bool m_computeEnvironmentNameHasBeenSet;
+
     CEType m_type;
     bool m_typeHasBeenSet;
+
     CEState m_state;
     bool m_stateHasBeenSet;
+
     ComputeResource m_computeResources;
     bool m_computeResourcesHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
   };

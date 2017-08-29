@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or ARN of the change set that you want use to update the specified
      * stack.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ExecuteChangeSetRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
 
+
     /**
      * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
      * that is associated with the change set you want to execute.</p>
@@ -125,6 +127,7 @@ namespace Model
      * that is associated with the change set you want to execute.</p>
      */
     inline ExecuteChangeSetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify
@@ -190,10 +193,13 @@ namespace Model
     inline ExecuteChangeSetRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_changeSetName;
     bool m_changeSetNameHasBeenSet;
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListTeamMembersResult();
-    ListTeamMembersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTeamMembersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTeamMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTeamMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of team member objects for the project.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of team member objects for the project.</p>
      */
     inline ListTeamMembersResult& AddTeamMembers(TeamMember&& value) { m_teamMembers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The continuation token to use when requesting the next set of results, if
@@ -121,7 +123,9 @@ namespace Model
     inline ListTeamMembersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<TeamMember> m_teamMembers;
+
     Aws::String m_nextToken;
   };
 

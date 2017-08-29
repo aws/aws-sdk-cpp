@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or unique stack ID of the stack to update.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name or unique stack ID of the stack to update.</p>
      */
     inline UpdateStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
@@ -158,6 +160,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
+
     /**
      * <p>Location of file containing the template body. The URL must point to a
      * template that is located in an Amazon S3 bucket. For more information, go to <a
@@ -235,6 +238,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
+
     /**
      * <p>Reuse the existing template that is associated with the stack that you are
      * updating.</p> <p>Conditional: You must specify only one of the following
@@ -258,6 +262,7 @@ namespace Model
      * <code>UsePreviousTemplate</code> to <code>true</code>.</p>
      */
     inline UpdateStackRequest& WithUsePreviousTemplate(bool value) { SetUsePreviousTemplate(value); return *this;}
+
 
     /**
      * <p>Structure containing the temporary overriding stack policy body. You can
@@ -328,6 +333,7 @@ namespace Model
      * that is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(const char* value) { SetStackPolicyDuringUpdateBody(value); return *this;}
+
 
     /**
      * <p>Location of a file containing the temporary overriding stack policy. The URL
@@ -413,6 +419,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(const char* value) { SetStackPolicyDuringUpdateURL(value); return *this;}
 
+
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
      * the stack. For more information, see the <a
@@ -468,6 +475,7 @@ namespace Model
      * data type.</p>
      */
     inline UpdateStackRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of values that you must specify before AWS CloudFormation can update
@@ -700,6 +708,7 @@ namespace Model
      */
     inline UpdateStackRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The template resource types that you have permissions to work with for this
      * update stack action, such as <code>AWS::EC2::Instance</code>,
@@ -812,6 +821,7 @@ namespace Model
      */
     inline UpdateStackRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
      * role that AWS CloudFormation assumes to update the stack. AWS CloudFormation
@@ -910,6 +920,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
      * and updating operations, and for the specified monitoring period afterwards.</p>
@@ -939,6 +950,7 @@ namespace Model
      * and updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline UpdateStackRequest& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>Structure containing a new stack policy body. You can specify either the
@@ -1009,6 +1021,7 @@ namespace Model
      * unchanged.</p>
      */
     inline UpdateStackRequest& WithStackPolicyBody(const char* value) { SetStackPolicyBody(value); return *this;}
+
 
     /**
      * <p>Location of a file containing the updated stack policy. The URL must point to
@@ -1087,6 +1100,7 @@ namespace Model
      */
     inline UpdateStackRequest& WithStackPolicyURL(const char* value) { SetStackPolicyURL(value); return *this;}
 
+
     /**
      * <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
      * AWS CloudFormation associates with the stack. Specify an empty list to remove
@@ -1142,6 +1156,7 @@ namespace Model
      * all notification topics.</p>
      */
     inline UpdateStackRequest& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
+
 
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
@@ -1205,6 +1220,7 @@ namespace Model
      * AWS CloudFormation removes all associated tags.</p>
      */
     inline UpdateStackRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A unique identifier for this <code>UpdateStack</code> request. Specify this
@@ -1347,36 +1363,52 @@ namespace Model
     inline UpdateStackRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_templateBody;
     bool m_templateBodyHasBeenSet;
+
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet;
+
     bool m_usePreviousTemplate;
     bool m_usePreviousTemplateHasBeenSet;
+
     Aws::String m_stackPolicyDuringUpdateBody;
     bool m_stackPolicyDuringUpdateBodyHasBeenSet;
+
     Aws::String m_stackPolicyDuringUpdateURL;
     bool m_stackPolicyDuringUpdateURLHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Vector<Capability> m_capabilities;
     bool m_capabilitiesHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourceTypes;
     bool m_resourceTypesHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     RollbackConfiguration m_rollbackConfiguration;
     bool m_rollbackConfigurationHasBeenSet;
+
     Aws::String m_stackPolicyBody;
     bool m_stackPolicyBodyHasBeenSet;
+
     Aws::String m_stackPolicyURL;
     bool m_stackPolicyURLHasBeenSet;
+
     Aws::Vector<Aws::String> m_notificationARNs;
     bool m_notificationARNsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
   };

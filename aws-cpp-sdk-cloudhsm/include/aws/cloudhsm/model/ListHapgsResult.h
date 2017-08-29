@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListHapgsResult();
-    ListHapgsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListHapgsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListHapgsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListHapgsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of high-availability partition groups.</p>
@@ -81,6 +82,7 @@ namespace Model
      * <p>The list of high-availability partition groups.</p>
      */
     inline ListHapgsResult& AddHapgList(const char* value) { m_hapgList.push_back(value); return *this; }
+
 
     /**
      * <p>If not null, more results are available. Pass this value to <a>ListHapgs</a>
@@ -125,7 +127,9 @@ namespace Model
     inline ListHapgsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_hapgList;
+
     Aws::String m_nextToken;
   };
 

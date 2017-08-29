@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the manual DB snapshot attribute.</p> <p>The attribute named
      * <code>restore</code> refers to the list of AWS accounts that have permission to
@@ -107,6 +108,7 @@ namespace Model
      * <a>ModifyDBSnapshotAttribute</a> API action.</p>
      */
     inline DBSnapshotAttribute& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+
 
     /**
      * <p>The value or values for the manual DB snapshot attribute.</p> <p>If the
@@ -189,8 +191,10 @@ namespace Model
     inline DBSnapshotAttribute& AddAttributeValues(const char* value) { m_attributeValuesHasBeenSet = true; m_attributeValues.push_back(value); return *this; }
 
   private:
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_attributeValues;
     bool m_attributeValuesHasBeenSet;
   };

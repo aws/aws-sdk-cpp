@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the assessment template of the assessment run that you want to
      * start.</p>
@@ -77,6 +78,7 @@ namespace Model
      * start.</p>
      */
     inline StartAssessmentRunRequest& WithAssessmentTemplateArn(const char* value) { SetAssessmentTemplateArn(value); return *this;}
+
 
     /**
      * <p>You can specify the name for the assessment run. The name must be unique for
@@ -121,8 +123,10 @@ namespace Model
     inline StartAssessmentRunRequest& WithAssessmentRunName(const char* value) { SetAssessmentRunName(value); return *this;}
 
   private:
+
     Aws::String m_assessmentTemplateArn;
     bool m_assessmentTemplateArnHasBeenSet;
+
     Aws::String m_assessmentRunName;
     bool m_assessmentRunNameHasBeenSet;
   };

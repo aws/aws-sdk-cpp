@@ -30,12 +30,12 @@ CreateTrustResult::CreateTrustResult()
 {
 }
 
-CreateTrustResult::CreateTrustResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateTrustResult::CreateTrustResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateTrustResult& CreateTrustResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateTrustResult& CreateTrustResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TrustId"))

@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * A pagination token for obtaining the next page of results.
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ListIdentityPoolUsageRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * The maximum number of results to be returned.
      */
@@ -94,8 +96,10 @@ namespace Model
     inline ListIdentityPoolUsageRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

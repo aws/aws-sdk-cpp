@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>An identifier for the assumed role session. Typically, you pass the name or
@@ -157,6 +159,7 @@ namespace Model
      */
     inline AssumeRoleWithWebIdentityRequest& WithRoleSessionName(const char* value) { SetRoleSessionName(value); return *this;}
 
+
     /**
      * <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the
      * identity provider. Your application must get this token by authenticating the
@@ -212,6 +215,7 @@ namespace Model
      * application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithWebIdentityToken(const char* value) { SetWebIdentityToken(value); return *this;}
+
 
     /**
      * <p>The fully qualified host component of the domain name of the identity
@@ -282,6 +286,7 @@ namespace Model
      * tokens.</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithProviderId(const char* value) { SetProviderId(value); return *this;}
+
 
     /**
      * <p>An IAM policy in JSON format.</p> <p>The policy parameter is optional. If you
@@ -444,6 +449,7 @@ namespace Model
      */
     inline AssumeRoleWithWebIdentityRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
+
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
@@ -490,16 +496,22 @@ namespace Model
     inline AssumeRoleWithWebIdentityRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_roleSessionName;
     bool m_roleSessionNameHasBeenSet;
+
     Aws::String m_webIdentityToken;
     bool m_webIdentityTokenHasBeenSet;
+
     Aws::String m_providerId;
     bool m_providerIdHasBeenSet;
+
     Aws::String m_policy;
     bool m_policyHasBeenSet;
+
     int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
   };

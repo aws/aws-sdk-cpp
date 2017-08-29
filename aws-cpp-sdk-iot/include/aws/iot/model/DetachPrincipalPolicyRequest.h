@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the policy to detach.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the policy to detach.</p>
      */
     inline DetachPrincipalPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The principal.</p> <p>If the principal is a certificate, specify the
@@ -125,8 +127,10 @@ namespace Model
     inline DetachPrincipalPolicyRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_principal;
     bool m_principalHasBeenSet;
   };

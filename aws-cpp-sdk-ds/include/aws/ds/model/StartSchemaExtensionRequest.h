@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the directory for which the schema extension will be
      * applied to.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline StartSchemaExtensionRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
+
     /**
      * <p>If true, creates a snapshot of the directory before applying the schema
      * extension.</p>
@@ -95,6 +97,7 @@ namespace Model
      * extension.</p>
      */
     inline StartSchemaExtensionRequest& WithCreateSnapshotBeforeSchemaExtension(bool value) { SetCreateSnapshotBeforeSchemaExtension(value); return *this;}
+
 
     /**
      * <p>The LDIF file represented as a string. To construct the LdifContent string,
@@ -152,6 +155,7 @@ namespace Model
      */
     inline StartSchemaExtensionRequest& WithLdifContent(const char* value) { SetLdifContent(value); return *this;}
 
+
     /**
      * <p>A description of the schema extension.</p>
      */
@@ -188,12 +192,16 @@ namespace Model
     inline StartSchemaExtensionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     bool m_createSnapshotBeforeSchemaExtension;
     bool m_createSnapshotBeforeSchemaExtensionHasBeenSet;
+
     Aws::String m_ldifContent;
     bool m_ldifContentHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

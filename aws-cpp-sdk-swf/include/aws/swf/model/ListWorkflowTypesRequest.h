@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain in which the workflow types have been registered.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the domain in which the workflow types have been registered.</p>
      */
     inline ListWorkflowTypesRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>If specified, lists the workflow type with this name.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline ListWorkflowTypesRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Specifies the registration status of the workflow types to list.</p>
      */
@@ -131,6 +134,7 @@ namespace Model
      * <p>Specifies the registration status of the workflow types to list.</p>
      */
     inline ListWorkflowTypesRequest& WithRegistrationStatus(RegistrationStatus&& value) { SetRegistrationStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -195,6 +199,7 @@ namespace Model
      */
     inline ListWorkflowTypesRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results that are returned per call.
      * <code>nextPageToken</code> can be used to obtain futher pages of results. The
@@ -225,6 +230,7 @@ namespace Model
      */
     inline ListWorkflowTypesRequest& WithMaximumPageSize(int value) { SetMaximumPageSize(value); return *this;}
 
+
     /**
      * <p>When set to <code>true</code>, returns the results in reverse order. By
      * default the results are returned in ascending alphabetical order of the
@@ -247,16 +253,22 @@ namespace Model
     inline ListWorkflowTypesRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     RegistrationStatus m_registrationStatus;
     bool m_registrationStatusHasBeenSet;
+
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet;
+
     int m_maximumPageSize;
     bool m_maximumPageSizeHasBeenSet;
+
     bool m_reverseOrder;
     bool m_reverseOrderHasBeenSet;
   };

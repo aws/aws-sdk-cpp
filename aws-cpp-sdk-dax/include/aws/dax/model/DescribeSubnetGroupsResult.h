@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeSubnetGroupsResult();
-    DescribeSubnetGroupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSubnetGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSubnetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSubnetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline DescribeSubnetGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>An array of subnet groups. Each element in the array represents a single
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeSubnetGroupsResult& AddSubnetGroups(SubnetGroup&& value) { m_subnetGroups.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<SubnetGroup> m_subnetGroups;
   };
 

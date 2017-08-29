@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The ID of the organization.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ID of the organization.</p>
      */
     inline DescribeNotificationSubscriptionsRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -117,6 +119,7 @@ namespace Model
      */
     inline DescribeNotificationSubscriptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
@@ -133,10 +136,13 @@ namespace Model
     inline DescribeNotificationSubscriptionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

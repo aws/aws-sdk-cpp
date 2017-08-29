@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
     inline Filter& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>One or more filter values. Filter values are case-sensitive.</p>
@@ -127,8 +129,10 @@ namespace Model
     inline Filter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

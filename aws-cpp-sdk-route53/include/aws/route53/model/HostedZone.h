@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The ID that Amazon Route 53 assigned to the hosted zone when you created
      * it.</p>
@@ -89,6 +90,7 @@ namespace Model
      * it.</p>
      */
     inline HostedZone& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the domain. For public hosted zones, this is the name that you
@@ -153,6 +155,7 @@ namespace Model
      */
     inline HostedZone& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The value that you specified for <code>CallerReference</code> when you
      * created the hosted zone.</p>
@@ -194,6 +197,7 @@ namespace Model
      * created the hosted zone.</p>
      */
     inline HostedZone& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
+
 
     /**
      * <p>A complex type that includes the <code>Comment</code> and
@@ -240,6 +244,7 @@ namespace Model
      */
     inline HostedZone& WithConfig(HostedZoneConfig&& value) { SetConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of resource record sets in the hosted zone.</p>
      */
@@ -256,14 +261,19 @@ namespace Model
     inline HostedZone& WithResourceRecordSetCount(long long value) { SetResourceRecordSetCount(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
+
     HostedZoneConfig m_config;
     bool m_configHasBeenSet;
+
     long long m_resourceRecordSetCount;
     bool m_resourceRecordSetCountHasBeenSet;
   };

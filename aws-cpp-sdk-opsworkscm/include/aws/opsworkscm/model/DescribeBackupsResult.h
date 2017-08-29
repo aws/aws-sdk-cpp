@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeBackupsResult();
-    DescribeBackupsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBackupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBackupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeBackupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Contains the response to a <code>DescribeBackups</code> request. </p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Contains the response to a <code>DescribeBackups</code> request. </p>
      */
     inline DescribeBackupsResult& AddBackups(Backup&& value) { m_backups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>NextToken is a string that is returned in some command responses. It
@@ -170,7 +172,9 @@ namespace Model
     inline DescribeBackupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Backup> m_backups;
+
     Aws::String m_nextToken;
   };
 

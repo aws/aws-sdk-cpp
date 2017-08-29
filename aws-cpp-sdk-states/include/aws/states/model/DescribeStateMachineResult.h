@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeStateMachineResult();
-    DescribeStateMachineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStateMachineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStateMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStateMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DescribeStateMachineResult& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
 
+
     /**
      * <p>The name of the state machine.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      */
     inline DescribeStateMachineResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The current status of the state machine.</p>
      */
@@ -137,6 +140,7 @@ namespace Model
      * <p>The current status of the state machine.</p>
      */
     inline DescribeStateMachineResult& WithStatus(StateMachineStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon States Language definition of the state machine.</p>
@@ -172,6 +176,7 @@ namespace Model
      * <p>The Amazon States Language definition of the state machine.</p>
      */
     inline DescribeStateMachineResult& WithDefinition(const char* value) { SetDefinition(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used for executing this state
@@ -215,6 +220,7 @@ namespace Model
      */
     inline DescribeStateMachineResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
     /**
      * <p>The date the state machine was created.</p>
      */
@@ -241,11 +247,17 @@ namespace Model
     inline DescribeStateMachineResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stateMachineArn;
+
     Aws::String m_name;
+
     StateMachineStatus m_status;
+
     Aws::String m_definition;
+
     Aws::String m_roleArn;
+
     Aws::Utils::DateTime m_creationDate;
   };
 

@@ -47,6 +47,7 @@ namespace Model
     FieldToMatch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The part of the web request that you want AWS WAF to search for a specified
      * string. Parts of a request that you can search include the following:</p> <ul>
@@ -172,6 +173,7 @@ namespace Model
      */
     inline FieldToMatch& WithType(MatchFieldType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of
      * the header that you want AWS WAF to search, for example, <code>User-Agent</code>
@@ -229,8 +231,10 @@ namespace Model
     inline FieldToMatch& WithData(const char* value) { SetData(value); return *this;}
 
   private:
+
     MatchFieldType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_data;
     bool m_dataHasBeenSet;
   };

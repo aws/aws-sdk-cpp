@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetBatchPredictionRequest& WithBatchPredictionId(const char* value) { SetBatchPredictionId(value); return *this;}
 
   private:
+
     Aws::String m_batchPredictionId;
     bool m_batchPredictionIdHasBeenSet;
   };

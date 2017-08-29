@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the table to be configured.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline UpdateTimeToLiveRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>Represents the settings used to enable or disable Time to Live for the
      * specified table.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline UpdateTimeToLiveRequest& WithTimeToLiveSpecification(TimeToLiveSpecification&& value) { SetTimeToLiveSpecification(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     TimeToLiveSpecification m_timeToLiveSpecification;
     bool m_timeToLiveSpecificationHasBeenSet;
   };

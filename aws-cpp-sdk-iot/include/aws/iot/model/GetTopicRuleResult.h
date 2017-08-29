@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetTopicRuleResult();
-    GetTopicRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTopicRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTopicRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTopicRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The rule ARN.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline GetTopicRuleResult& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
 
+
     /**
      * <p>The rule.</p>
      */
@@ -108,7 +110,9 @@ namespace Model
     inline GetTopicRuleResult& WithRule(TopicRule&& value) { SetRule(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_ruleArn;
+
     TopicRule m_rule;
   };
 

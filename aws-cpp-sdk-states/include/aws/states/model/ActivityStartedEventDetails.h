@@ -40,6 +40,7 @@ namespace Model
     ActivityStartedEventDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the worker that the task was assigned to. These names are
      * provided by the workers when calling <a>GetActivityTask</a>.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline ActivityStartedEventDetails& WithWorkerName(const char* value) { SetWorkerName(value); return *this;}
 
   private:
+
     Aws::String m_workerName;
     bool m_workerNameHasBeenSet;
   };

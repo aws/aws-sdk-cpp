@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
      * describe. The format of a trail ARN is:</p> <p>
@@ -176,6 +177,7 @@ namespace Model
      */
     inline DescribeTrailsRequest& AddTrailNameList(const char* value) { m_trailNameListHasBeenSet = true; m_trailNameList.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies whether to include shadow trails in the response. A shadow trail is
      * the replication in a region of a trail that was created in a different region.
@@ -198,8 +200,10 @@ namespace Model
     inline DescribeTrailsRequest& WithIncludeShadowTrails(bool value) { SetIncludeShadowTrails(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_trailNameList;
     bool m_trailNameListHasBeenSet;
+
     bool m_includeShadowTrails;
     bool m_includeShadowTrailsHasBeenSet;
   };

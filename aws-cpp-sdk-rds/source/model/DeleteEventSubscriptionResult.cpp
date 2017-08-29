@@ -31,12 +31,12 @@ DeleteEventSubscriptionResult::DeleteEventSubscriptionResult()
 {
 }
 
-DeleteEventSubscriptionResult::DeleteEventSubscriptionResult(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteEventSubscriptionResult::DeleteEventSubscriptionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteEventSubscriptionResult& DeleteEventSubscriptionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteEventSubscriptionResult& DeleteEventSubscriptionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

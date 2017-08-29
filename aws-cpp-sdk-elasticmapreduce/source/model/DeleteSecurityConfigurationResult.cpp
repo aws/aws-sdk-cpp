@@ -30,12 +30,12 @@ DeleteSecurityConfigurationResult::DeleteSecurityConfigurationResult()
 {
 }
 
-DeleteSecurityConfigurationResult::DeleteSecurityConfigurationResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSecurityConfigurationResult::DeleteSecurityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteSecurityConfigurationResult& DeleteSecurityConfigurationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteSecurityConfigurationResult& DeleteSecurityConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The state of the target.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The state of the target.</p>
      */
     inline TargetHealth& WithState(TargetHealthStateEnum&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason code. If the target state is <code>healthy</code>, a reason code
@@ -236,6 +238,7 @@ namespace Model
      */
     inline TargetHealth& WithReason(TargetHealthReasonEnum&& value) { SetReason(std::move(value)); return *this;}
 
+
     /**
      * <p>A description of the target health that provides additional details. If the
      * state is <code>healthy</code>, a description is not provided.</p>
@@ -279,10 +282,13 @@ namespace Model
     inline TargetHealth& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     TargetHealthStateEnum m_state;
     bool m_stateHasBeenSet;
+
     TargetHealthReasonEnum m_reason;
     bool m_reasonHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

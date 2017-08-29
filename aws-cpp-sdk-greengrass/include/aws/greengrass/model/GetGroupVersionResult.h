@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetGroupVersionResult();
-    GetGroupVersionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGroupVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGroupVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGroupVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the group version.
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetGroupVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * Timestamp when the group version was created.
      */
@@ -112,6 +114,7 @@ namespace Model
      */
     inline GetGroupVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
+
     /**
      * Information on the definition
      */
@@ -136,6 +139,7 @@ namespace Model
      * Information on the definition
      */
     inline GetGroupVersionResult& WithDefinition(GroupVersion&& value) { SetDefinition(std::move(value)); return *this;}
+
 
     /**
      * Id of the group version.
@@ -171,6 +175,7 @@ namespace Model
      * Id of the group version.
      */
     inline GetGroupVersionResult& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * Unique Id for a version of the Group.
@@ -208,10 +213,15 @@ namespace Model
     inline GetGroupVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_arn;
+
     Aws::String m_creationTimestamp;
+
     GroupVersion m_definition;
+
     Aws::String m_id;
+
     Aws::String m_version;
   };
 

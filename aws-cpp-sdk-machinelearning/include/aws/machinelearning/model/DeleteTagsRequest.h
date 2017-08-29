@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>One or more tags to delete.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline DeleteTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      */
     inline DeleteTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The type of the tagged ML object.</p>
      */
@@ -139,10 +142,13 @@ namespace Model
     inline DeleteTagsRequest& WithResourceType(TaggableResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     TaggableResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
   };

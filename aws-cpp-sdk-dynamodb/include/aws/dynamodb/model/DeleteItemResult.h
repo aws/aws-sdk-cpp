@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     DeleteItemResult();
-    DeleteItemResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteItemResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A map of attribute names to <code>AttributeValue</code> objects, representing
@@ -139,6 +140,7 @@ namespace Model
      */
     inline DeleteItemResult& AddAttributes(const char* key, const AttributeValue& value) { m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>The capacity units consumed by the <code>DeleteItem</code> operation. The
      * data returned includes the total provisioned throughput consumed, along with
@@ -198,6 +200,7 @@ namespace Model
      * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline DeleteItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about item collections, if any, that were affected by the
@@ -300,8 +303,11 @@ namespace Model
     inline DeleteItemResult& WithItemCollectionMetrics(ItemCollectionMetrics&& value) { SetItemCollectionMetrics(std::move(value)); return *this;}
 
   private:
+
     Aws::Map<Aws::String, AttributeValue> m_attributes;
+
     ConsumedCapacity m_consumedCapacity;
+
     ItemCollectionMetrics m_itemCollectionMetrics;
   };
 

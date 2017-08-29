@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     SubmitContainerStateChangeResult();
-    SubmitContainerStateChangeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SubmitContainerStateChangeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SubmitContainerStateChangeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SubmitContainerStateChangeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Acknowledgement of the state change.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline SubmitContainerStateChangeResult& WithAcknowledgment(const char* value) { SetAcknowledgment(value); return *this;}
 
   private:
+
     Aws::String m_acknowledgment;
   };
 

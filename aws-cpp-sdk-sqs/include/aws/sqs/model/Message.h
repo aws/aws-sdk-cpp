@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A unique identifier for the message. A <code>MessageId</code>is considered
      * unique across all AWS accounts for an extended period of time.</p>
@@ -92,6 +93,7 @@ namespace Model
      * unique across all AWS accounts for an extended period of time.</p>
      */
     inline Message& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+
 
     /**
      * <p>An identifier associated with the act of receiving the message. A new receipt
@@ -142,6 +144,7 @@ namespace Model
      */
     inline Message& WithReceiptHandle(const char* value) { SetReceiptHandle(value); return *this;}
 
+
     /**
      * <p>An MD5 digest of the non-URL-encoded message body string.</p>
      */
@@ -177,6 +180,7 @@ namespace Model
      */
     inline Message& WithMD5OfBody(const char* value) { SetMD5OfBody(value); return *this;}
 
+
     /**
      * <p>The message's contents (not URL-encoded).</p>
      */
@@ -211,6 +215,7 @@ namespace Model
      * <p>The message's contents (not URL-encoded).</p>
      */
     inline Message& WithBody(const char* value) { SetBody(value); return *this;}
+
 
     /**
      * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
@@ -322,6 +327,7 @@ namespace Model
      */
     inline Message& AddAttributes(const MessageSystemAttributeName& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
      * this attribute to verify that Amazon SQS received the message correctly. Amazon
@@ -377,6 +383,7 @@ namespace Model
      * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
     inline Message& WithMD5OfMessageAttributes(const char* value) { SetMD5OfMessageAttributes(value); return *this;}
+
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
@@ -467,18 +474,25 @@ namespace Model
     inline Message& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet;
+
     Aws::String m_receiptHandle;
     bool m_receiptHandleHasBeenSet;
+
     Aws::String m_mD5OfBody;
     bool m_mD5OfBodyHasBeenSet;
+
     Aws::String m_body;
     bool m_bodyHasBeenSet;
+
     Aws::Map<MessageSystemAttributeName, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::String m_mD5OfMessageAttributes;
     bool m_mD5OfMessageAttributesHasBeenSet;
+
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
     bool m_messageAttributesHasBeenSet;
   };

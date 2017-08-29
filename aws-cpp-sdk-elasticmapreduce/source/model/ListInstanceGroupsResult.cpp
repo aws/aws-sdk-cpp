@@ -30,12 +30,12 @@ ListInstanceGroupsResult::ListInstanceGroupsResult()
 {
 }
 
-ListInstanceGroupsResult::ListInstanceGroupsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListInstanceGroupsResult::ListInstanceGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListInstanceGroupsResult& ListInstanceGroupsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListInstanceGroupsResult& ListInstanceGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("InstanceGroups"))

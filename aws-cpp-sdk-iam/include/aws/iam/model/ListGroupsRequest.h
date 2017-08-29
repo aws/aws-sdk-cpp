@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p> The path prefix for filtering the results. For example, the prefix
      * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts
@@ -129,6 +130,7 @@ namespace Model
      */
     inline ListGroupsRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
 
+
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
      * response indicating that the results are truncated. Set it to the value of the
@@ -185,6 +187,7 @@ namespace Model
      */
     inline ListGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>(Optional) Use this only when paginating results to indicate the maximum
      * number of items you want in the response. If additional items exist beyond the
@@ -222,10 +225,13 @@ namespace Model
     inline ListGroupsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_pathPrefix;
     bool m_pathPrefixHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

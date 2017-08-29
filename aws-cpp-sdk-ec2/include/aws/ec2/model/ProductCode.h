@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The product code.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline ProductCode& WithProductCodeId(const char* value) { SetProductCodeId(value); return *this;}
 
+
     /**
      * <p>The type of product code.</p>
      */
@@ -110,8 +112,10 @@ namespace Model
     inline ProductCode& WithProductCodeType(ProductCodeValues&& value) { SetProductCodeType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_productCodeId;
     bool m_productCodeIdHasBeenSet;
+
     ProductCodeValues m_productCodeType;
     bool m_productCodeTypeHasBeenSet;
   };

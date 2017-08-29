@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
@@ -70,6 +71,7 @@ namespace Model
 
     
     inline DomainStatus& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+
 
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
@@ -92,6 +94,7 @@ namespace Model
     
     inline DomainStatus& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
@@ -112,6 +115,7 @@ namespace Model
 
     
     inline DomainStatus& WithARN(const char* value) { SetARN(value); return *this;}
+
 
     /**
      * <p>True if the search domain is created. It can take several minutes to
@@ -136,6 +140,7 @@ namespace Model
      * until domain creation is complete.</p>
      */
     inline DomainStatus& WithCreated(bool value) { SetCreated(value); return *this;}
+
 
     /**
      * <p>True if the search domain has been deleted. The system must clean up
@@ -164,6 +169,7 @@ namespace Model
      */
     inline DomainStatus& WithDeleted(bool value) { SetDeleted(value); return *this;}
 
+
     /**
      * <p>The service endpoint for updating documents in a search domain.</p>
      */
@@ -188,6 +194,7 @@ namespace Model
      * <p>The service endpoint for updating documents in a search domain.</p>
      */
     inline DomainStatus& WithDocService(ServiceEndpoint&& value) { SetDocService(std::move(value)); return *this;}
+
 
     /**
      * <p>The service endpoint for requesting search results from a search domain.</p>
@@ -214,6 +221,7 @@ namespace Model
      */
     inline DomainStatus& WithSearchService(ServiceEndpoint&& value) { SetSearchService(std::move(value)); return *this;}
 
+
     /**
      * <p>True if <a>IndexDocuments</a> needs to be called to activate the current
      * domain configuration.</p>
@@ -232,6 +240,7 @@ namespace Model
      */
     inline DomainStatus& WithRequiresIndexDocuments(bool value) { SetRequiresIndexDocuments(value); return *this;}
 
+
     /**
      * <p>True if processing is being done to activate the current domain
      * configuration.</p>
@@ -249,6 +258,7 @@ namespace Model
      * configuration.</p>
      */
     inline DomainStatus& WithProcessing(bool value) { SetProcessing(value); return *this;}
+
 
     /**
      * <p>The instance type that is being used to process search requests.</p>
@@ -285,6 +295,7 @@ namespace Model
      */
     inline DomainStatus& WithSearchInstanceType(const char* value) { SetSearchInstanceType(value); return *this;}
 
+
     /**
      * <p>The number of partitions across which the search index is spread.</p>
      */
@@ -299,6 +310,7 @@ namespace Model
      * <p>The number of partitions across which the search index is spread.</p>
      */
     inline DomainStatus& WithSearchPartitionCount(int value) { SetSearchPartitionCount(value); return *this;}
+
 
     /**
      * <p>The number of search instances that are available to process search
@@ -318,6 +330,7 @@ namespace Model
      */
     inline DomainStatus& WithSearchInstanceCount(int value) { SetSearchInstanceCount(value); return *this;}
 
+
     
     inline const Limits& GetLimits() const{ return m_limits; }
 
@@ -334,30 +347,43 @@ namespace Model
     inline DomainStatus& WithLimits(Limits&& value) { SetLimits(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet;
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
     bool m_created;
     bool m_createdHasBeenSet;
+
     bool m_deleted;
     bool m_deletedHasBeenSet;
+
     ServiceEndpoint m_docService;
     bool m_docServiceHasBeenSet;
+
     ServiceEndpoint m_searchService;
     bool m_searchServiceHasBeenSet;
+
     bool m_requiresIndexDocuments;
     bool m_requiresIndexDocumentsHasBeenSet;
+
     bool m_processing;
     bool m_processingHasBeenSet;
+
     Aws::String m_searchInstanceType;
     bool m_searchInstanceTypeHasBeenSet;
+
     int m_searchPartitionCount;
     bool m_searchPartitionCountHasBeenSet;
+
     int m_searchInstanceCount;
     bool m_searchInstanceCountHasBeenSet;
+
     Limits m_limits;
     bool m_limitsHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The label for the client.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The label for the client.</p>
      */
     inline CreateLunaClientRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
+
 
     /**
      * <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the
@@ -118,8 +120,10 @@ namespace Model
     inline CreateLunaClientRequest& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
   private:
+
     Aws::String m_label;
     bool m_labelHasBeenSet;
+
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
   };

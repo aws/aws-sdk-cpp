@@ -30,12 +30,12 @@ ListByteMatchSetsResult::ListByteMatchSetsResult()
 {
 }
 
-ListByteMatchSetsResult::ListByteMatchSetsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListByteMatchSetsResult::ListByteMatchSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListByteMatchSetsResult& ListByteMatchSetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListByteMatchSetsResult& ListByteMatchSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextMarker"))

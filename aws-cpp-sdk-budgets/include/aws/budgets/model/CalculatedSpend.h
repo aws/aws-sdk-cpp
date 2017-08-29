@@ -46,6 +46,7 @@ namespace Model
     CalculatedSpend& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Spend& GetActualSpend() const{ return m_actualSpend; }
 
@@ -60,6 +61,7 @@ namespace Model
 
     
     inline CalculatedSpend& WithActualSpend(Spend&& value) { SetActualSpend(std::move(value)); return *this;}
+
 
     
     inline const Spend& GetForecastedSpend() const{ return m_forecastedSpend; }
@@ -77,8 +79,10 @@ namespace Model
     inline CalculatedSpend& WithForecastedSpend(Spend&& value) { SetForecastedSpend(std::move(value)); return *this;}
 
   private:
+
     Spend m_actualSpend;
     bool m_actualSpendHasBeenSet;
+
     Spend m_forecastedSpend;
     bool m_forecastedSpendHasBeenSet;
   };

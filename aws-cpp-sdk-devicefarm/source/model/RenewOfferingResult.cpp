@@ -30,12 +30,12 @@ RenewOfferingResult::RenewOfferingResult()
 {
 }
 
-RenewOfferingResult::RenewOfferingResult(const AmazonWebServiceResult<JsonValue>& result)
+RenewOfferingResult::RenewOfferingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RenewOfferingResult& RenewOfferingResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RenewOfferingResult& RenewOfferingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("offeringTransaction"))

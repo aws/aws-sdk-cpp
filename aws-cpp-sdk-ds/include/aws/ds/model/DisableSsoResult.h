@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     DisableSsoResult();
-    DisableSsoResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisableSsoResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisableSsoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisableSsoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

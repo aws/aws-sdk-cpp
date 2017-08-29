@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace LexModelBuildingService
+} // namespace Client
 } // namespace Aws

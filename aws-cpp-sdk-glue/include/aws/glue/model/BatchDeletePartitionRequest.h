@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Data Catalog where the partition to be deleted resides. If none
      * is supplied, the AWS account ID is used by default.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline BatchDeletePartitionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
+
     /**
      * <p>The name of the catalog database in which the table in question resides.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      */
     inline BatchDeletePartitionRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>The name of the table where the partitions to be deleted is located.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The name of the table where the partitions to be deleted is located.</p>
      */
     inline BatchDeletePartitionRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+
 
     /**
      * <p>A list of <code>PartitionInput</code> structures that define the partitions
@@ -193,12 +197,16 @@ namespace Model
     inline BatchDeletePartitionRequest& AddPartitionsToDelete(PartitionValueList&& value) { m_partitionsToDeleteHasBeenSet = true; m_partitionsToDelete.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::Vector<PartitionValueList> m_partitionsToDelete;
     bool m_partitionsToDeleteHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeImagesResult();
-    DescribeImagesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeImagesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of <a>ImageDetail</a> objects that contain data about the image.</p>
      */
     inline DescribeImagesResult& AddImageDetails(ImageDetail&& value) { m_imageDetails.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The <code>nextToken</code> value to include in a future
@@ -142,7 +144,9 @@ namespace Model
     inline DescribeImagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ImageDetail> m_imageDetails;
+
     Aws::String m_nextToken;
   };
 

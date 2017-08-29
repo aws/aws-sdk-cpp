@@ -50,6 +50,7 @@ namespace Model
     BatchListIndex& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the ranges of indexed values that you want to query.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline BatchListIndex& AddRangesOnIndexedValues(ObjectAttributeRange&& value) { m_rangesOnIndexedValuesHasBeenSet = true; m_rangesOnIndexedValues.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The reference to the index to list.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      */
     inline BatchListIndex& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
@@ -124,6 +127,7 @@ namespace Model
      * <p>The maximum number of results to retrieve.</p>
      */
     inline BatchListIndex& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -161,12 +165,16 @@ namespace Model
     inline BatchListIndex& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ObjectAttributeRange> m_rangesOnIndexedValues;
     bool m_rangesOnIndexedValuesHasBeenSet;
+
     ObjectReference m_indexReference;
     bool m_indexReferenceHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

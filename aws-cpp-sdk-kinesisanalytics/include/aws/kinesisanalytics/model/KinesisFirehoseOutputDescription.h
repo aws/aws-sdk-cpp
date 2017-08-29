@@ -46,6 +46,7 @@ namespace Model
     KinesisFirehoseOutputDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery
      * stream.</p>
@@ -87,6 +88,7 @@ namespace Model
      * stream.</p>
      */
     inline KinesisFirehoseOutputDescription& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
@@ -131,8 +133,10 @@ namespace Model
     inline KinesisFirehoseOutputDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
   private:
+
     Aws::String m_resourceARN;
     bool m_resourceARNHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
   };

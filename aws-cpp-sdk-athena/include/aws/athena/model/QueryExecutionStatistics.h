@@ -44,6 +44,7 @@ namespace Model
     QueryExecutionStatistics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The number of milliseconds that the query took to execute.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>The number of milliseconds that the query took to execute.</p>
      */
     inline QueryExecutionStatistics& WithEngineExecutionTimeInMillis(long long value) { SetEngineExecutionTimeInMillis(value); return *this;}
+
 
     /**
      * <p>The number of bytes in the data that was queried.</p>
@@ -75,8 +77,10 @@ namespace Model
     inline QueryExecutionStatistics& WithDataScannedInBytes(long long value) { SetDataScannedInBytes(value); return *this;}
 
   private:
+
     long long m_engineExecutionTimeInMillis;
     bool m_engineExecutionTimeInMillisHasBeenSet;
+
     long long m_dataScannedInBytes;
     bool m_dataScannedInBytesHasBeenSet;
   };

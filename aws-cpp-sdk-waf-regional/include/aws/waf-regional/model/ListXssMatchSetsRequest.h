@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>If you specify a value for <code>Limit</code> and you have more
      * <a>XssMatchSet</a> objects than the value of <code>Limit</code>, AWS WAF returns
@@ -117,6 +118,7 @@ namespace Model
      */
     inline ListXssMatchSetsRequest& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>Specifies the number of <a>XssMatchSet</a> objects that you want AWS WAF to
      * return for this request. If you have more <code>XssMatchSet</code> objects than
@@ -145,8 +147,10 @@ namespace Model
     inline ListXssMatchSetsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

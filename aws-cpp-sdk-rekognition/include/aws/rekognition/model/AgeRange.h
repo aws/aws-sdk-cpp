@@ -47,6 +47,7 @@ namespace Model
     AgeRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The lowest estimated age.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>The lowest estimated age.</p>
      */
     inline AgeRange& WithLow(int value) { SetLow(value); return *this;}
+
 
     /**
      * <p>The highest estimated age.</p>
@@ -78,8 +80,10 @@ namespace Model
     inline AgeRange& WithHigh(int value) { SetHigh(value); return *this;}
 
   private:
+
     int m_low;
     bool m_lowHasBeenSet;
+
     int m_high;
     bool m_highHasBeenSet;
   };

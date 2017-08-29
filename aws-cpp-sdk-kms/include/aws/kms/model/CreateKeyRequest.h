@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do
      * not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must
@@ -208,6 +209,7 @@ namespace Model
      */
     inline CreateKeyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
+
     /**
      * <p>A description of the CMK.</p> <p>Use a description that helps you decide
      * whether the CMK is appropriate for a task.</p>
@@ -250,6 +252,7 @@ namespace Model
      */
     inline CreateKeyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The intended use of the CMK.</p> <p>You can use CMKs only for symmetric
      * encryption and decryption.</p>
@@ -279,6 +282,7 @@ namespace Model
      * encryption and decryption.</p>
      */
     inline CreateKeyRequest& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(std::move(value)); return *this;}
+
 
     /**
      * <p>The source of the CMK's key material.</p> <p>The default is
@@ -350,6 +354,7 @@ namespace Model
      */
     inline CreateKeyRequest& WithOrigin(OriginType&& value) { SetOrigin(std::move(value)); return *this;}
 
+
     /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
      * <important> <p>Setting this value to true increases the likelihood that the CMK
@@ -391,6 +396,7 @@ namespace Model
      * <p>The default value is false.</p>
      */
     inline CreateKeyRequest& WithBypassPolicyLockoutSafetyCheck(bool value) { SetBypassPolicyLockoutSafetyCheck(value); return *this;}
+
 
     /**
      * <p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys
@@ -456,16 +462,22 @@ namespace Model
     inline CreateKeyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_policy;
     bool m_policyHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     KeyUsageType m_keyUsage;
     bool m_keyUsageHasBeenSet;
+
     OriginType m_origin;
     bool m_originHasBeenSet;
+
     bool m_bypassPolicyLockoutSafetyCheck;
     bool m_bypassPolicyLockoutSafetyCheckHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

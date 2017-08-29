@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Name of the Lambda function whose resource policy you are updating by adding
      * a new permission.</p> <p> You can specify a function name (for example,
@@ -134,6 +135,7 @@ namespace Model
      */
     inline AddPermissionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>A unique statement identifier.</p>
      */
@@ -168,6 +170,7 @@ namespace Model
      * <p>A unique statement identifier.</p>
      */
     inline AddPermissionRequest& WithStatementId(const char* value) { SetStatementId(value); return *this;}
+
 
     /**
      * <p>The AWS Lambda action you want to allow in this statement. Each Lambda action
@@ -224,6 +227,7 @@ namespace Model
      * (<code>lambda:*</code>) to grant permission for all AWS Lambda actions. </p>
      */
     inline AddPermissionRequest& WithAction(const char* value) { SetAction(value); return *this;}
+
 
     /**
      * <p>The principal who is getting this permission. It can be Amazon S3 service
@@ -295,6 +299,7 @@ namespace Model
      */
     inline AddPermissionRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
+
     /**
      * <p>This is optional; however, when granting permission to invoke your function,
      * you should specify this field with the Amazon Resource Name (ARN) as its value.
@@ -364,6 +369,7 @@ namespace Model
      * events to invoke your Lambda function.</p> </important>
      */
     inline AddPermissionRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+
 
     /**
      * <p>This parameter is used for S3 and SES. The AWS account ID (without a hyphen)
@@ -442,6 +448,7 @@ namespace Model
      */
     inline AddPermissionRequest& WithSourceAccount(const char* value) { SetSourceAccount(value); return *this;}
 
+
     /**
      * <p>A unique token that must be supplied by the principal invoking the function.
      * This is currently only used for Alexa Smart Home functions.</p>
@@ -483,6 +490,7 @@ namespace Model
      * This is currently only used for Alexa Smart Home functions.</p>
      */
     inline AddPermissionRequest& WithEventSourceToken(const char* value) { SetEventSourceToken(value); return *this;}
+
 
     /**
      * <p>You can use this optional query parameter to describe a qualified ARN using a
@@ -597,20 +605,28 @@ namespace Model
     inline AddPermissionRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_statementId;
     bool m_statementIdHasBeenSet;
+
     Aws::String m_action;
     bool m_actionHasBeenSet;
+
     Aws::String m_principal;
     bool m_principalHasBeenSet;
+
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet;
+
     Aws::String m_sourceAccount;
     bool m_sourceAccountHasBeenSet;
+
     Aws::String m_eventSourceToken;
     bool m_eventSourceTokenHasBeenSet;
+
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet;
   };

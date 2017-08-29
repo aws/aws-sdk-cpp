@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
      * results.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline ListDocumentsRequest& AddDocumentFilterList(DocumentFilter&& value) { m_documentFilterListHasBeenSet = true; m_documentFilterList.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of
@@ -100,6 +102,7 @@ namespace Model
      * results.</p>
      */
     inline ListDocumentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -144,10 +147,13 @@ namespace Model
     inline ListDocumentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<DocumentFilter> m_documentFilterList;
     bool m_documentFilterListHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

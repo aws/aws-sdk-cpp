@@ -31,12 +31,12 @@ CreateVirtualMFADeviceResult::CreateVirtualMFADeviceResult()
 {
 }
 
-CreateVirtualMFADeviceResult::CreateVirtualMFADeviceResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateVirtualMFADeviceResult::CreateVirtualMFADeviceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateVirtualMFADeviceResult& CreateVirtualMFADeviceResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateVirtualMFADeviceResult& CreateVirtualMFADeviceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -30,12 +30,12 @@ RemoveTagsFromResourceResult::RemoveTagsFromResourceResult()
 {
 }
 
-RemoveTagsFromResourceResult::RemoveTagsFromResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+RemoveTagsFromResourceResult::RemoveTagsFromResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RemoveTagsFromResourceResult& RemoveTagsFromResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RemoveTagsFromResourceResult& RemoveTagsFromResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

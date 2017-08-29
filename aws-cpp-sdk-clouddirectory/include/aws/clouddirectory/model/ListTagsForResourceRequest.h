@@ -34,6 +34,7 @@ namespace Model
     ListTagsForResourceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
      * directories.</p>
@@ -75,6 +76,7 @@ namespace Model
      * directories.</p>
      */
     inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
 
     /**
      * <p>The pagination token. This is for future use. Currently pagination is not
@@ -118,6 +120,7 @@ namespace Model
      */
     inline ListTagsForResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The <code>MaxResults</code> parameter sets the maximum number of results
      * returned in a single page. This is for future use and is not supported
@@ -140,10 +143,13 @@ namespace Model
     inline ListTagsForResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool that hosts the resource server.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The user pool ID for the user pool that hosts the resource server.</p>
      */
     inline DescribeResourceServerRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The identifier for the resource server</p>
@@ -107,8 +109,10 @@ namespace Model
     inline DescribeResourceServerRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_identifier;
     bool m_identifierHasBeenSet;
   };

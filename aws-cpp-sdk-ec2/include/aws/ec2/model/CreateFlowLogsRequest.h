@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
@@ -100,6 +101,7 @@ namespace Model
      */
     inline CreateFlowLogsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs
      * log group.</p>
@@ -142,6 +144,7 @@ namespace Model
      */
     inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
 
+
     /**
      * <p>The name of the CloudWatch log group.</p>
      */
@@ -176,6 +179,7 @@ namespace Model
      * <p>The name of the CloudWatch log group.</p>
      */
     inline CreateFlowLogsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
@@ -225,6 +229,7 @@ namespace Model
      */
     inline CreateFlowLogsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
+
     /**
      * <p>The type of resource on which to create the flow log.</p>
      */
@@ -249,6 +254,7 @@ namespace Model
      * <p>The type of resource on which to create the flow log.</p>
      */
     inline CreateFlowLogsRequest& WithResourceType(FlowLogsResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of traffic to log.</p>
@@ -276,16 +282,22 @@ namespace Model
     inline CreateFlowLogsRequest& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::String m_deliverLogsPermissionArn;
     bool m_deliverLogsPermissionArnHasBeenSet;
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourceIds;
     bool m_resourceIdsHasBeenSet;
+
     FlowLogsResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     TrafficType m_trafficType;
     bool m_trafficTypeHasBeenSet;
   };

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeHapgResult();
-    DescribeHapgResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeHapgResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeHapgResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeHapgResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ARN of the high-availability partition group.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeHapgResult& WithHapgArn(const char* value) { SetHapgArn(value); return *this;}
 
+
     /**
      * <p>The serial number of the high-availability partition group.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      */
     inline DescribeHapgResult& WithHapgSerial(const char* value) { SetHapgSerial(value); return *this;}
 
+
     
     inline const Aws::Vector<Aws::String>& GetHsmsLastActionFailed() const{ return m_hsmsLastActionFailed; }
 
@@ -142,6 +145,7 @@ namespace Model
 
     
     inline DescribeHapgResult& AddHsmsLastActionFailed(const char* value) { m_hsmsLastActionFailed.push_back(value); return *this; }
+
 
     
     inline const Aws::Vector<Aws::String>& GetHsmsPendingDeletion() const{ return m_hsmsPendingDeletion; }
@@ -167,6 +171,7 @@ namespace Model
     
     inline DescribeHapgResult& AddHsmsPendingDeletion(const char* value) { m_hsmsPendingDeletion.push_back(value); return *this; }
 
+
     
     inline const Aws::Vector<Aws::String>& GetHsmsPendingRegistration() const{ return m_hsmsPendingRegistration; }
 
@@ -190,6 +195,7 @@ namespace Model
 
     
     inline DescribeHapgResult& AddHsmsPendingRegistration(const char* value) { m_hsmsPendingRegistration.push_back(value); return *this; }
+
 
     /**
      * <p>The label for the high-availability partition group.</p>
@@ -225,6 +231,7 @@ namespace Model
      * <p>The label for the high-availability partition group.</p>
      */
     inline DescribeHapgResult& WithLabel(const char* value) { SetLabel(value); return *this;}
+
 
     /**
      * <p>The date and time the high-availability partition group was last
@@ -267,6 +274,7 @@ namespace Model
      * modified.</p>
      */
     inline DescribeHapgResult& WithLastModifiedTimestamp(const char* value) { SetLastModifiedTimestamp(value); return *this;}
+
 
     /**
      * <p>The list of partition serial numbers that belong to the high-availability
@@ -316,6 +324,7 @@ namespace Model
      */
     inline DescribeHapgResult& AddPartitionSerialList(const char* value) { m_partitionSerialList.push_back(value); return *this; }
 
+
     /**
      * <p>The state of the high-availability partition group.</p>
      */
@@ -342,14 +351,23 @@ namespace Model
     inline DescribeHapgResult& WithState(CloudHsmObjectState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_hapgArn;
+
     Aws::String m_hapgSerial;
+
     Aws::Vector<Aws::String> m_hsmsLastActionFailed;
+
     Aws::Vector<Aws::String> m_hsmsPendingDeletion;
+
     Aws::Vector<Aws::String> m_hsmsPendingRegistration;
+
     Aws::String m_label;
+
     Aws::String m_lastModifiedTimestamp;
+
     Aws::Vector<Aws::String> m_partitionSerialList;
+
     CloudHsmObjectState m_state;
   };
 

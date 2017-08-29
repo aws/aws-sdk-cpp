@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateUserDefinedFunctionResult();
-    CreateUserDefinedFunctionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateUserDefinedFunctionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUserDefinedFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUserDefinedFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

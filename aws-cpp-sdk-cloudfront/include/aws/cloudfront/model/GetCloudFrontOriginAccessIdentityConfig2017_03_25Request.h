@@ -39,6 +39,7 @@ namespace Model
     GetCloudFrontOriginAccessIdentityConfig2017_03_25Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identity's ID. </p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline GetCloudFrontOriginAccessIdentityConfig2017_03_25Request& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

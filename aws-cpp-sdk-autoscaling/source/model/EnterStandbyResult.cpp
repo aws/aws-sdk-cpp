@@ -31,12 +31,12 @@ EnterStandbyResult::EnterStandbyResult()
 {
 }
 
-EnterStandbyResult::EnterStandbyResult(const AmazonWebServiceResult<XmlDocument>& result)
+EnterStandbyResult::EnterStandbyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-EnterStandbyResult& EnterStandbyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+EnterStandbyResult& EnterStandbyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetUploadResult();
-    GetUploadResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An app or a set of one or more tests to upload or that have been
@@ -77,6 +78,7 @@ namespace Model
     inline GetUploadResult& WithUpload(Upload&& value) { SetUpload(std::move(value)); return *this;}
 
   private:
+
     Upload m_upload;
   };
 

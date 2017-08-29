@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the directory for which to enable single-sign on.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The identifier of the directory for which to enable single-sign on.</p>
      */
     inline EnableSsoRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The username of an alternate account to use to enable single-sign on. This is
@@ -152,6 +154,7 @@ namespace Model
      */
     inline EnableSsoRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The password of an alternate account to use to enable single-sign on. This is
      * only used for AD Connector directories. For more information, see the
@@ -202,10 +205,13 @@ namespace Model
     inline EnableSsoRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
   };

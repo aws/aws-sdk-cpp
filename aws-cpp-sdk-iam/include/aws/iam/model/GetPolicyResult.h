@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetPolicyResult();
-    GetPolicyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure containing details about the policy.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline GetPolicyResult& WithPolicy(Policy&& value) { SetPolicy(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline GetPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Policy m_policy;
+
     ResponseMetadata m_responseMetadata;
   };
 

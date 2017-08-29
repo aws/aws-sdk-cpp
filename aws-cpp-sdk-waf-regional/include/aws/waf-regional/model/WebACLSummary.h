@@ -46,6 +46,7 @@ namespace Model
     WebACLSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
      * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
@@ -109,6 +110,7 @@ namespace Model
      */
     inline WebACLSummary& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 
+
     /**
      * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
      * name of a <code>WebACL</code> after you create it.</p>
@@ -152,8 +154,10 @@ namespace Model
     inline WebACLSummary& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

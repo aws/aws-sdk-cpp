@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the HSM to modify.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ARN of the HSM to modify.</p>
      */
     inline ModifyHsmRequest& WithHsmArn(const char* value) { SetHsmArn(value); return *this;}
+
 
     /**
      * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
@@ -116,6 +118,7 @@ namespace Model
      * in the same Availability Zone as the current subnet.</p>
      */
     inline ModifyHsmRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The new IP address for the elastic network interface (ENI) attached to the
@@ -173,6 +176,7 @@ namespace Model
      */
     inline ModifyHsmRequest& WithEniIp(const char* value) { SetEniIp(value); return *this;}
 
+
     /**
      * <p>The new IAM role ARN.</p>
      */
@@ -208,6 +212,7 @@ namespace Model
      */
     inline ModifyHsmRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 
+
     /**
      * <p>The new external ID.</p>
      */
@@ -242,6 +247,7 @@ namespace Model
      * <p>The new external ID.</p>
      */
     inline ModifyHsmRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
 
     /**
      * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
@@ -286,16 +292,22 @@ namespace Model
     inline ModifyHsmRequest& WithSyslogIp(const char* value) { SetSyslogIp(value); return *this;}
 
   private:
+
     Aws::String m_hsmArn;
     bool m_hsmArnHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_eniIp;
     bool m_eniIpHasBeenSet;
+
     Aws::String m_iamRoleArn;
     bool m_iamRoleArnHasBeenSet;
+
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
+
     Aws::String m_syslogIp;
     bool m_syslogIpHasBeenSet;
   };

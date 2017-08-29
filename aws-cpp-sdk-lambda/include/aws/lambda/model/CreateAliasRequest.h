@@ -34,6 +34,7 @@ namespace Model
     CreateAliasRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>Name of the Lambda function for which you want to create an alias. Note that
      * the length constraint applies only to the ARN. If you specify only the function
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CreateAliasRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>Name for the alias you are creating.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline CreateAliasRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Lambda function version for which you are creating the alias.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>Lambda function version for which you are creating the alias.</p>
      */
     inline CreateAliasRequest& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
+
 
     /**
      * <p>Description of the alias.</p>
@@ -189,12 +193,16 @@ namespace Model
     inline CreateAliasRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_functionVersion;
     bool m_functionVersionHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

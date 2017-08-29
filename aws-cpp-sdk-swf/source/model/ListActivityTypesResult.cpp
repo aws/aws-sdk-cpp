@@ -30,12 +30,12 @@ ListActivityTypesResult::ListActivityTypesResult()
 {
 }
 
-ListActivityTypesResult::ListActivityTypesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListActivityTypesResult::ListActivityTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListActivityTypesResult& ListActivityTypesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListActivityTypesResult& ListActivityTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("typeInfos"))

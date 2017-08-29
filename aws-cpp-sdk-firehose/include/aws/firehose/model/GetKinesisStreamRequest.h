@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetDeliveryStreamARN() const{ return m_deliveryStreamARN; }
 
@@ -58,6 +59,7 @@ namespace Model
     inline GetKinesisStreamRequest& WithDeliveryStreamARN(const char* value) { SetDeliveryStreamARN(value); return *this;}
 
   private:
+
     Aws::String m_deliveryStreamARN;
     bool m_deliveryStreamARNHasBeenSet;
   };

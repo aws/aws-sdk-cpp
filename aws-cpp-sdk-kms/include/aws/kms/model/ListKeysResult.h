@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListKeysResult();
-    ListKeysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of keys.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of keys.</p>
      */
     inline ListKeysResult& AddKeys(KeyListEntry&& value) { m_keys.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>When <code>Truncated</code> is true, this element is present and contains the
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ListKeysResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>A flag that indicates whether there are more items in the list. When this
      * value is true, the list in this response is truncated. To retrieve more items,
@@ -145,8 +148,11 @@ namespace Model
     inline ListKeysResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
 
   private:
+
     Aws::Vector<KeyListEntry> m_keys;
+
     Aws::String m_nextMarker;
+
     bool m_truncated;
   };
 

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     CreateMLModelResult();
-    CreateMLModelResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMLModelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateMLModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateMLModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
@@ -100,6 +101,7 @@ namespace Model
     inline CreateMLModelResult& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
 
   private:
+
     Aws::String m_mLModelId;
   };
 

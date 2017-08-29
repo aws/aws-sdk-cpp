@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specify an ID for this resource. For a managed instance, this is the instance
      * ID.</p>
@@ -80,6 +81,7 @@ namespace Model
      * ID.</p>
      */
     inline PutComplianceItemsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>Specify the type of resource. <code>ManagedInstance</code> is currently the
@@ -123,6 +125,7 @@ namespace Model
      */
     inline PutComplianceItemsRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>Specify the compliance type. For example, specify Association (for a State
      * Manager association), Patch, or Custom:<code>string</code>.</p>
@@ -165,6 +168,7 @@ namespace Model
      */
     inline PutComplianceItemsRequest& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
 
+
     /**
      * <p>A summary of the call execution that includes an execution ID, the type of
      * execution (for example, <code>Command</code>), and the date/time of the
@@ -204,6 +208,7 @@ namespace Model
      * yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
      */
     inline PutComplianceItemsRequest& WithExecutionSummary(ComplianceExecutionSummary&& value) { SetExecutionSummary(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
@@ -253,6 +258,7 @@ namespace Model
      * about the PatchSeverity, Classification, etc.</p>
      */
     inline PutComplianceItemsRequest& AddItems(ComplianceItemEntry&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>MD5 or SHA-256 content hash. The content hash is used to determine if
@@ -304,16 +310,22 @@ namespace Model
     inline PutComplianceItemsRequest& WithItemContentHash(const char* value) { SetItemContentHash(value); return *this;}
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_complianceType;
     bool m_complianceTypeHasBeenSet;
+
     ComplianceExecutionSummary m_executionSummary;
     bool m_executionSummaryHasBeenSet;
+
     Aws::Vector<ComplianceItemEntry> m_items;
     bool m_itemsHasBeenSet;
+
     Aws::String m_itemContentHash;
     bool m_itemContentHashHasBeenSet;
   };

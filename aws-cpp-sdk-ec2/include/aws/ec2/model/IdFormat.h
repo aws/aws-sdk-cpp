@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The date in UTC at which you are permanently switched over to using longer
      * IDs. If a deadline is not yet available for this resource type, this field is
@@ -83,6 +84,7 @@ namespace Model
      * not returned.</p>
      */
     inline IdFormat& WithDeadline(Aws::Utils::DateTime&& value) { SetDeadline(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of resource.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline IdFormat& WithResource(const char* value) { SetResource(value); return *this;}
 
+
     /**
      * <p>Indicates whether longer IDs (17-character IDs) are enabled for the
      * resource.</p>
@@ -138,10 +141,13 @@ namespace Model
     inline IdFormat& WithUseLongIds(bool value) { SetUseLongIds(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_deadline;
     bool m_deadlineHasBeenSet;
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
+
     bool m_useLongIds;
     bool m_useLongIdsHasBeenSet;
   };

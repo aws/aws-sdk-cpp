@@ -47,6 +47,7 @@ namespace Model
     OfferingStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type specified for the offering status.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The type specified for the offering status.</p>
      */
     inline OfferingStatus& WithType(OfferingTransactionType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Represents the metadata of an offering status.</p>
@@ -97,6 +99,7 @@ namespace Model
      */
     inline OfferingStatus& WithOffering(Offering&& value) { SetOffering(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of available devices in the offering.</p>
      */
@@ -111,6 +114,7 @@ namespace Model
      * <p>The number of available devices in the offering.</p>
      */
     inline OfferingStatus& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>The date on which the offering is effective.</p>
@@ -138,12 +142,16 @@ namespace Model
     inline OfferingStatus& WithEffectiveOn(Aws::Utils::DateTime&& value) { SetEffectiveOn(std::move(value)); return *this;}
 
   private:
+
     OfferingTransactionType m_type;
     bool m_typeHasBeenSet;
+
     Offering m_offering;
     bool m_offeringHasBeenSet;
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Utils::DateTime m_effectiveOn;
     bool m_effectiveOnHasBeenSet;
   };

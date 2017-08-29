@@ -30,12 +30,12 @@ CreateDatabaseResult::CreateDatabaseResult()
 {
 }
 
-CreateDatabaseResult::CreateDatabaseResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateDatabaseResult::CreateDatabaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateDatabaseResult& CreateDatabaseResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateDatabaseResult& CreateDatabaseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

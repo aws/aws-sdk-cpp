@@ -55,7 +55,7 @@ enum class BudgetsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CREATION_LIMIT_EXCEEDED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CREATION_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DUPLICATE_RECORD,
   EXPIRED_NEXT_TOKEN,
   INTERNAL_ERROR,
@@ -65,7 +65,7 @@ enum class BudgetsErrors
 };
 namespace BudgetsErrorMapper
 {
-  AWS_BUDGETS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_BUDGETS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace Budgets

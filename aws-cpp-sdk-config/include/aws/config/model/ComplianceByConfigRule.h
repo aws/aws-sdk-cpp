@@ -48,6 +48,7 @@ namespace Model
     ComplianceByConfigRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the AWS Config rule.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ComplianceByConfigRule& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
+
     /**
      * <p>Indicates whether the AWS Config rule is compliant.</p>
      */
@@ -109,8 +111,10 @@ namespace Model
     inline ComplianceByConfigRule& WithCompliance(Compliance&& value) { SetCompliance(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_configRuleName;
     bool m_configRuleNameHasBeenSet;
+
     Compliance m_compliance;
     bool m_complianceHasBeenSet;
   };

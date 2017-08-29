@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of structures that specify the WorkSpaces to reboot.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline RebootWorkspacesRequest& AddRebootWorkspaceRequests(RebootRequest&& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<RebootRequest> m_rebootWorkspaceRequests;
     bool m_rebootWorkspaceRequestsHasBeenSet;
   };

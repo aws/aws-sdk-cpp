@@ -55,7 +55,7 @@ enum class CodeCommitErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BLOB_ID_DOES_NOT_EXIST= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BLOB_ID_DOES_NOT_EXIST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   BLOB_ID_REQUIRED,
   BRANCH_DOES_NOT_EXIST,
   BRANCH_NAME_EXISTS,
@@ -104,7 +104,7 @@ enum class CodeCommitErrors
 };
 namespace CodeCommitErrorMapper
 {
-  AWS_CODECOMMIT_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CODECOMMIT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CodeCommit

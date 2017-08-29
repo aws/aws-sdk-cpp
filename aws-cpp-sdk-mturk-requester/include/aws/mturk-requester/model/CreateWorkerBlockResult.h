@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateWorkerBlockResult();
-    CreateWorkerBlockResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateWorkerBlockResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateWorkerBlockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateWorkerBlockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

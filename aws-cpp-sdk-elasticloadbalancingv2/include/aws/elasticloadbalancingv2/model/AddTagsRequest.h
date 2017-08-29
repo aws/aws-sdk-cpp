@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline AddTagsRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
+
     /**
      * <p>The tags. Each resource can have a maximum of 10 tags.</p>
      */
@@ -116,8 +118,10 @@ namespace Model
     inline AddTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_resourceArns;
     bool m_resourceArnsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The automatically generated ID for a cluster.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DescribeClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet;
   };

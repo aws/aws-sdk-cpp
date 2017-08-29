@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeEndpointTypesResult();
-    DescribeEndpointTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEndpointTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEndpointTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEndpointTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -97,6 +98,7 @@ namespace Model
      */
     inline DescribeEndpointTypesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The type of endpoints that are supported.</p>
      */
@@ -133,7 +135,9 @@ namespace Model
     inline DescribeEndpointTypesResult& AddSupportedEndpointTypes(SupportedEndpointType&& value) { m_supportedEndpointTypes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<SupportedEndpointType> m_supportedEndpointTypes;
   };
 

@@ -50,6 +50,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ResourceTagSet& WithResourceType(TagResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID for the specified resource.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The ID for the specified resource.</p>
      */
     inline ResourceTagSet& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>The tags associated with the specified resource.</p>
@@ -156,10 +159,13 @@ namespace Model
     inline ResourceTagSet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     TagResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

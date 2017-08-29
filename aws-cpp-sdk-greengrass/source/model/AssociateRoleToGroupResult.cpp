@@ -30,12 +30,12 @@ AssociateRoleToGroupResult::AssociateRoleToGroupResult()
 {
 }
 
-AssociateRoleToGroupResult::AssociateRoleToGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+AssociateRoleToGroupResult::AssociateRoleToGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AssociateRoleToGroupResult& AssociateRoleToGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AssociateRoleToGroupResult& AssociateRoleToGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AssociatedAt"))

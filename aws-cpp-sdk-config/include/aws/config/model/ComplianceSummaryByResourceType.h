@@ -48,6 +48,7 @@ namespace Model
     ComplianceSummaryByResourceType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of AWS resource.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ComplianceSummaryByResourceType& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>The number of AWS resources that are compliant or noncompliant, up to a
      * maximum of 100 for each compliance.</p>
@@ -114,8 +116,10 @@ namespace Model
     inline ComplianceSummaryByResourceType& WithComplianceSummary(ComplianceSummary&& value) { SetComplianceSummary(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     ComplianceSummary m_complianceSummary;
     bool m_complianceSummaryHasBeenSet;
   };

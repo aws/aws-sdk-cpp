@@ -50,6 +50,7 @@ namespace Model
     CreateAssociationBatchRequestEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the configuration document. </p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline CreateAssociationBatchRequestEntry& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The ID of the instance. </p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The ID of the instance. </p>
      */
     inline CreateAssociationBatchRequestEntry& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>A description of the parameters for a document. </p>
@@ -175,6 +178,7 @@ namespace Model
      */
     inline CreateAssociationBatchRequestEntry& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The document version.</p>
      */
@@ -209,6 +213,7 @@ namespace Model
      * <p>The document version.</p>
      */
     inline CreateAssociationBatchRequestEntry& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
 
     /**
      * <p>The instances targeted by the request.</p>
@@ -245,6 +250,7 @@ namespace Model
      */
     inline CreateAssociationBatchRequestEntry& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A cron expression that specifies a schedule when the association runs.</p>
      */
@@ -280,6 +286,7 @@ namespace Model
      */
     inline CreateAssociationBatchRequestEntry& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
+
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
      */
@@ -304,6 +311,7 @@ namespace Model
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
      */
     inline CreateAssociationBatchRequestEntry& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+
 
     /**
      * <p>Specify a descriptive name for the association.</p>
@@ -341,20 +349,28 @@ namespace Model
     inline CreateAssociationBatchRequestEntry& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet;
+
     InstanceAssociationOutputLocation m_outputLocation;
     bool m_outputLocationHasBeenSet;
+
     Aws::String m_associationName;
     bool m_associationNameHasBeenSet;
   };

@@ -30,12 +30,12 @@ TagResourceResult::TagResourceResult()
 {
 }
 
-TagResourceResult::TagResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+TagResourceResult::TagResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-TagResourceResult& TagResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TagResourceResult& TagResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

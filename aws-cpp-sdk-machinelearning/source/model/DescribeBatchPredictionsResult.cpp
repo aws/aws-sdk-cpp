@@ -30,12 +30,12 @@ DescribeBatchPredictionsResult::DescribeBatchPredictionsResult()
 {
 }
 
-DescribeBatchPredictionsResult::DescribeBatchPredictionsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeBatchPredictionsResult::DescribeBatchPredictionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeBatchPredictionsResult& DescribeBatchPredictionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeBatchPredictionsResult& DescribeBatchPredictionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Results"))

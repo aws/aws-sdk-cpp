@@ -48,6 +48,7 @@ namespace Model
     Policy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A structure that contains additional details about the policy.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>A structure that contains additional details about the policy.</p>
      */
     inline Policy& WithPolicySummary(PolicySummary&& value) { SetPolicySummary(std::move(value)); return *this;}
+
 
     /**
      * <p>The text content of the policy.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline Policy& WithContent(const char* value) { SetContent(value); return *this;}
 
   private:
+
     PolicySummary m_policySummary;
     bool m_policySummaryHasBeenSet;
+
     Aws::String m_content;
     bool m_contentHasBeenSet;
   };

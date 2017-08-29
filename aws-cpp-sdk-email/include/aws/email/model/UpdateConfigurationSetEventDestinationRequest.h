@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the configuration set that you want to update.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline UpdateConfigurationSetEventDestinationRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 
+
     /**
      * <p>The event destination object that you want to apply to the specified
      * configuration set.</p>
@@ -112,8 +114,10 @@ namespace Model
     inline UpdateConfigurationSetEventDestinationRequest& WithEventDestination(EventDestination&& value) { SetEventDestination(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_configurationSetName;
     bool m_configurationSetNameHasBeenSet;
+
     EventDestination m_eventDestination;
     bool m_eventDestinationHasBeenSet;
   };

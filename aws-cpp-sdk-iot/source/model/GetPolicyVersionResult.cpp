@@ -31,13 +31,13 @@ GetPolicyVersionResult::GetPolicyVersionResult() :
 {
 }
 
-GetPolicyVersionResult::GetPolicyVersionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetPolicyVersionResult::GetPolicyVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_isDefaultVersion(false)
 {
   *this = result;
 }
 
-GetPolicyVersionResult& GetPolicyVersionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetPolicyVersionResult& GetPolicyVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("policyArn"))

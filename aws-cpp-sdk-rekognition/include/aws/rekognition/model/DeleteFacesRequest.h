@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Collection from which to remove the specific faces.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>Collection from which to remove the specific faces.</p>
      */
     inline DeleteFacesRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
+
 
     /**
      * <p>An array of face IDs to delete.</p>
@@ -113,8 +115,10 @@ namespace Model
     inline DeleteFacesRequest& AddFaceIds(const char* value) { m_faceIdsHasBeenSet = true; m_faceIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_collectionId;
     bool m_collectionIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_faceIds;
     bool m_faceIdsHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline RemoveAllResourcePermissionsRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the resource.</p>
      */
@@ -114,8 +116,10 @@ namespace Model
     inline RemoveAllResourcePermissionsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
   };

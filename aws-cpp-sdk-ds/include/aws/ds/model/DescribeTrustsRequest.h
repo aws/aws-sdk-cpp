@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Directory ID of the AWS directory that is a part of the requested trust
      * relationship.</p>
@@ -84,6 +85,7 @@ namespace Model
      * relationship.</p>
      */
     inline DescribeTrustsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>A list of identifiers of the trust relationships for which to obtain the
@@ -149,6 +151,7 @@ namespace Model
      */
     inline DescribeTrustsRequest& AddTrustIds(const char* value) { m_trustIdsHasBeenSet = true; m_trustIds.push_back(value); return *this; }
 
+
     /**
      * <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
      * <a>DescribeTrusts</a>. Pass null if this is the first call.</p>
@@ -191,6 +194,7 @@ namespace Model
      */
     inline DescribeTrustsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of objects to return.</p>
      */
@@ -207,12 +211,16 @@ namespace Model
     inline DescribeTrustsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_trustIds;
     bool m_trustIdsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

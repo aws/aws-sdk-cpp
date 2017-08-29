@@ -44,6 +44,7 @@ namespace Model
     ImportRestApiRequest();
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>A query parameter to indicate whether to rollback the API creation
      * (<code>true</code>) or not (<code>false</code>) when a warning is encountered.
@@ -64,6 +65,7 @@ namespace Model
      * The default value is <code>false</code>.</p>
      */
     inline ImportRestApiRequest& WithFailOnWarnings(bool value) { SetFailOnWarnings(value); return *this;}
+
 
     /**
      * <p>Custom header parameters as part of the request. For example, to exclude
@@ -174,10 +176,13 @@ namespace Model
     inline ImportRestApiRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
   private:
+
     bool m_failOnWarnings;
     bool m_failOnWarningsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
   };
 
 } // namespace Model

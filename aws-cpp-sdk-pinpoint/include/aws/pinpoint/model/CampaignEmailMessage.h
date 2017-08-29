@@ -43,6 +43,7 @@ namespace Model
     CampaignEmailMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The email text body.
      */
@@ -77,6 +78,7 @@ namespace Model
      * The email text body.
      */
     inline CampaignEmailMessage& WithBody(const char* value) { SetBody(value); return *this;}
+
 
     /**
      * The email address used to send the email from. Defaults to use FromAddress
@@ -120,6 +122,7 @@ namespace Model
      */
     inline CampaignEmailMessage& WithFromAddress(const char* value) { SetFromAddress(value); return *this;}
 
+
     /**
      * The email html body.
      */
@@ -154,6 +157,7 @@ namespace Model
      * The email html body.
      */
     inline CampaignEmailMessage& WithHtmlBody(const char* value) { SetHtmlBody(value); return *this;}
+
 
     /**
      * The email title (Or subject).
@@ -191,12 +195,16 @@ namespace Model
     inline CampaignEmailMessage& WithTitle(const char* value) { SetTitle(value); return *this;}
 
   private:
+
     Aws::String m_body;
     bool m_bodyHasBeenSet;
+
     Aws::String m_fromAddress;
     bool m_fromAddressHasBeenSet;
+
     Aws::String m_htmlBody;
     bool m_htmlBodyHasBeenSet;
+
     Aws::String m_title;
     bool m_titleHasBeenSet;
   };

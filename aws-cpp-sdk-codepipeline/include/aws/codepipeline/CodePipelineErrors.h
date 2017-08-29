@@ -55,7 +55,7 @@ enum class CodePipelineErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACTION_NOT_FOUND= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACTION_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ACTION_TYPE_NOT_FOUND,
   APPROVAL_ALREADY_COMPLETED,
   INVALID_ACTION_DECLARATION,
@@ -80,7 +80,7 @@ enum class CodePipelineErrors
 };
 namespace CodePipelineErrorMapper
 {
-  AWS_CODEPIPELINE_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CODEPIPELINE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CodePipeline

@@ -31,13 +31,13 @@ RecognizeCelebritiesResult::RecognizeCelebritiesResult() :
 {
 }
 
-RecognizeCelebritiesResult::RecognizeCelebritiesResult(const AmazonWebServiceResult<JsonValue>& result) : 
+RecognizeCelebritiesResult::RecognizeCelebritiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_orientationCorrection(OrientationCorrection::NOT_SET)
 {
   *this = result;
 }
 
-RecognizeCelebritiesResult& RecognizeCelebritiesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RecognizeCelebritiesResult& RecognizeCelebritiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CelebrityFaces"))

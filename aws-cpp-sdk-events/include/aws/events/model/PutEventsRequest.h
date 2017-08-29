@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The entry that defines an event in your system. You can specify several
      * parameters for the entry such as the source and type of the event, resources
@@ -87,6 +88,7 @@ namespace Model
     inline PutEventsRequest& AddEntries(PutEventsRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<PutEventsRequestEntry> m_entries;
     bool m_entriesHasBeenSet;
   };

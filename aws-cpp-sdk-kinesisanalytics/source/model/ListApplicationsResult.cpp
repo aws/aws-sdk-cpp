@@ -31,13 +31,13 @@ ListApplicationsResult::ListApplicationsResult() :
 {
 }
 
-ListApplicationsResult::ListApplicationsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListApplicationsResult::ListApplicationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_hasMoreApplications(false)
 {
   *this = result;
 }
 
-ListApplicationsResult& ListApplicationsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListApplicationsResult& ListApplicationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ApplicationSummaries"))

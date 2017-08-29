@@ -47,6 +47,7 @@ namespace Model
     RoleMapping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The role mapping type. Token will use <code>cognito:roles</code> and
      * <code>cognito:preferred_role</code> claims from the Cognito identity provider
@@ -86,6 +87,7 @@ namespace Model
      * to map to a role.</p>
      */
     inline RoleMapping& WithType(RoleMappingType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>If you specify Token or Rules as the <code>Type</code>,
@@ -132,6 +134,7 @@ namespace Model
      */
     inline RoleMapping& WithAmbiguousRoleResolution(AmbiguousRoleResolutionType&& value) { SetAmbiguousRoleResolution(std::move(value)); return *this;}
 
+
     /**
      * <p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules
      * as the role mapping type, <code>RulesConfiguration</code> is required.</p>
@@ -163,10 +166,13 @@ namespace Model
     inline RoleMapping& WithRulesConfiguration(RulesConfigurationType&& value) { SetRulesConfiguration(std::move(value)); return *this;}
 
   private:
+
     RoleMappingType m_type;
     bool m_typeHasBeenSet;
+
     AmbiguousRoleResolutionType m_ambiguousRoleResolution;
     bool m_ambiguousRoleResolutionHasBeenSet;
+
     RulesConfigurationType m_rulesConfiguration;
     bool m_rulesConfigurationHasBeenSet;
   };

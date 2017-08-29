@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateDeploymentConfigResult();
-    CreateDeploymentConfigResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDeploymentConfigResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDeploymentConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDeploymentConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique deployment configuration ID.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateDeploymentConfigResult& WithDeploymentConfigId(const char* value) { SetDeploymentConfigId(value); return *this;}
 
   private:
+
     Aws::String m_deploymentConfigId;
   };
 

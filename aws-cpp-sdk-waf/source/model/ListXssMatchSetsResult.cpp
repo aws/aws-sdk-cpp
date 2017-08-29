@@ -30,12 +30,12 @@ ListXssMatchSetsResult::ListXssMatchSetsResult()
 {
 }
 
-ListXssMatchSetsResult::ListXssMatchSetsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListXssMatchSetsResult::ListXssMatchSetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListXssMatchSetsResult& ListXssMatchSetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListXssMatchSetsResult& ListXssMatchSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextMarker"))

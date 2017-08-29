@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListQueuesResult();
-    ListQueuesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListQueuesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of queue URLs, up to 1,000 entries.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline ListQueuesResult& AddQueueUrls(const char* value) { m_queueUrls.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -104,7 +106,9 @@ namespace Model
     inline ListQueuesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_queueUrls;
+
     ResponseMetadata m_responseMetadata;
   };
 

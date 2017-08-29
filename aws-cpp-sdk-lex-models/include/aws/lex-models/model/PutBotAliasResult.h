@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     PutBotAliasResult();
-    PutBotAliasResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutBotAliasResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutBotAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutBotAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the alias.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline PutBotAliasResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the alias.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>A description of the alias.</p>
      */
     inline PutBotAliasResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The version of the bot that the alias points to.</p>
@@ -147,6 +150,7 @@ namespace Model
      */
     inline PutBotAliasResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
 
+
     /**
      * <p>The name of the bot that the alias points to.</p>
      */
@@ -182,6 +186,7 @@ namespace Model
      */
     inline PutBotAliasResult& WithBotName(const char* value) { SetBotName(value); return *this;}
 
+
     /**
      * <p>The date that the bot alias was updated. When you create a resource, the
      * creation date and the last updated date are the same.</p>
@@ -212,6 +217,7 @@ namespace Model
      */
     inline PutBotAliasResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date that the bot alias was created.</p>
      */
@@ -236,6 +242,7 @@ namespace Model
      * <p>The date that the bot alias was created.</p>
      */
     inline PutBotAliasResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The checksum for the current version of the alias.</p>
@@ -273,12 +280,19 @@ namespace Model
     inline PutBotAliasResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_description;
+
     Aws::String m_botVersion;
+
     Aws::String m_botName;
+
     Aws::Utils::DateTime m_lastUpdatedDate;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::String m_checksum;
   };
 

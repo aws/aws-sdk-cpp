@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the parameter that you want to add to the system.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the parameter that you want to add to the system.</p>
      */
     inline PutParameterRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Information about the parameter that you want to add to the system</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline PutParameterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The parameter value that you want to add to the system.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      */
     inline PutParameterRequest& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>The type of parameter that you want to add to the system.</p>
      */
@@ -166,6 +170,7 @@ namespace Model
      * <p>The type of parameter that you want to add to the system.</p>
      */
     inline PutParameterRequest& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
@@ -216,6 +221,7 @@ namespace Model
      */
     inline PutParameterRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>Overwrite an existing parameter. If not specified, will default to
      * "false".</p>
@@ -233,6 +239,7 @@ namespace Model
      * "false".</p>
      */
     inline PutParameterRequest& WithOverwrite(bool value) { SetOverwrite(value); return *this;}
+
 
     /**
      * <p>A regular expression used to validate the parameter value. For example, for
@@ -284,18 +291,25 @@ namespace Model
     inline PutParameterRequest& WithAllowedPattern(const char* value) { SetAllowedPattern(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     ParameterType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     bool m_overwrite;
     bool m_overwriteHasBeenSet;
+
     Aws::String m_allowedPattern;
     bool m_allowedPatternHasBeenSet;
   };

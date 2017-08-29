@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ModifyTargetGroupAttributesResult();
-    ModifyTargetGroupAttributesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyTargetGroupAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyTargetGroupAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyTargetGroupAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the attributes.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ModifyTargetGroupAttributesResult& AddAttributes(TargetGroupAttribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline ModifyTargetGroupAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<TargetGroupAttribute> m_attributes;
+
     ResponseMetadata m_responseMetadata;
   };
 

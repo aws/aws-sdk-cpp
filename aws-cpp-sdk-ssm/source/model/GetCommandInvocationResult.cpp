@@ -32,14 +32,14 @@ GetCommandInvocationResult::GetCommandInvocationResult() :
 {
 }
 
-GetCommandInvocationResult::GetCommandInvocationResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetCommandInvocationResult::GetCommandInvocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_responseCode(0),
     m_status(CommandInvocationStatus::NOT_SET)
 {
   *this = result;
 }
 
-GetCommandInvocationResult& GetCommandInvocationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCommandInvocationResult& GetCommandInvocationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CommandId"))

@@ -38,6 +38,7 @@ namespace Model
     GetHostedZoneRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the hosted zone that you want to get information about.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline GetHostedZoneRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

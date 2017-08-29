@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The language code to use for this operation. Supported language codes are as
      * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListPrincipalsForPortfolioRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
+
     /**
      * <p>The portfolio identifier.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ListPrincipalsForPortfolioRequest& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return in the results. If more results exist
      * than fit in the specified <code>PageSize</code>, the value of
@@ -140,6 +143,7 @@ namespace Model
      * <code>NextPageToken</code> in the response is non-null.</p>
      */
     inline ListPrincipalsForPortfolioRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+
 
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first
@@ -184,12 +188,16 @@ namespace Model
     inline ListPrincipalsForPortfolioRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     Aws::String m_acceptLanguage;
     bool m_acceptLanguageHasBeenSet;
+
     Aws::String m_portfolioId;
     bool m_portfolioIdHasBeenSet;
+
     int m_pageSize;
     bool m_pageSizeHasBeenSet;
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
   };

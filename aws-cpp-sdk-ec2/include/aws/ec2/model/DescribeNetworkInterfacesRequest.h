@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
      * <code>addresses.private-ip-address</code> - The private IPv4 addresses
@@ -604,6 +605,7 @@ namespace Model
      */
     inline DescribeNetworkInterfacesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -627,6 +629,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeNetworkInterfacesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>One or more network interface IDs.</p> <p>Default: Describes all your network
@@ -677,10 +680,13 @@ namespace Model
     inline DescribeNetworkInterfacesRequest& AddNetworkInterfaceIds(const char* value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Aws::String> m_networkInterfaceIds;
     bool m_networkInterfaceIdsHasBeenSet;
   };

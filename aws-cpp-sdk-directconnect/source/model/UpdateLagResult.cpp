@@ -34,7 +34,7 @@ UpdateLagResult::UpdateLagResult() :
 {
 }
 
-UpdateLagResult::UpdateLagResult(const AmazonWebServiceResult<JsonValue>& result) : 
+UpdateLagResult::UpdateLagResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_numberOfConnections(0),
     m_lagState(LagState::NOT_SET),
     m_minimumLinks(0),
@@ -43,7 +43,7 @@ UpdateLagResult::UpdateLagResult(const AmazonWebServiceResult<JsonValue>& result
   *this = result;
 }
 
-UpdateLagResult& UpdateLagResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateLagResult& UpdateLagResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("connectionsBandwidth"))

@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A unique, case-sensitive key supplied by the client to ensure that the
      * request is idempotent. For more information, see <a
@@ -110,6 +111,7 @@ namespace Model
      */
     inline ReservedInstancesListing& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The time the listing was created.</p>
      */
@@ -134,6 +136,7 @@ namespace Model
      * <p>The time the listing was created.</p>
      */
     inline ReservedInstancesListing& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The number of instances in this state.</p>
@@ -170,6 +173,7 @@ namespace Model
      */
     inline ReservedInstancesListing& AddInstanceCounts(InstanceCount&& value) { m_instanceCountsHasBeenSet = true; m_instanceCounts.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The price of the Reserved Instance listing.</p>
      */
@@ -204,6 +208,7 @@ namespace Model
      * <p>The price of the Reserved Instance listing.</p>
      */
     inline ReservedInstancesListing& AddPriceSchedules(PriceSchedule&& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the Reserved Instance.</p>
@@ -240,6 +245,7 @@ namespace Model
      */
     inline ReservedInstancesListing& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
+
     /**
      * <p>The ID of the Reserved Instance listing.</p>
      */
@@ -275,6 +281,7 @@ namespace Model
      */
     inline ReservedInstancesListing& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
 
+
     /**
      * <p>The status of the Reserved Instance listing.</p>
      */
@@ -299,6 +306,7 @@ namespace Model
      * <p>The status of the Reserved Instance listing.</p>
      */
     inline ReservedInstancesListing& WithStatus(ListingStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason for the current status of the Reserved Instance listing. The
@@ -342,6 +350,7 @@ namespace Model
      */
     inline ReservedInstancesListing& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
     /**
      * <p>Any tags assigned to the resource.</p>
      */
@@ -377,6 +386,7 @@ namespace Model
      */
     inline ReservedInstancesListing& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The last modified timestamp of the listing.</p>
      */
@@ -403,24 +413,34 @@ namespace Model
     inline ReservedInstancesListing& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
+
     Aws::Vector<InstanceCount> m_instanceCounts;
     bool m_instanceCountsHasBeenSet;
+
     Aws::Vector<PriceSchedule> m_priceSchedules;
     bool m_priceSchedulesHasBeenSet;
+
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet;
+
     Aws::String m_reservedInstancesListingId;
     bool m_reservedInstancesListingIdHasBeenSet;
+
     ListingStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
   };

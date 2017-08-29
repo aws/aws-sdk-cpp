@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -64,6 +65,7 @@ namespace Model
     
     inline DeleteObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -84,6 +86,7 @@ namespace Model
 
     
     inline DeleteObjectRequest& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * The concatenation of the authentication device's serial number, a space, and the
@@ -127,6 +130,7 @@ namespace Model
      */
     inline DeleteObjectRequest& WithMFA(const char* value) { SetMFA(value); return *this;}
 
+
     /**
      * VersionId used to reference a specific version of the object.
      */
@@ -162,6 +166,7 @@ namespace Model
      */
     inline DeleteObjectRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
@@ -178,14 +183,19 @@ namespace Model
     inline DeleteObjectRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_mFA;
     bool m_mFAHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
   };

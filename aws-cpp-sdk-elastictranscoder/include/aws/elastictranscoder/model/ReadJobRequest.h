@@ -37,6 +37,7 @@ namespace Model
     ReadJobRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the job for which you want to get detailed information.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline ReadJobRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateTopicResult();
-    CreateTopicResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateTopicResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CreateTopicResult& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline CreateTopicResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_topicArn;
+
     ResponseMetadata m_responseMetadata;
   };
 

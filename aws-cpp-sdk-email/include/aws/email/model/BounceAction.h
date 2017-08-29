@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
      * bounce action is taken. An example of an Amazon SNS topic ARN is
@@ -124,6 +125,7 @@ namespace Model
      */
     inline BounceAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
+
     /**
      * <p>The SMTP reply code, as defined by <a
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
@@ -165,6 +167,7 @@ namespace Model
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
      */
     inline BounceAction& WithSmtpReplyCode(const char* value) { SetSmtpReplyCode(value); return *this;}
+
 
     /**
      * <p>The SMTP enhanced status code, as defined by <a
@@ -208,6 +211,7 @@ namespace Model
      */
     inline BounceAction& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
 
+
     /**
      * <p>Human-readable text to include in the bounce message.</p>
      */
@@ -242,6 +246,7 @@ namespace Model
      * <p>Human-readable text to include in the bounce message.</p>
      */
     inline BounceAction& WithMessage(const char* value) { SetMessage(value); return *this;}
+
 
     /**
      * <p>The email address of the sender of the bounced email. This is the address
@@ -286,14 +291,19 @@ namespace Model
     inline BounceAction& WithSender(const char* value) { SetSender(value); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_smtpReplyCode;
     bool m_smtpReplyCodeHasBeenSet;
+
     Aws::String m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::String m_sender;
     bool m_senderHasBeenSet;
   };

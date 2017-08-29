@@ -46,6 +46,7 @@ namespace Model
     ComputeType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the compute type for the bundle.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline ComputeType& WithName(Compute&& value) { SetName(std::move(value)); return *this;}
 
   private:
+
     Compute m_name;
     bool m_nameHasBeenSet;
   };

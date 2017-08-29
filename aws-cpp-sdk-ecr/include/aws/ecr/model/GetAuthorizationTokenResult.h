@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetAuthorizationTokenResult();
-    GetAuthorizationTokenResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAuthorizationTokenResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAuthorizationTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAuthorizationTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of authorization token data objects that correspond to the
@@ -85,6 +86,7 @@ namespace Model
     inline GetAuthorizationTokenResult& AddAuthorizationData(AuthorizationData&& value) { m_authorizationData.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<AuthorizationData> m_authorizationData;
   };
 

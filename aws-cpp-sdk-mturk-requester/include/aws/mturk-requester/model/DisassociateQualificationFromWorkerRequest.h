@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline DisassociateQualificationFromWorkerRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
 
+
     /**
      * <p>The ID of the Qualification type of the Qualification to be revoked.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The ID of the Qualification type of the Qualification to be revoked.</p>
      */
     inline DisassociateQualificationFromWorkerRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
+
 
     /**
      * <p>A text message that explains why the Qualification was revoked. The user who
@@ -149,10 +152,13 @@ namespace Model
     inline DisassociateQualificationFromWorkerRequest& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet;
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

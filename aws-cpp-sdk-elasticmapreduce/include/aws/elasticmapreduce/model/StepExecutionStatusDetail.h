@@ -47,6 +47,7 @@ namespace Model
     StepExecutionStatusDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The state of the step.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The state of the step.</p>
      */
     inline StepExecutionStatusDetail& WithState(StepExecutionState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The creation date and time of the step.</p>
@@ -97,6 +99,7 @@ namespace Model
      */
     inline StepExecutionStatusDetail& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The start date and time of the step.</p>
      */
@@ -122,6 +125,7 @@ namespace Model
      */
     inline StepExecutionStatusDetail& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The completion date and time of the step.</p>
      */
@@ -146,6 +150,7 @@ namespace Model
      * <p>The completion date and time of the step.</p>
      */
     inline StepExecutionStatusDetail& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the step's current state.</p>
@@ -183,14 +188,19 @@ namespace Model
     inline StepExecutionStatusDetail& WithLastStateChangeReason(const char* value) { SetLastStateChangeReason(value); return *this;}
 
   private:
+
     StepExecutionState m_state;
     bool m_stateHasBeenSet;
+
     Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_startDateTime;
     bool m_startDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endDateTime;
     bool m_endDateTimeHasBeenSet;
+
     Aws::String m_lastStateChangeReason;
     bool m_lastStateChangeReasonHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     NotificationConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
      * Run Command pushes notifications about command status changes to this topic.</p>
@@ -89,6 +90,7 @@ namespace Model
      * Run Command pushes notifications about command status changes to this topic.</p>
      */
     inline NotificationConfig& WithNotificationArn(const char* value) { SetNotificationArn(value); return *this;}
+
 
     /**
      * <p>The different events for which you can receive notifications. These events
@@ -160,6 +162,7 @@ namespace Model
      */
     inline NotificationConfig& AddNotificationEvents(NotificationEvent&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Command: Receive notification when the status of a command changes.
      * Invocation: For commands sent to multiple instances, receive notification on a
@@ -196,10 +199,13 @@ namespace Model
     inline NotificationConfig& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_notificationArn;
     bool m_notificationArnHasBeenSet;
+
     Aws::Vector<NotificationEvent> m_notificationEvents;
     bool m_notificationEventsHasBeenSet;
+
     NotificationType m_notificationType;
     bool m_notificationTypeHasBeenSet;
   };

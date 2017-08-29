@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteBGPPeerResult();
-    DeleteBGPPeerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteBGPPeerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteBGPPeerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteBGPPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const VirtualInterface& GetVirtualInterface() const{ return m_virtualInterface; }
@@ -63,6 +64,7 @@ namespace Model
     inline DeleteBGPPeerResult& WithVirtualInterface(VirtualInterface&& value) { SetVirtualInterface(std::move(value)); return *this;}
 
   private:
+
     VirtualInterface m_virtualInterface;
   };
 

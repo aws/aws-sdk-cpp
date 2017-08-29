@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     RemoveIpRoutesResult();
-    RemoveIpRoutesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveIpRoutesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveIpRoutesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveIpRoutesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

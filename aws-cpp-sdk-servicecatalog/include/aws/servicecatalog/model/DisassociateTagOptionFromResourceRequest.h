@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Identifier of the resource from which to disassociate the TagOption.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Identifier of the resource from which to disassociate the TagOption.</p>
      */
     inline DisassociateTagOptionFromResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>Identifier of the TagOption to disassociate from the resource.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline DisassociateTagOptionFromResourceRequest& WithTagOptionId(const char* value) { SetTagOptionId(value); return *this;}
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::String m_tagOptionId;
     bool m_tagOptionIdHasBeenSet;
   };

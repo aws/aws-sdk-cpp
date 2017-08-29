@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Number(ARN) of the replication task to be stopped.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline StopReplicationTaskRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
 
   private:
+
     Aws::String m_replicationTaskArn;
     bool m_replicationTaskArnHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or
      * scheduled backups. Automated backups are enabled by default. </p>
@@ -54,6 +55,7 @@ namespace Model
      */
     inline UpdateServerRequest& WithDisableAutomatedBackup(bool value) { SetDisableAutomatedBackup(value); return *this;}
 
+
     /**
      * <p>Sets the number of automated backups that you want to keep. </p>
      */
@@ -68,6 +70,7 @@ namespace Model
      * <p>Sets the number of automated backups that you want to keep. </p>
      */
     inline UpdateServerRequest& WithBackupRetentionCount(int value) { SetBackupRetentionCount(value); return *this;}
+
 
     /**
      * <p>The name of the server to update. </p>
@@ -104,6 +107,7 @@ namespace Model
      */
     inline UpdateServerRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 
+
     
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -124,6 +128,7 @@ namespace Model
 
     
     inline UpdateServerRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+
 
     
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
@@ -147,14 +152,19 @@ namespace Model
     inline UpdateServerRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
   private:
+
     bool m_disableAutomatedBackup;
     bool m_disableAutomatedBackupHasBeenSet;
+
     int m_backupRetentionCount;
     bool m_backupRetentionCountHasBeenSet;
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
   };

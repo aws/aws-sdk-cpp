@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the resource.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The ID of the resource.</p>
      */
     inline CreateLabelsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>List of labels to add to the resource.</p>
@@ -111,6 +113,7 @@ namespace Model
      * <p>List of labels to add to the resource.</p>
      */
     inline CreateLabelsRequest& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+
 
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
@@ -155,10 +158,13 @@ namespace Model
     inline CreateLabelsRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_labels;
     bool m_labelsHasBeenSet;
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
   };

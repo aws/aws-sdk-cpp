@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeLifecycleHookTypesResult();
-    DescribeLifecycleHookTypesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeLifecycleHookTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeLifecycleHookTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeLifecycleHookTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The lifecycle hook types.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline DescribeLifecycleHookTypesResult& AddLifecycleHookTypes(const char* value) { m_lifecycleHookTypes.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,7 +107,9 @@ namespace Model
     inline DescribeLifecycleHookTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_lifecycleHookTypes;
+
     ResponseMetadata m_responseMetadata;
   };
 

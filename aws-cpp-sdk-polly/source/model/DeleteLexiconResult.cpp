@@ -30,12 +30,12 @@ DeleteLexiconResult::DeleteLexiconResult()
 {
 }
 
-DeleteLexiconResult::DeleteLexiconResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteLexiconResult::DeleteLexiconResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteLexiconResult& DeleteLexiconResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteLexiconResult& DeleteLexiconResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The access key ID of the owner of the bucket. Before you specify a value for
      * your access key ID, review and follow the guidance in <a
@@ -106,6 +107,7 @@ namespace Model
      */
     inline S3Storage& WithAWSAccessKeyId(const char* value) { SetAWSAccessKeyId(value); return *this;}
 
+
     /**
      * <p>The bucket in which to store the AMI. You can specify a bucket that you
      * already own or a new bucket that Amazon EC2 creates on your behalf. If you
@@ -155,6 +157,7 @@ namespace Model
      */
     inline S3Storage& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     /**
      * <p>The beginning of the file name of the AMI.</p>
      */
@@ -190,6 +193,7 @@ namespace Model
      */
     inline S3Storage& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     /**
      * <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items
      * into Amazon S3 on your behalf.</p>
@@ -219,6 +223,7 @@ namespace Model
      * into Amazon S3 on your behalf.</p>
      */
     inline S3Storage& WithUploadPolicy(Aws::Utils::ByteBuffer&& value) { SetUploadPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>The signature of the JSON document.</p>
@@ -256,14 +261,19 @@ namespace Model
     inline S3Storage& WithUploadPolicySignature(const char* value) { SetUploadPolicySignature(value); return *this;}
 
   private:
+
     Aws::String m_aWSAccessKeyId;
     bool m_aWSAccessKeyIdHasBeenSet;
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     Aws::Utils::ByteBuffer m_uploadPolicy;
     bool m_uploadPolicyHasBeenSet;
+
     Aws::String m_uploadPolicySignature;
     bool m_uploadPolicySignatureHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteAppResult();
-    DeleteAppResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteAppResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const ApplicationResponse& GetApplicationResponse() const{ return m_applicationResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline DeleteAppResult& WithApplicationResponse(ApplicationResponse&& value) { SetApplicationResponse(std::move(value)); return *this;}
 
   private:
+
     ApplicationResponse m_applicationResponse;
   };
 

@@ -47,6 +47,7 @@ namespace Model
     PathToObjectIdentifiers& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The path that is used to identify the object starting from directory
      * root.</p>
@@ -88,6 +89,7 @@ namespace Model
      * root.</p>
      */
     inline PathToObjectIdentifiers& WithPath(const char* value) { SetPath(value); return *this;}
+
 
     /**
      * <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the
@@ -138,8 +140,10 @@ namespace Model
     inline PathToObjectIdentifiers& AddObjectIdentifiers(const char* value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers.push_back(value); return *this; }
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::Vector<Aws::String> m_objectIdentifiers;
     bool m_objectIdentifiersHasBeenSet;
   };

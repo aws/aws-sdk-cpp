@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline ModifyListenerRequest& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
 
+
     /**
      * <p>The port for connections from clients to the load balancer.</p>
      */
@@ -91,6 +93,7 @@ namespace Model
      * <p>The port for connections from clients to the load balancer.</p>
      */
     inline ModifyListenerRequest& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The protocol for connections from clients to the load balancer.</p>
@@ -116,6 +119,7 @@ namespace Model
      * <p>The protocol for connections from clients to the load balancer.</p>
      */
     inline ModifyListenerRequest& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}
+
 
     /**
      * <p>The security policy that defines which protocols and ciphers are supported.
@@ -173,6 +177,7 @@ namespace Model
      */
     inline ModifyListenerRequest& WithSslPolicy(const char* value) { SetSslPolicy(value); return *this;}
 
+
     /**
      * <p>The SSL server certificate.</p>
      */
@@ -207,6 +212,7 @@ namespace Model
      * <p>The SSL server certificate.</p>
      */
     inline ModifyListenerRequest& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The default actions.</p>
@@ -244,16 +250,22 @@ namespace Model
     inline ModifyListenerRequest& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_listenerArn;
     bool m_listenerArnHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     ProtocolEnum m_protocol;
     bool m_protocolHasBeenSet;
+
     Aws::String m_sslPolicy;
     bool m_sslPolicyHasBeenSet;
+
     Aws::Vector<Certificate> m_certificates;
     bool m_certificatesHasBeenSet;
+
     Aws::Vector<Action> m_defaultActions;
     bool m_defaultActionsHasBeenSet;
   };

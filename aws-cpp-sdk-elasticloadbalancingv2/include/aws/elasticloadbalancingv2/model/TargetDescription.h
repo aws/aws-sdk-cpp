@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the target.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline TargetDescription& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The port on which the target is listening.</p>
      */
@@ -99,8 +101,10 @@ namespace Model
     inline TargetDescription& WithPort(int value) { SetPort(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
   };

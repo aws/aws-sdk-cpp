@@ -38,6 +38,7 @@ namespace Model
     RegisterJobDefinitionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the job definition to register. </p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline RegisterJobDefinitionRequest& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
 
+
     /**
      * <p>The type of job definition.</p>
      */
@@ -97,6 +99,7 @@ namespace Model
      * <p>The type of job definition.</p>
      */
     inline RegisterJobDefinitionRequest& WithType(JobDefinitionType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>Default parameter substitution placeholders to set in the job definition.
@@ -194,6 +197,7 @@ namespace Model
      */
     inline RegisterJobDefinitionRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>An object with various properties specific for container-based jobs. This
      * parameter is required if the <code>type</code> parameter is
@@ -228,6 +232,7 @@ namespace Model
      * <code>container</code>.</p>
      */
     inline RegisterJobDefinitionRequest& WithContainerProperties(ContainerProperties&& value) { SetContainerProperties(std::move(value)); return *this;}
+
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
@@ -265,14 +270,19 @@ namespace Model
     inline RegisterJobDefinitionRequest& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobDefinitionName;
     bool m_jobDefinitionNameHasBeenSet;
+
     JobDefinitionType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_parameters;
     bool m_parametersHasBeenSet;
+
     ContainerProperties m_containerProperties;
     bool m_containerPropertiesHasBeenSet;
+
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListTagsForResourceResult();
-    ListTagsForResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of tags.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline ListTagsForResourceResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Tag> m_tagList;
   };
 

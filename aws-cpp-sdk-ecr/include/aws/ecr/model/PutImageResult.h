@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PutImageResult();
-    PutImageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutImageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Details of the image uploaded.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline PutImageResult& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
   private:
+
     Image m_image;
   };
 

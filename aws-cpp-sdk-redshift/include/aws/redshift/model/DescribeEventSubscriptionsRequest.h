@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the Amazon Redshift event notification subscription to be
      * described.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeEventSubscriptionsRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
 
+
     /**
      * <p>The maximum number of response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
@@ -112,6 +114,7 @@ namespace Model
      * maximum 100.</p>
      */
     inline DescribeEventSubscriptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -184,10 +187,13 @@ namespace Model
     inline DescribeEventSubscriptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionName;
     bool m_subscriptionNameHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

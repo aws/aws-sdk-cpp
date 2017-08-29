@@ -35,6 +35,7 @@ namespace Model
     ListJobsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
      * list jobs.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline ListJobsRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 
+
     /**
      * <p>The job status with which to filter jobs in the specified queue.</p>
      */
@@ -101,6 +103,7 @@ namespace Model
      * <p>The job status with which to filter jobs in the specified queue.</p>
      */
     inline ListJobsRequest& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The maximum number of results returned by <code>ListJobs</code> in paginated
@@ -137,6 +140,7 @@ namespace Model
      * and a <code>nextToken</code> value if applicable.</p>
      */
     inline ListJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -223,12 +227,16 @@ namespace Model
     inline ListJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_jobQueue;
     bool m_jobQueueHasBeenSet;
+
     JobStatus m_jobStatus;
     bool m_jobStatusHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

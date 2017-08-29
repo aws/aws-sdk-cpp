@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of the event source for which events will be returned. If not
      * specified, then all sources are included in the response.</p>
@@ -157,6 +158,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
+
     /**
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p>
@@ -186,6 +188,7 @@ namespace Model
      * are returned.</p>
      */
     inline DescribeEventsRequest& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+
 
     /**
      * <p> The beginning of the time interval to retrieve events for, specified in ISO
@@ -227,6 +230,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p> The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
@@ -267,6 +271,7 @@ namespace Model
      */
     inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of minutes to retrieve events for.</p> <p>Default: 60</p>
      */
@@ -281,6 +286,7 @@ namespace Model
      * <p>The number of minutes to retrieve events for.</p> <p>Default: 60</p>
      */
     inline DescribeEventsRequest& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>A list of event categories that trigger notifications for a event
@@ -330,6 +336,7 @@ namespace Model
      */
     inline DescribeEventsRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
+
     /**
      * <p>This parameter is not currently supported.</p>
      */
@@ -365,6 +372,7 @@ namespace Model
      */
     inline DescribeEventsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -388,6 +396,7 @@ namespace Model
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeEventsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p> An optional pagination token provided by a previous DescribeEvents request.
@@ -439,22 +448,31 @@ namespace Model
     inline DescribeEventsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet;
+
     SourceType m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventCategories;
     bool m_eventCategoriesHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

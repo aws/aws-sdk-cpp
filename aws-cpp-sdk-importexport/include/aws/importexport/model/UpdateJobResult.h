@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     UpdateJobResult();
-    UpdateJobResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline bool GetSuccess() const{ return m_success; }
@@ -57,6 +58,7 @@ namespace Model
 
     
     inline UpdateJobResult& WithSuccess(bool value) { SetSuccess(value); return *this;}
+
 
     
     inline const Aws::String& GetWarningMessage() const{ return m_warningMessage; }
@@ -79,6 +81,7 @@ namespace Model
     
     inline UpdateJobResult& WithWarningMessage(const char* value) { SetWarningMessage(value); return *this;}
 
+
     
     inline const Aws::Vector<Artifact>& GetArtifactList() const{ return m_artifactList; }
 
@@ -100,6 +103,7 @@ namespace Model
     
     inline UpdateJobResult& AddArtifactList(Artifact&& value) { m_artifactList.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -116,9 +120,13 @@ namespace Model
     inline UpdateJobResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     bool m_success;
+
     Aws::String m_warningMessage;
+
     Aws::Vector<Artifact> m_artifactList;
+
     ResponseMetadata m_responseMetadata;
   };
 

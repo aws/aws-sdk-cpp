@@ -48,6 +48,7 @@ namespace Model
     Logger& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * The component that will be subject to logs
      */
@@ -72,6 +73,7 @@ namespace Model
      * The component that will be subject to logs
      */
     inline Logger& WithComponent(LoggerComponent&& value) { SetComponent(std::move(value)); return *this;}
+
 
     /**
      * Element Id for this entry in the list.
@@ -108,6 +110,7 @@ namespace Model
      */
     inline Logger& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * The level of the logs
      */
@@ -133,6 +136,7 @@ namespace Model
      */
     inline Logger& WithLevel(LoggerLevel&& value) { SetLevel(std::move(value)); return *this;}
 
+
     /**
      * Amount of hardware space, in KB, to use if file system is used for logging
      * purposes.
@@ -150,6 +154,7 @@ namespace Model
      * purposes.
      */
     inline Logger& WithSpace(int value) { SetSpace(value); return *this;}
+
 
     /**
      * The type which will be use for log output
@@ -177,14 +182,19 @@ namespace Model
     inline Logger& WithType(LoggerType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     LoggerComponent m_component;
     bool m_componentHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     LoggerLevel m_level;
     bool m_levelHasBeenSet;
+
     int m_space;
     bool m_spaceHasBeenSet;
+
     LoggerType m_type;
     bool m_typeHasBeenSet;
   };

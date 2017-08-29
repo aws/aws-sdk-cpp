@@ -36,6 +36,7 @@ namespace Model
     UpdateComputeEnvironmentRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the compute environment to
      * update.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline UpdateComputeEnvironmentRequest& WithComputeEnvironment(const char* value) { SetComputeEnvironment(value); return *this;}
 
+
     /**
      * <p>The state of the compute environment. Compute environments in the
      * <code>ENABLED</code> state can accept jobs from a queue and scale in or out
@@ -113,6 +115,7 @@ namespace Model
      */
     inline UpdateComputeEnvironmentRequest& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>Details of the compute resources managed by the compute environment. Required
      * for a managed compute environment.</p>
@@ -142,6 +145,7 @@ namespace Model
      * for a managed compute environment.</p>
      */
     inline UpdateComputeEnvironmentRequest& WithComputeResources(ComputeResourceUpdate&& value) { SetComputeResources(std::move(value)); return *this;}
+
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows AWS
@@ -186,12 +190,16 @@ namespace Model
     inline UpdateComputeEnvironmentRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
   private:
+
     Aws::String m_computeEnvironment;
     bool m_computeEnvironmentHasBeenSet;
+
     CEState m_state;
     bool m_stateHasBeenSet;
+
     ComputeResourceUpdate m_computeResources;
     bool m_computeResourcesHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
   };

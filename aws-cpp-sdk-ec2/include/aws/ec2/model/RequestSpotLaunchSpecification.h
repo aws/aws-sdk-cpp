@@ -56,6 +56,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>One or more security group IDs.</p>
      */
@@ -95,6 +96,7 @@ namespace Model
      * <p>One or more security group IDs.</p>
      */
     inline RequestSpotLaunchSpecification& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p>One or more security groups. When requesting instances in a VPC, you must
@@ -152,6 +154,7 @@ namespace Model
      */
     inline RequestSpotLaunchSpecification& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
+
     /**
      * <p>Deprecated.</p>
      */
@@ -186,6 +189,7 @@ namespace Model
      * <p>Deprecated.</p>
      */
     inline RequestSpotLaunchSpecification& WithAddressingType(const char* value) { SetAddressingType(value); return *this;}
+
 
     /**
      * <p>One or more block device mapping entries.</p> <p>Although you can specify
@@ -236,6 +240,7 @@ namespace Model
      */
     inline RequestSpotLaunchSpecification& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
@@ -263,6 +268,7 @@ namespace Model
      */
     inline RequestSpotLaunchSpecification& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
+
     /**
      * <p>The IAM instance profile.</p>
      */
@@ -287,6 +293,7 @@ namespace Model
      * <p>The IAM instance profile.</p>
      */
     inline RequestSpotLaunchSpecification& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the AMI.</p>
@@ -323,6 +330,7 @@ namespace Model
      */
     inline RequestSpotLaunchSpecification& WithImageId(const char* value) { SetImageId(value); return *this;}
 
+
     /**
      * <p>The instance type.</p>
      */
@@ -347,6 +355,7 @@ namespace Model
      * <p>The instance type.</p>
      */
     inline RequestSpotLaunchSpecification& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the kernel.</p>
@@ -383,6 +392,7 @@ namespace Model
      */
     inline RequestSpotLaunchSpecification& WithKernelId(const char* value) { SetKernelId(value); return *this;}
 
+
     /**
      * <p>The name of the key pair.</p>
      */
@@ -418,6 +428,7 @@ namespace Model
      */
     inline RequestSpotLaunchSpecification& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
+
     /**
      * <p>Indicates whether basic or detailed monitoring is enabled for the
      * instance.</p> <p>Default: Disabled</p>
@@ -447,6 +458,7 @@ namespace Model
      * instance.</p> <p>Default: Disabled</p>
      */
     inline RequestSpotLaunchSpecification& WithMonitoring(RunInstancesMonitoringEnabled&& value) { SetMonitoring(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
@@ -490,6 +502,7 @@ namespace Model
      */
     inline RequestSpotLaunchSpecification& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The placement information for the instance.</p>
      */
@@ -514,6 +527,7 @@ namespace Model
      * <p>The placement information for the instance.</p>
      */
     inline RequestSpotLaunchSpecification& WithPlacement(SpotPlacement&& value) { SetPlacement(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the RAM disk.</p>
@@ -550,6 +564,7 @@ namespace Model
      */
     inline RequestSpotLaunchSpecification& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
+
     /**
      * <p>The ID of the subnet in which to launch the instance.</p>
      */
@@ -584,6 +599,7 @@ namespace Model
      * <p>The ID of the subnet in which to launch the instance.</p>
      */
     inline RequestSpotLaunchSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The user data to make available to the instances. If you are using an AWS SDK
@@ -635,36 +651,52 @@ namespace Model
     inline RequestSpotLaunchSpecification& WithUserData(const char* value) { SetUserData(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
     Aws::String m_addressingType;
     bool m_addressingTypeHasBeenSet;
+
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
     IamInstanceProfileSpecification m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_kernelId;
     bool m_kernelIdHasBeenSet;
+
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
+
     RunInstancesMonitoringEnabled m_monitoring;
     bool m_monitoringHasBeenSet;
+
     Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
     bool m_networkInterfacesHasBeenSet;
+
     SpotPlacement m_placement;
     bool m_placementHasBeenSet;
+
     Aws::String m_ramdiskId;
     bool m_ramdiskIdHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_userData;
     bool m_userDataHasBeenSet;
   };

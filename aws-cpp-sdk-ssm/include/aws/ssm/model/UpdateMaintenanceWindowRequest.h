@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Maintenance Window to update.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the Maintenance Window to update.</p>
      */
     inline UpdateMaintenanceWindowRequest& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>An optional description for the update request.</p>
      */
@@ -140,6 +143,7 @@ namespace Model
      * <p>An optional description for the update request.</p>
      */
     inline UpdateMaintenanceWindowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
@@ -183,6 +187,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 
+
     /**
      * <p>The duration of the Maintenance Window in hours.</p>
      */
@@ -197,6 +202,7 @@ namespace Model
      * <p>The duration of the Maintenance Window in hours.</p>
      */
     inline UpdateMaintenanceWindowRequest& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The number of hours before the end of the Maintenance Window that Systems
@@ -216,6 +222,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowRequest& WithCutoff(int value) { SetCutoff(value); return *this;}
 
+
     /**
      * <p>Whether targets must be registered with the Maintenance Window before tasks
      * can be defined for those targets.</p>
@@ -234,6 +241,7 @@ namespace Model
      */
     inline UpdateMaintenanceWindowRequest& WithAllowUnassociatedTargets(bool value) { SetAllowUnassociatedTargets(value); return *this;}
 
+
     /**
      * <p>Whether the Maintenance Window is enabled.</p>
      */
@@ -248,6 +256,7 @@ namespace Model
      * <p>Whether the Maintenance Window is enabled.</p>
      */
     inline UpdateMaintenanceWindowRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>If True, then all fields that are required by the CreateMaintenanceWindow
@@ -271,22 +280,31 @@ namespace Model
     inline UpdateMaintenanceWindowRequest& WithReplace(bool value) { SetReplace(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_schedule;
     bool m_scheduleHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     int m_cutoff;
     bool m_cutoffHasBeenSet;
+
     bool m_allowUnassociatedTargets;
     bool m_allowUnassociatedTargetsHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     bool m_replace;
     bool m_replaceHasBeenSet;
   };

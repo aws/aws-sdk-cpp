@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CheckIfPhoneNumberIsOptedOutResult();
-    CheckIfPhoneNumberIsOptedOutResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CheckIfPhoneNumberIsOptedOutResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CheckIfPhoneNumberIsOptedOutResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CheckIfPhoneNumberIsOptedOutResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Indicates whether the phone number is opted out:</p> <ul> <li> <p>
@@ -71,6 +72,7 @@ namespace Model
      */
     inline CheckIfPhoneNumberIsOptedOutResult& WithIsOptedOut(bool value) { SetIsOptedOut(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -87,7 +89,9 @@ namespace Model
     inline CheckIfPhoneNumberIsOptedOutResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     bool m_isOptedOut;
+
     ResponseMetadata m_responseMetadata;
   };
 

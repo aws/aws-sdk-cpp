@@ -30,12 +30,12 @@ ImportRestApiResult::ImportRestApiResult()
 {
 }
 
-ImportRestApiResult::ImportRestApiResult(const AmazonWebServiceResult<JsonValue>& result)
+ImportRestApiResult::ImportRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ImportRestApiResult& ImportRestApiResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ImportRestApiResult& ImportRestApiResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("id"))

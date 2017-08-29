@@ -32,13 +32,13 @@ SimulatePrincipalPolicyResult::SimulatePrincipalPolicyResult() :
 {
 }
 
-SimulatePrincipalPolicyResult::SimulatePrincipalPolicyResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+SimulatePrincipalPolicyResult::SimulatePrincipalPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-SimulatePrincipalPolicyResult& SimulatePrincipalPolicyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SimulatePrincipalPolicyResult& SimulatePrincipalPolicyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

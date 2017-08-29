@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the export task.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline CreateExportTaskRequest& WithTaskName(const char* value) { SetTaskName(value); return *this;}
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline CreateExportTaskRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>Export only log streams that match the provided prefix. If you don't specify
@@ -148,6 +151,7 @@ namespace Model
      */
     inline CreateExportTaskRequest& WithLogStreamNamePrefix(const char* value) { SetLogStreamNamePrefix(value); return *this;}
 
+
     /**
      * <p>The start time of the range for the request, expressed as the number of
      * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier
@@ -169,6 +173,7 @@ namespace Model
      */
     inline CreateExportTaskRequest& WithFrom(long long value) { SetFrom(value); return *this;}
 
+
     /**
      * <p>The end time of the range for the request, expressed as the number of
      * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
@@ -189,6 +194,7 @@ namespace Model
      * this time are not exported.</p>
      */
     inline CreateExportTaskRequest& WithTo(long long value) { SetTo(value); return *this;}
+
 
     /**
      * <p>The name of S3 bucket for the exported log data. The bucket must be in the
@@ -231,6 +237,7 @@ namespace Model
      * same AWS region.</p>
      */
     inline CreateExportTaskRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
+
 
     /**
      * <p>The prefix used as the start of the key for every object exported. If you
@@ -275,18 +282,25 @@ namespace Model
     inline CreateExportTaskRequest& WithDestinationPrefix(const char* value) { SetDestinationPrefix(value); return *this;}
 
   private:
+
     Aws::String m_taskName;
     bool m_taskNameHasBeenSet;
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_logStreamNamePrefix;
     bool m_logStreamNamePrefixHasBeenSet;
+
     long long m_from;
     bool m_fromHasBeenSet;
+
     long long m_to;
     bool m_toHasBeenSet;
+
     Aws::String m_destination;
     bool m_destinationHasBeenSet;
+
     Aws::String m_destinationPrefix;
     bool m_destinationPrefixHasBeenSet;
   };

@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CLOUDHSMV2_API CloudHSMV2ErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_CLOUDHSMV2_API CloudHSMV2ErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace CloudHSMV2
+} // namespace Client
 } // namespace Aws

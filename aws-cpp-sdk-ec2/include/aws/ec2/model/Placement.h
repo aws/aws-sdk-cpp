@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Availability Zone of the instance.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The Availability Zone of the instance.</p>
      */
     inline Placement& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
 
     /**
      * <p>The affinity setting for the instance on the Dedicated Host. This parameter
@@ -126,6 +128,7 @@ namespace Model
      */
     inline Placement& WithAffinity(const char* value) { SetAffinity(value); return *this;}
 
+
     /**
      * <p>The name of the placement group the instance is in (for cluster compute
      * instances).</p>
@@ -167,6 +170,7 @@ namespace Model
      * instances).</p>
      */
     inline Placement& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
@@ -210,6 +214,7 @@ namespace Model
      */
     inline Placement& WithHostId(const char* value) { SetHostId(value); return *this;}
 
+
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An
      * instance with a tenancy of <code>dedicated</code> runs on single-tenant
@@ -250,6 +255,7 @@ namespace Model
      */
     inline Placement& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -286,16 +292,22 @@ namespace Model
     inline Placement& WithSpreadDomain(const char* value) { SetSpreadDomain(value); return *this;}
 
   private:
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_affinity;
     bool m_affinityHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_hostId;
     bool m_hostIdHasBeenSet;
+
     Tenancy m_tenancy;
     bool m_tenancyHasBeenSet;
+
     Aws::String m_spreadDomain;
     bool m_spreadDomainHasBeenSet;
   };

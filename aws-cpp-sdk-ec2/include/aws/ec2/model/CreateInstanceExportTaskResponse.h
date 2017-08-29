@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreateInstanceExportTaskResponse();
-    CreateInstanceExportTaskResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateInstanceExportTaskResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateInstanceExportTaskResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateInstanceExportTaskResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the instance export task.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreateInstanceExportTaskResponse& WithExportTask(ExportTask&& value) { SetExportTask(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline CreateInstanceExportTaskResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ExportTask m_exportTask;
+
     ResponseMetadata m_responseMetadata;
   };
 

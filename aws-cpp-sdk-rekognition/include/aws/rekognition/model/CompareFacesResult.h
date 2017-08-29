@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     CompareFacesResult();
-    CompareFacesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CompareFacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CompareFacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CompareFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The face in the source image that was used for comparison.</p>
@@ -69,6 +70,7 @@ namespace Model
      * <p>The face in the source image that was used for comparison.</p>
      */
     inline CompareFacesResult& WithSourceImageFace(ComparedSourceImageFace&& value) { SetSourceImageFace(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of faces in the target image that match the source image face. Each
@@ -126,6 +128,7 @@ namespace Model
      */
     inline CompareFacesResult& AddFaceMatches(CompareFacesMatch&& value) { m_faceMatches.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>An array of faces in the target image that did not match the source image
      * face.</p>
@@ -167,6 +170,7 @@ namespace Model
      * face.</p>
      */
     inline CompareFacesResult& AddUnmatchedFaces(ComparedFace&& value) { m_unmatchedFaces.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p> The orientation of the source image (counterclockwise direction). If your
@@ -242,6 +246,7 @@ namespace Model
      * format don't contain Exif metadata.</p> </note>
      */
     inline CompareFacesResult& WithSourceImageOrientationCorrection(OrientationCorrection&& value) { SetSourceImageOrientationCorrection(std::move(value)); return *this;}
+
 
     /**
      * <p> The orientation of the target image (in counterclockwise direction). If your
@@ -324,10 +329,15 @@ namespace Model
     inline CompareFacesResult& WithTargetImageOrientationCorrection(OrientationCorrection&& value) { SetTargetImageOrientationCorrection(std::move(value)); return *this;}
 
   private:
+
     ComparedSourceImageFace m_sourceImageFace;
+
     Aws::Vector<CompareFacesMatch> m_faceMatches;
+
     Aws::Vector<ComparedFace> m_unmatchedFaces;
+
     OrientationCorrection m_sourceImageOrientationCorrection;
+
     OrientationCorrection m_targetImageOrientationCorrection;
   };
 

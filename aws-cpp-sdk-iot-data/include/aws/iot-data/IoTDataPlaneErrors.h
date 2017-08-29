@@ -55,7 +55,7 @@ enum class IoTDataPlaneErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_REQUEST,
   METHOD_NOT_ALLOWED,
   REQUEST_ENTITY_TOO_LARGE,
@@ -64,7 +64,7 @@ enum class IoTDataPlaneErrors
 };
 namespace IoTDataPlaneErrorMapper
 {
-  AWS_IOTDATAPLANE_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_IOTDATAPLANE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace IoTDataPlane

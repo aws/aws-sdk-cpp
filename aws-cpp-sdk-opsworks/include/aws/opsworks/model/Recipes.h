@@ -56,6 +56,7 @@ namespace Model
     Recipes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>An array of custom recipe names to be run following a <code>setup</code>
      * event.</p>
@@ -103,6 +104,7 @@ namespace Model
      * event.</p>
      */
     inline Recipes& AddSetup(const char* value) { m_setupHasBeenSet = true; m_setup.push_back(value); return *this; }
+
 
     /**
      * <p>An array of custom recipe names to be run following a <code>configure</code>
@@ -152,6 +154,7 @@ namespace Model
      */
     inline Recipes& AddConfigure(const char* value) { m_configureHasBeenSet = true; m_configure.push_back(value); return *this; }
 
+
     /**
      * <p>An array of custom recipe names to be run following a <code>deploy</code>
      * event.</p>
@@ -200,6 +203,7 @@ namespace Model
      */
     inline Recipes& AddDeploy(const char* value) { m_deployHasBeenSet = true; m_deploy.push_back(value); return *this; }
 
+
     /**
      * <p>An array of custom recipe names to be run following a <code>undeploy</code>
      * event.</p>
@@ -247,6 +251,7 @@ namespace Model
      * event.</p>
      */
     inline Recipes& AddUndeploy(const char* value) { m_undeployHasBeenSet = true; m_undeploy.push_back(value); return *this; }
+
 
     /**
      * <p>An array of custom recipe names to be run following a <code>shutdown</code>
@@ -297,14 +302,19 @@ namespace Model
     inline Recipes& AddShutdown(const char* value) { m_shutdownHasBeenSet = true; m_shutdown.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_setup;
     bool m_setupHasBeenSet;
+
     Aws::Vector<Aws::String> m_configure;
     bool m_configureHasBeenSet;
+
     Aws::Vector<Aws::String> m_deploy;
     bool m_deployHasBeenSet;
+
     Aws::Vector<Aws::String> m_undeploy;
     bool m_undeployHasBeenSet;
+
     Aws::Vector<Aws::String> m_shutdown;
     bool m_shutdownHasBeenSet;
   };

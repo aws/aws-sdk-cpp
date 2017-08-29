@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster with which
      * to register your container instance. If you do not specify a cluster, the
@@ -88,6 +89,7 @@ namespace Model
      * default cluster is assumed.</p>
      */
     inline RegisterContainerInstanceRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+
 
     /**
      * <p>The instance identity document for the EC2 instance to register. This
@@ -145,6 +147,7 @@ namespace Model
      */
     inline RegisterContainerInstanceRequest& WithInstanceIdentityDocument(const char* value) { SetInstanceIdentityDocument(value); return *this;}
 
+
     /**
      * <p>The instance identity document signature for the EC2 instance to register.
      * This signature can be found by running the following command from the instance:
@@ -201,6 +204,7 @@ namespace Model
      */
     inline RegisterContainerInstanceRequest& WithInstanceIdentityDocumentSignature(const char* value) { SetInstanceIdentityDocumentSignature(value); return *this;}
 
+
     /**
      * <p>The resources available on the instance.</p>
      */
@@ -236,6 +240,7 @@ namespace Model
      */
     inline RegisterContainerInstanceRequest& AddTotalResources(Resource&& value) { m_totalResourcesHasBeenSet = true; m_totalResources.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The version information for the Amazon ECS container agent and Docker daemon
      * running on the container instance.</p>
@@ -265,6 +270,7 @@ namespace Model
      * running on the container instance.</p>
      */
     inline RegisterContainerInstanceRequest& WithVersionInfo(VersionInfo&& value) { SetVersionInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance (if it was
@@ -308,6 +314,7 @@ namespace Model
      */
     inline RegisterContainerInstanceRequest& WithContainerInstanceArn(const char* value) { SetContainerInstanceArn(value); return *this;}
 
+
     /**
      * <p>The container instance attributes that this container instance supports.</p>
      */
@@ -344,18 +351,25 @@ namespace Model
     inline RegisterContainerInstanceRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
+
     Aws::String m_instanceIdentityDocument;
     bool m_instanceIdentityDocumentHasBeenSet;
+
     Aws::String m_instanceIdentityDocumentSignature;
     bool m_instanceIdentityDocumentSignatureHasBeenSet;
+
     Aws::Vector<Resource> m_totalResources;
     bool m_totalResourcesHasBeenSet;
+
     VersionInfo m_versionInfo;
     bool m_versionInfoHasBeenSet;
+
     Aws::String m_containerInstanceArn;
     bool m_containerInstanceArnHasBeenSet;
+
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
   };

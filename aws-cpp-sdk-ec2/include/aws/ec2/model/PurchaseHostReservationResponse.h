@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     PurchaseHostReservationResponse();
-    PurchaseHostReservationResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PurchaseHostReservationResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PurchaseHostReservationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PurchaseHostReservationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
@@ -108,6 +109,7 @@ namespace Model
      */
     inline PurchaseHostReservationResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The currency in which the <code>totalUpfrontPrice</code> and
      * <code>totalHourlyPrice</code> amounts are specified. At this time, the only
@@ -142,6 +144,7 @@ namespace Model
      * supported currency is <code>USD</code>.</p>
      */
     inline PurchaseHostReservationResponse& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
+
 
     /**
      * <p>Describes the details of the purchase.</p>
@@ -178,6 +181,7 @@ namespace Model
      */
     inline PurchaseHostReservationResponse& AddPurchase(Purchase&& value) { m_purchase.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The total hourly price of the reservation calculated per hour.</p>
      */
@@ -212,6 +216,7 @@ namespace Model
      * <p>The total hourly price of the reservation calculated per hour.</p>
      */
     inline PurchaseHostReservationResponse& WithTotalHourlyPrice(const char* value) { SetTotalHourlyPrice(value); return *this;}
+
 
     /**
      * <p>The total amount that will be charged to your account when you purchase the
@@ -255,6 +260,7 @@ namespace Model
      */
     inline PurchaseHostReservationResponse& WithTotalUpfrontPrice(const char* value) { SetTotalUpfrontPrice(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -271,11 +277,17 @@ namespace Model
     inline PurchaseHostReservationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clientToken;
+
     CurrencyCodeValues m_currencyCode;
+
     Aws::Vector<Purchase> m_purchase;
+
     Aws::String m_totalHourlyPrice;
+
     Aws::String m_totalUpfrontPrice;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ModifyClusterSubnetGroupResult();
-    ModifyClusterSubnetGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyClusterSubnetGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyClusterSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyClusterSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ClusterSubnetGroup& GetClusterSubnetGroup() const{ return m_clusterSubnetGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline ModifyClusterSubnetGroupResult& WithClusterSubnetGroup(ClusterSubnetGroup&& value) { SetClusterSubnetGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline ModifyClusterSubnetGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ClusterSubnetGroup m_clusterSubnetGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 

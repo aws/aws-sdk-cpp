@@ -30,12 +30,12 @@ CreateSubscriptionDefinitionResult::CreateSubscriptionDefinitionResult()
 {
 }
 
-CreateSubscriptionDefinitionResult::CreateSubscriptionDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateSubscriptionDefinitionResult::CreateSubscriptionDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateSubscriptionDefinitionResult& CreateSubscriptionDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateSubscriptionDefinitionResult& CreateSubscriptionDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Arn"))

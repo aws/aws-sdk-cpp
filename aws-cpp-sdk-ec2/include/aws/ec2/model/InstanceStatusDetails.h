@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The time when a status check failed. For an instance that was launched and
      * impaired, this is the time when the instance was launched.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline InstanceStatusDetails& WithImpairedSince(Aws::Utils::DateTime&& value) { SetImpairedSince(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of instance status.</p>
      */
@@ -104,6 +106,7 @@ namespace Model
      * <p>The type of instance status.</p>
      */
     inline InstanceStatusDetails& WithName(StatusName&& value) { SetName(std::move(value)); return *this;}
+
 
     /**
      * <p>The status.</p>
@@ -131,10 +134,13 @@ namespace Model
     inline InstanceStatusDetails& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_impairedSince;
     bool m_impairedSinceHasBeenSet;
+
     StatusName m_name;
     bool m_nameHasBeenSet;
+
     StatusType m_status;
     bool m_statusHasBeenSet;
   };

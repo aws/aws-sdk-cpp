@@ -34,6 +34,7 @@ namespace Model
     DeleteBotChannelAssociationRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the association. The name is case sensitive. </p>
      */
@@ -69,6 +70,7 @@ namespace Model
      */
     inline DeleteBotChannelAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The name of the Amazon Lex bot.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p>The name of the Amazon Lex bot.</p>
      */
     inline DeleteBotChannelAssociationRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+
 
     /**
      * <p>An alias that points to the specific version of the Amazon Lex bot to which
@@ -147,10 +150,13 @@ namespace Model
     inline DeleteBotChannelAssociationRequest& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
+
     Aws::String m_botAlias;
     bool m_botAliasHasBeenSet;
   };

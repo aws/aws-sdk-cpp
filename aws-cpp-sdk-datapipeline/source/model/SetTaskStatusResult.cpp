@@ -30,12 +30,12 @@ SetTaskStatusResult::SetTaskStatusResult()
 {
 }
 
-SetTaskStatusResult::SetTaskStatusResult(const AmazonWebServiceResult<JsonValue>& result)
+SetTaskStatusResult::SetTaskStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SetTaskStatusResult& SetTaskStatusResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+SetTaskStatusResult& SetTaskStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

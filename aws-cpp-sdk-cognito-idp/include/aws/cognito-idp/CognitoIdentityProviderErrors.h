@@ -55,7 +55,7 @@ enum class CognitoIdentityProviderErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALIAS_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALIAS_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CODE_DELIVERY_FAILURE,
   CODE_MISMATCH,
   CONCURRENT_MODIFICATION,
@@ -91,7 +91,7 @@ enum class CognitoIdentityProviderErrors
 };
 namespace CognitoIdentityProviderErrorMapper
 {
-  AWS_COGNITOIDENTITYPROVIDER_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_COGNITOIDENTITYPROVIDER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CognitoIdentityProvider

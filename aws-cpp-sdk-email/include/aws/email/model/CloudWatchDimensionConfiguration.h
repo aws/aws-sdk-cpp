@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
      * metric. The name must:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z),
@@ -109,6 +110,7 @@ namespace Model
      */
     inline CloudWatchDimensionConfiguration& WithDimensionName(const char* value) { SetDimensionName(value); return *this;}
 
+
     /**
      * <p>The place where Amazon SES finds the value of a dimension to publish to
      * Amazon CloudWatch. If you want Amazon SES to use the message tags that you
@@ -158,6 +160,7 @@ namespace Model
      * choose <code>emailHeader</code>.</p>
      */
     inline CloudWatchDimensionConfiguration& WithDimensionValueSource(DimensionValueSource&& value) { SetDimensionValueSource(std::move(value)); return *this;}
+
 
     /**
      * <p>The default value of the dimension that is published to Amazon CloudWatch if
@@ -223,10 +226,13 @@ namespace Model
     inline CloudWatchDimensionConfiguration& WithDefaultDimensionValue(const char* value) { SetDefaultDimensionValue(value); return *this;}
 
   private:
+
     Aws::String m_dimensionName;
     bool m_dimensionNameHasBeenSet;
+
     DimensionValueSource m_dimensionValueSource;
     bool m_dimensionValueSourceHasBeenSet;
+
     Aws::String m_defaultDimensionValue;
     bool m_defaultDimensionValueHasBeenSet;
   };

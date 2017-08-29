@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the dashboard. If a dashboard with this name already exists, this
      * call modifies that dashboard, replacing its current contents. Otherwise, a new
@@ -93,6 +94,7 @@ namespace Model
      * a-z, 0-9, "-", and "_".</p>
      */
     inline PutDashboardRequest& WithDashboardName(const char* value) { SetDashboardName(value); return *this;}
+
 
     /**
      * <p>The detailed information about the dashboard in JSON format, including the
@@ -151,8 +153,10 @@ namespace Model
     inline PutDashboardRequest& WithDashboardBody(const char* value) { SetDashboardBody(value); return *this;}
 
   private:
+
     Aws::String m_dashboardName;
     bool m_dashboardNameHasBeenSet;
+
     Aws::String m_dashboardBody;
     bool m_dashboardBodyHasBeenSet;
   };

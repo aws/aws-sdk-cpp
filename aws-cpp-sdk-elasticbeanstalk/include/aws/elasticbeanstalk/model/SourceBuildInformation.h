@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li>
      * <p> <code>Zip</code> </p> </li> </ul>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline SourceBuildInformation& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
 
+
     /**
      * <p>Location where the repository is stored.</p> <ul> <li> <p>
      * <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>
@@ -110,6 +112,7 @@ namespace Model
      * <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>
      */
     inline SourceBuildInformation& WithSourceRepository(SourceRepository&& value) { SetSourceRepository(std::move(value)); return *this;}
+
 
     /**
      * <p>The location of the source code, as a formatted string, depending on the
@@ -196,10 +199,13 @@ namespace Model
     inline SourceBuildInformation& WithSourceLocation(const char* value) { SetSourceLocation(value); return *this;}
 
   private:
+
     SourceType m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     SourceRepository m_sourceRepository;
     bool m_sourceRepositoryHasBeenSet;
+
     Aws::String m_sourceLocation;
     bool m_sourceLocationHasBeenSet;
   };

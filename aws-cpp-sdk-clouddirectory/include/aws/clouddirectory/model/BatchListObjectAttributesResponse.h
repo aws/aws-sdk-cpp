@@ -48,6 +48,7 @@ namespace Model
     BatchListObjectAttributesResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The attributes map that is associated with the object.
      * <code>AttributeArn</code> is the key; attribute value is the value.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline BatchListObjectAttributesResponse& AddAttributes(AttributeKeyAndValue&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The pagination token.</p>
      */
@@ -126,8 +128,10 @@ namespace Model
     inline BatchListObjectAttributesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<AttributeKeyAndValue> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

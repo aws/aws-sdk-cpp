@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * The name of the replaceable item.
      */
@@ -84,6 +85,7 @@ namespace Model
      * The name of the replaceable item.
      */
     inline ReplaceableItem& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * The list of attributes for a replaceable item.
@@ -121,8 +123,10 @@ namespace Model
     inline ReplaceableItem& AddAttributes(ReplaceableAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<ReplaceableAttribute> m_attributes;
     bool m_attributesHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline DescribeLayersRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>An array of layer IDs that specify the layers to be described. If you omit
@@ -129,8 +131,10 @@ namespace Model
     inline DescribeLayersRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_layerIds;
     bool m_layerIdsHasBeenSet;
   };

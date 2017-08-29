@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     PurchaseReservedDBInstancesOfferingResult();
-    PurchaseReservedDBInstancesOfferingResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PurchaseReservedDBInstancesOfferingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PurchaseReservedDBInstancesOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PurchaseReservedDBInstancesOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ReservedDBInstance& GetReservedDBInstance() const{ return m_reservedDBInstance; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline PurchaseReservedDBInstancesOfferingResult& WithReservedDBInstance(ReservedDBInstance&& value) { SetReservedDBInstance(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline PurchaseReservedDBInstancesOfferingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ReservedDBInstance m_reservedDBInstance;
+
     ResponseMetadata m_responseMetadata;
   };
 

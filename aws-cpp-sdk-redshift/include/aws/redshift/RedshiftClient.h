@@ -198,17 +198,17 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateHsmClientCertificateResult, Aws::Client::AWSError<RedshiftErrors>> CreateHsmClientCertificateOutcome;
         typedef Aws::Utils::Outcome<CreateHsmConfigurationResult, Aws::Client::AWSError<RedshiftErrors>> CreateHsmConfigurationOutcome;
         typedef Aws::Utils::Outcome<CreateSnapshotCopyGrantResult, Aws::Client::AWSError<RedshiftErrors>> CreateSnapshotCopyGrantOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<RedshiftErrors>> CreateTagsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> CreateTagsOutcome;
         typedef Aws::Utils::Outcome<DeleteClusterResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterParameterGroupOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterSecurityGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterParameterGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterSecurityGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteClusterSnapshotResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterSnapshotOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterSubnetGroupOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteEventSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteHsmClientCertificateOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteHsmConfigurationOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteSnapshotCopyGrantOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteClusterSubnetGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteHsmClientCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteHsmConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteSnapshotCopyGrantOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RedshiftErrors>> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterParameterGroupsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterParameterGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterParametersResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterParametersOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterSecurityGroupsResult, Aws::Client::AWSError<RedshiftErrors>> DescribeClusterSecurityGroupsOutcome;
@@ -414,27 +414,28 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        RedshiftClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        RedshiftClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        RedshiftClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        RedshiftClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        RedshiftClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        RedshiftClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~RedshiftClient();
+
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
-        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
 
         /**
@@ -3274,7 +3275,7 @@ namespace Model
 
 
   private:
-    void init(const Client::ClientConfiguration& clientConfiguration);
+    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void AuthorizeClusterSecurityGroupIngressAsyncHelper(const Model::AuthorizeClusterSecurityGroupIngressRequest& request, const AuthorizeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3342,7 +3343,7 @@ namespace Model
         void RotateEncryptionKeyAsyncHelper(const Model::RotateEncryptionKeyRequest& request, const RotateEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
-    std::shared_ptr<Utils::Threading::Executor> m_executor;
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace Redshift

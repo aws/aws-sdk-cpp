@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateProgressUpdateStreamResult();
-    CreateProgressUpdateStreamResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateProgressUpdateStreamResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateProgressUpdateStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateProgressUpdateStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

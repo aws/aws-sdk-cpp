@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeScalingParametersResult();
-    DescribeScalingParametersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeScalingParametersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeScalingParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeScalingParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ScalingParametersStatus& GetScalingParameters() const{ return m_scalingParameters; }
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline DescribeScalingParametersResult& WithScalingParameters(ScalingParametersStatus&& value) { SetScalingParameters(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -80,7 +82,9 @@ namespace Model
     inline DescribeScalingParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ScalingParametersStatus m_scalingParameters;
+
     ResponseMetadata m_responseMetadata;
   };
 

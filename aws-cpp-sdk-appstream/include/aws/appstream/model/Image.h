@@ -53,6 +53,7 @@ namespace Model
     Image& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the image.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>The unique identifier for the image.</p>
      */
     inline Image& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The ARN for the image.</p>
@@ -123,6 +125,7 @@ namespace Model
      */
     inline Image& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The source image ARN from which this image was created.</p>
      */
@@ -157,6 +160,7 @@ namespace Model
      * <p>The source image ARN from which this image was created.</p>
      */
     inline Image& WithBaseImageArn(const char* value) { SetBaseImageArn(value); return *this;}
+
 
     /**
      * <p>The display name for the image.</p>
@@ -193,6 +197,7 @@ namespace Model
      */
     inline Image& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
+
     /**
      * <p>The image starts in the <b>PENDING</b> state. If image creation succeeds, it
      * moves to <b>AVAILABLE</b>. If image creation fails, it moves to
@@ -228,6 +233,7 @@ namespace Model
      */
     inline Image& WithState(ImageState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>The visibility of an image to the user; images can be public or private.</p>
      */
@@ -253,6 +259,7 @@ namespace Model
      */
     inline Image& WithVisibility(VisibilityType&& value) { SetVisibility(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether an image builder can be launched from this image.</p>
      */
@@ -267,6 +274,7 @@ namespace Model
      * <p>Whether an image builder can be launched from this image.</p>
      */
     inline Image& WithImageBuilderSupported(bool value) { SetImageBuilderSupported(value); return *this;}
+
 
     /**
      * <p>The operating system platform of the image.</p>
@@ -292,6 +300,7 @@ namespace Model
      * <p>The operating system platform of the image.</p>
      */
     inline Image& WithPlatform(PlatformType&& value) { SetPlatform(std::move(value)); return *this;}
+
 
     /**
      * <p>A meaningful description for the image.</p>
@@ -328,6 +337,7 @@ namespace Model
      */
     inline Image& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The reason why the last state change occurred.</p>
      */
@@ -352,6 +362,7 @@ namespace Model
      * <p>The reason why the last state change occurred.</p>
      */
     inline Image& WithStateChangeReason(ImageStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
+
 
     /**
      * <p>The applications associated with an image.</p>
@@ -388,6 +399,7 @@ namespace Model
      */
     inline Image& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time stamp when the image was created.</p>
      */
@@ -412,6 +424,7 @@ namespace Model
      * <p>The time stamp when the image was created.</p>
      */
     inline Image& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS release date of the public base image. For private images, this date
@@ -444,30 +457,43 @@ namespace Model
     inline Image& WithPublicBaseImageReleasedDate(Aws::Utils::DateTime&& value) { SetPublicBaseImageReleasedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_baseImageArn;
     bool m_baseImageArnHasBeenSet;
+
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;
+
     ImageState m_state;
     bool m_stateHasBeenSet;
+
     VisibilityType m_visibility;
     bool m_visibilityHasBeenSet;
+
     bool m_imageBuilderSupported;
     bool m_imageBuilderSupportedHasBeenSet;
+
     PlatformType m_platform;
     bool m_platformHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ImageStateChangeReason m_stateChangeReason;
     bool m_stateChangeReasonHasBeenSet;
+
     Aws::Vector<Application> m_applications;
     bool m_applicationsHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
     Aws::Utils::DateTime m_publicBaseImageReleasedDate;
     bool m_publicBaseImageReleasedDateHasBeenSet;
   };

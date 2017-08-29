@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline RegisterApplicationRevisionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>A comment about the revision.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      */
     inline RegisterApplicationRevisionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Information about the application revision to register, including type and
      * location.</p>
@@ -149,10 +152,13 @@ namespace Model
     inline RegisterApplicationRevisionRequest& WithRevision(RevisionLocation&& value) { SetRevision(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     RevisionLocation m_revision;
     bool m_revisionHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the metric.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name of the metric.</p>
      */
     inline DescribeAlarmsForMetricRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+
 
     /**
      * <p>The namespace of the metric.</p>
@@ -112,6 +114,7 @@ namespace Model
      */
     inline DescribeAlarmsForMetricRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
+
     /**
      * <p>The statistic for the metric, other than percentiles. For percentile
      * statistics, use <code>ExtendedStatistics</code>.</p>
@@ -141,6 +144,7 @@ namespace Model
      * statistics, use <code>ExtendedStatistics</code>.</p>
      */
     inline DescribeAlarmsForMetricRequest& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
+
 
     /**
      * <p>The percentile statistic for the metric. Specify a value between p0.0 and
@@ -184,6 +188,7 @@ namespace Model
      */
     inline DescribeAlarmsForMetricRequest& WithExtendedStatistic(const char* value) { SetExtendedStatistic(value); return *this;}
 
+
     /**
      * <p>The dimensions associated with the metric. If the metric has any associated
      * dimensions, you must specify them in order for the call to succeed.</p>
@@ -226,6 +231,7 @@ namespace Model
      */
     inline DescribeAlarmsForMetricRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The period, in seconds, over which the statistic is applied.</p>
      */
@@ -240,6 +246,7 @@ namespace Model
      * <p>The period, in seconds, over which the statistic is applied.</p>
      */
     inline DescribeAlarmsForMetricRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
+
 
     /**
      * <p>The unit for the metric.</p>
@@ -267,18 +274,25 @@ namespace Model
     inline DescribeAlarmsForMetricRequest& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet;
+
     Statistic m_statistic;
     bool m_statisticHasBeenSet;
+
     Aws::String m_extendedStatistic;
     bool m_extendedStatisticHasBeenSet;
+
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
+
     int m_period;
     bool m_periodHasBeenSet;
+
     StandardUnit m_unit;
     bool m_unitHasBeenSet;
   };

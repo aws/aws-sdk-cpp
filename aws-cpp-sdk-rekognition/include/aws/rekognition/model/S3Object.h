@@ -49,6 +49,7 @@ namespace Model
     S3Object& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Name of the S3 bucket.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline S3Object& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     /**
      * <p>S3 object key name.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>S3 object key name.</p>
      */
     inline S3Object& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>If the bucket is versioning enabled, you can specify the object version. </p>
@@ -155,10 +158,13 @@ namespace Model
     inline S3Object& WithVersion(const char* value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
   };

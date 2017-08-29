@@ -48,6 +48,7 @@ namespace Model
     KeyPair& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The friendly name of the SSH key pair.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The friendly name of the SSH key pair.</p>
      */
     inline KeyPair& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the key pair (e.g.,
@@ -124,6 +126,7 @@ namespace Model
      * <code>arn:aws:lightsail:us-east-1:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
      */
     inline KeyPair& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -174,6 +177,7 @@ namespace Model
      */
     inline KeyPair& WithSupportCode(const char* value) { SetSupportCode(value); return *this;}
 
+
     /**
      * <p>The timestamp when the key pair was created (e.g.,
      * <code>1479816991.349</code>).</p>
@@ -204,6 +208,7 @@ namespace Model
      */
     inline KeyPair& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The region name and Availability Zone where the key pair was created.</p>
      */
@@ -229,6 +234,7 @@ namespace Model
      */
     inline KeyPair& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
+
     /**
      * <p>The resource type (usually <code>KeyPair</code>).</p>
      */
@@ -253,6 +259,7 @@ namespace Model
      * <p>The resource type (usually <code>KeyPair</code>).</p>
      */
     inline KeyPair& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The RSA fingerprint of the key pair.</p>
@@ -290,18 +297,25 @@ namespace Model
     inline KeyPair& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_supportCode;
     bool m_supportCodeHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     ResourceLocation m_location;
     bool m_locationHasBeenSet;
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_fingerprint;
     bool m_fingerprintHasBeenSet;
   };

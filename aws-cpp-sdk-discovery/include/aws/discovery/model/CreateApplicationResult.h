@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateApplicationResult();
-    CreateApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Configuration ID of an application to be created.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateApplicationResult& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
 
   private:
+
     Aws::String m_configurationId;
   };
 

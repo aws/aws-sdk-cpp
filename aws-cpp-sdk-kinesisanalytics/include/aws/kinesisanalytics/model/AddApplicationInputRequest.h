@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of your existing Amazon Kinesis Analytics application to which you want
      * to add the streaming source.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline AddApplicationInputRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
+
     /**
      * <p>Current version of your Amazon Kinesis Analytics application. You can use the
      * <a>DescribeApplication</a> operation to find the current application
@@ -102,6 +104,7 @@ namespace Model
      * version.</p>
      */
     inline AddApplicationInputRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+
 
     /**
      * <p/>
@@ -129,10 +132,13 @@ namespace Model
     inline AddApplicationInputRequest& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     long long m_currentApplicationVersionId;
     bool m_currentApplicationVersionIdHasBeenSet;
+
     Input m_input;
     bool m_inputHasBeenSet;
   };

@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeDBClustersResult();
-    DescribeDBClustersResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBClustersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeDBClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A pagination token that can be used in a subsequent DescribeDBClusters
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeDBClustersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Contains a list of DB clusters for the user.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeDBClustersResult& AddDBClusters(DBCluster&& value) { m_dBClusters.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeDBClustersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<DBCluster> m_dBClusters;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A specific list of images to describe.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline DescribeImagesRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet;
   };

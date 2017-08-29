@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Use one of the following variables to filter a list of
      * <code>BatchPrediction</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the
@@ -133,6 +134,7 @@ namespace Model
      */
     inline DescribeBatchPredictionsRequest& WithFilterVariable(BatchPredictionFilterVariable&& value) { SetFilterVariable(std::move(value)); return *this;}
 
+
     /**
      * <p>The equal to operator. The <code>BatchPrediction</code> results will have
      * <code>FilterVariable</code> values that exactly match the value specified with
@@ -181,6 +183,7 @@ namespace Model
      * <code>EQ</code>.</p>
      */
     inline DescribeBatchPredictionsRequest& WithEQ(const char* value) { SetEQ(value); return *this;}
+
 
     /**
      * <p>The greater than operator. The <code>BatchPrediction</code> results will have
@@ -231,6 +234,7 @@ namespace Model
      */
     inline DescribeBatchPredictionsRequest& WithGT(const char* value) { SetGT(value); return *this;}
 
+
     /**
      * <p>The less than operator. The <code>BatchPrediction</code> results will have
      * <code>FilterVariable</code> values that are less than the value specified with
@@ -279,6 +283,7 @@ namespace Model
      * <code>LT</code>.</p>
      */
     inline DescribeBatchPredictionsRequest& WithLT(const char* value) { SetLT(value); return *this;}
+
 
     /**
      * <p>The greater than or equal to operator. The <code>BatchPrediction</code>
@@ -329,6 +334,7 @@ namespace Model
      */
     inline DescribeBatchPredictionsRequest& WithGE(const char* value) { SetGE(value); return *this;}
 
+
     /**
      * <p>The less than or equal to operator. The <code>BatchPrediction</code> results
      * will have <code>FilterVariable</code> values that are less than or equal to the
@@ -378,6 +384,7 @@ namespace Model
      */
     inline DescribeBatchPredictionsRequest& WithLE(const char* value) { SetLE(value); return *this;}
 
+
     /**
      * <p>The not equal to operator. The <code>BatchPrediction</code> results will have
      * <code>FilterVariable</code> values not equal to the value specified with
@@ -426,6 +433,7 @@ namespace Model
      * <code>NE</code>.</p>
      */
     inline DescribeBatchPredictionsRequest& WithNE(const char* value) { SetNE(value); return *this;}
+
 
     /**
      * <p>A string that is found at the beginning of a variable, such as
@@ -511,6 +519,7 @@ namespace Model
      */
     inline DescribeBatchPredictionsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     /**
      * <p>A two-value parameter that determines the sequence of the resulting list of
      * <code>MLModel</code>s.</p> <ul> <li> <code>asc</code> - Arranges the list in
@@ -556,6 +565,7 @@ namespace Model
      */
     inline DescribeBatchPredictionsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
+
     /**
      * <p>An ID of the page in the paginated results.</p>
      */
@@ -591,6 +601,7 @@ namespace Model
      */
     inline DescribeBatchPredictionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The number of pages of information to include in the result. The range of
      * acceptable values is <code>1</code> through <code>100</code>. The default value
@@ -613,26 +624,37 @@ namespace Model
     inline DescribeBatchPredictionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     BatchPredictionFilterVariable m_filterVariable;
     bool m_filterVariableHasBeenSet;
+
     Aws::String m_eQ;
     bool m_eQHasBeenSet;
+
     Aws::String m_gT;
     bool m_gTHasBeenSet;
+
     Aws::String m_lT;
     bool m_lTHasBeenSet;
+
     Aws::String m_gE;
     bool m_gEHasBeenSet;
+
     Aws::String m_lE;
     bool m_lEHasBeenSet;
+
     Aws::String m_nE;
     bool m_nEHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>To list presets in chronological order by the date and time that they were
      * created, enter <code>true</code>. To list presets in reverse chronological
@@ -91,6 +92,7 @@ namespace Model
      * order, enter <code>false</code>.</p>
      */
     inline ListPresetsRequest& WithAscending(const char* value) { SetAscending(value); return *this;}
+
 
     /**
      * <p>When Elastic Transcoder returns more than one page of results, use
@@ -142,8 +144,10 @@ namespace Model
     inline ListPresetsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     Aws::String m_ascending;
     bool m_ascendingHasBeenSet;
+
     Aws::String m_pageToken;
     bool m_pageTokenHasBeenSet;
   };

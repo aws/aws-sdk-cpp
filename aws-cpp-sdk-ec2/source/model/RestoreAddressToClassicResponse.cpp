@@ -32,13 +32,13 @@ RestoreAddressToClassicResponse::RestoreAddressToClassicResponse() :
 {
 }
 
-RestoreAddressToClassicResponse::RestoreAddressToClassicResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+RestoreAddressToClassicResponse::RestoreAddressToClassicResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_status(Status::NOT_SET)
 {
   *this = result;
 }
 
-RestoreAddressToClassicResponse& RestoreAddressToClassicResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RestoreAddressToClassicResponse& RestoreAddressToClassicResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>(Optional) Maximum number of mount targets to return in the response. It must
      * be an integer with a value greater than zero.</p>
@@ -60,6 +61,7 @@ namespace Model
      * be an integer with a value greater than zero.</p>
      */
     inline DescribeMountTargetsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+
 
     /**
      * <p>(Optional) Opaque pagination token returned from a previous
@@ -110,6 +112,7 @@ namespace Model
      */
     inline DescribeMountTargetsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>(Optional) ID of the file system whose mount targets you want to list
      * (String). It must be included in your request if <code>MountTargetId</code> is
@@ -158,6 +161,7 @@ namespace Model
      * not included.</p>
      */
     inline DescribeMountTargetsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+
 
     /**
      * <p>(Optional) ID of the mount target that you want to have described (String).
@@ -209,12 +213,16 @@ namespace Model
     inline DescribeMountTargetsRequest& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
 
   private:
+
     int m_maxItems;
     bool m_maxItemsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet;
+
     Aws::String m_mountTargetId;
     bool m_mountTargetIdHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Worker to block.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the Worker to block.</p>
      */
     inline CreateWorkerBlockRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+
 
     /**
      * <p>A message explaining the reason for blocking the Worker. This parameter
@@ -121,8 +123,10 @@ namespace Model
     inline CreateWorkerBlockRequest& WithReason(const char* value) { SetReason(value); return *this;}
 
   private:
+
     Aws::String m_workerId;
     bool m_workerIdHasBeenSet;
+
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
   };

@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     CompleteMultipartUploadResult();
-    CompleteMultipartUploadResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CompleteMultipartUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CompleteMultipartUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CompleteMultipartUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The relative URI path of the newly added archive resource.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline CompleteMultipartUploadResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     /**
      * <p>The checksum of the archive computed by Amazon Glacier.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>The checksum of the archive computed by Amazon Glacier.</p>
      */
     inline CompleteMultipartUploadResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+
 
     /**
      * <p>The ID of the archive. This value is also included as part of the
@@ -164,8 +167,11 @@ namespace Model
     inline CompleteMultipartUploadResult& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
 
   private:
+
     Aws::String m_location;
+
     Aws::String m_checksum;
+
     Aws::String m_archiveId;
   };
 

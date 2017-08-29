@@ -45,6 +45,7 @@ namespace Model
     NetworkInterface& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
      */
     inline NetworkInterface& WithIpv4Address(const char* value) { SetIpv4Address(value); return *this;}
+
 
     /**
      * <p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This
@@ -121,6 +123,7 @@ namespace Model
      * is currently unsupported and will not be returned in output.</p> </note>
      */
     inline NetworkInterface& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
+
 
     /**
      * <p>The Internet Protocol version 6 (IPv6) address of the interface. <i>Currently
@@ -165,10 +168,13 @@ namespace Model
     inline NetworkInterface& WithIpv6Address(const char* value) { SetIpv6Address(value); return *this;}
 
   private:
+
     Aws::String m_ipv4Address;
     bool m_ipv4AddressHasBeenSet;
+
     Aws::String m_macAddress;
     bool m_macAddressHasBeenSet;
+
     Aws::String m_ipv6Address;
     bool m_ipv6AddressHasBeenSet;
   };

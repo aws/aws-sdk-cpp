@@ -30,12 +30,12 @@ DescribeConfigurationRecordersResult::DescribeConfigurationRecordersResult()
 {
 }
 
-DescribeConfigurationRecordersResult::DescribeConfigurationRecordersResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConfigurationRecordersResult::DescribeConfigurationRecordersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeConfigurationRecordersResult& DescribeConfigurationRecordersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConfigurationRecordersResult& DescribeConfigurationRecordersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ConfigurationRecorders"))

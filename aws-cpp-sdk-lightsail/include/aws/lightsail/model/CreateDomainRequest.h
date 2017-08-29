@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The domain name to manage (e.g., <code>example.com</code>).</p> <note> <p>You
      * cannot register a new domain name using Lightsail. You must register a domain
@@ -100,6 +101,7 @@ namespace Model
     inline CreateDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
   };

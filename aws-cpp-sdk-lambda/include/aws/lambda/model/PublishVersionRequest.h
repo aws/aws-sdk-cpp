@@ -37,6 +37,7 @@ namespace Model
     PublishVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Lambda function name. You can specify a function name (for example,
      * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the
@@ -121,6 +122,7 @@ namespace Model
      */
     inline PublishVersionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
      * validation on the code you are publishing. If you provide this parameter value
@@ -170,6 +172,7 @@ namespace Model
      */
     inline PublishVersionRequest& WithCodeSha256(const char* value) { SetCodeSha256(value); return *this;}
 
+
     /**
      * <p>The description for the version you are publishing. If not provided, AWS
      * Lambda copies the description from the $LATEST version.</p>
@@ -213,10 +216,13 @@ namespace Model
     inline PublishVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_codeSha256;
     bool m_codeSha256HasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeInstancesResult();
-    DescribeInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of objects containing properties for each instance returned.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Collection of objects containing properties for each instance returned.</p>
      */
     inline DescribeInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token that indicates where to resume retrieving results on the next call to
@@ -134,7 +136,9 @@ namespace Model
     inline DescribeInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Instance> m_instances;
+
     Aws::String m_nextToken;
   };
 

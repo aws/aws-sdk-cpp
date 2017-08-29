@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The image in which you want to detect faces. You can specify a blob or an S3
      * object. </p>
@@ -67,6 +68,7 @@ namespace Model
      * object. </p>
      */
     inline DetectFacesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of facial attributes you want to be returned. This can be the
@@ -167,8 +169,10 @@ namespace Model
     inline DetectFacesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Image m_image;
     bool m_imageHasBeenSet;
+
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
   };

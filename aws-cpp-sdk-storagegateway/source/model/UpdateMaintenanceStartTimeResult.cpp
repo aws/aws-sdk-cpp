@@ -30,12 +30,12 @@ UpdateMaintenanceStartTimeResult::UpdateMaintenanceStartTimeResult()
 {
 }
 
-UpdateMaintenanceStartTimeResult::UpdateMaintenanceStartTimeResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateMaintenanceStartTimeResult::UpdateMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateMaintenanceStartTimeResult& UpdateMaintenanceStartTimeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateMaintenanceStartTimeResult& UpdateMaintenanceStartTimeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

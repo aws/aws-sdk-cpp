@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the user the signing certificate belongs to.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -101,6 +102,7 @@ namespace Model
      */
     inline DeleteSigningCertificateRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The ID of the signing certificate to delete.</p> <p>The format of this
      * parameter, as described by its <a
@@ -158,8 +160,10 @@ namespace Model
     inline DeleteSigningCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
   };

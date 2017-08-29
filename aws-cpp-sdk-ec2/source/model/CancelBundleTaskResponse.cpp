@@ -31,12 +31,12 @@ CancelBundleTaskResponse::CancelBundleTaskResponse()
 {
 }
 
-CancelBundleTaskResponse::CancelBundleTaskResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CancelBundleTaskResponse::CancelBundleTaskResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CancelBundleTaskResponse& CancelBundleTaskResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CancelBundleTaskResponse& CancelBundleTaskResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

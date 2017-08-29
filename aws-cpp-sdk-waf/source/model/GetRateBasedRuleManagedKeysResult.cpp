@@ -30,12 +30,12 @@ GetRateBasedRuleManagedKeysResult::GetRateBasedRuleManagedKeysResult()
 {
 }
 
-GetRateBasedRuleManagedKeysResult::GetRateBasedRuleManagedKeysResult(const AmazonWebServiceResult<JsonValue>& result)
+GetRateBasedRuleManagedKeysResult::GetRateBasedRuleManagedKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetRateBasedRuleManagedKeysResult& GetRateBasedRuleManagedKeysResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetRateBasedRuleManagedKeysResult& GetRateBasedRuleManagedKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ManagedKeys"))

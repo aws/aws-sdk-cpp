@@ -30,12 +30,12 @@ ListOutgoingCertificatesResult::ListOutgoingCertificatesResult()
 {
 }
 
-ListOutgoingCertificatesResult::ListOutgoingCertificatesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListOutgoingCertificatesResult::ListOutgoingCertificatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListOutgoingCertificatesResult& ListOutgoingCertificatesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListOutgoingCertificatesResult& ListOutgoingCertificatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("outgoingCertificates"))

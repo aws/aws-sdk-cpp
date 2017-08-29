@@ -51,6 +51,7 @@ namespace Model
     Source& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The repository type.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The repository type.</p>
      */
     inline Source& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The source URL. The following is an example of an Amazon S3 source URL:
@@ -117,6 +119,7 @@ namespace Model
      * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
      */
     inline Source& WithUrl(const char* value) { SetUrl(value); return *this;}
+
 
     /**
      * <p>This parameter depends on the repository type.</p> <ul> <li> <p>For Amazon S3
@@ -173,6 +176,7 @@ namespace Model
      * set <code>Username</code> to the user name.</p> </li> </ul>
      */
     inline Source& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>When included in a request, the parameter depends on the repository type.</p>
@@ -258,6 +262,7 @@ namespace Model
      */
     inline Source& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
     /**
      * <p>In requests, the repository's SSH key.</p> <p>In responses, AWS OpsWorks
      * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
@@ -299,6 +304,7 @@ namespace Model
      * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
      */
     inline Source& WithSshKey(const char* value) { SetSshKey(value); return *this;}
+
 
     /**
      * <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy
@@ -357,16 +363,22 @@ namespace Model
     inline Source& WithRevision(const char* value) { SetRevision(value); return *this;}
 
   private:
+
     SourceType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     Aws::String m_sshKey;
     bool m_sshKeyHasBeenSet;
+
     Aws::String m_revision;
     bool m_revisionHasBeenSet;
   };

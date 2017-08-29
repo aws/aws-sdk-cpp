@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_GLUE_API GlueErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_GLUE_API GlueErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Glue
+} // namespace Client
 } // namespace Aws

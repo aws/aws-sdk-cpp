@@ -49,6 +49,7 @@ namespace Model
     Upload& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The upload's ARN.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The upload's ARN.</p>
      */
     inline Upload& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The upload's file name.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Upload& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>When the upload was created.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      * <p>When the upload was created.</p>
      */
     inline Upload& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+
 
     /**
      * <p>The upload's type.</p> <p>Must be one of the following values:</p> <ul> <li>
@@ -254,6 +258,7 @@ namespace Model
      */
     inline Upload& WithType(UploadType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The upload's status.</p> <p>Must be one of the following values:</p> <ul>
      * <li> <p>FAILED: A failed status.</p> </li> <li> <p>INITIALIZED: An initialized
@@ -293,6 +298,7 @@ namespace Model
      * <p>SUCCEEDED: A succeeded status.</p> </li> </ul>
      */
     inline Upload& WithStatus(UploadStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The pre-signed Amazon S3 URL that was used to store a file through a
@@ -335,6 +341,7 @@ namespace Model
      * corresponding PUT request.</p>
      */
     inline Upload& WithUrl(const char* value) { SetUrl(value); return *this;}
+
 
     /**
      * <p>The upload's metadata. For example, for Android, this contains information
@@ -385,6 +392,7 @@ namespace Model
      */
     inline Upload& WithMetadata(const char* value) { SetMetadata(value); return *this;}
 
+
     /**
      * <p>The upload's content type (for example, "application/octet-stream").</p>
      */
@@ -419,6 +427,7 @@ namespace Model
      * <p>The upload's content type (for example, "application/octet-stream").</p>
      */
     inline Upload& WithContentType(const char* value) { SetContentType(value); return *this;}
+
 
     /**
      * <p>A message about the upload's result.</p>
@@ -456,22 +465,31 @@ namespace Model
     inline Upload& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet;
+
     UploadType m_type;
     bool m_typeHasBeenSet;
+
     UploadStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_url;
     bool m_urlHasBeenSet;
+
     Aws::String m_metadata;
     bool m_metadataHasBeenSet;
+
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline AdminDisableProviderForUserRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
 
+
     /**
      * <p>The user to be disabled.</p>
      */
@@ -98,8 +100,10 @@ namespace Model
     inline AdminDisableProviderForUserRequest& WithUser(ProviderUserIdentifierType&& value) { SetUser(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     ProviderUserIdentifierType m_user;
     bool m_userHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cache parameter group.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      */
     inline CacheParameterGroupStatus& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
 
+
     /**
      * <p>The status of parameter updates.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The status of parameter updates.</p>
      */
     inline CacheParameterGroupStatus& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
+
 
     /**
      * <p>A list of the cache node IDs which need to be rebooted for parameter changes
@@ -168,10 +171,13 @@ namespace Model
     inline CacheParameterGroupStatus& AddCacheNodeIdsToReboot(const char* value) { m_cacheNodeIdsToRebootHasBeenSet = true; m_cacheNodeIdsToReboot.push_back(value); return *this; }
 
   private:
+
     Aws::String m_cacheParameterGroupName;
     bool m_cacheParameterGroupNameHasBeenSet;
+
     Aws::String m_parameterApplyStatus;
     bool m_parameterApplyStatusHasBeenSet;
+
     Aws::Vector<Aws::String> m_cacheNodeIdsToReboot;
     bool m_cacheNodeIdsToRebootHasBeenSet;
   };

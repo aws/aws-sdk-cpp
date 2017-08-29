@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p> The path to the group. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -129,6 +130,7 @@ namespace Model
      */
     inline CreateGroupRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The name of the group to create. Do not include the path in this value.</p>
      * <p>This parameter allows (per its <a
@@ -207,8 +209,10 @@ namespace Model
     inline CreateGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
   };

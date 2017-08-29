@@ -45,6 +45,7 @@ namespace Model
     MaintenanceWindowIdentity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the Maintenance Window.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ID of the Maintenance Window.</p>
      */
     inline MaintenanceWindowIdentity& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline MaintenanceWindowIdentity& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the Maintenance Window.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      */
     inline MaintenanceWindowIdentity& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Whether the Maintenance Window is enabled.</p>
      */
@@ -165,6 +169,7 @@ namespace Model
      */
     inline MaintenanceWindowIdentity& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
     /**
      * <p>The duration of the Maintenance Window in hours.</p>
      */
@@ -179,6 +184,7 @@ namespace Model
      * <p>The duration of the Maintenance Window in hours.</p>
      */
     inline MaintenanceWindowIdentity& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The number of hours before the end of the Maintenance Window that Systems
@@ -199,16 +205,22 @@ namespace Model
     inline MaintenanceWindowIdentity& WithCutoff(int value) { SetCutoff(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     int m_cutoff;
     bool m_cutoffHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     XssMatchSetUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an
      * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove a
@@ -83,6 +84,7 @@ namespace Model
      * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
      */
     inline XssMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the part of a web request that you want AWS WAF to inspect for
@@ -120,8 +122,10 @@ namespace Model
     inline XssMatchSetUpdate& WithXssMatchTuple(XssMatchTuple&& value) { SetXssMatchTuple(std::move(value)); return *this;}
 
   private:
+
     ChangeAction m_action;
     bool m_actionHasBeenSet;
+
     XssMatchTuple m_xssMatchTuple;
     bool m_xssMatchTupleHasBeenSet;
   };

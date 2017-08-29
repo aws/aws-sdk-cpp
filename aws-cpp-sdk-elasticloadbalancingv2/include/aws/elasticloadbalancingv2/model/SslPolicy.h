@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The protocols.</p>
      */
@@ -91,6 +92,7 @@ namespace Model
      */
     inline SslPolicy& AddSslProtocols(const char* value) { m_sslProtocolsHasBeenSet = true; m_sslProtocols.push_back(value); return *this; }
 
+
     /**
      * <p>The ciphers.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      * <p>The ciphers.</p>
      */
     inline SslPolicy& AddCiphers(Cipher&& value) { m_ciphersHasBeenSet = true; m_ciphers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The name of the policy.</p>
@@ -162,10 +165,13 @@ namespace Model
     inline SslPolicy& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_sslProtocols;
     bool m_sslProtocolsHasBeenSet;
+
     Aws::Vector<Cipher> m_ciphers;
     bool m_ciphersHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

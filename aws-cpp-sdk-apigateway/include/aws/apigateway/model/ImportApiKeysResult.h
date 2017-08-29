@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ImportApiKeysResult();
-    ImportApiKeysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportApiKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportApiKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ImportApiKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of all the <a>ApiKey</a> identifiers.</p>
@@ -87,6 +88,7 @@ namespace Model
      * <p>A list of all the <a>ApiKey</a> identifiers.</p>
      */
     inline ImportApiKeysResult& AddIds(const char* value) { m_ids.push_back(value); return *this; }
+
 
     /**
      * <p>A list of warning messages.</p>
@@ -129,7 +131,9 @@ namespace Model
     inline ImportApiKeysResult& AddWarnings(const char* value) { m_warnings.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_ids;
+
     Aws::Vector<Aws::String> m_warnings;
   };
 

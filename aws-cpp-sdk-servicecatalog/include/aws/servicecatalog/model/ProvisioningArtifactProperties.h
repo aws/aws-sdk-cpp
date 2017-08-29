@@ -48,6 +48,7 @@ namespace Model
     ProvisioningArtifactProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name assigned to the provisioning artifact properties.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline ProvisioningArtifactProperties& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The text description of the provisioning artifact properties.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The text description of the provisioning artifact properties.</p>
      */
     inline ProvisioningArtifactProperties& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Additional information about the provisioning artifact properties. When using
@@ -202,6 +205,7 @@ namespace Model
      */
     inline ProvisioningArtifactProperties& AddInfo(const char* key, const char* value) { m_infoHasBeenSet = true; m_info.emplace(key, value); return *this; }
 
+
     /**
      * <p>The type of the provisioning artifact properties. The following provisioning
      * artifact property types are used by AWS Marketplace products:</p> <p>
@@ -243,12 +247,16 @@ namespace Model
     inline ProvisioningArtifactProperties& WithType(ProvisioningArtifactType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_info;
     bool m_infoHasBeenSet;
+
     ProvisioningArtifactType m_type;
     bool m_typeHasBeenSet;
   };

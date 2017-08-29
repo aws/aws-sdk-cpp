@@ -30,12 +30,12 @@ CreateDomainEntryResult::CreateDomainEntryResult()
 {
 }
 
-CreateDomainEntryResult::CreateDomainEntryResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateDomainEntryResult::CreateDomainEntryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateDomainEntryResult& CreateDomainEntryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateDomainEntryResult& CreateDomainEntryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operation"))

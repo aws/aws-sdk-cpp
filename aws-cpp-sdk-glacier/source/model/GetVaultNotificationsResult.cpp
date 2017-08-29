@@ -30,12 +30,12 @@ GetVaultNotificationsResult::GetVaultNotificationsResult()
 {
 }
 
-GetVaultNotificationsResult::GetVaultNotificationsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetVaultNotificationsResult::GetVaultNotificationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetVaultNotificationsResult& GetVaultNotificationsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetVaultNotificationsResult& GetVaultNotificationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("vaultNotificationConfig"))

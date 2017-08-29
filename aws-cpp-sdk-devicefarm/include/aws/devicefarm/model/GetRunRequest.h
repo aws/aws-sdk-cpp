@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The run's ARN.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline GetRunRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
   };

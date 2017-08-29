@@ -34,6 +34,7 @@ namespace Model
     GetImportJobRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -54,6 +55,7 @@ namespace Model
 
     
     inline GetImportJobRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
 
     
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -77,8 +79,10 @@ namespace Model
     inline GetImportJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListTagsForDomainResult();
-    ListTagsForDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsForDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of the tags that are associated with the specified domain.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline ListTagsForDomainResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Tag> m_tagList;
   };
 

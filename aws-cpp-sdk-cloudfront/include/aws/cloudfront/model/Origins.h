@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The number of origins for this distribution.</p>
      */
@@ -62,6 +63,7 @@ namespace Model
      * <p>The number of origins for this distribution.</p>
      */
     inline Origins& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>A complex type that contains origins for this distribution.</p>
@@ -99,8 +101,10 @@ namespace Model
     inline Origins& AddItems(Origin&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<Origin> m_items;
     bool m_itemsHasBeenSet;
   };

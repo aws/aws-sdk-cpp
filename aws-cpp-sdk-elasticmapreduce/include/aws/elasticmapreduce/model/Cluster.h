@@ -54,6 +54,7 @@ namespace Model
     Cluster& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the cluster.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The unique identifier for the cluster.</p>
      */
     inline Cluster& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The name of the cluster.</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline Cluster& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The current status details about the cluster.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      * <p>The current status details about the cluster.</p>
      */
     inline Cluster& WithStatus(ClusterStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides information about the EC2 instances in a cluster grouped by
@@ -178,6 +182,7 @@ namespace Model
      * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
      */
     inline Cluster& WithEc2InstanceAttributes(Ec2InstanceAttributes&& value) { SetEc2InstanceAttributes(std::move(value)); return *this;}
+
 
     /**
      * <note> <p>The instance fleet configuration is available only in Amazon EMR
@@ -224,6 +229,7 @@ namespace Model
      */
     inline Cluster& WithInstanceCollectionType(InstanceCollectionType&& value) { SetInstanceCollectionType(std::move(value)); return *this;}
 
+
     /**
      * <p>The path to the Amazon S3 location where logs for this cluster are
      * stored.</p>
@@ -266,6 +272,7 @@ namespace Model
      */
     inline Cluster& WithLogUri(const char* value) { SetLogUri(value); return *this;}
 
+
     /**
      * <p>The AMI version requested for this cluster.</p>
      */
@@ -300,6 +307,7 @@ namespace Model
      * <p>The AMI version requested for this cluster.</p>
      */
     inline Cluster& WithRequestedAmiVersion(const char* value) { SetRequestedAmiVersion(value); return *this;}
+
 
     /**
      * <p>The AMI version running on this cluster.</p>
@@ -336,6 +344,7 @@ namespace Model
      */
     inline Cluster& WithRunningAmiVersion(const char* value) { SetRunningAmiVersion(value); return *this;}
 
+
     /**
      * <p>The release label for the Amazon EMR release.</p>
      */
@@ -371,6 +380,7 @@ namespace Model
      */
     inline Cluster& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
 
+
     /**
      * <p>Specifies whether the cluster should terminate after completing all
      * steps.</p>
@@ -388,6 +398,7 @@ namespace Model
      * steps.</p>
      */
     inline Cluster& WithAutoTerminate(bool value) { SetAutoTerminate(value); return *this;}
+
 
     /**
      * <p>Indicates whether Amazon EMR will lock the cluster to prevent the EC2
@@ -409,6 +420,7 @@ namespace Model
      * event of a cluster error.</p>
      */
     inline Cluster& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
+
 
     /**
      * <p>Indicates whether the cluster is visible to all IAM users of the AWS account
@@ -439,6 +451,7 @@ namespace Model
      * using the <a>SetVisibleToAllUsers</a> action.</p>
      */
     inline Cluster& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
+
 
     /**
      * <p>The applications installed on this cluster.</p>
@@ -475,6 +488,7 @@ namespace Model
      */
     inline Cluster& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of tags associated with a cluster.</p>
      */
@@ -509,6 +523,7 @@ namespace Model
      * <p>A list of tags associated with a cluster.</p>
      */
     inline Cluster& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
@@ -552,6 +567,7 @@ namespace Model
      */
     inline Cluster& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
+
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour an m1.small instance runs.
@@ -581,6 +597,7 @@ namespace Model
      * the actual billing rate.</p>
      */
     inline Cluster& WithNormalizedInstanceHours(int value) { SetNormalizedInstanceHours(value); return *this;}
+
 
     /**
      * <p>The public DNS name of the master EC2 instance.</p>
@@ -616,6 +633,7 @@ namespace Model
      * <p>The public DNS name of the master EC2 instance.</p>
      */
     inline Cluster& WithMasterPublicDnsName(const char* value) { SetMasterPublicDnsName(value); return *this;}
+
 
     /**
      * <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations
@@ -659,6 +677,7 @@ namespace Model
      */
     inline Cluster& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name of the security configuration applied to the cluster.</p>
      */
@@ -693,6 +712,7 @@ namespace Model
      * <p>The name of the security configuration applied to the cluster.</p>
      */
     inline Cluster& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+
 
     /**
      * <p>An IAM role for automatic scaling policies. The default role is
@@ -749,6 +769,7 @@ namespace Model
      * an instance group.</p>
      */
     inline Cluster& WithAutoScalingRole(const char* value) { SetAutoScalingRole(value); return *this;}
+
 
     /**
      * <p>The way that individual Amazon EC2 instances terminate when an automatic
@@ -835,6 +856,7 @@ namespace Model
      */
     inline Cluster& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
 
+
     /**
      * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
      * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
@@ -877,6 +899,7 @@ namespace Model
      */
     inline Cluster& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
 
+
     /**
      * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
      * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
@@ -894,6 +917,7 @@ namespace Model
      * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
      */
     inline Cluster& WithEbsRootVolumeSize(int value) { SetEbsRootVolumeSize(value); return *this;}
+
 
     /**
      * <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of
@@ -931,52 +955,76 @@ namespace Model
     inline Cluster& WithRepoUpgradeOnBoot(RepoUpgradeOnBoot&& value) { SetRepoUpgradeOnBoot(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ClusterStatus m_status;
     bool m_statusHasBeenSet;
+
     Ec2InstanceAttributes m_ec2InstanceAttributes;
     bool m_ec2InstanceAttributesHasBeenSet;
+
     InstanceCollectionType m_instanceCollectionType;
     bool m_instanceCollectionTypeHasBeenSet;
+
     Aws::String m_logUri;
     bool m_logUriHasBeenSet;
+
     Aws::String m_requestedAmiVersion;
     bool m_requestedAmiVersionHasBeenSet;
+
     Aws::String m_runningAmiVersion;
     bool m_runningAmiVersionHasBeenSet;
+
     Aws::String m_releaseLabel;
     bool m_releaseLabelHasBeenSet;
+
     bool m_autoTerminate;
     bool m_autoTerminateHasBeenSet;
+
     bool m_terminationProtected;
     bool m_terminationProtectedHasBeenSet;
+
     bool m_visibleToAllUsers;
     bool m_visibleToAllUsersHasBeenSet;
+
     Aws::Vector<Application> m_applications;
     bool m_applicationsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_serviceRole;
     bool m_serviceRoleHasBeenSet;
+
     int m_normalizedInstanceHours;
     bool m_normalizedInstanceHoursHasBeenSet;
+
     Aws::String m_masterPublicDnsName;
     bool m_masterPublicDnsNameHasBeenSet;
+
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet;
+
     Aws::String m_autoScalingRole;
     bool m_autoScalingRoleHasBeenSet;
+
     ScaleDownBehavior m_scaleDownBehavior;
     bool m_scaleDownBehaviorHasBeenSet;
+
     Aws::String m_customAmiId;
     bool m_customAmiIdHasBeenSet;
+
     int m_ebsRootVolumeSize;
     bool m_ebsRootVolumeSizeHasBeenSet;
+
     RepoUpgradeOnBoot m_repoUpgradeOnBoot;
     bool m_repoUpgradeOnBootHasBeenSet;
   };

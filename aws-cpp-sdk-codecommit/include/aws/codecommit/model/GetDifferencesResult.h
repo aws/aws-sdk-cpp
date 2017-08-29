@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetDifferencesResult();
-    GetDifferencesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDifferencesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDifferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDifferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A differences data type object that contains information about the
@@ -92,6 +93,7 @@ namespace Model
      */
     inline GetDifferencesResult& AddDifferences(Difference&& value) { m_differences.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>An enumeration token that can be used in a request to return the next batch
      * of the results.</p>
@@ -135,7 +137,9 @@ namespace Model
     inline GetDifferencesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Difference> m_differences;
+
     Aws::String m_nextToken;
   };
 

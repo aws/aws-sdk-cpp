@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The configurationId in ADS that uniquely identifies the grouped
      * application.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline DescribeApplicationStateRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
   };

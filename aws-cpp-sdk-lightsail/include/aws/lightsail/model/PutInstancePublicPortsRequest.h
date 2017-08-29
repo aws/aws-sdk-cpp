@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies information about the public port(s).</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>Specifies information about the public port(s).</p>
      */
     inline PutInstancePublicPortsRequest& AddPortInfos(PortInfo&& value) { m_portInfosHasBeenSet = true; m_portInfos.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The Lightsail instance name of the public port(s) you are setting.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline PutInstancePublicPortsRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
   private:
+
     Aws::Vector<PortInfo> m_portInfos;
     bool m_portInfosHasBeenSet;
+
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet;
   };

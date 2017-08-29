@@ -30,12 +30,12 @@ StartMaintenanceResult::StartMaintenanceResult()
 {
 }
 
-StartMaintenanceResult::StartMaintenanceResult(const AmazonWebServiceResult<JsonValue>& result)
+StartMaintenanceResult::StartMaintenanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StartMaintenanceResult& StartMaintenanceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StartMaintenanceResult& StartMaintenanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Server"))

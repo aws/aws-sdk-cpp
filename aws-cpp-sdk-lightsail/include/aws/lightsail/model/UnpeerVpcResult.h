@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UnpeerVpcResult();
-    UnpeerVpcResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UnpeerVpcResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UnpeerVpcResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UnpeerVpcResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the request
@@ -72,6 +73,7 @@ namespace Model
     inline UnpeerVpcResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
   private:
+
     Operation m_operation;
   };
 

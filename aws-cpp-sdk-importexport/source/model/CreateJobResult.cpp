@@ -32,13 +32,13 @@ CreateJobResult::CreateJobResult() :
 {
 }
 
-CreateJobResult::CreateJobResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+CreateJobResult::CreateJobResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_jobType(JobType::NOT_SET)
 {
   *this = result;
 }
 
-CreateJobResult& CreateJobResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateJobResult& CreateJobResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

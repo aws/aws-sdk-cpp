@@ -45,6 +45,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>(Conditional) For your first request to <code>ListTrafficPolicies</code>,
      * don't include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you
@@ -136,6 +137,7 @@ namespace Model
      */
     inline ListTrafficPoliciesRequest& WithTrafficPolicyIdMarker(const char* value) { SetTrafficPolicyIdMarker(value); return *this;}
 
+
     /**
      * <p>(Optional) The maximum number of traffic policies that you want Amazon Route
      * 53 to return in response to this request. If you have more than
@@ -207,8 +209,10 @@ namespace Model
     inline ListTrafficPoliciesRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_trafficPolicyIdMarker;
     bool m_trafficPolicyIdMarkerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

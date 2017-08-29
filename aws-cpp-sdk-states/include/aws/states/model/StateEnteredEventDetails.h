@@ -40,6 +40,7 @@ namespace Model
     StateEnteredEventDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the state.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the state.</p>
      */
     inline StateEnteredEventDetails& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The JSON input data to the state.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline StateEnteredEventDetails& WithInput(const char* value) { SetInput(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CancelClusterResult();
-    CancelClusterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CancelClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

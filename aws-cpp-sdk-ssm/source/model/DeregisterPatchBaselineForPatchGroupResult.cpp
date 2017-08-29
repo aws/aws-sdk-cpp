@@ -30,12 +30,12 @@ DeregisterPatchBaselineForPatchGroupResult::DeregisterPatchBaselineForPatchGroup
 {
 }
 
-DeregisterPatchBaselineForPatchGroupResult::DeregisterPatchBaselineForPatchGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterPatchBaselineForPatchGroupResult::DeregisterPatchBaselineForPatchGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeregisterPatchBaselineForPatchGroupResult& DeregisterPatchBaselineForPatchGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeregisterPatchBaselineForPatchGroupResult& DeregisterPatchBaselineForPatchGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("BaselineId"))

@@ -30,12 +30,12 @@ DeleteTrustResult::DeleteTrustResult()
 {
 }
 
-DeleteTrustResult::DeleteTrustResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTrustResult::DeleteTrustResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteTrustResult& DeleteTrustResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteTrustResult& DeleteTrustResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TrustId"))

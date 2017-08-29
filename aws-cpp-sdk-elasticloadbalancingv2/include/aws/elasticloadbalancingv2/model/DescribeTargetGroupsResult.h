@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeTargetGroupsResult();
-    DescribeTargetGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeTargetGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeTargetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeTargetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the target groups.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <p>Information about the target groups.</p>
      */
     inline DescribeTargetGroupsResult& AddTargetGroups(TargetGroup&& value) { m_targetGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -121,6 +123,7 @@ namespace Model
      */
     inline DescribeTargetGroupsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -137,8 +140,11 @@ namespace Model
     inline DescribeTargetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<TargetGroup> m_targetGroups;
+
     Aws::String m_nextMarker;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -53,6 +53,7 @@ namespace Model
     ThirdPartyJobData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Represents information about an action type.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>Represents information about an action type.</p>
      */
     inline ThirdPartyJobData& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(std::move(value)); return *this;}
+
 
     /**
      * <p>Represents information about an action configuration.</p>
@@ -103,6 +105,7 @@ namespace Model
      */
     inline ThirdPartyJobData& WithActionConfiguration(ActionConfiguration&& value) { SetActionConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Represents information about a pipeline to a job worker.</p>
      */
@@ -127,6 +130,7 @@ namespace Model
      * <p>Represents information about a pipeline to a job worker.</p>
      */
     inline ThirdPartyJobData& WithPipelineContext(PipelineContext&& value) { SetPipelineContext(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the artifact that will be worked upon by the action, if any. This
@@ -191,6 +195,7 @@ namespace Model
      */
     inline ThirdPartyJobData& AddInputArtifacts(Artifact&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name of the artifact that will be the result of the action, if any. This
      * name might be system-generated, such as "MyBuiltApp", or might be defined by the
@@ -240,6 +245,7 @@ namespace Model
      */
     inline ThirdPartyJobData& AddOutputArtifacts(Artifact&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Represents an AWS session credentials object. These credentials are temporary
      * credentials that are issued by AWS Secure Token Service (STS). They can be used
@@ -279,6 +285,7 @@ namespace Model
      * artifact for the pipeline in AWS CodePipeline. </p>
      */
     inline ThirdPartyJobData& WithArtifactCredentials(AWSSessionCredentials&& value) { SetArtifactCredentials(std::move(value)); return *this;}
+
 
     /**
      * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
@@ -322,6 +329,7 @@ namespace Model
      */
     inline ThirdPartyJobData& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
+
     /**
      * <p>The encryption key used to encrypt and decrypt data in the artifact store for
      * the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is
@@ -358,20 +366,28 @@ namespace Model
     inline ThirdPartyJobData& WithEncryptionKey(EncryptionKey&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
   private:
+
     ActionTypeId m_actionTypeId;
     bool m_actionTypeIdHasBeenSet;
+
     ActionConfiguration m_actionConfiguration;
     bool m_actionConfigurationHasBeenSet;
+
     PipelineContext m_pipelineContext;
     bool m_pipelineContextHasBeenSet;
+
     Aws::Vector<Artifact> m_inputArtifacts;
     bool m_inputArtifactsHasBeenSet;
+
     Aws::Vector<Artifact> m_outputArtifacts;
     bool m_outputArtifactsHasBeenSet;
+
     AWSSessionCredentials m_artifactCredentials;
     bool m_artifactCredentialsHasBeenSet;
+
     Aws::String m_continuationToken;
     bool m_continuationTokenHasBeenSet;
+
     EncryptionKey m_encryptionKey;
     bool m_encryptionKeyHasBeenSet;
   };

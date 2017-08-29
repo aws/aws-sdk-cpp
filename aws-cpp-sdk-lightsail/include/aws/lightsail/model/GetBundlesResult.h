@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetBundlesResult();
-    GetBundlesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBundlesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBundlesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBundlesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs that contains information about the available
@@ -84,6 +85,7 @@ namespace Model
      * bundles.</p>
      */
     inline GetBundlesResult& AddBundles(Bundle&& value) { m_bundles.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A token used for advancing to the next page of results from your get active
@@ -128,7 +130,9 @@ namespace Model
     inline GetBundlesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<Bundle> m_bundles;
+
     Aws::String m_nextPageToken;
   };
 

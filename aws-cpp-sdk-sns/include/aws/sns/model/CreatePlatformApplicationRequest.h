@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Application names must be made up of only uppercase and lowercase ASCII
      * letters, numbers, underscores, hyphens, and periods, and must be between 1 and
@@ -91,6 +92,7 @@ namespace Model
      */
     inline CreatePlatformApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS
      * (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud
@@ -139,6 +141,7 @@ namespace Model
      * Messaging).</p>
      */
     inline CreatePlatformApplicationRequest& WithPlatform(const char* value) { SetPlatform(value); return *this;}
+
 
     /**
      * <p>For a list of attributes, see <a
@@ -225,10 +228,13 @@ namespace Model
     inline CreatePlatformApplicationRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_platform;
     bool m_platformHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
   };

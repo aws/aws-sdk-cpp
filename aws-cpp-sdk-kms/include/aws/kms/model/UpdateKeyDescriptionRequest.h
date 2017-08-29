@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the CMK. This value can be a globally unique
      * identifier or the fully specified ARN to a key.</p> <ul> <li> <p>Key ARN Example
@@ -106,6 +107,7 @@ namespace Model
      */
     inline UpdateKeyDescriptionRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>New description for the CMK.</p>
      */
@@ -142,8 +144,10 @@ namespace Model
     inline UpdateKeyDescriptionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

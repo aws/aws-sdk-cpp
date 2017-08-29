@@ -49,6 +49,7 @@ namespace Model
     StreamDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
     inline StreamDescription& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
+
 
     /**
      * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
@@ -154,6 +156,7 @@ namespace Model
      */
     inline StreamDescription& WithStreamLabel(const char* value) { SetStreamLabel(value); return *this;}
 
+
     /**
      * <p>Indicates the current status of the stream:</p> <ul>
      * <li><p><code>ENABLING</code> - Streams is currently being enabled on the
@@ -203,6 +206,7 @@ namespace Model
      * stream is disabled.</p></li> </ul>
      */
     inline StreamDescription& WithStreamStatus(StreamStatus&& value) { SetStreamStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates the format of the records within this stream:</p> <ul>
@@ -259,6 +263,7 @@ namespace Model
      */
     inline StreamDescription& WithStreamViewType(StreamViewType&& value) { SetStreamViewType(std::move(value)); return *this;}
 
+
     /**
      * <p>The date and time when the request to create this stream was issued.</p>
      */
@@ -283,6 +288,7 @@ namespace Model
      * <p>The date and time when the request to create this stream was issued.</p>
      */
     inline StreamDescription& WithCreationRequestDateTime(Aws::Utils::DateTime&& value) { SetCreationRequestDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The DynamoDB table with which the stream is associated.</p>
@@ -319,6 +325,7 @@ namespace Model
      */
     inline StreamDescription& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>The key attribute(s) of the stream's DynamoDB table.</p>
      */
@@ -354,6 +361,7 @@ namespace Model
      */
     inline StreamDescription& AddKeySchema(KeySchemaElement&& value) { m_keySchemaHasBeenSet = true; m_keySchema.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The shards that comprise the stream.</p>
      */
@@ -388,6 +396,7 @@ namespace Model
      * <p>The shards that comprise the stream.</p>
      */
     inline StreamDescription& AddShards(Shard&& value) { m_shardsHasBeenSet = true; m_shards.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The shard ID of the item where the operation stopped, inclusive of the
@@ -474,22 +483,31 @@ namespace Model
     inline StreamDescription& WithLastEvaluatedShardId(const char* value) { SetLastEvaluatedShardId(value); return *this;}
 
   private:
+
     Aws::String m_streamArn;
     bool m_streamArnHasBeenSet;
+
     Aws::String m_streamLabel;
     bool m_streamLabelHasBeenSet;
+
     StreamStatus m_streamStatus;
     bool m_streamStatusHasBeenSet;
+
     StreamViewType m_streamViewType;
     bool m_streamViewTypeHasBeenSet;
+
     Aws::Utils::DateTime m_creationRequestDateTime;
     bool m_creationRequestDateTimeHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::Vector<KeySchemaElement> m_keySchema;
     bool m_keySchemaHasBeenSet;
+
     Aws::Vector<Shard> m_shards;
     bool m_shardsHasBeenSet;
+
     Aws::String m_lastEvaluatedShardId;
     bool m_lastEvaluatedShardIdHasBeenSet;
   };

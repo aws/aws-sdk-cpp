@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the directory where you want to attach the
      * typed link.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline AttachTypedLinkRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 
+
     /**
      * <p>Identifies the source object that the typed link will attach to.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>Identifies the source object that the typed link will attach to.</p>
      */
     inline AttachTypedLinkRequest& WithSourceObjectReference(ObjectReference&& value) { SetSourceObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>Identifies the target object that the typed link will attach to.</p>
@@ -132,6 +135,7 @@ namespace Model
      */
     inline AttachTypedLinkRequest& WithTargetObjectReference(ObjectReference&& value) { SetTargetObjectReference(std::move(value)); return *this;}
 
+
     /**
      * <p>Identifies the typed link facet that is associated with the typed link.</p>
      */
@@ -156,6 +160,7 @@ namespace Model
      * <p>Identifies the typed link facet that is associated with the typed link.</p>
      */
     inline AttachTypedLinkRequest& WithTypedLinkFacet(TypedLinkSchemaAndFacetName&& value) { SetTypedLinkFacet(std::move(value)); return *this;}
+
 
     /**
      * <p>A set of attributes that are associated with the typed link.</p>
@@ -193,14 +198,19 @@ namespace Model
     inline AttachTypedLinkRequest& AddAttributes(AttributeNameAndValue&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet;
+
     ObjectReference m_sourceObjectReference;
     bool m_sourceObjectReferenceHasBeenSet;
+
     ObjectReference m_targetObjectReference;
     bool m_targetObjectReferenceHasBeenSet;
+
     TypedLinkSchemaAndFacetName m_typedLinkFacet;
     bool m_typedLinkFacetHasBeenSet;
+
     Aws::Vector<AttributeNameAndValue> m_attributes;
     bool m_attributesHasBeenSet;
   };

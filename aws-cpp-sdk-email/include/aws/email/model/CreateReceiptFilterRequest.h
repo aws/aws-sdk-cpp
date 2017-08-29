@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A data structure that describes the IP address filter to create, which
      * consists of a name, an IP address range, and whether to allow or block mail from
@@ -80,6 +81,7 @@ namespace Model
     inline CreateReceiptFilterRequest& WithFilter(ReceiptFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:
+
     ReceiptFilter m_filter;
     bool m_filterHasBeenSet;
   };

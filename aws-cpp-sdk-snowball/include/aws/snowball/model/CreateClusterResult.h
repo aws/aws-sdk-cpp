@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateClusterResult();
-    CreateClusterResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The automatically generated ID for a cluster.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateClusterResult& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
   private:
+
     Aws::String m_clusterId;
   };
 

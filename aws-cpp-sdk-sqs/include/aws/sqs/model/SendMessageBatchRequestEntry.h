@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>An identifier for a message in this batch used to communicate the result.</p>
      * <note> <p>The <code>Id</code>s of a batch request need to be unique within a
@@ -100,6 +101,7 @@ namespace Model
      */
     inline SendMessageBatchRequestEntry& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The body of the message.</p>
      */
@@ -135,6 +137,7 @@ namespace Model
      */
     inline SendMessageBatchRequestEntry& WithMessageBody(const char* value) { SetMessageBody(value); return *this;}
 
+
     /**
      * <p>The length of time, in seconds, for which a specific message is delayed.
      * Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive
@@ -167,6 +170,7 @@ namespace Model
      * queue level.</p> </note>
      */
     inline SendMessageBatchRequestEntry& WithDelaySeconds(int value) { SetDelaySeconds(value); return *this;}
+
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
@@ -255,6 +259,7 @@ namespace Model
      * Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline SendMessageBatchRequestEntry& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
+
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
@@ -564,6 +569,7 @@ namespace Model
      */
     inline SendMessageBatchRequestEntry& WithMessageDeduplicationId(const char* value) { SetMessageDeduplicationId(value); return *this;}
 
+
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> <p>The
      * tag that specifies that a message belongs to a specific message group. Messages
@@ -747,16 +753,22 @@ namespace Model
     inline SendMessageBatchRequestEntry& WithMessageGroupId(const char* value) { SetMessageGroupId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_messageBody;
     bool m_messageBodyHasBeenSet;
+
     int m_delaySeconds;
     bool m_delaySecondsHasBeenSet;
+
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
     bool m_messageAttributesHasBeenSet;
+
     Aws::String m_messageDeduplicationId;
     bool m_messageDeduplicationIdHasBeenSet;
+
     Aws::String m_messageGroupId;
     bool m_messageGroupIdHasBeenSet;
   };

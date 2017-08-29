@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetSdkTypesResult();
-    GetSdkTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSdkTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSdkTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetSdkTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetPosition() const{ return m_position; }
@@ -68,6 +69,7 @@ namespace Model
 
     
     inline GetSdkTypesResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+
 
     /**
      * <p>The current page of elements from this collection.</p>
@@ -105,7 +107,9 @@ namespace Model
     inline GetSdkTypesResult& AddItems(SdkType&& value) { m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_position;
+
     Aws::Vector<SdkType> m_items;
   };
 

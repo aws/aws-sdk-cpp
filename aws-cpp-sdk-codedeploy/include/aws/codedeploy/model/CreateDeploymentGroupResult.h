@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateDeploymentGroupResult();
-    CreateDeploymentGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDeploymentGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDeploymentGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateDeploymentGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A unique deployment group ID.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline CreateDeploymentGroupResult& WithDeploymentGroupId(const char* value) { SetDeploymentGroupId(value); return *this;}
 
   private:
+
     Aws::String m_deploymentGroupId;
   };
 

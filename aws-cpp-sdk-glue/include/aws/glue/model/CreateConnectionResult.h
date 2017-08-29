@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     CreateConnectionResult();
-    CreateConnectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateConnectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the log group.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline GetLogEventsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the log stream.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline GetLogEventsRequest& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
+
     /**
      * <p>The start of the time range, expressed as the number of milliseconds since
      * Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not
@@ -127,6 +130,7 @@ namespace Model
      */
     inline GetLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
 
+
     /**
      * <p>The end of the time range, expressed as the number of milliseconds since Jan
      * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
@@ -147,6 +151,7 @@ namespace Model
      * included.</p>
      */
     inline GetLogEventsRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -190,6 +195,7 @@ namespace Model
      */
     inline GetLogEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of log events returned. If you don't specify a value, the
      * maximum is as many log events as can fit in a response size of 1MB, up to 10,000
@@ -210,6 +216,7 @@ namespace Model
      * log events.</p>
      */
     inline GetLogEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>If the value is true, the earliest log events are returned first. If the
@@ -233,18 +240,25 @@ namespace Model
     inline GetLogEventsRequest& WithStartFromHead(bool value) { SetStartFromHead(value); return *this;}
 
   private:
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
+
     long long m_startTime;
     bool m_startTimeHasBeenSet;
+
     long long m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     bool m_startFromHead;
     bool m_startFromHeadHasBeenSet;
   };

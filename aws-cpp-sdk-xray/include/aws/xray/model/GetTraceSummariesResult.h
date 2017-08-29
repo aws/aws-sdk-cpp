@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     GetTraceSummariesResult();
-    GetTraceSummariesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTraceSummariesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTraceSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTraceSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Trace IDs and metadata for traces that were found in the specified time
@@ -86,6 +87,7 @@ namespace Model
      */
     inline GetTraceSummariesResult& AddTraceSummaries(TraceSummary&& value) { m_traceSummaries.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The start time of this page of results.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      */
     inline GetTraceSummariesResult& WithApproximateTime(Aws::Utils::DateTime&& value) { SetApproximateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of traces that were processed to get this set of summaries.</p>
      */
@@ -125,6 +128,7 @@ namespace Model
      * <p>The number of traces that were processed to get this set of summaries.</p>
      */
     inline GetTraceSummariesResult& WithTracesProcessedCount(long long value) { SetTracesProcessedCount(value); return *this;}
+
 
     /**
      * <p>If the requested time frame contained more than one page of results, you can
@@ -176,9 +180,13 @@ namespace Model
     inline GetTraceSummariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<TraceSummary> m_traceSummaries;
+
     Aws::Utils::DateTime m_approximateTime;
+
     long long m_tracesProcessedCount;
+
     Aws::String m_nextToken;
   };
 

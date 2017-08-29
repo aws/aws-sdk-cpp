@@ -45,6 +45,7 @@ namespace Model
     Mitigation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the mitigation taken for this attack.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
     inline Mitigation& WithMitigationName(const char* value) { SetMitigationName(value); return *this;}
 
   private:
+
     Aws::String m_mitigationName;
     bool m_mitigationNameHasBeenSet;
   };

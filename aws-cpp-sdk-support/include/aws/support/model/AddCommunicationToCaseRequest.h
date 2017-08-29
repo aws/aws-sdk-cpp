@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
@@ -89,6 +90,7 @@ namespace Model
      */
     inline AddCommunicationToCaseRequest& WithCaseId(const char* value) { SetCaseId(value); return *this;}
 
+
     /**
      * <p>The body of an email communication to add to the support case.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      * <p>The body of an email communication to add to the support case.</p>
      */
     inline AddCommunicationToCaseRequest& WithCommunicationBody(const char* value) { SetCommunicationBody(value); return *this;}
+
 
     /**
      * <p>The email addresses in the CC line of an email to be added to the support
@@ -172,6 +175,7 @@ namespace Model
      */
     inline AddCommunicationToCaseRequest& AddCcEmailAddresses(const char* value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of a set of one or more attachments for the communication to add to
      * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
@@ -215,12 +219,16 @@ namespace Model
     inline AddCommunicationToCaseRequest& WithAttachmentSetId(const char* value) { SetAttachmentSetId(value); return *this;}
 
   private:
+
     Aws::String m_caseId;
     bool m_caseIdHasBeenSet;
+
     Aws::String m_communicationBody;
     bool m_communicationBodyHasBeenSet;
+
     Aws::Vector<Aws::String> m_ccEmailAddresses;
     bool m_ccEmailAddressesHasBeenSet;
+
     Aws::String m_attachmentSetId;
     bool m_attachmentSetIdHasBeenSet;
   };

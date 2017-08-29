@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateDataSourceFromRedshiftRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
+
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
      */
     inline CreateDataSourceFromRedshiftRequest& WithDataSourceName(const char* value) { SetDataSourceName(value); return *this;}
+
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
@@ -217,6 +220,7 @@ namespace Model
      */
     inline CreateDataSourceFromRedshiftRequest& WithDataSpec(RedshiftDataSpec&& value) { SetDataSpec(std::move(value)); return *this;}
 
+
     /**
      * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
      * on behalf of the user to create the following: </p> <p> <ul> <li><p>A security
@@ -287,6 +291,7 @@ namespace Model
      */
     inline CreateDataSourceFromRedshiftRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a <code>DataSource</code>.
@@ -315,14 +320,19 @@ namespace Model
     inline CreateDataSourceFromRedshiftRequest& WithComputeStatistics(bool value) { SetComputeStatistics(value); return *this;}
 
   private:
+
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet;
+
     Aws::String m_dataSourceName;
     bool m_dataSourceNameHasBeenSet;
+
     RedshiftDataSpec m_dataSpec;
     bool m_dataSpecHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     bool m_computeStatistics;
     bool m_computeStatisticsHasBeenSet;
   };

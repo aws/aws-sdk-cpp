@@ -34,6 +34,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A Boolean value indicating whether to also include Availability Zones in your
      * get regions request. Availability Zones are indicated with a letter: e.g.,
@@ -56,6 +57,7 @@ namespace Model
     inline GetRegionsRequest& WithIncludeAvailabilityZones(bool value) { SetIncludeAvailabilityZones(value); return *this;}
 
   private:
+
     bool m_includeAvailabilityZones;
     bool m_includeAvailabilityZonesHasBeenSet;
   };

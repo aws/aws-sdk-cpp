@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the execution.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline GetExecutionHistoryRequest& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
 
+
     /**
      * <p>The maximum number of results that will be returned per call.
      * <code>nextToken</code> can be used to obtain further pages of results. The
@@ -98,6 +100,7 @@ namespace Model
      */
     inline GetExecutionHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
     /**
      * <p>Lists events in descending order of their <code>timeStamp</code>.</p>
      */
@@ -112,6 +115,7 @@ namespace Model
      * <p>Lists events in descending order of their <code>timeStamp</code>.</p>
      */
     inline GetExecutionHistoryRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
+
 
     /**
      * <p>If a <code>nextToken</code> was returned by a previous call, there are more
@@ -177,12 +181,16 @@ namespace Model
     inline GetExecutionHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_executionArn;
     bool m_executionArnHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     bool m_reverseOrder;
     bool m_reverseOrderHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

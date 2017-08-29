@@ -32,13 +32,13 @@ DetachClassicLinkVpcResponse::DetachClassicLinkVpcResponse() :
 {
 }
 
-DetachClassicLinkVpcResponse::DetachClassicLinkVpcResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+DetachClassicLinkVpcResponse::DetachClassicLinkVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_return(false)
 {
   *this = result;
 }
 
-DetachClassicLinkVpcResponse& DetachClassicLinkVpcResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DetachClassicLinkVpcResponse& DetachClassicLinkVpcResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

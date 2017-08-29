@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the Maintenance Window.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The name of the Maintenance Window.</p>
      */
     inline CreateMaintenanceWindowRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>An optional description for the Maintenance Window. We recommend specifying a
@@ -114,6 +116,7 @@ namespace Model
      */
     inline CreateMaintenanceWindowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
@@ -156,6 +159,7 @@ namespace Model
      */
     inline CreateMaintenanceWindowRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 
+
     /**
      * <p>The duration of the Maintenance Window in hours.</p>
      */
@@ -170,6 +174,7 @@ namespace Model
      * <p>The duration of the Maintenance Window in hours.</p>
      */
     inline CreateMaintenanceWindowRequest& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The number of hours before the end of the Maintenance Window that Systems
@@ -188,6 +193,7 @@ namespace Model
      * Manager stops scheduling new tasks for execution.</p>
      */
     inline CreateMaintenanceWindowRequest& WithCutoff(int value) { SetCutoff(value); return *this;}
+
 
     /**
      * <p>Enables a Maintenance Window task to execute on managed instances, even if
@@ -218,6 +224,7 @@ namespace Model
      * Maintenance Window. </p>
      */
     inline CreateMaintenanceWindowRequest& WithAllowUnassociatedTargets(bool value) { SetAllowUnassociatedTargets(value); return *this;}
+
 
     /**
      * <p>User-provided idempotency token.</p>
@@ -255,18 +262,25 @@ namespace Model
     inline CreateMaintenanceWindowRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_schedule;
     bool m_scheduleHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     int m_cutoff;
     bool m_cutoffHasBeenSet;
+
     bool m_allowUnassociatedTargets;
     bool m_allowUnassociatedTargetsHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
   };

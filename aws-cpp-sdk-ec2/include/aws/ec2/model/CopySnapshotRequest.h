@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A description for the EBS snapshot.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>A description for the EBS snapshot.</p>
      */
     inline CopySnapshotRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The destination region to use in the <code>PresignedUrl</code> parameter of a
@@ -160,6 +162,7 @@ namespace Model
      */
     inline CopySnapshotRequest& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}
 
+
     /**
      * <p>Specifies whether the destination snapshot should be encrypted. You can
      * encrypt a copy of an unencrypted snapshot using this flag, but you cannot use it
@@ -192,6 +195,7 @@ namespace Model
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CopySnapshotRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when
@@ -290,6 +294,7 @@ namespace Model
      * also be set.</p>
      */
     inline CopySnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
 
     /**
      * <p>The pre-signed URL that facilitates copying an encrypted snapshot. This
@@ -417,6 +422,7 @@ namespace Model
      */
     inline CopySnapshotRequest& WithPresignedUrl(const char* value) { SetPresignedUrl(value); return *this;}
 
+
     /**
      * <p>The ID of the region that contains the snapshot to be copied.</p>
      */
@@ -451,6 +457,7 @@ namespace Model
      * <p>The ID of the region that contains the snapshot to be copied.</p>
      */
     inline CopySnapshotRequest& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
+
 
     /**
      * <p>The ID of the EBS snapshot to copy.</p>
@@ -487,6 +494,7 @@ namespace Model
      */
     inline CopySnapshotRequest& WithSourceSnapshotId(const char* value) { SetSourceSnapshotId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -512,20 +520,28 @@ namespace Model
     inline CopySnapshotRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_destinationRegion;
     bool m_destinationRegionHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::String m_presignedUrl;
     bool m_presignedUrlHasBeenSet;
+
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet;
+
     Aws::String m_sourceSnapshotId;
     bool m_sourceSnapshotIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

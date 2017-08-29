@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A list of ID numbers of the support cases you want returned. The maximum
      * number of cases is 100.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DescribeCasesRequest& AddCaseIdList(const char* value) { m_caseIdListHasBeenSet = true; m_caseIdList.push_back(value); return *this; }
 
+
     /**
      * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
      */
     inline DescribeCasesRequest& WithDisplayId(const char* value) { SetDisplayId(value); return *this;}
+
 
     /**
      * <p>The start date for a filtered date search on support case communications.
@@ -165,6 +168,7 @@ namespace Model
      */
     inline DescribeCasesRequest& WithAfterTime(const char* value) { SetAfterTime(value); return *this;}
 
+
     /**
      * <p>The end date for a filtered date search on support case communications. Case
      * communications are available for 12 months after creation.</p>
@@ -207,6 +211,7 @@ namespace Model
      */
     inline DescribeCasesRequest& WithBeforeTime(const char* value) { SetBeforeTime(value); return *this;}
 
+
     /**
      * <p>Specifies whether resolved support cases should be included in the
      * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
@@ -224,6 +229,7 @@ namespace Model
      * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
      */
     inline DescribeCasesRequest& WithIncludeResolvedCases(bool value) { SetIncludeResolvedCases(value); return *this;}
+
 
     /**
      * <p>A resumption point for pagination.</p>
@@ -260,6 +266,7 @@ namespace Model
      */
     inline DescribeCasesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of results to return before paginating.</p>
      */
@@ -274,6 +281,7 @@ namespace Model
      * <p>The maximum number of results to return before paginating.</p>
      */
     inline DescribeCasesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -324,6 +332,7 @@ namespace Model
      */
     inline DescribeCasesRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
+
     /**
      * <p>Specifies whether communications should be included in the
      * <a>DescribeCases</a> results. The default is <i>true</i>.</p>
@@ -343,22 +352,31 @@ namespace Model
     inline DescribeCasesRequest& WithIncludeCommunications(bool value) { SetIncludeCommunications(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_caseIdList;
     bool m_caseIdListHasBeenSet;
+
     Aws::String m_displayId;
     bool m_displayIdHasBeenSet;
+
     Aws::String m_afterTime;
     bool m_afterTimeHasBeenSet;
+
     Aws::String m_beforeTime;
     bool m_beforeTimeHasBeenSet;
+
     bool m_includeResolvedCases;
     bool m_includeResolvedCasesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_language;
     bool m_languageHasBeenSet;
+
     bool m_includeCommunications;
     bool m_includeCommunicationsHasBeenSet;
   };

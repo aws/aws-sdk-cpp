@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     BatchGetDeploymentInstancesResult();
-    BatchGetDeploymentInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetDeploymentInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetDeploymentInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetDeploymentInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the instance.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>Information about the instance.</p>
      */
     inline BatchGetDeploymentInstancesResult& AddInstancesSummary(InstanceSummary&& value) { m_instancesSummary.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Information about errors that may have occurred during the API call.</p>
@@ -120,7 +122,9 @@ namespace Model
     inline BatchGetDeploymentInstancesResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
   private:
+
     Aws::Vector<InstanceSummary> m_instancesSummary;
+
     Aws::String m_errorMessage;
   };
 

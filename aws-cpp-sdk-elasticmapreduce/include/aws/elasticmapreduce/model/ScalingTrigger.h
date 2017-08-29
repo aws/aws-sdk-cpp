@@ -46,6 +46,7 @@ namespace Model
     ScalingTrigger& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The definition of a CloudWatch metric alarm. When the defined alarm
      * conditions are met along with other trigger parameters, scaling activity
@@ -82,6 +83,7 @@ namespace Model
     inline ScalingTrigger& WithCloudWatchAlarmDefinition(CloudWatchAlarmDefinition&& value) { SetCloudWatchAlarmDefinition(std::move(value)); return *this;}
 
   private:
+
     CloudWatchAlarmDefinition m_cloudWatchAlarmDefinition;
     bool m_cloudWatchAlarmDefinitionHasBeenSet;
   };

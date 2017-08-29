@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateSnapshotScheduleResult();
-    UpdateSnapshotScheduleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSnapshotScheduleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateSnapshotScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p/>
@@ -83,6 +84,7 @@ namespace Model
     inline UpdateSnapshotScheduleResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
   };
 

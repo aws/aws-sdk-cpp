@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The customer-assigned name of the DB instance that contains the log files you
      * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
@@ -106,6 +107,7 @@ namespace Model
      */
     inline DescribeDBLogFilesRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p>Filters the available log files for log file names that contain the specified
      * string.</p>
@@ -148,6 +150,7 @@ namespace Model
      */
     inline DescribeDBLogFilesRequest& WithFilenameContains(const char* value) { SetFilenameContains(value); return *this;}
 
+
     /**
      * <p>Filters the available log files for files written since the specified date,
      * in POSIX timestamp format with milliseconds.</p>
@@ -166,6 +169,7 @@ namespace Model
      */
     inline DescribeDBLogFilesRequest& WithFileLastWritten(long long value) { SetFileLastWritten(value); return *this;}
 
+
     /**
      * <p>Filters the available log files for files larger than the specified size.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      * <p>Filters the available log files for files larger than the specified size.</p>
      */
     inline DescribeDBLogFilesRequest& WithFileSize(long long value) { SetFileSize(value); return *this;}
+
 
     /**
      * <p>This parameter is not currently supported.</p>
@@ -216,6 +221,7 @@ namespace Model
      */
     inline DescribeDBLogFilesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified MaxRecords value, a pagination token called a marker is
@@ -236,6 +242,7 @@ namespace Model
      * included in the response so that the remaining results can be retrieved.</p>
      */
     inline DescribeDBLogFilesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>The pagination token provided in the previous request. If this parameter is
@@ -287,18 +294,25 @@ namespace Model
     inline DescribeDBLogFilesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     Aws::String m_filenameContains;
     bool m_filenameContainsHasBeenSet;
+
     long long m_fileLastWritten;
     bool m_fileLastWrittenHasBeenSet;
+
     long long m_fileSize;
     bool m_fileSizeHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

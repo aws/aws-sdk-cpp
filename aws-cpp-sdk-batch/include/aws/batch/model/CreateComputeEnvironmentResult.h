@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateComputeEnvironmentResult();
-    CreateComputeEnvironmentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateComputeEnvironmentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateComputeEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateComputeEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the compute environment.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>The name of the compute environment.</p>
      */
     inline CreateComputeEnvironmentResult& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
@@ -112,7 +114,9 @@ namespace Model
     inline CreateComputeEnvironmentResult& WithComputeEnvironmentArn(const char* value) { SetComputeEnvironmentArn(value); return *this;}
 
   private:
+
     Aws::String m_computeEnvironmentName;
+
     Aws::String m_computeEnvironmentArn;
   };
 

@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     ModifyEventSubscriptionResult();
-    ModifyEventSubscriptionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyEventSubscriptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyEventSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyEventSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The modified event subscription.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline ModifyEventSubscriptionResult& WithEventSubscription(EventSubscription&& value) { SetEventSubscription(std::move(value)); return *this;}
 
   private:
+
     EventSubscription m_eventSubscription;
   };
 

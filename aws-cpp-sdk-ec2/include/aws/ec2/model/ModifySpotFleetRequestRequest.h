@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Indicates whether running Spot instances should be terminated if the target
      * capacity of the Spot fleet request is decreased below the current size of the
@@ -77,6 +78,7 @@ namespace Model
      * Spot fleet.</p>
      */
     inline ModifySpotFleetRequestRequest& WithExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { SetExcessCapacityTerminationPolicy(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Spot fleet request.</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline ModifySpotFleetRequestRequest& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
+
     /**
      * <p>The size of the fleet.</p>
      */
@@ -129,10 +132,13 @@ namespace Model
     inline ModifySpotFleetRequestRequest& WithTargetCapacity(int value) { SetTargetCapacity(value); return *this;}
 
   private:
+
     ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
     bool m_excessCapacityTerminationPolicyHasBeenSet;
+
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet;
+
     int m_targetCapacity;
     bool m_targetCapacityHasBeenSet;
   };

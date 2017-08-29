@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CLOUDWATCH_API CloudWatchErrorMarshaller : public Client::XmlErrorMarshaller
+class AWS_CLOUDWATCH_API CloudWatchErrorMarshaller : public Aws::Client::XmlErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace CloudWatch
+} // namespace Client
 } // namespace Aws

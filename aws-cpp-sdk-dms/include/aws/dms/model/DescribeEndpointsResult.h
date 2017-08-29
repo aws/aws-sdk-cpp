@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeEndpointsResult();
-    DescribeEndpointsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEndpointsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -97,6 +98,7 @@ namespace Model
      */
     inline DescribeEndpointsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Endpoint description.</p>
      */
@@ -133,7 +135,9 @@ namespace Model
     inline DescribeEndpointsResult& AddEndpoints(Endpoint&& value) { m_endpoints.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<Endpoint> m_endpoints;
   };
 

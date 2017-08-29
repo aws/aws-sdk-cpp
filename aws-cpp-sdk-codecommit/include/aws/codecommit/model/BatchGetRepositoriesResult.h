@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     BatchGetRepositoriesResult();
-    BatchGetRepositoriesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetRepositoriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of repositories returned by the batch get repositories operation.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list of repositories returned by the batch get repositories operation.</p>
      */
     inline BatchGetRepositoriesResult& AddRepositories(RepositoryMetadata&& value) { m_repositories.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Returns a list of repository names for which information could not be
@@ -133,7 +135,9 @@ namespace Model
     inline BatchGetRepositoriesResult& AddRepositoriesNotFound(const char* value) { m_repositoriesNotFound.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<RepositoryMetadata> m_repositories;
+
     Aws::Vector<Aws::String> m_repositoriesNotFound;
   };
 

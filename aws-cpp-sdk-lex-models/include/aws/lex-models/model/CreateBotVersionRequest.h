@@ -34,6 +34,7 @@ namespace Model
     CreateBotVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the bot that you want to create a new version of. The name is
      * case sensitive. </p>
@@ -75,6 +76,7 @@ namespace Model
      * case sensitive. </p>
      */
     inline CreateBotVersionRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Identifies a specific revision of the <code>$LATEST</code> version of the
@@ -140,8 +142,10 @@ namespace Model
     inline CreateBotVersionRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
   };

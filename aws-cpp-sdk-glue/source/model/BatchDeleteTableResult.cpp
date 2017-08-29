@@ -30,12 +30,12 @@ BatchDeleteTableResult::BatchDeleteTableResult()
 {
 }
 
-BatchDeleteTableResult::BatchDeleteTableResult(const AmazonWebServiceResult<JsonValue>& result)
+BatchDeleteTableResult::BatchDeleteTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BatchDeleteTableResult& BatchDeleteTableResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BatchDeleteTableResult& BatchDeleteTableResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Errors"))

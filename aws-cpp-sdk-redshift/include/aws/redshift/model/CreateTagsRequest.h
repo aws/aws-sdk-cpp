@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
      * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
@@ -85,6 +86,7 @@ namespace Model
      * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
      */
     inline CreateTagsRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
 
     /**
      * <p>One or more name/value pairs to add as tags to the specified resource. Each
@@ -164,8 +166,10 @@ namespace Model
     inline CreateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

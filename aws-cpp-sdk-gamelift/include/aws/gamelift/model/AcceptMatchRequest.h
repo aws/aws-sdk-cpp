@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a matchmaking ticket. The ticket must be in status
      * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
      */
     inline AcceptMatchRequest& WithTicketId(const char* value) { SetTicketId(value); return *this;}
+
 
     /**
      * <p>Unique identifier for a player delivering the response. This parameter can
@@ -131,6 +133,7 @@ namespace Model
      */
     inline AcceptMatchRequest& AddPlayerIds(const char* value) { m_playerIdsHasBeenSet = true; m_playerIds.push_back(value); return *this; }
 
+
     /**
      * <p>Player response to the proposed match.</p>
      */
@@ -157,10 +160,13 @@ namespace Model
     inline AcceptMatchRequest& WithAcceptanceType(AcceptanceType&& value) { SetAcceptanceType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_ticketId;
     bool m_ticketIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_playerIds;
     bool m_playerIdsHasBeenSet;
+
     AcceptanceType m_acceptanceType;
     bool m_acceptanceTypeHasBeenSet;
   };

@@ -50,6 +50,7 @@ namespace Model
     JobQueueDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the job queue.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The name of the job queue.</p>
      */
     inline JobQueueDetail& WithJobQueueName(const char* value) { SetJobQueueName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline JobQueueDetail& WithJobQueueArn(const char* value) { SetJobQueueArn(value); return *this;}
 
+
     /**
      * <p>Describes the ability of the queue to accept new jobs.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>Describes the ability of the queue to accept new jobs.</p>
      */
     inline JobQueueDetail& WithState(JQState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The status of the job queue (for example, <code>CREATING</code> or
@@ -174,6 +178,7 @@ namespace Model
      * <code>VALID</code>).</p>
      */
     inline JobQueueDetail& WithStatus(JQStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -217,6 +222,7 @@ namespace Model
      */
     inline JobQueueDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
+
     /**
      * <p>The priority of the job queue. </p>
      */
@@ -231,6 +237,7 @@ namespace Model
      * <p>The priority of the job queue. </p>
      */
     inline JobQueueDetail& WithPriority(int value) { SetPriority(value); return *this;}
+
 
     /**
      * <p>The compute environments that are attached to the job queue and the order in
@@ -282,18 +289,25 @@ namespace Model
     inline JobQueueDetail& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_jobQueueName;
     bool m_jobQueueNameHasBeenSet;
+
     Aws::String m_jobQueueArn;
     bool m_jobQueueArnHasBeenSet;
+
     JQState m_state;
     bool m_stateHasBeenSet;
+
     JQStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
+
     int m_priority;
     bool m_priorityHasBeenSet;
+
     Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;
     bool m_computeEnvironmentOrderHasBeenSet;
   };

@@ -30,12 +30,12 @@ UpdateConnectivityInfoResult::UpdateConnectivityInfoResult()
 {
 }
 
-UpdateConnectivityInfoResult::UpdateConnectivityInfoResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateConnectivityInfoResult::UpdateConnectivityInfoResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateConnectivityInfoResult& UpdateConnectivityInfoResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateConnectivityInfoResult& UpdateConnectivityInfoResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("message"))

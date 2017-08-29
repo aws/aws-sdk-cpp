@@ -48,6 +48,7 @@ namespace Model
     Face& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Face& WithFaceId(const char* value) { SetFaceId(value); return *this;}
 
+
     /**
      * <p>Bounding box of the face.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>Bounding box of the face.</p>
      */
     inline Face& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
+
 
     /**
      * <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
@@ -143,6 +146,7 @@ namespace Model
      */
     inline Face& WithImageId(const char* value) { SetImageId(value); return *this;}
 
+
     /**
      * <p>Identifier that you assign to all the faces in the input image.</p>
      */
@@ -178,6 +182,7 @@ namespace Model
      */
     inline Face& WithExternalImageId(const char* value) { SetExternalImageId(value); return *this;}
 
+
     /**
      * <p>Confidence level that the bounding box contains a face (and not a different
      * object such as a tree).</p>
@@ -197,14 +202,19 @@ namespace Model
     inline Face& WithConfidence(double value) { SetConfidence(value); return *this;}
 
   private:
+
     Aws::String m_faceId;
     bool m_faceIdHasBeenSet;
+
     BoundingBox m_boundingBox;
     bool m_boundingBoxHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     Aws::String m_externalImageId;
     bool m_externalImageIdHasBeenSet;
+
     double m_confidence;
     bool m_confidenceHasBeenSet;
   };

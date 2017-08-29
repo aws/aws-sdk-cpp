@@ -143,14 +143,14 @@ namespace Model
         class UpdateStackSetRequest;
         class ValidateTemplateRequest;
 
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> CancelUpdateStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> CancelUpdateStackOutcome;
         typedef Aws::Utils::Outcome<ContinueUpdateRollbackResult, Aws::Client::AWSError<CloudFormationErrors>> ContinueUpdateRollbackOutcome;
         typedef Aws::Utils::Outcome<CreateChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> CreateChangeSetOutcome;
         typedef Aws::Utils::Outcome<CreateStackResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackOutcome;
         typedef Aws::Utils::Outcome<CreateStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackInstancesOutcome;
         typedef Aws::Utils::Outcome<CreateStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> CreateStackSetOutcome;
         typedef Aws::Utils::Outcome<DeleteChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteChangeSetOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackOutcome;
         typedef Aws::Utils::Outcome<DeleteStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackInstancesOutcome;
         typedef Aws::Utils::Outcome<DeleteStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackSetOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeAccountLimitsOutcome;
@@ -176,8 +176,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListStackSetOperationsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetOperationsOutcome;
         typedef Aws::Utils::Outcome<ListStackSetsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetsOutcome;
         typedef Aws::Utils::Outcome<ListStacksResult, Aws::Client::AWSError<CloudFormationErrors>> ListStacksOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> SetStackPolicyOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CloudFormationErrors>> SignalResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> SetStackPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> SignalResourceOutcome;
         typedef Aws::Utils::Outcome<StopStackSetOperationResult, Aws::Client::AWSError<CloudFormationErrors>> StopStackSetOperationOutcome;
         typedef Aws::Utils::Outcome<UpdateStackResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackOutcome;
         typedef Aws::Utils::Outcome<UpdateStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackSetOutcome;
@@ -293,27 +293,28 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudFormationClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudFormationClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudFormationClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudFormationClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        CloudFormationClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        CloudFormationClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CloudFormationClient();
+
 
        /**
         * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
         */
-        Aws::String ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+        Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
 
         /**
@@ -1767,7 +1768,7 @@ namespace Model
 
 
   private:
-    void init(const Client::ClientConfiguration& clientConfiguration);
+    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void CancelUpdateStackAsyncHelper(const Model::CancelUpdateStackRequest& request, const CancelUpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1811,7 +1812,7 @@ namespace Model
         void ValidateTemplateAsyncHelper(const Model::ValidateTemplateRequest& request, const ValidateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
-    std::shared_ptr<Utils::Threading::Executor> m_executor;
+    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace CloudFormation

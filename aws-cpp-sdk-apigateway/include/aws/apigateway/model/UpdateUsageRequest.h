@@ -40,6 +40,7 @@ namespace Model
     UpdateUsageRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Id of the usage plan associated with the usage data.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The Id of the usage plan associated with the usage data.</p>
      */
     inline UpdateUsageRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
+
 
     /**
      * <p>The identifier of the API key associated with the usage plan in which a
@@ -116,6 +118,7 @@ namespace Model
      * temporary extension is granted to the remaining quota.</p>
      */
     inline UpdateUsageRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -160,10 +163,13 @@ namespace Model
     inline UpdateUsageRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_usagePlanId;
     bool m_usagePlanIdHasBeenSet;
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::Vector<PatchOperation> m_patchOperations;
     bool m_patchOperationsHasBeenSet;
   };

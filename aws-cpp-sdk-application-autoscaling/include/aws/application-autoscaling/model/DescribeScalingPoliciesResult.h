@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeScalingPoliciesResult();
-    DescribeScalingPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeScalingPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeScalingPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeScalingPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of scaling policy objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of scaling policy objects.</p>
      */
     inline DescribeScalingPoliciesResult& AddScalingPolicies(ScalingPolicy&& value) { m_scalingPolicies.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token required to get the next set of results. This value is
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeScalingPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ScalingPolicy> m_scalingPolicies;
+
     Aws::String m_nextToken;
   };
 

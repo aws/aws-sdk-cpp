@@ -30,12 +30,12 @@ BulkPublishResult::BulkPublishResult()
 {
 }
 
-BulkPublishResult::BulkPublishResult(const AmazonWebServiceResult<JsonValue>& result)
+BulkPublishResult::BulkPublishResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-BulkPublishResult& BulkPublishResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+BulkPublishResult& BulkPublishResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityPoolId"))

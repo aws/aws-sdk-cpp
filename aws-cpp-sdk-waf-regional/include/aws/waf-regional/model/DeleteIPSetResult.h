@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeleteIPSetResult();
-    DeleteIPSetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteIPSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteIPSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteIPSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -98,6 +99,7 @@ namespace Model
     inline DeleteIPSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Aws::String m_changeToken;
   };
 

@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An array of strings that contains the directory identifiers to retrieve
      * information for. If this member is null, all directories are retrieved.</p>
@@ -89,6 +90,7 @@ namespace Model
      */
     inline DescribeWorkspaceDirectoriesRequest& AddDirectoryIds(const char* value) { m_directoryIdsHasBeenSet = true; m_directoryIds.push_back(value); return *this; }
 
+
     /**
      * <p>The <code>NextToken</code> value from a previous call to this operation. Pass
      * null if this is the first call.</p>
@@ -132,8 +134,10 @@ namespace Model
     inline DescribeWorkspaceDirectoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_directoryIds;
     bool m_directoryIdsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

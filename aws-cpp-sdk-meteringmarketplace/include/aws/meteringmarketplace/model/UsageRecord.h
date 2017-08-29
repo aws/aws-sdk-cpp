@@ -48,6 +48,7 @@ namespace Model
     UsageRecord& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
      * of the timestamp will be ignored.</p> <p>Your application can meter usage for up
@@ -82,6 +83,7 @@ namespace Model
      * to one hour in the past.</p>
      */
     inline UsageRecord& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and
@@ -124,6 +126,7 @@ namespace Model
      * represents an individual buyer in your application.</p>
      */
     inline UsageRecord& WithCustomerIdentifier(const char* value) { SetCustomerIdentifier(value); return *this;}
+
 
     /**
      * <p>During the process of registering a product on AWS Marketplace, up to eight
@@ -174,6 +177,7 @@ namespace Model
      */
     inline UsageRecord& WithDimension(const char* value) { SetDimension(value); return *this;}
 
+
     /**
      * <p>The quantity of usage consumed by the customer for the given dimension and
      * time.</p>
@@ -193,12 +197,16 @@ namespace Model
     inline UsageRecord& WithQuantity(int value) { SetQuantity(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
     Aws::String m_customerIdentifier;
     bool m_customerIdentifierHasBeenSet;
+
     Aws::String m_dimension;
     bool m_dimensionHasBeenSet;
+
     int m_quantity;
     bool m_quantityHasBeenSet;
   };

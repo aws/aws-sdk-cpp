@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DescribeApplicationResult();
-    DescribeApplicationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeApplicationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Provides a description of the application, such as the application Amazon
@@ -82,6 +83,7 @@ namespace Model
     inline DescribeApplicationResult& WithApplicationDetail(ApplicationDetail&& value) { SetApplicationDetail(std::move(value)); return *this;}
 
   private:
+
     ApplicationDetail m_applicationDetail;
   };
 

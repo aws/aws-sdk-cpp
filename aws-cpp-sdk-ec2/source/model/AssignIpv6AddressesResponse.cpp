@@ -31,12 +31,12 @@ AssignIpv6AddressesResponse::AssignIpv6AddressesResponse()
 {
 }
 
-AssignIpv6AddressesResponse::AssignIpv6AddressesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+AssignIpv6AddressesResponse::AssignIpv6AddressesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AssignIpv6AddressesResponse& AssignIpv6AddressesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -55,6 +55,7 @@ namespace Model
     PlacedPlayerSession& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a player that is associated with this player
      * session.</p>
@@ -97,6 +98,7 @@ namespace Model
      */
     inline PlacedPlayerSession& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
 
+
     /**
      * <p>Unique identifier for a player session.</p>
      */
@@ -133,8 +135,10 @@ namespace Model
     inline PlacedPlayerSession& WithPlayerSessionId(const char* value) { SetPlayerSessionId(value); return *this;}
 
   private:
+
     Aws::String m_playerId;
     bool m_playerIdHasBeenSet;
+
     Aws::String m_playerSessionId;
     bool m_playerSessionIdHasBeenSet;
   };

@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     BatchWriteItemResult();
-    BatchWriteItemResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchWriteItemResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchWriteItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchWriteItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A map of tables and requests against those tables that were not processed.
@@ -360,6 +361,7 @@ namespace Model
      */
     inline BatchWriteItemResult& AddUnprocessedItems(const char* key, const Aws::Vector<WriteRequest>& value) { m_unprocessedItems.emplace(key, value); return *this; }
 
+
     /**
      * <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for
      * each table, information about any item collections that were affected by
@@ -558,6 +560,7 @@ namespace Model
      */
     inline BatchWriteItemResult& AddItemCollectionMetrics(const char* key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(key, value); return *this; }
 
+
     /**
      * <p>The capacity units consumed by the entire <code>BatchWriteItem</code>
      * operation.</p> <p>Each element consists of:</p> <ul> <li> <p>
@@ -622,8 +625,11 @@ namespace Model
     inline BatchWriteItemResult& AddConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::Vector<WriteRequest>> m_unprocessedItems;
+
     Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>> m_itemCollectionMetrics;
+
     Aws::Vector<ConsumedCapacity> m_consumedCapacity;
   };
 

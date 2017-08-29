@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -64,6 +65,7 @@ namespace Model
 
     
     inline CompleteMultipartUploadRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     
     inline const Aws::String& GetKey() const{ return m_key; }
@@ -86,6 +88,7 @@ namespace Model
     
     inline CompleteMultipartUploadRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     
     inline const CompletedMultipartUpload& GetMultipartUpload() const{ return m_multipartUpload; }
 
@@ -100,6 +103,7 @@ namespace Model
 
     
     inline CompleteMultipartUploadRequest& WithMultipartUpload(CompletedMultipartUpload&& value) { SetMultipartUpload(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
@@ -122,6 +126,7 @@ namespace Model
     
     inline CompleteMultipartUploadRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
+
     
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
@@ -138,14 +143,19 @@ namespace Model
     inline CompleteMultipartUploadRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     CompletedMultipartUpload m_multipartUpload;
     bool m_multipartUploadHasBeenSet;
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
   };

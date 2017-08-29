@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM role to get information about.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
@@ -102,6 +103,7 @@ namespace Model
     inline GetRoleRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
   private:
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
   };

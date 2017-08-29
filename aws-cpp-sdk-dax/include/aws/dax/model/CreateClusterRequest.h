@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
      * <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1 to 20
@@ -101,6 +102,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
+
     /**
      * <p>The compute and memory capacity of the nodes in the cluster.</p>
      */
@@ -135,6 +137,7 @@ namespace Model
      * <p>The compute and memory capacity of the nodes in the cluster.</p>
      */
     inline CreateClusterRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
+
 
     /**
      * <p>A description of the cluster.</p>
@@ -171,6 +174,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The number of nodes in the DAX cluster. A replication factor of 1 will create
      * a single-node cluster, without any read replicas. For additional fault
@@ -200,6 +204,7 @@ namespace Model
      * </note>
      */
     inline CreateClusterRequest& WithReplicationFactor(int value) { SetReplicationFactor(value); return *this;}
+
 
     /**
      * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
@@ -257,6 +262,7 @@ namespace Model
      */
     inline CreateClusterRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
+
     /**
      * <p>The name of the subnet group to be used for the replication group.</p>
      * <important> <p>DAX clusters can only run in an Amazon VPC environment. All of
@@ -313,6 +319,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithSubnetGroupName(const char* value) { SetSubnetGroupName(value); return *this;}
 
+
     /**
      * <p>A list of security group IDs to be assigned to each node in the DAX cluster.
      * (Each of the security group ID is system-generated.)</p> <p>If this parameter is
@@ -368,6 +375,7 @@ namespace Model
      * not specified, DAX assigns the default VPC security group to each node.</p>
      */
     inline CreateClusterRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the DAX cluster
@@ -474,6 +482,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
      * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX
@@ -522,6 +531,7 @@ namespace Model
      * cluster owner.</p> </note>
      */
     inline CreateClusterRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
+
 
     /**
      * <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime,
@@ -572,6 +582,7 @@ namespace Model
      */
     inline CreateClusterRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 
+
     /**
      * <p>The parameter group to be associated with the DAX cluster.</p>
      */
@@ -606,6 +617,7 @@ namespace Model
      * <p>The parameter group to be associated with the DAX cluster.</p>
      */
     inline CreateClusterRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+
 
     /**
      * <p>A set of tags to associate with the DAX cluster. </p>
@@ -643,28 +655,40 @@ namespace Model
     inline CreateClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet;
+
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     int m_replicationFactor;
     bool m_replicationFactorHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     Aws::String m_subnetGroupName;
     bool m_subnetGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
     Aws::String m_notificationTopicArn;
     bool m_notificationTopicArnHasBeenSet;
+
     Aws::String m_iamRoleArn;
     bool m_iamRoleArnHasBeenSet;
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

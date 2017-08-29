@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the virtual interface on which the BGP peer will be
      * provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline CreateBGPPeerRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
 
+
     /**
      * <p>Detailed information for the BGP peer to be created.</p> <p>Default: None</p>
      */
@@ -109,8 +111,10 @@ namespace Model
     inline CreateBGPPeerRequest& WithNewBGPPeer(NewBGPPeer&& value) { SetNewBGPPeer(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_virtualInterfaceId;
     bool m_virtualInterfaceIdHasBeenSet;
+
     NewBGPPeer m_newBGPPeer;
     bool m_newBGPPeerHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The number of Crawlers to return on each call.</p>
      */
@@ -50,6 +51,7 @@ namespace Model
      * <p>The number of Crawlers to return on each call.</p>
      */
     inline GetCrawlersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A continuation token, if this is a continuation request.</p>
@@ -87,8 +89,10 @@ namespace Model
     inline GetCrawlersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

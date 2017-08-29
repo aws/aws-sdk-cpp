@@ -34,6 +34,7 @@ namespace Model
     UpdateAliasRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The function name for which the alias is created. Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
@@ -83,6 +84,7 @@ namespace Model
      */
     inline UpdateAliasRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
+
     /**
      * <p>The alias name.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The alias name.</p>
      */
     inline UpdateAliasRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Using this parameter you can change the Lambda function version to which the
@@ -160,6 +163,7 @@ namespace Model
      */
     inline UpdateAliasRequest& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
 
+
     /**
      * <p>You can change the description of the alias using this parameter.</p>
      */
@@ -196,12 +200,16 @@ namespace Model
     inline UpdateAliasRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_functionVersion;
     bool m_functionVersionHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

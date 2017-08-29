@@ -45,6 +45,7 @@ namespace Model
     CrawlerMetrics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the crawler.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline CrawlerMetrics& WithCrawlerName(const char* value) { SetCrawlerName(value); return *this;}
 
+
     /**
      * <p>The estimated time left to complete a running crawl.</p>
      */
@@ -94,6 +96,7 @@ namespace Model
      * <p>The estimated time left to complete a running crawl.</p>
      */
     inline CrawlerMetrics& WithTimeLeftSeconds(double value) { SetTimeLeftSeconds(value); return *this;}
+
 
     /**
      * <p>True if the crawler is estimating its </p>
@@ -110,6 +113,7 @@ namespace Model
      */
     inline CrawlerMetrics& WithStillEstimating(bool value) { SetStillEstimating(value); return *this;}
 
+
     /**
      * <p>The duration of the crawler's most recent run, in seconds.</p>
      */
@@ -124,6 +128,7 @@ namespace Model
      * <p>The duration of the crawler's most recent run, in seconds.</p>
      */
     inline CrawlerMetrics& WithLastRuntimeSeconds(double value) { SetLastRuntimeSeconds(value); return *this;}
+
 
     /**
      * <p>The median duration of this crawler's runs, in seconds.</p>
@@ -140,6 +145,7 @@ namespace Model
      */
     inline CrawlerMetrics& WithMedianRuntimeSeconds(double value) { SetMedianRuntimeSeconds(value); return *this;}
 
+
     /**
      * <p>A list of the tables created by this crawler.</p>
      */
@@ -155,6 +161,7 @@ namespace Model
      */
     inline CrawlerMetrics& WithTablesCreated(int value) { SetTablesCreated(value); return *this;}
 
+
     /**
      * <p>A list of the tables created by this crawler.</p>
      */
@@ -169,6 +176,7 @@ namespace Model
      * <p>A list of the tables created by this crawler.</p>
      */
     inline CrawlerMetrics& WithTablesUpdated(int value) { SetTablesUpdated(value); return *this;}
+
 
     /**
      * <p>A list of the tables deleted by this crawler.</p>
@@ -186,20 +194,28 @@ namespace Model
     inline CrawlerMetrics& WithTablesDeleted(int value) { SetTablesDeleted(value); return *this;}
 
   private:
+
     Aws::String m_crawlerName;
     bool m_crawlerNameHasBeenSet;
+
     double m_timeLeftSeconds;
     bool m_timeLeftSecondsHasBeenSet;
+
     bool m_stillEstimating;
     bool m_stillEstimatingHasBeenSet;
+
     double m_lastRuntimeSeconds;
     bool m_lastRuntimeSecondsHasBeenSet;
+
     double m_medianRuntimeSeconds;
     bool m_medianRuntimeSecondsHasBeenSet;
+
     int m_tablesCreated;
     bool m_tablesCreatedHasBeenSet;
+
     int m_tablesUpdated;
     bool m_tablesUpdatedHasBeenSet;
+
     int m_tablesDeleted;
     bool m_tablesDeletedHasBeenSet;
   };

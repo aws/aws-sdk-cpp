@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the configuration to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteResourceDataSyncRequest& WithSyncName(const char* value) { SetSyncName(value); return *this;}
 
   private:
+
     Aws::String m_syncName;
     bool m_syncNameHasBeenSet;
   };

@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the simulated resource, in Amazon Resource Name (ARN) format.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ResourceSpecificResult& WithEvalResourceName(const char* value) { SetEvalResourceName(value); return *this;}
 
+
     /**
      * <p>The result of the simulation of the simulated API action on the resource
      * specified in <code>EvalResourceName</code>.</p>
@@ -118,6 +120,7 @@ namespace Model
      * specified in <code>EvalResourceName</code>.</p>
      */
     inline ResourceSpecificResult& WithEvalResourceDecision(PolicyEvaluationDecisionType&& value) { SetEvalResourceDecision(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the statements in the input policies that determine the result for
@@ -181,6 +184,7 @@ namespace Model
      * included in the result.</p>
      */
     inline ResourceSpecificResult& AddMatchedStatements(Statement&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of context keys that are required by the included input policies but
@@ -294,6 +298,7 @@ namespace Model
      */
     inline ResourceSpecificResult& AddMissingContextValues(const char* value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
 
+
     /**
      * <p>Additional details about the results of the evaluation decision. When there
      * are both IAM policies and resource policies, this parameter explains how each
@@ -394,14 +399,19 @@ namespace Model
     inline ResourceSpecificResult& AddEvalDecisionDetails(const char* key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_evalResourceName;
     bool m_evalResourceNameHasBeenSet;
+
     PolicyEvaluationDecisionType m_evalResourceDecision;
     bool m_evalResourceDecisionHasBeenSet;
+
     Aws::Vector<Statement> m_matchedStatements;
     bool m_matchedStatementsHasBeenSet;
+
     Aws::Vector<Aws::String> m_missingContextValues;
     bool m_missingContextValuesHasBeenSet;
+
     Aws::Map<Aws::String, PolicyEvaluationDecisionType> m_evalDecisionDetails;
     bool m_evalDecisionDetailsHasBeenSet;
   };

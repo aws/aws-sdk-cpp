@@ -45,12 +45,12 @@ GetBucketPolicyResult& GetBucketPolicyResult::operator=(GetBucketPolicyResult&& 
    return *this;
 }
 
-GetBucketPolicyResult::GetBucketPolicyResult(AmazonWebServiceResult<ResponseStream>&& result)
+GetBucketPolicyResult::GetBucketPolicyResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
 }
 
-GetBucketPolicyResult& GetBucketPolicyResult::operator =(AmazonWebServiceResult<ResponseStream>&& result)
+GetBucketPolicyResult& GetBucketPolicyResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_policy = result.TakeOwnershipOfPayload();
 

@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the existing directory configuration to be updated.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the existing directory configuration to be updated.</p>
      */
     inline UpdateDirectoryConfigRequest& WithDirectoryName(const char* value) { SetDirectoryName(value); return *this;}
+
 
     /**
      * <p>The list of the distinguished names of organizational units to place computer
@@ -121,6 +123,7 @@ namespace Model
      */
     inline UpdateDirectoryConfigRequest& AddOrganizationalUnitDistinguishedNames(const char* value) { m_organizationalUnitDistinguishedNamesHasBeenSet = true; m_organizationalUnitDistinguishedNames.push_back(value); return *this; }
 
+
     /**
      * <p>The <i>AccountName</i> and <i>AccountPassword</i> values for the service
      * account, which are used by the streaming instance to connect to the
@@ -157,10 +160,13 @@ namespace Model
     inline UpdateDirectoryConfigRequest& WithServiceAccountCredentials(ServiceAccountCredentials&& value) { SetServiceAccountCredentials(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryName;
     bool m_directoryNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_organizationalUnitDistinguishedNames;
     bool m_organizationalUnitDistinguishedNamesHasBeenSet;
+
     ServiceAccountCredentials m_serviceAccountCredentials;
     bool m_serviceAccountCredentialsHasBeenSet;
   };

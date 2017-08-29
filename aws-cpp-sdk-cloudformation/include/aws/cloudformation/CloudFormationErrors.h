@@ -55,7 +55,7 @@ enum class CloudFormationErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CHANGE_SET_NOT_FOUND,
   CREATED_BUT_MODIFIED,
   INSUFFICIENT_CAPABILITIES,
@@ -74,7 +74,7 @@ enum class CloudFormationErrors
 };
 namespace CloudFormationErrorMapper
 {
-  AWS_CLOUDFORMATION_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CLOUDFORMATION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CloudFormation

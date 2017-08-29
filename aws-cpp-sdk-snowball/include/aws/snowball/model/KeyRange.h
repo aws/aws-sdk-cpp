@@ -49,6 +49,7 @@ namespace Model
     KeyRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The key that starts an optional key range for an export job. Ranges are
      * inclusive and UTF-8 binary sorted.</p>
@@ -90,6 +91,7 @@ namespace Model
      * inclusive and UTF-8 binary sorted.</p>
      */
     inline KeyRange& WithBeginMarker(const char* value) { SetBeginMarker(value); return *this;}
+
 
     /**
      * <p>The key that ends an optional key range for an export job. Ranges are
@@ -134,8 +136,10 @@ namespace Model
     inline KeyRange& WithEndMarker(const char* value) { SetEndMarker(value); return *this;}
 
   private:
+
     Aws::String m_beginMarker;
     bool m_beginMarkerHasBeenSet;
+
     Aws::String m_endMarker;
     bool m_endMarkerHasBeenSet;
   };

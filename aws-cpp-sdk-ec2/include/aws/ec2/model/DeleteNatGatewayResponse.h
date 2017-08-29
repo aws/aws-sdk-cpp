@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DeleteNatGatewayResponse();
-    DeleteNatGatewayResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteNatGatewayResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteNatGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteNatGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the NAT gateway.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline DeleteNatGatewayResponse& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline DeleteNatGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_natGatewayId;
+
     ResponseMetadata m_responseMetadata;
   };
 

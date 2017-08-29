@@ -30,12 +30,12 @@ GetTestResult::GetTestResult()
 {
 }
 
-GetTestResult::GetTestResult(const AmazonWebServiceResult<JsonValue>& result)
+GetTestResult::GetTestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetTestResult& GetTestResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetTestResult& GetTestResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("test"))

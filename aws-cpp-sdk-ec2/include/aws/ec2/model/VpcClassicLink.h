@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Indicates whether the VPC is enabled for ClassicLink.</p>
      */
@@ -65,6 +66,7 @@ namespace Model
      * <p>Indicates whether the VPC is enabled for ClassicLink.</p>
      */
     inline VpcClassicLink& WithClassicLinkEnabled(bool value) { SetClassicLinkEnabled(value); return *this;}
+
 
     /**
      * <p>Any tags assigned to the VPC.</p>
@@ -100,6 +102,7 @@ namespace Model
      * <p>Any tags assigned to the VPC.</p>
      */
     inline VpcClassicLink& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -137,10 +140,13 @@ namespace Model
     inline VpcClassicLink& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     bool m_classicLinkEnabled;
     bool m_classicLinkEnabledHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

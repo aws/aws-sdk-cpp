@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeSpotFleetInstancesResponse();
-    DescribeSpotFleetInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSpotFleetInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotFleetInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotFleetInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The running instances. Note that this list is refreshed periodically and
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeSpotFleetInstancesResponse& AddActiveInstances(ActiveInstance&& value) { m_activeInstances.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token required to retrieve the next set of results. This value is
      * <code>null</code> when there are no more results to return.</p>
@@ -134,6 +136,7 @@ namespace Model
      */
     inline DescribeSpotFleetInstancesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The ID of the Spot fleet request.</p>
      */
@@ -169,6 +172,7 @@ namespace Model
      */
     inline DescribeSpotFleetInstancesResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -185,9 +189,13 @@ namespace Model
     inline DescribeSpotFleetInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<ActiveInstance> m_activeInstances;
+
     Aws::String m_nextToken;
+
     Aws::String m_spotFleetRequestId;
+
     ResponseMetadata m_responseMetadata;
   };
 

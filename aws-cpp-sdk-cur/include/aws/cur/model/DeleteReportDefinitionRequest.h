@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetReportName() const{ return m_reportName; }
 
@@ -61,6 +62,7 @@ namespace Model
     inline DeleteReportDefinitionRequest& WithReportName(const char* value) { SetReportName(value); return *this;}
 
   private:
+
     Aws::String m_reportName;
     bool m_reportNameHasBeenSet;
   };

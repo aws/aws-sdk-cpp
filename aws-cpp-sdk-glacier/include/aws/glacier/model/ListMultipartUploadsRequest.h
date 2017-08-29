@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -107,6 +108,7 @@ namespace Model
      */
     inline ListMultipartUploadsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -141,6 +143,7 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline ListMultipartUploadsRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
 
     /**
      * <p>An opaque string used for pagination. This value specifies the upload at
@@ -198,6 +201,7 @@ namespace Model
      */
     inline ListMultipartUploadsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Specifies the maximum number of uploads returned in the response body. If
      * this value is not specified, the List Uploads operation returns up to 1,000
@@ -248,12 +252,16 @@ namespace Model
     inline ListMultipartUploadsRequest& WithLimit(const char* value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_limit;
     bool m_limitHasBeenSet;
   };

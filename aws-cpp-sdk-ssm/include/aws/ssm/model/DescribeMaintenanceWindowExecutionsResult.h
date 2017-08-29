@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeMaintenanceWindowExecutionsResult();
-    DescribeMaintenanceWindowExecutionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMaintenanceWindowExecutionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMaintenanceWindowExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMaintenanceWindowExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the Maintenance Windows execution.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Information about the Maintenance Windows execution.</p>
      */
     inline DescribeMaintenanceWindowExecutionsResult& AddWindowExecutions(MaintenanceWindowExecution&& value) { m_windowExecutions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeMaintenanceWindowExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<MaintenanceWindowExecution> m_windowExecutions;
+
     Aws::String m_nextToken;
   };
 

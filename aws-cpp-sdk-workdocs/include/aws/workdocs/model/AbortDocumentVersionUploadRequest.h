@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline AbortDocumentVersionUploadRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The ID of the document.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      * <p>The ID of the document.</p>
      */
     inline AbortDocumentVersionUploadRequest& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
+
 
     /**
      * <p>The ID of the version.</p>
@@ -149,10 +152,13 @@ namespace Model
     inline AbortDocumentVersionUploadRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::String m_documentId;
     bool m_documentIdHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
   };

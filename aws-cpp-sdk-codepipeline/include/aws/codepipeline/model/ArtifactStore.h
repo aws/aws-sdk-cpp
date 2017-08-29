@@ -48,6 +48,7 @@ namespace Model
     ArtifactStore& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of the artifact store, such as S3.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The type of the artifact store, such as S3.</p>
      */
     inline ArtifactStore& WithType(ArtifactStoreType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon S3 bucket used for storing the artifacts for a pipeline. You can
@@ -136,6 +138,7 @@ namespace Model
      */
     inline ArtifactStore& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     /**
      * <p>The encryption key used to encrypt the data in the artifact store, such as an
      * AWS Key Management Service (AWS KMS) key. If this is undefined, the default key
@@ -172,10 +175,13 @@ namespace Model
     inline ArtifactStore& WithEncryptionKey(EncryptionKey&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
   private:
+
     ArtifactStoreType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
     EncryptionKey m_encryptionKey;
     bool m_encryptionKeyHasBeenSet;
   };

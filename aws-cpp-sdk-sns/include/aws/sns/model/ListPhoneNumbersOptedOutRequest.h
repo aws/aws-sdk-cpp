@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A <code>NextToken</code> string is used when you call the
      * <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that
@@ -92,6 +93,7 @@ namespace Model
     inline ListPhoneNumbersOptedOutRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

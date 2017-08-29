@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetTypedLinkFacetInformationResult();
-    GetTypedLinkFacetInformationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTypedLinkFacetInformationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTypedLinkFacetInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTypedLinkFacetInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The order of identity attributes for the facet, from most significant to
@@ -155,6 +156,7 @@ namespace Model
     inline GetTypedLinkFacetInformationResult& AddIdentityAttributeOrder(const char* value) { m_identityAttributeOrder.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_identityAttributeOrder;
   };
 

@@ -30,12 +30,12 @@ ListOutgoingTypedLinksResult::ListOutgoingTypedLinksResult()
 {
 }
 
-ListOutgoingTypedLinksResult::ListOutgoingTypedLinksResult(const AmazonWebServiceResult<JsonValue>& result)
+ListOutgoingTypedLinksResult::ListOutgoingTypedLinksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListOutgoingTypedLinksResult& ListOutgoingTypedLinksResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListOutgoingTypedLinksResult& ListOutgoingTypedLinksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("TypedLinkSpecifiers"))

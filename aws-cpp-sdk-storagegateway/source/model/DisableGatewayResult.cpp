@@ -30,12 +30,12 @@ DisableGatewayResult::DisableGatewayResult()
 {
 }
 
-DisableGatewayResult::DisableGatewayResult(const AmazonWebServiceResult<JsonValue>& result)
+DisableGatewayResult::DisableGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisableGatewayResult& DisableGatewayResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisableGatewayResult& DisableGatewayResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

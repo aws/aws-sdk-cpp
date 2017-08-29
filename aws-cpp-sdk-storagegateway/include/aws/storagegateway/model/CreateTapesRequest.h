@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
@@ -88,6 +89,7 @@ namespace Model
      */
     inline CreateTapesRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     /**
      * <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
      * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
@@ -105,6 +107,7 @@ namespace Model
      * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
      */
     inline CreateTapesRequest& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
+
 
     /**
      * <p>A unique identifier that you use to retry a request. If you retry a request,
@@ -162,6 +165,7 @@ namespace Model
      */
     inline CreateTapesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The number of virtual tapes that you want to create.</p>
      */
@@ -176,6 +180,7 @@ namespace Model
      * <p>The number of virtual tapes that you want to create.</p>
      */
     inline CreateTapesRequest& WithNumTapesToCreate(int value) { SetNumTapesToCreate(value); return *this;}
+
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
@@ -234,14 +239,19 @@ namespace Model
     inline CreateTapesRequest& WithTapeBarcodePrefix(const char* value) { SetTapeBarcodePrefix(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     long long m_tapeSizeInBytes;
     bool m_tapeSizeInBytesHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     int m_numTapesToCreate;
     bool m_numTapesToCreateHasBeenSet;
+
     Aws::String m_tapeBarcodePrefix;
     bool m_tapeBarcodePrefixHasBeenSet;
   };

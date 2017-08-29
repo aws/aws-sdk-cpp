@@ -30,12 +30,12 @@ ListProgressUpdateStreamsResult::ListProgressUpdateStreamsResult()
 {
 }
 
-ListProgressUpdateStreamsResult::ListProgressUpdateStreamsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListProgressUpdateStreamsResult::ListProgressUpdateStreamsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListProgressUpdateStreamsResult& ListProgressUpdateStreamsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListProgressUpdateStreamsResult& ListProgressUpdateStreamsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ProgressUpdateStreamSummaryList"))

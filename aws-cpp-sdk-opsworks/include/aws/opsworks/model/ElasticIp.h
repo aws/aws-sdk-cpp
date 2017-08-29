@@ -45,6 +45,7 @@ namespace Model
     ElasticIp& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The IP address.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The IP address.</p>
      */
     inline ElasticIp& WithIp(const char* value) { SetIp(value); return *this;}
+
 
     /**
      * <p>The name.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline ElasticIp& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The domain.</p>
      */
@@ -149,6 +152,7 @@ namespace Model
      * <p>The domain.</p>
      */
     inline ElasticIp& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>The AWS region. For more information, see <a
@@ -199,6 +203,7 @@ namespace Model
      */
     inline ElasticIp& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
     /**
      * <p>The ID of the instance that the address is attached to.</p>
      */
@@ -235,14 +240,19 @@ namespace Model
     inline ElasticIp& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_ip;
     bool m_ipHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     Notification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline Notification& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
+
 
     
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
@@ -77,6 +79,7 @@ namespace Model
     
     inline Notification& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
+
     
     inline double GetThreshold() const{ return m_threshold; }
 
@@ -87,10 +90,13 @@ namespace Model
     inline Notification& WithThreshold(double value) { SetThreshold(value); return *this;}
 
   private:
+
     NotificationType m_notificationType;
     bool m_notificationTypeHasBeenSet;
+
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
+
     double m_threshold;
     bool m_thresholdHasBeenSet;
   };

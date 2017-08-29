@@ -47,6 +47,7 @@ namespace Model
     BatchDetachTypedLink& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Used to accept a typed link specifier as input.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline BatchDetachTypedLink& WithTypedLinkSpecifier(TypedLinkSpecifier&& value) { SetTypedLinkSpecifier(std::move(value)); return *this;}
 
   private:
+
     TypedLinkSpecifier m_typedLinkSpecifier;
     bool m_typedLinkSpecifierHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Grantee& GetGrantee() const{ return m_grantee; }
 
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline Grant& WithGrantee(Grantee&& value) { SetGrantee(std::move(value)); return *this;}
+
 
     /**
      * Specifies the permission given to the grantee.
@@ -83,8 +85,10 @@ namespace Model
     inline Grant& WithPermission(Permission&& value) { SetPermission(std::move(value)); return *this;}
 
   private:
+
     Grantee m_grantee;
     bool m_granteeHasBeenSet;
+
     Permission m_permission;
     bool m_permissionHasBeenSet;
   };

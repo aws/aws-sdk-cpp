@@ -87,15 +87,15 @@ namespace Model
 
         typedef Aws::Utils::Outcome<CreateFileSystemResult, Aws::Client::AWSError<EFSErrors>> CreateFileSystemOutcome;
         typedef Aws::Utils::Outcome<CreateMountTargetResult, Aws::Client::AWSError<EFSErrors>> CreateMountTargetOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EFSErrors>> CreateTagsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EFSErrors>> DeleteFileSystemOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EFSErrors>> DeleteMountTargetOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EFSErrors>> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> CreateTagsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteFileSystemOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteMountTargetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeFileSystemsResult, Aws::Client::AWSError<EFSErrors>> DescribeFileSystemsOutcome;
         typedef Aws::Utils::Outcome<DescribeMountTargetSecurityGroupsResult, Aws::Client::AWSError<EFSErrors>> DescribeMountTargetSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeMountTargetsResult, Aws::Client::AWSError<EFSErrors>> DescribeMountTargetsOutcome;
         typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<EFSErrors>> DescribeTagsOutcome;
-        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EFSErrors>> ModifyMountTargetSecurityGroupsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> ModifyMountTargetSecurityGroupsOutcome;
 
         typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
         typedef std::future<CreateMountTargetOutcome> CreateMountTargetOutcomeCallable;
@@ -143,22 +143,23 @@ namespace Model
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EFSClient(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        EFSClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EFSClient(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        EFSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
-        EFSClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        EFSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~EFSClient();
+
 
         /**
          * <p>Creates a new, empty file system. The operation requires a creation token in
@@ -1058,7 +1059,7 @@ namespace Model
 
 
     private:
-      void init(const Client::ClientConfiguration& clientConfiguration);
+      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void CreateFileSystemAsyncHelper(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

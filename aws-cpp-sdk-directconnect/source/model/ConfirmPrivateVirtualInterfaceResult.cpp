@@ -31,13 +31,13 @@ ConfirmPrivateVirtualInterfaceResult::ConfirmPrivateVirtualInterfaceResult() :
 {
 }
 
-ConfirmPrivateVirtualInterfaceResult::ConfirmPrivateVirtualInterfaceResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ConfirmPrivateVirtualInterfaceResult::ConfirmPrivateVirtualInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
 {
   *this = result;
 }
 
-ConfirmPrivateVirtualInterfaceResult& ConfirmPrivateVirtualInterfaceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ConfirmPrivateVirtualInterfaceResult& ConfirmPrivateVirtualInterfaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("virtualInterfaceState"))

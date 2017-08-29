@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ReEncryptResult();
-    ReEncryptResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReEncryptResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReEncryptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReEncryptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The reencrypted data.</p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>The reencrypted data.</p>
      */
     inline ReEncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
+
 
     /**
      * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
@@ -101,6 +103,7 @@ namespace Model
      * <p>Unique identifier of the CMK used to originally encrypt the data.</p>
      */
     inline ReEncryptResult& WithSourceKeyId(const char* value) { SetSourceKeyId(value); return *this;}
+
 
     /**
      * <p>Unique identifier of the CMK used to reencrypt the data.</p>
@@ -138,8 +141,11 @@ namespace Model
     inline ReEncryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_ciphertextBlob;
+
     Aws::String m_sourceKeyId;
+
     Aws::String m_keyId;
   };
 

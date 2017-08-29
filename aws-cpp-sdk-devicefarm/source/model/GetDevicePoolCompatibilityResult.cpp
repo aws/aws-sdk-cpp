@@ -30,12 +30,12 @@ GetDevicePoolCompatibilityResult::GetDevicePoolCompatibilityResult()
 {
 }
 
-GetDevicePoolCompatibilityResult::GetDevicePoolCompatibilityResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDevicePoolCompatibilityResult::GetDevicePoolCompatibilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDevicePoolCompatibilityResult& GetDevicePoolCompatibilityResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDevicePoolCompatibilityResult& GetDevicePoolCompatibilityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("compatibleDevices"))

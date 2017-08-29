@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>CPU utilization metrics for the instance.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>CPU utilization metrics for the instance.</p>
      */
     inline SystemStatus& WithCPUUtilization(CPUUtilization&& value) { SetCPUUtilization(std::move(value)); return *this;}
+
 
     /**
      * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more
@@ -124,8 +126,10 @@ namespace Model
     inline SystemStatus& AddLoadAverage(double value) { m_loadAverageHasBeenSet = true; m_loadAverage.push_back(value); return *this; }
 
   private:
+
     CPUUtilization m_cPUUtilization;
     bool m_cPUUtilizationHasBeenSet;
+
     Aws::Vector<double> m_loadAverage;
     bool m_loadAverageHasBeenSet;
   };

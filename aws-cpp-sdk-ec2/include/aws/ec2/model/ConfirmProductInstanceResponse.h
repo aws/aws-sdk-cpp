@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ConfirmProductInstanceResponse();
-    ConfirmProductInstanceResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ConfirmProductInstanceResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ConfirmProductInstanceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ConfirmProductInstanceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The AWS account ID of the instance owner. This is only present if the product
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ConfirmProductInstanceResponse& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
     /**
      * <p>The return value of the request. Returns <code>true</code> if the specified
      * product code is owned by the requester and associated with the specified
@@ -110,6 +112,7 @@ namespace Model
      */
     inline ConfirmProductInstanceResponse& WithReturn(bool value) { SetReturn(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -126,8 +129,11 @@ namespace Model
     inline ConfirmProductInstanceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_ownerId;
+
     bool m_return;
+
     ResponseMetadata m_responseMetadata;
   };
 

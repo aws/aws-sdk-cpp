@@ -46,6 +46,7 @@ namespace Model
     ResourceDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identifier of the resource.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>Identifier of the resource.</p>
      */
     inline ResourceDetail& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>ARN of the resource.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline ResourceDetail& WithARN(const char* value) { SetARN(value); return *this;}
 
+
     /**
      * <p>Name of the resource.</p>
      */
@@ -150,6 +153,7 @@ namespace Model
      * <p>Name of the resource.</p>
      */
     inline ResourceDetail& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Description of the resource.</p>
@@ -186,6 +190,7 @@ namespace Model
      */
     inline ResourceDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Creation time of the resource.</p>
      */
@@ -212,14 +217,19 @@ namespace Model
     inline ResourceDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     DevicePoolCompatibilityResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The device (phone or tablet) that you wish to return information about.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline DevicePoolCompatibilityResult& WithDevice(Device&& value) { SetDevice(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether the result was compatible with the device pool.</p>
      */
@@ -86,6 +88,7 @@ namespace Model
      * <p>Whether the result was compatible with the device pool.</p>
      */
     inline DevicePoolCompatibilityResult& WithCompatible(bool value) { SetCompatible(value); return *this;}
+
 
     /**
      * <p>Information about the compatibility.</p>
@@ -123,10 +126,13 @@ namespace Model
     inline DevicePoolCompatibilityResult& AddIncompatibilityMessages(IncompatibilityMessage&& value) { m_incompatibilityMessagesHasBeenSet = true; m_incompatibilityMessages.push_back(std::move(value)); return *this; }
 
   private:
+
     Device m_device;
     bool m_deviceHasBeenSet;
+
     bool m_compatible;
     bool m_compatibleHasBeenSet;
+
     Aws::Vector<IncompatibilityMessage> m_incompatibilityMessages;
     bool m_incompatibilityMessagesHasBeenSet;
   };

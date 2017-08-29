@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A unique identifier for the source cache cluster.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>A unique identifier for the source cache cluster.</p>
      */
     inline NodeSnapshot& WithCacheClusterId(const char* value) { SetCacheClusterId(value); return *this;}
+
 
     /**
      * <p>A unique identifier for the source node group (shard).</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline NodeSnapshot& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
 
+
     /**
      * <p>The cache node identifier for the node in the source cache cluster.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      */
     inline NodeSnapshot& WithCacheNodeId(const char* value) { SetCacheNodeId(value); return *this;}
 
+
     /**
      * <p>The configuration for the source node group (shard).</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      * <p>The configuration for the source node group (shard).</p>
      */
     inline NodeSnapshot& WithNodeGroupConfiguration(NodeGroupConfiguration&& value) { SetNodeGroupConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The size of the cache on the source cache node.</p>
@@ -216,6 +221,7 @@ namespace Model
      */
     inline NodeSnapshot& WithCacheSize(const char* value) { SetCacheSize(value); return *this;}
 
+
     /**
      * <p>The date and time when the cache node was created in the source cache
      * cluster.</p>
@@ -245,6 +251,7 @@ namespace Model
      * cluster.</p>
      */
     inline NodeSnapshot& WithCacheNodeCreateTime(Aws::Utils::DateTime&& value) { SetCacheNodeCreateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time when the source node's metadata and cache data set was
@@ -277,18 +284,25 @@ namespace Model
     inline NodeSnapshot& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
+
     Aws::String m_nodeGroupId;
     bool m_nodeGroupIdHasBeenSet;
+
     Aws::String m_cacheNodeId;
     bool m_cacheNodeIdHasBeenSet;
+
     NodeGroupConfiguration m_nodeGroupConfiguration;
     bool m_nodeGroupConfigurationHasBeenSet;
+
     Aws::String m_cacheSize;
     bool m_cacheSizeHasBeenSet;
+
     Aws::Utils::DateTime m_cacheNodeCreateTime;
     bool m_cacheNodeCreateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_snapshotCreateTime;
     bool m_snapshotCreateTimeHasBeenSet;
   };

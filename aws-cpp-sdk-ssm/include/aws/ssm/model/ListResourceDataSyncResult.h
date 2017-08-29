@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListResourceDataSyncResult();
-    ListResourceDataSyncResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourceDataSyncResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourceDataSyncResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourceDataSyncResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of your current Resource Data Sync configurations and their
@@ -84,6 +85,7 @@ namespace Model
      * statuses.</p>
      */
     inline ListResourceDataSyncResult& AddResourceDataSyncItems(ResourceDataSyncItem&& value) { m_resourceDataSyncItems.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token for the next set of items to return. Use this token to get the next
@@ -128,7 +130,9 @@ namespace Model
     inline ListResourceDataSyncResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ResourceDataSyncItem> m_resourceDataSyncItems;
+
     Aws::String m_nextToken;
   };
 

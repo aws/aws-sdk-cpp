@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the catalog in which the partion is to be created. Currently, this
      * should be the AWS account ID.</p>
@@ -78,6 +79,7 @@ namespace Model
      * should be the AWS account ID.</p>
      */
     inline CreatePartitionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+
 
     /**
      * <p>The name of the metadata database in which the partition is to be
@@ -121,6 +123,7 @@ namespace Model
      */
     inline CreatePartitionRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
+
     /**
      * <p>The name of the metadata table in which the partition is to be created.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      */
     inline CreatePartitionRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>A <code>PartitionInput</code> structure defining the partition to be
      * created.</p>
@@ -187,12 +191,16 @@ namespace Model
     inline CreatePartitionRequest& WithPartitionInput(PartitionInput&& value) { SetPartitionInput(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet;
+
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     PartitionInput m_partitionInput;
     bool m_partitionInputHasBeenSet;
   };

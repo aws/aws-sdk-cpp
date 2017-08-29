@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The snapshot attribute to modify.</p> <note> <p>Only volume creation
      * permissions may be modified at the customer level.</p> </note>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline ModifySnapshotAttributeRequest& WithAttribute(SnapshotAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
+
     /**
      * <p>A JSON representation of the snapshot attribute modification.</p>
      */
@@ -100,6 +102,7 @@ namespace Model
      * <p>A JSON representation of the snapshot attribute modification.</p>
      */
     inline ModifySnapshotAttributeRequest& WithCreateVolumePermission(CreateVolumePermissionModifications&& value) { SetCreateVolumePermission(std::move(value)); return *this;}
+
 
     /**
      * <p>The group to modify for the snapshot.</p>
@@ -141,6 +144,7 @@ namespace Model
      */
     inline ModifySnapshotAttributeRequest& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
+
     /**
      * <p>The type of operation to perform to the attribute.</p>
      */
@@ -165,6 +169,7 @@ namespace Model
      * <p>The type of operation to perform to the attribute.</p>
      */
     inline ModifySnapshotAttributeRequest& WithOperationType(OperationType&& value) { SetOperationType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the snapshot.</p>
@@ -200,6 +205,7 @@ namespace Model
      * <p>The ID of the snapshot.</p>
      */
     inline ModifySnapshotAttributeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+
 
     /**
      * <p>The account ID to modify for the snapshot.</p>
@@ -241,6 +247,7 @@ namespace Model
      */
     inline ModifySnapshotAttributeRequest& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -266,18 +273,25 @@ namespace Model
     inline ModifySnapshotAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     SnapshotAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+
     CreateVolumePermissionModifications m_createVolumePermission;
     bool m_createVolumePermissionHasBeenSet;
+
     Aws::Vector<Aws::String> m_groupNames;
     bool m_groupNamesHasBeenSet;
+
     OperationType m_operationType;
     bool m_operationTypeHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_userIds;
     bool m_userIdsHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream for which to enable enhanced monitoring.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The name of the stream for which to enable enhanced monitoring.</p>
      */
     inline EnableEnhancedMonitoringRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * <p>List of shard-level metrics to enable.</p> <p>The following are the valid
@@ -190,8 +192,10 @@ namespace Model
     inline EnableEnhancedMonitoringRequest& AddShardLevelMetrics(MetricsName&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::Vector<MetricsName> m_shardLevelMetrics;
     bool m_shardLevelMetricsHasBeenSet;
   };

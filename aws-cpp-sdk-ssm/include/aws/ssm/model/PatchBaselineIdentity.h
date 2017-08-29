@@ -47,6 +47,7 @@ namespace Model
     PatchBaselineIdentity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the patch baseline.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The ID of the patch baseline.</p>
      */
     inline PatchBaselineIdentity& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
+
 
     /**
      * <p>The name of the patch baseline.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline PatchBaselineIdentity& WithBaselineName(const char* value) { SetBaselineName(value); return *this;}
 
+
     /**
      * <p>Defines the operating system the patch baseline applies to. Supported
      * operating systems include WINDOWS, AMAZON_LINUX, UBUNTU and
@@ -151,6 +154,7 @@ namespace Model
      * REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS. </p>
      */
     inline PatchBaselineIdentity& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+
 
     /**
      * <p>The description of the patch baseline.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline PatchBaselineIdentity& WithBaselineDescription(const char* value) { SetBaselineDescription(value); return *this;}
 
+
     /**
      * <p>Whether this is the default baseline. Note that Systems Manager supports
      * creating multiple default patch baselines. For example, you can create a default
@@ -209,14 +214,19 @@ namespace Model
     inline PatchBaselineIdentity& WithDefaultBaseline(bool value) { SetDefaultBaseline(value); return *this;}
 
   private:
+
     Aws::String m_baselineId;
     bool m_baselineIdHasBeenSet;
+
     Aws::String m_baselineName;
     bool m_baselineNameHasBeenSet;
+
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet;
+
     Aws::String m_baselineDescription;
     bool m_baselineDescriptionHasBeenSet;
+
     bool m_defaultBaseline;
     bool m_defaultBaselineHasBeenSet;
   };

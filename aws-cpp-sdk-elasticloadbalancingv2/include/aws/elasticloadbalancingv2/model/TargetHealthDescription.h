@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The description of the target.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The description of the target.</p>
      */
     inline TargetHealthDescription& WithTarget(TargetDescription&& value) { SetTarget(std::move(value)); return *this;}
+
 
     /**
      * <p>The port to use to connect with the target.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline TargetHealthDescription& WithHealthCheckPort(const char* value) { SetHealthCheckPort(value); return *this;}
 
+
     /**
      * <p>The health information for the target.</p>
      */
@@ -136,10 +139,13 @@ namespace Model
     inline TargetHealthDescription& WithTargetHealth(TargetHealth&& value) { SetTargetHealth(std::move(value)); return *this;}
 
   private:
+
     TargetDescription m_target;
     bool m_targetHasBeenSet;
+
     Aws::String m_healthCheckPort;
     bool m_healthCheckPortHasBeenSet;
+
     TargetHealth m_targetHealth;
     bool m_targetHealthHasBeenSet;
   };

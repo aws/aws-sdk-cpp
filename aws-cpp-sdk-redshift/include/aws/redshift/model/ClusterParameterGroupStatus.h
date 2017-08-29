@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cluster parameter group.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ClusterParameterGroupStatus& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
 
+
     /**
      * <p>The status of parameter updates.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The status of parameter updates.</p>
      */
     inline ClusterParameterGroupStatus& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
+
 
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters
@@ -184,10 +187,13 @@ namespace Model
     inline ClusterParameterGroupStatus& AddClusterParameterStatusList(ClusterParameterStatus&& value) { m_clusterParameterStatusListHasBeenSet = true; m_clusterParameterStatusList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     Aws::String m_parameterApplyStatus;
     bool m_parameterApplyStatusHasBeenSet;
+
     Aws::Vector<ClusterParameterStatus> m_clusterParameterStatusList;
     bool m_clusterParameterStatusListHasBeenSet;
   };

@@ -30,12 +30,12 @@ UpdateGatewayInformationResult::UpdateGatewayInformationResult()
 {
 }
 
-UpdateGatewayInformationResult::UpdateGatewayInformationResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateGatewayInformationResult::UpdateGatewayInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateGatewayInformationResult& UpdateGatewayInformationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateGatewayInformationResult& UpdateGatewayInformationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

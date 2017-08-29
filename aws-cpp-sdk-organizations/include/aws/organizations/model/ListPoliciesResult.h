@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListPoliciesResult();
-    ListPoliciesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPoliciesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of policies that match the filter criteria in the request. The output
@@ -91,6 +92,7 @@ namespace Model
      * <a>DescribePolicy</a>.</p>
      */
     inline ListPoliciesResult& AddPolicies(PolicySummary&& value) { m_policies.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -156,7 +158,9 @@ namespace Model
     inline ListPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<PolicySummary> m_policies;
+
     Aws::String m_nextToken;
   };
 

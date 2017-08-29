@@ -48,6 +48,7 @@ namespace Model
     HITLayoutParameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The name of the parameter in the HITLayout. </p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p> The name of the parameter in the HITLayout. </p>
      */
     inline HITLayoutParameter& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The value substituted for the parameter referenced in the HITLayout. </p>
@@ -119,8 +121,10 @@ namespace Model
     inline HITLayoutParameter& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

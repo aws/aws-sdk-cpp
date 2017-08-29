@@ -48,6 +48,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or the unique ID of the stack for which you are creating a change
      * set. AWS CloudFormation generates the change set by comparing this stack's
@@ -103,6 +104,7 @@ namespace Model
      * different parameter input values.</p>
      */
     inline CreateChangeSetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>A structure that contains the body of the revised template, with a minimum
@@ -167,6 +169,7 @@ namespace Model
      */
     inline CreateChangeSetRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
+
     /**
      * <p>The location of the file that contains the revised template. The URL must
      * point to a template (max size: 460,800 bytes) that is located in an S3 bucket.
@@ -230,6 +233,7 @@ namespace Model
      */
     inline CreateChangeSetRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
+
     /**
      * <p>Whether to reuse the template that is associated with the stack to create the
      * change set.</p>
@@ -247,6 +251,7 @@ namespace Model
      * change set.</p>
      */
     inline CreateChangeSetRequest& WithUsePreviousTemplate(bool value) { SetUsePreviousTemplate(value); return *this;}
+
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
@@ -303,6 +308,7 @@ namespace Model
      * data type.</p>
      */
     inline CreateChangeSetRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A list of values that you must specify before AWS CloudFormation can update
@@ -535,6 +541,7 @@ namespace Model
      */
     inline CreateChangeSetRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The template resource types that you have permissions to work with if you
      * execute this change set, such as <code>AWS::EC2::Instance</code>,
@@ -655,6 +662,7 @@ namespace Model
      */
     inline CreateChangeSetRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
      * role that AWS CloudFormation assumes when executing the change set. AWS
@@ -753,6 +761,7 @@ namespace Model
      */
     inline CreateChangeSetRequest& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p>The rollback triggers for AWS CloudFormation to monitor during stack creation
      * and updating operations, and for the specified monitoring period afterwards.</p>
@@ -782,6 +791,7 @@ namespace Model
      * and updating operations, and for the specified monitoring period afterwards.</p>
      */
     inline CreateChangeSetRequest& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service
@@ -839,6 +849,7 @@ namespace Model
      */
     inline CreateChangeSetRequest& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
 
+
     /**
      * <p>Key-value pairs to associate with this stack. AWS CloudFormation also
      * propagates these tags to resources in the stack. You can specify a maximum of 50
@@ -887,6 +898,7 @@ namespace Model
      * tags.</p>
      */
     inline CreateChangeSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The name of the change set. The name must be unique among all change sets
@@ -943,6 +955,7 @@ namespace Model
      * with an alphabetic character and cannot exceed 128 characters.</p>
      */
     inline CreateChangeSetRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+
 
     /**
      * <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify
@@ -1007,6 +1020,7 @@ namespace Model
      */
     inline CreateChangeSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>A description to help you identify this change set.</p>
      */
@@ -1041,6 +1055,7 @@ namespace Model
      * <p>A description to help you identify this change set.</p>
      */
     inline CreateChangeSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The type of change set operation. To create a change set for a new stack,
@@ -1113,34 +1128,49 @@ namespace Model
     inline CreateChangeSetRequest& WithChangeSetType(ChangeSetType&& value) { SetChangeSetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_templateBody;
     bool m_templateBodyHasBeenSet;
+
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet;
+
     bool m_usePreviousTemplate;
     bool m_usePreviousTemplateHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::Vector<Capability> m_capabilities;
     bool m_capabilitiesHasBeenSet;
+
     Aws::Vector<Aws::String> m_resourceTypes;
     bool m_resourceTypesHasBeenSet;
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     RollbackConfiguration m_rollbackConfiguration;
     bool m_rollbackConfigurationHasBeenSet;
+
     Aws::Vector<Aws::String> m_notificationARNs;
     bool m_notificationARNsHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_changeSetName;
     bool m_changeSetNameHasBeenSet;
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ChangeSetType m_changeSetType;
     bool m_changeSetTypeHasBeenSet;
   };

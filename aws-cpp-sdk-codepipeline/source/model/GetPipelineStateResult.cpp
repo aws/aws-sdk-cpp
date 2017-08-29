@@ -31,13 +31,13 @@ GetPipelineStateResult::GetPipelineStateResult() :
 {
 }
 
-GetPipelineStateResult::GetPipelineStateResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetPipelineStateResult::GetPipelineStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_pipelineVersion(0)
 {
   *this = result;
 }
 
-GetPipelineStateResult& GetPipelineStateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetPipelineStateResult& GetPipelineStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("pipelineName"))

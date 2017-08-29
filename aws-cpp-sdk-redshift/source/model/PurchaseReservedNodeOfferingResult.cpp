@@ -31,12 +31,12 @@ PurchaseReservedNodeOfferingResult::PurchaseReservedNodeOfferingResult()
 {
 }
 
-PurchaseReservedNodeOfferingResult::PurchaseReservedNodeOfferingResult(const AmazonWebServiceResult<XmlDocument>& result)
+PurchaseReservedNodeOfferingResult::PurchaseReservedNodeOfferingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-PurchaseReservedNodeOfferingResult& PurchaseReservedNodeOfferingResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+PurchaseReservedNodeOfferingResult& PurchaseReservedNodeOfferingResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

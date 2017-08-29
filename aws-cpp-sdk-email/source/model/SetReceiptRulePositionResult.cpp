@@ -31,12 +31,12 @@ SetReceiptRulePositionResult::SetReceiptRulePositionResult()
 {
 }
 
-SetReceiptRulePositionResult::SetReceiptRulePositionResult(const AmazonWebServiceResult<XmlDocument>& result)
+SetReceiptRulePositionResult::SetReceiptRulePositionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-SetReceiptRulePositionResult& SetReceiptRulePositionResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+SetReceiptRulePositionResult& SetReceiptRulePositionResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

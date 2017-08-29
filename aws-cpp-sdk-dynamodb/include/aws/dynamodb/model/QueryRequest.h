@@ -47,6 +47,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the table containing the requested items.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the table containing the requested items.</p>
      */
     inline QueryRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+
 
     /**
      * <p>The name of an index to query. This index can be any local secondary index or
@@ -137,6 +139,7 @@ namespace Model
      * </p>
      */
     inline QueryRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
 
     /**
      * <p>The attributes to be returned in the result. You can retrieve all item
@@ -333,6 +336,7 @@ namespace Model
      */
     inline QueryRequest& WithSelect(Select&& value) { SetSelect(std::move(value)); return *this;}
 
+
     /**
      * <p>This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      * For more information, see <a
@@ -397,6 +401,7 @@ namespace Model
      */
     inline QueryRequest& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
+
     /**
      * <p>The maximum number of items to evaluate (not necessarily the number of
      * matching items). If DynamoDB processes the number of items up to the limit while
@@ -442,6 +447,7 @@ namespace Model
      */
     inline QueryRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
+
     /**
      * <p>Determines the read consistency model: If set to <code>true</code>, then the
      * operation uses strongly consistent reads; otherwise, the operation uses
@@ -471,6 +477,7 @@ namespace Model
      * <code>ValidationException</code>.</p>
      */
     inline QueryRequest& WithConsistentRead(bool value) { SetConsistentRead(value); return *this;}
+
 
     /**
      * <p>This is a legacy parameter. Use <code>KeyConditionExpression</code> instead.
@@ -560,6 +567,7 @@ namespace Model
      */
     inline QueryRequest& AddKeyConditions(const char* key, const Condition& value) { m_keyConditionsHasBeenSet = true; m_keyConditions.emplace(key, value); return *this; }
 
+
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
@@ -648,6 +656,7 @@ namespace Model
      */
     inline QueryRequest& AddQueryFilter(const char* key, const Condition& value) { m_queryFilterHasBeenSet = true; m_queryFilter.emplace(key, value); return *this; }
 
+
     /**
      * <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For
      * more information, see <a
@@ -687,6 +696,7 @@ namespace Model
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithConditionalOperator(ConditionalOperator&& value) { SetConditionalOperator(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the order for index traversal: If <code>true</code> (default), the
@@ -735,6 +745,7 @@ namespace Model
      * the client.</p>
      */
     inline QueryRequest& WithScanIndexForward(bool value) { SetScanIndexForward(value); return *this;}
+
 
     /**
      * <p>The primary key of the first item that this operation will evaluate. Use the
@@ -824,6 +835,7 @@ namespace Model
      */
     inline QueryRequest& AddExclusiveStartKey(const char* key, const AttributeValue& value) { m_exclusiveStartKeyHasBeenSet = true; m_exclusiveStartKey.emplace(key, value); return *this; }
 
+
     
     inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
 
@@ -838,6 +850,7 @@ namespace Model
 
     
     inline QueryRequest& WithReturnConsumedCapacity(ReturnConsumedCapacity&& value) { SetReturnConsumedCapacity(std::move(value)); return *this;}
+
 
     /**
      * <p>A string that identifies one or more attributes to retrieve from the table.
@@ -922,6 +935,7 @@ namespace Model
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithProjectionExpression(const char* value) { SetProjectionExpression(value); return *this;}
+
 
     /**
      * <p>A string that contains conditions that DynamoDB applies after the
@@ -1020,6 +1034,7 @@ namespace Model
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
+
 
     /**
      * <p>The condition that specifies the key value(s) for items to be retrieved by
@@ -1427,6 +1442,7 @@ namespace Model
      */
     inline QueryRequest& WithKeyConditionExpression(const char* value) { SetKeyConditionExpression(value); return *this;}
 
+
     /**
      * <p>One or more substitution tokens for attribute names in an expression. The
      * following are some use cases for using
@@ -1751,6 +1767,7 @@ namespace Model
      */
     inline QueryRequest& AddExpressionAttributeNames(const char* key, const char* value) { m_expressionAttributeNamesHasBeenSet = true; m_expressionAttributeNames.emplace(key, value); return *this; }
 
+
     /**
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
@@ -1939,38 +1956,55 @@ namespace Model
     inline QueryRequest& AddExpressionAttributeValues(const char* key, const AttributeValue& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet;
+
     Select m_select;
     bool m_selectHasBeenSet;
+
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     bool m_consistentRead;
     bool m_consistentReadHasBeenSet;
+
     Aws::Map<Aws::String, Condition> m_keyConditions;
     bool m_keyConditionsHasBeenSet;
+
     Aws::Map<Aws::String, Condition> m_queryFilter;
     bool m_queryFilterHasBeenSet;
+
     ConditionalOperator m_conditionalOperator;
     bool m_conditionalOperatorHasBeenSet;
+
     bool m_scanIndexForward;
     bool m_scanIndexForwardHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_exclusiveStartKey;
     bool m_exclusiveStartKeyHasBeenSet;
+
     ReturnConsumedCapacity m_returnConsumedCapacity;
     bool m_returnConsumedCapacityHasBeenSet;
+
     Aws::String m_projectionExpression;
     bool m_projectionExpressionHasBeenSet;
+
     Aws::String m_filterExpression;
     bool m_filterExpressionHasBeenSet;
+
     Aws::String m_keyConditionExpression;
     bool m_keyConditionExpressionHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
     bool m_expressionAttributeNamesHasBeenSet;
+
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
     bool m_expressionAttributeValuesHasBeenSet;
   };

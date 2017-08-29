@@ -30,12 +30,12 @@ DescribeAssessmentRunsResult::DescribeAssessmentRunsResult()
 {
 }
 
-DescribeAssessmentRunsResult::DescribeAssessmentRunsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAssessmentRunsResult::DescribeAssessmentRunsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeAssessmentRunsResult& DescribeAssessmentRunsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAssessmentRunsResult& DescribeAssessmentRunsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("assessmentRuns"))

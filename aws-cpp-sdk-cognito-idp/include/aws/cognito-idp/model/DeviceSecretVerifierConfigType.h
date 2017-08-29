@@ -46,6 +46,7 @@ namespace Model
     DeviceSecretVerifierConfigType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The password verifier.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The password verifier.</p>
      */
     inline DeviceSecretVerifierConfigType& WithPasswordVerifier(const char* value) { SetPasswordVerifier(value); return *this;}
+
 
     /**
      * <p>The salt.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline DeviceSecretVerifierConfigType& WithSalt(const char* value) { SetSalt(value); return *this;}
 
   private:
+
     Aws::String m_passwordVerifier;
     bool m_passwordVerifierHasBeenSet;
+
     Aws::String m_salt;
     bool m_saltHasBeenSet;
   };

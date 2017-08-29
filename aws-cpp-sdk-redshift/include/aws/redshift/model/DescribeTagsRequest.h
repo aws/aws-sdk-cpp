@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) for which you want to describe the tag or
      * tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
@@ -90,6 +91,7 @@ namespace Model
      * </p>
      */
     inline DescribeTagsRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
 
     /**
      * <p>The type of resource with which you want to view tags. Valid resource types
@@ -189,6 +191,7 @@ namespace Model
      */
     inline DescribeTagsRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
     /**
      * <p>The maximum number or response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
@@ -215,6 +218,7 @@ namespace Model
      * <code>marker</code> value. </p>
      */
     inline DescribeTagsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -285,6 +289,7 @@ namespace Model
      * the request. </p>
      */
     inline DescribeTagsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>A tag key or keys for which you want to return all matching resources that
@@ -365,6 +370,7 @@ namespace Model
      * of these tag keys associated with them.</p>
      */
     inline DescribeTagsRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+
 
     /**
      * <p>A tag value or values for which you want to return all matching resources
@@ -447,16 +453,22 @@ namespace Model
     inline DescribeTagsRequest& AddTagValues(const char* value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
+
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagValues;
     bool m_tagValuesHasBeenSet;
   };

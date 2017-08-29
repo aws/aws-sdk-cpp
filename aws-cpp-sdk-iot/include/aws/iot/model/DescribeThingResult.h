@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeThingResult();
-    DescribeThingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeThingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The default client ID.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline DescribeThingResult& WithDefaultClientId(const char* value) { SetDefaultClientId(value); return *this;}
 
+
     /**
      * <p>The name of the thing.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      */
     inline DescribeThingResult& WithThingName(const char* value) { SetThingName(value); return *this;}
 
+
     /**
      * <p>The thing type name.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The thing type name.</p>
      */
     inline DescribeThingResult& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+
 
     /**
      * <p>The thing attributes.</p>
@@ -212,6 +216,7 @@ namespace Model
      */
     inline DescribeThingResult& AddAttributes(const char* key, const char* value) { m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>The current version of the thing record in the registry.</p> <note> <p>To
      * avoid unintentional changes to the information in the registry, you can pass the
@@ -237,10 +242,15 @@ namespace Model
     inline DescribeThingResult& WithVersion(long long value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_defaultClientId;
+
     Aws::String m_thingName;
+
     Aws::String m_thingTypeName;
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
+
     long long m_version;
   };
 

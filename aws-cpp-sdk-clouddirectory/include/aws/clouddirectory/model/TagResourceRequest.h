@@ -36,6 +36,7 @@ namespace Model
     TagResourceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
      * directories.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
+
     /**
      * <p>A list of tag key-value pairs.</p>
      */
@@ -114,8 +116,10 @@ namespace Model
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

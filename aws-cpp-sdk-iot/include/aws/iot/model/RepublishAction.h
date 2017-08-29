@@ -46,6 +46,7 @@ namespace Model
     RepublishAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The ARN of the IAM role that grants access.</p>
      */
     inline RepublishAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>The name of the MQTT topic.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline RepublishAction& WithTopic(const char* value) { SetTopic(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_topic;
     bool m_topicHasBeenSet;
   };

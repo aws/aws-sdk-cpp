@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The resource ID of the request.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline DescribeTagsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
   private:
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
   };

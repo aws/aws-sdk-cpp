@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline RegisterRdsDbInstanceRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The Amazon RDS instance's ARN.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline RegisterRdsDbInstanceRequest& WithRdsDbInstanceArn(const char* value) { SetRdsDbInstanceArn(value); return *this;}
 
+
     /**
      * <p>The database's master user name.</p>
      */
@@ -140,6 +143,7 @@ namespace Model
      * <p>The database's master user name.</p>
      */
     inline RegisterRdsDbInstanceRequest& WithDbUser(const char* value) { SetDbUser(value); return *this;}
+
 
     /**
      * <p>The database password.</p>
@@ -177,12 +181,16 @@ namespace Model
     inline RegisterRdsDbInstanceRequest& WithDbPassword(const char* value) { SetDbPassword(value); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_rdsDbInstanceArn;
     bool m_rdsDbInstanceArnHasBeenSet;
+
     Aws::String m_dbUser;
     bool m_dbUserHasBeenSet;
+
     Aws::String m_dbPassword;
     bool m_dbPasswordHasBeenSet;
   };

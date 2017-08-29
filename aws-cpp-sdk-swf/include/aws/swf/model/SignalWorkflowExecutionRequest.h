@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the domain containing the workflow execution to signal.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the domain containing the workflow execution to signal.</p>
      */
     inline SignalWorkflowExecutionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
 
     /**
      * <p>The workflowId of the workflow execution to signal.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline SignalWorkflowExecutionRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
+
     /**
      * <p>The runId of the workflow execution to signal.</p>
      */
@@ -140,6 +143,7 @@ namespace Model
      * <p>The runId of the workflow execution to signal.</p>
      */
     inline SignalWorkflowExecutionRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
+
 
     /**
      * <p>The name of the signal. This name must be meaningful to the target
@@ -182,6 +186,7 @@ namespace Model
      * workflow.</p>
      */
     inline SignalWorkflowExecutionRequest& WithSignalName(const char* value) { SetSignalName(value); return *this;}
+
 
     /**
      * <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the
@@ -226,14 +231,19 @@ namespace Model
     inline SignalWorkflowExecutionRequest& WithInput(const char* value) { SetInput(value); return *this;}
 
   private:
+
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet;
+
     Aws::String m_runId;
     bool m_runIdHasBeenSet;
+
     Aws::String m_signalName;
     bool m_signalNameHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
   };

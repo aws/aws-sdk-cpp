@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The type of pending maintenance action that is available for the
      * resource.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline PendingMaintenanceAction& WithAction(const char* value) { SetAction(value); return *this;}
 
+
     /**
      * <p>The date of the maintenance window when the action will be applied. The
      * maintenance action will be applied to the resource during its first maintenance
@@ -132,6 +134,7 @@ namespace Model
      */
     inline PendingMaintenanceAction& WithAutoAppliedAfterDate(Aws::Utils::DateTime&& value) { SetAutoAppliedAfterDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date when the maintenance action will be automatically applied. The
      * maintenance action will be applied to the resource on this date regardless of
@@ -171,6 +174,7 @@ namespace Model
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline PendingMaintenanceAction& WithForcedApplyDate(Aws::Utils::DateTime&& value) { SetForcedApplyDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates the type of opt-in request that has been received for the
@@ -213,6 +217,7 @@ namespace Model
      * resource.</p>
      */
     inline PendingMaintenanceAction& WithOptInStatus(const char* value) { SetOptInStatus(value); return *this;}
+
 
     /**
      * <p>The effective date when the pending maintenance action will be applied to the
@@ -264,6 +269,7 @@ namespace Model
      */
     inline PendingMaintenanceAction& WithCurrentApplyDate(Aws::Utils::DateTime&& value) { SetCurrentApplyDate(std::move(value)); return *this;}
 
+
     /**
      * <p>A description providing more detail about the maintenance action.</p>
      */
@@ -300,16 +306,22 @@ namespace Model
     inline PendingMaintenanceAction& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_action;
     bool m_actionHasBeenSet;
+
     Aws::Utils::DateTime m_autoAppliedAfterDate;
     bool m_autoAppliedAfterDateHasBeenSet;
+
     Aws::Utils::DateTime m_forcedApplyDate;
     bool m_forcedApplyDateHasBeenSet;
+
     Aws::String m_optInStatus;
     bool m_optInStatusHasBeenSet;
+
     Aws::Utils::DateTime m_currentApplyDate;
     bool m_currentApplyDateHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

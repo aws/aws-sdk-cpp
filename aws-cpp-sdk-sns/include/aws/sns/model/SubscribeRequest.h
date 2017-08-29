@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the topic you want to subscribe to.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The ARN of the topic you want to subscribe to.</p>
      */
     inline SubscribeRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
@@ -180,6 +182,7 @@ namespace Model
      * Lambda function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
@@ -294,10 +297,13 @@ namespace Model
     inline SubscribeRequest& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
+
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
   };

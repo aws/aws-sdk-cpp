@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     RemoveTagsFromResourceResult();
-    RemoveTagsFromResourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveTagsFromResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveTagsFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveTagsFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

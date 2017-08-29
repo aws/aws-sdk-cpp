@@ -30,12 +30,12 @@ RemoveAutoScalingPolicyResult::RemoveAutoScalingPolicyResult()
 {
 }
 
-RemoveAutoScalingPolicyResult::RemoveAutoScalingPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+RemoveAutoScalingPolicyResult::RemoveAutoScalingPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RemoveAutoScalingPolicyResult& RemoveAutoScalingPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RemoveAutoScalingPolicyResult& RemoveAutoScalingPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

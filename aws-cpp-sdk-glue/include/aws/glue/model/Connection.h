@@ -51,6 +51,7 @@ namespace Model
     Connection& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the connection definition.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The name of the connection definition.</p>
      */
     inline Connection& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Description of the connection.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline Connection& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The type of the connection.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>The type of the connection.</p>
      */
     inline Connection& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of criteria that can be used in selecting this connection.</p>
@@ -185,6 +189,7 @@ namespace Model
      * <p>A list of criteria that can be used in selecting this connection.</p>
      */
     inline Connection& AddMatchCriteria(const char* value) { m_matchCriteriaHasBeenSet = true; m_matchCriteria.push_back(value); return *this; }
+
 
     /**
      * <p>A list of key-value pairs used as parameters for this connection.</p>
@@ -241,6 +246,7 @@ namespace Model
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
+
     /**
      * <p>A map of physical connection requirements, such as VPC and SecurityGroup,
      * needed for making this connection successfully.</p>
@@ -271,6 +277,7 @@ namespace Model
      */
     inline Connection& WithPhysicalConnectionRequirements(PhysicalConnectionRequirements&& value) { SetPhysicalConnectionRequirements(std::move(value)); return *this;}
 
+
     /**
      * <p>The time this connection definition was created.</p>
      */
@@ -296,6 +303,7 @@ namespace Model
      */
     inline Connection& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The last time this connection definition was updated.</p>
      */
@@ -320,6 +328,7 @@ namespace Model
      * <p>The last time this connection definition was updated.</p>
      */
     inline Connection& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The user, group or role that last updated this connection definition.</p>
@@ -357,22 +366,31 @@ namespace Model
     inline Connection& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     ConnectionType m_connectionType;
     bool m_connectionTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_matchCriteria;
     bool m_matchCriteriaHasBeenSet;
+
     Aws::Map<ConnectionPropertyKey, Aws::String> m_connectionProperties;
     bool m_connectionPropertiesHasBeenSet;
+
     PhysicalConnectionRequirements m_physicalConnectionRequirements;
     bool m_physicalConnectionRequirementsHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
     Aws::String m_lastUpdatedBy;
     bool m_lastUpdatedByHasBeenSet;
   };

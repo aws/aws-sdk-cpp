@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetCognitoEventsResult();
-    GetCognitoEventsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCognitoEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCognitoEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetCognitoEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Cognito Events returned from the GetCognitoEvents request</p>
@@ -108,6 +109,7 @@ namespace Model
     inline GetCognitoEventsResult& AddEvents(const char* key, const char* value) { m_events.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_events;
   };
 

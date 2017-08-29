@@ -55,7 +55,7 @@ enum class ElastiCacheErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  AUTHORIZATION_ALREADY_EXISTS_FAULT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AUTHORIZATION_ALREADY_EXISTS_FAULT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   AUTHORIZATION_NOT_FOUND_FAULT,
   A_P_I_CALL_RATE_FOR_CUSTOMER_EXCEEDED_FAULT,
   CACHE_CLUSTER_ALREADY_EXISTS_FAULT,
@@ -102,7 +102,7 @@ enum class ElastiCacheErrors
 };
 namespace ElastiCacheErrorMapper
 {
-  AWS_ELASTICACHE_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ELASTICACHE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ElastiCache

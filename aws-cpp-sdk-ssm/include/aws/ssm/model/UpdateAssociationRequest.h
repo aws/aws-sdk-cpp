@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the association you want to update. </p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The ID of the association you want to update. </p>
      */
     inline UpdateAssociationRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
 
     /**
      * <p>The parameters you want to update for the association. If you create a
@@ -152,6 +154,7 @@ namespace Model
      */
     inline UpdateAssociationRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>The document version you want update for the association. </p>
      */
@@ -186,6 +189,7 @@ namespace Model
      * <p>The document version you want update for the association. </p>
      */
     inline UpdateAssociationRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
 
     /**
      * <p>The cron expression used to schedule the association that you want to
@@ -229,6 +233,7 @@ namespace Model
      */
     inline UpdateAssociationRequest& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 
+
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
      */
@@ -253,6 +258,7 @@ namespace Model
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
      */
     inline UpdateAssociationRequest& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the association document.</p>
@@ -289,6 +295,7 @@ namespace Model
      */
     inline UpdateAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The targets of the association.</p>
      */
@@ -324,6 +331,7 @@ namespace Model
      */
     inline UpdateAssociationRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The name of the association that you want to update.</p>
      */
@@ -358,6 +366,7 @@ namespace Model
      * <p>The name of the association that you want to update.</p>
      */
     inline UpdateAssociationRequest& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
+
 
     /**
      * <p>This parameter is provided for concurrency control purposes. You must specify
@@ -416,22 +425,31 @@ namespace Model
     inline UpdateAssociationRequest& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
 
   private:
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
     bool m_parametersHasBeenSet;
+
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
+
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet;
+
     InstanceAssociationOutputLocation m_outputLocation;
     bool m_outputLocationHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_associationName;
     bool m_associationNameHasBeenSet;
+
     Aws::String m_associationVersion;
     bool m_associationVersionHasBeenSet;
   };

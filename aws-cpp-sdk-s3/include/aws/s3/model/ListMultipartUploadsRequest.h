@@ -41,6 +41,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline ListMultipartUploadsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * Character you use to group keys.
@@ -97,6 +99,7 @@ namespace Model
      */
     inline ListMultipartUploadsRequest& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
+
     
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
@@ -111,6 +114,7 @@ namespace Model
 
     
     inline ListMultipartUploadsRequest& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
+
 
     /**
      * Together with upload-id-marker, this parameter specifies the multipart upload
@@ -154,6 +158,7 @@ namespace Model
      */
     inline ListMultipartUploadsRequest& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
 
+
     /**
      * Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the
      * response body. 1,000 is the maximum number of uploads that can be returned in a
@@ -174,6 +179,7 @@ namespace Model
      * response.
      */
     inline ListMultipartUploadsRequest& WithMaxUploads(int value) { SetMaxUploads(value); return *this;}
+
 
     /**
      * Lists in-progress uploads only for those keys that begin with the specified
@@ -216,6 +222,7 @@ namespace Model
      * prefix.
      */
     inline ListMultipartUploadsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+
 
     /**
      * Together with key-marker, specifies the multipart upload after which listing
@@ -267,18 +274,25 @@ namespace Model
     inline ListMultipartUploadsRequest& WithUploadIdMarker(const char* value) { SetUploadIdMarker(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_delimiter;
     bool m_delimiterHasBeenSet;
+
     EncodingType m_encodingType;
     bool m_encodingTypeHasBeenSet;
+
     Aws::String m_keyMarker;
     bool m_keyMarkerHasBeenSet;
+
     int m_maxUploads;
     bool m_maxUploadsHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     Aws::String m_uploadIdMarker;
     bool m_uploadIdMarkerHasBeenSet;
   };

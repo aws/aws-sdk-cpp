@@ -31,13 +31,13 @@ GetObjectAclResult::GetObjectAclResult() :
 {
 }
 
-GetObjectAclResult::GetObjectAclResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetObjectAclResult::GetObjectAclResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }
 
-GetObjectAclResult& GetObjectAclResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetObjectAclResult& GetObjectAclResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

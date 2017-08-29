@@ -30,12 +30,12 @@ CreateRealtimeEndpointResult::CreateRealtimeEndpointResult()
 {
 }
 
-CreateRealtimeEndpointResult::CreateRealtimeEndpointResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateRealtimeEndpointResult::CreateRealtimeEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateRealtimeEndpointResult& CreateRealtimeEndpointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateRealtimeEndpointResult& CreateRealtimeEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("MLModelId"))

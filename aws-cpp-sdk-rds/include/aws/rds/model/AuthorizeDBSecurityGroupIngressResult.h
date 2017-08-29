@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     AuthorizeDBSecurityGroupIngressResult();
-    AuthorizeDBSecurityGroupIngressResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AuthorizeDBSecurityGroupIngressResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AuthorizeDBSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AuthorizeDBSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DBSecurityGroup& GetDBSecurityGroup() const{ return m_dBSecurityGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline AuthorizeDBSecurityGroupIngressResult& WithDBSecurityGroup(DBSecurityGroup&& value) { SetDBSecurityGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline AuthorizeDBSecurityGroupIngressResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DBSecurityGroup m_dBSecurityGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -47,6 +47,7 @@ namespace Model
     Attribute& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The attribute key.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The attribute key.</p>
      */
     inline Attribute& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The value assigned to the attribute key.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline Attribute& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

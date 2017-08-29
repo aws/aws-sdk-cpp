@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListIdentityProvidersResult();
-    ListIdentityProvidersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListIdentityProvidersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIdentityProvidersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListIdentityProvidersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of identity provider objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of identity provider objects.</p>
      */
     inline ListIdentityProvidersResult& AddProviders(ProviderDescription&& value) { m_providers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline ListIdentityProvidersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ProviderDescription> m_providers;
+
     Aws::String m_nextToken;
   };
 

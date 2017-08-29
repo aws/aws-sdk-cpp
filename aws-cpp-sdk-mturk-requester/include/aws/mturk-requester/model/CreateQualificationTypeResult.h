@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateQualificationTypeResult();
-    CreateQualificationTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateQualificationTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateQualificationTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateQualificationTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The created Qualification type, returned as a QualificationType data
@@ -72,6 +73,7 @@ namespace Model
     inline CreateQualificationTypeResult& WithQualificationType(QualificationType&& value) { SetQualificationType(std::move(value)); return *this;}
 
   private:
+
     QualificationType m_qualificationType;
   };
 

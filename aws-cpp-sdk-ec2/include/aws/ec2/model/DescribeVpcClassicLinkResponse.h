@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeVpcClassicLinkResponse();
-    DescribeVpcClassicLinkResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVpcClassicLinkResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpcClassicLinkResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeVpcClassicLinkResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ClassicLink status of one or more VPCs.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeVpcClassicLinkResponse& AddVpcs(VpcClassicLink&& value) { m_vpcs.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribeVpcClassicLinkResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<VpcClassicLink> m_vpcs;
+
     ResponseMetadata m_responseMetadata;
   };
 

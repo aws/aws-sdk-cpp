@@ -37,6 +37,7 @@ namespace Model
     SubscribeToDatasetRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>A name-spaced GUID (for example,
      * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The
@@ -86,6 +87,7 @@ namespace Model
      */
     inline SubscribeToDatasetRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * <p>Unique ID for this identity.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      */
     inline SubscribeToDatasetRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
+
     /**
      * <p>The name of the dataset to subcribe to.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p>The name of the dataset to subcribe to.</p>
      */
     inline SubscribeToDatasetRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+
 
     /**
      * <p>The unique ID generated for this device by Cognito.</p>
@@ -192,12 +196,16 @@ namespace Model
     inline SubscribeToDatasetRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::String m_datasetName;
     bool m_datasetNameHasBeenSet;
+
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet;
   };

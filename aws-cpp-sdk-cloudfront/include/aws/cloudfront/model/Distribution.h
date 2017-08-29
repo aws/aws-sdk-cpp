@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The identifier for the distribution. For example:
      * <code>EDFDVBD632BHDS5</code>. </p>
@@ -90,6 +91,7 @@ namespace Model
      * <code>EDFDVBD632BHDS5</code>. </p>
      */
     inline Distribution& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
@@ -140,6 +142,7 @@ namespace Model
      */
     inline Distribution& WithARN(const char* value) { SetARN(value); return *this;}
 
+
     /**
      * <p>This response element indicates the current status of the distribution. When
      * the status is <code>Deployed</code>, the distribution's information is fully
@@ -189,6 +192,7 @@ namespace Model
      */
     inline Distribution& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The date and time the distribution was last modified. </p>
      */
@@ -214,6 +218,7 @@ namespace Model
      */
     inline Distribution& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of invalidation batches currently in progress. </p>
      */
@@ -228,6 +233,7 @@ namespace Model
      * <p>The number of invalidation batches currently in progress. </p>
      */
     inline Distribution& WithInProgressInvalidationBatches(int value) { SetInProgressInvalidationBatches(value); return *this;}
+
 
     /**
      * <p>The domain name corresponding to the distribution. For example:
@@ -270,6 +276,7 @@ namespace Model
      * <code>d604721fxaaqy9.cloudfront.net</code>. </p>
      */
     inline Distribution& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>CloudFront automatically adds this element to the response only if you've set
@@ -336,6 +343,7 @@ namespace Model
      */
     inline Distribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(std::move(value)); return *this;}
 
+
     /**
      * <p>The current configuration information for the distribution. Send a
      * <code>GET</code> request to the <code>/<i>CloudFront API
@@ -372,20 +380,28 @@ namespace Model
     inline Distribution& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
+
     int m_inProgressInvalidationBatches;
     bool m_inProgressInvalidationBatchesHasBeenSet;
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     ActiveTrustedSigners m_activeTrustedSigners;
     bool m_activeTrustedSignersHasBeenSet;
+
     DistributionConfig m_distributionConfig;
     bool m_distributionConfigHasBeenSet;
   };

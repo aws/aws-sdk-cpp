@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The progress of the Spot fleet request. If there is an error, the status is
      * <code>error</code>. After all bids are placed, the status is
@@ -102,6 +103,7 @@ namespace Model
      */
     inline SpotFleetRequestConfig& WithActivityStatus(ActivityStatus&& value) { SetActivityStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The creation date and time of the request.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      */
     inline SpotFleetRequestConfig& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the configuration of the Spot fleet request.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>Information about the configuration of the Spot fleet request.</p>
      */
     inline SpotFleetRequestConfig& WithSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { SetSpotFleetRequestConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the Spot fleet request.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline SpotFleetRequestConfig& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
+
     /**
      * <p>The state of the Spot fleet request.</p>
      */
@@ -213,14 +218,19 @@ namespace Model
     inline SpotFleetRequestConfig& WithSpotFleetRequestState(BatchState&& value) { SetSpotFleetRequestState(std::move(value)); return *this;}
 
   private:
+
     ActivityStatus m_activityStatus;
     bool m_activityStatusHasBeenSet;
+
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet;
+
     SpotFleetRequestConfigData m_spotFleetRequestConfig;
     bool m_spotFleetRequestConfigHasBeenSet;
+
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet;
+
     BatchState m_spotFleetRequestState;
     bool m_spotFleetRequestStateHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UploadLayerPartResult();
-    UploadLayerPartResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UploadLayerPartResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UploadLayerPartResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UploadLayerPartResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The registry ID associated with the request.</p>
@@ -76,6 +77,7 @@ namespace Model
      */
     inline UploadLayerPartResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The repository name associated with the request.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The repository name associated with the request.</p>
      */
     inline UploadLayerPartResult& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>The upload ID associated with the request.</p>
@@ -146,6 +149,7 @@ namespace Model
      */
     inline UploadLayerPartResult& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
+
     /**
      * <p>The integer value of the last byte received in the request.</p>
      */
@@ -162,9 +166,13 @@ namespace Model
     inline UploadLayerPartResult& WithLastByteReceived(long long value) { SetLastByteReceived(value); return *this;}
 
   private:
+
     Aws::String m_registryId;
+
     Aws::String m_repositoryName;
+
     Aws::String m_uploadId;
+
     long long m_lastByteReceived;
   };
 

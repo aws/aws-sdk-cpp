@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeDocumentPermissionResult();
-    DescribeDocumentPermissionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDocumentPermissionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDocumentPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDocumentPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The account IDs that have permission to use this document. The ID can be
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeDocumentPermissionResult& AddAccountIds(const char* value) { m_accountIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_accountIds;
   };
 

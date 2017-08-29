@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the SSM document.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the SSM document.</p>
      */
     inline DescribeAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The instance ID.</p>
@@ -106,6 +108,7 @@ namespace Model
      */
     inline DescribeAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The association ID for which you want information.</p>
      */
@@ -140,6 +143,7 @@ namespace Model
      * <p>The association ID for which you want information.</p>
      */
     inline DescribeAssociationRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+
 
     /**
      * <p>Specify the association version to retrieve. To view the latest version,
@@ -205,12 +209,16 @@ namespace Model
     inline DescribeAssociationRequest& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     Aws::String m_associationVersion;
     bool m_associationVersionHasBeenSet;
   };

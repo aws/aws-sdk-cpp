@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListPartsResult();
-    ListPartsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPartsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPartsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListPartsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the upload to which the parts are associated.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of the upload to which the parts are associated.</p>
      */
     inline ListPartsResult& WithMultipartUploadId(const char* value) { SetMultipartUploadId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was
@@ -126,6 +128,7 @@ namespace Model
      */
     inline ListPartsResult& WithVaultARN(const char* value) { SetVaultARN(value); return *this;}
 
+
     /**
      * <p>The description of the archive that was specified in the Initiate Multipart
      * Upload request.</p>
@@ -168,6 +171,7 @@ namespace Model
      */
     inline ListPartsResult& WithArchiveDescription(const char* value) { SetArchiveDescription(value); return *this;}
 
+
     /**
      * <p>The part size in bytes. This is the same value that you specified in the
      * Initiate Multipart Upload request.</p>
@@ -185,6 +189,7 @@ namespace Model
      * Initiate Multipart Upload request.</p>
      */
     inline ListPartsResult& WithPartSizeInBytes(long long value) { SetPartSizeInBytes(value); return *this;}
+
 
     /**
      * <p>The UTC time at which the multipart upload was initiated.</p>
@@ -220,6 +225,7 @@ namespace Model
      * <p>The UTC time at which the multipart upload was initiated.</p>
      */
     inline ListPartsResult& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+
 
     /**
      * <p>A list of the part sizes of the multipart upload. Each object in the array
@@ -269,6 +275,7 @@ namespace Model
      * pair.</p>
      */
     inline ListPartsResult& AddParts(PartListElement&& value) { m_parts.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An opaque string that represents where to continue pagination of the results.
@@ -320,12 +327,19 @@ namespace Model
     inline ListPartsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_multipartUploadId;
+
     Aws::String m_vaultARN;
+
     Aws::String m_archiveDescription;
+
     long long m_partSizeInBytes;
+
     Aws::String m_creationDate;
+
     Aws::Vector<PartListElement> m_parts;
+
     Aws::String m_marker;
   };
 

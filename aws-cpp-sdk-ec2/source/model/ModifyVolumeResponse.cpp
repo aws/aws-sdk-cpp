@@ -31,12 +31,12 @@ ModifyVolumeResponse::ModifyVolumeResponse()
 {
 }
 
-ModifyVolumeResponse::ModifyVolumeResponse(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyVolumeResponse::ModifyVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifyVolumeResponse& ModifyVolumeResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyVolumeResponse& ModifyVolumeResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
      */
     inline AddTagsToResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+
 
     /**
      * <p>The key-value pair that represents the tag you want to add to the resource.
@@ -133,8 +135,10 @@ namespace Model
     inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_resourceARN;
     bool m_resourceARNHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

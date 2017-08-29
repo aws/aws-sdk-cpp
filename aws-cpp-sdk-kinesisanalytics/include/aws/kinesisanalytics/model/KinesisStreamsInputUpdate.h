@@ -46,6 +46,7 @@ namespace Model
     KinesisStreamsInputUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Amazon Resource Name (ARN) of the input Amazon Kinesis stream to read.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the input Amazon Kinesis stream to read.</p>
      */
     inline KinesisStreamsInputUpdate& WithResourceARNUpdate(const char* value) { SetResourceARNUpdate(value); return *this;}
+
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
@@ -131,8 +133,10 @@ namespace Model
     inline KinesisStreamsInputUpdate& WithRoleARNUpdate(const char* value) { SetRoleARNUpdate(value); return *this;}
 
   private:
+
     Aws::String m_resourceARNUpdate;
     bool m_resourceARNUpdateHasBeenSet;
+
     Aws::String m_roleARNUpdate;
     bool m_roleARNUpdateHasBeenSet;
   };

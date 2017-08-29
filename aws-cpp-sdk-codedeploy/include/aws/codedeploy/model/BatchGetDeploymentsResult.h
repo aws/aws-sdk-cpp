@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     BatchGetDeploymentsResult();
-    BatchGetDeploymentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetDeploymentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the deployments.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline BatchGetDeploymentsResult& AddDeploymentsInfo(DeploymentInfo&& value) { m_deploymentsInfo.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<DeploymentInfo> m_deploymentsInfo;
   };
 

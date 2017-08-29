@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListSizeConstraintSetsResult();
-    ListSizeConstraintSetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSizeConstraintSetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSizeConstraintSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListSizeConstraintSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If you have more <code>SizeConstraintSet</code> objects than the number that
@@ -113,6 +114,7 @@ namespace Model
      */
     inline ListSizeConstraintSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>An array of <a>SizeConstraintSetSummary</a> objects.</p>
      */
@@ -149,7 +151,9 @@ namespace Model
     inline ListSizeConstraintSetsResult& AddSizeConstraintSets(SizeConstraintSetSummary&& value) { m_sizeConstraintSets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextMarker;
+
     Aws::Vector<SizeConstraintSetSummary> m_sizeConstraintSets;
   };
 

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     RegisterInstanceResult();
-    RegisterInstanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterInstanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The registered instance's AWS OpsWorks Stacks ID.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline RegisterInstanceResult& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
   };
 

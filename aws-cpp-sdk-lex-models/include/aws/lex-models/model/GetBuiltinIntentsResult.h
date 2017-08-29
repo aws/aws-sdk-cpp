@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetBuiltinIntentsResult();
-    GetBuiltinIntentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBuiltinIntentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBuiltinIntentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBuiltinIntentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent
@@ -84,6 +85,7 @@ namespace Model
      * in the response.</p>
      */
     inline GetBuiltinIntentsResult& AddIntents(BuiltinIntentMetadata&& value) { m_intents.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token that fetches the next page of intents. If the response to
@@ -142,7 +144,9 @@ namespace Model
     inline GetBuiltinIntentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<BuiltinIntentMetadata> m_intents;
+
     Aws::String m_nextToken;
   };
 

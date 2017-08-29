@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeTrustedAdvisorCheckRefreshStatusesResult();
-    DescribeTrustedAdvisorCheckRefreshStatusesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTrustedAdvisorCheckRefreshStatusesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTrustedAdvisorCheckRefreshStatusesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTrustedAdvisorCheckRefreshStatusesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The refresh status of the specified Trusted Advisor checks.</p>
@@ -85,6 +86,7 @@ namespace Model
     inline DescribeTrustedAdvisorCheckRefreshStatusesResult& AddStatuses(TrustedAdvisorCheckRefreshStatus&& value) { m_statuses.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<TrustedAdvisorCheckRefreshStatus> m_statuses;
   };
 

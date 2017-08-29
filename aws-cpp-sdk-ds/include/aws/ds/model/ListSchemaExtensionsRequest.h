@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The identifier of the directory from which to retrieve the schema extension
      * information.</p>
@@ -77,6 +78,7 @@ namespace Model
      * information.</p>
      */
     inline ListSchemaExtensionsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ListSchemaExtensionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return.</p>
      */
@@ -136,10 +139,13 @@ namespace Model
     inline ListSchemaExtensionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

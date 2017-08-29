@@ -47,6 +47,7 @@ namespace Model
     WorkspaceBundle& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The bundle identifier.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline WorkspaceBundle& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
+
     /**
      * <p>The name of the bundle.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The name of the bundle.</p>
      */
     inline WorkspaceBundle& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The owner of the bundle. This contains the owner's account identifier, or
@@ -159,6 +162,7 @@ namespace Model
      */
     inline WorkspaceBundle& WithOwner(const char* value) { SetOwner(value); return *this;}
 
+
     /**
      * <p>The bundle description.</p>
      */
@@ -194,6 +198,7 @@ namespace Model
      */
     inline WorkspaceBundle& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A <a>UserStorage</a> object that specifies the amount of user storage that
      * the bundle contains.</p>
@@ -223,6 +228,7 @@ namespace Model
      * the bundle contains.</p>
      */
     inline WorkspaceBundle& WithUserStorage(UserStorage&& value) { SetUserStorage(std::move(value)); return *this;}
+
 
     /**
      * <p>A <a>ComputeType</a> object that specifies the compute type for the
@@ -255,16 +261,22 @@ namespace Model
     inline WorkspaceBundle& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     UserStorage m_userStorage;
     bool m_userStorageHasBeenSet;
+
     ComputeType m_computeType;
     bool m_computeTypeHasBeenSet;
   };

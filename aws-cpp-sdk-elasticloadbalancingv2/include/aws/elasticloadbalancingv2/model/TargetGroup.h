@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
     inline TargetGroup& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
+
 
     /**
      * <p>The name of the target group.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline TargetGroup& WithTargetGroupName(const char* value) { SetTargetGroupName(value); return *this;}
 
+
     /**
      * <p>The protocol to use for routing traffic to the targets.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      */
     inline TargetGroup& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}
 
+
     /**
      * <p>The port on which the targets are listening.</p>
      */
@@ -160,6 +164,7 @@ namespace Model
      * <p>The port on which the targets are listening.</p>
      */
     inline TargetGroup& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC for the targets.</p>
@@ -196,6 +201,7 @@ namespace Model
      */
     inline TargetGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>The protocol to use to connect with the target.</p>
      */
@@ -220,6 +226,7 @@ namespace Model
      * <p>The protocol to use to connect with the target.</p>
      */
     inline TargetGroup& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
+
 
     /**
      * <p>The port to use to connect with the target.</p>
@@ -256,6 +263,7 @@ namespace Model
      */
     inline TargetGroup& WithHealthCheckPort(const char* value) { SetHealthCheckPort(value); return *this;}
 
+
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target.</p>
@@ -273,6 +281,7 @@ namespace Model
      * individual target.</p>
      */
     inline TargetGroup& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
+
 
     /**
      * <p>The amount of time, in seconds, during which no response means a failed
@@ -292,6 +301,7 @@ namespace Model
      */
     inline TargetGroup& WithHealthCheckTimeoutSeconds(int value) { SetHealthCheckTimeoutSeconds(value); return *this;}
 
+
     /**
      * <p>The number of consecutive health checks successes required before considering
      * an unhealthy target healthy.</p>
@@ -310,6 +320,7 @@ namespace Model
      */
     inline TargetGroup& WithHealthyThresholdCount(int value) { SetHealthyThresholdCount(value); return *this;}
 
+
     /**
      * <p>The number of consecutive health check failures required before considering
      * the target unhealthy.</p>
@@ -327,6 +338,7 @@ namespace Model
      * the target unhealthy.</p>
      */
     inline TargetGroup& WithUnhealthyThresholdCount(int value) { SetUnhealthyThresholdCount(value); return *this;}
+
 
     /**
      * <p>The destination for the health check request.</p>
@@ -363,6 +375,7 @@ namespace Model
      */
     inline TargetGroup& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
 
+
     /**
      * <p>The HTTP codes to use when checking for a successful response from a
      * target.</p>
@@ -392,6 +405,7 @@ namespace Model
      * target.</p>
      */
     inline TargetGroup& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
@@ -442,32 +456,46 @@ namespace Model
     inline TargetGroup& AddLoadBalancerArns(const char* value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns.push_back(value); return *this; }
 
   private:
+
     Aws::String m_targetGroupArn;
     bool m_targetGroupArnHasBeenSet;
+
     Aws::String m_targetGroupName;
     bool m_targetGroupNameHasBeenSet;
+
     ProtocolEnum m_protocol;
     bool m_protocolHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     ProtocolEnum m_healthCheckProtocol;
     bool m_healthCheckProtocolHasBeenSet;
+
     Aws::String m_healthCheckPort;
     bool m_healthCheckPortHasBeenSet;
+
     int m_healthCheckIntervalSeconds;
     bool m_healthCheckIntervalSecondsHasBeenSet;
+
     int m_healthCheckTimeoutSeconds;
     bool m_healthCheckTimeoutSecondsHasBeenSet;
+
     int m_healthyThresholdCount;
     bool m_healthyThresholdCountHasBeenSet;
+
     int m_unhealthyThresholdCount;
     bool m_unhealthyThresholdCountHasBeenSet;
+
     Aws::String m_healthCheckPath;
     bool m_healthCheckPathHasBeenSet;
+
     Matcher m_matcher;
     bool m_matcherHasBeenSet;
+
     Aws::Vector<Aws::String> m_loadBalancerArns;
     bool m_loadBalancerArnsHasBeenSet;
   };

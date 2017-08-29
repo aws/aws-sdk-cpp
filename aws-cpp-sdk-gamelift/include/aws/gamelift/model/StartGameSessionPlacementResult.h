@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     StartGameSessionPlacementResult();
-    StartGameSessionPlacementResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartGameSessionPlacementResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartGameSessionPlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StartGameSessionPlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that describes the newly created game session placement. This object
@@ -83,6 +84,7 @@ namespace Model
     inline StartGameSessionPlacementResult& WithGameSessionPlacement(GameSessionPlacement&& value) { SetGameSessionPlacement(std::move(value)); return *this;}
 
   private:
+
     GameSessionPlacement m_gameSessionPlacement;
   };
 

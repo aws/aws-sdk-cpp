@@ -48,6 +48,7 @@ namespace Model
     SqlInjectionMatchTuple& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies where in a web request to look for snippets of malicious SQL
      * code.</p>
@@ -77,6 +78,7 @@ namespace Model
      * code.</p>
      */
     inline SqlInjectionMatchTuple& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
@@ -259,8 +261,10 @@ namespace Model
     inline SqlInjectionMatchTuple& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(std::move(value)); return *this;}
 
   private:
+
     FieldToMatch m_fieldToMatch;
     bool m_fieldToMatchHasBeenSet;
+
     TextTransformation m_textTransformation;
     bool m_textTransformationHasBeenSet;
   };

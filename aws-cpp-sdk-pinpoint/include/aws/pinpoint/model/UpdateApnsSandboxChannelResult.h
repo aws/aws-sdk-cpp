@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateApnsSandboxChannelResult();
-    UpdateApnsSandboxChannelResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateApnsSandboxChannelResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateApnsSandboxChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateApnsSandboxChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const APNSSandboxChannelResponse& GetAPNSSandboxChannelResponse() const{ return m_aPNSSandboxChannelResponse; }
@@ -57,6 +58,7 @@ namespace Model
     inline UpdateApnsSandboxChannelResult& WithAPNSSandboxChannelResponse(APNSSandboxChannelResponse&& value) { SetAPNSSandboxChannelResponse(std::move(value)); return *this;}
 
   private:
+
     APNSSandboxChannelResponse m_aPNSSandboxChannelResponse;
   };
 

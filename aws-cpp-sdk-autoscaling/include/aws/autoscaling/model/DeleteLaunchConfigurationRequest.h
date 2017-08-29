@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the launch configuration.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline DeleteLaunchConfigurationRequest& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
 
   private:
+
     Aws::String m_launchConfigurationName;
     bool m_launchConfigurationNameHasBeenSet;
   };

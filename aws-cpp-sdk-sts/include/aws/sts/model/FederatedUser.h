@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The string that identifies the federated user associated with the
      * credentials, similar to the unique ID of an IAM user.</p>
@@ -90,6 +91,7 @@ namespace Model
      * credentials, similar to the unique ID of an IAM user.</p>
      */
     inline FederatedUser& WithFederatedUserId(const char* value) { SetFederatedUserId(value); return *this;}
+
 
     /**
      * <p>The ARN that specifies the federated user that is associated with the
@@ -155,8 +157,10 @@ namespace Model
     inline FederatedUser& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
+
     Aws::String m_federatedUserId;
     bool m_federatedUserIdHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
   };

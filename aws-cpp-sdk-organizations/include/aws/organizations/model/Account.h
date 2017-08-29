@@ -49,6 +49,7 @@ namespace Model
     Account& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier (ID) of the account.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
@@ -97,6 +98,7 @@ namespace Model
      * string requires exactly 12 digits.</p>
      */
     inline Account& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
@@ -161,6 +163,7 @@ namespace Model
      */
     inline Account& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The email address associated with the AWS account.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
@@ -209,6 +212,7 @@ namespace Model
      * string of characters that represents a standard Internet email address.</p>
      */
     inline Account& WithEmail(const char* value) { SetEmail(value); return *this;}
+
 
     /**
      * <p>The friendly name of the account.</p> <p>The <a
@@ -266,6 +270,7 @@ namespace Model
      */
     inline Account& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The status of the account in the organization.</p>
      */
@@ -291,6 +296,7 @@ namespace Model
      */
     inline Account& WithStatus(AccountStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The method by which the account joined the organization.</p>
      */
@@ -315,6 +321,7 @@ namespace Model
      * <p>The method by which the account joined the organization.</p>
      */
     inline Account& WithJoinedMethod(AccountJoinedMethod&& value) { SetJoinedMethod(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the account became a part of the organization.</p>
@@ -342,18 +349,25 @@ namespace Model
     inline Account& WithJoinedTimestamp(Aws::Utils::DateTime&& value) { SetJoinedTimestamp(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_email;
     bool m_emailHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     AccountStatus m_status;
     bool m_statusHasBeenSet;
+
     AccountJoinedMethod m_joinedMethod;
     bool m_joinedMethodHasBeenSet;
+
     Aws::Utils::DateTime m_joinedTimestamp;
     bool m_joinedTimestampHasBeenSet;
   };

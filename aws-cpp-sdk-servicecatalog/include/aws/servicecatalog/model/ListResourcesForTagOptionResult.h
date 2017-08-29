@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListResourcesForTagOptionResult();
-    ListResourcesForTagOptionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourcesForTagOptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourcesForTagOptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListResourcesForTagOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resulting detailed resource information.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The resulting detailed resource information.</p>
      */
     inline ListResourcesForTagOptionResult& AddResourceDetails(ResourceDetail&& value) { m_resourceDetails.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The page token of the first page retrieved. If null, this retrieves the first
@@ -121,7 +123,9 @@ namespace Model
     inline ListResourcesForTagOptionResult& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<ResourceDetail> m_resourceDetails;
+
     Aws::String m_pageToken;
   };
 

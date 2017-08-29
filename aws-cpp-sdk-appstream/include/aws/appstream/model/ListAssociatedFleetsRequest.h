@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stack whose associated fleets are listed.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the stack whose associated fleets are listed.</p>
      */
     inline ListAssociatedFleetsRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
@@ -114,8 +116,10 @@ namespace Model
     inline ListAssociatedFleetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     MaintenanceWindowLambdaParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Pass client-specific information to the Lambda function that you are
      * invoking. You can then process the client information in your Lambda function as
@@ -94,6 +95,7 @@ namespace Model
      * you choose through the context variable.</p>
      */
     inline MaintenanceWindowLambdaParameters& WithClientContext(const char* value) { SetClientContext(value); return *this;}
+
 
     /**
      * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
@@ -151,6 +153,7 @@ namespace Model
      */
     inline MaintenanceWindowLambdaParameters& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 
+
     /**
      * <p>JSON to provide to your Lambda function as input.</p>
      */
@@ -177,10 +180,13 @@ namespace Model
     inline MaintenanceWindowLambdaParameters& WithPayload(Aws::Utils::ByteBuffer&& value) { SetPayload(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clientContext;
     bool m_clientContextHasBeenSet;
+
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet;
+
     Aws::Utils::ByteBuffer m_payload;
     bool m_payloadHasBeenSet;
   };

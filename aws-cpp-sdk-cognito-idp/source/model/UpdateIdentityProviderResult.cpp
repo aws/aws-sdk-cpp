@@ -30,12 +30,12 @@ UpdateIdentityProviderResult::UpdateIdentityProviderResult()
 {
 }
 
-UpdateIdentityProviderResult::UpdateIdentityProviderResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateIdentityProviderResult::UpdateIdentityProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateIdentityProviderResult& UpdateIdentityProviderResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateIdentityProviderResult& UpdateIdentityProviderResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityProvider"))

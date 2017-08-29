@@ -48,6 +48,7 @@ namespace Model
     CreateJobPlaylist& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name that you want Elastic Transcoder to assign to the master playlist,
      * for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character,
@@ -146,6 +147,7 @@ namespace Model
      */
     inline CreateJobPlaylist& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The format of the output playlist. Valid formats include <code>HLSv3</code>,
      * <code>HLSv4</code>, and <code>Smooth</code>.</p>
@@ -187,6 +189,7 @@ namespace Model
      * <code>HLSv4</code>, and <code>Smooth</code>.</p>
      */
     inline CreateJobPlaylist& WithFormat(const char* value) { SetFormat(value); return *this;}
+
 
     /**
      * <p>For each output in this job that you want to include in a master playlist,
@@ -436,6 +439,7 @@ namespace Model
      */
     inline CreateJobPlaylist& AddOutputKeys(const char* value) { m_outputKeysHasBeenSet = true; m_outputKeys.push_back(value); return *this; }
 
+
     /**
      * <p>The HLS content protection settings, if any, that you want Elastic Transcoder
      * to apply to the output files associated with this playlist.</p>
@@ -465,6 +469,7 @@ namespace Model
      * to apply to the output files associated with this playlist.</p>
      */
     inline CreateJobPlaylist& WithHlsContentProtection(HlsContentProtection&& value) { SetHlsContentProtection(std::move(value)); return *this;}
+
 
     /**
      * <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the
@@ -497,14 +502,19 @@ namespace Model
     inline CreateJobPlaylist& WithPlayReadyDrm(PlayReadyDrm&& value) { SetPlayReadyDrm(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_format;
     bool m_formatHasBeenSet;
+
     Aws::Vector<Aws::String> m_outputKeys;
     bool m_outputKeysHasBeenSet;
+
     HlsContentProtection m_hlsContentProtection;
     bool m_hlsContentProtectionHasBeenSet;
+
     PlayReadyDrm m_playReadyDrm;
     bool m_playReadyDrmHasBeenSet;
   };

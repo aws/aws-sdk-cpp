@@ -31,12 +31,12 @@ AuthorizeDBSecurityGroupIngressResult::AuthorizeDBSecurityGroupIngressResult()
 {
 }
 
-AuthorizeDBSecurityGroupIngressResult::AuthorizeDBSecurityGroupIngressResult(const AmazonWebServiceResult<XmlDocument>& result)
+AuthorizeDBSecurityGroupIngressResult::AuthorizeDBSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-AuthorizeDBSecurityGroupIngressResult& AuthorizeDBSecurityGroupIngressResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AuthorizeDBSecurityGroupIngressResult& AuthorizeDBSecurityGroupIngressResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

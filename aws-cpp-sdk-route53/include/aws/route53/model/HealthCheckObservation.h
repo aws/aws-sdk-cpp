@@ -49,6 +49,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The region of the Amazon Route 53 health checker that provided the status in
      * <code>StatusReport</code>.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <code>StatusReport</code>.</p>
      */
     inline HealthCheckObservation& WithRegion(HealthCheckRegion&& value) { SetRegion(std::move(value)); return *this;}
+
 
     /**
      * <p>The IP address of the Amazon Route 53 health checker that provided the
@@ -121,6 +123,7 @@ namespace Model
      */
     inline HealthCheckObservation& WithIPAddress(const char* value) { SetIPAddress(value); return *this;}
 
+
     /**
      * <p>A complex type that contains the last failure reason as reported by one
      * Amazon Route 53 health checker and the time of the failed health check.</p>
@@ -152,10 +155,13 @@ namespace Model
     inline HealthCheckObservation& WithStatusReport(StatusReport&& value) { SetStatusReport(std::move(value)); return *this;}
 
   private:
+
     HealthCheckRegion m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_iPAddress;
     bool m_iPAddressHasBeenSet;
+
     StatusReport m_statusReport;
     bool m_statusReportHasBeenSet;
   };

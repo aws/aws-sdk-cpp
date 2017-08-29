@@ -34,6 +34,7 @@ namespace Model
     DeleteNotificationSubscriptionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the subscription.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>The ID of the subscription.</p>
      */
     inline DeleteNotificationSubscriptionRequest& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
+
 
     /**
      * <p>The ID of the organization.</p>
@@ -105,8 +107,10 @@ namespace Model
     inline DeleteNotificationSubscriptionRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionId;
     bool m_subscriptionIdHasBeenSet;
+
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet;
   };

@@ -30,12 +30,12 @@ DeleteComputeEnvironmentResult::DeleteComputeEnvironmentResult()
 {
 }
 
-DeleteComputeEnvironmentResult::DeleteComputeEnvironmentResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteComputeEnvironmentResult::DeleteComputeEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteComputeEnvironmentResult& DeleteComputeEnvironmentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteComputeEnvironmentResult& DeleteComputeEnvironmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

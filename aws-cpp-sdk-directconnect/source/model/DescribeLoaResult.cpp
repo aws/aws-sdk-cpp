@@ -32,13 +32,13 @@ DescribeLoaResult::DescribeLoaResult() :
 {
 }
 
-DescribeLoaResult::DescribeLoaResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeLoaResult::DescribeLoaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_loaContentType(LoaContentType::NOT_SET)
 {
   *this = result;
 }
 
-DescribeLoaResult& DescribeLoaResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLoaResult& DescribeLoaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("loaContent"))

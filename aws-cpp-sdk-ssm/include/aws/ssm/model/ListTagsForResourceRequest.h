@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Returns a list of tags for a specific resource type.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      * <p>Returns a list of tags for a specific resource type.</p>
      */
     inline ListTagsForResourceRequest& WithResourceType(ResourceTypeForTagging&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The resource ID for which you want to see a list of tags.</p>
@@ -98,8 +100,10 @@ namespace Model
     inline ListTagsForResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
   private:
+
     ResourceTypeForTagging m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
   };

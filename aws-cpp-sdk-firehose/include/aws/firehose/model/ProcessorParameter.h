@@ -46,6 +46,7 @@ namespace Model
     ProcessorParameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the parameter.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the parameter.</p>
      */
     inline ProcessorParameter& WithParameterName(ProcessorParameterName&& value) { SetParameterName(std::move(value)); return *this;}
+
 
     /**
      * <p>The parameter value.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline ProcessorParameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
 
   private:
+
     ProcessorParameterName m_parameterName;
     bool m_parameterNameHasBeenSet;
+
     Aws::String m_parameterValue;
     bool m_parameterValueHasBeenSet;
   };

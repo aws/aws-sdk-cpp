@@ -30,12 +30,12 @@ DescribeComplianceByConfigRuleResult::DescribeComplianceByConfigRuleResult()
 {
 }
 
-DescribeComplianceByConfigRuleResult::DescribeComplianceByConfigRuleResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeComplianceByConfigRuleResult::DescribeComplianceByConfigRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeComplianceByConfigRuleResult& DescribeComplianceByConfigRuleResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeComplianceByConfigRuleResult& DescribeComplianceByConfigRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ComplianceByConfigRules"))

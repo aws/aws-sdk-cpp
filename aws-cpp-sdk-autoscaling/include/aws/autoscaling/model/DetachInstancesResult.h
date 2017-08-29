@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DetachInstancesResult();
-    DetachInstancesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DetachInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DetachInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DetachInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The activities related to detaching the instances from the Auto Scaling
@@ -90,6 +91,7 @@ namespace Model
      */
     inline DetachInstancesResult& AddActivities(Activity&& value) { m_activities.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -106,7 +108,9 @@ namespace Model
     inline DetachInstancesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Activity> m_activities;
+
     ResponseMetadata m_responseMetadata;
   };
 

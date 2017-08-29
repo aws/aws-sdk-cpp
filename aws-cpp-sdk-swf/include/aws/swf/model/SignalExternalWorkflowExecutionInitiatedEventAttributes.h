@@ -47,6 +47,7 @@ namespace Model
     SignalExternalWorkflowExecutionInitiatedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>workflowId</code> of the external workflow execution.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The <code>workflowId</code> of the external workflow execution.</p>
      */
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+
 
     /**
      * <p>The <code>runId</code> of the external workflow execution to send the signal
@@ -124,6 +126,7 @@ namespace Model
      */
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithRunId(const char* value) { SetRunId(value); return *this;}
 
+
     /**
      * <p>The name of the signal.</p>
      */
@@ -158,6 +161,7 @@ namespace Model
      * <p>The name of the signal.</p>
      */
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithSignalName(const char* value) { SetSignalName(value); return *this;}
+
 
     /**
      * <p>The input provided to the signal.</p>
@@ -194,6 +198,7 @@ namespace Model
      */
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithInput(const char* value) { SetInput(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
      * decision task that resulted in the <code>SignalExternalWorkflowExecution</code>
@@ -217,6 +222,7 @@ namespace Model
      * by tracing back the chain of events leading up to this event.</p>
      */
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
+
 
     /**
      * <p>Data attached to the event that can be used by the decider in subsequent
@@ -261,16 +267,22 @@ namespace Model
     inline SignalExternalWorkflowExecutionInitiatedEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 
   private:
+
     Aws::String m_workflowId;
     bool m_workflowIdHasBeenSet;
+
     Aws::String m_runId;
     bool m_runIdHasBeenSet;
+
     Aws::String m_signalName;
     bool m_signalNameHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
+
     Aws::String m_control;
     bool m_controlHasBeenSet;
   };

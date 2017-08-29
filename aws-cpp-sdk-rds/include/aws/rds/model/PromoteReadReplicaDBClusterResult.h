@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     PromoteReadReplicaDBClusterResult();
-    PromoteReadReplicaDBClusterResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PromoteReadReplicaDBClusterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PromoteReadReplicaDBClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    PromoteReadReplicaDBClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DBCluster& GetDBCluster() const{ return m_dBCluster; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline PromoteReadReplicaDBClusterResult& WithDBCluster(DBCluster&& value) { SetDBCluster(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline PromoteReadReplicaDBClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DBCluster m_dBCluster;
+
     ResponseMetadata m_responseMetadata;
   };
 

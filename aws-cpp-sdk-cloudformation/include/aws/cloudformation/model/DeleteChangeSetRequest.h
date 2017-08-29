@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
      * delete.</p>
@@ -83,6 +84,7 @@ namespace Model
      * delete.</p>
      */
     inline DeleteChangeSetRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+
 
     /**
      * <p>If you specified the name of a change set to delete, specify the stack name
@@ -127,8 +129,10 @@ namespace Model
     inline DeleteChangeSetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
   private:
+
     Aws::String m_changeSetName;
     bool m_changeSetNameHasBeenSet;
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
   };

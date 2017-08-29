@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeDocumentVersionsResult();
-    DescribeDocumentVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDocumentVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDocumentVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDocumentVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The document versions.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The document versions.</p>
      */
     inline DescribeDocumentVersionsResult& AddDocumentVersions(DocumentVersionMetadata&& value) { m_documentVersions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeDocumentVersionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::Vector<DocumentVersionMetadata> m_documentVersions;
+
     Aws::String m_marker;
   };
 

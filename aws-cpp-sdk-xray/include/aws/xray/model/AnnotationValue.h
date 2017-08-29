@@ -46,6 +46,7 @@ namespace Model
     AnnotationValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Value for a Number annotation.</p>
      */
@@ -61,6 +62,7 @@ namespace Model
      */
     inline AnnotationValue& WithNumberValue(double value) { SetNumberValue(value); return *this;}
 
+
     /**
      * <p>Value for a Boolean annotation.</p>
      */
@@ -75,6 +77,7 @@ namespace Model
      * <p>Value for a Boolean annotation.</p>
      */
     inline AnnotationValue& WithBooleanValue(bool value) { SetBooleanValue(value); return *this;}
+
 
     /**
      * <p>Value for a String annotation.</p>
@@ -112,10 +115,13 @@ namespace Model
     inline AnnotationValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
 
   private:
+
     double m_numberValue;
     bool m_numberValueHasBeenSet;
+
     bool m_booleanValue;
     bool m_booleanValueHasBeenSet;
+
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet;
   };

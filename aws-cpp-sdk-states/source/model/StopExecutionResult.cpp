@@ -30,12 +30,12 @@ StopExecutionResult::StopExecutionResult()
 {
 }
 
-StopExecutionResult::StopExecutionResult(const AmazonWebServiceResult<JsonValue>& result)
+StopExecutionResult::StopExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopExecutionResult& StopExecutionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopExecutionResult& StopExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("stopDate"))

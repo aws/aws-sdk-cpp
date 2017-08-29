@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetMaintenanceWindowResult();
-    GetMaintenanceWindowResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMaintenanceWindowResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the created Maintenance Window.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline GetMaintenanceWindowResult& WithWindowId(const char* value) { SetWindowId(value); return *this;}
 
+
     /**
      * <p>The name of the Maintenance Window.</p>
      */
@@ -112,6 +114,7 @@ namespace Model
      */
     inline GetMaintenanceWindowResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The description of the Maintenance Window.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      * <p>The description of the Maintenance Window.</p>
      */
     inline GetMaintenanceWindowResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
@@ -189,6 +193,7 @@ namespace Model
      */
     inline GetMaintenanceWindowResult& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 
+
     /**
      * <p>The duration of the Maintenance Window in hours.</p>
      */
@@ -203,6 +208,7 @@ namespace Model
      * <p>The duration of the Maintenance Window in hours.</p>
      */
     inline GetMaintenanceWindowResult& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The number of hours before the end of the Maintenance Window that Systems
@@ -222,6 +228,7 @@ namespace Model
      */
     inline GetMaintenanceWindowResult& WithCutoff(int value) { SetCutoff(value); return *this;}
 
+
     /**
      * <p>Whether targets must be registered with the Maintenance Window before tasks
      * can be defined for those targets.</p>
@@ -240,6 +247,7 @@ namespace Model
      */
     inline GetMaintenanceWindowResult& WithAllowUnassociatedTargets(bool value) { SetAllowUnassociatedTargets(value); return *this;}
 
+
     /**
      * <p>Whether the Maintenance Windows is enabled.</p>
      */
@@ -254,6 +262,7 @@ namespace Model
      * <p>Whether the Maintenance Windows is enabled.</p>
      */
     inline GetMaintenanceWindowResult& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>The date the Maintenance Window was created.</p>
@@ -279,6 +288,7 @@ namespace Model
      * <p>The date the Maintenance Window was created.</p>
      */
     inline GetMaintenanceWindowResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the Maintenance Window was last modified.</p>
@@ -306,15 +316,25 @@ namespace Model
     inline GetMaintenanceWindowResult& WithModifiedDate(Aws::Utils::DateTime&& value) { SetModifiedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_windowId;
+
     Aws::String m_name;
+
     Aws::String m_description;
+
     Aws::String m_schedule;
+
     int m_duration;
+
     int m_cutoff;
+
     bool m_allowUnassociatedTargets;
+
     bool m_enabled;
+
     Aws::Utils::DateTime m_createdDate;
+
     Aws::Utils::DateTime m_modifiedDate;
   };
 

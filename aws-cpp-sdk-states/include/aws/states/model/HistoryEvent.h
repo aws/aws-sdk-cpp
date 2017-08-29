@@ -60,6 +60,7 @@ namespace Model
     HistoryEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The date the event occured.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The date the event occured.</p>
      */
     inline HistoryEvent& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of the event.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline HistoryEvent& WithType(HistoryEventType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The id of the event. Events are numbered sequentially, starting at one.</p>
      */
@@ -124,6 +127,7 @@ namespace Model
      * <p>The id of the event. Events are numbered sequentially, starting at one.</p>
      */
     inline HistoryEvent& WithId(long long value) { SetId(value); return *this;}
+
 
     /**
      * <p>The id of the previous event.</p>
@@ -140,6 +144,7 @@ namespace Model
      */
     inline HistoryEvent& WithPreviousEventId(long long value) { SetPreviousEventId(value); return *this;}
 
+
     
     inline const ActivityFailedEventDetails& GetActivityFailedEventDetails() const{ return m_activityFailedEventDetails; }
 
@@ -154,6 +159,7 @@ namespace Model
 
     
     inline HistoryEvent& WithActivityFailedEventDetails(ActivityFailedEventDetails&& value) { SetActivityFailedEventDetails(std::move(value)); return *this;}
+
 
     
     inline const ActivityScheduleFailedEventDetails& GetActivityScheduleFailedEventDetails() const{ return m_activityScheduleFailedEventDetails; }
@@ -170,6 +176,7 @@ namespace Model
     
     inline HistoryEvent& WithActivityScheduleFailedEventDetails(ActivityScheduleFailedEventDetails&& value) { SetActivityScheduleFailedEventDetails(std::move(value)); return *this;}
 
+
     
     inline const ActivityScheduledEventDetails& GetActivityScheduledEventDetails() const{ return m_activityScheduledEventDetails; }
 
@@ -184,6 +191,7 @@ namespace Model
 
     
     inline HistoryEvent& WithActivityScheduledEventDetails(ActivityScheduledEventDetails&& value) { SetActivityScheduledEventDetails(std::move(value)); return *this;}
+
 
     
     inline const ActivityStartedEventDetails& GetActivityStartedEventDetails() const{ return m_activityStartedEventDetails; }
@@ -200,6 +208,7 @@ namespace Model
     
     inline HistoryEvent& WithActivityStartedEventDetails(ActivityStartedEventDetails&& value) { SetActivityStartedEventDetails(std::move(value)); return *this;}
 
+
     
     inline const ActivitySucceededEventDetails& GetActivitySucceededEventDetails() const{ return m_activitySucceededEventDetails; }
 
@@ -214,6 +223,7 @@ namespace Model
 
     
     inline HistoryEvent& WithActivitySucceededEventDetails(ActivitySucceededEventDetails&& value) { SetActivitySucceededEventDetails(std::move(value)); return *this;}
+
 
     
     inline const ActivityTimedOutEventDetails& GetActivityTimedOutEventDetails() const{ return m_activityTimedOutEventDetails; }
@@ -230,6 +240,7 @@ namespace Model
     
     inline HistoryEvent& WithActivityTimedOutEventDetails(ActivityTimedOutEventDetails&& value) { SetActivityTimedOutEventDetails(std::move(value)); return *this;}
 
+
     
     inline const ExecutionFailedEventDetails& GetExecutionFailedEventDetails() const{ return m_executionFailedEventDetails; }
 
@@ -244,6 +255,7 @@ namespace Model
 
     
     inline HistoryEvent& WithExecutionFailedEventDetails(ExecutionFailedEventDetails&& value) { SetExecutionFailedEventDetails(std::move(value)); return *this;}
+
 
     
     inline const ExecutionStartedEventDetails& GetExecutionStartedEventDetails() const{ return m_executionStartedEventDetails; }
@@ -260,6 +272,7 @@ namespace Model
     
     inline HistoryEvent& WithExecutionStartedEventDetails(ExecutionStartedEventDetails&& value) { SetExecutionStartedEventDetails(std::move(value)); return *this;}
 
+
     
     inline const ExecutionSucceededEventDetails& GetExecutionSucceededEventDetails() const{ return m_executionSucceededEventDetails; }
 
@@ -274,6 +287,7 @@ namespace Model
 
     
     inline HistoryEvent& WithExecutionSucceededEventDetails(ExecutionSucceededEventDetails&& value) { SetExecutionSucceededEventDetails(std::move(value)); return *this;}
+
 
     
     inline const ExecutionAbortedEventDetails& GetExecutionAbortedEventDetails() const{ return m_executionAbortedEventDetails; }
@@ -290,6 +304,7 @@ namespace Model
     
     inline HistoryEvent& WithExecutionAbortedEventDetails(ExecutionAbortedEventDetails&& value) { SetExecutionAbortedEventDetails(std::move(value)); return *this;}
 
+
     
     inline const ExecutionTimedOutEventDetails& GetExecutionTimedOutEventDetails() const{ return m_executionTimedOutEventDetails; }
 
@@ -304,6 +319,7 @@ namespace Model
 
     
     inline HistoryEvent& WithExecutionTimedOutEventDetails(ExecutionTimedOutEventDetails&& value) { SetExecutionTimedOutEventDetails(std::move(value)); return *this;}
+
 
     
     inline const LambdaFunctionFailedEventDetails& GetLambdaFunctionFailedEventDetails() const{ return m_lambdaFunctionFailedEventDetails; }
@@ -320,6 +336,7 @@ namespace Model
     
     inline HistoryEvent& WithLambdaFunctionFailedEventDetails(LambdaFunctionFailedEventDetails&& value) { SetLambdaFunctionFailedEventDetails(std::move(value)); return *this;}
 
+
     
     inline const LambdaFunctionScheduleFailedEventDetails& GetLambdaFunctionScheduleFailedEventDetails() const{ return m_lambdaFunctionScheduleFailedEventDetails; }
 
@@ -334,6 +351,7 @@ namespace Model
 
     
     inline HistoryEvent& WithLambdaFunctionScheduleFailedEventDetails(LambdaFunctionScheduleFailedEventDetails&& value) { SetLambdaFunctionScheduleFailedEventDetails(std::move(value)); return *this;}
+
 
     
     inline const LambdaFunctionScheduledEventDetails& GetLambdaFunctionScheduledEventDetails() const{ return m_lambdaFunctionScheduledEventDetails; }
@@ -350,6 +368,7 @@ namespace Model
     
     inline HistoryEvent& WithLambdaFunctionScheduledEventDetails(LambdaFunctionScheduledEventDetails&& value) { SetLambdaFunctionScheduledEventDetails(std::move(value)); return *this;}
 
+
     
     inline const LambdaFunctionStartFailedEventDetails& GetLambdaFunctionStartFailedEventDetails() const{ return m_lambdaFunctionStartFailedEventDetails; }
 
@@ -364,6 +383,7 @@ namespace Model
 
     
     inline HistoryEvent& WithLambdaFunctionStartFailedEventDetails(LambdaFunctionStartFailedEventDetails&& value) { SetLambdaFunctionStartFailedEventDetails(std::move(value)); return *this;}
+
 
     
     inline const LambdaFunctionSucceededEventDetails& GetLambdaFunctionSucceededEventDetails() const{ return m_lambdaFunctionSucceededEventDetails; }
@@ -380,6 +400,7 @@ namespace Model
     
     inline HistoryEvent& WithLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails&& value) { SetLambdaFunctionSucceededEventDetails(std::move(value)); return *this;}
 
+
     
     inline const LambdaFunctionTimedOutEventDetails& GetLambdaFunctionTimedOutEventDetails() const{ return m_lambdaFunctionTimedOutEventDetails; }
 
@@ -395,6 +416,7 @@ namespace Model
     
     inline HistoryEvent& WithLambdaFunctionTimedOutEventDetails(LambdaFunctionTimedOutEventDetails&& value) { SetLambdaFunctionTimedOutEventDetails(std::move(value)); return *this;}
 
+
     
     inline const StateEnteredEventDetails& GetStateEnteredEventDetails() const{ return m_stateEnteredEventDetails; }
 
@@ -409,6 +431,7 @@ namespace Model
 
     
     inline HistoryEvent& WithStateEnteredEventDetails(StateEnteredEventDetails&& value) { SetStateEnteredEventDetails(std::move(value)); return *this;}
+
 
     
     inline const StateExitedEventDetails& GetStateExitedEventDetails() const{ return m_stateExitedEventDetails; }
@@ -426,50 +449,73 @@ namespace Model
     inline HistoryEvent& WithStateExitedEventDetails(StateExitedEventDetails&& value) { SetStateExitedEventDetails(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
     HistoryEventType m_type;
     bool m_typeHasBeenSet;
+
     long long m_id;
     bool m_idHasBeenSet;
+
     long long m_previousEventId;
     bool m_previousEventIdHasBeenSet;
+
     ActivityFailedEventDetails m_activityFailedEventDetails;
     bool m_activityFailedEventDetailsHasBeenSet;
+
     ActivityScheduleFailedEventDetails m_activityScheduleFailedEventDetails;
     bool m_activityScheduleFailedEventDetailsHasBeenSet;
+
     ActivityScheduledEventDetails m_activityScheduledEventDetails;
     bool m_activityScheduledEventDetailsHasBeenSet;
+
     ActivityStartedEventDetails m_activityStartedEventDetails;
     bool m_activityStartedEventDetailsHasBeenSet;
+
     ActivitySucceededEventDetails m_activitySucceededEventDetails;
     bool m_activitySucceededEventDetailsHasBeenSet;
+
     ActivityTimedOutEventDetails m_activityTimedOutEventDetails;
     bool m_activityTimedOutEventDetailsHasBeenSet;
+
     ExecutionFailedEventDetails m_executionFailedEventDetails;
     bool m_executionFailedEventDetailsHasBeenSet;
+
     ExecutionStartedEventDetails m_executionStartedEventDetails;
     bool m_executionStartedEventDetailsHasBeenSet;
+
     ExecutionSucceededEventDetails m_executionSucceededEventDetails;
     bool m_executionSucceededEventDetailsHasBeenSet;
+
     ExecutionAbortedEventDetails m_executionAbortedEventDetails;
     bool m_executionAbortedEventDetailsHasBeenSet;
+
     ExecutionTimedOutEventDetails m_executionTimedOutEventDetails;
     bool m_executionTimedOutEventDetailsHasBeenSet;
+
     LambdaFunctionFailedEventDetails m_lambdaFunctionFailedEventDetails;
     bool m_lambdaFunctionFailedEventDetailsHasBeenSet;
+
     LambdaFunctionScheduleFailedEventDetails m_lambdaFunctionScheduleFailedEventDetails;
     bool m_lambdaFunctionScheduleFailedEventDetailsHasBeenSet;
+
     LambdaFunctionScheduledEventDetails m_lambdaFunctionScheduledEventDetails;
     bool m_lambdaFunctionScheduledEventDetailsHasBeenSet;
+
     LambdaFunctionStartFailedEventDetails m_lambdaFunctionStartFailedEventDetails;
     bool m_lambdaFunctionStartFailedEventDetailsHasBeenSet;
+
     LambdaFunctionSucceededEventDetails m_lambdaFunctionSucceededEventDetails;
     bool m_lambdaFunctionSucceededEventDetailsHasBeenSet;
+
     LambdaFunctionTimedOutEventDetails m_lambdaFunctionTimedOutEventDetails;
     bool m_lambdaFunctionTimedOutEventDetailsHasBeenSet;
+
     StateEnteredEventDetails m_stateEnteredEventDetails;
     bool m_stateEnteredEventDetailsHasBeenSet;
+
     StateExitedEventDetails m_stateExitedEventDetails;
     bool m_stateExitedEventDetailsHasBeenSet;
   };

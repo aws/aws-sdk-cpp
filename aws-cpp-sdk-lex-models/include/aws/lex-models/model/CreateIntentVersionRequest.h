@@ -34,6 +34,7 @@ namespace Model
     CreateIntentVersionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the intent that you want to create a new version of. The name is
      * case sensitive. </p>
@@ -75,6 +76,7 @@ namespace Model
      * case sensitive. </p>
      */
     inline CreateIntentVersionRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Checksum of the <code>$LATEST</code> version of the intent that should be
@@ -147,8 +149,10 @@ namespace Model
     inline CreateIntentVersionRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
   };

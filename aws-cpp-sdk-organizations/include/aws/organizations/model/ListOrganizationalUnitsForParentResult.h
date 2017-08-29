@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListOrganizationalUnitsForParentResult();
-    ListOrganizationalUnitsForParentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOrganizationalUnitsForParentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOrganizationalUnitsForParentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListOrganizationalUnitsForParentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of the OUs in the specified root or parent OU.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of the OUs in the specified root or parent OU.</p>
      */
     inline ListOrganizationalUnitsForParentResult& AddOrganizationalUnits(OrganizationalUnit&& value) { m_organizationalUnits.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -142,7 +144,9 @@ namespace Model
     inline ListOrganizationalUnitsForParentResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<OrganizationalUnit> m_organizationalUnits;
+
     Aws::String m_nextToken;
   };
 

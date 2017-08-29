@@ -30,13 +30,13 @@ ListTrafficPolicyVersionsResult::ListTrafficPolicyVersionsResult() :
 {
 }
 
-ListTrafficPolicyVersionsResult::ListTrafficPolicyVersionsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListTrafficPolicyVersionsResult::ListTrafficPolicyVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListTrafficPolicyVersionsResult& ListTrafficPolicyVersionsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListTrafficPolicyVersionsResult& ListTrafficPolicyVersionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

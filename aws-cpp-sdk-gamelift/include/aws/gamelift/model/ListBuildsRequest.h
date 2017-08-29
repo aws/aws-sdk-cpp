@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Build status to filter results by. To retrieve all builds, leave this
      * parameter empty.</p> <p>Possible build statuses include the following:</p> <ul>
@@ -105,6 +106,7 @@ namespace Model
      */
     inline ListBuildsRequest& WithStatus(BuildStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -122,6 +124,7 @@ namespace Model
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline ListBuildsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -173,10 +176,13 @@ namespace Model
     inline ListBuildsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     BuildStatus m_status;
     bool m_statusHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

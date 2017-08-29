@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the event subscription to be created.</p> <p>Constraints:</p>
      * <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain
@@ -106,6 +107,7 @@ namespace Model
      */
     inline CreateEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the
      * event notifications. The ARN is created by Amazon SNS when you create a topic
@@ -154,6 +156,7 @@ namespace Model
      * and subscribe to it.</p>
      */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+
 
     /**
      * <p>The type of source that will be generating the events. For example, if you
@@ -224,6 +227,7 @@ namespace Model
      * cluster-parameter-group, cluster-security-group, and cluster-snapshot.</p>
      */
     inline CreateEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+
 
     /**
      * <p>A list of one or more identifiers of Amazon Redshift source objects. All of
@@ -305,6 +309,7 @@ namespace Model
      */
     inline CreateEventSubscriptionRequest& AddSourceIds(const char* value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies the Amazon Redshift event categories to be published by the event
      * notification subscription.</p> <p>Values: Configuration, Management, Monitoring,
@@ -361,6 +366,7 @@ namespace Model
      */
     inline CreateEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
+
     /**
      * <p>Specifies the Amazon Redshift event severity to be published by the event
      * notification subscription.</p> <p>Values: ERROR, INFO</p>
@@ -403,6 +409,7 @@ namespace Model
      */
     inline CreateEventSubscriptionRequest& WithSeverity(const char* value) { SetSeverity(value); return *this;}
 
+
     /**
      * <p>A Boolean value; set to <code>true</code> to activate the subscription, set
      * to <code>false</code> to create the subscription but not active it. </p>
@@ -420,6 +427,7 @@ namespace Model
      * to <code>false</code> to create the subscription but not active it. </p>
      */
     inline CreateEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
 
     /**
      * <p>A list of tag instances.</p>
@@ -457,20 +465,28 @@ namespace Model
     inline CreateEventSubscriptionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_subscriptionName;
     bool m_subscriptionNameHasBeenSet;
+
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet;
+
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
+
     Aws::Vector<Aws::String> m_sourceIds;
     bool m_sourceIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_eventCategories;
     bool m_eventCategoriesHasBeenSet;
+
     Aws::String m_severity;
     bool m_severityHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

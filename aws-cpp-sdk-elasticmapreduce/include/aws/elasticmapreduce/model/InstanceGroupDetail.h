@@ -49,6 +49,7 @@ namespace Model
     InstanceGroupDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for the instance group.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>Unique identifier for the instance group.</p>
      */
     inline InstanceGroupDetail& WithInstanceGroupId(const char* value) { SetInstanceGroupId(value); return *this;}
+
 
     /**
      * <p>Friendly name for the instance group.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline InstanceGroupDetail& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      */
     inline InstanceGroupDetail& WithMarket(MarketType&& value) { SetMarket(std::move(value)); return *this;}
 
+
     /**
      * <p>Instance group role in the cluster</p>
      */
@@ -168,6 +172,7 @@ namespace Model
      * <p>Instance group role in the cluster</p>
      */
     inline InstanceGroupDetail& WithInstanceRole(InstanceRoleType&& value) { SetInstanceRole(std::move(value)); return *this;}
+
 
     /**
      * <p>Bid price for EC2 Instances when launching nodes as Spot Instances, expressed
@@ -211,6 +216,7 @@ namespace Model
      */
     inline InstanceGroupDetail& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 
+
     /**
      * <p>EC2 instance type.</p>
      */
@@ -246,6 +252,7 @@ namespace Model
      */
     inline InstanceGroupDetail& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>Target number of instances to run in the instance group.</p>
      */
@@ -261,6 +268,7 @@ namespace Model
      */
     inline InstanceGroupDetail& WithInstanceRequestCount(int value) { SetInstanceRequestCount(value); return *this;}
 
+
     /**
      * <p>Actual count of running instances.</p>
      */
@@ -275,6 +283,7 @@ namespace Model
      * <p>Actual count of running instances.</p>
      */
     inline InstanceGroupDetail& WithInstanceRunningCount(int value) { SetInstanceRunningCount(value); return *this;}
+
 
     /**
      * <p>State of instance group. The following values are deprecated: STARTING,
@@ -305,6 +314,7 @@ namespace Model
      * TERMINATED, and FAILED.</p>
      */
     inline InstanceGroupDetail& WithState(InstanceGroupState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>Details regarding the state of the instance group.</p>
@@ -341,6 +351,7 @@ namespace Model
      */
     inline InstanceGroupDetail& WithLastStateChangeReason(const char* value) { SetLastStateChangeReason(value); return *this;}
 
+
     /**
      * <p>The date/time the instance group was created.</p>
      */
@@ -365,6 +376,7 @@ namespace Model
      * <p>The date/time the instance group was created.</p>
      */
     inline InstanceGroupDetail& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The date/time the instance group was started.</p>
@@ -391,6 +403,7 @@ namespace Model
      */
     inline InstanceGroupDetail& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The date/time the instance group was available to the cluster.</p>
      */
@@ -415,6 +428,7 @@ namespace Model
      * <p>The date/time the instance group was available to the cluster.</p>
      */
     inline InstanceGroupDetail& WithReadyDateTime(Aws::Utils::DateTime&& value) { SetReadyDateTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The date/time the instance group was terminated.</p>
@@ -442,32 +456,46 @@ namespace Model
     inline InstanceGroupDetail& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_instanceGroupId;
     bool m_instanceGroupIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     MarketType m_market;
     bool m_marketHasBeenSet;
+
     InstanceRoleType m_instanceRole;
     bool m_instanceRoleHasBeenSet;
+
     Aws::String m_bidPrice;
     bool m_bidPriceHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     int m_instanceRequestCount;
     bool m_instanceRequestCountHasBeenSet;
+
     int m_instanceRunningCount;
     bool m_instanceRunningCountHasBeenSet;
+
     InstanceGroupState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_lastStateChangeReason;
     bool m_lastStateChangeReasonHasBeenSet;
+
     Aws::Utils::DateTime m_creationDateTime;
     bool m_creationDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_startDateTime;
     bool m_startDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_readyDateTime;
     bool m_readyDateTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endDateTime;
     bool m_endDateTimeHasBeenSet;
   };

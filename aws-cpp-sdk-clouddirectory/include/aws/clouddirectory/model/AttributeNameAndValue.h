@@ -47,6 +47,7 @@ namespace Model
     AttributeNameAndValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The attribute name of the typed link.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline AttributeNameAndValue& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
+
     /**
      * <p>The value for the typed link.</p>
      */
@@ -108,8 +110,10 @@ namespace Model
     inline AttributeNameAndValue& WithValue(TypedAttributeValue&& value) { SetValue(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     TypedAttributeValue m_value;
     bool m_valueHasBeenSet;
   };

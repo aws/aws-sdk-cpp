@@ -40,6 +40,7 @@ namespace Model
     UpdateResourceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline UpdateResourceRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>The identifier of the <a>Resource</a> resource.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The identifier of the <a>Resource</a> resource.</p>
      */
     inline UpdateResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in
@@ -153,10 +156,13 @@ namespace Model
     inline UpdateResourceRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
+
     Aws::Vector<PatchOperation> m_patchOperations;
     bool m_patchOperationsHasBeenSet;
   };

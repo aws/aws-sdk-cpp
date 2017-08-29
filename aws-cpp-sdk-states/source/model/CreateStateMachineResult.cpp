@@ -30,12 +30,12 @@ CreateStateMachineResult::CreateStateMachineResult()
 {
 }
 
-CreateStateMachineResult::CreateStateMachineResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateStateMachineResult::CreateStateMachineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateStateMachineResult& CreateStateMachineResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateStateMachineResult& CreateStateMachineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("stateMachineArn"))

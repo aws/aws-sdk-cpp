@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p> A complex type that contains <code>Tag</code> elements.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
     inline Tags& AddItems(Tag&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Tag> m_items;
     bool m_itemsHasBeenSet;
   };

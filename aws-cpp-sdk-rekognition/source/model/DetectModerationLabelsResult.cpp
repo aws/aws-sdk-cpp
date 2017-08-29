@@ -30,12 +30,12 @@ DetectModerationLabelsResult::DetectModerationLabelsResult()
 {
 }
 
-DetectModerationLabelsResult::DetectModerationLabelsResult(const AmazonWebServiceResult<JsonValue>& result)
+DetectModerationLabelsResult::DetectModerationLabelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DetectModerationLabelsResult& DetectModerationLabelsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DetectModerationLabelsResult& DetectModerationLabelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ModerationLabels"))

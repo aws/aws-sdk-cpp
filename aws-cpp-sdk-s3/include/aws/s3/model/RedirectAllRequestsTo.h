@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Name of the host where requests will be redirected.
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline RedirectAllRequestsTo& WithHostName(const char* value) { SetHostName(value); return *this;}
 
+
     /**
      * Protocol to use (http, https) when redirecting requests. The default is the
      * protocol that is used in the original request.
@@ -108,8 +110,10 @@ namespace Model
     inline RedirectAllRequestsTo& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_hostName;
     bool m_hostNameHasBeenSet;
+
     Protocol m_protocol;
     bool m_protocolHasBeenSet;
   };

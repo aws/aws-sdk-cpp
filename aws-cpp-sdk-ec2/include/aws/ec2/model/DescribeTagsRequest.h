@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -66,6 +67,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeTagsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
@@ -172,6 +174,7 @@ namespace Model
      */
     inline DescribeTagsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The maximum number of results to return in a single call. This value can be
      * between 5 and 1000. To retrieve the remaining results, make another call with
@@ -192,6 +195,7 @@ namespace Model
      * the returned <code>NextToken</code> value.</p>
      */
     inline DescribeTagsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -229,12 +233,16 @@ namespace Model
     inline DescribeTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

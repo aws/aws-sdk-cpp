@@ -53,8 +53,9 @@ namespace Model
   {
   public:
     CreateUsagePlanResult();
-    CreateUsagePlanResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateUsagePlanResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUsagePlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateUsagePlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifier of a <a>UsagePlan</a> resource.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline CreateUsagePlanResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name of a usage plan.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      * <p>The name of a usage plan.</p>
      */
     inline CreateUsagePlanResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The description of a usage plan.</p>
@@ -161,6 +164,7 @@ namespace Model
      */
     inline CreateUsagePlanResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The associated API stages of a usage plan.</p>
      */
@@ -196,6 +200,7 @@ namespace Model
      */
     inline CreateUsagePlanResult& AddApiStages(ApiStage&& value) { m_apiStages.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The request throttle limits of a usage plan.</p>
      */
@@ -221,6 +226,7 @@ namespace Model
      */
     inline CreateUsagePlanResult& WithThrottle(ThrottleSettings&& value) { SetThrottle(std::move(value)); return *this;}
 
+
     /**
      * <p>The maximum number of permitted requests per a given unit time interval.</p>
      */
@@ -245,6 +251,7 @@ namespace Model
      * <p>The maximum number of permitted requests per a given unit time interval.</p>
      */
     inline CreateUsagePlanResult& WithQuota(QuotaSettings&& value) { SetQuota(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS Markeplace product identifier to associate with the usage plan as a
@@ -289,12 +296,19 @@ namespace Model
     inline CreateUsagePlanResult& WithProductCode(const char* value) { SetProductCode(value); return *this;}
 
   private:
+
     Aws::String m_id;
+
     Aws::String m_name;
+
     Aws::String m_description;
+
     Aws::Vector<ApiStage> m_apiStages;
+
     ThrottleSettings m_throttle;
+
     QuotaSettings m_quota;
+
     Aws::String m_productCode;
   };
 

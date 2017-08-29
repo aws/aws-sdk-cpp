@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     AssociateTeamMemberResult();
-    AssociateTeamMemberResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateTeamMemberResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateTeamMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateTeamMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The user- or system-generated token from the initial request that can be used
@@ -84,6 +85,7 @@ namespace Model
     inline AssociateTeamMemberResult& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:
+
     Aws::String m_clientRequestToken;
   };
 

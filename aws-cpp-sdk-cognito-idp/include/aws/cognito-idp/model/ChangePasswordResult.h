@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     ChangePasswordResult();
-    ChangePasswordResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ChangePasswordResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ChangePasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ChangePasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

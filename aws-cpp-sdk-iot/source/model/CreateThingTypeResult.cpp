@@ -30,12 +30,12 @@ CreateThingTypeResult::CreateThingTypeResult()
 {
 }
 
-CreateThingTypeResult::CreateThingTypeResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateThingTypeResult::CreateThingTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateThingTypeResult& CreateThingTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateThingTypeResult& CreateThingTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("thingTypeName"))

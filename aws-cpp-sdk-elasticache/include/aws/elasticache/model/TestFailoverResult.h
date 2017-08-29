@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     TestFailoverResult();
-    TestFailoverResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    TestFailoverResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    TestFailoverResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    TestFailoverResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ReplicationGroup& GetReplicationGroup() const{ return m_replicationGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline TestFailoverResult& WithReplicationGroup(ReplicationGroup&& value) { SetReplicationGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline TestFailoverResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ReplicationGroup m_replicationGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 

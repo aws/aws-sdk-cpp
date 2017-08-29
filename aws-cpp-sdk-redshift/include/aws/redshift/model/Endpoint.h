@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The DNS address of the Cluster.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
 
+
     /**
      * <p>The port that the database engine is listening on.</p>
      */
@@ -99,8 +101,10 @@ namespace Model
     inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
 
   private:
+
     Aws::String m_address;
     bool m_addressHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     ServiceEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID string of the event.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline ServiceEvent& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The Unix timestamp for when the event was triggered.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The Unix timestamp for when the event was triggered.</p>
      */
     inline ServiceEvent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The event message.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline ServiceEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

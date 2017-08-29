@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     AddAttributesToFindingsResult();
-    AddAttributesToFindingsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddAttributesToFindingsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddAttributesToFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddAttributesToFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Attribute details that cannot be described. An error code is provided for
@@ -110,6 +111,7 @@ namespace Model
     inline AddAttributesToFindingsResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
   };
 

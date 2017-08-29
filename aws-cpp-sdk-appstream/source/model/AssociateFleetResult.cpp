@@ -30,12 +30,12 @@ AssociateFleetResult::AssociateFleetResult()
 {
 }
 
-AssociateFleetResult::AssociateFleetResult(const AmazonWebServiceResult<JsonValue>& result)
+AssociateFleetResult::AssociateFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AssociateFleetResult& AssociateFleetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AssociateFleetResult& AssociateFleetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

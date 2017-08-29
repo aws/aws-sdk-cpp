@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The IDs of the agents or connectors from which to start collecting data. If
      * you send a request to an agent/connector ID that you do not have permission to
@@ -134,6 +135,7 @@ namespace Model
     inline StartDataCollectionByAgentIdsRequest& AddAgentIds(const char* value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_agentIds;
     bool m_agentIdsHasBeenSet;
   };

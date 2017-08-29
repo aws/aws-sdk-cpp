@@ -49,6 +49,7 @@ namespace Model
     RestApi& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The API's identifier. This identifier is unique across all of your APIs in
      * Amazon API Gateway.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline RestApi& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The API's name.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      * <p>The API's name.</p>
      */
     inline RestApi& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The API's description.</p>
@@ -161,6 +164,7 @@ namespace Model
      */
     inline RestApi& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The timestamp when the API was created.</p>
      */
@@ -185,6 +189,7 @@ namespace Model
      * <p>The timestamp when the API was created.</p>
      */
     inline RestApi& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
 
     /**
      * <p>A version identifier for the API.</p>
@@ -220,6 +225,7 @@ namespace Model
      * <p>A version identifier for the API.</p>
      */
     inline RestApi& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The warning messages reported when <code>failonwarnings</code> is turned on
@@ -268,6 +274,7 @@ namespace Model
      * during API import.</p>
      */
     inline RestApi& AddWarnings(const char* value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
+
 
     /**
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
@@ -318,18 +325,25 @@ namespace Model
     inline RestApi& AddBinaryMediaTypes(const char* value) { m_binaryMediaTypesHasBeenSet = true; m_binaryMediaTypes.push_back(value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::Vector<Aws::String> m_warnings;
     bool m_warningsHasBeenSet;
+
     Aws::Vector<Aws::String> m_binaryMediaTypes;
     bool m_binaryMediaTypesHasBeenSet;
   };

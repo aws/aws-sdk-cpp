@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     CreateStorediSCSIVolumeResult();
-    CreateStorediSCSIVolumeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateStorediSCSIVolumeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateStorediSCSIVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateStorediSCSIVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the configured volume.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline CreateStorediSCSIVolumeResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
+
     /**
      * <p>The size of the volume in bytes.</p>
      */
@@ -95,6 +97,7 @@ namespace Model
      * <p>The size of the volume in bytes.</p>
      */
     inline CreateStorediSCSIVolumeResult& WithVolumeSizeInBytes(long long value) { SetVolumeSizeInBytes(value); return *this;}
+
 
     /**
      * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI
@@ -139,8 +142,11 @@ namespace Model
     inline CreateStorediSCSIVolumeResult& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
+
     long long m_volumeSizeInBytes;
+
     Aws::String m_targetARN;
   };
 

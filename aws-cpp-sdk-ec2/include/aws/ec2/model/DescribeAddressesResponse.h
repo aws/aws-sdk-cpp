@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeAddressesResponse();
-    DescribeAddressesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAddressesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAddressesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAddressesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more Elastic IP addresses.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DescribeAddressesResponse& AddAddresses(Address&& value) { m_addresses.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DescribeAddressesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Address> m_addresses;
+
     ResponseMetadata m_responseMetadata;
   };
 

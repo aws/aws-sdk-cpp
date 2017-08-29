@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for the user pool.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      * <p>The user pool ID for the user pool.</p>
      */
     inline SetUICustomizationRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The client ID for the client app.</p>
@@ -107,6 +109,7 @@ namespace Model
      */
     inline SetUICustomizationRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 
+
     /**
      * <p>The CSS values in the UI customization.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      */
     inline SetUICustomizationRequest& WithCSS(const char* value) { SetCSS(value); return *this;}
 
+
     /**
      * <p>The uploaded logo image for the UI customization.</p>
      */
@@ -168,12 +172,16 @@ namespace Model
     inline SetUICustomizationRequest& WithImageFile(Aws::Utils::ByteBuffer&& value) { SetImageFile(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet;
+
     Aws::String m_cSS;
     bool m_cSSHasBeenSet;
+
     Aws::Utils::ByteBuffer m_imageFile;
     bool m_imageFileHasBeenSet;
   };

@@ -55,7 +55,7 @@ enum class KMSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DEPENDENCY_TIMEOUT,
   DISABLED,
   EXPIRED_IMPORT_TOKEN,
@@ -79,7 +79,7 @@ enum class KMSErrors
 };
 namespace KMSErrorMapper
 {
-  AWS_KMS_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_KMS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace KMS

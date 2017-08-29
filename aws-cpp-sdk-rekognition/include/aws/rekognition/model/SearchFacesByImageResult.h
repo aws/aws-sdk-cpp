@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     SearchFacesByImageResult();
-    SearchFacesByImageResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchFacesByImageResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SearchFacesByImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SearchFacesByImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The bounding box around the face in the input image that Amazon Rekognition
@@ -73,6 +74,7 @@ namespace Model
      */
     inline SearchFacesByImageResult& WithSearchedFaceBoundingBox(BoundingBox&& value) { SetSearchedFaceBoundingBox(std::move(value)); return *this;}
 
+
     /**
      * <p>The level of confidence that the <code>searchedFaceBoundingBox</code>,
      * contains a face.</p>
@@ -90,6 +92,7 @@ namespace Model
      * contains a face.</p>
      */
     inline SearchFacesByImageResult& WithSearchedFaceConfidence(double value) { SetSearchedFaceConfidence(value); return *this;}
+
 
     /**
      * <p>An array of faces that match the input face, along with the confidence in the
@@ -134,8 +137,11 @@ namespace Model
     inline SearchFacesByImageResult& AddFaceMatches(FaceMatch&& value) { m_faceMatches.push_back(std::move(value)); return *this; }
 
   private:
+
     BoundingBox m_searchedFaceBoundingBox;
+
     double m_searchedFaceConfidence;
+
     Aws::Vector<FaceMatch> m_faceMatches;
   };
 

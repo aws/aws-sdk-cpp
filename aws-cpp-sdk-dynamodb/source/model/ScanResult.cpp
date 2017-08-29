@@ -32,14 +32,14 @@ ScanResult::ScanResult() :
 {
 }
 
-ScanResult::ScanResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ScanResult::ScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_count(0),
     m_scannedCount(0)
 {
   *this = result;
 }
 
-ScanResult& ScanResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ScanResult& ScanResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Items"))

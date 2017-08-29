@@ -50,6 +50,7 @@ namespace Model
     ActionType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Represents information about an action type.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline ActionType& WithId(ActionTypeId&& value) { SetId(std::move(value)); return *this;}
 
+
     /**
      * <p>The settings for the action type.</p>
      */
@@ -99,6 +101,7 @@ namespace Model
      * <p>The settings for the action type.</p>
      */
     inline ActionType& WithSettings(ActionTypeSettings&& value) { SetSettings(std::move(value)); return *this;}
+
 
     /**
      * <p>The configuration properties for the action type.</p>
@@ -135,6 +138,7 @@ namespace Model
      */
     inline ActionType& AddActionConfigurationProperties(ActionConfigurationProperty&& value) { m_actionConfigurationPropertiesHasBeenSet = true; m_actionConfigurationProperties.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The details of the input artifact for the action, such as its commit ID.</p>
      */
@@ -159,6 +163,7 @@ namespace Model
      * <p>The details of the input artifact for the action, such as its commit ID.</p>
      */
     inline ActionType& WithInputArtifactDetails(ArtifactDetails&& value) { SetInputArtifactDetails(std::move(value)); return *this;}
+
 
     /**
      * <p>The details of the output artifact of the action, such as its commit ID.</p>
@@ -186,14 +191,19 @@ namespace Model
     inline ActionType& WithOutputArtifactDetails(ArtifactDetails&& value) { SetOutputArtifactDetails(std::move(value)); return *this;}
 
   private:
+
     ActionTypeId m_id;
     bool m_idHasBeenSet;
+
     ActionTypeSettings m_settings;
     bool m_settingsHasBeenSet;
+
     Aws::Vector<ActionConfigurationProperty> m_actionConfigurationProperties;
     bool m_actionConfigurationPropertiesHasBeenSet;
+
     ArtifactDetails m_inputArtifactDetails;
     bool m_inputArtifactDetailsHasBeenSet;
+
     ArtifactDetails m_outputArtifactDetails;
     bool m_outputArtifactDetailsHasBeenSet;
   };

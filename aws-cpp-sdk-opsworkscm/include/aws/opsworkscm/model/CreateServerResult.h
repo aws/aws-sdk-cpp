@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateServerResult();
-    CreateServerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateServerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The server that is created by the request. </p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateServerResult& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
 
   private:
+
     Server m_server;
   };
 

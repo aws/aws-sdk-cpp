@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateClassifierResult();
-    UpdateClassifierResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateClassifierResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateClassifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateClassifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

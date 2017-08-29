@@ -34,7 +34,7 @@ CreateFunctionResult::CreateFunctionResult() :
 {
 }
 
-CreateFunctionResult::CreateFunctionResult(const AmazonWebServiceResult<JsonValue>& result) : 
+CreateFunctionResult::CreateFunctionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_runtime(Runtime::NOT_SET),
     m_codeSize(0),
     m_timeout(0),
@@ -43,7 +43,7 @@ CreateFunctionResult::CreateFunctionResult(const AmazonWebServiceResult<JsonValu
   *this = result;
 }
 
-CreateFunctionResult& CreateFunctionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateFunctionResult& CreateFunctionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FunctionName"))

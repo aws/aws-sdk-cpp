@@ -35,6 +35,7 @@ namespace Model
     CreateFileSystemRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure
      * idempotent creation.</p>
@@ -76,6 +77,7 @@ namespace Model
      * idempotent creation.</p>
      */
     inline CreateFileSystemRequest& WithCreationToken(const char* value) { SetCreationToken(value); return *this;}
+
 
     /**
      * <p>The <code>PerformanceMode</code> of the file system. We recommend
@@ -127,6 +129,7 @@ namespace Model
      */
     inline CreateFileSystemRequest& WithPerformanceMode(PerformanceMode&& value) { SetPerformanceMode(std::move(value)); return *this;}
 
+
     /**
      * <p>A boolean value that, if true, creates an encrypted file system. When
      * creating an encrypted file system, you have the option of specifying a
@@ -156,6 +159,7 @@ namespace Model
      * protect the encrypted file system. </p>
      */
     inline CreateFileSystemRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
 
     /**
      * <p>The id of the AWS KMS CMK that will be used to protect the encrypted file
@@ -284,12 +288,16 @@ namespace Model
     inline CreateFileSystemRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
+
     Aws::String m_creationToken;
     bool m_creationTokenHasBeenSet;
+
     PerformanceMode m_performanceMode;
     bool m_performanceModeHasBeenSet;
+
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
   };

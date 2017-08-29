@@ -30,12 +30,12 @@ DescribeTableResult::DescribeTableResult()
 {
 }
 
-DescribeTableResult::DescribeTableResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTableResult::DescribeTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeTableResult& DescribeTableResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeTableResult& DescribeTableResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Table"))

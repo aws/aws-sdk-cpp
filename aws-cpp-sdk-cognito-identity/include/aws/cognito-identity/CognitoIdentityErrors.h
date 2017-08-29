@@ -55,7 +55,7 @@ enum class CognitoIdentityErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DEVELOPER_USER_ALREADY_REGISTERED,
   EXTERNAL_SERVICE,
   INTERNAL_ERROR,
@@ -68,7 +68,7 @@ enum class CognitoIdentityErrors
 };
 namespace CognitoIdentityErrorMapper
 {
-  AWS_COGNITOIDENTITY_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_COGNITOIDENTITY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace CognitoIdentity

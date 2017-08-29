@@ -31,12 +31,12 @@ CreateDBInstanceResult::CreateDBInstanceResult()
 {
 }
 
-CreateDBInstanceResult::CreateDBInstanceResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateDBInstanceResult::CreateDBInstanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateDBInstanceResult& CreateDBInstanceResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateDBInstanceResult& CreateDBInstanceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

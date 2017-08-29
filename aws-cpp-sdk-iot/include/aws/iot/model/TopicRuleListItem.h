@@ -46,6 +46,7 @@ namespace Model
     TopicRuleListItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The rule ARN.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The rule ARN.</p>
      */
     inline TopicRuleListItem& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
+
 
     /**
      * <p>The name of the rule.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline TopicRuleListItem& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 
+
     /**
      * <p>The pattern for the topic names that apply.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      */
     inline TopicRuleListItem& WithTopicPattern(const char* value) { SetTopicPattern(value); return *this;}
 
+
     /**
      * <p>The date and time the rule was created.</p>
      */
@@ -176,6 +180,7 @@ namespace Model
      */
     inline TopicRuleListItem& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies whether the rule is disabled.</p>
      */
@@ -192,14 +197,19 @@ namespace Model
     inline TopicRuleListItem& WithRuleDisabled(bool value) { SetRuleDisabled(value); return *this;}
 
   private:
+
     Aws::String m_ruleArn;
     bool m_ruleArnHasBeenSet;
+
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet;
+
     Aws::String m_topicPattern;
     bool m_topicPatternHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     bool m_ruleDisabled;
     bool m_ruleDisabledHasBeenSet;
   };

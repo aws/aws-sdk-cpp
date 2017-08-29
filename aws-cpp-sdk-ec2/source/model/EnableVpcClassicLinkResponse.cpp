@@ -32,13 +32,13 @@ EnableVpcClassicLinkResponse::EnableVpcClassicLinkResponse() :
 {
 }
 
-EnableVpcClassicLinkResponse::EnableVpcClassicLinkResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+EnableVpcClassicLinkResponse::EnableVpcClassicLinkResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_return(false)
 {
   *this = result;
 }
 
-EnableVpcClassicLinkResponse& EnableVpcClassicLinkResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+EnableVpcClassicLinkResponse& EnableVpcClassicLinkResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

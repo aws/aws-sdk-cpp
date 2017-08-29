@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -64,6 +65,7 @@ namespace Model
 
     
     inline UpdateAvailabilityOptionsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>You expand an existing search domain to a second Availability Zone by setting
@@ -90,8 +92,10 @@ namespace Model
     inline UpdateAvailabilityOptionsRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
   };

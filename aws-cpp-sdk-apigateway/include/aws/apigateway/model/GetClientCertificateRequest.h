@@ -38,6 +38,7 @@ namespace Model
     GetClientCertificateRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The identifier of the <a>ClientCertificate</a> resource to be described.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline GetClientCertificateRequest& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
 
   private:
+
     Aws::String m_clientCertificateId;
     bool m_clientCertificateIdHasBeenSet;
   };

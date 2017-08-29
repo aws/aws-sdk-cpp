@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DefineAnalysisSchemeResult();
-    DefineAnalysisSchemeResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DefineAnalysisSchemeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DefineAnalysisSchemeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DefineAnalysisSchemeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const AnalysisSchemeStatus& GetAnalysisScheme() const{ return m_analysisScheme; }
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline DefineAnalysisSchemeResult& WithAnalysisScheme(AnalysisSchemeStatus&& value) { SetAnalysisScheme(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -80,7 +82,9 @@ namespace Model
     inline DefineAnalysisSchemeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     AnalysisSchemeStatus m_analysisScheme;
+
     ResponseMetadata m_responseMetadata;
   };
 

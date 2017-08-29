@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
      * Support currently supports English ("en") and Japanese ("ja"). Language
@@ -89,6 +90,7 @@ namespace Model
     inline DescribeSeverityLevelsRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
   private:
+
     Aws::String m_language;
     bool m_languageHasBeenSet;
   };

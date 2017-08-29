@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The details of the volume status.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline VolumeStatusInfo& AddDetails(VolumeStatusDetails&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The status of the volume.</p>
      */
@@ -111,8 +113,10 @@ namespace Model
     inline VolumeStatusInfo& WithStatus(VolumeStatusInfoStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<VolumeStatusDetails> m_details;
     bool m_detailsHasBeenSet;
+
     VolumeStatusInfoStatus m_status;
     bool m_statusHasBeenSet;
   };

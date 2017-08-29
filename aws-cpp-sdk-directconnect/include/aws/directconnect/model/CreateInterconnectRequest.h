@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the interconnect.</p> <p>Example: "<i>1G Interconnect to
      * AWS</i>"</p> <p>Default: None</p>
@@ -81,6 +82,7 @@ namespace Model
      * AWS</i>"</p> <p>Default: None</p>
      */
     inline CreateInterconnectRequest& WithInterconnectName(const char* value) { SetInterconnectName(value); return *this;}
+
 
     /**
      * <p>The port bandwidth</p> <p>Example: 1Gbps</p> <p>Default: None</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline CreateInterconnectRequest& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
 
+
     /**
      * <p>Where the interconnect is located</p> <p>Example: EqSV5</p> <p>Default:
      * None</p>
@@ -166,6 +169,7 @@ namespace Model
      */
     inline CreateInterconnectRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     
     inline const Aws::String& GetLagId() const{ return m_lagId; }
 
@@ -188,12 +192,16 @@ namespace Model
     inline CreateInterconnectRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
 
   private:
+
     Aws::String m_interconnectName;
     bool m_interconnectNameHasBeenSet;
+
     Aws::String m_bandwidth;
     bool m_bandwidthHasBeenSet;
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
     Aws::String m_lagId;
     bool m_lagIdHasBeenSet;
   };

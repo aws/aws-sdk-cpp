@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListDomainsResult();
-    ListDomainsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListDomainsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * A list of domain names that match the expression.
@@ -82,6 +83,7 @@ namespace Model
      * A list of domain names that match the expression.
      */
     inline ListDomainsResult& AddDomainNames(const char* value) { m_domainNames.push_back(value); return *this; }
+
 
     /**
      * An opaque token indicating that there are more domains than the specified
@@ -125,6 +127,7 @@ namespace Model
      */
     inline ListDomainsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -141,8 +144,11 @@ namespace Model
     inline ListDomainsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_domainNames;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

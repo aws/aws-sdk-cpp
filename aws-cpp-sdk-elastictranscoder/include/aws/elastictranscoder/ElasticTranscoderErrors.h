@@ -55,14 +55,14 @@ enum class ElasticTranscoderErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INCOMPATIBLE_VERSION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INCOMPATIBLE_VERSION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVICE,
   LIMIT_EXCEEDED,
   RESOURCE_IN_USE
 };
 namespace ElasticTranscoderErrorMapper
 {
-  AWS_ELASTICTRANSCODER_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_ELASTICTRANSCODER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ElasticTranscoder

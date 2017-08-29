@@ -48,6 +48,7 @@ namespace Model
     EncryptionKey& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
      * key ARN.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline EncryptionKey& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS)
      * key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
@@ -121,8 +123,10 @@ namespace Model
     inline EncryptionKey& WithType(EncryptionKeyType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     EncryptionKeyType m_type;
     bool m_typeHasBeenSet;
   };

@@ -31,13 +31,13 @@ PutTargetsResult::PutTargetsResult() :
 {
 }
 
-PutTargetsResult::PutTargetsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PutTargetsResult::PutTargetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_failedEntryCount(0)
 {
   *this = result;
 }
 
-PutTargetsResult& PutTargetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutTargetsResult& PutTargetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("FailedEntryCount"))

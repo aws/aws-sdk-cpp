@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The fully qualified name for the directory, such as
      * <code>corp.example.com</code>.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline CreateDirectoryRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The short name of the directory, such as <code>CORP</code>.</p>
      */
@@ -118,6 +120,7 @@ namespace Model
      * <p>The short name of the directory, such as <code>CORP</code>.</p>
      */
     inline CreateDirectoryRequest& WithShortName(const char* value) { SetShortName(value); return *this;}
+
 
     /**
      * <p>The password for the directory administrator. The directory creation process
@@ -168,6 +171,7 @@ namespace Model
      */
     inline CreateDirectoryRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
     /**
      * <p>A textual description for the directory.</p>
      */
@@ -203,6 +207,7 @@ namespace Model
      */
     inline CreateDirectoryRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The size of the directory.</p>
      */
@@ -227,6 +232,7 @@ namespace Model
      * <p>The size of the directory.</p>
      */
     inline CreateDirectoryRequest& WithSize(DirectorySize&& value) { SetSize(std::move(value)); return *this;}
+
 
     /**
      * <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
@@ -259,16 +265,22 @@ namespace Model
     inline CreateDirectoryRequest& WithVpcSettings(DirectoryVpcSettings&& value) { SetVpcSettings(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_shortName;
     bool m_shortNameHasBeenSet;
+
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     DirectorySize m_size;
     bool m_sizeHasBeenSet;
+
     DirectoryVpcSettings m_vpcSettings;
     bool m_vpcSettingsHasBeenSet;
   };

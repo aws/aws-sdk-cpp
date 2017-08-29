@@ -35,6 +35,7 @@ namespace Model
     SendMessagesRequest();
     Aws::String SerializePayload() const override;
 
+
     
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
@@ -56,6 +57,7 @@ namespace Model
     
     inline SendMessagesRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     
     inline const MessageRequest& GetMessageRequest() const{ return m_messageRequest; }
 
@@ -72,8 +74,10 @@ namespace Model
     inline SendMessagesRequest& WithMessageRequest(MessageRequest&& value) { SetMessageRequest(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     MessageRequest m_messageRequest;
     bool m_messageRequestHasBeenSet;
   };

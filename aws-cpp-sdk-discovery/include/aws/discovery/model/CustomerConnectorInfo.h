@@ -44,6 +44,7 @@ namespace Model
     CustomerConnectorInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Number of active discovery connectors.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>Number of active discovery connectors.</p>
      */
     inline CustomerConnectorInfo& WithActiveConnectors(int value) { SetActiveConnectors(value); return *this;}
+
 
     /**
      * <p>Number of healthy discovery connectors.</p>
@@ -74,6 +76,7 @@ namespace Model
      */
     inline CustomerConnectorInfo& WithHealthyConnectors(int value) { SetHealthyConnectors(value); return *this;}
 
+
     /**
      * <p>Number of blacklisted discovery connectors.</p>
      */
@@ -88,6 +91,7 @@ namespace Model
      * <p>Number of blacklisted discovery connectors.</p>
      */
     inline CustomerConnectorInfo& WithBlackListedConnectors(int value) { SetBlackListedConnectors(value); return *this;}
+
 
     /**
      * <p>Number of discovery connectors with status SHUTDOWN,</p>
@@ -104,6 +108,7 @@ namespace Model
      */
     inline CustomerConnectorInfo& WithShutdownConnectors(int value) { SetShutdownConnectors(value); return *this;}
 
+
     /**
      * <p>Number of unhealthy discovery connectors.</p>
      */
@@ -119,6 +124,7 @@ namespace Model
      */
     inline CustomerConnectorInfo& WithUnhealthyConnectors(int value) { SetUnhealthyConnectors(value); return *this;}
 
+
     /**
      * <p>Total number of discovery connectors.</p>
      */
@@ -133,6 +139,7 @@ namespace Model
      * <p>Total number of discovery connectors.</p>
      */
     inline CustomerConnectorInfo& WithTotalConnectors(int value) { SetTotalConnectors(value); return *this;}
+
 
     /**
      * <p>Number of unknown discovery connectors.</p>
@@ -150,18 +157,25 @@ namespace Model
     inline CustomerConnectorInfo& WithUnknownConnectors(int value) { SetUnknownConnectors(value); return *this;}
 
   private:
+
     int m_activeConnectors;
     bool m_activeConnectorsHasBeenSet;
+
     int m_healthyConnectors;
     bool m_healthyConnectorsHasBeenSet;
+
     int m_blackListedConnectors;
     bool m_blackListedConnectorsHasBeenSet;
+
     int m_shutdownConnectors;
     bool m_shutdownConnectorsHasBeenSet;
+
     int m_unhealthyConnectors;
     bool m_unhealthyConnectorsHasBeenSet;
+
     int m_totalConnectors;
     bool m_totalConnectorsHasBeenSet;
+
     int m_unknownConnectors;
     bool m_unknownConnectorsHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeTagsResult();
-    DescribeTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If the request included a <code>Marker</code>, the response returns that
@@ -90,6 +91,7 @@ namespace Model
      */
     inline DescribeTagsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Returns tags associated with the file system as an array of <code>Tag</code>
      * objects. </p>
@@ -131,6 +133,7 @@ namespace Model
      * objects. </p>
      */
     inline DescribeTagsResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a value is present, there are more tags to return. In a subsequent
@@ -189,8 +192,11 @@ namespace Model
     inline DescribeTagsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<Tag> m_tags;
+
     Aws::String m_nextMarker;
   };
 

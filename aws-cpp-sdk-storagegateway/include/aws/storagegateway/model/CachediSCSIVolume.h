@@ -47,6 +47,7 @@ namespace Model
     CachediSCSIVolume& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the storage volume.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CachediSCSIVolume& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
+
     /**
      * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>
      */
     inline CachediSCSIVolume& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
 
     /**
      * <p>One of the VolumeType enumeration values that describes the type of the
@@ -159,6 +162,7 @@ namespace Model
      */
     inline CachediSCSIVolume& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
+
     /**
      * <p>One of the VolumeStatus values that indicates the state of the storage
      * volume.</p>
@@ -201,6 +205,7 @@ namespace Model
      */
     inline CachediSCSIVolume& WithVolumeStatus(const char* value) { SetVolumeStatus(value); return *this;}
 
+
     /**
      * <p>The size, in bytes, of the volume capacity.</p>
      */
@@ -215,6 +220,7 @@ namespace Model
      * <p>The size, in bytes, of the volume capacity.</p>
      */
     inline CachediSCSIVolume& WithVolumeSizeInBytes(long long value) { SetVolumeSizeInBytes(value); return *this;}
+
 
     /**
      * <p>Represents the percentage complete if the volume is restoring or
@@ -239,6 +245,7 @@ namespace Model
      * bootstrapping.</p>
      */
     inline CachediSCSIVolume& WithVolumeProgress(double value) { SetVolumeProgress(value); return *this;}
+
 
     /**
      * <p>If the cached volume was created from a snapshot, this field contains the
@@ -282,6 +289,7 @@ namespace Model
      */
     inline CachediSCSIVolume& WithSourceSnapshotId(const char* value) { SetSourceSnapshotId(value); return *this;}
 
+
     /**
      * <p>An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI
      * attributes for one stored volume.</p>
@@ -311,6 +319,7 @@ namespace Model
      * attributes for one stored volume.</p>
      */
     inline CachediSCSIVolume& WithVolumeiSCSIAttributes(VolumeiSCSIAttributes&& value) { SetVolumeiSCSIAttributes(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the volume was created. Volumes created prior to March 28, 2017
@@ -343,22 +352,31 @@ namespace Model
     inline CachediSCSIVolume& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_volumeARN;
     bool m_volumeARNHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     Aws::String m_volumeStatus;
     bool m_volumeStatusHasBeenSet;
+
     long long m_volumeSizeInBytes;
     bool m_volumeSizeInBytesHasBeenSet;
+
     double m_volumeProgress;
     bool m_volumeProgressHasBeenSet;
+
     Aws::String m_sourceSnapshotId;
     bool m_sourceSnapshotIdHasBeenSet;
+
     VolumeiSCSIAttributes m_volumeiSCSIAttributes;
     bool m_volumeiSCSIAttributesHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
   };

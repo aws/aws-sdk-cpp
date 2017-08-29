@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateMatchmakingConfigurationResult();
-    CreateMatchmakingConfigurationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMatchmakingConfigurationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateMatchmakingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateMatchmakingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Object that describes the newly created matchmaking configuration.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline CreateMatchmakingConfigurationResult& WithConfiguration(MatchmakingConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
   private:
+
     MatchmakingConfiguration m_configuration;
   };
 

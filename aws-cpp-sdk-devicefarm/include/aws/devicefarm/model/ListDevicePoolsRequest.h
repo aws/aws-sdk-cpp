@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The project ARN.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>The project ARN.</p>
      */
     inline ListDevicePoolsRequest& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The device pools' type.</p> <p>Allowed values include:</p> <ul> <li>
@@ -115,6 +117,7 @@ namespace Model
      * pool developer.</p> </li> </ul>
      */
     inline ListDevicePoolsRequest& WithType(DevicePoolType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -159,10 +162,13 @@ namespace Model
     inline ListDevicePoolsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     DevicePoolType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

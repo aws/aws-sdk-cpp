@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetDomainSuggestionsResult();
-    GetDomainSuggestionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDomainSuggestionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDomainSuggestionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDomainSuggestionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of possible domain names. If you specified <code>true</code> for
@@ -92,6 +93,7 @@ namespace Model
     inline GetDomainSuggestionsResult& AddSuggestionsList(DomainSuggestion&& value) { m_suggestionsList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<DomainSuggestion> m_suggestionsList;
   };
 

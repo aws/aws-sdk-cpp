@@ -30,12 +30,12 @@ GetComplianceSummaryByResourceTypeResult::GetComplianceSummaryByResourceTypeResu
 {
 }
 
-GetComplianceSummaryByResourceTypeResult::GetComplianceSummaryByResourceTypeResult(const AmazonWebServiceResult<JsonValue>& result)
+GetComplianceSummaryByResourceTypeResult::GetComplianceSummaryByResourceTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetComplianceSummaryByResourceTypeResult& GetComplianceSummaryByResourceTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetComplianceSummaryByResourceTypeResult& GetComplianceSummaryByResourceTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ComplianceSummariesByResourceType"))

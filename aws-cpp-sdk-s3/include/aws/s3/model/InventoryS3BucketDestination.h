@@ -42,6 +42,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The ID of the account that owns the destination bucket.
      */
@@ -76,6 +77,7 @@ namespace Model
      * The ID of the account that owns the destination bucket.
      */
     inline InventoryS3BucketDestination& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
 
     /**
      * The Amazon resource name (ARN) of the bucket where inventory results will be
@@ -119,6 +121,7 @@ namespace Model
      */
     inline InventoryS3BucketDestination& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     /**
      * Specifies the output format of the inventory results.
      */
@@ -143,6 +146,7 @@ namespace Model
      * Specifies the output format of the inventory results.
      */
     inline InventoryS3BucketDestination& WithFormat(InventoryFormat&& value) { SetFormat(std::move(value)); return *this;}
+
 
     /**
      * The prefix that is prepended to all inventory results.
@@ -180,12 +184,16 @@ namespace Model
     inline InventoryS3BucketDestination& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     InventoryFormat m_format;
     bool m_formatHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
   };

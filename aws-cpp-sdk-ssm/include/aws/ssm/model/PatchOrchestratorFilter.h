@@ -46,6 +46,7 @@ namespace Model
     PatchOrchestratorFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The key for the filter.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The key for the filter.</p>
      */
     inline PatchOrchestratorFilter& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The value for the filter.</p>
@@ -122,8 +124,10 @@ namespace Model
     inline PatchOrchestratorFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The time stamp used for the data point.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline Datapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of metric values that contributed to the aggregate value of this
      * data point.</p>
@@ -95,6 +97,7 @@ namespace Model
      */
     inline Datapoint& WithSampleCount(double value) { SetSampleCount(value); return *this;}
 
+
     /**
      * <p>The average of the metric values that correspond to the data point.</p>
      */
@@ -109,6 +112,7 @@ namespace Model
      * <p>The average of the metric values that correspond to the data point.</p>
      */
     inline Datapoint& WithAverage(double value) { SetAverage(value); return *this;}
+
 
     /**
      * <p>The sum of the metric values for the data point.</p>
@@ -125,6 +129,7 @@ namespace Model
      */
     inline Datapoint& WithSum(double value) { SetSum(value); return *this;}
 
+
     /**
      * <p>The minimum metric value for the data point.</p>
      */
@@ -140,6 +145,7 @@ namespace Model
      */
     inline Datapoint& WithMinimum(double value) { SetMinimum(value); return *this;}
 
+
     /**
      * <p>The maximum metric value for the data point.</p>
      */
@@ -154,6 +160,7 @@ namespace Model
      * <p>The maximum metric value for the data point.</p>
      */
     inline Datapoint& WithMaximum(double value) { SetMaximum(value); return *this;}
+
 
     /**
      * <p>The standard unit for the data point.</p>
@@ -179,6 +186,7 @@ namespace Model
      * <p>The standard unit for the data point.</p>
      */
     inline Datapoint& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
+
 
     /**
      * <p>The percentile statistic for the data point.</p>
@@ -221,20 +229,28 @@ namespace Model
     inline Datapoint& AddExtendedStatistics(const char* key, double value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.emplace(key, value); return *this; }
 
   private:
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
     double m_sampleCount;
     bool m_sampleCountHasBeenSet;
+
     double m_average;
     bool m_averageHasBeenSet;
+
     double m_sum;
     bool m_sumHasBeenSet;
+
     double m_minimum;
     bool m_minimumHasBeenSet;
+
     double m_maximum;
     bool m_maximumHasBeenSet;
+
     StandardUnit m_unit;
     bool m_unitHasBeenSet;
+
     Aws::Map<Aws::String, double> m_extendedStatistics;
     bool m_extendedStatisticsHasBeenSet;
   };

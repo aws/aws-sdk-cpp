@@ -30,12 +30,12 @@ ListOfferingTransactionsResult::ListOfferingTransactionsResult()
 {
 }
 
-ListOfferingTransactionsResult::ListOfferingTransactionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListOfferingTransactionsResult::ListOfferingTransactionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListOfferingTransactionsResult& ListOfferingTransactionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListOfferingTransactionsResult& ListOfferingTransactionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("offeringTransactions"))

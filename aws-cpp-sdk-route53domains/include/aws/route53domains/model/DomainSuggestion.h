@@ -45,6 +45,7 @@ namespace Model
     DomainSuggestion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A suggested domain name.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>A suggested domain name.</p>
      */
     inline DomainSuggestion& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>Whether the domain name is available for registering.</p> <note> <p>You can
@@ -235,8 +237,10 @@ namespace Model
     inline DomainSuggestion& WithAvailability(const char* value) { SetAvailability(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::String m_availability;
     bool m_availabilityHasBeenSet;
   };

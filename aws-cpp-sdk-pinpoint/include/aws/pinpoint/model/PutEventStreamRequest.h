@@ -36,6 +36,7 @@ namespace Model
     PutEventStreamRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * ApplicationId
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline PutEventStreamRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     /**
      * EventStream to write.
      */
@@ -97,8 +99,10 @@ namespace Model
     inline PutEventStreamRequest& WithWriteEventStream(WriteEventStream&& value) { SetWriteEventStream(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     WriteEventStream m_writeEventStream;
     bool m_writeEventStreamHasBeenSet;
   };

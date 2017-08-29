@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The name of the Auto Scaling group.</p>
      */
     inline DetachLoadBalancerTargetGroupsRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups.</p>
@@ -115,8 +117,10 @@ namespace Model
     inline DetachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(const char* value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_targetGroupARNs;
     bool m_targetGroupARNsHasBeenSet;
   };

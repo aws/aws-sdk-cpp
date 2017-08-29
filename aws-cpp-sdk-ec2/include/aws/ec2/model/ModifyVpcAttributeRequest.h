@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Indicates whether the instances launched in the VPC get DNS hostnames. If
      * enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
@@ -86,6 +87,7 @@ namespace Model
      * hostnames if you've enabled DNS support.</p>
      */
     inline ModifyVpcAttributeRequest& WithEnableDnsHostnames(AttributeBooleanValue&& value) { SetEnableDnsHostnames(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates whether the DNS resolution is supported for the VPC. If enabled,
@@ -142,6 +144,7 @@ namespace Model
      */
     inline ModifyVpcAttributeRequest& WithEnableDnsSupport(AttributeBooleanValue&& value) { SetEnableDnsSupport(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID of the VPC.</p>
      */
@@ -178,10 +181,13 @@ namespace Model
     inline ModifyVpcAttributeRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     AttributeBooleanValue m_enableDnsHostnames;
     bool m_enableDnsHostnamesHasBeenSet;
+
     AttributeBooleanValue m_enableDnsSupport;
     bool m_enableDnsSupportHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

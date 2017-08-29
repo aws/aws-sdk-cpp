@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the stream for the merge.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The name of the stream for the merge.</p>
      */
     inline MergeShardsRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * <p>The shard ID of the shard to combine with the adjacent shard for the
@@ -117,6 +119,7 @@ namespace Model
      */
     inline MergeShardsRequest& WithShardToMerge(const char* value) { SetShardToMerge(value); return *this;}
 
+
     /**
      * <p>The shard ID of the adjacent shard for the merge.</p>
      */
@@ -153,10 +156,13 @@ namespace Model
     inline MergeShardsRequest& WithAdjacentShardToMerge(const char* value) { SetAdjacentShardToMerge(value); return *this;}
 
   private:
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::String m_shardToMerge;
     bool m_shardToMergeHasBeenSet;
+
     Aws::String m_adjacentShardToMerge;
     bool m_adjacentShardToMergeHasBeenSet;
   };

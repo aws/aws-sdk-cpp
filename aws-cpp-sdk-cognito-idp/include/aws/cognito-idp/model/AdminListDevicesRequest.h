@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The user pool ID.</p>
      */
     inline AdminListDevicesRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The user name.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline AdminListDevicesRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
     /**
      * <p>The limit of the devices request.</p>
      */
@@ -124,6 +127,7 @@ namespace Model
      * <p>The limit of the devices request.</p>
      */
     inline AdminListDevicesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The pagination token.</p>
@@ -161,12 +165,16 @@ namespace Model
     inline AdminListDevicesRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_paginationToken;
     bool m_paginationTokenHasBeenSet;
   };

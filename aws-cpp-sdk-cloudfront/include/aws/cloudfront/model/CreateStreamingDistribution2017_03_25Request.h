@@ -38,6 +38,7 @@ namespace Model
     CreateStreamingDistribution2017_03_25Request();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The streaming distribution's configuration information.</p>
      */
@@ -64,6 +65,7 @@ namespace Model
     inline CreateStreamingDistribution2017_03_25Request& WithStreamingDistributionConfig(StreamingDistributionConfig&& value) { SetStreamingDistributionConfig(std::move(value)); return *this;}
 
   private:
+
     StreamingDistributionConfig m_streamingDistributionConfig;
     bool m_streamingDistributionConfigHasBeenSet;
   };

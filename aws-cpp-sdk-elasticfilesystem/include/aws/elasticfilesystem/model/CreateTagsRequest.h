@@ -39,6 +39,7 @@ namespace Model
     CreateTagsRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>ID of the file system whose tags you want to modify (String). This operation
      * modifies the tags only, not the file system.</p>
@@ -80,6 +81,7 @@ namespace Model
      * modifies the tags only, not the file system.</p>
      */
     inline CreateTagsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+
 
     /**
      * <p>Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a
@@ -124,8 +126,10 @@ namespace Model
     inline CreateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

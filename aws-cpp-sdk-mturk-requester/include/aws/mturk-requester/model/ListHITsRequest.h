@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Pagination token</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline ListHITsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -81,8 +83,10 @@ namespace Model
     inline ListHITsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

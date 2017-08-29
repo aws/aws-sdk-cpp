@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the Elastic GPU.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of the Elastic GPU.</p>
      */
     inline ElasticGpuAssociation& WithElasticGpuId(const char* value) { SetElasticGpuId(value); return *this;}
+
 
     /**
      * <p>The ID of the association.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline ElasticGpuAssociation& WithElasticGpuAssociationId(const char* value) { SetElasticGpuAssociationId(value); return *this;}
 
+
     /**
      * <p>The state of the association between the instance and the Elastic GPU.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>The state of the association between the instance and the Elastic GPU.</p>
      */
     inline ElasticGpuAssociation& WithElasticGpuAssociationState(const char* value) { SetElasticGpuAssociationState(value); return *this;}
+
 
     /**
      * <p>The time the Elastic GPU was associated with the instance.</p>
@@ -190,12 +194,16 @@ namespace Model
     inline ElasticGpuAssociation& WithElasticGpuAssociationTime(const char* value) { SetElasticGpuAssociationTime(value); return *this;}
 
   private:
+
     Aws::String m_elasticGpuId;
     bool m_elasticGpuIdHasBeenSet;
+
     Aws::String m_elasticGpuAssociationId;
     bool m_elasticGpuAssociationIdHasBeenSet;
+
     Aws::String m_elasticGpuAssociationState;
     bool m_elasticGpuAssociationStateHasBeenSet;
+
     Aws::String m_elasticGpuAssociationTime;
     bool m_elasticGpuAssociationTimeHasBeenSet;
   };

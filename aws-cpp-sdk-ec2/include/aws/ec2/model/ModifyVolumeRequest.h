@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -63,6 +64,7 @@ namespace Model
      */
     inline ModifyVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
     
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
@@ -83,6 +85,7 @@ namespace Model
 
     
     inline ModifyVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+
 
     /**
      * <p>Target size in GiB of the volume to be modified. Target volume size must be
@@ -110,6 +113,7 @@ namespace Model
      * <p>Default: If no size is specified, the existing size is retained. </p>
      */
     inline ModifyVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
+
 
     /**
      * <p>Target EBS volume type of the volume to be modified</p> <p> The API does not
@@ -151,6 +155,7 @@ namespace Model
      */
     inline ModifyVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
+
     /**
      * <p>Target IOPS rate of the volume to be modified.</p> <p>Only valid for
      * Provisioned IOPS SSD (<code>io1</code>) volumes. For more information about
@@ -179,14 +184,19 @@ namespace Model
     inline ModifyVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     int m_size;
     bool m_sizeHasBeenSet;
+
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the AWS Config rule that you want to delete.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline DeleteConfigRuleRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
   private:
+
     Aws::String m_configRuleName;
     bool m_configRuleNameHasBeenSet;
   };

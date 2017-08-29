@@ -32,13 +32,13 @@ GetFederationTokenResult::GetFederationTokenResult() :
 {
 }
 
-GetFederationTokenResult::GetFederationTokenResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetFederationTokenResult::GetFederationTokenResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_packedPolicySize(0)
 {
   *this = result;
 }
 
-GetFederationTokenResult& GetFederationTokenResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetFederationTokenResult& GetFederationTokenResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

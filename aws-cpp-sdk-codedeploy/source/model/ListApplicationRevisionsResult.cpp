@@ -30,12 +30,12 @@ ListApplicationRevisionsResult::ListApplicationRevisionsResult()
 {
 }
 
-ListApplicationRevisionsResult::ListApplicationRevisionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListApplicationRevisionsResult::ListApplicationRevisionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListApplicationRevisionsResult& ListApplicationRevisionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListApplicationRevisionsResult& ListApplicationRevisionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("revisions"))

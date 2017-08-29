@@ -30,12 +30,12 @@ ListLocalDisksResult::ListLocalDisksResult()
 {
 }
 
-ListLocalDisksResult::ListLocalDisksResult(const AmazonWebServiceResult<JsonValue>& result)
+ListLocalDisksResult::ListLocalDisksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListLocalDisksResult& ListLocalDisksResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListLocalDisksResult& ListLocalDisksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The status of the restore action. Returns starting, restoring, completed, or
      * failed.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline RestoreStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>The number of megabytes per second being transferred from the backup storage.
      * Returns the average rate for a completed backup.</p>
@@ -109,6 +111,7 @@ namespace Model
      */
     inline RestoreStatus& WithCurrentRestoreRateInMegaBytesPerSecond(double value) { SetCurrentRestoreRateInMegaBytesPerSecond(value); return *this;}
 
+
     /**
      * <p>The size of the set of snapshot data used to restore the cluster.</p>
      */
@@ -124,6 +127,7 @@ namespace Model
      */
     inline RestoreStatus& WithSnapshotSizeInMegaBytes(long long value) { SetSnapshotSizeInMegaBytes(value); return *this;}
 
+
     /**
      * <p>The number of megabytes that have been transferred from snapshot storage.</p>
      */
@@ -138,6 +142,7 @@ namespace Model
      * <p>The number of megabytes that have been transferred from snapshot storage.</p>
      */
     inline RestoreStatus& WithProgressInMegaBytes(long long value) { SetProgressInMegaBytes(value); return *this;}
+
 
     /**
      * <p>The amount of time an in-progress restore has been running, or the amount of
@@ -156,6 +161,7 @@ namespace Model
      * time it took a completed restore to finish.</p>
      */
     inline RestoreStatus& WithElapsedTimeInSeconds(long long value) { SetElapsedTimeInSeconds(value); return *this;}
+
 
     /**
      * <p>The estimate of the time remaining before the restore will complete. Returns
@@ -176,16 +182,22 @@ namespace Model
     inline RestoreStatus& WithEstimatedTimeToCompletionInSeconds(long long value) { SetEstimatedTimeToCompletionInSeconds(value); return *this;}
 
   private:
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     double m_currentRestoreRateInMegaBytesPerSecond;
     bool m_currentRestoreRateInMegaBytesPerSecondHasBeenSet;
+
     long long m_snapshotSizeInMegaBytes;
     bool m_snapshotSizeInMegaBytesHasBeenSet;
+
     long long m_progressInMegaBytes;
     bool m_progressInMegaBytesHasBeenSet;
+
     long long m_elapsedTimeInSeconds;
     bool m_elapsedTimeInSecondsHasBeenSet;
+
     long long m_estimatedTimeToCompletionInSeconds;
     bool m_estimatedTimeToCompletionInSecondsHasBeenSet;
   };

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -58,6 +59,7 @@ namespace Model
     
     inline PutBucketLoggingRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     
     inline const BucketLoggingStatus& GetBucketLoggingStatus() const{ return m_bucketLoggingStatus; }
 
@@ -72,6 +74,7 @@ namespace Model
 
     
     inline PutBucketLoggingRequest& WithBucketLoggingStatus(BucketLoggingStatus&& value) { SetBucketLoggingStatus(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
@@ -95,10 +98,13 @@ namespace Model
     inline PutBucketLoggingRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     BucketLoggingStatus m_bucketLoggingStatus;
     bool m_bucketLoggingStatusHasBeenSet;
+
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
   };

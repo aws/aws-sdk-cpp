@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetDataSourceResult();
-    GetDataSourceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDataSourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID assigned to the <code>DataSource</code> at creation. This value should
@@ -93,6 +94,7 @@ namespace Model
      */
     inline GetDataSourceResult& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
+
     /**
      * <p>The location of the data file or directory in Amazon Simple Storage Service
      * (Amazon S3).</p>
@@ -135,6 +137,7 @@ namespace Model
      */
     inline GetDataSourceResult& WithDataLocationS3(const char* value) { SetDataLocationS3(value); return *this;}
 
+
     /**
      * <p>A JSON string that represents the splitting and rearrangement requirement
      * used when this <code>DataSource</code> was created.</p>
@@ -176,6 +179,7 @@ namespace Model
      * used when this <code>DataSource</code> was created.</p>
      */
     inline GetDataSourceResult& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
+
 
     /**
      * <p>The AWS user account from which the <code>DataSource</code> was created. The
@@ -226,6 +230,7 @@ namespace Model
      */
     inline GetDataSourceResult& WithCreatedByIamUser(const char* value) { SetCreatedByIamUser(value); return *this;}
 
+
     /**
      * <p>The time that the <code>DataSource</code> was created. The time is expressed
      * in epoch time.</p>
@@ -255,6 +260,7 @@ namespace Model
      * in epoch time.</p>
      */
     inline GetDataSourceResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The time of the most recent edit to the <code>DataSource</code>. The time is
@@ -286,6 +292,7 @@ namespace Model
      */
     inline GetDataSourceResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The total size of observations in the data files.</p>
      */
@@ -301,6 +308,7 @@ namespace Model
      */
     inline GetDataSourceResult& WithDataSizeInBytes(long long value) { SetDataSizeInBytes(value); return *this;}
 
+
     /**
      * <p>The number of data files referenced by the <code>DataSource</code>.</p>
      */
@@ -315,6 +323,7 @@ namespace Model
      * <p>The number of data files referenced by the <code>DataSource</code>.</p>
      */
     inline GetDataSourceResult& WithNumberOfFiles(long long value) { SetNumberOfFiles(value); return *this;}
+
 
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>.</p>
@@ -350,6 +359,7 @@ namespace Model
      * <p>A user-supplied name or description of the <code>DataSource</code>.</p>
      */
     inline GetDataSourceResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
@@ -411,6 +421,7 @@ namespace Model
      */
     inline GetDataSourceResult& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code>
      * operations.</p>
@@ -452,6 +463,7 @@ namespace Model
      * operations.</p>
      */
     inline GetDataSourceResult& WithLogUri(const char* value) { SetLogUri(value); return *this;}
+
 
     /**
      * <p>The user-supplied description of the most recent details about creating the
@@ -495,6 +507,7 @@ namespace Model
      */
     inline GetDataSourceResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     
     inline const RedshiftMetadata& GetRedshiftMetadata() const{ return m_redshiftMetadata; }
 
@@ -510,6 +523,7 @@ namespace Model
     
     inline GetDataSourceResult& WithRedshiftMetadata(RedshiftMetadata&& value) { SetRedshiftMetadata(std::move(value)); return *this;}
 
+
     
     inline const RDSMetadata& GetRDSMetadata() const{ return m_rDSMetadata; }
 
@@ -524,6 +538,7 @@ namespace Model
 
     
     inline GetDataSourceResult& WithRDSMetadata(RDSMetadata&& value) { SetRDSMetadata(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
@@ -546,6 +561,7 @@ namespace Model
     
     inline GetDataSourceResult& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
+
     /**
      * <p> The parameter is <code>true</code> if statistics need to be generated from
      * the observation data. </p>
@@ -563,6 +579,7 @@ namespace Model
      * the observation data. </p>
      */
     inline GetDataSourceResult& WithComputeStatistics(bool value) { SetComputeStatistics(value); return *this;}
+
 
     /**
      * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
@@ -590,6 +607,7 @@ namespace Model
      * <code>ComputeStatistics</code> is set to true.</p>
      */
     inline GetDataSourceResult& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
 
     /**
      * <p>The epoch time when Amazon Machine Learning marked the
@@ -631,6 +649,7 @@ namespace Model
      */
     inline GetDataSourceResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The epoch time when Amazon Machine Learning marked the
      * <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't
@@ -670,6 +689,7 @@ namespace Model
      * state.</p>
      */
     inline GetDataSourceResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
@@ -721,25 +741,45 @@ namespace Model
     inline GetDataSourceResult& WithDataSourceSchema(const char* value) { SetDataSourceSchema(value); return *this;}
 
   private:
+
     Aws::String m_dataSourceId;
+
     Aws::String m_dataLocationS3;
+
     Aws::String m_dataRearrangement;
+
     Aws::String m_createdByIamUser;
+
     Aws::Utils::DateTime m_createdAt;
+
     Aws::Utils::DateTime m_lastUpdatedAt;
+
     long long m_dataSizeInBytes;
+
     long long m_numberOfFiles;
+
     Aws::String m_name;
+
     EntityStatus m_status;
+
     Aws::String m_logUri;
+
     Aws::String m_message;
+
     RedshiftMetadata m_redshiftMetadata;
+
     RDSMetadata m_rDSMetadata;
+
     Aws::String m_roleARN;
+
     bool m_computeStatistics;
+
     long long m_computeTime;
+
     Aws::Utils::DateTime m_finishedAt;
+
     Aws::Utils::DateTime m_startedAt;
+
     Aws::String m_dataSourceSchema;
   };
 

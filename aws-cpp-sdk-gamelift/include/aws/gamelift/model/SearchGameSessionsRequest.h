@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet to search for active game sessions. Each
      * request must reference either a fleet ID or alias ID, but not both.</p>
@@ -80,6 +81,7 @@ namespace Model
      * request must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Unique identifier for an alias associated with the fleet to search for active
@@ -129,6 +131,7 @@ namespace Model
      * not both.</p>
      */
     inline SearchGameSessionsRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
+
 
     /**
      * <p>String containing the search criteria for the session search. If no filter
@@ -354,6 +357,7 @@ namespace Model
      */
     inline SearchGameSessionsRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
 
+
     /**
      * <p>Instructions on how to sort the search results. If no sort expression is
      * included, the request returns results in random order. A sort expression
@@ -466,6 +470,7 @@ namespace Model
      */
     inline SearchGameSessionsRequest& WithSortExpression(const char* value) { SetSortExpression(value); return *this;}
 
+
     /**
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. The maximum
@@ -489,6 +494,7 @@ namespace Model
      * than 20. </p>
      */
     inline SearchGameSessionsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use
@@ -540,16 +546,22 @@ namespace Model
     inline SearchGameSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::String m_aliasId;
     bool m_aliasIdHasBeenSet;
+
     Aws::String m_filterExpression;
     bool m_filterExpressionHasBeenSet;
+
     Aws::String m_sortExpression;
     bool m_sortExpressionHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

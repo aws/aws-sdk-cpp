@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     CreateMultipartUploadResult();
-    CreateMultipartUploadResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateMultipartUploadResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateMultipartUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateMultipartUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * Date when multipart upload will become eligible for abort operation by
@@ -73,6 +74,7 @@ namespace Model
      * lifecycle.
      */
     inline CreateMultipartUploadResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(std::move(value)); return *this;}
+
 
     /**
      * Id of the lifecycle rule that makes a multipart upload eligible for abort
@@ -116,6 +118,7 @@ namespace Model
      */
     inline CreateMultipartUploadResult& WithAbortRuleId(const char* value) { SetAbortRuleId(value); return *this;}
 
+
     /**
      * Name of the bucket to which the multipart upload was initiated.
      */
@@ -150,6 +153,7 @@ namespace Model
      * Name of the bucket to which the multipart upload was initiated.
      */
     inline CreateMultipartUploadResult& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * Object key for which the multipart upload was initiated.
@@ -186,6 +190,7 @@ namespace Model
      */
     inline CreateMultipartUploadResult& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * ID for the initiated multipart upload.
      */
@@ -221,6 +226,7 @@ namespace Model
      */
     inline CreateMultipartUploadResult& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
+
     /**
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
      * AES256, aws:kms).
@@ -250,6 +256,7 @@ namespace Model
      * AES256, aws:kms).
      */
     inline CreateMultipartUploadResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
+
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -292,6 +299,7 @@ namespace Model
      * the response will include this header confirming the encryption algorithm used.
      */
     inline CreateMultipartUploadResult& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -342,6 +350,7 @@ namespace Model
      */
     inline CreateMultipartUploadResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
+
     /**
      * If present, specifies the ID of the AWS Key Management Service (KMS) master
      * encryption key that was used for the object.
@@ -384,6 +393,7 @@ namespace Model
      */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -400,15 +410,25 @@ namespace Model
     inline CreateMultipartUploadResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_abortDate;
+
     Aws::String m_abortRuleId;
+
     Aws::String m_bucket;
+
     Aws::String m_key;
+
     Aws::String m_uploadId;
+
     ServerSideEncryption m_serverSideEncryption;
+
     Aws::String m_sSECustomerAlgorithm;
+
     Aws::String m_sSECustomerKeyMD5;
+
     Aws::String m_sSEKMSKeyId;
+
     RequestCharged m_requestCharged;
   };
 

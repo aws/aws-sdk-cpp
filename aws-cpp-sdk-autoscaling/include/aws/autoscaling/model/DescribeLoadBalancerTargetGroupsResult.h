@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeLoadBalancerTargetGroupsResult();
-    DescribeLoadBalancerTargetGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeLoadBalancerTargetGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeLoadBalancerTargetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeLoadBalancerTargetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the target groups.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>Information about the target groups.</p>
      */
     inline DescribeLoadBalancerTargetGroupsResult& AddLoadBalancerTargetGroups(LoadBalancerTargetGroupState&& value) { m_loadBalancerTargetGroups.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -127,6 +129,7 @@ namespace Model
      */
     inline DescribeLoadBalancerTargetGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -143,8 +146,11 @@ namespace Model
     inline DescribeLoadBalancerTargetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<LoadBalancerTargetGroupState> m_loadBalancerTargetGroups;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

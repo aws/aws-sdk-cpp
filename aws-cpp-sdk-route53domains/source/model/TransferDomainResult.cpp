@@ -30,12 +30,12 @@ TransferDomainResult::TransferDomainResult()
 {
 }
 
-TransferDomainResult::TransferDomainResult(const AmazonWebServiceResult<JsonValue>& result)
+TransferDomainResult::TransferDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-TransferDomainResult& TransferDomainResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TransferDomainResult& TransferDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OperationId"))

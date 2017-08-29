@@ -47,6 +47,7 @@ namespace Model
     S3Location& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the Amazon S3 bucket where the application revision is
      * stored.</p>
@@ -88,6 +89,7 @@ namespace Model
      * stored.</p>
      */
     inline S3Location& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * <p>The name of the Amazon S3 object that represents the bundled artifacts for
@@ -131,6 +133,7 @@ namespace Model
      */
     inline S3Location& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
      * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
@@ -165,6 +168,7 @@ namespace Model
      * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
      */
     inline S3Location& WithBundleType(BundleType&& value) { SetBundleType(std::move(value)); return *this;}
+
 
     /**
      * <p>A specific version of the Amazon S3 object that represents the bundled
@@ -214,6 +218,7 @@ namespace Model
      * the system will use the most recent version by default.</p>
      */
     inline S3Location& WithVersion(const char* value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The ETag of the Amazon S3 object that represents the bundled artifacts for
@@ -265,14 +270,19 @@ namespace Model
     inline S3Location& WithETag(const char* value) { SetETag(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     BundleType m_bundleType;
     bool m_bundleTypeHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
   };

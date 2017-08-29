@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeConfigurationsResult();
-    DescribeConfigurationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConfigurationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A key in the response map. The value is an array of data.</p>
@@ -79,6 +80,7 @@ namespace Model
     inline DescribeConfigurationsResult& AddConfigurations(Aws::Map<Aws::String, Aws::String>&& value) { m_configurations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_configurations;
   };
 

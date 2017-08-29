@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the customer master key. This value can be a globally
      * unique identifier, a fully specified ARN to either an alias or a key, or an
@@ -121,6 +122,7 @@ namespace Model
      */
     inline DescribeKeyRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
@@ -178,8 +180,10 @@ namespace Model
     inline DescribeKeyRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet;
   };

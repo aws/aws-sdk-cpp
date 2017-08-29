@@ -30,12 +30,12 @@ DeleteLoggerDefinitionResult::DeleteLoggerDefinitionResult()
 {
 }
 
-DeleteLoggerDefinitionResult::DeleteLoggerDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteLoggerDefinitionResult::DeleteLoggerDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteLoggerDefinitionResult& DeleteLoggerDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteLoggerDefinitionResult& DeleteLoggerDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

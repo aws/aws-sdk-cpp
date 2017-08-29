@@ -30,12 +30,12 @@ ListIdentitiesResult::ListIdentitiesResult()
 {
 }
 
-ListIdentitiesResult::ListIdentitiesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListIdentitiesResult::ListIdentitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListIdentitiesResult& ListIdentitiesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListIdentitiesResult& ListIdentitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityPoolId"))

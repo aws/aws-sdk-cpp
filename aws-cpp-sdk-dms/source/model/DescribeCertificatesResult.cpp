@@ -30,12 +30,12 @@ DescribeCertificatesResult::DescribeCertificatesResult()
 {
 }
 
-DescribeCertificatesResult::DescribeCertificatesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCertificatesResult::DescribeCertificatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeCertificatesResult& DescribeCertificatesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Marker"))

@@ -61,6 +61,7 @@ namespace Model
     ConfigRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name that you assign to the AWS Config rule. The name is required if you
      * are adding a new rule.</p>
@@ -103,6 +104,7 @@ namespace Model
      */
     inline ConfigRule& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Config rule.</p>
      */
@@ -137,6 +139,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the AWS Config rule.</p>
      */
     inline ConfigRule& WithConfigRuleArn(const char* value) { SetConfigRuleArn(value); return *this;}
+
 
     /**
      * <p>The ID of the AWS Config rule.</p>
@@ -173,6 +176,7 @@ namespace Model
      */
     inline ConfigRule& WithConfigRuleId(const char* value) { SetConfigRuleId(value); return *this;}
 
+
     /**
      * <p>The description that you provide for the AWS Config rule.</p>
      */
@@ -207,6 +211,7 @@ namespace Model
      * <p>The description that you provide for the AWS Config rule.</p>
      */
     inline ConfigRule& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Defines which resources can trigger an evaluation for the rule. The scope can
@@ -258,6 +263,7 @@ namespace Model
      */
     inline ConfigRule& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides the rule owner (AWS or customer), the rule identifier, and the
      * notifications that cause the function to evaluate your AWS resources.</p>
@@ -287,6 +293,7 @@ namespace Model
      * notifications that cause the function to evaluate your AWS resources.</p>
      */
     inline ConfigRule& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
+
 
     /**
      * <p>A string in JSON format that is passed to the AWS Config rule Lambda
@@ -329,6 +336,7 @@ namespace Model
      * function.</p>
      */
     inline ConfigRule& WithInputParameters(const char* value) { SetInputParameters(value); return *this;}
+
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
@@ -394,6 +402,7 @@ namespace Model
      * parameter.</p> </note>
      */
     inline ConfigRule& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(std::move(value)); return *this;}
+
 
     /**
      * <p>Indicates whether the AWS Config rule is active or is currently being deleted
@@ -476,22 +485,31 @@ namespace Model
     inline ConfigRule& WithConfigRuleState(ConfigRuleState&& value) { SetConfigRuleState(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_configRuleName;
     bool m_configRuleNameHasBeenSet;
+
     Aws::String m_configRuleArn;
     bool m_configRuleArnHasBeenSet;
+
     Aws::String m_configRuleId;
     bool m_configRuleIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Scope m_scope;
     bool m_scopeHasBeenSet;
+
     Source m_source;
     bool m_sourceHasBeenSet;
+
     Aws::String m_inputParameters;
     bool m_inputParametersHasBeenSet;
+
     MaximumExecutionFrequency m_maximumExecutionFrequency;
     bool m_maximumExecutionFrequencyHasBeenSet;
+
     ConfigRuleState m_configRuleState;
     bool m_configRuleStateHasBeenSet;
   };

@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The path to the group. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -101,6 +102,7 @@ namespace Model
      */
     inline Group& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The friendly name that identifies the group.</p>
      */
@@ -135,6 +137,7 @@ namespace Model
      * <p>The friendly name that identifies the group.</p>
      */
     inline Group& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p> The stable and unique string identifying the group. For more information
@@ -192,6 +195,7 @@ namespace Model
      */
     inline Group& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
+
     /**
      * <p> The Amazon Resource Name (ARN) specifying the group. For more information
      * about ARNs and how to use them in policies, see <a
@@ -248,6 +252,7 @@ namespace Model
      */
     inline Group& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the group was created.</p>
@@ -279,14 +284,19 @@ namespace Model
     inline Group& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;
   };

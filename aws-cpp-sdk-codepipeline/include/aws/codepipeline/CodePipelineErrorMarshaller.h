@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_CODEPIPELINE_API CodePipelineErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_CODEPIPELINE_API CodePipelineErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace CodePipeline
+} // namespace Client
 } // namespace Aws

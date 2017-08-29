@@ -30,12 +30,12 @@ GetGcmChannelResult::GetGcmChannelResult()
 {
 }
 
-GetGcmChannelResult::GetGcmChannelResult(const AmazonWebServiceResult<JsonValue>& result)
+GetGcmChannelResult::GetGcmChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetGcmChannelResult& GetGcmChannelResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetGcmChannelResult& GetGcmChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GCMChannelResponse"))

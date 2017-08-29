@@ -30,12 +30,12 @@ GetCurrentUserResult::GetCurrentUserResult()
 {
 }
 
-GetCurrentUserResult::GetCurrentUserResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCurrentUserResult::GetCurrentUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCurrentUserResult& GetCurrentUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCurrentUserResult& GetCurrentUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("User"))

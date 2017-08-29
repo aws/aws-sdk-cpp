@@ -72,6 +72,7 @@ namespace Model
     CaseDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
@@ -121,6 +122,7 @@ namespace Model
      */
     inline CaseDetails& WithCaseId(const char* value) { SetCaseId(value); return *this;}
 
+
     /**
      * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
      * string.</p>
@@ -163,6 +165,7 @@ namespace Model
      */
     inline CaseDetails& WithDisplayId(const char* value) { SetDisplayId(value); return *this;}
 
+
     /**
      * <p>The subject line for the case in the AWS Support Center.</p>
      */
@@ -198,6 +201,7 @@ namespace Model
      */
     inline CaseDetails& WithSubject(const char* value) { SetSubject(value); return *this;}
 
+
     /**
      * <p>The status of the case.</p>
      */
@@ -232,6 +236,7 @@ namespace Model
      * <p>The status of the case.</p>
      */
     inline CaseDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>The code for the AWS service returned by the call to
@@ -275,6 +280,7 @@ namespace Model
      */
     inline CaseDetails& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 
+
     /**
      * <p>The category of problem for the AWS Support case.</p>
      */
@@ -309,6 +315,7 @@ namespace Model
      * <p>The category of problem for the AWS Support case.</p>
      */
     inline CaseDetails& WithCategoryCode(const char* value) { SetCategoryCode(value); return *this;}
+
 
     /**
      * <p>The code for the severity level returned by the call to
@@ -352,6 +359,7 @@ namespace Model
      */
     inline CaseDetails& WithSeverityCode(const char* value) { SetSeverityCode(value); return *this;}
 
+
     /**
      * <p>The email address of the account that submitted the case.</p>
      */
@@ -386,6 +394,7 @@ namespace Model
      * <p>The email address of the account that submitted the case.</p>
      */
     inline CaseDetails& WithSubmittedBy(const char* value) { SetSubmittedBy(value); return *this;}
+
 
     /**
      * <p>The time that the case was case created in the AWS Support Center.</p>
@@ -422,6 +431,7 @@ namespace Model
      */
     inline CaseDetails& WithTimeCreated(const char* value) { SetTimeCreated(value); return *this;}
 
+
     /**
      * <p>The five most recent communications between you and AWS Support Center,
      * including the IDs of any attachments to the communications. Also includes a
@@ -456,6 +466,7 @@ namespace Model
      * <code>nextToken</code> that you can use to retrieve earlier communications.</p>
      */
     inline CaseDetails& WithRecentCommunications(RecentCaseCommunications&& value) { SetRecentCommunications(std::move(value)); return *this;}
+
 
     /**
      * <p>The email addresses that receive copies of communication about the case.</p>
@@ -496,6 +507,7 @@ namespace Model
      * <p>The email addresses that receive copies of communication about the case.</p>
      */
     inline CaseDetails& AddCcEmailAddresses(const char* value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses.push_back(value); return *this; }
+
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -547,28 +559,40 @@ namespace Model
     inline CaseDetails& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 
   private:
+
     Aws::String m_caseId;
     bool m_caseIdHasBeenSet;
+
     Aws::String m_displayId;
     bool m_displayIdHasBeenSet;
+
     Aws::String m_subject;
     bool m_subjectHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_serviceCode;
     bool m_serviceCodeHasBeenSet;
+
     Aws::String m_categoryCode;
     bool m_categoryCodeHasBeenSet;
+
     Aws::String m_severityCode;
     bool m_severityCodeHasBeenSet;
+
     Aws::String m_submittedBy;
     bool m_submittedByHasBeenSet;
+
     Aws::String m_timeCreated;
     bool m_timeCreatedHasBeenSet;
+
     RecentCaseCommunications m_recentCommunications;
     bool m_recentCommunicationsHasBeenSet;
+
     Aws::Vector<Aws::String> m_ccEmailAddresses;
     bool m_ccEmailAddressesHasBeenSet;
+
     Aws::String m_language;
     bool m_languageHasBeenSet;
   };

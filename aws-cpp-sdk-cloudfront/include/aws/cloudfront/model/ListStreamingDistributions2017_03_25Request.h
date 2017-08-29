@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The value that you provided for the <code>Marker</code> request
      * parameter.</p>
@@ -85,6 +86,7 @@ namespace Model
      * parameter.</p>
      */
     inline ListStreamingDistributions2017_03_25Request& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * <p>The value that you provided for the <code>MaxItems</code> request
@@ -129,8 +131,10 @@ namespace Model
     inline ListStreamingDistributions2017_03_25Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

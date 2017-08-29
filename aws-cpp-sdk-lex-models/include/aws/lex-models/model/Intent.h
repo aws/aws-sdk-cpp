@@ -45,6 +45,7 @@ namespace Model
     Intent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the intent.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The name of the intent.</p>
      */
     inline Intent& WithIntentName(const char* value) { SetIntentName(value); return *this;}
+
 
     /**
      * <p>The version of the intent.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline Intent& WithIntentVersion(const char* value) { SetIntentVersion(value); return *this;}
 
   private:
+
     Aws::String m_intentName;
     bool m_intentNameHasBeenSet;
+
     Aws::String m_intentVersion;
     bool m_intentVersionHasBeenSet;
   };

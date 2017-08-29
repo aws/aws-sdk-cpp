@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline LiteralOptions& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
+
     
     inline const Aws::String& GetSourceField() const{ return m_sourceField; }
 
@@ -106,6 +108,7 @@ namespace Model
     
     inline LiteralOptions& WithSourceField(const char* value) { SetSourceField(value); return *this;}
 
+
     /**
      * <p>Whether facet information can be returned for the field.</p>
      */
@@ -120,6 +123,7 @@ namespace Model
      * <p>Whether facet information can be returned for the field.</p>
      */
     inline LiteralOptions& WithFacetEnabled(bool value) { SetFacetEnabled(value); return *this;}
+
 
     /**
      * <p>Whether the contents of the field are searchable.</p>
@@ -136,6 +140,7 @@ namespace Model
      */
     inline LiteralOptions& WithSearchEnabled(bool value) { SetSearchEnabled(value); return *this;}
 
+
     /**
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
@@ -150,6 +155,7 @@ namespace Model
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
     inline LiteralOptions& WithReturnEnabled(bool value) { SetReturnEnabled(value); return *this;}
+
 
     /**
      * <p>Whether the field can be used to sort the search results.</p>
@@ -167,16 +173,22 @@ namespace Model
     inline LiteralOptions& WithSortEnabled(bool value) { SetSortEnabled(value); return *this;}
 
   private:
+
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
     Aws::String m_sourceField;
     bool m_sourceFieldHasBeenSet;
+
     bool m_facetEnabled;
     bool m_facetEnabledHasBeenSet;
+
     bool m_searchEnabled;
     bool m_searchEnabledHasBeenSet;
+
     bool m_returnEnabled;
     bool m_returnEnabledHasBeenSet;
+
     bool m_sortEnabled;
     bool m_sortEnabledHasBeenSet;
   };

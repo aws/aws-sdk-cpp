@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The device name.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline DetachVolumeRequest& WithDevice(const char* value) { SetDevice(value); return *this;}
 
+
     /**
      * <p>Forces detachment if the previous detachment attempt did not occur cleanly
      * (for example, logging into an instance, unmounting the volume, and detaching
@@ -108,6 +110,7 @@ namespace Model
      * procedures.</p>
      */
     inline DetachVolumeRequest& WithForce(bool value) { SetForce(value); return *this;}
+
 
     /**
      * <p>The ID of the instance.</p>
@@ -144,6 +147,7 @@ namespace Model
      */
     inline DetachVolumeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The ID of the volume.</p>
      */
@@ -179,6 +183,7 @@ namespace Model
      */
     inline DetachVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -204,14 +209,19 @@ namespace Model
     inline DetachVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_device;
     bool m_deviceHasBeenSet;
+
     bool m_force;
     bool m_forceHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

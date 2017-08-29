@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more instance IDs.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline StartInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
+
     /**
      * <p>Reserved.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      */
     inline StartInstancesRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -142,10 +145,13 @@ namespace Model
     inline StartInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+
     Aws::String m_additionalInfo;
     bool m_additionalInfoHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
     ResourcePath& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The components of the resource path.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
     inline ResourcePath& AddComponents(ResourcePathComponent&& value) { m_componentsHasBeenSet = true; m_components.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ResourcePathComponent> m_components;
     bool m_componentsHasBeenSet;
   };

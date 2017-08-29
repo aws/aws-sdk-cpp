@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     StopQueryExecutionResult();
-    StopQueryExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopQueryExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopQueryExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    StopQueryExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

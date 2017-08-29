@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID for the celebrity. You get the celebrity ID from a call to the
      * operation, which recognizes celebrities in an image. </p>
@@ -79,6 +80,7 @@ namespace Model
     inline GetCelebrityInfoRequest& WithId(const char* value) { SetId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
   };

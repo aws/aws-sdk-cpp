@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the images to
      * describe. If you do not specify a registry, the default registry is assumed.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline BatchGetImageRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The repository that contains the images to describe.</p>
      */
@@ -114,6 +116,7 @@ namespace Model
      * <p>The repository that contains the images to describe.</p>
      */
     inline BatchGetImageRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+
 
     /**
      * <p>A list of image ID references that correspond to images to describe. The
@@ -163,6 +166,7 @@ namespace Model
      * <code>imageDigest=digest</code>.</p>
      */
     inline BatchGetImageRequest& AddImageIds(ImageIdentifier&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The accepted media types for the request.</p> <p>Valid values:
@@ -229,12 +233,16 @@ namespace Model
     inline BatchGetImageRequest& AddAcceptedMediaTypes(const char* value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes.push_back(value); return *this; }
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::Vector<ImageIdentifier> m_imageIds;
     bool m_imageIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_acceptedMediaTypes;
     bool m_acceptedMediaTypesHasBeenSet;
   };

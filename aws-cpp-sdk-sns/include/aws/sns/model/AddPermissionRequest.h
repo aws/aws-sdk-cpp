@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline AddPermissionRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
+
     /**
      * <p>A unique identifier for the new policy statement.</p>
      */
@@ -108,6 +110,7 @@ namespace Model
      * <p>A unique identifier for the new policy statement.</p>
      */
     inline AddPermissionRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
+
 
     /**
      * <p>The AWS account IDs of the users (principals) who will be given access to the
@@ -165,6 +168,7 @@ namespace Model
      */
     inline AddPermissionRequest& AddAWSAccountId(const char* value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.push_back(value); return *this; }
 
+
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
      * values: any Amazon SNS action name.</p>
@@ -214,12 +218,16 @@ namespace Model
     inline AddPermissionRequest& AddActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.push_back(value); return *this; }
 
   private:
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
+
     Aws::String m_label;
     bool m_labelHasBeenSet;
+
     Aws::Vector<Aws::String> m_aWSAccountId;
     bool m_aWSAccountIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_actionName;
     bool m_actionNameHasBeenSet;
   };

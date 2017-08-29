@@ -52,6 +52,7 @@ namespace Model
     Instance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name the user gave the instance (e.g.,
      * <code>Amazon_Linux-1GB-Virginia-1</code>).</p>
@@ -94,6 +95,7 @@ namespace Model
      */
     inline Instance& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
      * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
@@ -135,6 +137,7 @@ namespace Model
      * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline Instance& WithArn(const char* value) { SetArn(value); return *this;}
+
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -185,6 +188,7 @@ namespace Model
      */
     inline Instance& WithSupportCode(const char* value) { SetSupportCode(value); return *this;}
 
+
     /**
      * <p>The timestamp when the instance was created (e.g.,
      * <code>1479734909.17</code>).</p>
@@ -215,6 +219,7 @@ namespace Model
      */
     inline Instance& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The region name and availability zone where the instance is located.</p>
      */
@@ -240,6 +245,7 @@ namespace Model
      */
     inline Instance& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of resource (usually <code>Instance</code>).</p>
      */
@@ -264,6 +270,7 @@ namespace Model
      * <p>The type of resource (usually <code>Instance</code>).</p>
      */
     inline Instance& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
@@ -300,6 +307,7 @@ namespace Model
      */
     inline Instance& WithBlueprintId(const char* value) { SetBlueprintId(value); return *this;}
 
+
     /**
      * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
      */
@@ -334,6 +342,7 @@ namespace Model
      * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
      */
     inline Instance& WithBlueprintName(const char* value) { SetBlueprintName(value); return *this;}
+
 
     /**
      * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
@@ -370,6 +379,7 @@ namespace Model
      */
     inline Instance& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
+
     /**
      * <p>A Boolean value indicating whether this instance has a static IP assigned to
      * it.</p>
@@ -387,6 +397,7 @@ namespace Model
      * it.</p>
      */
     inline Instance& WithIsStaticIp(bool value) { SetIsStaticIp(value); return *this;}
+
 
     /**
      * <p>The private IP address of the instance.</p>
@@ -423,6 +434,7 @@ namespace Model
      */
     inline Instance& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
+
     /**
      * <p>The public IP address of the instance.</p>
      */
@@ -457,6 +469,7 @@ namespace Model
      * <p>The public IP address of the instance.</p>
      */
     inline Instance& WithPublicIpAddress(const char* value) { SetPublicIpAddress(value); return *this;}
+
 
     /**
      * <p>The IPv6 address of the instance.</p>
@@ -493,6 +506,7 @@ namespace Model
      */
     inline Instance& WithIpv6Address(const char* value) { SetIpv6Address(value); return *this;}
 
+
     /**
      * <p>The size of the vCPU and the amount of RAM for the instance.</p>
      */
@@ -517,6 +531,7 @@ namespace Model
      * <p>The size of the vCPU and the amount of RAM for the instance.</p>
      */
     inline Instance& WithHardware(InstanceHardware&& value) { SetHardware(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the public ports and monthly data transfer rates for the
@@ -548,6 +563,7 @@ namespace Model
      */
     inline Instance& WithNetworking(InstanceNetworking&& value) { SetNetworking(std::move(value)); return *this;}
 
+
     /**
      * <p>The status code and the state (e.g., <code>running</code>) for the
      * instance.</p>
@@ -577,6 +593,7 @@ namespace Model
      * instance.</p>
      */
     inline Instance& WithState(InstanceState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The user name for connecting to the instance (e.g.,
@@ -619,6 +636,7 @@ namespace Model
      * <code>ec2-user</code>).</p>
      */
     inline Instance& WithUsername(const char* value) { SetUsername(value); return *this;}
+
 
     /**
      * <p>The name of the SSH key being used to connect to the instance (e.g.,
@@ -663,40 +681,58 @@ namespace Model
     inline Instance& WithSshKeyName(const char* value) { SetSshKeyName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_supportCode;
     bool m_supportCodeHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     ResourceLocation m_location;
     bool m_locationHasBeenSet;
+
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::String m_blueprintId;
     bool m_blueprintIdHasBeenSet;
+
     Aws::String m_blueprintName;
     bool m_blueprintNameHasBeenSet;
+
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
     bool m_isStaticIp;
     bool m_isStaticIpHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
+
     Aws::String m_publicIpAddress;
     bool m_publicIpAddressHasBeenSet;
+
     Aws::String m_ipv6Address;
     bool m_ipv6AddressHasBeenSet;
+
     InstanceHardware m_hardware;
     bool m_hardwareHasBeenSet;
+
     InstanceNetworking m_networking;
     bool m_networkingHasBeenSet;
+
     InstanceState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     Aws::String m_sshKeyName;
     bool m_sshKeyNameHasBeenSet;
   };

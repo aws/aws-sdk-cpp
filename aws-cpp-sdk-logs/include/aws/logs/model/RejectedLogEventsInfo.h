@@ -43,6 +43,7 @@ namespace Model
     RejectedLogEventsInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The log events that are too new.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      */
     inline RejectedLogEventsInfo& WithTooNewLogEventStartIndex(int value) { SetTooNewLogEventStartIndex(value); return *this;}
 
+
     /**
      * <p>The log events that are too old.</p>
      */
@@ -72,6 +74,7 @@ namespace Model
      * <p>The log events that are too old.</p>
      */
     inline RejectedLogEventsInfo& WithTooOldLogEventEndIndex(int value) { SetTooOldLogEventEndIndex(value); return *this;}
+
 
     /**
      * <p>The expired log events.</p>
@@ -89,10 +92,13 @@ namespace Model
     inline RejectedLogEventsInfo& WithExpiredLogEventEndIndex(int value) { SetExpiredLogEventEndIndex(value); return *this;}
 
   private:
+
     int m_tooNewLogEventStartIndex;
     bool m_tooNewLogEventStartIndexHasBeenSet;
+
     int m_tooOldLogEventEndIndex;
     bool m_tooOldLogEventEndIndexHasBeenSet;
+
     int m_expiredLogEventEndIndex;
     bool m_expiredLogEventEndIndexHasBeenSet;
   };

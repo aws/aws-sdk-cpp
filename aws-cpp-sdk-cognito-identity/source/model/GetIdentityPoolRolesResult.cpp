@@ -30,12 +30,12 @@ GetIdentityPoolRolesResult::GetIdentityPoolRolesResult()
 {
 }
 
-GetIdentityPoolRolesResult::GetIdentityPoolRolesResult(const AmazonWebServiceResult<JsonValue>& result)
+GetIdentityPoolRolesResult::GetIdentityPoolRolesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetIdentityPoolRolesResult& GetIdentityPoolRolesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetIdentityPoolRolesResult& GetIdentityPoolRolesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("IdentityPoolId"))

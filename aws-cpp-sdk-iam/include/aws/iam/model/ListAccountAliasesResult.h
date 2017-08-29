@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListAccountAliasesResult();
-    ListAccountAliasesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListAccountAliasesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListAccountAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListAccountAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of aliases associated with the account. AWS supports only one alias
@@ -97,6 +98,7 @@ namespace Model
      */
     inline ListAccountAliasesResult& AddAccountAliases(const char* value) { m_accountAliases.push_back(value); return *this; }
 
+
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
@@ -129,6 +131,7 @@ namespace Model
      * results.</p>
      */
     inline ListAccountAliasesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -179,6 +182,7 @@ namespace Model
      */
     inline ListAccountAliasesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -195,9 +199,13 @@ namespace Model
     inline ListAccountAliasesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_accountAliases;
+
     bool m_isTruncated;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

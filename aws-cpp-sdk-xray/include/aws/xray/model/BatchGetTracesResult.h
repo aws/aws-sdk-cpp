@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     BatchGetTracesResult();
-    BatchGetTracesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetTracesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetTracesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    BatchGetTracesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Full traces for the specified requests.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Full traces for the specified requests.</p>
      */
     inline BatchGetTracesResult& AddTraces(Trace&& value) { m_traces.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Trace IDs of requests that haven't been processed.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline BatchGetTracesResult& AddUnprocessedTraceIds(const char* value) { m_unprocessedTraceIds.push_back(value); return *this; }
 
+
     /**
      * <p>Pagination token. Not used.</p>
      */
@@ -154,8 +157,11 @@ namespace Model
     inline BatchGetTracesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Trace> m_traces;
+
     Aws::Vector<Aws::String> m_unprocessedTraceIds;
+
     Aws::String m_nextToken;
   };
 

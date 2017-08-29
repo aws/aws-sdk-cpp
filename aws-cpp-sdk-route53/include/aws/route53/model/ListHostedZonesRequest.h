@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response was
      * <code>true</code>, you have more hosted zones. To get more hosted zones, submit
@@ -128,6 +129,7 @@ namespace Model
      */
     inline ListHostedZonesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53
      * to return. If you have more than <code>maxitems</code> hosted zones, the value
@@ -191,6 +193,7 @@ namespace Model
      */
     inline ListHostedZonesRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
+
     /**
      * <p>If you're using reusable delegation sets and you want to list all of the
      * hosted zones that are associated with a reusable delegation set, specify the ID
@@ -241,10 +244,13 @@ namespace Model
     inline ListHostedZonesRequest& WithDelegationSetId(const char* value) { SetDelegationSetId(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
+
     Aws::String m_delegationSetId;
     bool m_delegationSetIdHasBeenSet;
   };

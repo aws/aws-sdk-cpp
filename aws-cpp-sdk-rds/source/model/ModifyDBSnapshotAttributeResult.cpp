@@ -31,12 +31,12 @@ ModifyDBSnapshotAttributeResult::ModifyDBSnapshotAttributeResult()
 {
 }
 
-ModifyDBSnapshotAttributeResult::ModifyDBSnapshotAttributeResult(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyDBSnapshotAttributeResult::ModifyDBSnapshotAttributeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifyDBSnapshotAttributeResult& ModifyDBSnapshotAttributeResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyDBSnapshotAttributeResult& ModifyDBSnapshotAttributeResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

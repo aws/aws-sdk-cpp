@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetTablesResult();
-    GetTablesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTablesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTablesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTablesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of the requested <code>Table</code> objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of the requested <code>Table</code> objects.</p>
      */
     inline GetTablesResult& AddTableList(Table&& value) { m_tableList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token, present if the current list segment is not the
@@ -121,7 +123,9 @@ namespace Model
     inline GetTablesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Table> m_tableList;
+
     Aws::String m_nextToken;
   };
 

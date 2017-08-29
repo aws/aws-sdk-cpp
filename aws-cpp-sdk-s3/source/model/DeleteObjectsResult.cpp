@@ -31,13 +31,13 @@ DeleteObjectsResult::DeleteObjectsResult() :
 {
 }
 
-DeleteObjectsResult::DeleteObjectsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+DeleteObjectsResult::DeleteObjectsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }
 
-DeleteObjectsResult& DeleteObjectsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteObjectsResult& DeleteObjectsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

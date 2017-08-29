@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The prefix used when this CNAME is reserved.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline CheckDNSAvailabilityRequest& WithCNAMEPrefix(const char* value) { SetCNAMEPrefix(value); return *this;}
 
   private:
+
     Aws::String m_cNAMEPrefix;
     bool m_cNAMEPrefixHasBeenSet;
   };

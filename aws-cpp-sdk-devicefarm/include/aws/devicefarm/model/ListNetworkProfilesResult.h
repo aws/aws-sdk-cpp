@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListNetworkProfilesResult();
-    ListNetworkProfilesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListNetworkProfilesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListNetworkProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListNetworkProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of the available network profiles.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of the available network profiles.</p>
      */
     inline ListNetworkProfilesResult& AddNetworkProfiles(NetworkProfile&& value) { m_networkProfiles.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -121,7 +123,9 @@ namespace Model
     inline ListNetworkProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<NetworkProfile> m_networkProfiles;
+
     Aws::String m_nextToken;
   };
 

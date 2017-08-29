@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The scope to which the Stop action applies. That is, what is being
      * stopped.</p>
@@ -83,6 +84,7 @@ namespace Model
      * stopped.</p>
      */
     inline StopAction& WithScope(StopScope&& value) { SetScope(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
@@ -155,8 +157,10 @@ namespace Model
     inline StopAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
   private:
+
     StopScope m_scope;
     bool m_scopeHasBeenSet;
+
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
   };

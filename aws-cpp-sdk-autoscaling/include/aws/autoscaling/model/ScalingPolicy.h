@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the Auto Scaling group associated with this scaling policy.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>The name of the Auto Scaling group associated with this scaling policy.</p>
      */
     inline ScalingPolicy& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the scaling policy.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline ScalingPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
      */
@@ -156,6 +159,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
      */
     inline ScalingPolicy& WithPolicyARN(const char* value) { SetPolicyARN(value); return *this;}
+
 
     /**
      * <p>The policy type. Valid values are <code>SimpleScaling</code> and
@@ -198,6 +202,7 @@ namespace Model
      * <code>StepScaling</code>.</p>
      */
     inline ScalingPolicy& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
+
 
     /**
      * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
@@ -248,6 +253,7 @@ namespace Model
      */
     inline ScalingPolicy& WithAdjustmentType(const char* value) { SetAdjustmentType(value); return *this;}
 
+
     /**
      * <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
      * instead.</p>
@@ -265,6 +271,7 @@ namespace Model
      * instead.</p>
      */
     inline ScalingPolicy& WithMinAdjustmentStep(int value) { SetMinAdjustmentStep(value); return *this;}
+
 
     /**
      * <p>The minimum number of instances to scale. If the value of
@@ -293,6 +300,7 @@ namespace Model
      */
     inline ScalingPolicy& WithMinAdjustmentMagnitude(int value) { SetMinAdjustmentMagnitude(value); return *this;}
 
+
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
@@ -314,6 +322,7 @@ namespace Model
      */
     inline ScalingPolicy& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
 
+
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before any
      * further trigger-related scaling activities can start.</p>
@@ -331,6 +340,7 @@ namespace Model
      * further trigger-related scaling activities can start.</p>
      */
     inline ScalingPolicy& WithCooldown(int value) { SetCooldown(value); return *this;}
+
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
@@ -374,6 +384,7 @@ namespace Model
      */
     inline ScalingPolicy& AddStepAdjustments(StepAdjustment&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
@@ -416,6 +427,7 @@ namespace Model
      */
     inline ScalingPolicy& WithMetricAggregationType(const char* value) { SetMetricAggregationType(value); return *this;}
 
+
     /**
      * <p>The estimated time, in seconds, until a newly launched instance can
      * contribute to the CloudWatch metrics.</p>
@@ -433,6 +445,7 @@ namespace Model
      * contribute to the CloudWatch metrics.</p>
      */
     inline ScalingPolicy& WithEstimatedInstanceWarmup(int value) { SetEstimatedInstanceWarmup(value); return *this;}
+
 
     /**
      * <p>The CloudWatch alarms related to the policy.</p>
@@ -469,6 +482,7 @@ namespace Model
      */
     inline ScalingPolicy& AddAlarms(Alarm&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A target tracking policy.</p>
      */
@@ -495,32 +509,46 @@ namespace Model
     inline ScalingPolicy& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_policyARN;
     bool m_policyARNHasBeenSet;
+
     Aws::String m_policyType;
     bool m_policyTypeHasBeenSet;
+
     Aws::String m_adjustmentType;
     bool m_adjustmentTypeHasBeenSet;
+
     int m_minAdjustmentStep;
     bool m_minAdjustmentStepHasBeenSet;
+
     int m_minAdjustmentMagnitude;
     bool m_minAdjustmentMagnitudeHasBeenSet;
+
     int m_scalingAdjustment;
     bool m_scalingAdjustmentHasBeenSet;
+
     int m_cooldown;
     bool m_cooldownHasBeenSet;
+
     Aws::Vector<StepAdjustment> m_stepAdjustments;
     bool m_stepAdjustmentsHasBeenSet;
+
     Aws::String m_metricAggregationType;
     bool m_metricAggregationTypeHasBeenSet;
+
     int m_estimatedInstanceWarmup;
     bool m_estimatedInstanceWarmupHasBeenSet;
+
     Aws::Vector<Alarm> m_alarms;
     bool m_alarmsHasBeenSet;
+
     TargetTrackingConfiguration m_targetTrackingConfiguration;
     bool m_targetTrackingConfigurationHasBeenSet;
   };

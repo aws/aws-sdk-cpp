@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The error code.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The error code.</p>
      */
     inline BundleTaskError& WithCode(const char* value) { SetCode(value); return *this;}
+
 
     /**
      * <p>The error message.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline BundleTaskError& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
   };

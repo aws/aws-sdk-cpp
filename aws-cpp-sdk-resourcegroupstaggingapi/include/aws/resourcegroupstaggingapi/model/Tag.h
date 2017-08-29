@@ -50,6 +50,7 @@ namespace Model
     Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>One part of a key-value pair that make up a tag. A key is a general label
      * that acts like a category for more specific tag values.</p>
@@ -91,6 +92,7 @@ namespace Model
      * that acts like a category for more specific tag values.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The optional part of a key-value pair that make up a tag. A value acts as a
@@ -135,8 +137,10 @@ namespace Model
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

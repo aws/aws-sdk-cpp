@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AssociateCreatedArtifactResult();
-    AssociateCreatedArtifactResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateCreatedArtifactResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateCreatedArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AssociateCreatedArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

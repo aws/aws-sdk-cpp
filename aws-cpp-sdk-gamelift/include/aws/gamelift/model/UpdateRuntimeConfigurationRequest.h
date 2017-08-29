@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet to update run-time configuration for.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>Unique identifier for a fleet to update run-time configuration for.</p>
      */
     inline UpdateRuntimeConfigurationRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.
@@ -126,8 +128,10 @@ namespace Model
     inline UpdateRuntimeConfigurationRequest& WithRuntimeConfiguration(RuntimeConfiguration&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     RuntimeConfiguration m_runtimeConfiguration;
     bool m_runtimeConfigurationHasBeenSet;
   };

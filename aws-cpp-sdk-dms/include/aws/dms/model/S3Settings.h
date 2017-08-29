@@ -46,6 +46,7 @@ namespace Model
     S3Settings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline S3Settings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
 
+
     /**
      * <p> </p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p> </p>
      */
     inline S3Settings& WithExternalTableDefinition(const char* value) { SetExternalTableDefinition(value); return *this;}
+
 
     /**
      * <p> The delimiter used to separate rows in the source files. The default is a
@@ -158,6 +161,7 @@ namespace Model
      */
     inline S3Settings& WithCsvRowDelimiter(const char* value) { SetCsvRowDelimiter(value); return *this;}
 
+
     /**
      * <p> The delimiter used to separate columns in the source files. The default is a
      * comma. </p>
@@ -199,6 +203,7 @@ namespace Model
      * comma. </p>
      */
     inline S3Settings& WithCsvDelimiter(const char* value) { SetCsvDelimiter(value); return *this;}
+
 
     /**
      * <p> An optional parameter to set a folder name in the S3 bucket. If provided,
@@ -263,6 +268,7 @@ namespace Model
      */
     inline S3Settings& WithBucketFolder(const char* value) { SetBucketFolder(value); return *this;}
 
+
     /**
      * <p> The name of the S3 bucket. </p>
      */
@@ -297,6 +303,7 @@ namespace Model
      * <p> The name of the S3 bucket. </p>
      */
     inline S3Settings& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+
 
     /**
      * <p> An optional parameter to use GZIP to compress the target files. Set to GZIP
@@ -334,18 +341,25 @@ namespace Model
     inline S3Settings& WithCompressionType(CompressionTypeValue&& value) { SetCompressionType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_serviceAccessRoleArn;
     bool m_serviceAccessRoleArnHasBeenSet;
+
     Aws::String m_externalTableDefinition;
     bool m_externalTableDefinitionHasBeenSet;
+
     Aws::String m_csvRowDelimiter;
     bool m_csvRowDelimiterHasBeenSet;
+
     Aws::String m_csvDelimiter;
     bool m_csvDelimiterHasBeenSet;
+
     Aws::String m_bucketFolder;
     bool m_bucketFolderHasBeenSet;
+
     Aws::String m_bucketName;
     bool m_bucketNameHasBeenSet;
+
     CompressionTypeValue m_compressionType;
     bool m_compressionTypeHasBeenSet;
   };

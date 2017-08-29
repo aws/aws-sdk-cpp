@@ -30,12 +30,12 @@ CreateResourceServerResult::CreateResourceServerResult()
 {
 }
 
-CreateResourceServerResult::CreateResourceServerResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateResourceServerResult::CreateResourceServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateResourceServerResult& CreateResourceServerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateResourceServerResult& CreateResourceServerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ResourceServer"))

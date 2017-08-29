@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The container format used to combine disk images with metadata (such as OVF).
      * If absent, only the disk image is exported.</p>
@@ -81,6 +82,7 @@ namespace Model
      */
     inline ExportToS3Task& WithContainerFormat(ContainerFormat&& value) { SetContainerFormat(std::move(value)); return *this;}
 
+
     /**
      * <p>The format for the exported image.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The format for the exported image.</p>
      */
     inline ExportToS3Task& WithDiskImageFormat(DiskImageFormat&& value) { SetDiskImageFormat(std::move(value)); return *this;}
+
 
     /**
      * <p>The S3 bucket for the destination image. The destination bucket must exist
@@ -155,6 +158,7 @@ namespace Model
      */
     inline ExportToS3Task& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
+
     /**
      * <p>The encryption key for your S3 bucket.</p>
      */
@@ -191,12 +195,16 @@ namespace Model
     inline ExportToS3Task& WithS3Key(const char* value) { SetS3Key(value); return *this;}
 
   private:
+
     ContainerFormat m_containerFormat;
     bool m_containerFormatHasBeenSet;
+
     DiskImageFormat m_diskImageFormat;
     bool m_diskImageFormatHasBeenSet;
+
     Aws::String m_s3Bucket;
     bool m_s3BucketHasBeenSet;
+
     Aws::String m_s3Key;
     bool m_s3KeyHasBeenSet;
   };

@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the offering.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      */
     inline PurchaseOfferingRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 
+
     /**
      * <p>The number of device slots you wish to purchase in an offering request.</p>
      */
@@ -88,6 +90,7 @@ namespace Model
      * <p>The number of device slots you wish to purchase in an offering request.</p>
      */
     inline PurchaseOfferingRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>The ID of the offering promotion to be applied to the purchase.</p>
@@ -125,10 +128,13 @@ namespace Model
     inline PurchaseOfferingRequest& WithOfferingPromotionId(const char* value) { SetOfferingPromotionId(value); return *this;}
 
   private:
+
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet;
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::String m_offeringPromotionId;
     bool m_offeringPromotionIdHasBeenSet;
   };

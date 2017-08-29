@@ -48,6 +48,7 @@ namespace Model
     Computer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier of the computer.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Computer& WithComputerId(const char* value) { SetComputerId(value); return *this;}
 
+
     /**
      * <p>The computer name.</p>
      */
@@ -117,6 +119,7 @@ namespace Model
      * <p>The computer name.</p>
      */
     inline Computer& WithComputerName(const char* value) { SetComputerName(value); return *this;}
+
 
     /**
      * <p>An array of <a>Attribute</a> objects containing the LDAP attributes that
@@ -161,10 +164,13 @@ namespace Model
     inline Computer& AddComputerAttributes(Attribute&& value) { m_computerAttributesHasBeenSet = true; m_computerAttributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_computerId;
     bool m_computerIdHasBeenSet;
+
     Aws::String m_computerName;
     bool m_computerNameHasBeenSet;
+
     Aws::Vector<Attribute> m_computerAttributes;
     bool m_computerAttributesHasBeenSet;
   };

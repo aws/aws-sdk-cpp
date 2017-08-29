@@ -41,8 +41,8 @@ namespace Model
   {
   public:
     DeactivatePipelineResult();
-    DeactivatePipelineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeactivatePipelineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeactivatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeactivatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

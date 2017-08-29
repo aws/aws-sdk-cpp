@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeClusterVersionsResult();
-    DescribeClusterVersionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeClusterVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClusterVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeClusterVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -120,6 +121,7 @@ namespace Model
      */
     inline DescribeClusterVersionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A list of <code>Version</code> elements. </p>
      */
@@ -155,6 +157,7 @@ namespace Model
      */
     inline DescribeClusterVersionsResult& AddClusterVersions(ClusterVersion&& value) { m_clusterVersions.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -171,8 +174,11 @@ namespace Model
     inline DescribeClusterVersionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_marker;
+
     Aws::Vector<ClusterVersion> m_clusterVersions;
+
     ResponseMetadata m_responseMetadata;
   };
 

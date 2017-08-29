@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     UpdateRoleDescriptionResult();
-    UpdateRoleDescriptionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateRoleDescriptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateRoleDescriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateRoleDescriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure that contains details about the modified role.</p>
@@ -67,6 +68,7 @@ namespace Model
      */
     inline UpdateRoleDescriptionResult& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -83,7 +85,9 @@ namespace Model
     inline UpdateRoleDescriptionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Role m_role;
+
     ResponseMetadata m_responseMetadata;
   };
 

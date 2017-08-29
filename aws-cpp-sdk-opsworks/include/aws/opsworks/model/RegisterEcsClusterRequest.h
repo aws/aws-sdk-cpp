@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The cluster's ARN.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The cluster's ARN.</p>
      */
     inline RegisterEcsClusterRequest& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
+
 
     /**
      * <p>The stack ID.</p>
@@ -107,8 +109,10 @@ namespace Model
     inline RegisterEcsClusterRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
   private:
+
     Aws::String m_ecsClusterArn;
     bool m_ecsClusterArnHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
   };

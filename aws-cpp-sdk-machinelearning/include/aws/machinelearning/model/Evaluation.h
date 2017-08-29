@@ -50,6 +50,7 @@ namespace Model
     Evaluation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID that is assigned to the <code>Evaluation</code> at creation.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      */
     inline Evaluation& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>MLModel</code> that is the focus of the evaluation.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      * <p>The ID of the <code>MLModel</code> that is the focus of the evaluation.</p>
      */
     inline Evaluation& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+
 
     /**
      * <p>The ID of the <code>DataSource</code> that is used to evaluate the
@@ -162,6 +165,7 @@ namespace Model
      */
     inline Evaluation& WithEvaluationDataSourceId(const char* value) { SetEvaluationDataSourceId(value); return *this;}
 
+
     /**
      * <p>The location and name of the data in Amazon Simple Storage Server (Amazon S3)
      * that is used in the evaluation.</p>
@@ -203,6 +207,7 @@ namespace Model
      * that is used in the evaluation.</p>
      */
     inline Evaluation& WithInputDataLocationS3(const char* value) { SetInputDataLocationS3(value); return *this;}
+
 
     /**
      * <p>The AWS user account that invoked the evaluation. The account type can be
@@ -253,6 +258,7 @@ namespace Model
      */
     inline Evaluation& WithCreatedByIamUser(const char* value) { SetCreatedByIamUser(value); return *this;}
 
+
     /**
      * <p>The time that the <code>Evaluation</code> was created. The time is expressed
      * in epoch time.</p>
@@ -283,6 +289,7 @@ namespace Model
      */
     inline Evaluation& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
     /**
      * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
      * expressed in epoch time.</p>
@@ -312,6 +319,7 @@ namespace Model
      * expressed in epoch time.</p>
      */
     inline Evaluation& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+
 
     /**
      * <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
@@ -347,6 +355,7 @@ namespace Model
      * <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
      */
     inline Evaluation& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The status of the evaluation. This element can have one of the following
@@ -407,6 +416,7 @@ namespace Model
      * <code>Evaluation</code> is marked as deleted. It is not usable.</li> </ul>
      */
     inline Evaluation& WithStatus(EntityStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Measurements of how well the <code>MLModel</code> performed, using
@@ -493,6 +503,7 @@ namespace Model
      */
     inline Evaluation& WithPerformanceMetrics(PerformanceMetrics&& value) { SetPerformanceMetrics(std::move(value)); return *this;}
 
+
     /**
      * <p>A description of the most recent details about evaluating the
      * <code>MLModel</code>.</p>
@@ -535,6 +546,7 @@ namespace Model
      */
     inline Evaluation& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     
     inline long long GetComputeTime() const{ return m_computeTime; }
 
@@ -543,6 +555,7 @@ namespace Model
 
     
     inline Evaluation& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
 
     
     inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
@@ -558,6 +571,7 @@ namespace Model
 
     
     inline Evaluation& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(std::move(value)); return *this;}
+
 
     
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
@@ -575,32 +589,46 @@ namespace Model
     inline Evaluation& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_evaluationId;
     bool m_evaluationIdHasBeenSet;
+
     Aws::String m_mLModelId;
     bool m_mLModelIdHasBeenSet;
+
     Aws::String m_evaluationDataSourceId;
     bool m_evaluationDataSourceIdHasBeenSet;
+
     Aws::String m_inputDataLocationS3;
     bool m_inputDataLocationS3HasBeenSet;
+
     Aws::String m_createdByIamUser;
     bool m_createdByIamUserHasBeenSet;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     EntityStatus m_status;
     bool m_statusHasBeenSet;
+
     PerformanceMetrics m_performanceMetrics;
     bool m_performanceMetricsHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     long long m_computeTime;
     bool m_computeTimeHasBeenSet;
+
     Aws::Utils::DateTime m_finishedAt;
     bool m_finishedAtHasBeenSet;
+
     Aws::Utils::DateTime m_startedAt;
     bool m_startedAtHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     EventTypeFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of event type codes.</p>
      */
@@ -87,6 +88,7 @@ namespace Model
      * <p>A list of event type codes.</p>
      */
     inline EventTypeFilter& AddEventTypeCodes(const char* value) { m_eventTypeCodesHasBeenSet = true; m_eventTypeCodes.push_back(value); return *this; }
+
 
     /**
      * <p>The AWS services associated with the event. For example, <code>EC2</code>,
@@ -136,6 +138,7 @@ namespace Model
      */
     inline EventTypeFilter& AddServices(const char* value) { m_servicesHasBeenSet = true; m_services.push_back(value); return *this; }
 
+
     /**
      * <p>A list of event type category codes (<code>issue</code>,
      * <code>scheduledChange</code>, or <code>accountNotification</code>).</p>
@@ -179,10 +182,13 @@ namespace Model
     inline EventTypeFilter& AddEventTypeCategories(EventTypeCategory&& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_eventTypeCodes;
     bool m_eventTypeCodesHasBeenSet;
+
     Aws::Vector<Aws::String> m_services;
     bool m_servicesHasBeenSet;
+
     Aws::Vector<EventTypeCategory> m_eventTypeCategories;
     bool m_eventTypeCategoriesHasBeenSet;
   };

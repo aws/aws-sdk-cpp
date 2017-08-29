@@ -45,6 +45,7 @@ namespace Model
     GatewayInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier assigned to your gateway during activation. This ID
      * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
@@ -94,6 +95,7 @@ namespace Model
      */
     inline GatewayInfo& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
      * operation to return a list of gateways for your account and region.</p>
@@ -136,6 +138,7 @@ namespace Model
      */
     inline GatewayInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     /**
      * <p>The type of the gateway.</p>
      */
@@ -171,6 +174,7 @@ namespace Model
      */
     inline GatewayInfo& WithGatewayType(const char* value) { SetGatewayType(value); return *this;}
 
+
     /**
      * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
      */
@@ -205,6 +209,7 @@ namespace Model
      * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
      */
     inline GatewayInfo& WithGatewayOperationalState(const char* value) { SetGatewayOperationalState(value); return *this;}
+
 
     /**
      * <p>The name of the gateway.</p>
@@ -242,14 +247,19 @@ namespace Model
     inline GatewayInfo& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
 
   private:
+
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet;
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     Aws::String m_gatewayType;
     bool m_gatewayTypeHasBeenSet;
+
     Aws::String m_gatewayOperationalState;
     bool m_gatewayOperationalStateHasBeenSet;
+
     Aws::String m_gatewayName;
     bool m_gatewayNameHasBeenSet;
   };

@@ -30,12 +30,12 @@ DisassociateWebACLResult::DisassociateWebACLResult()
 {
 }
 
-DisassociateWebACLResult::DisassociateWebACLResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateWebACLResult::DisassociateWebACLResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateWebACLResult& DisassociateWebACLResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateWebACLResult& DisassociateWebACLResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

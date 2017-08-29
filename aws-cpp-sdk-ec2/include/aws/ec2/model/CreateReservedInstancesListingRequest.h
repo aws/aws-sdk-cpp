@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
      * listings. This helps avoid duplicate listings. For more information, see <a
@@ -100,6 +101,7 @@ namespace Model
      */
     inline CreateReservedInstancesListingRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The number of instances that are a part of a Reserved Instance account to be
      * listed in the Reserved Instance Marketplace. This number should be less than or
@@ -123,6 +125,7 @@ namespace Model
      * in this call.</p>
      */
     inline CreateReservedInstancesListingRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+
 
     /**
      * <p>A list specifying the price of the Standard Reserved Instance for each month
@@ -166,6 +169,7 @@ namespace Model
      */
     inline CreateReservedInstancesListingRequest& AddPriceSchedules(PriceScheduleSpecification&& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The ID of the active Standard Reserved Instance.</p>
      */
@@ -202,12 +206,16 @@ namespace Model
     inline CreateReservedInstancesListingRequest& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
 
   private:
+
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
     Aws::Vector<PriceScheduleSpecification> m_priceSchedules;
     bool m_priceSchedulesHasBeenSet;
+
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet;
   };

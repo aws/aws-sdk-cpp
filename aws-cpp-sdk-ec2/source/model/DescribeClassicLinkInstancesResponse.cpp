@@ -31,12 +31,12 @@ DescribeClassicLinkInstancesResponse::DescribeClassicLinkInstancesResponse()
 {
 }
 
-DescribeClassicLinkInstancesResponse::DescribeClassicLinkInstancesResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeClassicLinkInstancesResponse::DescribeClassicLinkInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeClassicLinkInstancesResponse& DescribeClassicLinkInstancesResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeClassicLinkInstancesResponse& DescribeClassicLinkInstancesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

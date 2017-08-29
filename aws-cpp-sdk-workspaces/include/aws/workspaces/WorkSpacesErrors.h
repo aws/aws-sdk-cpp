@@ -55,7 +55,7 @@ enum class WorkSpacesErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_PARAMETER_VALUES= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_PARAMETER_VALUES= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_RESOURCE_STATE,
   OPERATION_IN_PROGRESS,
   RESOURCE_LIMIT_EXCEEDED,
@@ -64,7 +64,7 @@ enum class WorkSpacesErrors
 };
 namespace WorkSpacesErrorMapper
 {
-  AWS_WORKSPACES_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_WORKSPACES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace WorkSpaces

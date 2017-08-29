@@ -48,6 +48,7 @@ namespace Model
     DeleteRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A map of attribute name to attribute values, representing the primary key of
      * the item to delete. All of the table's primary key attributes must be specified,
@@ -126,6 +127,7 @@ namespace Model
     inline DeleteRequest& AddKey(const char* key, const AttributeValue& value) { m_keyHasBeenSet = true; m_key.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, AttributeValue> m_key;
     bool m_keyHasBeenSet;
   };

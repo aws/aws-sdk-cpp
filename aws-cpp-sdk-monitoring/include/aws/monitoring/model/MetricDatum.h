@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the metric.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      * <p>The name of the metric.</p>
      */
     inline MetricDatum& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+
 
     /**
      * <p>The dimensions associated with the metric.</p>
@@ -124,6 +126,7 @@ namespace Model
      */
     inline MetricDatum& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The time the metric data was received, expressed as the number of
      * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
@@ -154,6 +157,7 @@ namespace Model
      */
     inline MetricDatum& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The value for the metric.</p> <p>Although the parameter accepts numbers of
      * type Double, CloudWatch rejects values that are either too small or too large.
@@ -181,6 +185,7 @@ namespace Model
      */
     inline MetricDatum& WithValue(double value) { SetValue(value); return *this;}
 
+
     /**
      * <p>The statistical values for the metric.</p>
      */
@@ -206,6 +211,7 @@ namespace Model
      */
     inline MetricDatum& WithStatisticValues(StatisticSet&& value) { SetStatisticValues(std::move(value)); return *this;}
 
+
     /**
      * <p>The unit of the metric.</p>
      */
@@ -230,6 +236,7 @@ namespace Model
      * <p>The unit of the metric.</p>
      */
     inline MetricDatum& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
+
 
     /**
      * <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a
@@ -271,18 +278,25 @@ namespace Model
     inline MetricDatum& WithStorageResolution(int value) { SetStorageResolution(value); return *this;}
 
   private:
+
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;
+
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
     double m_value;
     bool m_valueHasBeenSet;
+
     StatisticSet m_statisticValues;
     bool m_statisticValuesHasBeenSet;
+
     StandardUnit m_unit;
     bool m_unitHasBeenSet;
+
     int m_storageResolution;
     bool m_storageResolutionHasBeenSet;
   };

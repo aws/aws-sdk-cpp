@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DescribeProjectResult();
-    DescribeProjectResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeProjectResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The display name for the project.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline DescribeProjectResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The ID of the project.</p>
      */
@@ -111,6 +113,7 @@ namespace Model
      * <p>The ID of the project.</p>
      */
     inline DescribeProjectResult& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) for the project.</p>
@@ -147,6 +150,7 @@ namespace Model
      */
     inline DescribeProjectResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>The description of the project, if any.</p>
      */
@@ -181,6 +185,7 @@ namespace Model
      * <p>The description of the project, if any.</p>
      */
     inline DescribeProjectResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
@@ -224,6 +229,7 @@ namespace Model
      */
     inline DescribeProjectResult& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
     /**
      * <p>The date and time the project was created, in timestamp format.</p>
      */
@@ -248,6 +254,7 @@ namespace Model
      * <p>The date and time the project was created, in timestamp format.</p>
      */
     inline DescribeProjectResult& WithCreatedTimeStamp(Aws::Utils::DateTime&& value) { SetCreatedTimeStamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the primary stack in AWS CloudFormation used to generate resources
@@ -291,6 +298,7 @@ namespace Model
      */
     inline DescribeProjectResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The ID for the AWS CodeStar project template used to create the project.</p>
      */
@@ -327,13 +335,21 @@ namespace Model
     inline DescribeProjectResult& WithProjectTemplateId(const char* value) { SetProjectTemplateId(value); return *this;}
 
   private:
+
     Aws::String m_name;
+
     Aws::String m_id;
+
     Aws::String m_arn;
+
     Aws::String m_description;
+
     Aws::String m_clientRequestToken;
+
     Aws::Utils::DateTime m_createdTimeStamp;
+
     Aws::String m_stackId;
+
     Aws::String m_projectTemplateId;
   };
 

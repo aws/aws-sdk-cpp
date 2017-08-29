@@ -30,12 +30,12 @@ GetHITResult::GetHITResult()
 {
 }
 
-GetHITResult::GetHITResult(const AmazonWebServiceResult<JsonValue>& result)
+GetHITResult::GetHITResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetHITResult& GetHITResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetHITResult& GetHITResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("HIT"))

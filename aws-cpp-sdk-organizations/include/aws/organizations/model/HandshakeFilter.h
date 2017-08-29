@@ -47,6 +47,7 @@ namespace Model
     HandshakeFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the type of handshake action.</p> <p>If you specify
      * <code>ActionType</code>, you cannot also specify
@@ -81,6 +82,7 @@ namespace Model
      * <code>ParentHandshakeId</code>.</p>
      */
     inline HandshakeFilter& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies the parent handshake. Only used for handshake types that are a
@@ -146,8 +148,10 @@ namespace Model
     inline HandshakeFilter& WithParentHandshakeId(const char* value) { SetParentHandshakeId(value); return *this;}
 
   private:
+
     ActionType m_actionType;
     bool m_actionTypeHasBeenSet;
+
     Aws::String m_parentHandshakeId;
     bool m_parentHandshakeIdHasBeenSet;
   };

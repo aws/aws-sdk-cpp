@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -65,6 +66,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The AWS account ID of the owner of the peer VPC.</p> <p>Default: Your AWS
@@ -108,6 +110,7 @@ namespace Model
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const char* value) { SetPeerOwnerId(value); return *this;}
 
+
     /**
      * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The ID of the VPC with which you are creating the VPC peering connection.</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
+
 
     /**
      * <p>The ID of the requester VPC.</p>
@@ -179,12 +183,16 @@ namespace Model
     inline CreateVpcPeeringConnectionRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_peerOwnerId;
     bool m_peerOwnerIdHasBeenSet;
+
     Aws::String m_peerVpcId;
     bool m_peerVpcIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

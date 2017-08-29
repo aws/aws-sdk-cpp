@@ -49,6 +49,7 @@ namespace Model
     ComplianceExecutionSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The time the execution ran as a datetime object that is saved in the
      * following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
@@ -78,6 +79,7 @@ namespace Model
      * following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
      */
     inline ComplianceExecutionSummary& WithExecutionTime(Aws::Utils::DateTime&& value) { SetExecutionTime(std::move(value)); return *this;}
+
 
     /**
      * <p>An ID created by the system when <code>PutComplianceItems</code> was called.
@@ -128,6 +130,7 @@ namespace Model
      */
     inline ComplianceExecutionSummary& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
 
+
     /**
      * <p>The type of execution. For example, <code>Command</code> is a valid execution
      * type.</p>
@@ -171,10 +174,13 @@ namespace Model
     inline ComplianceExecutionSummary& WithExecutionType(const char* value) { SetExecutionType(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_executionTime;
     bool m_executionTimeHasBeenSet;
+
     Aws::String m_executionId;
     bool m_executionIdHasBeenSet;
+
     Aws::String m_executionType;
     bool m_executionTypeHasBeenSet;
   };

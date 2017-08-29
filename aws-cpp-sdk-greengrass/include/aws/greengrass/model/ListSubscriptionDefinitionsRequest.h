@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * Specifies the maximum number of list results to be returned in this page
      */
@@ -74,6 +75,7 @@ namespace Model
      * Specifies the maximum number of list results to be returned in this page
      */
     inline ListSubscriptionDefinitionsRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
+
 
     /**
      * Specifies the pagination token used when iterating through a paginated request
@@ -111,8 +113,10 @@ namespace Model
     inline ListSubscriptionDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

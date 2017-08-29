@@ -30,12 +30,12 @@ UpdateClusterResult::UpdateClusterResult()
 {
 }
 
-UpdateClusterResult::UpdateClusterResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateClusterResult::UpdateClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateClusterResult& UpdateClusterResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateClusterResult& UpdateClusterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Cluster"))

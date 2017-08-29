@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The names of the domains you want to include in the response.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
     inline DescribeDomainsRequest& AddDomainNames(const char* value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_domainNames;
     bool m_domainNamesHasBeenSet;
   };

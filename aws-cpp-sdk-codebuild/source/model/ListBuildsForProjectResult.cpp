@@ -30,12 +30,12 @@ ListBuildsForProjectResult::ListBuildsForProjectResult()
 {
 }
 
-ListBuildsForProjectResult::ListBuildsForProjectResult(const AmazonWebServiceResult<JsonValue>& result)
+ListBuildsForProjectResult::ListBuildsForProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListBuildsForProjectResult& ListBuildsForProjectResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListBuildsForProjectResult& ListBuildsForProjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ids"))

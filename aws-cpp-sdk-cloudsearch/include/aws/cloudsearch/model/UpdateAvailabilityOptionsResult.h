@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     UpdateAvailabilityOptionsResult();
-    UpdateAvailabilityOptionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateAvailabilityOptionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateAvailabilityOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UpdateAvailabilityOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The newly-configured availability options. Indicates whether Multi-AZ is
@@ -78,6 +79,7 @@ namespace Model
      */
     inline UpdateAvailabilityOptionsResult& WithAvailabilityOptions(AvailabilityOptionsStatus&& value) { SetAvailabilityOptions(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -94,7 +96,9 @@ namespace Model
     inline UpdateAvailabilityOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     AvailabilityOptionsStatus m_availabilityOptions;
+
     ResponseMetadata m_responseMetadata;
   };
 

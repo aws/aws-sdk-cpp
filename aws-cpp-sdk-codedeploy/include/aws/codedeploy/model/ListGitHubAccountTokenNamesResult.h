@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     ListGitHubAccountTokenNamesResult();
-    ListGitHubAccountTokenNamesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListGitHubAccountTokenNamesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListGitHubAccountTokenNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListGitHubAccountTokenNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of names of connections to GitHub accounts.</p>
@@ -87,6 +88,7 @@ namespace Model
      * <p>A list of names of connections to GitHub accounts.</p>
      */
     inline ListGitHubAccountTokenNamesResult& AddTokenNameList(const char* value) { m_tokenNameList.push_back(value); return *this; }
+
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
@@ -138,7 +140,9 @@ namespace Model
     inline ListGitHubAccountTokenNamesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_tokenNameList;
+
     Aws::String m_nextToken;
   };
 

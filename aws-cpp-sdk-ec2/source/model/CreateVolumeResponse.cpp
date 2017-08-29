@@ -36,7 +36,7 @@ CreateVolumeResponse::CreateVolumeResponse() :
 {
 }
 
-CreateVolumeResponse::CreateVolumeResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+CreateVolumeResponse::CreateVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_encrypted(false),
     m_size(0),
     m_state(VolumeState::NOT_SET),
@@ -46,7 +46,7 @@ CreateVolumeResponse::CreateVolumeResponse(const AmazonWebServiceResult<XmlDocum
   *this = result;
 }
 
-CreateVolumeResponse& CreateVolumeResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

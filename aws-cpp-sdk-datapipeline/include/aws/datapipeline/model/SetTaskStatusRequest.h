@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the task assigned to the task runner. This value is provided in the
      * response for <a>PollForTask</a>.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline SetTaskStatusRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
 
+
     /**
      * <p>If <code>FINISHED</code>, the task successfully completed. If
      * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
@@ -111,6 +113,7 @@ namespace Model
      * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
      */
     inline SetTaskStatusRequest& WithTaskStatus(TaskStatus&& value) { SetTaskStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>If an error occurred during the task, this value specifies the error code.
@@ -168,6 +171,7 @@ namespace Model
      */
     inline SetTaskStatusRequest& WithErrorId(const char* value) { SetErrorId(value); return *this;}
 
+
     /**
      * <p>If an error occurred during the task, this value specifies a text description
      * of the error. This value is set on the physical attempt object. It is used to
@@ -223,6 +227,7 @@ namespace Model
      * value.</p>
      */
     inline SetTaskStatusRequest& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+
 
     /**
      * <p>If an error occurred during the task, this value specifies the stack trace
@@ -281,14 +286,19 @@ namespace Model
     inline SetTaskStatusRequest& WithErrorStackTrace(const char* value) { SetErrorStackTrace(value); return *this;}
 
   private:
+
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet;
+
     TaskStatus m_taskStatus;
     bool m_taskStatusHasBeenSet;
+
     Aws::String m_errorId;
     bool m_errorIdHasBeenSet;
+
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
+
     Aws::String m_errorStackTrace;
     bool m_errorStackTraceHasBeenSet;
   };

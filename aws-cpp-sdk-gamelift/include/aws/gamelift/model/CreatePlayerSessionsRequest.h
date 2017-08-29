@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for the game session to add players to.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>Unique identifier for the game session to add players to.</p>
      */
     inline CreatePlayerSessionsRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
+
 
     /**
      * <p>List of unique identifiers for the players to be added.</p>
@@ -115,6 +117,7 @@ namespace Model
      * <p>List of unique identifiers for the players to be added.</p>
      */
     inline CreatePlayerSessionsRequest& AddPlayerIds(const char* value) { m_playerIdsHasBeenSet = true; m_playerIds.push_back(value); return *this; }
+
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of
@@ -225,10 +228,13 @@ namespace Model
     inline CreatePlayerSessionsRequest& AddPlayerDataMap(const char* key, const char* value) { m_playerDataMapHasBeenSet = true; m_playerDataMap.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet;
+
     Aws::Vector<Aws::String> m_playerIds;
     bool m_playerIdsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_playerDataMap;
     bool m_playerDataMapHasBeenSet;
   };

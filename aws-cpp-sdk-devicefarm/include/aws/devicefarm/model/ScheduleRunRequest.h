@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ARN of the project for the run to be scheduled.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The ARN of the project for the run to be scheduled.</p>
      */
     inline ScheduleRunRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+
 
     /**
      * <p>The ARN of the app to schedule a run.</p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline ScheduleRunRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
 
+
     /**
      * <p>The ARN of the device pool for the run to be scheduled.</p>
      */
@@ -147,6 +150,7 @@ namespace Model
      * <p>The ARN of the device pool for the run to be scheduled.</p>
      */
     inline ScheduleRunRequest& WithDevicePoolArn(const char* value) { SetDevicePoolArn(value); return *this;}
+
 
     /**
      * <p>The name for the run to be scheduled.</p>
@@ -183,6 +187,7 @@ namespace Model
      */
     inline ScheduleRunRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Information about the test for the run to be scheduled.</p>
      */
@@ -208,6 +213,7 @@ namespace Model
      */
     inline ScheduleRunRequest& WithTest(ScheduleRunTest&& value) { SetTest(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the settings for the run to be scheduled.</p>
      */
@@ -232,6 +238,7 @@ namespace Model
      * <p>Information about the settings for the run to be scheduled.</p>
      */
     inline ScheduleRunRequest& WithConfiguration(ScheduleRunConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>Specifies configuration information about a test run, such as the execution
@@ -264,18 +271,25 @@ namespace Model
     inline ScheduleRunRequest& WithExecutionConfiguration(ExecutionConfiguration&& value) { SetExecutionConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_projectArn;
     bool m_projectArnHasBeenSet;
+
     Aws::String m_appArn;
     bool m_appArnHasBeenSet;
+
     Aws::String m_devicePoolArn;
     bool m_devicePoolArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ScheduleRunTest m_test;
     bool m_testHasBeenSet;
+
     ScheduleRunConfiguration m_configuration;
     bool m_configurationHasBeenSet;
+
     ExecutionConfiguration m_executionConfiguration;
     bool m_executionConfigurationHasBeenSet;
   };

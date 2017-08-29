@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetDomainDetailResult();
-    GetDomainDetailResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDomainDetailResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDomainDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDomainDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of a domain.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline GetDomainDetailResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>The name of the domain.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      */
     inline GetDomainDetailResult& AddNameservers(Nameserver&& value) { m_nameservers.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Specifies whether the domain registration is set to renew automatically.</p>
      */
@@ -135,6 +138,7 @@ namespace Model
      * <p>Specifies whether the domain registration is set to renew automatically.</p>
      */
     inline GetDomainDetailResult& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}
+
 
     /**
      * <p>Provides details about the domain administrative contact.</p>
@@ -161,6 +165,7 @@ namespace Model
      */
     inline GetDomainDetailResult& WithAdminContact(ContactDetail&& value) { SetAdminContact(std::move(value)); return *this;}
 
+
     /**
      * <p>Provides details about the domain registrant.</p>
      */
@@ -185,6 +190,7 @@ namespace Model
      * <p>Provides details about the domain registrant.</p>
      */
     inline GetDomainDetailResult& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(std::move(value)); return *this;}
+
 
     /**
      * <p>Provides details about the domain technical contact.</p>
@@ -211,6 +217,7 @@ namespace Model
      */
     inline GetDomainDetailResult& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies whether contact information for the admin contact is concealed from
      * WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries will
@@ -234,6 +241,7 @@ namespace Model
      * contact information that you enter.</p>
      */
     inline GetDomainDetailResult& WithAdminPrivacy(bool value) { SetAdminPrivacy(value); return *this;}
+
 
     /**
      * <p>Specifies whether contact information for the registrant contact is concealed
@@ -259,6 +267,7 @@ namespace Model
      */
     inline GetDomainDetailResult& WithRegistrantPrivacy(bool value) { SetRegistrantPrivacy(value); return *this;}
 
+
     /**
      * <p>Specifies whether contact information for the tech contact is concealed from
      * WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries will
@@ -282,6 +291,7 @@ namespace Model
      * contact information that you enter.</p>
      */
     inline GetDomainDetailResult& WithTechPrivacy(bool value) { SetTechPrivacy(value); return *this;}
+
 
     /**
      * <p>Name of the registrar of the domain as identified in the registry. Amazon
@@ -332,6 +342,7 @@ namespace Model
      */
     inline GetDomainDetailResult& WithRegistrarName(const char* value) { SetRegistrarName(value); return *this;}
 
+
     /**
      * <p>The fully qualified name of the WHOIS server that can answer the WHOIS query
      * for the domain.</p>
@@ -374,6 +385,7 @@ namespace Model
      */
     inline GetDomainDetailResult& WithWhoIsServer(const char* value) { SetWhoIsServer(value); return *this;}
 
+
     /**
      * <p>Web address of the registrar.</p>
      */
@@ -408,6 +420,7 @@ namespace Model
      * <p>Web address of the registrar.</p>
      */
     inline GetDomainDetailResult& WithRegistrarUrl(const char* value) { SetRegistrarUrl(value); return *this;}
+
 
     /**
      * <p>Email address to contact to report incorrect contact information for a
@@ -465,6 +478,7 @@ namespace Model
      */
     inline GetDomainDetailResult& WithAbuseContactEmail(const char* value) { SetAbuseContactEmail(value); return *this;}
 
+
     /**
      * <p>Phone number for reporting abuse.</p>
      */
@@ -499,6 +513,7 @@ namespace Model
      * <p>Phone number for reporting abuse.</p>
      */
     inline GetDomainDetailResult& WithAbuseContactPhone(const char* value) { SetAbuseContactPhone(value); return *this;}
+
 
     /**
      * <p>Reserved for future use.</p>
@@ -535,6 +550,7 @@ namespace Model
      */
     inline GetDomainDetailResult& WithRegistryDomainId(const char* value) { SetRegistryDomainId(value); return *this;}
 
+
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
      * query. The date format is Unix time.</p>
@@ -564,6 +580,7 @@ namespace Model
      * query. The date format is Unix time.</p>
      */
     inline GetDomainDetailResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
@@ -595,6 +612,7 @@ namespace Model
      */
     inline GetDomainDetailResult& WithUpdatedDate(Aws::Utils::DateTime&& value) { SetUpdatedDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date when the registration for the domain is set to expire. The date
      * format is Unix time.</p>
@@ -624,6 +642,7 @@ namespace Model
      * format is Unix time.</p>
      */
     inline GetDomainDetailResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Reseller of the domain. Domains registered or transferred using Amazon Route
@@ -667,6 +686,7 @@ namespace Model
      */
     inline GetDomainDetailResult& WithReseller(const char* value) { SetReseller(value); return *this;}
 
+
     /**
      * <p>Reserved for future use.</p>
      */
@@ -701,6 +721,7 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline GetDomainDetailResult& WithDnsSec(const char* value) { SetDnsSec(value); return *this;}
+
 
     /**
      * <p>An array of domain name status codes, also known as Extensible Provisioning
@@ -823,26 +844,47 @@ namespace Model
     inline GetDomainDetailResult& AddStatusList(const char* value) { m_statusList.push_back(value); return *this; }
 
   private:
+
     Aws::String m_domainName;
+
     Aws::Vector<Nameserver> m_nameservers;
+
     bool m_autoRenew;
+
     ContactDetail m_adminContact;
+
     ContactDetail m_registrantContact;
+
     ContactDetail m_techContact;
+
     bool m_adminPrivacy;
+
     bool m_registrantPrivacy;
+
     bool m_techPrivacy;
+
     Aws::String m_registrarName;
+
     Aws::String m_whoIsServer;
+
     Aws::String m_registrarUrl;
+
     Aws::String m_abuseContactEmail;
+
     Aws::String m_abuseContactPhone;
+
     Aws::String m_registryDomainId;
+
     Aws::Utils::DateTime m_creationDate;
+
     Aws::Utils::DateTime m_updatedDate;
+
     Aws::Utils::DateTime m_expirationDate;
+
     Aws::String m_reseller;
+
     Aws::String m_dnsSec;
+
     Aws::Vector<Aws::String> m_statusList;
   };
 

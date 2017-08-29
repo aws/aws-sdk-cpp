@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetAccountBalanceResult();
-    GetAccountBalanceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAccountBalanceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAccountBalanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAccountBalanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetAvailableBalance() const{ return m_availableBalance; }
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline GetAccountBalanceResult& WithAvailableBalance(const char* value) { SetAvailableBalance(value); return *this;}
+
 
     
     inline const Aws::String& GetOnHoldBalance() const{ return m_onHoldBalance; }
@@ -84,7 +86,9 @@ namespace Model
     inline GetAccountBalanceResult& WithOnHoldBalance(const char* value) { SetOnHoldBalance(value); return *this;}
 
   private:
+
     Aws::String m_availableBalance;
+
     Aws::String m_onHoldBalance;
   };
 

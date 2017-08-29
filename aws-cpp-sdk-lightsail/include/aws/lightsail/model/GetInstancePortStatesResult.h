@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetInstancePortStatesResult();
-    GetInstancePortStatesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstancePortStatesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstancePortStatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstancePortStatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the port states resulting from your request.</p>
@@ -78,6 +79,7 @@ namespace Model
     inline GetInstancePortStatesResult& AddPortStates(InstancePortState&& value) { m_portStates.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<InstancePortState> m_portStates;
   };
 

@@ -46,6 +46,7 @@ namespace Model
     IdentityUsage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
@@ -87,6 +88,7 @@ namespace Model
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
     inline IdentityUsage& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -130,6 +132,7 @@ namespace Model
      */
     inline IdentityUsage& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * Date on which the identity was last modified.
      */
@@ -155,6 +158,7 @@ namespace Model
      */
     inline IdentityUsage& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
+
     /**
      * Number of datasets for the identity.
      */
@@ -169,6 +173,7 @@ namespace Model
      * Number of datasets for the identity.
      */
     inline IdentityUsage& WithDatasetCount(int value) { SetDatasetCount(value); return *this;}
+
 
     /**
      * Total data storage for this identity.
@@ -186,14 +191,19 @@ namespace Model
     inline IdentityUsage& WithDataStorage(long long value) { SetDataStorage(value); return *this;}
 
   private:
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
     int m_datasetCount;
     bool m_datasetCountHasBeenSet;
+
     long long m_dataStorage;
     bool m_dataStorageHasBeenSet;
   };

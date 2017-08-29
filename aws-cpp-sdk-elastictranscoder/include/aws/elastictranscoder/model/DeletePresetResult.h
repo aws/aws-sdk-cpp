@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     DeletePresetResult();
-    DeletePresetResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePresetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeletePresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeletePresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

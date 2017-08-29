@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     GetBuiltinIntentResult();
-    GetBuiltinIntentResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBuiltinIntentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBuiltinIntentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBuiltinIntentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique identifier for a built-in intent.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline GetBuiltinIntentResult& WithSignature(const char* value) { SetSignature(value); return *this;}
 
+
     /**
      * <p>A list of locales that the intent supports.</p>
      */
@@ -113,6 +115,7 @@ namespace Model
      * <p>A list of locales that the intent supports.</p>
      */
     inline GetBuiltinIntentResult& AddSupportedLocales(Locale&& value) { m_supportedLocales.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An array of <code>BuiltinIntentSlot</code> objects, one entry for each slot
@@ -157,8 +160,11 @@ namespace Model
     inline GetBuiltinIntentResult& AddSlots(BuiltinIntentSlot&& value) { m_slots.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_signature;
+
     Aws::Vector<Locale> m_supportedLocales;
+
     Aws::Vector<BuiltinIntentSlot> m_slots;
   };
 

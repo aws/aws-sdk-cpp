@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The AMI attribute.</p> <p> <b>Note</b>: Depending on your account privileges,
      * the <code>blockDeviceMapping</code> attribute may return a
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DescribeImageAttributeRequest& WithAttribute(ImageAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 
+
     /**
      * <p>The ID of the AMI.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      */
     inline DescribeImageAttributeRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -148,10 +151,13 @@ namespace Model
     inline DescribeImageAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     ImageAttributeName m_attribute;
     bool m_attributeHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

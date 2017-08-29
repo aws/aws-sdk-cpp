@@ -31,12 +31,12 @@ DescribeVpnGatewaysResponse::DescribeVpnGatewaysResponse()
 {
 }
 
-DescribeVpnGatewaysResponse::DescribeVpnGatewaysResponse(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeVpnGatewaysResponse::DescribeVpnGatewaysResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeVpnGatewaysResponse& DescribeVpnGatewaysResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeVpnGatewaysResponse& DescribeVpnGatewaysResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

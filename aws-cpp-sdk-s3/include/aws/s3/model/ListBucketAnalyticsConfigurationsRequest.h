@@ -40,6 +40,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * The name of the bucket from which analytics configurations are retrieved.
      */
@@ -74,6 +75,7 @@ namespace Model
      * The name of the bucket from which analytics configurations are retrieved.
      */
     inline ListBucketAnalyticsConfigurationsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * The ContinuationToken that represents a placeholder from where this request
@@ -118,8 +120,10 @@ namespace Model
     inline ListBucketAnalyticsConfigurationsRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_continuationToken;
     bool m_continuationTokenHasBeenSet;
   };

@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateFunctionDefinitionResult();
-    UpdateFunctionDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFunctionDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateFunctionDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateFunctionDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

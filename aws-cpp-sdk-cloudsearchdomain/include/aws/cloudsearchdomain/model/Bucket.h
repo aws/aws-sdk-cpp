@@ -45,6 +45,7 @@ namespace Model
     Bucket& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The facet value being counted.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline Bucket& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>The number of hits that contain the facet value in the specified facet
      * field.</p>
@@ -99,8 +101,10 @@ namespace Model
     inline Bucket& WithCount(long long value) { SetCount(value); return *this;}
 
   private:
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     long long m_count;
     bool m_countHasBeenSet;
   };

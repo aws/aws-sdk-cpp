@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The date when the event occurred.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The date when the event occurred.</p>
      */
     inline EventDescription& WithEventDate(Aws::Utils::DateTime&& value) { SetEventDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The event message.</p>
@@ -110,6 +112,7 @@ namespace Model
      */
     inline EventDescription& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The application associated with the event.</p>
      */
@@ -144,6 +147,7 @@ namespace Model
      * <p>The application associated with the event.</p>
      */
     inline EventDescription& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The release label for the application version associated with this event.</p>
@@ -180,6 +184,7 @@ namespace Model
      */
     inline EventDescription& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
 
+
     /**
      * <p>The name of the configuration associated with this event.</p>
      */
@@ -214,6 +219,7 @@ namespace Model
      * <p>The name of the configuration associated with this event.</p>
      */
     inline EventDescription& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+
 
     /**
      * <p>The name of the environment associated with this event.</p>
@@ -250,6 +256,7 @@ namespace Model
      */
     inline EventDescription& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
+
     /**
      * <p>The ARN of the platform.</p>
      */
@@ -284,6 +291,7 @@ namespace Model
      * <p>The ARN of the platform.</p>
      */
     inline EventDescription& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+
 
     /**
      * <p>The web service request ID for the activity of this event.</p>
@@ -320,6 +328,7 @@ namespace Model
      */
     inline EventDescription& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
+
     /**
      * <p>The severity level of this event.</p>
      */
@@ -346,22 +355,31 @@ namespace Model
     inline EventDescription& WithSeverity(EventSeverity&& value) { SetSeverity(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_eventDate;
     bool m_eventDateHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_versionLabel;
     bool m_versionLabelHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
+
     Aws::String m_platformArn;
     bool m_platformArnHasBeenSet;
+
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
+
     EventSeverity m_severity;
     bool m_severityHasBeenSet;
   };

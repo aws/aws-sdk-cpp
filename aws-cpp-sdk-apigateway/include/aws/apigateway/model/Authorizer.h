@@ -51,6 +51,7 @@ namespace Model
     Authorizer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The identifier for the authorizer resource.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The identifier for the authorizer resource.</p>
      */
     inline Authorizer& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>[Required] The name of the authorizer.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline Authorizer& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>[Required] The type of the authorizer. Currently, the valid type is
      * <code>TOKEN</code> for a Lambda function or <code>COGNITO_USER_POOLS</code> for
@@ -155,6 +158,7 @@ namespace Model
      * an Amazon Cognito user pool.</p>
      */
     inline Authorizer& WithType(AuthorizerType&& value) { SetType(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of the provider ARNs of the authorizer. For an <code>TOKEN</code>
@@ -236,6 +240,7 @@ namespace Model
      */
     inline Authorizer& AddProviderARNs(const char* value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
 
+
     /**
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
      * functional impact.</p>
@@ -277,6 +282,7 @@ namespace Model
      * functional impact.</p>
      */
     inline Authorizer& WithAuthType(const char* value) { SetAuthType(value); return *this;}
+
 
     /**
      * <p>[Required] Specifies the authorizer's Uniform Resource Identifier (URI). For
@@ -383,6 +389,7 @@ namespace Model
      */
     inline Authorizer& WithAuthorizerUri(const char* value) { SetAuthorizerUri(value); return *this;}
 
+
     /**
      * <p>Specifies the credentials required for the authorizer, if any. Two options
      * are available. To specify an IAM role for Amazon API Gateway to assume, use the
@@ -438,6 +445,7 @@ namespace Model
      * Lambda function, specify null.</p>
      */
     inline Authorizer& WithAuthorizerCredentials(const char* value) { SetAuthorizerCredentials(value); return *this;}
+
 
     /**
      * <p>[Required] The source of the identity in an incoming request. For a
@@ -516,6 +524,7 @@ namespace Model
      */
     inline Authorizer& WithIdentitySource(const char* value) { SetIdentitySource(value); return *this;}
 
+
     /**
      * <p>A validation expression for the incoming identity. For <code>TOKEN</code>
      * authorizers, this value should be a regular expression. The incoming token from
@@ -579,6 +588,7 @@ namespace Model
      */
     inline Authorizer& WithIdentityValidationExpression(const char* value) { SetIdentityValidationExpression(value); return *this;}
 
+
     /**
      * <p>The TTL in seconds of cached authorizer results. If greater than 0, API
      * Gateway will cache authorizer responses. If this field is not set, the default
@@ -601,24 +611,34 @@ namespace Model
     inline Authorizer& WithAuthorizerResultTtlInSeconds(int value) { SetAuthorizerResultTtlInSeconds(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     AuthorizerType m_type;
     bool m_typeHasBeenSet;
+
     Aws::Vector<Aws::String> m_providerARNs;
     bool m_providerARNsHasBeenSet;
+
     Aws::String m_authType;
     bool m_authTypeHasBeenSet;
+
     Aws::String m_authorizerUri;
     bool m_authorizerUriHasBeenSet;
+
     Aws::String m_authorizerCredentials;
     bool m_authorizerCredentialsHasBeenSet;
+
     Aws::String m_identitySource;
     bool m_identitySourceHasBeenSet;
+
     Aws::String m_identityValidationExpression;
     bool m_identityValidationExpressionHasBeenSet;
+
     int m_authorizerResultTtlInSeconds;
     bool m_authorizerResultTtlInSecondsHasBeenSet;
   };

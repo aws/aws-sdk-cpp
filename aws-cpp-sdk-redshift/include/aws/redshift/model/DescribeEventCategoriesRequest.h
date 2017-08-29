@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The source type, such as cluster or parameter group, to which the described
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeEventCategoriesRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 
   private:
+
     Aws::String m_sourceType;
     bool m_sourceTypeHasBeenSet;
   };

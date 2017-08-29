@@ -41,6 +41,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Name of the application.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      * <p>Name of the application.</p>
      */
     inline StartApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>Identifies the specific input, by ID, that the application starts consuming.
@@ -133,8 +135,10 @@ namespace Model
     inline StartApplicationRequest& AddInputConfigurations(InputConfiguration&& value) { m_inputConfigurationsHasBeenSet = true; m_inputConfigurations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::Vector<InputConfiguration> m_inputConfigurations;
     bool m_inputConfigurationsHasBeenSet;
   };

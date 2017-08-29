@@ -53,6 +53,7 @@ namespace Model
     JobData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Represents information about an action type.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>Represents information about an action type.</p>
      */
     inline JobData& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(std::move(value)); return *this;}
+
 
     /**
      * <p>Represents information about an action configuration.</p>
@@ -103,6 +105,7 @@ namespace Model
      */
     inline JobData& WithActionConfiguration(ActionConfiguration&& value) { SetActionConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>Represents information about a pipeline to a job worker.</p>
      */
@@ -127,6 +130,7 @@ namespace Model
      * <p>Represents information about a pipeline to a job worker.</p>
      */
     inline JobData& WithPipelineContext(PipelineContext&& value) { SetPipelineContext(std::move(value)); return *this;}
+
 
     /**
      * <p>The artifact supplied to the job.</p>
@@ -163,6 +167,7 @@ namespace Model
      */
     inline JobData& AddInputArtifacts(Artifact&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The output of the job.</p>
      */
@@ -197,6 +202,7 @@ namespace Model
      * <p>The output of the job.</p>
      */
     inline JobData& AddOutputArtifacts(Artifact&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Represents an AWS session credentials object. These credentials are temporary
@@ -237,6 +243,7 @@ namespace Model
      * artifact for the pipeline in AWS CodePipeline.</p>
      */
     inline JobData& WithArtifactCredentials(AWSSessionCredentials&& value) { SetArtifactCredentials(std::move(value)); return *this;}
+
 
     /**
      * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
@@ -280,6 +287,7 @@ namespace Model
      */
     inline JobData& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
+
     /**
      * <p>Represents information about the key used to encrypt data in the artifact
      * store, such as an AWS Key Management Service (AWS KMS) key. </p>
@@ -311,20 +319,28 @@ namespace Model
     inline JobData& WithEncryptionKey(EncryptionKey&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
   private:
+
     ActionTypeId m_actionTypeId;
     bool m_actionTypeIdHasBeenSet;
+
     ActionConfiguration m_actionConfiguration;
     bool m_actionConfigurationHasBeenSet;
+
     PipelineContext m_pipelineContext;
     bool m_pipelineContextHasBeenSet;
+
     Aws::Vector<Artifact> m_inputArtifacts;
     bool m_inputArtifactsHasBeenSet;
+
     Aws::Vector<Artifact> m_outputArtifacts;
     bool m_outputArtifactsHasBeenSet;
+
     AWSSessionCredentials m_artifactCredentials;
     bool m_artifactCredentialsHasBeenSet;
+
     Aws::String m_continuationToken;
     bool m_continuationTokenHasBeenSet;
+
     EncryptionKey m_encryptionKey;
     bool m_encryptionKeyHasBeenSet;
   };

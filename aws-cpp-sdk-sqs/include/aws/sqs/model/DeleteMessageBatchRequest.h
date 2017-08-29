@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
      * URLs are case-sensitive.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DeleteMessageBatchRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
+
     /**
      * <p>A list of receipt handles for the messages to be deleted.</p>
      */
@@ -121,8 +123,10 @@ namespace Model
     inline DeleteMessageBatchRequest& AddEntries(DeleteMessageBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     Aws::Vector<DeleteMessageBatchRequestEntry> m_entries;
     bool m_entriesHasBeenSet;
   };

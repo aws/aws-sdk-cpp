@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cluster security group to be deleted.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline DeleteClusterSecurityGroupRequest& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}
 
   private:
+
     Aws::String m_clusterSecurityGroupName;
     bool m_clusterSecurityGroupNameHasBeenSet;
   };

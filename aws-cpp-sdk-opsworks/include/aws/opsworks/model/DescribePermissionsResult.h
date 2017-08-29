@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribePermissionsResult();
-    DescribePermissionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePermissionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>Permission</code> objects that describe the stack
@@ -133,6 +134,7 @@ namespace Model
     inline DescribePermissionsResult& AddPermissions(Permission&& value) { m_permissions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Permission> m_permissions;
   };
 

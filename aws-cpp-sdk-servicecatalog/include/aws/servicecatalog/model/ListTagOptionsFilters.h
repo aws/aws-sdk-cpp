@@ -45,6 +45,7 @@ namespace Model
     ListTagOptionsFilters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ListTagOptionsFilters key.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The ListTagOptionsFilters key.</p>
      */
     inline ListTagOptionsFilters& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     /**
      * <p>The ListTagOptionsFilters value.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline ListTagOptionsFilters& WithValue(const char* value) { SetValue(value); return *this;}
 
+
     /**
      * <p>The ListTagOptionsFilters active state.</p>
      */
@@ -131,10 +134,13 @@ namespace Model
     inline ListTagOptionsFilters& WithActive(bool value) { SetActive(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
     bool m_active;
     bool m_activeHasBeenSet;
   };

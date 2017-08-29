@@ -30,12 +30,12 @@ DeleteGatewayResult::DeleteGatewayResult()
 {
 }
 
-DeleteGatewayResult::DeleteGatewayResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteGatewayResult::DeleteGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteGatewayResult& DeleteGatewayResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteGatewayResult& DeleteGatewayResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

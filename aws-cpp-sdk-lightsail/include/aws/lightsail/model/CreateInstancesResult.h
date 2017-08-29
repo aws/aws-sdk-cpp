@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateInstancesResult();
-    CreateInstancesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateInstancesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -85,6 +86,7 @@ namespace Model
     inline CreateInstancesResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Operation> m_operations;
   };
 

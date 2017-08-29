@@ -49,6 +49,7 @@ namespace Model
     DocumentMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the document.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID of the document.</p>
      */
     inline DocumentMetadata& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The ID of the creator.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline DocumentMetadata& WithCreatorId(const char* value) { SetCreatorId(value); return *this;}
 
+
     /**
      * <p>The ID of the parent folder.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline DocumentMetadata& WithParentFolderId(const char* value) { SetParentFolderId(value); return *this;}
 
+
     /**
      * <p>The time when the document was created.</p>
      */
@@ -178,6 +182,7 @@ namespace Model
      * <p>The time when the document was created.</p>
      */
     inline DocumentMetadata& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The time when the document was updated.</p>
@@ -204,6 +209,7 @@ namespace Model
      */
     inline DocumentMetadata& WithModifiedTimestamp(Aws::Utils::DateTime&& value) { SetModifiedTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>The latest version of the document.</p>
      */
@@ -229,6 +235,7 @@ namespace Model
      */
     inline DocumentMetadata& WithLatestVersionMetadata(DocumentVersionMetadata&& value) { SetLatestVersionMetadata(std::move(value)); return *this;}
 
+
     /**
      * <p>The resource state.</p>
      */
@@ -253,6 +260,7 @@ namespace Model
      * <p>The resource state.</p>
      */
     inline DocumentMetadata& WithResourceState(ResourceStateType&& value) { SetResourceState(std::move(value)); return *this;}
+
 
     /**
      * <p>List of labels on the document.</p>
@@ -295,20 +303,28 @@ namespace Model
     inline DocumentMetadata& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_creatorId;
     bool m_creatorIdHasBeenSet;
+
     Aws::String m_parentFolderId;
     bool m_parentFolderIdHasBeenSet;
+
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet;
+
     Aws::Utils::DateTime m_modifiedTimestamp;
     bool m_modifiedTimestampHasBeenSet;
+
     DocumentVersionMetadata m_latestVersionMetadata;
     bool m_latestVersionMetadataHasBeenSet;
+
     ResourceStateType m_resourceState;
     bool m_resourceStateHasBeenSet;
+
     Aws::Vector<Aws::String> m_labels;
     bool m_labelsHasBeenSet;
   };

@@ -32,14 +32,14 @@ UploadPartResult::UploadPartResult() :
 {
 }
 
-UploadPartResult::UploadPartResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+UploadPartResult::UploadPartResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
     m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }
 
-UploadPartResult& UploadPartResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UploadPartResult& UploadPartResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

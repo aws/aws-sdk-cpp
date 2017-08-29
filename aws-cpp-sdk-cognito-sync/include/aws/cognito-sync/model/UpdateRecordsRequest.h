@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
@@ -83,6 +84,7 @@ namespace Model
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
     inline UpdateRecordsRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+
 
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -126,6 +128,7 @@ namespace Model
      */
     inline UpdateRecordsRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
+
     /**
      * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_'
      * (underscore), '-' (dash), and '.' (dot).
@@ -168,6 +171,7 @@ namespace Model
      */
     inline UpdateRecordsRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
 
+
     /**
      * <p>The unique ID generated for this device by Cognito.</p>
      */
@@ -203,6 +207,7 @@ namespace Model
      */
     inline UpdateRecordsRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
 
+
     /**
      * A list of patch operations.
      */
@@ -237,6 +242,7 @@ namespace Model
      * A list of patch operations.
      */
     inline UpdateRecordsRequest& AddRecordPatches(RecordPatch&& value) { m_recordPatchesHasBeenSet = true; m_recordPatches.push_back(std::move(value)); return *this; }
+
 
     /**
      * The SyncSessionToken returned by a previous call to ListRecords for this dataset
@@ -279,6 +285,7 @@ namespace Model
      * and identity.
      */
     inline UpdateRecordsRequest& WithSyncSessionToken(const char* value) { SetSyncSessionToken(value); return *this;}
+
 
     /**
      * Intended to supply a device ID that will populate the lastModifiedBy field
@@ -323,18 +330,25 @@ namespace Model
     inline UpdateRecordsRequest& WithClientContext(const char* value) { SetClientContext(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::String m_datasetName;
     bool m_datasetNameHasBeenSet;
+
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet;
+
     Aws::Vector<RecordPatch> m_recordPatches;
     bool m_recordPatchesHasBeenSet;
+
     Aws::String m_syncSessionToken;
     bool m_syncSessionTokenHasBeenSet;
+
     Aws::String m_clientContext;
     bool m_clientContextHasBeenSet;
   };

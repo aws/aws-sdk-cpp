@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the repository
      * in which to put the image. If you do not specify a registry, the default
@@ -85,6 +86,7 @@ namespace Model
      */
     inline PutImageRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The name of the repository in which to put the image.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline PutImageRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>The image manifest corresponding to the image to be uploaded.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The image manifest corresponding to the image to be uploaded.</p>
      */
     inline PutImageRequest& WithImageManifest(const char* value) { SetImageManifest(value); return *this;}
+
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images
@@ -198,12 +202,16 @@ namespace Model
     inline PutImageRequest& WithImageTag(const char* value) { SetImageTag(value); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::String m_imageManifest;
     bool m_imageManifestHasBeenSet;
+
     Aws::String m_imageTag;
     bool m_imageTagHasBeenSet;
   };

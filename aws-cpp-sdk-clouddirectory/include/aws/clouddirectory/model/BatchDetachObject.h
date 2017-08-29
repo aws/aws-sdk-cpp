@@ -47,6 +47,7 @@ namespace Model
     BatchDetachObject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Parent reference from which the object with the specified link name is
      * detached.</p>
@@ -76,6 +77,7 @@ namespace Model
      * detached.</p>
      */
     inline BatchDetachObject& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the link.</p>
@@ -111,6 +113,7 @@ namespace Model
      * <p>The name of the link.</p>
      */
     inline BatchDetachObject& WithLinkName(const char* value) { SetLinkName(value); return *this;}
+
 
     /**
      * <p>The batch reference name. See <a
@@ -162,10 +165,13 @@ namespace Model
     inline BatchDetachObject& WithBatchReferenceName(const char* value) { SetBatchReferenceName(value); return *this;}
 
   private:
+
     ObjectReference m_parentReference;
     bool m_parentReferenceHasBeenSet;
+
     Aws::String m_linkName;
     bool m_linkNameHasBeenSet;
+
     Aws::String m_batchReferenceName;
     bool m_batchReferenceNameHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListProgressUpdateStreamsResult();
-    ListProgressUpdateStreamsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProgressUpdateStreamsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProgressUpdateStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProgressUpdateStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of progress update streams up to the max number of results passed in the
@@ -84,6 +85,7 @@ namespace Model
      * input.</p>
      */
     inline ListProgressUpdateStreamsResult& AddProgressUpdateStreamSummaryList(ProgressUpdateStreamSummary&& value) { m_progressUpdateStreamSummaryList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If there are more streams created than the max result, return the next token
@@ -128,7 +130,9 @@ namespace Model
     inline ListProgressUpdateStreamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ProgressUpdateStreamSummary> m_progressUpdateStreamSummaryList;
+
     Aws::String m_nextToken;
   };
 

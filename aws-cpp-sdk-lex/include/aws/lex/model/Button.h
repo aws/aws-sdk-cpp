@@ -46,6 +46,7 @@ namespace Model
     Button& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Text that is visible to the user on the button.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>Text that is visible to the user on the button.</p>
      */
     inline Button& WithText(const char* value) { SetText(value); return *this;}
+
 
     /**
      * <p>The value sent to Amazon Lex when a user chooses the button. For example,
@@ -131,8 +133,10 @@ namespace Model
     inline Button& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_text;
     bool m_textHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

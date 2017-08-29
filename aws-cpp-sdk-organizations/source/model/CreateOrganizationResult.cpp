@@ -30,12 +30,12 @@ CreateOrganizationResult::CreateOrganizationResult()
 {
 }
 
-CreateOrganizationResult::CreateOrganizationResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateOrganizationResult::CreateOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateOrganizationResult& CreateOrganizationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateOrganizationResult& CreateOrganizationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Organization"))

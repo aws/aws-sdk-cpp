@@ -30,12 +30,12 @@ DescribeRecordResult::DescribeRecordResult()
 {
 }
 
-DescribeRecordResult::DescribeRecordResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeRecordResult::DescribeRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeRecordResult& DescribeRecordResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeRecordResult& DescribeRecordResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("RecordDetail"))

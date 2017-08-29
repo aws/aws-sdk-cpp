@@ -30,12 +30,12 @@ ListFileSharesResult::ListFileSharesResult()
 {
 }
 
-ListFileSharesResult::ListFileSharesResult(const AmazonWebServiceResult<JsonValue>& result)
+ListFileSharesResult::ListFileSharesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListFileSharesResult& ListFileSharesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListFileSharesResult& ListFileSharesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Marker"))

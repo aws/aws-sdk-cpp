@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeTasksResult();
-    DescribeTasksResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTasksResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of tasks.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The list of tasks.</p>
      */
     inline DescribeTasksResult& AddTasks(Task&& value) { m_tasks.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Any failures associated with the call.</p>
@@ -114,7 +116,9 @@ namespace Model
     inline DescribeTasksResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Task> m_tasks;
+
     Aws::Vector<Failure> m_failures;
   };
 

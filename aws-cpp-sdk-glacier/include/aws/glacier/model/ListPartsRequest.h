@@ -44,6 +44,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
      * owns the vault. You can either specify an AWS account ID or optionally a single
@@ -107,6 +108,7 @@ namespace Model
      */
     inline ListPartsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -142,6 +144,7 @@ namespace Model
      */
     inline ListPartsRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
 
+
     /**
      * <p>The upload ID of the multipart upload.</p>
      */
@@ -176,6 +179,7 @@ namespace Model
      * <p>The upload ID of the multipart upload.</p>
      */
     inline ListPartsRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
+
 
     /**
      * <p>An opaque string used for pagination. This value specifies the part at which
@@ -240,6 +244,7 @@ namespace Model
      */
     inline ListPartsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of parts to be returned. The default limit is 1000. The
      * number of parts returned might be fewer than the specified limit, but the number
@@ -290,14 +295,19 @@ namespace Model
     inline ListPartsRequest& WithLimit(const char* value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_limit;
     bool m_limitHasBeenSet;
   };

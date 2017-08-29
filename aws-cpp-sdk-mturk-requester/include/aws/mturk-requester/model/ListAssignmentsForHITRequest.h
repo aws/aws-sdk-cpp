@@ -38,6 +38,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the HIT.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The ID of the HIT.</p>
      */
     inline ListAssignmentsForHITRequest& WithHITId(const char* value) { SetHITId(value); return *this;}
+
 
     /**
      * <p>Pagination token</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline ListAssignmentsForHITRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -116,6 +119,7 @@ namespace Model
 
     
     inline ListAssignmentsForHITRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
@@ -153,12 +157,16 @@ namespace Model
     inline ListAssignmentsForHITRequest& AddAssignmentStatuses(AssignmentStatus&& value) { m_assignmentStatusesHasBeenSet = true; m_assignmentStatuses.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_hITId;
     bool m_hITIdHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::Vector<AssignmentStatus> m_assignmentStatuses;
     bool m_assignmentStatusesHasBeenSet;
   };

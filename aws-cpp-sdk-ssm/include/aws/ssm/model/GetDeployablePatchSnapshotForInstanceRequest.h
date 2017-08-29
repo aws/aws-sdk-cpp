@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the instance for which the appropriate patch snapshot should be
      * retrieved.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline GetDeployablePatchSnapshotForInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The user-defined snapshot ID.</p>
      */
@@ -114,8 +116,10 @@ namespace Model
     inline GetDeployablePatchSnapshotForInstanceRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
   };

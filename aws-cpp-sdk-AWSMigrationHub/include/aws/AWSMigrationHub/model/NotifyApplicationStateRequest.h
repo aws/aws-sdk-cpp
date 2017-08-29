@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The configurationId in ADS that uniquely identifies the grouped
      * application.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline NotifyApplicationStateRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
+
     /**
      * <p>Status of the application - Not Started, In-Progress, Complete.</p>
      */
@@ -104,6 +106,7 @@ namespace Model
      */
     inline NotifyApplicationStateRequest& WithStatus(ApplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>Optional boolean flag to indicate whether any effect should take place. Used
      * to test if the caller has permission to make the call.</p>
@@ -123,10 +126,13 @@ namespace Model
     inline NotifyApplicationStateRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
     ApplicationStatus m_status;
     bool m_statusHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

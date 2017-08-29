@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     DescribeSpotFleetRequestHistoryResponse();
-    DescribeSpotFleetRequestHistoryResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSpotFleetRequestHistoryResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotFleetRequestHistoryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSpotFleetRequestHistoryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the events in the history of the Spot fleet request.</p>
@@ -85,6 +86,7 @@ namespace Model
      * <p>Information about the events in the history of the Spot fleet request.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& AddHistoryRecords(HistoryRecord&& value) { m_historyRecords.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The last date and time for the events, in UTC format (for example,
@@ -125,6 +127,7 @@ namespace Model
      * there are more results, this value is not present.</p>
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithLastEvaluatedTime(Aws::Utils::DateTime&& value) { SetLastEvaluatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The token required to retrieve the next set of results. This value is
@@ -168,6 +171,7 @@ namespace Model
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The ID of the Spot fleet request.</p>
      */
@@ -203,6 +207,7 @@ namespace Model
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
 
+
     /**
      * <p>The starting date and time for the events, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
@@ -233,6 +238,7 @@ namespace Model
      */
     inline DescribeSpotFleetRequestHistoryResponse& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -249,11 +255,17 @@ namespace Model
     inline DescribeSpotFleetRequestHistoryResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<HistoryRecord> m_historyRecords;
+
     Aws::Utils::DateTime m_lastEvaluatedTime;
+
     Aws::String m_nextToken;
+
     Aws::String m_spotFleetRequestId;
+
     Aws::Utils::DateTime m_startTime;
+
     ResponseMetadata m_responseMetadata;
   };
 

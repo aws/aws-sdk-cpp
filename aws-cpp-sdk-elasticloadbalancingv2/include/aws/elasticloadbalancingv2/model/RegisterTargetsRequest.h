@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
     inline RegisterTargetsRequest& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
+
 
     /**
      * <p>The targets. The default port for a target is the port for the target group.
@@ -125,8 +127,10 @@ namespace Model
     inline RegisterTargetsRequest& AddTargets(TargetDescription&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_targetGroupArn;
     bool m_targetGroupArnHasBeenSet;
+
     Aws::Vector<TargetDescription> m_targets;
     bool m_targetsHasBeenSet;
   };

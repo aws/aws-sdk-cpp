@@ -30,12 +30,12 @@ InviteAccountToOrganizationResult::InviteAccountToOrganizationResult()
 {
 }
 
-InviteAccountToOrganizationResult::InviteAccountToOrganizationResult(const AmazonWebServiceResult<JsonValue>& result)
+InviteAccountToOrganizationResult::InviteAccountToOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-InviteAccountToOrganizationResult& InviteAccountToOrganizationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+InviteAccountToOrganizationResult& InviteAccountToOrganizationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Handshake"))

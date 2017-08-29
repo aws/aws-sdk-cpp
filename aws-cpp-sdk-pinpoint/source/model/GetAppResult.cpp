@@ -30,12 +30,12 @@ GetAppResult::GetAppResult()
 {
 }
 
-GetAppResult::GetAppResult(const AmazonWebServiceResult<JsonValue>& result)
+GetAppResult::GetAppResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetAppResult& GetAppResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetAppResult& GetAppResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ApplicationResponse"))

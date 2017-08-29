@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>RuleId</code> of the <a>Rule</a> that you want to get.
      * <code>RuleId</code> is returned by <a>CreateRule</a> and by
@@ -86,6 +87,7 @@ namespace Model
     inline GetRuleRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
 
   private:
+
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;
   };

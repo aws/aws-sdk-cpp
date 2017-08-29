@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the repository where you want to create or update the
      * trigger.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline PutRepositoryTriggersRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>The JSON block of configuration information for each trigger.</p>
      */
@@ -120,8 +122,10 @@ namespace Model
     inline PutRepositoryTriggersRequest& AddTriggers(RepositoryTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     Aws::Vector<RepositoryTrigger> m_triggers;
     bool m_triggersHasBeenSet;
   };

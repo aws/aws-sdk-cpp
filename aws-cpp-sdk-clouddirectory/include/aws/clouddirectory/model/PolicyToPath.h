@@ -49,6 +49,7 @@ namespace Model
     PolicyToPath& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The path that is referenced from the root.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The path that is referenced from the root.</p>
      */
     inline PolicyToPath& WithPath(const char* value) { SetPath(value); return *this;}
+
 
     /**
      * <p>List of policy objects.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline PolicyToPath& AddPolicies(PolicyAttachment&& value) { m_policiesHasBeenSet = true; m_policies.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::Vector<PolicyAttachment> m_policies;
     bool m_policiesHasBeenSet;
   };

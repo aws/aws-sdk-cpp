@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The stack ID.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline CreateAppRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The app's short name.</p>
@@ -114,6 +116,7 @@ namespace Model
      */
     inline CreateAppRequest& WithShortname(const char* value) { SetShortname(value); return *this;}
 
+
     /**
      * <p>The app name.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      * <p>The app name.</p>
      */
     inline CreateAppRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A description of the app.</p>
@@ -184,6 +188,7 @@ namespace Model
      */
     inline CreateAppRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The app's data source.</p>
      */
@@ -218,6 +223,7 @@ namespace Model
      * <p>The app's data source.</p>
      */
     inline CreateAppRequest& AddDataSources(DataSource&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The app type. Each supported type is associated with a particular layer. For
@@ -264,6 +270,7 @@ namespace Model
      */
     inline CreateAppRequest& WithType(AppType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>A <code>Source</code> object that specifies the app repository.</p>
      */
@@ -288,6 +295,7 @@ namespace Model
      * <p>A <code>Source</code> object that specifies the app repository.</p>
      */
     inline CreateAppRequest& WithAppSource(Source&& value) { SetAppSource(std::move(value)); return *this;}
+
 
     /**
      * <p>The app virtual host settings, with multiple domains separated by commas. For
@@ -337,6 +345,7 @@ namespace Model
      */
     inline CreateAppRequest& AddDomains(const char* value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
 
+
     /**
      * <p>Whether to enable SSL for the app.</p>
      */
@@ -351,6 +360,7 @@ namespace Model
      * <p>Whether to enable SSL for the app.</p>
      */
     inline CreateAppRequest& WithEnableSsl(bool value) { SetEnableSsl(value); return *this;}
+
 
     /**
      * <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
@@ -376,6 +386,7 @@ namespace Model
      * <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
      */
     inline CreateAppRequest& WithSslConfiguration(SslConfiguration&& value) { SetSslConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more user-defined key/value pairs to be added to the stack
@@ -442,6 +453,7 @@ namespace Model
      * attributes.</p>
      */
     inline CreateAppRequest& AddAttributes(const AppAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+
 
     /**
      * <p>An array of <code>EnvironmentVariable</code> objects that specify environment
@@ -563,28 +575,40 @@ namespace Model
     inline CreateAppRequest& AddEnvironment(EnvironmentVariable&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_shortname;
     bool m_shortnameHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<DataSource> m_dataSources;
     bool m_dataSourcesHasBeenSet;
+
     AppType m_type;
     bool m_typeHasBeenSet;
+
     Source m_appSource;
     bool m_appSourceHasBeenSet;
+
     Aws::Vector<Aws::String> m_domains;
     bool m_domainsHasBeenSet;
+
     bool m_enableSsl;
     bool m_enableSslHasBeenSet;
+
     SslConfiguration m_sslConfiguration;
     bool m_sslConfigurationHasBeenSet;
+
     Aws::Map<AppAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     Aws::Vector<EnvironmentVariable> m_environment;
     bool m_environmentHasBeenSet;
   };

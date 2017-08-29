@@ -52,6 +52,7 @@ namespace Model
     SampledHTTPRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A complex type that contains detailed information about the request.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      */
     inline SampledHTTPRequest& WithRequest(HTTPRequest&& value) { SetRequest(std::move(value)); return *this;}
 
+
     /**
      * <p>A value that indicates how one result in the response relates proportionally
      * to other results in the response. A result that has a weight of <code>2</code>
@@ -100,6 +102,7 @@ namespace Model
      * weight of <code>1</code>.</p>
      */
     inline SampledHTTPRequest& WithWeight(long long value) { SetWeight(value); return *this;}
+
 
     /**
      * <p>The time at which AWS WAF received the request from your AWS resource, in
@@ -130,6 +133,7 @@ namespace Model
      * Unix time format (in seconds).</p>
      */
     inline SampledHTTPRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The action for the <code>Rule</code> that the request matched:
@@ -174,12 +178,16 @@ namespace Model
     inline SampledHTTPRequest& WithAction(const char* value) { SetAction(value); return *this;}
 
   private:
+
     HTTPRequest m_request;
     bool m_requestHasBeenSet;
+
     long long m_weight;
     bool m_weightHasBeenSet;
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
     Aws::String m_action;
     bool m_actionHasBeenSet;
   };

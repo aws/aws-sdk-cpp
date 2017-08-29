@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the RDS event notification subscription you want to remove a
      * source identifier from.</p>
@@ -82,6 +83,7 @@ namespace Model
      * source identifier from.</p>
      */
     inline RemoveSourceIdentifierFromSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+
 
     /**
      * <p> The source identifier to be removed from the subscription, such as the <b>DB
@@ -126,8 +128,10 @@ namespace Model
     inline RemoveSourceIdentifierFromSubscriptionRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
   private:
+
     Aws::String m_subscriptionName;
     bool m_subscriptionNameHasBeenSet;
+
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet;
   };

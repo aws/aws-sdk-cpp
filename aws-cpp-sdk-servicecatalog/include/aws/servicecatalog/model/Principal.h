@@ -46,6 +46,7 @@ namespace Model
     Principal& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN representing the principal (IAM user, role, or group).</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline Principal& WithPrincipalARN(const char* value) { SetPrincipalARN(value); return *this;}
 
+
     /**
      * <p>The principal type. Must be <code>IAM</code> </p>
      */
@@ -107,8 +109,10 @@ namespace Model
     inline Principal& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_principalARN;
     bool m_principalARNHasBeenSet;
+
     PrincipalType m_principalType;
     bool m_principalTypeHasBeenSet;
   };

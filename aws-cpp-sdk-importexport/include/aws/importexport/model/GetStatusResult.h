@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetStatusResult();
-    GetStatusResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const Aws::String& GetJobId() const{ return m_jobId; }
@@ -72,6 +73,7 @@ namespace Model
     
     inline GetStatusResult& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
     
     inline const JobType& GetJobType() const{ return m_jobType; }
 
@@ -86,6 +88,7 @@ namespace Model
 
     
     inline GetStatusResult& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetLocationCode() const{ return m_locationCode; }
@@ -108,6 +111,7 @@ namespace Model
     
     inline GetStatusResult& WithLocationCode(const char* value) { SetLocationCode(value); return *this;}
 
+
     
     inline const Aws::String& GetLocationMessage() const{ return m_locationMessage; }
 
@@ -128,6 +132,7 @@ namespace Model
 
     
     inline GetStatusResult& WithLocationMessage(const char* value) { SetLocationMessage(value); return *this;}
+
 
     
     inline const Aws::String& GetProgressCode() const{ return m_progressCode; }
@@ -150,6 +155,7 @@ namespace Model
     
     inline GetStatusResult& WithProgressCode(const char* value) { SetProgressCode(value); return *this;}
 
+
     
     inline const Aws::String& GetProgressMessage() const{ return m_progressMessage; }
 
@@ -170,6 +176,7 @@ namespace Model
 
     
     inline GetStatusResult& WithProgressMessage(const char* value) { SetProgressMessage(value); return *this;}
+
 
     
     inline const Aws::String& GetCarrier() const{ return m_carrier; }
@@ -192,6 +199,7 @@ namespace Model
     
     inline GetStatusResult& WithCarrier(const char* value) { SetCarrier(value); return *this;}
 
+
     
     inline const Aws::String& GetTrackingNumber() const{ return m_trackingNumber; }
 
@@ -212,6 +220,7 @@ namespace Model
 
     
     inline GetStatusResult& WithTrackingNumber(const char* value) { SetTrackingNumber(value); return *this;}
+
 
     
     inline const Aws::String& GetLogBucket() const{ return m_logBucket; }
@@ -234,6 +243,7 @@ namespace Model
     
     inline GetStatusResult& WithLogBucket(const char* value) { SetLogBucket(value); return *this;}
 
+
     
     inline const Aws::String& GetLogKey() const{ return m_logKey; }
 
@@ -255,6 +265,7 @@ namespace Model
     
     inline GetStatusResult& WithLogKey(const char* value) { SetLogKey(value); return *this;}
 
+
     
     inline int GetErrorCount() const{ return m_errorCount; }
 
@@ -263,6 +274,7 @@ namespace Model
 
     
     inline GetStatusResult& WithErrorCount(int value) { SetErrorCount(value); return *this;}
+
 
     
     inline const Aws::String& GetSignature() const{ return m_signature; }
@@ -285,6 +297,7 @@ namespace Model
     
     inline GetStatusResult& WithSignature(const char* value) { SetSignature(value); return *this;}
 
+
     
     inline const Aws::String& GetSignatureFileContents() const{ return m_signatureFileContents; }
 
@@ -305,6 +318,7 @@ namespace Model
 
     
     inline GetStatusResult& WithSignatureFileContents(const char* value) { SetSignatureFileContents(value); return *this;}
+
 
     
     inline const Aws::String& GetCurrentManifest() const{ return m_currentManifest; }
@@ -327,6 +341,7 @@ namespace Model
     
     inline GetStatusResult& WithCurrentManifest(const char* value) { SetCurrentManifest(value); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
@@ -341,6 +356,7 @@ namespace Model
 
     
     inline GetStatusResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     
     inline const Aws::Vector<Artifact>& GetArtifactList() const{ return m_artifactList; }
@@ -363,6 +379,7 @@ namespace Model
     
     inline GetStatusResult& AddArtifactList(Artifact&& value) { m_artifactList.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -379,22 +396,39 @@ namespace Model
     inline GetStatusResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_jobId;
+
     JobType m_jobType;
+
     Aws::String m_locationCode;
+
     Aws::String m_locationMessage;
+
     Aws::String m_progressCode;
+
     Aws::String m_progressMessage;
+
     Aws::String m_carrier;
+
     Aws::String m_trackingNumber;
+
     Aws::String m_logBucket;
+
     Aws::String m_logKey;
+
     int m_errorCount;
+
     Aws::String m_signature;
+
     Aws::String m_signatureFileContents;
+
     Aws::String m_currentManifest;
+
     Aws::Utils::DateTime m_creationDate;
+
     Aws::Vector<Artifact> m_artifactList;
+
     ResponseMetadata m_responseMetadata;
   };
 

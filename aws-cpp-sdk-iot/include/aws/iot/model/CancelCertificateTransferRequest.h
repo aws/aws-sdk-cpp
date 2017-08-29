@@ -38,6 +38,7 @@ namespace Model
     CancelCertificateTransferRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the certificate.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
     inline CancelCertificateTransferRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
   private:
+
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
   };

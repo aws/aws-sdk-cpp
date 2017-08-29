@@ -31,12 +31,12 @@ UploadSigningCertificateResult::UploadSigningCertificateResult()
 {
 }
 
-UploadSigningCertificateResult::UploadSigningCertificateResult(const AmazonWebServiceResult<XmlDocument>& result)
+UploadSigningCertificateResult::UploadSigningCertificateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UploadSigningCertificateResult& UploadSigningCertificateResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UploadSigningCertificateResult& UploadSigningCertificateResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

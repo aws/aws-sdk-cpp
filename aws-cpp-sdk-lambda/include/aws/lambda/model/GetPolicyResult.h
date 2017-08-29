@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     GetPolicyResult();
-    GetPolicyResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The resource policy associated with the specified function. The response
@@ -96,6 +97,7 @@ namespace Model
     inline GetPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
   private:
+
     Aws::String m_policy;
   };
 

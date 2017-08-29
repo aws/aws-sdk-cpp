@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
      * this is the original name.</p> <p>This parameter allows (per its <a
@@ -100,6 +101,7 @@ namespace Model
      * can also include any of the following characters: =,.@-</p>
      */
     inline UpdateGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
@@ -178,6 +180,7 @@ namespace Model
      */
     inline UpdateGroupRequest& WithNewPath(const char* value) { SetNewPath(value); return *this;}
 
+
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
      * name.</p> <p>This parameter allows (per its <a
@@ -242,10 +245,13 @@ namespace Model
     inline UpdateGroupRequest& WithNewGroupName(const char* value) { SetNewGroupName(value); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_newPath;
     bool m_newPathHasBeenSet;
+
     Aws::String m_newGroupName;
     bool m_newGroupNameHasBeenSet;
   };

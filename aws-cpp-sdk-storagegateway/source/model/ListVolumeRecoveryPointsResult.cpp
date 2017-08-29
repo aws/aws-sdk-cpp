@@ -30,12 +30,12 @@ ListVolumeRecoveryPointsResult::ListVolumeRecoveryPointsResult()
 {
 }
 
-ListVolumeRecoveryPointsResult::ListVolumeRecoveryPointsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListVolumeRecoveryPointsResult::ListVolumeRecoveryPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListVolumeRecoveryPointsResult& ListVolumeRecoveryPointsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListVolumeRecoveryPointsResult& ListVolumeRecoveryPointsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("GatewayARN"))

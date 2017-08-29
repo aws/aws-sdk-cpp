@@ -30,12 +30,12 @@ DescribeConfigurationsResult::DescribeConfigurationsResult()
 {
 }
 
-DescribeConfigurationsResult::DescribeConfigurationsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConfigurationsResult::DescribeConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeConfigurationsResult& DescribeConfigurationsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeConfigurationsResult& DescribeConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("configurations"))

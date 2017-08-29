@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identity for which to enable or disable headers in notifications.
      * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline SetIdentityHeadersInNotificationsEnabledRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
+
     /**
      * <p>The notification type for which to enable or disable headers in
      * notifications. </p>
@@ -117,6 +119,7 @@ namespace Model
      * notifications. </p>
      */
     inline SetIdentityHeadersInNotificationsEnabledRequest& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
+
 
     /**
      * <p>Sets whether Amazon SES includes the original email headers in Amazon SNS
@@ -152,10 +155,13 @@ namespace Model
     inline SetIdentityHeadersInNotificationsEnabledRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     NotificationType m_notificationType;
     bool m_notificationTypeHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
   };

@@ -49,6 +49,7 @@ namespace Model
     AccountSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The AWS account number specified in the <code>AccountSettings</code>
      * container.</p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline AccountSettings& WithAwsAccountNumber(const char* value) { SetAwsAccountNumber(value); return *this;}
 
+
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
     inline AccountSettings& AddUnmeteredDevices(DevicePlatform&& key, int value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices.emplace(std::move(key), value); return *this; }
+
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
@@ -168,6 +171,7 @@ namespace Model
      */
     inline AccountSettings& AddUnmeteredRemoteAccessDevices(DevicePlatform&& key, int value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices.emplace(std::move(key), value); return *this; }
 
+
     /**
      * <p>The maximum number of minutes a test run will execute before it times
      * out.</p>
@@ -185,6 +189,7 @@ namespace Model
      * out.</p>
      */
     inline AccountSettings& WithMaxJobTimeoutMinutes(int value) { SetMaxJobTimeoutMinutes(value); return *this;}
+
 
     /**
      * <p>Information about an AWS account's usage of free trial device minutes.</p>
@@ -210,6 +215,7 @@ namespace Model
      * <p>Information about an AWS account's usage of free trial device minutes.</p>
      */
     inline AccountSettings& WithTrialMinutes(TrialMinutes&& value) { SetTrialMinutes(std::move(value)); return *this;}
+
 
     /**
      * <p>The maximum number of device slots that the AWS account can purchase. Each
@@ -275,6 +281,7 @@ namespace Model
      */
     inline AccountSettings& AddMaxSlots(const char* key, int value) { m_maxSlotsHasBeenSet = true; m_maxSlots.emplace(key, value); return *this; }
 
+
     /**
      * <p>The default number of minutes (at the account level) a test run will execute
      * before it times out. Default value is 60 minutes.</p>
@@ -294,18 +301,25 @@ namespace Model
     inline AccountSettings& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
 
   private:
+
     Aws::String m_awsAccountNumber;
     bool m_awsAccountNumberHasBeenSet;
+
     Aws::Map<DevicePlatform, int> m_unmeteredDevices;
     bool m_unmeteredDevicesHasBeenSet;
+
     Aws::Map<DevicePlatform, int> m_unmeteredRemoteAccessDevices;
     bool m_unmeteredRemoteAccessDevicesHasBeenSet;
+
     int m_maxJobTimeoutMinutes;
     bool m_maxJobTimeoutMinutesHasBeenSet;
+
     TrialMinutes m_trialMinutes;
     bool m_trialMinutesHasBeenSet;
+
     Aws::Map<Aws::String, int> m_maxSlots;
     bool m_maxSlotsHasBeenSet;
+
     int m_defaultJobTimeoutMinutes;
     bool m_defaultJobTimeoutMinutesHasBeenSet;
   };

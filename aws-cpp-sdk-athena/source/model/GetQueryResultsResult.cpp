@@ -30,12 +30,12 @@ GetQueryResultsResult::GetQueryResultsResult()
 {
 }
 
-GetQueryResultsResult::GetQueryResultsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetQueryResultsResult& GetQueryResultsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetQueryResultsResult& GetQueryResultsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ResultSet"))

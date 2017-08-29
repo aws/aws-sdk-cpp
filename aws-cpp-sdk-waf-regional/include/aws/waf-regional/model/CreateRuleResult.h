@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateRuleResult();
-    CreateRuleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRuleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The <a>Rule</a> returned in the <code>CreateRule</code> response.</p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>The <a>Rule</a> returned in the <code>CreateRule</code> response.</p>
      */
     inline CreateRuleResult& WithRule(Rule&& value) { SetRule(std::move(value)); return *this;}
+
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the
@@ -117,7 +119,9 @@ namespace Model
     inline CreateRuleResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
   private:
+
     Rule m_rule;
+
     Aws::String m_changeToken;
   };
 

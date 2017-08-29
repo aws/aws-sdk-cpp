@@ -46,6 +46,7 @@ namespace Model
     OptionStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Timestamp which tells the creation date for the entity.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Timestamp which tells the creation date for the entity.</p>
      */
     inline OptionStatus& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>Timestamp which tells the last updated time for the entity.</p>
@@ -96,6 +98,7 @@ namespace Model
      */
     inline OptionStatus& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
 
+
     /**
      * <p>Specifies the latest version for the entity.</p>
      */
@@ -110,6 +113,7 @@ namespace Model
      * <p>Specifies the latest version for the entity.</p>
      */
     inline OptionStatus& WithUpdateVersion(int value) { SetUpdateVersion(value); return *this;}
+
 
     /**
      * <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
@@ -136,6 +140,7 @@ namespace Model
      */
     inline OptionStatus& WithState(OptionState&& value) { SetState(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether the Elasticsearch domain is being deleted.</p>
      */
@@ -152,14 +157,19 @@ namespace Model
     inline OptionStatus& WithPendingDeletion(bool value) { SetPendingDeletion(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
+
     int m_updateVersion;
     bool m_updateVersionHasBeenSet;
+
     OptionState m_state;
     bool m_stateHasBeenSet;
+
     bool m_pendingDeletion;
     bool m_pendingDeletionHasBeenSet;
   };

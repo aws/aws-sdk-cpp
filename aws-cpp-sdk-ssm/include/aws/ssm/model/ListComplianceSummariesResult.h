@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListComplianceSummariesResult();
-    ListComplianceSummariesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListComplianceSummariesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListComplianceSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListComplianceSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of compliant and non-compliant summary counts based on compliance
@@ -92,6 +93,7 @@ namespace Model
      */
     inline ListComplianceSummariesResult& AddComplianceSummaryItems(ComplianceSummaryItem&& value) { m_complianceSummaryItems.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The token for the next set of items to return. Use this token to get the next
      * set of results.</p>
@@ -135,7 +137,9 @@ namespace Model
     inline ListComplianceSummariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ComplianceSummaryItem> m_complianceSummaryItems;
+
     Aws::String m_nextToken;
   };
 

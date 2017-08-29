@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeConnectionsResult();
-    DescribeConnectionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConnectionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of connections.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline DescribeConnectionsResult& AddConnections(Connection&& value) { m_connections.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Connection> m_connections;
   };
 

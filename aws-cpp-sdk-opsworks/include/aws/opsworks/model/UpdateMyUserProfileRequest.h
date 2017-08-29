@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user's SSH public key.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline UpdateMyUserProfileRequest& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
 
   private:
+
     Aws::String m_sshPublicKey;
     bool m_sshPublicKeyHasBeenSet;
   };

@@ -35,6 +35,7 @@ namespace Model
     UntagResourceRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
      * directories.</p>
@@ -77,6 +78,7 @@ namespace Model
      */
     inline UntagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
+
     /**
      * <p>Keys of the tag that need to be removed from the resource.</p>
      */
@@ -118,8 +120,10 @@ namespace Model
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
   private:
+
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
   };

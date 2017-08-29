@@ -44,6 +44,7 @@ namespace Model
     AccountUsage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Total size, in bytes, of the account's deployment packages per region.</p>
      */
@@ -58,6 +59,7 @@ namespace Model
      * <p>Total size, in bytes, of the account's deployment packages per region.</p>
      */
     inline AccountUsage& WithTotalCodeSize(long long value) { SetTotalCodeSize(value); return *this;}
+
 
     /**
      * <p>The number of your account's existing functions per region.</p>
@@ -75,8 +77,10 @@ namespace Model
     inline AccountUsage& WithFunctionCount(long long value) { SetFunctionCount(value); return *this;}
 
   private:
+
     long long m_totalCodeSize;
     bool m_totalCodeSizeHasBeenSet;
+
     long long m_functionCount;
     bool m_functionCountHasBeenSet;
   };

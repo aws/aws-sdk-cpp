@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     DescribeSnapshotAttributeResponse();
-    DescribeSnapshotAttributeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSnapshotAttributeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSnapshotAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeSnapshotAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of permissions for creating volumes from the snapshot.</p>
@@ -86,6 +87,7 @@ namespace Model
      */
     inline DescribeSnapshotAttributeResponse& AddCreateVolumePermissions(CreateVolumePermission&& value) { m_createVolumePermissions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of product codes.</p>
      */
@@ -120,6 +122,7 @@ namespace Model
      * <p>A list of product codes.</p>
      */
     inline DescribeSnapshotAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the EBS snapshot.</p>
@@ -156,6 +159,7 @@ namespace Model
      */
     inline DescribeSnapshotAttributeResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -172,9 +176,13 @@ namespace Model
     inline DescribeSnapshotAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<CreateVolumePermission> m_createVolumePermissions;
+
     Aws::Vector<ProductCode> m_productCodes;
+
     Aws::String m_snapshotId;
+
     ResponseMetadata m_responseMetadata;
   };
 

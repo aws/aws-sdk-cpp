@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
      * you do not specify this value, then the operation assumes the user whose
@@ -109,6 +110,7 @@ namespace Model
      */
     inline UpdateServiceSpecificCredentialRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
+
     /**
      * <p>The unique identifier of the service-specific credential.</p> <p>This
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
@@ -165,6 +167,7 @@ namespace Model
      */
     inline UpdateServiceSpecificCredentialRequest& WithServiceSpecificCredentialId(const char* value) { SetServiceSpecificCredentialId(value); return *this;}
 
+
     /**
      * <p>The status to be assigned to the service-specific credential.</p>
      */
@@ -191,10 +194,13 @@ namespace Model
     inline UpdateServiceSpecificCredentialRequest& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_serviceSpecificCredentialId;
     bool m_serviceSpecificCredentialIdHasBeenSet;
+
     StatusType m_status;
     bool m_statusHasBeenSet;
   };

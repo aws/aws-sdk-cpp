@@ -30,12 +30,12 @@ ListSubscriptionDefinitionsResult::ListSubscriptionDefinitionsResult()
 {
 }
 
-ListSubscriptionDefinitionsResult::ListSubscriptionDefinitionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListSubscriptionDefinitionsResult::ListSubscriptionDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListSubscriptionDefinitionsResult& ListSubscriptionDefinitionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListSubscriptionDefinitionsResult& ListSubscriptionDefinitionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Definitions"))

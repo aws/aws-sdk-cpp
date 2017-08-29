@@ -46,6 +46,7 @@ namespace Model
     AgentPreview& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the EC2 instance where the agent is installed.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The ID of the EC2 instance where the agent is installed.</p>
      */
     inline AgentPreview& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+
 
     /**
      * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline AgentPreview& WithAutoScalingGroup(const char* value) { SetAutoScalingGroup(value); return *this;}
 
   private:
+
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet;
+
     Aws::String m_autoScalingGroup;
     bool m_autoScalingGroupHasBeenSet;
   };

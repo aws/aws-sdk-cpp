@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * The HTTP error code when the redirect is applied. In the event of an error, if
      * the error code equals this value, then the specified redirect is applied.
@@ -103,6 +104,7 @@ namespace Model
      * to be applied.
      */
     inline Condition& WithHttpErrorCodeReturnedEquals(const char* value) { SetHttpErrorCodeReturnedEquals(value); return *this;}
+
 
     /**
      * The object key name prefix when the redirect is applied. For example, to
@@ -182,8 +184,10 @@ namespace Model
     inline Condition& WithKeyPrefixEquals(const char* value) { SetKeyPrefixEquals(value); return *this;}
 
   private:
+
     Aws::String m_httpErrorCodeReturnedEquals;
     bool m_httpErrorCodeReturnedEqualsHasBeenSet;
+
     Aws::String m_keyPrefixEquals;
     bool m_keyPrefixEqualsHasBeenSet;
   };

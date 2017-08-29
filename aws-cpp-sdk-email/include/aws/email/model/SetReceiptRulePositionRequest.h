@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the receipt rule set that contains the receipt rule to
      * reposition.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline SetReceiptRulePositionRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
+
     /**
      * <p>The name of the receipt rule to reposition.</p>
      */
@@ -121,6 +123,7 @@ namespace Model
      * <p>The name of the receipt rule to reposition.</p>
      */
     inline SetReceiptRulePositionRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+
 
     /**
      * <p>The name of the receipt rule after which to place the specified receipt
@@ -165,10 +168,13 @@ namespace Model
     inline SetReceiptRulePositionRequest& WithAfter(const char* value) { SetAfter(value); return *this;}
 
   private:
+
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet;
+
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet;
+
     Aws::String m_after;
     bool m_afterHasBeenSet;
   };

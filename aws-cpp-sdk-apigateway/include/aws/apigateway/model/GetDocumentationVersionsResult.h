@@ -50,8 +50,9 @@ namespace Model
   {
   public:
     GetDocumentationVersionsResult();
-    GetDocumentationVersionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDocumentationVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDocumentationVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDocumentationVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetPosition() const{ return m_position; }
@@ -73,6 +74,7 @@ namespace Model
 
     
     inline GetDocumentationVersionsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+
 
     /**
      * <p>The current page of elements from this collection.</p>
@@ -110,7 +112,9 @@ namespace Model
     inline GetDocumentationVersionsResult& AddItems(DocumentationVersion&& value) { m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_position;
+
     Aws::Vector<DocumentationVersion> m_items;
   };
 

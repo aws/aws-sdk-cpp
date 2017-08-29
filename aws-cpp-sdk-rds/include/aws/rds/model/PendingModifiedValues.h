@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will
      * be applied or is in progress. </p>
@@ -91,6 +92,7 @@ namespace Model
      */
     inline PendingModifiedValues& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
+
     /**
      * <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that
      * will be applied or is in progress. </p>
@@ -108,6 +110,7 @@ namespace Model
      * will be applied or is in progress. </p>
      */
     inline PendingModifiedValues& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
+
 
     /**
      * <p>Contains the pending or in-progress change of the master credentials for the
@@ -151,6 +154,7 @@ namespace Model
      */
     inline PendingModifiedValues& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
+
     /**
      * <p>Specifies the pending port for the DB instance.</p>
      */
@@ -165,6 +169,7 @@ namespace Model
      * <p>Specifies the pending port for the DB instance.</p>
      */
     inline PendingModifiedValues& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>Specifies the pending number of days for which automated backups are
@@ -184,6 +189,7 @@ namespace Model
      */
     inline PendingModifiedValues& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
+
     /**
      * <p>Indicates that the Single-AZ DB instance is to change to a Multi-AZ
      * deployment.</p>
@@ -201,6 +207,7 @@ namespace Model
      * deployment.</p>
      */
     inline PendingModifiedValues& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p>Indicates the database engine version.</p>
@@ -236,6 +243,7 @@ namespace Model
      * <p>Indicates the database engine version.</p>
      */
     inline PendingModifiedValues& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
 
     /**
      * <p>The license model for the DB instance.</p> <p>Valid values:
@@ -286,6 +294,7 @@ namespace Model
      */
     inline PendingModifiedValues& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
+
     /**
      * <p>Specifies the new Provisioned IOPS value for the DB instance that will be
      * applied or is being applied.</p>
@@ -303,6 +312,7 @@ namespace Model
      * applied or is being applied.</p>
      */
     inline PendingModifiedValues& WithIops(int value) { SetIops(value); return *this;}
+
 
     /**
      * <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that
@@ -346,6 +356,7 @@ namespace Model
      */
     inline PendingModifiedValues& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
+
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
      */
@@ -381,6 +392,7 @@ namespace Model
      */
     inline PendingModifiedValues& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
+
     /**
      * <p>Specifies the identifier of the CA certificate for the DB instance.</p>
      */
@@ -415,6 +427,7 @@ namespace Model
      * <p>Specifies the identifier of the CA certificate for the DB instance.</p>
      */
     inline PendingModifiedValues& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
+
 
     /**
      * <p>The new DB subnet group for the DB instance. </p>
@@ -452,30 +465,43 @@ namespace Model
     inline PendingModifiedValues& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
   private:
+
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
+
     Aws::String m_masterUserPassword;
     bool m_masterUserPasswordHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
     int m_iops;
     bool m_iopsHasBeenSet;
+
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
+
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
+
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet;
+
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
   };

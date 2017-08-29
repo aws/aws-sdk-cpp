@@ -30,12 +30,12 @@ StopApplicationResult::StopApplicationResult()
 {
 }
 
-StopApplicationResult::StopApplicationResult(const AmazonWebServiceResult<JsonValue>& result)
+StopApplicationResult::StopApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-StopApplicationResult& StopApplicationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+StopApplicationResult& StopApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

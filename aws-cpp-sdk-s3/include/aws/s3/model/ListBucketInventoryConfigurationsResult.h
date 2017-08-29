@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListBucketInventoryConfigurationsResult();
-    ListBucketInventoryConfigurationsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListBucketInventoryConfigurationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListBucketInventoryConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListBucketInventoryConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * If sent in the request, the marker that is used as a starting point for this
@@ -85,6 +86,7 @@ namespace Model
      */
     inline ListBucketInventoryConfigurationsResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
+
     /**
      * The list of inventory configurations for a bucket.
      */
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ListBucketInventoryConfigurationsResult& AddInventoryConfigurationList(InventoryConfiguration&& value) { m_inventoryConfigurationList.push_back(std::move(value)); return *this; }
 
+
     /**
      * Indicates whether the returned list of inventory configurations is truncated in
      * this response. A value of true indicates that the list is truncated.
@@ -137,6 +140,7 @@ namespace Model
      * this response. A value of true indicates that the list is truncated.
      */
     inline ListBucketInventoryConfigurationsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * The marker used to continue this inventory configuration listing. Use the
@@ -188,9 +192,13 @@ namespace Model
     inline ListBucketInventoryConfigurationsResult& WithNextContinuationToken(const char* value) { SetNextContinuationToken(value); return *this;}
 
   private:
+
     Aws::String m_continuationToken;
+
     Aws::Vector<InventoryConfiguration> m_inventoryConfigurationList;
+
     bool m_isTruncated;
+
     Aws::String m_nextContinuationToken;
   };
 

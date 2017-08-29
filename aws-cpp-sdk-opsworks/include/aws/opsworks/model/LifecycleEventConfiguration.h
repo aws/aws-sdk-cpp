@@ -45,6 +45,7 @@ namespace Model
     LifecycleEventConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
      * event configuration.</p>
@@ -76,6 +77,7 @@ namespace Model
     inline LifecycleEventConfiguration& WithShutdown(ShutdownEventConfiguration&& value) { SetShutdown(std::move(value)); return *this;}
 
   private:
+
     ShutdownEventConfiguration m_shutdown;
     bool m_shutdownHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DeleteElasticsearchDomainResult();
-    DeleteElasticsearchDomainResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteElasticsearchDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteElasticsearchDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteElasticsearchDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status of the Elasticsearch domain being deleted.</p>
@@ -74,6 +75,7 @@ namespace Model
     inline DeleteElasticsearchDomainResult& WithDomainStatus(ElasticsearchDomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
 
   private:
+
     ElasticsearchDomainStatus m_domainStatus;
   };
 

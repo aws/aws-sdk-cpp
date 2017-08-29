@@ -46,6 +46,7 @@ namespace Model
     ServiceId& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p/>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p/>
      */
     inline ServiceId& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p/>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline ServiceId& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
+
     /**
      * <p/>
      */
@@ -155,6 +158,7 @@ namespace Model
      * <p/>
      */
     inline ServiceId& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
 
     /**
      * <p/>
@@ -192,12 +196,16 @@ namespace Model
     inline ServiceId& WithType(const char* value) { SetType(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet;
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_type;
     bool m_typeHasBeenSet;
   };

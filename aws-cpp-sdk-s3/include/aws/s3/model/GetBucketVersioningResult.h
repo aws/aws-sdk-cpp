@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetBucketVersioningResult();
-    GetBucketVersioningResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketVersioningResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketVersioningResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketVersioningResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * The versioning state of the bucket.
@@ -66,6 +67,7 @@ namespace Model
      * The versioning state of the bucket.
      */
     inline GetBucketVersioningResult& WithStatus(BucketVersioningStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * Specifies whether MFA delete is enabled in the bucket versioning configuration.
@@ -103,7 +105,9 @@ namespace Model
     inline GetBucketVersioningResult& WithMFADelete(MFADeleteStatus&& value) { SetMFADelete(std::move(value)); return *this;}
 
   private:
+
     BucketVersioningStatus m_status;
+
     MFADeleteStatus m_mFADelete;
   };
 

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the option group to be modified.</p> <p>Permanent options, such
      * as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
@@ -99,6 +100,7 @@ namespace Model
      */
     inline ModifyOptionGroupRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
+
     /**
      * <p>Options in this list are added to the option group or, if already present,
      * the specified configuration is used to update the existing configuration.</p>
@@ -141,6 +143,7 @@ namespace Model
      */
     inline ModifyOptionGroupRequest& AddOptionsToInclude(OptionConfiguration&& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Options in this list are removed from the option group.</p>
      */
@@ -181,6 +184,7 @@ namespace Model
      */
     inline ModifyOptionGroupRequest& AddOptionsToRemove(const char* value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
 
+
     /**
      * <p>Indicates whether the changes should be applied immediately, or during the
      * next maintenance window for each instance associated with the option group.</p>
@@ -200,12 +204,16 @@ namespace Model
     inline ModifyOptionGroupRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
   private:
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::Vector<OptionConfiguration> m_optionsToInclude;
     bool m_optionsToIncludeHasBeenSet;
+
     Aws::Vector<Aws::String> m_optionsToRemove;
     bool m_optionsToRemoveHasBeenSet;
+
     bool m_applyImmediately;
     bool m_applyImmediatelyHasBeenSet;
   };

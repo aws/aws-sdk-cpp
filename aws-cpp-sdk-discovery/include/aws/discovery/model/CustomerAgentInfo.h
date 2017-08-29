@@ -43,6 +43,7 @@ namespace Model
     CustomerAgentInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Number of active discovery agents.</p>
      */
@@ -57,6 +58,7 @@ namespace Model
      * <p>Number of active discovery agents.</p>
      */
     inline CustomerAgentInfo& WithActiveAgents(int value) { SetActiveAgents(value); return *this;}
+
 
     /**
      * <p>Number of healthy discovery agents</p>
@@ -73,6 +75,7 @@ namespace Model
      */
     inline CustomerAgentInfo& WithHealthyAgents(int value) { SetHealthyAgents(value); return *this;}
 
+
     /**
      * <p>Number of blacklisted discovery agents.</p>
      */
@@ -87,6 +90,7 @@ namespace Model
      * <p>Number of blacklisted discovery agents.</p>
      */
     inline CustomerAgentInfo& WithBlackListedAgents(int value) { SetBlackListedAgents(value); return *this;}
+
 
     /**
      * <p>Number of discovery agents with status SHUTDOWN.</p>
@@ -103,6 +107,7 @@ namespace Model
      */
     inline CustomerAgentInfo& WithShutdownAgents(int value) { SetShutdownAgents(value); return *this;}
 
+
     /**
      * <p>Number of unhealthy discovery agents.</p>
      */
@@ -118,6 +123,7 @@ namespace Model
      */
     inline CustomerAgentInfo& WithUnhealthyAgents(int value) { SetUnhealthyAgents(value); return *this;}
 
+
     /**
      * <p>Total number of discovery agents.</p>
      */
@@ -132,6 +138,7 @@ namespace Model
      * <p>Total number of discovery agents.</p>
      */
     inline CustomerAgentInfo& WithTotalAgents(int value) { SetTotalAgents(value); return *this;}
+
 
     /**
      * <p>Number of unknown discovery agents.</p>
@@ -149,18 +156,25 @@ namespace Model
     inline CustomerAgentInfo& WithUnknownAgents(int value) { SetUnknownAgents(value); return *this;}
 
   private:
+
     int m_activeAgents;
     bool m_activeAgentsHasBeenSet;
+
     int m_healthyAgents;
     bool m_healthyAgentsHasBeenSet;
+
     int m_blackListedAgents;
     bool m_blackListedAgentsHasBeenSet;
+
     int m_shutdownAgents;
     bool m_shutdownAgentsHasBeenSet;
+
     int m_unhealthyAgents;
     bool m_unhealthyAgentsHasBeenSet;
+
     int m_totalAgents;
     bool m_totalAgentsHasBeenSet;
+
     int m_unknownAgents;
     bool m_unknownAgentsHasBeenSet;
   };

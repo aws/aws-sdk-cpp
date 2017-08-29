@@ -30,12 +30,12 @@ GetBuiltinIntentResult::GetBuiltinIntentResult()
 {
 }
 
-GetBuiltinIntentResult::GetBuiltinIntentResult(const AmazonWebServiceResult<JsonValue>& result)
+GetBuiltinIntentResult::GetBuiltinIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetBuiltinIntentResult& GetBuiltinIntentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetBuiltinIntentResult& GetBuiltinIntentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("signature"))

@@ -48,6 +48,7 @@ namespace Model
     ActivityTypeInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <a>ActivityType</a> type structure representing the activity type.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      */
     inline ActivityTypeInfo& WithActivityType(ActivityType&& value) { SetActivityType(std::move(value)); return *this;}
 
+
     /**
      * <p>The current status of the activity type.</p>
      */
@@ -97,6 +99,7 @@ namespace Model
      * <p>The current status of the activity type.</p>
      */
     inline ActivityTypeInfo& WithStatus(RegistrationStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The description of the activity type provided in
@@ -140,6 +143,7 @@ namespace Model
      */
     inline ActivityTypeInfo& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The date and time this activity type was created through
      * <a>RegisterActivityType</a>.</p>
@@ -170,6 +174,7 @@ namespace Model
      */
     inline ActivityTypeInfo& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
+
     /**
      * <p>If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.</p>
      */
@@ -196,14 +201,19 @@ namespace Model
     inline ActivityTypeInfo& WithDeprecationDate(Aws::Utils::DateTime&& value) { SetDeprecationDate(std::move(value)); return *this;}
 
   private:
+
     ActivityType m_activityType;
     bool m_activityTypeHasBeenSet;
+
     RegistrationStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::Utils::DateTime m_deprecationDate;
     bool m_deprecationDateHasBeenSet;
   };

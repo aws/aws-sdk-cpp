@@ -30,12 +30,12 @@ RebootInstanceResult::RebootInstanceResult()
 {
 }
 
-RebootInstanceResult::RebootInstanceResult(const AmazonWebServiceResult<JsonValue>& result)
+RebootInstanceResult::RebootInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RebootInstanceResult& RebootInstanceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RebootInstanceResult& RebootInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("operations"))

@@ -30,12 +30,12 @@ UpdateDocumentResult::UpdateDocumentResult()
 {
 }
 
-UpdateDocumentResult::UpdateDocumentResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDocumentResult::UpdateDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateDocumentResult& UpdateDocumentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateDocumentResult& UpdateDocumentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DocumentDescription"))

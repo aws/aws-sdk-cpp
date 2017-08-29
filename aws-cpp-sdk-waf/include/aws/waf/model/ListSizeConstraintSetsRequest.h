@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>If you specify a value for <code>Limit</code> and you have more
      * <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF
@@ -113,6 +114,7 @@ namespace Model
      */
     inline ListSizeConstraintSetsRequest& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     /**
      * <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want
      * AWS WAF to return for this request. If you have more
@@ -141,8 +143,10 @@ namespace Model
     inline ListSizeConstraintSetsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

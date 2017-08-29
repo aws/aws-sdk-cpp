@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ARN of a user, group, or role whose policies contain the context keys
      * that you want listed. If you specify a user, the list includes context keys that
@@ -144,6 +145,7 @@ namespace Model
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicySourceArn(const char* value) { SetPolicySourceArn(value); return *this;}
 
+
     /**
      * <p>An optional list of additional policies for which you want the list of
      * context keys that are referenced.</p> <p>The <a
@@ -241,8 +243,10 @@ namespace Model
     inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
   private:
+
     Aws::String m_policySourceArn;
     bool m_policySourceArnHasBeenSet;
+
     Aws::Vector<Aws::String> m_policyInputList;
     bool m_policyInputListHasBeenSet;
   };

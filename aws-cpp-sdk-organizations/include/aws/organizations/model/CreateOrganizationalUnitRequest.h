@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique identifier (ID) of the parent root or OU in which you want to
      * create the new OU.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
@@ -120,6 +121,7 @@ namespace Model
      */
     inline CreateOrganizationalUnitRequest& WithParentId(const char* value) { SetParentId(value); return *this;}
 
+
     /**
      * <p>The friendly name to assign to the new OU.</p>
      */
@@ -156,8 +158,10 @@ namespace Model
     inline CreateOrganizationalUnitRequest& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_parentId;
     bool m_parentIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };

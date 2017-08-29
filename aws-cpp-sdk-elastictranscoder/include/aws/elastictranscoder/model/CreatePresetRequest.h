@@ -40,6 +40,7 @@ namespace Model
     CreatePresetRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the preset. We recommend that the name be unique within the AWS
      * account, but uniqueness is not enforced.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CreatePresetRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the preset.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>A description of the preset.</p>
      */
     inline CreatePresetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The container type for the output file. Valid values include
@@ -173,6 +176,7 @@ namespace Model
      */
     inline CreatePresetRequest& WithContainer(const char* value) { SetContainer(value); return *this;}
 
+
     /**
      * <p>A section of the request body that specifies the video parameters.</p>
      */
@@ -198,6 +202,7 @@ namespace Model
      */
     inline CreatePresetRequest& WithVideo(VideoParameters&& value) { SetVideo(std::move(value)); return *this;}
 
+
     /**
      * <p>A section of the request body that specifies the audio parameters.</p>
      */
@@ -222,6 +227,7 @@ namespace Model
      * <p>A section of the request body that specifies the audio parameters.</p>
      */
     inline CreatePresetRequest& WithAudio(AudioParameters&& value) { SetAudio(std::move(value)); return *this;}
+
 
     /**
      * <p>A section of the request body that specifies the thumbnail parameters, if
@@ -254,16 +260,22 @@ namespace Model
     inline CreatePresetRequest& WithThumbnails(Thumbnails&& value) { SetThumbnails(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_container;
     bool m_containerHasBeenSet;
+
     VideoParameters m_video;
     bool m_videoHasBeenSet;
+
     AudioParameters m_audio;
     bool m_audioHasBeenSet;
+
     Thumbnails m_thumbnails;
     bool m_thumbnailsHasBeenSet;
   };

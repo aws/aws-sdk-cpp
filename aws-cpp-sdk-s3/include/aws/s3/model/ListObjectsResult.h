@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     ListObjectsResult();
-    ListObjectsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListObjectsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListObjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListObjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * A flag that indicates whether or not Amazon S3 returned all of the results that
@@ -62,6 +63,7 @@ namespace Model
      * satisfied the search criteria.
      */
     inline ListObjectsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     
     inline const Aws::String& GetMarker() const{ return m_marker; }
@@ -83,6 +85,7 @@ namespace Model
 
     
     inline ListObjectsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+
 
     /**
      * When response is truncated (the IsTruncated element value in the response is
@@ -161,6 +164,7 @@ namespace Model
      */
     inline ListObjectsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     
     inline const Aws::Vector<Object>& GetContents() const{ return m_contents; }
 
@@ -181,6 +185,7 @@ namespace Model
 
     
     inline ListObjectsResult& AddContents(Object&& value) { m_contents.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::String& GetName() const{ return m_name; }
@@ -203,6 +208,7 @@ namespace Model
     
     inline ListObjectsResult& WithName(const char* value) { SetName(value); return *this;}
 
+
     
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
@@ -223,6 +229,7 @@ namespace Model
 
     
     inline ListObjectsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+
 
     
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
@@ -245,6 +252,7 @@ namespace Model
     
     inline ListObjectsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
+
     
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
@@ -253,6 +261,7 @@ namespace Model
 
     
     inline ListObjectsResult& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
+
 
     
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
@@ -274,6 +283,7 @@ namespace Model
 
     
     inline ListObjectsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
+
 
     /**
      * Encoding type used by Amazon S3 to encode object keys in the response.
@@ -301,15 +311,25 @@ namespace Model
     inline ListObjectsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 
   private:
+
     bool m_isTruncated;
+
     Aws::String m_marker;
+
     Aws::String m_nextMarker;
+
     Aws::Vector<Object> m_contents;
+
     Aws::String m_name;
+
     Aws::String m_prefix;
+
     Aws::String m_delimiter;
+
     int m_maxKeys;
+
     Aws::Vector<CommonPrefix> m_commonPrefixes;
+
     EncodingType m_encodingType;
   };
 

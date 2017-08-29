@@ -30,12 +30,12 @@ GetInstanceStateResult::GetInstanceStateResult()
 {
 }
 
-GetInstanceStateResult::GetInstanceStateResult(const AmazonWebServiceResult<JsonValue>& result)
+GetInstanceStateResult::GetInstanceStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetInstanceStateResult& GetInstanceStateResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetInstanceStateResult& GetInstanceStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("state"))

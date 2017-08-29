@@ -55,7 +55,7 @@ enum class ImportExportErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BUCKET_PERMISSION= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BUCKET_PERMISSION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CANCELED_JOB_ID,
   CREATE_JOB_QUOTA_EXCEEDED,
   EXPIRED_JOB_ID,
@@ -76,7 +76,7 @@ enum class ImportExportErrors
 };
 namespace ImportExportErrorMapper
 {
-  AWS_IMPORTEXPORT_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_IMPORTEXPORT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ImportExport

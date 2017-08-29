@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A list of values that are permitted for a parameter.</p>
      */
@@ -93,6 +94,7 @@ namespace Model
     inline ParameterConstraints& AddAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_allowedValues;
     bool m_allowedValuesHasBeenSet;
   };

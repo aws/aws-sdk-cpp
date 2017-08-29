@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetBucketRequestPaymentResult();
-    GetBucketRequestPaymentResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetBucketRequestPaymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketRequestPaymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetBucketRequestPaymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * Specifies who pays for the download and request fees.
@@ -67,6 +68,7 @@ namespace Model
     inline GetBucketRequestPaymentResult& WithPayer(Payer&& value) { SetPayer(std::move(value)); return *this;}
 
   private:
+
     Payer m_payer;
   };
 

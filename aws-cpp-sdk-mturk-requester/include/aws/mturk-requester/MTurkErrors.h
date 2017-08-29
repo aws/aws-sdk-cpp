@@ -55,12 +55,12 @@ enum class MTurkErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  REQUEST= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   SERVICE_FAULT
 };
 namespace MTurkErrorMapper
 {
-  AWS_MTURK_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_MTURK_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace MTurk

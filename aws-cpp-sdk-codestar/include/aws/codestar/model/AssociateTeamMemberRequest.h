@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the project to which you will add the IAM user.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The ID of the project to which you will add the IAM user.</p>
      */
     inline AssociateTeamMemberRequest& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
@@ -120,6 +122,7 @@ namespace Model
      */
     inline AssociateTeamMemberRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS
      * CodeStar project.</p>
@@ -161,6 +164,7 @@ namespace Model
      * CodeStar project.</p>
      */
     inline AssociateTeamMemberRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+
 
     /**
      * <p>The AWS CodeStar project role that will apply to this user. This role
@@ -204,6 +208,7 @@ namespace Model
      */
     inline AssociateTeamMemberRequest& WithProjectRole(const char* value) { SetProjectRole(value); return *this;}
 
+
     /**
      * <p>Whether the team member is allowed to use an SSH public/private key pair to
      * remotely access project resources, for example Amazon EC2 instances.</p>
@@ -223,14 +228,19 @@ namespace Model
     inline AssociateTeamMemberRequest& WithRemoteAccessAllowed(bool value) { SetRemoteAccessAllowed(value); return *this;}
 
   private:
+
     Aws::String m_projectId;
     bool m_projectIdHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
     Aws::String m_userArn;
     bool m_userArnHasBeenSet;
+
     Aws::String m_projectRole;
     bool m_projectRoleHasBeenSet;
+
     bool m_remoteAccessAllowed;
     bool m_remoteAccessAllowedHasBeenSet;
   };

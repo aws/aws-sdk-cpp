@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     DetectModerationLabelsResult();
-    DetectModerationLabelsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetectModerationLabelsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetectModerationLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DetectModerationLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of labels for explicit or suggestive adult content found in the
@@ -92,6 +93,7 @@ namespace Model
     inline DetectModerationLabelsResult& AddModerationLabels(ModerationLabel&& value) { m_moderationLabels.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ModerationLabel> m_moderationLabels;
   };
 

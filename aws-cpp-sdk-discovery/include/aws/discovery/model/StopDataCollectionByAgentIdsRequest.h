@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The IDs of the agents or connectors from which to stop collecting data.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
     inline StopDataCollectionByAgentIdsRequest& AddAgentIds(const char* value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_agentIds;
     bool m_agentIdsHasBeenSet;
   };

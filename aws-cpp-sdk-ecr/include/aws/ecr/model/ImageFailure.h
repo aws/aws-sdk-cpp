@@ -47,6 +47,7 @@ namespace Model
     ImageFailure& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The image ID associated with the failure.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline ImageFailure& WithImageId(ImageIdentifier&& value) { SetImageId(std::move(value)); return *this;}
 
+
     /**
      * <p>The code associated with the failure.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>The code associated with the failure.</p>
      */
     inline ImageFailure& WithFailureCode(ImageFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The reason for the failure.</p>
@@ -133,10 +136,13 @@ namespace Model
     inline ImageFailure& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
   private:
+
     ImageIdentifier m_imageId;
     bool m_imageIdHasBeenSet;
+
     ImageFailureCode m_failureCode;
     bool m_failureCodeHasBeenSet;
+
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;
   };

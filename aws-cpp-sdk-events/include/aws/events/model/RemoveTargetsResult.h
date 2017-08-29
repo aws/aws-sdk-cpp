@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     RemoveTargetsResult();
-    RemoveTargetsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveTargetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RemoveTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The number of failed entries.</p>
@@ -56,6 +57,7 @@ namespace Model
      * <p>The number of failed entries.</p>
      */
     inline RemoveTargetsResult& WithFailedEntryCount(int value) { SetFailedEntryCount(value); return *this;}
+
 
     /**
      * <p>The failed target entries.</p>
@@ -93,7 +95,9 @@ namespace Model
     inline RemoveTargetsResult& AddFailedEntries(RemoveTargetsResultEntry&& value) { m_failedEntries.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_failedEntryCount;
+
     Aws::Vector<RemoveTargetsResultEntry> m_failedEntries;
   };
 

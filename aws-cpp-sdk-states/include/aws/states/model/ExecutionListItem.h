@@ -42,6 +42,7 @@ namespace Model
     ExecutionListItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
     inline ExecutionListItem& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
@@ -112,6 +114,7 @@ namespace Model
      */
     inline ExecutionListItem& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
 
+
     /**
      * <p>The name of the execution.</p>
      */
@@ -147,6 +150,7 @@ namespace Model
      */
     inline ExecutionListItem& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The current status of the execution.</p>
      */
@@ -172,6 +176,7 @@ namespace Model
      */
     inline ExecutionListItem& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
     /**
      * <p>The date the execution started.</p>
      */
@@ -196,6 +201,7 @@ namespace Model
      * <p>The date the execution started.</p>
      */
     inline ExecutionListItem& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+
 
     /**
      * <p>If the execution already ended, the date the execution stopped.</p>
@@ -223,16 +229,22 @@ namespace Model
     inline ExecutionListItem& WithStopDate(Aws::Utils::DateTime&& value) { SetStopDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_executionArn;
     bool m_executionArnHasBeenSet;
+
     Aws::String m_stateMachineArn;
     bool m_stateMachineArnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     ExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::Utils::DateTime m_startDate;
     bool m_startDateHasBeenSet;
+
     Aws::Utils::DateTime m_stopDate;
     bool m_stopDateHasBeenSet;
   };

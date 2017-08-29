@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -129,6 +130,7 @@ namespace Model
      */
     inline CreateUserRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The name of the user to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
@@ -200,8 +202,10 @@ namespace Model
     inline CreateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
   };

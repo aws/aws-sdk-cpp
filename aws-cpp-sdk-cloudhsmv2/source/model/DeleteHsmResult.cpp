@@ -30,12 +30,12 @@ DeleteHsmResult::DeleteHsmResult()
 {
 }
 
-DeleteHsmResult::DeleteHsmResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteHsmResult::DeleteHsmResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteHsmResult& DeleteHsmResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteHsmResult& DeleteHsmResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("HsmId"))

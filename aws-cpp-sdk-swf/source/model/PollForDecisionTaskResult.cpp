@@ -32,14 +32,14 @@ PollForDecisionTaskResult::PollForDecisionTaskResult() :
 {
 }
 
-PollForDecisionTaskResult::PollForDecisionTaskResult(const AmazonWebServiceResult<JsonValue>& result) : 
+PollForDecisionTaskResult::PollForDecisionTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_startedEventId(0),
     m_previousStartedEventId(0)
 {
   *this = result;
 }
 
-PollForDecisionTaskResult& PollForDecisionTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PollForDecisionTaskResult& PollForDecisionTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("taskToken"))

@@ -30,12 +30,12 @@ GetCognitoEventsResult::GetCognitoEventsResult()
 {
 }
 
-GetCognitoEventsResult::GetCognitoEventsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCognitoEventsResult::GetCognitoEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCognitoEventsResult& GetCognitoEventsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCognitoEventsResult& GetCognitoEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Events"))

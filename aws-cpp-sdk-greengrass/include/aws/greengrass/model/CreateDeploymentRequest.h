@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * The client token used to request idempotent operations.
      */
@@ -71,6 +72,7 @@ namespace Model
      * The client token used to request idempotent operations.
      */
     inline CreateDeploymentRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
+
 
     /**
      * Id of the deployment if you wish to redeploy a previous deployment.
@@ -107,6 +109,7 @@ namespace Model
      */
     inline CreateDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
+
     /**
      * Type of deployment
      */
@@ -131,6 +134,7 @@ namespace Model
      * Type of deployment
      */
     inline CreateDeploymentRequest& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+
 
     /**
      * The unique Id of the AWS Greengrass Group
@@ -166,6 +170,7 @@ namespace Model
      * The unique Id of the AWS Greengrass Group
      */
     inline CreateDeploymentRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+
 
     /**
      * Group Version you wish to deploy.
@@ -203,14 +208,19 @@ namespace Model
     inline CreateDeploymentRequest& WithGroupVersionId(const char* value) { SetGroupVersionId(value); return *this;}
 
   private:
+
     Aws::String m_amznClientToken;
     bool m_amznClientTokenHasBeenSet;
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     DeploymentType m_deploymentType;
     bool m_deploymentTypeHasBeenSet;
+
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;
+
     Aws::String m_groupVersionId;
     bool m_groupVersionIdHasBeenSet;
   };

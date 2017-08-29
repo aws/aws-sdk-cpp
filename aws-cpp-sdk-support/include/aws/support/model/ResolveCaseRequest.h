@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
@@ -89,6 +90,7 @@ namespace Model
     inline ResolveCaseRequest& WithCaseId(const char* value) { SetCaseId(value); return *this;}
 
   private:
+
     Aws::String m_caseId;
     bool m_caseIdHasBeenSet;
   };

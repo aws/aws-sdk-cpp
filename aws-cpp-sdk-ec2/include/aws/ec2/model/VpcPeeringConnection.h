@@ -53,6 +53,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Information about the accepter VPC. CIDR block information is only returned
      * when describing an active VPC peering connection.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline VpcPeeringConnection& WithAccepterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { SetAccepterVpcInfo(std::move(value)); return *this;}
 
+
     /**
      * <p>The time that an unaccepted VPC peering connection will expire.</p>
      */
@@ -107,6 +109,7 @@ namespace Model
      * <p>The time that an unaccepted VPC peering connection will expire.</p>
      */
     inline VpcPeeringConnection& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about the requester VPC. CIDR block information is only returned
@@ -138,6 +141,7 @@ namespace Model
      */
     inline VpcPeeringConnection& WithRequesterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { SetRequesterVpcInfo(std::move(value)); return *this;}
 
+
     /**
      * <p>The status of the VPC peering connection.</p>
      */
@@ -162,6 +166,7 @@ namespace Model
      * <p>The status of the VPC peering connection.</p>
      */
     inline VpcPeeringConnection& WithStatus(VpcPeeringConnectionStateReason&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Any tags assigned to the resource.</p>
@@ -197,6 +202,7 @@ namespace Model
      * <p>Any tags assigned to the resource.</p>
      */
     inline VpcPeeringConnection& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the VPC peering connection.</p>
@@ -234,16 +240,22 @@ namespace Model
     inline VpcPeeringConnection& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
   private:
+
     VpcPeeringConnectionVpcInfo m_accepterVpcInfo;
     bool m_accepterVpcInfoHasBeenSet;
+
     Aws::Utils::DateTime m_expirationTime;
     bool m_expirationTimeHasBeenSet;
+
     VpcPeeringConnectionVpcInfo m_requesterVpcInfo;
     bool m_requesterVpcInfoHasBeenSet;
+
     VpcPeeringConnectionStateReason m_status;
     bool m_statusHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
   };

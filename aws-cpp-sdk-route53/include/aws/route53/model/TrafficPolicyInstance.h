@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
      */
     inline TrafficPolicyInstance& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The ID of the hosted zone that Amazon Route 53 created resource record sets
@@ -124,6 +126,7 @@ namespace Model
      * in.</p>
      */
     inline TrafficPolicyInstance& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+
 
     /**
      * <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to
@@ -174,6 +177,7 @@ namespace Model
      */
     inline TrafficPolicyInstance& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that
      * it created in the specified hosted zone.</p>
@@ -191,6 +195,7 @@ namespace Model
      * it created in the specified hosted zone.</p>
      */
     inline TrafficPolicyInstance& WithTTL(long long value) { SetTTL(value); return *this;}
+
 
     /**
      * <p>The value of <code>State</code> is one of the following values:</p> <dl>
@@ -290,6 +295,7 @@ namespace Model
      */
     inline TrafficPolicyInstance& WithState(const char* value) { SetState(value); return *this;}
 
+
     /**
      * <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason
      * for the failure. If <code>State</code> is another value, <code>Message</code> is
@@ -339,6 +345,7 @@ namespace Model
      */
     inline TrafficPolicyInstance& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
     /**
      * <p>The ID of the traffic policy that Amazon Route 53 used to create resource
      * record sets in the specified hosted zone.</p>
@@ -381,6 +388,7 @@ namespace Model
      */
     inline TrafficPolicyInstance& WithTrafficPolicyId(const char* value) { SetTrafficPolicyId(value); return *this;}
 
+
     /**
      * <p>The version of the traffic policy that Amazon Route 53 used to create
      * resource record sets in the specified hosted zone.</p>
@@ -398,6 +406,7 @@ namespace Model
      * resource record sets in the specified hosted zone.</p>
      */
     inline TrafficPolicyInstance& WithTrafficPolicyVersion(int value) { SetTrafficPolicyVersion(value); return *this;}
+
 
     /**
      * <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets
@@ -430,22 +439,31 @@ namespace Model
     inline TrafficPolicyInstance& WithTrafficPolicyType(RRType&& value) { SetTrafficPolicyType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     long long m_tTL;
     bool m_tTLHasBeenSet;
+
     Aws::String m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_message;
     bool m_messageHasBeenSet;
+
     Aws::String m_trafficPolicyId;
     bool m_trafficPolicyIdHasBeenSet;
+
     int m_trafficPolicyVersion;
     bool m_trafficPolicyVersionHasBeenSet;
+
     RRType m_trafficPolicyType;
     bool m_trafficPolicyTypeHasBeenSet;
   };

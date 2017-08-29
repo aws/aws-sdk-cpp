@@ -30,12 +30,12 @@ ListMigrationTasksResult::ListMigrationTasksResult()
 {
 }
 
-ListMigrationTasksResult::ListMigrationTasksResult(const AmazonWebServiceResult<JsonValue>& result)
+ListMigrationTasksResult::ListMigrationTasksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListMigrationTasksResult& ListMigrationTasksResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListMigrationTasksResult& ListMigrationTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

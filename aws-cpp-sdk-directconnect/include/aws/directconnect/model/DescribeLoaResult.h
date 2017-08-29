@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeLoaResult();
-    DescribeLoaResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLoaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLoaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeLoaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::Utils::ByteBuffer& GetLoaContent() const{ return m_loaContent; }
@@ -62,6 +63,7 @@ namespace Model
 
     
     inline DescribeLoaResult& WithLoaContent(Aws::Utils::ByteBuffer&& value) { SetLoaContent(std::move(value)); return *this;}
+
 
     
     inline const LoaContentType& GetLoaContentType() const{ return m_loaContentType; }
@@ -79,7 +81,9 @@ namespace Model
     inline DescribeLoaResult& WithLoaContentType(LoaContentType&& value) { SetLoaContentType(std::move(value)); return *this;}
 
   private:
+
     Aws::Utils::ByteBuffer m_loaContent;
+
     LoaContentType m_loaContentType;
   };
 

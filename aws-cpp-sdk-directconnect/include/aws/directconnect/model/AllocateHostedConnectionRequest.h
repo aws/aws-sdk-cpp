@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the interconnect or LAG on which the connection will be
      * provisioned.</p> <p>Example: dxcon-456abc78 or dxlag-abc123</p> <p>Default:
@@ -89,6 +90,7 @@ namespace Model
      */
     inline AllocateHostedConnectionRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
+
     /**
      * <p>The numeric account ID of the customer for whom the connection will be
      * provisioned.</p> <p>Example: 123443215678</p> <p>Default: None</p>
@@ -130,6 +132,7 @@ namespace Model
      * provisioned.</p> <p>Example: 123443215678</p> <p>Default: None</p>
      */
     inline AllocateHostedConnectionRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
+
 
     /**
      * <p>The bandwidth of the connection.</p> <p>Example: <code>500Mbps</code> </p>
@@ -180,6 +183,7 @@ namespace Model
      */
     inline AllocateHostedConnectionRequest& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
 
+
     /**
      * <p>The name of the provisioned connection.</p> <p>Example: "<code>500M
      * Connection to AWS</code>"</p> <p>Default: None</p>
@@ -222,6 +226,7 @@ namespace Model
      */
     inline AllocateHostedConnectionRequest& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
+
     /**
      * <p>The dedicated VLAN provisioned to the hosted connection.</p> <p>Example:
      * 101</p> <p>Default: None</p>
@@ -241,14 +246,19 @@ namespace Model
     inline AllocateHostedConnectionRequest& WithVlan(int value) { SetVlan(value); return *this;}
 
   private:
+
     Aws::String m_connectionId;
     bool m_connectionIdHasBeenSet;
+
     Aws::String m_ownerAccount;
     bool m_ownerAccountHasBeenSet;
+
     Aws::String m_bandwidth;
     bool m_bandwidthHasBeenSet;
+
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet;
+
     int m_vlan;
     bool m_vlanHasBeenSet;
   };

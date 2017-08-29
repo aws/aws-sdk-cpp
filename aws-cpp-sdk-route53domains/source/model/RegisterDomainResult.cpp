@@ -30,12 +30,12 @@ RegisterDomainResult::RegisterDomainResult()
 {
 }
 
-RegisterDomainResult::RegisterDomainResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterDomainResult::RegisterDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterDomainResult& RegisterDomainResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterDomainResult& RegisterDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("OperationId"))

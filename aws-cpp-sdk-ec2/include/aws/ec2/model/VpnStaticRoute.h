@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The CIDR block associated with the local subnet of the customer data
      * center.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline VpnStaticRoute& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
 
+
     /**
      * <p>Indicates how the routes were provided.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>Indicates how the routes were provided.</p>
      */
     inline VpnStaticRoute& WithSource(VpnStaticRouteSource&& value) { SetSource(std::move(value)); return *this;}
+
 
     /**
      * <p>The current state of the static route.</p>
@@ -143,10 +146,13 @@ namespace Model
     inline VpnStaticRoute& WithState(VpnState&& value) { SetState(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet;
+
     VpnStaticRouteSource m_source;
     bool m_sourceHasBeenSet;
+
     VpnState m_state;
     bool m_stateHasBeenSet;
   };

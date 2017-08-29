@@ -30,12 +30,12 @@ ListLoggerDefinitionVersionsResult::ListLoggerDefinitionVersionsResult()
 {
 }
 
-ListLoggerDefinitionVersionsResult::ListLoggerDefinitionVersionsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListLoggerDefinitionVersionsResult::ListLoggerDefinitionVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListLoggerDefinitionVersionsResult& ListLoggerDefinitionVersionsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListLoggerDefinitionVersionsResult& ListLoggerDefinitionVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NextToken"))

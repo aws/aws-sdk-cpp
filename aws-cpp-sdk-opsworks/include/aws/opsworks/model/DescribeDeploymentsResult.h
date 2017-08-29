@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeDeploymentsResult();
-    DescribeDeploymentsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDeploymentsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>Deployment</code> objects that describe the
@@ -91,6 +92,7 @@ namespace Model
     inline DescribeDeploymentsResult& AddDeployments(Deployment&& value) { m_deployments.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Deployment> m_deployments;
   };
 

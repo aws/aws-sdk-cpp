@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreatePatchBaselineResult();
-    CreatePatchBaselineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePatchBaselineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePatchBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreatePatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the created patch baseline.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreatePatchBaselineResult& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
 
   private:
+
     Aws::String m_baselineId;
   };
 

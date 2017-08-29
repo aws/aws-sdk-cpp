@@ -47,6 +47,7 @@ namespace Model
     ThingAttribute& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the thing.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline ThingAttribute& WithThingName(const char* value) { SetThingName(value); return *this;}
 
+
     /**
      * <p>The name of the thing type, if the thing has been associated with a type.</p>
      */
@@ -116,6 +118,7 @@ namespace Model
      * <p>The name of the thing type, if the thing has been associated with a type.</p>
      */
     inline ThingAttribute& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+
 
     /**
      * <p>A list of thing attributes which are name-value pairs.</p>
@@ -177,6 +180,7 @@ namespace Model
      */
     inline ThingAttribute& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>The version of the thing record in the registry.</p>
      */
@@ -193,12 +197,16 @@ namespace Model
     inline ThingAttribute& WithVersion(long long value) { SetVersion(value); return *this;}
 
   private:
+
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
+
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     long long m_version;
     bool m_versionHasBeenSet;
   };

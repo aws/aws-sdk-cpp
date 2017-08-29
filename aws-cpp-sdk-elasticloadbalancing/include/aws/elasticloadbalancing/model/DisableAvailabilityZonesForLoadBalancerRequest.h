@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name of the load balancer.</p>
      */
     inline DisableAvailabilityZonesForLoadBalancerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+
 
     /**
      * <p>The Availability Zones.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline DisableAvailabilityZonesForLoadBalancerRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
   };

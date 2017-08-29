@@ -30,12 +30,12 @@ GetDataRetrievalPolicyResult::GetDataRetrievalPolicyResult()
 {
 }
 
-GetDataRetrievalPolicyResult::GetDataRetrievalPolicyResult(const AmazonWebServiceResult<JsonValue>& result)
+GetDataRetrievalPolicyResult::GetDataRetrievalPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetDataRetrievalPolicyResult& GetDataRetrievalPolicyResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetDataRetrievalPolicyResult& GetDataRetrievalPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Policy"))

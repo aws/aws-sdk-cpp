@@ -58,6 +58,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>One or more security groups. When requesting instances in a VPC, you must
      * specify the IDs of the security groups. When requesting instances in
@@ -107,6 +108,7 @@ namespace Model
      */
     inline SpotFleetLaunchSpecification& AddSecurityGroups(GroupIdentifier&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Deprecated.</p>
      */
@@ -141,6 +143,7 @@ namespace Model
      * <p>Deprecated.</p>
      */
     inline SpotFleetLaunchSpecification& WithAddressingType(const char* value) { SetAddressingType(value); return *this;}
+
 
     /**
      * <p>One or more block device mapping entries.</p>
@@ -177,6 +180,7 @@ namespace Model
      */
     inline SpotFleetLaunchSpecification& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether the instances are optimized for EBS I/O. This optimization
      * provides dedicated throughput to Amazon EBS and an optimized configuration stack
@@ -204,6 +208,7 @@ namespace Model
      */
     inline SpotFleetLaunchSpecification& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
+
     /**
      * <p>The IAM instance profile.</p>
      */
@@ -228,6 +233,7 @@ namespace Model
      * <p>The IAM instance profile.</p>
      */
     inline SpotFleetLaunchSpecification& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the AMI.</p>
@@ -264,6 +270,7 @@ namespace Model
      */
     inline SpotFleetLaunchSpecification& WithImageId(const char* value) { SetImageId(value); return *this;}
 
+
     /**
      * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
      */
@@ -288,6 +295,7 @@ namespace Model
      * <p>The instance type. Note that T2 and HS1 instance types are not supported.</p>
      */
     inline SpotFleetLaunchSpecification& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the kernel.</p>
@@ -324,6 +332,7 @@ namespace Model
      */
     inline SpotFleetLaunchSpecification& WithKernelId(const char* value) { SetKernelId(value); return *this;}
 
+
     /**
      * <p>The name of the key pair.</p>
      */
@@ -359,6 +368,7 @@ namespace Model
      */
     inline SpotFleetLaunchSpecification& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
+
     /**
      * <p>Enable or disable monitoring for the instances.</p>
      */
@@ -383,6 +393,7 @@ namespace Model
      * <p>Enable or disable monitoring for the instances.</p>
      */
     inline SpotFleetLaunchSpecification& WithMonitoring(SpotFleetMonitoring&& value) { SetMonitoring(std::move(value)); return *this;}
+
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
@@ -426,6 +437,7 @@ namespace Model
      */
     inline SpotFleetLaunchSpecification& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The placement information.</p>
      */
@@ -450,6 +462,7 @@ namespace Model
      * <p>The placement information.</p>
      */
     inline SpotFleetLaunchSpecification& WithPlacement(SpotPlacement&& value) { SetPlacement(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the RAM disk.</p>
@@ -485,6 +498,7 @@ namespace Model
      * <p>The ID of the RAM disk.</p>
      */
     inline SpotFleetLaunchSpecification& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
+
 
     /**
      * <p>The bid price per unit hour for the specified instance type. If this value is
@@ -542,6 +556,7 @@ namespace Model
      */
     inline SpotFleetLaunchSpecification& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
+
     /**
      * <p>The ID of the subnet in which to launch the instances. To specify multiple
      * subnets, separate them using commas; for example, "subnet-a61dafcf,
@@ -590,6 +605,7 @@ namespace Model
      * subnet-65ea5f08".</p>
      */
     inline SpotFleetLaunchSpecification& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The user data to make available to the instances. If you are using an AWS SDK
@@ -640,6 +656,7 @@ namespace Model
      */
     inline SpotFleetLaunchSpecification& WithUserData(const char* value) { SetUserData(value); return *this;}
 
+
     /**
      * <p>The number of units provided by the specified instance type. These are the
      * same units that you chose to set the target capacity in terms (instances or a
@@ -669,6 +686,7 @@ namespace Model
      * is 1.</p>
      */
     inline SpotFleetLaunchSpecification& WithWeightedCapacity(double value) { SetWeightedCapacity(value); return *this;}
+
 
     /**
      * <p>The tags to apply during creation.</p>
@@ -706,40 +724,58 @@ namespace Model
     inline SpotFleetLaunchSpecification& AddTagSpecifications(SpotFleetTagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<GroupIdentifier> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
     Aws::String m_addressingType;
     bool m_addressingTypeHasBeenSet;
+
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet;
+
     bool m_ebsOptimized;
     bool m_ebsOptimizedHasBeenSet;
+
     IamInstanceProfileSpecification m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
+
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
+
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     Aws::String m_kernelId;
     bool m_kernelIdHasBeenSet;
+
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
+
     SpotFleetMonitoring m_monitoring;
     bool m_monitoringHasBeenSet;
+
     Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
     bool m_networkInterfacesHasBeenSet;
+
     SpotPlacement m_placement;
     bool m_placementHasBeenSet;
+
     Aws::String m_ramdiskId;
     bool m_ramdiskIdHasBeenSet;
+
     Aws::String m_spotPrice;
     bool m_spotPriceHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_userData;
     bool m_userDataHasBeenSet;
+
     double m_weightedCapacity;
     bool m_weightedCapacityHasBeenSet;
+
     Aws::Vector<SpotFleetTagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
   };

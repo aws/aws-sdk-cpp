@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     ListObjectVersionsResult();
-    ListObjectVersionsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListObjectVersionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListObjectVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListObjectVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * A flag that indicates whether or not Amazon S3 returned all of the results that
@@ -72,6 +73,7 @@ namespace Model
      * the results.
      */
     inline ListObjectVersionsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * Marks the last Key returned in a truncated response.
@@ -108,6 +110,7 @@ namespace Model
      */
     inline ListObjectVersionsResult& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
 
+
     
     inline const Aws::String& GetVersionIdMarker() const{ return m_versionIdMarker; }
 
@@ -128,6 +131,7 @@ namespace Model
 
     
     inline ListObjectVersionsResult& WithVersionIdMarker(const char* value) { SetVersionIdMarker(value); return *this;}
+
 
     /**
      * Use this value for the key marker request parameter in a subsequent request.
@@ -164,6 +168,7 @@ namespace Model
      */
     inline ListObjectVersionsResult& WithNextKeyMarker(const char* value) { SetNextKeyMarker(value); return *this;}
 
+
     /**
      * Use this value for the next version id marker parameter in a subsequent request.
      */
@@ -199,6 +204,7 @@ namespace Model
      */
     inline ListObjectVersionsResult& WithNextVersionIdMarker(const char* value) { SetNextVersionIdMarker(value); return *this;}
 
+
     
     inline const Aws::Vector<ObjectVersion>& GetVersions() const{ return m_versions; }
 
@@ -219,6 +225,7 @@ namespace Model
 
     
     inline ListObjectVersionsResult& AddVersions(ObjectVersion&& value) { m_versions.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::Vector<DeleteMarkerEntry>& GetDeleteMarkers() const{ return m_deleteMarkers; }
@@ -241,6 +248,7 @@ namespace Model
     
     inline ListObjectVersionsResult& AddDeleteMarkers(DeleteMarkerEntry&& value) { m_deleteMarkers.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -261,6 +269,7 @@ namespace Model
 
     
     inline ListObjectVersionsResult& WithName(const char* value) { SetName(value); return *this;}
+
 
     
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
@@ -283,6 +292,7 @@ namespace Model
     
     inline ListObjectVersionsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
@@ -304,6 +314,7 @@ namespace Model
     
     inline ListObjectVersionsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
+
     
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
@@ -312,6 +323,7 @@ namespace Model
 
     
     inline ListObjectVersionsResult& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
+
 
     
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
@@ -333,6 +345,7 @@ namespace Model
 
     
     inline ListObjectVersionsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
+
 
     /**
      * Encoding type used by Amazon S3 to encode object keys in the response.
@@ -360,18 +373,31 @@ namespace Model
     inline ListObjectVersionsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 
   private:
+
     bool m_isTruncated;
+
     Aws::String m_keyMarker;
+
     Aws::String m_versionIdMarker;
+
     Aws::String m_nextKeyMarker;
+
     Aws::String m_nextVersionIdMarker;
+
     Aws::Vector<ObjectVersion> m_versions;
+
     Aws::Vector<DeleteMarkerEntry> m_deleteMarkers;
+
     Aws::String m_name;
+
     Aws::String m_prefix;
+
     Aws::String m_delimiter;
+
     int m_maxKeys;
+
     Aws::Vector<CommonPrefix> m_commonPrefixes;
+
     EncodingType m_encodingType;
   };
 

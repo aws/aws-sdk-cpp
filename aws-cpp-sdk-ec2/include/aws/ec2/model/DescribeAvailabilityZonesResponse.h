@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeAvailabilityZonesResponse();
-    DescribeAvailabilityZonesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAvailabilityZonesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAvailabilityZonesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeAvailabilityZonesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about one or more Availability Zones.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeAvailabilityZonesResponse& AddAvailabilityZones(AvailabilityZone&& value) { m_availabilityZones.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeAvailabilityZonesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<AvailabilityZone> m_availabilityZones;
+
     ResponseMetadata m_responseMetadata;
   };
 

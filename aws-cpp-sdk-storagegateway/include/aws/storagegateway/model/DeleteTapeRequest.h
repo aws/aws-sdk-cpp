@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to
      * delete is associated with. Use the <a>ListGateways</a> operation to return a
@@ -88,6 +89,7 @@ namespace Model
      */
     inline DeleteTapeRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
      */
@@ -124,8 +126,10 @@ namespace Model
     inline DeleteTapeRequest& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     Aws::String m_tapeARN;
     bool m_tapeARNHasBeenSet;
   };

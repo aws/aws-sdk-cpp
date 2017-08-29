@@ -46,6 +46,7 @@ namespace Model
     Image& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The AWS account ID associated with the registry containing the image.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The AWS account ID associated with the registry containing the image.</p>
      */
     inline Image& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+
 
     /**
      * <p>The name of the repository associated with the image.</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline Image& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
+
     /**
      * <p>An object containing the image tag and image digest associated with an
      * image.</p>
@@ -145,6 +148,7 @@ namespace Model
      * image.</p>
      */
     inline Image& WithImageId(ImageIdentifier&& value) { SetImageId(std::move(value)); return *this;}
+
 
     /**
      * <p>The image manifest associated with the image.</p>
@@ -182,12 +186,16 @@ namespace Model
     inline Image& WithImageManifest(const char* value) { SetImageManifest(value); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
+
     ImageIdentifier m_imageId;
     bool m_imageIdHasBeenSet;
+
     Aws::String m_imageManifest;
     bool m_imageManifestHasBeenSet;
   };

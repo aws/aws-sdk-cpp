@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     RegisterDefaultPatchBaselineResult();
-    RegisterDefaultPatchBaselineResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterDefaultPatchBaselineResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterDefaultPatchBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RegisterDefaultPatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the default patch baseline.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline RegisterDefaultPatchBaselineResult& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
 
   private:
+
     Aws::String m_baselineId;
   };
 

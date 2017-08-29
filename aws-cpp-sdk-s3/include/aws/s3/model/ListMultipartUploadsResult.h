@@ -42,8 +42,9 @@ namespace Model
   {
   public:
     ListMultipartUploadsResult();
-    ListMultipartUploadsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListMultipartUploadsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListMultipartUploadsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListMultipartUploadsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * Name of the bucket to which the multipart upload was initiated.
@@ -80,6 +81,7 @@ namespace Model
      */
     inline ListMultipartUploadsResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     /**
      * The key at or after which the listing began.
      */
@@ -115,6 +117,7 @@ namespace Model
      */
     inline ListMultipartUploadsResult& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
 
+
     /**
      * Upload ID after which listing began.
      */
@@ -149,6 +152,7 @@ namespace Model
      * Upload ID after which listing began.
      */
     inline ListMultipartUploadsResult& WithUploadIdMarker(const char* value) { SetUploadIdMarker(value); return *this;}
+
 
     /**
      * When a list is truncated, this element specifies the value that should be used
@@ -192,6 +196,7 @@ namespace Model
      */
     inline ListMultipartUploadsResult& WithNextKeyMarker(const char* value) { SetNextKeyMarker(value); return *this;}
 
+
     /**
      * When a prefix is provided in the request, this field contains the specified
      * prefix. The result contains only keys starting with the specified prefix.
@@ -234,6 +239,7 @@ namespace Model
      */
     inline ListMultipartUploadsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
+
     
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
@@ -254,6 +260,7 @@ namespace Model
 
     
     inline ListMultipartUploadsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+
 
     /**
      * When a list is truncated, this element specifies the value that should be used
@@ -297,6 +304,7 @@ namespace Model
      */
     inline ListMultipartUploadsResult& WithNextUploadIdMarker(const char* value) { SetNextUploadIdMarker(value); return *this;}
 
+
     /**
      * Maximum number of multipart uploads that could have been included in the
      * response.
@@ -314,6 +322,7 @@ namespace Model
      * response.
      */
     inline ListMultipartUploadsResult& WithMaxUploads(int value) { SetMaxUploads(value); return *this;}
+
 
     /**
      * Indicates whether the returned list of multipart uploads is truncated. A value
@@ -339,6 +348,7 @@ namespace Model
      */
     inline ListMultipartUploadsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
+
     
     inline const Aws::Vector<MultipartUpload>& GetUploads() const{ return m_uploads; }
 
@@ -360,6 +370,7 @@ namespace Model
     
     inline ListMultipartUploadsResult& AddUploads(MultipartUpload&& value) { m_uploads.push_back(std::move(value)); return *this; }
 
+
     
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
@@ -380,6 +391,7 @@ namespace Model
 
     
     inline ListMultipartUploadsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
+
 
     /**
      * Encoding type used by Amazon S3 to encode object keys in the response.
@@ -407,17 +419,29 @@ namespace Model
     inline ListMultipartUploadsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
+
     Aws::String m_keyMarker;
+
     Aws::String m_uploadIdMarker;
+
     Aws::String m_nextKeyMarker;
+
     Aws::String m_prefix;
+
     Aws::String m_delimiter;
+
     Aws::String m_nextUploadIdMarker;
+
     int m_maxUploads;
+
     bool m_isTruncated;
+
     Aws::Vector<MultipartUpload> m_uploads;
+
     Aws::Vector<CommonPrefix> m_commonPrefixes;
+
     EncodingType m_encodingType;
   };
 

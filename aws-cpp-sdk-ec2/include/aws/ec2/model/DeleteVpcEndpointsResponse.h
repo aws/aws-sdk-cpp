@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DeleteVpcEndpointsResponse();
-    DeleteVpcEndpointsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteVpcEndpointsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteVpcEndpointsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteVpcEndpointsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the endpoints that were not successfully deleted.</p>
@@ -83,6 +84,7 @@ namespace Model
      */
     inline DeleteVpcEndpointsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -99,7 +101,9 @@ namespace Model
     inline DeleteVpcEndpointsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<UnsuccessfulItem> m_unsuccessful;
+
     ResponseMetadata m_responseMetadata;
   };
 

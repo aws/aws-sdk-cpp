@@ -40,6 +40,7 @@ namespace Model
     CreateStageRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline CreateStageRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
+
     /**
      * <p>The name for the <a>Stage</a> resource.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>The name for the <a>Stage</a> resource.</p>
      */
     inline CreateStageRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
+
 
     /**
      * <p>The identifier of the <a>Deployment</a> resource for the <a>Stage</a>
@@ -152,6 +155,7 @@ namespace Model
      */
     inline CreateStageRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
+
     /**
      * <p>The description of the <a>Stage</a> resource.</p>
      */
@@ -187,6 +191,7 @@ namespace Model
      */
     inline CreateStageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>Whether cache clustering is enabled for the stage.</p>
      */
@@ -201,6 +206,7 @@ namespace Model
      * <p>Whether cache clustering is enabled for the stage.</p>
      */
     inline CreateStageRequest& WithCacheClusterEnabled(bool value) { SetCacheClusterEnabled(value); return *this;}
+
 
     /**
      * <p>The stage's cache cluster size.</p>
@@ -226,6 +232,7 @@ namespace Model
      * <p>The stage's cache cluster size.</p>
      */
     inline CreateStageRequest& WithCacheClusterSize(CacheClusterSize&& value) { SetCacheClusterSize(std::move(value)); return *this;}
+
 
     /**
      * <p>A map that defines the stage variables for the new <a>Stage</a> resource.
@@ -311,6 +318,7 @@ namespace Model
      */
     inline CreateStageRequest& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
 
+
     /**
      * <p>The version of the associated API documentation.</p>
      */
@@ -347,20 +355,28 @@ namespace Model
     inline CreateStageRequest& WithDocumentationVersion(const char* value) { SetDocumentationVersion(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     bool m_cacheClusterEnabled;
     bool m_cacheClusterEnabledHasBeenSet;
+
     CacheClusterSize m_cacheClusterSize;
     bool m_cacheClusterSizeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_variables;
     bool m_variablesHasBeenSet;
+
     Aws::String m_documentationVersion;
     bool m_documentationVersionHasBeenSet;
   };

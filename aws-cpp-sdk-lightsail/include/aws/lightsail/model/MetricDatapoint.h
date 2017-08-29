@@ -46,6 +46,7 @@ namespace Model
     MetricDatapoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The average.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The average.</p>
      */
     inline MetricDatapoint& WithAverage(double value) { SetAverage(value); return *this;}
+
 
     /**
      * <p>The maximum.</p>
@@ -76,6 +78,7 @@ namespace Model
      */
     inline MetricDatapoint& WithMaximum(double value) { SetMaximum(value); return *this;}
 
+
     /**
      * <p>The minimum.</p>
      */
@@ -90,6 +93,7 @@ namespace Model
      * <p>The minimum.</p>
      */
     inline MetricDatapoint& WithMinimum(double value) { SetMinimum(value); return *this;}
+
 
     /**
      * <p>The sample count.</p>
@@ -106,6 +110,7 @@ namespace Model
      */
     inline MetricDatapoint& WithSampleCount(double value) { SetSampleCount(value); return *this;}
 
+
     /**
      * <p>The sum.</p>
      */
@@ -120,6 +125,7 @@ namespace Model
      * <p>The sum.</p>
      */
     inline MetricDatapoint& WithSum(double value) { SetSum(value); return *this;}
+
 
     /**
      * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
@@ -145,6 +151,7 @@ namespace Model
      * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
      */
     inline MetricDatapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The unit. </p>
@@ -172,18 +179,25 @@ namespace Model
     inline MetricDatapoint& WithUnit(MetricUnit&& value) { SetUnit(std::move(value)); return *this;}
 
   private:
+
     double m_average;
     bool m_averageHasBeenSet;
+
     double m_maximum;
     bool m_maximumHasBeenSet;
+
     double m_minimum;
     bool m_minimumHasBeenSet;
+
     double m_sampleCount;
     bool m_sampleCountHasBeenSet;
+
     double m_sum;
     bool m_sumHasBeenSet;
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
     MetricUnit m_unit;
     bool m_unitHasBeenSet;
   };

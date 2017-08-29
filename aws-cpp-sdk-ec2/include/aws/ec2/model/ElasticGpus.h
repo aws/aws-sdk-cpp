@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the Elastic GPU.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The ID of the Elastic GPU.</p>
      */
     inline ElasticGpus& WithElasticGpuId(const char* value) { SetElasticGpuId(value); return *this;}
+
 
     /**
      * <p>The Availability Zone in the which the Elastic GPU resides.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline ElasticGpus& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The type of Elastic GPU.</p>
      */
@@ -155,6 +158,7 @@ namespace Model
      */
     inline ElasticGpus& WithElasticGpuType(const char* value) { SetElasticGpuType(value); return *this;}
 
+
     /**
      * <p>The status of the Elastic GPU.</p>
      */
@@ -180,6 +184,7 @@ namespace Model
      */
     inline ElasticGpus& WithElasticGpuHealth(ElasticGpuHealth&& value) { SetElasticGpuHealth(std::move(value)); return *this;}
 
+
     /**
      * <p>The state of the Elastic GPU.</p>
      */
@@ -204,6 +209,7 @@ namespace Model
      * <p>The state of the Elastic GPU.</p>
      */
     inline ElasticGpus& WithElasticGpuState(ElasticGpuState&& value) { SetElasticGpuState(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the instance to which the Elastic GPU is attached.</p>
@@ -241,16 +247,22 @@ namespace Model
     inline ElasticGpus& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_elasticGpuId;
     bool m_elasticGpuIdHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     Aws::String m_elasticGpuType;
     bool m_elasticGpuTypeHasBeenSet;
+
     ElasticGpuHealth m_elasticGpuHealth;
     bool m_elasticGpuHealthHasBeenSet;
+
     ElasticGpuState m_elasticGpuState;
     bool m_elasticGpuStateHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
   };

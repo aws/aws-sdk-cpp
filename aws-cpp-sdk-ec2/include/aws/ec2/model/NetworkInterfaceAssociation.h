@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The allocation ID.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The allocation ID.</p>
      */
     inline NetworkInterfaceAssociation& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+
 
     /**
      * <p>The association ID.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline NetworkInterfaceAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
+
     /**
      * <p>The ID of the Elastic IP address owner.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      */
     inline NetworkInterfaceAssociation& WithIpOwnerId(const char* value) { SetIpOwnerId(value); return *this;}
 
+
     /**
      * <p>The public DNS name.</p>
      */
@@ -188,6 +192,7 @@ namespace Model
      * <p>The public DNS name.</p>
      */
     inline NetworkInterfaceAssociation& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
+
 
     /**
      * <p>The address of the Elastic IP address bound to the network interface.</p>
@@ -225,14 +230,19 @@ namespace Model
     inline NetworkInterfaceAssociation& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
   private:
+
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet;
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
+
     Aws::String m_ipOwnerId;
     bool m_ipOwnerIdHasBeenSet;
+
     Aws::String m_publicDnsName;
     bool m_publicDnsNameHasBeenSet;
+
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
   };

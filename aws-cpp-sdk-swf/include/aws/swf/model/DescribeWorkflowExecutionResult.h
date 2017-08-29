@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     DescribeWorkflowExecutionResult();
-    DescribeWorkflowExecutionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkflowExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkflowExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkflowExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the workflow execution.</p>
@@ -74,6 +75,7 @@ namespace Model
      * <p>Information about the workflow execution.</p>
      */
     inline DescribeWorkflowExecutionResult& WithExecutionInfo(WorkflowExecutionInfo&& value) { SetExecutionInfo(std::move(value)); return *this;}
+
 
     /**
      * <p>The configuration settings for this workflow execution including timeout
@@ -105,6 +107,7 @@ namespace Model
      */
     inline DescribeWorkflowExecutionResult& WithExecutionConfiguration(WorkflowExecutionConfiguration&& value) { SetExecutionConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of tasks for this workflow execution. This includes open and
      * closed tasks of all types.</p>
@@ -134,6 +137,7 @@ namespace Model
      * closed tasks of all types.</p>
      */
     inline DescribeWorkflowExecutionResult& WithOpenCounts(WorkflowExecutionOpenCounts&& value) { SetOpenCounts(std::move(value)); return *this;}
+
 
     /**
      * <p>The time when the last activity task was scheduled for this workflow
@@ -174,6 +178,7 @@ namespace Model
      * corrective action.</p>
      */
     inline DescribeWorkflowExecutionResult& WithLatestActivityTaskTimestamp(Aws::Utils::DateTime&& value) { SetLatestActivityTaskTimestamp(std::move(value)); return *this;}
+
 
     /**
      * <p>The latest executionContext provided by the decider for this workflow
@@ -225,10 +230,15 @@ namespace Model
     inline DescribeWorkflowExecutionResult& WithLatestExecutionContext(const char* value) { SetLatestExecutionContext(value); return *this;}
 
   private:
+
     WorkflowExecutionInfo m_executionInfo;
+
     WorkflowExecutionConfiguration m_executionConfiguration;
+
     WorkflowExecutionOpenCounts m_openCounts;
+
     Aws::Utils::DateTime m_latestActivityTaskTimestamp;
+
     Aws::String m_latestExecutionContext;
   };
 

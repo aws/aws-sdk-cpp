@@ -39,6 +39,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The IAM instance profile.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>The IAM instance profile.</p>
      */
     inline ReplaceIamInstanceProfileAssociationRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the existing IAM instance profile association.</p>
@@ -100,8 +102,10 @@ namespace Model
     inline ReplaceIamInstanceProfileAssociationRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 
   private:
+
     IamInstanceProfileSpecification m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet;
+
     Aws::String m_associationId;
     bool m_associationIdHasBeenSet;
   };

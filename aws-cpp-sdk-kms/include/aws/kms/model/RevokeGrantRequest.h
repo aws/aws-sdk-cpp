@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the customer master key associated with the grant.
      * This value can be a globally unique identifier or the fully specified ARN to a
@@ -106,6 +107,7 @@ namespace Model
      */
     inline RevokeGrantRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>Identifier of the grant to be revoked.</p>
      */
@@ -142,8 +144,10 @@ namespace Model
     inline RevokeGrantRequest& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::String m_grantId;
     bool m_grantIdHasBeenSet;
   };

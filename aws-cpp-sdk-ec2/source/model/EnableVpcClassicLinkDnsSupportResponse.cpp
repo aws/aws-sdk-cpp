@@ -32,13 +32,13 @@ EnableVpcClassicLinkDnsSupportResponse::EnableVpcClassicLinkDnsSupportResponse()
 {
 }
 
-EnableVpcClassicLinkDnsSupportResponse::EnableVpcClassicLinkDnsSupportResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+EnableVpcClassicLinkDnsSupportResponse::EnableVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_return(false)
 {
   *this = result;
 }
 
-EnableVpcClassicLinkDnsSupportResponse& EnableVpcClassicLinkDnsSupportResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+EnableVpcClassicLinkDnsSupportResponse& EnableVpcClassicLinkDnsSupportResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

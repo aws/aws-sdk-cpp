@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     PutResourceAttributesResult();
-    PutResourceAttributesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutResourceAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutResourceAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutResourceAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

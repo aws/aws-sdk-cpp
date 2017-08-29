@@ -33,14 +33,14 @@ AttachVolumeResponse::AttachVolumeResponse() :
 {
 }
 
-AttachVolumeResponse::AttachVolumeResponse(const AmazonWebServiceResult<XmlDocument>& result) : 
+AttachVolumeResponse::AttachVolumeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_state(VolumeAttachmentState::NOT_SET),
     m_deleteOnTermination(false)
 {
   *this = result;
 }
 
-AttachVolumeResponse& AttachVolumeResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+AttachVolumeResponse& AttachVolumeResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

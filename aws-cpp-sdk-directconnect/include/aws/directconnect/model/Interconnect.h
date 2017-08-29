@@ -56,6 +56,7 @@ namespace Model
     Interconnect& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetInterconnectId() const{ return m_interconnectId; }
 
@@ -76,6 +77,7 @@ namespace Model
 
     
     inline Interconnect& WithInterconnectId(const char* value) { SetInterconnectId(value); return *this;}
+
 
     
     inline const Aws::String& GetInterconnectName() const{ return m_interconnectName; }
@@ -98,6 +100,7 @@ namespace Model
     
     inline Interconnect& WithInterconnectName(const char* value) { SetInterconnectName(value); return *this;}
 
+
     
     inline const InterconnectState& GetInterconnectState() const{ return m_interconnectState; }
 
@@ -112,6 +115,7 @@ namespace Model
 
     
     inline Interconnect& WithInterconnectState(InterconnectState&& value) { SetInterconnectState(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetRegion() const{ return m_region; }
@@ -134,6 +138,7 @@ namespace Model
     
     inline Interconnect& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
     
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -155,6 +160,7 @@ namespace Model
     
     inline Interconnect& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
     
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
 
@@ -175,6 +181,7 @@ namespace Model
 
     
     inline Interconnect& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
+
 
     /**
      * <p>The time of the most recent call to DescribeInterconnectLoa for this
@@ -206,6 +213,7 @@ namespace Model
      */
     inline Interconnect& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(std::move(value)); return *this;}
 
+
     
     inline const Aws::String& GetLagId() const{ return m_lagId; }
 
@@ -226,6 +234,7 @@ namespace Model
 
     
     inline Interconnect& WithLagId(const char* value) { SetLagId(value); return *this;}
+
 
     /**
      * <p>The Direct Connection endpoint which the physical connection terminates
@@ -270,22 +279,31 @@ namespace Model
     inline Interconnect& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
 
   private:
+
     Aws::String m_interconnectId;
     bool m_interconnectIdHasBeenSet;
+
     Aws::String m_interconnectName;
     bool m_interconnectNameHasBeenSet;
+
     InterconnectState m_interconnectState;
     bool m_interconnectStateHasBeenSet;
+
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
     Aws::String m_bandwidth;
     bool m_bandwidthHasBeenSet;
+
     Aws::Utils::DateTime m_loaIssueTime;
     bool m_loaIssueTimeHasBeenSet;
+
     Aws::String m_lagId;
     bool m_lagIdHasBeenSet;
+
     Aws::String m_awsDevice;
     bool m_awsDeviceHasBeenSet;
   };

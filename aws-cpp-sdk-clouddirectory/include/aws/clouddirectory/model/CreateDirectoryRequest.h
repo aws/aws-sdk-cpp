@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the <a>Directory</a>. Should be unique per account, per
      * region.</p>
@@ -77,6 +78,7 @@ namespace Model
      * region.</p>
      */
     inline CreateDirectoryRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the published schema that will be copied
@@ -121,8 +123,10 @@ namespace Model
     inline CreateDirectoryRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet;
   };

@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     RestoreFromSnapshotResult();
-    RestoreFromSnapshotResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RestoreFromSnapshotResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RestoreFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    RestoreFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

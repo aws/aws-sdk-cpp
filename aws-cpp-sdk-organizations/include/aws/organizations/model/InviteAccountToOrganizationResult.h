@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     InviteAccountToOrganizationResult();
-    InviteAccountToOrganizationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InviteAccountToOrganizationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InviteAccountToOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InviteAccountToOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A structure that contains details about the handshake that is created to
@@ -72,6 +73,7 @@ namespace Model
     inline InviteAccountToOrganizationResult& WithHandshake(Handshake&& value) { SetHandshake(std::move(value)); return *this;}
 
   private:
+
     Handshake m_handshake;
   };
 

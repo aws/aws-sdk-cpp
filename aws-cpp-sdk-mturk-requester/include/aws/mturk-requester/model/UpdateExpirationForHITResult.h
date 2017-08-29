@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     UpdateExpirationForHITResult();
-    UpdateExpirationForHITResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateExpirationForHITResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateExpirationForHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateExpirationForHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

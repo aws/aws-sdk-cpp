@@ -47,6 +47,7 @@ namespace Model
     ParameterObject& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the parameter object. </p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The ID of the parameter object. </p>
      */
     inline ParameterObject& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The attributes of the parameter object.</p>
@@ -118,8 +120,10 @@ namespace Model
     inline ParameterObject& AddAttributes(ParameterAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Vector<ParameterAttribute> m_attributes;
     bool m_attributesHasBeenSet;
   };

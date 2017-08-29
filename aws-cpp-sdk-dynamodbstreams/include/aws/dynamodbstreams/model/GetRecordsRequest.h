@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A shard iterator that was retrieved from a previous GetShardIterator
      * operation. This iterator can be used to access the stream records in this
@@ -86,6 +87,7 @@ namespace Model
      */
     inline GetRecordsRequest& WithShardIterator(const char* value) { SetShardIterator(value); return *this;}
 
+
     /**
      * <p>The maximum number of records to return from the shard. The upper limit is
      * 1000.</p>
@@ -105,8 +107,10 @@ namespace Model
     inline GetRecordsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::String m_shardIterator;
     bool m_shardIteratorHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

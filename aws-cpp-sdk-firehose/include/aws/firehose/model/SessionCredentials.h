@@ -41,6 +41,7 @@ namespace Model
     SessionCredentials& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline SessionCredentials& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
+
 
     
     inline const Aws::String& GetSecretAccessKey() const{ return m_secretAccessKey; }
@@ -83,6 +85,7 @@ namespace Model
     
     inline SessionCredentials& WithSecretAccessKey(const char* value) { SetSecretAccessKey(value); return *this;}
 
+
     
     inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
 
@@ -104,6 +107,7 @@ namespace Model
     
     inline SessionCredentials& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
 
+
     
     inline const Aws::Utils::DateTime& GetExpiration() const{ return m_expiration; }
 
@@ -120,12 +124,16 @@ namespace Model
     inline SessionCredentials& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet;
+
     Aws::String m_secretAccessKey;
     bool m_secretAccessKeyHasBeenSet;
+
     Aws::String m_sessionToken;
     bool m_sessionTokenHasBeenSet;
+
     Aws::Utils::DateTime m_expiration;
     bool m_expirationHasBeenSet;
   };

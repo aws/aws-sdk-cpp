@@ -44,6 +44,7 @@ namespace Model
     CreateFunctionRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name you want to assign to the function you are uploading. The function
      * names appear in the console and are returned in the <a>ListFunctions</a> API.
@@ -113,6 +114,7 @@ namespace Model
      * </p>
      */
     inline CreateFunctionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+
 
     /**
      * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
@@ -194,6 +196,7 @@ namespace Model
      */
     inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
      * executes your function to access any other Amazon Web Services (AWS) resources.
@@ -256,6 +259,7 @@ namespace Model
      * Lambda: How it Works</a>. </p>
      */
     inline CreateFunctionRequest& WithRole(const char* value) { SetRole(value); return *this;}
+
 
     /**
      * <p>The function within your code that Lambda calls to begin execution. For
@@ -327,6 +331,7 @@ namespace Model
      */
     inline CreateFunctionRequest& WithHandler(const char* value) { SetHandler(value); return *this;}
 
+
     /**
      * <p>The code for the Lambda function.</p>
      */
@@ -351,6 +356,7 @@ namespace Model
      * <p>The code for the Lambda function.</p>
      */
     inline CreateFunctionRequest& WithCode(FunctionCode&& value) { SetCode(std::move(value)); return *this;}
+
 
     /**
      * <p>A short, user-defined function description. Lambda does not use this value.
@@ -394,6 +400,7 @@ namespace Model
      */
     inline CreateFunctionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
@@ -414,6 +421,7 @@ namespace Model
      * value based on your expected execution time. The default is 3 seconds.</p>
      */
     inline CreateFunctionRequest& WithTimeout(int value) { SetTimeout(value); return *this;}
+
 
     /**
      * <p>The amount of memory, in MB, your Lambda function is given. Lambda uses this
@@ -445,6 +453,7 @@ namespace Model
      */
     inline CreateFunctionRequest& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
+
     /**
      * <p>This boolean parameter can be used to request AWS Lambda to create the Lambda
      * function and publish a version as an atomic operation.</p>
@@ -462,6 +471,7 @@ namespace Model
      * function and publish a version as an atomic operation.</p>
      */
     inline CreateFunctionRequest& WithPublish(bool value) { SetPublish(value); return *this;}
+
 
     /**
      * <p>If your Lambda function accesses resources in a VPC, you provide this
@@ -503,6 +513,7 @@ namespace Model
      */
     inline CreateFunctionRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
      * Amazon SQS queue or Amazon SNS topic. </p>
@@ -533,6 +544,7 @@ namespace Model
      */
     inline CreateFunctionRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
 
+
     
     inline const Environment& GetEnvironment() const{ return m_environment; }
 
@@ -547,6 +559,7 @@ namespace Model
 
     
     inline CreateFunctionRequest& WithEnvironment(Environment&& value) { SetEnvironment(std::move(value)); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's
@@ -597,6 +610,7 @@ namespace Model
      */
     inline CreateFunctionRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
+
     /**
      * <p>The parent object that contains your function's tracing settings.</p>
      */
@@ -621,6 +635,7 @@ namespace Model
      * <p>The parent object that contains your function's tracing settings.</p>
      */
     inline CreateFunctionRequest& WithTracingConfig(TracingConfig&& value) { SetTracingConfig(std::move(value)); return *this;}
+
 
     /**
      * <p>The list of tags (key-value pairs) assigned to the new function.</p>
@@ -683,34 +698,49 @@ namespace Model
     inline CreateFunctionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
+
     Runtime m_runtime;
     bool m_runtimeHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
     Aws::String m_handler;
     bool m_handlerHasBeenSet;
+
     FunctionCode m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     int m_timeout;
     bool m_timeoutHasBeenSet;
+
     int m_memorySize;
     bool m_memorySizeHasBeenSet;
+
     bool m_publish;
     bool m_publishHasBeenSet;
+
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
     DeadLetterConfig m_deadLetterConfig;
     bool m_deadLetterConfigHasBeenSet;
+
     Environment m_environment;
     bool m_environmentHasBeenSet;
+
     Aws::String m_kMSKeyArn;
     bool m_kMSKeyArnHasBeenSet;
+
     TracingConfig m_tracingConfig;
     bool m_tracingConfigHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
   };

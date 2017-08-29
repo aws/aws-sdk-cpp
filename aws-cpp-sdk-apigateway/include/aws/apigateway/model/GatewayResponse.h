@@ -88,6 +88,7 @@ namespace Model
     GatewayResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The response type of the associated <a>GatewayResponse</a>. Valid values are
      * <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li>
@@ -133,6 +134,7 @@ namespace Model
      */
     inline GatewayResponse& WithResponseType(GatewayResponseType&& value) { SetResponseType(std::move(value)); return *this;}
 
+
     /**
      * <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
      */
@@ -167,6 +169,7 @@ namespace Model
      * <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
      */
     inline GatewayResponse& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+
 
     /**
      * <p>Response parameters (paths, query strings and headers) of the
@@ -240,6 +243,7 @@ namespace Model
      */
     inline GatewayResponse& AddResponseParameters(const char* key, const char* value) { m_responseParametersHasBeenSet = true; m_responseParameters.emplace(key, value); return *this; }
 
+
     /**
      * <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of
      * key-value pairs.</p>
@@ -312,6 +316,7 @@ namespace Model
      */
     inline GatewayResponse& AddResponseTemplates(const char* key, const char* value) { m_responseTemplatesHasBeenSet = true; m_responseTemplates.emplace(key, value); return *this; }
 
+
     /**
      * <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default
      * gateway response (<code>true</code>) or not (<code>false</code>). A default
@@ -337,14 +342,19 @@ namespace Model
     inline GatewayResponse& WithDefaultResponse(bool value) { SetDefaultResponse(value); return *this;}
 
   private:
+
     GatewayResponseType m_responseType;
     bool m_responseTypeHasBeenSet;
+
     Aws::String m_statusCode;
     bool m_statusCodeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
     bool m_responseParametersHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
     bool m_responseTemplatesHasBeenSet;
+
     bool m_defaultResponse;
     bool m_defaultResponseHasBeenSet;
   };

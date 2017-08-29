@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     CreatePolicyVersionResult();
-    CreatePolicyVersionResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreatePolicyVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreatePolicyVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreatePolicyVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure containing details about the new policy version.</p>
@@ -73,6 +74,7 @@ namespace Model
      */
     inline CreatePolicyVersionResult& WithPolicyVersion(PolicyVersion&& value) { SetPolicyVersion(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -89,7 +91,9 @@ namespace Model
     inline CreatePolicyVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     PolicyVersion m_policyVersion;
+
     ResponseMetadata m_responseMetadata;
   };
 

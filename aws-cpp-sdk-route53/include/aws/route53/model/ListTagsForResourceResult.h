@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     ListTagsForResourceResult();
-    ListTagsForResourceResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListTagsForResourceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A <code>ResourceTagSet</code> containing tags associated with the specified
@@ -78,6 +79,7 @@ namespace Model
     inline ListTagsForResourceResult& WithResourceTagSet(ResourceTagSet&& value) { SetResourceTagSet(std::move(value)); return *this;}
 
   private:
+
     ResourceTagSet m_resourceTagSet;
   };
 

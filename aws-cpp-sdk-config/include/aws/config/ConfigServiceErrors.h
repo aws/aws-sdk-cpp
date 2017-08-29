@@ -55,7 +55,7 @@ enum class ConfigServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INSUFFICIENT_DELIVERY_POLICY= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INSUFFICIENT_DELIVERY_POLICY= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INSUFFICIENT_PERMISSIONS,
   INVALID_CONFIGURATION_RECORDER_NAME,
   INVALID_DELIVERY_CHANNEL_NAME,
@@ -84,7 +84,7 @@ enum class ConfigServiceErrors
 };
 namespace ConfigServiceErrorMapper
 {
-  AWS_CONFIGSERVICE_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_CONFIGSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace ConfigService

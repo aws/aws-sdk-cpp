@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     DescribeStackSummaryResult();
-    DescribeStackSummaryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStackSummaryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStackSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStackSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A <code>StackSummary</code> object that contains the results.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline DescribeStackSummaryResult& WithStackSummary(StackSummary&& value) { SetStackSummary(std::move(value)); return *this;}
 
   private:
+
     StackSummary m_stackSummary;
   };
 

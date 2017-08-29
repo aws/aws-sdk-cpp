@@ -46,6 +46,7 @@ namespace Model
     Nameserver& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The fully qualified host name of the name server.</p> <p>Constraint: Maximum
      * 255 characters</p>
@@ -87,6 +88,7 @@ namespace Model
      * 255 characters</p>
      */
     inline Nameserver& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Glue IP address of a name server entry. Glue IP addresses are required only
@@ -161,8 +163,10 @@ namespace Model
     inline Nameserver& AddGlueIps(const char* value) { m_glueIpsHasBeenSet = true; m_glueIps.push_back(value); return *this; }
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Vector<Aws::String> m_glueIps;
     bool m_glueIpsHasBeenSet;
   };

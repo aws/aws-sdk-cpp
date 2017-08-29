@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     CreateFlowLogsResponse();
-    CreateFlowLogsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateFlowLogsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateFlowLogsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateFlowLogsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -91,6 +92,7 @@ namespace Model
      */
     inline CreateFlowLogsResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
     /**
      * <p>The IDs of the flow logs.</p>
      */
@@ -131,6 +133,7 @@ namespace Model
      */
     inline CreateFlowLogsResponse& AddFlowLogIds(const char* value) { m_flowLogIds.push_back(value); return *this; }
 
+
     /**
      * <p>Information about the flow logs that could not be created successfully.</p>
      */
@@ -166,6 +169,7 @@ namespace Model
      */
     inline CreateFlowLogsResponse& AddUnsuccessful(UnsuccessfulItem&& value) { m_unsuccessful.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -182,9 +186,13 @@ namespace Model
     inline CreateFlowLogsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_clientToken;
+
     Aws::Vector<Aws::String> m_flowLogIds;
+
     Aws::Vector<UnsuccessfulItem> m_unsuccessful;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     ReloadTablesResult();
-    ReloadTablesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReloadTablesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReloadTablesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ReloadTablesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task. </p>
@@ -77,6 +78,7 @@ namespace Model
     inline ReloadTablesResult& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
 
   private:
+
     Aws::String m_replicationTaskArn;
   };
 

@@ -54,6 +54,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The identifier for the replication group.</p>
      */
@@ -89,6 +90,7 @@ namespace Model
      */
     inline ReplicationGroup& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 
+
     /**
      * <p>The description of the replication group.</p>
      */
@@ -123,6 +125,7 @@ namespace Model
      * <p>The description of the replication group.</p>
      */
     inline ReplicationGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
@@ -173,6 +176,7 @@ namespace Model
      */
     inline ReplicationGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
     /**
      * <p>A group of settings to be applied to the replication group, either
      * immediately or during the next maintenance window.</p>
@@ -202,6 +206,7 @@ namespace Model
      * immediately or during the next maintenance window.</p>
      */
     inline ReplicationGroup& WithPendingModifiedValues(ReplicationGroupPendingModifiedValues&& value) { SetPendingModifiedValues(std::move(value)); return *this;}
+
 
     /**
      * <p>The names of all the cache clusters that are part of this replication
@@ -251,6 +256,7 @@ namespace Model
      */
     inline ReplicationGroup& AddMemberClusters(const char* value) { m_memberClustersHasBeenSet = true; m_memberClusters.push_back(value); return *this; }
 
+
     /**
      * <p>A single element list with information about the nodes in the replication
      * group.</p>
@@ -293,6 +299,7 @@ namespace Model
      */
     inline ReplicationGroup& AddNodeGroups(NodeGroup&& value) { m_nodeGroupsHasBeenSet = true; m_nodeGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The cache cluster ID that is used as the daily snapshot source for the
      * replication group.</p>
@@ -334,6 +341,7 @@ namespace Model
      * replication group.</p>
      */
     inline ReplicationGroup& WithSnapshottingClusterId(const char* value) { SetSnapshottingClusterId(value); return *this;}
+
 
     /**
      * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
@@ -380,6 +388,7 @@ namespace Model
      */
     inline ReplicationGroup& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(std::move(value)); return *this;}
 
+
     /**
      * <p>The configuration endpoint for this replicaiton group. Use the configuration
      * endpoint to connect to this replication group.</p>
@@ -410,6 +419,7 @@ namespace Model
      */
     inline ReplicationGroup& WithConfigurationEndpoint(Endpoint&& value) { SetConfigurationEndpoint(std::move(value)); return *this;}
 
+
     /**
      * <p>The number of days for which ElastiCache retains automatic cache cluster
      * snapshots before deleting them. For example, if you set
@@ -439,6 +449,7 @@ namespace Model
      * off.</p> </important>
      */
     inline ReplicationGroup& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
+
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -503,6 +514,7 @@ namespace Model
      */
     inline ReplicationGroup& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
+
     /**
      * <p>A flag indicating whether or not this replication group is cluster enabled;
      * i.e., whether its data can be partitioned across multiple shards (API/CLI: node
@@ -523,6 +535,7 @@ namespace Model
      * groups).</p> <p>Valid values: <code>true</code> | <code>false</code> </p>
      */
     inline ReplicationGroup& WithClusterEnabled(bool value) { SetClusterEnabled(value); return *this;}
+
 
     /**
      * <p>The name of the compute and memory capacity node type for each node in the
@@ -567,30 +580,43 @@ namespace Model
     inline ReplicationGroup& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
   private:
+
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     ReplicationGroupPendingModifiedValues m_pendingModifiedValues;
     bool m_pendingModifiedValuesHasBeenSet;
+
     Aws::Vector<Aws::String> m_memberClusters;
     bool m_memberClustersHasBeenSet;
+
     Aws::Vector<NodeGroup> m_nodeGroups;
     bool m_nodeGroupsHasBeenSet;
+
     Aws::String m_snapshottingClusterId;
     bool m_snapshottingClusterIdHasBeenSet;
+
     AutomaticFailoverStatus m_automaticFailover;
     bool m_automaticFailoverHasBeenSet;
+
     Endpoint m_configurationEndpoint;
     bool m_configurationEndpointHasBeenSet;
+
     int m_snapshotRetentionLimit;
     bool m_snapshotRetentionLimitHasBeenSet;
+
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;
+
     bool m_clusterEnabled;
     bool m_clusterEnabledHasBeenSet;
+
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
   };

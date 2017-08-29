@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the snapshot copy grant. This name must be unique in the region
      * for the AWS account.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to
@@ -114,6 +115,7 @@ namespace Model
      */
     inline CreateSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(const char* value) { SetSnapshotCopyGrantName(value); return *this;}
 
+
     /**
      * <p>The unique identifier of the customer master key (CMK) to which to grant
      * Amazon Redshift permission. If no key is specified, the default key is used.</p>
@@ -156,6 +158,7 @@ namespace Model
      */
     inline CreateSnapshotCopyGrantRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
     /**
      * <p>A list of tag instances.</p>
      */
@@ -192,10 +195,13 @@ namespace Model
     inline CreateSnapshotCopyGrantRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_snapshotCopyGrantName;
     bool m_snapshotCopyGrantNameHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateAddressResult();
-    CreateAddressResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAddressResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The automatically generated ID for a specific address. You'll use this ID
@@ -91,6 +92,7 @@ namespace Model
     inline CreateAddressResult& WithAddressId(const char* value) { SetAddressId(value); return *this;}
 
   private:
+
     Aws::String m_addressId;
   };
 

@@ -38,6 +38,7 @@ namespace Model
     UploadArchiveRequest();
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the vault.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline UploadArchiveRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
@@ -136,6 +138,7 @@ namespace Model
      */
     inline UploadArchiveRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     /**
      * <p>The optional description of the archive you are uploading.</p>
      */
@@ -170,6 +173,7 @@ namespace Model
      * <p>The optional description of the archive you are uploading.</p>
      */
     inline UploadArchiveRequest& WithArchiveDescription(const char* value) { SetArchiveDescription(value); return *this;}
+
 
     /**
      * <p>The SHA256 tree hash of the data being uploaded.</p>
@@ -207,14 +211,19 @@ namespace Model
     inline UploadArchiveRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
   private:
+
     Aws::String m_vaultName;
     bool m_vaultNameHasBeenSet;
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Aws::String m_archiveDescription;
     bool m_archiveDescriptionHasBeenSet;
+
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
+
   };
 
 } // namespace Model

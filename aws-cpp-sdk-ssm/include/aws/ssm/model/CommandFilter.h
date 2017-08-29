@@ -46,6 +46,7 @@ namespace Model
     CommandFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the filter.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>The name of the filter.</p>
      */
     inline CommandFilter& WithKey(CommandFilterKey&& value) { SetKey(std::move(value)); return *this;}
+
 
     /**
      * <p>The filter value. </p>
@@ -107,8 +109,10 @@ namespace Model
     inline CommandFilter& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     CommandFilterKey m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

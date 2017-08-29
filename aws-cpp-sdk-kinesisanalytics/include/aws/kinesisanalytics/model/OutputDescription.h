@@ -51,6 +51,7 @@ namespace Model
     OutputDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for the output configuration.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>A unique identifier for the output configuration.</p>
      */
     inline OutputDescription& WithOutputId(const char* value) { SetOutputId(value); return *this;}
+
 
     /**
      * <p>Name of the in-application stream configured as output.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline OutputDescription& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Describes Amazon Kinesis stream configured as the destination where output is
      * written.</p>
@@ -150,6 +153,7 @@ namespace Model
      * written.</p>
      */
     inline OutputDescription& WithKinesisStreamsOutputDescription(KinesisStreamsOutputDescription&& value) { SetKinesisStreamsOutputDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>Describes the Amazon Kinesis Firehose delivery stream configured as the
@@ -181,6 +185,7 @@ namespace Model
      */
     inline OutputDescription& WithKinesisFirehoseOutputDescription(KinesisFirehoseOutputDescription&& value) { SetKinesisFirehoseOutputDescription(std::move(value)); return *this;}
 
+
     /**
      * <p>Data format used for writing data to the destination.</p>
      */
@@ -207,14 +212,19 @@ namespace Model
     inline OutputDescription& WithDestinationSchema(DestinationSchema&& value) { SetDestinationSchema(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_outputId;
     bool m_outputIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     KinesisStreamsOutputDescription m_kinesisStreamsOutputDescription;
     bool m_kinesisStreamsOutputDescriptionHasBeenSet;
+
     KinesisFirehoseOutputDescription m_kinesisFirehoseOutputDescription;
     bool m_kinesisFirehoseOutputDescriptionHasBeenSet;
+
     DestinationSchema m_destinationSchema;
     bool m_destinationSchemaHasBeenSet;
   };

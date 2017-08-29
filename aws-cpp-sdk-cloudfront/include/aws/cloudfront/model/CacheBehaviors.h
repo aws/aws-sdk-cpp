@@ -48,6 +48,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>The number of cache behaviors for this distribution. </p>
      */
@@ -62,6 +63,7 @@ namespace Model
      * <p>The number of cache behaviors for this distribution. </p>
      */
     inline CacheBehaviors& WithQuantity(int value) { SetQuantity(value); return *this;}
+
 
     /**
      * <p>Optional: A complex type that contains cache behaviors for this distribution.
@@ -106,8 +108,10 @@ namespace Model
     inline CacheBehaviors& AddItems(CacheBehavior&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     int m_quantity;
     bool m_quantityHasBeenSet;
+
     Aws::Vector<CacheBehavior> m_items;
     bool m_itemsHasBeenSet;
   };

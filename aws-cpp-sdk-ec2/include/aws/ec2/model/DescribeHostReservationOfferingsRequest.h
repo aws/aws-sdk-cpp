@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
      * instance family of the offering (e.g., <code>m4</code>).</p> </li> <li> <p>
@@ -96,6 +97,7 @@ namespace Model
      */
     inline DescribeHostReservationOfferingsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>This is the maximum duration of the reservation you'd like to purchase,
      * specified in seconds. Reservations are available in one-year and three-year
@@ -122,6 +124,7 @@ namespace Model
      * specify 94608000 for three years.</p>
      */
     inline DescribeHostReservationOfferingsRequest& WithMaxDuration(int value) { SetMaxDuration(value); return *this;}
+
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -150,6 +153,7 @@ namespace Model
      */
     inline DescribeHostReservationOfferingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
     /**
      * <p>This is the minimum duration of the reservation you'd like to purchase,
      * specified in seconds. Reservations are available in one-year and three-year
@@ -176,6 +180,7 @@ namespace Model
      * specify 31536000 for one year.</p>
      */
     inline DescribeHostReservationOfferingsRequest& WithMinDuration(int value) { SetMinDuration(value); return *this;}
+
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>
@@ -211,6 +216,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results.</p>
      */
     inline DescribeHostReservationOfferingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>The ID of the reservation offering.</p>
@@ -248,16 +254,22 @@ namespace Model
     inline DescribeHostReservationOfferingsRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
 
   private:
+
     Aws::Vector<Filter> m_filter;
     bool m_filterHasBeenSet;
+
     int m_maxDuration;
     bool m_maxDurationHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     int m_minDuration;
     bool m_minDurationHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet;
   };

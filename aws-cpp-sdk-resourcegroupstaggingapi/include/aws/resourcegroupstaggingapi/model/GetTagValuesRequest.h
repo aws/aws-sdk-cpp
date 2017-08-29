@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A string that indicates that additional data is available. Leave this value
      * empty for your initial request. If the response includes a PaginationToken, use
@@ -85,6 +86,7 @@ namespace Model
      */
     inline GetTagValuesRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
+
     /**
      * <p>The key for which you want to list all existing values in the specified
      * region for the AWS account.</p>
@@ -128,8 +130,10 @@ namespace Model
     inline GetTagValuesRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
   private:
+
     Aws::String m_paginationToken;
     bool m_paginationTokenHasBeenSet;
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
   };

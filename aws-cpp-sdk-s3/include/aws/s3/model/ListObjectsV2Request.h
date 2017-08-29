@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * Name of the bucket to list.
      */
@@ -78,6 +79,7 @@ namespace Model
      * Name of the bucket to list.
      */
     inline ListObjectsV2Request& WithBucket(const char* value) { SetBucket(value); return *this;}
+
 
     /**
      * A delimiter is a character you use to group keys.
@@ -114,6 +116,7 @@ namespace Model
      */
     inline ListObjectsV2Request& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
+
     /**
      * Encoding type used by Amazon S3 to encode object keys in the response.
      */
@@ -139,6 +142,7 @@ namespace Model
      */
     inline ListObjectsV2Request& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 
+
     /**
      * Sets the maximum number of keys returned in the response. The response might
      * contain fewer keys but will never contain more.
@@ -156,6 +160,7 @@ namespace Model
      * contain fewer keys but will never contain more.
      */
     inline ListObjectsV2Request& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
+
 
     /**
      * Limits the response to keys that begin with the specified prefix.
@@ -191,6 +196,7 @@ namespace Model
      * Limits the response to keys that begin with the specified prefix.
      */
     inline ListObjectsV2Request& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+
 
     /**
      * ContinuationToken indicates Amazon S3 that the list is being continued on this
@@ -234,6 +240,7 @@ namespace Model
      */
     inline ListObjectsV2Request& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
+
     /**
      * The owner field is not present in listV2 by default, if you want to return owner
      * field with each key in the result then set the fetch owner field to true
@@ -251,6 +258,7 @@ namespace Model
      * field with each key in the result then set the fetch owner field to true
      */
     inline ListObjectsV2Request& WithFetchOwner(bool value) { SetFetchOwner(value); return *this;}
+
 
     /**
      * StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts
@@ -294,6 +302,7 @@ namespace Model
      */
     inline ListObjectsV2Request& WithStartAfter(const char* value) { SetStartAfter(value); return *this;}
 
+
     /**
      * Confirms that the requester knows that she or he will be charged for the list
      * objects request in V2 style. Bucket owners need not specify this parameter in
@@ -330,22 +339,31 @@ namespace Model
     inline ListObjectsV2Request& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     Aws::String m_delimiter;
     bool m_delimiterHasBeenSet;
+
     EncodingType m_encodingType;
     bool m_encodingTypeHasBeenSet;
+
     int m_maxKeys;
     bool m_maxKeysHasBeenSet;
+
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
     Aws::String m_continuationToken;
     bool m_continuationTokenHasBeenSet;
+
     bool m_fetchOwner;
     bool m_fetchOwnerHasBeenSet;
+
     Aws::String m_startAfter;
     bool m_startAfterHasBeenSet;
+
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
   };

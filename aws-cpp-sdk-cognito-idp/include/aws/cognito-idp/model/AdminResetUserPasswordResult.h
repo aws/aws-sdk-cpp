@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     AdminResetUserPasswordResult();
-    AdminResetUserPasswordResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminResetUserPasswordResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminResetUserPasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AdminResetUserPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -40,6 +40,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
@@ -152,6 +153,7 @@ namespace Model
      */
     inline CopyDBClusterParameterGroupRequest& WithSourceDBClusterParameterGroupIdentifier(const char* value) { SetSourceDBClusterParameterGroupIdentifier(value); return *this;}
 
+
     /**
      * <p>The identifier for the copied DB cluster parameter group.</p>
      * <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li>
@@ -222,6 +224,7 @@ namespace Model
      */
     inline CopyDBClusterParameterGroupRequest& WithTargetDBClusterParameterGroupIdentifier(const char* value) { SetTargetDBClusterParameterGroupIdentifier(value); return *this;}
 
+
     /**
      * <p>A description for the copied DB cluster parameter group.</p>
      */
@@ -257,6 +260,7 @@ namespace Model
      */
     inline CopyDBClusterParameterGroupRequest& WithTargetDBClusterParameterGroupDescription(const char* value) { SetTargetDBClusterParameterGroupDescription(value); return *this;}
 
+
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -279,12 +283,16 @@ namespace Model
     inline CopyDBClusterParameterGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_sourceDBClusterParameterGroupIdentifier;
     bool m_sourceDBClusterParameterGroupIdentifierHasBeenSet;
+
     Aws::String m_targetDBClusterParameterGroupIdentifier;
     bool m_targetDBClusterParameterGroupIdentifierHasBeenSet;
+
     Aws::String m_targetDBClusterParameterGroupDescription;
     bool m_targetDBClusterParameterGroupDescriptionHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

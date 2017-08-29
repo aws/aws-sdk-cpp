@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     GetRecordsResult();
-    GetRecordsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRecordsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The data records retrieved from the shard.</p>
@@ -82,6 +83,7 @@ namespace Model
      * <p>The data records retrieved from the shard.</p>
      */
     inline GetRecordsResult& AddRecords(Record&& value) { m_records.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The next position in the shard from which to start sequentially reading data
@@ -132,6 +134,7 @@ namespace Model
      */
     inline GetRecordsResult& WithNextShardIterator(const char* value) { SetNextShardIterator(value); return *this;}
 
+
     /**
      * <p>The number of milliseconds the <a>GetRecords</a> response is from the tip of
      * the stream, indicating how far behind current time the consumer is. A value of
@@ -157,8 +160,11 @@ namespace Model
     inline GetRecordsResult& WithMillisBehindLatest(long long value) { SetMillisBehindLatest(value); return *this;}
 
   private:
+
     Aws::Vector<Record> m_records;
+
     Aws::String m_nextShardIterator;
+
     long long m_millisBehindLatest;
   };
 

@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The unique ID of the query to delete.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline DeleteNamedQueryRequest& WithNamedQueryId(const char* value) { SetNamedQueryId(value); return *this;}
 
   private:
+
     Aws::String m_namedQueryId;
     bool m_namedQueryIdHasBeenSet;
   };

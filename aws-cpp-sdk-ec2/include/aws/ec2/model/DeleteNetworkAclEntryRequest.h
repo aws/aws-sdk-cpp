@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -66,6 +67,7 @@ namespace Model
      */
     inline DeleteNetworkAclEntryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
     /**
      * <p>Indicates whether the rule is an egress rule.</p>
      */
@@ -80,6 +82,7 @@ namespace Model
      * <p>Indicates whether the rule is an egress rule.</p>
      */
     inline DeleteNetworkAclEntryRequest& WithEgress(bool value) { SetEgress(value); return *this;}
+
 
     /**
      * <p>The ID of the network ACL.</p>
@@ -116,6 +119,7 @@ namespace Model
      */
     inline DeleteNetworkAclEntryRequest& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
 
+
     /**
      * <p>The rule number of the entry to delete.</p>
      */
@@ -132,12 +136,16 @@ namespace Model
     inline DeleteNetworkAclEntryRequest& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     bool m_egress;
     bool m_egressHasBeenSet;
+
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet;
+
     int m_ruleNumber;
     bool m_ruleNumberHasBeenSet;
   };

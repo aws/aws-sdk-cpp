@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeConditionalForwardersResult();
-    DescribeConditionalForwardersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConditionalForwardersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConditionalForwardersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeConditionalForwardersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of conditional forwarders that have been created.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeConditionalForwardersResult& AddConditionalForwarders(ConditionalForwarder&& value) { m_conditionalForwarders.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<ConditionalForwarder> m_conditionalForwarders;
   };
 

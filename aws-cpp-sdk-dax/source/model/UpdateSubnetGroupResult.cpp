@@ -30,12 +30,12 @@ UpdateSubnetGroupResult::UpdateSubnetGroupResult()
 {
 }
 
-UpdateSubnetGroupResult::UpdateSubnetGroupResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateSubnetGroupResult::UpdateSubnetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateSubnetGroupResult& UpdateSubnetGroupResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateSubnetGroupResult& UpdateSubnetGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("SubnetGroup"))

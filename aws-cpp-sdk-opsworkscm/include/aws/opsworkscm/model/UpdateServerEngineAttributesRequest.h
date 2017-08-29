@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the server to update. </p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline UpdateServerEngineAttributesRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
 
+
     /**
      * <p>The name of the engine attribute to update. </p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The name of the engine attribute to update. </p>
      */
     inline UpdateServerEngineAttributesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+
 
     /**
      * <p>The value to set for the attribute. </p>
@@ -142,10 +145,13 @@ namespace Model
     inline UpdateServerEngineAttributesRequest& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
 
   private:
+
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;
+
     Aws::String m_attributeValue;
     bool m_attributeValueHasBeenSet;
   };

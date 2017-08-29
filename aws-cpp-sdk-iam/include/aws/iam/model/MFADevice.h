@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The user with whom the MFA device is associated.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The user with whom the MFA device is associated.</p>
      */
     inline MFADevice& WithUserName(const char* value) { SetUserName(value); return *this;}
+
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
@@ -127,6 +129,7 @@ namespace Model
      */
     inline MFADevice& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 
+
     /**
      * <p>The date when the MFA device was enabled for the user.</p>
      */
@@ -153,10 +156,13 @@ namespace Model
     inline MFADevice& WithEnableDate(Aws::Utils::DateTime&& value) { SetEnableDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
+
     Aws::Utils::DateTime m_enableDate;
     bool m_enableDateHasBeenSet;
   };

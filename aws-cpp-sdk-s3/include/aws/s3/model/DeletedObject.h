@@ -41,6 +41,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -61,6 +62,7 @@ namespace Model
 
     
     inline DeletedObject& WithKey(const char* value) { SetKey(value); return *this;}
+
 
     
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
@@ -83,6 +85,7 @@ namespace Model
     
     inline DeletedObject& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
     
     inline bool GetDeleteMarker() const{ return m_deleteMarker; }
 
@@ -91,6 +94,7 @@ namespace Model
 
     
     inline DeletedObject& WithDeleteMarker(bool value) { SetDeleteMarker(value); return *this;}
+
 
     
     inline const Aws::String& GetDeleteMarkerVersionId() const{ return m_deleteMarkerVersionId; }
@@ -114,12 +118,16 @@ namespace Model
     inline DeletedObject& WithDeleteMarkerVersionId(const char* value) { SetDeleteMarkerVersionId(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
     bool m_deleteMarker;
     bool m_deleteMarkerHasBeenSet;
+
     Aws::String m_deleteMarkerVersionId;
     bool m_deleteMarkerVersionIdHasBeenSet;
   };

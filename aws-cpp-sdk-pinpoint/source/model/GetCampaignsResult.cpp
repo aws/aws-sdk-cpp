@@ -30,12 +30,12 @@ GetCampaignsResult::GetCampaignsResult()
 {
 }
 
-GetCampaignsResult::GetCampaignsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCampaignsResult::GetCampaignsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCampaignsResult& GetCampaignsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCampaignsResult& GetCampaignsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("CampaignsResponse"))

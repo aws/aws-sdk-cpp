@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     AcknowledgeThirdPartyJobResult();
-    AcknowledgeThirdPartyJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcknowledgeThirdPartyJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AcknowledgeThirdPartyJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AcknowledgeThirdPartyJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The status information for the third party job, if any.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline AcknowledgeThirdPartyJobResult& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     JobStatus m_status;
   };
 

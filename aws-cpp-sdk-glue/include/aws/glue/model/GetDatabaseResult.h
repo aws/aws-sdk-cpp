@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetDatabaseResult();
-    GetDatabaseResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDatabaseResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDatabaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDatabaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The definition of the specified database in the catalog.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetDatabaseResult& WithDatabase(Database&& value) { SetDatabase(std::move(value)); return *this;}
 
   private:
+
     Database m_database;
   };
 

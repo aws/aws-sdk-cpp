@@ -31,12 +31,12 @@ ListServiceSpecificCredentialsResult::ListServiceSpecificCredentialsResult()
 {
 }
 
-ListServiceSpecificCredentialsResult::ListServiceSpecificCredentialsResult(const AmazonWebServiceResult<XmlDocument>& result)
+ListServiceSpecificCredentialsResult::ListServiceSpecificCredentialsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ListServiceSpecificCredentialsResult& ListServiceSpecificCredentialsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListServiceSpecificCredentialsResult& ListServiceSpecificCredentialsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

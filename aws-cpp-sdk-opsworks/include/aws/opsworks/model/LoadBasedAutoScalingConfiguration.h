@@ -47,6 +47,7 @@ namespace Model
     LoadBasedAutoScalingConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The layer ID.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      */
     inline LoadBasedAutoScalingConfiguration& WithLayerId(const char* value) { SetLayerId(value); return *this;}
 
+
     /**
      * <p>Whether load-based auto scaling is enabled for the layer.</p>
      */
@@ -96,6 +98,7 @@ namespace Model
      * <p>Whether load-based auto scaling is enabled for the layer.</p>
      */
     inline LoadBasedAutoScalingConfiguration& WithEnable(bool value) { SetEnable(value); return *this;}
+
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object that describes the upscaling
@@ -131,6 +134,7 @@ namespace Model
      * number of instances.</p>
      */
     inline LoadBasedAutoScalingConfiguration& WithUpScaling(AutoScalingThresholds&& value) { SetUpScaling(std::move(value)); return *this;}
+
 
     /**
      * <p>An <code>AutoScalingThresholds</code> object that describes the downscaling
@@ -168,12 +172,16 @@ namespace Model
     inline LoadBasedAutoScalingConfiguration& WithDownScaling(AutoScalingThresholds&& value) { SetDownScaling(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_layerId;
     bool m_layerIdHasBeenSet;
+
     bool m_enable;
     bool m_enableHasBeenSet;
+
     AutoScalingThresholds m_upScaling;
     bool m_upScalingHasBeenSet;
+
     AutoScalingThresholds m_downScaling;
     bool m_downScalingHasBeenSet;
   };

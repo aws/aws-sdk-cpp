@@ -30,12 +30,12 @@ GetSegmentImportJobsResult::GetSegmentImportJobsResult()
 {
 }
 
-GetSegmentImportJobsResult::GetSegmentImportJobsResult(const AmazonWebServiceResult<JsonValue>& result)
+GetSegmentImportJobsResult::GetSegmentImportJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetSegmentImportJobsResult& GetSegmentImportJobsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetSegmentImportJobsResult& GetSegmentImportJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ImportJobsResponse"))

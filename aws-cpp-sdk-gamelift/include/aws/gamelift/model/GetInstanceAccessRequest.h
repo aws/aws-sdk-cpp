@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a fleet that contains the instance you want access to.
      * The fleet can be in any of the following statuses: <code>ACTIVATING</code>,
@@ -95,6 +96,7 @@ namespace Model
      */
     inline GetInstanceAccessRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
+
     /**
      * <p>Unique identifier for an instance you want to get access to. You can access
      * an instance in any status.</p>
@@ -138,8 +140,10 @@ namespace Model
     inline GetInstanceAccessRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
   private:
+
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
   };

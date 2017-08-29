@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Unique identifier for a matchmaking ticket.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
     inline StopMatchmakingRequest& WithTicketId(const char* value) { SetTicketId(value); return *this;}
 
   private:
+
     Aws::String m_ticketId;
     bool m_ticketIdHasBeenSet;
   };

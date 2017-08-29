@@ -49,6 +49,7 @@ namespace Model
     ComputeEnvironmentOrder& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The order of the compute environment.</p>
      */
@@ -63,6 +64,7 @@ namespace Model
      * <p>The order of the compute environment.</p>
      */
     inline ComputeEnvironmentOrder& WithOrder(int value) { SetOrder(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
@@ -100,8 +102,10 @@ namespace Model
     inline ComputeEnvironmentOrder& WithComputeEnvironment(const char* value) { SetComputeEnvironment(value); return *this;}
 
   private:
+
     int m_order;
     bool m_orderHasBeenSet;
+
     Aws::String m_computeEnvironment;
     bool m_computeEnvironmentHasBeenSet;
   };

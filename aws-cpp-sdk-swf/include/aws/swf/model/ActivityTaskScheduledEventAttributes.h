@@ -48,6 +48,7 @@ namespace Model
     ActivityTaskScheduledEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of the activity task.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The type of the activity task.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithActivityType(ActivityType&& value) { SetActivityType(std::move(value)); return *this;}
+
 
     /**
      * <p>The unique ID of the activity task.</p>
@@ -108,6 +110,7 @@ namespace Model
      */
     inline ActivityTaskScheduledEventAttributes& WithActivityId(const char* value) { SetActivityId(value); return *this;}
 
+
     /**
      * <p>The input provided to the activity task.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      * <p>The input provided to the activity task.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithInput(const char* value) { SetInput(value); return *this;}
+
 
     /**
      * <p>Data attached to the event that can be used by the decider in subsequent
@@ -185,6 +189,7 @@ namespace Model
      */
     inline ActivityTaskScheduledEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 
+
     /**
      * <p>The maximum amount of time the activity task can wait to be assigned to a
      * worker.</p>
@@ -227,6 +232,7 @@ namespace Model
      */
     inline ActivityTaskScheduledEventAttributes& WithScheduleToStartTimeout(const char* value) { SetScheduleToStartTimeout(value); return *this;}
 
+
     /**
      * <p>The maximum amount of time for this activity task.</p>
      */
@@ -261,6 +267,7 @@ namespace Model
      * <p>The maximum amount of time for this activity task.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithScheduleToCloseTimeout(const char* value) { SetScheduleToCloseTimeout(value); return *this;}
+
 
     /**
      * <p>The maximum amount of time a worker may take to process the activity
@@ -304,6 +311,7 @@ namespace Model
      */
     inline ActivityTaskScheduledEventAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p>The task list in which the activity task has been scheduled.</p>
      */
@@ -328,6 +336,7 @@ namespace Model
      * <p>The task list in which the activity task has been scheduled.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+
 
     /**
      * <p> The priority to assign to the scheduled activity task. If set, this
@@ -413,6 +422,7 @@ namespace Model
      */
     inline ActivityTaskScheduledEventAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
      * decision that resulted in the scheduling of this activity task. This information
@@ -436,6 +446,7 @@ namespace Model
      * leading up to this event.</p>
      */
     inline ActivityTaskScheduledEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
+
 
     /**
      * <p>The maximum time before which the worker processing this task must report
@@ -501,26 +512,37 @@ namespace Model
     inline ActivityTaskScheduledEventAttributes& WithHeartbeatTimeout(const char* value) { SetHeartbeatTimeout(value); return *this;}
 
   private:
+
     ActivityType m_activityType;
     bool m_activityTypeHasBeenSet;
+
     Aws::String m_activityId;
     bool m_activityIdHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     Aws::String m_control;
     bool m_controlHasBeenSet;
+
     Aws::String m_scheduleToStartTimeout;
     bool m_scheduleToStartTimeoutHasBeenSet;
+
     Aws::String m_scheduleToCloseTimeout;
     bool m_scheduleToCloseTimeoutHasBeenSet;
+
     Aws::String m_startToCloseTimeout;
     bool m_startToCloseTimeoutHasBeenSet;
+
     TaskList m_taskList;
     bool m_taskListHasBeenSet;
+
     Aws::String m_taskPriority;
     bool m_taskPriorityHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
+
     Aws::String m_heartbeatTimeout;
     bool m_heartbeatTimeoutHasBeenSet;
   };

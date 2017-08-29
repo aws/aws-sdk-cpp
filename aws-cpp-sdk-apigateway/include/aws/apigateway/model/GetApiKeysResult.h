@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetApiKeysResult();
-    GetApiKeysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApiKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetApiKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetApiKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of warning messages logged during the import of API keys when the
@@ -99,6 +100,7 @@ namespace Model
      */
     inline GetApiKeysResult& AddWarnings(const char* value) { m_warnings.push_back(value); return *this; }
 
+
     
     inline const Aws::String& GetPosition() const{ return m_position; }
 
@@ -119,6 +121,7 @@ namespace Model
 
     
     inline GetApiKeysResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+
 
     /**
      * <p>The current page of elements from this collection.</p>
@@ -156,8 +159,11 @@ namespace Model
     inline GetApiKeysResult& AddItems(ApiKey&& value) { m_items.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_warnings;
+
     Aws::String m_position;
+
     Aws::Vector<ApiKey> m_items;
   };
 

@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the alarm.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The name of the alarm.</p>
      */
     inline Alarm& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
@@ -119,8 +121,10 @@ namespace Model
     inline Alarm& WithAlarmARN(const char* value) { SetAlarmARN(value); return *this;}
 
   private:
+
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
+
     Aws::String m_alarmARN;
     bool m_alarmARNHasBeenSet;
   };

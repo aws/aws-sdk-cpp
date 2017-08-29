@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteJobQueueResult();
-    DeleteJobQueueResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteJobQueueResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteJobQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteJobQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

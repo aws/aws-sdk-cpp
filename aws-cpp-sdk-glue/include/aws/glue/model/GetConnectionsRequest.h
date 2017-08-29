@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
      * supplied, the AWS account ID is used by default.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline GetConnectionsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
+
     /**
      * <p>A filter that controls which connections will be returned.</p>
      */
@@ -103,6 +105,7 @@ namespace Model
      * <p>A filter that controls which connections will be returned.</p>
      */
     inline GetConnectionsRequest& WithFilter(GetConnectionsFilter&& value) { SetFilter(std::move(value)); return *this;}
+
 
     /**
      * <p>A continuation token, if this is a continuation call.</p>
@@ -139,6 +142,7 @@ namespace Model
      */
     inline GetConnectionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The maximum number of connections to return in one response.</p>
      */
@@ -155,12 +159,16 @@ namespace Model
     inline GetConnectionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet;
+
     GetConnectionsFilter m_filter;
     bool m_filterHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };

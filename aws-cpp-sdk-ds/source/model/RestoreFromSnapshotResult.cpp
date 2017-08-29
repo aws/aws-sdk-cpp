@@ -30,12 +30,12 @@ RestoreFromSnapshotResult::RestoreFromSnapshotResult()
 {
 }
 
-RestoreFromSnapshotResult::RestoreFromSnapshotResult(const AmazonWebServiceResult<JsonValue>& result)
+RestoreFromSnapshotResult::RestoreFromSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RestoreFromSnapshotResult& RestoreFromSnapshotResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RestoreFromSnapshotResult& RestoreFromSnapshotResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

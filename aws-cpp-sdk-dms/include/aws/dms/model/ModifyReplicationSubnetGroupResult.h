@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     ModifyReplicationSubnetGroupResult();
-    ModifyReplicationSubnetGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyReplicationSubnetGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyReplicationSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyReplicationSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The modified replication subnet group.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline ModifyReplicationSubnetGroupResult& WithReplicationSubnetGroup(ReplicationSubnetGroup&& value) { SetReplicationSubnetGroup(std::move(value)); return *this;}
 
   private:
+
     ReplicationSubnetGroup m_replicationSubnetGroup;
   };
 

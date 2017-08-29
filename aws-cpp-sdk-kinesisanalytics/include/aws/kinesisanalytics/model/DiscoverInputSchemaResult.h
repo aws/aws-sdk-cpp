@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DiscoverInputSchemaResult();
-    DiscoverInputSchemaResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DiscoverInputSchemaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DiscoverInputSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DiscoverInputSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Schema inferred from the streaming source. It identifies the format of the
@@ -82,6 +83,7 @@ namespace Model
      * columns in the in-application stream that you can create.</p>
      */
     inline DiscoverInputSchemaResult& WithInputSchema(SourceSchema&& value) { SetInputSchema(std::move(value)); return *this;}
+
 
     /**
      * <p>An array of elements, where each element corresponds to a row in a stream
@@ -125,6 +127,7 @@ namespace Model
      */
     inline DiscoverInputSchemaResult& AddParsedInputRecords(Aws::Vector<Aws::String>&& value) { m_parsedInputRecords.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Raw stream data that was sampled to infer the schema.</p>
      */
@@ -166,8 +169,11 @@ namespace Model
     inline DiscoverInputSchemaResult& AddRawInputRecords(const char* value) { m_rawInputRecords.push_back(value); return *this; }
 
   private:
+
     SourceSchema m_inputSchema;
+
     Aws::Vector<Aws::Vector<Aws::String>> m_parsedInputRecords;
+
     Aws::Vector<Aws::String> m_rawInputRecords;
   };
 

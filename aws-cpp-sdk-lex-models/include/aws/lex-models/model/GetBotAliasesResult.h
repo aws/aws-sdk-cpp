@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetBotAliasesResult();
-    GetBotAliasesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBotAliasesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBotAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot
@@ -84,6 +85,7 @@ namespace Model
      * alias.</p>
      */
     inline GetBotAliasesResult& AddBotAliases(BotAliasMetadata&& value) { m_botAliases.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A pagination token for fetching next page of aliases. If the response to this
@@ -142,7 +144,9 @@ namespace Model
     inline GetBotAliasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<BotAliasMetadata> m_botAliases;
+
     Aws::String m_nextToken;
   };
 

@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     BundleInstanceResponse();
-    BundleInstanceResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    BundleInstanceResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    BundleInstanceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    BundleInstanceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the bundle task.</p>
@@ -72,6 +73,7 @@ namespace Model
      */
     inline BundleInstanceResponse& WithBundleTask(BundleTask&& value) { SetBundleTask(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -88,7 +90,9 @@ namespace Model
     inline BundleInstanceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     BundleTask m_bundleTask;
+
     ResponseMetadata m_responseMetadata;
   };
 

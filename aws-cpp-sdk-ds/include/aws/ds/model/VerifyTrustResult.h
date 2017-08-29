@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     VerifyTrustResult();
-    VerifyTrustResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    VerifyTrustResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    VerifyTrustResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    VerifyTrustResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The unique Trust ID of the trust relationship that was verified.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline VerifyTrustResult& WithTrustId(const char* value) { SetTrustId(value); return *this;}
 
   private:
+
     Aws::String m_trustId;
   };
 

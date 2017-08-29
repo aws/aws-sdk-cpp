@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a>
      * that you want to get. <code>SqlInjectionMatchSetId</code> is returned by
@@ -89,6 +90,7 @@ namespace Model
     inline GetSqlInjectionMatchSetRequest& WithSqlInjectionMatchSetId(const char* value) { SetSqlInjectionMatchSetId(value); return *this;}
 
   private:
+
     Aws::String m_sqlInjectionMatchSetId;
     bool m_sqlInjectionMatchSetIdHasBeenSet;
   };

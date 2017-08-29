@@ -46,6 +46,7 @@ namespace Model
     Bundle& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The price in US dollars (e.g., <code>5.0</code>).</p>
      */
@@ -60,6 +61,7 @@ namespace Model
      * <p>The price in US dollars (e.g., <code>5.0</code>).</p>
      */
     inline Bundle& WithPrice(double value) { SetPrice(value); return *this;}
+
 
     /**
      * <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
@@ -76,6 +78,7 @@ namespace Model
      */
     inline Bundle& WithCpuCount(int value) { SetCpuCount(value); return *this;}
 
+
     /**
      * <p>The size of the SSD (e.g., <code>30</code>).</p>
      */
@@ -90,6 +93,7 @@ namespace Model
      * <p>The size of the SSD (e.g., <code>30</code>).</p>
      */
     inline Bundle& WithDiskSizeInGb(int value) { SetDiskSizeInGb(value); return *this;}
+
 
     /**
      * <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
@@ -126,6 +130,7 @@ namespace Model
      */
     inline Bundle& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
+
     /**
      * <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
      */
@@ -161,6 +166,7 @@ namespace Model
      */
     inline Bundle& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
+
     /**
      * <p>A Boolean value indicating whether the bundle is active.</p>
      */
@@ -175,6 +181,7 @@ namespace Model
      * <p>A Boolean value indicating whether the bundle is active.</p>
      */
     inline Bundle& WithIsActive(bool value) { SetIsActive(value); return *this;}
+
 
     /**
      * <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
@@ -211,6 +218,7 @@ namespace Model
      */
     inline Bundle& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The power of the bundle (e.g., <code>500</code>).</p>
      */
@@ -226,6 +234,7 @@ namespace Model
      */
     inline Bundle& WithPower(int value) { SetPower(value); return *this;}
 
+
     /**
      * <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
      */
@@ -240,6 +249,7 @@ namespace Model
      * <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
      */
     inline Bundle& WithRamSizeInGb(double value) { SetRamSizeInGb(value); return *this;}
+
 
     /**
      * <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
@@ -257,24 +267,34 @@ namespace Model
     inline Bundle& WithTransferPerMonthInGb(int value) { SetTransferPerMonthInGb(value); return *this;}
 
   private:
+
     double m_price;
     bool m_priceHasBeenSet;
+
     int m_cpuCount;
     bool m_cpuCountHasBeenSet;
+
     int m_diskSizeInGb;
     bool m_diskSizeInGbHasBeenSet;
+
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet;
+
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
     bool m_isActive;
     bool m_isActiveHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     int m_power;
     bool m_powerHasBeenSet;
+
     double m_ramSizeInGb;
     bool m_ramSizeInGbHasBeenSet;
+
     int m_transferPerMonthInGb;
     bool m_transferPerMonthInGbHasBeenSet;
   };

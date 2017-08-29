@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     AddTagsResult();
-    AddTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AddTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The ID of the ML object that was tagged.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline AddTagsResult& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
     /**
      * <p>The type of the ML object that was tagged.</p>
      */
@@ -108,7 +110,9 @@ namespace Model
     inline AddTagsResult& WithResourceType(TaggableResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_resourceId;
+
     TaggableResourceType m_resourceType;
   };
 

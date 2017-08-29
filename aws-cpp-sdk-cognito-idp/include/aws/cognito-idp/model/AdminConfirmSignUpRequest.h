@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The user pool ID for which you want to confirm user registration.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The user pool ID for which you want to confirm user registration.</p>
      */
     inline AdminConfirmSignUpRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+
 
     /**
      * <p>The user name for which you want to confirm user registration.</p>
@@ -111,8 +113,10 @@ namespace Model
     inline AdminConfirmSignUpRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
   private:
+
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
   };

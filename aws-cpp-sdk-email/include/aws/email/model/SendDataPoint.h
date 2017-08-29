@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Time of the data point.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline SendDataPoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
+
     /**
      * <p>Number of emails that have been sent.</p>
      */
@@ -89,6 +91,7 @@ namespace Model
      * <p>Number of emails that have been sent.</p>
      */
     inline SendDataPoint& WithDeliveryAttempts(long long value) { SetDeliveryAttempts(value); return *this;}
+
 
     /**
      * <p>Number of emails that have bounced.</p>
@@ -105,6 +108,7 @@ namespace Model
      */
     inline SendDataPoint& WithBounces(long long value) { SetBounces(value); return *this;}
 
+
     /**
      * <p>Number of unwanted emails that were rejected by recipients.</p>
      */
@@ -119,6 +123,7 @@ namespace Model
      * <p>Number of unwanted emails that were rejected by recipients.</p>
      */
     inline SendDataPoint& WithComplaints(long long value) { SetComplaints(value); return *this;}
+
 
     /**
      * <p>Number of emails rejected by Amazon SES.</p>
@@ -136,14 +141,19 @@ namespace Model
     inline SendDataPoint& WithRejects(long long value) { SetRejects(value); return *this;}
 
   private:
+
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
     long long m_deliveryAttempts;
     bool m_deliveryAttemptsHasBeenSet;
+
     long long m_bounces;
     bool m_bouncesHasBeenSet;
+
     long long m_complaints;
     bool m_complaintsHasBeenSet;
+
     long long m_rejects;
     bool m_rejectsHasBeenSet;
   };

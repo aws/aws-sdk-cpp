@@ -31,12 +31,12 @@ RevokeClusterSecurityGroupIngressResult::RevokeClusterSecurityGroupIngressResult
 {
 }
 
-RevokeClusterSecurityGroupIngressResult::RevokeClusterSecurityGroupIngressResult(const AmazonWebServiceResult<XmlDocument>& result)
+RevokeClusterSecurityGroupIngressResult::RevokeClusterSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-RevokeClusterSecurityGroupIngressResult& RevokeClusterSecurityGroupIngressResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+RevokeClusterSecurityGroupIngressResult& RevokeClusterSecurityGroupIngressResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

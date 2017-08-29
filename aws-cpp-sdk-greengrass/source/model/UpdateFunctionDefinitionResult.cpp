@@ -30,12 +30,12 @@ UpdateFunctionDefinitionResult::UpdateFunctionDefinitionResult()
 {
 }
 
-UpdateFunctionDefinitionResult::UpdateFunctionDefinitionResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateFunctionDefinitionResult::UpdateFunctionDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateFunctionDefinitionResult& UpdateFunctionDefinitionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateFunctionDefinitionResult& UpdateFunctionDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

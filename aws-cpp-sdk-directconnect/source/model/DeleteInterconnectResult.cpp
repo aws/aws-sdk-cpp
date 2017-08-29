@@ -31,13 +31,13 @@ DeleteInterconnectResult::DeleteInterconnectResult() :
 {
 }
 
-DeleteInterconnectResult::DeleteInterconnectResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DeleteInterconnectResult::DeleteInterconnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_interconnectState(InterconnectState::NOT_SET)
 {
   *this = result;
 }
 
-DeleteInterconnectResult& DeleteInterconnectResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteInterconnectResult& DeleteInterconnectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("interconnectState"))

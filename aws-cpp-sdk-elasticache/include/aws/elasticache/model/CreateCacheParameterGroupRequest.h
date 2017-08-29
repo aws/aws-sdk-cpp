@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>A user-specified name for the cache parameter group.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>A user-specified name for the cache parameter group.</p>
      */
     inline CreateCacheParameterGroupRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
+
 
     /**
      * <p>The name of the cache parameter group family that the cache parameter group
@@ -126,6 +128,7 @@ namespace Model
      */
     inline CreateCacheParameterGroupRequest& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
 
+
     /**
      * <p>A user-specified description for the cache parameter group.</p>
      */
@@ -162,10 +165,13 @@ namespace Model
     inline CreateCacheParameterGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_cacheParameterGroupName;
     bool m_cacheParameterGroupNameHasBeenSet;
+
     Aws::String m_cacheParameterGroupFamily;
     bool m_cacheParameterGroupFamilyHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

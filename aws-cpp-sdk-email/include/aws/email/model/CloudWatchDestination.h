@@ -55,6 +55,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>A list of dimensions upon which to categorize your emails when you publish
      * email sending events to Amazon CloudWatch.</p>
@@ -98,6 +99,7 @@ namespace Model
     inline CloudWatchDestination& AddDimensionConfigurations(CloudWatchDimensionConfiguration&& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<CloudWatchDimensionConfiguration> m_dimensionConfigurations;
     bool m_dimensionConfigurationsHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The AWS account ID associated with the registry that contains the repository.
      * If you do not specify a registry, the default registry is assumed.</p>
@@ -78,6 +79,7 @@ namespace Model
      */
     inline GetRepositoryPolicyRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
     /**
      * <p>The name of the repository whose policy you want to retrieve.</p>
      */
@@ -114,8 +116,10 @@ namespace Model
     inline GetRepositoryPolicyRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
   private:
+
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
+
     Aws::String m_repositoryName;
     bool m_repositoryNameHasBeenSet;
   };

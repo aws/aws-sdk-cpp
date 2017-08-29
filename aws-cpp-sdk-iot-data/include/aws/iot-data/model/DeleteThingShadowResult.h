@@ -47,8 +47,9 @@ namespace Model
     DeleteThingShadowResult& operator=(const DeleteThingShadowResult&) = delete;
 
 
-    DeleteThingShadowResult(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
-    DeleteThingShadowResult& operator=(AmazonWebServiceResult<Utils::Stream::ResponseStream>&& result);
+    DeleteThingShadowResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    DeleteThingShadowResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+
 
 
     /**
@@ -62,7 +63,8 @@ namespace Model
     inline void ReplaceBody(Aws::IOStream* body) { m_payload = Aws::Utils::Stream::ResponseStream(body); }
     
   private:
-    Utils::Stream::ResponseStream m_payload;
+
+  Aws::Utils::Stream::ResponseStream m_payload;
   };
 
 } // namespace Model

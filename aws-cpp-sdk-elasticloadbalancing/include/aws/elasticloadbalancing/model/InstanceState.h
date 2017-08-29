@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline InstanceState& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The current state of the instance.</p> <p>Valid values:
@@ -124,6 +126,7 @@ namespace Model
      * <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
      */
     inline InstanceState& WithState(const char* value) { SetState(value); return *this;}
+
 
     /**
      * <p>Information about the cause of <code>OutOfService</code> instances.
@@ -180,6 +183,7 @@ namespace Model
      * </p>
      */
     inline InstanceState& WithReasonCode(const char* value) { SetReasonCode(value); return *this;}
+
 
     /**
      * <p>A description of the instance state. This string can contain one or more of
@@ -315,12 +319,16 @@ namespace Model
     inline InstanceState& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_reasonCode;
     bool m_reasonCodeHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

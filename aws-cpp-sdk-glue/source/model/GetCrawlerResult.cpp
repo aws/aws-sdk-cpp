@@ -30,12 +30,12 @@ GetCrawlerResult::GetCrawlerResult()
 {
 }
 
-GetCrawlerResult::GetCrawlerResult(const AmazonWebServiceResult<JsonValue>& result)
+GetCrawlerResult::GetCrawlerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetCrawlerResult& GetCrawlerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetCrawlerResult& GetCrawlerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Crawler"))

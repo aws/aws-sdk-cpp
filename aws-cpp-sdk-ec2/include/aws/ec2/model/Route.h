@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The IPv4 CIDR block used for the destination match.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>The IPv4 CIDR block used for the destination match.</p>
      */
     inline Route& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+
 
     /**
      * <p>The IPv6 CIDR block used for the destination match.</p>
@@ -120,6 +122,7 @@ namespace Model
      */
     inline Route& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
 
+
     /**
      * <p>The prefix of the AWS service.</p>
      */
@@ -154,6 +157,7 @@ namespace Model
      * <p>The prefix of the AWS service.</p>
      */
     inline Route& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
+
 
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
@@ -190,6 +194,7 @@ namespace Model
      */
     inline Route& WithEgressOnlyInternetGatewayId(const char* value) { SetEgressOnlyInternetGatewayId(value); return *this;}
 
+
     /**
      * <p>The ID of a gateway attached to your VPC.</p>
      */
@@ -224,6 +229,7 @@ namespace Model
      * <p>The ID of a gateway attached to your VPC.</p>
      */
     inline Route& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+
 
     /**
      * <p>The ID of a NAT instance in your VPC.</p>
@@ -260,6 +266,7 @@ namespace Model
      */
     inline Route& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
     /**
      * <p>The AWS account ID of the owner of the instance.</p>
      */
@@ -294,6 +301,7 @@ namespace Model
      * <p>The AWS account ID of the owner of the instance.</p>
      */
     inline Route& WithInstanceOwnerId(const char* value) { SetInstanceOwnerId(value); return *this;}
+
 
     /**
      * <p>The ID of a NAT gateway.</p>
@@ -330,6 +338,7 @@ namespace Model
      */
     inline Route& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
 
+
     /**
      * <p>The ID of the network interface.</p>
      */
@@ -364,6 +373,7 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline Route& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+
 
     /**
      * <p>Describes how the route was created.</p> <ul> <li> <p>
@@ -415,6 +425,7 @@ namespace Model
      */
     inline Route& WithOrigin(RouteOrigin&& value) { SetOrigin(std::move(value)); return *this;}
 
+
     /**
      * <p>The state of the route. The <code>blackhole</code> state indicates that the
      * route's target isn't available (for example, the specified gateway isn't
@@ -449,6 +460,7 @@ namespace Model
      * attached to the VPC, or the specified NAT instance has been terminated).</p>
      */
     inline Route& WithState(RouteState&& value) { SetState(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the VPC peering connection.</p>
@@ -486,28 +498,40 @@ namespace Model
     inline Route& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
   private:
+
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet;
+
     Aws::String m_destinationIpv6CidrBlock;
     bool m_destinationIpv6CidrBlockHasBeenSet;
+
     Aws::String m_destinationPrefixListId;
     bool m_destinationPrefixListIdHasBeenSet;
+
     Aws::String m_egressOnlyInternetGatewayId;
     bool m_egressOnlyInternetGatewayIdHasBeenSet;
+
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_instanceOwnerId;
     bool m_instanceOwnerIdHasBeenSet;
+
     Aws::String m_natGatewayId;
     bool m_natGatewayIdHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     RouteOrigin m_origin;
     bool m_originHasBeenSet;
+
     RouteState m_state;
     bool m_stateHasBeenSet;
+
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet;
   };

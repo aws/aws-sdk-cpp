@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the IP address filter to delete.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
     inline DeleteReceiptFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 
   private:
+
     Aws::String m_filterName;
     bool m_filterNameHasBeenSet;
   };

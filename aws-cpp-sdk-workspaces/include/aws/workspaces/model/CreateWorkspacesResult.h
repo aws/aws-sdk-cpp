@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     CreateWorkspacesResult();
-    CreateWorkspacesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateWorkspacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of structures that represent the WorkSpaces that could not be
@@ -90,6 +91,7 @@ namespace Model
      * created.</p>
      */
     inline CreateWorkspacesResult& AddFailedRequests(FailedCreateWorkspaceRequest&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An array of structures that represent the WorkSpaces that were created.</p>
@@ -155,7 +157,9 @@ namespace Model
     inline CreateWorkspacesResult& AddPendingRequests(Workspace&& value) { m_pendingRequests.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<FailedCreateWorkspaceRequest> m_failedRequests;
+
     Aws::Vector<Workspace> m_pendingRequests;
   };
 

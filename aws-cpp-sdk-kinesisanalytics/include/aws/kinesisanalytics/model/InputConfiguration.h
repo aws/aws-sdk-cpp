@@ -48,6 +48,7 @@ namespace Model
     InputConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Input source ID. You can get this ID by calling the
      * <a>DescribeApplication</a> operation.</p>
@@ -90,6 +91,7 @@ namespace Model
      */
     inline InputConfiguration& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>Point at which you want the application to start processing records from the
      * streaming source.</p>
@@ -121,8 +123,10 @@ namespace Model
     inline InputConfiguration& WithInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { SetInputStartingPositionConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
     bool m_inputStartingPositionConfigurationHasBeenSet;
   };

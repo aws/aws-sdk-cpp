@@ -51,6 +51,7 @@ namespace Model
     AssessmentRunAgent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The AWS account of the EC2 instance where the agent is installed.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The AWS account of the EC2 instance where the agent is installed.</p>
      */
     inline AssessmentRunAgent& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+
 
     /**
      * <p>The ARN of the assessment run that is associated with the agent.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline AssessmentRunAgent& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
 
+
     /**
      * <p>The current health state of the agent.</p>
      */
@@ -146,6 +149,7 @@ namespace Model
      */
     inline AssessmentRunAgent& WithAgentHealth(AgentHealth&& value) { SetAgentHealth(std::move(value)); return *this;}
 
+
     /**
      * <p>The detailed health state of the agent.</p>
      */
@@ -170,6 +174,7 @@ namespace Model
      * <p>The detailed health state of the agent.</p>
      */
     inline AssessmentRunAgent& WithAgentHealthCode(AgentHealthCode&& value) { SetAgentHealthCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The description for the agent health code.</p>
@@ -205,6 +210,7 @@ namespace Model
      * <p>The description for the agent health code.</p>
      */
     inline AssessmentRunAgent& WithAgentHealthDetails(const char* value) { SetAgentHealthDetails(value); return *this;}
+
 
     /**
      * <p>The Auto Scaling group of the EC2 instance that is specified by the agent
@@ -247,6 +253,7 @@ namespace Model
      * ID.</p>
      */
     inline AssessmentRunAgent& WithAutoScalingGroup(const char* value) { SetAutoScalingGroup(value); return *this;}
+
 
     /**
      * <p>The Amazon Inspector application data metrics that are collected by the
@@ -291,18 +298,25 @@ namespace Model
     inline AssessmentRunAgent& AddTelemetryMetadata(TelemetryMetadata&& value) { m_telemetryMetadataHasBeenSet = true; m_telemetryMetadata.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet;
+
     Aws::String m_assessmentRunArn;
     bool m_assessmentRunArnHasBeenSet;
+
     AgentHealth m_agentHealth;
     bool m_agentHealthHasBeenSet;
+
     AgentHealthCode m_agentHealthCode;
     bool m_agentHealthCodeHasBeenSet;
+
     Aws::String m_agentHealthDetails;
     bool m_agentHealthDetailsHasBeenSet;
+
     Aws::String m_autoScalingGroup;
     bool m_autoScalingGroupHasBeenSet;
+
     Aws::Vector<TelemetryMetadata> m_telemetryMetadata;
     bool m_telemetryMetadataHasBeenSet;
   };

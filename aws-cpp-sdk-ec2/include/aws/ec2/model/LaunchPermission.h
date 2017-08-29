@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the group.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The name of the group.</p>
      */
     inline LaunchPermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
+
 
     /**
      * <p>The AWS account ID.</p>
@@ -110,8 +112,10 @@ namespace Model
     inline LaunchPermission& WithUserId(const char* value) { SetUserId(value); return *this;}
 
   private:
+
     PermissionGroup m_group;
     bool m_groupHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
   };

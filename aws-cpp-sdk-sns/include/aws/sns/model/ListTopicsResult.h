@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListTopicsResult();
-    ListTopicsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListTopicsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTopicsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ListTopicsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of topic ARNs.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list of topic ARNs.</p>
      */
     inline ListTopicsResult& AddTopics(Topic&& value) { m_topics.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Token to pass along to the next <code>ListTopics</code> request. This element
@@ -126,6 +128,7 @@ namespace Model
      */
     inline ListTopicsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -142,8 +145,11 @@ namespace Model
     inline ListTopicsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Topic> m_topics;
+
     Aws::String m_nextToken;
+
     ResponseMetadata m_responseMetadata;
   };
 

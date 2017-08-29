@@ -30,12 +30,12 @@ DescribeEventCategoriesResult::DescribeEventCategoriesResult()
 {
 }
 
-DescribeEventCategoriesResult::DescribeEventCategoriesResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEventCategoriesResult::DescribeEventCategoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeEventCategoriesResult& DescribeEventCategoriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EventCategoryGroupList"))

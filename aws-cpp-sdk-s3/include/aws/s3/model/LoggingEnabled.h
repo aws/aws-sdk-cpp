@@ -43,6 +43,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Specifies the bucket where you want Amazon S3 to store server access logs. You
      * can have your logs delivered to any bucket that you own, including the same
@@ -113,6 +114,7 @@ namespace Model
      */
     inline LoggingEnabled& WithTargetBucket(const char* value) { SetTargetBucket(value); return *this;}
 
+
     
     inline const Aws::Vector<TargetGrant>& GetTargetGrants() const{ return m_targetGrants; }
 
@@ -133,6 +135,7 @@ namespace Model
 
     
     inline LoggingEnabled& AddTargetGrants(TargetGrant&& value) { m_targetGrantsHasBeenSet = true; m_targetGrants.push_back(std::move(value)); return *this; }
+
 
     /**
      * This element lets you specify a prefix for the keys that the log files will be
@@ -177,10 +180,13 @@ namespace Model
     inline LoggingEnabled& WithTargetPrefix(const char* value) { SetTargetPrefix(value); return *this;}
 
   private:
+
     Aws::String m_targetBucket;
     bool m_targetBucketHasBeenSet;
+
     Aws::Vector<TargetGrant> m_targetGrants;
     bool m_targetGrantsHasBeenSet;
+
     Aws::String m_targetPrefix;
     bool m_targetPrefixHasBeenSet;
   };

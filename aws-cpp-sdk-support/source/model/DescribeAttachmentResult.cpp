@@ -30,12 +30,12 @@ DescribeAttachmentResult::DescribeAttachmentResult()
 {
 }
 
-DescribeAttachmentResult::DescribeAttachmentResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAttachmentResult::DescribeAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeAttachmentResult& DescribeAttachmentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeAttachmentResult& DescribeAttachmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("attachment"))

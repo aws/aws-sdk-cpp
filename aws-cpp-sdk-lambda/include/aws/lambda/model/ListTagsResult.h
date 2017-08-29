@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListTagsResult();
-    ListTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The list of tags assigned to the function.</p>
@@ -103,6 +104,7 @@ namespace Model
     inline ListTagsResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
   private:
+
     Aws::Map<Aws::String, Aws::String> m_tags;
   };
 

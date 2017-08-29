@@ -46,6 +46,7 @@ namespace Model
     EnvironmentImage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the Docker image.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The name of the Docker image.</p>
      */
     inline EnvironmentImage& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The description of the Docker image.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline EnvironmentImage& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

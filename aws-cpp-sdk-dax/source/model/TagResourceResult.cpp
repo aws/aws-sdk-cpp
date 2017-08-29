@@ -30,12 +30,12 @@ TagResourceResult::TagResourceResult()
 {
 }
 
-TagResourceResult::TagResourceResult(const AmazonWebServiceResult<JsonValue>& result)
+TagResourceResult::TagResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-TagResourceResult& TagResourceResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+TagResourceResult& TagResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Tags"))

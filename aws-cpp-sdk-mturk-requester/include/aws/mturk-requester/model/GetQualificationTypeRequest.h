@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The ID of the QualificationType.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline GetQualificationTypeRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
 
   private:
+
     Aws::String m_qualificationTypeId;
     bool m_qualificationTypeIdHasBeenSet;
   };

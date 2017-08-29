@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     PutEvaluationsResult();
-    PutEvaluationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutEvaluationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutEvaluationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutEvaluationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Requests that failed because of a client or server error.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline PutEvaluationsResult& AddFailedEvaluations(Evaluation&& value) { m_failedEvaluations.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Evaluation> m_failedEvaluations;
   };
 

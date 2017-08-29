@@ -30,12 +30,12 @@ PutDestinationResult::PutDestinationResult()
 {
 }
 
-PutDestinationResult::PutDestinationResult(const AmazonWebServiceResult<JsonValue>& result)
+PutDestinationResult::PutDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-PutDestinationResult& PutDestinationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+PutDestinationResult& PutDestinationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("destination"))

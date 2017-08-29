@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeServicesResult();
-    DescribeServicesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeServicesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A JSON-formatted list of AWS services.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeServicesResult& AddServices(Service&& value) { m_services.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<Service> m_services;
   };
 

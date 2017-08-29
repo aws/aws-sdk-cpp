@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Scopes the images by users with explicit launch permissions. Specify an AWS
      * account ID, <code>self</code> (the sender of the request), or <code>all</code>
@@ -98,6 +99,7 @@ namespace Model
      * (public AMIs).</p>
      */
     inline DescribeImagesRequest& AddExecutableUsers(const char* value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(value); return *this; }
+
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>architecture</code> - The image
@@ -526,6 +528,7 @@ namespace Model
      */
     inline DescribeImagesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>One or more image IDs.</p> <p>Default: Describes all images available to
      * you.</p>
@@ -573,6 +576,7 @@ namespace Model
      * you.</p>
      */
     inline DescribeImagesRequest& AddImageIds(const char* value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
+
 
     /**
      * <p>Filters the images by the owner. Specify an AWS account ID, <code>self</code>
@@ -646,6 +650,7 @@ namespace Model
      */
     inline DescribeImagesRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -671,14 +676,19 @@ namespace Model
     inline DescribeImagesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_executableUsers;
     bool m_executableUsersHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     Aws::Vector<Aws::String> m_imageIds;
     bool m_imageIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_owners;
     bool m_ownersHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

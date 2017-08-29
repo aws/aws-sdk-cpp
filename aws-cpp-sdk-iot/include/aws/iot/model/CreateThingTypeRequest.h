@@ -38,6 +38,7 @@ namespace Model
     CreateThingTypeRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the thing type.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The name of the thing type.</p>
      */
     inline CreateThingTypeRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+
 
     /**
      * <p>The ThingTypeProperties for the thing type to create. It contains information
@@ -109,8 +111,10 @@ namespace Model
     inline CreateThingTypeRequest& WithThingTypeProperties(ThingTypeProperties&& value) { SetThingTypeProperties(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet;
+
     ThingTypeProperties m_thingTypeProperties;
     bool m_thingTypePropertiesHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     DeviceiSCSIAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
      * qualified name(iqn) of a tape drive or media changer target.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline DeviceiSCSIAttributes& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}
 
+
     /**
      * <p>The network interface identifier of the VTL device.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      */
     inline DeviceiSCSIAttributes& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
+
     /**
      * <p>The port used to communicate with iSCSI VTL device targets.</p>
      */
@@ -136,6 +139,7 @@ namespace Model
      * <p>The port used to communicate with iSCSI VTL device targets.</p>
      */
     inline DeviceiSCSIAttributes& WithNetworkInterfacePort(int value) { SetNetworkInterfacePort(value); return *this;}
+
 
     /**
      * <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
@@ -153,12 +157,16 @@ namespace Model
     inline DeviceiSCSIAttributes& WithChapEnabled(bool value) { SetChapEnabled(value); return *this;}
 
   private:
+
     Aws::String m_targetARN;
     bool m_targetARNHasBeenSet;
+
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
+
     int m_networkInterfacePort;
     bool m_networkInterfacePortHasBeenSet;
+
     bool m_chapEnabled;
     bool m_chapEnabledHasBeenSet;
   };

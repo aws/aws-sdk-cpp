@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier for the replication group to be described. This parameter is
      * not case sensitive.</p> <p>If you do not specify this parameter, information
@@ -91,6 +92,7 @@ namespace Model
      */
     inline DescribeReplicationGroupsRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 
+
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a marker is included in
@@ -114,6 +116,7 @@ namespace Model
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
      */
     inline DescribeReplicationGroupsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
@@ -172,10 +175,13 @@ namespace Model
     inline DescribeReplicationGroupsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

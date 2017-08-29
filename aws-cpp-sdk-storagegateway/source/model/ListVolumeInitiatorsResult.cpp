@@ -30,12 +30,12 @@ ListVolumeInitiatorsResult::ListVolumeInitiatorsResult()
 {
 }
 
-ListVolumeInitiatorsResult::ListVolumeInitiatorsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListVolumeInitiatorsResult::ListVolumeInitiatorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListVolumeInitiatorsResult& ListVolumeInitiatorsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListVolumeInitiatorsResult& ListVolumeInitiatorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Initiators"))

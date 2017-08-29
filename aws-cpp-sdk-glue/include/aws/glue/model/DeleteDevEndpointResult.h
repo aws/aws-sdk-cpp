@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     DeleteDevEndpointResult();
-    DeleteDevEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDevEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDevEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteDevEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

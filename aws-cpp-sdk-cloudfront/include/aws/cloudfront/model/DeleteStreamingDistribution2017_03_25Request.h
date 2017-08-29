@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The distribution ID. </p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The distribution ID. </p>
      */
     inline DeleteStreamingDistribution2017_03_25Request& WithId(const char* value) { SetId(value); return *this;}
+
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when you disabled
@@ -117,8 +119,10 @@ namespace Model
     inline DeleteStreamingDistribution2017_03_25Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_ifMatch;
     bool m_ifMatchHasBeenSet;
   };

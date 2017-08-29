@@ -49,6 +49,7 @@ namespace Model
     AgentFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or
      * <b>UNHEALTHY</b>.</p>
@@ -90,6 +91,7 @@ namespace Model
      * <b>UNHEALTHY</b>.</p>
      */
     inline AgentFilter& AddAgentHealths(AgentHealth&& value) { m_agentHealthsHasBeenSet = true; m_agentHealths.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>,
@@ -141,8 +143,10 @@ namespace Model
     inline AgentFilter& AddAgentHealthCodes(AgentHealthCode&& value) { m_agentHealthCodesHasBeenSet = true; m_agentHealthCodes.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<AgentHealth> m_agentHealths;
     bool m_agentHealthsHasBeenSet;
+
     Aws::Vector<AgentHealthCode> m_agentHealthCodes;
     bool m_agentHealthCodesHasBeenSet;
   };

@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListDiscoveredResourcesResult();
-    ListDiscoveredResourcesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDiscoveredResourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDiscoveredResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDiscoveredResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If there are more discovered resources than the max result, return the next
@@ -84,6 +85,7 @@ namespace Model
      * token to be passed to the next call as a bookmark of where to start from.</p>
      */
     inline ListDiscoveredResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>Returned list of discovered resources associated with the given
@@ -128,7 +130,9 @@ namespace Model
     inline ListDiscoveredResourcesResult& AddDiscoveredResourceList(DiscoveredResource&& value) { m_discoveredResourceList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<DiscoveredResource> m_discoveredResourceList;
   };
 

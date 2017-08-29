@@ -50,6 +50,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Information about the attachment of the egress-only Internet gateway.</p>
      */
@@ -84,6 +85,7 @@ namespace Model
      * <p>Information about the attachment of the egress-only Internet gateway.</p>
      */
     inline EgressOnlyInternetGateway& AddAttachments(InternetGatewayAttachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the egress-only Internet gateway.</p>
@@ -121,8 +123,10 @@ namespace Model
     inline EgressOnlyInternetGateway& WithEgressOnlyInternetGatewayId(const char* value) { SetEgressOnlyInternetGatewayId(value); return *this;}
 
   private:
+
     Aws::Vector<InternetGatewayAttachment> m_attachments;
     bool m_attachmentsHasBeenSet;
+
     Aws::String m_egressOnlyInternetGatewayId;
     bool m_egressOnlyInternetGatewayIdHasBeenSet;
   };

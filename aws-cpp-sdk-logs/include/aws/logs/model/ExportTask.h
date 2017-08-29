@@ -47,6 +47,7 @@ namespace Model
     ExportTask& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID of the export task.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The ID of the export task.</p>
      */
     inline ExportTask& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+
 
     /**
      * <p>The name of the export task.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline ExportTask& WithTaskName(const char* value) { SetTaskName(value); return *this;}
 
+
     /**
      * <p>The name of the log group from which logs data was exported.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      */
     inline ExportTask& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
+
     /**
      * <p>The start time, expressed as the number of milliseconds since Jan 1, 1970
      * 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>
@@ -170,6 +174,7 @@ namespace Model
      */
     inline ExportTask& WithFrom(long long value) { SetFrom(value); return *this;}
 
+
     /**
      * <p>The end time, expressed as the number of milliseconds since Jan 1, 1970
      * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
@@ -187,6 +192,7 @@ namespace Model
      * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
      */
     inline ExportTask& WithTo(long long value) { SetTo(value); return *this;}
+
 
     /**
      * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
@@ -222,6 +228,7 @@ namespace Model
      * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
      */
     inline ExportTask& WithDestination(const char* value) { SetDestination(value); return *this;}
+
 
     /**
      * <p>The prefix that was used as the start of Amazon S3 key for every object
@@ -265,6 +272,7 @@ namespace Model
      */
     inline ExportTask& WithDestinationPrefix(const char* value) { SetDestinationPrefix(value); return *this;}
 
+
     /**
      * <p>The status of the export task.</p>
      */
@@ -289,6 +297,7 @@ namespace Model
      * <p>The status of the export task.</p>
      */
     inline ExportTask& WithStatus(ExportTaskStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Execution info about the export task.</p>
@@ -316,22 +325,31 @@ namespace Model
     inline ExportTask& WithExecutionInfo(ExportTaskExecutionInfo&& value) { SetExecutionInfo(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet;
+
     Aws::String m_taskName;
     bool m_taskNameHasBeenSet;
+
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
+
     long long m_from;
     bool m_fromHasBeenSet;
+
     long long m_to;
     bool m_toHasBeenSet;
+
     Aws::String m_destination;
     bool m_destinationHasBeenSet;
+
     Aws::String m_destinationPrefix;
     bool m_destinationPrefixHasBeenSet;
+
     ExportTaskStatus m_status;
     bool m_statusHasBeenSet;
+
     ExportTaskExecutionInfo m_executionInfo;
     bool m_executionInfoHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The label of the new high-availability partition group.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
     inline CreateHapgRequest& WithLabel(const char* value) { SetLabel(value); return *this;}
 
   private:
+
     Aws::String m_label;
     bool m_labelHasBeenSet;
   };

@@ -31,12 +31,12 @@ CloneReceiptRuleSetResult::CloneReceiptRuleSetResult()
 {
 }
 
-CloneReceiptRuleSetResult::CloneReceiptRuleSetResult(const AmazonWebServiceResult<XmlDocument>& result)
+CloneReceiptRuleSetResult::CloneReceiptRuleSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CloneReceiptRuleSetResult& CloneReceiptRuleSetResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CloneReceiptRuleSetResult& CloneReceiptRuleSetResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

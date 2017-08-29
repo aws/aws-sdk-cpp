@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeStackResourcesResult();
-    DescribeStackResourcesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeStackResourcesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStackResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeStackResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of <code>StackResource</code> structures.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline DescribeStackResourcesResult& AddStackResources(StackResource&& value) { m_stackResources.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,7 +102,9 @@ namespace Model
     inline DescribeStackResourcesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<StackResource> m_stackResources;
+
     ResponseMetadata m_responseMetadata;
   };
 

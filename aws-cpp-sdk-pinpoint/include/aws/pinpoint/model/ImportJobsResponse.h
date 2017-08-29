@@ -45,6 +45,7 @@ namespace Model
     ImportJobsResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * A list of import jobs for the application.
      */
@@ -79,6 +80,7 @@ namespace Model
      * A list of import jobs for the application.
      */
     inline ImportJobsResponse& AddItem(ImportJobResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
+
 
     /**
      * The string that you use in a subsequent request to get the next page of results
@@ -123,8 +125,10 @@ namespace Model
     inline ImportJobsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<ImportJobResponse> m_item;
     bool m_itemHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CopyDBSnapshotResult();
-    CopyDBSnapshotResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CopyDBSnapshotResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CopyDBSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CopyDBSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DBSnapshot& GetDBSnapshot() const{ return m_dBSnapshot; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline CopyDBSnapshotResult& WithDBSnapshot(DBSnapshot&& value) { SetDBSnapshot(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline CopyDBSnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DBSnapshot m_dBSnapshot;
+
     ResponseMetadata m_responseMetadata;
   };
 

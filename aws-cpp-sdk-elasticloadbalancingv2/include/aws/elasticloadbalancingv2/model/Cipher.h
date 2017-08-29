@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cipher.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      */
     inline Cipher& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The priority of the cipher.</p>
      */
@@ -99,8 +101,10 @@ namespace Model
     inline Cipher& WithPriority(int value) { SetPriority(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     int m_priority;
     bool m_priorityHasBeenSet;
   };

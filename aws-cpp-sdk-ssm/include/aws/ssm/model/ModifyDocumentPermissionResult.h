@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     ModifyDocumentPermissionResult();
-    ModifyDocumentPermissionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyDocumentPermissionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyDocumentPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyDocumentPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

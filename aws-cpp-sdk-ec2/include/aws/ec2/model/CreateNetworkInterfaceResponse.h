@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CreateNetworkInterfaceResponse();
-    CreateNetworkInterfaceResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateNetworkInterfaceResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateNetworkInterfaceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateNetworkInterfaceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the network interface.</p>
@@ -72,6 +73,7 @@ namespace Model
      */
     inline CreateNetworkInterfaceResponse& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -88,7 +90,9 @@ namespace Model
     inline CreateNetworkInterfaceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     NetworkInterface m_networkInterface;
+
     ResponseMetadata m_responseMetadata;
   };
 

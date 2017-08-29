@@ -45,6 +45,7 @@ namespace Model
     MinimumHealthyHosts& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The minimum healthy instance value.</p>
      */
@@ -59,6 +60,7 @@ namespace Model
      * <p>The minimum healthy instance value.</p>
      */
     inline MinimumHealthyHosts& WithValue(int value) { SetValue(value); return *this;}
+
 
     /**
      * <p>The minimum healthy instance type:</p> <ul> <li> <p>HOST_COUNT: The minimum
@@ -186,8 +188,10 @@ namespace Model
     inline MinimumHealthyHosts& WithType(MinimumHealthyHostsType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
     int m_value;
     bool m_valueHasBeenSet;
+
     MinimumHealthyHostsType m_type;
     bool m_typeHasBeenSet;
   };

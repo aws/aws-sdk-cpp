@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ModifyVolumeResponse();
-    ModifyVolumeResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyVolumeResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyVolumeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyVolumeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A <a>VolumeModification</a> object.</p>
@@ -67,6 +68,7 @@ namespace Model
      */
     inline ModifyVolumeResponse& WithVolumeModification(VolumeModification&& value) { SetVolumeModification(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -83,7 +85,9 @@ namespace Model
     inline ModifyVolumeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     VolumeModification m_volumeModification;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -47,6 +47,7 @@ namespace Model
     TransferData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The transfer message.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The transfer message.</p>
      */
     inline TransferData& WithTransferMessage(const char* value) { SetTransferMessage(value); return *this;}
+
 
     /**
      * <p>The reason why the transfer was rejected.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline TransferData& WithRejectReason(const char* value) { SetRejectReason(value); return *this;}
 
+
     /**
      * <p>The date the transfer took place.</p>
      */
@@ -142,6 +145,7 @@ namespace Model
      */
     inline TransferData& WithTransferDate(Aws::Utils::DateTime&& value) { SetTransferDate(std::move(value)); return *this;}
 
+
     /**
      * <p>The date the transfer was accepted.</p>
      */
@@ -166,6 +170,7 @@ namespace Model
      * <p>The date the transfer was accepted.</p>
      */
     inline TransferData& WithAcceptDate(Aws::Utils::DateTime&& value) { SetAcceptDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The date the transfer was rejected.</p>
@@ -193,14 +198,19 @@ namespace Model
     inline TransferData& WithRejectDate(Aws::Utils::DateTime&& value) { SetRejectDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_transferMessage;
     bool m_transferMessageHasBeenSet;
+
     Aws::String m_rejectReason;
     bool m_rejectReasonHasBeenSet;
+
     Aws::Utils::DateTime m_transferDate;
     bool m_transferDateHasBeenSet;
+
     Aws::Utils::DateTime m_acceptDate;
     bool m_acceptDateHasBeenSet;
+
     Aws::Utils::DateTime m_rejectDate;
     bool m_rejectDateHasBeenSet;
   };

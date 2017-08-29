@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     UpdateDevicePoolResult();
-    UpdateDevicePoolResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDevicePoolResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDevicePoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateDevicePoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The device pool you just updated.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline UpdateDevicePoolResult& WithDevicePool(DevicePool&& value) { SetDevicePool(std::move(value)); return *this;}
 
   private:
+
     DevicePool m_devicePool;
   };
 

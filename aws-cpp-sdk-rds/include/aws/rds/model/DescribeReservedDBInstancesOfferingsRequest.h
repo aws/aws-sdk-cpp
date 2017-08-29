@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The offering identifier filter value. Specify this parameter to show only the
      * available offering that matches the specified reservation identifier.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithReservedDBInstancesOfferingId(const char* value) { SetReservedDBInstancesOfferingId(value); return *this;}
 
+
     /**
      * <p>The DB instance class filter value. Specify this parameter to show only the
      * available offerings matching the specified DB instance class.</p>
@@ -133,6 +135,7 @@ namespace Model
      * available offerings matching the specified DB instance class.</p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
+
 
     /**
      * <p>Duration filter value, specified in years or seconds. Specify this parameter
@@ -183,6 +186,7 @@ namespace Model
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithDuration(const char* value) { SetDuration(value); return *this;}
 
+
     /**
      * <p>Product description filter value. Specify this parameter to show only the
      * available offerings matching the specified product description.</p>
@@ -224,6 +228,7 @@ namespace Model
      * available offerings matching the specified product description.</p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithProductDescription(const char* value) { SetProductDescription(value); return *this;}
+
 
     /**
      * <p>The offering type filter value. Specify this parameter to show only the
@@ -274,6 +279,7 @@ namespace Model
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithOfferingType(const char* value) { SetOfferingType(value); return *this;}
 
+
     /**
      * <p>The Multi-AZ filter value. Specify this parameter to show only the available
      * offerings matching the specified Multi-AZ parameter.</p>
@@ -291,6 +297,7 @@ namespace Model
      * offerings matching the specified Multi-AZ parameter.</p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
 
     /**
      * <p>This parameter is not currently supported.</p>
@@ -327,6 +334,7 @@ namespace Model
      */
     inline DescribeReservedDBInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p> The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
@@ -350,6 +358,7 @@ namespace Model
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -401,22 +410,31 @@ namespace Model
     inline DescribeReservedDBInstancesOfferingsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_reservedDBInstancesOfferingId;
     bool m_reservedDBInstancesOfferingIdHasBeenSet;
+
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+
     Aws::String m_duration;
     bool m_durationHasBeenSet;
+
     Aws::String m_productDescription;
     bool m_productDescriptionHasBeenSet;
+
     Aws::String m_offeringType;
     bool m_offeringTypeHasBeenSet;
+
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

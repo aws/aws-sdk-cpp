@@ -56,6 +56,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the load balancer.</p>
      */
@@ -91,6 +92,7 @@ namespace Model
      */
     inline LoadBalancerDescription& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
+
     /**
      * <p>The DNS name of the load balancer.</p>
      */
@@ -125,6 +127,7 @@ namespace Model
      * <p>The DNS name of the load balancer.</p>
      */
     inline LoadBalancerDescription& WithDNSName(const char* value) { SetDNSName(value); return *this;}
+
 
     /**
      * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
@@ -175,6 +178,7 @@ namespace Model
      */
     inline LoadBalancerDescription& WithCanonicalHostedZoneName(const char* value) { SetCanonicalHostedZoneName(value); return *this;}
 
+
     /**
      * <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
      */
@@ -209,6 +213,7 @@ namespace Model
      * <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
      */
     inline LoadBalancerDescription& WithCanonicalHostedZoneNameID(const char* value) { SetCanonicalHostedZoneNameID(value); return *this;}
+
 
     /**
      * <p>The listeners for the load balancer.</p>
@@ -245,6 +250,7 @@ namespace Model
      */
     inline LoadBalancerDescription& AddListenerDescriptions(ListenerDescription&& value) { m_listenerDescriptionsHasBeenSet = true; m_listenerDescriptions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The policies defined for the load balancer.</p>
      */
@@ -269,6 +275,7 @@ namespace Model
      * <p>The policies defined for the load balancer.</p>
      */
     inline LoadBalancerDescription& WithPolicies(Policies&& value) { SetPolicies(std::move(value)); return *this;}
+
 
     /**
      * <p>Information about your EC2 instances.</p>
@@ -304,6 +311,7 @@ namespace Model
      * <p>Information about your EC2 instances.</p>
      */
     inline LoadBalancerDescription& AddBackendServerDescriptions(BackendServerDescription&& value) { m_backendServerDescriptionsHasBeenSet = true; m_backendServerDescriptions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The Availability Zones for the load balancer.</p>
@@ -345,6 +353,7 @@ namespace Model
      */
     inline LoadBalancerDescription& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
+
     /**
      * <p>The IDs of the subnets for the load balancer.</p>
      */
@@ -385,6 +394,7 @@ namespace Model
      */
     inline LoadBalancerDescription& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
+
     /**
      * <p>The ID of the VPC for the load balancer.</p>
      */
@@ -419,6 +429,7 @@ namespace Model
      * <p>The ID of the VPC for the load balancer.</p>
      */
     inline LoadBalancerDescription& WithVPCId(const char* value) { SetVPCId(value); return *this;}
+
 
     /**
      * <p>The IDs of the instances for the load balancer.</p>
@@ -455,6 +466,7 @@ namespace Model
      */
     inline LoadBalancerDescription& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Information about the health checks conducted on the load balancer.</p>
      */
@@ -479,6 +491,7 @@ namespace Model
      * <p>Information about the health checks conducted on the load balancer.</p>
      */
     inline LoadBalancerDescription& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
+
 
     /**
      * <p>The security group for the load balancer, which you can use as part of your
@@ -519,6 +532,7 @@ namespace Model
      * as the inbound source.</p>
      */
     inline LoadBalancerDescription& WithSourceSecurityGroup(SourceSecurityGroup&& value) { SetSourceSecurityGroup(std::move(value)); return *this;}
+
 
     /**
      * <p>The security groups for the load balancer. Valid only for load balancers in a
@@ -568,6 +582,7 @@ namespace Model
      */
     inline LoadBalancerDescription& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
+
     /**
      * <p>The date and time the load balancer was created.</p>
      */
@@ -592,6 +607,7 @@ namespace Model
      * <p>The date and time the load balancer was created.</p>
      */
     inline LoadBalancerDescription& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The type of load balancer. Valid only for load balancers in a VPC.</p> <p>If
@@ -657,36 +673,52 @@ namespace Model
     inline LoadBalancerDescription& WithScheme(const char* value) { SetScheme(value); return *this;}
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     Aws::String m_dNSName;
     bool m_dNSNameHasBeenSet;
+
     Aws::String m_canonicalHostedZoneName;
     bool m_canonicalHostedZoneNameHasBeenSet;
+
     Aws::String m_canonicalHostedZoneNameID;
     bool m_canonicalHostedZoneNameIDHasBeenSet;
+
     Aws::Vector<ListenerDescription> m_listenerDescriptions;
     bool m_listenerDescriptionsHasBeenSet;
+
     Policies m_policies;
     bool m_policiesHasBeenSet;
+
     Aws::Vector<BackendServerDescription> m_backendServerDescriptions;
     bool m_backendServerDescriptionsHasBeenSet;
+
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet;
+
     Aws::String m_vPCId;
     bool m_vPCIdHasBeenSet;
+
     Aws::Vector<Instance> m_instances;
     bool m_instancesHasBeenSet;
+
     HealthCheck m_healthCheck;
     bool m_healthCheckHasBeenSet;
+
     SourceSecurityGroup m_sourceSecurityGroup;
     bool m_sourceSecurityGroupHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
     Aws::Utils::DateTime m_createdTime;
     bool m_createdTimeHasBeenSet;
+
     Aws::String m_scheme;
     bool m_schemeHasBeenSet;
   };

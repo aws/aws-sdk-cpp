@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     QueryObjectsResult();
-    QueryObjectsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    QueryObjectsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    QueryObjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    QueryObjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The identifiers that match the query selectors.</p>
@@ -86,6 +87,7 @@ namespace Model
      * <p>The identifiers that match the query selectors.</p>
      */
     inline QueryObjectsResult& AddIds(const char* value) { m_ids.push_back(value); return *this; }
+
 
     /**
      * <p>The starting point for the next page of results. To view the next page of
@@ -136,6 +138,7 @@ namespace Model
      */
     inline QueryObjectsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>Indicates whether there are more results that can be obtained by a subsequent
      * call.</p>
@@ -155,8 +158,11 @@ namespace Model
     inline QueryObjectsResult& WithHasMoreResults(bool value) { SetHasMoreResults(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_ids;
+
     Aws::String m_marker;
+
     bool m_hasMoreResults;
   };
 

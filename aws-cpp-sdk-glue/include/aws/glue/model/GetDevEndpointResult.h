@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetDevEndpointResult();
-    GetDevEndpointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDevEndpointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDevEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetDevEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A DevEndpoint definition.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline GetDevEndpointResult& WithDevEndpoint(DevEndpoint&& value) { SetDevEndpoint(std::move(value)); return *this;}
 
   private:
+
     DevEndpoint m_devEndpoint;
   };
 

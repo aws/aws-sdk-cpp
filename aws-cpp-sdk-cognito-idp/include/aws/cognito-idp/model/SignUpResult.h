@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     SignUpResult();
-    SignUpResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SignUpResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SignUpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    SignUpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A response from the server indicating that a user registration has been
@@ -65,6 +66,7 @@ namespace Model
      * confirmed.</p>
      */
     inline SignUpResult& WithUserConfirmed(bool value) { SetUserConfirmed(value); return *this;}
+
 
     /**
      * <p>The code delivery details returned by the server response to the user
@@ -95,6 +97,7 @@ namespace Model
      * registration request.</p>
      */
     inline SignUpResult& WithCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { SetCodeDeliveryDetails(std::move(value)); return *this;}
+
 
     /**
      * <p>The UUID of the authenticated user. This is not the same as
@@ -139,8 +142,11 @@ namespace Model
     inline SignUpResult& WithUserSub(const char* value) { SetUserSub(value); return *this;}
 
   private:
+
     bool m_userConfirmed;
+
     CodeDeliveryDetailsType m_codeDeliveryDetails;
+
     Aws::String m_userSub;
   };
 

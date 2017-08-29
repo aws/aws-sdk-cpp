@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetLogEventsResult();
-    GetLogEventsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLogEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetLogEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetLogEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The events.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>The events.</p>
      */
     inline GetLogEventsResult& AddEvents(OutputLogEvent&& value) { m_events.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token for the next set of items in the forward direction. The token
@@ -119,6 +121,7 @@ namespace Model
      * expires after 24 hours.</p>
      */
     inline GetLogEventsResult& WithNextForwardToken(const char* value) { SetNextForwardToken(value); return *this;}
+
 
     /**
      * <p>The token for the next set of items in the backward direction. The token
@@ -163,8 +166,11 @@ namespace Model
     inline GetLogEventsResult& WithNextBackwardToken(const char* value) { SetNextBackwardToken(value); return *this;}
 
   private:
+
     Aws::Vector<OutputLogEvent> m_events;
+
     Aws::String m_nextForwardToken;
+
     Aws::String m_nextBackwardToken;
   };
 

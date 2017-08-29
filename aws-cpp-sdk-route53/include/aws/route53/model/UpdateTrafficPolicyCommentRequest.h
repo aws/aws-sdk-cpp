@@ -38,6 +38,7 @@ namespace Model
     UpdateTrafficPolicyCommentRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The value of <code>Id</code> for the traffic policy that you want to update
      * the comment for.</p>
@@ -80,6 +81,7 @@ namespace Model
      */
     inline UpdateTrafficPolicyCommentRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The value of <code>Version</code> for the traffic policy that you want to
      * update the comment for.</p>
@@ -97,6 +99,7 @@ namespace Model
      * update the comment for.</p>
      */
     inline UpdateTrafficPolicyCommentRequest& WithVersion(int value) { SetVersion(value); return *this;}
+
 
     /**
      * <p>The new comment for the specified traffic policy and version.</p>
@@ -134,10 +137,13 @@ namespace Model
     inline UpdateTrafficPolicyCommentRequest& WithComment(const char* value) { SetComment(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     int m_version;
     bool m_versionHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
   };

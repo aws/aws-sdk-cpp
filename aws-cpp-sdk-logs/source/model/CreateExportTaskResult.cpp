@@ -30,12 +30,12 @@ CreateExportTaskResult::CreateExportTaskResult()
 {
 }
 
-CreateExportTaskResult::CreateExportTaskResult(const AmazonWebServiceResult<JsonValue>& result)
+CreateExportTaskResult::CreateExportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateExportTaskResult& CreateExportTaskResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreateExportTaskResult& CreateExportTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("taskId"))

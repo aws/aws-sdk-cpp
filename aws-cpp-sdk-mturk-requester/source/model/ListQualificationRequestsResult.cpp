@@ -31,13 +31,13 @@ ListQualificationRequestsResult::ListQualificationRequestsResult() :
 {
 }
 
-ListQualificationRequestsResult::ListQualificationRequestsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+ListQualificationRequestsResult::ListQualificationRequestsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_numResults(0)
 {
   *this = result;
 }
 
-ListQualificationRequestsResult& ListQualificationRequestsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListQualificationRequestsResult& ListQualificationRequestsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("NumResults"))

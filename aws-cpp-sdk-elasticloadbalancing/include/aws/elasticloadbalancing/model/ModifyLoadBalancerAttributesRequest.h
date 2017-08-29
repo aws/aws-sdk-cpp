@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
+
     /**
      * <p>The attributes for the load balancer.</p>
      */
@@ -104,8 +106,10 @@ namespace Model
     inline ModifyLoadBalancerAttributesRequest& WithLoadBalancerAttributes(LoadBalancerAttributes&& value) { SetLoadBalancerAttributes(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     LoadBalancerAttributes m_loadBalancerAttributes;
     bool m_loadBalancerAttributesHasBeenSet;
   };

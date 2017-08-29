@@ -30,12 +30,12 @@ DescribeMetricFiltersResult::DescribeMetricFiltersResult()
 {
 }
 
-DescribeMetricFiltersResult::DescribeMetricFiltersResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMetricFiltersResult::DescribeMetricFiltersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeMetricFiltersResult& DescribeMetricFiltersResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeMetricFiltersResult& DescribeMetricFiltersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("metricFilters"))

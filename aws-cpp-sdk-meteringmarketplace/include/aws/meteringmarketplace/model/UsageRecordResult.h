@@ -48,6 +48,7 @@ namespace Model
     UsageRecordResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The UsageRecord that was part of the BatchMeterUsage request.</p>
      */
     inline UsageRecordResult& WithUsageRecord(UsageRecord&& value) { SetUsageRecord(std::move(value)); return *this;}
+
 
     /**
      * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
@@ -107,6 +109,7 @@ namespace Model
      * <p>The MeteringRecordId is a unique identifier for this metering event.</p>
      */
     inline UsageRecordResult& WithMeteringRecordId(const char* value) { SetMeteringRecordId(value); return *this;}
+
 
     /**
      * <p>The UsageRecordResult Status indicates the status of an individual
@@ -174,10 +177,13 @@ namespace Model
     inline UsageRecordResult& WithStatus(UsageRecordResultStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
+
     UsageRecord m_usageRecord;
     bool m_usageRecordHasBeenSet;
+
     Aws::String m_meteringRecordId;
     bool m_meteringRecordIdHasBeenSet;
+
     UsageRecordResultStatus m_status;
     bool m_statusHasBeenSet;
   };

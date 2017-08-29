@@ -48,6 +48,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in
@@ -174,6 +175,7 @@ namespace Model
      */
     inline LoadBalancerAttribute& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The value of the attribute.</p>
      */
@@ -210,8 +212,10 @@ namespace Model
     inline LoadBalancerAttribute& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::String m_value;
     bool m_valueHasBeenSet;
   };

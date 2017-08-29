@@ -23,11 +23,11 @@ namespace Aws
 namespace Client
 {
 
-class AWS_EFS_API EFSErrorMarshaller : public Client::JsonErrorMarshaller
+class AWS_EFS_API EFSErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-  Client::AWSError<Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace EFS
+} // namespace Client
 } // namespace Aws

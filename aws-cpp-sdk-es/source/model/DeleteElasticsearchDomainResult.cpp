@@ -30,12 +30,12 @@ DeleteElasticsearchDomainResult::DeleteElasticsearchDomainResult()
 {
 }
 
-DeleteElasticsearchDomainResult::DeleteElasticsearchDomainResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteElasticsearchDomainResult::DeleteElasticsearchDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteElasticsearchDomainResult& DeleteElasticsearchDomainResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteElasticsearchDomainResult& DeleteElasticsearchDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DomainStatus"))

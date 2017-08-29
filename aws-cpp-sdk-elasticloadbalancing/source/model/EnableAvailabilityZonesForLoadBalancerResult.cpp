@@ -31,12 +31,12 @@ EnableAvailabilityZonesForLoadBalancerResult::EnableAvailabilityZonesForLoadBala
 {
 }
 
-EnableAvailabilityZonesForLoadBalancerResult::EnableAvailabilityZonesForLoadBalancerResult(const AmazonWebServiceResult<XmlDocument>& result)
+EnableAvailabilityZonesForLoadBalancerResult::EnableAvailabilityZonesForLoadBalancerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-EnableAvailabilityZonesForLoadBalancerResult& EnableAvailabilityZonesForLoadBalancerResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+EnableAvailabilityZonesForLoadBalancerResult& EnableAvailabilityZonesForLoadBalancerResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

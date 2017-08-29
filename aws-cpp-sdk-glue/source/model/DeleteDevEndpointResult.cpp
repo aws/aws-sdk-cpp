@@ -30,12 +30,12 @@ DeleteDevEndpointResult::DeleteDevEndpointResult()
 {
 }
 
-DeleteDevEndpointResult::DeleteDevEndpointResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDevEndpointResult::DeleteDevEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteDevEndpointResult& DeleteDevEndpointResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDevEndpointResult& DeleteDevEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name of the Auto Scaling group.</p>
      */
     inline PutNotificationConfigurationRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -119,6 +121,7 @@ namespace Model
      * (SNS) topic.</p>
      */
     inline PutNotificationConfigurationRequest& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
+
 
     /**
      * <p>The type of event that will cause the notification to be sent. For details
@@ -177,10 +180,13 @@ namespace Model
     inline PutNotificationConfigurationRequest& AddNotificationTypes(const char* value) { m_notificationTypesHasBeenSet = true; m_notificationTypes.push_back(value); return *this; }
 
   private:
+
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
     Aws::String m_topicARN;
     bool m_topicARNHasBeenSet;
+
     Aws::Vector<Aws::String> m_notificationTypes;
     bool m_notificationTypesHasBeenSet;
   };

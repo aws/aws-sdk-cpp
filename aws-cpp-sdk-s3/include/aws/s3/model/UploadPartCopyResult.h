@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     UploadPartCopyResult();
-    UploadPartCopyResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UploadPartCopyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UploadPartCopyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    UploadPartCopyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * The version of the source object that was copied, if you have enabled versioning
@@ -86,6 +87,7 @@ namespace Model
      */
     inline UploadPartCopyResult& WithCopySourceVersionId(const char* value) { SetCopySourceVersionId(value); return *this;}
 
+
     
     inline const CopyPartResult& GetCopyPartResult() const{ return m_copyPartResult; }
 
@@ -100,6 +102,7 @@ namespace Model
 
     
     inline UploadPartCopyResult& WithCopyPartResult(CopyPartResult&& value) { SetCopyPartResult(std::move(value)); return *this;}
+
 
     /**
      * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
@@ -130,6 +133,7 @@ namespace Model
      * AES256, aws:kms).
      */
     inline UploadPartCopyResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
+
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -172,6 +176,7 @@ namespace Model
      * the response will include this header confirming the encryption algorithm used.
      */
     inline UploadPartCopyResult& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
+
 
     /**
      * If server-side encryption with a customer-provided encryption key was requested,
@@ -222,6 +227,7 @@ namespace Model
      */
     inline UploadPartCopyResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
+
     /**
      * If present, specifies the ID of the AWS Key Management Service (KMS) master
      * encryption key that was used for the object.
@@ -264,6 +270,7 @@ namespace Model
      */
     inline UploadPartCopyResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
+
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
 
@@ -280,12 +287,19 @@ namespace Model
     inline UploadPartCopyResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_copySourceVersionId;
+
     CopyPartResult m_copyPartResult;
+
     ServerSideEncryption m_serverSideEncryption;
+
     Aws::String m_sSECustomerAlgorithm;
+
     Aws::String m_sSECustomerKeyMD5;
+
     Aws::String m_sSEKMSKeyId;
+
     RequestCharged m_requestCharged;
   };
 

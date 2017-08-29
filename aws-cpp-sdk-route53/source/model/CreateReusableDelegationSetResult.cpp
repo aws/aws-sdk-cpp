@@ -30,12 +30,12 @@ CreateReusableDelegationSetResult::CreateReusableDelegationSetResult()
 {
 }
 
-CreateReusableDelegationSetResult::CreateReusableDelegationSetResult(const AmazonWebServiceResult<XmlDocument>& result)
+CreateReusableDelegationSetResult::CreateReusableDelegationSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateReusableDelegationSetResult& CreateReusableDelegationSetResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateReusableDelegationSetResult& CreateReusableDelegationSetResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

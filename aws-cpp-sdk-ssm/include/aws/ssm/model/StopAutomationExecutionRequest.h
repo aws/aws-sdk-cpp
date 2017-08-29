@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The execution ID of the Automation to stop.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline StopAutomationExecutionRequest& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
 
   private:
+
     Aws::String m_automationExecutionId;
     bool m_automationExecutionIdHasBeenSet;
   };

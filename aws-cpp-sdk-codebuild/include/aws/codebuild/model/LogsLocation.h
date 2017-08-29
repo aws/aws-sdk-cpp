@@ -46,6 +46,7 @@ namespace Model
     LogsLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline LogsLocation& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
+
     /**
      * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
     inline LogsLocation& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
@@ -152,10 +155,13 @@ namespace Model
     inline LogsLocation& WithDeepLink(const char* value) { SetDeepLink(value); return *this;}
 
   private:
+
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
     Aws::String m_deepLink;
     bool m_deepLinkHasBeenSet;
   };

@@ -43,6 +43,7 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
     /**
      * <p>Use this when paginating results to indicate where to begin in your list of
      * origin access identities. The results include identities in the list that occur
@@ -106,6 +107,7 @@ namespace Model
      */
     inline ListCloudFrontOriginAccessIdentities2017_03_25Request& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The maximum number of origin access identities you want in the response body.
      * </p>
@@ -149,8 +151,10 @@ namespace Model
     inline ListCloudFrontOriginAccessIdentities2017_03_25Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
   private:
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::String m_maxItems;
     bool m_maxItemsHasBeenSet;
   };

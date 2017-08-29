@@ -31,12 +31,12 @@ ModifyClusterResult::ModifyClusterResult()
 {
 }
 
-ModifyClusterResult::ModifyClusterResult(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyClusterResult::ModifyClusterResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-ModifyClusterResult& ModifyClusterResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ModifyClusterResult& ModifyClusterResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

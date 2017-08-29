@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
@@ -75,6 +76,7 @@ namespace Model
      */
     inline LookupDeveloperIdentityRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
@@ -109,6 +111,7 @@ namespace Model
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
     inline LookupDeveloperIdentityRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+
 
     /**
      * <p>A unique ID used by your backend authentication process to identify a user.
@@ -159,6 +162,7 @@ namespace Model
      */
     inline LookupDeveloperIdentityRequest& WithDeveloperUserIdentifier(const char* value) { SetDeveloperUserIdentifier(value); return *this;}
 
+
     /**
      * <p>The maximum number of identities to return.</p>
      */
@@ -173,6 +177,7 @@ namespace Model
      * <p>The maximum number of identities to return.</p>
      */
     inline LookupDeveloperIdentityRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>A pagination token. The first call you make will have <code>NextToken</code>
@@ -245,14 +250,19 @@ namespace Model
     inline LookupDeveloperIdentityRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
+
     Aws::String m_developerUserIdentifier;
     bool m_developerUserIdentifierHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
   };

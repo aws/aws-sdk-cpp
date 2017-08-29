@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetTriggersResult();
-    GetTriggersResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTriggersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTriggersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetTriggersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of triggers for the specified job.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of triggers for the specified job.</p>
      */
     inline GetTriggersResult& AddTriggers(Trigger&& value) { m_triggers.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>A continuation token, if not all the requested triggers have yet been
@@ -121,7 +123,9 @@ namespace Model
     inline GetTriggersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Trigger> m_triggers;
+
     Aws::String m_nextToken;
   };
 

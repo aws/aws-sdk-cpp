@@ -46,6 +46,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identity for which the policies will be retrieved. You can specify an
      * identity by using its name or by using its Amazon Resource Name (ARN). Examples:
@@ -109,6 +110,7 @@ namespace Model
      */
     inline GetIdentityPoliciesRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
+
     /**
      * <p>A list of the names of policies to be retrieved. You can retrieve a maximum
      * of 20 policies at a time. If you do not know the names of the policies that are
@@ -166,8 +168,10 @@ namespace Model
     inline GetIdentityPoliciesRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
   private:
+
     Aws::String m_identity;
     bool m_identityHasBeenSet;
+
     Aws::Vector<Aws::String> m_policyNames;
     bool m_policyNamesHasBeenSet;
   };

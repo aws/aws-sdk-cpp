@@ -30,12 +30,12 @@ UpdateContainerAgentResult::UpdateContainerAgentResult()
 {
 }
 
-UpdateContainerAgentResult::UpdateContainerAgentResult(const AmazonWebServiceResult<JsonValue>& result)
+UpdateContainerAgentResult::UpdateContainerAgentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-UpdateContainerAgentResult& UpdateContainerAgentResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+UpdateContainerAgentResult& UpdateContainerAgentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("containerInstance"))

@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the cluster parameter group to be reset.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline ResetClusterParameterGroupRequest& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
 
+
     /**
      * <p>If <code>true</code>, all parameters in the specified parameter group will be
      * reset to their default values. </p> <p>Default: <code>true</code> </p>
@@ -95,6 +97,7 @@ namespace Model
      * reset to their default values. </p> <p>Default: <code>true</code> </p>
      */
     inline ResetClusterParameterGroupRequest& WithResetAllParameters(bool value) { SetResetAllParameters(value); return *this;}
+
 
     /**
      * <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i>
@@ -146,10 +149,13 @@ namespace Model
     inline ResetClusterParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_parameterGroupName;
     bool m_parameterGroupNameHasBeenSet;
+
     bool m_resetAllParameters;
     bool m_resetAllParametersHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
   };

@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DisableEnhancedMonitoringResult();
-    DisableEnhancedMonitoringResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisableEnhancedMonitoringResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisableEnhancedMonitoringResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisableEnhancedMonitoringResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the Amazon Kinesis stream.</p>
      */
     inline DisableEnhancedMonitoringResult& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+
 
     /**
      * <p>Represents the current state of the metrics that are in the enhanced state
@@ -125,6 +127,7 @@ namespace Model
      * before the operation.</p>
      */
     inline DisableEnhancedMonitoringResult& AddCurrentShardLevelMetrics(MetricsName&& value) { m_currentShardLevelMetrics.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>Represents the list of all the metrics that would be in the enhanced state
@@ -169,8 +172,11 @@ namespace Model
     inline DisableEnhancedMonitoringResult& AddDesiredShardLevelMetrics(MetricsName&& value) { m_desiredShardLevelMetrics.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_streamName;
+
     Aws::Vector<MetricsName> m_currentShardLevelMetrics;
+
     Aws::Vector<MetricsName> m_desiredShardLevelMetrics;
   };
 

@@ -46,6 +46,7 @@ namespace Model
     Credentials& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Access Key portion of the credentials.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The Access Key portion of the credentials.</p>
      */
     inline Credentials& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
+
 
     /**
      * <p>The Secret Access Key portion of the credentials</p>
@@ -116,6 +118,7 @@ namespace Model
      */
     inline Credentials& WithSecretKey(const char* value) { SetSecretKey(value); return *this;}
 
+
     /**
      * <p>The Session Token portion of the credentials</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      */
     inline Credentials& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
 
+
     /**
      * <p>The date at which these credentials will expire.</p>
      */
@@ -177,12 +181,16 @@ namespace Model
     inline Credentials& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet;
+
     Aws::String m_secretKey;
     bool m_secretKeyHasBeenSet;
+
     Aws::String m_sessionToken;
     bool m_sessionTokenHasBeenSet;
+
     Aws::Utils::DateTime m_expiration;
     bool m_expirationHasBeenSet;
   };

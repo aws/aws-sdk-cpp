@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB
      * cluster.</p>
@@ -90,6 +91,7 @@ namespace Model
      * cluster.</p>
      */
     inline DBClusterRole& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
 
     /**
      * <p>Describes the state of association between the IAM role and the DB cluster.
@@ -176,8 +178,10 @@ namespace Model
     inline DBClusterRole& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

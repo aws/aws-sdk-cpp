@@ -30,12 +30,12 @@ DescribeWorkflowExecutionResult::DescribeWorkflowExecutionResult()
 {
 }
 
-DescribeWorkflowExecutionResult::DescribeWorkflowExecutionResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeWorkflowExecutionResult::DescribeWorkflowExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeWorkflowExecutionResult& DescribeWorkflowExecutionResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeWorkflowExecutionResult& DescribeWorkflowExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("executionInfo"))

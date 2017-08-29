@@ -30,12 +30,12 @@ RegisterTargetWithMaintenanceWindowResult::RegisterTargetWithMaintenanceWindowRe
 {
 }
 
-RegisterTargetWithMaintenanceWindowResult::RegisterTargetWithMaintenanceWindowResult(const AmazonWebServiceResult<JsonValue>& result)
+RegisterTargetWithMaintenanceWindowResult::RegisterTargetWithMaintenanceWindowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-RegisterTargetWithMaintenanceWindowResult& RegisterTargetWithMaintenanceWindowResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+RegisterTargetWithMaintenanceWindowResult& RegisterTargetWithMaintenanceWindowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WindowTargetId"))

@@ -32,14 +32,14 @@ AdminGetUserResult::AdminGetUserResult() :
 {
 }
 
-AdminGetUserResult::AdminGetUserResult(const AmazonWebServiceResult<JsonValue>& result) : 
+AdminGetUserResult::AdminGetUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_enabled(false),
     m_userStatus(UserStatusType::NOT_SET)
 {
   *this = result;
 }
 
-AdminGetUserResult& AdminGetUserResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AdminGetUserResult& AdminGetUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Username"))

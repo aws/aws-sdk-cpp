@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     CopySnapshotResponse();
-    CopySnapshotResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CopySnapshotResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CopySnapshotResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CopySnapshotResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The ID of the new snapshot.</p>
@@ -82,6 +83,7 @@ namespace Model
      */
     inline CopySnapshotResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,7 +100,9 @@ namespace Model
     inline CopySnapshotResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_snapshotId;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -49,6 +49,7 @@ namespace Model
     MaintenanceWindowTarget& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The Maintenance Window ID where the target is registered.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The Maintenance Window ID where the target is registered.</p>
      */
     inline MaintenanceWindowTarget& WithWindowId(const char* value) { SetWindowId(value); return *this;}
+
 
     /**
      * <p>The ID of the target.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline MaintenanceWindowTarget& WithWindowTargetId(const char* value) { SetWindowTargetId(value); return *this;}
 
+
     /**
      * <p>The type of target.</p>
      */
@@ -143,6 +146,7 @@ namespace Model
      * <p>The type of target.</p>
      */
     inline MaintenanceWindowTarget& WithResourceType(MaintenanceWindowResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
@@ -193,6 +197,7 @@ namespace Model
      */
     inline MaintenanceWindowTarget& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
      * while running tasks for these targets in this Maintenance Window.</p>
@@ -235,6 +240,7 @@ namespace Model
      */
     inline MaintenanceWindowTarget& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}
 
+
     /**
      * <p>The target name.</p>
      */
@@ -269,6 +275,7 @@ namespace Model
      * <p>The target name.</p>
      */
     inline MaintenanceWindowTarget& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>A description of the target.</p>
@@ -306,18 +313,25 @@ namespace Model
     inline MaintenanceWindowTarget& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_windowId;
     bool m_windowIdHasBeenSet;
+
     Aws::String m_windowTargetId;
     bool m_windowTargetIdHasBeenSet;
+
     MaintenanceWindowResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
     Aws::String m_ownerInformation;
     bool m_ownerInformationHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

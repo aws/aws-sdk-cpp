@@ -47,6 +47,7 @@ namespace Model
     Deployment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The deployment ID.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The deployment ID.</p>
      */
     inline Deployment& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+
 
     /**
      * <p>The stack ID.</p>
@@ -117,6 +119,7 @@ namespace Model
      */
     inline Deployment& WithStackId(const char* value) { SetStackId(value); return *this;}
 
+
     /**
      * <p>The app ID.</p>
      */
@@ -151,6 +154,7 @@ namespace Model
      * <p>The app ID.</p>
      */
     inline Deployment& WithAppId(const char* value) { SetAppId(value); return *this;}
+
 
     /**
      * <p>Date when the deployment was created.</p>
@@ -187,6 +191,7 @@ namespace Model
      */
     inline Deployment& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
+
     /**
      * <p>Date when the deployment completed.</p>
      */
@@ -222,6 +227,7 @@ namespace Model
      */
     inline Deployment& WithCompletedAt(const char* value) { SetCompletedAt(value); return *this;}
 
+
     /**
      * <p>The deployment duration.</p>
      */
@@ -236,6 +242,7 @@ namespace Model
      * <p>The deployment duration.</p>
      */
     inline Deployment& WithDuration(int value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The user's IAM ARN.</p>
@@ -272,6 +279,7 @@ namespace Model
      */
     inline Deployment& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
 
+
     /**
      * <p>A user-defined comment.</p>
      */
@@ -307,6 +315,7 @@ namespace Model
      */
     inline Deployment& WithComment(const char* value) { SetComment(value); return *this;}
 
+
     
     inline const DeploymentCommand& GetCommand() const{ return m_command; }
 
@@ -321,6 +330,7 @@ namespace Model
 
     
     inline Deployment& WithCommand(DeploymentCommand&& value) { SetCommand(std::move(value)); return *this;}
+
 
     /**
      * <p>The deployment status:</p> <ul> <li> <p>running</p> </li> <li>
@@ -363,6 +373,7 @@ namespace Model
      * <p>successful</p> </li> <li> <p>failed</p> </li> </ul>
      */
     inline Deployment& WithStatus(const char* value) { SetStatus(value); return *this;}
+
 
     /**
      * <p>A string that contains user-defined custom JSON. It can be used to override
@@ -441,6 +452,7 @@ namespace Model
      */
     inline Deployment& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
+
     /**
      * <p>The IDs of the target instances.</p>
      */
@@ -482,28 +494,40 @@ namespace Model
     inline Deployment& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
   private:
+
     Aws::String m_deploymentId;
     bool m_deploymentIdHasBeenSet;
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     Aws::String m_appId;
     bool m_appIdHasBeenSet;
+
     Aws::String m_createdAt;
     bool m_createdAtHasBeenSet;
+
     Aws::String m_completedAt;
     bool m_completedAtHasBeenSet;
+
     int m_duration;
     bool m_durationHasBeenSet;
+
     Aws::String m_iamUserArn;
     bool m_iamUserArnHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     DeploymentCommand m_command;
     bool m_commandHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_customJson;
     bool m_customJsonHasBeenSet;
+
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
   };

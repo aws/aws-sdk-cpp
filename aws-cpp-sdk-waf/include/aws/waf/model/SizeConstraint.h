@@ -53,6 +53,7 @@ namespace Model
     SizeConstraint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Specifies where in a web request to look for the size constraint.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>Specifies where in a web request to look for the size constraint.</p>
      */
     inline SizeConstraint& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
@@ -278,6 +280,7 @@ namespace Model
      */
     inline SizeConstraint& WithTextTransformation(TextTransformation&& value) { SetTextTransformation(std::move(value)); return *this;}
 
+
     /**
      * <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in
      * combination with the provided <code>Size</code> and <code>FieldToMatch</code> to
@@ -378,6 +381,7 @@ namespace Model
      */
     inline SizeConstraint& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
+
     /**
      * <p>The size in bytes that you want AWS WAF to compare against the size of the
      * specified <code>FieldToMatch</code>. AWS WAF uses this in combination with
@@ -418,12 +422,16 @@ namespace Model
     inline SizeConstraint& WithSize(long long value) { SetSize(value); return *this;}
 
   private:
+
     FieldToMatch m_fieldToMatch;
     bool m_fieldToMatchHasBeenSet;
+
     TextTransformation m_textTransformation;
     bool m_textTransformationHasBeenSet;
+
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
+
     long long m_size;
     bool m_sizeHasBeenSet;
   };

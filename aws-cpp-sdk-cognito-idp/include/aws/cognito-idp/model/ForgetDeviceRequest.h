@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The access token for the forgotten device request.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
      * <p>The access token for the forgotten device request.</p>
      */
     inline ForgetDeviceRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+
 
     /**
      * <p>The device key.</p>
@@ -110,8 +112,10 @@ namespace Model
     inline ForgetDeviceRequest& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
 
   private:
+
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet;
+
     Aws::String m_deviceKey;
     bool m_deviceKeyHasBeenSet;
   };

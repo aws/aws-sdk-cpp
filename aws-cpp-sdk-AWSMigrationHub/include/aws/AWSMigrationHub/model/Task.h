@@ -46,6 +46,7 @@ namespace Model
     Task& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Status of the task - Not Started, In-Progress, Complete.</p>
      */
@@ -70,6 +71,7 @@ namespace Model
      * <p>Status of the task - Not Started, In-Progress, Complete.</p>
      */
     inline Task& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Details of task status as notified by a migration tool. A tool might use this
@@ -120,6 +122,7 @@ namespace Model
      */
     inline Task& WithStatusDetail(const char* value) { SetStatusDetail(value); return *this;}
 
+
     /**
      * <p>Indication of the percentage completion of the task.</p>
      */
@@ -136,10 +139,13 @@ namespace Model
     inline Task& WithProgressPercent(int value) { SetProgressPercent(value); return *this;}
 
   private:
+
     Status m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusDetail;
     bool m_statusDetailHasBeenSet;
+
     int m_progressPercent;
     bool m_progressPercentHasBeenSet;
   };

@@ -47,6 +47,7 @@ namespace Model
     BuiltinIntentMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for the built-in intent. To find the signature for an
      * intent, see <a
@@ -103,6 +104,7 @@ namespace Model
      */
     inline BuiltinIntentMetadata& WithSignature(const char* value) { SetSignature(value); return *this;}
 
+
     /**
      * <p>A list of identifiers for the locales that the intent supports.</p>
      */
@@ -139,8 +141,10 @@ namespace Model
     inline BuiltinIntentMetadata& AddSupportedLocales(Locale&& value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_signature;
     bool m_signatureHasBeenSet;
+
     Aws::Vector<Locale> m_supportedLocales;
     bool m_supportedLocalesHasBeenSet;
   };

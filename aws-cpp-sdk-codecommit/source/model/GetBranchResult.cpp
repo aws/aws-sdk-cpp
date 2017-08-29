@@ -30,12 +30,12 @@ GetBranchResult::GetBranchResult()
 {
 }
 
-GetBranchResult::GetBranchResult(const AmazonWebServiceResult<JsonValue>& result)
+GetBranchResult::GetBranchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetBranchResult& GetBranchResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetBranchResult& GetBranchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("branch"))

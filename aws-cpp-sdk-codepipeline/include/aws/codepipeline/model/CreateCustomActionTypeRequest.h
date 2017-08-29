@@ -45,6 +45,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The category of the custom action, such as a build action or a test
      * action.</p> <note> <p>Although Source and Approval are listed as valid values,
@@ -84,6 +85,7 @@ namespace Model
      * </note>
      */
     inline CreateCustomActionTypeRequest& WithCategory(ActionCategory&& value) { SetCategory(std::move(value)); return *this;}
+
 
     /**
      * <p>The provider of the service used in the custom action, such as AWS
@@ -127,6 +129,7 @@ namespace Model
      */
     inline CreateCustomActionTypeRequest& WithProvider(const char* value) { SetProvider(value); return *this;}
 
+
     /**
      * <p>The version identifier of the custom action.</p>
      */
@@ -162,6 +165,7 @@ namespace Model
      */
     inline CreateCustomActionTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
     /**
      * <p>Returns information about the settings for an action type.</p>
      */
@@ -186,6 +190,7 @@ namespace Model
      * <p>Returns information about the settings for an action type.</p>
      */
     inline CreateCustomActionTypeRequest& WithSettings(ActionTypeSettings&& value) { SetSettings(std::move(value)); return *this;}
+
 
     /**
      * <p>The configuration properties for the custom action.</p> <note> <p>You can
@@ -264,6 +269,7 @@ namespace Model
      */
     inline CreateCustomActionTypeRequest& AddConfigurationProperties(ActionConfigurationProperty&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The details of the input artifact for the action, such as its commit ID.</p>
      */
@@ -288,6 +294,7 @@ namespace Model
      * <p>The details of the input artifact for the action, such as its commit ID.</p>
      */
     inline CreateCustomActionTypeRequest& WithInputArtifactDetails(ArtifactDetails&& value) { SetInputArtifactDetails(std::move(value)); return *this;}
+
 
     /**
      * <p>The details of the output artifact of the action, such as its commit ID.</p>
@@ -315,18 +322,25 @@ namespace Model
     inline CreateCustomActionTypeRequest& WithOutputArtifactDetails(ArtifactDetails&& value) { SetOutputArtifactDetails(std::move(value)); return *this;}
 
   private:
+
     ActionCategory m_category;
     bool m_categoryHasBeenSet;
+
     Aws::String m_provider;
     bool m_providerHasBeenSet;
+
     Aws::String m_version;
     bool m_versionHasBeenSet;
+
     ActionTypeSettings m_settings;
     bool m_settingsHasBeenSet;
+
     Aws::Vector<ActionConfigurationProperty> m_configurationProperties;
     bool m_configurationPropertiesHasBeenSet;
+
     ArtifactDetails m_inputArtifactDetails;
     bool m_inputArtifactDetailsHasBeenSet;
+
     ArtifactDetails m_outputArtifactDetails;
     bool m_outputArtifactDetailsHasBeenSet;
   };

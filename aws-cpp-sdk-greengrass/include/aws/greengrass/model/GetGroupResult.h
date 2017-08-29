@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetGroupResult();
-    GetGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * Arn of the definition.
@@ -76,6 +77,7 @@ namespace Model
      */
     inline GetGroupResult& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * Timestamp of when the definition was created.
      */
@@ -110,6 +112,7 @@ namespace Model
      * Timestamp of when the definition was created.
      */
     inline GetGroupResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
+
 
     /**
      * Id of the definition.
@@ -146,6 +149,7 @@ namespace Model
      */
     inline GetGroupResult& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * Last updated timestamp of the definition.
      */
@@ -180,6 +184,7 @@ namespace Model
      * Last updated timestamp of the definition.
      */
     inline GetGroupResult& WithLastUpdatedTimestamp(const char* value) { SetLastUpdatedTimestamp(value); return *this;}
+
 
     /**
      * Last version of the definition.
@@ -216,6 +221,7 @@ namespace Model
      */
     inline GetGroupResult& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
 
+
     /**
      * Latest version arn of the definition.
      */
@@ -250,6 +256,7 @@ namespace Model
      * Latest version arn of the definition.
      */
     inline GetGroupResult& WithLatestVersionArn(const char* value) { SetLatestVersionArn(value); return *this;}
+
 
     /**
      * Name of the definition.
@@ -287,12 +294,19 @@ namespace Model
     inline GetGroupResult& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_arn;
+
     Aws::String m_creationTimestamp;
+
     Aws::String m_id;
+
     Aws::String m_lastUpdatedTimestamp;
+
     Aws::String m_latestVersion;
+
     Aws::String m_latestVersionArn;
+
     Aws::String m_name;
   };
 

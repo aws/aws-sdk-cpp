@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -65,6 +66,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline AttachInternetGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The ID of the Internet gateway.</p>
@@ -100,6 +102,7 @@ namespace Model
      * <p>The ID of the Internet gateway.</p>
      */
     inline AttachInternetGatewayRequest& WithInternetGatewayId(const char* value) { SetInternetGatewayId(value); return *this;}
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -137,10 +140,13 @@ namespace Model
     inline AttachInternetGatewayRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     Aws::String m_internetGatewayId;
     bool m_internetGatewayIdHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

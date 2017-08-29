@@ -30,13 +30,13 @@ ListBucketAnalyticsConfigurationsResult::ListBucketAnalyticsConfigurationsResult
 {
 }
 
-ListBucketAnalyticsConfigurationsResult::ListBucketAnalyticsConfigurationsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+ListBucketAnalyticsConfigurationsResult::ListBucketAnalyticsConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-ListBucketAnalyticsConfigurationsResult& ListBucketAnalyticsConfigurationsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+ListBucketAnalyticsConfigurationsResult& ListBucketAnalyticsConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

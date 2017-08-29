@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>A unique identifier for the CMK whose tags you are listing. You can use the
      * unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:</p> <ul>
@@ -106,6 +107,7 @@ namespace Model
      */
     inline ListResourceTagsRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
      * this value is present, AWS KMS does not return more than the specified number of
@@ -132,6 +134,7 @@ namespace Model
      * it defaults to 50.</p>
      */
     inline ListResourceTagsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>Use this parameter in a subsequent request after you receive a response with
@@ -197,10 +200,13 @@ namespace Model
     inline ListResourceTagsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

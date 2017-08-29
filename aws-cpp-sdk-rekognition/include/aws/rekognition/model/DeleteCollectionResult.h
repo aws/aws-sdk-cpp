@@ -36,8 +36,9 @@ namespace Model
   {
   public:
     DeleteCollectionResult();
-    DeleteCollectionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteCollectionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>HTTP status code that indicates the result of the operation.</p>
@@ -55,6 +56,7 @@ namespace Model
     inline DeleteCollectionResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
 
   private:
+
     int m_statusCode;
   };
 

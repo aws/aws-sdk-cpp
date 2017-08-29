@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the load balancer.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
      * <p>The name of the load balancer.</p>
      */
     inline AttachLoadBalancerToSubnetsRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+
 
     /**
      * <p>The IDs of the subnets to add. You can add only one subnet per Availability
@@ -127,8 +129,10 @@ namespace Model
     inline AttachLoadBalancerToSubnetsRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
   private:
+
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet;
   };

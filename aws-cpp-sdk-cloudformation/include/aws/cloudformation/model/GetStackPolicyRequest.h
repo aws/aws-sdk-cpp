@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name or unique stack ID that is associated with the stack whose policy
      * you want to get.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline GetStackPolicyRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
   private:
+
     Aws::String m_stackName;
     bool m_stackNameHasBeenSet;
   };

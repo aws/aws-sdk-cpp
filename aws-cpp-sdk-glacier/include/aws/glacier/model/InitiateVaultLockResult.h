@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     InitiateVaultLockResult();
-    InitiateVaultLockResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InitiateVaultLockResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateVaultLockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    InitiateVaultLockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The lock ID, which is used to complete the vault locking process.</p>
@@ -83,6 +84,7 @@ namespace Model
     inline InitiateVaultLockResult& WithLockId(const char* value) { SetLockId(value); return *this;}
 
   private:
+
     Aws::String m_lockId;
   };
 

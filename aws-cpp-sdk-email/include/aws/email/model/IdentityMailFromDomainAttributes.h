@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The custom MAIL FROM domain that the identity is configured to use.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The custom MAIL FROM domain that the identity is configured to use.</p>
      */
     inline IdentityMailFromDomainAttributes& WithMailFromDomain(const char* value) { SetMailFromDomain(value); return *this;}
+
 
     /**
      * <p>The state that indicates whether Amazon SES has successfully read the MX
@@ -130,6 +132,7 @@ namespace Model
      * takes the action described by <code>BehaviorOnMXFailure</code>.</p>
      */
     inline IdentityMailFromDomainAttributes& WithMailFromDomainStatus(CustomMailFromStatus&& value) { SetMailFromDomainStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>The action that Amazon SES takes if it cannot successfully read the required
@@ -197,10 +200,13 @@ namespace Model
     inline IdentityMailFromDomainAttributes& WithBehaviorOnMXFailure(BehaviorOnMXFailure&& value) { SetBehaviorOnMXFailure(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_mailFromDomain;
     bool m_mailFromDomainHasBeenSet;
+
     CustomMailFromStatus m_mailFromDomainStatus;
     bool m_mailFromDomainStatusHasBeenSet;
+
     BehaviorOnMXFailure m_behaviorOnMXFailure;
     bool m_behaviorOnMXFailureHasBeenSet;
   };

@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      */
     inline ModifyRuleRequest& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
 
+
     /**
      * <p>The conditions.</p>
      */
@@ -110,6 +112,7 @@ namespace Model
      * <p>The conditions.</p>
      */
     inline ModifyRuleRequest& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The actions.</p>
@@ -147,10 +150,13 @@ namespace Model
     inline ModifyRuleRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_ruleArn;
     bool m_ruleArnHasBeenSet;
+
     Aws::Vector<RuleCondition> m_conditions;
     bool m_conditionsHasBeenSet;
+
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet;
   };

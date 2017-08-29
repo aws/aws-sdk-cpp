@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
@@ -59,6 +60,7 @@ namespace Model
 
     
     inline SetLocalConsolePasswordRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
 
     /**
      * <p>The password you want to set for your VM local console.</p>
@@ -96,8 +98,10 @@ namespace Model
     inline SetLocalConsolePasswordRequest& WithLocalConsolePassword(const char* value) { SetLocalConsolePassword(value); return *this;}
 
   private:
+
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
     Aws::String m_localConsolePassword;
     bool m_localConsolePasswordHasBeenSet;
   };

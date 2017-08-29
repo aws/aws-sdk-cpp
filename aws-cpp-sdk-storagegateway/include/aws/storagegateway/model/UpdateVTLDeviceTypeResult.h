@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     UpdateVTLDeviceTypeResult();
-    UpdateVTLDeviceTypeResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateVTLDeviceTypeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateVTLDeviceTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateVTLDeviceTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
@@ -82,6 +83,7 @@ namespace Model
     inline UpdateVTLDeviceTypeResult& WithVTLDeviceARN(const char* value) { SetVTLDeviceARN(value); return *this;}
 
   private:
+
     Aws::String m_vTLDeviceARN;
   };
 

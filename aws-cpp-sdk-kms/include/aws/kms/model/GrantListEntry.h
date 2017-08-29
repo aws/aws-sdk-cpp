@@ -50,6 +50,7 @@ namespace Model
     GrantListEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique identifier for the customer master key (CMK) to which the grant
      * applies.</p>
@@ -92,6 +93,7 @@ namespace Model
      */
     inline GrantListEntry& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
     /**
      * <p>The unique identifier for the grant.</p>
      */
@@ -126,6 +128,7 @@ namespace Model
      * <p>The unique identifier for the grant.</p>
      */
     inline GrantListEntry& WithGrantId(const char* value) { SetGrantId(value); return *this;}
+
 
     /**
      * <p>The friendly name that identifies the grant. If a name was provided in the
@@ -176,6 +179,7 @@ namespace Model
      */
     inline GrantListEntry& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>The date and time when the grant was created.</p>
      */
@@ -200,6 +204,7 @@ namespace Model
      * <p>The date and time when the grant was created.</p>
      */
     inline GrantListEntry& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
 
     /**
      * <p>The principal that receives the grant's permissions.</p>
@@ -236,6 +241,7 @@ namespace Model
      */
     inline GrantListEntry& WithGranteePrincipal(const char* value) { SetGranteePrincipal(value); return *this;}
 
+
     /**
      * <p>The principal that can retire the grant.</p>
      */
@@ -270,6 +276,7 @@ namespace Model
      * <p>The principal that can retire the grant.</p>
      */
     inline GrantListEntry& WithRetiringPrincipal(const char* value) { SetRetiringPrincipal(value); return *this;}
+
 
     /**
      * <p>The AWS account under which the grant was issued.</p>
@@ -306,6 +313,7 @@ namespace Model
      */
     inline GrantListEntry& WithIssuingAccount(const char* value) { SetIssuingAccount(value); return *this;}
 
+
     /**
      * <p>The list of operations permitted by the grant.</p>
      */
@@ -341,6 +349,7 @@ namespace Model
      */
     inline GrantListEntry& AddOperations(GrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of key-value pairs that must be present in the encryption context of
      * certain subsequent operations that the grant allows.</p>
@@ -372,22 +381,31 @@ namespace Model
     inline GrantListEntry& WithConstraints(GrantConstraints&& value) { SetConstraints(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
+
     Aws::String m_grantId;
     bool m_grantIdHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+
     Aws::String m_granteePrincipal;
     bool m_granteePrincipalHasBeenSet;
+
     Aws::String m_retiringPrincipal;
     bool m_retiringPrincipalHasBeenSet;
+
     Aws::String m_issuingAccount;
     bool m_issuingAccountHasBeenSet;
+
     Aws::Vector<GrantOperation> m_operations;
     bool m_operationsHasBeenSet;
+
     GrantConstraints m_constraints;
     bool m_constraintsHasBeenSet;
   };

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     UpdateNetworkProfileResult();
-    UpdateNetworkProfileResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateNetworkProfileResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateNetworkProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateNetworkProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of the available network profiles.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline UpdateNetworkProfileResult& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(std::move(value)); return *this;}
 
   private:
+
     NetworkProfile m_networkProfile;
   };
 

@@ -43,6 +43,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -65,6 +66,7 @@ namespace Model
     inline ResponseMetadata& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
+
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
   };

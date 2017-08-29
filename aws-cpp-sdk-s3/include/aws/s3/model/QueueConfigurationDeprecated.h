@@ -43,6 +43,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const Aws::String& GetId() const{ return m_id; }
 
@@ -64,6 +65,7 @@ namespace Model
     
     inline QueueConfigurationDeprecated& WithId(const char* value) { SetId(value); return *this;}
 
+
     
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
@@ -84,6 +86,7 @@ namespace Model
 
     
     inline QueueConfigurationDeprecated& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+
 
     
     inline const Aws::String& GetQueue() const{ return m_queue; }
@@ -107,10 +110,13 @@ namespace Model
     inline QueueConfigurationDeprecated& WithQueue(const char* value) { SetQueue(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::Vector<Event> m_events;
     bool m_eventsHasBeenSet;
+
     Aws::String m_queue;
     bool m_queueHasBeenSet;
   };

@@ -44,6 +44,7 @@ namespace Model
     Capacity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The total number of capacity units consumed on a table or an index.</p>
      */
@@ -60,6 +61,7 @@ namespace Model
     inline Capacity& WithCapacityUnits(double value) { SetCapacityUnits(value); return *this;}
 
   private:
+
     double m_capacityUnits;
     bool m_capacityUnitsHasBeenSet;
   };

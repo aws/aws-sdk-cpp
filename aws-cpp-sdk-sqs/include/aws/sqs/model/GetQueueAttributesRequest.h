@@ -43,6 +43,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
      * <p>Queue URLs are case-sensitive.</p>
@@ -84,6 +85,7 @@ namespace Model
      * <p>Queue URLs are case-sensitive.</p>
      */
     inline GetQueueAttributesRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+
 
     /**
      * <p>A list of attributes for which to retrieve information.</p> <note> <p>In the
@@ -548,8 +550,10 @@ namespace Model
     inline GetQueueAttributesRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet;
+
     Aws::Vector<QueueAttributeName> m_attributeNames;
     bool m_attributeNamesHasBeenSet;
   };

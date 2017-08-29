@@ -30,12 +30,12 @@ AttachToIndexResult::AttachToIndexResult()
 {
 }
 
-AttachToIndexResult::AttachToIndexResult(const AmazonWebServiceResult<JsonValue>& result)
+AttachToIndexResult::AttachToIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AttachToIndexResult& AttachToIndexResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+AttachToIndexResult& AttachToIndexResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("AttachedObjectIdentifier"))

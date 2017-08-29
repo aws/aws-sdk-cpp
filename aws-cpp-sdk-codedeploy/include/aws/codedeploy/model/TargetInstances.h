@@ -49,6 +49,7 @@ namespace Model
     TargetInstances& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
      * a replacement environment for a blue/green deployment. Cannot be used in the
@@ -98,6 +99,7 @@ namespace Model
      */
     inline TargetInstances& AddTagFilters(EC2TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The names of one or more Auto Scaling groups to identify a replacement
      * environment for a blue/green deployment.</p>
@@ -146,6 +148,7 @@ namespace Model
      */
     inline TargetInstances& AddAutoScalingGroups(const char* value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
+
     /**
      * <p>Information about the groups of EC2 instance tags that an instance must be
      * identified by in order for it to be included in the replacement environment for
@@ -182,10 +185,13 @@ namespace Model
     inline TargetInstances& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<EC2TagFilter> m_tagFilters;
     bool m_tagFiltersHasBeenSet;
+
     Aws::Vector<Aws::String> m_autoScalingGroups;
     bool m_autoScalingGroupsHasBeenSet;
+
     EC2TagSet m_ec2TagSet;
     bool m_ec2TagSetHasBeenSet;
   };

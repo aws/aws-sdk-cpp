@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the AWS managed Config rules for which you want status
      * information. If you do not specify any names, AWS Config returns status
@@ -96,6 +97,7 @@ namespace Model
      */
     inline DescribeConfigRuleEvaluationStatusRequest& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
 
+
     /**
      * <p>The <code>NextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
@@ -138,6 +140,7 @@ namespace Model
      */
     inline DescribeConfigRuleEvaluationStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The number of rule evaluation results that you want returned.</p> <p>This
      * parameter is required if the rule limit for your account is more than the
@@ -169,10 +172,13 @@ namespace Model
     inline DescribeConfigRuleEvaluationStatusRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_configRuleNames;
     bool m_configRuleNamesHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
   };

@@ -48,6 +48,7 @@ namespace Model
     SkewedInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A list of names of columns that contain skewed values.</p>
      */
@@ -88,6 +89,7 @@ namespace Model
      */
     inline SkewedInfo& AddSkewedColumnNames(const char* value) { m_skewedColumnNamesHasBeenSet = true; m_skewedColumnNames.push_back(value); return *this; }
 
+
     /**
      * <p>A list of values that appear so frequently as to be considered skewed.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      * <p>A list of values that appear so frequently as to be considered skewed.</p>
      */
     inline SkewedInfo& AddSkewedColumnValues(const char* value) { m_skewedColumnValuesHasBeenSet = true; m_skewedColumnValues.push_back(value); return *this; }
+
 
     /**
      * <p>A mapping of skewed values to the columns that contain them.</p>
@@ -189,10 +192,13 @@ namespace Model
     inline SkewedInfo& AddSkewedColumnValueLocationMaps(const char* key, const char* value) { m_skewedColumnValueLocationMapsHasBeenSet = true; m_skewedColumnValueLocationMaps.emplace(key, value); return *this; }
 
   private:
+
     Aws::Vector<Aws::String> m_skewedColumnNames;
     bool m_skewedColumnNamesHasBeenSet;
+
     Aws::Vector<Aws::String> m_skewedColumnValues;
     bool m_skewedColumnValuesHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_skewedColumnValueLocationMaps;
     bool m_skewedColumnValueLocationMapsHasBeenSet;
   };

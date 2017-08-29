@@ -45,6 +45,7 @@ namespace Model
     NewDeviceMetadataType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The device key.</p>
      */
@@ -79,6 +80,7 @@ namespace Model
      * <p>The device key.</p>
      */
     inline NewDeviceMetadataType& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
+
 
     /**
      * <p>The device group key.</p>
@@ -116,8 +118,10 @@ namespace Model
     inline NewDeviceMetadataType& WithDeviceGroupKey(const char* value) { SetDeviceGroupKey(value); return *this;}
 
   private:
+
     Aws::String m_deviceKey;
     bool m_deviceKeyHasBeenSet;
+
     Aws::String m_deviceGroupKey;
     bool m_deviceGroupKeyHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     PutPipelineDefinitionResult();
-    PutPipelineDefinitionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutPipelineDefinitionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutPipelineDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutPipelineDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The validation errors that are associated with the objects defined in
@@ -90,6 +91,7 @@ namespace Model
      */
     inline PutPipelineDefinitionResult& AddValidationErrors(ValidationError&& value) { m_validationErrors.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The validation warnings that are associated with the objects defined in
      * <code>pipelineObjects</code>.</p>
@@ -132,6 +134,7 @@ namespace Model
      */
     inline PutPipelineDefinitionResult& AddValidationWarnings(ValidationWarning&& value) { m_validationWarnings.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether there were validation errors, and the pipeline definition
      * is stored but cannot be activated until you correct the pipeline and call
@@ -154,8 +157,11 @@ namespace Model
     inline PutPipelineDefinitionResult& WithErrored(bool value) { SetErrored(value); return *this;}
 
   private:
+
     Aws::Vector<ValidationError> m_validationErrors;
+
     Aws::Vector<ValidationWarning> m_validationWarnings;
+
     bool m_errored;
   };
 

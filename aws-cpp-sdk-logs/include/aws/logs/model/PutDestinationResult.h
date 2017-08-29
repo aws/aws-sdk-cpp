@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     PutDestinationResult();
-    PutDestinationResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutDestinationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PutDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The destination.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline PutDestinationResult& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
 
   private:
+
     Destination m_destination;
   };
 

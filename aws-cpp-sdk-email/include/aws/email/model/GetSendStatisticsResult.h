@@ -47,8 +47,9 @@ namespace Model
   {
   public:
     GetSendStatisticsResult();
-    GetSendStatisticsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetSendStatisticsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetSendStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetSendStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of data points, each of which represents 15 minutes of activity.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline GetSendStatisticsResult& AddSendDataPoints(SendDataPoint&& value) { m_sendDataPoints.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -101,7 +103,9 @@ namespace Model
     inline GetSendStatisticsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<SendDataPoint> m_sendDataPoints;
+
     ResponseMetadata m_responseMetadata;
   };
 

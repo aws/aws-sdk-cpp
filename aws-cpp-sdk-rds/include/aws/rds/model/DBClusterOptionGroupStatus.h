@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Specifies the name of the DB cluster option group.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>Specifies the name of the DB cluster option group.</p>
      */
     inline DBClusterOptionGroupStatus& WithDBClusterOptionGroupName(const char* value) { SetDBClusterOptionGroupName(value); return *this;}
+
 
     /**
      * <p>Specifies the status of the DB cluster option group.</p>
@@ -120,8 +122,10 @@ namespace Model
     inline DBClusterOptionGroupStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_dBClusterOptionGroupName;
     bool m_dBClusterOptionGroupNameHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

@@ -46,6 +46,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * Indicates the number of days that must pass since initiation for Lifecycle to
      * abort an Incomplete Multipart Upload.
@@ -65,6 +66,7 @@ namespace Model
     inline AbortIncompleteMultipartUpload& WithDaysAfterInitiation(int value) { SetDaysAfterInitiation(value); return *this;}
 
   private:
+
     int m_daysAfterInitiation;
     bool m_daysAfterInitiationHasBeenSet;
   };

@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     LookupEventsResult();
-    LookupEventsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    LookupEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    LookupEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    LookupEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of events returned based on the lookup attributes specified and the
@@ -96,6 +97,7 @@ namespace Model
      * listed first.</p>
      */
     inline LookupEventsResult& AddEvents(Event&& value) { m_events.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use to get the next page of results after a previous API call.
@@ -161,7 +163,9 @@ namespace Model
     inline LookupEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Event> m_events;
+
     Aws::String m_nextToken;
   };
 

@@ -32,14 +32,14 @@ DescribeLimitsResult::DescribeLimitsResult() :
 {
 }
 
-DescribeLimitsResult::DescribeLimitsResult(const AmazonWebServiceResult<JsonValue>& result) : 
+DescribeLimitsResult::DescribeLimitsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_shardLimit(0),
     m_openShardCount(0)
 {
   *this = result;
 }
 
-DescribeLimitsResult& DescribeLimitsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeLimitsResult& DescribeLimitsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ShardLimit"))

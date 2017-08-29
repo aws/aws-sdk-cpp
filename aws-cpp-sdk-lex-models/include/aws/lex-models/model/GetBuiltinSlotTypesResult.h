@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     GetBuiltinSlotTypesResult();
-    GetBuiltinSlotTypesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBuiltinSlotTypesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBuiltinSlotTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetBuiltinSlotTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each
@@ -84,6 +85,7 @@ namespace Model
      * slot type returned.</p>
      */
     inline GetBuiltinSlotTypesResult& AddSlotTypes(BuiltinSlotTypeMetadata&& value) { m_slotTypes.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If the response is truncated, the response includes a pagination token that
@@ -128,7 +130,9 @@ namespace Model
     inline GetBuiltinSlotTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<BuiltinSlotTypeMetadata> m_slotTypes;
+
     Aws::String m_nextToken;
   };
 

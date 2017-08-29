@@ -31,12 +31,12 @@ DescribeOptionGroupOptionsResult::DescribeOptionGroupOptionsResult()
 {
 }
 
-DescribeOptionGroupOptionsResult::DescribeOptionGroupOptionsResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeOptionGroupOptionsResult::DescribeOptionGroupOptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeOptionGroupOptionsResult& DescribeOptionGroupOptionsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeOptionGroupOptionsResult& DescribeOptionGroupOptionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

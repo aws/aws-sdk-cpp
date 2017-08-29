@@ -31,12 +31,12 @@ CreateVpcResponse::CreateVpcResponse()
 {
 }
 
-CreateVpcResponse::CreateVpcResponse(const AmazonWebServiceResult<XmlDocument>& result)
+CreateVpcResponse::CreateVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateVpcResponse& CreateVpcResponse::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateVpcResponse& CreateVpcResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

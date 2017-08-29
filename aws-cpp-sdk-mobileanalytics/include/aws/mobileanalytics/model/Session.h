@@ -43,6 +43,7 @@ namespace Model
     Session& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A unique identifier for the session</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      */
     inline Session& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The duration of the session.</p>
      */
@@ -92,6 +94,7 @@ namespace Model
      * <p>The duration of the session.</p>
      */
     inline Session& WithDuration(long long value) { SetDuration(value); return *this;}
+
 
     /**
      * <p>The time the event started in ISO 8601 standard date time format. For
@@ -134,6 +137,7 @@ namespace Model
      * example, 2014-06-30T19:07:47.885Z</p>
      */
     inline Session& WithStartTimestamp(const char* value) { SetStartTimestamp(value); return *this;}
+
 
     /**
      * <p>The time the event terminated in ISO 8601 standard date time format. For
@@ -178,12 +182,16 @@ namespace Model
     inline Session& WithStopTimestamp(const char* value) { SetStopTimestamp(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     long long m_duration;
     bool m_durationHasBeenSet;
+
     Aws::String m_startTimestamp;
     bool m_startTimestampHasBeenSet;
+
     Aws::String m_stopTimestamp;
     bool m_stopTimestampHasBeenSet;
   };

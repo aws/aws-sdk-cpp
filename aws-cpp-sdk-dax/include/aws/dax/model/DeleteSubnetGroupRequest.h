@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the subnet group to delete.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteSubnetGroupRequest& WithSubnetGroupName(const char* value) { SetSubnetGroupName(value); return *this;}
 
   private:
+
     Aws::String m_subnetGroupName;
     bool m_subnetGroupNameHasBeenSet;
   };

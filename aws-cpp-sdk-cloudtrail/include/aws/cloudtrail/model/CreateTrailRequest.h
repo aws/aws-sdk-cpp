@@ -39,6 +39,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Specifies the name of the trail. The name must meet the following
      * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
@@ -123,6 +124,7 @@ namespace Model
      */
     inline CreateTrailRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>Specifies the name of the Amazon S3 bucket designated for publishing log
      * files. See <a
@@ -178,6 +180,7 @@ namespace Model
      * S3 Bucket Naming Requirements</a>.</p>
      */
     inline CreateTrailRequest& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+
 
     /**
      * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
@@ -235,6 +238,7 @@ namespace Model
      */
     inline CreateTrailRequest& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
 
+
     /**
      * <p>Specifies the name of the Amazon SNS topic defined for notification of log
      * file delivery. The maximum length is 256 characters.</p>
@@ -277,6 +281,7 @@ namespace Model
      */
     inline CreateTrailRequest& WithSnsTopicName(const char* value) { SetSnsTopicName(value); return *this;}
 
+
     /**
      * <p>Specifies whether the trail is publishing events from global services such as
      * IAM to the log files.</p>
@@ -295,6 +300,7 @@ namespace Model
      */
     inline CreateTrailRequest& WithIncludeGlobalServiceEvents(bool value) { SetIncludeGlobalServiceEvents(value); return *this;}
 
+
     /**
      * <p>Specifies whether the trail is created in the current region or in all
      * regions. The default is false.</p>
@@ -312,6 +318,7 @@ namespace Model
      * regions. The default is false.</p>
      */
     inline CreateTrailRequest& WithIsMultiRegionTrail(bool value) { SetIsMultiRegionTrail(value); return *this;}
+
 
     /**
      * <p>Specifies whether log file integrity validation is enabled. The default is
@@ -351,6 +358,7 @@ namespace Model
      * whenever you stop CloudTrail logging or delete a trail.</p> </note>
      */
     inline CreateTrailRequest& WithEnableLogFileValidation(bool value) { SetEnableLogFileValidation(value); return *this;}
+
 
     /**
      * <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique
@@ -401,6 +409,7 @@ namespace Model
      */
     inline CreateTrailRequest& WithCloudWatchLogsLogGroupArn(const char* value) { SetCloudWatchLogsLogGroupArn(value); return *this;}
 
+
     /**
      * <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a
      * user's log group.</p>
@@ -442,6 +451,7 @@ namespace Model
      * user's log group.</p>
      */
     inline CreateTrailRequest& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}
+
 
     /**
      * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.
@@ -521,24 +531,34 @@ namespace Model
     inline CreateTrailRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_s3BucketName;
     bool m_s3BucketNameHasBeenSet;
+
     Aws::String m_s3KeyPrefix;
     bool m_s3KeyPrefixHasBeenSet;
+
     Aws::String m_snsTopicName;
     bool m_snsTopicNameHasBeenSet;
+
     bool m_includeGlobalServiceEvents;
     bool m_includeGlobalServiceEventsHasBeenSet;
+
     bool m_isMultiRegionTrail;
     bool m_isMultiRegionTrailHasBeenSet;
+
     bool m_enableLogFileValidation;
     bool m_enableLogFileValidationHasBeenSet;
+
     Aws::String m_cloudWatchLogsLogGroupArn;
     bool m_cloudWatchLogsLogGroupArnHasBeenSet;
+
     Aws::String m_cloudWatchLogsRoleArn;
     bool m_cloudWatchLogsRoleArnHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
   };

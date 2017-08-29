@@ -48,8 +48,9 @@ namespace Model
   {
   public:
     GetGroupResult();
-    GetGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    GetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A structure that contains details about the group.</p>
@@ -75,6 +76,7 @@ namespace Model
      * <p>A structure that contains details about the group.</p>
      */
     inline GetGroupResult& WithGroup(Group&& value) { SetGroup(std::move(value)); return *this;}
+
 
     /**
      * <p>A list of users in the group.</p>
@@ -111,6 +113,7 @@ namespace Model
      */
     inline GetGroupResult& AddUsers(User&& value) { m_users.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A flag that indicates whether there are more items to return. If your results
      * were truncated, you can make a subsequent pagination request using the
@@ -143,6 +146,7 @@ namespace Model
      * results.</p>
      */
     inline GetGroupResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
+
 
     /**
      * <p>When <code>IsTruncated</code> is <code>true</code>, this element is present
@@ -193,6 +197,7 @@ namespace Model
      */
     inline GetGroupResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -209,10 +214,15 @@ namespace Model
     inline GetGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Group m_group;
+
     Aws::Vector<User> m_users;
+
     bool m_isTruncated;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

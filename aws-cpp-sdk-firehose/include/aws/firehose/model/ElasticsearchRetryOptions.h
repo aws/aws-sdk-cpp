@@ -44,6 +44,7 @@ namespace Model
     ElasticsearchRetryOptions& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>After an initial failure to deliver to Amazon ES, the total amount of time
      * during which Kinesis Firehose re-attempts delivery (including the first
@@ -72,6 +73,7 @@ namespace Model
     inline ElasticsearchRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
 
   private:
+
     int m_durationInSeconds;
     bool m_durationInSecondsHasBeenSet;
   };

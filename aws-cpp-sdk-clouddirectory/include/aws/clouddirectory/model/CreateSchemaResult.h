@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateSchemaResult();
-    CreateSchemaResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSchemaResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
@@ -84,6 +85,7 @@ namespace Model
     inline CreateSchemaResult& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
 
   private:
+
     Aws::String m_schemaArn;
   };
 

@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateParameterGroupResult();
-    CreateParameterGroupResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateParameterGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Represents the output of a <i>CreateParameterGroup</i> action.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateParameterGroupResult& WithParameterGroup(ParameterGroup&& value) { SetParameterGroup(std::move(value)); return *this;}
 
   private:
+
     ParameterGroup m_parameterGroup;
   };
 

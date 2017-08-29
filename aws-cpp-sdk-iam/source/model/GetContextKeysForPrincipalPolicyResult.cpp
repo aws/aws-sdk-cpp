@@ -31,12 +31,12 @@ GetContextKeysForPrincipalPolicyResult::GetContextKeysForPrincipalPolicyResult()
 {
 }
 
-GetContextKeysForPrincipalPolicyResult::GetContextKeysForPrincipalPolicyResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetContextKeysForPrincipalPolicyResult::GetContextKeysForPrincipalPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetContextKeysForPrincipalPolicyResult& GetContextKeysForPrincipalPolicyResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetContextKeysForPrincipalPolicyResult& GetContextKeysForPrincipalPolicyResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

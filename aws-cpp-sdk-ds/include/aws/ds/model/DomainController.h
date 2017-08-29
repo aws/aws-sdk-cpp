@@ -48,6 +48,7 @@ namespace Model
     DomainController& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identifier of the directory where the domain controller resides.</p>
      */
@@ -82,6 +83,7 @@ namespace Model
      * <p>Identifier of the directory where the domain controller resides.</p>
      */
     inline DomainController& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
 
     /**
      * <p>Identifies a specific domain controller in the directory.</p>
@@ -118,6 +120,7 @@ namespace Model
      */
     inline DomainController& WithDomainControllerId(const char* value) { SetDomainControllerId(value); return *this;}
 
+
     /**
      * <p>The IP address of the domain controller.</p>
      */
@@ -152,6 +155,7 @@ namespace Model
      * <p>The IP address of the domain controller.</p>
      */
     inline DomainController& WithDnsIpAddr(const char* value) { SetDnsIpAddr(value); return *this;}
+
 
     /**
      * <p>The identifier of the VPC that contains the domain controller.</p>
@@ -188,6 +192,7 @@ namespace Model
      */
     inline DomainController& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     /**
      * <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
      */
@@ -222,6 +227,7 @@ namespace Model
      * <p>Identifier of the subnet in the VPC that contains the domain controller.</p>
      */
     inline DomainController& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
 
     /**
      * <p>The Availability Zone where the domain controller is located.</p>
@@ -258,6 +264,7 @@ namespace Model
      */
     inline DomainController& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
     /**
      * <p>The status of the domain controller.</p>
      */
@@ -282,6 +289,7 @@ namespace Model
      * <p>The status of the domain controller.</p>
      */
     inline DomainController& WithStatus(DomainControllerStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>A description of the domain controller state.</p>
@@ -318,6 +326,7 @@ namespace Model
      */
     inline DomainController& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
+
     /**
      * <p>Specifies when the domain controller was created.</p>
      */
@@ -342,6 +351,7 @@ namespace Model
      * <p>Specifies when the domain controller was created.</p>
      */
     inline DomainController& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The date and time that the status was last updated.</p>
@@ -369,24 +379,34 @@ namespace Model
     inline DomainController& WithStatusLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetStatusLastUpdatedDateTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet;
+
     Aws::String m_domainControllerId;
     bool m_domainControllerIdHasBeenSet;
+
     Aws::String m_dnsIpAddr;
     bool m_dnsIpAddrHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
     DomainControllerStatus m_status;
     bool m_statusHasBeenSet;
+
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet;
+
     Aws::Utils::DateTime m_launchTime;
     bool m_launchTimeHasBeenSet;
+
     Aws::Utils::DateTime m_statusLastUpdatedDateTime;
     bool m_statusLastUpdatedDateTimeHasBeenSet;
   };

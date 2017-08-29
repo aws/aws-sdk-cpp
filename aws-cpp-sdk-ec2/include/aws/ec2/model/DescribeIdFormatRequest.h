@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
      * <code>snapshot</code> | <code>volume</code> </p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeIdFormatRequest& WithResource(const char* value) { SetResource(value); return *this;}
 
   private:
+
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
   };

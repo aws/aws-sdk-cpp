@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cluster security group to which the operation was
      * applied.</p>
@@ -94,6 +95,7 @@ namespace Model
      */
     inline ClusterSecurityGroup& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}
 
+
     /**
      * <p>A description of the security group.</p>
      */
@@ -128,6 +130,7 @@ namespace Model
      * <p>A description of the security group.</p>
      */
     inline ClusterSecurityGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>A list of EC2 security groups that are permitted to access clusters
@@ -171,6 +174,7 @@ namespace Model
      */
     inline ClusterSecurityGroup& AddEC2SecurityGroups(EC2SecurityGroup&& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters
      * associated with this cluster security group.</p>
@@ -213,6 +217,7 @@ namespace Model
      */
     inline ClusterSecurityGroup& AddIPRanges(IPRange&& value) { m_iPRangesHasBeenSet = true; m_iPRanges.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>The list of tags for the cluster security group.</p>
      */
@@ -249,14 +254,19 @@ namespace Model
     inline ClusterSecurityGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_clusterSecurityGroupName;
     bool m_clusterSecurityGroupNameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<EC2SecurityGroup> m_eC2SecurityGroups;
     bool m_eC2SecurityGroupsHasBeenSet;
+
     Aws::Vector<IPRange> m_iPRanges;
     bool m_iPRangesHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

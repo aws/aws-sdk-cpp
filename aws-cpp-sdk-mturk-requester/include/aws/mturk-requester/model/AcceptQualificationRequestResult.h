@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     AcceptQualificationRequestResult();
-    AcceptQualificationRequestResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcceptQualificationRequestResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AcceptQualificationRequestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AcceptQualificationRequestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

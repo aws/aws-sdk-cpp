@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListTagsResult();
-    ListTagsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of tags.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of tags.</p>
      */
     inline ListTagsResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An opaque string that indicates that the response contains only a subset of
@@ -128,7 +130,9 @@ namespace Model
     inline ListTagsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Tag> m_tagList;
+
     Aws::String m_nextToken;
   };
 

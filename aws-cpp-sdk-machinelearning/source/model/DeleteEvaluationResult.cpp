@@ -30,12 +30,12 @@ DeleteEvaluationResult::DeleteEvaluationResult()
 {
 }
 
-DeleteEvaluationResult::DeleteEvaluationResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteEvaluationResult::DeleteEvaluationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteEvaluationResult& DeleteEvaluationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteEvaluationResult& DeleteEvaluationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("EvaluationId"))

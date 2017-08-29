@@ -59,6 +59,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>An identifier for this particular receipt handle used to communicate the
      * result.</p> <note> <p>The <code>Id</code>s of a batch request need to be unique
@@ -108,6 +109,7 @@ namespace Model
      */
     inline ChangeMessageVisibilityBatchRequestEntry& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>A receipt handle.</p>
      */
@@ -143,6 +145,7 @@ namespace Model
      */
     inline ChangeMessageVisibilityBatchRequestEntry& WithReceiptHandle(const char* value) { SetReceiptHandle(value); return *this;}
 
+
     /**
      * <p>The new value (in seconds) for the message's visibility timeout.</p>
      */
@@ -159,10 +162,13 @@ namespace Model
     inline ChangeMessageVisibilityBatchRequestEntry& WithVisibilityTimeout(int value) { SetVisibilityTimeout(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_receiptHandle;
     bool m_receiptHandleHasBeenSet;
+
     int m_visibilityTimeout;
     bool m_visibilityTimeoutHasBeenSet;
   };

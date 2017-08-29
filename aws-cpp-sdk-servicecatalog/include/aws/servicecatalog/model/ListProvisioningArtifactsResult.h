@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListProvisioningArtifactsResult();
-    ListProvisioningArtifactsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProvisioningArtifactsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProvisioningArtifactsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProvisioningArtifactsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>List of detailed provisioning artifact information objects.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>List of detailed provisioning artifact information objects.</p>
      */
     inline ListProvisioningArtifactsResult& AddProvisioningArtifactDetails(ProvisioningArtifactDetail&& value) { m_provisioningArtifactDetails.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The page token to use to retrieve the next page of results for this
@@ -121,7 +123,9 @@ namespace Model
     inline ListProvisioningArtifactsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
   private:
+
     Aws::Vector<ProvisioningArtifactDetail> m_provisioningArtifactDetails;
+
     Aws::String m_nextPageToken;
   };
 

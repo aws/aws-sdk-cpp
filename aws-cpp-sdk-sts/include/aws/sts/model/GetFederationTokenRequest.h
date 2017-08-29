@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the federated user. The name is used as an identifier for the
      * temporary security credentials (such as <code>Bob</code>). For example, you can
@@ -114,6 +115,7 @@ namespace Model
      * characters: =,.@-</p>
      */
     inline GetFederationTokenRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>An IAM policy in JSON format that is passed with the
@@ -311,6 +313,7 @@ namespace Model
      */
     inline GetFederationTokenRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
+
     /**
      * <p>The duration, in seconds, that the session should last. Acceptable durations
      * for federation sessions range from 900 seconds (15 minutes) to 129600 seconds
@@ -342,10 +345,13 @@ namespace Model
     inline GetFederationTokenRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_policy;
     bool m_policyHasBeenSet;
+
     int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
   };

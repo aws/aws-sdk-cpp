@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p> The path to the role. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -129,6 +130,7 @@ namespace Model
      */
     inline CreateRoleRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
+
     /**
      * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
@@ -198,6 +200,7 @@ namespace Model
      * "PRODROLE" and "prodrole".</p>
      */
     inline CreateRoleRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to
@@ -283,6 +286,7 @@ namespace Model
      */
     inline CreateRoleRequest& WithAssumeRolePolicyDocument(const char* value) { SetAssumeRolePolicyDocument(value); return *this;}
 
+
     /**
      * <p>A customer-provided description of the role.</p>
      */
@@ -319,12 +323,16 @@ namespace Model
     inline CreateRoleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
+
     Aws::String m_path;
     bool m_pathHasBeenSet;
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_assumeRolePolicyDocument;
     bool m_assumeRolePolicyDocumentHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
   };

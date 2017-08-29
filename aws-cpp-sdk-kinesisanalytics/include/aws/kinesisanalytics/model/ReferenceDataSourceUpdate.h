@@ -51,6 +51,7 @@ namespace Model
     ReferenceDataSourceUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>ID of the reference data source being updated. You can use the
      * <a>DescribeApplication</a> operation to get this value.</p>
@@ -93,6 +94,7 @@ namespace Model
      */
     inline ReferenceDataSourceUpdate& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
 
+
     /**
      * <p>In-application table name that is created by this update.</p>
      */
@@ -127,6 +129,7 @@ namespace Model
      * <p>In-application table name that is created by this update.</p>
      */
     inline ReferenceDataSourceUpdate& WithTableNameUpdate(const char* value) { SetTableNameUpdate(value); return *this;}
+
 
     /**
      * <p>Describes the S3 bucket name, object key name, and IAM role that Amazon
@@ -163,6 +166,7 @@ namespace Model
      */
     inline ReferenceDataSourceUpdate& WithS3ReferenceDataSourceUpdate(S3ReferenceDataSourceUpdate&& value) { SetS3ReferenceDataSourceUpdate(std::move(value)); return *this;}
 
+
     
     inline const SourceSchema& GetReferenceSchemaUpdate() const{ return m_referenceSchemaUpdate; }
 
@@ -179,12 +183,16 @@ namespace Model
     inline ReferenceDataSourceUpdate& WithReferenceSchemaUpdate(SourceSchema&& value) { SetReferenceSchemaUpdate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_referenceId;
     bool m_referenceIdHasBeenSet;
+
     Aws::String m_tableNameUpdate;
     bool m_tableNameUpdateHasBeenSet;
+
     S3ReferenceDataSourceUpdate m_s3ReferenceDataSourceUpdate;
     bool m_s3ReferenceDataSourceUpdateHasBeenSet;
+
     SourceSchema m_referenceSchemaUpdate;
     bool m_referenceSchemaUpdateHasBeenSet;
   };

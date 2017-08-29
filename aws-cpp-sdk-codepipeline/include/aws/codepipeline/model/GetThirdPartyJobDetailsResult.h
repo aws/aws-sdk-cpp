@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     GetThirdPartyJobDetailsResult();
-    GetThirdPartyJobDetailsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetThirdPartyJobDetailsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetThirdPartyJobDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetThirdPartyJobDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The details of the job, including any protected values defined for the
@@ -78,6 +79,7 @@ namespace Model
     inline GetThirdPartyJobDetailsResult& WithJobDetails(ThirdPartyJobDetails&& value) { SetJobDetails(std::move(value)); return *this;}
 
   private:
+
     ThirdPartyJobDetails m_jobDetails;
   };
 

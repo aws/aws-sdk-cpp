@@ -55,7 +55,7 @@ enum class DynamoDBErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONDITIONAL_CHECK_FAILED= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONDITIONAL_CHECK_FAILED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ITEM_COLLECTION_SIZE_LIMIT_EXCEEDED,
   LIMIT_EXCEEDED,
   PROVISIONED_THROUGHPUT_EXCEEDED,
@@ -63,7 +63,7 @@ enum class DynamoDBErrors
 };
 namespace DynamoDBErrorMapper
 {
-  AWS_DYNAMODB_API Client::AWSError<Client::CoreErrors> GetErrorForName(const char* errorName);
+  AWS_DYNAMODB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
 } // namespace DynamoDB

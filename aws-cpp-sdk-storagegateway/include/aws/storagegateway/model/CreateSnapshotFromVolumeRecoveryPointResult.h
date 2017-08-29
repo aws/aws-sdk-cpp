@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateSnapshotFromVolumeRecoveryPointResult();
-    CreateSnapshotFromVolumeRecoveryPointResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSnapshotFromVolumeRecoveryPointResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSnapshotFromVolumeRecoveryPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateSnapshotFromVolumeRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
@@ -62,6 +63,7 @@ namespace Model
     
     inline CreateSnapshotFromVolumeRecoveryPointResult& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
     
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
 
@@ -82,6 +84,7 @@ namespace Model
 
     
     inline CreateSnapshotFromVolumeRecoveryPointResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+
 
     
     inline const Aws::String& GetVolumeRecoveryPointTime() const{ return m_volumeRecoveryPointTime; }
@@ -105,8 +108,11 @@ namespace Model
     inline CreateSnapshotFromVolumeRecoveryPointResult& WithVolumeRecoveryPointTime(const char* value) { SetVolumeRecoveryPointTime(value); return *this;}
 
   private:
+
     Aws::String m_snapshotId;
+
     Aws::String m_volumeARN;
+
     Aws::String m_volumeRecoveryPointTime;
   };
 

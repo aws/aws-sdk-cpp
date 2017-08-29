@@ -56,6 +56,7 @@ namespace Model
     GameSessionPlacement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Unique identifier for a game session placement.</p>
      */
@@ -90,6 +91,7 @@ namespace Model
      * <p>Unique identifier for a game session placement.</p>
      */
     inline GameSessionPlacement& WithPlacementId(const char* value) { SetPlacementId(value); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with game session queue. Queue names
@@ -132,6 +134,7 @@ namespace Model
      * must be unique within each region.</p>
      */
     inline GameSessionPlacement& WithGameSessionQueueName(const char* value) { SetGameSessionQueueName(value); return *this;}
+
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
@@ -197,6 +200,7 @@ namespace Model
      * resubmit the placement request as needed.</p> </li> </ul>
      */
     inline GameSessionPlacement& WithStatus(GameSessionPlacementState&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
      * <p>Set of developer-defined properties for a game session, formatted as a set of
@@ -268,6 +272,7 @@ namespace Model
      */
     inline GameSessionPlacement& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session.</p>
@@ -285,6 +290,7 @@ namespace Model
      * session.</p>
      */
     inline GameSessionPlacement& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
+
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -328,6 +334,7 @@ namespace Model
      */
     inline GameSessionPlacement& WithGameSessionName(const char* value) { SetGameSessionName(value); return *this;}
 
+
     /**
      * <p>Unique identifier for the game session. This value is set once the new game
      * session is placed (placement status is <code>FULFILLED</code>).</p>
@@ -369,6 +376,7 @@ namespace Model
      * session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline GameSessionPlacement& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
+
 
     /**
      * <p>Identifier for the game session created by this placement request. This value
@@ -426,6 +434,7 @@ namespace Model
      */
     inline GameSessionPlacement& WithGameSessionArn(const char* value) { SetGameSessionArn(value); return *this;}
 
+
     /**
      * <p>Name of the region where the game session created by this placement request
      * is running. This value is set once the new game session is placed (placement
@@ -475,6 +484,7 @@ namespace Model
      */
     inline GameSessionPlacement& WithGameSessionRegion(const char* value) { SetGameSessionRegion(value); return *this;}
 
+
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
      * that a player experiences when connected to AWS regions.</p>
@@ -517,6 +527,7 @@ namespace Model
      */
     inline GameSessionPlacement& AddPlayerLatencies(PlayerLatency&& value) { m_playerLatenciesHasBeenSet = true; m_playerLatencies.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Time stamp indicating when this request was placed in the queue. Format is a
      * number expressed in Unix time as milliseconds (for example
@@ -552,6 +563,7 @@ namespace Model
      */
     inline GameSessionPlacement& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>Time stamp indicating when this request was completed, canceled, or timed
      * out.</p>
@@ -581,6 +593,7 @@ namespace Model
      * out.</p>
      */
     inline GameSessionPlacement& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
@@ -631,6 +644,7 @@ namespace Model
      */
     inline GameSessionPlacement& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
+
     /**
      * <p>Port number for the game session. To connect to a Amazon GameLift game
      * server, an app needs both the IP address and port number. This value is set once
@@ -651,6 +665,7 @@ namespace Model
      * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline GameSessionPlacement& WithPort(int value) { SetPort(value); return *this;}
+
 
     /**
      * <p>Collection of information on player sessions created in response to the game
@@ -729,6 +744,7 @@ namespace Model
      */
     inline GameSessionPlacement& AddPlacedPlayerSessions(PlacedPlayerSession&& value) { m_placedPlayerSessionsHasBeenSet = true; m_placedPlayerSessions.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Set of developer-defined game session properties, formatted as a single
      * string value. This data is included in the <a>GameSession</a> object, which is
@@ -793,36 +809,52 @@ namespace Model
     inline GameSessionPlacement& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
 
   private:
+
     Aws::String m_placementId;
     bool m_placementIdHasBeenSet;
+
     Aws::String m_gameSessionQueueName;
     bool m_gameSessionQueueNameHasBeenSet;
+
     GameSessionPlacementState m_status;
     bool m_statusHasBeenSet;
+
     Aws::Vector<GameProperty> m_gameProperties;
     bool m_gamePropertiesHasBeenSet;
+
     int m_maximumPlayerSessionCount;
     bool m_maximumPlayerSessionCountHasBeenSet;
+
     Aws::String m_gameSessionName;
     bool m_gameSessionNameHasBeenSet;
+
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet;
+
     Aws::String m_gameSessionArn;
     bool m_gameSessionArnHasBeenSet;
+
     Aws::String m_gameSessionRegion;
     bool m_gameSessionRegionHasBeenSet;
+
     Aws::Vector<PlayerLatency> m_playerLatencies;
     bool m_playerLatenciesHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+
     int m_port;
     bool m_portHasBeenSet;
+
     Aws::Vector<PlacedPlayerSession> m_placedPlayerSessions;
     bool m_placedPlayerSessionsHasBeenSet;
+
     Aws::String m_gameSessionData;
     bool m_gameSessionDataHasBeenSet;
   };

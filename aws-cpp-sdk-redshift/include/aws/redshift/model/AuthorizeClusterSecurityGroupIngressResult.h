@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     AuthorizeClusterSecurityGroupIngressResult();
-    AuthorizeClusterSecurityGroupIngressResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AuthorizeClusterSecurityGroupIngressResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AuthorizeClusterSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AuthorizeClusterSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ClusterSecurityGroup& GetClusterSecurityGroup() const{ return m_clusterSecurityGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline AuthorizeClusterSecurityGroupIngressResult& WithClusterSecurityGroup(ClusterSecurityGroup&& value) { SetClusterSecurityGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline AuthorizeClusterSecurityGroupIngressResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ClusterSecurityGroup m_clusterSecurityGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 

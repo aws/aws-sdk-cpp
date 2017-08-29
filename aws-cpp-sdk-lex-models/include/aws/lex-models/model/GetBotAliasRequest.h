@@ -34,6 +34,7 @@ namespace Model
     GetBotAliasRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The name of the bot alias. The name is case sensitive.</p>
      */
@@ -68,6 +69,7 @@ namespace Model
      * <p>The name of the bot alias. The name is case sensitive.</p>
      */
     inline GetBotAliasRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>The name of the bot.</p>
@@ -105,8 +107,10 @@ namespace Model
     inline GetBotAliasRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
 
   private:
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_botName;
     bool m_botNameHasBeenSet;
   };

@@ -30,12 +30,12 @@ DescribeResourceGroupsResult::DescribeResourceGroupsResult()
 {
 }
 
-DescribeResourceGroupsResult::DescribeResourceGroupsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeResourceGroupsResult::DescribeResourceGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeResourceGroupsResult& DescribeResourceGroupsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeResourceGroupsResult& DescribeResourceGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("resourceGroups"))

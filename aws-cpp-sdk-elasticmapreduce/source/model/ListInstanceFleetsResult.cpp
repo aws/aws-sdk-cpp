@@ -30,12 +30,12 @@ ListInstanceFleetsResult::ListInstanceFleetsResult()
 {
 }
 
-ListInstanceFleetsResult::ListInstanceFleetsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListInstanceFleetsResult::ListInstanceFleetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListInstanceFleetsResult& ListInstanceFleetsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListInstanceFleetsResult& ListInstanceFleetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("InstanceFleets"))

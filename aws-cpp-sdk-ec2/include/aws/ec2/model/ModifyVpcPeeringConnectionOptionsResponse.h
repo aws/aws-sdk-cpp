@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ModifyVpcPeeringConnectionOptionsResponse();
-    ModifyVpcPeeringConnectionOptionsResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyVpcPeeringConnectionOptionsResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyVpcPeeringConnectionOptionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    ModifyVpcPeeringConnectionOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the VPC peering connection options for the accepter
@@ -72,6 +73,7 @@ namespace Model
      */
     inline ModifyVpcPeeringConnectionOptionsResponse& WithAccepterPeeringConnectionOptions(PeeringConnectionOptions&& value) { SetAccepterPeeringConnectionOptions(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the VPC peering connection options for the requester
      * VPC.</p>
@@ -102,6 +104,7 @@ namespace Model
      */
     inline ModifyVpcPeeringConnectionOptionsResponse& WithRequesterPeeringConnectionOptions(PeeringConnectionOptions&& value) { SetRequesterPeeringConnectionOptions(std::move(value)); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -118,8 +121,11 @@ namespace Model
     inline ModifyVpcPeeringConnectionOptionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     PeeringConnectionOptions m_accepterPeeringConnectionOptions;
+
     PeeringConnectionOptions m_requesterPeeringConnectionOptions;
+
     ResponseMetadata m_responseMetadata;
   };
 

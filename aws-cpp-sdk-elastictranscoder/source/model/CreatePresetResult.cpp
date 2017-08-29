@@ -30,12 +30,12 @@ CreatePresetResult::CreatePresetResult()
 {
 }
 
-CreatePresetResult::CreatePresetResult(const AmazonWebServiceResult<JsonValue>& result)
+CreatePresetResult::CreatePresetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreatePresetResult& CreatePresetResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+CreatePresetResult& CreatePresetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Preset"))

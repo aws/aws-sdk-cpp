@@ -31,12 +31,12 @@ DecryptResult::DecryptResult()
 {
 }
 
-DecryptResult::DecryptResult(const AmazonWebServiceResult<JsonValue>& result)
+DecryptResult::DecryptResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DecryptResult& DecryptResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DecryptResult& DecryptResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("KeyId"))

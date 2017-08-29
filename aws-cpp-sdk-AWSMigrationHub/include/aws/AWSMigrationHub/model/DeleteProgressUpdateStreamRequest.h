@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline DeleteProgressUpdateStreamRequest& WithProgressUpdateStreamName(const char* value) { SetProgressUpdateStreamName(value); return *this;}
 
+
     /**
      * <p>Optional boolean flag to indicate whether any effect should take place. Used
      * to test if the caller has permission to make the call.</p>
@@ -90,8 +92,10 @@ namespace Model
     inline DeleteProgressUpdateStreamRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_progressUpdateStreamName;
     bool m_progressUpdateStreamNameHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

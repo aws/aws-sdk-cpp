@@ -41,6 +41,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>EndpointArn for GetEndpointAttributes input.</p>
      */
@@ -77,6 +78,7 @@ namespace Model
     inline GetEndpointAttributesRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
   private:
+
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet;
   };

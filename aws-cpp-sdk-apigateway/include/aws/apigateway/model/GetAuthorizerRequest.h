@@ -38,6 +38,7 @@ namespace Model
     GetAuthorizerRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetAuthorizerRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+
 
     /**
      * <p>The identifier of the <a>Authorizer</a> resource.</p>
@@ -109,8 +111,10 @@ namespace Model
     inline GetAuthorizerRequest& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
 
   private:
+
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet;
+
     Aws::String m_authorizerId;
     bool m_authorizerIdHasBeenSet;
   };

@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     GetLexiconResult();
-    GetLexiconResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLexiconResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetLexiconResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetLexiconResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Lexicon object that provides name and the string content of the lexicon. </p>
@@ -66,6 +67,7 @@ namespace Model
      * <p>Lexicon object that provides name and the string content of the lexicon. </p>
      */
     inline GetLexiconResult& WithLexicon(Lexicon&& value) { SetLexicon(std::move(value)); return *this;}
+
 
     /**
      * <p>Metadata of the lexicon, including phonetic alphabetic used, language code,
@@ -103,7 +105,9 @@ namespace Model
     inline GetLexiconResult& WithLexiconAttributes(LexiconAttributes&& value) { SetLexiconAttributes(std::move(value)); return *this;}
 
   private:
+
     Lexicon m_lexicon;
+
     LexiconAttributes m_lexiconAttributes;
   };
 

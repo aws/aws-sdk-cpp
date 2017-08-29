@@ -51,6 +51,7 @@ namespace Model
     RedshiftDestinationDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ARN of the AWS credentials.</p>
      */
@@ -85,6 +86,7 @@ namespace Model
      * <p>The ARN of the AWS credentials.</p>
      */
     inline RedshiftDestinationDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
 
     /**
      * <p>The database connection string.</p>
@@ -121,6 +123,7 @@ namespace Model
      */
     inline RedshiftDestinationDescription& WithClusterJDBCURL(const char* value) { SetClusterJDBCURL(value); return *this;}
 
+
     /**
      * <p>The <code>COPY</code> command.</p>
      */
@@ -145,6 +148,7 @@ namespace Model
      * <p>The <code>COPY</code> command.</p>
      */
     inline RedshiftDestinationDescription& WithCopyCommand(CopyCommand&& value) { SetCopyCommand(std::move(value)); return *this;}
+
 
     /**
      * <p>The name of the user.</p>
@@ -181,6 +185,7 @@ namespace Model
      */
     inline RedshiftDestinationDescription& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
     /**
      * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
      * Amazon Redshift. Default value is 3600 (60 minutes).</p>
@@ -211,6 +216,7 @@ namespace Model
      */
     inline RedshiftDestinationDescription& WithRetryOptions(RedshiftRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 
+
     /**
      * <p>The Amazon S3 destination.</p>
      */
@@ -235,6 +241,7 @@ namespace Model
      * <p>The Amazon S3 destination.</p>
      */
     inline RedshiftDestinationDescription& WithS3DestinationDescription(S3DestinationDescription&& value) { SetS3DestinationDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>The data processing configuration.</p>
@@ -261,6 +268,7 @@ namespace Model
      */
     inline RedshiftDestinationDescription& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
 
+
     /**
      * <p>The Amazon S3 backup mode.</p>
      */
@@ -286,6 +294,7 @@ namespace Model
      */
     inline RedshiftDestinationDescription& WithS3BackupMode(RedshiftS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
 
+
     /**
      * <p>The configuration for backup in Amazon S3.</p>
      */
@@ -310,6 +319,7 @@ namespace Model
      * <p>The configuration for backup in Amazon S3.</p>
      */
     inline RedshiftDestinationDescription& WithS3BackupDescription(S3DestinationDescription&& value) { SetS3BackupDescription(std::move(value)); return *this;}
+
 
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>
@@ -337,24 +347,34 @@ namespace Model
     inline RedshiftDestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;
+
     Aws::String m_clusterJDBCURL;
     bool m_clusterJDBCURLHasBeenSet;
+
     CopyCommand m_copyCommand;
     bool m_copyCommandHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
     RedshiftRetryOptions m_retryOptions;
     bool m_retryOptionsHasBeenSet;
+
     S3DestinationDescription m_s3DestinationDescription;
     bool m_s3DestinationDescriptionHasBeenSet;
+
     ProcessingConfiguration m_processingConfiguration;
     bool m_processingConfigurationHasBeenSet;
+
     RedshiftS3BackupMode m_s3BackupMode;
     bool m_s3BackupModeHasBeenSet;
+
     S3DestinationDescription m_s3BackupDescription;
     bool m_s3BackupDescriptionHasBeenSet;
+
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
   };

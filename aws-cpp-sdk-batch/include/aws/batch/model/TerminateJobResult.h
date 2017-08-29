@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     TerminateJobResult();
-    TerminateJobResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TerminateJobResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TerminateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TerminateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

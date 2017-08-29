@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     DeregisterTargetsResult();
-    DeregisterTargetsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeregisterTargetsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeregisterTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeregisterTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -57,6 +58,7 @@ namespace Model
     inline DeregisterTargetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     ResponseMetadata m_responseMetadata;
   };
 

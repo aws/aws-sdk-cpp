@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     AssociateVpcCidrBlockResponse();
-    AssociateVpcCidrBlockResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssociateVpcCidrBlockResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssociateVpcCidrBlockResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AssociateVpcCidrBlockResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the IPv6 CIDR block association.</p>
@@ -67,6 +68,7 @@ namespace Model
      * <p>Information about the IPv6 CIDR block association.</p>
      */
     inline AssociateVpcCidrBlockResponse& WithIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the VPC.</p>
@@ -103,6 +105,7 @@ namespace Model
      */
     inline AssociateVpcCidrBlockResponse& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -119,8 +122,11 @@ namespace Model
     inline AssociateVpcCidrBlockResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     VpcIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
+
     Aws::String m_vpcId;
+
     ResponseMetadata m_responseMetadata;
   };
 

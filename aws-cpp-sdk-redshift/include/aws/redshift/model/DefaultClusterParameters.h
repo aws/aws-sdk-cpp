@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the cluster parameter group family to which the engine default
      * parameters apply.</p>
@@ -92,6 +93,7 @@ namespace Model
      * parameters apply.</p>
      */
     inline DefaultClusterParameters& WithParameterGroupFamily(const char* value) { SetParameterGroupFamily(value); return *this;}
+
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -163,6 +165,7 @@ namespace Model
      */
     inline DefaultClusterParameters& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>The list of cluster default parameters.</p>
      */
@@ -199,10 +202,13 @@ namespace Model
     inline DefaultClusterParameters& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_parameterGroupFamily;
     bool m_parameterGroupFamilyHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::Vector<Parameter> m_parameters;
     bool m_parametersHasBeenSet;
   };

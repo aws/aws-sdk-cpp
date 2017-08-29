@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The unique identifier of a cluster whose properties you are requesting. This
      * parameter is case sensitive.</p> <p>The default is that all clusters defined for
@@ -91,6 +92,7 @@ namespace Model
      */
     inline DescribeClustersRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
+
     /**
      * <p>The maximum number of response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
@@ -120,6 +122,7 @@ namespace Model
      * maximum 100.</p>
      */
     inline DescribeClustersRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
@@ -205,6 +208,7 @@ namespace Model
      */
     inline DescribeClustersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     /**
      * <p>A tag key or keys for which you want to return all matching clusters that are
      * associated with the specified key or keys. For example, suppose that you have
@@ -284,6 +288,7 @@ namespace Model
      * these tag keys associated with them.</p>
      */
     inline DescribeClustersRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
+
 
     /**
      * <p>A tag value or values for which you want to return all matching clusters that
@@ -366,14 +371,19 @@ namespace Model
     inline DescribeClustersRequest& AddTagValues(const char* value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
 
   private:
+
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagKeys;
     bool m_tagKeysHasBeenSet;
+
     Aws::Vector<Aws::String> m_tagValues;
     bool m_tagValuesHasBeenSet;
   };

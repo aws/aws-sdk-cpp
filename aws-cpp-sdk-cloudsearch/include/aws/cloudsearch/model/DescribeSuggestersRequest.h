@@ -47,6 +47,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the domain you want to describe.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the domain you want to describe.</p>
      */
     inline DescribeSuggestersRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>The suggesters you want to describe.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline DescribeSuggestersRequest& AddSuggesterNames(const char* value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames.push_back(value); return *this; }
 
+
     /**
      * <p>Whether to display the deployed configuration (<code>true</code>) or include
      * any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -141,10 +144,13 @@ namespace Model
     inline DescribeSuggestersRequest& WithDeployed(bool value) { SetDeployed(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_suggesterNames;
     bool m_suggesterNamesHasBeenSet;
+
     bool m_deployed;
     bool m_deployedHasBeenSet;
   };

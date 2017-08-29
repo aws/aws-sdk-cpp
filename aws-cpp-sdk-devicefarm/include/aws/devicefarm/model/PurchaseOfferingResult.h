@@ -44,8 +44,9 @@ namespace Model
   {
   public:
     PurchaseOfferingResult();
-    PurchaseOfferingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PurchaseOfferingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PurchaseOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    PurchaseOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Represents the offering transaction for the purchase result.</p>
@@ -73,6 +74,7 @@ namespace Model
     inline PurchaseOfferingResult& WithOfferingTransaction(OfferingTransaction&& value) { SetOfferingTransaction(std::move(value)); return *this;}
 
   private:
+
     OfferingTransaction m_offeringTransaction;
   };
 

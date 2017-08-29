@@ -48,6 +48,7 @@ namespace Model
     RevisionLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
@@ -83,6 +84,7 @@ namespace Model
      */
     inline RevisionLocation& WithRevisionType(RevisionLocationType&& value) { SetRevisionType(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the location of application artifacts stored in Amazon S3.
      * </p>
@@ -113,6 +115,7 @@ namespace Model
      */
     inline RevisionLocation& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
 
+
     /**
      * <p>Information about the location of application artifacts stored in GitHub.</p>
      */
@@ -139,10 +142,13 @@ namespace Model
     inline RevisionLocation& WithGitHubLocation(GitHubLocation&& value) { SetGitHubLocation(std::move(value)); return *this;}
 
   private:
+
     RevisionLocationType m_revisionType;
     bool m_revisionTypeHasBeenSet;
+
     S3Location m_s3Location;
     bool m_s3LocationHasBeenSet;
+
     GitHubLocation m_gitHubLocation;
     bool m_gitHubLocationHasBeenSet;
   };

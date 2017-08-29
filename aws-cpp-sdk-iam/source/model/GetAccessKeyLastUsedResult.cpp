@@ -31,12 +31,12 @@ GetAccessKeyLastUsedResult::GetAccessKeyLastUsedResult()
 {
 }
 
-GetAccessKeyLastUsedResult::GetAccessKeyLastUsedResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetAccessKeyLastUsedResult::GetAccessKeyLastUsedResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetAccessKeyLastUsedResult& GetAccessKeyLastUsedResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetAccessKeyLastUsedResult& GetAccessKeyLastUsedResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

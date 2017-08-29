@@ -31,12 +31,12 @@ GetQueueAttributesResult::GetQueueAttributesResult()
 {
 }
 
-GetQueueAttributesResult::GetQueueAttributesResult(const AmazonWebServiceResult<XmlDocument>& result)
+GetQueueAttributesResult::GetQueueAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetQueueAttributesResult& GetQueueAttributesResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetQueueAttributesResult& GetQueueAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

@@ -30,12 +30,12 @@ DeleteDirectoryResult::DeleteDirectoryResult()
 {
 }
 
-DeleteDirectoryResult::DeleteDirectoryResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDirectoryResult::DeleteDirectoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteDirectoryResult& DeleteDirectoryResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteDirectoryResult& DeleteDirectoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("DirectoryId"))

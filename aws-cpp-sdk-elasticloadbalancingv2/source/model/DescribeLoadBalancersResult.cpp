@@ -31,12 +31,12 @@ DescribeLoadBalancersResult::DescribeLoadBalancersResult()
 {
 }
 
-DescribeLoadBalancersResult::DescribeLoadBalancersResult(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeLoadBalancersResult::DescribeLoadBalancersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DescribeLoadBalancersResult& DescribeLoadBalancersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

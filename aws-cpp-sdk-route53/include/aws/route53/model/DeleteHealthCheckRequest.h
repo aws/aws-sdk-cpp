@@ -37,6 +37,7 @@ namespace Model
     DeleteHealthCheckRequest();
     Aws::String SerializePayload() const override;
 
+
     /**
      * <p>The ID of the health check that you want to delete.</p>
      */
@@ -73,6 +74,7 @@ namespace Model
     inline DeleteHealthCheckRequest& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
 
   private:
+
     Aws::String m_healthCheckId;
     bool m_healthCheckIdHasBeenSet;
   };

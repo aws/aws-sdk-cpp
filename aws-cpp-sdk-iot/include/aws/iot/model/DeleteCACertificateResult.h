@@ -42,8 +42,8 @@ namespace Model
   {
   public:
     DeleteCACertificateResult();
-    DeleteCACertificateResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteCACertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteCACertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteCACertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

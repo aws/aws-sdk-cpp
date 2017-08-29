@@ -54,6 +54,7 @@ namespace Model
     TypedLinkSpecifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>Identifies the typed link facet that is associated with the typed link.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>Identifies the typed link facet that is associated with the typed link.</p>
      */
     inline TypedLinkSpecifier& WithTypedLinkFacet(TypedLinkSchemaAndFacetName&& value) { SetTypedLinkFacet(std::move(value)); return *this;}
+
 
     /**
      * <p>Identifies the source object that the typed link will attach to.</p>
@@ -104,6 +106,7 @@ namespace Model
      */
     inline TypedLinkSpecifier& WithSourceObjectReference(ObjectReference&& value) { SetSourceObjectReference(std::move(value)); return *this;}
 
+
     /**
      * <p>Identifies the target object that the typed link will attach to.</p>
      */
@@ -128,6 +131,7 @@ namespace Model
      * <p>Identifies the target object that the typed link will attach to.</p>
      */
     inline TypedLinkSpecifier& WithTargetObjectReference(ObjectReference&& value) { SetTargetObjectReference(std::move(value)); return *this;}
+
 
     /**
      * <p>Identifies the attribute value to update.</p>
@@ -165,12 +169,16 @@ namespace Model
     inline TypedLinkSpecifier& AddIdentityAttributeValues(AttributeNameAndValue&& value) { m_identityAttributeValuesHasBeenSet = true; m_identityAttributeValues.push_back(std::move(value)); return *this; }
 
   private:
+
     TypedLinkSchemaAndFacetName m_typedLinkFacet;
     bool m_typedLinkFacetHasBeenSet;
+
     ObjectReference m_sourceObjectReference;
     bool m_sourceObjectReferenceHasBeenSet;
+
     ObjectReference m_targetObjectReference;
     bool m_targetObjectReferenceHasBeenSet;
+
     Aws::Vector<AttributeNameAndValue> m_identityAttributeValues;
     bool m_identityAttributeValuesHasBeenSet;
   };

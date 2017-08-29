@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon RDS instance's ARN.</p>
      */
@@ -71,6 +72,7 @@ namespace Model
      */
     inline UpdateRdsDbInstanceRequest& WithRdsDbInstanceArn(const char* value) { SetRdsDbInstanceArn(value); return *this;}
 
+
     /**
      * <p>The master user name.</p>
      */
@@ -105,6 +107,7 @@ namespace Model
      * <p>The master user name.</p>
      */
     inline UpdateRdsDbInstanceRequest& WithDbUser(const char* value) { SetDbUser(value); return *this;}
+
 
     /**
      * <p>The database password.</p>
@@ -142,10 +145,13 @@ namespace Model
     inline UpdateRdsDbInstanceRequest& WithDbPassword(const char* value) { SetDbPassword(value); return *this;}
 
   private:
+
     Aws::String m_rdsDbInstanceArn;
     bool m_rdsDbInstanceArnHasBeenSet;
+
     Aws::String m_dbUser;
     bool m_dbUserHasBeenSet;
+
     Aws::String m_dbPassword;
     bool m_dbPasswordHasBeenSet;
   };

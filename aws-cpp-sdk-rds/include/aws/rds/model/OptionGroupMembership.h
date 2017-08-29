@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The name of the option group that the instance belongs to.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The name of the option group that the instance belongs to.</p>
      */
     inline OptionGroupMembership& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+
 
     /**
      * <p>The status of the DB instance's option group membership. Valid values are:
@@ -148,8 +150,10 @@ namespace Model
     inline OptionGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 
   private:
+
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
+
     Aws::String m_status;
     bool m_statusHasBeenSet;
   };

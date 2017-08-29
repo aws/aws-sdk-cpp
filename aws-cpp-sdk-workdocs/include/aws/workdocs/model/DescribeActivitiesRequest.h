@@ -43,6 +43,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>Amazon WorkDocs authentication token. This field should not be set when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
@@ -85,6 +86,7 @@ namespace Model
      */
     inline DescribeActivitiesRequest& WithAuthenticationToken(const char* value) { SetAuthenticationToken(value); return *this;}
 
+
     /**
      * <p>The timestamp that determines the starting time of the activities; the
      * response includes the activities performed after the specified timestamp.</p>
@@ -115,6 +117,7 @@ namespace Model
      */
     inline DescribeActivitiesRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
+
     /**
      * <p>The timestamp that determines the end time of the activities; the response
      * includes the activities performed before the specified timestamp.</p>
@@ -144,6 +147,7 @@ namespace Model
      * includes the activities performed before the specified timestamp.</p>
      */
     inline DescribeActivitiesRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
 
     /**
      * <p>The ID of the organization. This is a mandatory parameter when using
@@ -186,6 +190,7 @@ namespace Model
      * administrative API (SigV4) requests.</p>
      */
     inline DescribeActivitiesRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+
 
     /**
      * <p>The ID of the user who performed the action. The response includes activities
@@ -236,6 +241,7 @@ namespace Model
      */
     inline DescribeActivitiesRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 
+
     /**
      * <p>The maximum number of items to return.</p>
      */
@@ -250,6 +256,7 @@ namespace Model
      * <p>The maximum number of items to return.</p>
      */
     inline DescribeActivitiesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -294,18 +301,25 @@ namespace Model
     inline DescribeActivitiesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
     Aws::String m_authenticationToken;
     bool m_authenticationTokenHasBeenSet;
+
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
     int m_limit;
     bool m_limitHasBeenSet;
+
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

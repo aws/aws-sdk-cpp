@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeWorkspaceBundlesResult();
-    DescribeWorkspaceBundlesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkspaceBundlesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkspaceBundlesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeWorkspaceBundlesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of structures that contain information about the bundles.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>An array of structures that contain information about the bundles.</p>
      */
     inline DescribeWorkspaceBundlesResult& AddBundles(WorkspaceBundle&& value) { m_bundles.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If not null, more results are available. Pass this value for the
@@ -141,7 +143,9 @@ namespace Model
     inline DescribeWorkspaceBundlesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<WorkspaceBundle> m_bundles;
+
     Aws::String m_nextToken;
   };
 

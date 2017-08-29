@@ -46,6 +46,7 @@ namespace Model
     IdentityPoolUsage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
@@ -88,6 +89,7 @@ namespace Model
      */
     inline IdentityPoolUsage& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
 
+
     /**
      * Number of sync sessions for the identity pool.
      */
@@ -103,6 +105,7 @@ namespace Model
      */
     inline IdentityPoolUsage& WithSyncSessionsCount(long long value) { SetSyncSessionsCount(value); return *this;}
 
+
     /**
      * Data storage information for the identity pool.
      */
@@ -117,6 +120,7 @@ namespace Model
      * Data storage information for the identity pool.
      */
     inline IdentityPoolUsage& WithDataStorage(long long value) { SetDataStorage(value); return *this;}
+
 
     /**
      * Date on which the identity pool was last modified.
@@ -144,12 +148,16 @@ namespace Model
     inline IdentityPoolUsage& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
+
     long long m_syncSessionsCount;
     bool m_syncSessionsCountHasBeenSet;
+
     long long m_dataStorage;
     bool m_dataStorageHasBeenSet;
+
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
   };

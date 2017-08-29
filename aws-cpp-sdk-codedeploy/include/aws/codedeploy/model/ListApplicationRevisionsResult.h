@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     ListApplicationRevisionsResult();
-    ListApplicationRevisionsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListApplicationRevisionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListApplicationRevisionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListApplicationRevisionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of locations that contain the matching revisions.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>A list of locations that contain the matching revisions.</p>
      */
     inline ListApplicationRevisionsResult& AddRevisions(RevisionLocation&& value) { m_revisions.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If a large amount of information is returned, an identifier will also be
@@ -134,7 +136,9 @@ namespace Model
     inline ListApplicationRevisionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<RevisionLocation> m_revisions;
+
     Aws::String m_nextToken;
   };
 

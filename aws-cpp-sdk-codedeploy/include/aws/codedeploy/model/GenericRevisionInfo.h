@@ -47,6 +47,7 @@ namespace Model
     GenericRevisionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>A comment about the revision.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>A comment about the revision.</p>
      */
     inline GenericRevisionInfo& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>The deployment groups for which this is the current target revision.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline GenericRevisionInfo& AddDeploymentGroups(const char* value) { m_deploymentGroupsHasBeenSet = true; m_deploymentGroups.push_back(value); return *this; }
 
+
     /**
      * <p>When the revision was first used by AWS CodeDeploy.</p>
      */
@@ -147,6 +150,7 @@ namespace Model
      */
     inline GenericRevisionInfo& WithFirstUsedTime(Aws::Utils::DateTime&& value) { SetFirstUsedTime(std::move(value)); return *this;}
 
+
     /**
      * <p>When the revision was last used by AWS CodeDeploy.</p>
      */
@@ -171,6 +175,7 @@ namespace Model
      * <p>When the revision was last used by AWS CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithLastUsedTime(Aws::Utils::DateTime&& value) { SetLastUsedTime(std::move(value)); return *this;}
+
 
     /**
      * <p>When the revision was registered with AWS CodeDeploy.</p>
@@ -198,14 +203,19 @@ namespace Model
     inline GenericRevisionInfo& WithRegisterTime(Aws::Utils::DateTime&& value) { SetRegisterTime(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Aws::String> m_deploymentGroups;
     bool m_deploymentGroupsHasBeenSet;
+
     Aws::Utils::DateTime m_firstUsedTime;
     bool m_firstUsedTimeHasBeenSet;
+
     Aws::Utils::DateTime m_lastUsedTime;
     bool m_lastUsedTimeHasBeenSet;
+
     Aws::Utils::DateTime m_registerTime;
     bool m_registerTimeHasBeenSet;
   };

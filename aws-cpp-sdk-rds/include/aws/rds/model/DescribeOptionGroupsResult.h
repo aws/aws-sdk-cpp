@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DescribeOptionGroupsResult();
-    DescribeOptionGroupsResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeOptionGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeOptionGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeOptionGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>List of option groups.</p>
@@ -83,6 +84,7 @@ namespace Model
      * <p>List of option groups.</p>
      */
     inline DescribeOptionGroupsResult& AddOptionGroupsList(OptionGroup&& value) { m_optionGroupsList.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
@@ -133,6 +135,7 @@ namespace Model
      */
     inline DescribeOptionGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -149,8 +152,11 @@ namespace Model
     inline DescribeOptionGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<OptionGroup> m_optionGroupsList;
+
     Aws::String m_marker;
+
     ResponseMetadata m_responseMetadata;
   };
 

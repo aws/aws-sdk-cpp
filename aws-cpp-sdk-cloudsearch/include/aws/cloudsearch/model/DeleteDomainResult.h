@@ -46,8 +46,9 @@ namespace Model
   {
   public:
     DeleteDomainResult();
-    DeleteDomainResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteDomainResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DomainStatus& GetDomainStatus() const{ return m_domainStatus; }
@@ -63,6 +64,7 @@ namespace Model
 
     
     inline DeleteDomainResult& WithDomainStatus(DomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -80,7 +82,9 @@ namespace Model
     inline DeleteDomainResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DomainStatus m_domainStatus;
+
     ResponseMetadata m_responseMetadata;
   };
 

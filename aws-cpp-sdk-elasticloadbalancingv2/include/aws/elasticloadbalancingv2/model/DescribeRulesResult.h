@@ -41,8 +41,9 @@ namespace Model
   {
   public:
     DescribeRulesResult();
-    DescribeRulesResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeRulesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DescribeRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>Information about the rules.</p>
@@ -78,6 +79,7 @@ namespace Model
      * <p>Information about the rules.</p>
      */
     inline DescribeRulesResult& AddRules(Rule&& value) { m_rules.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
@@ -121,6 +123,7 @@ namespace Model
      */
     inline DescribeRulesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -137,8 +140,11 @@ namespace Model
     inline DescribeRulesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Rule> m_rules;
+
     Aws::String m_nextMarker;
+
     ResponseMetadata m_responseMetadata;
   };
 

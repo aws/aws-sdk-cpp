@@ -32,13 +32,13 @@ GetAccountAuthorizationDetailsResult::GetAccountAuthorizationDetailsResult() :
 {
 }
 
-GetAccountAuthorizationDetailsResult::GetAccountAuthorizationDetailsResult(const AmazonWebServiceResult<XmlDocument>& result) : 
+GetAccountAuthorizationDetailsResult::GetAccountAuthorizationDetailsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_isTruncated(false)
 {
   *this = result;
 }
 
-GetAccountAuthorizationDetailsResult& GetAccountAuthorizationDetailsResult::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetAccountAuthorizationDetailsResult& GetAccountAuthorizationDetailsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();

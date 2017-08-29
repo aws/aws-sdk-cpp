@@ -32,14 +32,14 @@ GetMaintenanceWindowExecutionTaskInvocationResult::GetMaintenanceWindowExecution
 {
 }
 
-GetMaintenanceWindowExecutionTaskInvocationResult::GetMaintenanceWindowExecutionTaskInvocationResult(const AmazonWebServiceResult<JsonValue>& result) : 
+GetMaintenanceWindowExecutionTaskInvocationResult::GetMaintenanceWindowExecutionTaskInvocationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_taskType(MaintenanceWindowTaskType::NOT_SET),
     m_status(MaintenanceWindowExecutionStatus::NOT_SET)
 {
   *this = result;
 }
 
-GetMaintenanceWindowExecutionTaskInvocationResult& GetMaintenanceWindowExecutionTaskInvocationResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+GetMaintenanceWindowExecutionTaskInvocationResult& GetMaintenanceWindowExecutionTaskInvocationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("WindowExecutionId"))

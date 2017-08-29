@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DescribeMatchmakingResult();
-    DescribeMatchmakingResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMatchmakingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMatchmakingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMatchmakingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Collection of existing matchmaking ticket objects matching the request.</p>
@@ -84,6 +85,7 @@ namespace Model
     inline DescribeMatchmakingResult& AddTicketList(MatchmakingTicket&& value) { m_ticketList.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<MatchmakingTicket> m_ticketList;
   };
 

@@ -30,12 +30,12 @@ DisassociateQualificationFromWorkerResult::DisassociateQualificationFromWorkerRe
 {
 }
 
-DisassociateQualificationFromWorkerResult::DisassociateQualificationFromWorkerResult(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateQualificationFromWorkerResult::DisassociateQualificationFromWorkerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DisassociateQualificationFromWorkerResult& DisassociateQualificationFromWorkerResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DisassociateQualificationFromWorkerResult& DisassociateQualificationFromWorkerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

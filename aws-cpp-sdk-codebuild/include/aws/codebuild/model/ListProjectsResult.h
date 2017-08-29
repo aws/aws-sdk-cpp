@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     ListProjectsResult();
-    ListProjectsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProjectsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>If there are more than 100 items in the list, only the first 100 items are
@@ -98,6 +99,7 @@ namespace Model
      */
     inline ListProjectsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
     /**
      * <p>The list of build project names, with each build project name representing a
      * single build project.</p>
@@ -147,7 +149,9 @@ namespace Model
     inline ListProjectsResult& AddProjects(const char* value) { m_projects.push_back(value); return *this; }
 
   private:
+
     Aws::String m_nextToken;
+
     Aws::Vector<Aws::String> m_projects;
   };
 

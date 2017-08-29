@@ -46,6 +46,7 @@ namespace Model
     LambdaFunctionScheduledEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The unique ID of the Lambda task.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      */
     inline LambdaFunctionScheduledEventAttributes& WithId(const char* value) { SetId(value); return *this;}
 
+
     /**
      * <p>The name of the Lambda function.</p>
      */
@@ -115,6 +117,7 @@ namespace Model
      * <p>The name of the Lambda function.</p>
      */
     inline LambdaFunctionScheduledEventAttributes& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>Data attached to the event that the decider can use in subsequent workflow
@@ -158,6 +161,7 @@ namespace Model
      */
     inline LambdaFunctionScheduledEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
 
+
     /**
      * <p>The input provided to the Lambda task.</p>
      */
@@ -192,6 +196,7 @@ namespace Model
      * <p>The input provided to the Lambda task.</p>
      */
     inline LambdaFunctionScheduledEventAttributes& WithInput(const char* value) { SetInput(value); return *this;}
+
 
     /**
      * <p>The maximum amount of time a worker can take to process the Lambda task.</p>
@@ -228,6 +233,7 @@ namespace Model
      */
     inline LambdaFunctionScheduledEventAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
 
+
     /**
      * <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the
      * decision that resulted in scheduling this activity task. To help diagnose
@@ -253,16 +259,22 @@ namespace Model
     inline LambdaFunctionScheduledEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
 
   private:
+
     Aws::String m_id;
     bool m_idHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_control;
     bool m_controlHasBeenSet;
+
     Aws::String m_input;
     bool m_inputHasBeenSet;
+
     Aws::String m_startToCloseTimeout;
     bool m_startToCloseTimeoutHasBeenSet;
+
     long long m_decisionTaskCompletedEventId;
     bool m_decisionTaskCompletedEventIdHasBeenSet;
   };

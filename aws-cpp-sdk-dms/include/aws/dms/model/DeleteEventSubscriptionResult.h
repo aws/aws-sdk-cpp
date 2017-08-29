@@ -43,8 +43,9 @@ namespace Model
   {
   public:
     DeleteEventSubscriptionResult();
-    DeleteEventSubscriptionResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEventSubscriptionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteEventSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteEventSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The event subscription that was deleted.</p>
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteEventSubscriptionResult& WithEventSubscription(EventSubscription&& value) { SetEventSubscription(std::move(value)); return *this;}
 
   private:
+
     EventSubscription m_eventSubscription;
   };
 

@@ -47,6 +47,7 @@ namespace Model
     InstanceInformationStringFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The filter key name to describe your instances. For example:</p>
      * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
@@ -96,6 +97,7 @@ namespace Model
      */
     inline InstanceInformationStringFilter& WithKey(const char* value) { SetKey(value); return *this;}
 
+
     /**
      * <p>The filter values.</p>
      */
@@ -137,8 +139,10 @@ namespace Model
     inline InstanceInformationStringFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
   private:
+
     Aws::String m_key;
     bool m_keyHasBeenSet;
+
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
   };

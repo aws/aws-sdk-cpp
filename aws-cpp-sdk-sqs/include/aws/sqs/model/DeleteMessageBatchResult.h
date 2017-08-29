@@ -49,8 +49,9 @@ namespace Model
   {
   public:
     DeleteMessageBatchResult();
-    DeleteMessageBatchResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteMessageBatchResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteMessageBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DeleteMessageBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>A list of <code> <a>DeleteMessageBatchResultEntry</a> </code> items.</p>
@@ -87,6 +88,7 @@ namespace Model
      */
     inline DeleteMessageBatchResult& AddSuccessful(DeleteMessageBatchResultEntry&& value) { m_successful.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>A list of <code> <a>BatchResultErrorEntry</a> </code> items.</p>
      */
@@ -122,6 +124,7 @@ namespace Model
      */
     inline DeleteMessageBatchResult& AddFailed(BatchResultErrorEntry&& value) { m_failed.push_back(std::move(value)); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -138,8 +141,11 @@ namespace Model
     inline DeleteMessageBatchResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<DeleteMessageBatchResultEntry> m_successful;
+
     Aws::Vector<BatchResultErrorEntry> m_failed;
+
     ResponseMetadata m_responseMetadata;
   };
 

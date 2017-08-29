@@ -36,8 +36,8 @@ namespace Model
   {
   public:
     ModifyWorkspacePropertiesResult();
-    ModifyWorkspacePropertiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyWorkspacePropertiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyWorkspacePropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ModifyWorkspacePropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

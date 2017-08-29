@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DeleteIdentitiesResult();
-    DeleteIdentitiesResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteIdentitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of UnprocessedIdentityId objects, each of which contains an
@@ -91,6 +92,7 @@ namespace Model
     inline DeleteIdentitiesResult& AddUnprocessedIdentityIds(UnprocessedIdentityId&& value) { m_unprocessedIdentityIds.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::Vector<UnprocessedIdentityId> m_unprocessedIdentityIds;
   };
 

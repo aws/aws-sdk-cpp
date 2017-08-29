@@ -45,6 +45,7 @@ namespace Model
     HostVolumeProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The path on the host container instance that is presented to the container.
      * If this parameter is empty, then the Docker daemon has assigned a host path for
@@ -130,6 +131,7 @@ namespace Model
     inline HostVolumeProperties& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
 
   private:
+
     Aws::String m_sourcePath;
     bool m_sourcePathHasBeenSet;
   };

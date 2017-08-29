@@ -44,6 +44,7 @@ namespace Model
     Segment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The zero-based index number of the this segment. For example, if the total
      * number of segments is 4, SegmentNumber values will range from zero through
@@ -65,6 +66,7 @@ namespace Model
      */
     inline Segment& WithSegmentNumber(int value) { SetSegmentNumber(value); return *this;}
 
+
     /**
      * <p>The total numer of segments.</p>
      */
@@ -81,8 +83,10 @@ namespace Model
     inline Segment& WithTotalSegments(int value) { SetTotalSegments(value); return *this;}
 
   private:
+
     int m_segmentNumber;
     bool m_segmentNumberHasBeenSet;
+
     int m_totalSegments;
     bool m_totalSegmentsHasBeenSet;
   };

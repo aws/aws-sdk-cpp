@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the role associated with the policy.</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
@@ -93,6 +94,7 @@ namespace Model
      * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline GetRolePolicyRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+
 
     /**
      * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
@@ -151,8 +153,10 @@ namespace Model
     inline GetRolePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
   private:
+
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
   };

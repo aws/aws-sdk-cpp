@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     RunScheduledInstancesResponse();
-    RunScheduledInstancesResponse(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RunScheduledInstancesResponse& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RunScheduledInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    RunScheduledInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     /**
      * <p>The IDs of the newly launched instances.</p>
@@ -88,6 +89,7 @@ namespace Model
      */
     inline RunScheduledInstancesResponse& AddInstanceIdSet(const char* value) { m_instanceIdSet.push_back(value); return *this; }
 
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -104,7 +106,9 @@ namespace Model
     inline RunScheduledInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     Aws::Vector<Aws::String> m_instanceIdSet;
+
     ResponseMetadata m_responseMetadata;
   };
 

@@ -49,6 +49,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The association information for an Elastic IP address for the network
      * interface.</p>
@@ -79,6 +80,7 @@ namespace Model
      */
     inline InstancePrivateIpAddress& WithAssociation(InstanceNetworkInterfaceAssociation&& value) { SetAssociation(std::move(value)); return *this;}
 
+
     /**
      * <p>Indicates whether this IPv4 address is the primary private IP address of the
      * network interface.</p>
@@ -96,6 +98,7 @@ namespace Model
      * network interface.</p>
      */
     inline InstancePrivateIpAddress& WithPrimary(bool value) { SetPrimary(value); return *this;}
+
 
     /**
      * <p>The private IPv4 DNS name.</p>
@@ -131,6 +134,7 @@ namespace Model
      * <p>The private IPv4 DNS name.</p>
      */
     inline InstancePrivateIpAddress& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
+
 
     /**
      * <p>The private IPv4 address of the network interface.</p>
@@ -168,12 +172,16 @@ namespace Model
     inline InstancePrivateIpAddress& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 
   private:
+
     InstanceNetworkInterfaceAssociation m_association;
     bool m_associationHasBeenSet;
+
     bool m_primary;
     bool m_primaryHasBeenSet;
+
     Aws::String m_privateDnsName;
     bool m_privateDnsNameHasBeenSet;
+
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet;
   };

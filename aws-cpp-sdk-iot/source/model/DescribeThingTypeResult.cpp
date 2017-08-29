@@ -30,12 +30,12 @@ DescribeThingTypeResult::DescribeThingTypeResult()
 {
 }
 
-DescribeThingTypeResult::DescribeThingTypeResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeThingTypeResult::DescribeThingTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeThingTypeResult& DescribeThingTypeResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeThingTypeResult& DescribeThingTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("thingTypeName"))

@@ -51,6 +51,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      */
     inline NetworkAclEntry& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
 
+
     /**
      * <p>Indicates whether the rule is an egress rule (applied to traffic leaving the
      * subnet).</p>
@@ -103,6 +105,7 @@ namespace Model
      * subnet).</p>
      */
     inline NetworkAclEntry& WithEgress(bool value) { SetEgress(value); return *this;}
+
 
     /**
      * <p>ICMP protocol: The ICMP type and code.</p>
@@ -128,6 +131,7 @@ namespace Model
      * <p>ICMP protocol: The ICMP type and code.</p>
      */
     inline NetworkAclEntry& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(std::move(value)); return *this;}
+
 
     /**
      * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
@@ -164,6 +168,7 @@ namespace Model
      */
     inline NetworkAclEntry& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
 
+
     /**
      * <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
      */
@@ -188,6 +193,7 @@ namespace Model
      * <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
      */
     inline NetworkAclEntry& WithPortRange(PortRange&& value) { SetPortRange(std::move(value)); return *this;}
+
 
     /**
      * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
@@ -224,6 +230,7 @@ namespace Model
      */
     inline NetworkAclEntry& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
+
     /**
      * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
      */
@@ -249,6 +256,7 @@ namespace Model
      */
     inline NetworkAclEntry& WithRuleAction(RuleAction&& value) { SetRuleAction(std::move(value)); return *this;}
 
+
     /**
      * <p>The rule number for the entry. ACL entries are processed in ascending order
      * by rule number.</p>
@@ -268,20 +276,28 @@ namespace Model
     inline NetworkAclEntry& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
 
   private:
+
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
+
     bool m_egress;
     bool m_egressHasBeenSet;
+
     IcmpTypeCode m_icmpTypeCode;
     bool m_icmpTypeCodeHasBeenSet;
+
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
+
     PortRange m_portRange;
     bool m_portRangeHasBeenSet;
+
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
+
     RuleAction m_ruleAction;
     bool m_ruleActionHasBeenSet;
+
     int m_ruleNumber;
     bool m_ruleNumberHasBeenSet;
   };

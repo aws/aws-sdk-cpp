@@ -44,6 +44,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>moving-status</code> - The
      * status of the Elastic IP address (<code>MovingToVpc</code> |
@@ -93,6 +94,7 @@ namespace Model
      */
     inline DescribeMovingAddressesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -116,6 +118,7 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline DescribeMovingAddressesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -146,6 +149,7 @@ namespace Model
      * 1000.</p>
      */
     inline DescribeMovingAddressesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>
@@ -181,6 +185,7 @@ namespace Model
      * <p>The token to use to retrieve the next page of results.</p>
      */
     inline DescribeMovingAddressesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
 
     /**
      * <p>One or more Elastic IP addresses.</p>
@@ -223,14 +228,19 @@ namespace Model
     inline DescribeMovingAddressesRequest& AddPublicIps(const char* value) { m_publicIpsHasBeenSet = true; m_publicIps.push_back(value); return *this; }
 
   private:
+
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
     Aws::Vector<Aws::String> m_publicIps;
     bool m_publicIpsHasBeenSet;
   };

@@ -56,6 +56,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     /**
      * <p>A unique value (for example, a date-time stamp) that ensures that the request
      * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
@@ -161,6 +162,7 @@ namespace Model
      */
     inline DistributionConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
+
     /**
      * <p>A complex type that contains information about CNAMEs (alternate domain
      * names), if any, for this distribution.</p>
@@ -190,6 +192,7 @@ namespace Model
      * names), if any, for this distribution.</p>
      */
     inline DistributionConfig& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
+
 
     /**
      * <p>The object that you want CloudFront to request from your origin (for example,
@@ -331,6 +334,7 @@ namespace Model
      */
     inline DistributionConfig& WithDefaultRootObject(const char* value) { SetDefaultRootObject(value); return *this;}
 
+
     /**
      * <p>A complex type that contains information about origins for this distribution.
      * </p>
@@ -360,6 +364,7 @@ namespace Model
      * </p>
      */
     inline DistributionConfig& WithOrigins(Origins&& value) { SetOrigins(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that describes the default cache behavior if you do not
@@ -401,6 +406,7 @@ namespace Model
      */
     inline DistributionConfig& WithDefaultCacheBehavior(DefaultCacheBehavior&& value) { SetDefaultCacheBehavior(std::move(value)); return *this;}
 
+
     /**
      * <p>A complex type that contains zero or more <code>CacheBehavior</code>
      * elements. </p>
@@ -430,6 +436,7 @@ namespace Model
      * elements. </p>
      */
     inline DistributionConfig& WithCacheBehaviors(CacheBehaviors&& value) { SetCacheBehaviors(std::move(value)); return *this;}
+
 
     /**
      * <p>A complex type that controls the following:</p> <ul> <li> <p>Whether
@@ -485,6 +492,7 @@ namespace Model
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline DistributionConfig& WithCustomErrorResponses(CustomErrorResponses&& value) { SetCustomErrorResponses(std::move(value)); return *this;}
+
 
     /**
      * <p>Any comments you want to include about the distribution.</p> <p>If you don't
@@ -549,6 +557,7 @@ namespace Model
      */
     inline DistributionConfig& WithComment(const char* value) { SetComment(value); return *this;}
 
+
     /**
      * <p>A complex type that controls whether access logs are written for the
      * distribution.</p> <p>For more information about logging, see <a
@@ -588,6 +597,7 @@ namespace Model
      * Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline DistributionConfig& WithLogging(LoggingConfig&& value) { SetLogging(std::move(value)); return *this;}
+
 
     /**
      * <p>The price class that corresponds with the maximum price that you want to pay
@@ -679,6 +689,7 @@ namespace Model
      */
     inline DistributionConfig& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
+
     /**
      * <p>From this field, you can enable or disable the selected distribution.</p>
      * <p>If you specify <code>false</code> for <code>Enabled</code> but you specify
@@ -703,6 +714,7 @@ namespace Model
      */
     inline DistributionConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
     
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
 
@@ -718,6 +730,7 @@ namespace Model
     
     inline DistributionConfig& WithViewerCertificate(ViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
 
+
     
     inline const Restrictions& GetRestrictions() const{ return m_restrictions; }
 
@@ -732,6 +745,7 @@ namespace Model
 
     
     inline DistributionConfig& WithRestrictions(Restrictions&& value) { SetRestrictions(std::move(value)); return *this;}
+
 
     /**
      * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
@@ -838,6 +852,7 @@ namespace Model
      */
     inline DistributionConfig& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 
+
     /**
      * <p>(Optional) Specify the maximum HTTP version that you want viewers to use to
      * communicate with CloudFront. The default value for new web distributions is
@@ -897,6 +912,7 @@ namespace Model
      * information, do an Internet search for "http/2 optimization." </p>
      */
     inline DistributionConfig& WithHttpVersion(HttpVersion&& value) { SetHttpVersion(std::move(value)); return *this;}
+
 
     /**
      * <p>If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address
@@ -992,36 +1008,52 @@ namespace Model
     inline DistributionConfig& WithIsIPV6Enabled(bool value) { SetIsIPV6Enabled(value); return *this;}
 
   private:
+
     Aws::String m_callerReference;
     bool m_callerReferenceHasBeenSet;
+
     Aliases m_aliases;
     bool m_aliasesHasBeenSet;
+
     Aws::String m_defaultRootObject;
     bool m_defaultRootObjectHasBeenSet;
+
     Origins m_origins;
     bool m_originsHasBeenSet;
+
     DefaultCacheBehavior m_defaultCacheBehavior;
     bool m_defaultCacheBehaviorHasBeenSet;
+
     CacheBehaviors m_cacheBehaviors;
     bool m_cacheBehaviorsHasBeenSet;
+
     CustomErrorResponses m_customErrorResponses;
     bool m_customErrorResponsesHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
+
     LoggingConfig m_logging;
     bool m_loggingHasBeenSet;
+
     PriceClass m_priceClass;
     bool m_priceClassHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
     ViewerCertificate m_viewerCertificate;
     bool m_viewerCertificateHasBeenSet;
+
     Restrictions m_restrictions;
     bool m_restrictionsHasBeenSet;
+
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
+
     HttpVersion m_httpVersion;
     bool m_httpVersionHasBeenSet;
+
     bool m_isIPV6Enabled;
     bool m_isIPV6EnabledHasBeenSet;
   };

@@ -30,12 +30,12 @@ DescribeFolderContentsResult::DescribeFolderContentsResult()
 {
 }
 
-DescribeFolderContentsResult::DescribeFolderContentsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeFolderContentsResult::DescribeFolderContentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeFolderContentsResult& DescribeFolderContentsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeFolderContentsResult& DescribeFolderContentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("Folders"))

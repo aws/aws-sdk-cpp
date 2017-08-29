@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateTriggerResult();
-    CreateTriggerResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTriggerResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTriggerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateTriggerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>The name assigned to the new trigger.</p>
@@ -77,6 +78,7 @@ namespace Model
     inline CreateTriggerResult& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_name;
   };
 

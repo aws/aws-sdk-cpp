@@ -49,6 +49,7 @@ namespace Model
     Activation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The ID created by Systems Manager when you submitted the activation.</p>
      */
@@ -83,6 +84,7 @@ namespace Model
      * <p>The ID created by Systems Manager when you submitted the activation.</p>
      */
     inline Activation& WithActivationId(const char* value) { SetActivationId(value); return *this;}
+
 
     /**
      * <p>A user defined description of the activation.</p>
@@ -119,6 +121,7 @@ namespace Model
      */
     inline Activation& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
     /**
      * <p>A name for the managed instance when it is created.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>A name for the managed instance when it is created.</p>
      */
     inline Activation& WithDefaultInstanceName(const char* value) { SetDefaultInstanceName(value); return *this;}
+
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
@@ -196,6 +200,7 @@ namespace Model
      */
     inline Activation& WithIamRole(const char* value) { SetIamRole(value); return *this;}
 
+
     /**
      * <p>The maximum number of managed instances that can be registered using this
      * activation.</p>
@@ -214,6 +219,7 @@ namespace Model
      */
     inline Activation& WithRegistrationLimit(int value) { SetRegistrationLimit(value); return *this;}
 
+
     /**
      * <p>The number of managed instances already registered with this activation.</p>
      */
@@ -228,6 +234,7 @@ namespace Model
      * <p>The number of managed instances already registered with this activation.</p>
      */
     inline Activation& WithRegistrationsCount(int value) { SetRegistrationsCount(value); return *this;}
+
 
     /**
      * <p>The date when this activation can no longer be used to register managed
@@ -259,6 +266,7 @@ namespace Model
      */
     inline Activation& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 
+
     /**
      * <p>Whether or not the activation is expired.</p>
      */
@@ -273,6 +281,7 @@ namespace Model
      * <p>Whether or not the activation is expired.</p>
      */
     inline Activation& WithExpired(bool value) { SetExpired(value); return *this;}
+
 
     /**
      * <p>The date the activation was created.</p>
@@ -300,22 +309,31 @@ namespace Model
     inline Activation& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_activationId;
     bool m_activationIdHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::String m_defaultInstanceName;
     bool m_defaultInstanceNameHasBeenSet;
+
     Aws::String m_iamRole;
     bool m_iamRoleHasBeenSet;
+
     int m_registrationLimit;
     bool m_registrationLimitHasBeenSet;
+
     int m_registrationsCount;
     bool m_registrationsCountHasBeenSet;
+
     Aws::Utils::DateTime m_expirationDate;
     bool m_expirationDateHasBeenSet;
+
     bool m_expired;
     bool m_expiredHasBeenSet;
+
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
   };

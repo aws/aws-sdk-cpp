@@ -44,6 +44,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The layer stack ID.</p>
      */
@@ -78,6 +79,7 @@ namespace Model
      * <p>The layer stack ID.</p>
      */
     inline CreateLayerRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+
 
     /**
      * <p>The layer type. A stack cannot have more than one built-in layer of the same
@@ -114,6 +116,7 @@ namespace Model
      */
     inline CreateLayerRequest& WithType(LayerType&& value) { SetType(std::move(value)); return *this;}
 
+
     /**
      * <p>The layer name, which is used by the console.</p>
      */
@@ -148,6 +151,7 @@ namespace Model
      * <p>The layer name, which is used by the console.</p>
      */
     inline CreateLayerRequest& WithName(const char* value) { SetName(value); return *this;}
+
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
@@ -233,6 +237,7 @@ namespace Model
      */
     inline CreateLayerRequest& WithShortname(const char* value) { SetShortname(value); return *this;}
 
+
     /**
      * <p>One or more user-defined key-value pairs to be added to the stack
      * attributes.</p> <p>To create a cluster layer, set the <code>EcsClusterArn</code>
@@ -310,6 +315,7 @@ namespace Model
      */
     inline CreateLayerRequest& AddAttributes(const LayerAttributesKeys& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
     /**
      * <p>Specifies CloudWatch Logs configuration options for the layer. For more
      * information, see <a>CloudWatchLogsLogStream</a>.</p>
@@ -339,6 +345,7 @@ namespace Model
      * information, see <a>CloudWatchLogsLogStream</a>.</p>
      */
     inline CreateLayerRequest& WithCloudWatchLogsConfiguration(CloudWatchLogsConfiguration&& value) { SetCloudWatchLogsConfiguration(std::move(value)); return *this;}
+
 
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
@@ -395,6 +402,7 @@ namespace Model
      * Identifiers</a>.</p>
      */
     inline CreateLayerRequest& WithCustomInstanceProfileArn(const char* value) { SetCustomInstanceProfileArn(value); return *this;}
+
 
     /**
      * <p>A JSON-formatted string containing custom stack configuration and deployment
@@ -466,6 +474,7 @@ namespace Model
      */
     inline CreateLayerRequest& WithCustomJson(const char* value) { SetCustomJson(value); return *this;}
 
+
     /**
      * <p>An array containing the layer custom security group IDs.</p>
      */
@@ -505,6 +514,7 @@ namespace Model
      * <p>An array containing the layer custom security group IDs.</p>
      */
     inline CreateLayerRequest& AddCustomSecurityGroupIds(const char* value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds.push_back(value); return *this; }
+
 
     /**
      * <p>An array of <code>Package</code> objects that describes the layer
@@ -554,6 +564,7 @@ namespace Model
      */
     inline CreateLayerRequest& AddPackages(const char* value) { m_packagesHasBeenSet = true; m_packages.push_back(value); return *this; }
 
+
     /**
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
      * EBS volumes.</p>
@@ -596,6 +607,7 @@ namespace Model
      */
     inline CreateLayerRequest& AddVolumeConfigurations(VolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Whether to disable auto healing for the layer.</p>
      */
@@ -610,6 +622,7 @@ namespace Model
      * <p>Whether to disable auto healing for the layer.</p>
      */
     inline CreateLayerRequest& WithEnableAutoHealing(bool value) { SetEnableAutoHealing(value); return *this;}
+
 
     /**
      * <p>Whether to automatically assign an <a
@@ -638,6 +651,7 @@ namespace Model
      */
     inline CreateLayerRequest& WithAutoAssignElasticIps(bool value) { SetAutoAssignElasticIps(value); return *this;}
 
+
     /**
      * <p>For stacks that are running in a VPC, whether to automatically assign a
      * public IP address to the layer's instances. For more information, see <a
@@ -661,6 +675,7 @@ namespace Model
      * to Edit a Layer</a>.</p>
      */
     inline CreateLayerRequest& WithAutoAssignPublicIps(bool value) { SetAutoAssignPublicIps(value); return *this;}
+
 
     /**
      * <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom
@@ -691,6 +706,7 @@ namespace Model
      * recipes.</p>
      */
     inline CreateLayerRequest& WithCustomRecipes(Recipes&& value) { SetCustomRecipes(std::move(value)); return *this;}
+
 
     /**
      * <p>Whether to install operating system and package updates when the instance
@@ -731,6 +747,7 @@ namespace Model
      */
     inline CreateLayerRequest& WithInstallUpdatesOnBoot(bool value) { SetInstallUpdatesOnBoot(value); return *this;}
 
+
     /**
      * <p>Whether to use Amazon EBS-optimized instances.</p>
      */
@@ -745,6 +762,7 @@ namespace Model
      * <p>Whether to use Amazon EBS-optimized instances.</p>
      */
     inline CreateLayerRequest& WithUseEbsOptimizedInstances(bool value) { SetUseEbsOptimizedInstances(value); return *this;}
+
 
     /**
      * <p>A <code>LifeCycleEventConfiguration</code> object that you can use to
@@ -782,40 +800,58 @@ namespace Model
     inline CreateLayerRequest& WithLifecycleEventConfiguration(LifecycleEventConfiguration&& value) { SetLifecycleEventConfiguration(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_stackId;
     bool m_stackIdHasBeenSet;
+
     LayerType m_type;
     bool m_typeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_shortname;
     bool m_shortnameHasBeenSet;
+
     Aws::Map<LayerAttributesKeys, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
     CloudWatchLogsConfiguration m_cloudWatchLogsConfiguration;
     bool m_cloudWatchLogsConfigurationHasBeenSet;
+
     Aws::String m_customInstanceProfileArn;
     bool m_customInstanceProfileArnHasBeenSet;
+
     Aws::String m_customJson;
     bool m_customJsonHasBeenSet;
+
     Aws::Vector<Aws::String> m_customSecurityGroupIds;
     bool m_customSecurityGroupIdsHasBeenSet;
+
     Aws::Vector<Aws::String> m_packages;
     bool m_packagesHasBeenSet;
+
     Aws::Vector<VolumeConfiguration> m_volumeConfigurations;
     bool m_volumeConfigurationsHasBeenSet;
+
     bool m_enableAutoHealing;
     bool m_enableAutoHealingHasBeenSet;
+
     bool m_autoAssignElasticIps;
     bool m_autoAssignElasticIpsHasBeenSet;
+
     bool m_autoAssignPublicIps;
     bool m_autoAssignPublicIpsHasBeenSet;
+
     Recipes m_customRecipes;
     bool m_customRecipesHasBeenSet;
+
     bool m_installUpdatesOnBoot;
     bool m_installUpdatesOnBootHasBeenSet;
+
     bool m_useEbsOptimizedInstances;
     bool m_useEbsOptimizedInstancesHasBeenSet;
+
     LifecycleEventConfiguration m_lifecycleEventConfiguration;
     bool m_lifecycleEventConfigurationHasBeenSet;
   };

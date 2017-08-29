@@ -47,6 +47,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the domain you want to describe.</p>
      */
@@ -81,6 +82,7 @@ namespace Model
      * <p>The name of the domain you want to describe.</p>
      */
     inline DescribeIndexFieldsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
 
     /**
      * <p>A list of the index fields you want to describe. If not specified,
@@ -130,6 +132,7 @@ namespace Model
      */
     inline DescribeIndexFieldsRequest& AddFieldNames(const char* value) { m_fieldNamesHasBeenSet = true; m_fieldNames.push_back(value); return *this; }
 
+
     /**
      * <p>Whether to display the deployed configuration (<code>true</code>) or include
      * any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -149,10 +152,13 @@ namespace Model
     inline DescribeIndexFieldsRequest& WithDeployed(bool value) { SetDeployed(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     Aws::Vector<Aws::String> m_fieldNames;
     bool m_fieldNamesHasBeenSet;
+
     bool m_deployed;
     bool m_deployedHasBeenSet;
   };

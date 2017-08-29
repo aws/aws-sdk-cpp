@@ -38,6 +38,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The identifier of an access key.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
@@ -88,6 +89,7 @@ namespace Model
     inline GetAccessKeyLastUsedRequest& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 
   private:
+
     Aws::String m_accessKeyId;
     bool m_accessKeyIdHasBeenSet;
   };

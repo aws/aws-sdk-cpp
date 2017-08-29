@@ -37,6 +37,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the job to start.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
      */
     inline StartJobRunRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 
+
     /**
      * <p>The ID of the job run to start.</p>
      */
@@ -106,6 +108,7 @@ namespace Model
      * <p>The ID of the job run to start.</p>
      */
     inline StartJobRunRequest& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
+
 
     /**
      * <p>Specific arguments for this job run.</p>
@@ -167,6 +170,7 @@ namespace Model
      */
     inline StartJobRunRequest& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
+
     /**
      * <p>The infrastructure capacity to allocate to this job.</p>
      */
@@ -183,12 +187,16 @@ namespace Model
     inline StartJobRunRequest& WithAllocatedCapacity(int value) { SetAllocatedCapacity(value); return *this;}
 
   private:
+
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
     Aws::String m_jobRunId;
     bool m_jobRunIdHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_arguments;
     bool m_argumentsHasBeenSet;
+
     int m_allocatedCapacity;
     bool m_allocatedCapacityHasBeenSet;
   };

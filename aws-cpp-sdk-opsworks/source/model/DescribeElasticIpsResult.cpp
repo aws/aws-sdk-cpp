@@ -30,12 +30,12 @@ DescribeElasticIpsResult::DescribeElasticIpsResult()
 {
 }
 
-DescribeElasticIpsResult::DescribeElasticIpsResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeElasticIpsResult::DescribeElasticIpsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DescribeElasticIpsResult& DescribeElasticIpsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DescribeElasticIpsResult& DescribeElasticIpsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("ElasticIps"))

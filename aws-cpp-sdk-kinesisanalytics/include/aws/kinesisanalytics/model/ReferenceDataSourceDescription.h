@@ -48,6 +48,7 @@ namespace Model
     ReferenceDataSourceDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>ID of the reference data source. This is the ID that Amazon Kinesis Analytics
      * assigns when you add the reference data source to your application using the
@@ -97,6 +98,7 @@ namespace Model
      */
     inline ReferenceDataSourceDescription& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
 
+
     /**
      * <p>The in-application table name created by the specific reference data source
      * configuration.</p>
@@ -139,6 +141,7 @@ namespace Model
      */
     inline ReferenceDataSourceDescription& WithTableName(const char* value) { SetTableName(value); return *this;}
 
+
     /**
      * <p>Provides the S3 bucket name, the object key name that contains the reference
      * data. It also provides the Amazon Resource Name (ARN) of the IAM role that
@@ -179,6 +182,7 @@ namespace Model
      */
     inline ReferenceDataSourceDescription& WithS3ReferenceDataSourceDescription(S3ReferenceDataSourceDescription&& value) { SetS3ReferenceDataSourceDescription(std::move(value)); return *this;}
 
+
     
     inline const SourceSchema& GetReferenceSchema() const{ return m_referenceSchema; }
 
@@ -195,12 +199,16 @@ namespace Model
     inline ReferenceDataSourceDescription& WithReferenceSchema(SourceSchema&& value) { SetReferenceSchema(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_referenceId;
     bool m_referenceIdHasBeenSet;
+
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
     S3ReferenceDataSourceDescription m_s3ReferenceDataSourceDescription;
     bool m_s3ReferenceDataSourceDescriptionHasBeenSet;
+
     SourceSchema m_referenceSchema;
     bool m_referenceSchemaHasBeenSet;
   };

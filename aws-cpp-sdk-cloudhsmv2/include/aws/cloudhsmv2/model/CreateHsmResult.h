@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     CreateHsmResult();
-    CreateHsmResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateHsmResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateHsmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateHsmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the HSM that was created.</p>
@@ -67,6 +68,7 @@ namespace Model
     inline CreateHsmResult& WithHsm(Hsm&& value) { SetHsm(std::move(value)); return *this;}
 
   private:
+
     Hsm m_hsm;
   };
 

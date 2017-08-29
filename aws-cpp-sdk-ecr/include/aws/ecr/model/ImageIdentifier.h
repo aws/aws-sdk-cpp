@@ -46,6 +46,7 @@ namespace Model
     ImageIdentifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
     inline ImageIdentifier& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+
 
     /**
      * <p>The tag used for the image.</p>
@@ -117,8 +119,10 @@ namespace Model
     inline ImageIdentifier& WithImageTag(const char* value) { SetImageTag(value); return *this;}
 
   private:
+
     Aws::String m_imageDigest;
     bool m_imageDigestHasBeenSet;
+
     Aws::String m_imageTag;
     bool m_imageTagHasBeenSet;
   };

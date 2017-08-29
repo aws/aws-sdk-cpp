@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     DescribeMaintenanceWindowExecutionTaskInvocationsResult();
-    DescribeMaintenanceWindowExecutionTaskInvocationsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMaintenanceWindowExecutionTaskInvocationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMaintenanceWindowExecutionTaskInvocationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeMaintenanceWindowExecutionTaskInvocationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>Information about the task invocation results per invocation.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>Information about the task invocation results per invocation.</p>
      */
     inline DescribeMaintenanceWindowExecutionTaskInvocationsResult& AddWindowExecutionTaskInvocationIdentities(MaintenanceWindowExecutionTaskInvocationIdentity&& value) { m_windowExecutionTaskInvocationIdentities.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The token to use when requesting the next set of items. If there are no
@@ -121,7 +123,9 @@ namespace Model
     inline DescribeMaintenanceWindowExecutionTaskInvocationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<MaintenanceWindowExecutionTaskInvocationIdentity> m_windowExecutionTaskInvocationIdentities;
+
     Aws::String m_nextToken;
   };
 

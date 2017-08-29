@@ -39,8 +39,9 @@ namespace Model
   {
   public:
     CreateDBSecurityGroupResult();
-    CreateDBSecurityGroupResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateDBSecurityGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDBSecurityGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    CreateDBSecurityGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const DBSecurityGroup& GetDBSecurityGroup() const{ return m_dBSecurityGroup; }
@@ -56,6 +57,7 @@ namespace Model
 
     
     inline CreateDBSecurityGroupResult& WithDBSecurityGroup(DBSecurityGroup&& value) { SetDBSecurityGroup(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -73,7 +75,9 @@ namespace Model
     inline CreateDBSecurityGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     DBSecurityGroup m_dBSecurityGroup;
+
     ResponseMetadata m_responseMetadata;
   };
 

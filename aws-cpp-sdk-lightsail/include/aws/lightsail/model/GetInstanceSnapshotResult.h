@@ -38,8 +38,9 @@ namespace Model
   {
   public:
     GetInstanceSnapshotResult();
-    GetInstanceSnapshotResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstanceSnapshotResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetInstanceSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>An array of key-value pairs containing information about the results of your
@@ -72,6 +73,7 @@ namespace Model
     inline GetInstanceSnapshotResult& WithInstanceSnapshot(InstanceSnapshot&& value) { SetInstanceSnapshot(std::move(value)); return *this;}
 
   private:
+
     InstanceSnapshot m_instanceSnapshot;
   };
 

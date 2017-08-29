@@ -30,12 +30,12 @@ DeleteResourceDataSyncResult::DeleteResourceDataSyncResult()
 {
 }
 
-DeleteResourceDataSyncResult::DeleteResourceDataSyncResult(const AmazonWebServiceResult<JsonValue>& result)
+DeleteResourceDataSyncResult::DeleteResourceDataSyncResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DeleteResourceDataSyncResult& DeleteResourceDataSyncResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+DeleteResourceDataSyncResult& DeleteResourceDataSyncResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

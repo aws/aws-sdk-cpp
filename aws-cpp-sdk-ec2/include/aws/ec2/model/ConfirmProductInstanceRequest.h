@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The ID of the instance.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline ConfirmProductInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
 
     /**
      * <p>The product code. This must be a product code that you own.</p>
@@ -112,6 +114,7 @@ namespace Model
      */
     inline ConfirmProductInstanceRequest& WithProductCode(const char* value) { SetProductCode(value); return *this;}
 
+
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -137,10 +140,13 @@ namespace Model
     inline ConfirmProductInstanceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
   private:
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
     Aws::String m_productCode;
     bool m_productCodeHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
   };

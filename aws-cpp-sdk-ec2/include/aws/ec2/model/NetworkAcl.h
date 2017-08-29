@@ -52,6 +52,7 @@ namespace Model
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
     /**
      * <p>Any associations between the network ACL and one or more subnets</p>
      */
@@ -86,6 +87,7 @@ namespace Model
      * <p>Any associations between the network ACL and one or more subnets</p>
      */
     inline NetworkAcl& AddAssociations(NetworkAclAssociation&& value) { m_associationsHasBeenSet = true; m_associations.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>One or more entries (rules) in the network ACL.</p>
@@ -122,6 +124,7 @@ namespace Model
      */
     inline NetworkAcl& AddEntries(NetworkAclEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 
+
     /**
      * <p>Indicates whether this is the default network ACL for the VPC.</p>
      */
@@ -136,6 +139,7 @@ namespace Model
      * <p>Indicates whether this is the default network ACL for the VPC.</p>
      */
     inline NetworkAcl& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
+
 
     /**
      * <p>The ID of the network ACL.</p>
@@ -172,6 +176,7 @@ namespace Model
      */
     inline NetworkAcl& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
 
+
     /**
      * <p>Any tags assigned to the network ACL.</p>
      */
@@ -206,6 +211,7 @@ namespace Model
      * <p>Any tags assigned to the network ACL.</p>
      */
     inline NetworkAcl& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>The ID of the VPC for the network ACL.</p>
@@ -243,16 +249,22 @@ namespace Model
     inline NetworkAcl& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
   private:
+
     Aws::Vector<NetworkAclAssociation> m_associations;
     bool m_associationsHasBeenSet;
+
     Aws::Vector<NetworkAclEntry> m_entries;
     bool m_entriesHasBeenSet;
+
     bool m_isDefault;
     bool m_isDefaultHasBeenSet;
+
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet;
+
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
   };

@@ -36,6 +36,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The name of the cluster to be deleted.</p>
      */
@@ -72,6 +73,7 @@ namespace Model
     inline DeleteClusterRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
   private:
+
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet;
   };

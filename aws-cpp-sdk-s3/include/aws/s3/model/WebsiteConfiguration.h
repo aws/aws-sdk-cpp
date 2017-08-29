@@ -45,6 +45,7 @@ namespace Model
 
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
+
     
     inline const ErrorDocument& GetErrorDocument() const{ return m_errorDocument; }
 
@@ -59,6 +60,7 @@ namespace Model
 
     
     inline WebsiteConfiguration& WithErrorDocument(ErrorDocument&& value) { SetErrorDocument(std::move(value)); return *this;}
+
 
     
     inline const IndexDocument& GetIndexDocument() const{ return m_indexDocument; }
@@ -75,6 +77,7 @@ namespace Model
     
     inline WebsiteConfiguration& WithIndexDocument(IndexDocument&& value) { SetIndexDocument(std::move(value)); return *this;}
 
+
     
     inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const{ return m_redirectAllRequestsTo; }
 
@@ -89,6 +92,7 @@ namespace Model
 
     
     inline WebsiteConfiguration& WithRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { SetRedirectAllRequestsTo(std::move(value)); return *this;}
+
 
     
     inline const Aws::Vector<RoutingRule>& GetRoutingRules() const{ return m_routingRules; }
@@ -112,12 +116,16 @@ namespace Model
     inline WebsiteConfiguration& AddRoutingRules(RoutingRule&& value) { m_routingRulesHasBeenSet = true; m_routingRules.push_back(std::move(value)); return *this; }
 
   private:
+
     ErrorDocument m_errorDocument;
     bool m_errorDocumentHasBeenSet;
+
     IndexDocument m_indexDocument;
     bool m_indexDocumentHasBeenSet;
+
     RedirectAllRequestsTo m_redirectAllRequestsTo;
     bool m_redirectAllRequestsToHasBeenSet;
+
     Aws::Vector<RoutingRule> m_routingRules;
     bool m_routingRulesHasBeenSet;
   };

@@ -45,6 +45,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The name of the domain you want to describe.</p>
      */
@@ -80,6 +81,7 @@ namespace Model
      */
     inline DescribeAvailabilityOptionsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
+
     /**
      * <p>Whether to display the deployed configuration (<code>true</code>) or include
      * any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -99,8 +101,10 @@ namespace Model
     inline DescribeAvailabilityOptionsRequest& WithDeployed(bool value) { SetDeployed(value); return *this;}
 
   private:
+
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
     bool m_deployed;
     bool m_deployedHasBeenSet;
   };

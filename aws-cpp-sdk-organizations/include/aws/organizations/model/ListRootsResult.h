@@ -40,8 +40,9 @@ namespace Model
   {
   public:
     ListRootsResult();
-    ListRootsResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRootsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRootsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRootsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
 
     /**
      * <p>A list of roots that are defined in an organization.</p>
@@ -77,6 +78,7 @@ namespace Model
      * <p>A list of roots that are defined in an organization.</p>
      */
     inline ListRootsResult& AddRoots(Root&& value) { m_roots.push_back(std::move(value)); return *this; }
+
 
     /**
      * <p>If present, this value indicates that there is more output available than is
@@ -142,7 +144,9 @@ namespace Model
     inline ListRootsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
     Aws::Vector<Root> m_roots;
+
     Aws::String m_nextToken;
   };
 

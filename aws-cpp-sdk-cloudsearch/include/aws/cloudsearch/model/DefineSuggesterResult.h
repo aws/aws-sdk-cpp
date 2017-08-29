@@ -45,8 +45,9 @@ namespace Model
   {
   public:
     DefineSuggesterResult();
-    DefineSuggesterResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DefineSuggesterResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DefineSuggesterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    DefineSuggesterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
 
     
     inline const SuggesterStatus& GetSuggester() const{ return m_suggester; }
@@ -62,6 +63,7 @@ namespace Model
 
     
     inline DefineSuggesterResult& WithSuggester(SuggesterStatus&& value) { SetSuggester(std::move(value)); return *this;}
+
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -79,7 +81,9 @@ namespace Model
     inline DefineSuggesterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
+
     SuggesterStatus m_suggester;
+
     ResponseMetadata m_responseMetadata;
   };
 

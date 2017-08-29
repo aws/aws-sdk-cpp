@@ -30,12 +30,12 @@ ListDeploymentConfigsResult::ListDeploymentConfigsResult()
 {
 }
 
-ListDeploymentConfigsResult::ListDeploymentConfigsResult(const AmazonWebServiceResult<JsonValue>& result)
+ListDeploymentConfigsResult::ListDeploymentConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ListDeploymentConfigsResult& ListDeploymentConfigsResult::operator =(const AmazonWebServiceResult<JsonValue>& result)
+ListDeploymentConfigsResult& ListDeploymentConfigsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   const JsonValue& jsonValue = result.GetPayload();
   if(jsonValue.ValueExists("deploymentConfigsList"))

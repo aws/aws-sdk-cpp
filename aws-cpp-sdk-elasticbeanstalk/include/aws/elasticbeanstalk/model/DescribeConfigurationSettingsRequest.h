@@ -42,6 +42,7 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
     /**
      * <p>The application for the environment or configuration template.</p>
      */
@@ -76,6 +77,7 @@ namespace Model
      * <p>The application for the environment or configuration template.</p>
      */
     inline DescribeConfigurationSettingsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+
 
     /**
      * <p>The name of the configuration template to describe.</p> <p> Conditional: You
@@ -147,6 +149,7 @@ namespace Model
      */
     inline DescribeConfigurationSettingsRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
+
     /**
      * <p>The name of the environment to describe.</p> <p> Condition: You must specify
      * either this or a TemplateName, but not both. If you specify both, AWS Elastic
@@ -211,10 +214,13 @@ namespace Model
     inline DescribeConfigurationSettingsRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
 
   private:
+
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
+
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;
+
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet;
   };

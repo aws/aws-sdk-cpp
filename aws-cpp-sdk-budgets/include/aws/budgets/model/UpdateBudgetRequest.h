@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
@@ -61,6 +62,7 @@ namespace Model
     
     inline UpdateBudgetRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
     
     inline const Budget& GetNewBudget() const{ return m_newBudget; }
 
@@ -77,8 +79,10 @@ namespace Model
     inline UpdateBudgetRequest& WithNewBudget(Budget&& value) { SetNewBudget(std::move(value)); return *this;}
 
   private:
+
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
     Budget m_newBudget;
     bool m_newBudgetHasBeenSet;
   };

@@ -40,6 +40,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The policy name.</p>
      */
@@ -74,6 +75,7 @@ namespace Model
      * <p>The policy name.</p>
      */
     inline AttachPrincipalPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
 
     /**
      * <p>The principal, which can be a certificate ARN (as returned from the
@@ -118,8 +120,10 @@ namespace Model
     inline AttachPrincipalPolicyRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
   private:
+
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet;
+
     Aws::String m_principal;
     bool m_principalHasBeenSet;
   };

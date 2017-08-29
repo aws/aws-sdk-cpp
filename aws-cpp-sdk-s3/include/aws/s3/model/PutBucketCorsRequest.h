@@ -39,6 +39,7 @@ namespace Model
 
     inline bool ShouldComputeContentMd5() const override { return true; }
 
+
     
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -60,6 +61,7 @@ namespace Model
     
     inline PutBucketCorsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
+
     
     inline const CORSConfiguration& GetCORSConfiguration() const{ return m_cORSConfiguration; }
 
@@ -74,6 +76,7 @@ namespace Model
 
     
     inline PutBucketCorsRequest& WithCORSConfiguration(CORSConfiguration&& value) { SetCORSConfiguration(std::move(value)); return *this;}
+
 
     
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
@@ -97,10 +100,13 @@ namespace Model
     inline PutBucketCorsRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
   private:
+
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
+
     CORSConfiguration m_cORSConfiguration;
     bool m_cORSConfigurationHasBeenSet;
+
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;
   };

@@ -42,6 +42,7 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+
     /**
      * <p>The Amazon Resourc Name (ARN) of the Device Farm device pool you wish to
      * update.</p>
@@ -84,6 +85,7 @@ namespace Model
      */
     inline UpdateDevicePoolRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
+
     /**
      * <p>A string representing the name of the device pool you wish to update.</p>
      */
@@ -119,6 +121,7 @@ namespace Model
      */
     inline UpdateDevicePoolRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
     /**
      * <p>A description of the device pool you wish to update.</p>
      */
@@ -153,6 +156,7 @@ namespace Model
      * <p>A description of the device pool you wish to update.</p>
      */
     inline UpdateDevicePoolRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
 
     /**
      * <p>Represents the rules you wish to modify for the device pool. Updating rules
@@ -204,12 +208,16 @@ namespace Model
     inline UpdateDevicePoolRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
   private:
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet;
   };

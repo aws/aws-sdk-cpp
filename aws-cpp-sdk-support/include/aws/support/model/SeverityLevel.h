@@ -46,6 +46,7 @@ namespace Model
     SeverityLevel& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
+
     /**
      * <p>One of four values: "low," "medium," "high," and "urgent". These values
      * correspond to response times returned to the caller in
@@ -95,6 +96,7 @@ namespace Model
      */
     inline SeverityLevel& WithCode(const char* value) { SetCode(value); return *this;}
 
+
     /**
      * <p>The name of the severity level that corresponds to the severity level
      * code.</p>
@@ -138,8 +140,10 @@ namespace Model
     inline SeverityLevel& WithName(const char* value) { SetName(value); return *this;}
 
   private:
+
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
   };
