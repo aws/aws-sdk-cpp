@@ -616,19 +616,30 @@ namespace Model
          * <p>For more information about creating accounts, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> <important> <p>You cannot remove accounts that are created with
-         * this operation from an organization. That also means that you cannot delete an
-         * organization that contains an account that is created with this operation.</p>
-         * </important> <note> <p>When you create a member account with this operation, you
-         * can choose whether to create the account with the <b>IAM User and Role Access to
-         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
-         * that have appropriate permissions can view billing information for the account.
-         * If you disable this, then only the account root user can access billing
-         * information. For information about how to disable this for an account, see <a
+         * Guide</i>.</p> <important> <p>When you create an account in an organization
+         * using the AWS Organizations console, API, or CLI commands, the information
+         * required for the account to operate as a standalone account, such as a payment
+         * method and signing the End User Licence Agreement (EULA) is <i>not</i>
+         * automatically collected. If you must remove an account from your organization
+         * later, you can do so only after you provide the missing information. Follow the
+         * steps at <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+         * To leave an organization when all required account information has not yet been
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </important> <note>
+         * <p>When you create a member account with this operation, you can choose whether
+         * to create the account with the <b>IAM User and Role Access to Billing
+         * Information</b> switch enabled. If you enable it, IAM users and roles that have
+         * appropriate permissions can view billing information for the account. If you
+         * disable this, then only the account root user can access billing information.
+         * For information about how to disable this for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
-         * can be called only from the organization's master account.</p><p><h3>See
-         * Also:</h3>   <a
+         * can be called only from the organization's master account.</p> <important> <p>If
+         * you get an exception that indicates that you exceeded your account limits for
+         * the organization or that you can"t add an account because your organization is
+         * still initializing, please contact <a
+         * href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+         * Support</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">AWS
          * API Reference</a></p>
          */
@@ -648,19 +659,30 @@ namespace Model
          * <p>For more information about creating accounts, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> <important> <p>You cannot remove accounts that are created with
-         * this operation from an organization. That also means that you cannot delete an
-         * organization that contains an account that is created with this operation.</p>
-         * </important> <note> <p>When you create a member account with this operation, you
-         * can choose whether to create the account with the <b>IAM User and Role Access to
-         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
-         * that have appropriate permissions can view billing information for the account.
-         * If you disable this, then only the account root user can access billing
-         * information. For information about how to disable this for an account, see <a
+         * Guide</i>.</p> <important> <p>When you create an account in an organization
+         * using the AWS Organizations console, API, or CLI commands, the information
+         * required for the account to operate as a standalone account, such as a payment
+         * method and signing the End User Licence Agreement (EULA) is <i>not</i>
+         * automatically collected. If you must remove an account from your organization
+         * later, you can do so only after you provide the missing information. Follow the
+         * steps at <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+         * To leave an organization when all required account information has not yet been
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </important> <note>
+         * <p>When you create a member account with this operation, you can choose whether
+         * to create the account with the <b>IAM User and Role Access to Billing
+         * Information</b> switch enabled. If you enable it, IAM users and roles that have
+         * appropriate permissions can view billing information for the account. If you
+         * disable this, then only the account root user can access billing information.
+         * For information about how to disable this for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
-         * can be called only from the organization's master account.</p><p><h3>See
-         * Also:</h3>   <a
+         * can be called only from the organization's master account.</p> <important> <p>If
+         * you get an exception that indicates that you exceeded your account limits for
+         * the organization or that you can"t add an account because your organization is
+         * still initializing, please contact <a
+         * href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+         * Support</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">AWS
          * API Reference</a></p>
          *
@@ -682,19 +704,30 @@ namespace Model
          * <p>For more information about creating accounts, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> <important> <p>You cannot remove accounts that are created with
-         * this operation from an organization. That also means that you cannot delete an
-         * organization that contains an account that is created with this operation.</p>
-         * </important> <note> <p>When you create a member account with this operation, you
-         * can choose whether to create the account with the <b>IAM User and Role Access to
-         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
-         * that have appropriate permissions can view billing information for the account.
-         * If you disable this, then only the account root user can access billing
-         * information. For information about how to disable this for an account, see <a
+         * Guide</i>.</p> <important> <p>When you create an account in an organization
+         * using the AWS Organizations console, API, or CLI commands, the information
+         * required for the account to operate as a standalone account, such as a payment
+         * method and signing the End User Licence Agreement (EULA) is <i>not</i>
+         * automatically collected. If you must remove an account from your organization
+         * later, you can do so only after you provide the missing information. Follow the
+         * steps at <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+         * To leave an organization when all required account information has not yet been
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </important> <note>
+         * <p>When you create a member account with this operation, you can choose whether
+         * to create the account with the <b>IAM User and Role Access to Billing
+         * Information</b> switch enabled. If you enable it, IAM users and roles that have
+         * appropriate permissions can view billing information for the account. If you
+         * disable this, then only the account root user can access billing information.
+         * For information about how to disable this for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
-         * can be called only from the organization's master account.</p><p><h3>See
-         * Also:</h3>   <a
+         * can be called only from the organization's master account.</p> <important> <p>If
+         * you get an exception that indicates that you exceeded your account limits for
+         * the organization or that you can"t add an account because your organization is
+         * still initializing, please contact <a
+         * href="https://console.aws.amazon.com/support/home#/"> AWS Customer
+         * Support</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">AWS
          * API Reference</a></p>
          *
@@ -904,10 +937,7 @@ namespace Model
         /**
          * <p>Deletes the organization. You can delete an organization only by using
          * credentials from the master account. The organization must be empty of member
-         * accounts, OUs, and policies.</p> <important> <p>If you create any accounts using
-         * Organizations operations or the Organizations console, you can't remove those
-         * accounts from the organization, which means that you can't delete the
-         * organization.</p> </important><p><h3>See Also:</h3>   <a
+         * accounts, OUs, and policies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
          * API Reference</a></p>
          */
@@ -916,10 +946,7 @@ namespace Model
         /**
          * <p>Deletes the organization. You can delete an organization only by using
          * credentials from the master account. The organization must be empty of member
-         * accounts, OUs, and policies.</p> <important> <p>If you create any accounts using
-         * Organizations operations or the Organizations console, you can't remove those
-         * accounts from the organization, which means that you can't delete the
-         * organization.</p> </important><p><h3>See Also:</h3>   <a
+         * accounts, OUs, and policies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
          * API Reference</a></p>
          *
@@ -930,10 +957,7 @@ namespace Model
         /**
          * <p>Deletes the organization. You can delete an organization only by using
          * credentials from the master account. The organization must be empty of member
-         * accounts, OUs, and policies.</p> <important> <p>If you create any accounts using
-         * Organizations operations or the Organizations console, you can't remove those
-         * accounts from the organization, which means that you can't delete the
-         * organization.</p> </important><p><h3>See Also:</h3>   <a
+         * accounts, OUs, and policies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
          * API Reference</a></p>
          *
@@ -1448,14 +1472,18 @@ namespace Model
          * account. Organizations sends email on your behalf to the email address that is
          * associated with the other account's owner. The invitation is implemented as a
          * <a>Handshake</a> whose details are in the response.</p> <important> <p>You can
-         * invite AWS accounts only from the same reseller as the master account. For
+         * invite AWS accounts only from the same seller as the master account. For
          * example, if your organization's master account was created by Amazon Internet
-         * Services Pvt. Ltd (AISPL), an AWS reseller in India, then you can only invite
+         * Services Pvt. Ltd (AISPL), an AWS seller in India, then you can only invite
          * other AISPL accounts to your organization. You can't combine accounts from AISPL
-         * and AWS. For more information, see <a
+         * and AWS, or any other AWS seller. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
          * Billing in India</a>.</p> </important> <p>This operation can be called only from
-         * the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * the organization's master account.</p> <important> <p>If you get an exception
+         * that indicates that you exceeded your account limits for the organization or
+         * that you can"t add an account because your organization is still initializing,
+         * please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS
+         * Customer Support</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          */
@@ -1466,14 +1494,18 @@ namespace Model
          * account. Organizations sends email on your behalf to the email address that is
          * associated with the other account's owner. The invitation is implemented as a
          * <a>Handshake</a> whose details are in the response.</p> <important> <p>You can
-         * invite AWS accounts only from the same reseller as the master account. For
+         * invite AWS accounts only from the same seller as the master account. For
          * example, if your organization's master account was created by Amazon Internet
-         * Services Pvt. Ltd (AISPL), an AWS reseller in India, then you can only invite
+         * Services Pvt. Ltd (AISPL), an AWS seller in India, then you can only invite
          * other AISPL accounts to your organization. You can't combine accounts from AISPL
-         * and AWS. For more information, see <a
+         * and AWS, or any other AWS seller. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
          * Billing in India</a>.</p> </important> <p>This operation can be called only from
-         * the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * the organization's master account.</p> <important> <p>If you get an exception
+         * that indicates that you exceeded your account limits for the organization or
+         * that you can"t add an account because your organization is still initializing,
+         * please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS
+         * Customer Support</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          *
@@ -1486,14 +1518,18 @@ namespace Model
          * account. Organizations sends email on your behalf to the email address that is
          * associated with the other account's owner. The invitation is implemented as a
          * <a>Handshake</a> whose details are in the response.</p> <important> <p>You can
-         * invite AWS accounts only from the same reseller as the master account. For
+         * invite AWS accounts only from the same seller as the master account. For
          * example, if your organization's master account was created by Amazon Internet
-         * Services Pvt. Ltd (AISPL), an AWS reseller in India, then you can only invite
+         * Services Pvt. Ltd (AISPL), an AWS seller in India, then you can only invite
          * other AISPL accounts to your organization. You can't combine accounts from AISPL
-         * and AWS. For more information, see <a
+         * and AWS, or any other AWS seller. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
          * Billing in India</a>.</p> </important> <p>This operation can be called only from
-         * the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * the organization's master account.</p> <important> <p>If you get an exception
+         * that indicates that you exceeded your account limits for the organization or
+         * that you can"t add an account because your organization is still initializing,
+         * please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS
+         * Customer Support</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          *
@@ -1511,10 +1547,21 @@ namespace Model
          * service control policies (SCPs) that can restrict what administrators of member
          * accounts can do, including preventing them from successfully calling
          * <code>LeaveOrganization</code> and leaving the organization. </p> </li> <li>
-         * <p>If you created the account using the AWS Organizations console, the
-         * Organizations API, or the Organizations CLI commands, then you cannot remove the
-         * account.</p> </li> <li> <p>You can leave an organization only after you enable
-         * IAM user access to billing in your account. For more information, see <a
+         * <p>You can leave an organization as a member account only if the account is
+         * configured with the information required to operate as a standalone account.
+         * When you create an account in an organization using the AWS Organizations
+         * console, API, or CLI commands, the information required of standalone accounts
+         * is <i>not</i> automatically collected. For each account that you want to make
+         * standalone, you must accept the End User License Agreement (EULA), choose a
+         * support plan, provide and verify the required contact information, and provide a
+         * current payment method. AWS uses the payment method to charge for any billable
+         * (not free tier) AWS activity that occurs while the account is not attached to an
+         * organization. Follow the steps at <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+         * To leave an organization when all required account information has not yet been
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>You
+         * can leave an organization only after you enable IAM user access to billing in
+         * your account. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
          * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
          * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
@@ -1534,10 +1581,21 @@ namespace Model
          * service control policies (SCPs) that can restrict what administrators of member
          * accounts can do, including preventing them from successfully calling
          * <code>LeaveOrganization</code> and leaving the organization. </p> </li> <li>
-         * <p>If you created the account using the AWS Organizations console, the
-         * Organizations API, or the Organizations CLI commands, then you cannot remove the
-         * account.</p> </li> <li> <p>You can leave an organization only after you enable
-         * IAM user access to billing in your account. For more information, see <a
+         * <p>You can leave an organization as a member account only if the account is
+         * configured with the information required to operate as a standalone account.
+         * When you create an account in an organization using the AWS Organizations
+         * console, API, or CLI commands, the information required of standalone accounts
+         * is <i>not</i> automatically collected. For each account that you want to make
+         * standalone, you must accept the End User License Agreement (EULA), choose a
+         * support plan, provide and verify the required contact information, and provide a
+         * current payment method. AWS uses the payment method to charge for any billable
+         * (not free tier) AWS activity that occurs while the account is not attached to an
+         * organization. Follow the steps at <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+         * To leave an organization when all required account information has not yet been
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>You
+         * can leave an organization only after you enable IAM user access to billing in
+         * your account. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
          * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
          * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
@@ -1559,10 +1617,21 @@ namespace Model
          * service control policies (SCPs) that can restrict what administrators of member
          * accounts can do, including preventing them from successfully calling
          * <code>LeaveOrganization</code> and leaving the organization. </p> </li> <li>
-         * <p>If you created the account using the AWS Organizations console, the
-         * Organizations API, or the Organizations CLI commands, then you cannot remove the
-         * account.</p> </li> <li> <p>You can leave an organization only after you enable
-         * IAM user access to billing in your account. For more information, see <a
+         * <p>You can leave an organization as a member account only if the account is
+         * configured with the information required to operate as a standalone account.
+         * When you create an account in an organization using the AWS Organizations
+         * console, API, or CLI commands, the information required of standalone accounts
+         * is <i>not</i> automatically collected. For each account that you want to make
+         * standalone, you must accept the End User License Agreement (EULA), choose a
+         * support plan, provide and verify the required contact information, and provide a
+         * current payment method. AWS uses the payment method to charge for any billable
+         * (not free tier) AWS activity that occurs while the account is not attached to an
+         * organization. Follow the steps at <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+         * To leave an organization when all required account information has not yet been
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>You
+         * can leave an organization only after you enable IAM user access to billing in
+         * your account. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
          * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
          * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
@@ -2035,12 +2104,23 @@ namespace Model
          * expenses accrued by the member account after it is removed from the
          * organization.</p> <p>This operation can be called only from the organization's
          * master account. Member accounts can remove themselves with
-         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove
-         * only accounts that were created outside your organization and invited to join.
-         * If you created the account using the AWS Organizations console, the
-         * Organizations API, or the Organizations CLI commands, then you cannot remove the
-         * account.</p> </li> <li> <p>You can remove a member account only after you enable
-         * IAM user access to billing in the member account. For more information, see <a
+         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove an
+         * account from your organization only if the account is configured with the
+         * information required to operate as a standalone account. When you create an
+         * account in an organization using the AWS Organizations console, API, or CLI
+         * commands, the information required of standalone accounts is <i>not</i>
+         * automatically collected. For an account that you want to make standalone, you
+         * must accept the End User License Agreement (EULA), choose a support plan,
+         * provide and verify the required contact information, and provide a current
+         * payment method. AWS uses the payment method to charge for any billable (not free
+         * tier) AWS activity that occurs while the account is not attached to an
+         * organization. To remove an account that does not yet have this information, you
+         * must sign in as the member account and follow the steps at <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+         * To leave an organization when all required account information has not yet been
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>You
+         * can remove a member account only after you enable IAM user access to billing in
+         * the member account. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
          * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
          * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
@@ -2058,12 +2138,23 @@ namespace Model
          * expenses accrued by the member account after it is removed from the
          * organization.</p> <p>This operation can be called only from the organization's
          * master account. Member accounts can remove themselves with
-         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove
-         * only accounts that were created outside your organization and invited to join.
-         * If you created the account using the AWS Organizations console, the
-         * Organizations API, or the Organizations CLI commands, then you cannot remove the
-         * account.</p> </li> <li> <p>You can remove a member account only after you enable
-         * IAM user access to billing in the member account. For more information, see <a
+         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove an
+         * account from your organization only if the account is configured with the
+         * information required to operate as a standalone account. When you create an
+         * account in an organization using the AWS Organizations console, API, or CLI
+         * commands, the information required of standalone accounts is <i>not</i>
+         * automatically collected. For an account that you want to make standalone, you
+         * must accept the End User License Agreement (EULA), choose a support plan,
+         * provide and verify the required contact information, and provide a current
+         * payment method. AWS uses the payment method to charge for any billable (not free
+         * tier) AWS activity that occurs while the account is not attached to an
+         * organization. To remove an account that does not yet have this information, you
+         * must sign in as the member account and follow the steps at <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+         * To leave an organization when all required account information has not yet been
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>You
+         * can remove a member account only after you enable IAM user access to billing in
+         * the member account. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
          * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
          * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
@@ -2083,12 +2174,23 @@ namespace Model
          * expenses accrued by the member account after it is removed from the
          * organization.</p> <p>This operation can be called only from the organization's
          * master account. Member accounts can remove themselves with
-         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove
-         * only accounts that were created outside your organization and invited to join.
-         * If you created the account using the AWS Organizations console, the
-         * Organizations API, or the Organizations CLI commands, then you cannot remove the
-         * account.</p> </li> <li> <p>You can remove a member account only after you enable
-         * IAM user access to billing in the member account. For more information, see <a
+         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove an
+         * account from your organization only if the account is configured with the
+         * information required to operate as a standalone account. When you create an
+         * account in an organization using the AWS Organizations console, API, or CLI
+         * commands, the information required of standalone accounts is <i>not</i>
+         * automatically collected. For an account that you want to make standalone, you
+         * must accept the End User License Agreement (EULA), choose a support plan,
+         * provide and verify the required contact information, and provide a current
+         * payment method. AWS uses the payment method to charge for any billable (not free
+         * tier) AWS activity that occurs while the account is not attached to an
+         * organization. To remove an account that does not yet have this information, you
+         * must sign in as the member account and follow the steps at <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
+         * To leave an organization when all required account information has not yet been
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>You
+         * can remove a member account only after you enable IAM user access to billing in
+         * the member account. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
          * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
          * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See

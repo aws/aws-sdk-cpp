@@ -180,6 +180,16 @@ namespace Model
      */
     inline TargetTrackingScalingPolicyConfiguration& WithScaleInCooldown(int value) { SetScaleInCooldown(value); return *this;}
 
+
+    
+    inline bool GetDisableScaleIn() const{ return m_disableScaleIn; }
+
+    
+    inline void SetDisableScaleIn(bool value) { m_disableScaleInHasBeenSet = true; m_disableScaleIn = value; }
+
+    
+    inline TargetTrackingScalingPolicyConfiguration& WithDisableScaleIn(bool value) { SetDisableScaleIn(value); return *this;}
+
   private:
 
     double m_targetValue;
@@ -196,6 +206,9 @@ namespace Model
 
     int m_scaleInCooldown;
     bool m_scaleInCooldownHasBeenSet;
+
+    bool m_disableScaleIn;
+    bool m_disableScaleInHasBeenSet;
   };
 
 } // namespace Model
