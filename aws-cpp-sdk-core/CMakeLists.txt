@@ -373,17 +373,8 @@ if(USE_WINDOWS_DLL_SEMANTICS)
     endif()
 endif()
 
-if(USE_GCC_FLAGS)
-    target_compile_options(${PROJECT_NAME} PUBLIC -std=c++${CPP_STANDARD})
-
-    if(NOT ENABLE_RTTI)
-        target_compile_options(${PROJECT_NAME} PUBLIC -fno-rtti)
-    endif()
-else()
-    if(NOT ENABLE_RTTI)
-        target_compile_options(${PROJECT_NAME} PUBLIC /GR-)
-    endif()
-endif()
+set_compiler_flags(${PROJECT_NAME})
+set_compiler_warnings(${PROJECT_NAME})
 
 if(SIMPLE_INSTALL)
     install (
