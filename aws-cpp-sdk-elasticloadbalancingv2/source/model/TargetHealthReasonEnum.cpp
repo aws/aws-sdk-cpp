@@ -39,6 +39,7 @@ namespace Aws
         static const int Target_NotInUse_HASH = HashingUtils::HashString("Target.NotInUse");
         static const int Target_DeregistrationInProgress_HASH = HashingUtils::HashString("Target.DeregistrationInProgress");
         static const int Target_InvalidState_HASH = HashingUtils::HashString("Target.InvalidState");
+        static const int Target_IpUnusable_HASH = HashingUtils::HashString("Target.IpUnusable");
         static const int Elb_InternalError_HASH = HashingUtils::HashString("Elb.InternalError");
 
 
@@ -81,6 +82,10 @@ namespace Aws
           {
             return TargetHealthReasonEnum::Target_InvalidState;
           }
+          else if (hashCode == Target_IpUnusable_HASH)
+          {
+            return TargetHealthReasonEnum::Target_IpUnusable;
+          }
           else if (hashCode == Elb_InternalError_HASH)
           {
             return TargetHealthReasonEnum::Elb_InternalError;
@@ -117,6 +122,8 @@ namespace Aws
             return "Target.DeregistrationInProgress";
           case TargetHealthReasonEnum::Target_InvalidState:
             return "Target.InvalidState";
+          case TargetHealthReasonEnum::Target_IpUnusable:
+            return "Target.IpUnusable";
           case TargetHealthReasonEnum::Elb_InternalError:
             return "Elb.InternalError";
           default:

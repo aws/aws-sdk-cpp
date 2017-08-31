@@ -91,93 +91,114 @@ namespace Model
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
      * number. For the ICMP/ICMPv6 type number, use <code>-1</code> to specify all
-     * types.</p>
+     * types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
      * number. For the ICMP/ICMPv6 type number, use <code>-1</code> to specify all
-     * types.</p>
+     * types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
      * number. For the ICMP/ICMPv6 type number, use <code>-1</code> to specify all
-     * types.</p>
+     * types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithFromPort(int value) { SetFromPort(value); return *this;}
 
 
     /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the security group. Required for a nondefault VPC.</p>
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group.</p>
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
@@ -476,21 +497,21 @@ namespace Model
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code
      * number. For the ICMP/ICMPv6 code number, use <code>-1</code> to specify all
-     * codes.</p>
+     * codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code
      * number. For the ICMP/ICMPv6 code number, use <code>-1</code> to specify all
-     * codes.</p>
+     * codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code
      * number. For the ICMP/ICMPv6 code number, use <code>-1</code> to specify all
-     * codes.</p>
+     * codes. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithToPort(int value) { SetToPort(value); return *this;}
 

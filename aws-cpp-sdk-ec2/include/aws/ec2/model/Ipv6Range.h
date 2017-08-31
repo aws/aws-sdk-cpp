@@ -91,10 +91,63 @@ namespace Model
      */
     inline Ipv6Range& WithCidrIpv6(const char* value) { SetCidrIpv6(value); return *this;}
 
+
+    /**
+     * <p>A description for the security group rule that references this IPv6 address
+     * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
+     * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the security group rule that references this IPv6 address
+     * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
+     * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description for the security group rule that references this IPv6 address
+     * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
+     * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description for the security group rule that references this IPv6 address
+     * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
+     * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description for the security group rule that references this IPv6 address
+     * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
+     * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline Ipv6Range& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the security group rule that references this IPv6 address
+     * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
+     * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline Ipv6Range& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the security group rule that references this IPv6 address
+     * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
+     * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline Ipv6Range& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
 
     Aws::String m_cidrIpv6;
     bool m_cidrIpv6HasBeenSet;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
   };
 
 } // namespace Model

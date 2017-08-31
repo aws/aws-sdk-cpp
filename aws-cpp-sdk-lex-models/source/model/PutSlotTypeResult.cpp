@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutSlotTypeResult::PutSlotTypeResult()
+PutSlotTypeResult::PutSlotTypeResult() : 
+    m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET)
 {
 }
 
-PutSlotTypeResult::PutSlotTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+PutSlotTypeResult::PutSlotTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET)
 {
   *this = result;
 }
@@ -80,6 +82,12 @@ PutSlotTypeResult& PutSlotTypeResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("checksum"))
   {
     m_checksum = jsonValue.GetString("checksum");
+
+  }
+
+  if(jsonValue.ValueExists("valueSelectionStrategy"))
+  {
+    m_valueSelectionStrategy = SlotValueSelectionStrategyMapper::GetSlotValueSelectionStrategyForName(jsonValue.GetString("valueSelectionStrategy"));
 
   }
 

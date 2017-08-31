@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -85,10 +86,54 @@ namespace Model
      */
     inline EnumerationValue& WithValue(const char* value) { SetValue(value); return *this;}
 
+
+    /**
+     * <p>Additional values related to the slot type value.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSynonyms() const{ return m_synonyms; }
+
+    /**
+     * <p>Additional values related to the slot type value.</p>
+     */
+    inline void SetSynonyms(const Aws::Vector<Aws::String>& value) { m_synonymsHasBeenSet = true; m_synonyms = value; }
+
+    /**
+     * <p>Additional values related to the slot type value.</p>
+     */
+    inline void SetSynonyms(Aws::Vector<Aws::String>&& value) { m_synonymsHasBeenSet = true; m_synonyms = std::move(value); }
+
+    /**
+     * <p>Additional values related to the slot type value.</p>
+     */
+    inline EnumerationValue& WithSynonyms(const Aws::Vector<Aws::String>& value) { SetSynonyms(value); return *this;}
+
+    /**
+     * <p>Additional values related to the slot type value.</p>
+     */
+    inline EnumerationValue& WithSynonyms(Aws::Vector<Aws::String>&& value) { SetSynonyms(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional values related to the slot type value.</p>
+     */
+    inline EnumerationValue& AddSynonyms(const Aws::String& value) { m_synonymsHasBeenSet = true; m_synonyms.push_back(value); return *this; }
+
+    /**
+     * <p>Additional values related to the slot type value.</p>
+     */
+    inline EnumerationValue& AddSynonyms(Aws::String&& value) { m_synonymsHasBeenSet = true; m_synonyms.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Additional values related to the slot type value.</p>
+     */
+    inline EnumerationValue& AddSynonyms(const char* value) { m_synonymsHasBeenSet = true; m_synonyms.push_back(value); return *this; }
+
   private:
 
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
+    Aws::Vector<Aws::String> m_synonyms;
+    bool m_synonymsHasBeenSet;
   };
 
 } // namespace Model

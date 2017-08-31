@@ -27,6 +27,7 @@
 #include <aws/codebuild/CodeBuildClient.h>
 #include <aws/codebuild/CodeBuildEndpoint.h>
 #include <aws/codebuild/CodeBuildErrorMarshaller.h>
+#include <aws/codebuild/model/BatchDeleteBuildsRequest.h>
 #include <aws/codebuild/model/BatchGetBuildsRequest.h>
 #include <aws/codebuild/model/BatchGetProjectsRequest.h>
 #include <aws/codebuild/model/CreateProjectRequest.h>
@@ -101,6 +102,41 @@ void CodeBuildClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+BatchDeleteBuildsOutcome CodeBuildClient::BatchDeleteBuilds(const BatchDeleteBuildsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchDeleteBuildsOutcome(BatchDeleteBuildsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchDeleteBuildsOutcome(outcome.GetError());
+  }
+}
+
+BatchDeleteBuildsOutcomeCallable CodeBuildClient::BatchDeleteBuildsCallable(const BatchDeleteBuildsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteBuildsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteBuilds(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::BatchDeleteBuildsAsync(const BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteBuildsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::BatchDeleteBuildsAsyncHelper(const BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDeleteBuilds(request), context);
 }
 
 BatchGetBuildsOutcome CodeBuildClient::BatchGetBuilds(const BatchGetBuildsRequest& request) const

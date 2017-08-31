@@ -31,11 +31,13 @@ namespace Model
 {
 
 PrefixListId::PrefixListId() : 
+    m_descriptionHasBeenSet(false),
     m_prefixListIdHasBeenSet(false)
 {
 }
 
 PrefixListId::PrefixListId(const XmlNode& xmlNode) : 
+    m_descriptionHasBeenSet(false),
     m_prefixListIdHasBeenSet(false)
 {
   *this = xmlNode;
@@ -47,6 +49,12 @@ PrefixListId& PrefixListId::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode descriptionNode = resultNode.FirstChild("description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
+      m_descriptionHasBeenSet = true;
+    }
     XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
     if(!prefixListIdNode.IsNull())
     {
@@ -60,6 +68,11 @@ PrefixListId& PrefixListId::operator =(const XmlNode& xmlNode)
 
 void PrefixListId::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
   if(m_prefixListIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
@@ -69,6 +82,10 @@ void PrefixListId::OutputToStream(Aws::OStream& oStream, const char* location, u
 
 void PrefixListId::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_descriptionHasBeenSet)
+  {
+      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
   if(m_prefixListIdHasBeenSet)
   {
       oStream << location << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";

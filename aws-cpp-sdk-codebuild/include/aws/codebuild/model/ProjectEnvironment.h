@@ -220,8 +220,8 @@ namespace Model
      * specified build environment image is provided by AWS CodeBuild with Docker
      * support.)</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .;
-     * sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo
+     * .; sleep 1; done"</code> </p>
      */
     inline bool GetPrivilegedMode() const{ return m_privilegedMode; }
 
@@ -238,8 +238,8 @@ namespace Model
      * specified build environment image is provided by AWS CodeBuild with Docker
      * support.)</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .;
-     * sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo
+     * .; sleep 1; done"</code> </p>
      */
     inline void SetPrivilegedMode(bool value) { m_privilegedModeHasBeenSet = true; m_privilegedMode = value; }
 
@@ -256,8 +256,8 @@ namespace Model
      * specified build environment image is provided by AWS CodeBuild with Docker
      * support.)</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .;
-     * sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo
+     * .; sleep 1; done"</code> </p>
      */
     inline ProjectEnvironment& WithPrivilegedMode(bool value) { SetPrivilegedMode(value); return *this;}
 

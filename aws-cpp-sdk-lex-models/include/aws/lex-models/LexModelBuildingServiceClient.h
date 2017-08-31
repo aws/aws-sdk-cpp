@@ -826,9 +826,8 @@ namespace Model
 
         /**
          * <p>Returns metadata information for a specific bot. You must provide the bot
-         * name and the bot version or alias. </p> <p> The GetBot operation requires
-         * permissions for the <code>lex:GetBot</code> action. </p><p><h3>See Also:</h3>  
-         * <a
+         * name and the bot version or alias. </p> <p> This operation requires permissions
+         * for the <code>lex:GetBot</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBot">AWS
          * API Reference</a></p>
          */
@@ -836,9 +835,8 @@ namespace Model
 
         /**
          * <p>Returns metadata information for a specific bot. You must provide the bot
-         * name and the bot version or alias. </p> <p> The GetBot operation requires
-         * permissions for the <code>lex:GetBot</code> action. </p><p><h3>See Also:</h3>  
-         * <a
+         * name and the bot version or alias. </p> <p> This operation requires permissions
+         * for the <code>lex:GetBot</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBot">AWS
          * API Reference</a></p>
          *
@@ -848,9 +846,8 @@ namespace Model
 
         /**
          * <p>Returns metadata information for a specific bot. You must provide the bot
-         * name and the bot version or alias. </p> <p> The GetBot operation requires
-         * permissions for the <code>lex:GetBot</code> action. </p><p><h3>See Also:</h3>  
-         * <a
+         * name and the bot version or alias. </p> <p> This operation requires permissions
+         * for the <code>lex:GetBot</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBot">AWS
          * API Reference</a></p>
          *

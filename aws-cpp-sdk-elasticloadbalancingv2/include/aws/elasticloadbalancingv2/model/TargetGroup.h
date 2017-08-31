@@ -20,6 +20,7 @@
 #include <aws/elasticloadbalancingv2/model/ProtocolEnum.h>
 #include <aws/elasticloadbalancingv2/model/Matcher.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancingv2/model/TargetTypeEnum.h>
 #include <utility>
 
 namespace Aws
@@ -455,6 +456,47 @@ namespace Model
      */
     inline TargetGroup& AddLoadBalancerArns(const char* value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. The possible values are <code>instance</code> (targets are
+     * specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).</p>
+     */
+    inline const TargetTypeEnum& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. The possible values are <code>instance</code> (targets are
+     * specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).</p>
+     */
+    inline void SetTargetType(const TargetTypeEnum& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. The possible values are <code>instance</code> (targets are
+     * specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).</p>
+     */
+    inline void SetTargetType(TargetTypeEnum&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. The possible values are <code>instance</code> (targets are
+     * specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).</p>
+     */
+    inline TargetGroup& WithTargetType(const TargetTypeEnum& value) { SetTargetType(value); return *this;}
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. The possible values are <code>instance</code> (targets are
+     * specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).</p>
+     */
+    inline TargetGroup& WithTargetType(TargetTypeEnum&& value) { SetTargetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_targetGroupArn;
@@ -498,6 +540,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_loadBalancerArns;
     bool m_loadBalancerArnsHasBeenSet;
+
+    TargetTypeEnum m_targetType;
+    bool m_targetTypeHasBeenSet;
   };
 
 } // namespace Model

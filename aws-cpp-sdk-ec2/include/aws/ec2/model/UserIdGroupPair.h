@@ -51,6 +51,56 @@ namespace Model
 
 
     /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline UserIdGroupPair& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline UserIdGroupPair& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline UserIdGroupPair& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
      * <p>The ID of the security group.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
@@ -301,6 +351,9 @@ namespace Model
     inline UserIdGroupPair& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
   private:
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
 
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet;

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancingv2/model/ProtocolEnum.h>
 #include <aws/elasticloadbalancingv2/model/Matcher.h>
+#include <aws/elasticloadbalancingv2/model/TargetTypeEnum.h>
 #include <utility>
 
 namespace Aws
@@ -402,6 +403,72 @@ namespace Model
      */
     inline CreateTargetGroupRequest& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. The possible values are <code>instance</code> (targets are
+     * specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address). The default is <code>instance</code>. Note that you can't specify
+     * targets for a target group using both instance IDs and IP addresses.</p> <p>If
+     * the target type is <code>ip</code>, specify IP addresses from the subnets of the
+     * virtual private cloud (VPC) for the target group, the RFC 1918 range
+     * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p>
+     */
+    inline const TargetTypeEnum& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. The possible values are <code>instance</code> (targets are
+     * specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address). The default is <code>instance</code>. Note that you can't specify
+     * targets for a target group using both instance IDs and IP addresses.</p> <p>If
+     * the target type is <code>ip</code>, specify IP addresses from the subnets of the
+     * virtual private cloud (VPC) for the target group, the RFC 1918 range
+     * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p>
+     */
+    inline void SetTargetType(const TargetTypeEnum& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. The possible values are <code>instance</code> (targets are
+     * specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address). The default is <code>instance</code>. Note that you can't specify
+     * targets for a target group using both instance IDs and IP addresses.</p> <p>If
+     * the target type is <code>ip</code>, specify IP addresses from the subnets of the
+     * virtual private cloud (VPC) for the target group, the RFC 1918 range
+     * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p>
+     */
+    inline void SetTargetType(TargetTypeEnum&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. The possible values are <code>instance</code> (targets are
+     * specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address). The default is <code>instance</code>. Note that you can't specify
+     * targets for a target group using both instance IDs and IP addresses.</p> <p>If
+     * the target type is <code>ip</code>, specify IP addresses from the subnets of the
+     * virtual private cloud (VPC) for the target group, the RFC 1918 range
+     * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p>
+     */
+    inline CreateTargetGroupRequest& WithTargetType(const TargetTypeEnum& value) { SetTargetType(value); return *this;}
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. The possible values are <code>instance</code> (targets are
+     * specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address). The default is <code>instance</code>. Note that you can't specify
+     * targets for a target group using both instance IDs and IP addresses.</p> <p>If
+     * the target type is <code>ip</code>, specify IP addresses from the subnets of the
+     * virtual private cloud (VPC) for the target group, the RFC 1918 range
+     * (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p>
+     */
+    inline CreateTargetGroupRequest& WithTargetType(TargetTypeEnum&& value) { SetTargetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -439,6 +506,9 @@ namespace Model
 
     Matcher m_matcher;
     bool m_matcherHasBeenSet;
+
+    TargetTypeEnum m_targetType;
+    bool m_targetTypeHasBeenSet;
   };
 
 } // namespace Model

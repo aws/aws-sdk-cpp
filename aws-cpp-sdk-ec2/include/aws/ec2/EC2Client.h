@@ -195,6 +195,8 @@
 #include <aws/ec2/model/TerminateInstancesResponse.h>
 #include <aws/ec2/model/UnassignIpv6AddressesResponse.h>
 #include <aws/ec2/model/UnmonitorInstancesResponse.h>
+#include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressResponse.h>
+#include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressResponse.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -475,6 +477,8 @@ namespace Model
         class UnassignIpv6AddressesRequest;
         class UnassignPrivateIpAddressesRequest;
         class UnmonitorInstancesRequest;
+        class UpdateSecurityGroupRuleDescriptionsEgressRequest;
+        class UpdateSecurityGroupRuleDescriptionsIngressRequest;
 
         typedef Aws::Utils::Outcome<AcceptReservedInstancesExchangeQuoteResponse, Aws::Client::AWSError<EC2Errors>> AcceptReservedInstancesExchangeQuoteOutcome;
         typedef Aws::Utils::Outcome<AcceptVpcPeeringConnectionResponse, Aws::Client::AWSError<EC2Errors>> AcceptVpcPeeringConnectionOutcome;
@@ -710,6 +714,8 @@ namespace Model
         typedef Aws::Utils::Outcome<UnassignIpv6AddressesResponse, Aws::Client::AWSError<EC2Errors>> UnassignIpv6AddressesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> UnassignPrivateIpAddressesOutcome;
         typedef Aws::Utils::Outcome<UnmonitorInstancesResponse, Aws::Client::AWSError<EC2Errors>> UnmonitorInstancesOutcome;
+        typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsEgressResponse, Aws::Client::AWSError<EC2Errors>> UpdateSecurityGroupRuleDescriptionsEgressOutcome;
+        typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsIngressResponse, Aws::Client::AWSError<EC2Errors>> UpdateSecurityGroupRuleDescriptionsIngressOutcome;
 
         typedef std::future<AcceptReservedInstancesExchangeQuoteOutcome> AcceptReservedInstancesExchangeQuoteOutcomeCallable;
         typedef std::future<AcceptVpcPeeringConnectionOutcome> AcceptVpcPeeringConnectionOutcomeCallable;
@@ -945,6 +951,8 @@ namespace Model
         typedef std::future<UnassignIpv6AddressesOutcome> UnassignIpv6AddressesOutcomeCallable;
         typedef std::future<UnassignPrivateIpAddressesOutcome> UnassignPrivateIpAddressesOutcomeCallable;
         typedef std::future<UnmonitorInstancesOutcome> UnmonitorInstancesOutcomeCallable;
+        typedef std::future<UpdateSecurityGroupRuleDescriptionsEgressOutcome> UpdateSecurityGroupRuleDescriptionsEgressOutcomeCallable;
+        typedef std::future<UpdateSecurityGroupRuleDescriptionsIngressOutcome> UpdateSecurityGroupRuleDescriptionsIngressOutcomeCallable;
 } // namespace Model
 
   class EC2Client;
@@ -1183,6 +1191,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::UnassignIpv6AddressesRequest&, const Model::UnassignIpv6AddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignIpv6AddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnassignPrivateIpAddressesRequest&, const Model::UnassignPrivateIpAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnassignPrivateIpAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UnmonitorInstancesRequest&, const Model::UnmonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnmonitorInstancesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest&, const Model::UpdateSecurityGroupRuleDescriptionsEgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest&, const Model::UpdateSecurityGroupRuleDescriptionsIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler;
 
   /**
    * <fullname>Amazon Elastic Compute Cloud</fullname> <p>Amazon Elastic Compute
@@ -2028,9 +2038,9 @@ namespace Model
          * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
          * must also specify the destination port or port range. For the ICMP protocol, you
          * must also specify the ICMP type and code. You can use -1 for the type or code to
-         * mean all types or all codes.</p> <p>Rule changes are propagated to affected
-         * instances as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * mean all types or all codes. You can optionally specify a description for the
+         * rule.</p> <p>Rule changes are propagated to affected instances as quickly as
+         * possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
          * API Reference</a></p>
          */
@@ -2050,9 +2060,9 @@ namespace Model
          * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
          * must also specify the destination port or port range. For the ICMP protocol, you
          * must also specify the ICMP type and code. You can use -1 for the type or code to
-         * mean all types or all codes.</p> <p>Rule changes are propagated to affected
-         * instances as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * mean all types or all codes. You can optionally specify a description for the
+         * rule.</p> <p>Rule changes are propagated to affected instances as quickly as
+         * possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -2074,9 +2084,9 @@ namespace Model
          * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
          * must also specify the destination port or port range. For the ICMP protocol, you
          * must also specify the ICMP type and code. You can use -1 for the type or code to
-         * mean all types or all codes.</p> <p>Rule changes are propagated to affected
-         * instances as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * mean all types or all codes. You can optionally specify a description for the
+         * rule.</p> <p>Rule changes are propagated to affected instances as quickly as
+         * possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -2099,7 +2109,8 @@ namespace Model
          * a peer VPC in a VPC peering connection. For more information about VPC security
          * group limits, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
-         * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
+         * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
+         * group rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
          * API Reference</a></p>
          */
@@ -2120,7 +2131,8 @@ namespace Model
          * a peer VPC in a VPC peering connection. For more information about VPC security
          * group limits, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
-         * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
+         * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
+         * group rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -2143,7 +2155,8 @@ namespace Model
          * a peer VPC in a VPC peering connection. For more information about VPC security
          * group limits, see <a
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
-         * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
+         * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
+         * group rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -11211,15 +11224,16 @@ namespace Model
 
         /**
          * <p>[EC2-VPC only] Removes one or more egress rules from a security group for
-         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic.
-         * The values that you specify in the revoke request (for example, ports) must
-         * match the existing rule's values for the rule to be revoked.</p> <p>Each rule
-         * consists of the protocol and the IPv4 or IPv6 CIDR range or source security
-         * group. For the TCP and UDP protocols, you must also specify the destination port
-         * or range of ports. For the ICMP protocol, you must also specify the ICMP type
-         * and code.</p> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p><p><h3>See
-         * Also:</h3>   <a
+         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
+         * remove a rule, the values that you specify (for example, ports) must match the
+         * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
+         * the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
+         * protocols, you must also specify the destination port or range of ports. For the
+         * ICMP protocol, you must also specify the ICMP type and code. If the security
+         * group rule has a description, you do not have to specify the description to
+         * revoke the rule.</p> <p>Rule changes are propagated to instances within the
+         * security group as quickly as possible. However, a small delay might
+         * occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          */
@@ -11227,15 +11241,16 @@ namespace Model
 
         /**
          * <p>[EC2-VPC only] Removes one or more egress rules from a security group for
-         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic.
-         * The values that you specify in the revoke request (for example, ports) must
-         * match the existing rule's values for the rule to be revoked.</p> <p>Each rule
-         * consists of the protocol and the IPv4 or IPv6 CIDR range or source security
-         * group. For the TCP and UDP protocols, you must also specify the destination port
-         * or range of ports. For the ICMP protocol, you must also specify the ICMP type
-         * and code.</p> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p><p><h3>See
-         * Also:</h3>   <a
+         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
+         * remove a rule, the values that you specify (for example, ports) must match the
+         * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
+         * the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
+         * protocols, you must also specify the destination port or range of ports. For the
+         * ICMP protocol, you must also specify the ICMP type and code. If the security
+         * group rule has a description, you do not have to specify the description to
+         * revoke the rule.</p> <p>Rule changes are propagated to instances within the
+         * security group as quickly as possible. However, a small delay might
+         * occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -11245,15 +11260,16 @@ namespace Model
 
         /**
          * <p>[EC2-VPC only] Removes one or more egress rules from a security group for
-         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic.
-         * The values that you specify in the revoke request (for example, ports) must
-         * match the existing rule's values for the rule to be revoked.</p> <p>Each rule
-         * consists of the protocol and the IPv4 or IPv6 CIDR range or source security
-         * group. For the TCP and UDP protocols, you must also specify the destination port
-         * or range of ports. For the ICMP protocol, you must also specify the ICMP type
-         * and code.</p> <p>Rule changes are propagated to instances within the security
-         * group as quickly as possible. However, a small delay might occur.</p><p><h3>See
-         * Also:</h3>   <a
+         * EC2-VPC. This action doesn't apply to security groups for use in EC2-Classic. To
+         * remove a rule, the values that you specify (for example, ports) must match the
+         * existing rule's values exactly.</p> <p>Each rule consists of the protocol and
+         * the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
+         * protocols, you must also specify the destination port or range of ports. For the
+         * ICMP protocol, you must also specify the ICMP type and code. If the security
+         * group rule has a description, you do not have to specify the description to
+         * revoke the rule.</p> <p>Rule changes are propagated to instances within the
+         * security group as quickly as possible. However, a small delay might
+         * occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -11262,34 +11278,36 @@ namespace Model
         virtual void RevokeSecurityGroupEgressAsync(const Model::RevokeSecurityGroupEgressRequest& request, const RevokeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more ingress rules from a security group. The values that you
-         * specify in the revoke request (for example, ports) must match the existing
-         * rule's values for the rule to be removed.</p> <note> <p>[EC2-Classic security
-         * groups only] If the values you specify do not match the existing rule's values,
-         * no error is returned. Use <a>DescribeSecurityGroups</a> to verify that the rule
-         * has been removed.</p> </note> <p>Each rule consists of the protocol and the CIDR
-         * range or source security group. For the TCP and UDP protocols, you must also
-         * specify the destination port or range of ports. For the ICMP protocol, you must
-         * also specify the ICMP type and code.</p> <p>Rule changes are propagated to
-         * instances within the security group as quickly as possible. However, a small
-         * delay might occur.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more ingress rules from a security group. To remove a rule,
+         * the values that you specify (for example, ports) must match the existing rule's
+         * values exactly.</p> <note> <p>[EC2-Classic security groups only] If the values
+         * you specify do not match the existing rule's values, no error is returned. Use
+         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
+         * </note> <p>Each rule consists of the protocol and the CIDR range or source
+         * security group. For the TCP and UDP protocols, you must also specify the
+         * destination port or range of ports. For the ICMP protocol, you must also specify
+         * the ICMP type and code. If the security group rule has a description, you do not
+         * have to specify the description to revoke the rule.</p> <p>Rule changes are
+         * propagated to instances within the security group as quickly as possible.
+         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          */
         virtual Model::RevokeSecurityGroupIngressOutcome RevokeSecurityGroupIngress(const Model::RevokeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Removes one or more ingress rules from a security group. The values that you
-         * specify in the revoke request (for example, ports) must match the existing
-         * rule's values for the rule to be removed.</p> <note> <p>[EC2-Classic security
-         * groups only] If the values you specify do not match the existing rule's values,
-         * no error is returned. Use <a>DescribeSecurityGroups</a> to verify that the rule
-         * has been removed.</p> </note> <p>Each rule consists of the protocol and the CIDR
-         * range or source security group. For the TCP and UDP protocols, you must also
-         * specify the destination port or range of ports. For the ICMP protocol, you must
-         * also specify the ICMP type and code.</p> <p>Rule changes are propagated to
-         * instances within the security group as quickly as possible. However, a small
-         * delay might occur.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more ingress rules from a security group. To remove a rule,
+         * the values that you specify (for example, ports) must match the existing rule's
+         * values exactly.</p> <note> <p>[EC2-Classic security groups only] If the values
+         * you specify do not match the existing rule's values, no error is returned. Use
+         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
+         * </note> <p>Each rule consists of the protocol and the CIDR range or source
+         * security group. For the TCP and UDP protocols, you must also specify the
+         * destination port or range of ports. For the ICMP protocol, you must also specify
+         * the ICMP type and code. If the security group rule has a description, you do not
+         * have to specify the description to revoke the rule.</p> <p>Rule changes are
+         * propagated to instances within the security group as quickly as possible.
+         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -11298,17 +11316,18 @@ namespace Model
         virtual Model::RevokeSecurityGroupIngressOutcomeCallable RevokeSecurityGroupIngressCallable(const Model::RevokeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Removes one or more ingress rules from a security group. The values that you
-         * specify in the revoke request (for example, ports) must match the existing
-         * rule's values for the rule to be removed.</p> <note> <p>[EC2-Classic security
-         * groups only] If the values you specify do not match the existing rule's values,
-         * no error is returned. Use <a>DescribeSecurityGroups</a> to verify that the rule
-         * has been removed.</p> </note> <p>Each rule consists of the protocol and the CIDR
-         * range or source security group. For the TCP and UDP protocols, you must also
-         * specify the destination port or range of ports. For the ICMP protocol, you must
-         * also specify the ICMP type and code.</p> <p>Rule changes are propagated to
-         * instances within the security group as quickly as possible. However, a small
-         * delay might occur.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more ingress rules from a security group. To remove a rule,
+         * the values that you specify (for example, ports) must match the existing rule's
+         * values exactly.</p> <note> <p>[EC2-Classic security groups only] If the values
+         * you specify do not match the existing rule's values, no error is returned. Use
+         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
+         * </note> <p>Each rule consists of the protocol and the CIDR range or source
+         * security group. For the TCP and UDP protocols, you must also specify the
+         * destination port or range of ports. For the ICMP protocol, you must also specify
+         * the ICMP type and code. If the security group rule has a description, you do not
+         * have to specify the description to revoke the rule.</p> <p>Rule changes are
+         * propagated to instances within the security group as quickly as possible.
+         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -11855,6 +11874,83 @@ namespace Model
          */
         virtual void UnmonitorInstancesAsync(const Model::UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>[EC2-VPC only] Updates the description of an egress (outbound) security group
+         * rule. You can replace an existing description, or add a description to a rule
+         * that did not have one previously.</p> <p>You specify the description as part of
+         * the IP permissions structure. You can remove a description for a security group
+         * rule by omitting the description parameter in the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSecurityGroupRuleDescriptionsEgressOutcome UpdateSecurityGroupRuleDescriptionsEgress(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request) const;
+
+        /**
+         * <p>[EC2-VPC only] Updates the description of an egress (outbound) security group
+         * rule. You can replace an existing description, or add a description to a rule
+         * that did not have one previously.</p> <p>You specify the description as part of
+         * the IP permissions structure. You can remove a description for a security group
+         * rule by omitting the description parameter in the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSecurityGroupRuleDescriptionsEgressOutcomeCallable UpdateSecurityGroupRuleDescriptionsEgressCallable(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request) const;
+
+        /**
+         * <p>[EC2-VPC only] Updates the description of an egress (outbound) security group
+         * rule. You can replace an existing description, or add a description to a rule
+         * that did not have one previously.</p> <p>You specify the description as part of
+         * the IP permissions structure. You can remove a description for a security group
+         * rule by omitting the description parameter in the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSecurityGroupRuleDescriptionsEgressAsync(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request, const UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the description of an ingress (inbound) security group rule. You can
+         * replace an existing description, or add a description to a rule that did not
+         * have one previously.</p> <p>You specify the description as part of the IP
+         * permissions structure. You can remove a description for a security group rule by
+         * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSecurityGroupRuleDescriptionsIngressOutcome UpdateSecurityGroupRuleDescriptionsIngress(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request) const;
+
+        /**
+         * <p>Updates the description of an ingress (inbound) security group rule. You can
+         * replace an existing description, or add a description to a rule that did not
+         * have one previously.</p> <p>You specify the description as part of the IP
+         * permissions structure. You can remove a description for a security group rule by
+         * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSecurityGroupRuleDescriptionsIngressOutcomeCallable UpdateSecurityGroupRuleDescriptionsIngressCallable(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request) const;
+
+        /**
+         * <p>Updates the description of an ingress (inbound) security group rule. You can
+         * replace an existing description, or add a description to a rule that did not
+         * have one previously.</p> <p>You specify the description as part of the IP
+         * permissions structure. You can remove a description for a security group rule by
+         * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSecurityGroupRuleDescriptionsIngressAsync(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
   private:
     void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -12094,6 +12190,8 @@ namespace Model
         void UnassignIpv6AddressesAsyncHelper(const Model::UnassignIpv6AddressesRequest& request, const UnassignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnassignPrivateIpAddressesAsyncHelper(const Model::UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnmonitorInstancesAsyncHelper(const Model::UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSecurityGroupRuleDescriptionsEgressAsyncHelper(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request, const UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSecurityGroupRuleDescriptionsIngressAsyncHelper(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

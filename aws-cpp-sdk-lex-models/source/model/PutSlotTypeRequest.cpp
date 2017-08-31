@@ -26,7 +26,9 @@ PutSlotTypeRequest::PutSlotTypeRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_enumerationValuesHasBeenSet(false),
-    m_checksumHasBeenSet(false)
+    m_checksumHasBeenSet(false),
+    m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET),
+    m_valueSelectionStrategyHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,11 @@ Aws::String PutSlotTypeRequest::SerializePayload() const
   {
    payload.WithString("checksum", m_checksum);
 
+  }
+
+  if(m_valueSelectionStrategyHasBeenSet)
+  {
+   payload.WithString("valueSelectionStrategy", SlotValueSelectionStrategyMapper::GetNameForSlotValueSelectionStrategy(m_valueSelectionStrategy));
   }
 
   return payload.WriteReadable();

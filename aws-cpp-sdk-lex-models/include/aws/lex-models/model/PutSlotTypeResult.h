@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lex-models/model/SlotValueSelectionStrategy.h>
 #include <aws/lex-models/model/EnumerationValue.h>
 #include <utility>
 
@@ -295,6 +296,37 @@ namespace Model
      */
     inline PutSlotTypeResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
+
+    /**
+     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
+     * more information, see <a>PutSlotType</a>.</p>
+     */
+    inline const SlotValueSelectionStrategy& GetValueSelectionStrategy() const{ return m_valueSelectionStrategy; }
+
+    /**
+     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
+     * more information, see <a>PutSlotType</a>.</p>
+     */
+    inline void SetValueSelectionStrategy(const SlotValueSelectionStrategy& value) { m_valueSelectionStrategy = value; }
+
+    /**
+     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
+     * more information, see <a>PutSlotType</a>.</p>
+     */
+    inline void SetValueSelectionStrategy(SlotValueSelectionStrategy&& value) { m_valueSelectionStrategy = std::move(value); }
+
+    /**
+     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
+     * more information, see <a>PutSlotType</a>.</p>
+     */
+    inline PutSlotTypeResult& WithValueSelectionStrategy(const SlotValueSelectionStrategy& value) { SetValueSelectionStrategy(value); return *this;}
+
+    /**
+     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
+     * more information, see <a>PutSlotType</a>.</p>
+     */
+    inline PutSlotTypeResult& WithValueSelectionStrategy(SlotValueSelectionStrategy&& value) { SetValueSelectionStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -310,6 +342,8 @@ namespace Model
     Aws::String m_version;
 
     Aws::String m_checksum;
+
+    SlotValueSelectionStrategy m_valueSelectionStrategy;
   };
 
 } // namespace Model

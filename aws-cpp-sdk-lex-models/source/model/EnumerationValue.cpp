@@ -29,12 +29,14 @@ namespace Model
 {
 
 EnumerationValue::EnumerationValue() : 
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_synonymsHasBeenSet(false)
 {
 }
 
 EnumerationValue::EnumerationValue(const JsonValue& jsonValue) : 
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_synonymsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,16 @@ EnumerationValue& EnumerationValue::operator =(const JsonValue& jsonValue)
     m_valueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("synonyms"))
+  {
+    Array<JsonValue> synonymsJsonList = jsonValue.GetArray("synonyms");
+    for(unsigned synonymsIndex = 0; synonymsIndex < synonymsJsonList.GetLength(); ++synonymsIndex)
+    {
+      m_synonyms.push_back(synonymsJsonList[synonymsIndex].AsString());
+    }
+    m_synonymsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +70,17 @@ JsonValue EnumerationValue::Jsonize() const
   if(m_valueHasBeenSet)
   {
    payload.WithString("value", m_value);
+
+  }
+
+  if(m_synonymsHasBeenSet)
+  {
+   Array<JsonValue> synonymsJsonList(m_synonyms.size());
+   for(unsigned synonymsIndex = 0; synonymsIndex < synonymsJsonList.GetLength(); ++synonymsIndex)
+   {
+     synonymsJsonList[synonymsIndex].AsString(m_synonyms[synonymsIndex]);
+   }
+   payload.WithArray("synonyms", std::move(synonymsJsonList));
 
   }
 

@@ -56,19 +56,22 @@ namespace Model
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
-     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
+     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types. If you
+     * specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
-     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
+     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types. If you
+     * specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
-     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.</p>
+     * number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types. If you
+     * specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 
@@ -325,21 +328,21 @@ namespace Model
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
      * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
-     * ICMP type.</p>
+     * ICMP type. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
      * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
-     * ICMP type.</p>
+     * ICMP type. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code.
      * A value of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified
-     * ICMP type.</p>
+     * ICMP type. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 

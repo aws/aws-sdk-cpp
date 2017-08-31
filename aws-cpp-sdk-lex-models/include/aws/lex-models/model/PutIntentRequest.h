@@ -159,49 +159,49 @@ namespace Model
     /**
      * <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values
      * from the user using prompts defined in the slots. For more information, see
-     * &lt;xref linkend="how-it-works"/&gt;. </p>
+     * <a>how-it-works</a>. </p>
      */
     inline const Aws::Vector<Slot>& GetSlots() const{ return m_slots; }
 
     /**
      * <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values
      * from the user using prompts defined in the slots. For more information, see
-     * &lt;xref linkend="how-it-works"/&gt;. </p>
+     * <a>how-it-works</a>. </p>
      */
     inline void SetSlots(const Aws::Vector<Slot>& value) { m_slotsHasBeenSet = true; m_slots = value; }
 
     /**
      * <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values
      * from the user using prompts defined in the slots. For more information, see
-     * &lt;xref linkend="how-it-works"/&gt;. </p>
+     * <a>how-it-works</a>. </p>
      */
     inline void SetSlots(Aws::Vector<Slot>&& value) { m_slotsHasBeenSet = true; m_slots = std::move(value); }
 
     /**
      * <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values
      * from the user using prompts defined in the slots. For more information, see
-     * &lt;xref linkend="how-it-works"/&gt;. </p>
+     * <a>how-it-works</a>. </p>
      */
     inline PutIntentRequest& WithSlots(const Aws::Vector<Slot>& value) { SetSlots(value); return *this;}
 
     /**
      * <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values
      * from the user using prompts defined in the slots. For more information, see
-     * &lt;xref linkend="how-it-works"/&gt;. </p>
+     * <a>how-it-works</a>. </p>
      */
     inline PutIntentRequest& WithSlots(Aws::Vector<Slot>&& value) { SetSlots(std::move(value)); return *this;}
 
     /**
      * <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values
      * from the user using prompts defined in the slots. For more information, see
-     * &lt;xref linkend="how-it-works"/&gt;. </p>
+     * <a>how-it-works</a>. </p>
      */
     inline PutIntentRequest& AddSlots(const Slot& value) { m_slotsHasBeenSet = true; m_slots.push_back(value); return *this; }
 
     /**
      * <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values
      * from the user using prompts defined in the slots. For more information, see
-     * &lt;xref linkend="how-it-works"/&gt;. </p>
+     * <a>how-it-works</a>. </p>
      */
     inline PutIntentRequest& AddSlots(Slot&& value) { m_slotsHasBeenSet = true; m_slots.push_back(std::move(value)); return *this; }
 
@@ -569,52 +569,57 @@ namespace Model
 
 
     /**
-     * <p> Describes how the intent is fulfilled. For example, after a user provides
-     * all of the information for a pizza order, <code>fulfillmentActivity</code>
-     * defines how the bot places an order with a local pizza store. </p> <p> You might
-     * configure Amazon Lex to return all of the intent information to the client
-     * application, or direct it to invoke a Lambda function that can process the
-     * intent (for example, place an order with a pizzeria). </p>
+     * <p>Required. Describes how the intent is fulfilled. For example, after a user
+     * provides all of the information for a pizza order,
+     * <code>fulfillmentActivity</code> defines how the bot places an order with a
+     * local pizza store. </p> <p> You might configure Amazon Lex to return all of the
+     * intent information to the client application, or direct it to invoke a Lambda
+     * function that can process the intent (for example, place an order with a
+     * pizzeria). </p>
      */
     inline const FulfillmentActivity& GetFulfillmentActivity() const{ return m_fulfillmentActivity; }
 
     /**
-     * <p> Describes how the intent is fulfilled. For example, after a user provides
-     * all of the information for a pizza order, <code>fulfillmentActivity</code>
-     * defines how the bot places an order with a local pizza store. </p> <p> You might
-     * configure Amazon Lex to return all of the intent information to the client
-     * application, or direct it to invoke a Lambda function that can process the
-     * intent (for example, place an order with a pizzeria). </p>
+     * <p>Required. Describes how the intent is fulfilled. For example, after a user
+     * provides all of the information for a pizza order,
+     * <code>fulfillmentActivity</code> defines how the bot places an order with a
+     * local pizza store. </p> <p> You might configure Amazon Lex to return all of the
+     * intent information to the client application, or direct it to invoke a Lambda
+     * function that can process the intent (for example, place an order with a
+     * pizzeria). </p>
      */
     inline void SetFulfillmentActivity(const FulfillmentActivity& value) { m_fulfillmentActivityHasBeenSet = true; m_fulfillmentActivity = value; }
 
     /**
-     * <p> Describes how the intent is fulfilled. For example, after a user provides
-     * all of the information for a pizza order, <code>fulfillmentActivity</code>
-     * defines how the bot places an order with a local pizza store. </p> <p> You might
-     * configure Amazon Lex to return all of the intent information to the client
-     * application, or direct it to invoke a Lambda function that can process the
-     * intent (for example, place an order with a pizzeria). </p>
+     * <p>Required. Describes how the intent is fulfilled. For example, after a user
+     * provides all of the information for a pizza order,
+     * <code>fulfillmentActivity</code> defines how the bot places an order with a
+     * local pizza store. </p> <p> You might configure Amazon Lex to return all of the
+     * intent information to the client application, or direct it to invoke a Lambda
+     * function that can process the intent (for example, place an order with a
+     * pizzeria). </p>
      */
     inline void SetFulfillmentActivity(FulfillmentActivity&& value) { m_fulfillmentActivityHasBeenSet = true; m_fulfillmentActivity = std::move(value); }
 
     /**
-     * <p> Describes how the intent is fulfilled. For example, after a user provides
-     * all of the information for a pizza order, <code>fulfillmentActivity</code>
-     * defines how the bot places an order with a local pizza store. </p> <p> You might
-     * configure Amazon Lex to return all of the intent information to the client
-     * application, or direct it to invoke a Lambda function that can process the
-     * intent (for example, place an order with a pizzeria). </p>
+     * <p>Required. Describes how the intent is fulfilled. For example, after a user
+     * provides all of the information for a pizza order,
+     * <code>fulfillmentActivity</code> defines how the bot places an order with a
+     * local pizza store. </p> <p> You might configure Amazon Lex to return all of the
+     * intent information to the client application, or direct it to invoke a Lambda
+     * function that can process the intent (for example, place an order with a
+     * pizzeria). </p>
      */
     inline PutIntentRequest& WithFulfillmentActivity(const FulfillmentActivity& value) { SetFulfillmentActivity(value); return *this;}
 
     /**
-     * <p> Describes how the intent is fulfilled. For example, after a user provides
-     * all of the information for a pizza order, <code>fulfillmentActivity</code>
-     * defines how the bot places an order with a local pizza store. </p> <p> You might
-     * configure Amazon Lex to return all of the intent information to the client
-     * application, or direct it to invoke a Lambda function that can process the
-     * intent (for example, place an order with a pizzeria). </p>
+     * <p>Required. Describes how the intent is fulfilled. For example, after a user
+     * provides all of the information for a pizza order,
+     * <code>fulfillmentActivity</code> defines how the bot places an order with a
+     * local pizza store. </p> <p> You might configure Amazon Lex to return all of the
+     * intent information to the client application, or direct it to invoke a Lambda
+     * function that can process the intent (for example, place an order with a
+     * pizzeria). </p>
      */
     inline PutIntentRequest& WithFulfillmentActivity(FulfillmentActivity&& value) { SetFulfillmentActivity(std::move(value)); return *this;}
 
