@@ -27,7 +27,9 @@ if(MSVC AND BUILD_SHARED_LIBS)
     add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
 endif()
 
-enable_testing()
+if (AUTORUN_UNIT_TESTS)
+    enable_testing()
+endif()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
     add_library(aws-cpp-sdk-s3-encryption-tests ${LIBTYPE} ${S3ENCRYPTION_TEST_SRC})
@@ -39,6 +41,9 @@ target_link_libraries(aws-cpp-sdk-s3-encryption-tests ${PROJECT_LIBS})
 copyDlls(aws-cpp-sdk-s3-encryption-tests ${PROJECT_LIBS})
 
 if(NOT CMAKE_CROSSCOMPILING)
-    ADD_CUSTOM_COMMAND( TARGET aws-cpp-sdk-s3-encryption-tests POST_BUILD COMMAND $<TARGET_FILE:aws-cpp-sdk-s3-encryption-tests>)
     SET_TARGET_PROPERTIES(aws-cpp-sdk-s3-encryption-tests PROPERTIES OUTPUT_NAME aws-cpp-sdk-s3-encryption-tests)
+endif()
+
+if (AUTORUN_UNIT_TESTS)
+    ADD_CUSTOM_COMMAND( TARGET aws-cpp-sdk-s3-encryption-tests POST_BUILD COMMAND $<TARGET_FILE:aws-cpp-sdk-s3-encryption-tests>)
 endif()
