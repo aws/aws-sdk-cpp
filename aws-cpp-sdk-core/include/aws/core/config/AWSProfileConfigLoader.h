@@ -45,7 +45,7 @@ namespace Aws
             inline const Aws::String& GetSourceProfile() const { return m_sourceProfile; }
             inline void SetSourceProfile(const Aws::String& value ) { m_sourceProfile = value; }
             inline void SetAllKeyValPairs(const Aws::Map<Aws::String, Aws::String>& map) { m_allKeyValPairs = map; }
-            inline const Aws::String& GetValue(const Aws::String& key) 
+            inline const Aws::String GetValue(const Aws::String& key) 
             {
                 auto iter = m_allKeyValPairs.find(key);
                 if (iter == m_allKeyValPairs.end()) return "";
