@@ -192,6 +192,7 @@ namespace Aws
                         AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found source profile " << sourceProfileIter->second);
                         profile.SetSourceProfile(sourceProfileIter->second);
                     }
+                    profile.SetAllKeyValPairs(m_profileKeyValuePairs);
 
                     m_foundProfiles[profile.GetName()] = std::move(profile);
                     m_currentWorkingProfile.clear();
