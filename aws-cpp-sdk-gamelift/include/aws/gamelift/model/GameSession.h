@@ -65,49 +65,49 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline GameSession& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
     inline GameSession& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for the game session. A game session ID has the following
+     * <p>Unique identifier for the game session. A game session ARN has the following
      * format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
@@ -158,37 +158,37 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline GameSession& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline GameSession& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet the game session is running on.</p>
+     * <p>Unique identifier for a fleet that the game session is running on.</p>
      */
     inline GameSession& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 

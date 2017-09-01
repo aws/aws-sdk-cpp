@@ -323,7 +323,7 @@ namespace Model
      * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
      * identifies a request for a new game session. Maximum token length is 48
      * characters. If provided, this string is included in the new game session's ID.
-     * (A game session ID has the following format:
+     * (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) </p>
      */
@@ -334,7 +334,7 @@ namespace Model
      * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
      * identifies a request for a new game session. Maximum token length is 48
      * characters. If provided, this string is included in the new game session's ID.
-     * (A game session ID has the following format:
+     * (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) </p>
      */
@@ -345,7 +345,7 @@ namespace Model
      * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
      * identifies a request for a new game session. Maximum token length is 48
      * characters. If provided, this string is included in the new game session's ID.
-     * (A game session ID has the following format:
+     * (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) </p>
      */
@@ -356,7 +356,7 @@ namespace Model
      * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
      * identifies a request for a new game session. Maximum token length is 48
      * characters. If provided, this string is included in the new game session's ID.
-     * (A game session ID has the following format:
+     * (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) </p>
      */
@@ -367,7 +367,7 @@ namespace Model
      * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
      * identifies a request for a new game session. Maximum token length is 48
      * characters. If provided, this string is included in the new game session's ID.
-     * (A game session ID has the following format:
+     * (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) </p>
      */
@@ -378,7 +378,7 @@ namespace Model
      * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
      * identifies a request for a new game session. Maximum token length is 48
      * characters. If provided, this string is included in the new game session's ID.
-     * (A game session ID has the following format:
+     * (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) </p>
      */
@@ -389,7 +389,7 @@ namespace Model
      * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
      * identifies a request for a new game session. Maximum token length is 48
      * characters. If provided, this string is included in the new game session's ID.
-     * (A game session ID has the following format:
+     * (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) </p>
      */
@@ -399,7 +399,7 @@ namespace Model
     /**
      * <p>Custom string that uniquely identifies a request for a new game session.
      * Maximum token length is 48 characters. If provided, this string is included in
-     * the new game session's ID. (A game session ID has the following format:
+     * the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) Idempotency tokens remain in use for
      * 30 days after a game session has ended; game session objects are retained for
@@ -410,7 +410,7 @@ namespace Model
     /**
      * <p>Custom string that uniquely identifies a request for a new game session.
      * Maximum token length is 48 characters. If provided, this string is included in
-     * the new game session's ID. (A game session ID has the following format:
+     * the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) Idempotency tokens remain in use for
      * 30 days after a game session has ended; game session objects are retained for
@@ -421,7 +421,7 @@ namespace Model
     /**
      * <p>Custom string that uniquely identifies a request for a new game session.
      * Maximum token length is 48 characters. If provided, this string is included in
-     * the new game session's ID. (A game session ID has the following format:
+     * the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) Idempotency tokens remain in use for
      * 30 days after a game session has ended; game session objects are retained for
@@ -432,7 +432,7 @@ namespace Model
     /**
      * <p>Custom string that uniquely identifies a request for a new game session.
      * Maximum token length is 48 characters. If provided, this string is included in
-     * the new game session's ID. (A game session ID has the following format:
+     * the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) Idempotency tokens remain in use for
      * 30 days after a game session has ended; game session objects are retained for
@@ -443,7 +443,7 @@ namespace Model
     /**
      * <p>Custom string that uniquely identifies a request for a new game session.
      * Maximum token length is 48 characters. If provided, this string is included in
-     * the new game session's ID. (A game session ID has the following format:
+     * the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) Idempotency tokens remain in use for
      * 30 days after a game session has ended; game session objects are retained for
@@ -454,7 +454,7 @@ namespace Model
     /**
      * <p>Custom string that uniquely identifies a request for a new game session.
      * Maximum token length is 48 characters. If provided, this string is included in
-     * the new game session's ID. (A game session ID has the following format:
+     * the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) Idempotency tokens remain in use for
      * 30 days after a game session has ended; game session objects are retained for
@@ -465,7 +465,7 @@ namespace Model
     /**
      * <p>Custom string that uniquely identifies a request for a new game session.
      * Maximum token length is 48 characters. If provided, this string is included in
-     * the new game session's ID. (A game session ID has the following format:
+     * the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
      * ID string or idempotency token&gt;</code>.) Idempotency tokens remain in use for
      * 30 days after a game session has ended; game session objects are retained for

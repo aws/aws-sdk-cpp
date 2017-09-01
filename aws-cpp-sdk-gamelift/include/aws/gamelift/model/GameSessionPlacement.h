@@ -138,12 +138,12 @@ namespace Model
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
-     * <b>PENDING</b> – The placement request is currently in the queue waiting to be
-     * processed.</p> </li> <li> <p> <b>FULFILLED</b> – A new game session and player
+     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
+     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
      * sessions (if requested) have been successfully created. Values for
      * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> – The placement request was canceled with a call to
-     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> – A new
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
+     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
      * game session was not successfully created before the time limit expired. You can
      * resubmit the placement request as needed.</p> </li> </ul>
      */
@@ -151,12 +151,12 @@ namespace Model
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
-     * <b>PENDING</b> – The placement request is currently in the queue waiting to be
-     * processed.</p> </li> <li> <p> <b>FULFILLED</b> – A new game session and player
+     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
+     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
      * sessions (if requested) have been successfully created. Values for
      * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> – The placement request was canceled with a call to
-     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> – A new
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
+     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
      * game session was not successfully created before the time limit expired. You can
      * resubmit the placement request as needed.</p> </li> </ul>
      */
@@ -164,12 +164,12 @@ namespace Model
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
-     * <b>PENDING</b> – The placement request is currently in the queue waiting to be
-     * processed.</p> </li> <li> <p> <b>FULFILLED</b> – A new game session and player
+     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
+     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
      * sessions (if requested) have been successfully created. Values for
      * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> – The placement request was canceled with a call to
-     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> – A new
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
+     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
      * game session was not successfully created before the time limit expired. You can
      * resubmit the placement request as needed.</p> </li> </ul>
      */
@@ -177,12 +177,12 @@ namespace Model
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
-     * <b>PENDING</b> – The placement request is currently in the queue waiting to be
-     * processed.</p> </li> <li> <p> <b>FULFILLED</b> – A new game session and player
+     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
+     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
      * sessions (if requested) have been successfully created. Values for
      * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> – The placement request was canceled with a call to
-     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> – A new
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
+     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
      * game session was not successfully created before the time limit expired. You can
      * resubmit the placement request as needed.</p> </li> </ul>
      */
@@ -190,12 +190,12 @@ namespace Model
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
-     * <b>PENDING</b> – The placement request is currently in the queue waiting to be
-     * processed.</p> </li> <li> <p> <b>FULFILLED</b> – A new game session and player
+     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
+     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
      * sessions (if requested) have been successfully created. Values for
      * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
-     * <li> <p> <b>CANCELLED</b> – The placement request was canceled with a call to
-     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> – A new
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
+     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
      * game session was not successfully created before the time limit expired. You can
      * resubmit the placement request as needed.</p> </li> </ul>
      */

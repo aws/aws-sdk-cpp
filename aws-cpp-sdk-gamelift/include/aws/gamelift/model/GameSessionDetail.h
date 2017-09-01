@@ -76,8 +76,8 @@ namespace Model
 
     /**
      * <p>Current status of protection for the game session.</p> <ul> <li> <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session is in an
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
@@ -85,8 +85,8 @@ namespace Model
 
     /**
      * <p>Current status of protection for the game session.</p> <ul> <li> <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session is in an
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
@@ -94,8 +94,8 @@ namespace Model
 
     /**
      * <p>Current status of protection for the game session.</p> <ul> <li> <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session is in an
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
@@ -103,8 +103,8 @@ namespace Model
 
     /**
      * <p>Current status of protection for the game session.</p> <ul> <li> <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session is in an
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
@@ -112,8 +112,8 @@ namespace Model
 
     /**
      * <p>Current status of protection for the game session.</p> <ul> <li> <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session is in an
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */

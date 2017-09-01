@@ -59,6 +59,9 @@ namespace Aws
         static const int FLEET_CREATION_EXTRACTING_BUILD_HASH = HashingUtils::HashString("FLEET_CREATION_EXTRACTING_BUILD");
         static const int FLEET_CREATION_RUNNING_INSTALLER_HASH = HashingUtils::HashString("FLEET_CREATION_RUNNING_INSTALLER");
         static const int FLEET_CREATION_VALIDATING_RUNTIME_CONFIG_HASH = HashingUtils::HashString("FLEET_CREATION_VALIDATING_RUNTIME_CONFIG");
+        static const int FLEET_VPC_PEERING_SUCCEEDED_HASH = HashingUtils::HashString("FLEET_VPC_PEERING_SUCCEEDED");
+        static const int FLEET_VPC_PEERING_FAILED_HASH = HashingUtils::HashString("FLEET_VPC_PEERING_FAILED");
+        static const int FLEET_VPC_PEERING_DELETED_HASH = HashingUtils::HashString("FLEET_VPC_PEERING_DELETED");
 
 
         EventCode GetEventCodeForName(const Aws::String& name)
@@ -180,6 +183,18 @@ namespace Aws
           {
             return EventCode::FLEET_CREATION_VALIDATING_RUNTIME_CONFIG;
           }
+          else if (hashCode == FLEET_VPC_PEERING_SUCCEEDED_HASH)
+          {
+            return EventCode::FLEET_VPC_PEERING_SUCCEEDED;
+          }
+          else if (hashCode == FLEET_VPC_PEERING_FAILED_HASH)
+          {
+            return EventCode::FLEET_VPC_PEERING_FAILED;
+          }
+          else if (hashCode == FLEET_VPC_PEERING_DELETED_HASH)
+          {
+            return EventCode::FLEET_VPC_PEERING_DELETED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -252,6 +267,12 @@ namespace Aws
             return "FLEET_CREATION_RUNNING_INSTALLER";
           case EventCode::FLEET_CREATION_VALIDATING_RUNTIME_CONFIG:
             return "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG";
+          case EventCode::FLEET_VPC_PEERING_SUCCEEDED:
+            return "FLEET_VPC_PEERING_SUCCEEDED";
+          case EventCode::FLEET_VPC_PEERING_FAILED:
+            return "FLEET_VPC_PEERING_FAILED";
+          case EventCode::FLEET_VPC_PEERING_DELETED:
+            return "FLEET_VPC_PEERING_DELETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

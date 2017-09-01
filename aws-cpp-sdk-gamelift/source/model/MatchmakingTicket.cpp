@@ -36,8 +36,11 @@ MatchmakingTicket::MatchmakingTicket() :
     m_statusReasonHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_playersHasBeenSet(false),
-    m_gameSessionConnectionInfoHasBeenSet(false)
+    m_gameSessionConnectionInfoHasBeenSet(false),
+    m_estimatedWaitTime(0),
+    m_estimatedWaitTimeHasBeenSet(false)
 {
 }
 
@@ -49,8 +52,11 @@ MatchmakingTicket::MatchmakingTicket(const JsonValue& jsonValue) :
     m_statusReasonHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_playersHasBeenSet(false),
-    m_gameSessionConnectionInfoHasBeenSet(false)
+    m_gameSessionConnectionInfoHasBeenSet(false),
+    m_estimatedWaitTime(0),
+    m_estimatedWaitTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +105,13 @@ MatchmakingTicket& MatchmakingTicket::operator =(const JsonValue& jsonValue)
     m_startTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EndTime"))
+  {
+    m_endTime = jsonValue.GetDouble("EndTime");
+
+    m_endTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Players"))
   {
     Array<JsonValue> playersJsonList = jsonValue.GetArray("Players");
@@ -114,6 +127,13 @@ MatchmakingTicket& MatchmakingTicket::operator =(const JsonValue& jsonValue)
     m_gameSessionConnectionInfo = jsonValue.GetObject("GameSessionConnectionInfo");
 
     m_gameSessionConnectionInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EstimatedWaitTime"))
+  {
+    m_estimatedWaitTime = jsonValue.GetInteger("EstimatedWaitTime");
+
+    m_estimatedWaitTimeHasBeenSet = true;
   }
 
   return *this;
@@ -157,6 +177,11 @@ JsonValue MatchmakingTicket::Jsonize() const
    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
+  if(m_endTimeHasBeenSet)
+  {
+   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  }
+
   if(m_playersHasBeenSet)
   {
    Array<JsonValue> playersJsonList(m_players.size());
@@ -171,6 +196,12 @@ JsonValue MatchmakingTicket::Jsonize() const
   if(m_gameSessionConnectionInfoHasBeenSet)
   {
    payload.WithObject("GameSessionConnectionInfo", m_gameSessionConnectionInfo.Jsonize());
+
+  }
+
+  if(m_estimatedWaitTimeHasBeenSet)
+  {
+   payload.WithInteger("EstimatedWaitTime", m_estimatedWaitTime);
 
   }
 

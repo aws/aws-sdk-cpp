@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 StartAutomationExecutionRequest::StartAutomationExecutionRequest() : 
     m_documentNameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,12 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
      parametersJsonMap.WithArray(parametersItem.first, std::move(automationParameterValueListJsonList));
    }
    payload.WithObject("Parameters", std::move(parametersJsonMap));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
 
   }
 

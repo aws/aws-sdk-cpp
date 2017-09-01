@@ -168,46 +168,46 @@ namespace Model
 
     /**
      * <p>Game session protection policy to apply to this game session only.</p> <ul>
-     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
+     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
+     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetProtectionPolicy() const{ return m_protectionPolicy; }
 
     /**
      * <p>Game session protection policy to apply to this game session only.</p> <ul>
-     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
+     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
+     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.</p> </li> </ul>
      */
     inline void SetProtectionPolicy(const ProtectionPolicy& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = value; }
 
     /**
      * <p>Game session protection policy to apply to this game session only.</p> <ul>
-     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
+     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
+     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.</p> </li> </ul>
      */
     inline void SetProtectionPolicy(ProtectionPolicy&& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = std::move(value); }
 
     /**
      * <p>Game session protection policy to apply to this game session only.</p> <ul>
-     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
+     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
+     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.</p> </li> </ul>
      */
     inline UpdateGameSessionRequest& WithProtectionPolicy(const ProtectionPolicy& value) { SetProtectionPolicy(value); return *this;}
 
     /**
      * <p>Game session protection policy to apply to this game session only.</p> <ul>
-     * <li> <p> <b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
+     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
+     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.</p> </li> </ul>
      */
     inline UpdateGameSessionRequest& WithProtectionPolicy(ProtectionPolicy&& value) { SetProtectionPolicy(std::move(value)); return *this;}
 

@@ -162,8 +162,8 @@ namespace Model
      * <p>Game session protection policy to apply to all new instances created in this
      * fleet. Instances that already exist are not affected. You can set protection for
      * individual instances using <a>UpdateGameSession</a>.</p> <ul> <li> <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session is in an
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
@@ -173,8 +173,8 @@ namespace Model
      * <p>Game session protection policy to apply to all new instances created in this
      * fleet. Instances that already exist are not affected. You can set protection for
      * individual instances using <a>UpdateGameSession</a>.</p> <ul> <li> <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session is in an
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
@@ -184,8 +184,8 @@ namespace Model
      * <p>Game session protection policy to apply to all new instances created in this
      * fleet. Instances that already exist are not affected. You can set protection for
      * individual instances using <a>UpdateGameSession</a>.</p> <ul> <li> <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session is in an
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
@@ -195,8 +195,8 @@ namespace Model
      * <p>Game session protection policy to apply to all new instances created in this
      * fleet. Instances that already exist are not affected. You can set protection for
      * individual instances using <a>UpdateGameSession</a>.</p> <ul> <li> <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session is in an
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */
@@ -206,8 +206,8 @@ namespace Model
      * <p>Game session protection policy to apply to all new instances created in this
      * fleet. Instances that already exist are not affected. You can set protection for
      * individual instances using <a>UpdateGameSession</a>.</p> <ul> <li> <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> – If the game session is in an
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</p> </li> </ul>
      */

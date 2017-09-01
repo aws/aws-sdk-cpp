@@ -214,13 +214,13 @@ namespace Model
 
     /**
      * <p>Current status of the instance. Possible statuses include the following:</p>
-     * <ul> <li> <p> <b>PENDING</b> – The instance is in the process of being created
+     * <ul> <li> <p> <b>PENDING</b> -- The instance is in the process of being created
      * and launching server processes as defined in the fleet's run-time configuration.
-     * </p> </li> <li> <p> <b>ACTIVE</b> – The instance has been successfully created
+     * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
      * Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> –
-     * The instance is in the process of shutting down. This may happen to reduce
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
      * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
@@ -228,13 +228,13 @@ namespace Model
 
     /**
      * <p>Current status of the instance. Possible statuses include the following:</p>
-     * <ul> <li> <p> <b>PENDING</b> – The instance is in the process of being created
+     * <ul> <li> <p> <b>PENDING</b> -- The instance is in the process of being created
      * and launching server processes as defined in the fleet's run-time configuration.
-     * </p> </li> <li> <p> <b>ACTIVE</b> – The instance has been successfully created
+     * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
      * Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> –
-     * The instance is in the process of shutting down. This may happen to reduce
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
      * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
@@ -242,13 +242,13 @@ namespace Model
 
     /**
      * <p>Current status of the instance. Possible statuses include the following:</p>
-     * <ul> <li> <p> <b>PENDING</b> – The instance is in the process of being created
+     * <ul> <li> <p> <b>PENDING</b> -- The instance is in the process of being created
      * and launching server processes as defined in the fleet's run-time configuration.
-     * </p> </li> <li> <p> <b>ACTIVE</b> – The instance has been successfully created
+     * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
      * Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> –
-     * The instance is in the process of shutting down. This may happen to reduce
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
      * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
@@ -256,13 +256,13 @@ namespace Model
 
     /**
      * <p>Current status of the instance. Possible statuses include the following:</p>
-     * <ul> <li> <p> <b>PENDING</b> – The instance is in the process of being created
+     * <ul> <li> <p> <b>PENDING</b> -- The instance is in the process of being created
      * and launching server processes as defined in the fleet's run-time configuration.
-     * </p> </li> <li> <p> <b>ACTIVE</b> – The instance has been successfully created
+     * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
      * Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> –
-     * The instance is in the process of shutting down. This may happen to reduce
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
      * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
@@ -270,13 +270,13 @@ namespace Model
 
     /**
      * <p>Current status of the instance. Possible statuses include the following:</p>
-     * <ul> <li> <p> <b>PENDING</b> – The instance is in the process of being created
+     * <ul> <li> <p> <b>PENDING</b> -- The instance is in the process of being created
      * and launching server processes as defined in the fleet's run-time configuration.
-     * </p> </li> <li> <p> <b>ACTIVE</b> – The instance has been successfully created
+     * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
      * Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> –
-     * The instance is in the process of shutting down. This may happen to reduce
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
      * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */

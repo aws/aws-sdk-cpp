@@ -37,12 +37,16 @@
 #include <aws/gamelift/model/CreateMatchmakingRuleSetRequest.h>
 #include <aws/gamelift/model/CreatePlayerSessionRequest.h>
 #include <aws/gamelift/model/CreatePlayerSessionsRequest.h>
+#include <aws/gamelift/model/CreateVpcPeeringAuthorizationRequest.h>
+#include <aws/gamelift/model/CreateVpcPeeringConnectionRequest.h>
 #include <aws/gamelift/model/DeleteAliasRequest.h>
 #include <aws/gamelift/model/DeleteBuildRequest.h>
 #include <aws/gamelift/model/DeleteFleetRequest.h>
 #include <aws/gamelift/model/DeleteGameSessionQueueRequest.h>
 #include <aws/gamelift/model/DeleteMatchmakingConfigurationRequest.h>
 #include <aws/gamelift/model/DeleteScalingPolicyRequest.h>
+#include <aws/gamelift/model/DeleteVpcPeeringAuthorizationRequest.h>
+#include <aws/gamelift/model/DeleteVpcPeeringConnectionRequest.h>
 #include <aws/gamelift/model/DescribeAliasRequest.h>
 #include <aws/gamelift/model/DescribeBuildRequest.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsRequest.h>
@@ -62,6 +66,8 @@
 #include <aws/gamelift/model/DescribePlayerSessionsRequest.h>
 #include <aws/gamelift/model/DescribeRuntimeConfigurationRequest.h>
 #include <aws/gamelift/model/DescribeScalingPoliciesRequest.h>
+#include <aws/gamelift/model/DescribeVpcPeeringAuthorizationsRequest.h>
+#include <aws/gamelift/model/DescribeVpcPeeringConnectionsRequest.h>
 #include <aws/gamelift/model/GetGameSessionLogUrlRequest.h>
 #include <aws/gamelift/model/GetInstanceAccessRequest.h>
 #include <aws/gamelift/model/ListAliasesRequest.h>
@@ -500,6 +506,76 @@ void GameLiftClient::CreatePlayerSessionsAsyncHelper(const CreatePlayerSessionsR
   handler(this, request, CreatePlayerSessions(request), context);
 }
 
+CreateVpcPeeringAuthorizationOutcome GameLiftClient::CreateVpcPeeringAuthorization(const CreateVpcPeeringAuthorizationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateVpcPeeringAuthorizationOutcome(CreateVpcPeeringAuthorizationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateVpcPeeringAuthorizationOutcome(outcome.GetError());
+  }
+}
+
+CreateVpcPeeringAuthorizationOutcomeCallable GameLiftClient::CreateVpcPeeringAuthorizationCallable(const CreateVpcPeeringAuthorizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVpcPeeringAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVpcPeeringAuthorization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::CreateVpcPeeringAuthorizationAsync(const CreateVpcPeeringAuthorizationRequest& request, const CreateVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcPeeringAuthorizationAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::CreateVpcPeeringAuthorizationAsyncHelper(const CreateVpcPeeringAuthorizationRequest& request, const CreateVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVpcPeeringAuthorization(request), context);
+}
+
+CreateVpcPeeringConnectionOutcome GameLiftClient::CreateVpcPeeringConnection(const CreateVpcPeeringConnectionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateVpcPeeringConnectionOutcome(CreateVpcPeeringConnectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateVpcPeeringConnectionOutcome(outcome.GetError());
+  }
+}
+
+CreateVpcPeeringConnectionOutcomeCallable GameLiftClient::CreateVpcPeeringConnectionCallable(const CreateVpcPeeringConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVpcPeeringConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVpcPeeringConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::CreateVpcPeeringConnectionAsync(const CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcPeeringConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::CreateVpcPeeringConnectionAsyncHelper(const CreateVpcPeeringConnectionRequest& request, const CreateVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVpcPeeringConnection(request), context);
+}
+
 DeleteAliasOutcome GameLiftClient::DeleteAlias(const DeleteAliasRequest& request) const
 {
   Aws::StringStream ss;
@@ -708,6 +784,76 @@ void GameLiftClient::DeleteScalingPolicyAsync(const DeleteScalingPolicyRequest& 
 void GameLiftClient::DeleteScalingPolicyAsyncHelper(const DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteScalingPolicy(request), context);
+}
+
+DeleteVpcPeeringAuthorizationOutcome GameLiftClient::DeleteVpcPeeringAuthorization(const DeleteVpcPeeringAuthorizationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteVpcPeeringAuthorizationOutcome(DeleteVpcPeeringAuthorizationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteVpcPeeringAuthorizationOutcome(outcome.GetError());
+  }
+}
+
+DeleteVpcPeeringAuthorizationOutcomeCallable GameLiftClient::DeleteVpcPeeringAuthorizationCallable(const DeleteVpcPeeringAuthorizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcPeeringAuthorizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVpcPeeringAuthorization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DeleteVpcPeeringAuthorizationAsync(const DeleteVpcPeeringAuthorizationRequest& request, const DeleteVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcPeeringAuthorizationAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DeleteVpcPeeringAuthorizationAsyncHelper(const DeleteVpcPeeringAuthorizationRequest& request, const DeleteVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVpcPeeringAuthorization(request), context);
+}
+
+DeleteVpcPeeringConnectionOutcome GameLiftClient::DeleteVpcPeeringConnection(const DeleteVpcPeeringConnectionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteVpcPeeringConnectionOutcome(DeleteVpcPeeringConnectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteVpcPeeringConnectionOutcome(outcome.GetError());
+  }
+}
+
+DeleteVpcPeeringConnectionOutcomeCallable GameLiftClient::DeleteVpcPeeringConnectionCallable(const DeleteVpcPeeringConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcPeeringConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVpcPeeringConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DeleteVpcPeeringConnectionAsync(const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcPeeringConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DeleteVpcPeeringConnectionAsyncHelper(const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVpcPeeringConnection(request), context);
 }
 
 DescribeAliasOutcome GameLiftClient::DescribeAlias(const DescribeAliasRequest& request) const
@@ -1373,6 +1519,76 @@ void GameLiftClient::DescribeScalingPoliciesAsync(const DescribeScalingPoliciesR
 void GameLiftClient::DescribeScalingPoliciesAsyncHelper(const DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeScalingPolicies(request), context);
+}
+
+DescribeVpcPeeringAuthorizationsOutcome GameLiftClient::DescribeVpcPeeringAuthorizations(const DescribeVpcPeeringAuthorizationsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeVpcPeeringAuthorizationsOutcome(DescribeVpcPeeringAuthorizationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeVpcPeeringAuthorizationsOutcome(outcome.GetError());
+  }
+}
+
+DescribeVpcPeeringAuthorizationsOutcomeCallable GameLiftClient::DescribeVpcPeeringAuthorizationsCallable(const DescribeVpcPeeringAuthorizationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVpcPeeringAuthorizationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVpcPeeringAuthorizations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeVpcPeeringAuthorizationsAsync(const DescribeVpcPeeringAuthorizationsRequest& request, const DescribeVpcPeeringAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcPeeringAuthorizationsAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeVpcPeeringAuthorizationsAsyncHelper(const DescribeVpcPeeringAuthorizationsRequest& request, const DescribeVpcPeeringAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeVpcPeeringAuthorizations(request), context);
+}
+
+DescribeVpcPeeringConnectionsOutcome GameLiftClient::DescribeVpcPeeringConnections(const DescribeVpcPeeringConnectionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeVpcPeeringConnectionsOutcome(DescribeVpcPeeringConnectionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeVpcPeeringConnectionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeVpcPeeringConnectionsOutcomeCallable GameLiftClient::DescribeVpcPeeringConnectionsCallable(const DescribeVpcPeeringConnectionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVpcPeeringConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVpcPeeringConnections(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeVpcPeeringConnectionsAsync(const DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeVpcPeeringConnectionsAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeVpcPeeringConnectionsAsyncHelper(const DescribeVpcPeeringConnectionsRequest& request, const DescribeVpcPeeringConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeVpcPeeringConnections(request), context);
 }
 
 GetGameSessionLogUrlOutcome GameLiftClient::GetGameSessionLogUrl(const GetGameSessionLogUrlRequest& request) const

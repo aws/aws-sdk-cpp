@@ -184,60 +184,60 @@ namespace Model
 
     /**
      * <p>Current status of the build.</p> <p>Possible build statuses include the
-     * following:</p> <ul> <li> <p> <b>INITIALIZED</b> – A new build has been defined,
+     * following:</p> <ul> <li> <p> <b>INITIALIZED</b> -- A new build has been defined,
      * but no files have been uploaded. You cannot create fleets for builds that are in
      * this status. When a build is successfully created, the build status is set to
-     * this value. </p> </li> <li> <p> <b>READY</b> – The game build has been
+     * this value. </p> </li> <li> <p> <b>READY</b> -- The game build has been
      * successfully uploaded. You can now create new fleets for this build.</p> </li>
-     * <li> <p> <b>FAILED</b> – The game build upload failed. You cannot create new
+     * <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new
      * fleets for this build. </p> </li> </ul>
      */
     inline const BuildStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>Current status of the build.</p> <p>Possible build statuses include the
-     * following:</p> <ul> <li> <p> <b>INITIALIZED</b> – A new build has been defined,
+     * following:</p> <ul> <li> <p> <b>INITIALIZED</b> -- A new build has been defined,
      * but no files have been uploaded. You cannot create fleets for builds that are in
      * this status. When a build is successfully created, the build status is set to
-     * this value. </p> </li> <li> <p> <b>READY</b> – The game build has been
+     * this value. </p> </li> <li> <p> <b>READY</b> -- The game build has been
      * successfully uploaded. You can now create new fleets for this build.</p> </li>
-     * <li> <p> <b>FAILED</b> – The game build upload failed. You cannot create new
+     * <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new
      * fleets for this build. </p> </li> </ul>
      */
     inline void SetStatus(const BuildStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Current status of the build.</p> <p>Possible build statuses include the
-     * following:</p> <ul> <li> <p> <b>INITIALIZED</b> – A new build has been defined,
+     * following:</p> <ul> <li> <p> <b>INITIALIZED</b> -- A new build has been defined,
      * but no files have been uploaded. You cannot create fleets for builds that are in
      * this status. When a build is successfully created, the build status is set to
-     * this value. </p> </li> <li> <p> <b>READY</b> – The game build has been
+     * this value. </p> </li> <li> <p> <b>READY</b> -- The game build has been
      * successfully uploaded. You can now create new fleets for this build.</p> </li>
-     * <li> <p> <b>FAILED</b> – The game build upload failed. You cannot create new
+     * <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new
      * fleets for this build. </p> </li> </ul>
      */
     inline void SetStatus(BuildStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Current status of the build.</p> <p>Possible build statuses include the
-     * following:</p> <ul> <li> <p> <b>INITIALIZED</b> – A new build has been defined,
+     * following:</p> <ul> <li> <p> <b>INITIALIZED</b> -- A new build has been defined,
      * but no files have been uploaded. You cannot create fleets for builds that are in
      * this status. When a build is successfully created, the build status is set to
-     * this value. </p> </li> <li> <p> <b>READY</b> – The game build has been
+     * this value. </p> </li> <li> <p> <b>READY</b> -- The game build has been
      * successfully uploaded. You can now create new fleets for this build.</p> </li>
-     * <li> <p> <b>FAILED</b> – The game build upload failed. You cannot create new
+     * <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new
      * fleets for this build. </p> </li> </ul>
      */
     inline Build& WithStatus(const BuildStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Current status of the build.</p> <p>Possible build statuses include the
-     * following:</p> <ul> <li> <p> <b>INITIALIZED</b> – A new build has been defined,
+     * following:</p> <ul> <li> <p> <b>INITIALIZED</b> -- A new build has been defined,
      * but no files have been uploaded. You cannot create fleets for builds that are in
      * this status. When a build is successfully created, the build status is set to
-     * this value. </p> </li> <li> <p> <b>READY</b> – The game build has been
+     * this value. </p> </li> <li> <p> <b>READY</b> -- The game build has been
      * successfully uploaded. You can now create new fleets for this build.</p> </li>
-     * <li> <p> <b>FAILED</b> – The game build upload failed. You cannot create new
+     * <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new
      * fleets for this build. </p> </li> </ul>
      */
     inline Build& WithStatus(BuildStatus&& value) { SetStatus(std::move(value)); return *this;}

@@ -66,9 +66,9 @@ namespace Model
 
     /**
      * <p>Type of routing strategy.</p> <p>Possible routing types include the
-     * following:</p> <ul> <li> <p> <b>SIMPLE</b> – The alias resolves to one specific
+     * following:</p> <ul> <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific
      * fleet. Use this type when routing to active fleets.</p> </li> <li> <p>
-     * <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used
      * to display a message to the user. A terminal alias throws a
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</p> </li> </ul>
@@ -77,9 +77,9 @@ namespace Model
 
     /**
      * <p>Type of routing strategy.</p> <p>Possible routing types include the
-     * following:</p> <ul> <li> <p> <b>SIMPLE</b> – The alias resolves to one specific
+     * following:</p> <ul> <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific
      * fleet. Use this type when routing to active fleets.</p> </li> <li> <p>
-     * <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used
      * to display a message to the user. A terminal alias throws a
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</p> </li> </ul>
@@ -88,9 +88,9 @@ namespace Model
 
     /**
      * <p>Type of routing strategy.</p> <p>Possible routing types include the
-     * following:</p> <ul> <li> <p> <b>SIMPLE</b> – The alias resolves to one specific
+     * following:</p> <ul> <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific
      * fleet. Use this type when routing to active fleets.</p> </li> <li> <p>
-     * <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used
      * to display a message to the user. A terminal alias throws a
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</p> </li> </ul>
@@ -99,9 +99,9 @@ namespace Model
 
     /**
      * <p>Type of routing strategy.</p> <p>Possible routing types include the
-     * following:</p> <ul> <li> <p> <b>SIMPLE</b> – The alias resolves to one specific
+     * following:</p> <ul> <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific
      * fleet. Use this type when routing to active fleets.</p> </li> <li> <p>
-     * <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used
      * to display a message to the user. A terminal alias throws a
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</p> </li> </ul>
@@ -110,9 +110,9 @@ namespace Model
 
     /**
      * <p>Type of routing strategy.</p> <p>Possible routing types include the
-     * following:</p> <ul> <li> <p> <b>SIMPLE</b> – The alias resolves to one specific
+     * following:</p> <ul> <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific
      * fleet. Use this type when routing to active fleets.</p> </li> <li> <p>
-     * <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used
      * to display a message to the user. A terminal alias throws a
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</p> </li> </ul>
