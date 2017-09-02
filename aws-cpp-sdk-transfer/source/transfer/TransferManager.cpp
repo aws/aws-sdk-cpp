@@ -129,7 +129,7 @@ namespace Aws
         std::shared_ptr<TransferHandle> TransferManager::RetryUpload(const Aws::String& fileName, const std::shared_ptr<TransferHandle>& retryHandle)
         {
 #ifdef _MSC_VER
-            auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, Aws::Utils::StringUtils::ToWString(fileName.c_str()), std::ios_base::in | std::ios_base::binary);
+            auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, Aws::Utils::StringUtils::ToWString(fileName.c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
 #else
             auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, fileName.c_str(), std::ios_base::in | std::ios_base::binary);
 #endif
