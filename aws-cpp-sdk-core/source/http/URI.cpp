@@ -330,7 +330,7 @@ void URI::ExtractAndSetAuthority(const Aws::String& uri)
     size_t posOfEndOfAuthorityPort = uri.find(':', authorityStart);
     size_t posOfEndOfAuthoritySlash = uri.find('/', authorityStart);
     size_t posOfEndOfAuthorityQuery = uri.find('?', authorityStart);
-    size_t posEndOfAuthority = std::min({posOfEndOfAuthorityPort, posOfEndOfAuthoritySlash, posOfEndOfAuthorityQuery});
+    size_t posEndOfAuthority = (std::min)({posOfEndOfAuthorityPort, posOfEndOfAuthoritySlash, posOfEndOfAuthorityQuery});
     if (posEndOfAuthority == Aws::String::npos)
     {
         posEndOfAuthority = uri.length();

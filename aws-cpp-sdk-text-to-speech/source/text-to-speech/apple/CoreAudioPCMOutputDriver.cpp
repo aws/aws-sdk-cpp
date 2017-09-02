@@ -60,7 +60,7 @@ namespace Aws
                         AudioQueueBufferRef audioBuffer = m_bufferQueue.front();
                         m_bufferQueue.pop();
 
-                        auto toCpy = std::min(m_maxBufferSize, size - i);
+                        auto toCpy = (std::min)(m_maxBufferSize, size - i);
                         AWS_LOGSTREAM_TRACE(CLASS_TAG, " Writing " << toCpy << " bytes to audio device.");
                         memcpy(audioBuffer->mAudioData, buffer + i, toCpy);
                         audioBuffer->mAudioDataByteSize = static_cast<UInt32>(toCpy);
