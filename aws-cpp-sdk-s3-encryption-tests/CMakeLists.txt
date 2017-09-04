@@ -27,6 +27,10 @@ if(MSVC AND BUILD_SHARED_LIBS)
     add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
 endif()
 
+if (CMAKE_CROSSCOMPILING)
+    set(AUTORUN_UNIT_TESTS OFF)
+endif()
+
 if (AUTORUN_UNIT_TESTS)
     enable_testing()
 endif()
@@ -40,10 +44,10 @@ endif()
 target_link_libraries(aws-cpp-sdk-s3-encryption-tests ${PROJECT_LIBS})
 copyDlls(aws-cpp-sdk-s3-encryption-tests ${PROJECT_LIBS})
 
-if(NOT CMAKE_CROSSCOMPILING)
-    SET_TARGET_PROPERTIES(aws-cpp-sdk-s3-encryption-tests PROPERTIES OUTPUT_NAME aws-cpp-sdk-s3-encryption-tests)
-endif()
-
 if (AUTORUN_UNIT_TESTS)
     ADD_CUSTOM_COMMAND( TARGET aws-cpp-sdk-s3-encryption-tests POST_BUILD COMMAND $<TARGET_FILE:aws-cpp-sdk-s3-encryption-tests>)
+endif()
+
+if(NOT CMAKE_CROSSCOMPILING)
+    SET_TARGET_PROPERTIES(aws-cpp-sdk-s3-encryption-tests PROPERTIES OUTPUT_NAME aws-cpp-sdk-s3-encryption-tests)
 endif()
