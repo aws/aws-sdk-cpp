@@ -88,7 +88,7 @@ if(COMMAND apply_pre_project_platform_settings)
     apply_pre_project_platform_settings()
 endif()
 
-if (CROSSCOMPILING)
+if (CMAKE_CROSSCOMPILING)
     set(AUTORUN_UNIT_TESTS OFF)
 endif()
 
