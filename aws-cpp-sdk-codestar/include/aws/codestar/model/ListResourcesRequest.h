@@ -117,19 +117,19 @@ namespace Model
 
 
     /**
-     * <p>he maximum amount of data that can be contained in a single set of
+     * <p>The maximum amount of data that can be contained in a single set of
      * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>he maximum amount of data that can be contained in a single set of
+     * <p>The maximum amount of data that can be contained in a single set of
      * results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>he maximum amount of data that can be contained in a single set of
+     * <p>The maximum amount of data that can be contained in a single set of
      * results.</p>
      */
     inline ListResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

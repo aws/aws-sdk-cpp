@@ -37,8 +37,11 @@
 #include <aws/codestar/model/DisassociateTeamMemberRequest.h>
 #include <aws/codestar/model/ListProjectsRequest.h>
 #include <aws/codestar/model/ListResourcesRequest.h>
+#include <aws/codestar/model/ListTagsForProjectRequest.h>
 #include <aws/codestar/model/ListTeamMembersRequest.h>
 #include <aws/codestar/model/ListUserProfilesRequest.h>
+#include <aws/codestar/model/TagProjectRequest.h>
+#include <aws/codestar/model/UntagProjectRequest.h>
 #include <aws/codestar/model/UpdateProjectRequest.h>
 #include <aws/codestar/model/UpdateTeamMemberRequest.h>
 #include <aws/codestar/model/UpdateUserProfileRequest.h>
@@ -457,6 +460,41 @@ void CodeStarClient::ListResourcesAsyncHelper(const ListResourcesRequest& reques
   handler(this, request, ListResources(request), context);
 }
 
+ListTagsForProjectOutcome CodeStarClient::ListTagsForProject(const ListTagsForProjectRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForProjectOutcome(ListTagsForProjectResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForProjectOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForProjectOutcomeCallable CodeStarClient::ListTagsForProjectCallable(const ListTagsForProjectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForProject(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeStarClient::ListTagsForProjectAsync(const ListTagsForProjectRequest& request, const ListTagsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForProjectAsyncHelper( request, handler, context ); } );
+}
+
+void CodeStarClient::ListTagsForProjectAsyncHelper(const ListTagsForProjectRequest& request, const ListTagsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForProject(request), context);
+}
+
 ListTeamMembersOutcome CodeStarClient::ListTeamMembers(const ListTeamMembersRequest& request) const
 {
   Aws::StringStream ss;
@@ -525,6 +563,76 @@ void CodeStarClient::ListUserProfilesAsync(const ListUserProfilesRequest& reques
 void CodeStarClient::ListUserProfilesAsyncHelper(const ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListUserProfiles(request), context);
+}
+
+TagProjectOutcome CodeStarClient::TagProject(const TagProjectRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagProjectOutcome(TagProjectResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TagProjectOutcome(outcome.GetError());
+  }
+}
+
+TagProjectOutcomeCallable CodeStarClient::TagProjectCallable(const TagProjectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagProject(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeStarClient::TagProjectAsync(const TagProjectRequest& request, const TagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagProjectAsyncHelper( request, handler, context ); } );
+}
+
+void CodeStarClient::TagProjectAsyncHelper(const TagProjectRequest& request, const TagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagProject(request), context);
+}
+
+UntagProjectOutcome CodeStarClient::UntagProject(const UntagProjectRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagProjectOutcome(UntagProjectResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UntagProjectOutcome(outcome.GetError());
+  }
+}
+
+UntagProjectOutcomeCallable CodeStarClient::UntagProjectCallable(const UntagProjectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagProject(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeStarClient::UntagProjectAsync(const UntagProjectRequest& request, const UntagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagProjectAsyncHelper( request, handler, context ); } );
+}
+
+void CodeStarClient::UntagProjectAsyncHelper(const UntagProjectRequest& request, const UntagProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagProject(request), context);
 }
 
 UpdateProjectOutcome CodeStarClient::UpdateProject(const UpdateProjectRequest& request) const

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Firehose;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.1.20150804.46;
+        version : 1.1.20150804.47;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Kinesis Firehose);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.1.46
+            AWSSDKCPP-Core/1.1.47
        }
     }
 

@@ -76,49 +76,49 @@ namespace Model
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline AssociateTeamMemberRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline AssociateTeamMemberRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
      * the team member association to the project. This token can be used to repeat the
-     * request. </p>
+     * request.</p>
      */
     inline AssociateTeamMemberRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

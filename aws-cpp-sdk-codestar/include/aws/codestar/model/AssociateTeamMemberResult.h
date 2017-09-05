@@ -44,43 +44,43 @@ namespace Model
 
     /**
      * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. </p>
+     * to repeat the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. </p>
+     * to repeat the request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestToken = value; }
 
     /**
      * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. </p>
+     * to repeat the request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestToken = std::move(value); }
 
     /**
      * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. </p>
+     * to repeat the request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestToken.assign(value); }
 
     /**
      * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. </p>
+     * to repeat the request.</p>
      */
     inline AssociateTeamMemberResult& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. </p>
+     * to repeat the request.</p>
      */
     inline AssociateTeamMemberResult& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>The user- or system-generated token from the initial request that can be used
-     * to repeat the request. </p>
+     * to repeat the request.</p>
      */
     inline AssociateTeamMemberResult& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
