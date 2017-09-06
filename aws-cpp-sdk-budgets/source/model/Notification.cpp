@@ -34,7 +34,9 @@ Notification::Notification() :
     m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_threshold(0.0),
-    m_thresholdHasBeenSet(false)
+    m_thresholdHasBeenSet(false),
+    m_thresholdType(ThresholdType::NOT_SET),
+    m_thresholdTypeHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ Notification::Notification(const JsonValue& jsonValue) :
     m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_threshold(0.0),
-    m_thresholdHasBeenSet(false)
+    m_thresholdHasBeenSet(false),
+    m_thresholdType(ThresholdType::NOT_SET),
+    m_thresholdTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +76,13 @@ Notification& Notification::operator =(const JsonValue& jsonValue)
     m_thresholdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ThresholdType"))
+  {
+    m_thresholdType = ThresholdTypeMapper::GetThresholdTypeForName(jsonValue.GetString("ThresholdType"));
+
+    m_thresholdTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +104,11 @@ JsonValue Notification::Jsonize() const
   {
    payload.WithDouble("Threshold", m_threshold);
 
+  }
+
+  if(m_thresholdTypeHasBeenSet)
+  {
+   payload.WithString("ThresholdType", ThresholdTypeMapper::GetNameForThresholdType(m_thresholdType));
   }
 
   return payload;

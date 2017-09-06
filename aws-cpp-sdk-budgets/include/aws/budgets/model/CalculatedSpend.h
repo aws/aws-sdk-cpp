@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * A structure holds the actual and forecasted spend for a budget.<p><h3>See
+   * A structure that holds the actual and forecasted spend for a budget.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CalculatedSpend">AWS
    * API Reference</a></p>
