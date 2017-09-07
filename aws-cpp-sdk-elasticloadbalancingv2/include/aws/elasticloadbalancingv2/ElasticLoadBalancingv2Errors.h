@@ -55,7 +55,9 @@ enum class ElasticLoadBalancingv2Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CERTIFICATE_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALLOCATION_ID_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AVAILABILITY_ZONE_NOT_SUPPORTED,
+  CERTIFICATE_NOT_FOUND,
   DUPLICATE_LISTENER,
   DUPLICATE_LOAD_BALANCER_NAME,
   DUPLICATE_TAG_KEYS,

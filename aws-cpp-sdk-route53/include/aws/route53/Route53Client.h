@@ -27,6 +27,7 @@
 #include <aws/route53/model/ChangeTagsForResourceResult.h>
 #include <aws/route53/model/CreateHealthCheckResult.h>
 #include <aws/route53/model/CreateHostedZoneResult.h>
+#include <aws/route53/model/CreateQueryLoggingConfigResult.h>
 #include <aws/route53/model/CreateReusableDelegationSetResult.h>
 #include <aws/route53/model/CreateTrafficPolicyResult.h>
 #include <aws/route53/model/CreateTrafficPolicyInstanceResult.h>
@@ -34,6 +35,7 @@
 #include <aws/route53/model/CreateVPCAssociationAuthorizationResult.h>
 #include <aws/route53/model/DeleteHealthCheckResult.h>
 #include <aws/route53/model/DeleteHostedZoneResult.h>
+#include <aws/route53/model/DeleteQueryLoggingConfigResult.h>
 #include <aws/route53/model/DeleteReusableDelegationSetResult.h>
 #include <aws/route53/model/DeleteTrafficPolicyResult.h>
 #include <aws/route53/model/DeleteTrafficPolicyInstanceResult.h>
@@ -48,6 +50,7 @@
 #include <aws/route53/model/GetHealthCheckStatusResult.h>
 #include <aws/route53/model/GetHostedZoneResult.h>
 #include <aws/route53/model/GetHostedZoneCountResult.h>
+#include <aws/route53/model/GetQueryLoggingConfigResult.h>
 #include <aws/route53/model/GetReusableDelegationSetResult.h>
 #include <aws/route53/model/GetTrafficPolicyResult.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceResult.h>
@@ -56,6 +59,7 @@
 #include <aws/route53/model/ListHealthChecksResult.h>
 #include <aws/route53/model/ListHostedZonesResult.h>
 #include <aws/route53/model/ListHostedZonesByNameResult.h>
+#include <aws/route53/model/ListQueryLoggingConfigsResult.h>
 #include <aws/route53/model/ListResourceRecordSetsResult.h>
 #include <aws/route53/model/ListReusableDelegationSetsResult.h>
 #include <aws/route53/model/ListTagsForResourceResult.h>
@@ -121,6 +125,7 @@ namespace Model
         class ChangeTagsForResourceRequest;
         class CreateHealthCheckRequest;
         class CreateHostedZoneRequest;
+        class CreateQueryLoggingConfigRequest;
         class CreateReusableDelegationSetRequest;
         class CreateTrafficPolicyRequest;
         class CreateTrafficPolicyInstanceRequest;
@@ -128,6 +133,7 @@ namespace Model
         class CreateVPCAssociationAuthorizationRequest;
         class DeleteHealthCheckRequest;
         class DeleteHostedZoneRequest;
+        class DeleteQueryLoggingConfigRequest;
         class DeleteReusableDelegationSetRequest;
         class DeleteTrafficPolicyRequest;
         class DeleteTrafficPolicyInstanceRequest;
@@ -142,6 +148,7 @@ namespace Model
         class GetHealthCheckStatusRequest;
         class GetHostedZoneRequest;
         class GetHostedZoneCountRequest;
+        class GetQueryLoggingConfigRequest;
         class GetReusableDelegationSetRequest;
         class GetTrafficPolicyRequest;
         class GetTrafficPolicyInstanceRequest;
@@ -150,6 +157,7 @@ namespace Model
         class ListHealthChecksRequest;
         class ListHostedZonesRequest;
         class ListHostedZonesByNameRequest;
+        class ListQueryLoggingConfigsRequest;
         class ListResourceRecordSetsRequest;
         class ListReusableDelegationSetsRequest;
         class ListTagsForResourceRequest;
@@ -171,6 +179,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ChangeTagsForResourceResult, Aws::Client::AWSError<Route53Errors>> ChangeTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<CreateHealthCheckResult, Aws::Client::AWSError<Route53Errors>> CreateHealthCheckOutcome;
         typedef Aws::Utils::Outcome<CreateHostedZoneResult, Aws::Client::AWSError<Route53Errors>> CreateHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<CreateQueryLoggingConfigResult, Aws::Client::AWSError<Route53Errors>> CreateQueryLoggingConfigOutcome;
         typedef Aws::Utils::Outcome<CreateReusableDelegationSetResult, Aws::Client::AWSError<Route53Errors>> CreateReusableDelegationSetOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficPolicyResult, Aws::Client::AWSError<Route53Errors>> CreateTrafficPolicyOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficPolicyInstanceResult, Aws::Client::AWSError<Route53Errors>> CreateTrafficPolicyInstanceOutcome;
@@ -178,6 +187,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateVPCAssociationAuthorizationResult, Aws::Client::AWSError<Route53Errors>> CreateVPCAssociationAuthorizationOutcome;
         typedef Aws::Utils::Outcome<DeleteHealthCheckResult, Aws::Client::AWSError<Route53Errors>> DeleteHealthCheckOutcome;
         typedef Aws::Utils::Outcome<DeleteHostedZoneResult, Aws::Client::AWSError<Route53Errors>> DeleteHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<DeleteQueryLoggingConfigResult, Aws::Client::AWSError<Route53Errors>> DeleteQueryLoggingConfigOutcome;
         typedef Aws::Utils::Outcome<DeleteReusableDelegationSetResult, Aws::Client::AWSError<Route53Errors>> DeleteReusableDelegationSetOutcome;
         typedef Aws::Utils::Outcome<DeleteTrafficPolicyResult, Aws::Client::AWSError<Route53Errors>> DeleteTrafficPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteTrafficPolicyInstanceResult, Aws::Client::AWSError<Route53Errors>> DeleteTrafficPolicyInstanceOutcome;
@@ -192,6 +202,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetHealthCheckStatusResult, Aws::Client::AWSError<Route53Errors>> GetHealthCheckStatusOutcome;
         typedef Aws::Utils::Outcome<GetHostedZoneResult, Aws::Client::AWSError<Route53Errors>> GetHostedZoneOutcome;
         typedef Aws::Utils::Outcome<GetHostedZoneCountResult, Aws::Client::AWSError<Route53Errors>> GetHostedZoneCountOutcome;
+        typedef Aws::Utils::Outcome<GetQueryLoggingConfigResult, Aws::Client::AWSError<Route53Errors>> GetQueryLoggingConfigOutcome;
         typedef Aws::Utils::Outcome<GetReusableDelegationSetResult, Aws::Client::AWSError<Route53Errors>> GetReusableDelegationSetOutcome;
         typedef Aws::Utils::Outcome<GetTrafficPolicyResult, Aws::Client::AWSError<Route53Errors>> GetTrafficPolicyOutcome;
         typedef Aws::Utils::Outcome<GetTrafficPolicyInstanceResult, Aws::Client::AWSError<Route53Errors>> GetTrafficPolicyInstanceOutcome;
@@ -200,6 +211,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListHealthChecksResult, Aws::Client::AWSError<Route53Errors>> ListHealthChecksOutcome;
         typedef Aws::Utils::Outcome<ListHostedZonesResult, Aws::Client::AWSError<Route53Errors>> ListHostedZonesOutcome;
         typedef Aws::Utils::Outcome<ListHostedZonesByNameResult, Aws::Client::AWSError<Route53Errors>> ListHostedZonesByNameOutcome;
+        typedef Aws::Utils::Outcome<ListQueryLoggingConfigsResult, Aws::Client::AWSError<Route53Errors>> ListQueryLoggingConfigsOutcome;
         typedef Aws::Utils::Outcome<ListResourceRecordSetsResult, Aws::Client::AWSError<Route53Errors>> ListResourceRecordSetsOutcome;
         typedef Aws::Utils::Outcome<ListReusableDelegationSetsResult, Aws::Client::AWSError<Route53Errors>> ListReusableDelegationSetsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<Route53Errors>> ListTagsForResourceOutcome;
@@ -221,6 +233,7 @@ namespace Model
         typedef std::future<ChangeTagsForResourceOutcome> ChangeTagsForResourceOutcomeCallable;
         typedef std::future<CreateHealthCheckOutcome> CreateHealthCheckOutcomeCallable;
         typedef std::future<CreateHostedZoneOutcome> CreateHostedZoneOutcomeCallable;
+        typedef std::future<CreateQueryLoggingConfigOutcome> CreateQueryLoggingConfigOutcomeCallable;
         typedef std::future<CreateReusableDelegationSetOutcome> CreateReusableDelegationSetOutcomeCallable;
         typedef std::future<CreateTrafficPolicyOutcome> CreateTrafficPolicyOutcomeCallable;
         typedef std::future<CreateTrafficPolicyInstanceOutcome> CreateTrafficPolicyInstanceOutcomeCallable;
@@ -228,6 +241,7 @@ namespace Model
         typedef std::future<CreateVPCAssociationAuthorizationOutcome> CreateVPCAssociationAuthorizationOutcomeCallable;
         typedef std::future<DeleteHealthCheckOutcome> DeleteHealthCheckOutcomeCallable;
         typedef std::future<DeleteHostedZoneOutcome> DeleteHostedZoneOutcomeCallable;
+        typedef std::future<DeleteQueryLoggingConfigOutcome> DeleteQueryLoggingConfigOutcomeCallable;
         typedef std::future<DeleteReusableDelegationSetOutcome> DeleteReusableDelegationSetOutcomeCallable;
         typedef std::future<DeleteTrafficPolicyOutcome> DeleteTrafficPolicyOutcomeCallable;
         typedef std::future<DeleteTrafficPolicyInstanceOutcome> DeleteTrafficPolicyInstanceOutcomeCallable;
@@ -242,6 +256,7 @@ namespace Model
         typedef std::future<GetHealthCheckStatusOutcome> GetHealthCheckStatusOutcomeCallable;
         typedef std::future<GetHostedZoneOutcome> GetHostedZoneOutcomeCallable;
         typedef std::future<GetHostedZoneCountOutcome> GetHostedZoneCountOutcomeCallable;
+        typedef std::future<GetQueryLoggingConfigOutcome> GetQueryLoggingConfigOutcomeCallable;
         typedef std::future<GetReusableDelegationSetOutcome> GetReusableDelegationSetOutcomeCallable;
         typedef std::future<GetTrafficPolicyOutcome> GetTrafficPolicyOutcomeCallable;
         typedef std::future<GetTrafficPolicyInstanceOutcome> GetTrafficPolicyInstanceOutcomeCallable;
@@ -250,6 +265,7 @@ namespace Model
         typedef std::future<ListHealthChecksOutcome> ListHealthChecksOutcomeCallable;
         typedef std::future<ListHostedZonesOutcome> ListHostedZonesOutcomeCallable;
         typedef std::future<ListHostedZonesByNameOutcome> ListHostedZonesByNameOutcomeCallable;
+        typedef std::future<ListQueryLoggingConfigsOutcome> ListQueryLoggingConfigsOutcomeCallable;
         typedef std::future<ListResourceRecordSetsOutcome> ListResourceRecordSetsOutcomeCallable;
         typedef std::future<ListReusableDelegationSetsOutcome> ListReusableDelegationSetsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -274,6 +290,7 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::ChangeTagsForResourceRequest&, const Model::ChangeTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateHealthCheckRequest&, const Model::CreateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateHostedZoneRequest&, const Model::CreateHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHostedZoneResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::CreateQueryLoggingConfigRequest&, const Model::CreateQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueryLoggingConfigResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateReusableDelegationSetRequest&, const Model::CreateReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReusableDelegationSetResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyRequest&, const Model::CreateTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyInstanceRequest&, const Model::CreateTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyInstanceResponseReceivedHandler;
@@ -281,6 +298,7 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::CreateVPCAssociationAuthorizationRequest&, const Model::CreateVPCAssociationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVPCAssociationAuthorizationResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteHealthCheckRequest&, const Model::DeleteHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteHostedZoneRequest&, const Model::DeleteHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHostedZoneResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::DeleteQueryLoggingConfigRequest&, const Model::DeleteQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueryLoggingConfigResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteReusableDelegationSetRequest&, const Model::DeleteReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReusableDelegationSetResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteTrafficPolicyRequest&, const Model::DeleteTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteTrafficPolicyInstanceRequest&, const Model::DeleteTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficPolicyInstanceResponseReceivedHandler;
@@ -295,6 +313,7 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::GetHealthCheckStatusRequest&, const Model::GetHealthCheckStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHealthCheckStatusResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetHostedZoneRequest&, const Model::GetHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostedZoneResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetHostedZoneCountRequest&, const Model::GetHostedZoneCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostedZoneCountResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::GetQueryLoggingConfigRequest&, const Model::GetQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryLoggingConfigResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetReusableDelegationSetRequest&, const Model::GetReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReusableDelegationSetResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetTrafficPolicyRequest&, const Model::GetTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetTrafficPolicyInstanceRequest&, const Model::GetTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficPolicyInstanceResponseReceivedHandler;
@@ -303,6 +322,7 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::ListHealthChecksRequest&, const Model::ListHealthChecksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHealthChecksResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListHostedZonesRequest&, const Model::ListHostedZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListHostedZonesByNameRequest&, const Model::ListHostedZonesByNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesByNameResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::ListQueryLoggingConfigsRequest&, const Model::ListQueryLoggingConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueryLoggingConfigsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListResourceRecordSetsRequest&, const Model::ListResourceRecordSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceRecordSetsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListReusableDelegationSetsRequest&, const Model::ListReusableDelegationSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReusableDelegationSetsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -826,6 +846,241 @@ namespace Model
         virtual void CreateHostedZoneAsync(const Model::CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a configuration for DNS query logging. After you create a query
+         * logging configuration, Amazon Route 53 begins to publish log data to an Amazon
+         * CloudWatch Logs log group.</p> <p>DNS query logs contain information about the
+         * queries that Amazon Route 53 receives for a specified public hosted zone, such
+         * as the following:</p> <ul> <li> <p>Amazon Route 53 edge location that responded
+         * to the DNS query</p> </li> <li> <p>Domain or subdomain that was requested</p>
+         * </li> <li> <p>DNS record type, such as A or AAAA</p> </li> <li> <p>DNS response
+         * code, such as <code>NoError</code> or <code>ServFail</code> </p> </li> </ul>
+         * <dl> <dt>Log Group and Resource Policy</dt> <dd> <p>Before you create a query
+         * logging configuration, perform the following operations.</p> <note> <p>If you
+         * create a query logging configuration using the Amazon Route 53 console, Amazon
+         * Route 53 performs these operations automatically.</p> </note> <ol> <li>
+         * <p>Create a CloudWatch Logs log group, and make note of the ARN, which you
+         * specify when you create a query logging configuration. Note the following:</p>
+         * <ul> <li> <p>You must create the log group in the us-east-1 region.</p> </li>
+         * <li> <p>You must use the same AWS account to create the log group and the hosted
+         * zone that you want to configure query logging for.</p> </li> <li> <p>When you
+         * create log groups for query logging, we recommend that you use a consistent
+         * prefix, for example:</p> <p> <code>/aws/route53/<i>hosted zone name</i> </code>
+         * </p> <p>In the next step, you'll create a resource policy, which controls access
+         * to one or more log groups and the associated AWS resources, such as Amazon Route
+         * 53 hosted zones. There's a limit on the number of resource policies that you can
+         * create, so we recommend that you use a consistent prefix so you can use the same
+         * resource policy for all the log groups that you create for query logging.</p>
+         * </li> </ul> </li> <li> <p>Create a CloudWatch Logs resource policy, and give it
+         * the permissions that Amazon Route 53 needs to create log streams and to to send
+         * query logs to log streams. For the value of <code>Resource</code>, specify the
+         * ARN for the log group that you created in the previous step. To use the same
+         * resource policy for all the CloudWatch Logs log groups that you created for
+         * query logging configurations, replace the hosted zone name with <code>*</code>,
+         * for example:</p> <p>
+         * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
+         * <note> <p>You can't use the CloudWatch console to create or edit a resource
+         * policy. You must use the CloudWatch API, one of the AWS SDKs, or the AWS
+         * CLI.</p> </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
+         * <p>When Amazon Route 53 finishes creating the configuration for DNS query
+         * logging, it does the following:</p> <ul> <li> <p>Creates a log stream for an
+         * edge location the first time that the edge location responds to DNS queries for
+         * the specified hosted zone. That log stream is used to log all queries that
+         * Amazon Route 53 responds to for that edge location.</p> </li> <li> <p>Begins to
+         * send query logs to the applicable log stream.</p> </li> </ul> <p>The name of
+         * each log stream is in the following format:</p> <p> <code> <i>hosted zone
+         * ID</i>/<i>edge location code</i> </code> </p> <p>The edge location code is a
+         * three-letter code and an arbitrarily assigned number, for example, DFW3. The
+         * three-letter code typically corresponds with the International Air Transport
+         * Association airport code for an airport near the edge location. (These
+         * abbreviations might change in the future.) For a list of edge locations, see
+         * "The Amazon Route 53 Global Network" on the <a
+         * href="http://aws.amazon.com/route53/details/">Amazon Route 53 Product
+         * Details</a> page.</p> </dd> <dt>Queries That Are Logged</dt> <dd> <p>Query logs
+         * contain only the queries that DNS resolvers forward to Amazon Route 53. If a DNS
+         * resolver has already cached the response to a query (such as the IP address for
+         * a load balancer for example.com), the resolver will continue to return the
+         * cached response. It doesn't forward another query to Amazon Route 53 until the
+         * TTL for the corresponding resource record set expires. Depending on how many DNS
+         * queries are submitted for a resource record set, and depending on the TTL for
+         * that resource record set, query logs might contain information about only one
+         * query out of every several thousand queries that are submitted to DNS. For more
+         * information about how DNS works, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
+         * Internet Traffic to Your Website or Web Application</a> in the <i>Amazon Route
+         * 53 Developer Guide</i>.</p> </dd> <dt>Log File Format</dt> <dd> <p>For a list of
+         * the values in each query log and the format of each value, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </dd>
+         * <dt>Pricing</dt> <dd> <p>For information about charges for query logs, see <a
+         * href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+         * Pricing</a>.</p> </dd> <dt>How to Stop Logging</dt> <dd> <p>If you want Amazon
+         * Route 53 to stop sending query logs to CloudWatch Logs, delete the query logging
+         * configuration. For more information, see <a>DeleteQueryLoggingConfig</a>.</p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateQueryLoggingConfigOutcome CreateQueryLoggingConfig(const Model::CreateQueryLoggingConfigRequest& request) const;
+
+        /**
+         * <p>Creates a configuration for DNS query logging. After you create a query
+         * logging configuration, Amazon Route 53 begins to publish log data to an Amazon
+         * CloudWatch Logs log group.</p> <p>DNS query logs contain information about the
+         * queries that Amazon Route 53 receives for a specified public hosted zone, such
+         * as the following:</p> <ul> <li> <p>Amazon Route 53 edge location that responded
+         * to the DNS query</p> </li> <li> <p>Domain or subdomain that was requested</p>
+         * </li> <li> <p>DNS record type, such as A or AAAA</p> </li> <li> <p>DNS response
+         * code, such as <code>NoError</code> or <code>ServFail</code> </p> </li> </ul>
+         * <dl> <dt>Log Group and Resource Policy</dt> <dd> <p>Before you create a query
+         * logging configuration, perform the following operations.</p> <note> <p>If you
+         * create a query logging configuration using the Amazon Route 53 console, Amazon
+         * Route 53 performs these operations automatically.</p> </note> <ol> <li>
+         * <p>Create a CloudWatch Logs log group, and make note of the ARN, which you
+         * specify when you create a query logging configuration. Note the following:</p>
+         * <ul> <li> <p>You must create the log group in the us-east-1 region.</p> </li>
+         * <li> <p>You must use the same AWS account to create the log group and the hosted
+         * zone that you want to configure query logging for.</p> </li> <li> <p>When you
+         * create log groups for query logging, we recommend that you use a consistent
+         * prefix, for example:</p> <p> <code>/aws/route53/<i>hosted zone name</i> </code>
+         * </p> <p>In the next step, you'll create a resource policy, which controls access
+         * to one or more log groups and the associated AWS resources, such as Amazon Route
+         * 53 hosted zones. There's a limit on the number of resource policies that you can
+         * create, so we recommend that you use a consistent prefix so you can use the same
+         * resource policy for all the log groups that you create for query logging.</p>
+         * </li> </ul> </li> <li> <p>Create a CloudWatch Logs resource policy, and give it
+         * the permissions that Amazon Route 53 needs to create log streams and to to send
+         * query logs to log streams. For the value of <code>Resource</code>, specify the
+         * ARN for the log group that you created in the previous step. To use the same
+         * resource policy for all the CloudWatch Logs log groups that you created for
+         * query logging configurations, replace the hosted zone name with <code>*</code>,
+         * for example:</p> <p>
+         * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
+         * <note> <p>You can't use the CloudWatch console to create or edit a resource
+         * policy. You must use the CloudWatch API, one of the AWS SDKs, or the AWS
+         * CLI.</p> </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
+         * <p>When Amazon Route 53 finishes creating the configuration for DNS query
+         * logging, it does the following:</p> <ul> <li> <p>Creates a log stream for an
+         * edge location the first time that the edge location responds to DNS queries for
+         * the specified hosted zone. That log stream is used to log all queries that
+         * Amazon Route 53 responds to for that edge location.</p> </li> <li> <p>Begins to
+         * send query logs to the applicable log stream.</p> </li> </ul> <p>The name of
+         * each log stream is in the following format:</p> <p> <code> <i>hosted zone
+         * ID</i>/<i>edge location code</i> </code> </p> <p>The edge location code is a
+         * three-letter code and an arbitrarily assigned number, for example, DFW3. The
+         * three-letter code typically corresponds with the International Air Transport
+         * Association airport code for an airport near the edge location. (These
+         * abbreviations might change in the future.) For a list of edge locations, see
+         * "The Amazon Route 53 Global Network" on the <a
+         * href="http://aws.amazon.com/route53/details/">Amazon Route 53 Product
+         * Details</a> page.</p> </dd> <dt>Queries That Are Logged</dt> <dd> <p>Query logs
+         * contain only the queries that DNS resolvers forward to Amazon Route 53. If a DNS
+         * resolver has already cached the response to a query (such as the IP address for
+         * a load balancer for example.com), the resolver will continue to return the
+         * cached response. It doesn't forward another query to Amazon Route 53 until the
+         * TTL for the corresponding resource record set expires. Depending on how many DNS
+         * queries are submitted for a resource record set, and depending on the TTL for
+         * that resource record set, query logs might contain information about only one
+         * query out of every several thousand queries that are submitted to DNS. For more
+         * information about how DNS works, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
+         * Internet Traffic to Your Website or Web Application</a> in the <i>Amazon Route
+         * 53 Developer Guide</i>.</p> </dd> <dt>Log File Format</dt> <dd> <p>For a list of
+         * the values in each query log and the format of each value, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </dd>
+         * <dt>Pricing</dt> <dd> <p>For information about charges for query logs, see <a
+         * href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+         * Pricing</a>.</p> </dd> <dt>How to Stop Logging</dt> <dd> <p>If you want Amazon
+         * Route 53 to stop sending query logs to CloudWatch Logs, delete the query logging
+         * configuration. For more information, see <a>DeleteQueryLoggingConfig</a>.</p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateQueryLoggingConfigOutcomeCallable CreateQueryLoggingConfigCallable(const Model::CreateQueryLoggingConfigRequest& request) const;
+
+        /**
+         * <p>Creates a configuration for DNS query logging. After you create a query
+         * logging configuration, Amazon Route 53 begins to publish log data to an Amazon
+         * CloudWatch Logs log group.</p> <p>DNS query logs contain information about the
+         * queries that Amazon Route 53 receives for a specified public hosted zone, such
+         * as the following:</p> <ul> <li> <p>Amazon Route 53 edge location that responded
+         * to the DNS query</p> </li> <li> <p>Domain or subdomain that was requested</p>
+         * </li> <li> <p>DNS record type, such as A or AAAA</p> </li> <li> <p>DNS response
+         * code, such as <code>NoError</code> or <code>ServFail</code> </p> </li> </ul>
+         * <dl> <dt>Log Group and Resource Policy</dt> <dd> <p>Before you create a query
+         * logging configuration, perform the following operations.</p> <note> <p>If you
+         * create a query logging configuration using the Amazon Route 53 console, Amazon
+         * Route 53 performs these operations automatically.</p> </note> <ol> <li>
+         * <p>Create a CloudWatch Logs log group, and make note of the ARN, which you
+         * specify when you create a query logging configuration. Note the following:</p>
+         * <ul> <li> <p>You must create the log group in the us-east-1 region.</p> </li>
+         * <li> <p>You must use the same AWS account to create the log group and the hosted
+         * zone that you want to configure query logging for.</p> </li> <li> <p>When you
+         * create log groups for query logging, we recommend that you use a consistent
+         * prefix, for example:</p> <p> <code>/aws/route53/<i>hosted zone name</i> </code>
+         * </p> <p>In the next step, you'll create a resource policy, which controls access
+         * to one or more log groups and the associated AWS resources, such as Amazon Route
+         * 53 hosted zones. There's a limit on the number of resource policies that you can
+         * create, so we recommend that you use a consistent prefix so you can use the same
+         * resource policy for all the log groups that you create for query logging.</p>
+         * </li> </ul> </li> <li> <p>Create a CloudWatch Logs resource policy, and give it
+         * the permissions that Amazon Route 53 needs to create log streams and to to send
+         * query logs to log streams. For the value of <code>Resource</code>, specify the
+         * ARN for the log group that you created in the previous step. To use the same
+         * resource policy for all the CloudWatch Logs log groups that you created for
+         * query logging configurations, replace the hosted zone name with <code>*</code>,
+         * for example:</p> <p>
+         * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
+         * <note> <p>You can't use the CloudWatch console to create or edit a resource
+         * policy. You must use the CloudWatch API, one of the AWS SDKs, or the AWS
+         * CLI.</p> </note> </li> </ol> </dd> <dt>Log Streams and Edge Locations</dt> <dd>
+         * <p>When Amazon Route 53 finishes creating the configuration for DNS query
+         * logging, it does the following:</p> <ul> <li> <p>Creates a log stream for an
+         * edge location the first time that the edge location responds to DNS queries for
+         * the specified hosted zone. That log stream is used to log all queries that
+         * Amazon Route 53 responds to for that edge location.</p> </li> <li> <p>Begins to
+         * send query logs to the applicable log stream.</p> </li> </ul> <p>The name of
+         * each log stream is in the following format:</p> <p> <code> <i>hosted zone
+         * ID</i>/<i>edge location code</i> </code> </p> <p>The edge location code is a
+         * three-letter code and an arbitrarily assigned number, for example, DFW3. The
+         * three-letter code typically corresponds with the International Air Transport
+         * Association airport code for an airport near the edge location. (These
+         * abbreviations might change in the future.) For a list of edge locations, see
+         * "The Amazon Route 53 Global Network" on the <a
+         * href="http://aws.amazon.com/route53/details/">Amazon Route 53 Product
+         * Details</a> page.</p> </dd> <dt>Queries That Are Logged</dt> <dd> <p>Query logs
+         * contain only the queries that DNS resolvers forward to Amazon Route 53. If a DNS
+         * resolver has already cached the response to a query (such as the IP address for
+         * a load balancer for example.com), the resolver will continue to return the
+         * cached response. It doesn't forward another query to Amazon Route 53 until the
+         * TTL for the corresponding resource record set expires. Depending on how many DNS
+         * queries are submitted for a resource record set, and depending on the TTL for
+         * that resource record set, query logs might contain information about only one
+         * query out of every several thousand queries that are submitted to DNS. For more
+         * information about how DNS works, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">Routing
+         * Internet Traffic to Your Website or Web Application</a> in the <i>Amazon Route
+         * 53 Developer Guide</i>.</p> </dd> <dt>Log File Format</dt> <dd> <p>For a list of
+         * the values in each query log and the format of each value, see <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </dd>
+         * <dt>Pricing</dt> <dd> <p>For information about charges for query logs, see <a
+         * href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+         * Pricing</a>.</p> </dd> <dt>How to Stop Logging</dt> <dd> <p>If you want Amazon
+         * Route 53 to stop sending query logs to CloudWatch Logs, delete the query logging
+         * configuration. For more information, see <a>DeleteQueryLoggingConfig</a>.</p>
+         * </dd> </dl><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateQueryLoggingConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateQueryLoggingConfigAsync(const Model::CreateQueryLoggingConfigRequest& request, const CreateQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a delegation set (a group of four name servers) that can be reused by
          * multiple hosted zones. If a hosted zoned ID is specified,
          * <code>CreateReusableDelegationSet</code> marks the delegation set associated
@@ -1182,6 +1437,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteHostedZoneAsync(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a configuration for DNS query logging. If you delete a configuration,
+         * Amazon Route 53 stops sending query logs to CloudWatch Logs. Amazon Route 53
+         * doesn't delete any logs that are already in CloudWatch Logs.</p> <p>For more
+         * information about DNS query logs, see
+         * <a>CreateQueryLoggingConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteQueryLoggingConfigOutcome DeleteQueryLoggingConfig(const Model::DeleteQueryLoggingConfigRequest& request) const;
+
+        /**
+         * <p>Deletes a configuration for DNS query logging. If you delete a configuration,
+         * Amazon Route 53 stops sending query logs to CloudWatch Logs. Amazon Route 53
+         * doesn't delete any logs that are already in CloudWatch Logs.</p> <p>For more
+         * information about DNS query logs, see
+         * <a>CreateQueryLoggingConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteQueryLoggingConfigOutcomeCallable DeleteQueryLoggingConfigCallable(const Model::DeleteQueryLoggingConfigRequest& request) const;
+
+        /**
+         * <p>Deletes a configuration for DNS query logging. If you delete a configuration,
+         * Amazon Route 53 stops sending query logs to CloudWatch Logs. Amazon Route 53
+         * doesn't delete any logs that are already in CloudWatch Logs.</p> <p>For more
+         * information about DNS query logs, see
+         * <a>CreateQueryLoggingConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteQueryLoggingConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteQueryLoggingConfigAsync(const Model::DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a reusable delegation set.</p> <important> <p>You can delete a
@@ -1681,6 +1973,43 @@ namespace Model
         virtual void GetHostedZoneCountAsync(const Model::GetHostedZoneCountRequest& request, const GetHostedZoneCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about a specified configuration for DNS query logging.</p>
+         * <p>For more information about DNS query logs, see
+         * <a>CreateQueryLoggingConfig</a> and <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * DNS Queries</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetQueryLoggingConfigOutcome GetQueryLoggingConfig(const Model::GetQueryLoggingConfigRequest& request) const;
+
+        /**
+         * <p>Gets information about a specified configuration for DNS query logging.</p>
+         * <p>For more information about DNS query logs, see
+         * <a>CreateQueryLoggingConfig</a> and <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * DNS Queries</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetQueryLoggingConfigOutcomeCallable GetQueryLoggingConfigCallable(const Model::GetQueryLoggingConfigRequest& request) const;
+
+        /**
+         * <p>Gets information about a specified configuration for DNS query logging.</p>
+         * <p>For more information about DNS query logs, see
+         * <a>CreateQueryLoggingConfig</a> and <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * DNS Queries</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetQueryLoggingConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetQueryLoggingConfigAsync(const Model::GetQueryLoggingConfigRequest& request, const GetQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves information about a specified reusable delegation set, including
          * the four name servers that are assigned to the delegation set.</p><p><h3>See
          * Also:</h3>   <a
@@ -2056,6 +2385,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListHostedZonesByNameAsync(const Model::ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the configurations for DNS query logging that are associated with the
+         * current AWS account or the configuration that is associated with a specified
+         * hosted zone.</p> <p>For more information about DNS query logs, see
+         * <a>CreateQueryLoggingConfig</a>. Additional information, including the format of
+         * DNS query logs, appears in <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListQueryLoggingConfigsOutcome ListQueryLoggingConfigs(const Model::ListQueryLoggingConfigsRequest& request) const;
+
+        /**
+         * <p>Lists the configurations for DNS query logging that are associated with the
+         * current AWS account or the configuration that is associated with a specified
+         * hosted zone.</p> <p>For more information about DNS query logs, see
+         * <a>CreateQueryLoggingConfig</a>. Additional information, including the format of
+         * DNS query logs, appears in <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListQueryLoggingConfigsOutcomeCallable ListQueryLoggingConfigsCallable(const Model::ListQueryLoggingConfigsRequest& request) const;
+
+        /**
+         * <p>Lists the configurations for DNS query logging that are associated with the
+         * current AWS account or the configuration that is associated with a specified
+         * hosted zone.</p> <p>For more information about DNS query logs, see
+         * <a>CreateQueryLoggingConfig</a>. Additional information, including the format of
+         * DNS query logs, appears in <a
+         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging
+         * DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListQueryLoggingConfigsAsync(const Model::ListQueryLoggingConfigsRequest& request, const ListQueryLoggingConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the resource record sets in a specified hosted zone.</p> <p>
@@ -2718,6 +3093,7 @@ namespace Model
         void ChangeTagsForResourceAsyncHelper(const Model::ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHealthCheckAsyncHelper(const Model::CreateHealthCheckRequest& request, const CreateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHostedZoneAsyncHelper(const Model::CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateQueryLoggingConfigAsyncHelper(const Model::CreateQueryLoggingConfigRequest& request, const CreateQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReusableDelegationSetAsyncHelper(const Model::CreateReusableDelegationSetRequest& request, const CreateReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficPolicyAsyncHelper(const Model::CreateTrafficPolicyRequest& request, const CreateTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficPolicyInstanceAsyncHelper(const Model::CreateTrafficPolicyInstanceRequest& request, const CreateTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2725,6 +3101,7 @@ namespace Model
         void CreateVPCAssociationAuthorizationAsyncHelper(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHealthCheckAsyncHelper(const Model::DeleteHealthCheckRequest& request, const DeleteHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHostedZoneAsyncHelper(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteQueryLoggingConfigAsyncHelper(const Model::DeleteQueryLoggingConfigRequest& request, const DeleteQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReusableDelegationSetAsyncHelper(const Model::DeleteReusableDelegationSetRequest& request, const DeleteReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficPolicyAsyncHelper(const Model::DeleteTrafficPolicyRequest& request, const DeleteTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficPolicyInstanceAsyncHelper(const Model::DeleteTrafficPolicyInstanceRequest& request, const DeleteTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2739,6 +3116,7 @@ namespace Model
         void GetHealthCheckStatusAsyncHelper(const Model::GetHealthCheckStatusRequest& request, const GetHealthCheckStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHostedZoneAsyncHelper(const Model::GetHostedZoneRequest& request, const GetHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHostedZoneCountAsyncHelper(const Model::GetHostedZoneCountRequest& request, const GetHostedZoneCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetQueryLoggingConfigAsyncHelper(const Model::GetQueryLoggingConfigRequest& request, const GetQueryLoggingConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReusableDelegationSetAsyncHelper(const Model::GetReusableDelegationSetRequest& request, const GetReusableDelegationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTrafficPolicyAsyncHelper(const Model::GetTrafficPolicyRequest& request, const GetTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTrafficPolicyInstanceAsyncHelper(const Model::GetTrafficPolicyInstanceRequest& request, const GetTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2747,6 +3125,7 @@ namespace Model
         void ListHealthChecksAsyncHelper(const Model::ListHealthChecksRequest& request, const ListHealthChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHostedZonesAsyncHelper(const Model::ListHostedZonesRequest& request, const ListHostedZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHostedZonesByNameAsyncHelper(const Model::ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListQueryLoggingConfigsAsyncHelper(const Model::ListQueryLoggingConfigsRequest& request, const ListQueryLoggingConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourceRecordSetsAsyncHelper(const Model::ListResourceRecordSetsRequest& request, const ListResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListReusableDelegationSetsAsyncHelper(const Model::ListReusableDelegationSetsRequest& request, const ListReusableDelegationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

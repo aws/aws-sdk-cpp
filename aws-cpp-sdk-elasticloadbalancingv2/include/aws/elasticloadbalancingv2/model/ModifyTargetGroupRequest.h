@@ -78,137 +78,160 @@ namespace Model
 
 
     /**
-     * <p>The protocol to use to connect with the target.</p>
+     * <p>The protocol the load balancer uses when performing health checks on targets.
+     * The TCP protocol is supported only if the protocol of the target group is
+     * TCP.</p>
      */
     inline const ProtocolEnum& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
 
     /**
-     * <p>The protocol to use to connect with the target.</p>
+     * <p>The protocol the load balancer uses when performing health checks on targets.
+     * The TCP protocol is supported only if the protocol of the target group is
+     * TCP.</p>
      */
     inline void SetHealthCheckProtocol(const ProtocolEnum& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
 
     /**
-     * <p>The protocol to use to connect with the target.</p>
+     * <p>The protocol the load balancer uses when performing health checks on targets.
+     * The TCP protocol is supported only if the protocol of the target group is
+     * TCP.</p>
      */
     inline void SetHealthCheckProtocol(ProtocolEnum&& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = std::move(value); }
 
     /**
-     * <p>The protocol to use to connect with the target.</p>
+     * <p>The protocol the load balancer uses when performing health checks on targets.
+     * The TCP protocol is supported only if the protocol of the target group is
+     * TCP.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckProtocol(const ProtocolEnum& value) { SetHealthCheckProtocol(value); return *this;}
 
     /**
-     * <p>The protocol to use to connect with the target.</p>
+     * <p>The protocol the load balancer uses when performing health checks on targets.
+     * The TCP protocol is supported only if the protocol of the target group is
+     * TCP.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
 
 
     /**
-     * <p>The port to use to connect with the target.</p>
+     * <p>The port the load balancer uses when performing health checks on targets.</p>
      */
     inline const Aws::String& GetHealthCheckPort() const{ return m_healthCheckPort; }
 
     /**
-     * <p>The port to use to connect with the target.</p>
+     * <p>The port the load balancer uses when performing health checks on targets.</p>
      */
     inline void SetHealthCheckPort(const Aws::String& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = value; }
 
     /**
-     * <p>The port to use to connect with the target.</p>
+     * <p>The port the load balancer uses when performing health checks on targets.</p>
      */
     inline void SetHealthCheckPort(Aws::String&& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = std::move(value); }
 
     /**
-     * <p>The port to use to connect with the target.</p>
+     * <p>The port the load balancer uses when performing health checks on targets.</p>
      */
     inline void SetHealthCheckPort(const char* value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort.assign(value); }
 
     /**
-     * <p>The port to use to connect with the target.</p>
+     * <p>The port the load balancer uses when performing health checks on targets.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckPort(const Aws::String& value) { SetHealthCheckPort(value); return *this;}
 
     /**
-     * <p>The port to use to connect with the target.</p>
+     * <p>The port the load balancer uses when performing health checks on targets.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckPort(Aws::String&& value) { SetHealthCheckPort(std::move(value)); return *this;}
 
     /**
-     * <p>The port to use to connect with the target.</p>
+     * <p>The port the load balancer uses when performing health checks on targets.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckPort(const char* value) { SetHealthCheckPort(value); return *this;}
 
 
     /**
-     * <p>The ping path that is the destination for the health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
+     * health check request.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
 
     /**
-     * <p>The ping path that is the destination for the health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
+     * health check request.</p>
      */
     inline void SetHealthCheckPath(const Aws::String& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = value; }
 
     /**
-     * <p>The ping path that is the destination for the health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
+     * health check request.</p>
      */
     inline void SetHealthCheckPath(Aws::String&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::move(value); }
 
     /**
-     * <p>The ping path that is the destination for the health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
+     * health check request.</p>
      */
     inline void SetHealthCheckPath(const char* value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath.assign(value); }
 
     /**
-     * <p>The ping path that is the destination for the health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
+     * health check request.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckPath(const Aws::String& value) { SetHealthCheckPath(value); return *this;}
 
     /**
-     * <p>The ping path that is the destination for the health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
+     * health check request.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckPath(Aws::String&& value) { SetHealthCheckPath(std::move(value)); return *this;}
 
     /**
-     * <p>The ping path that is the destination for the health check request.</p>
+     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
+     * health check request.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
 
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target.</p>
+     * individual target. For Application Load Balancers, the range is 5 to 300
+     * seconds. For Network Load Balancers, the supported values are 10 or 30
+     * seconds.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target.</p>
+     * individual target. For Application Load Balancers, the range is 5 to 300
+     * seconds. For Network Load Balancers, the supported values are 10 or 30
+     * seconds.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target.</p>
+     * individual target. For Application Load Balancers, the range is 5 to 300
+     * seconds. For Network Load Balancers, the supported values are 10 or 30
+     * seconds.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 
 
     /**
-     * <p>The amount of time, in seconds, during which no response means a failed
-     * health check.</p>
+     * <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no
+     * response means a failed health check.</p>
      */
     inline int GetHealthCheckTimeoutSeconds() const{ return m_healthCheckTimeoutSeconds; }
 
     /**
-     * <p>The amount of time, in seconds, during which no response means a failed
-     * health check.</p>
+     * <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no
+     * response means a failed health check.</p>
      */
     inline void SetHealthCheckTimeoutSeconds(int value) { m_healthCheckTimeoutSecondsHasBeenSet = true; m_healthCheckTimeoutSeconds = value; }
 
     /**
-     * <p>The amount of time, in seconds, during which no response means a failed
-     * health check.</p>
+     * <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no
+     * response means a failed health check.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckTimeoutSeconds(int value) { SetHealthCheckTimeoutSeconds(value); return *this;}
 
@@ -234,50 +257,53 @@ namespace Model
 
     /**
      * <p>The number of consecutive health check failures required before considering
-     * the target unhealthy.</p>
+     * the target unhealthy. For Network Load Balancers, this value must be the same as
+     * the healthy threshold count.</p>
      */
     inline int GetUnhealthyThresholdCount() const{ return m_unhealthyThresholdCount; }
 
     /**
      * <p>The number of consecutive health check failures required before considering
-     * the target unhealthy.</p>
+     * the target unhealthy. For Network Load Balancers, this value must be the same as
+     * the healthy threshold count.</p>
      */
     inline void SetUnhealthyThresholdCount(int value) { m_unhealthyThresholdCountHasBeenSet = true; m_unhealthyThresholdCount = value; }
 
     /**
      * <p>The number of consecutive health check failures required before considering
-     * the target unhealthy.</p>
+     * the target unhealthy. For Network Load Balancers, this value must be the same as
+     * the healthy threshold count.</p>
      */
     inline ModifyTargetGroupRequest& WithUnhealthyThresholdCount(int value) { SetUnhealthyThresholdCount(value); return *this;}
 
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
-     * target.</p>
+     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * successful response from a target.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
-     * target.</p>
+     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * successful response from a target.</p>
      */
     inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
-     * target.</p>
+     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * successful response from a target.</p>
      */
     inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
-     * target.</p>
+     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * successful response from a target.</p>
      */
     inline ModifyTargetGroupRequest& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
 
     /**
-     * <p>The HTTP codes to use when checking for a successful response from a
-     * target.</p>
+     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * successful response from a target.</p>
      */
     inline ModifyTargetGroupRequest& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
 

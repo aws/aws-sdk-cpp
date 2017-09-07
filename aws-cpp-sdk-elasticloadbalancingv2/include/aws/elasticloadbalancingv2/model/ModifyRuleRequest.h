@@ -115,37 +115,37 @@ namespace Model
 
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
      */
     inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
      */
     inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
      */
     inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
      */
     inline ModifyRuleRequest& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
      */
     inline ModifyRuleRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
      */
     inline ModifyRuleRequest& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The actions.</p>
+     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
      */
     inline ModifyRuleRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 

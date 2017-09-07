@@ -17,6 +17,8 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancingv2/model/LoadBalancerAddress.h>
 #include <utility>
 
 namespace Aws
@@ -120,6 +122,42 @@ namespace Model
      */
     inline AvailabilityZone& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
+    /**
+     * <p>[Network Load Balancers] The static IP address.</p>
+     */
+    inline const Aws::Vector<LoadBalancerAddress>& GetLoadBalancerAddresses() const{ return m_loadBalancerAddresses; }
+
+    /**
+     * <p>[Network Load Balancers] The static IP address.</p>
+     */
+    inline void SetLoadBalancerAddresses(const Aws::Vector<LoadBalancerAddress>& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses = value; }
+
+    /**
+     * <p>[Network Load Balancers] The static IP address.</p>
+     */
+    inline void SetLoadBalancerAddresses(Aws::Vector<LoadBalancerAddress>&& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses = std::move(value); }
+
+    /**
+     * <p>[Network Load Balancers] The static IP address.</p>
+     */
+    inline AvailabilityZone& WithLoadBalancerAddresses(const Aws::Vector<LoadBalancerAddress>& value) { SetLoadBalancerAddresses(value); return *this;}
+
+    /**
+     * <p>[Network Load Balancers] The static IP address.</p>
+     */
+    inline AvailabilityZone& WithLoadBalancerAddresses(Aws::Vector<LoadBalancerAddress>&& value) { SetLoadBalancerAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p>[Network Load Balancers] The static IP address.</p>
+     */
+    inline AvailabilityZone& AddLoadBalancerAddresses(const LoadBalancerAddress& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>[Network Load Balancers] The static IP address.</p>
+     */
+    inline AvailabilityZone& AddLoadBalancerAddresses(LoadBalancerAddress&& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_zoneName;
@@ -127,6 +165,9 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
+    Aws::Vector<LoadBalancerAddress> m_loadBalancerAddresses;
+    bool m_loadBalancerAddressesHasBeenSet;
   };
 
 } // namespace Model

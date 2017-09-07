@@ -26,7 +26,8 @@ namespace Model
   enum class LoadBalancerTypeEnum
   {
     NOT_SET,
-    application
+    application,
+    network
   };
 
 namespace LoadBalancerTypeEnumMapper

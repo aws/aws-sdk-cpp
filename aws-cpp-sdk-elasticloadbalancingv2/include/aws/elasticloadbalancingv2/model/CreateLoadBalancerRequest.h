@@ -19,7 +19,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/LoadBalancerSchemeEnum.h>
+#include <aws/elasticloadbalancingv2/model/LoadBalancerTypeEnum.h>
 #include <aws/elasticloadbalancingv2/model/IpAddressType.h>
+#include <aws/elasticloadbalancingv2/model/SubnetMapping.h>
 #include <aws/elasticloadbalancingv2/model/Tag.h>
 #include <utility>
 
@@ -95,98 +97,178 @@ namespace Model
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
-     * one subnet per Availability Zone. You must specify subnets from at least two
-     * Availability Zones.</p>
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
-     * one subnet per Availability Zone. You must specify subnets from at least two
-     * Availability Zones.</p>
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p>
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
-     * one subnet per Availability Zone. You must specify subnets from at least two
-     * Availability Zones.</p>
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p>
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
-     * one subnet per Availability Zone. You must specify subnets from at least two
-     * Availability Zones.</p>
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
-     * one subnet per Availability Zone. You must specify subnets from at least two
-     * Availability Zones.</p>
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
-     * one subnet per Availability Zone. You must specify subnets from at least two
-     * Availability Zones.</p>
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
-     * one subnet per Availability Zone. You must specify subnets from at least two
-     * Availability Zones.</p>
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the subnets to attach to the load balancer. You can specify only
-     * one subnet per Availability Zone. You must specify subnets from at least two
-     * Availability Zones.</p>
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p>
      */
     inline CreateLoadBalancerRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
 
     /**
-     * <p>The IDs of the security groups to assign to the load balancer.</p>
+     * <p>The IDs of the subnets to attach to the load balancer. You can specify only
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
+     */
+    inline const Aws::Vector<SubnetMapping>& GetSubnetMappings() const{ return m_subnetMappings; }
+
+    /**
+     * <p>The IDs of the subnets to attach to the load balancer. You can specify only
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
+     */
+    inline void SetSubnetMappings(const Aws::Vector<SubnetMapping>& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = value; }
+
+    /**
+     * <p>The IDs of the subnets to attach to the load balancer. You can specify only
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
+     */
+    inline void SetSubnetMappings(Aws::Vector<SubnetMapping>&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = std::move(value); }
+
+    /**
+     * <p>The IDs of the subnets to attach to the load balancer. You can specify only
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
+     */
+    inline CreateLoadBalancerRequest& WithSubnetMappings(const Aws::Vector<SubnetMapping>& value) { SetSubnetMappings(value); return *this;}
+
+    /**
+     * <p>The IDs of the subnets to attach to the load balancer. You can specify only
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
+     */
+    inline CreateLoadBalancerRequest& WithSubnetMappings(Aws::Vector<SubnetMapping>&& value) { SetSubnetMappings(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of the subnets to attach to the load balancer. You can specify only
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
+     */
+    inline CreateLoadBalancerRequest& AddSubnetMappings(const SubnetMapping& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of the subnets to attach to the load balancer. You can specify only
+     * one subnet per Availability Zone. You must specify either subnets or subnet
+     * mappings.</p> <p>[Network Load Balancers] You can specify one Elastic IP address
+     * per subnet.</p> <p>[Application Load Balancers] You cannot specify Elastic IP
+     * addresses for your subnets.</p>
+     */
+    inline CreateLoadBalancerRequest& AddSubnetMappings(SubnetMapping&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>[Application Load Balancers] The IDs of the security groups to assign to the
+     * load balancer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>The IDs of the security groups to assign to the load balancer.</p>
+     * <p>[Application Load Balancers] The IDs of the security groups to assign to the
+     * load balancer.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>The IDs of the security groups to assign to the load balancer.</p>
+     * <p>[Application Load Balancers] The IDs of the security groups to assign to the
+     * load balancer.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>The IDs of the security groups to assign to the load balancer.</p>
+     * <p>[Application Load Balancers] The IDs of the security groups to assign to the
+     * load balancer.</p>
      */
     inline CreateLoadBalancerRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>The IDs of the security groups to assign to the load balancer.</p>
+     * <p>[Application Load Balancers] The IDs of the security groups to assign to the
+     * load balancer.</p>
      */
     inline CreateLoadBalancerRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the security groups to assign to the load balancer.</p>
+     * <p>[Application Load Balancers] The IDs of the security groups to assign to the
+     * load balancer.</p>
      */
     inline CreateLoadBalancerRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the security groups to assign to the load balancer.</p>
+     * <p>[Application Load Balancers] The IDs of the security groups to assign to the
+     * load balancer.</p>
      */
     inline CreateLoadBalancerRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the security groups to assign to the load balancer.</p>
+     * <p>[Application Load Balancers] The IDs of the security groups to assign to the
+     * load balancer.</p>
      */
     inline CreateLoadBalancerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
@@ -294,42 +376,73 @@ namespace Model
 
 
     /**
-     * <p>The type of IP addresses used by the subnets for your load balancer. The
-     * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-     * must use <code>ipv4</code>.</p>
+     * <p>The type of load balancer to create. The default is
+     * <code>application</code>.</p>
+     */
+    inline const LoadBalancerTypeEnum& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of load balancer to create. The default is
+     * <code>application</code>.</p>
+     */
+    inline void SetType(const LoadBalancerTypeEnum& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of load balancer to create. The default is
+     * <code>application</code>.</p>
+     */
+    inline void SetType(LoadBalancerTypeEnum&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of load balancer to create. The default is
+     * <code>application</code>.</p>
+     */
+    inline CreateLoadBalancerRequest& WithType(const LoadBalancerTypeEnum& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of load balancer to create. The default is
+     * <code>application</code>.</p>
+     */
+    inline CreateLoadBalancerRequest& WithType(LoadBalancerTypeEnum&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
+     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     * load balancers must use <code>ipv4</code>.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
-     * <p>The type of IP addresses used by the subnets for your load balancer. The
-     * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-     * must use <code>ipv4</code>.</p>
+     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
+     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     * load balancers must use <code>ipv4</code>.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
-     * <p>The type of IP addresses used by the subnets for your load balancer. The
-     * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-     * must use <code>ipv4</code>.</p>
+     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
+     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     * load balancers must use <code>ipv4</code>.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
-     * <p>The type of IP addresses used by the subnets for your load balancer. The
-     * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-     * must use <code>ipv4</code>.</p>
+     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
+     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     * load balancers must use <code>ipv4</code>.</p>
      */
     inline CreateLoadBalancerRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
-     * <p>The type of IP addresses used by the subnets for your load balancer. The
-     * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-     * must use <code>ipv4</code>.</p>
+     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
+     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     * load balancers must use <code>ipv4</code>.</p>
      */
     inline CreateLoadBalancerRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
@@ -341,6 +454,9 @@ namespace Model
     Aws::Vector<Aws::String> m_subnets;
     bool m_subnetsHasBeenSet;
 
+    Aws::Vector<SubnetMapping> m_subnetMappings;
+    bool m_subnetMappingsHasBeenSet;
+
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
 
@@ -349,6 +465,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    LoadBalancerTypeEnum m_type;
+    bool m_typeHasBeenSet;
 
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet;

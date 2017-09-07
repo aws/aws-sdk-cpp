@@ -298,32 +298,32 @@ namespace Model
 
 
     /**
-     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
-     * more information, see <a>PutSlotType</a>.</p>
+     * <p>The slot resolution strategy that Amazon Lex uses to determine the value of
+     * the slot. For more information, see <a>PutSlotType</a>.</p>
      */
     inline const SlotValueSelectionStrategy& GetValueSelectionStrategy() const{ return m_valueSelectionStrategy; }
 
     /**
-     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
-     * more information, see <a>PutSlotType</a>.</p>
+     * <p>The slot resolution strategy that Amazon Lex uses to determine the value of
+     * the slot. For more information, see <a>PutSlotType</a>.</p>
      */
     inline void SetValueSelectionStrategy(const SlotValueSelectionStrategy& value) { m_valueSelectionStrategy = value; }
 
     /**
-     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
-     * more information, see <a>PutSlotType</a>.</p>
+     * <p>The slot resolution strategy that Amazon Lex uses to determine the value of
+     * the slot. For more information, see <a>PutSlotType</a>.</p>
      */
     inline void SetValueSelectionStrategy(SlotValueSelectionStrategy&& value) { m_valueSelectionStrategy = std::move(value); }
 
     /**
-     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
-     * more information, see <a>PutSlotType</a>.</p>
+     * <p>The slot resolution strategy that Amazon Lex uses to determine the value of
+     * the slot. For more information, see <a>PutSlotType</a>.</p>
      */
     inline PutSlotTypeResult& WithValueSelectionStrategy(const SlotValueSelectionStrategy& value) { SetValueSelectionStrategy(value); return *this;}
 
     /**
-     * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
-     * more information, see <a>PutSlotType</a>.</p>
+     * <p>The slot resolution strategy that Amazon Lex uses to determine the value of
+     * the slot. For more information, see <a>PutSlotType</a>.</p>
      */
     inline PutSlotTypeResult& WithValueSelectionStrategy(SlotValueSelectionStrategy&& value) { SetValueSelectionStrategy(std::move(value)); return *this;}
 

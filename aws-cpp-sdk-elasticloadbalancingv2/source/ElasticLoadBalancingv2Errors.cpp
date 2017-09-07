@@ -44,10 +44,12 @@ static const int TOO_MANY_TARGETS_HASH = HashingUtils::HashString("TooManyTarget
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTags");
 static const int TARGET_GROUP_NOT_FOUND_HASH = HashingUtils::HashString("TargetGroupNotFound");
 static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SubnetNotFound");
+static const int AVAILABILITY_ZONE_NOT_SUPPORTED_HASH = HashingUtils::HashString("AvailabilityZoneNotSupported");
 static const int DUPLICATE_LISTENER_HASH = HashingUtils::HashString("DuplicateListener");
 static const int TOO_MANY_REGISTRATIONS_FOR_TARGET_ID_HASH = HashingUtils::HashString("TooManyRegistrationsForTargetId");
 static const int UNSUPPORTED_PROTOCOL_HASH = HashingUtils::HashString("UnsupportedProtocol");
 static const int RULE_NOT_FOUND_HASH = HashingUtils::HashString("RuleNotFound");
+static const int ALLOCATION_ID_NOT_FOUND_HASH = HashingUtils::HashString("AllocationIdNotFound");
 static const int TOO_MANY_LISTENERS_HASH = HashingUtils::HashString("TooManyListeners");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUse");
 static const int INVALID_SCHEME_HASH = HashingUtils::HashString("InvalidScheme");
@@ -129,6 +131,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::SUBNET_NOT_FOUND), false);
   }
+  else if (hashCode == AVAILABILITY_ZONE_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::AVAILABILITY_ZONE_NOT_SUPPORTED), false);
+  }
   else if (hashCode == DUPLICATE_LISTENER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::DUPLICATE_LISTENER), false);
@@ -144,6 +150,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RULE_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::RULE_NOT_FOUND), false);
+  }
+  else if (hashCode == ALLOCATION_ID_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::ALLOCATION_ID_NOT_FOUND), false);
   }
   else if (hashCode == TOO_MANY_LISTENERS_HASH)
   {

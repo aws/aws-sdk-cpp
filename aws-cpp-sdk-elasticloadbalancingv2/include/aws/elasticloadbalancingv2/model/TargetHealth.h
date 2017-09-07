@@ -100,12 +100,13 @@ namespace Model
      * <code>Target.NotRegistered</code> - The target is not registered with the target
      * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
      * used by any load balancer or the target is in an Availability Zone that is not
-     * enabled for its load balancer.</p> </li> <li> <p>
-     * <code>Target.InvalidState</code> - The target is in the stopped or terminated
-     * state.</p> </li> </ul> <p>If the target state is <code>draining</code>, the
-     * reason code can be the following value:</p> <ul> <li> <p>
-     * <code>Target.DeregistrationInProgress</code> - The target is in the process of
-     * being deregistered and the deregistration delay period has not expired.</p>
+     * enabled for its load balancer.</p> </li> <li> <p> <code>Target.IpUnusable</code>
+     * - The target IP address is reserved for use by a load balancer.</p> </li> <li>
+     * <p> <code>Target.InvalidState</code> - The target is in the stopped or
+     * terminated state.</p> </li> </ul> <p>If the target state is
+     * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
+     * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
+     * of being deregistered and the deregistration delay period has not expired.</p>
      * </li> </ul>
      */
     inline const TargetHealthReasonEnum& GetReason() const{ return m_reason; }
@@ -132,12 +133,13 @@ namespace Model
      * <code>Target.NotRegistered</code> - The target is not registered with the target
      * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
      * used by any load balancer or the target is in an Availability Zone that is not
-     * enabled for its load balancer.</p> </li> <li> <p>
-     * <code>Target.InvalidState</code> - The target is in the stopped or terminated
-     * state.</p> </li> </ul> <p>If the target state is <code>draining</code>, the
-     * reason code can be the following value:</p> <ul> <li> <p>
-     * <code>Target.DeregistrationInProgress</code> - The target is in the process of
-     * being deregistered and the deregistration delay period has not expired.</p>
+     * enabled for its load balancer.</p> </li> <li> <p> <code>Target.IpUnusable</code>
+     * - The target IP address is reserved for use by a load balancer.</p> </li> <li>
+     * <p> <code>Target.InvalidState</code> - The target is in the stopped or
+     * terminated state.</p> </li> </ul> <p>If the target state is
+     * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
+     * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
+     * of being deregistered and the deregistration delay period has not expired.</p>
      * </li> </ul>
      */
     inline void SetReason(const TargetHealthReasonEnum& value) { m_reasonHasBeenSet = true; m_reason = value; }
@@ -164,12 +166,13 @@ namespace Model
      * <code>Target.NotRegistered</code> - The target is not registered with the target
      * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
      * used by any load balancer or the target is in an Availability Zone that is not
-     * enabled for its load balancer.</p> </li> <li> <p>
-     * <code>Target.InvalidState</code> - The target is in the stopped or terminated
-     * state.</p> </li> </ul> <p>If the target state is <code>draining</code>, the
-     * reason code can be the following value:</p> <ul> <li> <p>
-     * <code>Target.DeregistrationInProgress</code> - The target is in the process of
-     * being deregistered and the deregistration delay period has not expired.</p>
+     * enabled for its load balancer.</p> </li> <li> <p> <code>Target.IpUnusable</code>
+     * - The target IP address is reserved for use by a load balancer.</p> </li> <li>
+     * <p> <code>Target.InvalidState</code> - The target is in the stopped or
+     * terminated state.</p> </li> </ul> <p>If the target state is
+     * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
+     * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
+     * of being deregistered and the deregistration delay period has not expired.</p>
      * </li> </ul>
      */
     inline void SetReason(TargetHealthReasonEnum&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
@@ -196,12 +199,13 @@ namespace Model
      * <code>Target.NotRegistered</code> - The target is not registered with the target
      * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
      * used by any load balancer or the target is in an Availability Zone that is not
-     * enabled for its load balancer.</p> </li> <li> <p>
-     * <code>Target.InvalidState</code> - The target is in the stopped or terminated
-     * state.</p> </li> </ul> <p>If the target state is <code>draining</code>, the
-     * reason code can be the following value:</p> <ul> <li> <p>
-     * <code>Target.DeregistrationInProgress</code> - The target is in the process of
-     * being deregistered and the deregistration delay period has not expired.</p>
+     * enabled for its load balancer.</p> </li> <li> <p> <code>Target.IpUnusable</code>
+     * - The target IP address is reserved for use by a load balancer.</p> </li> <li>
+     * <p> <code>Target.InvalidState</code> - The target is in the stopped or
+     * terminated state.</p> </li> </ul> <p>If the target state is
+     * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
+     * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
+     * of being deregistered and the deregistration delay period has not expired.</p>
      * </li> </ul>
      */
     inline TargetHealth& WithReason(const TargetHealthReasonEnum& value) { SetReason(value); return *this;}
@@ -228,12 +232,13 @@ namespace Model
      * <code>Target.NotRegistered</code> - The target is not registered with the target
      * group.</p> </li> <li> <p> <code>Target.NotInUse</code> - The target group is not
      * used by any load balancer or the target is in an Availability Zone that is not
-     * enabled for its load balancer.</p> </li> <li> <p>
-     * <code>Target.InvalidState</code> - The target is in the stopped or terminated
-     * state.</p> </li> </ul> <p>If the target state is <code>draining</code>, the
-     * reason code can be the following value:</p> <ul> <li> <p>
-     * <code>Target.DeregistrationInProgress</code> - The target is in the process of
-     * being deregistered and the deregistration delay period has not expired.</p>
+     * enabled for its load balancer.</p> </li> <li> <p> <code>Target.IpUnusable</code>
+     * - The target IP address is reserved for use by a load balancer.</p> </li> <li>
+     * <p> <code>Target.InvalidState</code> - The target is in the stopped or
+     * terminated state.</p> </li> </ul> <p>If the target state is
+     * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
+     * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
+     * of being deregistered and the deregistration delay period has not expired.</p>
      * </li> </ul>
      */
     inline TargetHealth& WithReason(TargetHealthReasonEnum&& value) { SetReason(std::move(value)); return *this;}

@@ -132,9 +132,10 @@ namespace Model
    * Developer Guide</i>.</p> </li> <li> <p>Provisioned read and write capacity for
    * Amazon DynamoDB tables and global secondary indexes. For more information, see
    * <a
-   * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TargetTracking.html">Auto
-   * Scaling for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-   * </li> </ul> <p>For a list of supported regions, see <a
+   * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html">Managing
+   * Throughput Capacity Automatically with DynamoDB Auto Scaling</a> in the
+   * <i>Amazon DynamoDB Developer Guide</i>.</p> </li> </ul> <p>For a list of
+   * supported regions, see <a
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS
    * Regions and Endpoints: Application Auto Scaling</a> in the <i>AWS General
    * Reference</i>.</p>

@@ -35,6 +35,7 @@ namespace Aws
         static const int unhealthy_HASH = HashingUtils::HashString("unhealthy");
         static const int unused_HASH = HashingUtils::HashString("unused");
         static const int draining_HASH = HashingUtils::HashString("draining");
+        static const int unavailable_HASH = HashingUtils::HashString("unavailable");
 
 
         TargetHealthStateEnum GetTargetHealthStateEnumForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return TargetHealthStateEnum::draining;
           }
+          else if (hashCode == unavailable_HASH)
+          {
+            return TargetHealthStateEnum::unavailable;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "unused";
           case TargetHealthStateEnum::draining:
             return "draining";
+          case TargetHealthStateEnum::unavailable:
+            return "unavailable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

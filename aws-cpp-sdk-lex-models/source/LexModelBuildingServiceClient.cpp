@@ -49,6 +49,7 @@
 #include <aws/lex-models/model/GetBuiltinIntentRequest.h>
 #include <aws/lex-models/model/GetBuiltinIntentsRequest.h>
 #include <aws/lex-models/model/GetBuiltinSlotTypesRequest.h>
+#include <aws/lex-models/model/GetExportRequest.h>
 #include <aws/lex-models/model/GetIntentRequest.h>
 #include <aws/lex-models/model/GetIntentVersionsRequest.h>
 #include <aws/lex-models/model/GetIntentsRequest.h>
@@ -942,6 +943,41 @@ void LexModelBuildingServiceClient::GetBuiltinSlotTypesAsync(const GetBuiltinSlo
 void LexModelBuildingServiceClient::GetBuiltinSlotTypesAsyncHelper(const GetBuiltinSlotTypesRequest& request, const GetBuiltinSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetBuiltinSlotTypes(request), context);
+}
+
+GetExportOutcome LexModelBuildingServiceClient::GetExport(const GetExportRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/exports/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetExportOutcome(GetExportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetExportOutcome(outcome.GetError());
+  }
+}
+
+GetExportOutcomeCallable LexModelBuildingServiceClient::GetExportCallable(const GetExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::GetExportAsync(const GetExportRequest& request, const GetExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetExportAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::GetExportAsyncHelper(const GetExportRequest& request, const GetExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetExport(request), context);
 }
 
 GetIntentOutcome LexModelBuildingServiceClient::GetIntent(const GetIntentRequest& request) const

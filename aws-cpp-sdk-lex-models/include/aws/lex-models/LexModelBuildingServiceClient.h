@@ -34,6 +34,7 @@
 #include <aws/lex-models/model/GetBuiltinIntentResult.h>
 #include <aws/lex-models/model/GetBuiltinIntentsResult.h>
 #include <aws/lex-models/model/GetBuiltinSlotTypesResult.h>
+#include <aws/lex-models/model/GetExportResult.h>
 #include <aws/lex-models/model/GetIntentResult.h>
 #include <aws/lex-models/model/GetIntentVersionsResult.h>
 #include <aws/lex-models/model/GetIntentsResult.h>
@@ -113,6 +114,7 @@ namespace Model
         class GetBuiltinIntentRequest;
         class GetBuiltinIntentsRequest;
         class GetBuiltinSlotTypesRequest;
+        class GetExportRequest;
         class GetIntentRequest;
         class GetIntentVersionsRequest;
         class GetIntentsRequest;
@@ -147,6 +149,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetBuiltinIntentResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBuiltinIntentOutcome;
         typedef Aws::Utils::Outcome<GetBuiltinIntentsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBuiltinIntentsOutcome;
         typedef Aws::Utils::Outcome<GetBuiltinSlotTypesResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetBuiltinSlotTypesOutcome;
+        typedef Aws::Utils::Outcome<GetExportResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetExportOutcome;
         typedef Aws::Utils::Outcome<GetIntentResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetIntentOutcome;
         typedef Aws::Utils::Outcome<GetIntentVersionsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetIntentVersionsOutcome;
         typedef Aws::Utils::Outcome<GetIntentsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetIntentsOutcome;
@@ -181,6 +184,7 @@ namespace Model
         typedef std::future<GetBuiltinIntentOutcome> GetBuiltinIntentOutcomeCallable;
         typedef std::future<GetBuiltinIntentsOutcome> GetBuiltinIntentsOutcomeCallable;
         typedef std::future<GetBuiltinSlotTypesOutcome> GetBuiltinSlotTypesOutcomeCallable;
+        typedef std::future<GetExportOutcome> GetExportOutcomeCallable;
         typedef std::future<GetIntentOutcome> GetIntentOutcomeCallable;
         typedef std::future<GetIntentVersionsOutcome> GetIntentVersionsOutcomeCallable;
         typedef std::future<GetIntentsOutcome> GetIntentsOutcomeCallable;
@@ -218,6 +222,7 @@ namespace Model
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetBuiltinIntentRequest&, const Model::GetBuiltinIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBuiltinIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetBuiltinIntentsRequest&, const Model::GetBuiltinIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBuiltinIntentsResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetBuiltinSlotTypesRequest&, const Model::GetBuiltinSlotTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBuiltinSlotTypesResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetExportRequest&, const Model::GetExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExportResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetIntentRequest&, const Model::GetIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetIntentVersionsRequest&, const Model::GetIntentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntentVersionsResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetIntentsRequest&, const Model::GetIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntentsResponseReceivedHandler;
@@ -1180,6 +1185,34 @@ namespace Model
         virtual void GetBuiltinSlotTypesAsync(const Model::GetBuiltinSlotTypesRequest& request, const GetBuiltinSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Exports the contents of a Amazon Lex resource in a specified format.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetExportOutcome GetExport(const Model::GetExportRequest& request) const;
+
+        /**
+         * <p>Exports the contents of a Amazon Lex resource in a specified format.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetExportOutcomeCallable GetExportCallable(const Model::GetExportRequest& request) const;
+
+        /**
+         * <p>Exports the contents of a Amazon Lex resource in a specified format.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetExportAsync(const Model::GetExportRequest& request, const GetExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Returns information about an intent. In addition to the intent name, you
          * must specify the intent version. </p> <p> This operation requires permissions to
          * perform the <code>lex:GetIntent</code> action. </p><p><h3>See Also:</h3>   <a
@@ -1793,6 +1826,7 @@ namespace Model
         void GetBuiltinIntentAsyncHelper(const Model::GetBuiltinIntentRequest& request, const GetBuiltinIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBuiltinIntentsAsyncHelper(const Model::GetBuiltinIntentsRequest& request, const GetBuiltinIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBuiltinSlotTypesAsyncHelper(const Model::GetBuiltinSlotTypesRequest& request, const GetBuiltinSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetExportAsyncHelper(const Model::GetExportRequest& request, const GetExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntentAsyncHelper(const Model::GetIntentRequest& request, const GetIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntentVersionsAsyncHelper(const Model::GetIntentVersionsRequest& request, const GetIntentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntentsAsyncHelper(const Model::GetIntentsRequest& request, const GetIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

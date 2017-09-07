@@ -79,7 +79,7 @@ namespace Model
 
 
     /**
-     * <p>A condition. Each condition specifies a field name and a single value.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
@@ -97,7 +97,7 @@ namespace Model
     inline const Aws::Vector<RuleCondition>& GetConditions() const{ return m_conditions; }
 
     /**
-     * <p>A condition. Each condition specifies a field name and a single value.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
@@ -115,7 +115,7 @@ namespace Model
     inline void SetConditions(const Aws::Vector<RuleCondition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
 
     /**
-     * <p>A condition. Each condition specifies a field name and a single value.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
@@ -133,7 +133,7 @@ namespace Model
     inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
 
     /**
-     * <p>A condition. Each condition specifies a field name and a single value.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
@@ -151,7 +151,7 @@ namespace Model
     inline CreateRuleRequest& WithConditions(const Aws::Vector<RuleCondition>& value) { SetConditions(value); return *this;}
 
     /**
-     * <p>A condition. Each condition specifies a field name and a single value.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
@@ -169,7 +169,7 @@ namespace Model
     inline CreateRuleRequest& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(std::move(value)); return *this;}
 
     /**
-     * <p>A condition. Each condition specifies a field name and a single value.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
@@ -187,7 +187,7 @@ namespace Model
     inline CreateRuleRequest& AddConditions(const RuleCondition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
 
     /**
-     * <p>A condition. Each condition specifies a field name and a single value.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.

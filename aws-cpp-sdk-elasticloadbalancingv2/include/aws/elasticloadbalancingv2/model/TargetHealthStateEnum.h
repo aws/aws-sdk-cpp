@@ -30,7 +30,8 @@ namespace Model
     healthy,
     unhealthy,
     unused,
-    draining
+    draining,
+    unavailable
   };
 
 namespace TargetHealthStateEnumMapper

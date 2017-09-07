@@ -337,61 +337,66 @@ namespace Model
 
 
     /**
-     * <p>Determines the strategy that Amazon Lex uses to return slot type values. The
-     * field can be set to one of the following values:</p> <ul> <li> <p>
-     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.</p> </li>
-     * <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the
-     * slot, return the first value in the resolution list as the slot type value. If
-     * there is no resolution list, null is returned.</p> </li> </ul> <p>If you don't
-     * specify the <code>valueSelectionStrategy</code> is not provided, the default is
+     * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
+     * type values. The field can be set to one of the following values:</p> <ul> <li>
+     * <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the
+     * user value is similar to the slot value.</p> </li> <li> <p>
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
+     * the first value in the resolution list as the slot type value. If there is no
+     * resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the
+     * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline const SlotValueSelectionStrategy& GetValueSelectionStrategy() const{ return m_valueSelectionStrategy; }
 
     /**
-     * <p>Determines the strategy that Amazon Lex uses to return slot type values. The
-     * field can be set to one of the following values:</p> <ul> <li> <p>
-     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.</p> </li>
-     * <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the
-     * slot, return the first value in the resolution list as the slot type value. If
-     * there is no resolution list, null is returned.</p> </li> </ul> <p>If you don't
-     * specify the <code>valueSelectionStrategy</code> is not provided, the default is
+     * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
+     * type values. The field can be set to one of the following values:</p> <ul> <li>
+     * <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the
+     * user value is similar to the slot value.</p> </li> <li> <p>
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
+     * the first value in the resolution list as the slot type value. If there is no
+     * resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the
+     * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline void SetValueSelectionStrategy(const SlotValueSelectionStrategy& value) { m_valueSelectionStrategyHasBeenSet = true; m_valueSelectionStrategy = value; }
 
     /**
-     * <p>Determines the strategy that Amazon Lex uses to return slot type values. The
-     * field can be set to one of the following values:</p> <ul> <li> <p>
-     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.</p> </li>
-     * <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the
-     * slot, return the first value in the resolution list as the slot type value. If
-     * there is no resolution list, null is returned.</p> </li> </ul> <p>If you don't
-     * specify the <code>valueSelectionStrategy</code> is not provided, the default is
+     * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
+     * type values. The field can be set to one of the following values:</p> <ul> <li>
+     * <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the
+     * user value is similar to the slot value.</p> </li> <li> <p>
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
+     * the first value in the resolution list as the slot type value. If there is no
+     * resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the
+     * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline void SetValueSelectionStrategy(SlotValueSelectionStrategy&& value) { m_valueSelectionStrategyHasBeenSet = true; m_valueSelectionStrategy = std::move(value); }
 
     /**
-     * <p>Determines the strategy that Amazon Lex uses to return slot type values. The
-     * field can be set to one of the following values:</p> <ul> <li> <p>
-     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.</p> </li>
-     * <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the
-     * slot, return the first value in the resolution list as the slot type value. If
-     * there is no resolution list, null is returned.</p> </li> </ul> <p>If you don't
-     * specify the <code>valueSelectionStrategy</code> is not provided, the default is
+     * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
+     * type values. The field can be set to one of the following values:</p> <ul> <li>
+     * <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the
+     * user value is similar to the slot value.</p> </li> <li> <p>
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
+     * the first value in the resolution list as the slot type value. If there is no
+     * resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the
+     * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline PutSlotTypeRequest& WithValueSelectionStrategy(const SlotValueSelectionStrategy& value) { SetValueSelectionStrategy(value); return *this;}
 
     /**
-     * <p>Determines the strategy that Amazon Lex uses to return slot type values. The
-     * field can be set to one of the following values:</p> <ul> <li> <p>
-     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.</p> </li>
-     * <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the
-     * slot, return the first value in the resolution list as the slot type value. If
-     * there is no resolution list, null is returned.</p> </li> </ul> <p>If you don't
-     * specify the <code>valueSelectionStrategy</code> is not provided, the default is
+     * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
+     * type values. The field can be set to one of the following values:</p> <ul> <li>
+     * <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the
+     * user value is similar to the slot value.</p> </li> <li> <p>
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
+     * the first value in the resolution list as the slot type value. If there is no
+     * resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the
+     * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
     inline PutSlotTypeRequest& WithValueSelectionStrategy(SlotValueSelectionStrategy&& value) { SetValueSelectionStrategy(std::move(value)); return *this;}
