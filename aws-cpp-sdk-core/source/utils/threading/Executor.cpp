@@ -23,9 +23,40 @@ using namespace Aws::Utils::Threading;
 
 bool DefaultExecutor::SubmitToThread(std::function<void()>&&  fx)
 {
-    std::thread t(fx);
-    t.detach();
+    auto main = [fx, this] { 
+        fx(); 
+        Detach(std::this_thread::get_id()); 
+    };
+    std::lock_guard<std::mutex> locker(m_listLock);
+    std::thread t(main);
+    m_threads.emplace(t.get_id(), std::move(t));
     return true;
+}
+
+void DefaultExecutor::Detach(std::thread::id id)
+{
+    if(m_shuttingdown)
+    {
+        // we're shutting down, therefore the dtor is waiting on all the threads to join. We'll deadlock if we attempt
+        // to acquire the mutex |m_listLock|.
+        return;
+    }
+    std::lock_guard<std::mutex> locker(m_listLock);
+    auto it = m_threads.find(id);
+    assert(it != m_threads.end());
+    it->second.detach();
+    m_threads.erase(it);
+}
+
+DefaultExecutor::~DefaultExecutor()
+{
+    m_shuttingdown = true;
+    std::lock_guard<std::mutex> locker(m_listLock);
+    for (auto& pair : m_threads)
+    {
+        pair.second.join();
+    }
+    m_threads.clear();
 }
 
 PooledThreadExecutor::PooledThreadExecutor(size_t poolSize, OverflowPolicy overflowPolicy) :
