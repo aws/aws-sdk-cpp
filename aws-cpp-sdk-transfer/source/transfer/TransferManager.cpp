@@ -47,13 +47,11 @@ namespace Aws
             Aws::String prefix;
         };
 
-        TransferManager::TransferManager(const TransferManagerConfiguration& configuration) : m_transferConfig(configuration)
+        TransferManager::TransferManager(const TransferManagerConfiguration& configuration) : m_transferConfig(configuration), 
+            m_executor(Aws::MakeUnique<Aws::Utils::Threading::PooledThreadExecutor>(CLASS_TAG, m_transferConfig.maxParallelTransfers))
         {
-            assert(m_transferConfig.s3Client != nullptr);
-            if (m_transferConfig.transferExecutor == nullptr)
-            {
-                m_transferConfig.transferExecutor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(CLASS_TAG, m_transferConfig.maxParallelTransfers);
-            }
+            assert(m_transferConfig.s3ClientFactory != nullptr);
+            m_s3 = m_transferConfig.s3ClientFactory();
 
             for (uint64_t i = 0; i < m_transferConfig.transferBufferMaxHeapSize; i += m_transferConfig.bufferSize)
             {
@@ -63,6 +61,12 @@ namespace Aws
 
         TransferManager::~TransferManager()
         {
+            // NOTE: the following order is important.
+            // worker-threads spawned by TransferManager might reference m_s3, so they need to be joined _BEFORE_ s3 is
+            // destroyed.
+            m_executor = nullptr; // force our threadpool to join its threads
+            m_s3 = nullptr; // force s3 async tasks to join its threads
+
             for (auto buffer : m_bufferManager.ShutdownAndWait(static_cast<size_t>(m_transferConfig.transferBufferMaxHeapSize / m_transferConfig.bufferSize)))
             {
                 Aws::Delete(buffer);
@@ -89,7 +93,7 @@ namespace Aws
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, writeToStreamfn);
             handle->ApplyDownloadConfiguration(downloadConfig);
 
-            m_transferConfig.transferExecutor->Submit([this, writeToStreamfn, handle] { DoDownload(handle); });
+            m_executor->Submit([this, writeToStreamfn, handle] { DoDownload(handle); });
             return handle;
         }
 
@@ -109,7 +113,7 @@ namespace Aws
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, createFileFn);
             handle->ApplyDownloadConfiguration(downloadConfig);
 
-            m_transferConfig.transferExecutor->Submit([this, createFileFn, handle] { DoDownload(handle); });
+            m_executor->Submit([this, createFileFn, handle] { DoDownload(handle); });
             return handle;
         }
 
@@ -156,7 +160,7 @@ namespace Aws
             assert(inProgressHandle->GetTransferDirection() == TransferDirection::UPLOAD);
 
             inProgressHandle->Cancel();
-            m_transferConfig.transferExecutor->Submit([this, inProgressHandle] { WaitForCancellationAndAbortUpload(inProgressHandle); });
+            m_executor->Submit([this, inProgressHandle] { WaitForCancellationAndAbortUpload(inProgressHandle); });
         }
 
         void TransferManager::UploadDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix, const Aws::Map<Aws::String, Aws::String>& metadata)
@@ -181,7 +185,7 @@ namespace Aws
                 return true;
             };
             
-            m_transferConfig.transferExecutor->Submit([directory, visitor]() { Aws::FileSystem::DirectoryTree dir(directory); dir.TraverseDepthFirst(visitor); });
+            m_executor->Submit([directory, visitor]() { Aws::FileSystem::DirectoryTree dir(directory); dir.TraverseDepthFirst(visitor); });
         }
 
         void TransferManager::DownloadToDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix)
@@ -201,7 +205,7 @@ namespace Aws
             context->rootDirectory = directory;
             context->prefix = prefix;
                 
-            m_transferConfig.s3Client->ListObjectsV2Async(request, handler, context);
+            m_s3->ListObjectsV2Async(request, handler, context);
         }
 
         void TransferManager::DoMultiPartUpload(const std::shared_ptr<TransferHandle>& handle)
@@ -231,7 +235,7 @@ namespace Aws
                 createMultipartRequest.WithKey(handle->GetKey());
                 createMultipartRequest.WithMetadata(handle->GetMetadata());
 
-                auto createMultipartResponse = m_transferConfig.s3Client->CreateMultipartUpload(createMultipartRequest);
+                auto createMultipartResponse = m_s3->CreateMultipartUpload(createMultipartRequest);
                 if (createMultipartResponse.IsSuccess())
                 {
                     handle->SetMultipartId(createMultipartResponse.GetResult().GetUploadId());
@@ -310,7 +314,7 @@ namespace Aws
                         HandleUploadPartResponse(client, request, outcome, context);
                     };
 
-                    m_transferConfig.s3Client->UploadPartAsync(uploadPartRequest, callback, asyncContext);
+                    m_s3->UploadPartAsync(uploadPartRequest, callback, asyncContext);
                     sentBytes += lengthToWrite;
 
                     ++partsIter;
@@ -392,7 +396,7 @@ namespace Aws
                 HandlePutObjectResponse(client, request, outcome, context);
             };
 
-            m_transferConfig.s3Client->PutObjectAsync(putObjectRequest, callback, asyncContext);
+            m_s3->PutObjectAsync(putObjectRequest, callback, asyncContext);
         }
 
         void TransferManager::HandleUploadPartResponse(const Aws::S3::S3Client*, const Aws::S3::Model::UploadPartRequest& request,
@@ -444,7 +448,7 @@ namespace Aws
                         .WithUploadId(transferContext->handle->GetMultiPartId())
                         .WithMultipartUpload(completedUpload);
 
-                    auto completeUploadOutcome = m_transferConfig.s3Client->CompleteMultipartUpload(completeMultipartUploadRequest);
+                    auto completeUploadOutcome = m_s3->CompleteMultipartUpload(completeMultipartUploadRequest);
 
                     if (completeUploadOutcome.IsSuccess())
                     {
@@ -505,7 +509,7 @@ namespace Aws
             retryHandle->UpdateStatus(TransferStatus::NOT_STARTED);
             retryHandle->Restart();
             
-            m_transferConfig.transferExecutor->Submit([this, retryHandle] 
+            m_executor->Submit([this, retryHandle] 
                                                       { DoDownload(retryHandle); });
 
             return retryHandle;
@@ -541,7 +545,7 @@ namespace Aws
                 TriggerDownloadProgressCallback(*handle);
             });
 
-            auto getObjectOutcome = m_transferConfig.s3Client->GetObject(request);
+            auto getObjectOutcome = m_s3->GetObject(request);
             if (getObjectOutcome.IsSuccess())
             {
                 handle->SetMetadata(getObjectOutcome.GetResult().GetMetadata());
@@ -583,7 +587,7 @@ namespace Aws
                     headObjectRequest.SetVersionId(handle->GetVersionId());
                 }
             
-                auto headObjectOutcome = m_transferConfig.s3Client->HeadObject(headObjectRequest);
+                auto headObjectOutcome = m_s3->HeadObject(headObjectRequest);
 
                 if (!headObjectOutcome.IsSuccess())
                 {
@@ -703,7 +707,7 @@ namespace Aws
 
                     handle->AddPendingPart(partState);
 
-                    m_transferConfig.s3Client->GetObjectAsync(getObjectRangeRequest, callback, asyncContext);
+                    m_s3->GetObjectAsync(getObjectRangeRequest, callback, asyncContext);
                     ++queuedPartIter;
                 }
                 else if(buffer)
@@ -790,7 +794,7 @@ namespace Aws
                     .WithKey(canceledHandle->GetKey())
                     .WithUploadId(canceledHandle->GetMultiPartId());
 
-                auto abortOutcome = m_transferConfig.s3Client->AbortMultipartUpload(abortMultipartUploadRequest);
+                auto abortOutcome = m_s3->AbortMultipartUpload(abortMultipartUploadRequest);
                 if (abortOutcome.IsSuccess())
                 {
                     canceledHandle->UpdateStatus(TransferStatus::ABORTED);
@@ -822,7 +826,7 @@ namespace Aws
                 if (result.GetIsTruncated())
                 {
                     requestCpy.SetContinuationToken(result.GetNextContinuationToken());
-                    m_transferConfig.s3Client->ListObjectsV2Async(requestCpy, handler, context);
+                    m_s3->ListObjectsV2Async(requestCpy, handler, context);
                 }
 
                 //this can contain matching directories or actual objects to download. If it's a directory, go ahead and create a local directory then
@@ -833,7 +837,7 @@ namespace Aws
                     {
                         Aws::FileSystem::CreateDirectoryIfNotExists(DetermineFilePath(directory, prefix, content.GetKey()).c_str());
                         requestCpy.SetPrefix(content.GetKey());
-                        m_transferConfig.s3Client->ListObjectsV2Async(requestCpy, handler, context);
+                        m_s3->ListObjectsV2Async(requestCpy, handler, context);
                     }
                     //this is our fixed point in the algorithm. eventually, everything will return an object.
                     else if (content.GetSize() > 0)
@@ -848,7 +852,7 @@ namespace Aws
                 {
                     Aws::FileSystem::CreateDirectoryIfNotExists(DetermineFilePath(directory, prefix, commonPrefix.GetPrefix()).c_str());
                     requestCpy.SetPrefix(commonPrefix.GetPrefix());
-                    m_transferConfig.s3Client->ListObjectsV2Async(requestCpy, handler, context);
+                    m_s3->ListObjectsV2Async(requestCpy, handler, context);
                 }
             }
             else
@@ -921,8 +925,7 @@ namespace Aws
         bool TransferManager::MultipartUploadSupported(uint64_t length) const
         {
             return length > m_transferConfig.bufferSize && 
-                   m_transferConfig.s3Client            && 
-                   m_transferConfig.s3Client->MultipartUploadSupported();
+                   m_s3->MultipartUploadSupported();
         }
 
         std::shared_ptr<TransferHandle> TransferManager::CreateUploadFileHandle(Aws::IOStream* fileStream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
@@ -956,11 +959,11 @@ namespace Aws
 
             if (MultipartUploadSupported(handle->GetBytesTotalSize()))
             {
-                m_transferConfig.transferExecutor->Submit([this, handle, fileStream] { if (fileStream != nullptr) DoMultiPartUpload(fileStream, handle); else DoMultiPartUpload(handle); });
+                m_executor->Submit([this, handle, fileStream] { if (fileStream != nullptr) DoMultiPartUpload(fileStream, handle); else DoMultiPartUpload(handle); });
             }
             else
             {
-                m_transferConfig.transferExecutor->Submit([this, handle, fileStream] { if (fileStream != nullptr) DoSinglePartUpload(fileStream, handle); else DoSinglePartUpload(handle); });
+                m_executor->Submit([this, handle, fileStream] { if (fileStream != nullptr) DoSinglePartUpload(fileStream, handle); else DoSinglePartUpload(handle); });
             }
             return handle;
         }

@@ -27,36 +27,58 @@ bool DefaultExecutor::SubmitToThread(std::function<void()>&&  fx)
         fx(); 
         Detach(std::this_thread::get_id()); 
     };
-    std::lock_guard<std::mutex> locker(m_listLock);
-    std::thread t(main);
-    m_threads.emplace(t.get_id(), std::move(t));
-    return true;
+
+    ExecutorState expected;
+    do
+    {
+        expected = ExecutorState::Free;
+        if(m_state.compare_exchange_strong(expected, ExecutorState::Locked))
+        {
+            std::thread t(main);
+            m_threads.emplace(t.get_id(), std::move(t));
+            m_state = ExecutorState::Free;
+            return true;
+        }
+    }
+    while(expected != ExecutorState::Shutdown);
+    return false;
 }
 
 void DefaultExecutor::Detach(std::thread::id id)
 {
-    if(m_shuttingdown)
+    ExecutorState expected;
+    do
     {
-        // we're shutting down, therefore the dtor is waiting on all the threads to join. We'll deadlock if we attempt
-        // to acquire the mutex |m_listLock|.
-        return;
-    }
-    std::lock_guard<std::mutex> locker(m_listLock);
-    auto it = m_threads.find(id);
-    assert(it != m_threads.end());
-    it->second.detach();
-    m_threads.erase(it);
+        expected = ExecutorState::Free;
+        if(m_state.compare_exchange_strong(expected, ExecutorState::Locked))
+        {
+            auto it = m_threads.find(id);
+            assert(it != m_threads.end());
+            it->second.detach();
+            m_threads.erase(it);
+            m_state = ExecutorState::Free;
+            return;
+        }
+    } 
+    while(expected != ExecutorState::Shutdown);
 }
 
 DefaultExecutor::~DefaultExecutor()
 {
-    m_shuttingdown = true;
-    std::lock_guard<std::mutex> locker(m_listLock);
-    for (auto& pair : m_threads)
+    auto expected = ExecutorState::Free;
+    while(!m_state.compare_exchange_strong(expected, ExecutorState::Shutdown))
     {
-        pair.second.join();
+        //spin while currently detaching threads finish
+        assert(expected == ExecutorState::Locked);
+        expected = ExecutorState::Free; 
     }
-    m_threads.clear();
+
+    auto it = m_threads.begin();
+    while(!m_threads.empty())
+    {
+        it->second.join();
+        it = m_threads.erase(it);
+    }
 }
 
 PooledThreadExecutor::PooledThreadExecutor(size_t poolSize, OverflowPolicy overflowPolicy) :

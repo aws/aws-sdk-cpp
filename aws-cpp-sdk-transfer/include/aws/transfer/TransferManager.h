@@ -36,6 +36,7 @@ namespace Aws
         typedef std::function<void(const TransferManager*, const TransferHandle&)> TransferStatusUpdatedCallback;
         typedef std::function<void(const TransferManager*, const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>&)> ErrorCallback;
         typedef std::function<void(const TransferManager*, const std::shared_ptr<TransferHandle>&)> TransferInitiatedCallback;
+        typedef std::function<Aws::UniquePtr<Aws::S3::S3Client>()> S3ClientFactory;
 
         const uint64_t MB5 = 5 * 1024 * 1024;
 
@@ -44,7 +45,7 @@ namespace Aws
          */
         struct TransferManagerConfiguration
         {
-            TransferManagerConfiguration() : s3Client(nullptr), transferExecutor(nullptr), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5), maxParallelTransfers(1)
+            TransferManagerConfiguration() : transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5), maxParallelTransfers(1)
             {
                 //let the programmer know if they've created two useless values here.
                 //you need at least bufferSize * maxParallelTransfers for the  max heap size.
@@ -53,17 +54,9 @@ namespace Aws
             }
 
             /**
-             * S3 Client to use for transfers. You are responsible for setting this.
+             * Factory to create s3 client owned exclusively by TransferManager
              */
-            std::shared_ptr<Aws::S3::S3Client> s3Client;
-            /**
-             * Executor to use for the transfer manager threads. This probably shouldn't be the same executor
-             * you are using for your client configuration. This executor will be used in a different context than the s3 client is used.
-             * It is not a bug to use the same executor, but at least be aware that this is how the manager will be used.
-             *
-             * If this is not set then it will be defaulted to ThreadPooledExecutor(maxParallelTransfers) inside when it is copied the TransferManager.
-             */
-            std::shared_ptr<Aws::Utils::Threading::Executor> transferExecutor;
+            S3ClientFactory s3ClientFactory;
             /**
              * If you have special arguments you want passed to our put object calls, put them here. We will copy the template for each put object call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
@@ -123,7 +116,7 @@ namespace Aws
          *  The key interface for controlling and knowing the status of your upload is the TransferHandle. An instance of TransferHandle is returned from each of the public functions in this interface.
          *  Keep a reference to the pointer. Each of the callbacks will also pass the handle that has received an update. None of the public methods in this interface block.
          */
-        class  AWS_TRANSFER_API TransferManager
+        class AWS_TRANSFER_API TransferManager
         {
         public:
             /**
@@ -207,6 +200,12 @@ namespace Aws
 
         private:
             /**
+             * Creates TransferHandle.
+             * fileName is not necessary if this handle will upload data from an IOStream
+             */
+            std::shared_ptr<TransferHandle> CreateUploadFileHandle(Aws::IOStream* fileStream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, const Aws::Map<Aws::String, Aws::String>& metadata, const Aws::String& fileName = "");
+            std::shared_ptr<TransferHandle> SubmitUpload(const std::shared_ptr<TransferHandle>& handle, Aws::IOStream* fileStream = nullptr);
+            /**
              * Uploads the contents of stream, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
              * then a multi-part upload will be performed. 
              */
@@ -254,6 +253,8 @@ namespace Aws
 
             Aws::Utils::ExclusiveOwnershipResourceManager<Aws::Utils::Array<uint8_t>*> m_bufferManager;
             TransferManagerConfiguration m_transferConfig;
+            Aws::UniquePtr<Aws::Utils::Threading::Executor> m_executor;
+            Aws::UniquePtr<Aws::S3::S3Client> m_s3;
         };
     }
 }

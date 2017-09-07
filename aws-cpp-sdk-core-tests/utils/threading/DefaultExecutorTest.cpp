@@ -15,6 +15,7 @@
 
 #include <aws/external/gtest.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/Semaphore.h>
 #include <atomic>
 #include <chrono>
 
@@ -25,10 +26,12 @@ TEST(DefaultExecutor, ThreadsJoinOnDestructionTest)
     std::atomic<int> i(1);
     {
         DefaultExecutor exec;
-        auto first = [&] { std::this_thread::yield(); i++; };
-        auto second = [&] { std::this_thread::yield(); i++; };
+        static Semaphore ev(0, 2);
+        auto first = [&] { ev.WaitOne(); i++; };
+        auto second = [&] { ev.WaitOne(); i++; };
         exec.Submit(first);
         exec.Submit(second);
+        ev.ReleaseAll();
     }
     i = i * 10;
     ASSERT_EQ(30, i.load());
@@ -37,10 +40,11 @@ TEST(DefaultExecutor, ThreadsJoinOnDestructionTest)
 TEST(DefaultExecutor, ThreadsDetachIfNotShuttingDown)
 {
     using namespace std::chrono;
+    static Semaphore ev(0, 1);
     std::atomic<int> i(1);
     DefaultExecutor exec;
-    exec.Submit([&] { i++; });
-    std::this_thread::sleep_for(milliseconds(1));
+    exec.Submit([&] { i++; ev.Release();});
+    ev.WaitOne();
     i = i * 10;
     ASSERT_EQ(20, i.load());
 }
