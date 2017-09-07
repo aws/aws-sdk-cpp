@@ -16,6 +16,7 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/threading/ThreadTask.h>
 #include <thread>
+#include <cassert>
 
 static const char* POOLED_CLASS_TAG = "PooledThreadExecutor";
 
@@ -23,9 +24,62 @@ using namespace Aws::Utils::Threading;
 
 bool DefaultExecutor::SubmitToThread(std::function<void()>&&  fx)
 {
-    std::thread t(fx);
-    t.detach();
-    return true;
+    auto main = [fx, this] { 
+        fx(); 
+        Detach(std::this_thread::get_id()); 
+    };
+
+    State expected;
+    do
+    {
+        expected = State::Free;
+        if(m_state.compare_exchange_strong(expected, State::Locked))
+        {
+            std::thread t(main);
+            m_threads.emplace(t.get_id(), std::move(t));
+            m_state = State::Free;
+            return true;
+        }
+    }
+    while(expected != State::Shutdown);
+    return false;
+}
+
+void DefaultExecutor::Detach(std::thread::id id)
+{
+    State expected;
+    do
+    {
+        expected = State::Free;
+        if(m_state.compare_exchange_strong(expected, State::Locked))
+        {
+            auto it = m_threads.find(id);
+            assert(it != m_threads.end());
+            it->second.detach();
+            m_threads.erase(it);
+            m_state = State::Free;
+            return;
+        }
+    } 
+    while(expected != State::Shutdown);
+}
+
+DefaultExecutor::~DefaultExecutor()
+{
+    auto expected = State::Free;
+    while(!m_state.compare_exchange_strong(expected, State::Shutdown))
+    {
+        //spin while currently detaching threads finish
+        assert(expected == State::Locked);
+        expected = State::Free; 
+    }
+
+    auto it = m_threads.begin();
+    while(!m_threads.empty())
+    {
+        it->second.join();
+        it = m_threads.erase(it);
+    }
 }
 
 PooledThreadExecutor::PooledThreadExecutor(size_t poolSize, OverflowPolicy overflowPolicy) :
