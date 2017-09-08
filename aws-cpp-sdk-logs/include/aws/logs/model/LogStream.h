@@ -85,37 +85,37 @@ namespace Model
 
     /**
      * <p>The creation time of the stream, expressed as the number of milliseconds
-     * since Jan 1, 1970 00:00:00 UTC.</p>
+     * after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
 
     /**
      * <p>The creation time of the stream, expressed as the number of milliseconds
-     * since Jan 1, 1970 00:00:00 UTC.</p>
+     * after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
      * <p>The creation time of the stream, expressed as the number of milliseconds
-     * since Jan 1, 1970 00:00:00 UTC.</p>
+     * after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline LogStream& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
 
     /**
-     * <p>The time of the first event, expressed as the number of milliseconds since
+     * <p>The time of the first event, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetFirstEventTimestamp() const{ return m_firstEventTimestamp; }
 
     /**
-     * <p>The time of the first event, expressed as the number of milliseconds since
+     * <p>The time of the first event, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetFirstEventTimestamp(long long value) { m_firstEventTimestampHasBeenSet = true; m_firstEventTimestamp = value; }
 
     /**
-     * <p>The time of the first event, expressed as the number of milliseconds since
+     * <p>The time of the first event, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline LogStream& WithFirstEventTimestamp(long long value) { SetFirstEventTimestamp(value); return *this;}
@@ -123,7 +123,7 @@ namespace Model
 
     /**
      * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
-     * This number is expressed as the number of milliseconds since Jan 1, 1970
+     * This number is expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
      * typically updates in less than an hour from ingestion, but may take longer in
      * some rare situations.</p>
@@ -132,7 +132,7 @@ namespace Model
 
     /**
      * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
-     * This number is expressed as the number of milliseconds since Jan 1, 1970
+     * This number is expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
      * typically updates in less than an hour from ingestion, but may take longer in
      * some rare situations.</p>
@@ -141,7 +141,7 @@ namespace Model
 
     /**
      * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
-     * This number is expressed as the number of milliseconds since Jan 1, 1970
+     * This number is expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
      * typically updates in less than an hour from ingestion, but may take longer in
      * some rare situations.</p>
@@ -150,19 +150,19 @@ namespace Model
 
 
     /**
-     * <p>The ingestion time, expressed as the number of milliseconds since Jan 1, 1970
+     * <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC.</p>
      */
     inline long long GetLastIngestionTime() const{ return m_lastIngestionTime; }
 
     /**
-     * <p>The ingestion time, expressed as the number of milliseconds since Jan 1, 1970
+     * <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC.</p>
      */
     inline void SetLastIngestionTime(long long value) { m_lastIngestionTimeHasBeenSet = true; m_lastIngestionTime = value; }
 
     /**
-     * <p>The ingestion time, expressed as the number of milliseconds since Jan 1, 1970
+     * <p>The ingestion time, expressed as the number of milliseconds after Jan 1, 1970
      * 00:00:00 UTC.</p>
      */
     inline LogStream& WithLastIngestionTime(long long value) { SetLastIngestionTime(value); return *this;}

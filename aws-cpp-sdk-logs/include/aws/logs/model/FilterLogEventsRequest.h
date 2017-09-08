@@ -116,44 +116,44 @@ namespace Model
 
 
     /**
-     * <p>The start of the time range, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not
+     * <p>The start of the time range, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
      * returned.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The start of the time range, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not
+     * <p>The start of the time range, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
      * returned.</p>
      */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The start of the time range, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not
+     * <p>The start of the time range, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
      * returned.</p>
      */
     inline FilterLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
 
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+     * <p>The end of the time range, expressed as the number of milliseconds after Jan
+     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
      * returned.</p>
      */
     inline long long GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+     * <p>The end of the time range, expressed as the number of milliseconds after Jan
+     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
      * returned.</p>
      */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+     * <p>The end of the time range, expressed as the number of milliseconds after Jan
+     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
      * returned.</p>
      */
     inline FilterLogEventsRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
@@ -256,8 +256,8 @@ namespace Model
 
     /**
      * <p>If the value is true, the operation makes a best effort to provide responses
-     * that contain events from multiple log streams within the log group interleaved
-     * in a single response. If the value is false all the matched log events in the
+     * that contain events from multiple log streams within the log group, interleaved
+     * in a single response. If the value is false, all the matched log events in the
      * first log stream are searched first, then those in the next log stream, and so
      * on. The default is false.</p>
      */
@@ -265,8 +265,8 @@ namespace Model
 
     /**
      * <p>If the value is true, the operation makes a best effort to provide responses
-     * that contain events from multiple log streams within the log group interleaved
-     * in a single response. If the value is false all the matched log events in the
+     * that contain events from multiple log streams within the log group, interleaved
+     * in a single response. If the value is false, all the matched log events in the
      * first log stream are searched first, then those in the next log stream, and so
      * on. The default is false.</p>
      */
@@ -274,8 +274,8 @@ namespace Model
 
     /**
      * <p>If the value is true, the operation makes a best effort to provide responses
-     * that contain events from multiple log streams within the log group interleaved
-     * in a single response. If the value is false all the matched log events in the
+     * that contain events from multiple log streams within the log group, interleaved
+     * in a single response. If the value is false, all the matched log events in the
      * first log stream are searched first, then those in the next log stream, and so
      * on. The default is false.</p>
      */

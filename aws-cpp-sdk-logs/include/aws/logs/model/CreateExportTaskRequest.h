@@ -154,21 +154,21 @@ namespace Model
 
     /**
      * <p>The start time of the range for the request, expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a time stamp earlier
      * than this time are not exported.</p>
      */
     inline long long GetFrom() const{ return m_from; }
 
     /**
      * <p>The start time of the range for the request, expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a time stamp earlier
      * than this time are not exported.</p>
      */
     inline void SetFrom(long long value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
      * <p>The start time of the range for the request, expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a time stamp earlier
      * than this time are not exported.</p>
      */
     inline CreateExportTaskRequest& WithFrom(long long value) { SetFrom(value); return *this;}
@@ -176,21 +176,21 @@ namespace Model
 
     /**
      * <p>The end time of the range for the request, expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a time stamp later than
      * this time are not exported.</p>
      */
     inline long long GetTo() const{ return m_to; }
 
     /**
      * <p>The end time of the range for the request, expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a time stamp later than
      * this time are not exported.</p>
      */
     inline void SetTo(long long value) { m_toHasBeenSet = true; m_to = value; }
 
     /**
      * <p>The end time of the range for the request, expressed as the number of
-     * milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a time stamp later than
      * this time are not exported.</p>
      */
     inline CreateExportTaskRequest& WithTo(long long value) { SetTo(value); return *this;}

@@ -27,12 +27,14 @@
 #include <aws/logs/model/DescribeLogGroupsResult.h>
 #include <aws/logs/model/DescribeLogStreamsResult.h>
 #include <aws/logs/model/DescribeMetricFiltersResult.h>
+#include <aws/logs/model/DescribeResourcePoliciesResult.h>
 #include <aws/logs/model/DescribeSubscriptionFiltersResult.h>
 #include <aws/logs/model/FilterLogEventsResult.h>
 #include <aws/logs/model/GetLogEventsResult.h>
 #include <aws/logs/model/ListTagsLogGroupResult.h>
 #include <aws/logs/model/PutDestinationResult.h>
 #include <aws/logs/model/PutLogEventsResult.h>
+#include <aws/logs/model/PutResourcePolicyResult.h>
 #include <aws/logs/model/TestMetricFilterResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -88,6 +90,7 @@ namespace Model
         class DeleteLogGroupRequest;
         class DeleteLogStreamRequest;
         class DeleteMetricFilterRequest;
+        class DeleteResourcePolicyRequest;
         class DeleteRetentionPolicyRequest;
         class DeleteSubscriptionFilterRequest;
         class DescribeDestinationsRequest;
@@ -95,6 +98,7 @@ namespace Model
         class DescribeLogGroupsRequest;
         class DescribeLogStreamsRequest;
         class DescribeMetricFiltersRequest;
+        class DescribeResourcePoliciesRequest;
         class DescribeSubscriptionFiltersRequest;
         class FilterLogEventsRequest;
         class GetLogEventsRequest;
@@ -103,6 +107,7 @@ namespace Model
         class PutDestinationPolicyRequest;
         class PutLogEventsRequest;
         class PutMetricFilterRequest;
+        class PutResourcePolicyRequest;
         class PutRetentionPolicyRequest;
         class PutSubscriptionFilterRequest;
         class TagLogGroupRequest;
@@ -117,6 +122,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DeleteLogGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DeleteLogStreamOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DeleteMetricFilterOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DeleteResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DeleteRetentionPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DeleteSubscriptionFilterOutcome;
         typedef Aws::Utils::Outcome<DescribeDestinationsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeDestinationsOutcome;
@@ -124,6 +130,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeLogGroupsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeLogGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeLogStreamsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeLogStreamsOutcome;
         typedef Aws::Utils::Outcome<DescribeMetricFiltersResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeMetricFiltersOutcome;
+        typedef Aws::Utils::Outcome<DescribeResourcePoliciesResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeResourcePoliciesOutcome;
         typedef Aws::Utils::Outcome<DescribeSubscriptionFiltersResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeSubscriptionFiltersOutcome;
         typedef Aws::Utils::Outcome<FilterLogEventsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> FilterLogEventsOutcome;
         typedef Aws::Utils::Outcome<GetLogEventsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> GetLogEventsOutcome;
@@ -132,6 +139,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutDestinationPolicyOutcome;
         typedef Aws::Utils::Outcome<PutLogEventsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutLogEventsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutMetricFilterOutcome;
+        typedef Aws::Utils::Outcome<PutResourcePolicyResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutRetentionPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutSubscriptionFilterOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> TagLogGroupOutcome;
@@ -146,6 +154,7 @@ namespace Model
         typedef std::future<DeleteLogGroupOutcome> DeleteLogGroupOutcomeCallable;
         typedef std::future<DeleteLogStreamOutcome> DeleteLogStreamOutcomeCallable;
         typedef std::future<DeleteMetricFilterOutcome> DeleteMetricFilterOutcomeCallable;
+        typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
         typedef std::future<DeleteRetentionPolicyOutcome> DeleteRetentionPolicyOutcomeCallable;
         typedef std::future<DeleteSubscriptionFilterOutcome> DeleteSubscriptionFilterOutcomeCallable;
         typedef std::future<DescribeDestinationsOutcome> DescribeDestinationsOutcomeCallable;
@@ -153,6 +162,7 @@ namespace Model
         typedef std::future<DescribeLogGroupsOutcome> DescribeLogGroupsOutcomeCallable;
         typedef std::future<DescribeLogStreamsOutcome> DescribeLogStreamsOutcomeCallable;
         typedef std::future<DescribeMetricFiltersOutcome> DescribeMetricFiltersOutcomeCallable;
+        typedef std::future<DescribeResourcePoliciesOutcome> DescribeResourcePoliciesOutcomeCallable;
         typedef std::future<DescribeSubscriptionFiltersOutcome> DescribeSubscriptionFiltersOutcomeCallable;
         typedef std::future<FilterLogEventsOutcome> FilterLogEventsOutcomeCallable;
         typedef std::future<GetLogEventsOutcome> GetLogEventsOutcomeCallable;
@@ -161,6 +171,7 @@ namespace Model
         typedef std::future<PutDestinationPolicyOutcome> PutDestinationPolicyOutcomeCallable;
         typedef std::future<PutLogEventsOutcome> PutLogEventsOutcomeCallable;
         typedef std::future<PutMetricFilterOutcome> PutMetricFilterOutcomeCallable;
+        typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
         typedef std::future<PutRetentionPolicyOutcome> PutRetentionPolicyOutcomeCallable;
         typedef std::future<PutSubscriptionFilterOutcome> PutSubscriptionFilterOutcomeCallable;
         typedef std::future<TagLogGroupOutcome> TagLogGroupOutcomeCallable;
@@ -178,6 +189,7 @@ namespace Model
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteLogGroupRequest&, const Model::DeleteLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLogGroupResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteLogStreamRequest&, const Model::DeleteLogStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLogStreamResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteMetricFilterRequest&, const Model::DeleteMetricFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMetricFilterResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteRetentionPolicyRequest&, const Model::DeleteRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteSubscriptionFilterRequest&, const Model::DeleteSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionFilterResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeDestinationsRequest&, const Model::DescribeDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDestinationsResponseReceivedHandler;
@@ -185,6 +197,7 @@ namespace Model
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeLogGroupsRequest&, const Model::DescribeLogGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLogGroupsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeLogStreamsRequest&, const Model::DescribeLogStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLogStreamsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeMetricFiltersRequest&, const Model::DescribeMetricFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMetricFiltersResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeResourcePoliciesRequest&, const Model::DescribeResourcePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePoliciesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeSubscriptionFiltersRequest&, const Model::DescribeSubscriptionFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscriptionFiltersResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::FilterLogEventsRequest&, const Model::FilterLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FilterLogEventsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogEventsRequest&, const Model::GetLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogEventsResponseReceivedHandler;
@@ -193,6 +206,7 @@ namespace Model
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDestinationPolicyRequest&, const Model::PutDestinationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDestinationPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutLogEventsRequest&, const Model::PutLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLogEventsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutMetricFilterRequest&, const Model::PutMetricFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricFilterResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutRetentionPolicyRequest&, const Model::PutRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutSubscriptionFilterRequest&, const Model::PutSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSubscriptionFilterResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::TagLogGroupRequest&, const Model::TagLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagLogGroupResponseReceivedHandler;
@@ -201,29 +215,29 @@ namespace Model
 
   /**
    * <p>You can use Amazon CloudWatch Logs to monitor, store, and access your log
-   * files from EC2 instances, Amazon CloudTrail, or other sources. You can then
-   * retrieve the associated log data from CloudWatch Logs using the Amazon
-   * CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch
-   * Logs API, or the CloudWatch Logs SDK.</p> <p>You can use CloudWatch Logs to:</p>
-   * <ul> <li> <p> <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You
-   * can use CloudWatch Logs to monitor applications and systems using log data. For
-   * example, CloudWatch Logs can track the number of errors that occur in your
-   * application logs and send you a notification whenever the rate of errors exceeds
-   * a threshold you specify. CloudWatch Logs uses your log data for monitoring; so,
-   * no code changes are required. For example, you can monitor application logs for
-   * specific literal terms (such as "NullReferenceException") or count the number of
-   * occurrences of a literal term at a particular position in log data (such as
-   * "404" status codes in an Apache access log). When the term you are searching for
-   * is found, CloudWatch Logs reports the data to a Amazon CloudWatch metric that
-   * you specify.</p> </li> <li> <p> <b>Monitor Amazon CloudTrail Logged Events</b>:
-   * You can create alarms in Amazon CloudWatch and receive notifications of
-   * particular API activity as captured by CloudTrail and use the notification to
-   * perform troubleshooting.</p> </li> <li> <p> <b>Archive Log Data</b>: You can use
-   * CloudWatch Logs to store your log data in highly durable storage. You can change
-   * the log retention setting so that any log events older than this setting are
-   * automatically deleted. The CloudWatch Logs agent makes it easy to quickly send
-   * both rotated and non-rotated log data off of a host and into the log service.
-   * You can then access the raw log data when you need it.</p> </li> </ul>
+   * files from Amazon EC2 instances, AWS CloudTrail, or other sources. You can then
+   * retrieve the associated log data from CloudWatch Logs using the CloudWatch
+   * console, CloudWatch Logs commands in the AWS CLI, CloudWatch Logs API, or
+   * CloudWatch Logs SDK.</p> <p>You can use CloudWatch Logs to:</p> <ul> <li> <p>
+   * <b>Monitor logs from EC2 instances in real-time</b>: You can use CloudWatch Logs
+   * to monitor applications and systems using log data. For example, CloudWatch Logs
+   * can track the number of errors that occur in your application logs and send you
+   * a notification whenever the rate of errors exceeds a threshold that you specify.
+   * CloudWatch Logs uses your log data for monitoring; so, no code changes are
+   * required. For example, you can monitor application logs for specific literal
+   * terms (such as "NullReferenceException") or count the number of occurrences of a
+   * literal term at a particular position in log data (such as "404" status codes in
+   * an Apache access log). When the term you are searching for is found, CloudWatch
+   * Logs reports the data to a CloudWatch metric that you specify.</p> </li> <li>
+   * <p> <b>Monitor AWS CloudTrail logged events</b>: You can create alarms in
+   * CloudWatch and receive notifications of particular API activity as captured by
+   * CloudTrail and use the notification to perform troubleshooting.</p> </li> <li>
+   * <p> <b>Archive log data</b>: You can use CloudWatch Logs to store your log data
+   * in highly durable storage. You can change the log retention setting so that any
+   * log events older than this setting are automatically deleted. The CloudWatch
+   * Logs agent makes it easy to quickly send both rotated and non-rotated log data
+   * off of a host and into the log service. You can then access the raw log data
+   * when you need it.</p> </li> </ul>
    */
   class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonClient
   {
@@ -293,7 +307,7 @@ namespace Model
          * task at a time. To cancel an export task, use <a>CancelExportTask</a>.</p>
          * <p>You can export logs from multiple log groups or multiple time ranges to the
          * same S3 bucket. To separate out log data for each export task, you can specify a
-         * prefix that will be used as the Amazon S3 key prefix for all exported
+         * prefix to be used as the Amazon S3 key prefix for all exported
          * objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">AWS
          * API Reference</a></p>
@@ -310,7 +324,7 @@ namespace Model
          * task at a time. To cancel an export task, use <a>CancelExportTask</a>.</p>
          * <p>You can export logs from multiple log groups or multiple time ranges to the
          * same S3 bucket. To separate out log data for each export task, you can specify a
-         * prefix that will be used as the Amazon S3 key prefix for all exported
+         * prefix to be used as the Amazon S3 key prefix for all exported
          * objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">AWS
          * API Reference</a></p>
@@ -329,7 +343,7 @@ namespace Model
          * task at a time. To cancel an export task, use <a>CancelExportTask</a>.</p>
          * <p>You can export logs from multiple log groups or multiple time ranges to the
          * same S3 bucket. To separate out log data for each export task, you can specify a
-         * prefix that will be used as the Amazon S3 key prefix for all exported
+         * prefix to be used as the Amazon S3 key prefix for all exported
          * objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">AWS
          * API Reference</a></p>
@@ -535,6 +549,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMetricFilterAsync(const Model::DeleteMetricFilterRequest& request, const DeleteMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a resource policy from this account. This revokes the access of the
+         * identities in that policy to put log events to this account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Deletes a resource policy from this account. This revokes the access of the
+         * identities in that policy to put log events to this account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Deletes a resource policy from this account. This revokes the access of the
+         * identities in that policy to put log events to this account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified retention policy.</p> <p>Log events do not expire if
@@ -748,6 +793,31 @@ namespace Model
         virtual void DescribeMetricFiltersAsync(const Model::DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the resource policies in this account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeResourcePoliciesOutcome DescribeResourcePolicies(const Model::DescribeResourcePoliciesRequest& request) const;
+
+        /**
+         * <p>Lists the resource policies in this account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeResourcePoliciesOutcomeCallable DescribeResourcePoliciesCallable(const Model::DescribeResourcePoliciesRequest& request) const;
+
+        /**
+         * <p>Lists the resource policies in this account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeResourcePoliciesAsync(const Model::DescribeResourcePoliciesRequest& request, const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the subscription filters for the specified log group. You can list all
          * the subscription filters or filter the results by prefix. The results are
          * ASCII-sorted by filter name.</p><p><h3>See Also:</h3>   <a
@@ -782,7 +852,7 @@ namespace Model
          * <p>Lists log events from the specified log group. You can list all the log
          * events or filter the results using a filter pattern, a time range, and the name
          * of the log stream.</p> <p>By default, this operation returns as many log events
-         * as can fit in 1MB (up to 10,000 log events), or all the events found within the
+         * as can fit in 1 MB (up to 10,000 log events), or all the events found within the
          * time range that you specify. If the results include a token, then there are more
          * log events available, and you can get additional results by specifying the token
          * in a subsequent call.</p><p><h3>See Also:</h3>   <a
@@ -795,7 +865,7 @@ namespace Model
          * <p>Lists log events from the specified log group. You can list all the log
          * events or filter the results using a filter pattern, a time range, and the name
          * of the log stream.</p> <p>By default, this operation returns as many log events
-         * as can fit in 1MB (up to 10,000 log events), or all the events found within the
+         * as can fit in 1 MB (up to 10,000 log events), or all the events found within the
          * time range that you specify. If the results include a token, then there are more
          * log events available, and you can get additional results by specifying the token
          * in a subsequent call.</p><p><h3>See Also:</h3>   <a
@@ -810,7 +880,7 @@ namespace Model
          * <p>Lists log events from the specified log group. You can list all the log
          * events or filter the results using a filter pattern, a time range, and the name
          * of the log stream.</p> <p>By default, this operation returns as many log events
-         * as can fit in 1MB (up to 10,000 log events), or all the events found within the
+         * as can fit in 1 MB (up to 10,000 log events), or all the events found within the
          * time range that you specify. If the results include a token, then there are more
          * log events available, and you can get additional results by specifying the token
          * in a subsequent call.</p><p><h3>See Also:</h3>   <a
@@ -824,10 +894,9 @@ namespace Model
         /**
          * <p>Lists log events from the specified log stream. You can list all the log
          * events or filter using a time range.</p> <p>By default, this operation returns
-         * as many log events as can fit in a response size of 1MB (up to 10,000 log
-         * events). If the results include tokens, there are more log events available. You
-         * can get additional log events by specifying one of the tokens in a subsequent
-         * call.</p><p><h3>See Also:</h3>   <a
+         * as many log events as can fit in a response size of 1 MB (up to 10,000 log
+         * events). You can get additional log events by specifying one of the tokens in a
+         * subsequent call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">AWS
          * API Reference</a></p>
          */
@@ -836,10 +905,9 @@ namespace Model
         /**
          * <p>Lists log events from the specified log stream. You can list all the log
          * events or filter using a time range.</p> <p>By default, this operation returns
-         * as many log events as can fit in a response size of 1MB (up to 10,000 log
-         * events). If the results include tokens, there are more log events available. You
-         * can get additional log events by specifying one of the tokens in a subsequent
-         * call.</p><p><h3>See Also:</h3>   <a
+         * as many log events as can fit in a response size of 1 MB (up to 10,000 log
+         * events). You can get additional log events by specifying one of the tokens in a
+         * subsequent call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">AWS
          * API Reference</a></p>
          *
@@ -850,10 +918,9 @@ namespace Model
         /**
          * <p>Lists log events from the specified log stream. You can list all the log
          * events or filter using a time range.</p> <p>By default, this operation returns
-         * as many log events as can fit in a response size of 1MB (up to 10,000 log
-         * events). If the results include tokens, there are more log events available. You
-         * can get additional log events by specifying one of the tokens in a subsequent
-         * call.</p><p><h3>See Also:</h3>   <a
+         * as many log events as can fit in a response size of 1 MB (up to 10,000 log
+         * events). You can get additional log events by specifying one of the tokens in a
+         * subsequent call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">AWS
          * API Reference</a></p>
          *
@@ -894,12 +961,12 @@ namespace Model
 
         /**
          * <p>Creates or updates a destination. A destination encapsulates a physical
-         * resource (such as a Kinesis stream) and enables you to subscribe to a real-time
-         * stream of log events of a different account, ingested using <a>PutLogEvents</a>.
-         * Currently, the only supported physical resource is a Amazon Kinesis stream
-         * belonging to the same account as the destination.</p> <p>A destination controls
-         * what is written to its Amazon Kinesis stream through an access policy. By
-         * default, <code>PutDestination</code> does not set any access policy with the
+         * resource (such as an Amazon Kinesis stream) and enables you to subscribe to a
+         * real-time stream of log events for a different account, ingested using
+         * <a>PutLogEvents</a>. Currently, the only supported physical resource is a
+         * Kinesis stream belonging to the same account as the destination.</p> <p>Through
+         * an access policy, a destination controls what is written to its Kinesis stream.
+         * By default, <code>PutDestination</code> does not set any access policy with the
          * destination, which means a cross-account user cannot call
          * <a>PutSubscriptionFilter</a> against this destination. To enable this, the
          * destination owner must call <a>PutDestinationPolicy</a> after
@@ -911,12 +978,12 @@ namespace Model
 
         /**
          * <p>Creates or updates a destination. A destination encapsulates a physical
-         * resource (such as a Kinesis stream) and enables you to subscribe to a real-time
-         * stream of log events of a different account, ingested using <a>PutLogEvents</a>.
-         * Currently, the only supported physical resource is a Amazon Kinesis stream
-         * belonging to the same account as the destination.</p> <p>A destination controls
-         * what is written to its Amazon Kinesis stream through an access policy. By
-         * default, <code>PutDestination</code> does not set any access policy with the
+         * resource (such as an Amazon Kinesis stream) and enables you to subscribe to a
+         * real-time stream of log events for a different account, ingested using
+         * <a>PutLogEvents</a>. Currently, the only supported physical resource is a
+         * Kinesis stream belonging to the same account as the destination.</p> <p>Through
+         * an access policy, a destination controls what is written to its Kinesis stream.
+         * By default, <code>PutDestination</code> does not set any access policy with the
          * destination, which means a cross-account user cannot call
          * <a>PutSubscriptionFilter</a> against this destination. To enable this, the
          * destination owner must call <a>PutDestinationPolicy</a> after
@@ -930,12 +997,12 @@ namespace Model
 
         /**
          * <p>Creates or updates a destination. A destination encapsulates a physical
-         * resource (such as a Kinesis stream) and enables you to subscribe to a real-time
-         * stream of log events of a different account, ingested using <a>PutLogEvents</a>.
-         * Currently, the only supported physical resource is a Amazon Kinesis stream
-         * belonging to the same account as the destination.</p> <p>A destination controls
-         * what is written to its Amazon Kinesis stream through an access policy. By
-         * default, <code>PutDestination</code> does not set any access policy with the
+         * resource (such as an Amazon Kinesis stream) and enables you to subscribe to a
+         * real-time stream of log events for a different account, ingested using
+         * <a>PutLogEvents</a>. Currently, the only supported physical resource is a
+         * Kinesis stream belonging to the same account as the destination.</p> <p>Through
+         * an access policy, a destination controls what is written to its Kinesis stream.
+         * By default, <code>PutDestination</code> does not set any access policy with the
          * destination, which means a cross-account user cannot call
          * <a>PutSubscriptionFilter</a> against this destination. To enable this, the
          * destination owner must call <a>PutDestinationPolicy</a> after
@@ -988,19 +1055,21 @@ namespace Model
          * <p>Uploads a batch of log events to the specified log stream.</p> <p>You must
          * include the sequence token obtained from the response of the previous call. An
          * upload in a newly created log stream does not require a sequence token. You can
-         * also get the sequence token using <a>DescribeLogStreams</a>.</p> <p>The batch of
-         * events must satisfy the following constraints:</p> <ul> <li> <p>The maximum
-         * batch size is 1,048,576 bytes, and this size is calculated as the sum of all
-         * event messages in UTF-8, plus 26 bytes for each log event.</p> </li> <li>
-         * <p>None of the log events in the batch can be more than 2 hours in the
-         * future.</p> </li> <li> <p>None of the log events in the batch can be older than
-         * 14 days or the retention period of the log group.</p> </li> <li> <p>The log
-         * events in the batch must be in chronological ordered by their timestamp (the
-         * time the event occurred, expressed as the number of milliseconds since Jan 1,
-         * 1970 00:00:00 UTC).</p> </li> <li> <p>The maximum number of log events in a
-         * batch is 10,000.</p> </li> <li> <p>A batch of log events in a single request
-         * cannot span more than 24 hours. Otherwise, the operation fails.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * also get the sequence token using <a>DescribeLogStreams</a>. If you call
+         * <code>PutLogEvents</code> twice within a narrow time period using the same value
+         * for <code>sequenceToken</code>, both calls may be successful, or one may be
+         * rejected.</p> <p>The batch of events must satisfy the following constraints:</p>
+         * <ul> <li> <p>The maximum batch size is 1,048,576 bytes, and this size is
+         * calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log
+         * event.</p> </li> <li> <p>None of the log events in the batch can be more than 2
+         * hours in the future.</p> </li> <li> <p>None of the log events in the batch can
+         * be older than 14 days or the retention period of the log group.</p> </li> <li>
+         * <p>The log events in the batch must be in chronological ordered by their time
+         * stamp (the time the event occurred, expressed as the number of milliseconds
+         * after Jan 1, 1970 00:00:00 UTC).</p> </li> <li> <p>The maximum number of log
+         * events in a batch is 10,000.</p> </li> <li> <p>A batch of log events in a single
+         * request cannot span more than 24 hours. Otherwise, the operation fails.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">AWS
          * API Reference</a></p>
          */
@@ -1010,19 +1079,21 @@ namespace Model
          * <p>Uploads a batch of log events to the specified log stream.</p> <p>You must
          * include the sequence token obtained from the response of the previous call. An
          * upload in a newly created log stream does not require a sequence token. You can
-         * also get the sequence token using <a>DescribeLogStreams</a>.</p> <p>The batch of
-         * events must satisfy the following constraints:</p> <ul> <li> <p>The maximum
-         * batch size is 1,048,576 bytes, and this size is calculated as the sum of all
-         * event messages in UTF-8, plus 26 bytes for each log event.</p> </li> <li>
-         * <p>None of the log events in the batch can be more than 2 hours in the
-         * future.</p> </li> <li> <p>None of the log events in the batch can be older than
-         * 14 days or the retention period of the log group.</p> </li> <li> <p>The log
-         * events in the batch must be in chronological ordered by their timestamp (the
-         * time the event occurred, expressed as the number of milliseconds since Jan 1,
-         * 1970 00:00:00 UTC).</p> </li> <li> <p>The maximum number of log events in a
-         * batch is 10,000.</p> </li> <li> <p>A batch of log events in a single request
-         * cannot span more than 24 hours. Otherwise, the operation fails.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * also get the sequence token using <a>DescribeLogStreams</a>. If you call
+         * <code>PutLogEvents</code> twice within a narrow time period using the same value
+         * for <code>sequenceToken</code>, both calls may be successful, or one may be
+         * rejected.</p> <p>The batch of events must satisfy the following constraints:</p>
+         * <ul> <li> <p>The maximum batch size is 1,048,576 bytes, and this size is
+         * calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log
+         * event.</p> </li> <li> <p>None of the log events in the batch can be more than 2
+         * hours in the future.</p> </li> <li> <p>None of the log events in the batch can
+         * be older than 14 days or the retention period of the log group.</p> </li> <li>
+         * <p>The log events in the batch must be in chronological ordered by their time
+         * stamp (the time the event occurred, expressed as the number of milliseconds
+         * after Jan 1, 1970 00:00:00 UTC).</p> </li> <li> <p>The maximum number of log
+         * events in a batch is 10,000.</p> </li> <li> <p>A batch of log events in a single
+         * request cannot span more than 24 hours. Otherwise, the operation fails.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">AWS
          * API Reference</a></p>
          *
@@ -1034,19 +1105,21 @@ namespace Model
          * <p>Uploads a batch of log events to the specified log stream.</p> <p>You must
          * include the sequence token obtained from the response of the previous call. An
          * upload in a newly created log stream does not require a sequence token. You can
-         * also get the sequence token using <a>DescribeLogStreams</a>.</p> <p>The batch of
-         * events must satisfy the following constraints:</p> <ul> <li> <p>The maximum
-         * batch size is 1,048,576 bytes, and this size is calculated as the sum of all
-         * event messages in UTF-8, plus 26 bytes for each log event.</p> </li> <li>
-         * <p>None of the log events in the batch can be more than 2 hours in the
-         * future.</p> </li> <li> <p>None of the log events in the batch can be older than
-         * 14 days or the retention period of the log group.</p> </li> <li> <p>The log
-         * events in the batch must be in chronological ordered by their timestamp (the
-         * time the event occurred, expressed as the number of milliseconds since Jan 1,
-         * 1970 00:00:00 UTC).</p> </li> <li> <p>The maximum number of log events in a
-         * batch is 10,000.</p> </li> <li> <p>A batch of log events in a single request
-         * cannot span more than 24 hours. Otherwise, the operation fails.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * also get the sequence token using <a>DescribeLogStreams</a>. If you call
+         * <code>PutLogEvents</code> twice within a narrow time period using the same value
+         * for <code>sequenceToken</code>, both calls may be successful, or one may be
+         * rejected.</p> <p>The batch of events must satisfy the following constraints:</p>
+         * <ul> <li> <p>The maximum batch size is 1,048,576 bytes, and this size is
+         * calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log
+         * event.</p> </li> <li> <p>None of the log events in the batch can be more than 2
+         * hours in the future.</p> </li> <li> <p>None of the log events in the batch can
+         * be older than 14 days or the retention period of the log group.</p> </li> <li>
+         * <p>The log events in the batch must be in chronological ordered by their time
+         * stamp (the time the event occurred, expressed as the number of milliseconds
+         * after Jan 1, 1970 00:00:00 UTC).</p> </li> <li> <p>The maximum number of log
+         * events in a batch is 10,000.</p> </li> <li> <p>A batch of log events in a single
+         * request cannot span more than 24 hours. Otherwise, the operation fails.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">AWS
          * API Reference</a></p>
          *
@@ -1092,8 +1165,39 @@ namespace Model
         virtual void PutMetricFilterAsync(const Model::PutMetricFilterRequest& request, const PutMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates or updates a resource policy allowing other AWS services to put log
+         * events to this account, such as Amazon Route 53. An account can have up to 50
+         * resource policies per region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Creates or updates a resource policy allowing other AWS services to put log
+         * events to this account, such as Amazon Route 53. An account can have up to 50
+         * resource policies per region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Creates or updates a resource policy allowing other AWS services to put log
+         * events to this account, such as Amazon Route 53. An account can have up to 50
+         * resource policies per region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sets the retention of the specified log group. A retention policy allows you
-         * to configure the number of days you want to retain log events in the specified
+         * to configure the number of days for which to retain log events in the specified
          * log group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">AWS
          * API Reference</a></p>
@@ -1102,7 +1206,7 @@ namespace Model
 
         /**
          * <p>Sets the retention of the specified log group. A retention policy allows you
-         * to configure the number of days you want to retain log events in the specified
+         * to configure the number of days for which to retain log events in the specified
          * log group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">AWS
          * API Reference</a></p>
@@ -1113,7 +1217,7 @@ namespace Model
 
         /**
          * <p>Sets the retention of the specified log group. A retention policy allows you
-         * to configure the number of days you want to retain log events in the specified
+         * to configure the number of days for which to retain log events in the specified
          * log group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">AWS
          * API Reference</a></p>
@@ -1130,13 +1234,13 @@ namespace Model
          * <p>An Amazon Kinesis stream belonging to the same account as the subscription
          * filter, for same-account delivery.</p> </li> <li> <p>A logical destination that
          * belongs to a different account, for cross-account delivery.</p> </li> <li> <p>An
-         * Amazon Kinesis Firehose stream that belongs to the same account as the
+         * Amazon Kinesis Firehose delivery stream that belongs to the same account as the
          * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
          * function that belongs to the same account as the subscription filter, for
          * same-account delivery.</p> </li> </ul> <p>There can only be one subscription
          * filter associated with a log group. If you are updating an existing filter, you
          * must specify the correct name in <code>filterName</code>. Otherwise, the call
-         * will fail because you cannot associate a second filter with a log
+         * fails because you cannot associate a second filter with a log
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
@@ -1151,13 +1255,13 @@ namespace Model
          * <p>An Amazon Kinesis stream belonging to the same account as the subscription
          * filter, for same-account delivery.</p> </li> <li> <p>A logical destination that
          * belongs to a different account, for cross-account delivery.</p> </li> <li> <p>An
-         * Amazon Kinesis Firehose stream that belongs to the same account as the
+         * Amazon Kinesis Firehose delivery stream that belongs to the same account as the
          * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
          * function that belongs to the same account as the subscription filter, for
          * same-account delivery.</p> </li> </ul> <p>There can only be one subscription
          * filter associated with a log group. If you are updating an existing filter, you
          * must specify the correct name in <code>filterName</code>. Otherwise, the call
-         * will fail because you cannot associate a second filter with a log
+         * fails because you cannot associate a second filter with a log
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
@@ -1174,13 +1278,13 @@ namespace Model
          * <p>An Amazon Kinesis stream belonging to the same account as the subscription
          * filter, for same-account delivery.</p> </li> <li> <p>A logical destination that
          * belongs to a different account, for cross-account delivery.</p> </li> <li> <p>An
-         * Amazon Kinesis Firehose stream that belongs to the same account as the
+         * Amazon Kinesis Firehose delivery stream that belongs to the same account as the
          * subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda
          * function that belongs to the same account as the subscription filter, for
          * same-account delivery.</p> </li> </ul> <p>There can only be one subscription
          * filter associated with a log group. If you are updating an existing filter, you
          * must specify the correct name in <code>filterName</code>. Otherwise, the call
-         * will fail because you cannot associate a second filter with a log
+         * fails because you cannot associate a second filter with a log
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
@@ -1304,6 +1408,7 @@ namespace Model
         void DeleteLogGroupAsyncHelper(const Model::DeleteLogGroupRequest& request, const DeleteLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLogStreamAsyncHelper(const Model::DeleteLogStreamRequest& request, const DeleteLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMetricFilterAsyncHelper(const Model::DeleteMetricFilterRequest& request, const DeleteMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRetentionPolicyAsyncHelper(const Model::DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSubscriptionFilterAsyncHelper(const Model::DeleteSubscriptionFilterRequest& request, const DeleteSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDestinationsAsyncHelper(const Model::DescribeDestinationsRequest& request, const DescribeDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1311,6 +1416,7 @@ namespace Model
         void DescribeLogGroupsAsyncHelper(const Model::DescribeLogGroupsRequest& request, const DescribeLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLogStreamsAsyncHelper(const Model::DescribeLogStreamsRequest& request, const DescribeLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMetricFiltersAsyncHelper(const Model::DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeResourcePoliciesAsyncHelper(const Model::DescribeResourcePoliciesRequest& request, const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSubscriptionFiltersAsyncHelper(const Model::DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FilterLogEventsAsyncHelper(const Model::FilterLogEventsRequest& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLogEventsAsyncHelper(const Model::GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1319,6 +1425,7 @@ namespace Model
         void PutDestinationPolicyAsyncHelper(const Model::PutDestinationPolicyRequest& request, const PutDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLogEventsAsyncHelper(const Model::PutLogEventsRequest& request, const PutLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricFilterAsyncHelper(const Model::PutMetricFilterRequest& request, const PutMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRetentionPolicyAsyncHelper(const Model::PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSubscriptionFilterAsyncHelper(const Model::PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagLogGroupAsyncHelper(const Model::TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

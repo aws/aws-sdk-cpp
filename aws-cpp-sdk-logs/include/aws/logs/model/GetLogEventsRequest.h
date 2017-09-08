@@ -110,44 +110,44 @@ namespace Model
 
 
     /**
-     * <p>The start of the time range, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not
-     * included.</p>
+     * <p>The start of the time range, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp earlier than this time are
+     * not included.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The start of the time range, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not
-     * included.</p>
+     * <p>The start of the time range, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp earlier than this time are
+     * not included.</p>
      */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The start of the time range, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not
-     * included.</p>
+     * <p>The start of the time range, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp earlier than this time are
+     * not included.</p>
      */
     inline GetLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
 
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+     * <p>The end of the time range, expressed as the number of milliseconds after Jan
+     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
      * included.</p>
      */
     inline long long GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+     * <p>The end of the time range, expressed as the number of milliseconds after Jan
+     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
      * included.</p>
      */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The end of the time range, expressed as the number of milliseconds since Jan
-     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+     * <p>The end of the time range, expressed as the number of milliseconds after Jan
+     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
      * included.</p>
      */
     inline GetLogEventsRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
@@ -198,22 +198,22 @@ namespace Model
 
     /**
      * <p>The maximum number of log events returned. If you don't specify a value, the
-     * maximum is as many log events as can fit in a response size of 1MB, up to 10,000
-     * log events.</p>
+     * maximum is as many log events as can fit in a response size of 1 MB, up to
+     * 10,000 log events.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of log events returned. If you don't specify a value, the
-     * maximum is as many log events as can fit in a response size of 1MB, up to 10,000
-     * log events.</p>
+     * maximum is as many log events as can fit in a response size of 1 MB, up to
+     * 10,000 log events.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of log events returned. If you don't specify a value, the
-     * maximum is as many log events as can fit in a response size of 1MB, up to 10,000
-     * log events.</p>
+     * maximum is as many log events as can fit in a response size of 1 MB, up to
+     * 10,000 log events.</p>
      */
     inline GetLogEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

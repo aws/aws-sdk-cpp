@@ -48,20 +48,20 @@ namespace Model
 
 
     /**
-     * <p>The time the event occurred, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <p>The time the event occurred, expressed as the number of milliseconds fter Jan
+     * 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>The time the event occurred, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <p>The time the event occurred, expressed as the number of milliseconds fter Jan
+     * 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>The time the event occurred, expressed as the number of milliseconds since
-     * Jan 1, 1970 00:00:00 UTC.</p>
+     * <p>The time the event occurred, expressed as the number of milliseconds fter Jan
+     * 1, 1970 00:00:00 UTC.</p>
      */
     inline InputLogEvent& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 

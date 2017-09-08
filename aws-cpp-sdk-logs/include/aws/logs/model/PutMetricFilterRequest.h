@@ -148,44 +148,37 @@ namespace Model
 
 
     /**
-     * <p>A collection of information needed to define how metric data gets
-     * emitted.</p>
+     * <p>A collection of information that defines how metric data gets emitted.</p>
      */
     inline const Aws::Vector<MetricTransformation>& GetMetricTransformations() const{ return m_metricTransformations; }
 
     /**
-     * <p>A collection of information needed to define how metric data gets
-     * emitted.</p>
+     * <p>A collection of information that defines how metric data gets emitted.</p>
      */
     inline void SetMetricTransformations(const Aws::Vector<MetricTransformation>& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = value; }
 
     /**
-     * <p>A collection of information needed to define how metric data gets
-     * emitted.</p>
+     * <p>A collection of information that defines how metric data gets emitted.</p>
      */
     inline void SetMetricTransformations(Aws::Vector<MetricTransformation>&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = std::move(value); }
 
     /**
-     * <p>A collection of information needed to define how metric data gets
-     * emitted.</p>
+     * <p>A collection of information that defines how metric data gets emitted.</p>
      */
     inline PutMetricFilterRequest& WithMetricTransformations(const Aws::Vector<MetricTransformation>& value) { SetMetricTransformations(value); return *this;}
 
     /**
-     * <p>A collection of information needed to define how metric data gets
-     * emitted.</p>
+     * <p>A collection of information that defines how metric data gets emitted.</p>
      */
     inline PutMetricFilterRequest& WithMetricTransformations(Aws::Vector<MetricTransformation>&& value) { SetMetricTransformations(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of information needed to define how metric data gets
-     * emitted.</p>
+     * <p>A collection of information that defines how metric data gets emitted.</p>
      */
     inline PutMetricFilterRequest& AddMetricTransformations(const MetricTransformation& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(value); return *this; }
 
     /**
-     * <p>A collection of information needed to define how metric data gets
-     * emitted.</p>
+     * <p>A collection of information that defines how metric data gets emitted.</p>
      */
     inline PutMetricFilterRequest& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(std::move(value)); return *this; }
 

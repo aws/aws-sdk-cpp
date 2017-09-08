@@ -75,44 +75,44 @@ namespace Model
 
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(const Aws::String& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::move(value); }
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline void SetLogStreamNamePrefix(const char* value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix.assign(value); }
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const Aws::String& value) { SetLogStreamNamePrefix(value); return *this;}
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The prefix to match.</p> <p>You cannot specify this parameter if
-     * <code>orderBy</code> is <code>LastEventTime</code>.</p>
+     * <p>The prefix to match.</p> <p>iIf <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline DescribeLogStreamsRequest& WithLogStreamNamePrefix(const char* value) { SetLogStreamNamePrefix(value); return *this;}
 
@@ -124,7 +124,7 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
      * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
      * updates in less than an hour from ingestion, but may take longer in some rare
      * situations.</p>
@@ -138,7 +138,7 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
      * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
      * updates in less than an hour from ingestion, but may take longer in some rare
      * situations.</p>
@@ -152,7 +152,7 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
      * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
      * updates in less than an hour from ingestion, but may take longer in some rare
      * situations.</p>
@@ -166,7 +166,7 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
      * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
      * updates in less than an hour from ingestion, but may take longer in some rare
      * situations.</p>
@@ -180,7 +180,7 @@ namespace Model
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
      * the time of the most recent log event in the log stream in CloudWatch Logs. This
-     * number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
      * updates in less than an hour from ingestion, but may take longer in some rare
      * situations.</p>
