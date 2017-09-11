@@ -515,6 +515,25 @@ namespace Model
 
 
     /**
+     * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
+     * device.</p>
+     */
+    inline bool GetRemoteDebugEnabled() const{ return m_remoteDebugEnabled; }
+
+    /**
+     * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
+     * device.</p>
+     */
+    inline void SetRemoteDebugEnabled(bool value) { m_remoteDebugEnabledHasBeenSet = true; m_remoteDebugEnabled = value; }
+
+    /**
+     * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
+     * device.</p>
+     */
+    inline Device& WithRemoteDebugEnabled(bool value) { SetRemoteDebugEnabled(value); return *this;}
+
+
+    /**
      * <p>The type of fleet to which this device belongs. Possible values for fleet
      * type are PRIVATE and PUBLIC.</p>
      */
@@ -638,6 +657,9 @@ namespace Model
 
     bool m_remoteAccessEnabled;
     bool m_remoteAccessEnabledHasBeenSet;
+
+    bool m_remoteDebugEnabled;
+    bool m_remoteDebugEnabledHasBeenSet;
 
     Aws::String m_fleetType;
     bool m_fleetTypeHasBeenSet;

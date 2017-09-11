@@ -378,6 +378,118 @@ namespace Model
 
 
     /**
+     * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
+     * remote access session.</p>
+     */
+    inline bool GetRemoteDebugEnabled() const{ return m_remoteDebugEnabled; }
+
+    /**
+     * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
+     * remote access session.</p>
+     */
+    inline void SetRemoteDebugEnabled(bool value) { m_remoteDebugEnabledHasBeenSet = true; m_remoteDebugEnabled = value; }
+
+    /**
+     * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
+     * remote access session.</p>
+     */
+    inline RemoteAccessSession& WithRemoteDebugEnabled(bool value) { SetRemoteDebugEnabled(value); return *this;}
+
+
+    /**
+     * <p>IP address of the EC2 host where you need to connect to remotely debug
+     * devices. Only returned if remote debugging is enabled for the remote access
+     * session.</p>
+     */
+    inline const Aws::String& GetHostAddress() const{ return m_hostAddress; }
+
+    /**
+     * <p>IP address of the EC2 host where you need to connect to remotely debug
+     * devices. Only returned if remote debugging is enabled for the remote access
+     * session.</p>
+     */
+    inline void SetHostAddress(const Aws::String& value) { m_hostAddressHasBeenSet = true; m_hostAddress = value; }
+
+    /**
+     * <p>IP address of the EC2 host where you need to connect to remotely debug
+     * devices. Only returned if remote debugging is enabled for the remote access
+     * session.</p>
+     */
+    inline void SetHostAddress(Aws::String&& value) { m_hostAddressHasBeenSet = true; m_hostAddress = std::move(value); }
+
+    /**
+     * <p>IP address of the EC2 host where you need to connect to remotely debug
+     * devices. Only returned if remote debugging is enabled for the remote access
+     * session.</p>
+     */
+    inline void SetHostAddress(const char* value) { m_hostAddressHasBeenSet = true; m_hostAddress.assign(value); }
+
+    /**
+     * <p>IP address of the EC2 host where you need to connect to remotely debug
+     * devices. Only returned if remote debugging is enabled for the remote access
+     * session.</p>
+     */
+    inline RemoteAccessSession& WithHostAddress(const Aws::String& value) { SetHostAddress(value); return *this;}
+
+    /**
+     * <p>IP address of the EC2 host where you need to connect to remotely debug
+     * devices. Only returned if remote debugging is enabled for the remote access
+     * session.</p>
+     */
+    inline RemoteAccessSession& WithHostAddress(Aws::String&& value) { SetHostAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>IP address of the EC2 host where you need to connect to remotely debug
+     * devices. Only returned if remote debugging is enabled for the remote access
+     * session.</p>
+     */
+    inline RemoteAccessSession& WithHostAddress(const char* value) { SetHostAddress(value); return *this;}
+
+
+    /**
+     * <p>Unique identifier of your client for the remote access session. Only returned
+     * if remote debugging is enabled for the remote access session.</p>
+     */
+    inline const Aws::String& GetClientId() const{ return m_clientId; }
+
+    /**
+     * <p>Unique identifier of your client for the remote access session. Only returned
+     * if remote debugging is enabled for the remote access session.</p>
+     */
+    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
+
+    /**
+     * <p>Unique identifier of your client for the remote access session. Only returned
+     * if remote debugging is enabled for the remote access session.</p>
+     */
+    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
+
+    /**
+     * <p>Unique identifier of your client for the remote access session. Only returned
+     * if remote debugging is enabled for the remote access session.</p>
+     */
+    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
+
+    /**
+     * <p>Unique identifier of your client for the remote access session. Only returned
+     * if remote debugging is enabled for the remote access session.</p>
+     */
+    inline RemoteAccessSession& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
+
+    /**
+     * <p>Unique identifier of your client for the remote access session. Only returned
+     * if remote debugging is enabled for the remote access session.</p>
+     */
+    inline RemoteAccessSession& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier of your client for the remote access session. Only returned
+     * if remote debugging is enabled for the remote access session.</p>
+     */
+    inline RemoteAccessSession& WithClientId(const char* value) { SetClientId(value); return *this;}
+
+
+    /**
      * <p>The billing method of the remote access session. Possible values include
      * <code>METERED</code> or <code>UNMETERED</code>. For more information about
      * metered devices, see <a
@@ -489,6 +601,49 @@ namespace Model
      */
     inline RemoteAccessSession& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
+
+    /**
+     * <p>Unique device identifier for the remote device. Only returned if remote
+     * debugging is enabled for the remote access session.</p>
+     */
+    inline const Aws::String& GetDeviceUdid() const{ return m_deviceUdid; }
+
+    /**
+     * <p>Unique device identifier for the remote device. Only returned if remote
+     * debugging is enabled for the remote access session.</p>
+     */
+    inline void SetDeviceUdid(const Aws::String& value) { m_deviceUdidHasBeenSet = true; m_deviceUdid = value; }
+
+    /**
+     * <p>Unique device identifier for the remote device. Only returned if remote
+     * debugging is enabled for the remote access session.</p>
+     */
+    inline void SetDeviceUdid(Aws::String&& value) { m_deviceUdidHasBeenSet = true; m_deviceUdid = std::move(value); }
+
+    /**
+     * <p>Unique device identifier for the remote device. Only returned if remote
+     * debugging is enabled for the remote access session.</p>
+     */
+    inline void SetDeviceUdid(const char* value) { m_deviceUdidHasBeenSet = true; m_deviceUdid.assign(value); }
+
+    /**
+     * <p>Unique device identifier for the remote device. Only returned if remote
+     * debugging is enabled for the remote access session.</p>
+     */
+    inline RemoteAccessSession& WithDeviceUdid(const Aws::String& value) { SetDeviceUdid(value); return *this;}
+
+    /**
+     * <p>Unique device identifier for the remote device. Only returned if remote
+     * debugging is enabled for the remote access session.</p>
+     */
+    inline RemoteAccessSession& WithDeviceUdid(Aws::String&& value) { SetDeviceUdid(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique device identifier for the remote device. Only returned if remote
+     * debugging is enabled for the remote access session.</p>
+     */
+    inline RemoteAccessSession& WithDeviceUdid(const char* value) { SetDeviceUdid(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -518,6 +673,15 @@ namespace Model
     Device m_device;
     bool m_deviceHasBeenSet;
 
+    bool m_remoteDebugEnabled;
+    bool m_remoteDebugEnabledHasBeenSet;
+
+    Aws::String m_hostAddress;
+    bool m_hostAddressHasBeenSet;
+
+    Aws::String m_clientId;
+    bool m_clientIdHasBeenSet;
+
     BillingMethod m_billingMethod;
     bool m_billingMethodHasBeenSet;
 
@@ -526,6 +690,9 @@ namespace Model
 
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
+
+    Aws::String m_deviceUdid;
+    bool m_deviceUdidHasBeenSet;
   };
 
 } // namespace Model

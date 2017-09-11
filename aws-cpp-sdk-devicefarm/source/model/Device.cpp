@@ -49,6 +49,8 @@ Device::Device() :
     m_radioHasBeenSet(false),
     m_remoteAccessEnabled(false),
     m_remoteAccessEnabledHasBeenSet(false),
+    m_remoteDebugEnabled(false),
+    m_remoteDebugEnabledHasBeenSet(false),
     m_fleetTypeHasBeenSet(false),
     m_fleetNameHasBeenSet(false)
 {
@@ -75,6 +77,8 @@ Device::Device(const JsonValue& jsonValue) :
     m_radioHasBeenSet(false),
     m_remoteAccessEnabled(false),
     m_remoteAccessEnabledHasBeenSet(false),
+    m_remoteDebugEnabled(false),
+    m_remoteDebugEnabledHasBeenSet(false),
     m_fleetTypeHasBeenSet(false),
     m_fleetNameHasBeenSet(false)
 {
@@ -188,6 +192,13 @@ Device& Device::operator =(const JsonValue& jsonValue)
     m_remoteAccessEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("remoteDebugEnabled"))
+  {
+    m_remoteDebugEnabled = jsonValue.GetBool("remoteDebugEnabled");
+
+    m_remoteDebugEnabledHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("fleetType"))
   {
     m_fleetType = jsonValue.GetString("fleetType");
@@ -294,6 +305,12 @@ JsonValue Device::Jsonize() const
   if(m_remoteAccessEnabledHasBeenSet)
   {
    payload.WithBool("remoteAccessEnabled", m_remoteAccessEnabled);
+
+  }
+
+  if(m_remoteDebugEnabledHasBeenSet)
+  {
+   payload.WithBool("remoteDebugEnabled", m_remoteDebugEnabled);
 
   }
 

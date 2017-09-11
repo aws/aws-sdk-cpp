@@ -17,6 +17,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/model/Location.h>
+#include <aws/devicefarm/model/CustomerArtifactPaths.h>
 #include <aws/devicefarm/model/Radios.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devicefarm/model/BillingMethod.h>
@@ -200,6 +201,37 @@ namespace Model
 
 
     /**
+     * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+     * configuration.</p>
+     */
+    inline const CustomerArtifactPaths& GetCustomerArtifactPaths() const{ return m_customerArtifactPaths; }
+
+    /**
+     * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+     * configuration.</p>
+     */
+    inline void SetCustomerArtifactPaths(const CustomerArtifactPaths& value) { m_customerArtifactPathsHasBeenSet = true; m_customerArtifactPaths = value; }
+
+    /**
+     * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+     * configuration.</p>
+     */
+    inline void SetCustomerArtifactPaths(CustomerArtifactPaths&& value) { m_customerArtifactPathsHasBeenSet = true; m_customerArtifactPaths = std::move(value); }
+
+    /**
+     * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+     * configuration.</p>
+     */
+    inline ScheduleRunConfiguration& WithCustomerArtifactPaths(const CustomerArtifactPaths& value) { SetCustomerArtifactPaths(value); return *this;}
+
+    /**
+     * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+     * configuration.</p>
+     */
+    inline ScheduleRunConfiguration& WithCustomerArtifactPaths(CustomerArtifactPaths&& value) { SetCustomerArtifactPaths(std::move(value)); return *this;}
+
+
+    /**
      * <p>Information about the radio states for the run.</p>
      */
     inline const Radios& GetRadios() const{ return m_radios; }
@@ -314,6 +346,9 @@ namespace Model
 
     Location m_location;
     bool m_locationHasBeenSet;
+
+    CustomerArtifactPaths m_customerArtifactPaths;
+    bool m_customerArtifactPathsHasBeenSet;
 
     Radios m_radios;
     bool m_radiosHasBeenSet;

@@ -129,6 +129,75 @@ namespace Model
 
 
     /**
+     * <p>The public key of the <code>ssh</code> key pair you want to use for
+     * connecting to remote devices in your remote debugging session. This is only
+     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline const Aws::String& GetSshPublicKey() const{ return m_sshPublicKey; }
+
+    /**
+     * <p>The public key of the <code>ssh</code> key pair you want to use for
+     * connecting to remote devices in your remote debugging session. This is only
+     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline void SetSshPublicKey(const Aws::String& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
+
+    /**
+     * <p>The public key of the <code>ssh</code> key pair you want to use for
+     * connecting to remote devices in your remote debugging session. This is only
+     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline void SetSshPublicKey(Aws::String&& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = std::move(value); }
+
+    /**
+     * <p>The public key of the <code>ssh</code> key pair you want to use for
+     * connecting to remote devices in your remote debugging session. This is only
+     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline void SetSshPublicKey(const char* value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey.assign(value); }
+
+    /**
+     * <p>The public key of the <code>ssh</code> key pair you want to use for
+     * connecting to remote devices in your remote debugging session. This is only
+     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline CreateRemoteAccessSessionRequest& WithSshPublicKey(const Aws::String& value) { SetSshPublicKey(value); return *this;}
+
+    /**
+     * <p>The public key of the <code>ssh</code> key pair you want to use for
+     * connecting to remote devices in your remote debugging session. This is only
+     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline CreateRemoteAccessSessionRequest& WithSshPublicKey(Aws::String&& value) { SetSshPublicKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The public key of the <code>ssh</code> key pair you want to use for
+     * connecting to remote devices in your remote debugging session. This is only
+     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline CreateRemoteAccessSessionRequest& WithSshPublicKey(const char* value) { SetSshPublicKey(value); return *this;}
+
+
+    /**
+     * <p>Set to <code>true</code> if you want to access devices remotely for debugging
+     * in your remote access session.</p>
+     */
+    inline bool GetRemoteDebugEnabled() const{ return m_remoteDebugEnabled; }
+
+    /**
+     * <p>Set to <code>true</code> if you want to access devices remotely for debugging
+     * in your remote access session.</p>
+     */
+    inline void SetRemoteDebugEnabled(bool value) { m_remoteDebugEnabledHasBeenSet = true; m_remoteDebugEnabled = value; }
+
+    /**
+     * <p>Set to <code>true</code> if you want to access devices remotely for debugging
+     * in your remote access session.</p>
+     */
+    inline CreateRemoteAccessSessionRequest& WithRemoteDebugEnabled(bool value) { SetRemoteDebugEnabled(value); return *this;}
+
+
+    /**
      * <p>The name of the remote access session that you wish to create.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -165,6 +234,63 @@ namespace Model
 
 
     /**
+     * <p>Unique identifier for the client. If you want access to multiple devices on
+     * the same client, you should pass the same <code>clientId</code> value in each
+     * call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.</p>
+     */
+    inline const Aws::String& GetClientId() const{ return m_clientId; }
+
+    /**
+     * <p>Unique identifier for the client. If you want access to multiple devices on
+     * the same client, you should pass the same <code>clientId</code> value in each
+     * call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.</p>
+     */
+    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
+
+    /**
+     * <p>Unique identifier for the client. If you want access to multiple devices on
+     * the same client, you should pass the same <code>clientId</code> value in each
+     * call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.</p>
+     */
+    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
+
+    /**
+     * <p>Unique identifier for the client. If you want access to multiple devices on
+     * the same client, you should pass the same <code>clientId</code> value in each
+     * call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.</p>
+     */
+    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
+
+    /**
+     * <p>Unique identifier for the client. If you want access to multiple devices on
+     * the same client, you should pass the same <code>clientId</code> value in each
+     * call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.</p>
+     */
+    inline CreateRemoteAccessSessionRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for the client. If you want access to multiple devices on
+     * the same client, you should pass the same <code>clientId</code> value in each
+     * call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.</p>
+     */
+    inline CreateRemoteAccessSessionRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier for the client. If you want access to multiple devices on
+     * the same client, you should pass the same <code>clientId</code> value in each
+     * call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.</p>
+     */
+    inline CreateRemoteAccessSessionRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+
+
+    /**
      * <p>The configuration information for the remote access session request.</p>
      */
     inline const CreateRemoteAccessSessionConfiguration& GetConfiguration() const{ return m_configuration; }
@@ -197,8 +323,17 @@ namespace Model
     Aws::String m_deviceArn;
     bool m_deviceArnHasBeenSet;
 
+    Aws::String m_sshPublicKey;
+    bool m_sshPublicKeyHasBeenSet;
+
+    bool m_remoteDebugEnabled;
+    bool m_remoteDebugEnabledHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_clientId;
+    bool m_clientIdHasBeenSet;
 
     CreateRemoteAccessSessionConfiguration m_configuration;
     bool m_configurationHasBeenSet;

@@ -25,6 +25,8 @@
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/devicefarm/model/DeviceMinutes.h>
 #include <aws/devicefarm/model/NetworkProfile.h>
+#include <aws/devicefarm/model/ExecutionResultCode.h>
+#include <aws/devicefarm/model/CustomerArtifactPaths.h>
 #include <utility>
 
 namespace Aws
@@ -42,8 +44,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents an app on a set of devices with a specific test and
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a test run on a set of devices with a given app package, test
+   * parameters, etc.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Run">AWS API
    * Reference</a></p>
    */
@@ -616,6 +618,118 @@ namespace Model
      */
     inline Run& WithNetworkProfile(NetworkProfile&& value) { SetNetworkProfile(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Read-only URL for an object in S3 bucket where you can get the parsing
+     * results of the test package. If the test package doesn't parse, the reason why
+     * it doesn't parse appears in the file that this URL points to.</p>
+     */
+    inline const Aws::String& GetParsingResultUrl() const{ return m_parsingResultUrl; }
+
+    /**
+     * <p>Read-only URL for an object in S3 bucket where you can get the parsing
+     * results of the test package. If the test package doesn't parse, the reason why
+     * it doesn't parse appears in the file that this URL points to.</p>
+     */
+    inline void SetParsingResultUrl(const Aws::String& value) { m_parsingResultUrlHasBeenSet = true; m_parsingResultUrl = value; }
+
+    /**
+     * <p>Read-only URL for an object in S3 bucket where you can get the parsing
+     * results of the test package. If the test package doesn't parse, the reason why
+     * it doesn't parse appears in the file that this URL points to.</p>
+     */
+    inline void SetParsingResultUrl(Aws::String&& value) { m_parsingResultUrlHasBeenSet = true; m_parsingResultUrl = std::move(value); }
+
+    /**
+     * <p>Read-only URL for an object in S3 bucket where you can get the parsing
+     * results of the test package. If the test package doesn't parse, the reason why
+     * it doesn't parse appears in the file that this URL points to.</p>
+     */
+    inline void SetParsingResultUrl(const char* value) { m_parsingResultUrlHasBeenSet = true; m_parsingResultUrl.assign(value); }
+
+    /**
+     * <p>Read-only URL for an object in S3 bucket where you can get the parsing
+     * results of the test package. If the test package doesn't parse, the reason why
+     * it doesn't parse appears in the file that this URL points to.</p>
+     */
+    inline Run& WithParsingResultUrl(const Aws::String& value) { SetParsingResultUrl(value); return *this;}
+
+    /**
+     * <p>Read-only URL for an object in S3 bucket where you can get the parsing
+     * results of the test package. If the test package doesn't parse, the reason why
+     * it doesn't parse appears in the file that this URL points to.</p>
+     */
+    inline Run& WithParsingResultUrl(Aws::String&& value) { SetParsingResultUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>Read-only URL for an object in S3 bucket where you can get the parsing
+     * results of the test package. If the test package doesn't parse, the reason why
+     * it doesn't parse appears in the file that this URL points to.</p>
+     */
+    inline Run& WithParsingResultUrl(const char* value) { SetParsingResultUrl(value); return *this;}
+
+
+    /**
+     * <p>Supporting field for the result field. Set only if <code>result</code> is
+     * <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped
+     * because of test package parsing failure.</p>
+     */
+    inline const ExecutionResultCode& GetResultCode() const{ return m_resultCode; }
+
+    /**
+     * <p>Supporting field for the result field. Set only if <code>result</code> is
+     * <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped
+     * because of test package parsing failure.</p>
+     */
+    inline void SetResultCode(const ExecutionResultCode& value) { m_resultCodeHasBeenSet = true; m_resultCode = value; }
+
+    /**
+     * <p>Supporting field for the result field. Set only if <code>result</code> is
+     * <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped
+     * because of test package parsing failure.</p>
+     */
+    inline void SetResultCode(ExecutionResultCode&& value) { m_resultCodeHasBeenSet = true; m_resultCode = std::move(value); }
+
+    /**
+     * <p>Supporting field for the result field. Set only if <code>result</code> is
+     * <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped
+     * because of test package parsing failure.</p>
+     */
+    inline Run& WithResultCode(const ExecutionResultCode& value) { SetResultCode(value); return *this;}
+
+    /**
+     * <p>Supporting field for the result field. Set only if <code>result</code> is
+     * <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped
+     * because of test package parsing failure.</p>
+     */
+    inline Run& WithResultCode(ExecutionResultCode&& value) { SetResultCode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
+     */
+    inline const CustomerArtifactPaths& GetCustomerArtifactPaths() const{ return m_customerArtifactPaths; }
+
+    /**
+     * <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
+     */
+    inline void SetCustomerArtifactPaths(const CustomerArtifactPaths& value) { m_customerArtifactPathsHasBeenSet = true; m_customerArtifactPaths = value; }
+
+    /**
+     * <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
+     */
+    inline void SetCustomerArtifactPaths(CustomerArtifactPaths&& value) { m_customerArtifactPathsHasBeenSet = true; m_customerArtifactPaths = std::move(value); }
+
+    /**
+     * <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
+     */
+    inline Run& WithCustomerArtifactPaths(const CustomerArtifactPaths& value) { SetCustomerArtifactPaths(value); return *this;}
+
+    /**
+     * <p>Output <code>CustomerArtifactPaths</code> object for the test run.</p>
+     */
+    inline Run& WithCustomerArtifactPaths(CustomerArtifactPaths&& value) { SetCustomerArtifactPaths(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -665,6 +779,15 @@ namespace Model
 
     NetworkProfile m_networkProfile;
     bool m_networkProfileHasBeenSet;
+
+    Aws::String m_parsingResultUrl;
+    bool m_parsingResultUrlHasBeenSet;
+
+    ExecutionResultCode m_resultCode;
+    bool m_resultCodeHasBeenSet;
+
+    CustomerArtifactPaths m_customerArtifactPaths;
+    bool m_customerArtifactPathsHasBeenSet;
   };
 
 } // namespace Model

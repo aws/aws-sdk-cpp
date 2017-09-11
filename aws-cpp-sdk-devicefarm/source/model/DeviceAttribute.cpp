@@ -35,6 +35,7 @@ namespace Aws
         static const int FORM_FACTOR_HASH = HashingUtils::HashString("FORM_FACTOR");
         static const int MANUFACTURER_HASH = HashingUtils::HashString("MANUFACTURER");
         static const int REMOTE_ACCESS_ENABLED_HASH = HashingUtils::HashString("REMOTE_ACCESS_ENABLED");
+        static const int REMOTE_DEBUG_ENABLED_HASH = HashingUtils::HashString("REMOTE_DEBUG_ENABLED");
         static const int APPIUM_VERSION_HASH = HashingUtils::HashString("APPIUM_VERSION");
 
 
@@ -60,6 +61,10 @@ namespace Aws
           else if (hashCode == REMOTE_ACCESS_ENABLED_HASH)
           {
             return DeviceAttribute::REMOTE_ACCESS_ENABLED;
+          }
+          else if (hashCode == REMOTE_DEBUG_ENABLED_HASH)
+          {
+            return DeviceAttribute::REMOTE_DEBUG_ENABLED;
           }
           else if (hashCode == APPIUM_VERSION_HASH)
           {
@@ -89,6 +94,8 @@ namespace Aws
             return "MANUFACTURER";
           case DeviceAttribute::REMOTE_ACCESS_ENABLED:
             return "REMOTE_ACCESS_ENABLED";
+          case DeviceAttribute::REMOTE_DEBUG_ENABLED:
+            return "REMOTE_DEBUG_ENABLED";
           case DeviceAttribute::APPIUM_VERSION:
             return "APPIUM_VERSION";
           default:

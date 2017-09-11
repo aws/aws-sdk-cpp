@@ -50,7 +50,9 @@ namespace Model
     EXPLORER_SUMMARY_LOG,
     APPLICATION_CRASH_REPORT,
     XCTEST_LOG,
-    VIDEO
+    VIDEO,
+    CUSTOMER_ARTIFACT,
+    CUSTOMER_ARTIFACT_LOG
   };
 
 namespace ArtifactTypeMapper

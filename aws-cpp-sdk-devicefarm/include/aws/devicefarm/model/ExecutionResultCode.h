@@ -23,24 +23,18 @@ namespace DeviceFarm
 {
 namespace Model
 {
-  enum class DeviceAttribute
+  enum class ExecutionResultCode
   {
     NOT_SET,
-    ARN,
-    PLATFORM,
-    FORM_FACTOR,
-    MANUFACTURER,
-    REMOTE_ACCESS_ENABLED,
-    REMOTE_DEBUG_ENABLED,
-    APPIUM_VERSION
+    PARSING_FAILED
   };
 
-namespace DeviceAttributeMapper
+namespace ExecutionResultCodeMapper
 {
-AWS_DEVICEFARM_API DeviceAttribute GetDeviceAttributeForName(const Aws::String& name);
+AWS_DEVICEFARM_API ExecutionResultCode GetExecutionResultCodeForName(const Aws::String& name);
 
-AWS_DEVICEFARM_API Aws::String GetNameForDeviceAttribute(DeviceAttribute value);
-} // namespace DeviceAttributeMapper
+AWS_DEVICEFARM_API Aws::String GetNameForExecutionResultCode(ExecutionResultCode value);
+} // namespace ExecutionResultCodeMapper
 } // namespace Model
 } // namespace DeviceFarm
 } // namespace Aws

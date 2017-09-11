@@ -25,7 +25,11 @@ using namespace Aws::Utils;
 CreateRemoteAccessSessionRequest::CreateRemoteAccessSessionRequest() : 
     m_projectArnHasBeenSet(false),
     m_deviceArnHasBeenSet(false),
+    m_sshPublicKeyHasBeenSet(false),
+    m_remoteDebugEnabled(false),
+    m_remoteDebugEnabledHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_clientIdHasBeenSet(false),
     m_configurationHasBeenSet(false)
 {
 }
@@ -46,9 +50,27 @@ Aws::String CreateRemoteAccessSessionRequest::SerializePayload() const
 
   }
 
+  if(m_sshPublicKeyHasBeenSet)
+  {
+   payload.WithString("sshPublicKey", m_sshPublicKey);
+
+  }
+
+  if(m_remoteDebugEnabledHasBeenSet)
+  {
+   payload.WithBool("remoteDebugEnabled", m_remoteDebugEnabled);
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_clientIdHasBeenSet)
+  {
+   payload.WithString("clientId", m_clientId);
 
   }
 
