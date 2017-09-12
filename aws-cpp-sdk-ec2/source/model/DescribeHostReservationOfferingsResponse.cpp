@@ -56,11 +56,11 @@ DescribeHostReservationOfferingsResponse& DescribeHostReservationOfferingsRespon
     XmlNode offeringSetNode = resultNode.FirstChild("offeringSet");
     if(!offeringSetNode.IsNull())
     {
-      XmlNode offeringSetMember = offeringSetNode.FirstChild("member");
+      XmlNode offeringSetMember = offeringSetNode.FirstChild("item");
       while(!offeringSetMember.IsNull())
       {
         m_offeringSet.push_back(offeringSetMember);
-        offeringSetMember = offeringSetMember.NextNode("member");
+        offeringSetMember = offeringSetMember.NextNode("item");
       }
 
     }
